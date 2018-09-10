@@ -1,0 +1,267 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4E93D15C-08AE-4EC1-8140-B707CC081A83}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>ElixisLive.My.MyApplication</StartupObject>
+    <RootNamespace>ElixisLive</RootNamespace>
+    <AssemblyName>ElixisLive</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>ElixisLive.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>ElixisLive.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MySql.Data, Version=6.1.0.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\MySql.Data.DLL</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Entidad\generalConsulta.vb" />
+    <Compile Include="Entidad\Inventario\Configuracion.vb" />
+    <Compile Include="Entidad\Principal\ElementoMenu.vb" />
+    <Compile Include="FormBase\FormBaseLista.Designer.vb">
+      <DependentUpon>FormBaseLista.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormBase\FormBaseLista.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBase\FormBaseProductivo.Designer.vb">
+      <DependentUpon>FormBaseProductivo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormBase\FormBaseProductivo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modelo\Principal\principalBLL.vb" />
+    <Compile Include="Utilidad\ConeccionBD.vb" />
+    <Compile Include="Utilidad\Funciones.vb" />
+    <Compile Include="Utilidad\Generales.vb" />
+    <Compile Include="Utilidad\MensajeSistema.vb" />
+    <Compile Include="Vista\Administracion\FormEmpresa.Designer.vb">
+      <DependentUpon>FormEmpresa.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Administracion\FormEmpresa.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Configuracion\FormGasto.Designer.vb">
+      <DependentUpon>FormGasto.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Configuracion\FormGasto.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Configuracion\FormMarca.Designer.vb">
+      <DependentUpon>FormMarca.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Configuracion\FormMarca.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Configuracion\FormServicio.Designer.vb">
+      <DependentUpon>FormServicio.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Configuracion\FormServicio.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Inventario\FormCliente.Designer.vb">
+      <DependentUpon>FormCliente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Inventario\FormCliente.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Inventario\FormListaGasto.Designer.vb">
+      <DependentUpon>FormListaGasto.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Inventario\FormListaGasto.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Inventario\FormListaProducto.Designer.vb">
+      <DependentUpon>FormListaProducto.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Inventario\FormListaProducto.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Inventario\FormListaServicio.Designer.vb">
+      <DependentUpon>FormListaServicio.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Inventario\FormListaServicio.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Inventario\FormProducto.Designer.vb">
+      <DependentUpon>FormProducto.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Inventario\FormProducto.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Inventario\FormProveedor.Designer.vb">
+      <DependentUpon>FormProveedor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Inventario\FormProveedor.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Principal\FormPrincipal.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Principal\FormPrincipal.Designer.vb">
+      <DependentUpon>FormPrincipal.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBase\FormBase.Designer.vb">
+      <DependentUpon>FormBase.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormBase\FormBase.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="FormBase\FormBaseLista.resx">
+      <DependentUpon>FormBaseLista.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormBase\FormBaseProductivo.resx">
+      <DependentUpon>FormBaseProductivo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Administracion\FormEmpresa.resx">
+      <DependentUpon>FormEmpresa.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Configuracion\FormGasto.resx">
+      <DependentUpon>FormGasto.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Configuracion\FormMarca.resx">
+      <DependentUpon>FormMarca.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Configuracion\FormServicio.resx">
+      <DependentUpon>FormServicio.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Inventario\FormCliente.resx">
+      <DependentUpon>FormCliente.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Inventario\FormListaGasto.resx">
+      <DependentUpon>FormListaGasto.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Inventario\FormListaProducto.resx">
+      <DependentUpon>FormListaProducto.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Inventario\FormListaServicio.resx">
+      <DependentUpon>FormListaServicio.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Inventario\FormProducto.resx">
+      <DependentUpon>FormProducto.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Inventario\FormProveedor.resx">
+      <DependentUpon>FormProveedor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Principal\FormPrincipal.resx">
+      <DependentUpon>FormPrincipal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormBase\FormBase.resx">
+      <DependentUpon>FormBase.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Controlador\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ReferenciaDLL\MySql.Data.DLL" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
