@@ -22,19 +22,9 @@ Partial Class FormBase
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormBase))
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.LTitulo = New System.Windows.Forms.Label()
         Me.Pimagen = New System.Windows.Forms.PictureBox()
-        Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.TxtDescripcion = New System.Windows.Forms.TextBox()
-        Me.txtId = New System.Windows.Forms.TextBox()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.txtBuscar = New System.Windows.Forms.TextBox()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.dgRegistro = New System.Windows.Forms.DataGridView()
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
         Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.btNuevo = New System.Windows.Forms.ToolStripButton()
@@ -47,23 +37,31 @@ Partial Class FormBase
         Me.ToolStripSeparator5 = New System.Windows.Forms.ToolStripSeparator()
         Me.btAnular = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripSeparator6 = New System.Windows.Forms.ToolStripSeparator()
-        Me.btSalir = New System.Windows.Forms.ToolStripButton()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.txtnombre = New System.Windows.Forms.TextBox()
+        Me.txtcodigo = New System.Windows.Forms.TextBox()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Panel2.SuspendLayout()
-        Me.Panel3.SuspendLayout()
-        CType(Me.dgRegistro, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ToolStrip1.SuspendLayout()
+        Me.GroupBox1.SuspendLayout()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
         '
-        Me.Panel1.BackColor = System.Drawing.Color.White
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.Panel1.Controls.Add(Me.LTitulo)
         Me.Panel1.Controls.Add(Me.Pimagen)
         Me.Panel1.Location = New System.Drawing.Point(1, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(569, 47)
+        Me.Panel1.Size = New System.Drawing.Size(569, 42)
         Me.Panel1.TabIndex = 0
         '
         'LTitulo
@@ -78,107 +76,19 @@ Partial Class FormBase
         '
         'Pimagen
         '
-        Me.Pimagen.Location = New System.Drawing.Point(3, 3)
+        Me.Pimagen.BackColor = System.Drawing.Color.White
+        Me.Pimagen.Location = New System.Drawing.Point(1, 1)
         Me.Pimagen.Name = "Pimagen"
         Me.Pimagen.Size = New System.Drawing.Size(43, 40)
         Me.Pimagen.TabIndex = 1
         Me.Pimagen.TabStop = False
         '
-        'Panel2
-        '
-        Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel2.Controls.Add(Me.TxtDescripcion)
-        Me.Panel2.Controls.Add(Me.txtId)
-        Me.Panel2.Controls.Add(Me.Label2)
-        Me.Panel2.Controls.Add(Me.Label1)
-        Me.Panel2.Location = New System.Drawing.Point(1, 50)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(569, 38)
-        Me.Panel2.TabIndex = 1
-        '
-        'TxtDescripcion
-        '
-        Me.TxtDescripcion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TxtDescripcion.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtDescripcion.Location = New System.Drawing.Point(227, 8)
-        Me.TxtDescripcion.Name = "TxtDescripcion"
-        Me.TxtDescripcion.Size = New System.Drawing.Size(330, 22)
-        Me.TxtDescripcion.TabIndex = 5
-        '
-        'txtId
-        '
-        Me.txtId.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtId.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtId.Location = New System.Drawing.Point(42, 7)
-        Me.txtId.Name = "txtId"
-        Me.txtId.ReadOnly = True
-        Me.txtId.Size = New System.Drawing.Size(63, 22)
-        Me.txtId.TabIndex = 4
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Monotype Corsiva", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(145, 9)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(77, 18)
-        Me.Label2.TabIndex = 3
-        Me.Label2.Text = "Descripción:"
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Monotype Corsiva", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(7, 8)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(29, 18)
-        Me.Label1.TabIndex = 2
-        Me.Label1.Text = "ID:"
-        '
-        'Panel3
-        '
-        Me.Panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel3.Controls.Add(Me.txtBuscar)
-        Me.Panel3.Controls.Add(Me.Label3)
-        Me.Panel3.Controls.Add(Me.dgRegistro)
-        Me.Panel3.Location = New System.Drawing.Point(1, 94)
-        Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(569, 240)
-        Me.Panel3.TabIndex = 2
-        '
-        'txtBuscar
-        '
-        Me.txtBuscar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtBuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtBuscar.Location = New System.Drawing.Point(61, 5)
-        Me.txtBuscar.Name = "txtBuscar"
-        Me.txtBuscar.Size = New System.Drawing.Size(503, 22)
-        Me.txtBuscar.TabIndex = 7
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Monotype Corsiva", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(4, 6)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(51, 18)
-        Me.Label3.TabIndex = 6
-        Me.Label3.Text = "Buscar:"
-        '
-        'dgRegistro
-        '
-        Me.dgRegistro.BackgroundColor = System.Drawing.SystemColors.Control
-        Me.dgRegistro.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgRegistro.Location = New System.Drawing.Point(3, 33)
-        Me.dgRegistro.Name = "dgRegistro"
-        Me.dgRegistro.Size = New System.Drawing.Size(561, 202)
-        Me.dgRegistro.TabIndex = 0
-        '
         'ToolStrip1
         '
+        Me.ToolStrip1.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.ToolStrip1.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripSeparator1, Me.btNuevo, Me.ToolStripSeparator2, Me.btRegistrar, Me.ToolStripSeparator3, Me.btCancelar, Me.ToolStripSeparator4, Me.btEditar, Me.ToolStripSeparator5, Me.btAnular, Me.ToolStripSeparator6, Me.btSalir})
-        Me.ToolStrip1.Location = New System.Drawing.Point(0, 343)
+        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripSeparator1, Me.btNuevo, Me.ToolStripSeparator2, Me.btRegistrar, Me.ToolStripSeparator3, Me.btCancelar, Me.ToolStripSeparator4, Me.btEditar, Me.ToolStripSeparator5, Me.btAnular, Me.ToolStripSeparator6})
+        Me.ToolStrip1.Location = New System.Drawing.Point(0, 320)
         Me.ToolStrip1.Name = "ToolStrip1"
         Me.ToolStrip1.Size = New System.Drawing.Size(571, 25)
         Me.ToolStrip1.TabIndex = 3
@@ -191,12 +101,11 @@ Partial Class FormBase
         '
         'btNuevo
         '
-        Me.btNuevo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
         Me.btNuevo.Font = New System.Drawing.Font("Monotype Corsiva", 12.0!, CType((System.Drawing.FontStyle.Italic Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btNuevo.Image = CType(resources.GetObject("btNuevo.Image"), System.Drawing.Image)
+        Me.btNuevo.Image = Global.ElixisLive.My.Resources.Resources.Files_New_File_icon
         Me.btNuevo.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.btNuevo.Name = "btNuevo"
-        Me.btNuevo.Size = New System.Drawing.Size(51, 22)
+        Me.btNuevo.Size = New System.Drawing.Size(67, 22)
         Me.btNuevo.Text = "Nuevo"
         '
         'ToolStripSeparator2
@@ -206,12 +115,11 @@ Partial Class FormBase
         '
         'btRegistrar
         '
-        Me.btRegistrar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
         Me.btRegistrar.Font = New System.Drawing.Font("Monotype Corsiva", 12.0!, CType((System.Drawing.FontStyle.Italic Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btRegistrar.Image = CType(resources.GetObject("btRegistrar.Image"), System.Drawing.Image)
+        Me.btRegistrar.Image = Global.ElixisLive.My.Resources.Resources.Save_icon__1_
         Me.btRegistrar.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.btRegistrar.Name = "btRegistrar"
-        Me.btRegistrar.Size = New System.Drawing.Size(64, 22)
+        Me.btRegistrar.Size = New System.Drawing.Size(80, 22)
         Me.btRegistrar.Text = "Registrar"
         '
         'ToolStripSeparator3
@@ -221,12 +129,11 @@ Partial Class FormBase
         '
         'btCancelar
         '
-        Me.btCancelar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
         Me.btCancelar.Font = New System.Drawing.Font("Monotype Corsiva", 12.0!, CType((System.Drawing.FontStyle.Italic Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btCancelar.Image = CType(resources.GetObject("btCancelar.Image"), System.Drawing.Image)
+        Me.btCancelar.Image = Global.ElixisLive.My.Resources.Resources.Actions_blue_arrow_undo_icon
         Me.btCancelar.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.btCancelar.Name = "btCancelar"
-        Me.btCancelar.Size = New System.Drawing.Size(59, 22)
+        Me.btCancelar.Size = New System.Drawing.Size(75, 22)
         Me.btCancelar.Text = "Cancelar"
         '
         'ToolStripSeparator4
@@ -236,12 +143,11 @@ Partial Class FormBase
         '
         'btEditar
         '
-        Me.btEditar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
         Me.btEditar.Font = New System.Drawing.Font("Monotype Corsiva", 12.0!, CType((System.Drawing.FontStyle.Italic Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btEditar.Image = CType(resources.GetObject("btEditar.Image"), System.Drawing.Image)
+        Me.btEditar.Image = Global.ElixisLive.My.Resources.Resources.pencil_icon__1_
         Me.btEditar.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.btEditar.Name = "btEditar"
-        Me.btEditar.Size = New System.Drawing.Size(50, 22)
+        Me.btEditar.Size = New System.Drawing.Size(66, 22)
         Me.btEditar.Text = "Editar"
         '
         'ToolStripSeparator5
@@ -251,12 +157,11 @@ Partial Class FormBase
         '
         'btAnular
         '
-        Me.btAnular.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
         Me.btAnular.Font = New System.Drawing.Font("Monotype Corsiva", 12.0!, CType((System.Drawing.FontStyle.Italic Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btAnular.Image = CType(resources.GetObject("btAnular.Image"), System.Drawing.Image)
+        Me.btAnular.Image = Global.ElixisLive.My.Resources.Resources.document_delete_icon__1_
         Me.btAnular.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.btAnular.Name = "btAnular"
-        Me.btAnular.Size = New System.Drawing.Size(52, 22)
+        Me.btAnular.Size = New System.Drawing.Size(68, 22)
         Me.btAnular.Text = "Anular"
         '
         'ToolStripSeparator6
@@ -264,27 +169,110 @@ Partial Class FormBase
         Me.ToolStripSeparator6.Name = "ToolStripSeparator6"
         Me.ToolStripSeparator6.Size = New System.Drawing.Size(6, 25)
         '
-        'btSalir
+        'GroupBox1
         '
-        Me.btSalir.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
-        Me.btSalir.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
-        Me.btSalir.Font = New System.Drawing.Font("Monotype Corsiva", 12.0!, CType((System.Drawing.FontStyle.Italic Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btSalir.ForeColor = System.Drawing.Color.Red
-        Me.btSalir.Image = CType(resources.GetObject("btSalir.Image"), System.Drawing.Image)
-        Me.btSalir.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.btSalir.Name = "btSalir"
-        Me.btSalir.Size = New System.Drawing.Size(38, 22)
-        Me.btSalir.Text = "Salir"
+        Me.GroupBox1.BackColor = System.Drawing.Color.Transparent
+        Me.GroupBox1.Controls.Add(Me.Label1)
+        Me.GroupBox1.Controls.Add(Me.DataGridView1)
+        Me.GroupBox1.Controls.Add(Me.TextBox1)
+        Me.GroupBox1.Controls.Add(Me.GroupBox2)
+        Me.GroupBox1.Location = New System.Drawing.Point(4, 48)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(564, 269)
+        Me.GroupBox1.TabIndex = 18
+        Me.GroupBox1.TabStop = False
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Monotype Corsiva", 12.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.White
+        Me.Label1.Location = New System.Drawing.Point(6, 72)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(53, 20)
+        Me.Label1.TabIndex = 19
+        Me.Label1.Text = "Filtrar:"
+        '
+        'DataGridView1
+        '
+        Me.DataGridView1.BackgroundColor = System.Drawing.Color.White
+        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView1.Location = New System.Drawing.Point(6, 98)
+        Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridView1.Size = New System.Drawing.Size(552, 165)
+        Me.DataGridView1.TabIndex = 4
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!)
+        Me.TextBox1.Location = New System.Drawing.Point(65, 71)
+        Me.TextBox1.MaxLength = 100
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(493, 21)
+        Me.TextBox1.TabIndex = 3
+        '
+        'GroupBox2
+        '
+        Me.GroupBox2.Controls.Add(Me.txtnombre)
+        Me.GroupBox2.Controls.Add(Me.txtcodigo)
+        Me.GroupBox2.Controls.Add(Me.Label3)
+        Me.GroupBox2.Controls.Add(Me.Label5)
+        Me.GroupBox2.Font = New System.Drawing.Font("Arial Narrow", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox2.ForeColor = System.Drawing.Color.White
+        Me.GroupBox2.Location = New System.Drawing.Point(6, 15)
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.Size = New System.Drawing.Size(552, 48)
+        Me.GroupBox2.TabIndex = 0
+        Me.GroupBox2.TabStop = False
+        Me.GroupBox2.Text = "Información de Cualidades"
+        '
+        'txtnombre
+        '
+        Me.txtnombre.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!)
+        Me.txtnombre.Location = New System.Drawing.Point(246, 20)
+        Me.txtnombre.MaxLength = 100
+        Me.txtnombre.Name = "txtnombre"
+        Me.txtnombre.Size = New System.Drawing.Size(300, 21)
+        Me.txtnombre.TabIndex = 2
+        '
+        'txtcodigo
+        '
+        Me.txtcodigo.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!)
+        Me.txtcodigo.Location = New System.Drawing.Point(60, 20)
+        Me.txtcodigo.Name = "txtcodigo"
+        Me.txtcodigo.ReadOnly = True
+        Me.txtcodigo.Size = New System.Drawing.Size(100, 21)
+        Me.txtcodigo.TabIndex = 1
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Monotype Corsiva", 12.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(160, 21)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(84, 20)
+        Me.Label3.TabIndex = 18
+        Me.Label3.Text = "Descripción:"
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Monotype Corsiva", 12.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Location = New System.Drawing.Point(5, 21)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(54, 20)
+        Me.Label5.TabIndex = 17
+        Me.Label5.Text = "Código:"
         '
         'FormBase
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(571, 368)
-        Me.ControlBox = False
+        Me.BackgroundImage = Global.ElixisLive.My.Resources.Resources.image
+        Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.ClientSize = New System.Drawing.Size(571, 345)
+        Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.ToolStrip1)
-        Me.Controls.Add(Me.Panel3)
-        Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
         Me.Location = New System.Drawing.Point(3000, 1000)
         Me.MaximumSize = New System.Drawing.Size(587, 384)
@@ -294,13 +282,13 @@ Partial Class FormBase
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Panel2.ResumeLayout(False)
-        Me.Panel2.PerformLayout()
-        Me.Panel3.ResumeLayout(False)
-        Me.Panel3.PerformLayout()
-        CType(Me.dgRegistro, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ToolStrip1.ResumeLayout(False)
         Me.ToolStrip1.PerformLayout()
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox2.ResumeLayout(False)
+        Me.GroupBox2.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -314,20 +302,19 @@ Partial Class FormBase
     Public WithEvents Panel1 As Panel
     Public WithEvents LTitulo As Label
     Public WithEvents Pimagen As PictureBox
-    Public WithEvents Panel2 As Panel
-    Public WithEvents Panel3 As Panel
     Public WithEvents ToolStrip1 As ToolStrip
-    Public WithEvents Label2 As Label
-    Public WithEvents Label1 As Label
-    Public WithEvents TxtDescripcion As TextBox
-    Public WithEvents txtId As TextBox
-    Public WithEvents txtBuscar As TextBox
-    Public WithEvents Label3 As Label
-    Public WithEvents dgRegistro As DataGridView
     Public WithEvents btNuevo As ToolStripButton
     Public WithEvents btRegistrar As ToolStripButton
     Public WithEvents btCancelar As ToolStripButton
     Public WithEvents btEditar As ToolStripButton
     Public WithEvents btAnular As ToolStripButton
-    Public WithEvents btSalir As ToolStripButton
+    Public WithEvents GroupBox1 As GroupBox
+    Public WithEvents Label1 As Label
+    Friend WithEvents DataGridView1 As DataGridView
+    Public WithEvents TextBox1 As TextBox
+    Public WithEvents GroupBox2 As GroupBox
+    Public WithEvents txtnombre As TextBox
+    Public WithEvents txtcodigo As TextBox
+    Public WithEvents Label3 As Label
+    Public WithEvents Label5 As Label
 End Class

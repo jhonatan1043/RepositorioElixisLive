@@ -255,6 +255,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ReferenciaDLL\MySql.Data.DLL" />
+    <None Include="Resources\image.png" />
+    <None Include="Resources\document-delete-icon %281%29.png" />
+    <None Include="Resources\pencil-icon %281%29.png" />
+    <None Include="Resources\Actions-blue-arrow-undo-icon.png" />
+    <None Include="Resources\Save-icon %281%29.png" />
+    <None Include="Resources\Files-New-File-icon.png" />
+    <None Include="Resources\320474.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
