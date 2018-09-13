@@ -46,7 +46,7 @@ Public Class principalBLL
     Private Shared Sub CreaOpciones(ByRef dsDatos As DataSet)
         Dim dtmenu As New DataTable("menu")
         Try
-            Generales.llenarTabla("SP_MENU_CARGAR", Nothing, dtmenu)
+            Generales.llenarTabla("SP_ADMIN_MENU", Nothing, dtmenu)
             dsDatos.Tables.Add(dtmenu)
         Catch ex As Exception
             MsgBox(ex.Message)
@@ -55,7 +55,7 @@ Public Class principalBLL
     Private Shared Sub cargarMenuPadre(ByRef dsDatos As DataSet)
         Dim dtmenu As New DataTable("padre")
         Try
-            Generales.llenarTabla("SP_MENU_PADRE_CARGAR", Nothing, dtmenu)
+            Generales.llenarTabla("SP_ADMIN_MENU_PADRE", Nothing, dtmenu)
             dsDatos.Tables.Add(dtmenu)
         Catch ex As Exception
             MsgBox(ex.Message)
@@ -64,7 +64,7 @@ Public Class principalBLL
     Private Shared Sub cargarMenuHijas(ByRef dsDatos As DataSet)
         Dim dtmenu As New DataTable("hijo")
         Try
-            Generales.llenarTabla("SP_MENU_HIJO_CARGAR", Nothing, dtmenu)
+            Generales.llenarTabla("SP_ADMIN_MENU_HIJOS", Nothing, dtmenu)
             dsDatos.Tables.Add(dtmenu)
         Catch ex As Exception
             MsgBox(ex.Message)
