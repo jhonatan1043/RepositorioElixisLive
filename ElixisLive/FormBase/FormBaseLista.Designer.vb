@@ -23,8 +23,8 @@ Partial Class FormBaseLista
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.LTitulo = New System.Windows.Forms.Label()
         Me.Pimagen = New System.Windows.Forms.PictureBox()
+        Me.LTitulo = New System.Windows.Forms.Label()
         Me.txtBuscar = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.dgRegistro = New System.Windows.Forms.DataGridView()
@@ -60,6 +60,15 @@ Partial Class FormBaseLista
         Me.Panel1.Size = New System.Drawing.Size(569, 42)
         Me.Panel1.TabIndex = 0
         '
+        'Pimagen
+        '
+        Me.Pimagen.BackColor = System.Drawing.Color.White
+        Me.Pimagen.Location = New System.Drawing.Point(3, 3)
+        Me.Pimagen.Name = "Pimagen"
+        Me.Pimagen.Size = New System.Drawing.Size(46, 36)
+        Me.Pimagen.TabIndex = 1
+        Me.Pimagen.TabStop = False
+        '
         'LTitulo
         '
         Me.LTitulo.BackColor = System.Drawing.Color.Transparent
@@ -71,15 +80,6 @@ Partial Class FormBaseLista
         Me.LTitulo.TabIndex = 1
         Me.LTitulo.Text = "TITULO"
         Me.LTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'Pimagen
-        '
-        Me.Pimagen.BackColor = System.Drawing.Color.White
-        Me.Pimagen.Location = New System.Drawing.Point(3, 3)
-        Me.Pimagen.Name = "Pimagen"
-        Me.Pimagen.Size = New System.Drawing.Size(46, 36)
-        Me.Pimagen.TabIndex = 1
-        Me.Pimagen.TabStop = False
         '
         'txtBuscar
         '
@@ -230,6 +230,7 @@ Partial Class FormBaseLista
         Me.MaximumSize = New System.Drawing.Size(587, 426)
         Me.MinimumSize = New System.Drawing.Size(587, 426)
         Me.Name = "FormBaseLista"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Panel1.ResumeLayout(False)
         CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dgRegistro, System.ComponentModel.ISupportInitialize).EndInit()

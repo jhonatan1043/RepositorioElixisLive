@@ -1,9 +1,9 @@
 ﻿Public Class FormEmpresa
-    Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
+    Private Sub Label1_Click(sender As Object, e As EventArgs)
 
     End Sub
 
-    Private Sub btSalir_Click(sender As Object, e As EventArgs) Handles btSalir.Click
+    Private Sub btSalir_Click(sender As Object, e As EventArgs)
         If btRegistrar.Enabled = True Then
             Close()
         End If

@@ -23,8 +23,8 @@ Partial Class FormBaseProductivo
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.LTitulo = New System.Windows.Forms.Label()
         Me.Pimagen = New System.Windows.Forms.PictureBox()
+        Me.LTitulo = New System.Windows.Forms.Label()
         Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.TxtDescripcion = New System.Windows.Forms.TextBox()
@@ -70,6 +70,14 @@ Partial Class FormBaseProductivo
         Me.Panel1.Size = New System.Drawing.Size(905, 42)
         Me.Panel1.TabIndex = 0
         '
+        'Pimagen
+        '
+        Me.Pimagen.Location = New System.Drawing.Point(3, 3)
+        Me.Pimagen.Name = "Pimagen"
+        Me.Pimagen.Size = New System.Drawing.Size(46, 36)
+        Me.Pimagen.TabIndex = 1
+        Me.Pimagen.TabStop = False
+        '
         'LTitulo
         '
         Me.LTitulo.BackColor = System.Drawing.Color.Transparent
@@ -81,14 +89,6 @@ Partial Class FormBaseProductivo
         Me.LTitulo.TabIndex = 1
         Me.LTitulo.Text = "TITULO"
         Me.LTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'Pimagen
-        '
-        Me.Pimagen.Location = New System.Drawing.Point(3, 3)
-        Me.Pimagen.Name = "Pimagen"
-        Me.Pimagen.Size = New System.Drawing.Size(46, 36)
-        Me.Pimagen.TabIndex = 1
-        Me.Pimagen.TabStop = False
         '
         'DateTimePicker1
         '
@@ -161,7 +161,7 @@ Partial Class FormBaseProductivo
         '
         Me.txtBuscar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtBuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtBuscar.Location = New System.Drawing.Point(59, 233)
+        Me.txtBuscar.Location = New System.Drawing.Point(59, 260)
         Me.txtBuscar.Name = "txtBuscar"
         Me.txtBuscar.Size = New System.Drawing.Size(836, 22)
         Me.txtBuscar.TabIndex = 7
@@ -172,7 +172,7 @@ Partial Class FormBaseProductivo
         Me.Label3.BackColor = System.Drawing.Color.Transparent
         Me.Label3.Font = New System.Drawing.Font("Monotype Corsiva", 12.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.White
-        Me.Label3.Location = New System.Drawing.Point(2, 234)
+        Me.Label3.Location = New System.Drawing.Point(2, 261)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(53, 20)
         Me.Label3.TabIndex = 6
@@ -182,18 +182,18 @@ Partial Class FormBaseProductivo
         '
         Me.dgRegistro.BackgroundColor = System.Drawing.SystemColors.Control
         Me.dgRegistro.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgRegistro.Location = New System.Drawing.Point(4, 261)
+        Me.dgRegistro.Location = New System.Drawing.Point(4, 289)
         Me.dgRegistro.Name = "dgRegistro"
-        Me.dgRegistro.Size = New System.Drawing.Size(892, 187)
+        Me.dgRegistro.Size = New System.Drawing.Size(892, 159)
         Me.dgRegistro.TabIndex = 0
         '
         'dgvParametro
         '
         Me.dgvParametro.BackgroundColor = System.Drawing.SystemColors.Control
         Me.dgvParametro.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvParametro.Location = New System.Drawing.Point(4, 53)
+        Me.dgvParametro.Location = New System.Drawing.Point(4, 76)
         Me.dgvParametro.Name = "dgvParametro"
-        Me.dgvParametro.Size = New System.Drawing.Size(892, 174)
+        Me.dgvParametro.Size = New System.Drawing.Size(892, 176)
         Me.dgvParametro.TabIndex = 0
         '
         'GroupBox1
@@ -332,6 +332,7 @@ Partial Class FormBaseProductivo
         Me.MaximumSize = New System.Drawing.Size(921, 562)
         Me.MinimumSize = New System.Drawing.Size(921, 562)
         Me.Name = "FormBaseProductivo"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Panel1.ResumeLayout(False)
         CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dgRegistro, System.ComponentModel.ISupportInitialize).EndInit()
