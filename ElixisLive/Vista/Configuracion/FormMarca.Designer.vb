@@ -21,22 +21,26 @@ Partial Class FormMarca
     Private Sub InitializeComponent()
         Me.Panel1.SuspendLayout()
         CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox1.SuspendLayout()
+        Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
         '
         'LTitulo
         '
-        Me.LTitulo.Size = New System.Drawing.Size(102, 33)
         Me.LTitulo.Text = "MARCA"
         '
         'FormMarca
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
-        Me.ClientSize = New System.Drawing.Size(571, 368)
+        Me.ClientSize = New System.Drawing.Size(571, 345)
         Me.Location = New System.Drawing.Point(0, 0)
         Me.Name = "FormMarca"
         Me.Panel1.ResumeLayout(False)
-        Me.Panel1.PerformLayout()
         CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
+        Me.GroupBox2.ResumeLayout(False)
+        Me.GroupBox2.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

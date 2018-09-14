@@ -22,28 +22,46 @@ Partial Class FormPrincipal
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormPrincipal))
         Me.arbolMenu = New System.Windows.Forms.TreeView()
+        Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.SuspendLayout()
         '
         'arbolMenu
         '
-        Me.arbolMenu.BackColor = System.Drawing.Color.LightGray
-        Me.arbolMenu.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.arbolMenu.BackColor = System.Drawing.Color.White
         Me.arbolMenu.Dock = System.Windows.Forms.DockStyle.Left
         Me.arbolMenu.Font = New System.Drawing.Font("Monotype Corsiva", 15.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.arbolMenu.ForeColor = System.Drawing.Color.Indigo
+        Me.arbolMenu.ImageKey = "17x17.png"
+        Me.arbolMenu.ImageList = Me.ImageList1
+        Me.arbolMenu.LineColor = System.Drawing.Color.Indigo
         Me.arbolMenu.Location = New System.Drawing.Point(0, 0)
         Me.arbolMenu.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.arbolMenu.Name = "arbolMenu"
-        Me.arbolMenu.Size = New System.Drawing.Size(264, 567)
+        Me.arbolMenu.SelectedImageKey = "ree.png"
+        Me.arbolMenu.Size = New System.Drawing.Size(240, 567)
+        Me.arbolMenu.StateImageList = Me.ImageList1
         Me.arbolMenu.TabIndex = 1
+        '
+        'ImageList1
+        '
+        Me.ImageList1.ImageStream = CType(resources.GetObject("ImageList1.ImageStream"), System.Windows.Forms.ImageListStreamer)
+        Me.ImageList1.TransparentColor = System.Drawing.Color.Transparent
+        Me.ImageList1.Images.SetKeyName(0, "ree.png")
+        Me.ImageList1.Images.SetKeyName(1, "17x17.png")
         '
         'StatusStrip1
         '
-        Me.StatusStrip1.Location = New System.Drawing.Point(264, 545)
+        Me.StatusStrip1.BackColor = System.Drawing.Color.White
+        Me.StatusStrip1.BackgroundImage = Global.ElixisLive.My.Resources.Resources.Sin_título
+        Me.StatusStrip1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.StatusStrip1.Location = New System.Drawing.Point(240, 545)
         Me.StatusStrip1.Name = "StatusStrip1"
         Me.StatusStrip1.Padding = New System.Windows.Forms.Padding(1, 0, 17, 0)
-        Me.StatusStrip1.Size = New System.Drawing.Size(873, 22)
+        Me.StatusStrip1.Size = New System.Drawing.Size(897, 22)
         Me.StatusStrip1.TabIndex = 2
         Me.StatusStrip1.Text = "StatusStrip1"
         '
@@ -51,6 +69,7 @@ Partial Class FormPrincipal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.BlueViolet
         Me.BackgroundImage = Global.ElixisLive.My.Resources.Resources.image
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(1137, 567)
@@ -71,4 +90,5 @@ Partial Class FormPrincipal
 
     Friend WithEvents arbolMenu As TreeView
     Friend WithEvents StatusStrip1 As StatusStrip
+    Friend WithEvents ImageList1 As ImageList
 End Class

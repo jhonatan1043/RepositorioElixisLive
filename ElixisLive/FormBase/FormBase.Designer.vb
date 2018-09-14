@@ -56,36 +56,40 @@ Partial Class FormBase
         '
         'Panel1
         '
-        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.Panel1.Controls.Add(Me.LTitulo)
+        Me.Panel1.BackColor = System.Drawing.Color.White
+        Me.Panel1.BackgroundImage = Global.ElixisLive.My.Resources.Resources.Sin_título
+        Me.Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Panel1.Controls.Add(Me.Pimagen)
-        Me.Panel1.Location = New System.Drawing.Point(1, 0)
+        Me.Panel1.Controls.Add(Me.LTitulo)
+        Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(569, 42)
+        Me.Panel1.Size = New System.Drawing.Size(571, 42)
         Me.Panel1.TabIndex = 0
         '
         'LTitulo
         '
-        Me.LTitulo.AutoSize = True
+        Me.LTitulo.BackColor = System.Drawing.Color.Transparent
         Me.LTitulo.Font = New System.Drawing.Font("Monotype Corsiva", 20.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LTitulo.Location = New System.Drawing.Point(222, 7)
+        Me.LTitulo.ForeColor = System.Drawing.Color.White
+        Me.LTitulo.Location = New System.Drawing.Point(0, 6)
         Me.LTitulo.Name = "LTitulo"
-        Me.LTitulo.Size = New System.Drawing.Size(105, 33)
+        Me.LTitulo.Size = New System.Drawing.Size(568, 33)
         Me.LTitulo.TabIndex = 1
         Me.LTitulo.Text = "TITULO"
+        Me.LTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Pimagen
         '
         Me.Pimagen.BackColor = System.Drawing.Color.White
-        Me.Pimagen.Location = New System.Drawing.Point(1, 1)
+        Me.Pimagen.Location = New System.Drawing.Point(3, 3)
         Me.Pimagen.Name = "Pimagen"
-        Me.Pimagen.Size = New System.Drawing.Size(43, 40)
+        Me.Pimagen.Size = New System.Drawing.Size(46, 36)
         Me.Pimagen.TabIndex = 1
         Me.Pimagen.TabStop = False
         '
         'ToolStrip1
         '
-        Me.ToolStrip1.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.ToolStrip1.BackColor = System.Drawing.Color.White
         Me.ToolStrip1.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripSeparator1, Me.btNuevo, Me.ToolStripSeparator2, Me.btRegistrar, Me.ToolStripSeparator3, Me.btCancelar, Me.ToolStripSeparator4, Me.btEditar, Me.ToolStripSeparator5, Me.btAnular, Me.ToolStripSeparator6})
         Me.ToolStrip1.Location = New System.Drawing.Point(0, 320)
@@ -102,6 +106,7 @@ Partial Class FormBase
         'btNuevo
         '
         Me.btNuevo.Font = New System.Drawing.Font("Monotype Corsiva", 12.0!, CType((System.Drawing.FontStyle.Italic Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btNuevo.ForeColor = System.Drawing.Color.Purple
         Me.btNuevo.Image = Global.ElixisLive.My.Resources.Resources.Files_New_File_icon
         Me.btNuevo.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.btNuevo.Name = "btNuevo"
@@ -116,6 +121,7 @@ Partial Class FormBase
         'btRegistrar
         '
         Me.btRegistrar.Font = New System.Drawing.Font("Monotype Corsiva", 12.0!, CType((System.Drawing.FontStyle.Italic Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btRegistrar.ForeColor = System.Drawing.Color.Purple
         Me.btRegistrar.Image = Global.ElixisLive.My.Resources.Resources.Save_icon__1_
         Me.btRegistrar.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.btRegistrar.Name = "btRegistrar"
@@ -130,6 +136,7 @@ Partial Class FormBase
         'btCancelar
         '
         Me.btCancelar.Font = New System.Drawing.Font("Monotype Corsiva", 12.0!, CType((System.Drawing.FontStyle.Italic Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btCancelar.ForeColor = System.Drawing.Color.Purple
         Me.btCancelar.Image = Global.ElixisLive.My.Resources.Resources.Actions_blue_arrow_undo_icon
         Me.btCancelar.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.btCancelar.Name = "btCancelar"
@@ -144,6 +151,7 @@ Partial Class FormBase
         'btEditar
         '
         Me.btEditar.Font = New System.Drawing.Font("Monotype Corsiva", 12.0!, CType((System.Drawing.FontStyle.Italic Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btEditar.ForeColor = System.Drawing.Color.Purple
         Me.btEditar.Image = Global.ElixisLive.My.Resources.Resources.pencil_icon__1_
         Me.btEditar.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.btEditar.Name = "btEditar"
@@ -158,6 +166,7 @@ Partial Class FormBase
         'btAnular
         '
         Me.btAnular.Font = New System.Drawing.Font("Monotype Corsiva", 12.0!, CType((System.Drawing.FontStyle.Italic Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btAnular.ForeColor = System.Drawing.Color.Purple
         Me.btAnular.Image = Global.ElixisLive.My.Resources.Resources.document_delete_icon__1_
         Me.btAnular.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.btAnular.Name = "btAnular"
@@ -176,9 +185,9 @@ Partial Class FormBase
         Me.GroupBox1.Controls.Add(Me.DataGridView1)
         Me.GroupBox1.Controls.Add(Me.TextBox1)
         Me.GroupBox1.Controls.Add(Me.GroupBox2)
-        Me.GroupBox1.Location = New System.Drawing.Point(4, 48)
+        Me.GroupBox1.Location = New System.Drawing.Point(4, 44)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(564, 269)
+        Me.GroupBox1.Size = New System.Drawing.Size(564, 273)
         Me.GroupBox1.TabIndex = 18
         Me.GroupBox1.TabStop = False
         '
@@ -187,7 +196,7 @@ Partial Class FormBase
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Monotype Corsiva", 12.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(6, 72)
+        Me.Label1.Location = New System.Drawing.Point(6, 63)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(53, 20)
         Me.Label1.TabIndex = 19
@@ -197,15 +206,15 @@ Partial Class FormBase
         '
         Me.DataGridView1.BackgroundColor = System.Drawing.Color.White
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(6, 98)
+        Me.DataGridView1.Location = New System.Drawing.Point(6, 89)
         Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(552, 165)
+        Me.DataGridView1.Size = New System.Drawing.Size(552, 178)
         Me.DataGridView1.TabIndex = 4
         '
         'TextBox1
         '
         Me.TextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!)
-        Me.TextBox1.Location = New System.Drawing.Point(65, 71)
+        Me.TextBox1.Location = New System.Drawing.Point(65, 62)
         Me.TextBox1.MaxLength = 100
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(493, 21)
@@ -219,7 +228,7 @@ Partial Class FormBase
         Me.GroupBox2.Controls.Add(Me.Label5)
         Me.GroupBox2.Font = New System.Drawing.Font("Arial Narrow", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox2.ForeColor = System.Drawing.Color.White
-        Me.GroupBox2.Location = New System.Drawing.Point(6, 15)
+        Me.GroupBox2.Location = New System.Drawing.Point(6, 7)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(552, 48)
         Me.GroupBox2.TabIndex = 0
@@ -274,13 +283,14 @@ Partial Class FormBase
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.ToolStrip1)
         Me.Controls.Add(Me.Panel1)
+        Me.DoubleBuffered = True
         Me.Location = New System.Drawing.Point(3000, 1000)
+        Me.MaximizeBox = False
         Me.MaximumSize = New System.Drawing.Size(587, 384)
         Me.MinimumSize = New System.Drawing.Size(587, 384)
         Me.Name = "FormBase"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Panel1.ResumeLayout(False)
-        Me.Panel1.PerformLayout()
         CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ToolStrip1.ResumeLayout(False)
         Me.ToolStrip1.PerformLayout()

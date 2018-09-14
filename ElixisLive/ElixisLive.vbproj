@@ -255,6 +255,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ReferenciaDLL\MySql.Data.DLL" />
+    <None Include="Resources\Sin título.png" />
     <None Include="Resources\image.png" />
     <None Include="Resources\document-delete-icon %281%29.png" />
     <None Include="Resources\pencil-icon %281%29.png" />

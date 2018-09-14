@@ -21,34 +21,32 @@ Partial Class FormProducto
     Private Sub InitializeComponent()
         Me.Panel1.SuspendLayout()
         CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Panel2.SuspendLayout()
-        Me.Panel3.SuspendLayout()
         Me.SuspendLayout()
         '
         'LTitulo
         '
-        Me.LTitulo.Size = New System.Drawing.Size(145, 33)
+        Me.LTitulo.AutoSize = False
+        Me.LTitulo.Location = New System.Drawing.Point(0, 4)
+        Me.LTitulo.Size = New System.Drawing.Size(903, 33)
         Me.LTitulo.Text = "PRODUCTO"
+        Me.LTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Label2
         '
         Me.Label2.Location = New System.Drawing.Point(138, 9)
-        Me.Label2.Size = New System.Drawing.Size(57, 18)
+        Me.Label2.Size = New System.Drawing.Size(61, 20)
         Me.Label2.Text = "Nombre:"
         '
         'FormProducto
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
-        Me.ClientSize = New System.Drawing.Size(714, 489)
+        Me.ClientSize = New System.Drawing.Size(905, 523)
         Me.Location = New System.Drawing.Point(0, 0)
+        Me.MaximumSize = New System.Drawing.Size(921, 562)
+        Me.MinimumSize = New System.Drawing.Size(921, 562)
         Me.Name = "FormProducto"
         Me.Panel1.ResumeLayout(False)
-        Me.Panel1.PerformLayout()
         CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Panel2.ResumeLayout(False)
-        Me.Panel2.PerformLayout()
-        Me.Panel3.ResumeLayout(False)
-        Me.Panel3.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

@@ -3,7 +3,7 @@
 
     End Sub
 
-    Private Sub btSalir_Click(sender As Object, e As EventArgs) Handles btSalir.Click
+    Private Sub btSalir_Click(sender As Object, e As EventArgs)
         If btRegistrar.Enabled = True Then
             Close()
         End If
