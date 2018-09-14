@@ -75,14 +75,16 @@ Public Class principalBLL
         cargarMenuHijas(dsCuentas)
     End Sub
 
-    Public Shared Sub cargarFormulario(sender As Object, e As EventArgs)
+    Public Shared Sub cargarFormulario(elemento As ElementoMenu)
         Try
-            Dim menuItem = DirectCast(sender, TreeView)
-            Dim elemMenu As ElementoMenu = menuItem.Tag
+            Dim elemMenu As ElementoMenu = elemento
+
             If estaAbierto(elemMenu) = True Then
                 traerAlFrente(elemMenu)
             Else
-                Dim nombreTipo = "" & elemMenu.nombre
+
+                Dim nombreTipo = "ElixisLive." & elemMenu.nombre
+
                 Dim vTipo As Type = Assembly.GetExecutingAssembly.GetType(nombreTipo)
                 If vTipo IsNot Nothing Then
                     Dim vFormulario = Activator.CreateInstance(vTipo)

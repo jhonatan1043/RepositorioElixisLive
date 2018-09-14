@@ -17,11 +17,16 @@
     End Sub
 
     Private Sub arbolMenu_NodeMouseClick(sender As Object, e As TreeNodeMouseClickEventArgs) Handles arbolMenu.NodeMouseClick
-        'Dim ramaActiva As String
-        'ramaActiva = arbolMenu.get
-
-        'If ramaActiva = String.Empty Then
-
-        'End If
+        Dim ramaActiva As String
+        ramaActiva = e.Node.Tag
+        If ramaActiva <> String.Empty Then
+            principalBLL.cargarFormulario(cargarFormulario(e))
+        End If
     End Sub
+    Private Function cargarFormulario(e As TreeNodeMouseClickEventArgs) As ElementoMenu
+        Dim elemento As New ElementoMenu
+        elemento.codigo = e.Node.Name
+        elemento.nombre = e.Node.Tag
+        Return elemento
+    End Function
 End Class

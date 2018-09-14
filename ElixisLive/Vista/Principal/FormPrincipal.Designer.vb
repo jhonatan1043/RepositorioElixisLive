@@ -56,6 +56,7 @@ Partial Class FormPrincipal
         Me.ClientSize = New System.Drawing.Size(1137, 567)
         Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.arbolMenu)
+        Me.DoubleBuffered = True
         Me.Font = New System.Drawing.Font("Monotype Corsiva", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.IsMdiContainer = True
         Me.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
