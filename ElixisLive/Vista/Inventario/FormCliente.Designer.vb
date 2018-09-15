@@ -27,6 +27,10 @@ Partial Class FormCliente
         '
         Me.LTitulo.Text = "Clientes"
         '
+        'Pimagen
+        '
+        Me.Pimagen.Image = Global.ElixisLive.My.Resources.Resources.Apps_preferences_contact_list_icon__1_1
+        '
         'Label2
         '
         Me.Label2.Location = New System.Drawing.Point(137, 14)

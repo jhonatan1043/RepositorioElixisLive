@@ -255,6 +255,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ReferenciaDLL\MySql.Data.DLL" />
+    <None Include="Resources\Cash-icon.png" />
+    <None Include="Resources\Apps-preferences-contact-list-icon %281%291.png" />
+    <None Include="Resources\aplica.png" />
     <None Include="Resources\logo az.png" />
     <None Include="Resources\company-building-icon.png" />
     <None Include="Resources\basket-full-icon.png" />

@@ -95,7 +95,7 @@ Partial Class FormBase
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Controls.Add(Me.TextBox1)
         Me.GroupBox1.Controls.Add(Me.GroupBox2)
-        Me.GroupBox1.Location = New System.Drawing.Point(4, 44)
+        Me.GroupBox1.Location = New System.Drawing.Point(3, 44)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(564, 265)
         Me.GroupBox1.TabIndex = 18

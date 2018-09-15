@@ -27,11 +27,11 @@ Partial Class FormGasto
         '
         'LTitulo
         '
-        Me.LTitulo.Text = "Gasto"
+        Me.LTitulo.Text = "Gastos"
         '
         'Pimagen
         '
-        Me.Pimagen.Image = Global.ElixisLive.My.Resources.Resources.Cash_register_icon__1_
+        Me.Pimagen.Image = Global.ElixisLive.My.Resources.Resources.Cash_icon
         Me.Pimagen.Location = New System.Drawing.Point(7, 3)
         Me.Pimagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         '

@@ -31,8 +31,7 @@ Partial Class FormListaGasto
         '
         'Pimagen
         '
-        Me.Pimagen.Image = Global.ElixisLive.My.Resources.Resources.Edit_Text_icon__1_
-        Me.Pimagen.Location = New System.Drawing.Point(6, 3)
+        Me.Pimagen.Image = Global.ElixisLive.My.Resources.Resources.aplica
         Me.Pimagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         '
         'FormListaGasto

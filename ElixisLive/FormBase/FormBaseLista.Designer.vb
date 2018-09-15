@@ -28,6 +28,8 @@ Partial Class FormBaseLista
         Me.txtBuscar = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.GroupBox5 = New System.Windows.Forms.GroupBox()
+        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
         Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.btNuevo = New System.Windows.Forms.ToolStripButton()
@@ -40,14 +42,12 @@ Partial Class FormBaseLista
         Me.ToolStripSeparator5 = New System.Windows.Forms.ToolStripSeparator()
         Me.btAnular = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripSeparator6 = New System.Windows.Forms.ToolStripSeparator()
-        Me.GroupBox5 = New System.Windows.Forms.GroupBox()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.Panel1.SuspendLayout()
         CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
-        Me.ToolStrip1.SuspendLayout()
         Me.GroupBox5.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.ToolStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
@@ -88,7 +88,7 @@ Partial Class FormBaseLista
         Me.txtBuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtBuscar.Location = New System.Drawing.Point(64, 53)
         Me.txtBuscar.Name = "txtBuscar"
-        Me.txtBuscar.Size = New System.Drawing.Size(497, 22)
+        Me.txtBuscar.Size = New System.Drawing.Size(494, 22)
         Me.txtBuscar.TabIndex = 7
         '
         'Label3
@@ -107,11 +107,33 @@ Partial Class FormBaseLista
         '
         Me.GroupBox1.BackColor = System.Drawing.Color.Transparent
         Me.GroupBox1.Controls.Add(Me.GroupBox5)
-        Me.GroupBox1.Location = New System.Drawing.Point(6, 40)
+        Me.GroupBox1.Location = New System.Drawing.Point(5, 40)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(561, 311)
         Me.GroupBox1.TabIndex = 8
         Me.GroupBox1.TabStop = False
+        '
+        'GroupBox5
+        '
+        Me.GroupBox5.Controls.Add(Me.DataGridView1)
+        Me.GroupBox5.Font = New System.Drawing.Font("Times New Roman", 8.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox5.ForeColor = System.Drawing.Color.RoyalBlue
+        Me.GroupBox5.Location = New System.Drawing.Point(7, 41)
+        Me.GroupBox5.Name = "GroupBox5"
+        Me.GroupBox5.Size = New System.Drawing.Size(548, 264)
+        Me.GroupBox5.TabIndex = 61
+        Me.GroupBox5.TabStop = False
+        Me.GroupBox5.Text = "Registros Almacenados"
+        '
+        'DataGridView1
+        '
+        Me.DataGridView1.BackgroundColor = System.Drawing.SystemColors.Control
+        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.DataGridView1.Location = New System.Drawing.Point(3, 16)
+        Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridView1.Size = New System.Drawing.Size(542, 245)
+        Me.DataGridView1.TabIndex = 0
         '
         'ToolStrip1
         '
@@ -205,28 +227,6 @@ Partial Class FormBaseLista
         Me.ToolStripSeparator6.Name = "ToolStripSeparator6"
         Me.ToolStripSeparator6.Size = New System.Drawing.Size(6, 33)
         '
-        'GroupBox5
-        '
-        Me.GroupBox5.Controls.Add(Me.DataGridView1)
-        Me.GroupBox5.Font = New System.Drawing.Font("Times New Roman", 8.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox5.ForeColor = System.Drawing.Color.RoyalBlue
-        Me.GroupBox5.Location = New System.Drawing.Point(7, 41)
-        Me.GroupBox5.Name = "GroupBox5"
-        Me.GroupBox5.Size = New System.Drawing.Size(546, 264)
-        Me.GroupBox5.TabIndex = 61
-        Me.GroupBox5.TabStop = False
-        Me.GroupBox5.Text = "Registros Almacenados"
-        '
-        'DataGridView1
-        '
-        Me.DataGridView1.BackgroundColor = System.Drawing.SystemColors.Control
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.DataGridView1.Location = New System.Drawing.Point(3, 16)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(540, 245)
-        Me.DataGridView1.TabIndex = 0
-        '
         'FormBaseLista
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -249,10 +249,10 @@ Partial Class FormBaseLista
         Me.Panel1.ResumeLayout(False)
         CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
-        Me.ToolStrip1.ResumeLayout(False)
-        Me.ToolStrip1.PerformLayout()
         Me.GroupBox5.ResumeLayout(False)
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.ToolStrip1.ResumeLayout(False)
+        Me.ToolStrip1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
