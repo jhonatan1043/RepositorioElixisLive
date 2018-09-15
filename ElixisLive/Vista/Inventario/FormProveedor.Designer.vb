@@ -25,25 +25,37 @@ Partial Class FormProveedor
         '
         'LTitulo
         '
-        Me.LTitulo.AutoSize = False
         Me.LTitulo.Location = New System.Drawing.Point(2, 5)
         Me.LTitulo.Size = New System.Drawing.Size(901, 33)
-        Me.LTitulo.Text = "PROVEEDOR"
-        Me.LTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.LTitulo.Text = "Proveedores"
+        '
+        'Pimagen
+        '
+        Me.Pimagen.Image = Global.ElixisLive.My.Resources.Resources.Apps_preferences_contact_list_icon__1_
+        Me.Pimagen.Location = New System.Drawing.Point(8, 3)
+        Me.Pimagen.Size = New System.Drawing.Size(46, 39)
+        Me.Pimagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         '
         'Label2
         '
-        Me.Label2.Location = New System.Drawing.Point(138, 9)
-        Me.Label2.Size = New System.Drawing.Size(61, 20)
+        Me.Label2.Location = New System.Drawing.Point(138, 14)
+        Me.Label2.Size = New System.Drawing.Size(65, 19)
         Me.Label2.Text = "Nombre:"
+        '
+        'Label1
+        '
+        Me.Label1.Size = New System.Drawing.Size(34, 19)
+        Me.Label1.Text = "Nit:"
+        '
+        'txtId
+        '
+        Me.txtId.Size = New System.Drawing.Size(93, 22)
         '
         'FormProveedor
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.ClientSize = New System.Drawing.Size(905, 523)
         Me.Location = New System.Drawing.Point(0, 0)
-        Me.MaximumSize = New System.Drawing.Size(921, 562)
-        Me.MinimumSize = New System.Drawing.Size(921, 562)
         Me.Name = "FormProveedor"
         Me.Panel1.ResumeLayout(False)
         CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).EndInit()

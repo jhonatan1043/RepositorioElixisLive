@@ -27,7 +27,7 @@ Partial Class FormServicio
         '
         'LTitulo
         '
-        Me.LTitulo.Text = "SERVICIO"
+        Me.LTitulo.Text = "Servicios"
         '
         'FormServicio
         '

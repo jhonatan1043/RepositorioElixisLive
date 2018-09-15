@@ -25,16 +25,20 @@ Partial Class FormProducto
         '
         'LTitulo
         '
-        Me.LTitulo.AutoSize = False
-        Me.LTitulo.Location = New System.Drawing.Point(0, 4)
+        Me.LTitulo.Location = New System.Drawing.Point(0, 6)
         Me.LTitulo.Size = New System.Drawing.Size(903, 33)
-        Me.LTitulo.Text = "PRODUCTO"
-        Me.LTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.LTitulo.Text = "Productos"
+        '
+        'Pimagen
+        '
+        Me.Pimagen.Image = Global.ElixisLive.My.Resources.Resources.basket_full_icon
+        Me.Pimagen.Location = New System.Drawing.Point(6, 5)
+        Me.Pimagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         '
         'Label2
         '
-        Me.Label2.Location = New System.Drawing.Point(138, 9)
-        Me.Label2.Size = New System.Drawing.Size(61, 20)
+        Me.Label2.Location = New System.Drawing.Point(138, 14)
+        Me.Label2.Size = New System.Drawing.Size(65, 19)
         Me.Label2.Text = "Nombre:"
         '
         'FormProducto
@@ -42,8 +46,6 @@ Partial Class FormProducto
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.ClientSize = New System.Drawing.Size(905, 523)
         Me.Location = New System.Drawing.Point(0, 0)
-        Me.MaximumSize = New System.Drawing.Size(921, 562)
-        Me.MinimumSize = New System.Drawing.Size(921, 562)
         Me.Name = "FormProducto"
         Me.Panel1.ResumeLayout(False)
         CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).EndInit()

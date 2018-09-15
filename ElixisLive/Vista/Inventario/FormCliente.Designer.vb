@@ -25,13 +25,22 @@ Partial Class FormCliente
         '
         'LTitulo
         '
-        Me.LTitulo.Text = "CLIENTE"
+        Me.LTitulo.Text = "Clientes"
         '
         'Label2
         '
-        Me.Label2.Location = New System.Drawing.Point(137, 9)
-        Me.Label2.Size = New System.Drawing.Size(61, 20)
+        Me.Label2.Location = New System.Drawing.Point(137, 14)
+        Me.Label2.Size = New System.Drawing.Size(65, 19)
         Me.Label2.Text = "Nombre:"
+        '
+        'Label1
+        '
+        Me.Label1.Size = New System.Drawing.Size(34, 19)
+        Me.Label1.Text = "Nit:"
+        '
+        'txtId
+        '
+        Me.txtId.Size = New System.Drawing.Size(92, 22)
         '
         'FormCliente
         '

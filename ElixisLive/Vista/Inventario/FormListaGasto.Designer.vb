@@ -25,18 +25,23 @@ Partial Class FormListaGasto
         '
         'LTitulo
         '
-        Me.LTitulo.Location = New System.Drawing.Point(169, 9)
-        Me.LTitulo.Size = New System.Drawing.Size(231, 33)
+        Me.LTitulo.Location = New System.Drawing.Point(-1, 5)
+        Me.LTitulo.Size = New System.Drawing.Size(567, 33)
         Me.LTitulo.Text = "Lista de Precio Gastos"
+        '
+        'Pimagen
+        '
+        Me.Pimagen.Image = Global.ElixisLive.My.Resources.Resources.Edit_Text_icon__1_
+        Me.Pimagen.Location = New System.Drawing.Point(6, 3)
+        Me.Pimagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         '
         'FormListaGasto
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
-        Me.ClientSize = New System.Drawing.Size(571, 410)
+        Me.ClientSize = New System.Drawing.Size(571, 387)
         Me.Location = New System.Drawing.Point(0, 0)
         Me.Name = "FormListaGasto"
         Me.Panel1.ResumeLayout(False)
-        Me.Panel1.PerformLayout()
         CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()

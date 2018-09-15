@@ -255,6 +255,21 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ReferenciaDLL\MySql.Data.DLL" />
+    <None Include="Resources\logo az.png" />
+    <None Include="Resources\company-building-icon.png" />
+    <None Include="Resources\basket-full-icon.png" />
+    <None Include="Resources\document-icon %281%29.png" />
+    <None Include="Resources\Edit-Text-icon %281%29.png" />
+    <None Include="Resources\tag-alt-icon %281%29.png" />
+    <None Include="Resources\Cash-register-icon %282%29.png" />
+    <None Include="Resources\Cash-register-icon %281%29.png" />
+    <None Include="Resources\Apps-preferences-contact-list-icon %281%29.png" />
+    <None Include="Resources\panel.png" />
+    <None Include="Resources\esta.jpg" />
+    <None Include="Resources\fondo-abstracto-azul_1048-1511.jpg" />
+    <None Include="Resources\hojas.png" />
+    <None Include="Resources\hojas.jpg" />
+    <None Include="Resources\fundo-da-onda-moderna_1035-8665.jpg" />
     <None Include="Resources\image1.png" />
     <None Include="Resources\Sin título.png" />
     <None Include="Resources\image.png" />

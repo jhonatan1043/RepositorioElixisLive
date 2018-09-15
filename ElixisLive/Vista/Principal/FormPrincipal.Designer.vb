@@ -33,11 +33,11 @@ Partial Class FormPrincipal
         '
         Me.arbolMenu.BackColor = System.Drawing.Color.White
         Me.arbolMenu.Dock = System.Windows.Forms.DockStyle.Left
-        Me.arbolMenu.Font = New System.Drawing.Font("Monotype Corsiva", 15.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.arbolMenu.ForeColor = System.Drawing.Color.Indigo
-        Me.arbolMenu.ImageKey = "Orb_Icons2_17x.png"
+        Me.arbolMenu.Font = New System.Drawing.Font("Times New Roman", 15.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.arbolMenu.ForeColor = System.Drawing.Color.RoyalBlue
+        Me.arbolMenu.ImageKey = "Orb_Icons_17x17.png"
         Me.arbolMenu.ImageList = Me.ImageList1
-        Me.arbolMenu.LineColor = System.Drawing.Color.Indigo
+        Me.arbolMenu.LineColor = System.Drawing.Color.RoyalBlue
         Me.arbolMenu.Location = New System.Drawing.Point(0, 0)
         Me.arbolMenu.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.arbolMenu.Name = "arbolMenu"
@@ -50,13 +50,12 @@ Partial Class FormPrincipal
         '
         Me.ImageList1.ImageStream = CType(resources.GetObject("ImageList1.ImageStream"), System.Windows.Forms.ImageListStreamer)
         Me.ImageList1.TransparentColor = System.Drawing.Color.Transparent
-        Me.ImageList1.Images.SetKeyName(0, "Orb_Icons2_17x.png")
+        Me.ImageList1.Images.SetKeyName(0, "Orb_Icons_17x17.png")
         Me.ImageList1.Images.SetKeyName(1, "generictokengreen (2).png")
         '
         'StatusStrip1
         '
         Me.StatusStrip1.BackColor = System.Drawing.Color.White
-        Me.StatusStrip1.BackgroundImage = Global.ElixisLive.My.Resources.Resources.Sin_título
         Me.StatusStrip1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.StatusStrip1.Location = New System.Drawing.Point(240, 545)
         Me.StatusStrip1.Name = "StatusStrip1"
@@ -70,7 +69,7 @@ Partial Class FormPrincipal
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.BlueViolet
-        Me.BackgroundImage = Global.ElixisLive.My.Resources.Resources.image
+        Me.BackgroundImage = Global.ElixisLive.My.Resources.Resources.fondo_abstracto_azul_1048_1511
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(1137, 567)
         Me.Controls.Add(Me.StatusStrip1)
