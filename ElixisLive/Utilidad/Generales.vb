@@ -198,7 +198,7 @@ Public Class Generales
     Public Shared Sub habilitarControles(ByRef pElemento As Object)
         For Each vItem In pElemento.Controls
             If ((TypeOf vItem Is TextBox) Or (TypeOf vItem Is RichTextBox) Or (TypeOf vItem Is MaskedTextBox) Or (TypeOf vItem Is DataGridView)) And
-                   Not (vItem.name.ToString.ToLower.Contains("txtId")) Then
+                   Not (vItem.name.ToString.ToLower.Contains("txtcodigo")) Then
                 vItem.readonly = False
             ElseIf (TypeOf vItem Is CheckBox) Or (TypeOf vItem Is RadioButton) Or (TypeOf vItem Is ComboBox) Or
                 (TypeOf vItem Is Button) Or (TypeOf vItem Is TreeView) Or (TypeOf vItem Is DateTimePicker) Or (TypeOf vItem Is NumericUpDown) Then
