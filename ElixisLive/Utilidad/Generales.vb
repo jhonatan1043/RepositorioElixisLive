@@ -20,6 +20,7 @@ Public Class Generales
         End Try
 
     End Sub
+
     Public Shared Sub limpiarControles(ByRef pFormulario As Object)
         Dim vFrtRB As Integer = pFormulario.Width + pFormulario.Height
         For Each vControl In pFormulario.Controls
@@ -68,12 +69,12 @@ Public Class Generales
         dgv.DefaultCellStyle.ForeColor = Color.Black
         dgv.DefaultCellStyle.SelectionBackColor = Color.DodgerBlue
         dgv.DefaultCellStyle.SelectionForeColor = Color.White
-        dgv.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(192, 255, 192)
+        dgv.AlternatingRowsDefaultCellStyle.BackColor = Color.AliceBlue
         dgv.AlternatingRowsDefaultCellStyle.ForeColor = Nothing
         dgv.AlternatingRowsDefaultCellStyle.SelectionBackColor = Nothing
         dgv.AlternatingRowsDefaultCellStyle.SelectionForeColor = Nothing
         dgv.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
-        'dgv.DefaultCellStyle.Font = New Font(Constantes.TIPO_LETRA_ELEMENTO, 9)
+        dgv.DefaultCellStyle.Font = New Font(Constantes.TIPO_LETRA, 12)
     End Sub
     Public Shared Sub cargarForm(ByVal form As System.Windows.Forms.Form)
         formPrincipal.Cursor = Cursors.WaitCursor

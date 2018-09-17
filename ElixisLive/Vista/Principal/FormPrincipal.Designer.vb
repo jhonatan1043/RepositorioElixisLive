@@ -68,8 +68,8 @@ Partial Class FormPrincipal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.BlueViolet
-        Me.BackgroundImage = Global.ElixisLive.My.Resources.Resources.fondo_abstracto_azul_1048_1511
+        Me.BackColor = System.Drawing.Color.White
+        Me.BackgroundImage = Global.ElixisLive.My.Resources.Resources.logos
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(1137, 567)
         Me.Controls.Add(Me.StatusStrip1)

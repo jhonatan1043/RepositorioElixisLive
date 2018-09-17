@@ -29,15 +29,11 @@ Namespace My
             Me.SaveMySettingsOnExit = true
             Me.ShutDownStyle = Global.Microsoft.VisualBasic.ApplicationServices.ShutdownMode.AfterMainFormCloses
         End Sub
-        
-        <Global.System.Diagnostics.DebuggerStepThroughAttribute()>  _
+
+        <Global.System.Diagnostics.DebuggerStepThroughAttribute()>
         Protected Overrides Sub OnCreateMainForm()
             Me.MainForm = Global.ElixisLive.FormInicioSesion
         End Sub
-        
-        <Global.System.Diagnostics.DebuggerStepThroughAttribute()>  _
-        Protected Overrides Sub OnCreateSplashScreen()
-            Me.SplashScreen = Global.ElixisLive.FormPresentacion
-        End Sub
+
     End Class
 End Namespace

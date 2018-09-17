@@ -37,20 +37,20 @@ Partial Class FormBaseProductivo
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Pimagen = New System.Windows.Forms.PictureBox()
         Me.LTitulo = New System.Windows.Forms.Label()
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
         Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
-        Me.btNuevo = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
-        Me.btRegistrar = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripSeparator3 = New System.Windows.Forms.ToolStripSeparator()
-        Me.btCancelar = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripSeparator4 = New System.Windows.Forms.ToolStripSeparator()
-        Me.btEditar = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripSeparator5 = New System.Windows.Forms.ToolStripSeparator()
-        Me.btAnular = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripSeparator6 = New System.Windows.Forms.ToolStripSeparator()
+        Me.btNuevo = New System.Windows.Forms.ToolStripButton()
+        Me.btRegistrar = New System.Windows.Forms.ToolStripButton()
+        Me.btCancelar = New System.Windows.Forms.ToolStripButton()
+        Me.btEditar = New System.Windows.Forms.ToolStripButton()
+        Me.btAnular = New System.Windows.Forms.ToolStripButton()
+        Me.Pimagen = New System.Windows.Forms.PictureBox()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
         CType(Me.dgvParametro, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -58,8 +58,8 @@ Partial Class FormBaseProductivo
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
         Me.Panel1.SuspendLayout()
-        CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ToolStrip1.SuspendLayout()
+        CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'DateTimePicker1
@@ -234,14 +234,6 @@ Partial Class FormBaseProductivo
         Me.Panel1.Size = New System.Drawing.Size(905, 42)
         Me.Panel1.TabIndex = 0
         '
-        'Pimagen
-        '
-        Me.Pimagen.Location = New System.Drawing.Point(6, 3)
-        Me.Pimagen.Name = "Pimagen"
-        Me.Pimagen.Size = New System.Drawing.Size(46, 36)
-        Me.Pimagen.TabIndex = 1
-        Me.Pimagen.TabStop = False
-        '
         'LTitulo
         '
         Me.LTitulo.BackColor = System.Drawing.Color.Transparent
@@ -271,6 +263,31 @@ Partial Class FormBaseProductivo
         Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
         Me.ToolStripSeparator1.Size = New System.Drawing.Size(6, 33)
         '
+        'ToolStripSeparator2
+        '
+        Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
+        Me.ToolStripSeparator2.Size = New System.Drawing.Size(6, 33)
+        '
+        'ToolStripSeparator3
+        '
+        Me.ToolStripSeparator3.Name = "ToolStripSeparator3"
+        Me.ToolStripSeparator3.Size = New System.Drawing.Size(6, 33)
+        '
+        'ToolStripSeparator4
+        '
+        Me.ToolStripSeparator4.Name = "ToolStripSeparator4"
+        Me.ToolStripSeparator4.Size = New System.Drawing.Size(6, 33)
+        '
+        'ToolStripSeparator5
+        '
+        Me.ToolStripSeparator5.Name = "ToolStripSeparator5"
+        Me.ToolStripSeparator5.Size = New System.Drawing.Size(6, 33)
+        '
+        'ToolStripSeparator6
+        '
+        Me.ToolStripSeparator6.Name = "ToolStripSeparator6"
+        Me.ToolStripSeparator6.Size = New System.Drawing.Size(6, 33)
+        '
         'btNuevo
         '
         Me.btNuevo.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -280,11 +297,6 @@ Partial Class FormBaseProductivo
         Me.btNuevo.Name = "btNuevo"
         Me.btNuevo.Size = New System.Drawing.Size(81, 30)
         Me.btNuevo.Text = "Nuevo"
-        '
-        'ToolStripSeparator2
-        '
-        Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
-        Me.ToolStripSeparator2.Size = New System.Drawing.Size(6, 33)
         '
         'btRegistrar
         '
@@ -296,11 +308,6 @@ Partial Class FormBaseProductivo
         Me.btRegistrar.Size = New System.Drawing.Size(98, 30)
         Me.btRegistrar.Text = "Registrar"
         '
-        'ToolStripSeparator3
-        '
-        Me.ToolStripSeparator3.Name = "ToolStripSeparator3"
-        Me.ToolStripSeparator3.Size = New System.Drawing.Size(6, 33)
-        '
         'btCancelar
         '
         Me.btCancelar.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -310,11 +317,6 @@ Partial Class FormBaseProductivo
         Me.btCancelar.Name = "btCancelar"
         Me.btCancelar.Size = New System.Drawing.Size(98, 30)
         Me.btCancelar.Text = "Cancelar"
-        '
-        'ToolStripSeparator4
-        '
-        Me.ToolStripSeparator4.Name = "ToolStripSeparator4"
-        Me.ToolStripSeparator4.Size = New System.Drawing.Size(6, 33)
         '
         'btEditar
         '
@@ -326,11 +328,6 @@ Partial Class FormBaseProductivo
         Me.btEditar.Size = New System.Drawing.Size(80, 30)
         Me.btEditar.Text = "Editar"
         '
-        'ToolStripSeparator5
-        '
-        Me.ToolStripSeparator5.Name = "ToolStripSeparator5"
-        Me.ToolStripSeparator5.Size = New System.Drawing.Size(6, 33)
-        '
         'btAnular
         '
         Me.btAnular.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -341,10 +338,13 @@ Partial Class FormBaseProductivo
         Me.btAnular.Size = New System.Drawing.Size(83, 30)
         Me.btAnular.Text = "Anular"
         '
-        'ToolStripSeparator6
+        'Pimagen
         '
-        Me.ToolStripSeparator6.Name = "ToolStripSeparator6"
-        Me.ToolStripSeparator6.Size = New System.Drawing.Size(6, 33)
+        Me.Pimagen.Location = New System.Drawing.Point(6, 5)
+        Me.Pimagen.Name = "Pimagen"
+        Me.Pimagen.Size = New System.Drawing.Size(46, 36)
+        Me.Pimagen.TabIndex = 1
+        Me.Pimagen.TabStop = False
         '
         'FormBaseProductivo
         '
@@ -371,9 +371,9 @@ Partial Class FormBaseProductivo
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
         Me.Panel1.ResumeLayout(False)
-        CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ToolStrip1.ResumeLayout(False)
         Me.ToolStrip1.PerformLayout()
+        CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
