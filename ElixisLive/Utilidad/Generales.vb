@@ -1,20 +1,22 @@
 ﻿Imports System.Data.SqlClient
+Imports CnxElixisLiveBD
 Public Class Generales
+    Private Shared objConexion As New ConexionBD
     Public Shared Sub llenarTabla(ByVal consulta As String,
                                   ByVal params As List(Of String),
                                   ByVal dtTabla As DataTable,
                                   Optional pLimpiarDT As Boolean = True)
 
         Dim listaParams As String = Funciones.getParametros(params)
+        objConexion.conectar()
+
         Try
             If pLimpiarDT Then dtTabla.Clear()
-            ConeccionBD.conectarBD()
-
-            Using daAdapter = New SqlDataAdapter(consulta & listaParams, ConeccionBD.cnxion)
+            Using daAdapter = New SqlDataAdapter(consulta & listaParams, objConexion.cnxbd)
                 daAdapter.SelectCommand.CommandTimeout = 120
                 daAdapter.Fill(dtTabla)
             End Using
-            ConeccionBD.desConectarBD()
+            objConexion.desConectar()
         Catch ex As Exception
             Throw
         End Try
@@ -77,15 +79,15 @@ Public Class Generales
         dgv.DefaultCellStyle.Font = New Font(Constantes.TIPO_LETRA, 12)
     End Sub
     Public Shared Sub cargarForm(ByVal form As System.Windows.Forms.Form)
-        formPrincipal.Cursor = Cursors.WaitCursor
-        form.MdiParent = formPrincipal
+        FormPrincipal.Cursor = Cursors.WaitCursor
+        form.MdiParent = FormPrincipal
         Generales.limpiarControles(form)
         form.Show()
         form.Focus()
         If form.WindowState = FormWindowState.Minimized Then
             form.WindowState = FormWindowState.Normal
         End If
-        formPrincipal.Cursor = Cursors.Default
+        FormPrincipal.Cursor = Cursors.Default
     End Sub
     Public Shared Sub llenardgv(ByVal consulta As String,
                                  ByVal dgdgv As DataGridView,
@@ -95,11 +97,11 @@ Public Class Generales
         Dim dtTabla As New DataTable
 
         Try
-            ConeccionBD.conectarBD()
-            Using daAdapter = New SqlDataAdapter(consulta & listaParams, ConeccionBD.cnxion)
+            objConexion.conectar()
+            Using daAdapter = New SqlDataAdapter(consulta & listaParams, objConexion.cnxbd)
                 daAdapter.Fill(dtTabla)
             End Using
-            ConeccionBD.desConectarBD()
+            objConexion.desConectar()
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
@@ -111,11 +113,11 @@ Public Class Generales
     Public Shared Function cargarItem(ByVal consulta As String) As DataRow
         Dim dtTabla As New DataTable
         Try
-            ConeccionBD.conectarBD()
-            Using daAdapter = New SqlDataAdapter(consulta, ConeccionBD.cnxion)
+            objConexion.conectar()
+            Using daAdapter = New SqlDataAdapter(consulta, objConexion.cnxbd)
                 daAdapter.Fill(dtTabla)
             End Using
-            ConeccionBD.desConectarBD()
+            objConexion.desConectar()
         Catch ex As Exception
             Throw ex
         End Try
@@ -131,12 +133,12 @@ Public Class Generales
         Dim listaParams As String = Funciones.getParametros(params)
         Dim dtTabla As New DataTable
         Try
-            ConeccionBD.conectarBD()
+            objConexion.conectar()
 
-            Using daAdapter = New SqlDataAdapter(consulta & listaParams, ConeccionBD.cnxion)
+            Using daAdapter = New SqlDataAdapter(consulta & listaParams, objConexion.cnxbd)
                 daAdapter.Fill(dtTabla)
             End Using
-            ConeccionBD.desConectarBD()
+            objConexion.desConectar()
         Catch ex As Exception
             Throw ex
         End Try
@@ -150,10 +152,10 @@ Public Class Generales
                                    ByVal params As List(Of SqlParameter)) As DataTable
         Dim dtTabla As New DataTable
         Try
-            ConeccionBD.conectarBD()
+            objConexion.conectar()
 
             Using dbCommand As New SqlCommand
-                dbCommand.Connection = ConeccionBD.cnxion
+                dbCommand.Connection = objConexion.cnxbd
                 dbCommand.CommandType = CommandType.StoredProcedure
                 dbCommand.CommandText = consulta
                 For Each param As SqlParameter In params
@@ -166,7 +168,7 @@ Public Class Generales
                     daAdapter.Fill(dtTabla)
                 End Using
             End Using
-            ConeccionBD.desConectarBD()
+            objConexion.desConectar()
         Catch ex As Exception
             Throw
         End Try

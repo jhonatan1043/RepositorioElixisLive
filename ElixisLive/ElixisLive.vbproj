@@ -62,6 +62,10 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CnxElixisLiveBD, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>ReferenciaDLL\CnxElixisLiveBD.dll</HintPath>
+    </Reference>
     <Reference Include="MySql.Data, Version=6.1.0.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\MySql.Data.DLL</HintPath>
@@ -109,7 +113,6 @@
     </Compile>
     <Compile Include="Modelo\Principal\InicioSesionBLL.vb" />
     <Compile Include="Modelo\Principal\principalBLL.vb" />
-    <Compile Include="Utilidad\ConeccionBD.vb" />
     <Compile Include="Utilidad\Constantes.vb" />
     <Compile Include="Utilidad\Funciones.vb" />
     <Compile Include="Utilidad\Generales.vb" />
@@ -282,6 +285,7 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ReferenciaDLL\CnxElixisLiveBD.dll" />
     <Content Include="ReferenciaDLL\MySql.Data.DLL" />
     <None Include="Resources\logos.jpg" />
     <None Include="Resources\Key-icon %282%29.png" />
