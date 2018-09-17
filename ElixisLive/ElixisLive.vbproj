@@ -13,6 +13,21 @@
     <MyType>WindowsForms</MyType>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <PublishUrl>publicar\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -76,6 +91,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApplicationEvents.vb" />
     <Compile Include="Entidad\generalConsulta.vb" />
     <Compile Include="Entidad\Inventario\Configuracion.vb" />
     <Compile Include="Entidad\Principal\ElementoMenu.vb" />
@@ -91,11 +107,13 @@
     <Compile Include="FormBase\FormBaseProductivo.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Modelo\Principal\InicioSesionBLL.vb" />
     <Compile Include="Modelo\Principal\principalBLL.vb" />
     <Compile Include="Utilidad\ConeccionBD.vb" />
     <Compile Include="Utilidad\Funciones.vb" />
     <Compile Include="Utilidad\Generales.vb" />
     <Compile Include="Utilidad\MensajeSistema.vb" />
+    <Compile Include="Utilidad\SesionActual.vb" />
     <Compile Include="Vista\Administracion\FormEmpresa.Designer.vb">
       <DependentUpon>FormEmpresa.vb</DependentUpon>
     </Compile>
@@ -154,6 +172,18 @@
       <DependentUpon>FormProveedor.vb</DependentUpon>
     </Compile>
     <Compile Include="Vista\Inventario\FormProveedor.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Principal\FormInicioSesion.Designer.vb">
+      <DependentUpon>FormInicioSesion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Principal\FormInicioSesion.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Principal\FormPresentacion.Designer.vb">
+      <DependentUpon>FormPresentacion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Principal\FormPresentacion.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Vista\Principal\FormPrincipal.vb">
@@ -222,6 +252,12 @@
     <EmbeddedResource Include="Vista\Inventario\FormProveedor.resx">
       <DependentUpon>FormProveedor.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Principal\FormInicioSesion.resx">
+      <DependentUpon>FormInicioSesion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Principal\FormPresentacion.resx">
+      <DependentUpon>FormPresentacion.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vista\Principal\FormPrincipal.resx">
       <DependentUpon>FormPrincipal.vb</DependentUpon>
     </EmbeddedResource>
@@ -282,6 +318,18 @@
     <None Include="Resources\Save-icon %281%29.png" />
     <None Include="Resources\Files-New-File-icon.png" />
     <None Include="Resources\320474.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5.2 %28x86 y x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

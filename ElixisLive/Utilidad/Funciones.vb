@@ -20,4 +20,17 @@
         Return listaParams
 
     End Function
+    Public Shared Function consulInicioSesion(params As List(Of String)) As String
+        Dim idUsuario As String = Nothing
+        Dim dFila As DataRow
+        Try
+            dFila = Generales.cargarItem("[SP_PERS_INICIO_SESION]", params)
+            If Not IsDBNull(dFila.Item(0)) Then
+                idUsuario = dFila.Item(0)
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+        Return idUsuario
+    End Function
 End Class

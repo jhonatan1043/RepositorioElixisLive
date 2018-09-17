@@ -4,7 +4,7 @@ Public Class ConeccionBD
 
     Public Shared Sub conectarBD()
         Try
-            cnxion.ConnectionString = "Server=sistema-pc;User=AdminSoftLive;Password=AdminSoftLive;Database=softbd"
+            cnxion.ConnectionString = "Server=localhost;User=AdminSoftLive;Password=AdminSoftLive;Database=softbd"
             cnxion.Open()
         Catch ex As Exception
             MsgBox(ex.Message)

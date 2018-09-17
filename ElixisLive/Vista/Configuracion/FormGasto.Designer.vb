@@ -39,7 +39,7 @@ Partial Class FormGasto
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(571, 345)
+        Me.ClientSize = New System.Drawing.Size(571, 346)
         Me.Location = New System.Drawing.Point(0, 0)
         Me.Name = "FormGasto"
         Me.Panel1.ResumeLayout(False)
