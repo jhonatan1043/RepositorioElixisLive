@@ -69,7 +69,7 @@ Partial Class FormPrincipal
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.BackgroundImage = Global.ElixisLive.My.Resources.Resources.logos
+        Me.BackgroundImage = Global.ElixisLive.My.Resources.Resources.logos1
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(1137, 567)
         Me.Controls.Add(Me.StatusStrip1)
@@ -80,7 +80,6 @@ Partial Class FormPrincipal
         Me.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.Name = "FormPrincipal"
         Me.ShowIcon = False
-        Me.Text = "ElixisLive"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.ResumeLayout(False)
         Me.PerformLayout()

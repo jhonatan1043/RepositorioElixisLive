@@ -283,6 +283,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ReferenciaDLL\MySql.Data.DLL" />
+    <None Include="Resources\logos.jpg" />
     <None Include="Resources\Key-icon %282%29.png" />
     <None Include="Resources\Register-icon %281%29.png" />
     <None Include="Resources\user-icon %281%29.png" />
