@@ -72,12 +72,12 @@ Public Class Generales
         dgv.DefaultCellStyle.ForeColor = Color.Black
         dgv.DefaultCellStyle.SelectionBackColor = Color.DodgerBlue
         dgv.DefaultCellStyle.SelectionForeColor = Color.White
-        dgv.AlternatingRowsDefaultCellStyle.BackColor = Color.AliceBlue
+        dgv.AlternatingRowsDefaultCellStyle.BackColor = Color.Gainsboro
         dgv.AlternatingRowsDefaultCellStyle.ForeColor = Nothing
         dgv.AlternatingRowsDefaultCellStyle.SelectionBackColor = Nothing
         dgv.AlternatingRowsDefaultCellStyle.SelectionForeColor = Nothing
         dgv.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
-        dgv.DefaultCellStyle.Font = New Font(Constantes.TIPO_LETRA, 12)
+        dgv.DefaultCellStyle.Font = New Font(Constantes.TIPO_LETRA, 9)
     End Sub
     Public Shared Sub cargarForm(ByVal form As System.Windows.Forms.Form)
         FormPrincipal.Cursor = Cursors.WaitCursor
