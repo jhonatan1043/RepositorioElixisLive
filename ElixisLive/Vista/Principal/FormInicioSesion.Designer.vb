@@ -38,14 +38,18 @@ Partial Class FormInicioSesion
         Me.Cancel = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.CbEmpresa = New System.Windows.Forms.ComboBox()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.Panel5 = New System.Windows.Forms.Panel()
+        Me.Panel6 = New System.Windows.Forms.Panel()
+        Me.Panel7 = New System.Windows.Forms.Panel()
         Me.GroupBox1.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'UsernameLabel
@@ -102,7 +106,7 @@ Partial Class FormInicioSesion
         Me.Cancel.DialogResult = System.Windows.Forms.DialogResult.Cancel
         Me.Cancel.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Cancel.ForeColor = System.Drawing.Color.RoyalBlue
-        Me.Cancel.Location = New System.Drawing.Point(288, 155)
+        Me.Cancel.Location = New System.Drawing.Point(290, 155)
         Me.Cancel.Name = "Cancel"
         Me.Cancel.Size = New System.Drawing.Size(72, 23)
         Me.Cancel.TabIndex = 5
@@ -127,6 +131,25 @@ Partial Class FormInicioSesion
         Me.CbEmpresa.Name = "CbEmpresa"
         Me.CbEmpresa.Size = New System.Drawing.Size(120, 21)
         Me.CbEmpresa.TabIndex = 7
+        '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Me.OK)
+        Me.GroupBox1.Controls.Add(Me.Cancel)
+        Me.GroupBox1.Controls.Add(Me.GroupBox2)
+        Me.GroupBox1.Location = New System.Drawing.Point(4, -1)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(394, 193)
+        Me.GroupBox1.TabIndex = 11
+        Me.GroupBox1.TabStop = False
+        '
+        'GroupBox2
+        '
+        Me.GroupBox2.Location = New System.Drawing.Point(168, 7)
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.Size = New System.Drawing.Size(220, 180)
+        Me.GroupBox2.TabIndex = 6
+        Me.GroupBox2.TabStop = False
         '
         'Panel3
         '
@@ -165,24 +188,37 @@ Partial Class FormInicioSesion
         Me.PictureBox1.TabIndex = 0
         Me.PictureBox1.TabStop = False
         '
-        'GroupBox1
+        'Panel4
         '
-        Me.GroupBox1.Controls.Add(Me.OK)
-        Me.GroupBox1.Controls.Add(Me.Cancel)
-        Me.GroupBox1.Controls.Add(Me.GroupBox2)
-        Me.GroupBox1.Location = New System.Drawing.Point(4, -1)
-        Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(394, 193)
-        Me.GroupBox1.TabIndex = 11
-        Me.GroupBox1.TabStop = False
+        Me.Panel4.BackgroundImage = Global.ElixisLive.My.Resources.Resources.Sin
+        Me.Panel4.Location = New System.Drawing.Point(1, 1)
+        Me.Panel4.Name = "Panel4"
+        Me.Panel4.Size = New System.Drawing.Size(398, 5)
+        Me.Panel4.TabIndex = 16
         '
-        'GroupBox2
+        'Panel5
         '
-        Me.GroupBox2.Location = New System.Drawing.Point(168, 7)
-        Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(220, 180)
-        Me.GroupBox2.TabIndex = 6
-        Me.GroupBox2.TabStop = False
+        Me.Panel5.BackgroundImage = Global.ElixisLive.My.Resources.Resources.Sin
+        Me.Panel5.Location = New System.Drawing.Point(1, 192)
+        Me.Panel5.Name = "Panel5"
+        Me.Panel5.Size = New System.Drawing.Size(398, 5)
+        Me.Panel5.TabIndex = 17
+        '
+        'Panel6
+        '
+        Me.Panel6.BackgroundImage = Global.ElixisLive.My.Resources.Resources.Sin
+        Me.Panel6.Location = New System.Drawing.Point(394, 4)
+        Me.Panel6.Name = "Panel6"
+        Me.Panel6.Size = New System.Drawing.Size(5, 193)
+        Me.Panel6.TabIndex = 18
+        '
+        'Panel7
+        '
+        Me.Panel7.BackgroundImage = Global.ElixisLive.My.Resources.Resources.Sin
+        Me.Panel7.Location = New System.Drawing.Point(0, 4)
+        Me.Panel7.Name = "Panel7"
+        Me.Panel7.Size = New System.Drawing.Size(5, 193)
+        Me.Panel7.TabIndex = 19
         '
         'FormInicioSesion
         '
@@ -192,6 +228,11 @@ Partial Class FormInicioSesion
         Me.BackColor = System.Drawing.Color.White
         Me.CancelButton = Me.Cancel
         Me.ClientSize = New System.Drawing.Size(401, 197)
+        Me.ControlBox = False
+        Me.Controls.Add(Me.Panel7)
+        Me.Controls.Add(Me.Panel6)
+        Me.Controls.Add(Me.Panel5)
+        Me.Controls.Add(Me.Panel4)
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
@@ -209,8 +250,8 @@ Partial Class FormInicioSesion
         Me.Name = "FormInicioSesion"
         Me.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -223,4 +264,8 @@ Partial Class FormInicioSesion
     Friend WithEvents Panel3 As Panel
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents GroupBox2 As GroupBox
+    Friend WithEvents Panel4 As Panel
+    Friend WithEvents Panel5 As Panel
+    Friend WithEvents Panel6 As Panel
+    Friend WithEvents Panel7 As Panel
 End Class

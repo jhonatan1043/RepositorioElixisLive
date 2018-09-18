@@ -178,7 +178,7 @@ Partial Class FormBaseProductivo
         '
         'dgvParametro
         '
-        Me.dgvParametro.BackgroundColor = System.Drawing.SystemColors.Control
+        Me.dgvParametro.BackgroundColor = System.Drawing.Color.White
         Me.dgvParametro.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvParametro.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dgvParametro.Location = New System.Drawing.Point(3, 16)
@@ -200,7 +200,7 @@ Partial Class FormBaseProductivo
         '
         'DataGridView1
         '
-        Me.DataGridView1.BackgroundColor = System.Drawing.SystemColors.Control
+        Me.DataGridView1.BackgroundColor = System.Drawing.Color.White
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.DataGridView1.Location = New System.Drawing.Point(3, 16)

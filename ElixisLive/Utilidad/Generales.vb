@@ -67,6 +67,7 @@ Public Class Generales
         Next
     End Sub
     Public Shared Sub diseñoDGV(ByRef dgv As DataGridView)
+        dgv.BackgroundColor = Color.White
         dgv.DefaultCellStyle.BackColor = Color.White
         dgv.DefaultCellStyle.ForeColor = Color.Black
         dgv.DefaultCellStyle.SelectionBackColor = Color.DodgerBlue

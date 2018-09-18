@@ -287,6 +287,8 @@
   <ItemGroup>
     <Content Include="ReferenciaDLL\CnxElixisLiveBD.dll" />
     <Content Include="ReferenciaDLL\MySql.Data.DLL" />
+    <None Include="Resources\Sin.png" />
+    <None Include="Resources\título.png" />
     <None Include="Resources\logos.jpg" />
     <None Include="Resources\Key-icon %282%29.png" />
     <None Include="Resources\Register-icon %281%29.png" />
