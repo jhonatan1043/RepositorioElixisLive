@@ -224,9 +224,11 @@ Public Class Generales
             drFila.Item(0) = "-1"
             drFila.Item(1) = " - - - Seleccione - - - "
             dtTabla.Rows.Add(drFila)
+            objConexion.conectar()
             Using da = New SqlDataAdapter(consulta & Funciones.getParametros(params), objConexion.cnxbd)
                 da.Fill(dtTabla)
             End Using
+            objConexion.desConectar()
             cbCombo.DataSource = dtTabla
             cbCombo.DisplayMember = vlrDisplayMember
             cbCombo.ValueMember = vlrValueMember

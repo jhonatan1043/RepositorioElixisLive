@@ -20,8 +20,12 @@
     End Sub
     Private Sub cargarComboEmpresa()
         Dim params As New List(Of String)
-        params.Add(txtUsuario.Text)
-        Generales.cargarCombo("[SP_ADMIN_CONSULTAR_EMPRESA]", params, "Nombre", "codigo_empresa", CbEmpresa)
+        Try
+            params.Add(txtUsuario.Text)
+            Generales.cargarCombo("[SP_ADMIN_CONSULTAR_EMPRESA]", params, "Nombre", "codigo_empresa", CbEmpresa)
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
     End Sub
 
     Private Sub txtUsuario_Leave(sender As Object, e As EventArgs) Handles txtUsuario.Leave
