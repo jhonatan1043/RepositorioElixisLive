@@ -18,22 +18,30 @@
     Private Sub FormInicioSesion_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         cargarComboEmpresa()
     End Sub
-    Private Sub cargarComboEmpresa()
+    Private Function cargarComboEmpresa() As Boolean
         Dim params As New List(Of String)
+        Dim resultado As Boolean
         Try
             params.Add(txtUsuario.Text)
-            Generales.cargarCombo("[SP_ADMIN_CONSULTAR_EMPRESA]", params, "Nombre", "codigo_empresa", CbEmpresa)
+            resultado = Generales.cargarCombo("[SP_ADMIN_CONSULTAR_EMPRESA]", params, "Nombre", "codigo_empresa", CbEmpresa)
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
-    End Sub
-
+        Return resultado
+    End Function
     Private Sub txtUsuario_Leave(sender As Object, e As EventArgs) Handles txtUsuario.Leave
         If Not String.IsNullOrEmpty(txtUsuario.Text) Then
-            cargarComboEmpresa()
+            If cargarComboEmpresa() = False Then
+                validarExistencia()
+            End If
         Else
-            Generales.limpiarControles(Me)
-            MsgBox("¡ Usuario no Existete !", MsgBoxStyle.Exclamation)
+            validarExistencia()
         End If
     End Sub
+    Private Sub validarExistencia()
+        MsgBox(MensajeSistema.USUARIO_NO_EXISTE, MsgBoxStyle.Exclamation)
+        Generales.limpiarControles(Me)
+        txtUsuario.Focus()
+    End Sub
+
 End Class

@@ -6,5 +6,5 @@
     Public Const EDITAR = "¡ Desea Editar el registro !"
     Public Const SALIR = "¡ Desea Salir !"
     '-------- Mensaje Accion 
-
+    Public Const USUARIO_NO_EXISTE = "¡ Usuario no Existete !"
 End Class

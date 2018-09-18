@@ -212,12 +212,13 @@ Public Class Generales
             End If
         Next
     End Sub
-    Public Shared Sub cargarCombo(ByVal consulta As String,
+    Public Shared Function cargarCombo(ByVal consulta As String,
                                   ByVal params As List(Of String),
                                   ByVal vlrDisplayMember As String,
                                   ByVal vlrValueMember As String,
-                                  ByVal cbCombo As ComboBox)
+                                  ByVal cbCombo As ComboBox) As Boolean
         Dim dtTabla As New DataTable
+        Dim resultado As Boolean
         Try
             Dim drFila As DataRow = dtTabla.NewRow()
             dtTabla.Columns.Add(vlrValueMember)
@@ -230,6 +231,9 @@ Public Class Generales
                 da.Fill(dtTabla)
             End Using
             objConexion.desConectar()
+            If dtTabla.Rows.Count > 1 Then
+                resultado = True
+            End If
             cbCombo.DataSource = dtTabla
             cbCombo.DisplayMember = vlrDisplayMember
             cbCombo.ValueMember = vlrValueMember
@@ -241,5 +245,6 @@ Public Class Generales
         Catch ex As Exception
             Throw ex
         End Try
-    End Sub
+        Return resultado
+    End Function
 End Class
