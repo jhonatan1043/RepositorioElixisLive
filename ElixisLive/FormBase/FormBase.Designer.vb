@@ -47,6 +47,7 @@ Partial Class FormBase
         Me.ToolStripSeparator5 = New System.Windows.Forms.ToolStripSeparator()
         Me.btAnular = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripSeparator6 = New System.Windows.Forms.ToolStripSeparator()
+        Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Panel1.SuspendLayout()
         CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
@@ -204,7 +205,7 @@ Partial Class FormBase
         Me.ToolStrip1.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.ToolStrip1.ImageScalingSize = New System.Drawing.Size(26, 26)
         Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripSeparator1, Me.btNuevo, Me.ToolStripSeparator2, Me.btRegistrar, Me.ToolStripSeparator3, Me.btCancelar, Me.ToolStripSeparator4, Me.btEditar, Me.ToolStripSeparator5, Me.btAnular, Me.ToolStripSeparator6})
-        Me.ToolStrip1.Location = New System.Drawing.Point(0, 313)
+        Me.ToolStrip1.Location = New System.Drawing.Point(0, 312)
         Me.ToolStrip1.Name = "ToolStrip1"
         Me.ToolStrip1.Size = New System.Drawing.Size(571, 33)
         Me.ToolStrip1.TabIndex = 19
@@ -290,13 +291,22 @@ Partial Class FormBase
         Me.ToolStripSeparator6.Name = "ToolStripSeparator6"
         Me.ToolStripSeparator6.Size = New System.Drawing.Size(6, 33)
         '
+        'Panel2
+        '
+        Me.Panel2.BackgroundImage = Global.ElixisLive.My.Resources.Resources.Sin
+        Me.Panel2.Location = New System.Drawing.Point(0, 42)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(570, 5)
+        Me.Panel2.TabIndex = 20
+        '
         'FormBase
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(571, 346)
+        Me.ClientSize = New System.Drawing.Size(571, 345)
+        Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.ToolStrip1)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Panel1)
@@ -346,4 +356,5 @@ Partial Class FormBase
     Friend WithEvents ToolStripSeparator6 As ToolStripSeparator
     Friend WithEvents GroupBox5 As GroupBox
     Public WithEvents dgRegistro As DataGridView
+    Friend WithEvents Panel2 As Panel
 End Class

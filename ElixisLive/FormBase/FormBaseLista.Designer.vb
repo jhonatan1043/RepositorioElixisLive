@@ -42,6 +42,7 @@ Partial Class FormBaseLista
         Me.ToolStripSeparator5 = New System.Windows.Forms.ToolStripSeparator()
         Me.btAnular = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripSeparator6 = New System.Windows.Forms.ToolStripSeparator()
+        Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Panel1.SuspendLayout()
         CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
@@ -227,6 +228,14 @@ Partial Class FormBaseLista
         Me.ToolStripSeparator6.Name = "ToolStripSeparator6"
         Me.ToolStripSeparator6.Size = New System.Drawing.Size(6, 33)
         '
+        'Panel2
+        '
+        Me.Panel2.BackgroundImage = Global.ElixisLive.My.Resources.Resources.Sin
+        Me.Panel2.Location = New System.Drawing.Point(0, 42)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(571, 5)
+        Me.Panel2.TabIndex = 14
+        '
         'FormBaseLista
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -234,6 +243,7 @@ Partial Class FormBaseLista
         Me.BackColor = System.Drawing.Color.White
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(571, 387)
+        Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.ToolStrip1)
         Me.Controls.Add(Me.txtBuscar)
         Me.Controls.Add(Me.Label3)
@@ -277,4 +287,5 @@ Partial Class FormBaseLista
     Friend WithEvents ToolStripSeparator6 As ToolStripSeparator
     Friend WithEvents GroupBox5 As GroupBox
     Public WithEvents DataGridView1 As DataGridView
+    Friend WithEvents Panel2 As Panel
 End Class

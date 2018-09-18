@@ -51,6 +51,7 @@ Partial Class FormBaseProductivo
         Me.btEditar = New System.Windows.Forms.ToolStripButton()
         Me.btAnular = New System.Windows.Forms.ToolStripButton()
         Me.Pimagen = New System.Windows.Forms.PictureBox()
+        Me.Panel2 = New System.Windows.Forms.Panel()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
         CType(Me.dgvParametro, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -153,6 +154,7 @@ Partial Class FormBaseProductivo
         'GroupBox1
         '
         Me.GroupBox1.BackColor = System.Drawing.Color.Transparent
+        Me.GroupBox1.Controls.Add(Me.Panel2)
         Me.GroupBox1.Controls.Add(Me.GroupBox4)
         Me.GroupBox1.Controls.Add(Me.GroupBox5)
         Me.GroupBox1.Controls.Add(Me.txtBuscar)
@@ -346,6 +348,14 @@ Partial Class FormBaseProductivo
         Me.Pimagen.TabIndex = 1
         Me.Pimagen.TabStop = False
         '
+        'Panel2
+        '
+        Me.Panel2.BackgroundImage = Global.ElixisLive.My.Resources.Resources.Sin
+        Me.Panel2.Location = New System.Drawing.Point(0, 5)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(905, 5)
+        Me.Panel2.TabIndex = 15
+        '
         'FormBaseProductivo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -407,4 +417,5 @@ Partial Class FormBaseProductivo
     Public WithEvents DataGridView1 As DataGridView
     Friend WithEvents GroupBox4 As GroupBox
     Public WithEvents dgvParametro As DataGridView
+    Friend WithEvents Panel2 As Panel
 End Class
