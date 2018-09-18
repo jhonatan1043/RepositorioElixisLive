@@ -2,6 +2,8 @@
     Private objConfig As Configuracion
     Private Sub FormBase_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         objConfig = New Configuracion
+        cargarConsultas()
+        cargarRegistro()
         Generales.deshabilitarBotones(ToolStrip1)
         Generales.deshabilitarControles(Me)
         txtFiltro.ReadOnly = False
@@ -43,14 +45,48 @@
         btRegistrar.Enabled = True
         btCancelar.Enabled = True
     End Sub
-
+    Private Function validaciones() As Boolean
+        Dim badraResultado As Boolean
+        If txtnombre.Text = String.Empty Then
+            MsgBox("¡ Favor Registrar, algún valor valido. !", MsgBoxStyle.Exclamation)
+        Else
+            badraResultado = True
+        End If
+        Return badraResultado
+    End Function
     Private Sub btRegistrar_Click(sender As Object, e As EventArgs) Handles btRegistrar.Click
         If MsgBox(MensajeSistema.REGISTRAR, 32 + 1, "Registrar") = 1 Then
+            Try
 
+                If validaciones() = True Then
+                    cargarObjeto()
+                    ConfigBLL.guardar(objConfig)
+                    Generales.deshabilitarBotones(ToolStrip1)
+                    Generales.deshabilitarControles(Me)
+                    btNuevo.Enabled = True
+                    btAnular.Enabled = True
+                    txtFiltro.ReadOnly = False
+                    txtcodigo.Text = objConfig.codigo
+                    cargarRegistro()
+                    MsgBox(MensajeSistema.REGISTRADO_CON_EXITO, MsgBoxStyle.Information)
+                End If
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
         End If
     End Sub
     Private Sub cargarObjeto()
-        objConfig.id = txtcodigo.Text
-        objConfig.descripcion = txtnombre.Text
+        objConfig.codigo = If(String.IsNullOrEmpty(txtcodigo.Text), Nothing, txtcodigo.Text)
+        objConfig.descripcion = txtnombre.Text.ToUpper
+    End Sub
+    Private Sub txtFiltro_KeyDown(sender As Object, e As KeyEventArgs) Handles txtFiltro.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            cargarRegistro()
+        End If
+    End Sub
+    Private Sub cargarConsultas()
+        objConfig.sqlConsulta = "SP_CONFI_SERVICIO_CONSULTAR"
+        objConfig.sqlAnular = ""
+        objConfig.sqlGuardar = "SP_CONFI_SERVICIO_CREAR"
     End Sub
 End Class

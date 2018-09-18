@@ -7,4 +7,5 @@
     Public Const SALIR = "¡ Desea Salir !"
     '-------- Mensaje Accion 
     Public Const USUARIO_NO_EXISTE = "¡ Usuario no Existete !"
+    Public Const REGISTRADO_CON_EXITO = "Registro, Guardado con ¡EXITO!"
 End Class
