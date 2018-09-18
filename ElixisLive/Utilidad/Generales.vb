@@ -211,4 +211,32 @@ Public Class Generales
             End If
         Next
     End Sub
+    Public Shared Sub cargarCombo(ByVal consulta As String,
+                                  ByVal params As List(Of String),
+                                  ByVal vlrDisplayMember As String,
+                                  ByVal vlrValueMember As String,
+                                  ByVal cbCombo As ComboBox)
+        Dim dtTabla As New DataTable
+        Try
+            Dim drFila As DataRow = dtTabla.NewRow()
+            dtTabla.Columns.Add(vlrValueMember)
+            dtTabla.Columns.Add(vlrDisplayMember)
+            drFila.Item(0) = "-1"
+            drFila.Item(1) = " - - - Seleccione - - - "
+            dtTabla.Rows.Add(drFila)
+            Using da = New SqlDataAdapter(consulta & Funciones.getParametros(params), objConexion.cnxbd)
+                da.Fill(dtTabla)
+            End Using
+            cbCombo.DataSource = dtTabla
+            cbCombo.DisplayMember = vlrDisplayMember
+            cbCombo.ValueMember = vlrValueMember
+            If cbCombo IsNot Nothing Then
+                cbCombo.AutoCompleteMode = AutoCompleteMode.None
+                cbCombo.AutoCompleteSource = AutoCompleteSource.None
+                cbCombo.DropDownStyle = ComboBoxStyle.DropDownList
+            End If
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Sub
 End Class

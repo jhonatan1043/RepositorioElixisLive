@@ -24,7 +24,7 @@
         Dim idUsuario As String = Nothing
         Dim dFila As DataRow
         Try
-            dFila = Generales.cargarItem("[SP_PERS_INICIO_SESION]", params)
+            dFila = Generales.cargarItem("[SP_ADMIN_INICIO_SESION]", params)
             If Not IsDBNull(dFila.Item(0)) Then
                 idUsuario = dFila.Item(0)
             End If

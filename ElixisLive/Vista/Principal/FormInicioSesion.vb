@@ -15,4 +15,21 @@
         objInicioSesionBLL.idEmpresa = CbEmpresa.SelectedValue
     End Sub
 
+    Private Sub FormInicioSesion_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        cargarComboEmpresa()
+    End Sub
+    Private Sub cargarComboEmpresa()
+        Dim params As New List(Of String)
+        params.Add(txtUsuario.Text)
+        Generales.cargarCombo("[SP_ADMIN_CONSULTAR_EMPRESA]", params, "Nombre", "codigo_empresa", CbEmpresa)
+    End Sub
+
+    Private Sub txtUsuario_Leave(sender As Object, e As EventArgs) Handles txtUsuario.Leave
+        If Not String.IsNullOrEmpty(txtUsuario.Text) Then
+            cargarComboEmpresa()
+        Else
+            Generales.limpiarControles(Me)
+            MsgBox("¡ Usuario no Existete !", MsgBoxStyle.Exclamation)
+        End If
+    End Sub
 End Class

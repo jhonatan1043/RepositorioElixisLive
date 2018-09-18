@@ -27,9 +27,9 @@ Partial Class FormBase
         Me.LTitulo = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.dgRegistro = New System.Windows.Forms.DataGridView()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.txtFiltro = New System.Windows.Forms.TextBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.txtnombre = New System.Windows.Forms.TextBox()
         Me.txtcodigo = New System.Windows.Forms.TextBox()
@@ -51,7 +51,7 @@ Partial Class FormBase
         CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox5.SuspendLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgRegistro, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
         Me.ToolStrip1.SuspendLayout()
         Me.SuspendLayout()
@@ -93,7 +93,7 @@ Partial Class FormBase
         Me.GroupBox1.BackColor = System.Drawing.Color.Transparent
         Me.GroupBox1.Controls.Add(Me.GroupBox5)
         Me.GroupBox1.Controls.Add(Me.Label1)
-        Me.GroupBox1.Controls.Add(Me.TextBox1)
+        Me.GroupBox1.Controls.Add(Me.txtFiltro)
         Me.GroupBox1.Controls.Add(Me.GroupBox2)
         Me.GroupBox1.Location = New System.Drawing.Point(3, 44)
         Me.GroupBox1.Name = "GroupBox1"
@@ -103,7 +103,7 @@ Partial Class FormBase
         '
         'GroupBox5
         '
-        Me.GroupBox5.Controls.Add(Me.DataGridView1)
+        Me.GroupBox5.Controls.Add(Me.dgRegistro)
         Me.GroupBox5.Font = New System.Drawing.Font("Times New Roman", 8.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox5.ForeColor = System.Drawing.Color.RoyalBlue
         Me.GroupBox5.Location = New System.Drawing.Point(4, 85)
@@ -113,15 +113,15 @@ Partial Class FormBase
         Me.GroupBox5.TabStop = False
         Me.GroupBox5.Text = "Registros Almacenados"
         '
-        'DataGridView1
+        'dgRegistro
         '
-        Me.DataGridView1.BackgroundColor = System.Drawing.SystemColors.Control
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.DataGridView1.Location = New System.Drawing.Point(3, 16)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(550, 157)
-        Me.DataGridView1.TabIndex = 0
+        Me.dgRegistro.BackgroundColor = System.Drawing.SystemColors.Control
+        Me.dgRegistro.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgRegistro.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.dgRegistro.Location = New System.Drawing.Point(3, 16)
+        Me.dgRegistro.Name = "dgRegistro"
+        Me.dgRegistro.Size = New System.Drawing.Size(550, 157)
+        Me.dgRegistro.TabIndex = 0
         '
         'Label1
         '
@@ -134,14 +134,14 @@ Partial Class FormBase
         Me.Label1.TabIndex = 19
         Me.Label1.Text = "Filtrar:"
         '
-        'TextBox1
+        'txtFiltro
         '
-        Me.TextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!)
-        Me.TextBox1.Location = New System.Drawing.Point(65, 60)
-        Me.TextBox1.MaxLength = 100
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(493, 21)
-        Me.TextBox1.TabIndex = 3
+        Me.txtFiltro.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!)
+        Me.txtFiltro.Location = New System.Drawing.Point(65, 60)
+        Me.txtFiltro.MaxLength = 100
+        Me.txtFiltro.Name = "txtFiltro"
+        Me.txtFiltro.Size = New System.Drawing.Size(493, 21)
+        Me.txtFiltro.TabIndex = 3
         '
         'GroupBox2
         '
@@ -312,7 +312,7 @@ Partial Class FormBase
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.GroupBox5.ResumeLayout(False)
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgRegistro, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
         Me.ToolStrip1.ResumeLayout(False)
@@ -326,7 +326,7 @@ Partial Class FormBase
     Public WithEvents Pimagen As PictureBox
     Public WithEvents GroupBox1 As GroupBox
     Public WithEvents Label1 As Label
-    Public WithEvents TextBox1 As TextBox
+    Public WithEvents txtFiltro As TextBox
     Public WithEvents GroupBox2 As GroupBox
     Public WithEvents txtnombre As TextBox
     Public WithEvents txtcodigo As TextBox
@@ -345,5 +345,5 @@ Partial Class FormBase
     Public WithEvents btAnular As ToolStripButton
     Friend WithEvents ToolStripSeparator6 As ToolStripSeparator
     Friend WithEvents GroupBox5 As GroupBox
-    Public WithEvents DataGridView1 As DataGridView
+    Public WithEvents dgRegistro As DataGridView
 End Class
