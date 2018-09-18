@@ -1,8 +1,5 @@
 ﻿Public Class SesionActual
-    Property idUsuario As Integer
-    Property idEmpresa As Integer
+    Public Shared Property idUsuario As Integer
+    Public Shared Property idEmpresa As Integer
 
-    Public Sub New()
-
-    End Sub
 End Class
