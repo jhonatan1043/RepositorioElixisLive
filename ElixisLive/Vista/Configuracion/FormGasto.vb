@@ -77,16 +77,21 @@
     End Sub
     Private Sub cargarObjeto()
         objConfig.codigo = If(String.IsNullOrEmpty(txtcodigo.Text), Nothing, txtcodigo.Text)
-        objConfig.descripcion = txtnombre.Text.ToUpper
+        objConfig.descripcion = txtnombre.Text.ToLower
     End Sub
     Private Sub txtFiltro_KeyDown(sender As Object, e As KeyEventArgs) Handles txtFiltro.KeyDown
         If e.KeyCode = Keys.Enter Then
             cargarRegistro()
         End If
     End Sub
+    Private Sub txtFiltro_TextChanged(sender As Object, e As KeyEventArgs) Handles txtFiltro.TextChanged
+        If String.IsNullOrEmpty(txtFiltro.Text) Then
+            cargarRegistro()
+        End If
+    End Sub
     Private Sub cargarConsultas()
-        objConfig.sqlConsulta = "SP_CONFI_GASTOS_CONSULTAR"
+        objConfig.sqlConsulta = "SP_CONFI_GASTO_CONSULTAR"
         objConfig.sqlAnular = ""
-        objConfig.sqlGuardar = "SP_CONFI_GASTOS_CREAR"
+        objConfig.sqlGuardar = "SP_CONFI_GASTO_CREAR"
     End Sub
 End Class
