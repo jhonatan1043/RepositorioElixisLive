@@ -247,4 +247,9 @@ Public Class Generales
         End Try
         Return resultado
     End Function
+    Public Shared Sub cargarPrametro(params As List(Of String), ByRef dgv As DataGridView)
+        Dim dttable As New DataTable
+        llenarTabla("SP_CONSULTAR_PARAMETROS", params, dttable)
+        dgv.DataSource = dttable
+    End Sub
 End Class

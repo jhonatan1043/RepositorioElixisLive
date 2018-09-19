@@ -98,7 +98,8 @@
     <Compile Include="ApplicationEvents.vb" />
     <Compile Include="Controlador\Configuracion\ConfigDAL.vb" />
     <Compile Include="Entidad\generalConsulta.vb" />
-    <Compile Include="Entidad\Inventario\Configuracion.vb" />
+    <Compile Include="Entidad\Configuracion\Configuracion.vb" />
+    <Compile Include="Entidad\Inventario\producto.vb" />
     <Compile Include="Entidad\Principal\ElementoMenu.vb" />
     <Compile Include="FormBase\FormBaseLista.Designer.vb">
       <DependentUpon>FormBaseLista.vb</DependentUpon>
