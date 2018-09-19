@@ -34,8 +34,6 @@
             If cargarComboEmpresa() = False Then
                 validarExistencia()
             End If
-        Else
-            validarExistencia()
         End If
     End Sub
     Private Sub validarExistencia()

@@ -31,7 +31,7 @@ Partial Class FormBase
         Me.dgRegistro = New System.Windows.Forms.DataGridView()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txtFiltro = New System.Windows.Forms.TextBox()
-        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.Gbdatos = New System.Windows.Forms.GroupBox()
         Me.txtnombre = New System.Windows.Forms.TextBox()
         Me.txtcodigo = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -54,7 +54,7 @@ Partial Class FormBase
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox5.SuspendLayout()
         CType(Me.dgRegistro, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GroupBox2.SuspendLayout()
+        Me.Gbdatos.SuspendLayout()
         Me.ToolStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -96,7 +96,7 @@ Partial Class FormBase
         Me.GroupBox1.Controls.Add(Me.GroupBox5)
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Controls.Add(Me.txtFiltro)
-        Me.GroupBox1.Controls.Add(Me.GroupBox2)
+        Me.GroupBox1.Controls.Add(Me.Gbdatos)
         Me.GroupBox1.Location = New System.Drawing.Point(3, 44)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(564, 265)
@@ -147,20 +147,20 @@ Partial Class FormBase
         Me.txtFiltro.Size = New System.Drawing.Size(493, 21)
         Me.txtFiltro.TabIndex = 3
         '
-        'GroupBox2
+        'Gbdatos
         '
-        Me.GroupBox2.Controls.Add(Me.txtnombre)
-        Me.GroupBox2.Controls.Add(Me.txtcodigo)
-        Me.GroupBox2.Controls.Add(Me.Label3)
-        Me.GroupBox2.Controls.Add(Me.Label5)
-        Me.GroupBox2.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox2.ForeColor = System.Drawing.Color.RoyalBlue
-        Me.GroupBox2.Location = New System.Drawing.Point(6, 7)
-        Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(554, 48)
-        Me.GroupBox2.TabIndex = 0
-        Me.GroupBox2.TabStop = False
-        Me.GroupBox2.Text = "Información "
+        Me.Gbdatos.Controls.Add(Me.txtnombre)
+        Me.Gbdatos.Controls.Add(Me.txtcodigo)
+        Me.Gbdatos.Controls.Add(Me.Label3)
+        Me.Gbdatos.Controls.Add(Me.Label5)
+        Me.Gbdatos.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Gbdatos.ForeColor = System.Drawing.Color.RoyalBlue
+        Me.Gbdatos.Location = New System.Drawing.Point(6, 7)
+        Me.Gbdatos.Name = "Gbdatos"
+        Me.Gbdatos.Size = New System.Drawing.Size(554, 48)
+        Me.Gbdatos.TabIndex = 0
+        Me.Gbdatos.TabStop = False
+        Me.Gbdatos.Text = "Información "
         '
         'txtnombre
         '
@@ -208,7 +208,7 @@ Partial Class FormBase
         Me.ToolStrip1.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.ToolStrip1.ImageScalingSize = New System.Drawing.Size(26, 26)
         Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripSeparator1, Me.btNuevo, Me.ToolStripSeparator2, Me.btRegistrar, Me.ToolStripSeparator3, Me.btCancelar, Me.ToolStripSeparator4, Me.btEditar, Me.ToolStripSeparator5, Me.btAnular, Me.ToolStripSeparator6})
-        Me.ToolStrip1.Location = New System.Drawing.Point(0, 312)
+        Me.ToolStrip1.Location = New System.Drawing.Point(0, 313)
         Me.ToolStrip1.Name = "ToolStrip1"
         Me.ToolStrip1.Size = New System.Drawing.Size(571, 33)
         Me.ToolStrip1.TabIndex = 19
@@ -308,7 +308,7 @@ Partial Class FormBase
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(571, 345)
+        Me.ClientSize = New System.Drawing.Size(571, 346)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.ToolStrip1)
         Me.Controls.Add(Me.GroupBox1)
@@ -326,8 +326,8 @@ Partial Class FormBase
         Me.GroupBox1.PerformLayout()
         Me.GroupBox5.ResumeLayout(False)
         CType(Me.dgRegistro, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.GroupBox2.ResumeLayout(False)
-        Me.GroupBox2.PerformLayout()
+        Me.Gbdatos.ResumeLayout(False)
+        Me.Gbdatos.PerformLayout()
         Me.ToolStrip1.ResumeLayout(False)
         Me.ToolStrip1.PerformLayout()
         Me.ResumeLayout(False)
@@ -340,7 +340,7 @@ Partial Class FormBase
     Public WithEvents GroupBox1 As GroupBox
     Public WithEvents Label1 As Label
     Public WithEvents txtFiltro As TextBox
-    Public WithEvents GroupBox2 As GroupBox
+    Public WithEvents Gbdatos As GroupBox
     Public WithEvents txtnombre As TextBox
     Public WithEvents txtcodigo As TextBox
     Public WithEvents Label3 As Label

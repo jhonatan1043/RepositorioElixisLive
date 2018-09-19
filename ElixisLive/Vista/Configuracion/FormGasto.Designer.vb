@@ -22,7 +22,7 @@ Partial Class FormGasto
         Me.Panel1.SuspendLayout()
         CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
-        Me.GroupBox2.SuspendLayout()
+        Me.Gbdatos.SuspendLayout()
         Me.SuspendLayout()
         '
         'LTitulo
@@ -46,8 +46,8 @@ Partial Class FormGasto
         CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
-        Me.GroupBox2.ResumeLayout(False)
-        Me.GroupBox2.PerformLayout()
+        Me.Gbdatos.ResumeLayout(False)
+        Me.Gbdatos.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

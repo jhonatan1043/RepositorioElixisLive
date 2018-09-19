@@ -40,7 +40,7 @@
     Private Sub btNuevo_Click(sender As Object, e As EventArgs) Handles btNuevo.Click
         Generales.deshabilitarBotones(ToolStrip1)
         Generales.habilitarControles(Me)
-        Generales.limpiarControles(Me)
+        Generales.limpiarControles(Gbdatos)
         txtFiltro.ReadOnly = True
         btRegistrar.Enabled = True
         btCancelar.Enabled = True
