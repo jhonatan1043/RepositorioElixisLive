@@ -22,7 +22,7 @@ Partial Class FormBaseProductivo
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
+        Me.dtTiempo = New System.Windows.Forms.DateTimePicker()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.TxtDescripcion = New System.Windows.Forms.TextBox()
         Me.txtCodigo = New System.Windows.Forms.TextBox()
@@ -68,17 +68,17 @@ Partial Class FormBaseProductivo
         Me.ToolStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
-        'DateTimePicker1
+        'dtTiempo
         '
-        Me.DateTimePicker1.CalendarForeColor = System.Drawing.Color.Indigo
-        Me.DateTimePicker1.CalendarTitleBackColor = System.Drawing.Color.Indigo
-        Me.DateTimePicker1.CustomFormat = "dddd-dd / MMMM / yyyy HH:mm"
-        Me.DateTimePicker1.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.DateTimePicker1.Location = New System.Drawing.Point(623, 12)
-        Me.DateTimePicker1.Name = "DateTimePicker1"
-        Me.DateTimePicker1.Size = New System.Drawing.Size(263, 22)
-        Me.DateTimePicker1.TabIndex = 7
+        Me.dtTiempo.CalendarForeColor = System.Drawing.Color.Indigo
+        Me.dtTiempo.CalendarTitleBackColor = System.Drawing.Color.Indigo
+        Me.dtTiempo.CustomFormat = "dddd-dd / MMMM / yyyy HH:mm"
+        Me.dtTiempo.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.dtTiempo.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.dtTiempo.Location = New System.Drawing.Point(623, 12)
+        Me.dtTiempo.Name = "dtTiempo"
+        Me.dtTiempo.Size = New System.Drawing.Size(263, 22)
+        Me.dtTiempo.TabIndex = 7
         '
         'Label4
         '
@@ -263,7 +263,7 @@ Partial Class FormBaseProductivo
         'GroupBox2
         '
         Me.GroupBox2.BackColor = System.Drawing.Color.Transparent
-        Me.GroupBox2.Controls.Add(Me.DateTimePicker1)
+        Me.GroupBox2.Controls.Add(Me.dtTiempo)
         Me.GroupBox2.Controls.Add(Me.Label4)
         Me.GroupBox2.Controls.Add(Me.txtCodigo)
         Me.GroupBox2.Controls.Add(Me.TxtDescripcion)
@@ -441,7 +441,7 @@ Partial Class FormBaseProductivo
     Public WithEvents txtCodigo As TextBox
     Public WithEvents txtBuscar As TextBox
     Public WithEvents Label3 As Label
-    Friend WithEvents DateTimePicker1 As DateTimePicker
+    Friend WithEvents dtTiempo As DateTimePicker
     Public WithEvents Label4 As Label
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents GroupBox2 As GroupBox

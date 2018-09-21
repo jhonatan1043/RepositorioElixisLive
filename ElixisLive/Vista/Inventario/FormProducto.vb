@@ -17,7 +17,16 @@
     End Sub
     Private Sub dgvParametro_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvParametro.CellClick
         If btRegistrar.Enabled = False Then Exit Sub
-        Generales.consultarTipoControl(dgvParametro)
+        Try
+            Generales.consultarTipoControl(dgvParametro)
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+    Private Sub cargarObjeto()
+        objProducto.codigoProducto = txtCodigo.Text
+        objProducto.nombre = TxtDescripcion.Text
+        objProducto.fecha = dtTiempo.Value
     End Sub
     Private Sub btExaminar_Click(sender As Object, e As EventArgs) Handles btExaminar.Click
         Dim openImag As New OpenFileDialog

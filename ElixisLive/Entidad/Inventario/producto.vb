@@ -2,6 +2,7 @@
     Property codigoProducto As String
     Property nombre As String
     Property fecha As DateTime
+    Property foto As Byte()
     Property dtParametro As DataTable
     Property dtRegistro As DataTable
 

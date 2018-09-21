@@ -303,21 +303,30 @@ Public Class Generales
         Dim params As New List(Of String)
         Dim dfil As DataRow
         Dim controlDgv As String
+        Dim consulta As String
+        Dim valorInterno As String
+        Dim valorExterno As String
+        Try
+            params.Add(dgv.Rows(dgv.CurrentCell.RowIndex).Cells("codigo_Descripcion").Value)
+            dfil = Generales.cargarItem("SP_CONSULTAR_CONTROL", params)
 
-        params.Add(dgv.Rows(dgv.CurrentCell.RowIndex).Cells("codigo_parametro").Value)
-        dfil = Generales.cargarItem("SP_CONSULTAR_CONTROL", params)
-        If Not IsNothing(dfil) Then
-            controlDgv = dfil("control")
-            dgv.Rows(dgv.CurrentCell.RowIndex).Cells("Datos") = crearControl(controlDgv)
-        End If
+            If Not IsNothing(dfil) Then
+                controlDgv = dfil("control")
+                consulta = dfil("Consulta")
+                valorInterno = dfil("valorInterno")
+                valorExterno = dfil("valorExterno")
+                dgv.Rows(dgv.CurrentCell.RowIndex).Cells("Datos") = crearControl(controlDgv, consulta, valorInterno, valorExterno)
+            End If
+        Catch ex As Exception
+            Throw ex
+        End Try
     End Sub
-    Private Shared Function crearControl(controlDGV As String)
+    Private Shared Function crearControl(controlDGV As String, consulta As String, valorInterno As String, valorExterno As String)
         Dim cell As Object = Nothing
 
         Select Case controlDGV
             Case "combo"
-                Dim contedor As New DataGridViewComboBoxCell
-                cell = contedor
+                cell = dgvComboCellSinParametro(consulta, valorInterno, valorExterno)
             Case "seleccion"
                 Dim contedor As New DataGridViewCheckBoxCell
                 cell = contedor
@@ -327,5 +336,40 @@ Public Class Generales
         End Select
 
         Return cell
+    End Function
+    Private Shared Function dgvComboCellSinParametro(consulta As String, valorInterno As String, valorExterno As String)
+        Dim contedor As New DataGridViewComboBoxCell
+        Dim dtTabla As New DataTable
+        Dim resultado As Boolean
+        Try
+
+            dtTabla.Columns.Add(valorInterno)
+            dtTabla.Columns.Add(valorExterno)
+
+            Dim drFila As DataRow = dtTabla.NewRow()
+            drFila.Item(0) = "-1"
+            drFila.Item(1) = " - - - Seleccione - - - "
+            dtTabla.Rows.Add(drFila)
+
+            objConexion.conectar()
+            Using da = New SqlDataAdapter(consulta, objConexion.cnxbd)
+                da.Fill(dtTabla)
+            End Using
+
+            objConexion.desConectar()
+
+            If dtTabla.Rows.Count > 1 Then
+                resultado = True
+            End If
+
+            contedor.DataSource = dtTabla
+            contedor.DisplayMember = valorExterno
+            contedor.ValueMember = valorInterno
+
+        Catch ex As Exception
+            Throw ex
+        End Try
+
+        Return contedor
     End Function
 End Class
