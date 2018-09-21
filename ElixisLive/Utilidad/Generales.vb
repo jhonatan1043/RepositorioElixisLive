@@ -51,19 +51,28 @@ Public Class Generales
             ElseIf (TypeOf vControl Is TreeView) Then
                 vControl.Nodes.Clear()
             ElseIf (TypeOf vControl Is DataGridView) Then
-                vControl.EndEdit()
-                If TypeOf vControl.DataSource Is BindingSource Then
-                    vControl.DataSource.DataSource.Clear()
-                Else
-                    If vControl.Datasource IsNot Nothing Then
-                        vControl.Datasource.Clear()
+                If vControl.name <> "dgvParametro" Then
+                    vControl.EndEdit()
+                    If TypeOf vControl.DataSource Is BindingSource Then
+                        vControl.DataSource.DataSource.Clear()
+                    Else
+                        If vControl.Datasource IsNot Nothing Then
+                            vControl.Datasource.Clear()
+                        End If
                     End If
+                    diseñoDGV(vControl)
+                Else
+                    limpiarGrillaParametro(vControl)
                 End If
-                diseñoDGV(vControl)
             Else
                 ' mira a ve si es un contenedor
                 limpiarControles(vControl)
             End If
+        Next
+    End Sub
+    Private Shared Sub limpiarGrillaParametro(dgv As DataGridView)
+        For posicion = 0 To dgv.Rows.Count - 1
+            dgv.Rows(posicion).Cells("Datos").Value = Nothing
         Next
     End Sub
     Public Shared Sub diseñoDGV(ByRef dgv As DataGridView)
@@ -203,7 +212,11 @@ Public Class Generales
         For Each vItem In pElemento.Controls
             If ((TypeOf vItem Is TextBox) Or (TypeOf vItem Is RichTextBox) Or (TypeOf vItem Is MaskedTextBox) Or (TypeOf vItem Is DataGridView)) And
                    Not (vItem.name.ToString.ToLower.Contains("txtcodigo")) Then
-                vItem.readonly = False
+                If vItem.name <> "dgvParametro" Then
+                    vItem.readonly = False
+                Else
+                    habilitarColumnaParametro(vItem)
+                End If
             ElseIf (TypeOf vItem Is CheckBox) Or (TypeOf vItem Is RadioButton) Or (TypeOf vItem Is ComboBox) Or
                 (TypeOf vItem Is Button) Or (TypeOf vItem Is TreeView) Or (TypeOf vItem Is DateTimePicker) Or (TypeOf vItem Is NumericUpDown) Then
                 vItem.enabled = True
@@ -212,6 +225,14 @@ Public Class Generales
             End If
         Next
     End Sub
+    Private Shared Sub habilitarColumnaParametro(dgv As DataGridView)
+        With dgv
+            .ReadOnly = False
+            .Columns("Informacion").ReadOnly = True
+            .Columns("Datos").ReadOnly = False
+        End With
+    End Sub
+
     Public Shared Function cargarCombo(ByVal consulta As String,
                                   ByVal params As List(Of String),
                                   ByVal vlrDisplayMember As String,
@@ -247,9 +268,64 @@ Public Class Generales
         End Try
         Return resultado
     End Function
-    Public Shared Sub cargarPrametro(params As List(Of String), ByRef dgv As DataGridView)
-        Dim dttable As New DataTable
-        llenarTabla("SP_CONSULTAR_PARAMETROS", params, dttable)
-        dgv.DataSource = dttable
+    Public Shared Sub diseñoGrillaParametro(dgv As DataGridView)
+        With dgv
+            .Columns("codigo_Descripcion").Visible = False
+            .Columns("Informacion").SortMode = DataGridViewColumnSortMode.NotSortable
+            .Columns("Datos").SortMode = DataGridViewColumnSortMode.NotSortable
+            .Columns("Informacion").AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
+            .Columns("Datos").AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
+        End With
     End Sub
+    Public Shared Sub subirimagen(ByVal objeto As PictureBox, ByVal componente As OpenFileDialog)
+        Try
+            objeto.Image = Nothing
+            objeto.SizeMode = PictureBoxSizeMode.StretchImage
+            objeto.BorderStyle = BorderStyle.None
+            With componente
+                .InitialDirectory = ""
+                .Filter = "Todos los archivos de imagen|*.jpg;*.jpeg;*.png;*.bmp;*.gif;*.pdf;*|PDF|*.pdf|JPEG|*.jpeg;*.jpg|BMP|*.bmp|GIF|*.gif|PNG|*.png"
+                .Title = "Seleccionar Archivo"
+            End With
+            If componente.ShowDialog() = DialogResult.OK Then
+                Dim documento = componente.FileName
+                Dim aux = System.IO.Path.GetExtension(componente.FileName).ToLower
+                With objeto
+                    documento = Nothing
+                    .Image = Image.FromFile(componente.FileName)
+                End With
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+    Public Shared Sub consultarTipoControl(dgv As DataGridView)
+        Dim params As New List(Of String)
+        Dim dfil As DataRow
+        Dim controlDgv As String
+
+        params.Add(dgv.Rows(dgv.CurrentCell.RowIndex).Cells("codigo_parametro").Value)
+        dfil = Generales.cargarItem("SP_CONSULTAR_CONTROL", params)
+        If Not IsNothing(dfil) Then
+            controlDgv = dfil("control")
+            dgv.Rows(dgv.CurrentCell.RowIndex).Cells("Datos") = crearControl(controlDgv)
+        End If
+    End Sub
+    Private Shared Function crearControl(controlDGV As String)
+        Dim cell As Object = Nothing
+
+        Select Case controlDGV
+            Case "combo"
+                Dim contedor As New DataGridViewComboBoxCell
+                cell = contedor
+            Case "seleccion"
+                Dim contedor As New DataGridViewCheckBoxCell
+                cell = contedor
+            Case "tiempo"
+                'Dim contedor As New DataGridView
+                'cell = contedor
+        End Select
+
+        Return cell
+    End Function
 End Class

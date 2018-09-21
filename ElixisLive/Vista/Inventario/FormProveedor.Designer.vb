@@ -49,7 +49,7 @@ Partial Class FormProveedor
         '
         'txtId
         '
-        Me.txtId.Size = New System.Drawing.Size(93, 22)
+        Me.txtCodigo.Size = New System.Drawing.Size(93, 22)
         '
         'FormProveedor
         '

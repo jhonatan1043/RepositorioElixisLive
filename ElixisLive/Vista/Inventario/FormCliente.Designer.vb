@@ -44,7 +44,7 @@ Partial Class FormCliente
         '
         'txtId
         '
-        Me.txtId.Size = New System.Drawing.Size(92, 22)
+        Me.txtCodigo.Size = New System.Drawing.Size(92, 22)
         '
         'FormCliente
         '

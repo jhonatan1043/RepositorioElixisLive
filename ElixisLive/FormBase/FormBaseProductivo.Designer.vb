@@ -25,12 +25,15 @@ Partial Class FormBaseProductivo
         Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.TxtDescripcion = New System.Windows.Forms.TextBox()
-        Me.txtId = New System.Windows.Forms.TextBox()
+        Me.txtCodigo = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txtBuscar = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.btExaminar = New System.Windows.Forms.Button()
+        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.pictImagen = New System.Windows.Forms.PictureBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.dgvParametro = New System.Windows.Forms.DataGridView()
@@ -53,6 +56,8 @@ Partial Class FormBaseProductivo
         Me.btAnular = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripSeparator6 = New System.Windows.Forms.ToolStripSeparator()
         Me.GroupBox1.SuspendLayout()
+        Me.GroupBox3.SuspendLayout()
+        CType(Me.pictImagen, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox4.SuspendLayout()
         CType(Me.dgvParametro, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox5.SuspendLayout()
@@ -96,15 +101,15 @@ Partial Class FormBaseProductivo
         Me.TxtDescripcion.Size = New System.Drawing.Size(358, 22)
         Me.TxtDescripcion.TabIndex = 5
         '
-        'txtId
+        'txtCodigo
         '
-        Me.txtId.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtId.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtId.Location = New System.Drawing.Point(33, 13)
-        Me.txtId.Name = "txtId"
-        Me.txtId.ReadOnly = True
-        Me.txtId.Size = New System.Drawing.Size(81, 22)
-        Me.txtId.TabIndex = 4
+        Me.txtCodigo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtCodigo.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtCodigo.Location = New System.Drawing.Point(33, 13)
+        Me.txtCodigo.Name = "txtCodigo"
+        Me.txtCodigo.ReadOnly = True
+        Me.txtCodigo.Size = New System.Drawing.Size(81, 22)
+        Me.txtCodigo.TabIndex = 4
         '
         'Label2
         '
@@ -154,6 +159,8 @@ Partial Class FormBaseProductivo
         'GroupBox1
         '
         Me.GroupBox1.BackColor = System.Drawing.Color.Transparent
+        Me.GroupBox1.Controls.Add(Me.btExaminar)
+        Me.GroupBox1.Controls.Add(Me.GroupBox3)
         Me.GroupBox1.Controls.Add(Me.Panel2)
         Me.GroupBox1.Controls.Add(Me.GroupBox4)
         Me.GroupBox1.Controls.Add(Me.GroupBox5)
@@ -165,6 +172,38 @@ Partial Class FormBaseProductivo
         Me.GroupBox1.Size = New System.Drawing.Size(901, 446)
         Me.GroupBox1.TabIndex = 8
         Me.GroupBox1.TabStop = False
+        '
+        'btExaminar
+        '
+        Me.btExaminar.BackColor = System.Drawing.Color.White
+        Me.btExaminar.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btExaminar.ForeColor = System.Drawing.Color.RoyalBlue
+        Me.btExaminar.Location = New System.Drawing.Point(748, 204)
+        Me.btExaminar.Name = "btExaminar"
+        Me.btExaminar.Size = New System.Drawing.Size(84, 25)
+        Me.btExaminar.TabIndex = 64
+        Me.btExaminar.Text = "Examinar..."
+        Me.btExaminar.UseVisualStyleBackColor = False
+        '
+        'GroupBox3
+        '
+        Me.GroupBox3.Controls.Add(Me.pictImagen)
+        Me.GroupBox3.Location = New System.Drawing.Point(684, 46)
+        Me.GroupBox3.Name = "GroupBox3"
+        Me.GroupBox3.Size = New System.Drawing.Size(207, 152)
+        Me.GroupBox3.TabIndex = 63
+        Me.GroupBox3.TabStop = False
+        '
+        'pictImagen
+        '
+        Me.pictImagen.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.pictImagen.InitialImage = Global.ElixisLive.My.Resources.Resources.logo_elixis
+        Me.pictImagen.Location = New System.Drawing.Point(3, 16)
+        Me.pictImagen.Name = "pictImagen"
+        Me.pictImagen.Size = New System.Drawing.Size(201, 133)
+        Me.pictImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.pictImagen.TabIndex = 0
+        Me.pictImagen.TabStop = False
         '
         'Panel2
         '
@@ -181,19 +220,22 @@ Partial Class FormBaseProductivo
         Me.GroupBox4.ForeColor = System.Drawing.Color.RoyalBlue
         Me.GroupBox4.Location = New System.Drawing.Point(6, 47)
         Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Size = New System.Drawing.Size(889, 185)
+        Me.GroupBox4.Size = New System.Drawing.Size(672, 185)
         Me.GroupBox4.TabIndex = 62
         Me.GroupBox4.TabStop = False
         Me.GroupBox4.Text = "Información de la Empresa"
         '
         'dgvParametro
         '
+        Me.dgvParametro.AllowUserToAddRows = False
+        Me.dgvParametro.AllowUserToDeleteRows = False
         Me.dgvParametro.BackgroundColor = System.Drawing.Color.White
         Me.dgvParametro.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvParametro.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dgvParametro.Location = New System.Drawing.Point(3, 16)
         Me.dgvParametro.Name = "dgvParametro"
-        Me.dgvParametro.Size = New System.Drawing.Size(883, 166)
+        Me.dgvParametro.ReadOnly = True
+        Me.dgvParametro.Size = New System.Drawing.Size(666, 166)
         Me.dgvParametro.TabIndex = 0
         '
         'GroupBox5
@@ -223,7 +265,7 @@ Partial Class FormBaseProductivo
         Me.GroupBox2.BackColor = System.Drawing.Color.Transparent
         Me.GroupBox2.Controls.Add(Me.DateTimePicker1)
         Me.GroupBox2.Controls.Add(Me.Label4)
-        Me.GroupBox2.Controls.Add(Me.txtId)
+        Me.GroupBox2.Controls.Add(Me.txtCodigo)
         Me.GroupBox2.Controls.Add(Me.TxtDescripcion)
         Me.GroupBox2.Controls.Add(Me.Label2)
         Me.GroupBox2.Controls.Add(Me.Label1)
@@ -374,6 +416,8 @@ Partial Class FormBaseProductivo
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
+        Me.GroupBox3.ResumeLayout(False)
+        CType(Me.pictImagen, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox4.ResumeLayout(False)
         CType(Me.dgvParametro, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox5.ResumeLayout(False)
@@ -394,7 +438,7 @@ Partial Class FormBaseProductivo
     Public WithEvents Label2 As Label
     Public WithEvents Label1 As Label
     Public WithEvents TxtDescripcion As TextBox
-    Public WithEvents txtId As TextBox
+    Public WithEvents txtCodigo As TextBox
     Public WithEvents txtBuscar As TextBox
     Public WithEvents Label3 As Label
     Friend WithEvents DateTimePicker1 As DateTimePicker
@@ -418,4 +462,7 @@ Partial Class FormBaseProductivo
     Friend WithEvents GroupBox4 As GroupBox
     Public WithEvents dgvParametro As DataGridView
     Friend WithEvents Panel2 As Panel
+    Public WithEvents GroupBox3 As GroupBox
+    Friend WithEvents pictImagen As PictureBox
+    Friend WithEvents btExaminar As Button
 End Class
