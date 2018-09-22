@@ -229,7 +229,6 @@ Public Class Generales
         With dgv
             .ReadOnly = False
             .Columns("Informacion").ReadOnly = True
-            .Columns("Datos").ReadOnly = False
         End With
     End Sub
 
@@ -299,13 +298,15 @@ Public Class Generales
             MsgBox(ex.Message)
         End Try
     End Sub
-    Public Shared Sub consultarTipoControl(dgv As DataGridView)
+    Public Shared Function consultarTipoControl(dgv As DataGridView) As Boolean
         Dim params As New List(Of String)
         Dim dfil As DataRow
         Dim controlDgv As String
         Dim consulta As String
         Dim valorInterno As String
         Dim valorExterno As String
+        Dim resultado As Boolean
+
         Try
             params.Add(dgv.Rows(dgv.CurrentCell.RowIndex).Cells("codigo_Descripcion").Value)
             dfil = Generales.cargarItem("SP_CONSULTAR_CONTROL", params)
@@ -316,11 +317,15 @@ Public Class Generales
                 valorInterno = dfil("valorInterno")
                 valorExterno = dfil("valorExterno")
                 dgv.Rows(dgv.CurrentCell.RowIndex).Cells("Datos") = crearControl(controlDgv, consulta, valorInterno, valorExterno)
+                resultado = True
             End If
+
+            Return resultado
+
         Catch ex As Exception
             Throw ex
         End Try
-    End Sub
+    End Function
     Private Shared Function crearControl(controlDgv As String, consulta As String, valorInterno As String, valorExterno As String)
         Dim cell As Object = Nothing
 
@@ -365,7 +370,7 @@ Public Class Generales
             contedor.DataSource = dtTabla
             contedor.DisplayMember = valorExterno
             contedor.ValueMember = valorInterno
-
+            contedor.Tag = Constantes.TIPO_CONTROL.COMBO
         Catch ex As Exception
             Throw ex
         End Try

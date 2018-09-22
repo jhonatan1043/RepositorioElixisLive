@@ -97,6 +97,7 @@
   <ItemGroup>
     <Compile Include="ApplicationEvents.vb" />
     <Compile Include="Controlador\Configuracion\ConfigDAL.vb" />
+    <Compile Include="Controlador\Inventario\ProductoDAL.vb" />
     <Compile Include="Entidad\generalConsulta.vb" />
     <Compile Include="Entidad\Configuracion\Configuracion.vb" />
     <Compile Include="Entidad\Inventario\producto.vb" />
@@ -114,6 +115,7 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Modelo\Configuracion\ConfigBLL.vb" />
+    <Compile Include="Modelo\Inventario\ProductoBLL.vb" />
     <Compile Include="Modelo\Principal\InicioSesionBLL.vb" />
     <Compile Include="Modelo\Principal\principalBLL.vb" />
     <Compile Include="Utilidad\Constantes.vb" />
@@ -281,9 +283,7 @@
     </None>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Controlador\Inventario\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
