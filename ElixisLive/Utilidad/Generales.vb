@@ -321,15 +321,15 @@ Public Class Generales
             Throw ex
         End Try
     End Sub
-    Private Shared Function crearControl(controlDGV As String, consulta As String, valorInterno As String, valorExterno As String)
+    Private Shared Function crearControl(controlDgv As String, consulta As String, valorInterno As String, valorExterno As String)
         Dim cell As Object = Nothing
 
-        Select Case controlDGV
+        Select Case controlDgv
             Case "combo"
                 cell = dgvComboCellSinParametro(consulta, valorInterno, valorExterno)
             Case "seleccion"
-                Dim contedor As New DataGridViewCheckBoxCell
-                cell = contedor
+                Dim tipoControl As New DataGridViewCheckBoxCell
+                cell = tipoControl
             Case "tiempo"
                 'Dim contedor As New DataGridView
                 'cell = contedor

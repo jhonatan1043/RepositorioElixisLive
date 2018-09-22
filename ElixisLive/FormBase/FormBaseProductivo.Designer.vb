@@ -22,8 +22,6 @@ Partial Class FormBaseProductivo
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.dtTiempo = New System.Windows.Forms.DateTimePicker()
-        Me.Label4 = New System.Windows.Forms.Label()
         Me.TxtDescripcion = New System.Windows.Forms.TextBox()
         Me.txtCodigo = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -68,37 +66,13 @@ Partial Class FormBaseProductivo
         Me.ToolStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
-        'dtTiempo
-        '
-        Me.dtTiempo.CalendarForeColor = System.Drawing.Color.Indigo
-        Me.dtTiempo.CalendarTitleBackColor = System.Drawing.Color.Indigo
-        Me.dtTiempo.CustomFormat = "dddd-dd / MMMM / yyyy HH:mm"
-        Me.dtTiempo.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.dtTiempo.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.dtTiempo.Location = New System.Drawing.Point(623, 12)
-        Me.dtTiempo.Name = "dtTiempo"
-        Me.dtTiempo.Size = New System.Drawing.Size(263, 22)
-        Me.dtTiempo.TabIndex = 7
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.BackColor = System.Drawing.Color.Transparent
-        Me.Label4.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.ForeColor = System.Drawing.Color.RoyalBlue
-        Me.Label4.Location = New System.Drawing.Point(567, 13)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(54, 19)
-        Me.Label4.TabIndex = 6
-        Me.Label4.Text = "Fecha:"
-        '
         'TxtDescripcion
         '
         Me.TxtDescripcion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TxtDescripcion.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtDescripcion.Location = New System.Drawing.Point(208, 14)
+        Me.TxtDescripcion.Location = New System.Drawing.Point(252, 14)
         Me.TxtDescripcion.Name = "TxtDescripcion"
-        Me.TxtDescripcion.Size = New System.Drawing.Size(358, 22)
+        Me.TxtDescripcion.Size = New System.Drawing.Size(630, 22)
         Me.TxtDescripcion.TabIndex = 5
         '
         'txtCodigo
@@ -108,7 +82,7 @@ Partial Class FormBaseProductivo
         Me.txtCodigo.Location = New System.Drawing.Point(33, 13)
         Me.txtCodigo.Name = "txtCodigo"
         Me.txtCodigo.ReadOnly = True
-        Me.txtCodigo.Size = New System.Drawing.Size(81, 22)
+        Me.txtCodigo.Size = New System.Drawing.Size(126, 22)
         Me.txtCodigo.TabIndex = 4
         '
         'Label2
@@ -117,7 +91,7 @@ Partial Class FormBaseProductivo
         Me.Label2.BackColor = System.Drawing.Color.Transparent
         Me.Label2.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.RoyalBlue
-        Me.Label2.Location = New System.Drawing.Point(121, 15)
+        Me.Label2.Location = New System.Drawing.Point(165, 15)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(90, 19)
         Me.Label2.TabIndex = 3
@@ -190,7 +164,7 @@ Partial Class FormBaseProductivo
         Me.GroupBox3.Controls.Add(Me.pictImagen)
         Me.GroupBox3.Location = New System.Drawing.Point(684, 46)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(207, 152)
+        Me.GroupBox3.Size = New System.Drawing.Size(211, 152)
         Me.GroupBox3.TabIndex = 63
         Me.GroupBox3.TabStop = False
         '
@@ -200,7 +174,7 @@ Partial Class FormBaseProductivo
         Me.pictImagen.InitialImage = Global.ElixisLive.My.Resources.Resources.logo_elixis
         Me.pictImagen.Location = New System.Drawing.Point(3, 16)
         Me.pictImagen.Name = "pictImagen"
-        Me.pictImagen.Size = New System.Drawing.Size(201, 133)
+        Me.pictImagen.Size = New System.Drawing.Size(205, 133)
         Me.pictImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.pictImagen.TabIndex = 0
         Me.pictImagen.TabStop = False
@@ -263,8 +237,6 @@ Partial Class FormBaseProductivo
         'GroupBox2
         '
         Me.GroupBox2.BackColor = System.Drawing.Color.Transparent
-        Me.GroupBox2.Controls.Add(Me.dtTiempo)
-        Me.GroupBox2.Controls.Add(Me.Label4)
         Me.GroupBox2.Controls.Add(Me.txtCodigo)
         Me.GroupBox2.Controls.Add(Me.TxtDescripcion)
         Me.GroupBox2.Controls.Add(Me.Label2)
@@ -312,7 +284,7 @@ Partial Class FormBaseProductivo
         Me.ToolStrip1.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.ToolStrip1.ImageScalingSize = New System.Drawing.Size(26, 26)
         Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripSeparator1, Me.btNuevo, Me.ToolStripSeparator2, Me.btRegistrar, Me.ToolStripSeparator3, Me.btCancelar, Me.ToolStripSeparator4, Me.btEditar, Me.ToolStripSeparator5, Me.btAnular, Me.ToolStripSeparator6})
-        Me.ToolStrip1.Location = New System.Drawing.Point(0, 491)
+        Me.ToolStrip1.Location = New System.Drawing.Point(0, 490)
         Me.ToolStrip1.Name = "ToolStrip1"
         Me.ToolStrip1.Size = New System.Drawing.Size(905, 33)
         Me.ToolStrip1.TabIndex = 14
@@ -403,7 +375,7 @@ Partial Class FormBaseProductivo
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(905, 524)
+        Me.ClientSize = New System.Drawing.Size(905, 523)
         Me.Controls.Add(Me.ToolStrip1)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Panel1)
@@ -441,8 +413,6 @@ Partial Class FormBaseProductivo
     Public WithEvents txtCodigo As TextBox
     Public WithEvents txtBuscar As TextBox
     Public WithEvents Label3 As Label
-    Friend WithEvents dtTiempo As DateTimePicker
-    Public WithEvents Label4 As Label
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents GroupBox2 As GroupBox
     Public WithEvents ToolStrip1 As ToolStrip

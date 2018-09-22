@@ -26,7 +26,6 @@
     Private Sub cargarObjeto()
         objProducto.codigoProducto = txtCodigo.Text
         objProducto.nombre = TxtDescripcion.Text
-        objProducto.fecha = dtTiempo.Value
     End Sub
     Private Sub btExaminar_Click(sender As Object, e As EventArgs) Handles btExaminar.Click
         Dim openImag As New OpenFileDialog
