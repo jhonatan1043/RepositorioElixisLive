@@ -298,7 +298,7 @@ Public Class Generales
             MsgBox(ex.Message)
         End Try
     End Sub
-    Public Shared Function consultarTipoControl(dgv As DataGridView) As Boolean
+    Public Shared Function consultarTipoControl(dgv As DataGridView, posicion As Integer) As Boolean
         Dim params As New List(Of String)
         Dim dfil As DataRow
         Dim controlDgv As String
@@ -308,7 +308,7 @@ Public Class Generales
         Dim resultado As Boolean
 
         Try
-            params.Add(dgv.Rows(dgv.CurrentCell.RowIndex).Cells("codigo_Descripcion").Value)
+            params.Add(dgv.Rows(posicion).Cells("codigo_Descripcion").Value)
             dfil = Generales.cargarItem("SP_CONSULTAR_CONTROL", params)
 
             If Not IsNothing(dfil) Then
@@ -316,7 +316,7 @@ Public Class Generales
                 consulta = dfil("Consulta")
                 valorInterno = dfil("valorInterno")
                 valorExterno = dfil("valorExterno")
-                dgv.Rows(dgv.CurrentCell.RowIndex).Cells("Datos") = crearControl(controlDgv, consulta, valorInterno, valorExterno)
+                dgv.Rows(posicion).Cells("Datos") = crearControl(controlDgv, consulta, valorInterno, valorExterno)
                 resultado = True
             End If
 
