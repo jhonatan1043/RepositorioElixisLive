@@ -21,7 +21,7 @@ Public Class ProductoDAL
                 End Using
             End Using
         Catch ex As Exception
-            Throw ex
+            Throw
         Finally
             objConexio.desConectar()
         End Try
