@@ -35,7 +35,12 @@
     End Sub
     Private Sub btAnular_Click(sender As Object, e As EventArgs) Handles btAnular.Click
         If MsgBox(MensajeSistema.ANULAR, 32 + 1, "Anular") = 1 Then
-
+            If Generales.ejecutarSQL(objConfig.sqlAnular) = True Then
+                Generales.limpiarControles(Gbdatos)
+                Generales.deshabilitarBotones(ToolStrip1)
+                cargarRegistro()
+                btNuevo.Enabled = True
+            End If
         End If
     End Sub
     Private Sub btNuevo_Click(sender As Object, e As EventArgs) Handles btNuevo.Click

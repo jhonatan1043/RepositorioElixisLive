@@ -27,7 +27,7 @@
             If Not IsNothing(dfila) Then
                 txtCodigo.Text = objProducto.codigoProducto
                 TxtDescripcion.Text = dfila.Item("Nombre")
-                cargarImagen(dfila.Item("Foto"))
+                cargarImagen(If(IsDBNull(dfila.Item("Foto")), Nothing, dfila.Item("Foto")))
                 Generales.llenardgv(objProducto.sqlCargarDetalle, dgvParametro, params)
                 Generales.diseñoGrillaParametro(dgvParametro)
                 controlVeificar()
@@ -35,6 +35,7 @@
             Generales.deshabilitarBotones(ToolStrip1)
             btEditar.Enabled = True
             btCancelar.Enabled = True
+            btNuevo.Enabled = True
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
@@ -103,7 +104,9 @@
     Private Sub btNuevo_Click(sender As Object, e As EventArgs) Handles btNuevo.Click
         Generales.deshabilitarBotones(ToolStrip1)
         Generales.habilitarControles(Me)
-        Generales.limpiarControles(Me)
+        Generales.limpiarControles(GbInform_D)
+        Generales.limpiarControles(gbInform)
+        pictImagen.Image = Nothing
         btCancelar.Enabled = True
         btRegistrar.Enabled = True
         txtBuscar.ReadOnly = True
@@ -155,7 +158,16 @@
         End If
     End Sub
     Private Sub btAnular_Click(sender As Object, e As EventArgs) Handles btAnular.Click
-
+        If MsgBox(MensajeSistema.ANULAR, 32 + 1, "Anular") = 1 Then
+            If Generales.ejecutarSQL(objProducto.sqlAnular) = True Then
+                Generales.limpiarControles(GbInform_D)
+                Generales.limpiarControles(gbInform)
+                Generales.deshabilitarBotones(ToolStrip1)
+                pictImagen.Image = Nothing
+                cargarRegistro()
+                btNuevo.Enabled = True
+            End If
+        End If
     End Sub
 
 End Class

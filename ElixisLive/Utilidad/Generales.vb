@@ -377,4 +377,19 @@ Public Class Generales
 
         Return contedor
     End Function
+    Public Shared Function ejecutarSQL(ByVal cadena As String) As Boolean
+        Dim respuesta As Boolean
+        Try
+            objConexion.conectar()
+            Using consulta As New SqlCommand(cadena)
+                consulta.Connection = objConexion.cnxbd
+                respuesta = consulta.ExecuteScalar()
+            End Using
+            objConexion.desConectar()
+            Return respuesta
+        Catch ex As Exception
+            Throw ex
+            Return False
+        End Try
+    End Function
 End Class
