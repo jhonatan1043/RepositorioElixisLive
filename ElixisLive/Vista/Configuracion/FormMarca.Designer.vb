@@ -27,12 +27,12 @@ Partial Class FormMarca
         '
         'LTitulo
         '
+        Me.LTitulo.Size = New System.Drawing.Size(571, 41)
         Me.LTitulo.Text = "Marcas"
         '
         'Pimagen
         '
-        Me.Pimagen.Image = Global.ElixisLive.My.Resources.Resources.tag_alt_icon__1_
-        Me.Pimagen.Location = New System.Drawing.Point(6, 3)
+        Me.Pimagen.Image = Global.ElixisLive.My.Resources.Resources.price_tag_icon
         Me.Pimagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         '
         'FormMarca

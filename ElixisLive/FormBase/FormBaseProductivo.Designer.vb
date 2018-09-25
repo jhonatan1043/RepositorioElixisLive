@@ -32,7 +32,6 @@ Partial Class FormBaseProductivo
         Me.btExaminar = New System.Windows.Forms.Button()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.pictImagen = New System.Windows.Forms.PictureBox()
-        Me.Panel2 = New System.Windows.Forms.Panel()
         Me.GbInform_D = New System.Windows.Forms.GroupBox()
         Me.dgvParametro = New System.Windows.Forms.DataGridView()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
@@ -46,11 +45,11 @@ Partial Class FormBaseProductivo
         Me.btNuevo = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
         Me.btRegistrar = New System.Windows.Forms.ToolStripButton()
-        Me.ToolStripSeparator3 = New System.Windows.Forms.ToolStripSeparator()
-        Me.btCancelar = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripSeparator4 = New System.Windows.Forms.ToolStripSeparator()
         Me.btEditar = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripSeparator5 = New System.Windows.Forms.ToolStripSeparator()
+        Me.btCancelar = New System.Windows.Forms.ToolStripButton()
+        Me.ToolStripSeparator3 = New System.Windows.Forms.ToolStripSeparator()
         Me.btAnular = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripSeparator6 = New System.Windows.Forms.ToolStripSeparator()
         Me.GroupBox1.SuspendLayout()
@@ -135,15 +134,14 @@ Partial Class FormBaseProductivo
         Me.GroupBox1.BackColor = System.Drawing.Color.Transparent
         Me.GroupBox1.Controls.Add(Me.btExaminar)
         Me.GroupBox1.Controls.Add(Me.GroupBox3)
-        Me.GroupBox1.Controls.Add(Me.Panel2)
         Me.GroupBox1.Controls.Add(Me.GbInform_D)
         Me.GroupBox1.Controls.Add(Me.GroupBox5)
         Me.GroupBox1.Controls.Add(Me.txtBuscar)
         Me.GroupBox1.Controls.Add(Me.Label3)
         Me.GroupBox1.Controls.Add(Me.gbInform)
-        Me.GroupBox1.Location = New System.Drawing.Point(2, 41)
+        Me.GroupBox1.Location = New System.Drawing.Point(2, 46)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(901, 446)
+        Me.GroupBox1.Size = New System.Drawing.Size(901, 439)
         Me.GroupBox1.TabIndex = 8
         Me.GroupBox1.TabStop = False
         '
@@ -179,14 +177,6 @@ Partial Class FormBaseProductivo
         Me.pictImagen.TabIndex = 0
         Me.pictImagen.TabStop = False
         '
-        'Panel2
-        '
-        Me.Panel2.BackgroundImage = Global.ElixisLive.My.Resources.Resources.Sin
-        Me.Panel2.Location = New System.Drawing.Point(0, 5)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(905, 5)
-        Me.Panel2.TabIndex = 15
-        '
         'GbInform_D
         '
         Me.GbInform_D.Controls.Add(Me.dgvParametro)
@@ -203,10 +193,13 @@ Partial Class FormBaseProductivo
         '
         Me.dgvParametro.AllowUserToAddRows = False
         Me.dgvParametro.AllowUserToDeleteRows = False
+        Me.dgvParametro.AllowUserToResizeColumns = False
+        Me.dgvParametro.AllowUserToResizeRows = False
         Me.dgvParametro.BackgroundColor = System.Drawing.Color.White
         Me.dgvParametro.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvParametro.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dgvParametro.Location = New System.Drawing.Point(3, 16)
+        Me.dgvParametro.MultiSelect = False
         Me.dgvParametro.Name = "dgvParametro"
         Me.dgvParametro.ReadOnly = True
         Me.dgvParametro.Size = New System.Drawing.Size(666, 166)
@@ -217,7 +210,7 @@ Partial Class FormBaseProductivo
         Me.GroupBox5.Controls.Add(Me.dgRegistro)
         Me.GroupBox5.Font = New System.Drawing.Font("Times New Roman", 8.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox5.ForeColor = System.Drawing.Color.RoyalBlue
-        Me.GroupBox5.Location = New System.Drawing.Point(6, 264)
+        Me.GroupBox5.Location = New System.Drawing.Point(6, 262)
         Me.GroupBox5.Name = "GroupBox5"
         Me.GroupBox5.Size = New System.Drawing.Size(889, 176)
         Me.GroupBox5.TabIndex = 61
@@ -228,10 +221,13 @@ Partial Class FormBaseProductivo
         '
         Me.dgRegistro.AllowUserToAddRows = False
         Me.dgRegistro.AllowUserToDeleteRows = False
+        Me.dgRegistro.AllowUserToResizeColumns = False
+        Me.dgRegistro.AllowUserToResizeRows = False
         Me.dgRegistro.BackgroundColor = System.Drawing.Color.White
         Me.dgRegistro.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgRegistro.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dgRegistro.Location = New System.Drawing.Point(3, 16)
+        Me.dgRegistro.MultiSelect = False
         Me.dgRegistro.Name = "dgRegistro"
         Me.dgRegistro.ReadOnly = True
         Me.dgRegistro.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
@@ -264,20 +260,20 @@ Partial Class FormBaseProductivo
         '
         'Pimagen
         '
-        Me.Pimagen.Location = New System.Drawing.Point(6, 5)
+        Me.Pimagen.Location = New System.Drawing.Point(0, 0)
         Me.Pimagen.Name = "Pimagen"
-        Me.Pimagen.Size = New System.Drawing.Size(46, 36)
+        Me.Pimagen.Size = New System.Drawing.Size(52, 45)
         Me.Pimagen.TabIndex = 1
         Me.Pimagen.TabStop = False
         '
         'LTitulo
         '
-        Me.LTitulo.BackColor = System.Drawing.Color.Transparent
+        Me.LTitulo.BackColor = System.Drawing.Color.RoyalBlue
         Me.LTitulo.Font = New System.Drawing.Font("Times New Roman", 20.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LTitulo.ForeColor = System.Drawing.Color.RoyalBlue
-        Me.LTitulo.Location = New System.Drawing.Point(0, 5)
+        Me.LTitulo.ForeColor = System.Drawing.Color.White
+        Me.LTitulo.Location = New System.Drawing.Point(0, 1)
         Me.LTitulo.Name = "LTitulo"
-        Me.LTitulo.Size = New System.Drawing.Size(902, 33)
+        Me.LTitulo.Size = New System.Drawing.Size(905, 44)
         Me.LTitulo.TabIndex = 1
         Me.LTitulo.Text = "Titulo"
         Me.LTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -287,8 +283,8 @@ Partial Class FormBaseProductivo
         Me.ToolStrip1.BackColor = System.Drawing.Color.White
         Me.ToolStrip1.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.ToolStrip1.ImageScalingSize = New System.Drawing.Size(26, 26)
-        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripSeparator1, Me.btNuevo, Me.ToolStripSeparator2, Me.btRegistrar, Me.ToolStripSeparator3, Me.btCancelar, Me.ToolStripSeparator4, Me.btEditar, Me.ToolStripSeparator5, Me.btAnular, Me.ToolStripSeparator6})
-        Me.ToolStrip1.Location = New System.Drawing.Point(0, 491)
+        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripSeparator1, Me.btNuevo, Me.ToolStripSeparator2, Me.btRegistrar, Me.ToolStripSeparator4, Me.btEditar, Me.ToolStripSeparator5, Me.btCancelar, Me.ToolStripSeparator3, Me.btAnular, Me.ToolStripSeparator6})
+        Me.ToolStrip1.Location = New System.Drawing.Point(0, 490)
         Me.ToolStrip1.Name = "ToolStrip1"
         Me.ToolStrip1.Size = New System.Drawing.Size(905, 33)
         Me.ToolStrip1.TabIndex = 14
@@ -324,21 +320,6 @@ Partial Class FormBaseProductivo
         Me.btRegistrar.Size = New System.Drawing.Size(98, 30)
         Me.btRegistrar.Text = "Registrar"
         '
-        'ToolStripSeparator3
-        '
-        Me.ToolStripSeparator3.Name = "ToolStripSeparator3"
-        Me.ToolStripSeparator3.Size = New System.Drawing.Size(6, 33)
-        '
-        'btCancelar
-        '
-        Me.btCancelar.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btCancelar.ForeColor = System.Drawing.Color.RoyalBlue
-        Me.btCancelar.Image = Global.ElixisLive.My.Resources.Resources.Actions_blue_arrow_undo_icon
-        Me.btCancelar.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.btCancelar.Name = "btCancelar"
-        Me.btCancelar.Size = New System.Drawing.Size(98, 30)
-        Me.btCancelar.Text = "Cancelar"
-        '
         'ToolStripSeparator4
         '
         Me.ToolStripSeparator4.Name = "ToolStripSeparator4"
@@ -358,6 +339,21 @@ Partial Class FormBaseProductivo
         '
         Me.ToolStripSeparator5.Name = "ToolStripSeparator5"
         Me.ToolStripSeparator5.Size = New System.Drawing.Size(6, 33)
+        '
+        'btCancelar
+        '
+        Me.btCancelar.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btCancelar.ForeColor = System.Drawing.Color.RoyalBlue
+        Me.btCancelar.Image = Global.ElixisLive.My.Resources.Resources.Actions_blue_arrow_undo_icon
+        Me.btCancelar.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.btCancelar.Name = "btCancelar"
+        Me.btCancelar.Size = New System.Drawing.Size(98, 30)
+        Me.btCancelar.Text = "Cancelar"
+        '
+        'ToolStripSeparator3
+        '
+        Me.ToolStripSeparator3.Name = "ToolStripSeparator3"
+        Me.ToolStripSeparator3.Size = New System.Drawing.Size(6, 33)
         '
         'btAnular
         '
@@ -379,7 +375,7 @@ Partial Class FormBaseProductivo
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(905, 524)
+        Me.ClientSize = New System.Drawing.Size(905, 523)
         Me.Controls.Add(Me.ToolStrip1)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Panel1)
@@ -435,7 +431,6 @@ Partial Class FormBaseProductivo
     Public WithEvents dgRegistro As DataGridView
     Friend WithEvents GbInform_D As GroupBox
     Public WithEvents dgvParametro As DataGridView
-    Friend WithEvents Panel2 As Panel
     Public WithEvents GroupBox3 As GroupBox
     Friend WithEvents pictImagen As PictureBox
     Friend WithEvents btExaminar As Button

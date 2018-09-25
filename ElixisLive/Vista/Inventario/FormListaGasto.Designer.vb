@@ -25,8 +25,7 @@ Partial Class FormListaGasto
         '
         'LTitulo
         '
-        Me.LTitulo.Location = New System.Drawing.Point(-1, 5)
-        Me.LTitulo.Size = New System.Drawing.Size(567, 33)
+        Me.LTitulo.Size = New System.Drawing.Size(571, 42)
         Me.LTitulo.Text = "Lista de Precio Gastos"
         '
         'Pimagen

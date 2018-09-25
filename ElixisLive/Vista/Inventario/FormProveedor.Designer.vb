@@ -25,15 +25,14 @@ Partial Class FormProveedor
         '
         'LTitulo
         '
-        Me.LTitulo.Location = New System.Drawing.Point(2, 5)
-        Me.LTitulo.Size = New System.Drawing.Size(901, 33)
+        Me.LTitulo.Location = New System.Drawing.Point(2, 0)
+        Me.LTitulo.Size = New System.Drawing.Size(901, 43)
         Me.LTitulo.Text = "Proveedores"
         '
         'Pimagen
         '
         Me.Pimagen.Image = Global.ElixisLive.My.Resources.Resources.Apps_preferences_contact_list_icon__1_
-        Me.Pimagen.Location = New System.Drawing.Point(8, 3)
-        Me.Pimagen.Size = New System.Drawing.Size(46, 39)
+        Me.Pimagen.Size = New System.Drawing.Size(46, 42)
         Me.Pimagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         '
         'Label2
@@ -47,7 +46,7 @@ Partial Class FormProveedor
         Me.Label1.Size = New System.Drawing.Size(34, 19)
         Me.Label1.Text = "Nit:"
         '
-        'txtId
+        'txtCodigo
         '
         Me.txtCodigo.Size = New System.Drawing.Size(93, 22)
         '

@@ -25,14 +25,14 @@ Partial Class FormProducto
         '
         'LTitulo
         '
-        Me.LTitulo.Location = New System.Drawing.Point(0, 6)
-        Me.LTitulo.Size = New System.Drawing.Size(903, 33)
+        Me.LTitulo.Location = New System.Drawing.Point(0, 0)
+        Me.LTitulo.Size = New System.Drawing.Size(905, 42)
         Me.LTitulo.Text = "Productos"
         '
         'Pimagen
         '
         Me.Pimagen.Image = Global.ElixisLive.My.Resources.Resources.basket_full_icon
-        Me.Pimagen.Location = New System.Drawing.Point(6, 5)
+        Me.Pimagen.Location = New System.Drawing.Point(0, -3)
         Me.Pimagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         '
         'Label2
@@ -44,7 +44,7 @@ Partial Class FormProducto
         'FormProducto
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
-        Me.ClientSize = New System.Drawing.Size(905, 524)
+        Me.ClientSize = New System.Drawing.Size(905, 523)
         Me.Location = New System.Drawing.Point(0, 0)
         Me.Name = "FormProducto"
         Me.Panel1.ResumeLayout(False)

@@ -25,8 +25,8 @@ Partial Class FormListaServicio
         '
         'LTitulo
         '
-        Me.LTitulo.Location = New System.Drawing.Point(156, 6)
-        Me.LTitulo.Size = New System.Drawing.Size(249, 33)
+        Me.LTitulo.Location = New System.Drawing.Point(39, 0)
+        Me.LTitulo.Size = New System.Drawing.Size(530, 42)
         Me.LTitulo.Text = "Lista de Precio Servicios"
         '
         'Pimagen

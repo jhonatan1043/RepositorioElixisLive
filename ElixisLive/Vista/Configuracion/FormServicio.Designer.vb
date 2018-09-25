@@ -27,6 +27,7 @@ Partial Class FormServicio
         '
         'LTitulo
         '
+        Me.LTitulo.Size = New System.Drawing.Size(571, 41)
         Me.LTitulo.Text = "Servicios"
         '
         'FormServicio

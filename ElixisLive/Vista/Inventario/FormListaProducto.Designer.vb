@@ -25,8 +25,8 @@ Partial Class FormListaProducto
         '
         'LTitulo
         '
-        Me.LTitulo.Location = New System.Drawing.Point(155, 7)
-        Me.LTitulo.Size = New System.Drawing.Size(261, 33)
+        Me.LTitulo.Location = New System.Drawing.Point(44, 0)
+        Me.LTitulo.Size = New System.Drawing.Size(525, 42)
         Me.LTitulo.Text = "Lista de Precio Productos"
         '
         'Pimagen

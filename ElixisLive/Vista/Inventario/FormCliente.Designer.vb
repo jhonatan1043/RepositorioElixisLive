@@ -42,7 +42,7 @@ Partial Class FormCliente
         Me.Label1.Size = New System.Drawing.Size(34, 19)
         Me.Label1.Text = "Nit:"
         '
-        'txtId
+        'txtCodigo
         '
         Me.txtCodigo.Size = New System.Drawing.Size(92, 22)
         '
