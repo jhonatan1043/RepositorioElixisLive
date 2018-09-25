@@ -11,11 +11,11 @@
     Private Function validarCampos() As Boolean
         Dim resultado As Boolean
         If txtUsuario.Text = String.Empty Then
-            MsgBox("¡ Favor digitar un usuario valido !", MsgBoxStyle.Exclamation)
+            MsgBox(MensajeSistema.USUARIO_NO_EXISTE, MsgBoxStyle.Exclamation)
         ElseIf txtContraseña.Text = String.Empty Then
-            MsgBox("¡ Favor digitar la contraseña valida !", MsgBoxStyle.Exclamation)
+            MsgBox(MensajeSistema.CONTRASENA_NO_VALIDA, MsgBoxStyle.Exclamation)
         ElseIf CbEmpresa.SelectedIndex = 0 Then
-            MsgBox("¡ Seleccionar la empresa !", MsgBoxStyle.Exclamation)
+            MsgBox(MensajeSistema.SELECCIONAR_UNA_EMPRESA, MsgBoxStyle.Exclamation)
         Else
             resultado = True
         End If

@@ -19,7 +19,7 @@
             FormPrincipal.Show()
             banderaForm = True
         Else
-            MsgBox("¡ contraseña no validos !", , "Inicio Sesión")
+            MsgBox(MensajeSistema.CONTRASENA_VALIDA, , "Inicio Sesión")
         End If
         Return banderaForm
     End Function
