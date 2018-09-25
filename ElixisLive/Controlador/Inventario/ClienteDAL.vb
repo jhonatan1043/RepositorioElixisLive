@@ -1,6 +1,6 @@
 ﻿Imports System.Data.SqlClient
 Public Class ClienteDAL
-    Public Shared Function guardar(objProducto As producto) As producto
+    Public Shared Function guardar(objCliente As Cliente) As Cliente
         Dim objConexio As New CnxElixisLiveBD.ConexionBD
         Try
             objConexio.conectar()
@@ -10,13 +10,13 @@ Public Class ClienteDAL
                     comando.Transaction = trnsccion
                     comando.CommandType = CommandType.StoredProcedure
                     comando.Parameters.Clear()
-                    comando.CommandText = objProducto.sqlGuardar
-                    comando.Parameters.Add(New SqlParameter("@Codigo", SqlDbType.NVarChar)).Value = objProducto.codigoProducto
+                    comando.CommandText = objCliente.sqlGuardar
+                    comando.Parameters.Add(New SqlParameter("@Codigo", SqlDbType.NVarChar)).Value = objCliente.codigoProducto
                     comando.Parameters.Add(New SqlParameter("@Codigo_Empresa", SqlDbType.Int)).Value = SesionActual.idEmpresa
-                    comando.Parameters.Add(New SqlParameter("@Nombre", SqlDbType.NVarChar)).Value = objProducto.nombre
-                    comando.Parameters.Add(New SqlParameter("@Foto", SqlDbType.VarBinary)).Value = objProducto.foto
-                    comando.Parameters.Add(New SqlParameter("@Tabla", SqlDbType.Structured)).Value = objProducto.dtParametro
-                    objProducto.codigoProducto = CType(comando.ExecuteScalar, String)
+                    comando.Parameters.Add(New SqlParameter("@Nombre", SqlDbType.NVarChar)).Value = objCliente.nombre
+                    comando.Parameters.Add(New SqlParameter("@Foto", SqlDbType.VarBinary)).Value = objCliente.foto
+                    comando.Parameters.Add(New SqlParameter("@Tabla", SqlDbType.Structured)).Value = objCliente.dtParametro
+                    objCliente.codigoProducto = CType(comando.ExecuteScalar, String)
                     trnsccion.Commit()
                 End Using
             End Using
@@ -25,6 +25,6 @@ Public Class ClienteDAL
         Finally
             objConexio.desConectar()
         End Try
-        Return objProducto
+        Return objCliente
     End Function
 End Class

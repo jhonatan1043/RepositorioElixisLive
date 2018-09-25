@@ -1,7 +1,7 @@
 ﻿Public Class ClienteBLL
-    Public Shared Function guardar(objProducto As producto) As producto
-        ProductoDAL.guardar(objProducto)
-        Return objProducto
+    Public Shared Function guardar(objCliente As Cliente) As Cliente
+        ClienteDAL.guardar(objCliente)
+        Return objCliente
     End Function
     'Public Shared Sub verificarTipoControl(ByRef dgv As DataGridView)
     '    Dim valorTipo As String

@@ -1,7 +1,7 @@
 ﻿Public Class ProveedorBLL
-    Public Shared Function guardar(objProducto As producto) As producto
-        ProductoDAL.guardar(objProducto)
-        Return objProducto
+    Public Shared Function guardar(objProveedor As Proveedor) As Proveedor
+        ProveedorDAL.guardar(objProveedor)
+        Return objProveedor
     End Function
     'Public Shared Sub verificarTipoControl(ByRef dgv As DataGridView)
     '    Dim valorTipo As String
