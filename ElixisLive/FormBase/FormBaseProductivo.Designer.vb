@@ -33,11 +33,11 @@ Partial Class FormBaseProductivo
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.pictImagen = New System.Windows.Forms.PictureBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.GroupBox4 = New System.Windows.Forms.GroupBox()
+        Me.GbInform_D = New System.Windows.Forms.GroupBox()
         Me.dgvParametro = New System.Windows.Forms.DataGridView()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
         Me.dgRegistro = New System.Windows.Forms.DataGridView()
-        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.gbInform = New System.Windows.Forms.GroupBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Pimagen = New System.Windows.Forms.PictureBox()
         Me.LTitulo = New System.Windows.Forms.Label()
@@ -56,11 +56,11 @@ Partial Class FormBaseProductivo
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         CType(Me.pictImagen, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GroupBox4.SuspendLayout()
+        Me.GbInform_D.SuspendLayout()
         CType(Me.dgvParametro, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox5.SuspendLayout()
         CType(Me.dgRegistro, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GroupBox2.SuspendLayout()
+        Me.gbInform.SuspendLayout()
         Me.Panel1.SuspendLayout()
         CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ToolStrip1.SuspendLayout()
@@ -136,11 +136,11 @@ Partial Class FormBaseProductivo
         Me.GroupBox1.Controls.Add(Me.btExaminar)
         Me.GroupBox1.Controls.Add(Me.GroupBox3)
         Me.GroupBox1.Controls.Add(Me.Panel2)
-        Me.GroupBox1.Controls.Add(Me.GroupBox4)
+        Me.GroupBox1.Controls.Add(Me.GbInform_D)
         Me.GroupBox1.Controls.Add(Me.GroupBox5)
         Me.GroupBox1.Controls.Add(Me.txtBuscar)
         Me.GroupBox1.Controls.Add(Me.Label3)
-        Me.GroupBox1.Controls.Add(Me.GroupBox2)
+        Me.GroupBox1.Controls.Add(Me.gbInform)
         Me.GroupBox1.Location = New System.Drawing.Point(2, 41)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(901, 446)
@@ -187,17 +187,17 @@ Partial Class FormBaseProductivo
         Me.Panel2.Size = New System.Drawing.Size(905, 5)
         Me.Panel2.TabIndex = 15
         '
-        'GroupBox4
+        'GbInform_D
         '
-        Me.GroupBox4.Controls.Add(Me.dgvParametro)
-        Me.GroupBox4.Font = New System.Drawing.Font("Times New Roman", 8.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox4.ForeColor = System.Drawing.Color.RoyalBlue
-        Me.GroupBox4.Location = New System.Drawing.Point(6, 47)
-        Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Size = New System.Drawing.Size(672, 185)
-        Me.GroupBox4.TabIndex = 62
-        Me.GroupBox4.TabStop = False
-        Me.GroupBox4.Text = "Información de la Empresa"
+        Me.GbInform_D.Controls.Add(Me.dgvParametro)
+        Me.GbInform_D.Font = New System.Drawing.Font("Times New Roman", 8.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GbInform_D.ForeColor = System.Drawing.Color.RoyalBlue
+        Me.GbInform_D.Location = New System.Drawing.Point(6, 47)
+        Me.GbInform_D.Name = "GbInform_D"
+        Me.GbInform_D.Size = New System.Drawing.Size(672, 185)
+        Me.GbInform_D.TabIndex = 62
+        Me.GbInform_D.TabStop = False
+        Me.GbInform_D.Text = "Información de la Empresa"
         '
         'dgvParametro
         '
@@ -226,27 +226,30 @@ Partial Class FormBaseProductivo
         '
         'dgRegistro
         '
+        Me.dgRegistro.AllowUserToAddRows = False
+        Me.dgRegistro.AllowUserToDeleteRows = False
         Me.dgRegistro.BackgroundColor = System.Drawing.Color.White
         Me.dgRegistro.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgRegistro.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dgRegistro.Location = New System.Drawing.Point(3, 16)
         Me.dgRegistro.Name = "dgRegistro"
+        Me.dgRegistro.ReadOnly = True
         Me.dgRegistro.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgRegistro.Size = New System.Drawing.Size(883, 157)
         Me.dgRegistro.TabIndex = 0
         '
-        'GroupBox2
+        'gbInform
         '
-        Me.GroupBox2.BackColor = System.Drawing.Color.Transparent
-        Me.GroupBox2.Controls.Add(Me.txtCodigo)
-        Me.GroupBox2.Controls.Add(Me.TxtDescripcion)
-        Me.GroupBox2.Controls.Add(Me.Label2)
-        Me.GroupBox2.Controls.Add(Me.Label1)
-        Me.GroupBox2.Location = New System.Drawing.Point(6, 5)
-        Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(889, 40)
-        Me.GroupBox2.TabIndex = 9
-        Me.GroupBox2.TabStop = False
+        Me.gbInform.BackColor = System.Drawing.Color.Transparent
+        Me.gbInform.Controls.Add(Me.txtCodigo)
+        Me.gbInform.Controls.Add(Me.TxtDescripcion)
+        Me.gbInform.Controls.Add(Me.Label2)
+        Me.gbInform.Controls.Add(Me.Label1)
+        Me.gbInform.Location = New System.Drawing.Point(6, 5)
+        Me.gbInform.Name = "gbInform"
+        Me.gbInform.Size = New System.Drawing.Size(889, 40)
+        Me.gbInform.TabIndex = 9
+        Me.gbInform.TabStop = False
         '
         'Panel1
         '
@@ -391,12 +394,12 @@ Partial Class FormBaseProductivo
         Me.GroupBox1.PerformLayout()
         Me.GroupBox3.ResumeLayout(False)
         CType(Me.pictImagen, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.GroupBox4.ResumeLayout(False)
+        Me.GbInform_D.ResumeLayout(False)
         CType(Me.dgvParametro, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox5.ResumeLayout(False)
         CType(Me.dgRegistro, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.GroupBox2.ResumeLayout(False)
-        Me.GroupBox2.PerformLayout()
+        Me.gbInform.ResumeLayout(False)
+        Me.gbInform.PerformLayout()
         Me.Panel1.ResumeLayout(False)
         CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ToolStrip1.ResumeLayout(False)
@@ -415,7 +418,7 @@ Partial Class FormBaseProductivo
     Public WithEvents txtBuscar As TextBox
     Public WithEvents Label3 As Label
     Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents GroupBox2 As GroupBox
+    Friend WithEvents gbInform As GroupBox
     Public WithEvents ToolStrip1 As ToolStrip
     Friend WithEvents ToolStripSeparator1 As ToolStripSeparator
     Public WithEvents btNuevo As ToolStripButton
@@ -430,7 +433,7 @@ Partial Class FormBaseProductivo
     Friend WithEvents ToolStripSeparator6 As ToolStripSeparator
     Friend WithEvents GroupBox5 As GroupBox
     Public WithEvents dgRegistro As DataGridView
-    Friend WithEvents GroupBox4 As GroupBox
+    Friend WithEvents GbInform_D As GroupBox
     Public WithEvents dgvParametro As DataGridView
     Friend WithEvents Panel2 As Panel
     Public WithEvents GroupBox3 As GroupBox

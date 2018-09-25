@@ -12,16 +12,14 @@
         params.Add(idEmpresa)
 
         resultado = Funciones.consulInicioSesion(params)
-        SesionActual.idUsuario = resultado
-        SesionActual.idEmpresa = idEmpresa
 
         If Not String.IsNullOrEmpty(resultado) Then
+            SesionActual.idUsuario = resultado
+            SesionActual.idEmpresa = idEmpresa
             FormPrincipal.Show()
             banderaForm = True
         Else
             MsgBox("¡ contraseña no validos !", , "Inicio Sesión")
-            'FormPrincipal.Show()
-            'banderaForm = True
         End If
         Return banderaForm
     End Function

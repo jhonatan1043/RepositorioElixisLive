@@ -12,6 +12,7 @@
     Private Sub cargarRegistro()
         Dim params As New List(Of String)
         params.Add(txtFiltro.Text)
+        params.Add(SesionActual.idEmpresa)
         Generales.llenardgv(objConfig.sqlConsulta, dgRegistro, params)
     End Sub
     Private Sub btCancelar_Click(sender As Object, e As EventArgs) Handles btCancelar.Click
@@ -68,7 +69,7 @@
                     txtFiltro.ReadOnly = False
                     txtcodigo.Text = objConfig.codigo
                     cargarRegistro()
-                    MsgBox(MensajeSistema.REGISTRADO_CON_EXITO, MsgBoxStyle.Information)
+                    '  MsgBox(MensajeSistema.REGISTRADO_CON_EXITO, MsgBoxStyle.Information)
                 End If
             Catch ex As Exception
                 MsgBox(ex.Message)

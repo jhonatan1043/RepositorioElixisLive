@@ -20,8 +20,8 @@
         Return listaParams
 
     End Function
-    Public Shared Function consulInicioSesion(params As List(Of String)) As Integer
-        Dim idUsuario As Integer
+    Public Shared Function consulInicioSesion(params As List(Of String)) As String
+        Dim idUsuario As String = String.Empty
         Dim dFila As DataRow
         Try
             dFila = Generales.cargarItem("[SP_ADMIN_INICIO_SESION]", params)

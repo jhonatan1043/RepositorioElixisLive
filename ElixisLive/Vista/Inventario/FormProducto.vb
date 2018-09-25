@@ -5,6 +5,7 @@
         objProducto = New producto
         Try
             params.Add(ElementoMenu.codigo)
+            params.Add(SesionActual.idEmpresa)
             Generales.deshabilitarBotones(ToolStrip1)
             Generales.deshabilitarControles(Me)
             txtBuscar.ReadOnly = False
@@ -58,6 +59,7 @@
     Private Sub cargarRegistro()
         Dim params As New List(Of String)
         params.Add(txtBuscar.Text)
+        params.Add(SesionActual.idEmpresa)
         Try
             Generales.llenardgv(objProducto.sqlConsulta, dgRegistro, params)
             objProducto.dtRegistro = dgRegistro.DataSource
@@ -135,7 +137,9 @@
         If MsgBox(MensajeSistema.CANCELAR, 32 + 1, "Cancelar") = 1 Then
             Generales.deshabilitarBotones(ToolStrip1)
             Generales.deshabilitarControles(Me)
-            Generales.limpiarControles(Me)
+            Generales.limpiarControles(GbInform_D)
+            Generales.limpiarControles(gbInform)
+            pictImagen.Image = Nothing
             txtBuscar.ReadOnly = False
             btNuevo.Enabled = True
         End If
@@ -146,6 +150,7 @@
             Generales.habilitarControles(Me)
             txtBuscar.ReadOnly = True
             btCancelar.Enabled = True
+            btRegistrar.Enabled = True
             txtBuscar.ReadOnly = True
         End If
     End Sub

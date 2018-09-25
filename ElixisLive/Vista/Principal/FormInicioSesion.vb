@@ -1,11 +1,26 @@
 ﻿Public Class FormInicioSesion
     Dim objInicioSesionBLL As New InicioSesionBLL
     Private Sub OK_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles OK.Click
-        cargarObjeto()
-        If objInicioSesionBLL.inicioSesionCargar() = True Then
-            Hide()
+        If validarCampos() = True Then
+            cargarObjeto()
+            If objInicioSesionBLL.inicioSesionCargar() = True Then
+                Hide()
+            End If
         End If
     End Sub
+    Private Function validarCampos() As Boolean
+        Dim resultado As Boolean
+        If txtUsuario.Text = String.Empty Then
+            MsgBox("¡ Favor digitar un usuario valido !", MsgBoxStyle.Exclamation)
+        ElseIf txtContraseña.Text = String.Empty Then
+            MsgBox("¡ Favor digitar la contraseña valida !", MsgBoxStyle.Exclamation)
+        ElseIf CbEmpresa.SelectedIndex = 0 Then
+            MsgBox("¡ Seleccionar la empresa !", MsgBoxStyle.Exclamation)
+        Else
+            resultado = True
+        End If
+        Return resultado
+    End Function
     Private Sub Cancel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Cancel.Click
         Me.Close()
     End Sub
