@@ -298,7 +298,8 @@ Public Class Generales
             MsgBox(ex.Message)
         End Try
     End Sub
-    Public Shared Function consultarTipoControl(dgv As DataGridView, posicion As Integer) As Boolean
+    Public Shared Function consultarTipoControl(dgv As DataGridView,
+                                                posicion As Integer) As Boolean
         Dim params As New List(Of String)
         Dim dfil As DataRow
         Dim controlDgv As String
@@ -312,12 +313,15 @@ Public Class Generales
             dfil = Generales.cargarItem("SP_CONSULTAR_CONTROL", params)
 
             If Not IsNothing(dfil) Then
+                params = Nothing
                 controlDgv = dfil("control")
                 consulta = dfil("Consulta")
                 valorInterno = dfil("valorInterno")
                 valorExterno = dfil("valorExterno")
-                dgv.Rows(posicion).Cells("Datos") = crearControl(controlDgv, consulta, valorInterno, valorExterno)
+
+                dgv.Rows(posicion).Cells("Datos") = crearControl(controlDgv, consulta, valorInterno, valorExterno, params)
                 resultado = True
+
             End If
 
             Return resultado
@@ -326,12 +330,16 @@ Public Class Generales
             Throw ex
         End Try
     End Function
-    Private Shared Function crearControl(controlDgv As String, consulta As String, valorInterno As String, valorExterno As String)
+    Private Shared Function crearControl(controlDgv As String,
+                                         consulta As String,
+                                         valorInterno As String,
+                                         valorExterno As String,
+                                         params As List(Of String))
         Dim cell As Object = Nothing
 
         Select Case controlDgv
             Case "combo"
-                cell = dgvComboCellSinParametro(consulta, valorInterno, valorExterno)
+                cell = dgvComboCellSinParametro(consulta, valorInterno, valorExterno, params)
             Case "seleccion"
                 Dim tipoControl As New DataGridViewCheckBoxCell
                 cell = tipoControl
@@ -342,7 +350,10 @@ Public Class Generales
 
         Return cell
     End Function
-    Private Shared Function dgvComboCellSinParametro(consulta As String, valorInterno As String, valorExterno As String)
+    Private Shared Function dgvComboCellSinParametro(consulta As String,
+                                                     valorInterno As String,
+                                                     valorExterno As String,
+                                                     params As List(Of String))
         Dim contedor As New DataGridViewComboBoxCell
         Dim dtTabla As New DataTable
         Dim resultado As Boolean
@@ -357,7 +368,8 @@ Public Class Generales
             dtTabla.Rows.Add(drFila)
 
             objConexion.conectar()
-            Using da = New SqlDataAdapter(consulta, objConexion.cnxbd)
+
+            Using da = New SqlDataAdapter(consulta & Funciones.getParametros(params), objConexion.cnxbd)
                 da.Fill(dtTabla)
             End Using
 

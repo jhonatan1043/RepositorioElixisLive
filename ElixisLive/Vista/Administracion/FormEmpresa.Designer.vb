@@ -23,15 +23,21 @@ Partial Class FormEmpresa
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Pimagen = New System.Windows.Forms.PictureBox()
         Me.LTitulo = New System.Windows.Forms.Label()
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
         Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
+        Me.btNuevo = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
+        Me.btRegistrar = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripSeparator4 = New System.Windows.Forms.ToolStripSeparator()
+        Me.btEditar = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripSeparator5 = New System.Windows.Forms.ToolStripSeparator()
+        Me.btCancelar = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripSeparator3 = New System.Windows.Forms.ToolStripSeparator()
+        Me.btAnular = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripSeparator6 = New System.Windows.Forms.ToolStripSeparator()
-        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.GbInform = New System.Windows.Forms.GroupBox()
         Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -41,31 +47,24 @@ Partial Class FormEmpresa
         Me.Label3 = New System.Windows.Forms.Label()
         Me.txtBuscar = New System.Windows.Forms.TextBox()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.GroupBox4 = New System.Windows.Forms.GroupBox()
+        Me.pictImagen = New System.Windows.Forms.PictureBox()
+        Me.GbInform_D = New System.Windows.Forms.GroupBox()
         Me.dgvParametro = New System.Windows.Forms.DataGridView()
-        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.dgRegistro = New System.Windows.Forms.DataGridView()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.btNuevo = New System.Windows.Forms.ToolStripButton()
-        Me.btRegistrar = New System.Windows.Forms.ToolStripButton()
-        Me.btEditar = New System.Windows.Forms.ToolStripButton()
-        Me.btCancelar = New System.Windows.Forms.ToolStripButton()
-        Me.btAnular = New System.Windows.Forms.ToolStripButton()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.Pimagen = New System.Windows.Forms.PictureBox()
+        Me.btExaminar = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
+        CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ToolStrip1.SuspendLayout()
-        Me.GroupBox2.SuspendLayout()
+        Me.GbInform.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
-        Me.GroupBox4.SuspendLayout()
+        CType(Me.pictImagen, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GbInform_D.SuspendLayout()
         CType(Me.dgvParametro, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox5.SuspendLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgRegistro, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
@@ -77,6 +76,16 @@ Partial Class FormEmpresa
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(904, 44)
         Me.Panel1.TabIndex = 0
+        '
+        'Pimagen
+        '
+        Me.Pimagen.Image = Global.ElixisLive.My.Resources.Resources.company_building_icon
+        Me.Pimagen.Location = New System.Drawing.Point(-1, -3)
+        Me.Pimagen.Name = "Pimagen"
+        Me.Pimagen.Size = New System.Drawing.Size(46, 44)
+        Me.Pimagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.Pimagen.TabIndex = 1
+        Me.Pimagen.TabStop = False
         '
         'LTitulo
         '
@@ -96,7 +105,7 @@ Partial Class FormEmpresa
         Me.ToolStrip1.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.ToolStrip1.ImageScalingSize = New System.Drawing.Size(26, 26)
         Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripSeparator1, Me.btNuevo, Me.ToolStripSeparator2, Me.btRegistrar, Me.ToolStripSeparator4, Me.btEditar, Me.ToolStripSeparator5, Me.btCancelar, Me.ToolStripSeparator3, Me.btAnular, Me.ToolStripSeparator6})
-        Me.ToolStrip1.Location = New System.Drawing.Point(0, 490)
+        Me.ToolStrip1.Location = New System.Drawing.Point(0, 491)
         Me.ToolStrip1.Name = "ToolStrip1"
         Me.ToolStrip1.Size = New System.Drawing.Size(905, 33)
         Me.ToolStrip1.TabIndex = 14
@@ -107,45 +116,95 @@ Partial Class FormEmpresa
         Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
         Me.ToolStripSeparator1.Size = New System.Drawing.Size(6, 33)
         '
+        'btNuevo
+        '
+        Me.btNuevo.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btNuevo.ForeColor = System.Drawing.Color.RoyalBlue
+        Me.btNuevo.Image = Global.ElixisLive.My.Resources.Resources.Files_New_File_icon
+        Me.btNuevo.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.btNuevo.Name = "btNuevo"
+        Me.btNuevo.Size = New System.Drawing.Size(81, 30)
+        Me.btNuevo.Text = "Nuevo"
+        '
         'ToolStripSeparator2
         '
         Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
         Me.ToolStripSeparator2.Size = New System.Drawing.Size(6, 33)
+        '
+        'btRegistrar
+        '
+        Me.btRegistrar.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btRegistrar.ForeColor = System.Drawing.Color.RoyalBlue
+        Me.btRegistrar.Image = Global.ElixisLive.My.Resources.Resources.Save_icon__1_
+        Me.btRegistrar.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.btRegistrar.Name = "btRegistrar"
+        Me.btRegistrar.Size = New System.Drawing.Size(98, 30)
+        Me.btRegistrar.Text = "Registrar"
         '
         'ToolStripSeparator4
         '
         Me.ToolStripSeparator4.Name = "ToolStripSeparator4"
         Me.ToolStripSeparator4.Size = New System.Drawing.Size(6, 33)
         '
+        'btEditar
+        '
+        Me.btEditar.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btEditar.ForeColor = System.Drawing.Color.RoyalBlue
+        Me.btEditar.Image = Global.ElixisLive.My.Resources.Resources.pencil_icon__1_
+        Me.btEditar.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.btEditar.Name = "btEditar"
+        Me.btEditar.Size = New System.Drawing.Size(80, 30)
+        Me.btEditar.Text = "Editar"
+        '
         'ToolStripSeparator5
         '
         Me.ToolStripSeparator5.Name = "ToolStripSeparator5"
         Me.ToolStripSeparator5.Size = New System.Drawing.Size(6, 33)
+        '
+        'btCancelar
+        '
+        Me.btCancelar.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btCancelar.ForeColor = System.Drawing.Color.RoyalBlue
+        Me.btCancelar.Image = Global.ElixisLive.My.Resources.Resources.Actions_blue_arrow_undo_icon
+        Me.btCancelar.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.btCancelar.Name = "btCancelar"
+        Me.btCancelar.Size = New System.Drawing.Size(98, 30)
+        Me.btCancelar.Text = "Cancelar"
         '
         'ToolStripSeparator3
         '
         Me.ToolStripSeparator3.Name = "ToolStripSeparator3"
         Me.ToolStripSeparator3.Size = New System.Drawing.Size(6, 33)
         '
+        'btAnular
+        '
+        Me.btAnular.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btAnular.ForeColor = System.Drawing.Color.RoyalBlue
+        Me.btAnular.Image = Global.ElixisLive.My.Resources.Resources.document_delete_icon__1_
+        Me.btAnular.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.btAnular.Name = "btAnular"
+        Me.btAnular.Size = New System.Drawing.Size(83, 30)
+        Me.btAnular.Text = "Anular"
+        '
         'ToolStripSeparator6
         '
         Me.ToolStripSeparator6.Name = "ToolStripSeparator6"
         Me.ToolStripSeparator6.Size = New System.Drawing.Size(6, 33)
         '
-        'GroupBox2
+        'GbInform
         '
-        Me.GroupBox2.BackColor = System.Drawing.Color.Transparent
-        Me.GroupBox2.Controls.Add(Me.DateTimePicker1)
-        Me.GroupBox2.Controls.Add(Me.Label1)
-        Me.GroupBox2.Controls.Add(Me.Label2)
-        Me.GroupBox2.Controls.Add(Me.Label4)
-        Me.GroupBox2.Controls.Add(Me.txtId)
-        Me.GroupBox2.Controls.Add(Me.TxtDescripcion)
-        Me.GroupBox2.Location = New System.Drawing.Point(4, 7)
-        Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(890, 40)
-        Me.GroupBox2.TabIndex = 9
-        Me.GroupBox2.TabStop = False
+        Me.GbInform.BackColor = System.Drawing.Color.Transparent
+        Me.GbInform.Controls.Add(Me.DateTimePicker1)
+        Me.GbInform.Controls.Add(Me.Label1)
+        Me.GbInform.Controls.Add(Me.Label2)
+        Me.GbInform.Controls.Add(Me.Label4)
+        Me.GbInform.Controls.Add(Me.txtId)
+        Me.GbInform.Controls.Add(Me.TxtDescripcion)
+        Me.GbInform.Location = New System.Drawing.Point(4, 7)
+        Me.GbInform.Name = "GbInform"
+        Me.GbInform.Size = New System.Drawing.Size(890, 40)
+        Me.GbInform.TabIndex = 9
+        Me.GbInform.TabStop = False
         '
         'DateTimePicker1
         '
@@ -237,36 +296,35 @@ Partial Class FormEmpresa
         '
         'GroupBox3
         '
-        Me.GroupBox3.Controls.Add(Me.PictureBox1)
+        Me.GroupBox3.Controls.Add(Me.pictImagen)
         Me.GroupBox3.Location = New System.Drawing.Point(757, 51)
         Me.GroupBox3.Name = "GroupBox3"
         Me.GroupBox3.Size = New System.Drawing.Size(136, 148)
         Me.GroupBox3.TabIndex = 56
         Me.GroupBox3.TabStop = False
         '
-        'Button1
+        'pictImagen
         '
-        Me.Button1.BackColor = System.Drawing.Color.White
-        Me.Button1.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.ForeColor = System.Drawing.Color.RoyalBlue
-        Me.Button1.Location = New System.Drawing.Point(789, 202)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(84, 25)
-        Me.Button1.TabIndex = 57
-        Me.Button1.Text = "Examinar..."
-        Me.Button1.UseVisualStyleBackColor = False
+        Me.pictImagen.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.pictImagen.Image = Global.ElixisLive.My.Resources.Resources.logo_az
+        Me.pictImagen.Location = New System.Drawing.Point(3, 16)
+        Me.pictImagen.Name = "pictImagen"
+        Me.pictImagen.Size = New System.Drawing.Size(130, 129)
+        Me.pictImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
+        Me.pictImagen.TabIndex = 0
+        Me.pictImagen.TabStop = False
         '
-        'GroupBox4
+        'GbInform_D
         '
-        Me.GroupBox4.Controls.Add(Me.dgvParametro)
-        Me.GroupBox4.Font = New System.Drawing.Font("Times New Roman", 8.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox4.ForeColor = System.Drawing.Color.RoyalBlue
-        Me.GroupBox4.Location = New System.Drawing.Point(4, 51)
-        Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Size = New System.Drawing.Size(748, 176)
-        Me.GroupBox4.TabIndex = 59
-        Me.GroupBox4.TabStop = False
-        Me.GroupBox4.Text = "Información de la Empresa"
+        Me.GbInform_D.Controls.Add(Me.dgvParametro)
+        Me.GbInform_D.Font = New System.Drawing.Font("Times New Roman", 8.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GbInform_D.ForeColor = System.Drawing.Color.RoyalBlue
+        Me.GbInform_D.Location = New System.Drawing.Point(4, 51)
+        Me.GbInform_D.Name = "GbInform_D"
+        Me.GbInform_D.Size = New System.Drawing.Size(748, 176)
+        Me.GbInform_D.TabIndex = 59
+        Me.GbInform_D.TabStop = False
+        Me.GbInform_D.Text = "Información de la Empresa"
         '
         'dgvParametro
         '
@@ -276,7 +334,6 @@ Partial Class FormEmpresa
         Me.dgvParametro.AllowUserToResizeRows = False
         Me.dgvParametro.BackgroundColor = System.Drawing.SystemColors.Control
         Me.dgvParametro.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvParametro.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1})
         Me.dgvParametro.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dgvParametro.Location = New System.Drawing.Point(3, 16)
         Me.dgvParametro.MultiSelect = False
@@ -284,14 +341,9 @@ Partial Class FormEmpresa
         Me.dgvParametro.Size = New System.Drawing.Size(742, 157)
         Me.dgvParametro.TabIndex = 0
         '
-        'Column1
-        '
-        Me.Column1.HeaderText = "Column1"
-        Me.Column1.Name = "Column1"
-        '
         'GroupBox5
         '
-        Me.GroupBox5.Controls.Add(Me.DataGridView1)
+        Me.GroupBox5.Controls.Add(Me.dgRegistro)
         Me.GroupBox5.Font = New System.Drawing.Font("Times New Roman", 8.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox5.ForeColor = System.Drawing.Color.RoyalBlue
         Me.GroupBox5.Location = New System.Drawing.Point(4, 261)
@@ -301,102 +353,43 @@ Partial Class FormEmpresa
         Me.GroupBox5.TabStop = False
         Me.GroupBox5.Text = "Registros Almacenados"
         '
-        'DataGridView1
+        'dgRegistro
         '
-        Me.DataGridView1.BackgroundColor = System.Drawing.SystemColors.Control
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.DataGridView1.Location = New System.Drawing.Point(3, 16)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(883, 157)
-        Me.DataGridView1.TabIndex = 0
+        Me.dgRegistro.BackgroundColor = System.Drawing.SystemColors.Control
+        Me.dgRegistro.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgRegistro.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.dgRegistro.Location = New System.Drawing.Point(3, 16)
+        Me.dgRegistro.Name = "dgRegistro"
+        Me.dgRegistro.Size = New System.Drawing.Size(883, 157)
+        Me.dgRegistro.TabIndex = 0
         '
         'GroupBox1
         '
         Me.GroupBox1.BackColor = System.Drawing.Color.Transparent
         Me.GroupBox1.Controls.Add(Me.GroupBox5)
-        Me.GroupBox1.Controls.Add(Me.GroupBox4)
-        Me.GroupBox1.Controls.Add(Me.Button1)
+        Me.GroupBox1.Controls.Add(Me.GbInform_D)
+        Me.GroupBox1.Controls.Add(Me.btExaminar)
         Me.GroupBox1.Controls.Add(Me.GroupBox3)
         Me.GroupBox1.Controls.Add(Me.txtBuscar)
         Me.GroupBox1.Controls.Add(Me.Label3)
-        Me.GroupBox1.Controls.Add(Me.GroupBox2)
+        Me.GroupBox1.Controls.Add(Me.GbInform)
         Me.GroupBox1.Location = New System.Drawing.Point(4, 43)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(898, 443)
         Me.GroupBox1.TabIndex = 11
         Me.GroupBox1.TabStop = False
         '
-        'btNuevo
+        'btExaminar
         '
-        Me.btNuevo.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btNuevo.ForeColor = System.Drawing.Color.RoyalBlue
-        Me.btNuevo.Image = Global.ElixisLive.My.Resources.Resources.Files_New_File_icon
-        Me.btNuevo.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.btNuevo.Name = "btNuevo"
-        Me.btNuevo.Size = New System.Drawing.Size(81, 30)
-        Me.btNuevo.Text = "Nuevo"
-        '
-        'btRegistrar
-        '
-        Me.btRegistrar.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btRegistrar.ForeColor = System.Drawing.Color.RoyalBlue
-        Me.btRegistrar.Image = Global.ElixisLive.My.Resources.Resources.Save_icon__1_
-        Me.btRegistrar.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.btRegistrar.Name = "btRegistrar"
-        Me.btRegistrar.Size = New System.Drawing.Size(98, 30)
-        Me.btRegistrar.Text = "Registrar"
-        '
-        'btEditar
-        '
-        Me.btEditar.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btEditar.ForeColor = System.Drawing.Color.RoyalBlue
-        Me.btEditar.Image = Global.ElixisLive.My.Resources.Resources.pencil_icon__1_
-        Me.btEditar.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.btEditar.Name = "btEditar"
-        Me.btEditar.Size = New System.Drawing.Size(80, 30)
-        Me.btEditar.Text = "Editar"
-        '
-        'btCancelar
-        '
-        Me.btCancelar.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btCancelar.ForeColor = System.Drawing.Color.RoyalBlue
-        Me.btCancelar.Image = Global.ElixisLive.My.Resources.Resources.Actions_blue_arrow_undo_icon
-        Me.btCancelar.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.btCancelar.Name = "btCancelar"
-        Me.btCancelar.Size = New System.Drawing.Size(98, 30)
-        Me.btCancelar.Text = "Cancelar"
-        '
-        'btAnular
-        '
-        Me.btAnular.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btAnular.ForeColor = System.Drawing.Color.RoyalBlue
-        Me.btAnular.Image = Global.ElixisLive.My.Resources.Resources.document_delete_icon__1_
-        Me.btAnular.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.btAnular.Name = "btAnular"
-        Me.btAnular.Size = New System.Drawing.Size(83, 30)
-        Me.btAnular.Text = "Anular"
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.PictureBox1.Image = Global.ElixisLive.My.Resources.Resources.logo_az
-        Me.PictureBox1.Location = New System.Drawing.Point(3, 16)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(130, 129)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
-        Me.PictureBox1.TabIndex = 0
-        Me.PictureBox1.TabStop = False
-        '
-        'Pimagen
-        '
-        Me.Pimagen.Image = Global.ElixisLive.My.Resources.Resources.company_building_icon
-        Me.Pimagen.Location = New System.Drawing.Point(-1, -3)
-        Me.Pimagen.Name = "Pimagen"
-        Me.Pimagen.Size = New System.Drawing.Size(46, 44)
-        Me.Pimagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.Pimagen.TabIndex = 1
-        Me.Pimagen.TabStop = False
+        Me.btExaminar.BackColor = System.Drawing.Color.White
+        Me.btExaminar.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btExaminar.ForeColor = System.Drawing.Color.RoyalBlue
+        Me.btExaminar.Location = New System.Drawing.Point(789, 202)
+        Me.btExaminar.Name = "btExaminar"
+        Me.btExaminar.Size = New System.Drawing.Size(84, 25)
+        Me.btExaminar.TabIndex = 57
+        Me.btExaminar.Text = "Examinar..."
+        Me.btExaminar.UseVisualStyleBackColor = False
         '
         'FormEmpresa
         '
@@ -404,7 +397,7 @@ Partial Class FormEmpresa
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(905, 523)
+        Me.ClientSize = New System.Drawing.Size(905, 524)
         Me.Controls.Add(Me.ToolStrip1)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Panel1)
@@ -416,19 +409,19 @@ Partial Class FormEmpresa
         Me.Name = "FormEmpresa"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Panel1.ResumeLayout(False)
+        CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ToolStrip1.ResumeLayout(False)
         Me.ToolStrip1.PerformLayout()
-        Me.GroupBox2.ResumeLayout(False)
-        Me.GroupBox2.PerformLayout()
+        Me.GbInform.ResumeLayout(False)
+        Me.GbInform.PerformLayout()
         Me.GroupBox3.ResumeLayout(False)
-        Me.GroupBox4.ResumeLayout(False)
+        CType(Me.pictImagen, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GbInform_D.ResumeLayout(False)
         CType(Me.dgvParametro, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox5.ResumeLayout(False)
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgRegistro, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -448,7 +441,7 @@ Partial Class FormEmpresa
     Friend WithEvents ToolStripSeparator5 As ToolStripSeparator
     Public WithEvents btAnular As ToolStripButton
     Friend WithEvents ToolStripSeparator6 As ToolStripSeparator
-    Friend WithEvents GroupBox2 As GroupBox
+    Friend WithEvents GbInform As GroupBox
     Friend WithEvents DateTimePicker1 As DateTimePicker
     Public WithEvents Label1 As Label
     Public WithEvents Label2 As Label
@@ -458,12 +451,11 @@ Partial Class FormEmpresa
     Public WithEvents Label3 As Label
     Public WithEvents txtBuscar As TextBox
     Public WithEvents GroupBox3 As GroupBox
-    Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents Button1 As Button
-    Friend WithEvents GroupBox4 As GroupBox
+    Friend WithEvents pictImagen As PictureBox
+    Friend WithEvents GbInform_D As GroupBox
     Public WithEvents dgvParametro As DataGridView
-    Friend WithEvents Column1 As DataGridViewTextBoxColumn
     Friend WithEvents GroupBox5 As GroupBox
-    Public WithEvents DataGridView1 As DataGridView
+    Public WithEvents dgRegistro As DataGridView
     Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents btExaminar As Button
 End Class
