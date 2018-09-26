@@ -123,17 +123,16 @@
     Private Sub btRegistrar_Click(sender As Object, e As EventArgs) Handles btRegistrar.Click
         dgvParametro.EndEdit()
         If validarCampos() = True Then
-            If MsgBox(MensajeSistema.REGISTRAR, 32 + 1, "Registrar") = 1 Then
-                cargarObjeto()
-                ProductoBLL.guardar(objProducto)
-                Generales.deshabilitarBotones(ToolStrip1)
-                Generales.deshabilitarControles(Me)
-                txtCodigo.Text = objProducto.codigoProducto
-                cargarRegistro()
-                txtBuscar.ReadOnly = False
-                btNuevo.Enabled = True
-                btEditar.Enabled = True
-            End If
+            cargarObjeto()
+            ProductoBLL.guardar(objProducto)
+            Generales.deshabilitarBotones(ToolStrip1)
+            Generales.deshabilitarControles(Me)
+            txtCodigo.Text = objProducto.codigoProducto
+            cargarRegistro()
+            txtBuscar.ReadOnly = False
+            btNuevo.Enabled = True
+            btEditar.Enabled = True
+            Generales.mostrarMensaje(MensajeSistema.REGISTRO_GUARDADO, My.Resources.Save_icon__1_)
         End If
     End Sub
     Private Sub btCancelar_Click(sender As Object, e As EventArgs) Handles btCancelar.Click
@@ -147,6 +146,7 @@
             btNuevo.Enabled = True
         End If
     End Sub
+
     Private Sub btEditar_Click(sender As Object, e As EventArgs) Handles btEditar.Click
         If MsgBox(MensajeSistema.EDITAR, 32 + 1, "Editar") = 1 Then
             Generales.deshabilitarBotones(ToolStrip1)
@@ -166,6 +166,7 @@
                 pictImagen.Image = Nothing
                 cargarRegistro()
                 btNuevo.Enabled = True
+                Generales.mostrarMensaje(MensajeSistema.REGISTRO_ANULADO, My.Resources.document_delete_icon__1_)
             End If
         End If
     End Sub

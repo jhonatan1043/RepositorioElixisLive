@@ -389,6 +389,10 @@ Public Class Generales
 
         Return contedor
     End Function
+    Public Shared Sub mostrarMensaje(ByVal mensaje As String, icono As Image)
+        Dim popupmotify1 As New NotifySenderControl.NotifySender
+        popupmotify1.Show("¡Atención!", mensaje, icono)
+    End Sub
     Public Shared Function ejecutarSQL(ByVal cadena As String) As Boolean
         Dim respuesta As Boolean
         Try

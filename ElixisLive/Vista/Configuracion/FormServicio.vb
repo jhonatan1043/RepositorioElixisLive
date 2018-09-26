@@ -61,25 +61,24 @@
         Return badraResultado
     End Function
     Private Sub btRegistrar_Click(sender As Object, e As EventArgs) Handles btRegistrar.Click
-        If MsgBox(MensajeSistema.REGISTRAR, 32 + 1, "Registrar") = 1 Then
-            Try
+        Try
 
-                If validaciones() = True Then
-                    cargarObjeto()
-                    ConfigBLL.guardar(objConfig)
-                    Generales.deshabilitarBotones(ToolStrip1)
-                    Generales.deshabilitarControles(Me)
-                    btNuevo.Enabled = True
-                    btAnular.Enabled = True
-                    txtFiltro.ReadOnly = False
-                    txtcodigo.Text = objConfig.codigo
-                    cargarRegistro()
-                    'MsgBox(MensajeSistema.REGISTRADO_CON_EXITO, MsgBoxStyle.Information)
-                End If
-            Catch ex As Exception
-                MsgBox(ex.Message)
-            End Try
-        End If
+            If validaciones() = True Then
+                cargarObjeto()
+                ConfigBLL.guardar(objConfig)
+                Generales.deshabilitarBotones(ToolStrip1)
+                Generales.deshabilitarControles(Me)
+                btNuevo.Enabled = True
+                btAnular.Enabled = True
+                txtFiltro.ReadOnly = False
+                txtcodigo.Text = objConfig.codigo
+                cargarRegistro()
+                'MsgBox(MensajeSistema.REGISTRADO_CON_EXITO, MsgBoxStyle.Information)
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+
     End Sub
     Private Sub cargarObjeto()
         objConfig.codigo = If(String.IsNullOrEmpty(txtcodigo.Text), Nothing, txtcodigo.Text)

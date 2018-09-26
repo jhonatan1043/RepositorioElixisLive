@@ -61,8 +61,8 @@
         Return badraResultado
     End Function
     Private Sub btRegistrar_Click(sender As Object, e As EventArgs) Handles btRegistrar.Click
-        If MsgBox(MensajeSistema.REGISTRAR, 32 + 1, "Registrar") = 1 Then
-            Try
+
+        Try
 
                 If validaciones() = True Then
                     cargarObjeto()
@@ -79,7 +79,7 @@
             Catch ex As Exception
                 MsgBox(ex.Message)
             End Try
-        End If
+
     End Sub
     Private Sub cargarObjeto()
         objConfig.codigo = If(String.IsNullOrEmpty(txtcodigo.Text), Nothing, txtcodigo.Text)
