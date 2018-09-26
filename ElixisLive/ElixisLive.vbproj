@@ -175,22 +175,10 @@
     <Compile Include="Vista\Inventario\FormCliente.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vista\Inventario\FormListaGasto.Designer.vb">
-      <DependentUpon>FormListaGasto.vb</DependentUpon>
+    <Compile Include="Vista\Inventario\FormListaPrecio.Designer.vb">
+      <DependentUpon>FormListaPrecio.vb</DependentUpon>
     </Compile>
-    <Compile Include="Vista\Inventario\FormListaGasto.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Vista\Inventario\FormListaProducto.Designer.vb">
-      <DependentUpon>FormListaProducto.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Vista\Inventario\FormListaProducto.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Vista\Inventario\FormListaServicio.Designer.vb">
-      <DependentUpon>FormListaServicio.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Vista\Inventario\FormListaServicio.vb">
+    <Compile Include="Vista\Inventario\FormListaPrecio.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Vista\Inventario\FormProducto.Designer.vb">
@@ -268,14 +256,8 @@
     <EmbeddedResource Include="Vista\Inventario\FormCliente.resx">
       <DependentUpon>FormCliente.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vista\Inventario\FormListaGasto.resx">
-      <DependentUpon>FormListaGasto.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Vista\Inventario\FormListaProducto.resx">
-      <DependentUpon>FormListaProducto.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Vista\Inventario\FormListaServicio.resx">
-      <DependentUpon>FormListaServicio.vb</DependentUpon>
+    <EmbeddedResource Include="Vista\Inventario\FormListaPrecio.resx">
+      <DependentUpon>FormListaPrecio.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\Inventario\FormProducto.resx">
       <DependentUpon>FormProducto.vb</DependentUpon>

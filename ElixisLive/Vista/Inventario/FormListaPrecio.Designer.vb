@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class FormListaServicio
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
+Partial Class FormListaPrecio
     Inherits ElixisLive.FormBaseLista
 
     'Form invalida a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         If disposing AndAlso components IsNot Nothing Then
             components.Dispose()
@@ -17,7 +17,7 @@ Partial Class FormListaServicio
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.Panel1.SuspendLayout()
         CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -25,21 +25,20 @@ Partial Class FormListaServicio
         '
         'LTitulo
         '
-        Me.LTitulo.Location = New System.Drawing.Point(39, 0)
-        Me.LTitulo.Size = New System.Drawing.Size(530, 42)
-        Me.LTitulo.Text = "Lista de Precio Servicios"
+        Me.LTitulo.Size = New System.Drawing.Size(571, 42)
+        Me.LTitulo.Text = "Lista de Precio Gastos"
         '
         'Pimagen
         '
         Me.Pimagen.Image = Global.ElixisLive.My.Resources.Resources.aplica
         Me.Pimagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         '
-        'FormListaServicio
+        'FormListaGasto
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.ClientSize = New System.Drawing.Size(571, 387)
         Me.Location = New System.Drawing.Point(0, 0)
-        Me.Name = "FormListaServicio"
+        Me.Name = "FormListaPrecio"
         Me.Panel1.ResumeLayout(False)
         CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
