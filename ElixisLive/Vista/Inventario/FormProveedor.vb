@@ -125,17 +125,15 @@
     Private Sub btRegistrar_Click(sender As Object, e As EventArgs) Handles btRegistrar.Click
         dgvParametro.EndEdit()
         If validarCampos() = True Then
-            If MsgBox(MensajeSistema.REGISTRAR, 32 + 1, "Registrar") = 1 Then
-                cargarObjeto()
-                ProveedorBLL.guardar(objProveedor)
-                Generales.deshabilitarBotones(ToolStrip1)
-                Generales.deshabilitarControles(Me)
-                txtCodigo.Text = objProveedor.codigoProducto
-                cargarRegistro()
-                txtBuscar.ReadOnly = False
-                btNuevo.Enabled = True
-                btEditar.Enabled = True
-            End If
+            cargarObjeto()
+            ProveedorBLL.guardar(objProveedor)
+            Generales.deshabilitarBotones(ToolStrip1)
+            Generales.deshabilitarControles(Me)
+            txtCodigo.Text = objProveedor.codigoProducto
+            cargarRegistro()
+            txtBuscar.ReadOnly = False
+            btNuevo.Enabled = True
+            btEditar.Enabled = True
         End If
     End Sub
     Private Sub btCancelar_Click(sender As Object, e As EventArgs) Handles btCancelar.Click
