@@ -12,8 +12,6 @@ Public Class ProveedorDAL
                     comando.Parameters.Clear()
                     comando.CommandText = objProveedor.sqlGuardar
                     comando.Parameters.Add(New SqlParameter("@Codigo", SqlDbType.NVarChar)).Value = objProveedor.codigoProducto
-                    comando.Parameters.Add(New SqlParameter("@Codigo_Empresa", SqlDbType.Int)).Value = SesionActual.idEmpresa
-                    comando.Parameters.Add(New SqlParameter("@Nombre", SqlDbType.NVarChar)).Value = objProveedor.nombre
                     comando.Parameters.Add(New SqlParameter("@Foto", SqlDbType.VarBinary)).Value = objProveedor.foto
                     comando.Parameters.Add(New SqlParameter("@Tabla", SqlDbType.Structured)).Value = objProveedor.dtParametro
                     objProveedor.codigoProducto = CType(comando.ExecuteScalar, String)

@@ -1,12 +1,9 @@
 ﻿Public Class producto
-    Inherits generalConsulta
+    Inherits persona
     Property codigoProducto As String
-    Property nombre As String
     Property fecha As DateTime
     Property foto As Byte()
-    Property dtParametro As DataTable
-    Property dtRegistro As DataTable
-    Property bdraControl As Boolean
+
     Public Sub New()
         dtRegistro = New DataTable
         sqlGuardar = "[SP_INVEN_PRODUCTO_CREAR]"

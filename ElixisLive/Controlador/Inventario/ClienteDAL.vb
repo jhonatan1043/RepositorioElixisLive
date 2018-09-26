@@ -12,8 +12,6 @@ Public Class ClienteDAL
                     comando.Parameters.Clear()
                     comando.CommandText = objCliente.sqlGuardar
                     comando.Parameters.Add(New SqlParameter("@Codigo", SqlDbType.NVarChar)).Value = objCliente.codigoProducto
-                    comando.Parameters.Add(New SqlParameter("@Codigo_Empresa", SqlDbType.Int)).Value = SesionActual.idEmpresa
-                    comando.Parameters.Add(New SqlParameter("@Nombre", SqlDbType.NVarChar)).Value = objCliente.nombre
                     comando.Parameters.Add(New SqlParameter("@Foto", SqlDbType.VarBinary)).Value = objCliente.foto
                     comando.Parameters.Add(New SqlParameter("@Tabla", SqlDbType.Structured)).Value = objCliente.dtParametro
                     objCliente.codigoProducto = CType(comando.ExecuteScalar, String)

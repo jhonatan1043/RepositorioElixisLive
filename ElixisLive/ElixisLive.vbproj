@@ -101,7 +101,14 @@
     <Compile Include="Controlador\Inventario\ClienteDAL.vb" />
     <Compile Include="Controlador\Inventario\ProveedorDAL.vb" />
     <Compile Include="Controlador\Inventario\ProductoDAL.vb" />
+    <Compile Include="ControlesElixisLive\TextFiltrarRegistro.Designer.vb">
+      <DependentUpon>TextFiltrarRegistro.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ControlesElixisLive\TextFiltrarRegistro.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Entidad\Administracion\Empresa.vb" />
+    <Compile Include="Entidad\Administracion\persona.vb" />
     <Compile Include="Entidad\generalConsulta.vb" />
     <Compile Include="Entidad\Configuracion\Configuracion.vb" />
     <Compile Include="Entidad\Inventario\Cliente.vb" />
@@ -132,6 +139,12 @@
     <Compile Include="Utilidad\Generales.vb" />
     <Compile Include="Utilidad\MensajeSistema.vb" />
     <Compile Include="Utilidad\SesionActual.vb" />
+    <Compile Include="Vista\Administracion\FormPersona.Designer.vb">
+      <DependentUpon>FormPersona.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Administracion\FormPersona.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Vista\Administracion\FormEmpresa.Designer.vb">
       <DependentUpon>FormEmpresa.vb</DependentUpon>
     </Compile>
@@ -228,11 +241,17 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="ControlesElixisLive\TextFiltrarRegistro.resx">
+      <DependentUpon>TextFiltrarRegistro.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormBase\FormBaseLista.resx">
       <DependentUpon>FormBaseLista.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormBase\FormBaseProductivo.resx">
       <DependentUpon>FormBaseProductivo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Administracion\FormPersona.resx">
+      <DependentUpon>FormPersona.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\Administracion\FormEmpresa.resx">
       <DependentUpon>FormEmpresa.vb</DependentUpon>
