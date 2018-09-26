@@ -1,8 +1,8 @@
 ﻿Public Class FormProveedor
-    Dim objProducto As Proveedor
+    Dim objProveedor As Proveedor
     Private Sub FormBaseProductivo_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim params As New List(Of String)
-        objProducto = New Proveedor
+        objProveedor = New Proveedor
         Try
             params.Add(ElementoMenu.codigo)
             params.Add(SesionActual.idEmpresa)
@@ -12,6 +12,9 @@
             btNuevo.Enabled = True
             Generales.llenardgv("SP_CONSULTAR_PARAMETROS", dgvParametro, params)
             Generales.diseñoGrillaParametro(dgvParametro)
+            params.Clear()
+            params.Add(SesionActual.idEmpresa)
+            Generales.cargarCombo("[SP_CONSULTAR_PERSONA]", params, "Nombre", "Codigo_persona", TxtDescripcion)
             cargarRegistro()
         Catch ex As Exception
             MsgBox(ex.Message)
@@ -20,15 +23,15 @@
     Private Sub cargarInfomacion(pcodigo As Integer)
         Dim params As New List(Of String)
         Dim dfila As DataRow
-        objProducto.codigoProducto = pcodigo
-        params.Add(objProducto.codigoProducto)
-        dfila = Generales.cargarItem(objProducto.sqlCargar, params)
+        objProveedor.codigoProducto = pcodigo
+        params.Add(objProveedor.codigoProducto)
+        dfila = Generales.cargarItem(objProveedor.sqlCargar, params)
         Try
             If Not IsNothing(dfila) Then
-                txtCodigo.Text = objProducto.codigoProducto
+                txtCodigo.Text = objProveedor.codigoProducto
                 TxtDescripcion.Text = dfila.Item("Nombre")
                 cargarImagen(If(IsDBNull(dfila.Item("Foto")), Nothing, dfila.Item("Foto")))
-                Generales.llenardgv(objProducto.sqlCargarDetalle, dgvParametro, params)
+                Generales.llenardgv(objProveedor.sqlCargarDetalle, dgvParametro, params)
                 Generales.diseñoGrillaParametro(dgvParametro)
                 controlVeificar()
             End If
@@ -62,8 +65,8 @@
         params.Add(txtBuscar.Text)
         params.Add(SesionActual.idEmpresa)
         Try
-            Generales.llenardgv(objProducto.sqlConsulta, dgRegistro, params)
-            objProducto.dtRegistro = dgRegistro.DataSource
+            Generales.llenardgv(objProveedor.sqlConsulta, dgRegistro, params)
+            objProveedor.dtRegistro = dgRegistro.DataSource
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
@@ -82,8 +85,8 @@
         End Try
     End Sub
     Private Sub dgRegistro_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgRegistro.CellClick
-        If objProducto.dtRegistro.Rows.Count > 0 Then
-            cargarInfomacion(objProducto.dtRegistro.Rows(dgRegistro.CurrentCell.RowIndex).Item("Codigo"))
+        If objProveedor.dtRegistro.Rows.Count > 0 Then
+            cargarInfomacion(objProveedor.dtRegistro.Rows(dgRegistro.CurrentCell.RowIndex).Item("Codigo"))
         End If
     End Sub
     Private Sub cargarObjeto()
@@ -92,10 +95,9 @@
             almMemoria = New System.IO.MemoryStream
             pictImagen.Image.Save(almMemoria, Imaging.ImageFormat.Png)
         End If
-        objProducto.codigoProducto = If(String.IsNullOrEmpty(txtCodigo.Text), Nothing, txtCodigo.Text)
-        objProducto.nombre = TxtDescripcion.Text
-        objProducto.foto = If(IsNothing(almMemoria), Nothing, almMemoria.GetBuffer())
-        objProducto.dtParametro = dgvParametro.DataSource
+        objProveedor.codigo = TxtDescripcion.SelectedValue
+        objProveedor.foto = If(IsNothing(almMemoria), Nothing, almMemoria.GetBuffer())
+        objProveedor.dtParametro = dgvParametro.DataSource
     End Sub
     Private Sub btExaminar_Click(sender As Object, e As EventArgs) Handles btExaminar.Click
         Dim openImag As New OpenFileDialog
@@ -125,10 +127,10 @@
         If validarCampos() = True Then
             If MsgBox(MensajeSistema.REGISTRAR, 32 + 1, "Registrar") = 1 Then
                 cargarObjeto()
-                ProveedorBLL.guardar(objProducto)
+                ProveedorBLL.guardar(objProveedor)
                 Generales.deshabilitarBotones(ToolStrip1)
                 Generales.deshabilitarControles(Me)
-                txtCodigo.Text = objProducto.codigoProducto
+                txtCodigo.Text = objProveedor.codigoProducto
                 cargarRegistro()
                 txtBuscar.ReadOnly = False
                 btNuevo.Enabled = True
@@ -159,7 +161,7 @@
     End Sub
     Private Sub btAnular_Click(sender As Object, e As EventArgs) Handles btAnular.Click
         If MsgBox(MensajeSistema.ANULAR, 32 + 1, "Anular") = 1 Then
-            If Generales.ejecutarSQL(objProducto.sqlAnular) = True Then
+            If Generales.ejecutarSQL(objProveedor.sqlAnular) = True Then
                 Generales.limpiarControles(GbInform_D)
                 Generales.limpiarControles(gbInform)
                 Generales.deshabilitarBotones(ToolStrip1)

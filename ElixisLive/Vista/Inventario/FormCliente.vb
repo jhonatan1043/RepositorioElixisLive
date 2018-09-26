@@ -12,6 +12,9 @@
             btNuevo.Enabled = True
             Generales.llenardgv("SP_CONSULTAR_PARAMETROS", dgvParametro, params)
             Generales.diseñoGrillaParametro(dgvParametro)
+            params.Clear()
+            params.Add(SesionActual.idEmpresa)
+            Generales.cargarCombo("[SP_CONSULTAR_PERSONA]", params, "Nombre", "Codigo_persona", TxtDescripcion)
             cargarRegistro()
         Catch ex As Exception
             MsgBox(ex.Message)

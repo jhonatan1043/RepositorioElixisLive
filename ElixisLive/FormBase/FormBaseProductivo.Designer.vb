@@ -22,7 +22,6 @@ Partial Class FormBaseProductivo
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.TxtDescripcion = New System.Windows.Forms.TextBox()
         Me.txtCodigo = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -52,6 +51,7 @@ Partial Class FormBaseProductivo
         Me.ToolStripSeparator3 = New System.Windows.Forms.ToolStripSeparator()
         Me.btAnular = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripSeparator6 = New System.Windows.Forms.ToolStripSeparator()
+        Me.TxtDescripcion = New System.Windows.Forms.ComboBox()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         CType(Me.pictImagen, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -65,20 +65,11 @@ Partial Class FormBaseProductivo
         Me.ToolStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
-        'TxtDescripcion
-        '
-        Me.TxtDescripcion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TxtDescripcion.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtDescripcion.Location = New System.Drawing.Point(252, 14)
-        Me.TxtDescripcion.Name = "TxtDescripcion"
-        Me.TxtDescripcion.Size = New System.Drawing.Size(630, 22)
-        Me.TxtDescripcion.TabIndex = 5
-        '
         'txtCodigo
         '
         Me.txtCodigo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtCodigo.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtCodigo.Location = New System.Drawing.Point(33, 13)
+        Me.txtCodigo.Location = New System.Drawing.Point(35, 12)
         Me.txtCodigo.Name = "txtCodigo"
         Me.txtCodigo.ReadOnly = True
         Me.txtCodigo.Size = New System.Drawing.Size(126, 22)
@@ -90,7 +81,7 @@ Partial Class FormBaseProductivo
         Me.Label2.BackColor = System.Drawing.Color.Transparent
         Me.Label2.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.RoyalBlue
-        Me.Label2.Location = New System.Drawing.Point(165, 15)
+        Me.Label2.Location = New System.Drawing.Point(166, 14)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(90, 19)
         Me.Label2.TabIndex = 3
@@ -102,7 +93,7 @@ Partial Class FormBaseProductivo
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.RoyalBlue
-        Me.Label1.Location = New System.Drawing.Point(4, 14)
+        Me.Label1.Location = New System.Drawing.Point(4, 13)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(30, 19)
         Me.Label1.TabIndex = 2
@@ -237,8 +228,8 @@ Partial Class FormBaseProductivo
         'gbInform
         '
         Me.gbInform.BackColor = System.Drawing.Color.Transparent
-        Me.gbInform.Controls.Add(Me.txtCodigo)
         Me.gbInform.Controls.Add(Me.TxtDescripcion)
+        Me.gbInform.Controls.Add(Me.txtCodigo)
         Me.gbInform.Controls.Add(Me.Label2)
         Me.gbInform.Controls.Add(Me.Label1)
         Me.gbInform.Location = New System.Drawing.Point(6, 5)
@@ -284,7 +275,7 @@ Partial Class FormBaseProductivo
         Me.ToolStrip1.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.ToolStrip1.ImageScalingSize = New System.Drawing.Size(26, 26)
         Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripSeparator1, Me.btNuevo, Me.ToolStripSeparator2, Me.btRegistrar, Me.ToolStripSeparator4, Me.btEditar, Me.ToolStripSeparator5, Me.btCancelar, Me.ToolStripSeparator3, Me.btAnular, Me.ToolStripSeparator6})
-        Me.ToolStrip1.Location = New System.Drawing.Point(0, 490)
+        Me.ToolStrip1.Location = New System.Drawing.Point(0, 491)
         Me.ToolStrip1.Name = "ToolStrip1"
         Me.ToolStrip1.Size = New System.Drawing.Size(905, 33)
         Me.ToolStrip1.TabIndex = 14
@@ -370,12 +361,22 @@ Partial Class FormBaseProductivo
         Me.ToolStripSeparator6.Name = "ToolStripSeparator6"
         Me.ToolStripSeparator6.Size = New System.Drawing.Size(6, 33)
         '
+        'TxtDescripcion
+        '
+        Me.TxtDescripcion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.TxtDescripcion.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!)
+        Me.TxtDescripcion.FormattingEnabled = True
+        Me.TxtDescripcion.Location = New System.Drawing.Point(261, 11)
+        Me.TxtDescripcion.Name = "TxtDescripcion"
+        Me.TxtDescripcion.Size = New System.Drawing.Size(611, 24)
+        Me.TxtDescripcion.TabIndex = 1
+        '
         'FormBaseProductivo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(905, 523)
+        Me.ClientSize = New System.Drawing.Size(905, 524)
         Me.Controls.Add(Me.ToolStrip1)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Panel1)
@@ -409,7 +410,6 @@ Partial Class FormBaseProductivo
     Public WithEvents Pimagen As PictureBox
     Public WithEvents Label2 As Label
     Public WithEvents Label1 As Label
-    Public WithEvents TxtDescripcion As TextBox
     Public WithEvents txtCodigo As TextBox
     Public WithEvents txtBuscar As TextBox
     Public WithEvents Label3 As Label
@@ -434,4 +434,5 @@ Partial Class FormBaseProductivo
     Public WithEvents GroupBox3 As GroupBox
     Friend WithEvents pictImagen As PictureBox
     Friend WithEvents btExaminar As Button
+    Friend WithEvents TxtDescripcion As ComboBox
 End Class
