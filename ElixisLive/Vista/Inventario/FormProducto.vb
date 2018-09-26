@@ -13,6 +13,7 @@
             Generales.llenardgv("SP_CONSULTAR_PARAMETROS", dgvParametro, params)
             Generales.diseñoGrillaParametro(dgvParametro)
             cargarRegistro()
+            TxtDescripcion.DropDownStyle = ComboBoxStyle.Simple
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
