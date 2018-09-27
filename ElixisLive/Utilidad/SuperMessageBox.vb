@@ -89,16 +89,16 @@
         Me.lblMensaje.BackColor = System.Drawing.Color.Transparent
         Me.lblMensaje.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblMensaje.ForeColor = System.Drawing.Color.White
-        Me.lblMensaje.Location = New System.Drawing.Point(73, 42)
+        Me.lblMensaje.Location = New System.Drawing.Point(73, 60)
         Me.lblMensaje.Name = "lblMensaje"
-        Me.lblMensaje.Size = New System.Drawing.Size(260, 76)
+        Me.lblMensaje.Size = New System.Drawing.Size(260, 37)
         Me.lblMensaje.TabIndex = 0
         Me.lblMensaje.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'logo
         '
         Me.logo.BackColor = System.Drawing.Color.Transparent
-        Me.logo.Location = New System.Drawing.Point(2, 46)
+        Me.logo.Location = New System.Drawing.Point(2, 45)
         Me.logo.Name = "logo"
         Me.logo.Size = New System.Drawing.Size(68, 68)
         Me.logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -116,7 +116,7 @@
         Me.MinimizeBox = False
         Me.Name = "SuperMessageBox"
         Me.ShowInTaskbar = False
-        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
         Me.Text = "SuperMessageBox"
         Me.TopMost = True
         Me.panel1.ResumeLayout(False)
@@ -238,12 +238,16 @@
             'seteamos al formulario como padre del control.
             panel2.Controls.Add(cmdBoton)
         Next
-
+        Dim x As Integer
+        Dim y As Integer
+        x = Screen.PrimaryScreen.WorkingArea.Width - 750
+        y = Screen.PrimaryScreen.WorkingArea.Height - 450
+        Me.Location = New Point(x, y)
         'centramos en la pantalla el formulario
-        Me.CenterToScreen()
+        'Me.CenterToScreen()
         'lo mostramos y esperamos hasta que se haya presionado un boton 
         'evento que cerrará el formulario
-        'Me.MdiParent = form_principal
+        'Me.MdiParent = FormPrincipal
         Me.ShowDialog()
 
         'retornamos el valor de la variable de retorno
