@@ -30,6 +30,7 @@ Partial Class FormInicioSesion
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormInicioSesion))
         Me.UsernameLabel = New System.Windows.Forms.Label()
         Me.PasswordLabel = New System.Windows.Forms.Label()
         Me.txtUsuario = New System.Windows.Forms.TextBox()
@@ -39,42 +40,44 @@ Partial Class FormInicioSesion
         Me.Label1 = New System.Windows.Forms.Label()
         Me.CbEmpresa = New System.Windows.Forms.ComboBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.Pimagen = New System.Windows.Forms.PictureBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Pimagen = New System.Windows.Forms.PictureBox()
         Me.GroupBox1.SuspendLayout()
+        Me.GroupBox3.SuspendLayout()
         CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'UsernameLabel
         '
-        Me.UsernameLabel.BackColor = System.Drawing.Color.White
-        Me.UsernameLabel.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.UsernameLabel.ForeColor = System.Drawing.Color.RoyalBlue
-        Me.UsernameLabel.Location = New System.Drawing.Point(173, 22)
+        Me.UsernameLabel.BackColor = System.Drawing.Color.Transparent
+        Me.UsernameLabel.Font = New System.Drawing.Font("Times New Roman", 11.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.UsernameLabel.ForeColor = System.Drawing.Color.White
+        Me.UsernameLabel.Location = New System.Drawing.Point(164, 22)
         Me.UsernameLabel.Name = "UsernameLabel"
-        Me.UsernameLabel.Size = New System.Drawing.Size(65, 24)
+        Me.UsernameLabel.Size = New System.Drawing.Size(78, 24)
         Me.UsernameLabel.TabIndex = 0
         Me.UsernameLabel.Text = "&Usuario:"
         Me.UsernameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'PasswordLabel
         '
-        Me.PasswordLabel.BackColor = System.Drawing.Color.White
-        Me.PasswordLabel.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.PasswordLabel.ForeColor = System.Drawing.Color.RoyalBlue
-        Me.PasswordLabel.Location = New System.Drawing.Point(173, 69)
+        Me.PasswordLabel.BackColor = System.Drawing.Color.Transparent
+        Me.PasswordLabel.Font = New System.Drawing.Font("Times New Roman", 11.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.PasswordLabel.ForeColor = System.Drawing.Color.White
+        Me.PasswordLabel.Location = New System.Drawing.Point(164, 69)
         Me.PasswordLabel.Name = "PasswordLabel"
-        Me.PasswordLabel.Size = New System.Drawing.Size(76, 23)
+        Me.PasswordLabel.Size = New System.Drawing.Size(89, 23)
         Me.PasswordLabel.TabIndex = 2
         Me.PasswordLabel.Text = "&Contraseña:"
         Me.PasswordLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'txtUsuario
         '
-        Me.txtUsuario.Location = New System.Drawing.Point(245, 25)
+        Me.txtUsuario.Location = New System.Drawing.Point(247, 25)
         Me.txtUsuario.MaxLength = 10
         Me.txtUsuario.Name = "txtUsuario"
         Me.txtUsuario.Size = New System.Drawing.Size(120, 20)
@@ -82,7 +85,7 @@ Partial Class FormInicioSesion
         '
         'txtContraseña
         '
-        Me.txtContraseña.Location = New System.Drawing.Point(245, 72)
+        Me.txtContraseña.Location = New System.Drawing.Point(247, 72)
         Me.txtContraseña.MaxLength = 20
         Me.txtContraseña.Name = "txtContraseña"
         Me.txtContraseña.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
@@ -91,37 +94,43 @@ Partial Class FormInicioSesion
         '
         'OK
         '
-        Me.OK.BackColor = System.Drawing.Color.RoyalBlue
-        Me.OK.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.OK.BackColor = System.Drawing.Color.Transparent
+        Me.OK.BackgroundImage = CType(resources.GetObject("OK.BackgroundImage"), System.Drawing.Image)
+        Me.OK.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.OK.Font = New System.Drawing.Font("Times New Roman", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.OK.ForeColor = System.Drawing.Color.White
-        Me.OK.Location = New System.Drawing.Point(209, 155)
+        Me.OK.Location = New System.Drawing.Point(209, 152)
         Me.OK.Name = "OK"
         Me.OK.Size = New System.Drawing.Size(72, 23)
         Me.OK.TabIndex = 4
         Me.OK.Text = "&Aceptar"
+        Me.OK.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.OK.UseVisualStyleBackColor = False
         '
         'Cancel
         '
-        Me.Cancel.BackColor = System.Drawing.Color.RoyalBlue
+        Me.Cancel.BackColor = System.Drawing.Color.Transparent
+        Me.Cancel.BackgroundImage = CType(resources.GetObject("Cancel.BackgroundImage"), System.Drawing.Image)
+        Me.Cancel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Cancel.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.Cancel.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Cancel.Font = New System.Drawing.Font("Times New Roman", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Cancel.ForeColor = System.Drawing.Color.White
-        Me.Cancel.Location = New System.Drawing.Point(290, 155)
+        Me.Cancel.Location = New System.Drawing.Point(290, 152)
         Me.Cancel.Name = "Cancel"
         Me.Cancel.Size = New System.Drawing.Size(72, 23)
         Me.Cancel.TabIndex = 5
         Me.Cancel.Text = "&Cancelar"
+        Me.Cancel.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.Cancel.UseVisualStyleBackColor = False
         '
         'Label1
         '
-        Me.Label1.BackColor = System.Drawing.Color.White
-        Me.Label1.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.RoyalBlue
-        Me.Label1.Location = New System.Drawing.Point(174, 115)
+        Me.Label1.BackColor = System.Drawing.Color.Transparent
+        Me.Label1.Font = New System.Drawing.Font("Times New Roman", 11.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.White
+        Me.Label1.Location = New System.Drawing.Point(165, 115)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(65, 23)
+        Me.Label1.Size = New System.Drawing.Size(88, 23)
         Me.Label1.TabIndex = 6
         Me.Label1.Text = "Empresa:"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -130,7 +139,7 @@ Partial Class FormInicioSesion
         '
         Me.CbEmpresa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.CbEmpresa.FormattingEnabled = True
-        Me.CbEmpresa.Location = New System.Drawing.Point(245, 117)
+        Me.CbEmpresa.Location = New System.Drawing.Point(247, 117)
         Me.CbEmpresa.Name = "CbEmpresa"
         Me.CbEmpresa.Size = New System.Drawing.Size(120, 21)
         Me.CbEmpresa.TabIndex = 7
@@ -138,27 +147,53 @@ Partial Class FormInicioSesion
         'GroupBox1
         '
         Me.GroupBox1.BackColor = System.Drawing.Color.White
+        Me.GroupBox1.BackgroundImage = Global.ElixisLive.My.Resources.Resources.fondo_azul
+        Me.GroupBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.GroupBox1.Controls.Add(Me.GroupBox3)
         Me.GroupBox1.Controls.Add(Me.OK)
         Me.GroupBox1.Controls.Add(Me.Cancel)
         Me.GroupBox1.Controls.Add(Me.GroupBox2)
-        Me.GroupBox1.Location = New System.Drawing.Point(3, 4)
+        Me.GroupBox1.Location = New System.Drawing.Point(3, 2)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(394, 188)
         Me.GroupBox1.TabIndex = 11
         Me.GroupBox1.TabStop = False
         '
+        'GroupBox3
+        '
+        Me.GroupBox3.BackColor = System.Drawing.Color.Transparent
+        Me.GroupBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.GroupBox3.Controls.Add(Me.Pimagen)
+        Me.GroupBox3.Location = New System.Drawing.Point(6, 7)
+        Me.GroupBox3.Name = "GroupBox3"
+        Me.GroupBox3.Size = New System.Drawing.Size(142, 175)
+        Me.GroupBox3.TabIndex = 12
+        Me.GroupBox3.TabStop = False
+        '
+        'Pimagen
+        '
+        Me.Pimagen.BackColor = System.Drawing.Color.Transparent
+        Me.Pimagen.Image = Global.ElixisLive.My.Resources.Resources.glossy_3d_blue_orbs2_086_icon
+        Me.Pimagen.Location = New System.Drawing.Point(6, 13)
+        Me.Pimagen.Name = "Pimagen"
+        Me.Pimagen.Size = New System.Drawing.Size(130, 156)
+        Me.Pimagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.Pimagen.TabIndex = 0
+        Me.Pimagen.TabStop = False
+        '
         'GroupBox2
         '
-        Me.GroupBox2.BackColor = System.Drawing.Color.White
-        Me.GroupBox2.Location = New System.Drawing.Point(168, 7)
+        Me.GroupBox2.BackColor = System.Drawing.Color.Transparent
+        Me.GroupBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.GroupBox2.Location = New System.Drawing.Point(154, 7)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(220, 175)
+        Me.GroupBox2.Size = New System.Drawing.Size(234, 175)
         Me.GroupBox2.TabIndex = 6
         Me.GroupBox2.TabStop = False
         '
         'Panel3
         '
-        Me.Panel3.BackColor = System.Drawing.Color.White
+        Me.Panel3.BackColor = System.Drawing.Color.Transparent
         Me.Panel3.BackgroundImage = Global.ElixisLive.My.Resources.Resources.company_building_icon
         Me.Panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Panel3.Location = New System.Drawing.Point(370, 117)
@@ -168,7 +203,7 @@ Partial Class FormInicioSesion
         '
         'Panel2
         '
-        Me.Panel2.BackColor = System.Drawing.Color.White
+        Me.Panel2.BackColor = System.Drawing.Color.Transparent
         Me.Panel2.BackgroundImage = Global.ElixisLive.My.Resources.Resources.Key_icon__2_
         Me.Panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Panel2.Location = New System.Drawing.Point(370, 72)
@@ -178,7 +213,7 @@ Partial Class FormInicioSesion
         '
         'Panel1
         '
-        Me.Panel1.BackColor = System.Drawing.Color.White
+        Me.Panel1.BackColor = System.Drawing.Color.Transparent
         Me.Panel1.BackgroundImage = Global.ElixisLive.My.Resources.Resources.user_icon__1_
         Me.Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Panel1.Location = New System.Drawing.Point(370, 25)
@@ -186,23 +221,14 @@ Partial Class FormInicioSesion
         Me.Panel1.Size = New System.Drawing.Size(15, 20)
         Me.Panel1.TabIndex = 8
         '
-        'Pimagen
-        '
-        Me.Pimagen.BackColor = System.Drawing.Color.White
-        Me.Pimagen.Image = Global.ElixisLive.My.Resources.Resources.logos
-        Me.Pimagen.Location = New System.Drawing.Point(11, 12)
-        Me.Pimagen.Name = "Pimagen"
-        Me.Pimagen.Size = New System.Drawing.Size(154, 174)
-        Me.Pimagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.Pimagen.TabIndex = 0
-        Me.Pimagen.TabStop = False
-        '
         'FormInicioSesion
         '
         Me.AcceptButton = Me.OK
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.RoyalBlue
+        Me.BackColor = System.Drawing.Color.White
+        Me.BackgroundImage = Global.ElixisLive.My.Resources.Resources.fondo_azul
+        Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.CancelButton = Me.Cancel
         Me.ClientSize = New System.Drawing.Size(401, 197)
         Me.Controls.Add(Me.Panel3)
@@ -214,7 +240,6 @@ Partial Class FormInicioSesion
         Me.Controls.Add(Me.txtUsuario)
         Me.Controls.Add(Me.PasswordLabel)
         Me.Controls.Add(Me.UsernameLabel)
-        Me.Controls.Add(Me.Pimagen)
         Me.Controls.Add(Me.GroupBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.MaximizeBox = False
@@ -223,6 +248,7 @@ Partial Class FormInicioSesion
         Me.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox3.ResumeLayout(False)
         CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -236,4 +262,5 @@ Partial Class FormInicioSesion
     Friend WithEvents Panel3 As Panel
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents GroupBox2 As GroupBox
+    Friend WithEvents GroupBox3 As GroupBox
 End Class

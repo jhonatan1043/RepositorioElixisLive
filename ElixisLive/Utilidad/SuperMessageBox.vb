@@ -37,42 +37,33 @@
     Friend WithEvents panel1 As System.Windows.Forms.Panel
     Friend WithEvents panel2 As System.Windows.Forms.Panel
     <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
-        Me.lblMensaje = New System.Windows.Forms.Label()
         Me.label2 = New System.Windows.Forms.Label()
         Me.panel1 = New System.Windows.Forms.Panel()
         Me.panel2 = New System.Windows.Forms.Panel()
+        Me.lblMensaje = New System.Windows.Forms.Label()
         Me.logo = New System.Windows.Forms.PictureBox()
         Me.panel1.SuspendLayout()
         Me.panel2.SuspendLayout()
         CType(Me.logo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'lblMensaje
-        '
-        Me.lblMensaje.BackColor = System.Drawing.Color.Transparent
-        Me.lblMensaje.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblMensaje.ForeColor = System.Drawing.Color.White
-        Me.lblMensaje.Location = New System.Drawing.Point(73, 38)
-        Me.lblMensaje.Name = "lblMensaje"
-        Me.lblMensaje.Size = New System.Drawing.Size(260, 76)
-        Me.lblMensaje.TabIndex = 0
-        Me.lblMensaje.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
         'label2
         '
         Me.label2.BackColor = System.Drawing.Color.Transparent
-        Me.label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.label2.ForeColor = System.Drawing.Color.RoyalBlue
+        Me.label2.Font = New System.Drawing.Font("Times New Roman", 14.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.label2.ForeColor = System.Drawing.Color.White
         Me.label2.Location = New System.Drawing.Point(-1, -1)
         Me.label2.Name = "label2"
-        Me.label2.Size = New System.Drawing.Size(334, 23)
+        Me.label2.Size = New System.Drawing.Size(338, 23)
         Me.label2.TabIndex = 0
-        Me.label2.Text = "ElixisLive"
-        Me.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.label2.Text = "Elixis"
+        Me.label2.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         '
         'panel1
         '
         Me.panel1.BackColor = System.Drawing.Color.White
+        Me.panel1.BackgroundImage = Global.ElixisLive.My.Resources.Resources.fondo_azul
+        Me.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.panel1.Controls.Add(Me.label2)
         Me.panel1.Location = New System.Drawing.Point(0, 0)
@@ -92,6 +83,17 @@
         Me.panel2.Name = "panel2"
         Me.panel2.Size = New System.Drawing.Size(350, 150)
         Me.panel2.TabIndex = 1
+        '
+        'lblMensaje
+        '
+        Me.lblMensaje.BackColor = System.Drawing.Color.Transparent
+        Me.lblMensaje.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblMensaje.ForeColor = System.Drawing.Color.White
+        Me.lblMensaje.Location = New System.Drawing.Point(73, 38)
+        Me.lblMensaje.Name = "lblMensaje"
+        Me.lblMensaje.Size = New System.Drawing.Size(260, 76)
+        Me.lblMensaje.TabIndex = 0
+        Me.lblMensaje.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'logo
         '

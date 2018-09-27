@@ -53,6 +53,7 @@ Partial Class FormBaseLista
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.White
+        Me.Panel1.BackgroundImage = Global.ElixisLive.My.Resources.Resources.fondo_azul
         Me.Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Panel1.Controls.Add(Me.Pimagen)
         Me.Panel1.Controls.Add(Me.LTitulo)
@@ -64,20 +65,20 @@ Partial Class FormBaseLista
         'Pimagen
         '
         Me.Pimagen.BackColor = System.Drawing.Color.White
-        Me.Pimagen.Location = New System.Drawing.Point(0, 0)
+        Me.Pimagen.Location = New System.Drawing.Point(4, -7)
         Me.Pimagen.Name = "Pimagen"
-        Me.Pimagen.Size = New System.Drawing.Size(46, 42)
+        Me.Pimagen.Size = New System.Drawing.Size(69, 53)
         Me.Pimagen.TabIndex = 1
         Me.Pimagen.TabStop = False
         '
         'LTitulo
         '
-        Me.LTitulo.BackColor = System.Drawing.Color.RoyalBlue
+        Me.LTitulo.BackColor = System.Drawing.Color.Transparent
         Me.LTitulo.Font = New System.Drawing.Font("Times New Roman", 20.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LTitulo.ForeColor = System.Drawing.Color.White
         Me.LTitulo.Location = New System.Drawing.Point(-1, 0)
         Me.LTitulo.Name = "LTitulo"
-        Me.LTitulo.Size = New System.Drawing.Size(568, 42)
+        Me.LTitulo.Size = New System.Drawing.Size(560, 42)
         Me.LTitulo.TabIndex = 1
         Me.LTitulo.Text = "Titulo"
         Me.LTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -96,7 +97,7 @@ Partial Class FormBaseLista
         Me.Label3.AutoSize = True
         Me.Label3.BackColor = System.Drawing.Color.Transparent
         Me.Label3.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.ForeColor = System.Drawing.Color.RoyalBlue
+        Me.Label3.ForeColor = System.Drawing.Color.Black
         Me.Label3.Location = New System.Drawing.Point(9, 54)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(57, 19)
@@ -117,7 +118,7 @@ Partial Class FormBaseLista
         '
         Me.GroupBox5.Controls.Add(Me.DataGridView1)
         Me.GroupBox5.Font = New System.Drawing.Font("Times New Roman", 8.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox5.ForeColor = System.Drawing.Color.RoyalBlue
+        Me.GroupBox5.ForeColor = System.Drawing.Color.DarkBlue
         Me.GroupBox5.Location = New System.Drawing.Point(7, 41)
         Me.GroupBox5.Name = "GroupBox5"
         Me.GroupBox5.Size = New System.Drawing.Size(548, 264)
@@ -144,13 +145,15 @@ Partial Class FormBaseLista
         'ToolStrip1
         '
         Me.ToolStrip1.BackColor = System.Drawing.Color.White
+        Me.ToolStrip1.BackgroundImage = Global.ElixisLive.My.Resources.Resources.fondo_azul
+        Me.ToolStrip1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ToolStrip1.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.ToolStrip1.ImageScalingSize = New System.Drawing.Size(26, 26)
         Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripSeparator1, Me.btNuevo, Me.ToolStripSeparator2, Me.btRegistrar, Me.ToolStripSeparator4, Me.btEditar, Me.ToolStripSeparator5, Me.btCancelar, Me.ToolStripSeparator3, Me.btAnular, Me.ToolStripSeparator6})
         Me.ToolStrip1.Location = New System.Drawing.Point(0, 354)
         Me.ToolStrip1.Name = "ToolStrip1"
         Me.ToolStrip1.Size = New System.Drawing.Size(571, 33)
-        Me.ToolStrip1.TabIndex = 13
+        Me.ToolStrip1.TabIndex = 15
         Me.ToolStrip1.Text = "ToolStrip1"
         '
         'ToolStripSeparator1
@@ -160,13 +163,14 @@ Partial Class FormBaseLista
         '
         'btNuevo
         '
-        Me.btNuevo.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btNuevo.ForeColor = System.Drawing.Color.RoyalBlue
+        Me.btNuevo.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btNuevo.ForeColor = System.Drawing.Color.White
         Me.btNuevo.Image = Global.ElixisLive.My.Resources.Resources.Files_New_File_icon
         Me.btNuevo.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.btNuevo.Name = "btNuevo"
-        Me.btNuevo.Size = New System.Drawing.Size(81, 30)
+        Me.btNuevo.Size = New System.Drawing.Size(82, 30)
         Me.btNuevo.Text = "Nuevo"
+        Me.btNuevo.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         '
         'ToolStripSeparator2
         '
@@ -175,13 +179,14 @@ Partial Class FormBaseLista
         '
         'btRegistrar
         '
-        Me.btRegistrar.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btRegistrar.ForeColor = System.Drawing.Color.RoyalBlue
+        Me.btRegistrar.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btRegistrar.ForeColor = System.Drawing.Color.White
         Me.btRegistrar.Image = Global.ElixisLive.My.Resources.Resources.Save_icon__1_
         Me.btRegistrar.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.btRegistrar.Name = "btRegistrar"
-        Me.btRegistrar.Size = New System.Drawing.Size(98, 30)
+        Me.btRegistrar.Size = New System.Drawing.Size(101, 30)
         Me.btRegistrar.Text = "Registrar"
+        Me.btRegistrar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         '
         'ToolStripSeparator4
         '
@@ -190,13 +195,14 @@ Partial Class FormBaseLista
         '
         'btEditar
         '
-        Me.btEditar.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btEditar.ForeColor = System.Drawing.Color.RoyalBlue
+        Me.btEditar.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btEditar.ForeColor = System.Drawing.Color.White
         Me.btEditar.Image = Global.ElixisLive.My.Resources.Resources.pencil_icon__1_
         Me.btEditar.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.btEditar.Name = "btEditar"
-        Me.btEditar.Size = New System.Drawing.Size(80, 30)
+        Me.btEditar.Size = New System.Drawing.Size(82, 30)
         Me.btEditar.Text = "Editar"
+        Me.btEditar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         '
         'ToolStripSeparator5
         '
@@ -205,13 +211,14 @@ Partial Class FormBaseLista
         '
         'btCancelar
         '
-        Me.btCancelar.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btCancelar.ForeColor = System.Drawing.Color.RoyalBlue
+        Me.btCancelar.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btCancelar.ForeColor = System.Drawing.Color.White
         Me.btCancelar.Image = Global.ElixisLive.My.Resources.Resources.Actions_blue_arrow_undo_icon
         Me.btCancelar.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.btCancelar.Name = "btCancelar"
-        Me.btCancelar.Size = New System.Drawing.Size(98, 30)
+        Me.btCancelar.Size = New System.Drawing.Size(100, 30)
         Me.btCancelar.Text = "Cancelar"
+        Me.btCancelar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         '
         'ToolStripSeparator3
         '
@@ -220,13 +227,14 @@ Partial Class FormBaseLista
         '
         'btAnular
         '
-        Me.btAnular.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btAnular.ForeColor = System.Drawing.Color.RoyalBlue
+        Me.btAnular.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btAnular.ForeColor = System.Drawing.Color.White
         Me.btAnular.Image = Global.ElixisLive.My.Resources.Resources.document_delete_icon__1_
         Me.btAnular.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.btAnular.Name = "btAnular"
-        Me.btAnular.Size = New System.Drawing.Size(83, 30)
+        Me.btAnular.Size = New System.Drawing.Size(87, 30)
         Me.btAnular.Text = "Anular"
+        Me.btAnular.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         '
         'ToolStripSeparator6
         '
@@ -269,18 +277,18 @@ Partial Class FormBaseLista
     Public WithEvents txtBuscar As TextBox
     Public WithEvents Label3 As Label
     Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents GroupBox5 As GroupBox
+    Public WithEvents DataGridView1 As DataGridView
     Public WithEvents ToolStrip1 As ToolStrip
     Friend WithEvents ToolStripSeparator1 As ToolStripSeparator
     Public WithEvents btNuevo As ToolStripButton
     Friend WithEvents ToolStripSeparator2 As ToolStripSeparator
     Public WithEvents btRegistrar As ToolStripButton
-    Friend WithEvents ToolStripSeparator3 As ToolStripSeparator
-    Public WithEvents btCancelar As ToolStripButton
     Friend WithEvents ToolStripSeparator4 As ToolStripSeparator
     Public WithEvents btEditar As ToolStripButton
     Friend WithEvents ToolStripSeparator5 As ToolStripSeparator
+    Public WithEvents btCancelar As ToolStripButton
+    Friend WithEvents ToolStripSeparator3 As ToolStripSeparator
     Public WithEvents btAnular As ToolStripButton
     Friend WithEvents ToolStripSeparator6 As ToolStripSeparator
-    Friend WithEvents GroupBox5 As GroupBox
-    Public WithEvents DataGridView1 As DataGridView
 End Class

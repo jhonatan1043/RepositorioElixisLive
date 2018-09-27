@@ -7,10 +7,19 @@
         End If
         frmMsgBx.AgregarBoton("Aceptar")
         frmMsgBx.AgregarMensaje(mensaje)
-        frmMsgBx.Agregarlogo(My.Resources.exito1)
+        frmMsgBx.Agregarlogo(My.Resources.exitoso)
         frmMsgBx.Mostrar()
     End Sub
-
+    Public Shared Sub mostrarMensajeAnulado(mensaje As String, ByVal Optional titulo As String = "")
+        frmMsgBx = New SuperMessageBox
+        If titulo <> "" Then
+            frmMsgBx.AgregarTitulo(titulo)
+        End If
+        frmMsgBx.AgregarBoton("Aceptar")
+        frmMsgBx.AgregarMensaje(mensaje)
+        frmMsgBx.Agregarlogo(My.Resources.advertencia)
+        frmMsgBx.Mostrar()
+    End Sub
     Public Shared Sub mostrarMensajeError(mensaje As String, ByVal Optional titulo As String = "")
         frmMsgBx = New SuperMessageBox
         If titulo <> "" Then
@@ -18,10 +27,19 @@
         End If
         frmMsgBx.AgregarBoton("Aceptar")
         frmMsgBx.AgregarMensaje(mensaje)
-        frmMsgBx.Agregarlogo(My.Resources.Orb_minus_icon)
+        frmMsgBx.Agregarlogo(My.Resources._error)
         frmMsgBx.Mostrar()
     End Sub
-
+    Public Shared Sub mostrarMensajeAdvertencia(mensaje As String, ByVal Optional titulo As String = "")
+        frmMsgBx = New SuperMessageBox
+        If titulo <> "" Then
+            frmMsgBx.AgregarTitulo(titulo)
+        End If
+        frmMsgBx.AgregarBoton("Aceptar")
+        frmMsgBx.AgregarMensaje(mensaje)
+        frmMsgBx.Agregarlogo(My.Resources.prohibido)
+        frmMsgBx.Mostrar()
+    End Sub
     Public Shared Function mostrarMensajePregunta(mensaje As String, ByVal Optional titulo As String = "") As String
         frmMsgBx = New SuperMessageBox
         Dim respuesta As String
@@ -31,7 +49,7 @@
         frmMsgBx.AgregarBoton(Constantes.SI)
         frmMsgBx.AgregarBoton(Constantes.NO)
         frmMsgBx.AgregarMensaje(mensaje)
-        frmMsgBx.Agregarlogo(My.Resources.Orb_help_icon__1_)
+        frmMsgBx.Agregarlogo(My.Resources.pregunta)
         respuesta = frmMsgBx.Mostrar()
         Return respuesta
 
@@ -43,7 +61,7 @@
         frmMsgBx.AgregarBoton(Constantes.NO)
         frmMsgBx.AgregarBoton("Cancelar")
         frmMsgBx.AgregarMensaje(mensaje)
-        frmMsgBx.Agregarlogo(My.Resources.Orb_help_icon__1_)
+        frmMsgBx.Agregarlogo(My.Resources.pregunta)
         frmMsgBx.Mostrar()
     End Sub
 End Class

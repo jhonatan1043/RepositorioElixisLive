@@ -34,14 +34,14 @@ Partial Class FormPrincipal
         Me.arbolMenu.BackColor = System.Drawing.Color.White
         Me.arbolMenu.Dock = System.Windows.Forms.DockStyle.Left
         Me.arbolMenu.Font = New System.Drawing.Font("Times New Roman", 15.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.arbolMenu.ForeColor = System.Drawing.Color.RoyalBlue
-        Me.arbolMenu.ImageKey = "Orb_Icons_17x17.png"
+        Me.arbolMenu.ForeColor = System.Drawing.Color.DarkBlue
+        Me.arbolMenu.ImageKey = "Item.png"
         Me.arbolMenu.ImageList = Me.ImageList1
-        Me.arbolMenu.LineColor = System.Drawing.Color.RoyalBlue
+        Me.arbolMenu.LineColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.arbolMenu.Location = New System.Drawing.Point(0, 0)
         Me.arbolMenu.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.arbolMenu.Name = "arbolMenu"
-        Me.arbolMenu.SelectedImageKey = "generictokengreen (2).png"
+        Me.arbolMenu.SelectedImageKey = "Item seleccionado.png"
         Me.arbolMenu.Size = New System.Drawing.Size(240, 567)
         Me.arbolMenu.StateImageList = Me.ImageList1
         Me.arbolMenu.TabIndex = 1
@@ -50,8 +50,8 @@ Partial Class FormPrincipal
         '
         Me.ImageList1.ImageStream = CType(resources.GetObject("ImageList1.ImageStream"), System.Windows.Forms.ImageListStreamer)
         Me.ImageList1.TransparentColor = System.Drawing.Color.Transparent
-        Me.ImageList1.Images.SetKeyName(0, "Orb_Icons_17x17.png")
-        Me.ImageList1.Images.SetKeyName(1, "generictokengreen (2).png")
+        Me.ImageList1.Images.SetKeyName(0, "Item seleccionado.png")
+        Me.ImageList1.Images.SetKeyName(1, "Item.png")
         '
         'StatusStrip1
         '
