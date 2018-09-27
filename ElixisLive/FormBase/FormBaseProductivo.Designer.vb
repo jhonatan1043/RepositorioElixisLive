@@ -168,17 +168,17 @@ Partial Class FormBaseProductivo
         Me.pictImagen.TabIndex = 0
         Me.pictImagen.TabStop = False
         '
-        'GbInform_D
+        'gbInformD
         '
         Me.gbInformD.Controls.Add(Me.dgvParametro)
         Me.gbInformD.Font = New System.Drawing.Font("Times New Roman", 8.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.gbInformD.ForeColor = System.Drawing.Color.DarkBlue
         Me.gbInformD.Location = New System.Drawing.Point(6, 47)
-        Me.gbInformD.Name = "GbInform_D"
+        Me.gbInformD.Name = "gbInformD"
         Me.gbInformD.Size = New System.Drawing.Size(672, 185)
         Me.gbInformD.TabIndex = 62
         Me.gbInformD.TabStop = False
-        Me.gbInformD.Text = "Información de la Empresa"
+        Me.gbInformD.Text = "Información "
         '
         'dgvParametro
         '
