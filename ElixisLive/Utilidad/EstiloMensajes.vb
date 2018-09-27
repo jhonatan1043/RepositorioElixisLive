@@ -28,8 +28,8 @@
         If titulo <> "" Then
             frmMsgBx.AgregarTitulo(titulo)
         End If
-        frmMsgBx.AgregarBoton("Si")
-        frmMsgBx.AgregarBoton("No")
+        frmMsgBx.AgregarBoton(Constantes.SI)
+        frmMsgBx.AgregarBoton(Constantes.NO)
         frmMsgBx.AgregarMensaje(mensaje)
         frmMsgBx.Agregarlogo(My.Resources.Orb_help_icon__1_)
         respuesta = frmMsgBx.Mostrar()
@@ -39,8 +39,8 @@
 
     Public Sub mostrarMensajePreguntaCancel(mensaje As String, ByVal Optional titulo As String = "")
         frmMsgBx.AgregarTitulo(titulo)
-        frmMsgBx.AgregarBoton("Si")
-        frmMsgBx.AgregarBoton("No")
+        frmMsgBx.AgregarBoton(Constantes.SI)
+        frmMsgBx.AgregarBoton(Constantes.NO)
         frmMsgBx.AgregarBoton("Cancelar")
         frmMsgBx.AgregarMensaje(mensaje)
         frmMsgBx.Agregarlogo(My.Resources.Orb_help_icon__1_)
