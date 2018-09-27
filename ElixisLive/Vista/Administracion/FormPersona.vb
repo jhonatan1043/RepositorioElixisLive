@@ -57,7 +57,7 @@
             EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
         End Try
     End Sub
-    Private Sub btNuevo_Click(sender As Object, e As EventArgs)
+    Private Sub btNuevo_Click(sender As Object, e As EventArgs) Handles btNuevo.Click
         Generales.deshabilitarBotones(ToolStrip1)
         Generales.habilitarControles(Me)
         Generales.limpiarControles(GbInform_D)
@@ -67,11 +67,11 @@
         txtBuscar.ReadOnly = True
     End Sub
 
-    Private Sub btRegistrar_Click(sender As Object, e As EventArgs)
+    Private Sub btRegistrar_Click(sender As Object, e As EventArgs) Handles btRegistrar.Click
         dgvParametro.EndEdit()
         If validarCampos() = True Then
             cargarObjeto()
-            'EmpresaBLL.guardar(objEmpresa)
+            PersonaBLL.guardar(objPersona)
             Generales.deshabilitarBotones(ToolStrip1)
             Generales.deshabilitarControles(Me)
             cargarRegistro()
@@ -83,7 +83,7 @@
 
     End Sub
 
-    Private Sub btEditar_Click(sender As Object, e As EventArgs)
+    Private Sub btEditar_Click(sender As Object, e As EventArgs) Handles btEditar.Click
         If EstiloMensajes.mostrarMensajePregunta(MensajeSistema.EDITAR) = Constantes.SI Then
             Generales.deshabilitarBotones(ToolStrip1)
             Generales.habilitarControles(Me)
@@ -94,7 +94,7 @@
         End If
     End Sub
 
-    Private Sub btCancelar_Click(sender As Object, e As EventArgs)
+    Private Sub btCancelar_Click(sender As Object, e As EventArgs) Handles btCancelar.Click
         If EstiloMensajes.mostrarMensajePregunta(MensajeSistema.CANCELAR) = Constantes.SI Then
             Generales.deshabilitarBotones(ToolStrip1)
             Generales.deshabilitarControles(Me)
@@ -105,7 +105,7 @@
         End If
     End Sub
 
-    Private Sub btAnular_Click(sender As Object, e As EventArgs)
+    Private Sub btAnular_Click(sender As Object, e As EventArgs) Handles btAnular.Click
         If EstiloMensajes.mostrarMensajePregunta(MensajeSistema.ANULAR) = Constantes.SI Then
             If Generales.ejecutarSQL(objPersona.sqlAnular) = True Then
                 Generales.limpiarControles(GbInform_D)
