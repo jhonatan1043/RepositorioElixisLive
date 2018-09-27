@@ -11,7 +11,7 @@
         frmMsgBx.Mostrar()
     End Sub
 
-    Public Sub mostrarMensajeError(mensaje As String, ByVal Optional titulo As String = "")
+    Public Shared Sub mostrarMensajeError(mensaje As String, ByVal Optional titulo As String = "")
         frmMsgBx = New SuperMessageBox
         If titulo <> "" Then
             frmMsgBx.AgregarTitulo(titulo)
