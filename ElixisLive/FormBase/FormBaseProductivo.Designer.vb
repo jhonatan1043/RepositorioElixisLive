@@ -24,7 +24,7 @@ Partial Class FormBaseProductivo
     Private Sub InitializeComponent()
         Me.txtCodigo = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
+        Me.lbID = New System.Windows.Forms.Label()
         Me.txtBuscar = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
@@ -36,6 +36,7 @@ Partial Class FormBaseProductivo
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
         Me.dgRegistro = New System.Windows.Forms.DataGridView()
         Me.gbInform = New System.Windows.Forms.GroupBox()
+        Me.TxtDescripcion = New System.Windows.Forms.ComboBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Pimagen = New System.Windows.Forms.PictureBox()
         Me.LTitulo = New System.Windows.Forms.Label()
@@ -51,7 +52,6 @@ Partial Class FormBaseProductivo
         Me.ToolStripSeparator3 = New System.Windows.Forms.ToolStripSeparator()
         Me.btAnular = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripSeparator6 = New System.Windows.Forms.ToolStripSeparator()
-        Me.TxtDescripcion = New System.Windows.Forms.ComboBox()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         CType(Me.pictImagen, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -69,7 +69,7 @@ Partial Class FormBaseProductivo
         '
         Me.txtCodigo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtCodigo.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtCodigo.Location = New System.Drawing.Point(35, 12)
+        Me.txtCodigo.Location = New System.Drawing.Point(38, 10)
         Me.txtCodigo.Name = "txtCodigo"
         Me.txtCodigo.ReadOnly = True
         Me.txtCodigo.Size = New System.Drawing.Size(126, 22)
@@ -81,23 +81,23 @@ Partial Class FormBaseProductivo
         Me.Label2.BackColor = System.Drawing.Color.Transparent
         Me.Label2.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.RoyalBlue
-        Me.Label2.Location = New System.Drawing.Point(166, 14)
+        Me.Label2.Location = New System.Drawing.Point(185, 12)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(90, 19)
         Me.Label2.TabIndex = 3
         Me.Label2.Text = "Descripción:"
         '
-        'Label1
+        'lbID
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.BackColor = System.Drawing.Color.Transparent
-        Me.Label1.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.RoyalBlue
-        Me.Label1.Location = New System.Drawing.Point(4, 13)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(30, 19)
-        Me.Label1.TabIndex = 2
-        Me.Label1.Text = "ID:"
+        Me.lbID.AutoSize = True
+        Me.lbID.BackColor = System.Drawing.Color.Transparent
+        Me.lbID.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbID.ForeColor = System.Drawing.Color.RoyalBlue
+        Me.lbID.Location = New System.Drawing.Point(4, 11)
+        Me.lbID.Name = "lbID"
+        Me.lbID.Size = New System.Drawing.Size(30, 19)
+        Me.lbID.TabIndex = 2
+        Me.lbID.Text = "ID:"
         '
         'txtBuscar
         '
@@ -231,12 +231,22 @@ Partial Class FormBaseProductivo
         Me.gbInform.Controls.Add(Me.TxtDescripcion)
         Me.gbInform.Controls.Add(Me.txtCodigo)
         Me.gbInform.Controls.Add(Me.Label2)
-        Me.gbInform.Controls.Add(Me.Label1)
+        Me.gbInform.Controls.Add(Me.lbID)
         Me.gbInform.Location = New System.Drawing.Point(6, 5)
         Me.gbInform.Name = "gbInform"
         Me.gbInform.Size = New System.Drawing.Size(889, 40)
         Me.gbInform.TabIndex = 9
         Me.gbInform.TabStop = False
+        '
+        'TxtDescripcion
+        '
+        Me.TxtDescripcion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.TxtDescripcion.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!)
+        Me.TxtDescripcion.FormattingEnabled = True
+        Me.TxtDescripcion.Location = New System.Drawing.Point(279, 10)
+        Me.TxtDescripcion.Name = "TxtDescripcion"
+        Me.TxtDescripcion.Size = New System.Drawing.Size(572, 24)
+        Me.TxtDescripcion.TabIndex = 1
         '
         'Panel1
         '
@@ -361,16 +371,6 @@ Partial Class FormBaseProductivo
         Me.ToolStripSeparator6.Name = "ToolStripSeparator6"
         Me.ToolStripSeparator6.Size = New System.Drawing.Size(6, 33)
         '
-        'TxtDescripcion
-        '
-        Me.TxtDescripcion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.TxtDescripcion.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!)
-        Me.TxtDescripcion.FormattingEnabled = True
-        Me.TxtDescripcion.Location = New System.Drawing.Point(261, 11)
-        Me.TxtDescripcion.Name = "TxtDescripcion"
-        Me.TxtDescripcion.Size = New System.Drawing.Size(611, 24)
-        Me.TxtDescripcion.TabIndex = 1
-        '
         'FormBaseProductivo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -409,7 +409,7 @@ Partial Class FormBaseProductivo
     Public WithEvents LTitulo As Label
     Public WithEvents Pimagen As PictureBox
     Public WithEvents Label2 As Label
-    Public WithEvents Label1 As Label
+    Public WithEvents lbID As Label
     Public WithEvents txtCodigo As TextBox
     Public WithEvents txtBuscar As TextBox
     Public WithEvents Label3 As Label

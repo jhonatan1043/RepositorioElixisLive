@@ -37,14 +37,22 @@ Partial Class FormProducto
         '
         'Label2
         '
-        Me.Label2.Location = New System.Drawing.Point(138, 14)
+        Me.Label2.Location = New System.Drawing.Point(210, 12)
         Me.Label2.Size = New System.Drawing.Size(65, 19)
         Me.Label2.Text = "Nombre:"
+        '
+        'lbID
+        '
+        Me.lbID.Location = New System.Drawing.Point(4, 10)
+        '
+        'txtCodigo
+        '
+        Me.txtCodigo.Location = New System.Drawing.Point(38, 9)
         '
         'FormProducto
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
-        Me.ClientSize = New System.Drawing.Size(905, 523)
+        Me.ClientSize = New System.Drawing.Size(905, 524)
         Me.Location = New System.Drawing.Point(0, 0)
         Me.Name = "FormProducto"
         Me.Panel1.ResumeLayout(False)

@@ -13,12 +13,17 @@
             Generales.llenardgv("SP_CONSULTAR_PARAMETROS", dgvParametro, params)
             Generales.diseñoGrillaParametro(dgvParametro)
             cargarRegistro()
-            TxtDescripcion.DropDownStyle = ComboBoxStyle.Simple
-
+            diseñoTexto()
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
     End Sub
+    Private Sub diseñoTexto()
+        TxtDescripcion.DropDownStyle = ComboBoxStyle.Simple
+        TxtDescripcion.DroppedDown = False
+
+    End Sub
+
     Private Sub cargarInfomacion(pcodigo As Integer)
         Dim params As New List(Of String)
         Dim dfila As DataRow
@@ -32,7 +37,7 @@
                 cargarImagen(If(IsDBNull(dfila.Item("Foto")), Nothing, dfila.Item("Foto")))
                 Generales.llenardgv(objProducto.sqlCargarDetalle, dgvParametro, params)
                 Generales.diseñoGrillaParametro(dgvParametro)
-                controlVeificar()
+                controlVerificar()
             End If
             Generales.deshabilitarBotones(ToolStrip1)
             btEditar.Enabled = True
@@ -42,7 +47,7 @@
             MsgBox(ex.Message)
         End Try
     End Sub
-    Private Sub controlVeificar()
+    Private Sub controlVerificar()
         For posicion = 0 To dgvParametro.Rows.Count - 1
             Generales.consultarTipoControl(dgvParametro, posicion)
         Next

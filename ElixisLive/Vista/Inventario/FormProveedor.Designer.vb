@@ -43,8 +43,8 @@ Partial Class FormProveedor
         '
         'Label1
         '
-        Me.Label1.Size = New System.Drawing.Size(34, 19)
-        Me.Label1.Text = "Nit:"
+        Me.lbID.Size = New System.Drawing.Size(34, 19)
+        Me.lbID.Text = "Nit:"
         '
         'txtCodigo
         '
