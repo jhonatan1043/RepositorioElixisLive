@@ -54,7 +54,7 @@
     Private Function validaciones() As Boolean
         Dim badraResultado As Boolean
         If txtnombre.Text = String.Empty Then
-            MsgBox("¡ Favor Registrar, algún valor valido. !", MsgBoxStyle.Exclamation)
+            EstiloMensajes.mostrarMensajeAdvertencia("Debe ingresar un valor válido")
         Else
             badraResultado = True
         End If
@@ -74,10 +74,10 @@
                 txtFiltro.ReadOnly = False
                 txtcodigo.Text = objConfig.codigo
                 cargarRegistro()
-                '   MsgBox(MensajeSistema.REGISTRADO_CON_EXITO, MsgBoxStyle.Information)
+                EstiloMensajes.mostrarMensajeExitoso(MensajeSistema.REGISTRO_GUARDADO)
             End If
         Catch ex As Exception
-            MsgBox(ex.Message)
+            EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
         End Try
 
     End Sub

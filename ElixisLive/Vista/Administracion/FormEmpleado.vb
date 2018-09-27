@@ -8,7 +8,7 @@
             Generales.llenardgv(objEmpleado.sqlConsulta, dgRegistro, params)
             objEmpleado.dtRegistro = dgRegistro.DataSource
         Catch ex As Exception
-            MsgBox(ex.Message)
+            EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
         End Try
     End Sub
     Private Sub cargarObjeto()
@@ -25,9 +25,9 @@
     Private Function validarCampos() As Boolean
         Dim resultado As Boolean
         If String.IsNullOrEmpty(txtId.Text) Then
-            MsgBox("¡ Favor digitar el nit de la Empresa !", MsgBoxStyle.Exclamation)
+            EstiloMensajes.mostrarMensajeAdvertencia("Debe ingresar el nit de la empresa")
         ElseIf String.IsNullOrEmpty(TxtDescripcion.Text) Then
-            MsgBox("¡ Favor digitar el nombre de la empresa !", MsgBoxStyle.Exclamation)
+            EstiloMensajes.mostrarMensajeAdvertencia("Debe ingresar el nombre de la empresa")
         Else
             resultado = True
         End If
@@ -43,7 +43,7 @@
         Try
             Generales.consultarTipoControl(dgvParametro, dgvParametro.CurrentCell.RowIndex)
         Catch ex As Exception
-            MsgBox(ex.Message)
+            EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
         End Try
     End Sub
 
@@ -60,7 +60,7 @@
             Generales.llenardgv("SP_CONSULTAR_PARAMETROS", dgvParametro, params)
             Generales.diseñoGrillaParametro(dgvParametro)
         Catch ex As Exception
-            MsgBox(ex.Message)
+            EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
         End Try
     End Sub
     Private Sub btNuevo_Click(sender As Object, e As EventArgs) Handles btNuevo.Click
@@ -127,7 +127,7 @@
         Try
             Generales.subirimagen(pictImagen, openDialog)
         Catch ex As Exception
-            MsgBox(ex.Message)
+            EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
         End Try
     End Sub
 End Class

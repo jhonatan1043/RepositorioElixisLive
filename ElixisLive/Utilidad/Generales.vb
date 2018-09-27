@@ -113,7 +113,7 @@ Public Class Generales
             End Using
             objConexion.desConectar()
         Catch ex As Exception
-            MsgBox(ex.Message)
+            EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
         End Try
 
         dgdgv.DataSource = dtTabla
@@ -297,7 +297,7 @@ Public Class Generales
                 End With
             End If
         Catch ex As Exception
-            MsgBox(ex.Message)
+            EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
         End Try
     End Sub
     Public Shared Function consultarTipoControl(dgv As DataGridView,

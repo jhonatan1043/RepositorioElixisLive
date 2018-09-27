@@ -55,7 +55,7 @@
 
     End Function
 
-    Public Sub mostrarMensajePreguntaCancel(mensaje As String, ByVal Optional titulo As String = "")
+    Public Shared Sub mostrarMensajePreguntaCancel(mensaje As String, ByVal Optional titulo As String = "")
         frmMsgBx.AgregarTitulo(titulo)
         frmMsgBx.AgregarBoton(Constantes.SI)
         frmMsgBx.AgregarBoton(Constantes.NO)

@@ -31,7 +31,7 @@ Partial Class FormBaseProductivo
         Me.btExaminar = New System.Windows.Forms.Button()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.pictImagen = New System.Windows.Forms.PictureBox()
-        Me.GbInform_D = New System.Windows.Forms.GroupBox()
+        Me.gbInformD = New System.Windows.Forms.GroupBox()
         Me.dgvParametro = New System.Windows.Forms.DataGridView()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
         Me.dgRegistro = New System.Windows.Forms.DataGridView()
@@ -55,7 +55,7 @@ Partial Class FormBaseProductivo
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         CType(Me.pictImagen, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GbInform_D.SuspendLayout()
+        Me.gbInformD.SuspendLayout()
         CType(Me.dgvParametro, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox5.SuspendLayout()
         CType(Me.dgRegistro, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -125,7 +125,7 @@ Partial Class FormBaseProductivo
         Me.GroupBox1.BackColor = System.Drawing.Color.Transparent
         Me.GroupBox1.Controls.Add(Me.btExaminar)
         Me.GroupBox1.Controls.Add(Me.GroupBox3)
-        Me.GroupBox1.Controls.Add(Me.GbInform_D)
+        Me.GroupBox1.Controls.Add(Me.gbInformD)
         Me.GroupBox1.Controls.Add(Me.GroupBox5)
         Me.GroupBox1.Controls.Add(Me.txtBuscar)
         Me.GroupBox1.Controls.Add(Me.Label3)
@@ -170,15 +170,15 @@ Partial Class FormBaseProductivo
         '
         'GbInform_D
         '
-        Me.GbInform_D.Controls.Add(Me.dgvParametro)
-        Me.GbInform_D.Font = New System.Drawing.Font("Times New Roman", 8.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GbInform_D.ForeColor = System.Drawing.Color.DarkBlue
-        Me.GbInform_D.Location = New System.Drawing.Point(6, 47)
-        Me.GbInform_D.Name = "GbInform_D"
-        Me.GbInform_D.Size = New System.Drawing.Size(672, 185)
-        Me.GbInform_D.TabIndex = 62
-        Me.GbInform_D.TabStop = False
-        Me.GbInform_D.Text = "Información de la Empresa"
+        Me.gbInformD.Controls.Add(Me.dgvParametro)
+        Me.gbInformD.Font = New System.Drawing.Font("Times New Roman", 8.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.gbInformD.ForeColor = System.Drawing.Color.DarkBlue
+        Me.gbInformD.Location = New System.Drawing.Point(6, 47)
+        Me.gbInformD.Name = "GbInform_D"
+        Me.gbInformD.Size = New System.Drawing.Size(672, 185)
+        Me.gbInformD.TabIndex = 62
+        Me.gbInformD.TabStop = False
+        Me.gbInformD.Text = "Información de la Empresa"
         '
         'dgvParametro
         '
@@ -399,7 +399,7 @@ Partial Class FormBaseProductivo
         Me.GroupBox1.PerformLayout()
         Me.GroupBox3.ResumeLayout(False)
         CType(Me.pictImagen, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.GbInform_D.ResumeLayout(False)
+        Me.gbInformD.ResumeLayout(False)
         CType(Me.dgvParametro, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox5.ResumeLayout(False)
         CType(Me.dgRegistro, System.ComponentModel.ISupportInitialize).EndInit()
@@ -425,7 +425,7 @@ Partial Class FormBaseProductivo
     Friend WithEvents gbInform As GroupBox
     Friend WithEvents GroupBox5 As GroupBox
     Public WithEvents dgRegistro As DataGridView
-    Friend WithEvents GbInform_D As GroupBox
+    Friend WithEvents gbInformD As GroupBox
     Public WithEvents dgvParametro As DataGridView
     Public WithEvents GroupBox3 As GroupBox
     Friend WithEvents pictImagen As PictureBox

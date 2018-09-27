@@ -8,7 +8,7 @@
             Generales.llenardgv(objPersona.sqlConsulta, dgRegistro, params)
             objPersona.dtRegistro = dgRegistro.DataSource
         Catch ex As Exception
-            MsgBox(ex.Message)
+            EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
         End Try
     End Sub
     Private Sub cargarObjeto()
@@ -19,9 +19,9 @@
     Private Function validarCampos() As Boolean
         Dim resultado As Boolean
         If String.IsNullOrEmpty(txtCodigo.Text) Then
-            MsgBox("¡ Favor digitar la identificación de la persona !", MsgBoxStyle.Exclamation)
+            EstiloMensajes.mostrarMensajeAdvertencia("Debe ingresar el número de identificación de la persona")
         ElseIf String.IsNullOrEmpty(TxtDescripcion.Text) Then
-            MsgBox("¡ Favor digitar el nombre de la persona !", MsgBoxStyle.Exclamation)
+            EstiloMensajes.mostrarMensajeAdvertencia("Debe ingresar el nombre de la persona")
         Else
             resultado = True
         End If
@@ -37,7 +37,7 @@
         Try
             Generales.consultarTipoControl(dgvParametro, dgvParametro.CurrentCell.RowIndex)
         Catch ex As Exception
-            MsgBox(ex.Message)
+            EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
         End Try
     End Sub
 
@@ -54,7 +54,7 @@
             Generales.llenardgv("SP_CONSULTAR_PARAMETROS", dgvParametro, params)
             Generales.diseñoGrillaParametro(dgvParametro)
         Catch ex As Exception
-            MsgBox(ex.Message)
+            EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
         End Try
     End Sub
     Private Sub btNuevo_Click(sender As Object, e As EventArgs)

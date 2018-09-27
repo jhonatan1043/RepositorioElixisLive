@@ -29,7 +29,7 @@
                 idUsuario = dFila.Item(0)
             End If
         Catch ex As Exception
-            MsgBox(ex.Message)
+            EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
         End Try
         Return idUsuario
     End Function

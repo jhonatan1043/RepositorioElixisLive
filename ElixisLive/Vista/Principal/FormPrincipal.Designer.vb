@@ -32,6 +32,7 @@ Partial Class FormPrincipal
         'arbolMenu
         '
         Me.arbolMenu.BackColor = System.Drawing.Color.White
+        Me.arbolMenu.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.arbolMenu.Dock = System.Windows.Forms.DockStyle.Left
         Me.arbolMenu.Font = New System.Drawing.Font("Times New Roman", 15.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.arbolMenu.ForeColor = System.Drawing.Color.DarkBlue
@@ -69,7 +70,7 @@ Partial Class FormPrincipal
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.BackgroundImage = Global.ElixisLive.My.Resources.Resources.logos1
+        Me.BackgroundImage = Global.ElixisLive.My.Resources.Resources._8eaeba986b34f11547cce4ca3f8b6df6
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(1137, 567)
         Me.Controls.Add(Me.StatusStrip1)

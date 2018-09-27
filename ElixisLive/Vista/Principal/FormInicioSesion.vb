@@ -11,11 +11,11 @@
     Private Function validarCampos() As Boolean
         Dim resultado As Boolean
         If txtUsuario.Text = String.Empty Then
-            MsgBox(MensajeSistema.USUARIO_NO_EXISTE, MsgBoxStyle.Exclamation)
+            EstiloMensajes.mostrarMensajeAdvertencia(MensajeSistema.USUARIO_NO_EXISTE)
         ElseIf txtContraseña.Text = String.Empty Then
-            MsgBox(MensajeSistema.CONTRASENA_NO_VALIDA, MsgBoxStyle.Exclamation)
+            EstiloMensajes.mostrarMensajeAdvertencia(MensajeSistema.CONTRASENA_NO_VALIDA)
         ElseIf CbEmpresa.SelectedIndex = 0 Then
-            MsgBox(MensajeSistema.SELECCIONAR_UNA_EMPRESA, MsgBoxStyle.Exclamation)
+            EstiloMensajes.mostrarMensajeAdvertencia(MensajeSistema.SELECCIONAR_UNA_EMPRESA)
         Else
             resultado = True
         End If
@@ -40,7 +40,7 @@
             params.Add(txtUsuario.Text)
             resultado = Generales.cargarCombo("[SP_ADMIN_CONSULTAR_EMPRESA]", params, "Nombre", "codigo_empresa", CbEmpresa)
         Catch ex As Exception
-            MsgBox(ex.Message)
+            EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
         End Try
         Return resultado
     End Function
@@ -52,7 +52,7 @@
         End If
     End Sub
     Private Sub validarExistencia()
-        MsgBox(MensajeSistema.USUARIO_NO_EXISTE, MsgBoxStyle.Exclamation)
+        EstiloMensajes.mostrarMensajeAdvertencia(MensajeSistema.USUARIO_NO_EXISTE)
         Generales.limpiarControles(Me)
         txtUsuario.Focus()
     End Sub

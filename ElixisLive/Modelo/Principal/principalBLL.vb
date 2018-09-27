@@ -19,7 +19,7 @@ Public Class principalBLL
                 crearSubcuentas(nodo)
             Next
         Catch ex As Exception
-            MsgBox(ex.Message)
+            EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
         End Try
     End Sub
     Private Shared Sub crearSubcuentas(ByRef nodoPade As TreeNode)
@@ -39,7 +39,7 @@ Public Class principalBLL
                 crearSubcuentas(subnodo)
             Next
         Catch ex As Exception
-            MsgBox(ex.Message)
+            EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
         End Try
 
     End Sub
@@ -51,7 +51,7 @@ Public Class principalBLL
             Generales.llenarTabla("SP_ADMIN_MENU", params, dtmenu)
             dsDatos.Tables.Add(dtmenu)
         Catch ex As Exception
-            MsgBox(ex.Message)
+            EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
         End Try
     End Sub
     Private Shared Sub cargarMenuPadre(ByRef dsDatos As DataSet)
@@ -62,7 +62,7 @@ Public Class principalBLL
             Generales.llenarTabla("SP_ADMIN_MENU_PADRE", params, dtmenu)
             dsDatos.Tables.Add(dtmenu)
         Catch ex As Exception
-            MsgBox(ex.Message)
+            EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
         End Try
     End Sub
     Private Shared Sub cargarMenuHijas(ByRef dsDatos As DataSet)
@@ -73,7 +73,7 @@ Public Class principalBLL
             Generales.llenarTabla("SP_ADMIN_MENU_HIJOS", params, dtmenu)
             dsDatos.Tables.Add(dtmenu)
         Catch ex As Exception
-            MsgBox(ex.Message)
+            EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
         End Try
     End Sub
     Public Shared Sub cargarMenu(ByRef dsCuentas As DataSet)
@@ -99,7 +99,7 @@ Public Class principalBLL
                 End If
             End If
         Catch ex As Exception
-            MsgBox(ex.Message)
+            EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
         End Try
     End Sub
     Public Shared Sub traerAlFrente(ByVal elemento As ElementoMenu)

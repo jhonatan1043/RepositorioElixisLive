@@ -9,7 +9,7 @@
                 ' Attempt to cast the control to type MdiClient.
                 ctlMDI = CType(ctl, MdiClient)
                 ' Set the BackColor of the MdiClient control.
-                ctlMDI.BackgroundImage = My.Resources.logos1
+                ctlMDI.BackgroundImage = My.Resources._8eaeba986b34f11547cce4ca3f8b6df6
             Catch exc As InvalidCastException
                 ' Catch and ignore the error if casting failed.
             End Try

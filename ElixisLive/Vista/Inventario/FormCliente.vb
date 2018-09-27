@@ -17,7 +17,7 @@
             Generales.cargarCombo("[SP_CONSULTAR_PERSONA]", params, "Nombre", "Codigo_persona", TxtDescripcion)
             cargarRegistro()
         Catch ex As Exception
-            MsgBox(ex.Message)
+             EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
         End Try
     End Sub
     Private Sub cargarInfomacion(pcodigo As Integer)
@@ -40,7 +40,7 @@
             btCancelar.Enabled = True
             btNuevo.Enabled = True
         Catch ex As Exception
-            MsgBox(ex.Message)
+             EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
         End Try
     End Sub
     Private Sub controlVeificar()
@@ -68,7 +68,7 @@
             Generales.llenardgv(objCliente.sqlConsulta, dgRegistro, params)
             objCliente.dtRegistro = dgRegistro.DataSource
         Catch ex As Exception
-            MsgBox(ex.Message)
+             EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
         End Try
     End Sub
     Private Sub txtBuscar_KeyDown(sender As Object, e As KeyEventArgs) Handles txtBuscar.KeyDown
@@ -81,7 +81,7 @@
         Try
             Generales.consultarTipoControl(dgvParametro, dgvParametro.CurrentCell.RowIndex)
         Catch ex As Exception
-            MsgBox(ex.Message)
+            EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
         End Try
     End Sub
     Private Sub dgRegistro_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgRegistro.CellClick
@@ -107,7 +107,7 @@
     Private Sub btNuevo_Click(sender As Object, e As EventArgs) Handles btNuevo.Click
         Generales.deshabilitarBotones(ToolStrip1)
         Generales.habilitarControles(Me)
-        Generales.limpiarControles(GbInform_D)
+        Generales.limpiarControles(gbInformD)
         Generales.limpiarControles(gbInform)
         pictImagen.Image = Nothing
         btCancelar.Enabled = True
@@ -117,7 +117,7 @@
     Private Function validarCampos() As Boolean
         Dim resultado As Boolean
         If String.IsNullOrEmpty(TxtDescripcion.Text) Then
-            MsgBox("¡ Favor digitar el nombre del registro !", MsgBoxStyle.Exclamation)
+            EstiloMensajes.mostrarMensajeAdvertencia("")
         Else
             resultado = True
         End If
@@ -142,7 +142,7 @@
         If EstiloMensajes.mostrarMensajePregunta(MensajeSistema.CANCELAR) = Constantes.SI Then
             Generales.deshabilitarBotones(ToolStrip1)
             Generales.deshabilitarControles(Me)
-            Generales.limpiarControles(GbInform_D)
+            Generales.limpiarControles(gbInformD)
             Generales.limpiarControles(gbInform)
             pictImagen.Image = Nothing
             txtBuscar.ReadOnly = False
@@ -162,7 +162,7 @@
     Private Sub btAnular_Click(sender As Object, e As EventArgs) Handles btAnular.Click
         If EstiloMensajes.mostrarMensajePregunta(MensajeSistema.ANULAR) = Constantes.SI Then
             If Generales.ejecutarSQL(objCliente.sqlAnular) = True Then
-                Generales.limpiarControles(GbInform_D)
+                Generales.limpiarControles(gbInformD)
                 Generales.limpiarControles(gbInform)
                 Generales.deshabilitarBotones(ToolStrip1)
                 pictImagen.Image = Nothing
