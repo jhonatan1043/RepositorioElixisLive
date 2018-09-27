@@ -17,7 +17,7 @@
             Generales.cargarCombo("[SP_CONSULTAR_PERSONA]", params, "Nombre", "Codigo_persona", TxtDescripcion)
             cargarRegistro()
         Catch ex As Exception
-             EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
+            EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
         End Try
     End Sub
     Private Sub cargarInfomacion(pcodigo As Integer)
@@ -40,7 +40,7 @@
             btCancelar.Enabled = True
             btNuevo.Enabled = True
         Catch ex As Exception
-             EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
+            EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
         End Try
     End Sub
     Private Sub controlVeificar()
@@ -68,7 +68,7 @@
             Generales.llenardgv(objCliente.sqlConsulta, dgRegistro, params)
             objCliente.dtRegistro = dgRegistro.DataSource
         Catch ex As Exception
-             EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
+            EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
         End Try
     End Sub
     Private Sub txtBuscar_KeyDown(sender As Object, e As KeyEventArgs) Handles txtBuscar.KeyDown

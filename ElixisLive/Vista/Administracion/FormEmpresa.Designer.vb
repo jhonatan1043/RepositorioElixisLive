@@ -259,14 +259,17 @@ Partial Class FormEmpresa
         '
         'btExaminar
         '
-        Me.btExaminar.BackColor = System.Drawing.Color.White
-        Me.btExaminar.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btExaminar.ForeColor = System.Drawing.Color.Black
+        Me.btExaminar.BackColor = System.Drawing.Color.Transparent
+        Me.btExaminar.BackgroundImage = Global.ElixisLive.My.Resources.Resources.fondo_azul
+        Me.btExaminar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btExaminar.Font = New System.Drawing.Font("Times New Roman", 9.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btExaminar.ForeColor = System.Drawing.Color.White
         Me.btExaminar.Location = New System.Drawing.Point(789, 202)
         Me.btExaminar.Name = "btExaminar"
         Me.btExaminar.Size = New System.Drawing.Size(84, 25)
         Me.btExaminar.TabIndex = 57
         Me.btExaminar.Text = "Examinar..."
+        Me.btExaminar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btExaminar.UseVisualStyleBackColor = False
         '
         'ToolStrip1

@@ -41,9 +41,14 @@ Partial Class FormProducto
         Me.Label2.Size = New System.Drawing.Size(65, 19)
         Me.Label2.Text = "Nombre:"
         '
+        'lbID
+        '
+        Me.lbID.Size = New System.Drawing.Size(61, 19)
+        Me.lbID.Text = "Código:"
+        '
         'txtCodigo
         '
-        Me.txtCodigo.Location = New System.Drawing.Point(39, 9)
+        Me.txtCodigo.Location = New System.Drawing.Point(61, 9)
         '
         'FormProducto
         '

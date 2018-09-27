@@ -37,7 +37,7 @@ Partial Class FormProveedor
         '
         'Label2
         '
-        Me.Label2.Location = New System.Drawing.Point(138, 14)
+        Me.Label2.Location = New System.Drawing.Point(210, 12)
         Me.Label2.Size = New System.Drawing.Size(65, 19)
         Me.Label2.Text = "Nombre:"
         '
@@ -48,7 +48,7 @@ Partial Class FormProveedor
         '
         'txtCodigo
         '
-        Me.txtCodigo.Size = New System.Drawing.Size(93, 22)
+        Me.txtCodigo.Size = New System.Drawing.Size(134, 22)
         '
         'FormProveedor
         '

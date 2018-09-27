@@ -36,7 +36,7 @@ Partial Class FormCliente
         '
         'Label2
         '
-        Me.Label2.Location = New System.Drawing.Point(137, 14)
+        Me.Label2.Location = New System.Drawing.Point(207, 12)
         Me.Label2.Size = New System.Drawing.Size(65, 19)
         Me.Label2.Text = "Nombre:"
         '
@@ -47,7 +47,7 @@ Partial Class FormCliente
         '
         'txtCodigo
         '
-        Me.txtCodigo.Size = New System.Drawing.Size(92, 22)
+        Me.txtCodigo.Size = New System.Drawing.Size(136, 22)
         '
         'FormCliente
         '
