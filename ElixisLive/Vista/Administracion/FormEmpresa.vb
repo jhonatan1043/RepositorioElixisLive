@@ -119,6 +119,7 @@
                 pictImagen.Image = Nothing
                 cargarRegistro()
                 btNuevo.Enabled = True
+                EstiloMensajes.mostrarMensajeAnulado(MensajeSistema.REGISTRO_ANULADO)
             End If
         End If
     End Sub

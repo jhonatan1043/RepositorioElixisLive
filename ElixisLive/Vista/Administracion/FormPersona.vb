@@ -78,6 +78,7 @@
             txtBuscar.ReadOnly = False
             btNuevo.Enabled = True
             btEditar.Enabled = True
+            EstiloMensajes.mostrarMensajeExitoso(MensajeSistema.REGISTRO_GUARDADO)
         End If
 
     End Sub
@@ -112,6 +113,7 @@
                 Generales.deshabilitarBotones(ToolStrip1)
                 cargarRegistro()
                 btNuevo.Enabled = True
+                EstiloMensajes.mostrarMensajeAnulado(MensajeSistema.REGISTRO_ANULADO)
             End If
         End If
     End Sub

@@ -31,8 +31,8 @@ Partial Class FormProveedor
         '
         'Pimagen
         '
-        Me.Pimagen.Image = Global.ElixisLive.My.Resources.Resources.Apps_preferences_contact_list_icon__1_
-        Me.Pimagen.Size = New System.Drawing.Size(46, 42)
+        Me.Pimagen.BackColor = System.Drawing.Color.Transparent
+        Me.Pimagen.Image = Global.ElixisLive.My.Resources.Resources.proveedor
         Me.Pimagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         '
         'Label2
@@ -41,7 +41,7 @@ Partial Class FormProveedor
         Me.Label2.Size = New System.Drawing.Size(65, 19)
         Me.Label2.Text = "Nombre:"
         '
-        'Label1
+        'lbID
         '
         Me.lbID.Size = New System.Drawing.Size(34, 19)
         Me.lbID.Text = "Nit:"

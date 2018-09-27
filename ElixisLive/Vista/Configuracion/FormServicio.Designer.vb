@@ -30,6 +30,12 @@ Partial Class FormServicio
         Me.LTitulo.Size = New System.Drawing.Size(571, 41)
         Me.LTitulo.Text = "Servicios"
         '
+        'Pimagen
+        '
+        Me.Pimagen.BackColor = System.Drawing.Color.Transparent
+        Me.Pimagen.Image = Global.ElixisLive.My.Resources.Resources.glossy_3d_blue_orbs2_115_icon
+        Me.Pimagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        '
         'FormServicio
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)

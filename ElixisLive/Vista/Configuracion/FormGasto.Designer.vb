@@ -32,9 +32,8 @@ Partial Class FormGasto
         '
         'Pimagen
         '
-        Me.Pimagen.Image = Global.ElixisLive.My.Resources.Resources.Cash_icon
-        Me.Pimagen.Location = New System.Drawing.Point(0, -1)
-        Me.Pimagen.Size = New System.Drawing.Size(50, 46)
+        Me.Pimagen.BackColor = System.Drawing.Color.Transparent
+        Me.Pimagen.Image = Global.ElixisLive.My.Resources.Resources.dinero
         Me.Pimagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         '
         'FormGasto

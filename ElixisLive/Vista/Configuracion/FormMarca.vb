@@ -40,6 +40,7 @@
                 Generales.deshabilitarBotones(ToolStrip1)
                 cargarRegistro()
                 btNuevo.Enabled = True
+                EstiloMensajes.mostrarMensajeAnulado(MensajeSistema.REGISTRO_ANULADO)
             End If
         End If
     End Sub
@@ -73,7 +74,7 @@
                 txtFiltro.ReadOnly = False
                 txtcodigo.Text = objConfig.codigo
                 cargarRegistro()
-                '  MsgBox(MensajeSistema.REGISTRADO_CON_EXITO, MsgBoxStyle.Information)
+                EstiloMensajes.mostrarMensajeExitoso(MensajeSistema.REGISTRO_GUARDADO)
             End If
         Catch ex As Exception
             MsgBox(ex.Message)

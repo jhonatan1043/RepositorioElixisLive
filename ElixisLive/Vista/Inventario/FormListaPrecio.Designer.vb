@@ -30,10 +30,11 @@ Partial Class FormListaPrecio
         '
         'Pimagen
         '
-        Me.Pimagen.Image = Global.ElixisLive.My.Resources.Resources.aplica
+        Me.Pimagen.BackColor = System.Drawing.Color.Transparent
+        Me.Pimagen.Image = Global.ElixisLive.My.Resources.Resources.lista
         Me.Pimagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         '
-        'FormListaGasto
+        'FormListaPrecio
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.ClientSize = New System.Drawing.Size(571, 387)

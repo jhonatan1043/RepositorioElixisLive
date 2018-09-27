@@ -64,21 +64,21 @@
 
         Try
 
-                If validaciones() = True Then
-                    cargarObjeto()
-                    ConfigBLL.guardar(objConfig)
-                    Generales.deshabilitarBotones(ToolStrip1)
-                    Generales.deshabilitarControles(Me)
-                    btNuevo.Enabled = True
-                    btAnular.Enabled = True
-                    txtFiltro.ReadOnly = False
-                    txtcodigo.Text = objConfig.codigo
-                    cargarRegistro()
-                    '   MsgBox(MensajeSistema.REGISTRADO_CON_EXITO, MsgBoxStyle.Information)
-                End If
-            Catch ex As Exception
-                MsgBox(ex.Message)
-            End Try
+            If validaciones() = True Then
+                cargarObjeto()
+                ConfigBLL.guardar(objConfig)
+                Generales.deshabilitarBotones(ToolStrip1)
+                Generales.deshabilitarControles(Me)
+                btNuevo.Enabled = True
+                btAnular.Enabled = True
+                txtFiltro.ReadOnly = False
+                txtcodigo.Text = objConfig.codigo
+                cargarRegistro()
+                '   MsgBox(MensajeSistema.REGISTRADO_CON_EXITO, MsgBoxStyle.Information)
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
 
     End Sub
     Private Sub cargarObjeto()
