@@ -1,7 +1,5 @@
-﻿Public Class Empresa
+﻿Public Class Empleado
     Inherits persona
-    Property codigoEmpresa As String
-    Property nit As String
     Property foto As Byte()
 
     Public Sub New()

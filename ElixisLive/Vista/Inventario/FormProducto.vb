@@ -21,7 +21,6 @@
     Private Sub diseñoTexto()
         TxtDescripcion.DropDownStyle = ComboBoxStyle.Simple
         TxtDescripcion.DroppedDown = False
-
     End Sub
 
     Private Sub cargarInfomacion(pcodigo As Integer)
@@ -89,6 +88,7 @@
         End Try
     End Sub
     Private Sub dgRegistro_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgRegistro.CellClick
+        If btRegistrar.Enabled = True Then Exit Sub
         If objProducto.dtRegistro.Rows.Count > 0 Then
             cargarInfomacion(objProducto.dtRegistro.Rows(dgRegistro.CurrentCell.RowIndex).Item("Codigo"))
         End If

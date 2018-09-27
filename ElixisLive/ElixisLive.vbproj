@@ -111,6 +111,7 @@
     <Compile Include="ControlesElixisLive\TextFiltrarRegistro.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Entidad\Administracion\Empleado.vb" />
     <Compile Include="Entidad\Administracion\Empresa.vb" />
     <Compile Include="Entidad\Administracion\persona.vb" />
     <Compile Include="Entidad\generalConsulta.vb" />
@@ -145,6 +146,12 @@
     <Compile Include="Utilidad\MensajeSistema.vb" />
     <Compile Include="Utilidad\SesionActual.vb" />
     <Compile Include="Utilidad\SuperMessageBox.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Administracion\FormEmpleado.Designer.vb">
+      <DependentUpon>FormEmpleado.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Administracion\FormEmpleado.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Vista\Administracion\FormPersona.Designer.vb">
@@ -247,6 +254,9 @@
       <DependentUpon>FormBaseProductivo.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Utilidad\SuperMessageBox.resx" />
+    <EmbeddedResource Include="Vista\Administracion\FormEmpleado.resx">
+      <DependentUpon>FormEmpleado.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vista\Administracion\FormPersona.resx">
       <DependentUpon>FormPersona.vb</DependentUpon>
     </EmbeddedResource>

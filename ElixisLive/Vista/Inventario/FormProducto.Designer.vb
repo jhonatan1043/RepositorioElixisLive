@@ -44,10 +44,11 @@ Partial Class FormProducto
         'lbID
         '
         Me.lbID.Location = New System.Drawing.Point(4, 10)
+        Me.lbID.Text = "Nº:"
         '
         'txtCodigo
         '
-        Me.txtCodigo.Location = New System.Drawing.Point(38, 9)
+        Me.txtCodigo.Location = New System.Drawing.Point(39, 9)
         '
         'FormProducto
         '
