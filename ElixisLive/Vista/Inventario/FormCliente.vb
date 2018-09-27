@@ -138,7 +138,7 @@
         End If
     End Sub
     Private Sub btCancelar_Click(sender As Object, e As EventArgs) Handles btCancelar.Click
-        If MsgBox(MensajeSistema.CANCELAR, 32 + 1, "Cancelar") = 1 Then
+        If MsgBox(MensajeSistema.CANCELAR, 32 + 1) = 1 Then
             Generales.deshabilitarBotones(ToolStrip1)
             Generales.deshabilitarControles(Me)
             Generales.limpiarControles(GbInform_D)
@@ -149,7 +149,7 @@
         End If
     End Sub
     Private Sub btEditar_Click(sender As Object, e As EventArgs) Handles btEditar.Click
-        If MsgBox(MensajeSistema.EDITAR, 32 + 1, "Editar") = 1 Then
+        If MsgBox(MensajeSistema.EDITAR, 32 + 1) = 1 Then
             Generales.deshabilitarBotones(ToolStrip1)
             Generales.habilitarControles(Me)
             txtBuscar.ReadOnly = True
@@ -159,7 +159,7 @@
         End If
     End Sub
     Private Sub btAnular_Click(sender As Object, e As EventArgs) Handles btAnular.Click
-        If MsgBox(MensajeSistema.ANULAR, 32 + 1, "Anular") = 1 Then
+        If MsgBox(MensajeSistema.ANULAR, 32 + 1) = 1 Then
             If Generales.ejecutarSQL(objCliente.sqlAnular) = True Then
                 Generales.limpiarControles(GbInform_D)
                 Generales.limpiarControles(gbInform)

@@ -16,7 +16,7 @@
         Generales.llenardgv(objConfig.sqlConsulta, dgRegistro, params)
     End Sub
     Private Sub btCancelar_Click(sender As Object, e As EventArgs) Handles btCancelar.Click
-        If EstiloMensajes.mostrarMensajePregunta(MensajeSistema.CANCELAR, "Cancelar") = Constantes.SI Then
+        If EstiloMensajes.mostrarMensajePregunta(MensajeSistema.CANCELAR) = Constantes.SI Then
             Generales.deshabilitarBotones(ToolStrip1)
             Generales.deshabilitarControles(Me)
             Generales.limpiarControles(Me)
@@ -25,7 +25,7 @@
         End If
     End Sub
     Private Sub btEditar_Click(sender As Object, e As EventArgs) Handles btEditar.Click
-        If EstiloMensajes.mostrarMensajePregunta(MensajeSistema.EDITAR, "Editar") = Constantes.SI Then
+        If EstiloMensajes.mostrarMensajePregunta(MensajeSistema.EDITAR) = Constantes.SI Then
             Generales.deshabilitarBotones(ToolStrip1)
             Generales.habilitarControles(Me)
             txtFiltro.ReadOnly = True
@@ -34,7 +34,7 @@
         End If
     End Sub
     Private Sub btAnular_Click(sender As Object, e As EventArgs) Handles btAnular.Click
-        If EstiloMensajes.mostrarMensajePregunta(MensajeSistema.ANULAR, "Anular") = Constantes.SI Then
+        If EstiloMensajes.mostrarMensajePregunta(MensajeSistema.ANULAR) = Constantes.SI Then
             If Generales.ejecutarSQL(objConfig.sqlAnular) = True Then
                 Generales.limpiarControles(Gbdatos)
                 Generales.deshabilitarBotones(ToolStrip1)
