@@ -87,20 +87,20 @@
         'lblMensaje
         '
         Me.lblMensaje.BackColor = System.Drawing.Color.Transparent
-        Me.lblMensaje.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblMensaje.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblMensaje.ForeColor = System.Drawing.Color.White
-        Me.lblMensaje.Location = New System.Drawing.Point(73, 60)
+        Me.lblMensaje.Location = New System.Drawing.Point(100, 38)
         Me.lblMensaje.Name = "lblMensaje"
-        Me.lblMensaje.Size = New System.Drawing.Size(260, 37)
+        Me.lblMensaje.Size = New System.Drawing.Size(233, 59)
         Me.lblMensaje.TabIndex = 0
         Me.lblMensaje.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'logo
         '
         Me.logo.BackColor = System.Drawing.Color.Transparent
-        Me.logo.Location = New System.Drawing.Point(2, 45)
+        Me.logo.Location = New System.Drawing.Point(2, 36)
         Me.logo.Name = "logo"
-        Me.logo.Size = New System.Drawing.Size(68, 68)
+        Me.logo.Size = New System.Drawing.Size(92, 83)
         Me.logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.logo.TabIndex = 0
         Me.logo.TabStop = False

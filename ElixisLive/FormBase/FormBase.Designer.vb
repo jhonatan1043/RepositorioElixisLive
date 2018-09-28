@@ -24,6 +24,7 @@ Partial Class FormBase
     Private Sub InitializeComponent()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Pimagen = New System.Windows.Forms.PictureBox()
         Me.LTitulo = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
@@ -35,7 +36,6 @@ Partial Class FormBase
         Me.txtcodigo = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.Pimagen = New System.Windows.Forms.PictureBox()
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
         Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.btNuevo = New System.Windows.Forms.ToolStripButton()
@@ -49,11 +49,11 @@ Partial Class FormBase
         Me.btAnular = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripSeparator6 = New System.Windows.Forms.ToolStripSeparator()
         Me.Panel1.SuspendLayout()
+        CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox5.SuspendLayout()
         CType(Me.dgRegistro, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Gbdatos.SuspendLayout()
-        CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ToolStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -68,6 +68,15 @@ Partial Class FormBase
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(571, 42)
         Me.Panel1.TabIndex = 0
+        '
+        'Pimagen
+        '
+        Me.Pimagen.BackColor = System.Drawing.Color.White
+        Me.Pimagen.Location = New System.Drawing.Point(4, -7)
+        Me.Pimagen.Name = "Pimagen"
+        Me.Pimagen.Size = New System.Drawing.Size(69, 53)
+        Me.Pimagen.TabIndex = 1
+        Me.Pimagen.TabStop = False
         '
         'LTitulo
         '
@@ -108,7 +117,10 @@ Partial Class FormBase
         '
         'dgRegistro
         '
-        Me.dgRegistro.AllowUserToOrderColumns = True
+        Me.dgRegistro.AllowUserToAddRows = False
+        Me.dgRegistro.AllowUserToDeleteRows = False
+        Me.dgRegistro.AllowUserToResizeColumns = False
+        Me.dgRegistro.AllowUserToResizeRows = False
         DataGridViewCellStyle1.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.dgRegistro.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.dgRegistro.BackgroundColor = System.Drawing.SystemColors.Control
@@ -195,15 +207,6 @@ Partial Class FormBase
         Me.Label5.Size = New System.Drawing.Size(61, 19)
         Me.Label5.TabIndex = 17
         Me.Label5.Text = "Código:"
-        '
-        'Pimagen
-        '
-        Me.Pimagen.BackColor = System.Drawing.Color.White
-        Me.Pimagen.Location = New System.Drawing.Point(4, -7)
-        Me.Pimagen.Name = "Pimagen"
-        Me.Pimagen.Size = New System.Drawing.Size(69, 53)
-        Me.Pimagen.TabIndex = 1
-        Me.Pimagen.TabStop = False
         '
         'ToolStrip1
         '
@@ -322,13 +325,13 @@ Partial Class FormBase
         Me.Name = "FormBase"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Panel1.ResumeLayout(False)
+        CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.GroupBox5.ResumeLayout(False)
         CType(Me.dgRegistro, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Gbdatos.ResumeLayout(False)
         Me.Gbdatos.PerformLayout()
-        CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ToolStrip1.ResumeLayout(False)
         Me.ToolStrip1.PerformLayout()
         Me.ResumeLayout(False)
