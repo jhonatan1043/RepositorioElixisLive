@@ -55,7 +55,7 @@
     Private Function validaciones() As Boolean
         Dim badraResultado As Boolean
         If txtnombre.Text = String.Empty Then
-            EstiloMensajes.mostrarMensajeAdvertencia("Debe ingresar un valor válido")
+            EstiloMensajes.mostrarMensajeAdvertencia("¡Debe ingresar un valor válido!")
         Else
             badraResultado = True
         End If

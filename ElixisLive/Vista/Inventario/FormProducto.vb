@@ -121,7 +121,7 @@
     Private Function validarCampos() As Boolean
         Dim resultado As Boolean
         If String.IsNullOrEmpty(TxtDescripcion.Text) Then
-            EstiloMensajes.mostrarMensajeAdvertencia("Debe ingresar el nombre del producto")
+            EstiloMensajes.mostrarMensajeAdvertencia("¡Debe ingresar el nombre del producto!")
         Else
             resultado = True
         End If

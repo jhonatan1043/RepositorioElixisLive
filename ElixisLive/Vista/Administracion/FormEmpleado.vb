@@ -25,9 +25,9 @@
     Private Function validarCampos() As Boolean
         Dim resultado As Boolean
         If String.IsNullOrEmpty(txtId.Text) Then
-            EstiloMensajes.mostrarMensajeAdvertencia("Debe ingresar el nit de la empresa")
+            EstiloMensajes.mostrarMensajeAdvertencia("¡Debe ingresar el nit de la empresa!")
         ElseIf String.IsNullOrEmpty(TxtDescripcion.Text) Then
-            EstiloMensajes.mostrarMensajeAdvertencia("Debe ingresar el nombre de la empresa")
+            EstiloMensajes.mostrarMensajeAdvertencia("¡Debe ingresar el nombre de la empresa!")
         Else
             resultado = True
         End If
