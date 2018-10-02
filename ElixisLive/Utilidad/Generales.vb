@@ -1,6 +1,8 @@
 ﻿Imports System.Data.SqlClient
 Imports CnxElixisLiveBD
 Public Class Generales
+    Public Delegate Sub cargaInfoForm(ByVal codigo As String)
+    Public Delegate Sub cargaInfoFormObj(ByVal fila As DataRow)
     Private Shared objConexion As New ConexionBD
     Public Shared Sub llenarTabla(ByVal consulta As String,
                                   ByVal params As List(Of String),
@@ -22,7 +24,34 @@ Public Class Generales
         End Try
 
     End Sub
-
+    Public Shared Sub buscarElemento(pConsultaSQL As String,
+                                     plistaParam As List(Of String),
+                                     pMetodo As cargaInfoForm,
+                                     pTitulo As String,
+                                     pOcultaCol As Boolean,
+                                     Optional pBuscarDarEnter As Boolean = False
+                                     )
+        Dim vForm As New FormBusqueda()
+        vForm.Text = pTitulo
+        If Not IsNothing(plistaParam) Then
+            vForm.consulta = pConsultaSQL & Funciones.getParametros(plistaParam)
+        Else
+            vForm.consulta = pConsultaSQL
+        End If
+        vForm.metodoCarga = pMetodo
+        vForm.isOcultaCol = pOcultaCol
+        vForm.buscarAlDarEnter = pBuscarDarEnter
+        vForm.ShowDialog()
+    End Sub
+    Public Shared Function validarComillaSimple(ByVal busqueda As String) As String
+        Return Replace(busqueda, "'", "")
+    End Function
+    Public Shared Function filaValida(ByVal fila As Integer) As Boolean
+        If fila < 0 Then
+            Return False
+        End If
+        Return True
+    End Function
     Public Shared Sub limpiarControles(ByRef pFormulario As Object)
         Dim vFrtRB As Integer = pFormulario.Width + pFormulario.Height
         For Each vControl In pFormulario.Controls

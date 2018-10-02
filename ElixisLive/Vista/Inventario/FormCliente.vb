@@ -60,6 +60,25 @@
             End If
         End If
     End Sub
+    Private Sub btbuscar_Click(sender As Object, e As EventArgs) Handles btBuscar.Click
+        Dim params As New List(Of String)
+        params.Add("")
+
+        Generales.buscarElemento(Sentencias.BUSCAR_CLIENTES,
+                                   params,
+                                   AddressOf cargarDatosCliente,
+                                   "Busqueda de Clientes",
+                                   False, True)
+    End Sub
+    Private Sub cargarDatosCliente(pCodigoCliente As String)
+        Dim dtCliente As New DataTable
+        Dim params As New List(Of String)
+        params.Add(pCodigoCliente)
+        Generales.llenarTabla(Sentencias.CARGAR_CLIENTES, params, dtCliente)
+        If dtCliente.Rows.Count > 0 Then
+
+        End If
+    End Sub
     Private Sub cargarRegistro()
         Dim params As New List(Of String)
         params.Add(txtBuscar.Text)

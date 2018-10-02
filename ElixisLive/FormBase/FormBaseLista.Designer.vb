@@ -42,6 +42,8 @@ Partial Class FormBaseLista
         Me.ToolStripSeparator3 = New System.Windows.Forms.ToolStripSeparator()
         Me.btAnular = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripSeparator6 = New System.Windows.Forms.ToolStripSeparator()
+        Me.btBuscar = New System.Windows.Forms.ToolStripButton()
+        Me.ToolStripSeparator7 = New System.Windows.Forms.ToolStripSeparator()
         Me.Panel1.SuspendLayout()
         CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
@@ -59,7 +61,7 @@ Partial Class FormBaseLista
         Me.Panel1.Controls.Add(Me.LTitulo)
         Me.Panel1.Location = New System.Drawing.Point(1, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(569, 42)
+        Me.Panel1.Size = New System.Drawing.Size(602, 42)
         Me.Panel1.TabIndex = 0
         '
         'Pimagen
@@ -78,7 +80,7 @@ Partial Class FormBaseLista
         Me.LTitulo.ForeColor = System.Drawing.Color.White
         Me.LTitulo.Location = New System.Drawing.Point(-1, 0)
         Me.LTitulo.Name = "LTitulo"
-        Me.LTitulo.Size = New System.Drawing.Size(560, 42)
+        Me.LTitulo.Size = New System.Drawing.Size(603, 42)
         Me.LTitulo.TabIndex = 1
         Me.LTitulo.Text = "Titulo"
         Me.LTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -89,7 +91,7 @@ Partial Class FormBaseLista
         Me.txtBuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtBuscar.Location = New System.Drawing.Point(64, 53)
         Me.txtBuscar.Name = "txtBuscar"
-        Me.txtBuscar.Size = New System.Drawing.Size(494, 22)
+        Me.txtBuscar.Size = New System.Drawing.Size(530, 22)
         Me.txtBuscar.TabIndex = 7
         '
         'Label3
@@ -110,7 +112,7 @@ Partial Class FormBaseLista
         Me.GroupBox1.Controls.Add(Me.GroupBox5)
         Me.GroupBox1.Location = New System.Drawing.Point(5, 40)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(561, 311)
+        Me.GroupBox1.Size = New System.Drawing.Size(595, 311)
         Me.GroupBox1.TabIndex = 8
         Me.GroupBox1.TabStop = False
         '
@@ -121,7 +123,7 @@ Partial Class FormBaseLista
         Me.GroupBox5.ForeColor = System.Drawing.Color.DarkBlue
         Me.GroupBox5.Location = New System.Drawing.Point(7, 41)
         Me.GroupBox5.Name = "GroupBox5"
-        Me.GroupBox5.Size = New System.Drawing.Size(548, 264)
+        Me.GroupBox5.Size = New System.Drawing.Size(582, 264)
         Me.GroupBox5.TabIndex = 61
         Me.GroupBox5.TabStop = False
         Me.GroupBox5.Text = "Registros Almacenados"
@@ -139,7 +141,7 @@ Partial Class FormBaseLista
         Me.DataGridView1.MultiSelect = False
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGridView1.Size = New System.Drawing.Size(542, 245)
+        Me.DataGridView1.Size = New System.Drawing.Size(576, 245)
         Me.DataGridView1.TabIndex = 0
         '
         'ToolStrip1
@@ -149,10 +151,10 @@ Partial Class FormBaseLista
         Me.ToolStrip1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ToolStrip1.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.ToolStrip1.ImageScalingSize = New System.Drawing.Size(26, 26)
-        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripSeparator1, Me.btNuevo, Me.ToolStripSeparator2, Me.btRegistrar, Me.ToolStripSeparator4, Me.btEditar, Me.ToolStripSeparator5, Me.btCancelar, Me.ToolStripSeparator3, Me.btAnular, Me.ToolStripSeparator6})
+        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripSeparator1, Me.btNuevo, Me.ToolStripSeparator2, Me.btBuscar, Me.ToolStripSeparator7, Me.btRegistrar, Me.ToolStripSeparator4, Me.btEditar, Me.ToolStripSeparator5, Me.btCancelar, Me.ToolStripSeparator3, Me.btAnular, Me.ToolStripSeparator6})
         Me.ToolStrip1.Location = New System.Drawing.Point(0, 354)
         Me.ToolStrip1.Name = "ToolStrip1"
-        Me.ToolStrip1.Size = New System.Drawing.Size(571, 33)
+        Me.ToolStrip1.Size = New System.Drawing.Size(603, 33)
         Me.ToolStrip1.TabIndex = 15
         Me.ToolStrip1.Text = "ToolStrip1"
         '
@@ -241,13 +243,29 @@ Partial Class FormBaseLista
         Me.ToolStripSeparator6.Name = "ToolStripSeparator6"
         Me.ToolStripSeparator6.Size = New System.Drawing.Size(6, 33)
         '
+        'btBuscar
+        '
+        Me.btBuscar.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btBuscar.ForeColor = System.Drawing.Color.White
+        Me.btBuscar.Image = Global.ElixisLive.My.Resources.Resources.Search_icon__1_
+        Me.btBuscar.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.btBuscar.Name = "btBuscar"
+        Me.btBuscar.Size = New System.Drawing.Size(86, 30)
+        Me.btBuscar.Text = "Buscar"
+        Me.btBuscar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        '
+        'ToolStripSeparator7
+        '
+        Me.ToolStripSeparator7.Name = "ToolStripSeparator7"
+        Me.ToolStripSeparator7.Size = New System.Drawing.Size(6, 33)
+        '
         'FormBaseLista
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(571, 387)
+        Me.ClientSize = New System.Drawing.Size(603, 387)
         Me.Controls.Add(Me.ToolStrip1)
         Me.Controls.Add(Me.txtBuscar)
         Me.Controls.Add(Me.Label3)
@@ -256,8 +274,8 @@ Partial Class FormBaseLista
         Me.DoubleBuffered = True
         Me.Location = New System.Drawing.Point(3000, 1000)
         Me.MaximizeBox = False
-        Me.MaximumSize = New System.Drawing.Size(587, 426)
-        Me.MinimumSize = New System.Drawing.Size(587, 426)
+        Me.MaximumSize = New System.Drawing.Size(619, 426)
+        Me.MinimumSize = New System.Drawing.Size(619, 408)
         Me.Name = "FormBaseLista"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Panel1.ResumeLayout(False)
@@ -291,4 +309,6 @@ Partial Class FormBaseLista
     Friend WithEvents ToolStripSeparator3 As ToolStripSeparator
     Public WithEvents btAnular As ToolStripButton
     Friend WithEvents ToolStripSeparator6 As ToolStripSeparator
+    Public WithEvents btBuscar As ToolStripButton
+    Friend WithEvents ToolStripSeparator7 As ToolStripSeparator
 End Class

@@ -141,11 +141,13 @@
     <Compile Include="Modelo\Inventario\ProductoBLL.vb" />
     <Compile Include="Modelo\Principal\InicioSesionBLL.vb" />
     <Compile Include="Modelo\Principal\principalBLL.vb" />
+    <Compile Include="Utilidad\Busqueda.vb" />
     <Compile Include="Utilidad\Constantes.vb" />
     <Compile Include="Utilidad\EstiloMensajes.vb" />
     <Compile Include="Utilidad\Funciones.vb" />
     <Compile Include="Utilidad\Generales.vb" />
     <Compile Include="Utilidad\MensajeSistema.vb" />
+    <Compile Include="Utilidad\Sentencias.vb" />
     <Compile Include="Utilidad\SesionActual.vb" />
     <Compile Include="Utilidad\SuperMessageBox.vb">
       <SubType>Form</SubType>
@@ -208,6 +210,12 @@
       <DependentUpon>FormProveedor.vb</DependentUpon>
     </Compile>
     <Compile Include="Vista\Inventario\FormProveedor.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Principal\FormBusqueda.Designer.vb">
+      <DependentUpon>FormBusqueda.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Principal\FormBusqueda.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Vista\Principal\FormInicioSesion.Designer.vb">
@@ -286,6 +294,9 @@
     <EmbeddedResource Include="Vista\Inventario\FormProveedor.resx">
       <DependentUpon>FormProveedor.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Principal\FormBusqueda.resx">
+      <DependentUpon>FormBusqueda.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vista\Principal\FormInicioSesion.resx">
       <DependentUpon>FormInicioSesion.vb</DependentUpon>
     </EmbeddedResource>
@@ -323,6 +334,7 @@
     <Content Include="ReferenciaDLL\CnxElixisLiveBD.dll" />
     <Content Include="ReferenciaDLL\MySql.Data.DLL" />
     <Content Include="ReferenciaDLL\NotifySenderControl.dll" />
+    <None Include="Resources\Search-icon %281%29.png" />
     <None Include="Resources\proveedor1.png" />
     <None Include="Resources\8eaeba986b34f11547cce4ca3f8b6df6.jpg" />
     <None Include="Resources\producto1.png" />

@@ -49,6 +49,8 @@ Partial Class FormPersona
         Me.ToolStripSeparator3 = New System.Windows.Forms.ToolStripSeparator()
         Me.btAnular = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripSeparator6 = New System.Windows.Forms.ToolStripSeparator()
+        Me.btBuscar = New System.Windows.Forms.ToolStripButton()
+        Me.ToolStripSeparator7 = New System.Windows.Forms.ToolStripSeparator()
         Me.GroupBox1.SuspendLayout()
         Me.GbInform_D.SuspendLayout()
         CType(Me.dgvParametro, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -66,7 +68,7 @@ Partial Class FormPersona
         Me.TxtDescripcion.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TxtDescripcion.Location = New System.Drawing.Point(328, 14)
         Me.TxtDescripcion.Name = "TxtDescripcion"
-        Me.TxtDescripcion.Size = New System.Drawing.Size(356, 22)
+        Me.TxtDescripcion.Size = New System.Drawing.Size(399, 22)
         Me.TxtDescripcion.TabIndex = 5
         '
         'txtCodigo
@@ -108,7 +110,7 @@ Partial Class FormPersona
         Me.txtBuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtBuscar.Location = New System.Drawing.Point(59, 238)
         Me.txtBuscar.Name = "txtBuscar"
-        Me.txtBuscar.Size = New System.Drawing.Size(637, 22)
+        Me.txtBuscar.Size = New System.Drawing.Size(680, 22)
         Me.txtBuscar.TabIndex = 7
         '
         'Label3
@@ -131,9 +133,9 @@ Partial Class FormPersona
         Me.GroupBox1.Controls.Add(Me.txtBuscar)
         Me.GroupBox1.Controls.Add(Me.Label3)
         Me.GroupBox1.Controls.Add(Me.gbInform)
-        Me.GroupBox1.Location = New System.Drawing.Point(2, 46)
+        Me.GroupBox1.Location = New System.Drawing.Point(5, 46)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(705, 439)
+        Me.GroupBox1.Size = New System.Drawing.Size(745, 439)
         Me.GroupBox1.TabIndex = 8
         Me.GroupBox1.TabStop = False
         '
@@ -144,7 +146,7 @@ Partial Class FormPersona
         Me.GbInform_D.ForeColor = System.Drawing.Color.DarkBlue
         Me.GbInform_D.Location = New System.Drawing.Point(6, 47)
         Me.GbInform_D.Name = "GbInform_D"
-        Me.GbInform_D.Size = New System.Drawing.Size(690, 185)
+        Me.GbInform_D.Size = New System.Drawing.Size(733, 185)
         Me.GbInform_D.TabIndex = 62
         Me.GbInform_D.TabStop = False
         Me.GbInform_D.Text = "Información "
@@ -162,7 +164,7 @@ Partial Class FormPersona
         Me.dgvParametro.MultiSelect = False
         Me.dgvParametro.Name = "dgvParametro"
         Me.dgvParametro.ReadOnly = True
-        Me.dgvParametro.Size = New System.Drawing.Size(684, 166)
+        Me.dgvParametro.Size = New System.Drawing.Size(727, 166)
         Me.dgvParametro.TabIndex = 0
         '
         'GroupBox5
@@ -172,7 +174,7 @@ Partial Class FormPersona
         Me.GroupBox5.ForeColor = System.Drawing.Color.DarkBlue
         Me.GroupBox5.Location = New System.Drawing.Point(6, 262)
         Me.GroupBox5.Name = "GroupBox5"
-        Me.GroupBox5.Size = New System.Drawing.Size(690, 176)
+        Me.GroupBox5.Size = New System.Drawing.Size(733, 176)
         Me.GroupBox5.TabIndex = 61
         Me.GroupBox5.TabStop = False
         Me.GroupBox5.Text = "Registros Almacenados"
@@ -191,7 +193,7 @@ Partial Class FormPersona
         Me.dgRegistro.Name = "dgRegistro"
         Me.dgRegistro.ReadOnly = True
         Me.dgRegistro.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgRegistro.Size = New System.Drawing.Size(684, 157)
+        Me.dgRegistro.Size = New System.Drawing.Size(727, 157)
         Me.dgRegistro.TabIndex = 0
         '
         'gbInform
@@ -203,7 +205,7 @@ Partial Class FormPersona
         Me.gbInform.Controls.Add(Me.Label1)
         Me.gbInform.Location = New System.Drawing.Point(6, 5)
         Me.gbInform.Name = "gbInform"
-        Me.gbInform.Size = New System.Drawing.Size(690, 40)
+        Me.gbInform.Size = New System.Drawing.Size(733, 40)
         Me.gbInform.TabIndex = 9
         Me.gbInform.TabStop = False
         '
@@ -216,7 +218,7 @@ Partial Class FormPersona
         Me.Panel1.Controls.Add(Me.LTitulo)
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(711, 42)
+        Me.Panel1.Size = New System.Drawing.Size(756, 42)
         Me.Panel1.TabIndex = 0
         '
         'Pimagen
@@ -237,7 +239,7 @@ Partial Class FormPersona
         Me.LTitulo.ForeColor = System.Drawing.Color.White
         Me.LTitulo.Location = New System.Drawing.Point(0, 1)
         Me.LTitulo.Name = "LTitulo"
-        Me.LTitulo.Size = New System.Drawing.Size(711, 44)
+        Me.LTitulo.Size = New System.Drawing.Size(756, 44)
         Me.LTitulo.TabIndex = 1
         Me.LTitulo.Text = "Persona"
         Me.LTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -249,10 +251,10 @@ Partial Class FormPersona
         Me.ToolStrip1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ToolStrip1.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.ToolStrip1.ImageScalingSize = New System.Drawing.Size(26, 26)
-        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripSeparator1, Me.btNuevo, Me.ToolStripSeparator2, Me.btRegistrar, Me.ToolStripSeparator4, Me.btEditar, Me.ToolStripSeparator5, Me.btCancelar, Me.ToolStripSeparator3, Me.btAnular, Me.ToolStripSeparator6})
-        Me.ToolStrip1.Location = New System.Drawing.Point(0, 491)
+        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripSeparator1, Me.btNuevo, Me.ToolStripSeparator2, Me.btBuscar, Me.ToolStripSeparator7, Me.btRegistrar, Me.ToolStripSeparator4, Me.btEditar, Me.ToolStripSeparator5, Me.btCancelar, Me.ToolStripSeparator3, Me.btAnular, Me.ToolStripSeparator6})
+        Me.ToolStrip1.Location = New System.Drawing.Point(0, 490)
         Me.ToolStrip1.Name = "ToolStrip1"
-        Me.ToolStrip1.Size = New System.Drawing.Size(711, 33)
+        Me.ToolStrip1.Size = New System.Drawing.Size(756, 33)
         Me.ToolStrip1.TabIndex = 16
         Me.ToolStrip1.Text = "ToolStrip1"
         '
@@ -341,19 +343,34 @@ Partial Class FormPersona
         Me.ToolStripSeparator6.Name = "ToolStripSeparator6"
         Me.ToolStripSeparator6.Size = New System.Drawing.Size(6, 33)
         '
+        'btBuscar
+        '
+        Me.btBuscar.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btBuscar.ForeColor = System.Drawing.Color.White
+        Me.btBuscar.Image = Global.ElixisLive.My.Resources.Resources.Search_icon__1_
+        Me.btBuscar.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.btBuscar.Name = "btBuscar"
+        Me.btBuscar.Size = New System.Drawing.Size(86, 30)
+        Me.btBuscar.Text = "Buscar"
+        Me.btBuscar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        '
+        'ToolStripSeparator7
+        '
+        Me.ToolStripSeparator7.Name = "ToolStripSeparator7"
+        Me.ToolStripSeparator7.Size = New System.Drawing.Size(6, 33)
+        '
         'FormPersona
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(711, 524)
+        Me.ClientSize = New System.Drawing.Size(756, 523)
         Me.Controls.Add(Me.ToolStrip1)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Panel1)
         Me.DoubleBuffered = True
         Me.Location = New System.Drawing.Point(3000, 1000)
         Me.MaximizeBox = False
-        Me.MaximumSize = New System.Drawing.Size(727, 562)
         Me.MinimumSize = New System.Drawing.Size(727, 562)
         Me.Name = "FormPersona"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
@@ -400,4 +417,6 @@ Partial Class FormPersona
     Friend WithEvents ToolStripSeparator3 As ToolStripSeparator
     Public WithEvents btAnular As ToolStripButton
     Friend WithEvents ToolStripSeparator6 As ToolStripSeparator
+    Public WithEvents btBuscar As ToolStripButton
+    Friend WithEvents ToolStripSeparator7 As ToolStripSeparator
 End Class

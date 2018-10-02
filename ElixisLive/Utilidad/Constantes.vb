@@ -2,6 +2,7 @@
     Public Const TIPO_LETRA = "[FontFamily: Name=Times New Roman style=Italic]"
     Public Const SI = "Si"
     Public Const NO = "No"
+    Public Const SIGNO_PESO = "$"
     Public Enum TIPO_CONTROL
         COMBO = 0
         SELECTOR = 1
