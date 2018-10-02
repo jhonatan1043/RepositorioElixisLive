@@ -25,7 +25,8 @@
         Dim params As New List(Of String)
         Dim dfila As DataRow
         objCliente.codigoProducto = pcodigo
-        params.Add(objCliente.codigoProducto)
+        params.Add(pcodigo)
+        params.Add(SesionActual.idEmpresa)
         dfila = Generales.cargarItem(objCliente.sqlCargar, params)
         Try
             If Not IsNothing(dfila) Then

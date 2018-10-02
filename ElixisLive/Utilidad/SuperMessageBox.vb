@@ -68,7 +68,7 @@
         Me.label2.Name = "label2"
         Me.label2.Size = New System.Drawing.Size(338, 23)
         Me.label2.TabIndex = 0
-        Me.label2.Text = "Elixis"
+        Me.label2.Text = "Quality"
         Me.label2.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         '
         'panel2
