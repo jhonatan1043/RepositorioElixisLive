@@ -226,7 +226,17 @@ Public Class Generales
             End If
         Next
     End Sub
+    Public Shared Sub habilitarBotones(ByRef pToolStrip As ToolStrip)
 
+        'Recorre y habilita cada elemento
+        For Each oToolStripButton In pToolStrip.Items
+            If TypeOf oToolStripButton Is ToolStripButton Then
+                oToolStripButton.enabled = True
+            ElseIf TypeOf oToolStripButton Is ToolStripDropDown Then
+                oToolStripButton.enabled = True
+            End If
+        Next
+    End Sub
     Public Shared Sub deshabilitarBotones(ByRef pToolStrip As ToolStrip)
         'Recorre y deshabilita cada elemento
         For Each oToolStripButton In pToolStrip.Items

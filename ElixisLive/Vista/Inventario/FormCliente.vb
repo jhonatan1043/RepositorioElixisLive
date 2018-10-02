@@ -10,6 +10,7 @@
             Generales.deshabilitarControles(Me)
             txtBuscar.ReadOnly = False
             btNuevo.Enabled = True
+            btBuscar.Enabled = True
             Generales.llenardgv("SP_CONSULTAR_PARAMETROS", dgvParametro, params)
             Generales.diseñoGrillaParametro(dgvParametro)
             params.Clear()
@@ -63,22 +64,22 @@
     Private Sub btbuscar_Click(sender As Object, e As EventArgs) Handles btBuscar.Click
         Dim params As New List(Of String)
         params.Add("")
-
+        params.Add(SesionActual.idEmpresa)
         Generales.buscarElemento(Sentencias.BUSCAR_CLIENTES,
                                    params,
-                                   AddressOf cargarDatosCliente,
+                                   AddressOf cargarInfomacion,
                                    "Busqueda de Clientes",
                                    False, True)
     End Sub
-    Private Sub cargarDatosCliente(pCodigoCliente As String)
-        Dim dtCliente As New DataTable
-        Dim params As New List(Of String)
-        params.Add(pCodigoCliente)
-        Generales.llenarTabla(Sentencias.CARGAR_CLIENTES, params, dtCliente)
-        If dtCliente.Rows.Count > 0 Then
+    'Private Sub cargarDatosCliente(pCodigoCliente As String)
+    '    Dim dtCliente As New DataTable
+    '    Dim params As New List(Of String)
+    '    params.Add(pCodigoCliente)
+    '    Generales.llenarTabla(Sentencias.CARGAR_CLIENTES, params, dtCliente)
+    '    If dtCliente.Rows.Count > 0 Then
 
-        End If
-    End Sub
+    '    End If
+    'End Sub
     Private Sub cargarRegistro()
         Dim params As New List(Of String)
         params.Add(txtBuscar.Text)

@@ -8,9 +8,6 @@
     Public Property isRetornaObj As Boolean
 
     Dim dtBusqueda As New DataTable
-    Dim ex, ey As Integer
-    Dim Arrastre As Boolean
-
 
     Private Sub dgvbusqueda_CellMouseDoubleClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles dgvbusqueda.CellMouseDoubleClick
         If Generales.filaValida(e.RowIndex) Then
@@ -36,6 +33,7 @@
 
     Public Overridable Sub Form_Busqueda_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         LTitulo.Text = Text
+        Me.Text = ""
         Textbusqueda.Text = Generales.validarComillaSimple(Textbusqueda.Text)
         llenardgv()
         Textbusqueda.SelectionStart = Textbusqueda.TextLength
@@ -66,9 +64,9 @@
     Public Sub llenardgv()
         Dim busqueda As New Busqueda
         If consulta <> "" Then
-            dtBusqueda = busqueda.llenar(consulta, Textbusqueda.Text)
-            dgvbusqueda.DataSource = dtBusqueda
-            dgvbusqueda.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+            dtBusqueda = Busqueda.llenar(consulta, Textbusqueda.Text)
+            dgvBusqueda.DataSource = dtBusqueda
+            dgvBusqueda.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
             dgvBusqueda.DefaultCellStyle.Font = New Font(Constantes.TIPO_LETRA, 9)
         End If
 

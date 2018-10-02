@@ -19,7 +19,7 @@ Public Class Busqueda
             End Using
             objConexion.desConectar()
         Catch ex As Exception
-            EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
+            MsgBox(ex.Message)
         End Try
         Return dt
 
