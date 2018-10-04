@@ -377,7 +377,7 @@ Partial Class FormBase
         Me.Location = New System.Drawing.Point(3000, 1000)
         Me.MaximizeBox = False
         Me.MaximumSize = New System.Drawing.Size(619, 408)
-        Me.MinimumSize = New System.Drawing.Size(587, 384)
+        Me.MinimumSize = New System.Drawing.Size(619, 408)
         Me.Name = "FormBase"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.GroupBox1.ResumeLayout(False)

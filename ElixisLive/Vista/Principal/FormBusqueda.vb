@@ -43,6 +43,11 @@
         If isOcultaCol Then
             dgvbusqueda.Columns(0).Visible = False
         End If
+        Dim x As Integer
+        Dim y As Integer
+        x = Screen.PrimaryScreen.WorkingArea.Width - 880
+        y = Screen.PrimaryScreen.WorkingArea.Height - 600
+        Me.Location = New Point(x, y)
     End Sub
     Private Sub Textbusqueda_TextChanged(sender As Object, e As EventArgs) Handles Textbusqueda.TextChanged
         If buscarAlDarEnter = False Then

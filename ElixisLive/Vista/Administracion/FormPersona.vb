@@ -1,16 +1,5 @@
 ﻿Public Class FormPersona
     Dim objPersona As persona
-    Private Sub cargarRegistro()
-        Dim params As New List(Of String)
-        params.Add(txtBuscar.Text)
-        params.Add(SesionActual.idEmpresa)
-        Try
-            Generales.llenardgv(objPersona.sqlConsulta, dgRegistro, params)
-            objPersona.dtRegistro = dgRegistro.DataSource
-        Catch ex As Exception
-            EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
-        End Try
-    End Sub
     Private Sub cargarObjeto()
         objPersona.identificacion = txtCodigo.Text
         objPersona.nombre = TxtDescripcion.Text
@@ -27,11 +16,6 @@
         End If
         Return resultado
     End Function
-    Private Sub txtBuscar_KeyDown(sender As Object, e As KeyEventArgs) Handles txtBuscar.KeyDown
-        If e.KeyCode = Keys.Enter Then
-            cargarRegistro()
-        End If
-    End Sub
     Private Sub dgvParametro_CellEnter(sender As Object, e As DataGridViewCellEventArgs) Handles dgvParametro.CellEnter
         If btRegistrar.Enabled = False Then Exit Sub
         Try
@@ -49,7 +33,6 @@
             params.Add(SesionActual.idEmpresa)
             Generales.deshabilitarBotones(ToolStrip1)
             Generales.deshabilitarControles(Me)
-            txtBuscar.ReadOnly = False
             btNuevo.Enabled = True
             Generales.llenardgv("SP_CONSULTAR_PARAMETROS", dgvParametro, params)
             Generales.diseñoGrillaParametro(dgvParametro)
@@ -64,7 +47,6 @@
         Generales.limpiarControles(gbInform)
         btCancelar.Enabled = True
         btRegistrar.Enabled = True
-        txtBuscar.ReadOnly = True
     End Sub
 
     Private Sub btRegistrar_Click(sender As Object, e As EventArgs) Handles btRegistrar.Click
@@ -74,8 +56,6 @@
             PersonaBLL.guardar(objPersona)
             Generales.deshabilitarBotones(ToolStrip1)
             Generales.deshabilitarControles(Me)
-            cargarRegistro()
-            txtBuscar.ReadOnly = False
             btNuevo.Enabled = True
             btEditar.Enabled = True
             EstiloMensajes.mostrarMensajeExitoso(MensajeSistema.REGISTRO_GUARDADO)
@@ -87,10 +67,8 @@
         If EstiloMensajes.mostrarMensajePregunta(MensajeSistema.EDITAR) = Constantes.SI Then
             Generales.deshabilitarBotones(ToolStrip1)
             Generales.habilitarControles(Me)
-            txtBuscar.ReadOnly = True
             btCancelar.Enabled = True
             btRegistrar.Enabled = True
-            txtBuscar.ReadOnly = True
         End If
     End Sub
 
@@ -100,7 +78,6 @@
             Generales.deshabilitarControles(Me)
             Generales.limpiarControles(GbInform_D)
             Generales.limpiarControles(gbInform)
-            txtBuscar.ReadOnly = False
             btNuevo.Enabled = True
         End If
     End Sub
@@ -111,7 +88,6 @@
                 Generales.limpiarControles(GbInform_D)
                 Generales.limpiarControles(gbInform)
                 Generales.deshabilitarBotones(ToolStrip1)
-                cargarRegistro()
                 btNuevo.Enabled = True
                 EstiloMensajes.mostrarMensajeAnulado(MensajeSistema.REGISTRO_ANULADO)
             End If
