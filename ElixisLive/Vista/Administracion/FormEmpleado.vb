@@ -33,7 +33,7 @@
         End If
         Return resultado
     End Function
-    Private Sub txtBuscar_KeyDown(sender As Object, e As KeyEventArgs) Handles txtBuscar.KeyDown
+    Private Sub txtBuscar_KeyDown(sender As Object, e As KeyEventArgs)
         If e.KeyCode = Keys.Enter Then
             cargarRegistro()
         End If
@@ -63,7 +63,7 @@
             EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
         End Try
     End Sub
-    Private Sub btNuevo_Click(sender As Object, e As EventArgs) Handles btNuevo.Click
+    Private Sub btNuevo_Click(sender As Object, e As EventArgs)
         Generales.deshabilitarBotones(ToolStrip1)
         Generales.habilitarControles(Me)
         Generales.limpiarControles(GbInform_D)
@@ -74,7 +74,7 @@
         txtBuscar.ReadOnly = True
     End Sub
 
-    Private Sub btRegistrar_Click(sender As Object, e As EventArgs) Handles btRegistrar.Click
+    Private Sub btRegistrar_Click(sender As Object, e As EventArgs)
         dgvParametro.EndEdit()
         If validarCampos() = True Then
             cargarObjeto()
@@ -89,7 +89,7 @@
         End If
     End Sub
 
-    Private Sub btEditar_Click(sender As Object, e As EventArgs) Handles btEditar.Click
+    Private Sub btEditar_Click(sender As Object, e As EventArgs)
         If EstiloMensajes.mostrarMensajePregunta(MensajeSistema.EDITAR) = Constantes.SI Then
             Generales.habilitarControles(Me)
             txtBuscar.ReadOnly = True
@@ -99,7 +99,7 @@
         End If
     End Sub
 
-    Private Sub btCancelar_Click(sender As Object, e As EventArgs) Handles btCancelar.Click
+    Private Sub btCancelar_Click(sender As Object, e As EventArgs)
         If EstiloMensajes.mostrarMensajePregunta(MensajeSistema.CANCELAR) = Constantes.SI Then
             Generales.deshabilitarBotones(ToolStrip1)
             Generales.deshabilitarControles(Me)
@@ -111,7 +111,7 @@
         End If
     End Sub
 
-    Private Sub btAnular_Click(sender As Object, e As EventArgs) Handles btAnular.Click
+    Private Sub btAnular_Click(sender As Object, e As EventArgs)
         If EstiloMensajes.mostrarMensajePregunta(MensajeSistema.ANULAR) = Constantes.SI Then
             If Generales.ejecutarSQL(objEmpleado.sqlAnular) = True Then
                 Generales.limpiarControles(GbInform_D)

@@ -36,7 +36,7 @@ Partial Class FormCliente
         '
         'Label2
         '
-        Me.Label2.Location = New System.Drawing.Point(207, 12)
+        Me.Label2.Location = New System.Drawing.Point(278, 12)
         Me.Label2.Size = New System.Drawing.Size(65, 19)
         Me.Label2.Text = "Nombre:"
         '
@@ -48,6 +48,48 @@ Partial Class FormCliente
         'txtCodigo
         '
         Me.txtCodigo.Size = New System.Drawing.Size(136, 22)
+        '
+        'TextBox5
+        '
+        Me.TextBox5.Location = New System.Drawing.Point(367, 66)
+        Me.TextBox5.Size = New System.Drawing.Size(462, 22)
+        '
+        'Label5
+        '
+        Me.Label5.Size = New System.Drawing.Size(59, 19)
+        Me.Label5.Text = "Em@il:"
+        '
+        'TextBox4
+        '
+        Me.TextBox4.Location = New System.Drawing.Point(367, 38)
+        Me.TextBox4.Size = New System.Drawing.Size(462, 22)
+        '
+        'Label4
+        '
+        Me.Label4.Size = New System.Drawing.Size(75, 19)
+        Me.Label4.Text = "Dirección:"
+        '
+        'TextBox3
+        '
+        Me.TextBox3.Size = New System.Drawing.Size(136, 22)
+        '
+        'Label3
+        '
+        Me.Label3.Size = New System.Drawing.Size(62, 19)
+        Me.Label3.Text = "Celular:"
+        '
+        'TextBox2
+        '
+        Me.TextBox2.Size = New System.Drawing.Size(136, 22)
+        '
+        'Label1
+        '
+        Me.Label1.Size = New System.Drawing.Size(69, 19)
+        Me.Label1.Text = "Telefono:"
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Location = New System.Drawing.Point(367, 10)
         '
         'FormCliente
         '

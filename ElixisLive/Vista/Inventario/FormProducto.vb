@@ -8,19 +8,13 @@
             params.Add(SesionActual.idEmpresa)
             Generales.deshabilitarBotones(ToolStrip1)
             Generales.deshabilitarControles(Me)
-            txtBuscar.ReadOnly = False
             btNuevo.Enabled = True
-            Generales.llenardgv("SP_CONSULTAR_PARAMETROS", dgvParametro, params)
-            Generales.diseñoGrillaParametro(dgvParametro)
-            cargarRegistro()
-            diseñoTexto()
+            'Generales.llenardgv("SP_CONSULTAR_PARAMETROS", dgvParametro, params)
+            'Generales.diseñoGrillaParametro(dgvParametro)
+
         Catch ex As Exception
             EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
         End Try
-    End Sub
-    Private Sub diseñoTexto()
-        TxtDescripcion.DropDownStyle = ComboBoxStyle.Simple
-        TxtDescripcion.DroppedDown = False
     End Sub
 
     Private Sub cargarInfomacion(pcodigo As Integer)
@@ -31,12 +25,9 @@
         dfila = Generales.cargarItem(objProducto.sqlCargar, params)
         Try
             If Not IsNothing(dfila) Then
-                txtCodigo.Text = objProducto.codigoProducto
-                TxtDescripcion.Text = dfila.Item("Nombre")
-                cargarImagen(If(IsDBNull(dfila.Item("Foto")), Nothing, dfila.Item("Foto")))
-                Generales.llenardgv(objProducto.sqlCargarDetalle, dgvParametro, params)
-                Generales.diseñoGrillaParametro(dgvParametro)
-                controlVerificar()
+                txtcodigo.Text = objProducto.codigoProducto
+                'Generales.llenardgv(objProducto.sqlCargarDetalle, dgvParametro, params)
+                'Generales.diseñoGrillaParametro(dgvParametro)
             End If
             Generales.deshabilitarBotones(ToolStrip1)
             btEditar.Enabled = True
@@ -46,97 +37,28 @@
             EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
         End Try
     End Sub
-    Private Sub controlVerificar()
-        For posicion = 0 To dgvParametro.Rows.Count - 1
-            Generales.consultarTipoControl(dgvParametro, posicion)
-        Next
-    End Sub
-    Private Sub cargarImagen(bites As Byte())
-        If IsNothing(bites) = True Then
-            pictImagen.Image = Nothing
-        Else
-            If (bites IsNot DBNull.Value AndAlso bites.Length > 0) Then
-                Dim ms As New System.IO.MemoryStream(DirectCast(bites, Byte()))
-                pictImagen.Image = Image.FromStream(ms)
-                ms.Dispose()
-                bites = Nothing
-            End If
-        End If
-    End Sub
-    Private Sub cargarRegistro()
-        Dim params As New List(Of String)
-        params.Add(txtBuscar.Text)
-        params.Add(SesionActual.idEmpresa)
-        Try
-            Generales.llenardgv(objProducto.sqlConsulta, dgRegistro, params)
-            objProducto.dtRegistro = dgRegistro.DataSource
-        Catch ex As Exception
-            EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
-        End Try
-    End Sub
-    Private Sub txtBuscar_KeyDown(sender As Object, e As KeyEventArgs) Handles txtBuscar.KeyDown
-        If e.KeyCode = Keys.Enter Then
-            cargarRegistro()
-        End If
-    End Sub
-    Private Sub dgvParametro_CellEnter(sender As Object, e As DataGridViewCellEventArgs) Handles dgvParametro.CellEnter
-        If btRegistrar.Enabled = False Then Exit Sub
-        Try
-            Generales.consultarTipoControl(dgvParametro, dgvParametro.CurrentCell.RowIndex)
-        Catch ex As Exception
-            EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
-        End Try
-    End Sub
-    Private Sub dgRegistro_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgRegistro.CellClick
-        If btRegistrar.Enabled = True Then Exit Sub
-        If objProducto.dtRegistro.Rows.Count > 0 Then
-            cargarInfomacion(objProducto.dtRegistro.Rows(dgRegistro.CurrentCell.RowIndex).Item("Codigo"))
-        End If
-    End Sub
-    Private Sub cargarObjeto()
-        Dim almMemoria As System.IO.MemoryStream = Nothing
-        If Not IsNothing(pictImagen.Image) Then
-            almMemoria = New System.IO.MemoryStream
-            pictImagen.Image.Save(almMemoria, Imaging.ImageFormat.Png)
-        End If
-        objProducto.codigoProducto = If(String.IsNullOrEmpty(txtCodigo.Text), Nothing, txtCodigo.Text)
-        objProducto.nombre = TxtDescripcion.Text
-        objProducto.foto = If(IsNothing(almMemoria), Nothing, almMemoria.GetBuffer())
-        objProducto.dtParametro = dgvParametro.DataSource
-    End Sub
-    Private Sub btExaminar_Click(sender As Object, e As EventArgs) Handles btExaminar.Click
-        Dim openImag As New OpenFileDialog
-        Generales.subirimagen(pictImagen, openImag)
-    End Sub
+
     Private Sub btNuevo_Click(sender As Object, e As EventArgs) Handles btNuevo.Click
         Generales.deshabilitarBotones(ToolStrip1)
         Generales.habilitarControles(Me)
-        Generales.limpiarControles(gbInformD)
-        Generales.limpiarControles(gbInform)
-        pictImagen.Image = Nothing
         btCancelar.Enabled = True
         btRegistrar.Enabled = True
-        txtBuscar.ReadOnly = True
     End Sub
     Private Function validarCampos() As Boolean
         Dim resultado As Boolean
-        If String.IsNullOrEmpty(TxtDescripcion.Text) Then
-            EstiloMensajes.mostrarMensajeAdvertencia("¡Debe ingresar el nombre del producto!")
-        Else
-            resultado = True
-        End If
+        'If String.IsNullOrEmpty(TxtDescripcion.Text) Then
+        '    EstiloMensajes.mostrarMensajeAdvertencia("¡Debe ingresar el nombre del producto!")
+        'Else
+        '    resultado = True
+        'End If
         Return resultado
     End Function
     Private Sub btRegistrar_Click(sender As Object, e As EventArgs) Handles btRegistrar.Click
-        dgvParametro.EndEdit()
         If validarCampos() = True Then
-            cargarObjeto()
             ProductoBLL.guardar(objProducto)
             Generales.deshabilitarBotones(ToolStrip1)
             Generales.deshabilitarControles(Me)
-            txtCodigo.Text = objProducto.codigoProducto
-            cargarRegistro()
-            txtBuscar.ReadOnly = False
+            txtcodigo.Text = objProducto.codigoProducto
             btNuevo.Enabled = True
             btEditar.Enabled = True
             EstiloMensajes.mostrarMensajeExitoso(MensajeSistema.REGISTRO_GUARDADO)
@@ -146,10 +68,6 @@
         If EstiloMensajes.mostrarMensajePregunta(MensajeSistema.CANCELAR) = Constantes.SI Then
             Generales.deshabilitarBotones(ToolStrip1)
             Generales.deshabilitarControles(Me)
-            Generales.limpiarControles(gbInformD)
-            Generales.limpiarControles(gbInform)
-            pictImagen.Image = Nothing
-            txtBuscar.ReadOnly = False
             btNuevo.Enabled = True
         End If
     End Sub
@@ -158,20 +76,14 @@
         If EstiloMensajes.mostrarMensajePregunta(MensajeSistema.EDITAR) = Constantes.SI Then
             Generales.deshabilitarBotones(ToolStrip1)
             Generales.habilitarControles(Me)
-            txtBuscar.ReadOnly = True
             btCancelar.Enabled = True
             btRegistrar.Enabled = True
-            txtBuscar.ReadOnly = True
         End If
     End Sub
     Private Sub btAnular_Click(sender As Object, e As EventArgs) Handles btAnular.Click
         If EstiloMensajes.mostrarMensajePregunta(MensajeSistema.ANULAR) = Constantes.SI Then
             If Generales.ejecutarSQL(objProducto.sqlAnular) = True Then
-                Generales.limpiarControles(gbInformD)
-                Generales.limpiarControles(gbInform)
                 Generales.deshabilitarBotones(ToolStrip1)
-                pictImagen.Image = Nothing
-                cargarRegistro()
                 btNuevo.Enabled = True
                 EstiloMensajes.mostrarMensajeAnulado(MensajeSistema.REGISTRO_ANULADO)
             End If

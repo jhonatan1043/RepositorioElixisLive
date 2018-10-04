@@ -1,6 +1,6 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
 Partial Class FormProducto
-    Inherits ElixisLive.FormBaseProductivo
+    Inherits ElixisLive.FormBase
 
     'Form invalida a Dispose para limpiar la lista de componentes.
     <System.Diagnostics.DebuggerNonUserCode()> _
@@ -21,12 +21,14 @@ Partial Class FormProducto
     Private Sub InitializeComponent()
         Me.Panel1.SuspendLayout()
         CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox1.SuspendLayout()
+        Me.Gbdatos.SuspendLayout()
+        Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
         '
         'LTitulo
         '
-        Me.LTitulo.Location = New System.Drawing.Point(0, 0)
-        Me.LTitulo.Size = New System.Drawing.Size(905, 42)
+        Me.LTitulo.Size = New System.Drawing.Size(603, 42)
         Me.LTitulo.Text = "Productos"
         '
         'Pimagen
@@ -35,29 +37,46 @@ Partial Class FormProducto
         Me.Pimagen.Image = Global.ElixisLive.My.Resources.Resources.producto1
         Me.Pimagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         '
+        'txtcodigo
+        '
+        Me.txtcodigo.Location = New System.Drawing.Point(95, 9)
+        '
+        'Label3
+        '
+        Me.Label3.Size = New System.Drawing.Size(62, 19)
+        Me.Label3.Text = "Celular:"
+        '
+        'Label5
+        '
+        Me.Label5.Location = New System.Drawing.Point(279, 67)
+        Me.Label5.Size = New System.Drawing.Size(59, 19)
+        Me.Label5.Text = "Em@il:"
+        '
+        'TextBox2
+        '
+        Me.TextBox2.Location = New System.Drawing.Point(58, 20)
+        '
         'Label2
         '
-        Me.Label2.Location = New System.Drawing.Point(210, 12)
-        Me.Label2.Size = New System.Drawing.Size(65, 19)
-        Me.Label2.Text = "Nombre:"
+        Me.Label2.Location = New System.Drawing.Point(158, 20)
         '
-        'lbID
+        'Label4
         '
-        Me.lbID.Size = New System.Drawing.Size(61, 19)
-        Me.lbID.Text = "Código:"
-        '
-        'txtCodigo
-        '
-        Me.txtCodigo.Location = New System.Drawing.Point(61, 9)
+        Me.Label4.Location = New System.Drawing.Point(1, 20)
         '
         'FormProducto
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
-        Me.ClientSize = New System.Drawing.Size(905, 523)
+        Me.ClientSize = New System.Drawing.Size(603, 369)
         Me.Location = New System.Drawing.Point(0, 0)
         Me.Name = "FormProducto"
         Me.Panel1.ResumeLayout(False)
         CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox1.ResumeLayout(False)
+        Me.Gbdatos.ResumeLayout(False)
+        Me.Gbdatos.PerformLayout()
+        Me.GroupBox2.ResumeLayout(False)
+        Me.GroupBox2.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

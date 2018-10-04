@@ -6,12 +6,10 @@
         cargarRegistro()
         Generales.deshabilitarBotones(ToolStrip1)
         Generales.deshabilitarControles(Me)
-        txtFiltro.ReadOnly = False
         btNuevo.Enabled = True
     End Sub
     Private Sub cargarRegistro()
         Dim params As New List(Of String)
-        params.Add(txtFiltro.Text)
         params.Add(SesionActual.idEmpresa)
         Generales.llenardgv(objConfig.sqlConsulta, dgRegistro, params)
     End Sub
@@ -20,7 +18,6 @@
             Generales.deshabilitarBotones(ToolStrip1)
             Generales.deshabilitarControles(Me)
             Generales.limpiarControles(Me)
-            txtFiltro.ReadOnly = False
             btNuevo.Enabled = True
         End If
     End Sub
@@ -28,7 +25,6 @@
         If EstiloMensajes.mostrarMensajePregunta(MensajeSistema.EDITAR) = Constantes.SI Then
             Generales.deshabilitarBotones(ToolStrip1)
             Generales.habilitarControles(Me)
-            txtFiltro.ReadOnly = True
             btRegistrar.Enabled = True
             btCancelar.Enabled = True
         End If
@@ -48,7 +44,6 @@
         Generales.deshabilitarBotones(ToolStrip1)
         Generales.habilitarControles(Me)
         Generales.limpiarControles(Gbdatos)
-        txtFiltro.ReadOnly = True
         btRegistrar.Enabled = True
         btCancelar.Enabled = True
     End Sub
@@ -71,7 +66,6 @@
                 Generales.deshabilitarControles(Me)
                 btNuevo.Enabled = True
                 btAnular.Enabled = True
-                txtFiltro.ReadOnly = False
                 txtcodigo.Text = objConfig.codigo
                 cargarRegistro()
                 EstiloMensajes.mostrarMensajeExitoso(MensajeSistema.REGISTRO_GUARDADO)
@@ -85,16 +79,7 @@
         objConfig.codigo = If(String.IsNullOrEmpty(txtcodigo.Text), Nothing, txtcodigo.Text)
         objConfig.descripcion = txtnombre.Text.ToLower
     End Sub
-    Private Sub txtFiltro_KeyDown(sender As Object, e As KeyEventArgs) Handles txtFiltro.KeyDown
-        If e.KeyCode = Keys.Enter Then
-            cargarRegistro()
-        End If
-    End Sub
-    Private Sub txtFiltro_TextChanged(sender As Object, e As KeyEventArgs) Handles txtFiltro.TextChanged
-        If String.IsNullOrEmpty(txtFiltro.Text) Then
-            cargarRegistro()
-        End If
-    End Sub
+
     Private Sub cargarConsultas()
         objConfig.sqlConsulta = "SP_CONFI_MARCA_CONSULTAR"
         objConfig.sqlAnular = ""

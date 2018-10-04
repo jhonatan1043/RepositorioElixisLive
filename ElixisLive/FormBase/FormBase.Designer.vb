@@ -26,18 +26,16 @@ Partial Class FormBase
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
         Me.dgRegistro = New System.Windows.Forms.DataGridView()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.txtFiltro = New System.Windows.Forms.TextBox()
-        Me.Gbdatos = New System.Windows.Forms.GroupBox()
-        Me.txtnombre = New System.Windows.Forms.TextBox()
-        Me.txtcodigo = New System.Windows.Forms.TextBox()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
+        Me.Gbdatos = New System.Windows.Forms.GroupBox()
+        Me.txtnombre = New System.Windows.Forms.TextBox()
+        Me.txtcodigo = New System.Windows.Forms.TextBox()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
         Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.btNuevo = New System.Windows.Forms.ToolStripButton()
@@ -58,8 +56,8 @@ Partial Class FormBase
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox5.SuspendLayout()
         CType(Me.dgRegistro, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Gbdatos.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
+        Me.Gbdatos.SuspendLayout()
         Me.ToolStrip1.SuspendLayout()
         Me.Panel1.SuspendLayout()
         CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -69,8 +67,6 @@ Partial Class FormBase
         '
         Me.GroupBox1.BackColor = System.Drawing.Color.Transparent
         Me.GroupBox1.Controls.Add(Me.GroupBox5)
-        Me.GroupBox1.Controls.Add(Me.Label1)
-        Me.GroupBox1.Controls.Add(Me.txtFiltro)
         Me.GroupBox1.Controls.Add(Me.GroupBox2)
         Me.GroupBox1.Controls.Add(Me.Gbdatos)
         Me.GroupBox1.Location = New System.Drawing.Point(6, 44)
@@ -84,12 +80,12 @@ Partial Class FormBase
         Me.GroupBox5.Controls.Add(Me.dgRegistro)
         Me.GroupBox5.Font = New System.Drawing.Font("Times New Roman", 8.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox5.ForeColor = System.Drawing.Color.DarkBlue
-        Me.GroupBox5.Location = New System.Drawing.Point(4, 85)
+        Me.GroupBox5.Location = New System.Drawing.Point(4, 61)
         Me.GroupBox5.Name = "GroupBox5"
-        Me.GroupBox5.Size = New System.Drawing.Size(580, 198)
+        Me.GroupBox5.Size = New System.Drawing.Size(580, 222)
         Me.GroupBox5.TabIndex = 61
         Me.GroupBox5.TabStop = False
-        Me.GroupBox5.Text = "Registros Almacenados"
+        Me.GroupBox5.Text = "Información"
         '
         'dgRegistro
         '
@@ -106,83 +102,8 @@ Partial Class FormBase
         Me.dgRegistro.MultiSelect = False
         Me.dgRegistro.Name = "dgRegistro"
         Me.dgRegistro.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgRegistro.Size = New System.Drawing.Size(574, 179)
+        Me.dgRegistro.Size = New System.Drawing.Size(574, 203)
         Me.dgRegistro.TabIndex = 0
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.Black
-        Me.Label1.Location = New System.Drawing.Point(6, 61)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(57, 19)
-        Me.Label1.TabIndex = 19
-        Me.Label1.Text = "Filtrar:"
-        '
-        'txtFiltro
-        '
-        Me.txtFiltro.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!)
-        Me.txtFiltro.Location = New System.Drawing.Point(65, 60)
-        Me.txtFiltro.MaxLength = 100
-        Me.txtFiltro.Name = "txtFiltro"
-        Me.txtFiltro.Size = New System.Drawing.Size(519, 21)
-        Me.txtFiltro.TabIndex = 3
-        '
-        'Gbdatos
-        '
-        Me.Gbdatos.Controls.Add(Me.txtnombre)
-        Me.Gbdatos.Controls.Add(Me.txtcodigo)
-        Me.Gbdatos.Controls.Add(Me.Label3)
-        Me.Gbdatos.Controls.Add(Me.Label5)
-        Me.Gbdatos.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Gbdatos.ForeColor = System.Drawing.Color.DarkBlue
-        Me.Gbdatos.Location = New System.Drawing.Point(6, 7)
-        Me.Gbdatos.Name = "Gbdatos"
-        Me.Gbdatos.Size = New System.Drawing.Size(554, 48)
-        Me.Gbdatos.TabIndex = 0
-        Me.Gbdatos.TabStop = False
-        Me.Gbdatos.Text = "Información "
-        '
-        'txtnombre
-        '
-        Me.txtnombre.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!)
-        Me.txtnombre.Location = New System.Drawing.Point(246, 20)
-        Me.txtnombre.MaxLength = 100
-        Me.txtnombre.Name = "txtnombre"
-        Me.txtnombre.Size = New System.Drawing.Size(305, 21)
-        Me.txtnombre.TabIndex = 2
-        '
-        'txtcodigo
-        '
-        Me.txtcodigo.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!)
-        Me.txtcodigo.Location = New System.Drawing.Point(60, 20)
-        Me.txtcodigo.Name = "txtcodigo"
-        Me.txtcodigo.ReadOnly = True
-        Me.txtcodigo.Size = New System.Drawing.Size(100, 21)
-        Me.txtcodigo.TabIndex = 1
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.ForeColor = System.Drawing.Color.Black
-        Me.Label3.Location = New System.Drawing.Point(160, 20)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(90, 19)
-        Me.Label3.TabIndex = 18
-        Me.Label3.Text = "Descripción:"
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.ForeColor = System.Drawing.Color.Black
-        Me.Label5.Location = New System.Drawing.Point(1, 21)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(61, 19)
-        Me.Label5.TabIndex = 17
-        Me.Label5.Text = "Código:"
         '
         'GroupBox2
         '
@@ -238,6 +159,61 @@ Partial Class FormBase
         Me.Label4.Size = New System.Drawing.Size(61, 19)
         Me.Label4.TabIndex = 17
         Me.Label4.Text = "Código:"
+        '
+        'Gbdatos
+        '
+        Me.Gbdatos.Controls.Add(Me.txtnombre)
+        Me.Gbdatos.Controls.Add(Me.txtcodigo)
+        Me.Gbdatos.Controls.Add(Me.Label3)
+        Me.Gbdatos.Controls.Add(Me.Label5)
+        Me.Gbdatos.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Gbdatos.ForeColor = System.Drawing.Color.DarkBlue
+        Me.Gbdatos.Location = New System.Drawing.Point(6, 7)
+        Me.Gbdatos.Name = "Gbdatos"
+        Me.Gbdatos.Size = New System.Drawing.Size(554, 48)
+        Me.Gbdatos.TabIndex = 0
+        Me.Gbdatos.TabStop = False
+        Me.Gbdatos.Text = "Información "
+        '
+        'txtnombre
+        '
+        Me.txtnombre.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!)
+        Me.txtnombre.Location = New System.Drawing.Point(246, 20)
+        Me.txtnombre.MaxLength = 100
+        Me.txtnombre.Name = "txtnombre"
+        Me.txtnombre.Size = New System.Drawing.Size(305, 21)
+        Me.txtnombre.TabIndex = 2
+        '
+        'txtcodigo
+        '
+        Me.txtcodigo.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!)
+        Me.txtcodigo.Location = New System.Drawing.Point(60, 20)
+        Me.txtcodigo.Name = "txtcodigo"
+        Me.txtcodigo.ReadOnly = True
+        Me.txtcodigo.Size = New System.Drawing.Size(100, 21)
+        Me.txtcodigo.TabIndex = 1
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.Black
+        Me.Label3.Location = New System.Drawing.Point(160, 20)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(90, 19)
+        Me.Label3.TabIndex = 18
+        Me.Label3.Text = "Descripción:"
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.ForeColor = System.Drawing.Color.Black
+        Me.Label5.Location = New System.Drawing.Point(1, 21)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(61, 19)
+        Me.Label5.TabIndex = 17
+        Me.Label5.Text = "Código:"
         '
         'ToolStrip1
         '
@@ -405,13 +381,12 @@ Partial Class FormBase
         Me.Name = "FormBase"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.GroupBox1.ResumeLayout(False)
-        Me.GroupBox1.PerformLayout()
         Me.GroupBox5.ResumeLayout(False)
         CType(Me.dgRegistro, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Gbdatos.ResumeLayout(False)
-        Me.Gbdatos.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
+        Me.Gbdatos.ResumeLayout(False)
+        Me.Gbdatos.PerformLayout()
         Me.ToolStrip1.ResumeLayout(False)
         Me.ToolStrip1.PerformLayout()
         Me.Panel1.ResumeLayout(False)
@@ -424,8 +399,6 @@ Partial Class FormBase
     Public WithEvents LTitulo As Label
     Public WithEvents Pimagen As PictureBox
     Public WithEvents GroupBox1 As GroupBox
-    Public WithEvents Label1 As Label
-    Public WithEvents txtFiltro As TextBox
     Public WithEvents Gbdatos As GroupBox
     Public WithEvents txtnombre As TextBox
     Public WithEvents txtcodigo As TextBox
