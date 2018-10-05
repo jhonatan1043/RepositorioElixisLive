@@ -79,6 +79,7 @@ Partial Class FormPrincipal
         Me.Font = New System.Drawing.Font("Monotype Corsiva", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.IsMdiContainer = True
         Me.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
+        Me.MaximizeBox = False
         Me.Name = "FormPrincipal"
         Me.ShowIcon = False
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized

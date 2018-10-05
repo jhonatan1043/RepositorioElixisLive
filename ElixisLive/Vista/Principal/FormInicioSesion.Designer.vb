@@ -46,6 +46,8 @@ Partial Class FormInicioSesion
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.Panel5 = New System.Windows.Forms.Panel()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -55,7 +57,7 @@ Partial Class FormInicioSesion
         '
         Me.UsernameLabel.BackColor = System.Drawing.Color.Transparent
         Me.UsernameLabel.Font = New System.Drawing.Font("Times New Roman", 11.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.UsernameLabel.ForeColor = System.Drawing.Color.White
+        Me.UsernameLabel.ForeColor = System.Drawing.Color.Black
         Me.UsernameLabel.Location = New System.Drawing.Point(164, 22)
         Me.UsernameLabel.Name = "UsernameLabel"
         Me.UsernameLabel.Size = New System.Drawing.Size(78, 24)
@@ -67,7 +69,7 @@ Partial Class FormInicioSesion
         '
         Me.PasswordLabel.BackColor = System.Drawing.Color.Transparent
         Me.PasswordLabel.Font = New System.Drawing.Font("Times New Roman", 11.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.PasswordLabel.ForeColor = System.Drawing.Color.White
+        Me.PasswordLabel.ForeColor = System.Drawing.Color.Black
         Me.PasswordLabel.Location = New System.Drawing.Point(164, 69)
         Me.PasswordLabel.Name = "PasswordLabel"
         Me.PasswordLabel.Size = New System.Drawing.Size(89, 23)
@@ -127,7 +129,7 @@ Partial Class FormInicioSesion
         '
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("Times New Roman", 11.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.White
+        Me.Label1.ForeColor = System.Drawing.Color.Black
         Me.Label1.Location = New System.Drawing.Point(165, 115)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(88, 23)
@@ -147,7 +149,6 @@ Partial Class FormInicioSesion
         'GroupBox1
         '
         Me.GroupBox1.BackColor = System.Drawing.Color.White
-        Me.GroupBox1.BackgroundImage = Global.ElixisLive.My.Resources.Resources.fondo_azul
         Me.GroupBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.GroupBox1.Controls.Add(Me.GroupBox3)
         Me.GroupBox1.Controls.Add(Me.OK)
@@ -173,7 +174,7 @@ Partial Class FormInicioSesion
         'Pimagen
         '
         Me.Pimagen.BackColor = System.Drawing.Color.Transparent
-        Me.Pimagen.Image = Global.ElixisLive.My.Resources.Resources.glossy_3d_blue_orbs2_086_icon
+        Me.Pimagen.Image = Global.ElixisLive.My.Resources.Resources.QUALITY__Version2_
         Me.Pimagen.Location = New System.Drawing.Point(6, 13)
         Me.Pimagen.Name = "Pimagen"
         Me.Pimagen.Size = New System.Drawing.Size(130, 156)
@@ -221,16 +222,36 @@ Partial Class FormInicioSesion
         Me.Panel1.Size = New System.Drawing.Size(15, 20)
         Me.Panel1.TabIndex = 8
         '
+        'Panel4
+        '
+        Me.Panel4.BackgroundImage = Global.ElixisLive.My.Resources.Resources.fondo_azul
+        Me.Panel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Panel4.Location = New System.Drawing.Point(2, -3)
+        Me.Panel4.Name = "Panel4"
+        Me.Panel4.Size = New System.Drawing.Size(395, 10)
+        Me.Panel4.TabIndex = 1
+        '
+        'Panel5
+        '
+        Me.Panel5.BackgroundImage = Global.ElixisLive.My.Resources.Resources.fondo_azul
+        Me.Panel5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Panel5.Location = New System.Drawing.Point(3, 190)
+        Me.Panel5.Name = "Panel5"
+        Me.Panel5.Size = New System.Drawing.Size(395, 10)
+        Me.Panel5.TabIndex = 12
+        '
         'FormInicioSesion
         '
         Me.AcceptButton = Me.OK
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.BackgroundImage = Global.ElixisLive.My.Resources.Resources.fondo_azul
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.CancelButton = Me.Cancel
         Me.ClientSize = New System.Drawing.Size(401, 197)
+        Me.ControlBox = False
+        Me.Controls.Add(Me.Panel5)
+        Me.Controls.Add(Me.Panel4)
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
@@ -263,4 +284,6 @@ Partial Class FormInicioSesion
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents GroupBox3 As GroupBox
+    Friend WithEvents Panel4 As Panel
+    Friend WithEvents Panel5 As Panel
 End Class

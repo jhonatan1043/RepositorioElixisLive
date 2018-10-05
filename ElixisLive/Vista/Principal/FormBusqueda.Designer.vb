@@ -24,6 +24,7 @@ Partial Class FormBusqueda
     Private Sub InitializeComponent()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
         Me.Pimagen = New System.Windows.Forms.PictureBox()
         Me.LTitulo = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
@@ -44,12 +45,27 @@ Partial Class FormBusqueda
         Me.Panel1.BackColor = System.Drawing.Color.White
         Me.Panel1.BackgroundImage = Global.ElixisLive.My.Resources.Resources.fondo_azul
         Me.Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Panel1.Controls.Add(Me.LinkLabel1)
         Me.Panel1.Controls.Add(Me.Pimagen)
         Me.Panel1.Controls.Add(Me.LTitulo)
         Me.Panel1.Location = New System.Drawing.Point(1, 0)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(602, 42)
         Me.Panel1.TabIndex = 1
+        '
+        'LinkLabel1
+        '
+        Me.LinkLabel1.AutoSize = True
+        Me.LinkLabel1.BackColor = System.Drawing.Color.Transparent
+        Me.LinkLabel1.Font = New System.Drawing.Font("Times New Roman", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LinkLabel1.LinkColor = System.Drawing.Color.White
+        Me.LinkLabel1.Location = New System.Drawing.Point(560, 17)
+        Me.LinkLabel1.Name = "LinkLabel1"
+        Me.LinkLabel1.Size = New System.Drawing.Size(33, 13)
+        Me.LinkLabel1.TabIndex = 2
+        Me.LinkLabel1.TabStop = True
+        Me.LinkLabel1.Text = "Salir"
+        Me.LinkLabel1.VisitedLinkColor = System.Drawing.Color.Red
         '
         'Pimagen
         '
@@ -81,7 +97,7 @@ Partial Class FormBusqueda
         Me.GroupBox1.Controls.Add(Me.GroupBox2)
         Me.GroupBox1.Location = New System.Drawing.Point(8, 42)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(588, 365)
+        Me.GroupBox1.Size = New System.Drawing.Size(588, 371)
         Me.GroupBox1.TabIndex = 19
         Me.GroupBox1.TabStop = False
         '
@@ -92,7 +108,7 @@ Partial Class FormBusqueda
         Me.GroupBox5.ForeColor = System.Drawing.Color.DarkBlue
         Me.GroupBox5.Location = New System.Drawing.Point(4, 51)
         Me.GroupBox5.Name = "GroupBox5"
-        Me.GroupBox5.Size = New System.Drawing.Size(578, 308)
+        Me.GroupBox5.Size = New System.Drawing.Size(578, 314)
         Me.GroupBox5.TabIndex = 61
         Me.GroupBox5.TabStop = False
         Me.GroupBox5.Text = "Resultado de la busqueda"
@@ -113,7 +129,7 @@ Partial Class FormBusqueda
         Me.dgvBusqueda.Name = "dgvBusqueda"
         Me.dgvBusqueda.ReadOnly = True
         Me.dgvBusqueda.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvBusqueda.Size = New System.Drawing.Size(572, 289)
+        Me.dgvBusqueda.Size = New System.Drawing.Size(572, 295)
         Me.dgvBusqueda.TabIndex = 0
         '
         'GroupBox2
@@ -142,15 +158,17 @@ Partial Class FormBusqueda
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(603, 411)
+        Me.ClientSize = New System.Drawing.Size(605, 422)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Panel1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.KeyPreview = True
         Me.MaximizeBox = False
         Me.MaximumSize = New System.Drawing.Size(619, 450)
-        Me.MinimumSize = New System.Drawing.Size(619, 450)
         Me.Name = "FormBusqueda"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox5.ResumeLayout(False)
@@ -169,4 +187,5 @@ Partial Class FormBusqueda
     Public WithEvents dgvBusqueda As DataGridView
     Public WithEvents GroupBox2 As GroupBox
     Public WithEvents Textbusqueda As TextBox
+    Friend WithEvents LinkLabel1 As LinkLabel
 End Class
