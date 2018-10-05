@@ -22,9 +22,9 @@ Partial Class FormBusqueda
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
+        Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Pimagen = New System.Windows.Forms.PictureBox()
         Me.LTitulo = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
@@ -45,7 +45,7 @@ Partial Class FormBusqueda
         Me.Panel1.BackColor = System.Drawing.Color.White
         Me.Panel1.BackgroundImage = Global.ElixisLive.My.Resources.Resources.fondo_azul
         Me.Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Panel1.Controls.Add(Me.LinkLabel1)
+        Me.Panel1.Controls.Add(Me.Panel2)
         Me.Panel1.Controls.Add(Me.Pimagen)
         Me.Panel1.Controls.Add(Me.LTitulo)
         Me.Panel1.Location = New System.Drawing.Point(1, 0)
@@ -53,27 +53,23 @@ Partial Class FormBusqueda
         Me.Panel1.Size = New System.Drawing.Size(602, 42)
         Me.Panel1.TabIndex = 1
         '
-        'LinkLabel1
+        'Panel2
         '
-        Me.LinkLabel1.AutoSize = True
-        Me.LinkLabel1.BackColor = System.Drawing.Color.Transparent
-        Me.LinkLabel1.Font = New System.Drawing.Font("Times New Roman", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LinkLabel1.LinkColor = System.Drawing.Color.White
-        Me.LinkLabel1.Location = New System.Drawing.Point(560, 17)
-        Me.LinkLabel1.Name = "LinkLabel1"
-        Me.LinkLabel1.Size = New System.Drawing.Size(33, 13)
-        Me.LinkLabel1.TabIndex = 2
-        Me.LinkLabel1.TabStop = True
-        Me.LinkLabel1.Text = "Salir"
-        Me.LinkLabel1.VisitedLinkColor = System.Drawing.Color.Red
+        Me.Panel2.BackColor = System.Drawing.Color.Transparent
+        Me.Panel2.BackgroundImage = Global.ElixisLive.My.Resources.Resources._error
+        Me.Panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Panel2.Location = New System.Drawing.Point(563, 5)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(32, 31)
+        Me.Panel2.TabIndex = 1
         '
         'Pimagen
         '
         Me.Pimagen.BackColor = System.Drawing.Color.Transparent
         Me.Pimagen.Image = Global.ElixisLive.My.Resources.Resources.glossy_3d_blue_orbs2_096_icon
-        Me.Pimagen.Location = New System.Drawing.Point(4, -7)
+        Me.Pimagen.Location = New System.Drawing.Point(4, 0)
         Me.Pimagen.Name = "Pimagen"
-        Me.Pimagen.Size = New System.Drawing.Size(69, 53)
+        Me.Pimagen.Size = New System.Drawing.Size(60, 46)
         Me.Pimagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.Pimagen.TabIndex = 1
         Me.Pimagen.TabStop = False
@@ -119,8 +115,8 @@ Partial Class FormBusqueda
         Me.dgvBusqueda.AllowUserToDeleteRows = False
         Me.dgvBusqueda.AllowUserToResizeColumns = False
         Me.dgvBusqueda.AllowUserToResizeRows = False
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.dgvBusqueda.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.dgvBusqueda.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle2
         Me.dgvBusqueda.BackgroundColor = System.Drawing.SystemColors.Control
         Me.dgvBusqueda.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvBusqueda.Dock = System.Windows.Forms.DockStyle.Fill
@@ -168,7 +164,6 @@ Partial Class FormBusqueda
         Me.Name = "FormBusqueda"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Panel1.ResumeLayout(False)
-        Me.Panel1.PerformLayout()
         CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox5.ResumeLayout(False)
@@ -187,5 +182,5 @@ Partial Class FormBusqueda
     Public WithEvents dgvBusqueda As DataGridView
     Public WithEvents GroupBox2 As GroupBox
     Public WithEvents Textbusqueda As TextBox
-    Friend WithEvents LinkLabel1 As LinkLabel
+    Friend WithEvents Panel2 As Panel
 End Class
