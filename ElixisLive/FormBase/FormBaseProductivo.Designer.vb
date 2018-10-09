@@ -29,7 +29,7 @@ Partial Class FormBaseProductivo
         Me.gbInformD = New System.Windows.Forms.GroupBox()
         Me.dgvParametro = New System.Windows.Forms.DataGridView()
         Me.gbInform = New System.Windows.Forms.GroupBox()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.btBuscarPersona = New System.Windows.Forms.Button()
         Me.TextBox5 = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.TextBox4 = New System.Windows.Forms.TextBox()
@@ -141,7 +141,7 @@ Partial Class FormBaseProductivo
         'gbInform
         '
         Me.gbInform.BackColor = System.Drawing.Color.Transparent
-        Me.gbInform.Controls.Add(Me.Button1)
+        Me.gbInform.Controls.Add(Me.btBuscarPersona)
         Me.gbInform.Controls.Add(Me.TextBox5)
         Me.gbInform.Controls.Add(Me.Label5)
         Me.gbInform.Controls.Add(Me.TextBox4)
@@ -160,16 +160,16 @@ Partial Class FormBaseProductivo
         Me.gbInform.TabIndex = 9
         Me.gbInform.TabStop = False
         '
-        'Button1
+        'btBuscarPersona
         '
-        Me.Button1.BackgroundImage = Global.ElixisLive.My.Resources.Resources.fondo_azul
-        Me.Button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button1.Image = Global.ElixisLive.My.Resources.Resources.Search_icon__2_
-        Me.Button1.Location = New System.Drawing.Point(840, 29)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(43, 38)
-        Me.Button1.TabIndex = 14
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.btBuscarPersona.BackgroundImage = Global.ElixisLive.My.Resources.Resources.fondo_azul
+        Me.btBuscarPersona.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btBuscarPersona.Image = Global.ElixisLive.My.Resources.Resources.Search_icon__2_
+        Me.btBuscarPersona.Location = New System.Drawing.Point(840, 29)
+        Me.btBuscarPersona.Name = "btBuscarPersona"
+        Me.btBuscarPersona.Size = New System.Drawing.Size(43, 38)
+        Me.btBuscarPersona.TabIndex = 14
+        Me.btBuscarPersona.UseVisualStyleBackColor = True
         '
         'TextBox5
         '
@@ -277,7 +277,7 @@ Partial Class FormBaseProductivo
         Me.ToolStrip1.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.ToolStrip1.ImageScalingSize = New System.Drawing.Size(26, 26)
         Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripSeparator1, Me.btNuevo, Me.ToolStripSeparator7, Me.btBuscar, Me.ToolStripSeparator2, Me.btRegistrar, Me.ToolStripSeparator4, Me.btEditar, Me.ToolStripSeparator5, Me.btCancelar, Me.ToolStripSeparator3, Me.btAnular, Me.ToolStripSeparator6})
-        Me.ToolStrip1.Location = New System.Drawing.Point(0, 490)
+        Me.ToolStrip1.Location = New System.Drawing.Point(0, 491)
         Me.ToolStrip1.Name = "ToolStrip1"
         Me.ToolStrip1.Size = New System.Drawing.Size(905, 33)
         Me.ToolStrip1.TabIndex = 20
@@ -421,7 +421,7 @@ Partial Class FormBaseProductivo
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(905, 523)
+        Me.ClientSize = New System.Drawing.Size(905, 524)
         Me.Controls.Add(Me.ToolStrip1)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Panel1)
@@ -478,5 +478,5 @@ Partial Class FormBaseProductivo
     Public WithEvents TextBox2 As TextBox
     Public WithEvents Label1 As Label
     Public WithEvents TextBox1 As TextBox
-    Friend WithEvents Button1 As Button
+    Friend WithEvents btBuscarPersona As Button
 End Class

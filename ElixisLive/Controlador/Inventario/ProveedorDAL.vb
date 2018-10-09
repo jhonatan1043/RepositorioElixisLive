@@ -11,10 +11,10 @@ Public Class ProveedorDAL
                     comando.CommandType = CommandType.StoredProcedure
                     comando.Parameters.Clear()
                     comando.CommandText = objProveedor.sqlGuardar
-                    comando.Parameters.Add(New SqlParameter("@Codigo", SqlDbType.NVarChar)).Value = objProveedor.codigoProducto
+                    comando.Parameters.Add(New SqlParameter("@Codigo", SqlDbType.NVarChar)).Value = objProveedor.codigo
                     comando.Parameters.Add(New SqlParameter("@Foto", SqlDbType.VarBinary)).Value = objProveedor.foto
                     comando.Parameters.Add(New SqlParameter("@Tabla", SqlDbType.Structured)).Value = objProveedor.dtParametro
-                    objProveedor.codigoProducto = CType(comando.ExecuteScalar, String)
+                    objProveedor.codigo = CType(comando.ExecuteScalar, String)
                     trnsccion.Commit()
                 End Using
             End Using
