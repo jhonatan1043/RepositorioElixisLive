@@ -444,6 +444,7 @@ Public Class Generales
             End Using
         Catch ex As Exception
             Throw ex
+            objConexion.desConectar()
             Return False
         End Try
         objConexion.desConectar()
