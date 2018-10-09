@@ -1,9 +1,5 @@
 ﻿Public Class producto
     Inherits persona
-    Property codigoProducto As String
-    Property fecha As DateTime
-    Property foto As Byte()
-
     Public Sub New()
         dtRegistro = New DataTable
         sqlGuardar = "[SP_INVEN_PRODUCTO_CREAR]"

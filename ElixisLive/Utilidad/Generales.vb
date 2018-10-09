@@ -1,5 +1,6 @@
 ﻿Imports System.Data.SqlClient
 Imports CnxElixisLiveBD
+Imports System.Net
 Public Class Generales
     Public Delegate Sub cargaInfoForm(ByVal codigo As String)
     Public Delegate Sub cargaInfoFormObj(ByVal fila As DataRow)
@@ -140,11 +141,10 @@ Public Class Generales
             Using daAdapter = New SqlDataAdapter(consulta & listaParams, objConexion.cnxbd)
                 daAdapter.Fill(dtTabla)
             End Using
-            objConexion.desConectar()
         Catch ex As Exception
             EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
         End Try
-
+        objConexion.desConectar()
         dgdgv.DataSource = dtTabla
         'dgdgv.DefaultCellStyle.Font = New Font(Constantes.TIPO_LETRA_ELEMENTO, 9)
 
@@ -156,7 +156,6 @@ Public Class Generales
             Using daAdapter = New SqlDataAdapter(consulta, objConexion.cnxbd)
                 daAdapter.Fill(dtTabla)
             End Using
-            objConexion.desConectar()
         Catch ex As Exception
             Throw ex
         End Try
@@ -165,6 +164,7 @@ Public Class Generales
         Else
             Return Nothing
         End If
+        objConexion.desConectar()
     End Function
     Public Shared Function cargarItem(ByVal consulta As String,
                                   ByVal params As List(Of String)) As DataRow
@@ -177,10 +177,10 @@ Public Class Generales
             Using daAdapter = New SqlDataAdapter(consulta & listaParams, objConexion.cnxbd)
                 daAdapter.Fill(dtTabla)
             End Using
-            objConexion.desConectar()
         Catch ex As Exception
             Throw ex
         End Try
+        objConexion.desConectar()
         If dtTabla.Rows.Count > 0 Then
             Return dtTabla.Rows(0)
         Else
@@ -207,10 +207,10 @@ Public Class Generales
                     daAdapter.Fill(dtTabla)
                 End Using
             End Using
-            objConexion.desConectar()
         Catch ex As Exception
             Throw
         End Try
+        objConexion.desConectar()
         Return dtTabla
     End Function
     Public Shared Sub deshabilitarControles(ByRef pElemento As Object)
@@ -317,7 +317,7 @@ Public Class Generales
             .Columns("Datos").AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
         End With
     End Sub
-    Public Shared Sub subirimagen(ByVal objeto As PictureBox, ByVal componente As OpenFileDialog)
+    Public Shared Function subirimagen(ByVal objeto As PictureBox, ByVal componente As OpenFileDialog) As OpenFileDialog
         Try
             objeto.Image = Nothing
             objeto.SizeMode = PictureBoxSizeMode.StretchImage
@@ -338,7 +338,8 @@ Public Class Generales
         Catch ex As Exception
             EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
         End Try
-    End Sub
+        Return componente
+    End Function
     Public Shared Function consultarTipoControl(dgv As DataGridView,
                                                 posicion As Integer) As Boolean
         Dim params As New List(Of String)
@@ -414,8 +415,6 @@ Public Class Generales
                 da.Fill(dtTabla)
             End Using
 
-            objConexion.desConectar()
-
             If dtTabla.Rows.Count > 1 Then
                 resultado = True
             End If
@@ -428,6 +427,8 @@ Public Class Generales
             Throw ex
         End Try
 
+        objConexion.desConectar()
+
         Return contedor
     End Function
     Public Shared Sub mostrarMensaje(ByVal mensaje As String, icono As Image)
@@ -435,18 +436,69 @@ Public Class Generales
         popupmotify1.Show("¡Atención!", mensaje, icono)
     End Sub
     Public Shared Function ejecutarSQL(ByVal cadena As String) As Boolean
-        Dim respuesta As Boolean
         Try
             objConexion.conectar()
             Using consulta As New SqlCommand(cadena)
                 consulta.Connection = objConexion.cnxbd
-                respuesta = consulta.ExecuteScalar()
+                consulta.ExecuteNonQuery()
             End Using
-            objConexion.desConectar()
-            Return respuesta
         Catch ex As Exception
             Throw ex
             Return False
         End Try
+        objConexion.desConectar()
+        Return True
     End Function
+    Public Shared Sub subirArchivoFTP(objeto As Object)
+        Dim segundoPlano As System.Threading.Thread
+        Try
+            segundoPlano = New Threading.Thread(AddressOf subirArchivo)
+            segundoPlano.Start(objeto)
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Sub
+    Private Shared Sub subirArchivo(objeto As Object)
+        If Not IsNothing(objeto.foto) Then
+            Try
+                My.Computer.Network.UploadFile(objeto.ruta, Constantes.SERVIDOR_FTP & objeto.foto,
+                                               Constantes.USUARIO_FTP,
+                                               Constantes.CONTRASENA_FTP,
+                                               False,
+                                               3500,
+                                               FileIO.UICancelOption.ThrowException)
+            Catch ex As Net.WebException
+                Throw ex
+            End Try
+        End If
+    End Sub
+    Public Shared Sub bajarArchivoFTP(objeto As Object)
+        Dim segundoPlanoBajar As System.Threading.Thread
+        Try
+            segundoPlanoBajar = New Threading.Thread(AddressOf bajarArchivo)
+            segundoPlanoBajar.Start(objeto)
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Sub
+    Private Shared Sub bajarArchivo(objeto As Object)
+        Dim ruta As String
+        If Not IsNothing(objeto.foto) Then
+            Try
+                ruta = IO.Path.GetTempPath & objeto.codigo
+                'objeto.imagen.Cursor = Cursors.WaitCursor
+                My.Computer.Network.DownloadFile(ruta, Constantes.SERVIDOR_FTP & objeto.foto,
+                                                 Constantes.USUARIO_FTP,
+                                                 Constantes.CONTRASENA_FTP,
+                                                 False,
+                                                 3500,
+                                                 True,
+                                                 FileIO.UICancelOption.ThrowException)
+                objeto.image.ImageLocation(ruta)
+                'objeto.imagen.Cursor = Cursors.Default
+            Catch ex As Exception
+                objeto.imagen.image = My.Resources.advertencia
+            End Try
+        End If
+    End Sub
 End Class

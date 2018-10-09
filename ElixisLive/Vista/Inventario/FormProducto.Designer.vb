@@ -23,7 +23,6 @@ Partial Class FormProducto
         CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.Gbdatos.SuspendLayout()
-        Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
         '
         'LTitulo
@@ -52,18 +51,6 @@ Partial Class FormProducto
         Me.Label5.Size = New System.Drawing.Size(59, 19)
         Me.Label5.Text = "Em@il:"
         '
-        'TextBox2
-        '
-        Me.TextBox2.Location = New System.Drawing.Point(58, 20)
-        '
-        'Label2
-        '
-        Me.Label2.Location = New System.Drawing.Point(158, 20)
-        '
-        'Label4
-        '
-        Me.Label4.Location = New System.Drawing.Point(1, 20)
-        '
         'FormProducto
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -75,8 +62,6 @@ Partial Class FormProducto
         Me.GroupBox1.ResumeLayout(False)
         Me.Gbdatos.ResumeLayout(False)
         Me.Gbdatos.PerformLayout()
-        Me.GroupBox2.ResumeLayout(False)
-        Me.GroupBox2.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

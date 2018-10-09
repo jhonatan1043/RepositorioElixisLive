@@ -12,14 +12,11 @@
         End Try
     End Sub
     Private Sub cargarObjeto()
-        Dim almMemoria As System.IO.MemoryStream = Nothing
         If Not IsNothing(pictImagen.Image) Then
-            almMemoria = New System.IO.MemoryStream
-            pictImagen.Image.Save(almMemoria, Imaging.ImageFormat.Png)
+
         End If
-        objEmpresa.nit = txtId.Text
+        objEmpresa.identificacion = txtId.Text
         objEmpresa.nombre = TxtDescripcion.Text
-        objEmpresa.foto = If(IsNothing(almMemoria), Nothing, almMemoria.GetBuffer())
         objEmpresa.dtParametro = dgvParametro.DataSource
     End Sub
     Private Function validarCampos() As Boolean
@@ -51,6 +48,7 @@
         Dim params As New List(Of String)
         objEmpresa = New Empresa
         Try
+            CheckForIllegalCrossThreadCalls = False
             params.Add(ElementoMenu.codigo)
             params.Add(SesionActual.idEmpresa)
             Generales.deshabilitarBotones(ToolStrip1)
@@ -79,6 +77,7 @@
         If validarCampos() = True Then
             cargarObjeto()
             EmpresaBLL.guardar(objEmpresa)
+            Generales.subirArchivoFTP(objEmpresa)
             Generales.deshabilitarBotones(ToolStrip1)
             Generales.deshabilitarControles(Me)
             cargarRegistro()
@@ -126,7 +125,6 @@
     Private Sub btExaminar_Click(sender As Object, e As EventArgs) Handles btExaminar.Click
         Dim openDialog As New OpenFileDialog
         Try
-            Generales.subirimagen(pictImagen, openDialog)
         Catch ex As Exception
             EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
         End Try

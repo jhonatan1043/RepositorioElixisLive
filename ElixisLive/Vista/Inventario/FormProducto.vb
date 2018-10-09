@@ -18,24 +18,24 @@
     End Sub
 
     Private Sub cargarInfomacion(pcodigo As Integer)
-        Dim params As New List(Of String)
-        Dim dfila As DataRow
-        objProducto.codigoProducto = pcodigo
-        params.Add(objProducto.codigoProducto)
-        dfila = Generales.cargarItem(objProducto.sqlCargar, params)
-        Try
-            If Not IsNothing(dfila) Then
-                txtcodigo.Text = objProducto.codigoProducto
-                'Generales.llenardgv(objProducto.sqlCargarDetalle, dgvParametro, params)
-                'Generales.diseñoGrillaParametro(dgvParametro)
-            End If
-            Generales.deshabilitarBotones(ToolStrip1)
-            btEditar.Enabled = True
-            btCancelar.Enabled = True
-            btNuevo.Enabled = True
-        Catch ex As Exception
-            EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
-        End Try
+        'Dim params As New List(Of String)
+        'Dim dfila As DataRow
+        'objProducto.codigoProducto = pcodigo
+        'params.Add(objProducto.codigoProducto)
+        'dfila = Generales.cargarItem(objProducto.sqlCargar, params)
+        'Try
+        '    If Not IsNothing(dfila) Then
+        '        txtcodigo.Text = objProducto.codigoProducto
+        '        'Generales.llenardgv(objProducto.sqlCargarDetalle, dgvParametro, params)
+        '        'Generales.diseñoGrillaParametro(dgvParametro)
+        '    End If
+        '    Generales.deshabilitarBotones(ToolStrip1)
+        '    btEditar.Enabled = True
+        '    btCancelar.Enabled = True
+        '    btNuevo.Enabled = True
+        'Catch ex As Exception
+        '    EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
+        'End Try
     End Sub
 
     Private Sub btNuevo_Click(sender As Object, e As EventArgs) Handles btNuevo.Click
@@ -58,7 +58,7 @@
             ProductoBLL.guardar(objProducto)
             Generales.deshabilitarBotones(ToolStrip1)
             Generales.deshabilitarControles(Me)
-            txtcodigo.Text = objProducto.codigoProducto
+            'txtcodigo.Text = objProducto.codigoProducto
             btNuevo.Enabled = True
             btEditar.Enabled = True
             EstiloMensajes.mostrarMensajeExitoso(MensajeSistema.REGISTRO_GUARDADO)

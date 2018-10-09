@@ -11,12 +11,12 @@ Public Class ProductoDAL
                     comando.CommandType = CommandType.StoredProcedure
                     comando.Parameters.Clear()
                     comando.CommandText = objProducto.sqlGuardar
-                    comando.Parameters.Add(New SqlParameter("@Codigo", SqlDbType.NVarChar)).Value = objProducto.codigoProducto
+                    comando.Parameters.Add(New SqlParameter("@Codigo", SqlDbType.NVarChar)).Value = objProducto.codigo
                     comando.Parameters.Add(New SqlParameter("@Codigo_Empresa", SqlDbType.Int)).Value = SesionActual.idEmpresa
                     comando.Parameters.Add(New SqlParameter("@Nombre", SqlDbType.NVarChar)).Value = objProducto.nombre
-                    comando.Parameters.Add(New SqlParameter("@Foto", SqlDbType.VarBinary)).Value = objProducto.foto
+                    comando.Parameters.Add(New SqlParameter("@Foto", SqlDbType.NVarChar)).Value = objProducto.foto
                     comando.Parameters.Add(New SqlParameter("@Tabla", SqlDbType.Structured)).Value = objProducto.dtParametro
-                    objProducto.codigoProducto = CType(comando.ExecuteScalar, String)
+                    objProducto.codigo = CType(comando.ExecuteScalar, String)
                     trnsccion.Commit()
                 End Using
             End Using
