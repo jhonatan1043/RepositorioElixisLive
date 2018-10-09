@@ -17,8 +17,9 @@ Partial Class FormProducto
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
@@ -36,14 +37,29 @@ Partial Class FormProducto
         Me.Pimagen.Image = Global.ElixisLive.My.Resources.Resources.producto1
         Me.Pimagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         '
+        'Gbdatos
+        '
+        Me.Gbdatos.Controls.Add(Me.Label1)
+        Me.Gbdatos.Controls.SetChildIndex(Me.Label5, 0)
+        Me.Gbdatos.Controls.SetChildIndex(Me.Label3, 0)
+        Me.Gbdatos.Controls.SetChildIndex(Me.txtcodigo, 0)
+        Me.Gbdatos.Controls.SetChildIndex(Me.txtnombre, 0)
+        Me.Gbdatos.Controls.SetChildIndex(Me.Label1, 0)
+        '
+        'txtnombre
+        '
+        Me.txtnombre.Location = New System.Drawing.Point(238, 17)
+        Me.txtnombre.Size = New System.Drawing.Size(334, 21)
+        '
         'txtcodigo
         '
-        Me.txtcodigo.Location = New System.Drawing.Point(95, 9)
+        Me.txtcodigo.Location = New System.Drawing.Point(35, 18)
         '
         'Label3
         '
-        Me.Label3.Size = New System.Drawing.Size(62, 19)
-        Me.Label3.Text = "Celular:"
+        Me.Label3.Location = New System.Drawing.Point(159, 19)
+        Me.Label3.Size = New System.Drawing.Size(73, 19)
+        Me.Label3.Text = "Producto:"
         '
         'Label5
         '
@@ -51,10 +67,19 @@ Partial Class FormProducto
         Me.Label5.Size = New System.Drawing.Size(59, 19)
         Me.Label5.Text = "Em@il:"
         '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(6, 22)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(23, 15)
+        Me.Label1.TabIndex = 19
+        Me.Label1.Text = "ID:"
+        '
         'FormProducto
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
-        Me.ClientSize = New System.Drawing.Size(603, 369)
+        Me.ClientSize = New System.Drawing.Size(603, 370)
         Me.Location = New System.Drawing.Point(0, 0)
         Me.Name = "FormProducto"
         Me.Panel1.ResumeLayout(False)
@@ -67,4 +92,5 @@ Partial Class FormProducto
 
     End Sub
 
+    Friend WithEvents Label1 As Label
 End Class
