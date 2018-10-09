@@ -12,16 +12,15 @@ Public Class Busqueda
 
             Using rsltdo = dt.CreateDataReader()
                 aux = Replace(cadena, "''", "'" & busqueda & "'")
-            aux = Replace(aux, Constantes.SIGNO_PESO, "")
+                aux = Replace(aux, Constantes.SIGNO_PESO, "")
                 Using adpter = New SqlDataAdapter(aux, objConexion.cnxbd)
                     adpter.Fill(dt)
                 End Using
             End Using
-            objConexion.desConectar()
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
         Return dt
-
+        objConexion.desConectar()
     End Function
 End Class

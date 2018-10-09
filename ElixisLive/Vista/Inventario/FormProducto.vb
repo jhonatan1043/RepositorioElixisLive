@@ -29,6 +29,7 @@
         Dim dfila As DataRow
         objProducto.codigo = pcodigo
         params.Add(objProducto.codigo)
+        params.Add(SesionActual.idEmpresa)
         dfila = Generales.cargarItem(objProducto.sqlCargar, params)
         Try
             If Not IsNothing(dfila) Then
