@@ -23,25 +23,21 @@ Partial Class FormEmpresa
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.GbInform = New System.Windows.Forms.GroupBox()
-        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
         Me.txtId = New System.Windows.Forms.TextBox()
         Me.TxtDescripcion = New System.Windows.Forms.TextBox()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.txtBuscar = New System.Windows.Forms.TextBox()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.pictImagen = New System.Windows.Forms.PictureBox()
         Me.GbInform_D = New System.Windows.Forms.GroupBox()
         Me.dgvParametro = New System.Windows.Forms.DataGridView()
-        Me.GroupBox5 = New System.Windows.Forms.GroupBox()
-        Me.dgRegistro = New System.Windows.Forms.DataGridView()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.btExaminar = New System.Windows.Forms.Button()
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
         Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.btNuevo = New System.Windows.Forms.ToolStripButton()
+        Me.ToolStripSeparator7 = New System.Windows.Forms.ToolStripSeparator()
+        Me.btBuscar = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
         Me.btRegistrar = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripSeparator4 = New System.Windows.Forms.ToolStripSeparator()
@@ -54,15 +50,11 @@ Partial Class FormEmpresa
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Pimagen = New System.Windows.Forms.PictureBox()
         Me.LTitulo = New System.Windows.Forms.Label()
-        Me.btBuscar = New System.Windows.Forms.ToolStripButton()
-        Me.ToolStripSeparator7 = New System.Windows.Forms.ToolStripSeparator()
         Me.GbInform.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         CType(Me.pictImagen, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GbInform_D.SuspendLayout()
         CType(Me.dgvParametro, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GroupBox5.SuspendLayout()
-        CType(Me.dgRegistro, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.ToolStrip1.SuspendLayout()
         Me.Panel1.SuspendLayout()
@@ -72,10 +64,8 @@ Partial Class FormEmpresa
         'GbInform
         '
         Me.GbInform.BackColor = System.Drawing.Color.Transparent
-        Me.GbInform.Controls.Add(Me.DateTimePicker1)
         Me.GbInform.Controls.Add(Me.Label1)
         Me.GbInform.Controls.Add(Me.Label2)
-        Me.GbInform.Controls.Add(Me.Label4)
         Me.GbInform.Controls.Add(Me.txtId)
         Me.GbInform.Controls.Add(Me.TxtDescripcion)
         Me.GbInform.Location = New System.Drawing.Point(4, 7)
@@ -83,19 +73,6 @@ Partial Class FormEmpresa
         Me.GbInform.Size = New System.Drawing.Size(890, 40)
         Me.GbInform.TabIndex = 9
         Me.GbInform.TabStop = False
-        '
-        'DateTimePicker1
-        '
-        Me.DateTimePicker1.CalendarForeColor = System.Drawing.Color.Indigo
-        Me.DateTimePicker1.CalendarTitleBackColor = System.Drawing.Color.Indigo
-        Me.DateTimePicker1.CalendarTitleForeColor = System.Drawing.Color.Blue
-        Me.DateTimePicker1.CustomFormat = "dddd-dd / MMMM / yyyy HH:mm"
-        Me.DateTimePicker1.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.DateTimePicker1.Location = New System.Drawing.Point(634, 13)
-        Me.DateTimePicker1.Name = "DateTimePicker1"
-        Me.DateTimePicker1.Size = New System.Drawing.Size(249, 22)
-        Me.DateTimePicker1.TabIndex = 7
         '
         'Label1
         '
@@ -115,23 +92,11 @@ Partial Class FormEmpresa
         Me.Label2.BackColor = System.Drawing.Color.Transparent
         Me.Label2.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.Black
-        Me.Label2.Location = New System.Drawing.Point(126, 15)
+        Me.Label2.Location = New System.Drawing.Point(181, 16)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(96, 19)
         Me.Label2.TabIndex = 3
         Me.Label2.Text = "Razón Social:"
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.BackColor = System.Drawing.Color.Transparent
-        Me.Label4.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.ForeColor = System.Drawing.Color.Black
-        Me.Label4.Location = New System.Drawing.Point(582, 14)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(54, 19)
-        Me.Label4.TabIndex = 6
-        Me.Label4.Text = "Fecha:"
         '
         'txtId
         '
@@ -139,38 +104,17 @@ Partial Class FormEmpresa
         Me.txtId.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtId.Location = New System.Drawing.Point(43, 13)
         Me.txtId.Name = "txtId"
-        Me.txtId.Size = New System.Drawing.Size(81, 22)
+        Me.txtId.Size = New System.Drawing.Size(132, 22)
         Me.txtId.TabIndex = 4
         '
         'TxtDescripcion
         '
         Me.TxtDescripcion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TxtDescripcion.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtDescripcion.Location = New System.Drawing.Point(223, 14)
+        Me.TxtDescripcion.Location = New System.Drawing.Point(280, 14)
         Me.TxtDescripcion.Name = "TxtDescripcion"
-        Me.TxtDescripcion.Size = New System.Drawing.Size(353, 22)
+        Me.TxtDescripcion.Size = New System.Drawing.Size(604, 22)
         Me.TxtDescripcion.TabIndex = 5
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.BackColor = System.Drawing.Color.Transparent
-        Me.Label3.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.ForeColor = System.Drawing.Color.Black
-        Me.Label3.Location = New System.Drawing.Point(2, 234)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(57, 19)
-        Me.Label3.TabIndex = 6
-        Me.Label3.Text = "Filtrar:"
-        '
-        'txtBuscar
-        '
-        Me.txtBuscar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtBuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtBuscar.Location = New System.Drawing.Point(59, 233)
-        Me.txtBuscar.Name = "txtBuscar"
-        Me.txtBuscar.Size = New System.Drawing.Size(831, 22)
-        Me.txtBuscar.TabIndex = 7
         '
         'GroupBox3
         '
@@ -201,7 +145,7 @@ Partial Class FormEmpresa
         Me.GbInform_D.ForeColor = System.Drawing.Color.DarkBlue
         Me.GbInform_D.Location = New System.Drawing.Point(4, 51)
         Me.GbInform_D.Name = "GbInform_D"
-        Me.GbInform_D.Size = New System.Drawing.Size(748, 176)
+        Me.GbInform_D.Size = New System.Drawing.Size(748, 386)
         Me.GbInform_D.TabIndex = 59
         Me.GbInform_D.TabStop = False
         Me.GbInform_D.Text = "Información de la Empresa"
@@ -218,40 +162,15 @@ Partial Class FormEmpresa
         Me.dgvParametro.Location = New System.Drawing.Point(3, 16)
         Me.dgvParametro.MultiSelect = False
         Me.dgvParametro.Name = "dgvParametro"
-        Me.dgvParametro.Size = New System.Drawing.Size(742, 157)
+        Me.dgvParametro.Size = New System.Drawing.Size(742, 367)
         Me.dgvParametro.TabIndex = 0
-        '
-        'GroupBox5
-        '
-        Me.GroupBox5.Controls.Add(Me.dgRegistro)
-        Me.GroupBox5.Font = New System.Drawing.Font("Times New Roman", 8.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox5.ForeColor = System.Drawing.Color.DarkBlue
-        Me.GroupBox5.Location = New System.Drawing.Point(4, 261)
-        Me.GroupBox5.Name = "GroupBox5"
-        Me.GroupBox5.Size = New System.Drawing.Size(889, 176)
-        Me.GroupBox5.TabIndex = 60
-        Me.GroupBox5.TabStop = False
-        Me.GroupBox5.Text = "Registros Almacenados"
-        '
-        'dgRegistro
-        '
-        Me.dgRegistro.BackgroundColor = System.Drawing.SystemColors.Control
-        Me.dgRegistro.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgRegistro.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.dgRegistro.Location = New System.Drawing.Point(3, 16)
-        Me.dgRegistro.Name = "dgRegistro"
-        Me.dgRegistro.Size = New System.Drawing.Size(883, 157)
-        Me.dgRegistro.TabIndex = 0
         '
         'GroupBox1
         '
         Me.GroupBox1.BackColor = System.Drawing.Color.Transparent
-        Me.GroupBox1.Controls.Add(Me.GroupBox5)
         Me.GroupBox1.Controls.Add(Me.GbInform_D)
         Me.GroupBox1.Controls.Add(Me.btExaminar)
         Me.GroupBox1.Controls.Add(Me.GroupBox3)
-        Me.GroupBox1.Controls.Add(Me.txtBuscar)
-        Me.GroupBox1.Controls.Add(Me.Label3)
         Me.GroupBox1.Controls.Add(Me.GbInform)
         Me.GroupBox1.Location = New System.Drawing.Point(4, 43)
         Me.GroupBox1.Name = "GroupBox1"
@@ -282,7 +201,7 @@ Partial Class FormEmpresa
         Me.ToolStrip1.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.ToolStrip1.ImageScalingSize = New System.Drawing.Size(26, 26)
         Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripSeparator1, Me.btNuevo, Me.ToolStripSeparator7, Me.btBuscar, Me.ToolStripSeparator2, Me.btRegistrar, Me.ToolStripSeparator4, Me.btEditar, Me.ToolStripSeparator5, Me.btCancelar, Me.ToolStripSeparator3, Me.btAnular, Me.ToolStripSeparator6})
-        Me.ToolStrip1.Location = New System.Drawing.Point(0, 490)
+        Me.ToolStrip1.Location = New System.Drawing.Point(0, 491)
         Me.ToolStrip1.Name = "ToolStrip1"
         Me.ToolStrip1.Size = New System.Drawing.Size(905, 33)
         Me.ToolStrip1.TabIndex = 14
@@ -303,6 +222,22 @@ Partial Class FormEmpresa
         Me.btNuevo.Size = New System.Drawing.Size(82, 30)
         Me.btNuevo.Text = "Nuevo"
         Me.btNuevo.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        '
+        'ToolStripSeparator7
+        '
+        Me.ToolStripSeparator7.Name = "ToolStripSeparator7"
+        Me.ToolStripSeparator7.Size = New System.Drawing.Size(6, 33)
+        '
+        'btBuscar
+        '
+        Me.btBuscar.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btBuscar.ForeColor = System.Drawing.Color.White
+        Me.btBuscar.Image = Global.ElixisLive.My.Resources.Resources.Search_icon__1_
+        Me.btBuscar.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.btBuscar.Name = "btBuscar"
+        Me.btBuscar.Size = New System.Drawing.Size(86, 30)
+        Me.btBuscar.Text = "Buscar"
+        Me.btBuscar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         '
         'ToolStripSeparator2
         '
@@ -408,29 +343,13 @@ Partial Class FormEmpresa
         Me.LTitulo.Text = "Empresa"
         Me.LTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'btBuscar
-        '
-        Me.btBuscar.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btBuscar.ForeColor = System.Drawing.Color.White
-        Me.btBuscar.Image = Global.ElixisLive.My.Resources.Resources.Search_icon__1_
-        Me.btBuscar.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.btBuscar.Name = "btBuscar"
-        Me.btBuscar.Size = New System.Drawing.Size(86, 30)
-        Me.btBuscar.Text = "Buscar"
-        Me.btBuscar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        '
-        'ToolStripSeparator7
-        '
-        Me.ToolStripSeparator7.Name = "ToolStripSeparator7"
-        Me.ToolStripSeparator7.Size = New System.Drawing.Size(6, 33)
-        '
         'FormEmpresa
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(905, 523)
+        Me.ClientSize = New System.Drawing.Size(905, 524)
         Me.Controls.Add(Me.ToolStrip1)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Panel1)
@@ -447,10 +366,7 @@ Partial Class FormEmpresa
         CType(Me.pictImagen, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GbInform_D.ResumeLayout(False)
         CType(Me.dgvParametro, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.GroupBox5.ResumeLayout(False)
-        CType(Me.dgRegistro, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
-        Me.GroupBox1.PerformLayout()
         Me.ToolStrip1.ResumeLayout(False)
         Me.ToolStrip1.PerformLayout()
         Me.Panel1.ResumeLayout(False)
@@ -475,20 +391,14 @@ Partial Class FormEmpresa
     Public WithEvents btAnular As ToolStripButton
     Friend WithEvents ToolStripSeparator6 As ToolStripSeparator
     Friend WithEvents GbInform As GroupBox
-    Friend WithEvents DateTimePicker1 As DateTimePicker
     Public WithEvents Label1 As Label
     Public WithEvents Label2 As Label
-    Public WithEvents Label4 As Label
     Public WithEvents txtId As TextBox
     Public WithEvents TxtDescripcion As TextBox
-    Public WithEvents Label3 As Label
-    Public WithEvents txtBuscar As TextBox
     Public WithEvents GroupBox3 As GroupBox
     Friend WithEvents pictImagen As PictureBox
     Friend WithEvents GbInform_D As GroupBox
     Public WithEvents dgvParametro As DataGridView
-    Friend WithEvents GroupBox5 As GroupBox
-    Public WithEvents dgRegistro As DataGridView
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents btExaminar As Button
     Friend WithEvents ToolStripSeparator7 As ToolStripSeparator

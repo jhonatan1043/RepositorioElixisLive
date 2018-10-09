@@ -12,7 +12,7 @@ Public Class EmpresaDAL
                     comando.Parameters.Clear()
                     comando.CommandText = objEmpresa.sqlGuardar
                     comando.Parameters.Add(New SqlParameter("@Codigo", SqlDbType.NVarChar)).Value = objEmpresa.codigo
-                    comando.Parameters.Add(New SqlParameter("@Codigo_Empresa", SqlDbType.Int)).Value = SesionActual.idEmpresa
+                    comando.Parameters.Add(New SqlParameter("@Nit", SqlDbType.NVarChar)).Value = objEmpresa.identificacion
                     comando.Parameters.Add(New SqlParameter("@Nombre", SqlDbType.NVarChar)).Value = objEmpresa.nombre
                     comando.Parameters.Add(New SqlParameter("@Foto", SqlDbType.VarBinary)).Value = objEmpresa.foto
                     comando.Parameters.Add(New SqlParameter("@Tabla", SqlDbType.Structured)).Value = objEmpresa.dtParametro

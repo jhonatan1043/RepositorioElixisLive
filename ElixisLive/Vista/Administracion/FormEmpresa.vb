@@ -1,20 +1,6 @@
 ﻿Public Class FormEmpresa
     Dim objEmpresa As Empresa
-    Private Sub cargarRegistro()
-        Dim params As New List(Of String)
-        params.Add(txtBuscar.Text)
-        params.Add(SesionActual.idEmpresa)
-        Try
-            Generales.llenardgv(objEmpresa.sqlConsulta, dgRegistro, params)
-            objEmpresa.dtRegistro = dgRegistro.DataSource
-        Catch ex As Exception
-            EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
-        End Try
-    End Sub
     Private Sub cargarObjeto()
-        If Not IsNothing(pictImagen.Image) Then
-
-        End If
         objEmpresa.identificacion = txtId.Text
         objEmpresa.nombre = TxtDescripcion.Text
         objEmpresa.dtParametro = dgvParametro.DataSource
@@ -30,11 +16,6 @@
         End If
         Return resultado
     End Function
-    Private Sub txtBuscar_KeyDown(sender As Object, e As KeyEventArgs) Handles txtBuscar.KeyDown
-        If e.KeyCode = Keys.Enter Then
-            cargarRegistro()
-        End If
-    End Sub
     Private Sub dgvParametro_CellEnter(sender As Object, e As DataGridViewCellEventArgs) Handles dgvParametro.CellEnter
         If btRegistrar.Enabled = False Then Exit Sub
         Try
@@ -53,8 +34,8 @@
             params.Add(SesionActual.idEmpresa)
             Generales.deshabilitarBotones(ToolStrip1)
             Generales.deshabilitarControles(Me)
-            txtBuscar.ReadOnly = False
             btNuevo.Enabled = True
+            btBuscar.Enabled = True
             Generales.llenardgv("SP_CONSULTAR_PARAMETROS", dgvParametro, params)
             Generales.diseñoGrillaParametro(dgvParametro)
         Catch ex As Exception
@@ -69,7 +50,6 @@
         pictImagen.Image = Nothing
         btCancelar.Enabled = True
         btRegistrar.Enabled = True
-        txtBuscar.ReadOnly = True
     End Sub
 
     Private Sub btRegistrar_Click(sender As Object, e As EventArgs) Handles btRegistrar.Click
@@ -80,20 +60,18 @@
             Generales.subirArchivoFTP(objEmpresa)
             Generales.deshabilitarBotones(ToolStrip1)
             Generales.deshabilitarControles(Me)
-            cargarRegistro()
-            txtBuscar.ReadOnly = False
             btNuevo.Enabled = True
             btEditar.Enabled = True
+            btBuscar.Enabled = True
         End If
     End Sub
 
     Private Sub btEditar_Click(sender As Object, e As EventArgs) Handles btEditar.Click
         If EstiloMensajes.mostrarMensajePregunta(MensajeSistema.EDITAR) = Constantes.SI Then
             Generales.habilitarControles(Me)
-            txtBuscar.ReadOnly = True
+            Generales.deshabilitarBotones(ToolStrip1)
             btCancelar.Enabled = True
             btRegistrar.Enabled = True
-            txtBuscar.ReadOnly = True
         End If
     End Sub
 
@@ -104,7 +82,6 @@
             Generales.limpiarControles(GbInform_D)
             Generales.limpiarControles(GbInform)
             pictImagen.Image = Nothing
-            txtBuscar.ReadOnly = False
             btNuevo.Enabled = True
         End If
     End Sub
@@ -116,7 +93,6 @@
                 Generales.limpiarControles(GbInform)
                 Generales.deshabilitarBotones(ToolStrip1)
                 pictImagen.Image = Nothing
-                cargarRegistro()
                 btNuevo.Enabled = True
                 EstiloMensajes.mostrarMensajeAnulado(MensajeSistema.REGISTRO_ANULADO)
             End If
@@ -124,9 +100,47 @@
     End Sub
     Private Sub btExaminar_Click(sender As Object, e As EventArgs) Handles btExaminar.Click
         Dim openDialog As New OpenFileDialog
+        Generales.subirimagen(pictImagen, openDialog)
         Try
         Catch ex As Exception
             EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
         End Try
+    End Sub
+    Private Sub btBuscar_Click(sender As Object, e As EventArgs) Handles btBuscar.Click
+        Dim params As New List(Of String)
+        params.Add("")
+        Generales.buscarElemento(objEmpresa.sqlConsulta,
+                                   params,
+                                   AddressOf cargarInfomacion,
+                                   "Busqueda de Empresa",
+                                   False, True)
+    End Sub
+    Private Sub cargarInfomacion(pcodigo As Integer)
+        Dim params As New List(Of String)
+        Dim dfila As DataRow
+        objEmpresa.codigo = pcodigo
+        params.Add(pcodigo)
+        dfila = Generales.cargarItem(objEmpresa.sqlCargar, params)
+        Try
+            If Not IsNothing(dfila) Then
+                txtId.Text = dfila.Item("Nit")
+                TxtDescripcion.Text = dfila.Item("Nombre")
+                params.Add(ElementoMenu.codigo)
+                Generales.llenardgv(objEmpresa.sqlCargarDetalle, dgvParametro, params)
+                Generales.diseñoGrillaParametro(dgvParametro)
+                controlVerificarControl()
+            End If
+            Generales.deshabilitarBotones(ToolStrip1)
+            btEditar.Enabled = True
+            btAnular.Enabled = True
+            btNuevo.Enabled = True
+        Catch ex As Exception
+            EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
+        End Try
+    End Sub
+    Private Sub controlVerificarControl()
+        For posicion = 0 To dgvParametro.Rows.Count - 1
+            Generales.consultarTipoControl(dgvParametro, posicion)
+        Next
     End Sub
 End Class
