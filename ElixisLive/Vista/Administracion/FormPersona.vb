@@ -16,7 +16,7 @@
         End If
         Return resultado
     End Function
-    Private Sub dgvParametro_CellEnter(sender As Object, e As DataGridViewCellEventArgs) Handles dgvParametro.CellEnter
+    Private Sub dgvParametro_CellEnter(sender As Object, e As DataGridViewCellEventArgs)
         If btRegistrar.Enabled = False Then Exit Sub
         Try
             Generales.consultarTipoControl(dgvParametro, dgvParametro.CurrentCell.RowIndex)
