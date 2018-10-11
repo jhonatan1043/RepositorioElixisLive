@@ -22,7 +22,7 @@ Partial Class FormBusqueda
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Pimagen = New System.Windows.Forms.PictureBox()
@@ -115,8 +115,8 @@ Partial Class FormBusqueda
         Me.dgvBusqueda.AllowUserToDeleteRows = False
         Me.dgvBusqueda.AllowUserToResizeColumns = False
         Me.dgvBusqueda.AllowUserToResizeRows = False
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.dgvBusqueda.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.dgvBusqueda.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.dgvBusqueda.BackgroundColor = System.Drawing.SystemColors.Control
         Me.dgvBusqueda.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvBusqueda.Dock = System.Windows.Forms.DockStyle.Fill
@@ -142,11 +142,11 @@ Partial Class FormBusqueda
         '
         'Textbusqueda
         '
-        Me.Textbusqueda.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!)
+        Me.Textbusqueda.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Textbusqueda.Location = New System.Drawing.Point(6, 16)
         Me.Textbusqueda.MaxLength = 100
         Me.Textbusqueda.Name = "Textbusqueda"
-        Me.Textbusqueda.Size = New System.Drawing.Size(567, 21)
+        Me.Textbusqueda.Size = New System.Drawing.Size(567, 22)
         Me.Textbusqueda.TabIndex = 2
         '
         'FormBusqueda

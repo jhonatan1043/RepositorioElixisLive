@@ -41,26 +41,26 @@ Partial Class FormPersona
         Me.ToolStripSeparator6 = New System.Windows.Forms.ToolStripSeparator()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
+        Me.TextEmail = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
-        Me.TextBox6 = New System.Windows.Forms.TextBox()
+        Me.TextTelefono = New System.Windows.Forms.TextBox()
+        Me.TextCelular = New System.Windows.Forms.TextBox()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.GroupBox6 = New System.Windows.Forms.GroupBox()
-        Me.ComboBox3 = New System.Windows.Forms.ComboBox()
-        Me.ComboBox4 = New System.Windows.Forms.ComboBox()
-        Me.TextBox7 = New System.Windows.Forms.TextBox()
+        Me.ComboDepartamento = New System.Windows.Forms.ComboBox()
+        Me.ComboMunicipio = New System.Windows.Forms.ComboBox()
+        Me.TextDireccion = New System.Windows.Forms.TextBox()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.GroupBox7 = New System.Windows.Forms.GroupBox()
-        Me.ComboBox5 = New System.Windows.Forms.ComboBox()
-        Me.TextBox8 = New System.Windows.Forms.TextBox()
-        Me.TextBox9 = New System.Windows.Forms.TextBox()
+        Me.CombotipoIdentificacion = New System.Windows.Forms.ComboBox()
+        Me.TextDV = New System.Windows.Forms.TextBox()
+        Me.TextNombre = New System.Windows.Forms.TextBox()
         Me.Label17 = New System.Windows.Forms.Label()
         Me.Label18 = New System.Windows.Forms.Label()
-        Me.TextBox10 = New System.Windows.Forms.TextBox()
+        Me.TextIdentificacion = New System.Windows.Forms.TextBox()
         Me.Label19 = New System.Windows.Forms.Label()
         Me.Label20 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
@@ -236,10 +236,10 @@ Partial Class FormPersona
         '
         'GroupBox5
         '
-        Me.GroupBox5.Controls.Add(Me.TextBox3)
+        Me.GroupBox5.Controls.Add(Me.TextEmail)
         Me.GroupBox5.Controls.Add(Me.Label7)
-        Me.GroupBox5.Controls.Add(Me.TextBox4)
-        Me.GroupBox5.Controls.Add(Me.TextBox6)
+        Me.GroupBox5.Controls.Add(Me.TextTelefono)
+        Me.GroupBox5.Controls.Add(Me.TextCelular)
         Me.GroupBox5.Controls.Add(Me.Label9)
         Me.GroupBox5.Controls.Add(Me.Label10)
         Me.GroupBox5.ForeColor = System.Drawing.Color.DarkBlue
@@ -250,14 +250,14 @@ Partial Class FormPersona
         Me.GroupBox5.TabStop = False
         Me.GroupBox5.Text = "Otros datos"
         '
-        'TextBox3
+        'TextEmail
         '
-        Me.TextBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextBox3.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox3.Location = New System.Drawing.Point(138, 46)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(495, 22)
-        Me.TextBox3.TabIndex = 28
+        Me.TextEmail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TextEmail.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextEmail.Location = New System.Drawing.Point(138, 46)
+        Me.TextEmail.Name = "TextEmail"
+        Me.TextEmail.Size = New System.Drawing.Size(495, 22)
+        Me.TextEmail.TabIndex = 28
         '
         'Label7
         '
@@ -271,23 +271,23 @@ Partial Class FormPersona
         Me.Label7.TabIndex = 26
         Me.Label7.Text = "Em@il:"
         '
-        'TextBox4
+        'TextTelefono
         '
-        Me.TextBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextBox4.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox4.Location = New System.Drawing.Point(138, 18)
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(110, 22)
-        Me.TextBox4.TabIndex = 24
+        Me.TextTelefono.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TextTelefono.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextTelefono.Location = New System.Drawing.Point(138, 18)
+        Me.TextTelefono.Name = "TextTelefono"
+        Me.TextTelefono.Size = New System.Drawing.Size(110, 22)
+        Me.TextTelefono.TabIndex = 24
         '
-        'TextBox6
+        'TextCelular
         '
-        Me.TextBox6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextBox6.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox6.Location = New System.Drawing.Point(397, 17)
-        Me.TextBox6.Name = "TextBox6"
-        Me.TextBox6.Size = New System.Drawing.Size(110, 22)
-        Me.TextBox6.TabIndex = 25
+        Me.TextCelular.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TextCelular.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextCelular.Location = New System.Drawing.Point(397, 17)
+        Me.TextCelular.Name = "TextCelular"
+        Me.TextCelular.Size = New System.Drawing.Size(110, 22)
+        Me.TextCelular.TabIndex = 25
         '
         'Label9
         '
@@ -315,9 +315,9 @@ Partial Class FormPersona
         '
         'GroupBox6
         '
-        Me.GroupBox6.Controls.Add(Me.ComboBox3)
-        Me.GroupBox6.Controls.Add(Me.ComboBox4)
-        Me.GroupBox6.Controls.Add(Me.TextBox7)
+        Me.GroupBox6.Controls.Add(Me.ComboDepartamento)
+        Me.GroupBox6.Controls.Add(Me.ComboMunicipio)
+        Me.GroupBox6.Controls.Add(Me.TextDireccion)
         Me.GroupBox6.Controls.Add(Me.Label11)
         Me.GroupBox6.Controls.Add(Me.Label12)
         Me.GroupBox6.Controls.Add(Me.Label13)
@@ -329,32 +329,32 @@ Partial Class FormPersona
         Me.GroupBox6.TabStop = False
         Me.GroupBox6.Text = "Domocilio"
         '
-        'ComboBox3
+        'ComboDepartamento
         '
-        Me.ComboBox3.Font = New System.Drawing.Font("Times New Roman", 8.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ComboBox3.FormattingEnabled = True
-        Me.ComboBox3.Location = New System.Drawing.Point(138, 18)
-        Me.ComboBox3.Name = "ComboBox3"
-        Me.ComboBox3.Size = New System.Drawing.Size(154, 22)
-        Me.ComboBox3.TabIndex = 35
+        Me.ComboDepartamento.Font = New System.Drawing.Font("Times New Roman", 8.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ComboDepartamento.FormattingEnabled = True
+        Me.ComboDepartamento.Location = New System.Drawing.Point(138, 18)
+        Me.ComboDepartamento.Name = "ComboDepartamento"
+        Me.ComboDepartamento.Size = New System.Drawing.Size(154, 22)
+        Me.ComboDepartamento.TabIndex = 35
         '
-        'ComboBox4
+        'ComboMunicipio
         '
-        Me.ComboBox4.Font = New System.Drawing.Font("Times New Roman", 8.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ComboBox4.FormattingEnabled = True
-        Me.ComboBox4.Location = New System.Drawing.Point(397, 17)
-        Me.ComboBox4.Name = "ComboBox4"
-        Me.ComboBox4.Size = New System.Drawing.Size(154, 22)
-        Me.ComboBox4.TabIndex = 34
+        Me.ComboMunicipio.Font = New System.Drawing.Font("Times New Roman", 8.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ComboMunicipio.FormattingEnabled = True
+        Me.ComboMunicipio.Location = New System.Drawing.Point(397, 17)
+        Me.ComboMunicipio.Name = "ComboMunicipio"
+        Me.ComboMunicipio.Size = New System.Drawing.Size(154, 22)
+        Me.ComboMunicipio.TabIndex = 34
         '
-        'TextBox7
+        'TextDireccion
         '
-        Me.TextBox7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextBox7.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox7.Location = New System.Drawing.Point(138, 46)
-        Me.TextBox7.Name = "TextBox7"
-        Me.TextBox7.Size = New System.Drawing.Size(495, 22)
-        Me.TextBox7.TabIndex = 28
+        Me.TextDireccion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TextDireccion.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextDireccion.Location = New System.Drawing.Point(138, 46)
+        Me.TextDireccion.Name = "TextDireccion"
+        Me.TextDireccion.Size = New System.Drawing.Size(495, 22)
+        Me.TextDireccion.TabIndex = 28
         '
         'Label11
         '
@@ -395,12 +395,12 @@ Partial Class FormPersona
         'GroupBox7
         '
         Me.GroupBox7.BackColor = System.Drawing.Color.Transparent
-        Me.GroupBox7.Controls.Add(Me.ComboBox5)
-        Me.GroupBox7.Controls.Add(Me.TextBox8)
-        Me.GroupBox7.Controls.Add(Me.TextBox9)
+        Me.GroupBox7.Controls.Add(Me.CombotipoIdentificacion)
+        Me.GroupBox7.Controls.Add(Me.TextDV)
+        Me.GroupBox7.Controls.Add(Me.TextNombre)
         Me.GroupBox7.Controls.Add(Me.Label17)
         Me.GroupBox7.Controls.Add(Me.Label18)
-        Me.GroupBox7.Controls.Add(Me.TextBox10)
+        Me.GroupBox7.Controls.Add(Me.TextIdentificacion)
         Me.GroupBox7.Controls.Add(Me.Label19)
         Me.GroupBox7.Controls.Add(Me.Label20)
         Me.GroupBox7.ForeColor = System.Drawing.Color.DarkBlue
@@ -411,33 +411,33 @@ Partial Class FormPersona
         Me.GroupBox7.TabStop = False
         Me.GroupBox7.Text = "Información"
         '
-        'ComboBox5
+        'CombotipoIdentificacion
         '
-        Me.ComboBox5.Font = New System.Drawing.Font("Times New Roman", 8.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ComboBox5.FormattingEnabled = True
-        Me.ComboBox5.Location = New System.Drawing.Point(138, 17)
-        Me.ComboBox5.Name = "ComboBox5"
-        Me.ComboBox5.Size = New System.Drawing.Size(154, 22)
-        Me.ComboBox5.TabIndex = 22
+        Me.CombotipoIdentificacion.Font = New System.Drawing.Font("Times New Roman", 8.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CombotipoIdentificacion.FormattingEnabled = True
+        Me.CombotipoIdentificacion.Location = New System.Drawing.Point(138, 17)
+        Me.CombotipoIdentificacion.Name = "CombotipoIdentificacion"
+        Me.CombotipoIdentificacion.Size = New System.Drawing.Size(154, 22)
+        Me.CombotipoIdentificacion.TabIndex = 22
         '
-        'TextBox8
+        'TextDV
         '
-        Me.TextBox8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextBox8.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox8.Location = New System.Drawing.Point(604, 17)
-        Me.TextBox8.Name = "TextBox8"
-        Me.TextBox8.Size = New System.Drawing.Size(29, 22)
-        Me.TextBox8.TabIndex = 8
-        Me.TextBox8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.TextDV.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TextDV.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextDV.Location = New System.Drawing.Point(604, 17)
+        Me.TextDV.Name = "TextDV"
+        Me.TextDV.Size = New System.Drawing.Size(29, 22)
+        Me.TextDV.TabIndex = 8
+        Me.TextDV.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'TextBox9
+        'TextNombre
         '
-        Me.TextBox9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextBox9.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox9.Location = New System.Drawing.Point(138, 45)
-        Me.TextBox9.Name = "TextBox9"
-        Me.TextBox9.Size = New System.Drawing.Size(495, 22)
-        Me.TextBox9.TabIndex = 9
+        Me.TextNombre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TextNombre.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextNombre.Location = New System.Drawing.Point(138, 45)
+        Me.TextNombre.Name = "TextNombre"
+        Me.TextNombre.Size = New System.Drawing.Size(495, 22)
+        Me.TextNombre.TabIndex = 9
         '
         'Label17
         '
@@ -463,14 +463,14 @@ Partial Class FormPersona
         Me.Label18.TabIndex = 6
         Me.Label18.Text = "DV:"
         '
-        'TextBox10
+        'TextIdentificacion
         '
-        Me.TextBox10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextBox10.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox10.Location = New System.Drawing.Point(397, 17)
-        Me.TextBox10.Name = "TextBox10"
-        Me.TextBox10.Size = New System.Drawing.Size(169, 22)
-        Me.TextBox10.TabIndex = 5
+        Me.TextIdentificacion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TextIdentificacion.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextIdentificacion.Location = New System.Drawing.Point(397, 17)
+        Me.TextIdentificacion.Name = "TextIdentificacion"
+        Me.TextIdentificacion.Size = New System.Drawing.Size(169, 22)
+        Me.TextIdentificacion.TabIndex = 5
         '
         'Label19
         '
@@ -546,26 +546,26 @@ Partial Class FormPersona
     Friend WithEvents ToolStripSeparator7 As ToolStripSeparator
     Friend WithEvents GroupBox4 As GroupBox
     Friend WithEvents GroupBox5 As GroupBox
-    Public WithEvents TextBox3 As TextBox
+    Public WithEvents TextEmail As TextBox
     Public WithEvents Label7 As Label
-    Public WithEvents TextBox4 As TextBox
-    Public WithEvents TextBox6 As TextBox
+    Public WithEvents TextTelefono As TextBox
+    Public WithEvents TextCelular As TextBox
     Public WithEvents Label9 As Label
     Public WithEvents Label10 As Label
     Friend WithEvents GroupBox6 As GroupBox
-    Friend WithEvents ComboBox3 As ComboBox
-    Friend WithEvents ComboBox4 As ComboBox
-    Public WithEvents TextBox7 As TextBox
+    Friend WithEvents ComboDepartamento As ComboBox
+    Friend WithEvents ComboMunicipio As ComboBox
+    Public WithEvents TextDireccion As TextBox
     Public WithEvents Label11 As Label
     Public WithEvents Label12 As Label
     Public WithEvents Label13 As Label
     Friend WithEvents GroupBox7 As GroupBox
-    Friend WithEvents ComboBox5 As ComboBox
-    Public WithEvents TextBox8 As TextBox
-    Public WithEvents TextBox9 As TextBox
+    Friend WithEvents CombotipoIdentificacion As ComboBox
+    Public WithEvents TextDV As TextBox
+    Public WithEvents TextNombre As TextBox
     Public WithEvents Label17 As Label
     Public WithEvents Label18 As Label
-    Public WithEvents TextBox10 As TextBox
+    Public WithEvents TextIdentificacion As TextBox
     Public WithEvents Label19 As Label
     Public WithEvents Label20 As Label
 End Class

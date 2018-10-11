@@ -79,6 +79,7 @@ Partial Class FormInicioSesion
         '
         'txtUsuario
         '
+        Me.txtUsuario.Font = New System.Drawing.Font("Times New Roman", 8.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtUsuario.Location = New System.Drawing.Point(247, 25)
         Me.txtUsuario.MaxLength = 10
         Me.txtUsuario.Name = "txtUsuario"
@@ -87,6 +88,7 @@ Partial Class FormInicioSesion
         '
         'txtContraseña
         '
+        Me.txtContraseña.Font = New System.Drawing.Font("Times New Roman", 8.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtContraseña.Location = New System.Drawing.Point(247, 72)
         Me.txtContraseña.MaxLength = 20
         Me.txtContraseña.Name = "txtContraseña"
@@ -109,10 +111,11 @@ Partial Class FormInicioSesion
         'CbEmpresa
         '
         Me.CbEmpresa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.CbEmpresa.Font = New System.Drawing.Font("Times New Roman", 8.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CbEmpresa.FormattingEnabled = True
         Me.CbEmpresa.Location = New System.Drawing.Point(247, 117)
         Me.CbEmpresa.Name = "CbEmpresa"
-        Me.CbEmpresa.Size = New System.Drawing.Size(120, 21)
+        Me.CbEmpresa.Size = New System.Drawing.Size(120, 22)
         Me.CbEmpresa.TabIndex = 7
         '
         'GroupBox1
