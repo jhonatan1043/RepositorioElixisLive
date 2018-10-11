@@ -41,7 +41,7 @@
             End If
             Generales.deshabilitarBotones(ToolStrip1)
             btEditar.Enabled = True
-            btCancelar.Enabled = True
+            btAnular.Enabled = True
             btNuevo.Enabled = True
         Catch ex As Exception
             EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
@@ -62,6 +62,7 @@
         Generales.habilitarControles(Me)
         Generales.limpiarControles(Gbdatos)
         Generales.limpiarGrillaParametro(dgRegistro)
+        dgRegistro.ReadOnly = False
         btCancelar.Enabled = True
         btRegistrar.Enabled = True
     End Sub
@@ -89,6 +90,7 @@
                 txtcodigo.Text = objProducto.codigo
                 btNuevo.Enabled = True
                 btEditar.Enabled = True
+                btBuscar.Enabled = True
             Catch ex As Exception
                 EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
             End Try
@@ -109,6 +111,7 @@
         If EstiloMensajes.mostrarMensajePregunta(MensajeSistema.EDITAR) = Constantes.SI Then
             Generales.deshabilitarBotones(ToolStrip1)
             Generales.habilitarControles(Me)
+            dgRegistro.ReadOnly = False
             btCancelar.Enabled = True
             btRegistrar.Enabled = True
         End If
