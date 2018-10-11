@@ -23,10 +23,14 @@ Partial Class FormProveedor
         CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
+        'Panel1
+        '
+        Me.Panel1.Size = New System.Drawing.Size(804, 42)
+        '
         'LTitulo
         '
         Me.LTitulo.Location = New System.Drawing.Point(2, 0)
-        Me.LTitulo.Size = New System.Drawing.Size(901, 43)
+        Me.LTitulo.Size = New System.Drawing.Size(802, 43)
         Me.LTitulo.Text = "Proveedores"
         '
         'Pimagen
@@ -46,29 +50,29 @@ Partial Class FormProveedor
         Me.lbID.Size = New System.Drawing.Size(34, 19)
         Me.lbID.Text = "Nit:"
         '
-        'txtCodigo
+        'txtIdentificacion
         '
         Me.txtIdentificacion.Size = New System.Drawing.Size(134, 22)
         '
-        'TextBox5
+        'txtEmail
         '
-        Me.txtEmail.Size = New System.Drawing.Size(462, 22)
+        Me.txtEmail.Size = New System.Drawing.Size(343, 22)
         '
         'Label5
         '
         Me.Label5.Size = New System.Drawing.Size(59, 19)
         Me.Label5.Text = "Em@il:"
         '
-        'TextBox4
+        'txtDireccion
         '
-        Me.txtDireccion.Size = New System.Drawing.Size(462, 22)
+        Me.txtDireccion.Size = New System.Drawing.Size(343, 22)
         '
         'Label4
         '
         Me.Label4.Size = New System.Drawing.Size(75, 19)
         Me.Label4.Text = "Dirección:"
         '
-        'TextBox3
+        'txtCelular
         '
         Me.txtCelular.Size = New System.Drawing.Size(134, 22)
         '
@@ -77,7 +81,7 @@ Partial Class FormProveedor
         Me.Label3.Size = New System.Drawing.Size(62, 19)
         Me.Label3.Text = "Celular:"
         '
-        'TextBox2
+        'txtTelefono
         '
         Me.txtTelefono.Size = New System.Drawing.Size(134, 22)
         '
@@ -86,10 +90,14 @@ Partial Class FormProveedor
         Me.Label1.Size = New System.Drawing.Size(69, 19)
         Me.Label1.Text = "Teléfono:"
         '
+        'txtNombre
+        '
+        Me.txtNombre.Size = New System.Drawing.Size(343, 22)
+        '
         'FormProveedor
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
-        Me.ClientSize = New System.Drawing.Size(905, 523)
+        Me.ClientSize = New System.Drawing.Size(804, 523)
         Me.Location = New System.Drawing.Point(0, 0)
         Me.Name = "FormProveedor"
         Me.Panel1.ResumeLayout(False)

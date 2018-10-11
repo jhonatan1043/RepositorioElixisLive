@@ -47,7 +47,6 @@
         Generales.habilitarControles(Me)
         Generales.limpiarControles(GbInform_D)
         Generales.limpiarControles(GbInform)
-        pictImagen.Image = Nothing
         btCancelar.Enabled = True
         btRegistrar.Enabled = True
     End Sub
@@ -81,7 +80,6 @@
             Generales.deshabilitarControles(Me)
             Generales.limpiarControles(GbInform_D)
             Generales.limpiarControles(GbInform)
-            pictImagen.Image = Nothing
             btNuevo.Enabled = True
         End If
     End Sub
@@ -92,20 +90,12 @@
                 Generales.limpiarControles(GbInform_D)
                 Generales.limpiarControles(GbInform)
                 Generales.deshabilitarBotones(ToolStrip1)
-                pictImagen.Image = Nothing
                 btNuevo.Enabled = True
                 EstiloMensajes.mostrarMensajeAnulado(MensajeSistema.REGISTRO_ANULADO)
             End If
         End If
     End Sub
-    Private Sub btExaminar_Click(sender As Object, e As EventArgs) Handles btExaminar.Click
-        Dim openDialog As New OpenFileDialog
-        Generales.subirimagen(pictImagen, openDialog)
-        Try
-        Catch ex As Exception
-            EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
-        End Try
-    End Sub
+
     Private Sub btBuscar_Click(sender As Object, e As EventArgs) Handles btBuscar.Click
         Dim params As New List(Of String)
         params.Add("")
@@ -127,7 +117,7 @@
                 TxtDescripcion.Text = dfila.Item("Nombre")
                 params.Add(ElementoMenu.codigo)
                 Generales.llenardgv(objEmpresa.sqlCargarDetalle, dgvParametro, params)
-                Generales.diseñoGrillaParametro(dgvParametro)
+                Generales.diseñoDGV(dgvParametro)
                 controlVerificarControl()
             End If
             Generales.deshabilitarBotones(ToolStrip1)

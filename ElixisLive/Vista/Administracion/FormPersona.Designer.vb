@@ -253,10 +253,10 @@ Partial Class FormPersona
         'TextEmail
         '
         Me.TextEmail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextEmail.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextEmail.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextEmail.Location = New System.Drawing.Point(138, 46)
         Me.TextEmail.Name = "TextEmail"
-        Me.TextEmail.Size = New System.Drawing.Size(495, 22)
+        Me.TextEmail.Size = New System.Drawing.Size(495, 25)
         Me.TextEmail.TabIndex = 28
         '
         'Label7
@@ -274,19 +274,19 @@ Partial Class FormPersona
         'TextTelefono
         '
         Me.TextTelefono.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextTelefono.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextTelefono.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextTelefono.Location = New System.Drawing.Point(138, 18)
         Me.TextTelefono.Name = "TextTelefono"
-        Me.TextTelefono.Size = New System.Drawing.Size(110, 22)
+        Me.TextTelefono.Size = New System.Drawing.Size(110, 25)
         Me.TextTelefono.TabIndex = 24
         '
         'TextCelular
         '
         Me.TextCelular.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextCelular.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextCelular.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextCelular.Location = New System.Drawing.Point(397, 17)
         Me.TextCelular.Name = "TextCelular"
-        Me.TextCelular.Size = New System.Drawing.Size(110, 22)
+        Me.TextCelular.Size = New System.Drawing.Size(110, 25)
         Me.TextCelular.TabIndex = 25
         '
         'Label9
@@ -331,29 +331,29 @@ Partial Class FormPersona
         '
         'ComboDepartamento
         '
-        Me.ComboDepartamento.Font = New System.Drawing.Font("Times New Roman", 8.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ComboDepartamento.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ComboDepartamento.FormattingEnabled = True
         Me.ComboDepartamento.Location = New System.Drawing.Point(138, 18)
         Me.ComboDepartamento.Name = "ComboDepartamento"
-        Me.ComboDepartamento.Size = New System.Drawing.Size(154, 22)
+        Me.ComboDepartamento.Size = New System.Drawing.Size(154, 25)
         Me.ComboDepartamento.TabIndex = 35
         '
         'ComboMunicipio
         '
-        Me.ComboMunicipio.Font = New System.Drawing.Font("Times New Roman", 8.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ComboMunicipio.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ComboMunicipio.FormattingEnabled = True
         Me.ComboMunicipio.Location = New System.Drawing.Point(397, 17)
         Me.ComboMunicipio.Name = "ComboMunicipio"
-        Me.ComboMunicipio.Size = New System.Drawing.Size(154, 22)
+        Me.ComboMunicipio.Size = New System.Drawing.Size(154, 25)
         Me.ComboMunicipio.TabIndex = 34
         '
         'TextDireccion
         '
         Me.TextDireccion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextDireccion.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextDireccion.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextDireccion.Location = New System.Drawing.Point(138, 46)
         Me.TextDireccion.Name = "TextDireccion"
-        Me.TextDireccion.Size = New System.Drawing.Size(495, 22)
+        Me.TextDireccion.Size = New System.Drawing.Size(495, 25)
         Me.TextDireccion.TabIndex = 28
         '
         'Label11
@@ -413,30 +413,30 @@ Partial Class FormPersona
         '
         'CombotipoIdentificacion
         '
-        Me.CombotipoIdentificacion.Font = New System.Drawing.Font("Times New Roman", 8.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CombotipoIdentificacion.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CombotipoIdentificacion.FormattingEnabled = True
         Me.CombotipoIdentificacion.Location = New System.Drawing.Point(138, 17)
         Me.CombotipoIdentificacion.Name = "CombotipoIdentificacion"
-        Me.CombotipoIdentificacion.Size = New System.Drawing.Size(154, 22)
+        Me.CombotipoIdentificacion.Size = New System.Drawing.Size(154, 25)
         Me.CombotipoIdentificacion.TabIndex = 22
         '
         'TextDV
         '
         Me.TextDV.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextDV.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextDV.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextDV.Location = New System.Drawing.Point(604, 17)
         Me.TextDV.Name = "TextDV"
-        Me.TextDV.Size = New System.Drawing.Size(29, 22)
+        Me.TextDV.Size = New System.Drawing.Size(29, 25)
         Me.TextDV.TabIndex = 8
         Me.TextDV.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'TextNombre
         '
         Me.TextNombre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextNombre.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextNombre.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextNombre.Location = New System.Drawing.Point(138, 45)
         Me.TextNombre.Name = "TextNombre"
-        Me.TextNombre.Size = New System.Drawing.Size(495, 22)
+        Me.TextNombre.Size = New System.Drawing.Size(495, 25)
         Me.TextNombre.TabIndex = 9
         '
         'Label17
@@ -466,10 +466,10 @@ Partial Class FormPersona
         'TextIdentificacion
         '
         Me.TextIdentificacion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextIdentificacion.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextIdentificacion.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextIdentificacion.Location = New System.Drawing.Point(397, 17)
         Me.TextIdentificacion.Name = "TextIdentificacion"
-        Me.TextIdentificacion.Size = New System.Drawing.Size(169, 22)
+        Me.TextIdentificacion.Size = New System.Drawing.Size(169, 25)
         Me.TextIdentificacion.TabIndex = 5
         '
         'Label19

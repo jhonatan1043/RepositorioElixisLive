@@ -22,17 +22,17 @@ Partial Class FormEmpresa
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.GbInform = New System.Windows.Forms.GroupBox()
+        Me.GbInform_D = New System.Windows.Forms.GroupBox()
+        Me.dgvParametro = New System.Windows.Forms.DataGridView()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.txtId = New System.Windows.Forms.TextBox()
         Me.TxtDescripcion = New System.Windows.Forms.TextBox()
-        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
-        Me.pictImagen = New System.Windows.Forms.PictureBox()
-        Me.GbInform_D = New System.Windows.Forms.GroupBox()
-        Me.dgvParametro = New System.Windows.Forms.DataGridView()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.btExaminar = New System.Windows.Forms.Button()
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
         Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.btNuevo = New System.Windows.Forms.ToolStripButton()
@@ -51,8 +51,6 @@ Partial Class FormEmpresa
         Me.Pimagen = New System.Windows.Forms.PictureBox()
         Me.LTitulo = New System.Windows.Forms.Label()
         Me.GbInform.SuspendLayout()
-        Me.GroupBox3.SuspendLayout()
-        CType(Me.pictImagen, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GbInform_D.SuspendLayout()
         CType(Me.dgvParametro, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
@@ -64,15 +62,55 @@ Partial Class FormEmpresa
         'GbInform
         '
         Me.GbInform.BackColor = System.Drawing.Color.Transparent
+        Me.GbInform.Controls.Add(Me.GbInform_D)
         Me.GbInform.Controls.Add(Me.Label1)
         Me.GbInform.Controls.Add(Me.Label2)
         Me.GbInform.Controls.Add(Me.txtId)
         Me.GbInform.Controls.Add(Me.TxtDescripcion)
+        Me.GbInform.Controls.Add(Me.GroupBox2)
         Me.GbInform.Location = New System.Drawing.Point(4, 7)
         Me.GbInform.Name = "GbInform"
-        Me.GbInform.Size = New System.Drawing.Size(890, 40)
+        Me.GbInform.Size = New System.Drawing.Size(856, 430)
         Me.GbInform.TabIndex = 9
         Me.GbInform.TabStop = False
+        '
+        'GbInform_D
+        '
+        Me.GbInform_D.Controls.Add(Me.dgvParametro)
+        Me.GbInform_D.Font = New System.Drawing.Font("Times New Roman", 8.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GbInform_D.ForeColor = System.Drawing.Color.DarkBlue
+        Me.GbInform_D.Location = New System.Drawing.Point(8, 49)
+        Me.GbInform_D.Name = "GbInform_D"
+        Me.GbInform_D.Size = New System.Drawing.Size(841, 375)
+        Me.GbInform_D.TabIndex = 59
+        Me.GbInform_D.TabStop = False
+        Me.GbInform_D.Text = "Información de la Empresa"
+        '
+        'dgvParametro
+        '
+        Me.dgvParametro.AllowUserToAddRows = False
+        Me.dgvParametro.AllowUserToDeleteRows = False
+        Me.dgvParametro.AllowUserToResizeColumns = False
+        Me.dgvParametro.AllowUserToResizeRows = False
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black
+        Me.dgvParametro.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        Me.dgvParametro.BackgroundColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Times New Roman", 8.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvParametro.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+        Me.dgvParametro.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvParametro.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.dgvParametro.Location = New System.Drawing.Point(3, 16)
+        Me.dgvParametro.MultiSelect = False
+        Me.dgvParametro.Name = "dgvParametro"
+        Me.dgvParametro.Size = New System.Drawing.Size(835, 356)
+        Me.dgvParametro.TabIndex = 0
         '
         'Label1
         '
@@ -80,7 +118,7 @@ Partial Class FormEmpresa
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.Black
-        Me.Label1.Location = New System.Drawing.Point(4, 14)
+        Me.Label1.Location = New System.Drawing.Point(11, 24)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(34, 19)
         Me.Label1.TabIndex = 2
@@ -92,7 +130,7 @@ Partial Class FormEmpresa
         Me.Label2.BackColor = System.Drawing.Color.Transparent
         Me.Label2.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.Black
-        Me.Label2.Location = New System.Drawing.Point(181, 16)
+        Me.Label2.Location = New System.Drawing.Point(162, 24)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(96, 19)
         Me.Label2.TabIndex = 3
@@ -101,97 +139,38 @@ Partial Class FormEmpresa
         'txtId
         '
         Me.txtId.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtId.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtId.Location = New System.Drawing.Point(43, 13)
+        Me.txtId.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtId.Location = New System.Drawing.Point(46, 21)
         Me.txtId.Name = "txtId"
-        Me.txtId.Size = New System.Drawing.Size(132, 22)
+        Me.txtId.Size = New System.Drawing.Size(109, 25)
         Me.txtId.TabIndex = 4
         '
         'TxtDescripcion
         '
         Me.TxtDescripcion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TxtDescripcion.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtDescripcion.Location = New System.Drawing.Point(280, 14)
+        Me.TxtDescripcion.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtDescripcion.Location = New System.Drawing.Point(261, 21)
         Me.TxtDescripcion.Name = "TxtDescripcion"
-        Me.TxtDescripcion.Size = New System.Drawing.Size(604, 22)
+        Me.TxtDescripcion.Size = New System.Drawing.Size(582, 25)
         Me.TxtDescripcion.TabIndex = 5
         '
-        'GroupBox3
+        'GroupBox2
         '
-        Me.GroupBox3.Controls.Add(Me.pictImagen)
-        Me.GroupBox3.Location = New System.Drawing.Point(757, 51)
-        Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(136, 148)
-        Me.GroupBox3.TabIndex = 56
-        Me.GroupBox3.TabStop = False
-        '
-        'pictImagen
-        '
-        Me.pictImagen.BackgroundImage = Global.ElixisLive.My.Resources.Resources.fondo_azul
-        Me.pictImagen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.pictImagen.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.pictImagen.Image = Global.ElixisLive.My.Resources.Resources.glossy_3d_blue_orbs2_059_icon
-        Me.pictImagen.Location = New System.Drawing.Point(3, 16)
-        Me.pictImagen.Name = "pictImagen"
-        Me.pictImagen.Size = New System.Drawing.Size(130, 129)
-        Me.pictImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
-        Me.pictImagen.TabIndex = 0
-        Me.pictImagen.TabStop = False
-        '
-        'GbInform_D
-        '
-        Me.GbInform_D.Controls.Add(Me.dgvParametro)
-        Me.GbInform_D.Font = New System.Drawing.Font("Times New Roman", 8.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GbInform_D.ForeColor = System.Drawing.Color.DarkBlue
-        Me.GbInform_D.Location = New System.Drawing.Point(4, 51)
-        Me.GbInform_D.Name = "GbInform_D"
-        Me.GbInform_D.Size = New System.Drawing.Size(748, 386)
-        Me.GbInform_D.TabIndex = 59
-        Me.GbInform_D.TabStop = False
-        Me.GbInform_D.Text = "Información de la Empresa"
-        '
-        'dgvParametro
-        '
-        Me.dgvParametro.AllowUserToAddRows = False
-        Me.dgvParametro.AllowUserToDeleteRows = False
-        Me.dgvParametro.AllowUserToResizeColumns = False
-        Me.dgvParametro.AllowUserToResizeRows = False
-        Me.dgvParametro.BackgroundColor = System.Drawing.SystemColors.Control
-        Me.dgvParametro.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvParametro.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.dgvParametro.Location = New System.Drawing.Point(3, 16)
-        Me.dgvParametro.MultiSelect = False
-        Me.dgvParametro.Name = "dgvParametro"
-        Me.dgvParametro.Size = New System.Drawing.Size(742, 367)
-        Me.dgvParametro.TabIndex = 0
+        Me.GroupBox2.Location = New System.Drawing.Point(8, 7)
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.Size = New System.Drawing.Size(841, 42)
+        Me.GroupBox2.TabIndex = 60
+        Me.GroupBox2.TabStop = False
         '
         'GroupBox1
         '
         Me.GroupBox1.BackColor = System.Drawing.Color.Transparent
-        Me.GroupBox1.Controls.Add(Me.GbInform_D)
-        Me.GroupBox1.Controls.Add(Me.btExaminar)
-        Me.GroupBox1.Controls.Add(Me.GroupBox3)
         Me.GroupBox1.Controls.Add(Me.GbInform)
         Me.GroupBox1.Location = New System.Drawing.Point(4, 43)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(898, 443)
+        Me.GroupBox1.Size = New System.Drawing.Size(864, 443)
         Me.GroupBox1.TabIndex = 11
         Me.GroupBox1.TabStop = False
-        '
-        'btExaminar
-        '
-        Me.btExaminar.BackColor = System.Drawing.Color.Transparent
-        Me.btExaminar.BackgroundImage = Global.ElixisLive.My.Resources.Resources.fondo_azul
-        Me.btExaminar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btExaminar.Font = New System.Drawing.Font("Times New Roman", 9.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btExaminar.ForeColor = System.Drawing.Color.White
-        Me.btExaminar.Location = New System.Drawing.Point(789, 202)
-        Me.btExaminar.Name = "btExaminar"
-        Me.btExaminar.Size = New System.Drawing.Size(84, 25)
-        Me.btExaminar.TabIndex = 57
-        Me.btExaminar.Text = "Examinar..."
-        Me.btExaminar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.btExaminar.UseVisualStyleBackColor = False
         '
         'ToolStrip1
         '
@@ -203,7 +182,7 @@ Partial Class FormEmpresa
         Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripSeparator1, Me.btNuevo, Me.ToolStripSeparator7, Me.btBuscar, Me.ToolStripSeparator2, Me.btRegistrar, Me.ToolStripSeparator4, Me.btEditar, Me.ToolStripSeparator5, Me.btCancelar, Me.ToolStripSeparator3, Me.btAnular, Me.ToolStripSeparator6})
         Me.ToolStrip1.Location = New System.Drawing.Point(0, 490)
         Me.ToolStrip1.Name = "ToolStrip1"
-        Me.ToolStrip1.Size = New System.Drawing.Size(905, 33)
+        Me.ToolStrip1.Size = New System.Drawing.Size(873, 33)
         Me.ToolStrip1.TabIndex = 14
         Me.ToolStrip1.Text = "ToolStrip1"
         '
@@ -317,7 +296,7 @@ Partial Class FormEmpresa
         Me.Panel1.Controls.Add(Me.LTitulo)
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(905, 44)
+        Me.Panel1.Size = New System.Drawing.Size(873, 44)
         Me.Panel1.TabIndex = 0
         '
         'Pimagen
@@ -338,7 +317,7 @@ Partial Class FormEmpresa
         Me.LTitulo.ForeColor = System.Drawing.Color.White
         Me.LTitulo.Location = New System.Drawing.Point(-1, 0)
         Me.LTitulo.Name = "LTitulo"
-        Me.LTitulo.Size = New System.Drawing.Size(898, 40)
+        Me.LTitulo.Size = New System.Drawing.Size(874, 40)
         Me.LTitulo.TabIndex = 1
         Me.LTitulo.Text = "Empresa"
         Me.LTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -349,21 +328,17 @@ Partial Class FormEmpresa
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(905, 523)
+        Me.ClientSize = New System.Drawing.Size(873, 523)
         Me.Controls.Add(Me.ToolStrip1)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Panel1)
         Me.DoubleBuffered = True
         Me.Location = New System.Drawing.Point(3000, 1000)
         Me.MaximizeBox = False
-        Me.MaximumSize = New System.Drawing.Size(921, 562)
-        Me.MinimumSize = New System.Drawing.Size(921, 562)
         Me.Name = "FormEmpresa"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.GbInform.ResumeLayout(False)
         Me.GbInform.PerformLayout()
-        Me.GroupBox3.ResumeLayout(False)
-        CType(Me.pictImagen, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GbInform_D.ResumeLayout(False)
         CType(Me.dgvParametro, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
@@ -395,12 +370,10 @@ Partial Class FormEmpresa
     Public WithEvents Label2 As Label
     Public WithEvents txtId As TextBox
     Public WithEvents TxtDescripcion As TextBox
-    Public WithEvents GroupBox3 As GroupBox
-    Friend WithEvents pictImagen As PictureBox
     Friend WithEvents GbInform_D As GroupBox
     Public WithEvents dgvParametro As DataGridView
     Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents btExaminar As Button
     Friend WithEvents ToolStripSeparator7 As ToolStripSeparator
     Public WithEvents btBuscar As ToolStripButton
+    Friend WithEvents GroupBox2 As GroupBox
 End Class

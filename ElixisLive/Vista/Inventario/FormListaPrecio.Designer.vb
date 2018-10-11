@@ -25,7 +25,6 @@ Partial Class FormListaPrecio
         '
         'LTitulo
         '
-        Me.LTitulo.Size = New System.Drawing.Size(571, 42)
         Me.LTitulo.Text = "Lista de Precio Gastos"
         '
         'Pimagen
@@ -37,7 +36,7 @@ Partial Class FormListaPrecio
         'FormListaPrecio
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
-        Me.ClientSize = New System.Drawing.Size(571, 387)
+        Me.ClientSize = New System.Drawing.Size(603, 387)
         Me.Location = New System.Drawing.Point(0, 0)
         Me.Name = "FormListaPrecio"
         Me.Panel1.ResumeLayout(False)

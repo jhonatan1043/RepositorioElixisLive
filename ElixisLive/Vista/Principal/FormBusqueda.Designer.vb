@@ -116,6 +116,7 @@ Partial Class FormBusqueda
         Me.dgvBusqueda.AllowUserToResizeColumns = False
         Me.dgvBusqueda.AllowUserToResizeRows = False
         DataGridViewCellStyle1.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black
         Me.dgvBusqueda.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.dgvBusqueda.BackgroundColor = System.Drawing.SystemColors.Control
         Me.dgvBusqueda.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
