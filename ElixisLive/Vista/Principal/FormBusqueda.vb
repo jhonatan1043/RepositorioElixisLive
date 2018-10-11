@@ -72,7 +72,7 @@
             dtBusqueda = Busqueda.llenar(consulta, Textbusqueda.Text)
             dgvBusqueda.DataSource = dtBusqueda
             dgvBusqueda.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
-            dgvBusqueda.DefaultCellStyle.Font = New Font(Constantes.TIPO_LETRA, 9)
+            dgvBusqueda.DefaultCellStyle.Font = New Font("Times New Roman", 11, FontStyle.Italic)
         End If
 
     End Sub

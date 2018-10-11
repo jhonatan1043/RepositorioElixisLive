@@ -43,7 +43,7 @@
             Generales.deshabilitarControles(Me)
             btNuevo.Enabled = True
             Generales.llenardgv("SP_CONSULTAR_PARAMETROS", dgvParametro, params)
-            Generales.diseñoGrillaParametro(dgvParametro)
+            Generales.diseñoDGV(dgvParametro)
         Catch ex As Exception
             EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
         End Try

@@ -8,6 +8,7 @@
         Generales.deshabilitarControles(Me)
         visibleConfig()
         btNuevo.Enabled = True
+        btBuscar.Enabled = True
     End Sub
     Private Sub visibleConfig()
         btBuscar.Visible = False
@@ -18,16 +19,9 @@
         params.Add(String.Empty)
         params.Add(SesionActual.idEmpresa)
         Generales.llenardgv(objConfig.sqlConsulta, dgRegistro, params)
-        diseñoGrillaConfig()
+        Generales.diseñoDGV(dgRegistro)
     End Sub
-    Private Sub diseñoGrillaConfig()
-        With dgRegistro
-            .Columns(0).SortMode = DataGridViewColumnSortMode.NotSortable
-            .Columns(1).SortMode = DataGridViewColumnSortMode.NotSortable
-            .Columns(0).AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
-            .Columns(1).AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
-        End With
-    End Sub
+
     Private Sub dgRegistro_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgRegistro.CellClick
         If btRegistrar.Enabled = True Then Exit Sub
         If dgRegistro.RowCount > 0 Then
@@ -43,8 +37,8 @@
         If EstiloMensajes.mostrarMensajePregunta(MensajeSistema.CANCELAR) = Constantes.SI Then
             Generales.deshabilitarBotones(ToolStrip1)
             Generales.deshabilitarControles(Me)
-            Generales.limpiarControles(Me)
             btNuevo.Enabled = True
+            btBuscar.Enabled = True
         End If
     End Sub
     Private Sub btEditar_Click(sender As Object, e As EventArgs) Handles btEditar.Click
@@ -63,6 +57,8 @@
                     Generales.deshabilitarBotones(ToolStrip1)
                     cargarRegistro()
                     btNuevo.Enabled = True
+                    btBuscar.Enabled = True
+                    EstiloMensajes.mostrarMensajeAnulado(MensajeSistema.REGISTRO_ANULADO)
                 End If
             Catch ex As Exception
                 EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
@@ -97,6 +93,7 @@
                 btEditar.Enabled = True
                 txtcodigo.Text = objConfig.codigo
                 cargarRegistro()
+                EstiloMensajes.mostrarMensajeExitoso(MensajeSistema.REGISTRO_GUARDADO)
             End If
         Catch ex As Exception
             EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))

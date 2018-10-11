@@ -37,7 +37,6 @@
             btNuevo.Enabled = True
             btBuscar.Enabled = True
             Generales.llenardgv("SP_CONSULTAR_PARAMETROS", dgvParametro, params)
-            Generales.diseñoGrillaParametro(dgvParametro)
         Catch ex As Exception
             EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
         End Try
@@ -54,14 +53,19 @@
     Private Sub btRegistrar_Click(sender As Object, e As EventArgs) Handles btRegistrar.Click
         dgvParametro.EndEdit()
         If validarCampos() = True Then
-            cargarObjeto()
-            EmpresaBLL.guardar(objEmpresa)
-            Generales.subirArchivoFTP(objEmpresa)
-            Generales.deshabilitarBotones(ToolStrip1)
-            Generales.deshabilitarControles(Me)
-            btNuevo.Enabled = True
-            btEditar.Enabled = True
-            btBuscar.Enabled = True
+            Try
+                cargarObjeto()
+                EmpresaBLL.guardar(objEmpresa)
+                Generales.subirArchivoFTP(objEmpresa)
+                Generales.deshabilitarBotones(ToolStrip1)
+                Generales.deshabilitarControles(Me)
+                btNuevo.Enabled = True
+                btEditar.Enabled = True
+                btBuscar.Enabled = True
+                EstiloMensajes.mostrarMensajeExitoso(MensajeSistema.REGISTRO_GUARDADO)
+            Catch ex As Exception
+                EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
+            End Try
         End If
     End Sub
 
@@ -78,21 +82,25 @@
         If EstiloMensajes.mostrarMensajePregunta(MensajeSistema.CANCELAR) = Constantes.SI Then
             Generales.deshabilitarBotones(ToolStrip1)
             Generales.deshabilitarControles(Me)
-            Generales.limpiarControles(GbInform_D)
-            Generales.limpiarControles(GbInform)
             btNuevo.Enabled = True
+            btBuscar.Enabled = True
         End If
     End Sub
 
     Private Sub btAnular_Click(sender As Object, e As EventArgs) Handles btAnular.Click
         If EstiloMensajes.mostrarMensajePregunta(MensajeSistema.ANULAR) = Constantes.SI Then
-            If Generales.ejecutarSQL(objEmpresa.sqlAnular) = True Then
-                Generales.limpiarControles(GbInform_D)
-                Generales.limpiarControles(GbInform)
-                Generales.deshabilitarBotones(ToolStrip1)
-                btNuevo.Enabled = True
-                EstiloMensajes.mostrarMensajeAnulado(MensajeSistema.REGISTRO_ANULADO)
-            End If
+            Try
+                If Generales.ejecutarSQL(objEmpresa.sqlAnular) = True Then
+                    Generales.limpiarControles(GbInform_D)
+                    Generales.limpiarControles(GbInform)
+                    Generales.deshabilitarBotones(ToolStrip1)
+                    btNuevo.Enabled = True
+                    btBuscar.Enabled = True
+                    EstiloMensajes.mostrarMensajeAnulado(MensajeSistema.REGISTRO_ANULADO)
+                End If
+            Catch ex As Exception
+                EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
+            End Try
         End If
     End Sub
 
@@ -117,7 +125,6 @@
                 TxtDescripcion.Text = dfila.Item("Nombre")
                 params.Add(ElementoMenu.codigo)
                 Generales.llenardgv(objEmpresa.sqlCargarDetalle, dgvParametro, params)
-                Generales.diseñoDGV(dgvParametro)
                 controlVerificarControl()
             End If
             Generales.deshabilitarBotones(ToolStrip1)

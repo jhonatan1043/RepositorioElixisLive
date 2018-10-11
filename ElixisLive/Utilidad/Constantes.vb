@@ -1,5 +1,4 @@
 ﻿Public Class Constantes
-    Public Const TIPO_LETRA = "[FontFamily: Name=Times New Roman style=Italic]"
     Public Const SI = "Si"
     Public Const NO = "No"
     Public Const SERVIDOR_FTP = "ftp://192.168.2.89//CarpetaFTP/"

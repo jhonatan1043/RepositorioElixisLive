@@ -7,7 +7,7 @@
             params.Add(ElementoMenu.codigo)
             params.Add(SesionActual.idEmpresa)
             Generales.llenardgv("SP_CONSULTAR_PARAMETROS", dgvParametro, params)
-            Generales.diseñoGrillaParametro(dgvParametro)
+
             Generales.deshabilitarBotones(ToolStrip1)
             Generales.deshabilitarControles(Me)
             btNuevo.Enabled = True
@@ -27,7 +27,7 @@
                 cargarCampos(dfila)
                 params.Add(ElementoMenu.codigo)
                 Generales.llenardgv(objProveedor.sqlCargarDetalle, dgvParametro, params)
-                Generales.diseñoGrillaParametro(dgvParametro)
+
                 controlVerificar()
             End If
             Generales.deshabilitarBotones(ToolStrip1)
@@ -123,11 +123,11 @@
             If validarCampos() = True Then
                 objProveedor.dtParametro = dgvParametro.DataSource
                 ProveedorBLL.guardar(objProveedor)
-                Generales.deshabilitarBotones(ToolStrip1)
+                Generales.habilitarBotones(ToolStrip1)
                 Generales.deshabilitarControles(Me)
-                btBuscar.Enabled = True
-                btNuevo.Enabled = True
-                btEditar.Enabled = True
+                btCancelar.Enabled = False
+                btRegistrar.Enabled = False
+                EstiloMensajes.mostrarMensajeExitoso(MensajeSistema.REGISTRO_GUARDADO)
             End If
         Catch ex As Exception
             EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
@@ -137,7 +137,6 @@
         If EstiloMensajes.mostrarMensajePregunta(MensajeSistema.CANCELAR) = Constantes.SI Then
             Generales.deshabilitarBotones(ToolStrip1)
             Generales.deshabilitarControles(Me)
-            Generales.limpiarControles(Me)
             btNuevo.Enabled = True
             btBuscar.Enabled = True
         End If
@@ -157,6 +156,8 @@
                     Generales.limpiarControles(Me)
                     Generales.deshabilitarBotones(ToolStrip1)
                     btNuevo.Enabled = True
+                    btBuscar.Enabled = True
+                    EstiloMensajes.mostrarMensajeAnulado(MensajeSistema.REGISTRO_ANULADO)
                 End If
             Catch ex As Exception
                 EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))

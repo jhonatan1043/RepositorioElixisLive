@@ -11,7 +11,7 @@
             btNuevo.Enabled = True
             btBuscar.Enabled = True
             Generales.llenardgv("SP_CONSULTAR_PARAMETROS", dgRegistro, params)
-            Generales.diseñoGrillaParametro(dgRegistro)
+            Generales.diseñoDGV(dgRegistro)
         Catch ex As Exception
             EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
         End Try
@@ -36,7 +36,7 @@
                 txtnombre.Text = dfila("Nombre")
                 params.Add(ElementoMenu.codigo)
                 Generales.llenardgv(objProducto.sqlCargarDetalle, dgRegistro, params)
-                Generales.diseñoGrillaParametro(dgRegistro)
+                Generales.diseñoDGV(dgRegistro)
                 controlVerificarControl()
             End If
             Generales.deshabilitarBotones(ToolStrip1)
@@ -85,12 +85,12 @@
             cargarObjeto()
             Try
                 ProductoBLL.guardar(objProducto)
-                Generales.deshabilitarBotones(ToolStrip1)
+                Generales.habilitarBotones(ToolStrip1)
                 Generales.deshabilitarControles(Me)
                 txtcodigo.Text = objProducto.codigo
-                btNuevo.Enabled = True
-                btEditar.Enabled = True
-                btBuscar.Enabled = True
+                btRegistrar.Enabled = False
+                btCancelar.Enabled = False
+                EstiloMensajes.mostrarMensajeExitoso(MensajeSistema.REGISTRO_GUARDADO)
             Catch ex As Exception
                 EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
             End Try
@@ -100,8 +100,6 @@
         If EstiloMensajes.mostrarMensajePregunta(MensajeSistema.CANCELAR) = Constantes.SI Then
             Generales.deshabilitarBotones(ToolStrip1)
             Generales.deshabilitarControles(Me)
-            Generales.limpiarControles(Gbdatos)
-            Generales.limpiarGrillaParametro(dgRegistro)
             btNuevo.Enabled = True
             btBuscar.Enabled = True
         End If
@@ -124,6 +122,7 @@
                     Generales.limpiarControles(Gbdatos)
                     btNuevo.Enabled = True
                     btBuscar.Enabled = True
+                    EstiloMensajes.mostrarMensajeAnulado(MensajeSistema.REGISTRO_ANULADO)
                 End If
             Catch ex As Exception
                 EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))

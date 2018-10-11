@@ -7,7 +7,7 @@
             params.Add(ElementoMenu.codigo)
             params.Add(SesionActual.idEmpresa)
             Generales.llenardgv("SP_CONSULTAR_PARAMETROS", dgvParametro, params)
-            Generales.diseñoGrillaParametro(dgvParametro)
+            Generales.diseñoDGV(dgvParametro)
             Generales.deshabilitarBotones(ToolStrip1)
             Generales.deshabilitarControles(Me)
             btNuevo.Enabled = True
@@ -27,7 +27,7 @@
                 cargarCampos(dfila)
                 params.Add(ElementoMenu.codigo)
                 Generales.llenardgv(objCliente.sqlCargarDetalle, dgvParametro, params)
-                Generales.diseñoGrillaParametro(dgvParametro)
+
                 controlVerificar()
             End If
             Generales.deshabilitarBotones(ToolStrip1)
@@ -124,10 +124,9 @@
                 objCliente.dtParametro = dgvParametro.DataSource
                 ClienteBLL.guardar(objCliente)
                 Generales.deshabilitarBotones(ToolStrip1)
-                Generales.deshabilitarControles(Me)
-                btBuscar.Enabled = True
-                btNuevo.Enabled = True
-                btEditar.Enabled = True
+                Generales.habilitarControles(Me)
+                btCancelar.Enabled = False
+                btRegistrar.Enabled = False
             End If
         Catch ex As Exception
             EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
@@ -137,7 +136,6 @@
         If EstiloMensajes.mostrarMensajePregunta(MensajeSistema.CANCELAR) = Constantes.SI Then
             Generales.deshabilitarBotones(ToolStrip1)
             Generales.deshabilitarControles(Me)
-            Generales.limpiarControles(Me)
             btNuevo.Enabled = True
             btBuscar.Enabled = True
         End If
@@ -157,6 +155,7 @@
                     Generales.limpiarControles(Me)
                     Generales.deshabilitarBotones(ToolStrip1)
                     btNuevo.Enabled = True
+                    EstiloMensajes.mostrarMensajeAnulado(MensajeSistema.REGISTRO_ANULADO)
                 End If
             Catch ex As Exception
                 EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))

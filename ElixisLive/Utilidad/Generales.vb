@@ -111,13 +111,23 @@ Public Class Generales
         dgv.DefaultCellStyle.ForeColor = Color.Black
         dgv.DefaultCellStyle.SelectionBackColor = Color.DodgerBlue
         dgv.DefaultCellStyle.SelectionForeColor = Color.White
+        dgv.DefaultCellStyle.Font = New Font("Times New Roman", 11, FontStyle.Italic)
+        dgv.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft
         dgv.AlternatingRowsDefaultCellStyle.BackColor = Color.AliceBlue
         dgv.AlternatingRowsDefaultCellStyle.ForeColor = Nothing
         dgv.AlternatingRowsDefaultCellStyle.SelectionBackColor = Nothing
         dgv.AlternatingRowsDefaultCellStyle.SelectionForeColor = Nothing
-        dgv.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft
-        'dgv.DefaultCellStyle.Font = New Font(Constantes.TIPO_LETRA, 9)
+        dgv.AlternatingRowsDefaultCellStyle.Font = New Font("Times New Roman", 11, FontStyle.Italic)
+        dgv.AlternatingRowsDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft
 
+        dgv.ColumnHeadersDefaultCellStyle.Font = New Font("Times New Roman", 12, FontStyle.Italic)
+        With dgv
+            .Columns("codigo_Descripcion").Visible = False
+            .Columns("Informacion").SortMode = DataGridViewColumnSortMode.NotSortable
+            .Columns("Datos").SortMode = DataGridViewColumnSortMode.NotSortable
+            .Columns("Informacion").AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
+            .Columns("Datos").AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
+        End With
     End Sub
     Public Shared Sub cargarForm(ByVal form As System.Windows.Forms.Form)
         FormPrincipal.Cursor = Cursors.WaitCursor
@@ -147,7 +157,7 @@ Public Class Generales
         End Try
         objConexion.desConectar()
         dgdgv.DataSource = dtTabla
-
+        diseñoDGV(dgdgv)
     End Sub
     Public Shared Function cargarItem(ByVal consulta As String) As DataRow
         Dim dtTabla As New DataTable
@@ -308,15 +318,6 @@ Public Class Generales
         End Try
         Return resultado
     End Function
-    Public Shared Sub diseñoGrillaParametro(dgv As DataGridView)
-        With dgv
-            .Columns("codigo_Descripcion").Visible = False
-            .Columns("Informacion").SortMode = DataGridViewColumnSortMode.NotSortable
-            .Columns("Datos").SortMode = DataGridViewColumnSortMode.NotSortable
-            .Columns("Informacion").AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
-            .Columns("Datos").AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
-        End With
-    End Sub
     Public Shared Function subirimagen(ByVal objeto As PictureBox, ByVal componente As OpenFileDialog) As OpenFileDialog
         Try
             objeto.Image = Nothing

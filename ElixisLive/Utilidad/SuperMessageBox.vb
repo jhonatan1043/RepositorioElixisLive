@@ -172,7 +172,7 @@
         Dim cmdBoton As New System.Windows.Forms.Button
         cmdBoton.Text = Cadena
         cmdBoton.Height = 22 : cmdBoton.Width = mintAncho
-        cmdBoton.Font = New Font(Constantes.TIPO_LETRA, 9)
+        cmdBoton.Font = New Font("Times New Roman", 11, FontStyle.Italic)
         alstBotones.Add(cmdBoton)
     End Sub
 
