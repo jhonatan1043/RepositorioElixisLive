@@ -78,7 +78,7 @@
         params.Add(String.Empty)
         params.Add(SesionActual.idEmpresa)
         Try
-            Generales.buscarElemento("SP_PERSONA_CONSULTAR",
+            Generales.buscarElemento("[SP_PERSONA_CLIENTE_CONSULTAR]",
                                    params,
                                    AddressOf cargarPersona,
                                    "Busqueda de persona",
