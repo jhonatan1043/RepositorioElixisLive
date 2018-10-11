@@ -48,11 +48,11 @@ Partial Class FormProveedor
         '
         'txtCodigo
         '
-        Me.txtCodigo.Size = New System.Drawing.Size(134, 22)
+        Me.txtIdentificacion.Size = New System.Drawing.Size(134, 22)
         '
         'TextBox5
         '
-        Me.TextBox5.Size = New System.Drawing.Size(462, 22)
+        Me.txtEmail.Size = New System.Drawing.Size(462, 22)
         '
         'Label5
         '
@@ -61,7 +61,7 @@ Partial Class FormProveedor
         '
         'TextBox4
         '
-        Me.TextBox4.Size = New System.Drawing.Size(462, 22)
+        Me.txtDireccion.Size = New System.Drawing.Size(462, 22)
         '
         'Label4
         '
@@ -70,7 +70,7 @@ Partial Class FormProveedor
         '
         'TextBox3
         '
-        Me.TextBox3.Size = New System.Drawing.Size(134, 22)
+        Me.txtCelular.Size = New System.Drawing.Size(134, 22)
         '
         'Label3
         '
@@ -79,7 +79,7 @@ Partial Class FormProveedor
         '
         'TextBox2
         '
-        Me.TextBox2.Size = New System.Drawing.Size(134, 22)
+        Me.txtTelefono.Size = New System.Drawing.Size(134, 22)
         '
         'Label1
         '

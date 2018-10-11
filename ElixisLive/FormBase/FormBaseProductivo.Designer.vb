@@ -22,7 +22,7 @@ Partial Class FormBaseProductivo
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.txtCodigo = New System.Windows.Forms.TextBox()
+        Me.txtIdentificacion = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.lbID = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
@@ -30,15 +30,15 @@ Partial Class FormBaseProductivo
         Me.dgvParametro = New System.Windows.Forms.DataGridView()
         Me.gbInform = New System.Windows.Forms.GroupBox()
         Me.btBuscarPersona = New System.Windows.Forms.Button()
-        Me.TextBox5 = New System.Windows.Forms.TextBox()
+        Me.txtEmail = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
+        Me.txtDireccion = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
+        Me.txtCelular = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.txtTelefono = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.txtNombre = New System.Windows.Forms.TextBox()
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
         Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.btNuevo = New System.Windows.Forms.ToolStripButton()
@@ -65,15 +65,15 @@ Partial Class FormBaseProductivo
         CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'txtCodigo
+        'txtIdentificacion
         '
-        Me.txtCodigo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtCodigo.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtCodigo.Location = New System.Drawing.Point(95, 10)
-        Me.txtCodigo.Name = "txtCodigo"
-        Me.txtCodigo.ReadOnly = True
-        Me.txtCodigo.Size = New System.Drawing.Size(156, 22)
-        Me.txtCodigo.TabIndex = 4
+        Me.txtIdentificacion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtIdentificacion.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtIdentificacion.Location = New System.Drawing.Point(95, 10)
+        Me.txtIdentificacion.Name = "txtIdentificacion"
+        Me.txtIdentificacion.ReadOnly = True
+        Me.txtIdentificacion.Size = New System.Drawing.Size(156, 22)
+        Me.txtIdentificacion.TabIndex = 4
         '
         'Label2
         '
@@ -142,16 +142,16 @@ Partial Class FormBaseProductivo
         '
         Me.gbInform.BackColor = System.Drawing.Color.Transparent
         Me.gbInform.Controls.Add(Me.btBuscarPersona)
-        Me.gbInform.Controls.Add(Me.TextBox5)
+        Me.gbInform.Controls.Add(Me.txtEmail)
         Me.gbInform.Controls.Add(Me.Label5)
-        Me.gbInform.Controls.Add(Me.TextBox4)
+        Me.gbInform.Controls.Add(Me.txtDireccion)
         Me.gbInform.Controls.Add(Me.Label4)
-        Me.gbInform.Controls.Add(Me.TextBox3)
+        Me.gbInform.Controls.Add(Me.txtCelular)
         Me.gbInform.Controls.Add(Me.Label3)
-        Me.gbInform.Controls.Add(Me.TextBox2)
+        Me.gbInform.Controls.Add(Me.txtTelefono)
         Me.gbInform.Controls.Add(Me.Label1)
-        Me.gbInform.Controls.Add(Me.TextBox1)
-        Me.gbInform.Controls.Add(Me.txtCodigo)
+        Me.gbInform.Controls.Add(Me.txtNombre)
+        Me.gbInform.Controls.Add(Me.txtIdentificacion)
         Me.gbInform.Controls.Add(Me.Label2)
         Me.gbInform.Controls.Add(Me.lbID)
         Me.gbInform.Location = New System.Drawing.Point(6, 5)
@@ -171,15 +171,15 @@ Partial Class FormBaseProductivo
         Me.btBuscarPersona.TabIndex = 14
         Me.btBuscarPersona.UseVisualStyleBackColor = True
         '
-        'TextBox5
+        'txtEmail
         '
-        Me.TextBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextBox5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox5.Location = New System.Drawing.Point(374, 66)
-        Me.TextBox5.Name = "TextBox5"
-        Me.TextBox5.ReadOnly = True
-        Me.TextBox5.Size = New System.Drawing.Size(126, 22)
-        Me.TextBox5.TabIndex = 13
+        Me.txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtEmail.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtEmail.Location = New System.Drawing.Point(374, 66)
+        Me.txtEmail.Name = "txtEmail"
+        Me.txtEmail.ReadOnly = True
+        Me.txtEmail.Size = New System.Drawing.Size(126, 22)
+        Me.txtEmail.TabIndex = 13
         '
         'Label5
         '
@@ -193,15 +193,15 @@ Partial Class FormBaseProductivo
         Me.Label5.TabIndex = 12
         Me.Label5.Text = "ID:"
         '
-        'TextBox4
+        'txtDireccion
         '
-        Me.TextBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextBox4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox4.Location = New System.Drawing.Point(374, 38)
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.ReadOnly = True
-        Me.TextBox4.Size = New System.Drawing.Size(126, 22)
-        Me.TextBox4.TabIndex = 11
+        Me.txtDireccion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtDireccion.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtDireccion.Location = New System.Drawing.Point(374, 38)
+        Me.txtDireccion.Name = "txtDireccion"
+        Me.txtDireccion.ReadOnly = True
+        Me.txtDireccion.Size = New System.Drawing.Size(126, 22)
+        Me.txtDireccion.TabIndex = 11
         '
         'Label4
         '
@@ -215,15 +215,15 @@ Partial Class FormBaseProductivo
         Me.Label4.TabIndex = 10
         Me.Label4.Text = "ID:"
         '
-        'TextBox3
+        'txtCelular
         '
-        Me.TextBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextBox3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox3.Location = New System.Drawing.Point(95, 66)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.ReadOnly = True
-        Me.TextBox3.Size = New System.Drawing.Size(156, 22)
-        Me.TextBox3.TabIndex = 9
+        Me.txtCelular.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtCelular.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtCelular.Location = New System.Drawing.Point(95, 66)
+        Me.txtCelular.Name = "txtCelular"
+        Me.txtCelular.ReadOnly = True
+        Me.txtCelular.Size = New System.Drawing.Size(156, 22)
+        Me.txtCelular.TabIndex = 9
         '
         'Label3
         '
@@ -237,15 +237,15 @@ Partial Class FormBaseProductivo
         Me.Label3.TabIndex = 8
         Me.Label3.Text = "ID:"
         '
-        'TextBox2
+        'txtTelefono
         '
-        Me.TextBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox2.Location = New System.Drawing.Point(95, 38)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.ReadOnly = True
-        Me.TextBox2.Size = New System.Drawing.Size(156, 22)
-        Me.TextBox2.TabIndex = 7
+        Me.txtTelefono.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtTelefono.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtTelefono.Location = New System.Drawing.Point(95, 38)
+        Me.txtTelefono.Name = "txtTelefono"
+        Me.txtTelefono.ReadOnly = True
+        Me.txtTelefono.Size = New System.Drawing.Size(156, 22)
+        Me.txtTelefono.TabIndex = 7
         '
         'Label1
         '
@@ -259,15 +259,15 @@ Partial Class FormBaseProductivo
         Me.Label1.TabIndex = 6
         Me.Label1.Text = "ID:"
         '
-        'TextBox1
+        'txtNombre
         '
-        Me.TextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox1.Location = New System.Drawing.Point(374, 10)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.ReadOnly = True
-        Me.TextBox1.Size = New System.Drawing.Size(462, 22)
-        Me.TextBox1.TabIndex = 5
+        Me.txtNombre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtNombre.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtNombre.Location = New System.Drawing.Point(374, 10)
+        Me.txtNombre.Name = "txtNombre"
+        Me.txtNombre.ReadOnly = True
+        Me.txtNombre.Size = New System.Drawing.Size(462, 22)
+        Me.txtNombre.TabIndex = 5
         '
         'ToolStrip1
         '
@@ -450,7 +450,7 @@ Partial Class FormBaseProductivo
     Public WithEvents Pimagen As PictureBox
     Public WithEvents Label2 As Label
     Public WithEvents lbID As Label
-    Public WithEvents txtCodigo As TextBox
+    Public WithEvents txtIdentificacion As TextBox
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents gbInform As GroupBox
     Friend WithEvents gbInformD As GroupBox
@@ -469,14 +469,14 @@ Partial Class FormBaseProductivo
     Friend WithEvents ToolStripSeparator6 As ToolStripSeparator
     Friend WithEvents ToolStripSeparator7 As ToolStripSeparator
     Public WithEvents btBuscar As ToolStripButton
-    Public WithEvents TextBox5 As TextBox
+    Public WithEvents txtEmail As TextBox
     Public WithEvents Label5 As Label
-    Public WithEvents TextBox4 As TextBox
+    Public WithEvents txtDireccion As TextBox
     Public WithEvents Label4 As Label
-    Public WithEvents TextBox3 As TextBox
+    Public WithEvents txtCelular As TextBox
     Public WithEvents Label3 As Label
-    Public WithEvents TextBox2 As TextBox
+    Public WithEvents txtTelefono As TextBox
     Public WithEvents Label1 As Label
-    Public WithEvents TextBox1 As TextBox
+    Public WithEvents txtNombre As TextBox
     Friend WithEvents btBuscarPersona As Button
 End Class

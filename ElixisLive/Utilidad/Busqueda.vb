@@ -20,7 +20,7 @@ Public Class Busqueda
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
-        Return dt
         objConexion.desConectar()
+        Return dt
     End Function
 End Class

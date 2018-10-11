@@ -49,7 +49,7 @@
     End Sub
     Private Sub btBuscar_Click(sender As Object, e As EventArgs) Handles btBuscar.Click
         Dim params As New List(Of String)
-        params.Add("")
+        params.Add(String.Empty)
         params.Add(SesionActual.idEmpresa)
         Generales.buscarElemento(objProducto.sqlConsulta,
                                    params,
@@ -60,6 +60,8 @@
     Private Sub btNuevo_Click(sender As Object, e As EventArgs) Handles btNuevo.Click
         Generales.deshabilitarBotones(ToolStrip1)
         Generales.habilitarControles(Me)
+        Generales.limpiarControles(Gbdatos)
+        Generales.limpiarGrillaParametro(dgRegistro)
         btCancelar.Enabled = True
         btRegistrar.Enabled = True
     End Sub
@@ -72,22 +74,34 @@
         End If
         Return resultado
     End Function
+    Private Sub cargarObjeto()
+        objProducto.codigo = If(String.IsNullOrEmpty(txtcodigo.Text), Nothing, txtcodigo.Text)
+        objProducto.nombre = txtnombre.Text
+        objProducto.dtParametro = dgRegistro.DataSource
+    End Sub
     Private Sub btRegistrar_Click(sender As Object, e As EventArgs) Handles btRegistrar.Click
         If validarCampos() = True Then
-            ProductoBLL.guardar(objProducto)
-            Generales.deshabilitarBotones(ToolStrip1)
-            Generales.deshabilitarControles(Me)
-            txtcodigo.Text = objProducto.codigo
-            btNuevo.Enabled = True
-            btEditar.Enabled = True
-            EstiloMensajes.mostrarMensajeExitoso(MensajeSistema.REGISTRO_GUARDADO)
+            cargarObjeto()
+            Try
+                ProductoBLL.guardar(objProducto)
+                Generales.deshabilitarBotones(ToolStrip1)
+                Generales.deshabilitarControles(Me)
+                txtcodigo.Text = objProducto.codigo
+                btNuevo.Enabled = True
+                btEditar.Enabled = True
+            Catch ex As Exception
+                EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
+            End Try
         End If
     End Sub
     Private Sub btCancelar_Click(sender As Object, e As EventArgs) Handles btCancelar.Click
         If EstiloMensajes.mostrarMensajePregunta(MensajeSistema.CANCELAR) = Constantes.SI Then
             Generales.deshabilitarBotones(ToolStrip1)
             Generales.deshabilitarControles(Me)
+            Generales.limpiarControles(Gbdatos)
+            Generales.limpiarGrillaParametro(dgRegistro)
             btNuevo.Enabled = True
+            btBuscar.Enabled = True
         End If
     End Sub
 
@@ -102,12 +116,11 @@
     Private Sub btAnular_Click(sender As Object, e As EventArgs) Handles btAnular.Click
         If EstiloMensajes.mostrarMensajePregunta(MensajeSistema.ANULAR) = Constantes.SI Then
             Try
-                If Generales.ejecutarSQL(objProducto.sqlAnular) = True Then
+                If Generales.ejecutarSQL(objProducto.sqlAnular & txtcodigo.Text) = True Then
                     Generales.deshabilitarBotones(ToolStrip1)
                     Generales.limpiarControles(Gbdatos)
                     btNuevo.Enabled = True
                     btBuscar.Enabled = True
-                    EstiloMensajes.mostrarMensajeAnulado(MensajeSistema.REGISTRO_ANULADO)
                 End If
             Catch ex As Exception
                 EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))

@@ -100,7 +100,7 @@ Public Class Generales
             End If
         Next
     End Sub
-    Private Shared Sub limpiarGrillaParametro(dgv As DataGridView)
+    Public Shared Sub limpiarGrillaParametro(dgv As DataGridView)
         For posicion = 0 To dgv.Rows.Count - 1
             dgv.Rows(posicion).Cells("Datos").Value = Nothing
         Next

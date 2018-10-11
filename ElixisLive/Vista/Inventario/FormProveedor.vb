@@ -24,18 +24,27 @@
         dfila = Generales.cargarItem(objProveedor.sqlCargar, params)
         Try
             If Not IsNothing(dfila) Then
-                txtCodigo.Text = objProveedor.codigo
+                cargarCampos(dfila)
+                params.Add(ElementoMenu.codigo)
                 Generales.llenardgv(objProveedor.sqlCargarDetalle, dgvParametro, params)
                 Generales.diseñoGrillaParametro(dgvParametro)
                 controlVerificar()
             End If
             Generales.deshabilitarBotones(ToolStrip1)
             btEditar.Enabled = True
-            btCancelar.Enabled = True
+            btAnular.Enabled = True
             btNuevo.Enabled = True
         Catch ex As Exception
             EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
         End Try
+    End Sub
+    Private Sub cargarCampos(dfila As DataRow)
+        txtIdentificacion.Text = dfila("Identificacion")
+        txtTelefono.Text = If(IsDBNull(dfila("Telefono")), Nothing, dfila("Telefono"))
+        txtCelular.Text = dfila("Celular")
+        txtNombre.Text = dfila("Nombre")
+        txtDireccion.Text = dfila("Direccion")
+        txtEmail.Text = dfila("Email")
     End Sub
     Private Sub controlVerificar()
         For posicion = 0 To dgvParametro.Rows.Count - 1
@@ -51,31 +60,75 @@
         End Try
     End Sub
     Private Sub btBuscar_Click(sender As Object, e As EventArgs) Handles btBuscar.Click
-
+        Dim params As New List(Of String)
+        params.Add(String.Empty)
+        params.Add(SesionActual.idEmpresa)
+        Try
+            Generales.buscarElemento(objProveedor.sqlConsulta,
+                                   params,
+                                   AddressOf cargarInfomacion,
+                                   "Busqueda de proveedor",
+                                   True, True)
+        Catch ex As Exception
+            EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
+        End Try
     End Sub
     Private Sub btBuscarPersona_Click(sender As Object, e As EventArgs) Handles btBuscarPersona.Click
-
+        Dim params As New List(Of String)
+        params.Add(String.Empty)
+        params.Add(SesionActual.idEmpresa)
+        Try
+            Generales.buscarElemento("SP_PERSONA_CONSULTAR",
+                                   params,
+                                   AddressOf cargarPersona,
+                                   "Busqueda de persona",
+                                   True, True)
+        Catch ex As Exception
+            EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
+        End Try
     End Sub
-    Private Sub cargarPersona()
-
+    Private Sub cargarPersona(pCodigo As Integer)
+        Dim params As New List(Of String)
+        Dim dfila As DataRow
+        objProveedor.codigo = pCodigo
+        params.Add(pCodigo)
+        Try
+            dfila = Generales.cargarItem("SP_PERSONA_CARGAR", params)
+            cargarCampos(dfila)
+        Catch ex As Exception
+            EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
+        End Try
     End Sub
     Private Sub btNuevo_Click(sender As Object, e As EventArgs) Handles btNuevo.Click
         Generales.deshabilitarBotones(ToolStrip1)
         Generales.habilitarControles(gbInformD)
         Generales.limpiarControles(Me)
+        btBuscarPersona.Enabled = True
         btCancelar.Enabled = True
         btRegistrar.Enabled = True
     End Sub
+    Private Function validarCampos() As Boolean
+        Dim resultado As Boolean
+        If IsNothing(objProveedor.codigo) Then
+            EstiloMensajes.mostrarMensajeAdvertencia("¡Debe Seleccionar una persona!")
+        Else
+            resultado = True
+        End If
+        Return resultado
+    End Function
+
     Private Sub btRegistrar_Click(sender As Object, e As EventArgs) Handles btRegistrar.Click
         dgvParametro.EndEdit()
         Try
-            ProveedorBLL.guardar(objProveedor)
-            Generales.deshabilitarBotones(ToolStrip1)
-            Generales.deshabilitarControles(Me)
-            txtCodigo.Text = objProveedor.codigo
-            btBuscar.Enabled = True
-            btNuevo.Enabled = True
-            btEditar.Enabled = True
+            If validarCampos() = True Then
+                objProveedor.dtParametro = dgvParametro.DataSource
+                ProveedorBLL.guardar(objProveedor)
+                Generales.deshabilitarBotones(ToolStrip1)
+                Generales.deshabilitarControles(Me)
+                btBuscar.Enabled = True
+                btNuevo.Enabled = True
+                btEditar.Enabled = True
+            End If
         Catch ex As Exception
             EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
         End Try
