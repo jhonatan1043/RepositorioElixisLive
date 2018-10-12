@@ -100,6 +100,15 @@ Public Class Generales
             End If
         Next
     End Sub
+    Public Shared Sub diseñoGrillaParametros(dgv As DataGridView)
+        With dgv
+            .Columns("codigo_Descripcion").Visible = False
+            .Columns("Informacion").SortMode = DataGridViewColumnSortMode.NotSortable
+            .Columns("Datos").SortMode = DataGridViewColumnSortMode.NotSortable
+            .Columns("Informacion").AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
+            .Columns("Datos").AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
+        End With
+    End Sub
     Public Shared Sub limpiarGrillaParametro(dgv As DataGridView)
         For posicion = 0 To dgv.Rows.Count - 1
             dgv.Rows(posicion).Cells("Datos").Value = Nothing
@@ -119,15 +128,7 @@ Public Class Generales
         dgv.AlternatingRowsDefaultCellStyle.SelectionForeColor = Nothing
         dgv.AlternatingRowsDefaultCellStyle.Font = New Font("Times New Roman", 11, FontStyle.Italic)
         dgv.AlternatingRowsDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft
-
         dgv.ColumnHeadersDefaultCellStyle.Font = New Font("Times New Roman", 12, FontStyle.Italic)
-        With dgv
-            .Columns("codigo_Descripcion").Visible = False
-            .Columns("Informacion").SortMode = DataGridViewColumnSortMode.NotSortable
-            .Columns("Datos").SortMode = DataGridViewColumnSortMode.NotSortable
-            .Columns("Informacion").AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
-            .Columns("Datos").AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
-        End With
     End Sub
     Public Shared Sub cargarForm(ByVal form As System.Windows.Forms.Form)
         FormPrincipal.Cursor = Cursors.WaitCursor

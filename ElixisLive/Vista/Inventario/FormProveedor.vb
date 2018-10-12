@@ -7,7 +7,8 @@
             params.Add(ElementoMenu.codigo)
             params.Add(SesionActual.idEmpresa)
             Generales.llenardgv("SP_CONSULTAR_PARAMETROS", dgvParametro, params)
-
+            Generales.diseñoDGV(dgvParametro)
+            Generales.diseñoGrillaParametros(dgvParametro)
             Generales.deshabilitarBotones(ToolStrip1)
             Generales.deshabilitarControles(Me)
             btNuevo.Enabled = True
@@ -27,7 +28,8 @@
                 cargarCampos(dfila)
                 params.Add(ElementoMenu.codigo)
                 Generales.llenardgv(objProveedor.sqlCargarDetalle, dgvParametro, params)
-
+                Generales.diseñoDGV(dgvParametro)
+                Generales.diseñoGrillaParametros(dgvParametro)
                 controlVerificar()
             End If
             Generales.deshabilitarBotones(ToolStrip1)

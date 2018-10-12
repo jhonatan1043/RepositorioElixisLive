@@ -12,6 +12,7 @@
             btBuscar.Enabled = True
             Generales.llenardgv("SP_CONSULTAR_PARAMETROS", dgRegistro, params)
             Generales.diseñoDGV(dgRegistro)
+            Generales.diseñoGrillaParametros(dgRegistro)
         Catch ex As Exception
             EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
         End Try

@@ -37,6 +37,8 @@
             btNuevo.Enabled = True
             btBuscar.Enabled = True
             Generales.llenardgv("SP_CONSULTAR_PARAMETROS", dgvParametro, params)
+            Generales.diseñoDGV(dgvParametro)
+            Generales.diseñoGrillaParametros(dgvParametro)
         Catch ex As Exception
             EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
         End Try
@@ -125,6 +127,8 @@
                 TxtDescripcion.Text = dfila.Item("Nombre")
                 params.Add(ElementoMenu.codigo)
                 Generales.llenardgv(objEmpresa.sqlCargarDetalle, dgvParametro, params)
+                Generales.diseñoDGV(dgvParametro)
+                Generales.diseñoGrillaParametros(dgvParametro)
                 controlVerificarControl()
             End If
             Generales.deshabilitarBotones(ToolStrip1)
