@@ -131,10 +131,9 @@
                 Generales.diseñoGrillaParametros(dgvParametro)
                 controlVerificarControl()
             End If
-            Generales.deshabilitarBotones(ToolStrip1)
-            btEditar.Enabled = True
-            btAnular.Enabled = True
-            btNuevo.Enabled = True
+            Generales.habilitarBotones(ToolStrip1)
+            btCancelar.Enabled = False
+            btRegistrar.Enabled = False
         Catch ex As Exception
             EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
         End Try

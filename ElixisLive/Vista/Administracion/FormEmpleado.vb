@@ -42,6 +42,7 @@
             Generales.deshabilitarBotones(ToolStrip1)
             Generales.deshabilitarControles(Me)
             btNuevo.Enabled = True
+            btBuscar.Enabled = True
             Generales.llenardgv("SP_CONSULTAR_PARAMETROS", dgvParametro, params)
             Generales.diseñoDGV(dgvParametro)
         Catch ex As Exception
@@ -60,14 +61,19 @@
 
     Private Sub btRegistrar_Click(sender As Object, e As EventArgs)
         dgvParametro.EndEdit()
+
         If validarCampos() = True Then
-            cargarObjeto()
-            'EmpresaBLL.guardar(objEmpleado)
-            Generales.deshabilitarBotones(ToolStrip1)
-            Generales.deshabilitarControles(Me)
-            btNuevo.Enabled = True
-            btEditar.Enabled = True
-            EstiloMensajes.mostrarMensajeExitoso(MensajeSistema.REGISTRO_GUARDADO)
+            Try
+                cargarObjeto()
+                'EmpresaBLL.guardar(objEmpleado)
+                Generales.deshabilitarBotones(ToolStrip1)
+                Generales.deshabilitarControles(Me)
+                btNuevo.Enabled = True
+                btEditar.Enabled = True
+                EstiloMensajes.mostrarMensajeExitoso(MensajeSistema.REGISTRO_GUARDADO)
+            Catch ex As Exception
+                EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
+            End Try
         End If
     End Sub
 
@@ -83,8 +89,6 @@
         If EstiloMensajes.mostrarMensajePregunta(MensajeSistema.CANCELAR) = Constantes.SI Then
             Generales.deshabilitarBotones(ToolStrip1)
             Generales.deshabilitarControles(Me)
-            Generales.limpiarControles(GbInform_D)
-            Generales.limpiarControles(GbInform)
             pictImagen.Image = Nothing
             btNuevo.Enabled = True
         End If
@@ -92,14 +96,18 @@
 
     Private Sub btAnular_Click(sender As Object, e As EventArgs)
         If EstiloMensajes.mostrarMensajePregunta(MensajeSistema.ANULAR) = Constantes.SI Then
-            If Generales.ejecutarSQL(objEmpleado.sqlAnular) = True Then
-                Generales.limpiarControles(GbInform_D)
-                Generales.limpiarControles(GbInform)
-                Generales.deshabilitarBotones(ToolStrip1)
-                pictImagen.Image = Nothing
-                btNuevo.Enabled = True
-                EstiloMensajes.mostrarMensajeAnulado(MensajeSistema.REGISTRO_ANULADO)
-            End If
+            Try
+                If Generales.ejecutarSQL(objEmpleado.sqlAnular) = True Then
+                    Generales.limpiarControles(GbInform_D)
+                    Generales.limpiarControles(GbInform)
+                    Generales.deshabilitarBotones(ToolStrip1)
+                    pictImagen.Image = Nothing
+                    btNuevo.Enabled = True
+                    EstiloMensajes.mostrarMensajeAnulado(MensajeSistema.REGISTRO_ANULADO)
+                End If
+            Catch ex As Exception
+                EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
+            End Try
         End If
     End Sub
     Private Sub btExaminar_Click(sender As Object, e As EventArgs) Handles btExaminar.Click
@@ -109,5 +117,9 @@
         Catch ex As Exception
             EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
         End Try
+    End Sub
+
+    Private Sub btBuscar_Click(sender As Object, e As EventArgs) Handles btBuscar.Click
+
     End Sub
 End Class

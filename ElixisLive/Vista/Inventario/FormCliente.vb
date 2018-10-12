@@ -32,10 +32,9 @@
                 Generales.diseñoGrillaParametros(dgvParametro)
                 controlVerificar()
             End If
-            Generales.deshabilitarBotones(ToolStrip1)
-            btEditar.Enabled = True
-            btAnular.Enabled = True
-            btNuevo.Enabled = True
+            Generales.habilitarBotones(ToolStrip1)
+            btRegistrar.Enabled = False
+            btCancelar.Enabled = False
         Catch ex As Exception
             EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
         End Try
@@ -129,6 +128,7 @@
                 Generales.habilitarControles(Me)
                 btCancelar.Enabled = False
                 btRegistrar.Enabled = False
+                EstiloMensajes.mostrarMensajeExitoso(MensajeSistema.REGISTRO_GUARDADO)
             End If
         Catch ex As Exception
             EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
