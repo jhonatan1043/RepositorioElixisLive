@@ -1,6 +1,6 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class FormListaPrecio
-    Inherits ElixisLive.FormBaseLista
+    Inherits Quality.FormBaseLista
 
     'Form invalida a Dispose para limpiar la lista de componentes.
     <System.Diagnostics.DebuggerNonUserCode()>
@@ -30,7 +30,7 @@ Partial Class FormListaPrecio
         'Pimagen
         '
         Me.Pimagen.BackColor = System.Drawing.Color.Transparent
-        Me.Pimagen.Image = Global.ElixisLive.My.Resources.Resources.lista
+        Me.Pimagen.Image = Global.Quality.My.Resources.Resources.lista
         Me.Pimagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         '
         'FormListaPrecio

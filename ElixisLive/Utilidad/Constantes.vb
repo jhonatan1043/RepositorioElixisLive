@@ -2,7 +2,7 @@
     Public Const SI = "Si"
     Public Const NO = "No"
     Public Const SERVIDOR_FTP = "ftp://192.168.2.89//CarpetaFTP/"
-    Public Const USUARIO_FTP = "AdminSoftElixisLive"
+    Public Const USUARIO_FTP = "AdminSoftQuality"
     Public Const CONTRASENA_FTP = "AdminSoft"
     Public Const SIGNO_PESO = "$"
 

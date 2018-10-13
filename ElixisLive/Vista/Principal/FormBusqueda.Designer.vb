@@ -43,7 +43,7 @@ Partial Class FormBusqueda
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.White
-        Me.Panel1.BackgroundImage = Global.ElixisLive.My.Resources.Resources.fondo_azul
+        Me.Panel1.BackgroundImage = Global.Quality.My.Resources.Resources.fondo_azul
         Me.Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Panel1.Controls.Add(Me.Panel2)
         Me.Panel1.Controls.Add(Me.Pimagen)
@@ -56,7 +56,7 @@ Partial Class FormBusqueda
         'Panel2
         '
         Me.Panel2.BackColor = System.Drawing.Color.Transparent
-        Me.Panel2.BackgroundImage = Global.ElixisLive.My.Resources.Resources._error
+        Me.Panel2.BackgroundImage = Global.Quality.My.Resources.Resources._error
         Me.Panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Panel2.Location = New System.Drawing.Point(558, 1)
         Me.Panel2.Name = "Panel2"
@@ -66,7 +66,7 @@ Partial Class FormBusqueda
         'Pimagen
         '
         Me.Pimagen.BackColor = System.Drawing.Color.Transparent
-        Me.Pimagen.Image = Global.ElixisLive.My.Resources.Resources.glossy_3d_blue_orbs2_096_icon
+        Me.Pimagen.Image = Global.Quality.My.Resources.Resources.glossy_3d_blue_orbs2_096_icon
         Me.Pimagen.Location = New System.Drawing.Point(4, -8)
         Me.Pimagen.Name = "Pimagen"
         Me.Pimagen.Size = New System.Drawing.Size(60, 58)

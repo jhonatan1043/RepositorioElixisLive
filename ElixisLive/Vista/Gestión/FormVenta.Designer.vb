@@ -22,7 +22,7 @@ Partial Class FormVenta
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.GroupBox7 = New System.Windows.Forms.GroupBox()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -33,6 +33,7 @@ Partial Class FormVenta
         Me.Label19 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.dgvParametro = New System.Windows.Forms.DataGridView()
         Me.TextBox4 = New System.Windows.Forms.TextBox()
         Me.TextBox3 = New System.Windows.Forms.TextBox()
         Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
@@ -41,7 +42,6 @@ Partial Class FormVenta
         Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
-        Me.dgvParametro = New System.Windows.Forms.DataGridView()
         Me.DataGridViewImageColumn1 = New System.Windows.Forms.DataGridViewImageColumn()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Pimagen = New System.Windows.Forms.PictureBox()
@@ -204,6 +204,25 @@ Partial Class FormVenta
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Información de factura"
         '
+        'dgvParametro
+        '
+        Me.dgvParametro.AllowUserToAddRows = False
+        Me.dgvParametro.AllowUserToDeleteRows = False
+        Me.dgvParametro.AllowUserToResizeColumns = False
+        Me.dgvParametro.AllowUserToResizeRows = False
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
+        Me.dgvParametro.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle2
+        Me.dgvParametro.BackgroundColor = System.Drawing.Color.White
+        Me.dgvParametro.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvParametro.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.dgQuitar})
+        Me.dgvParametro.Location = New System.Drawing.Point(6, 73)
+        Me.dgvParametro.MultiSelect = False
+        Me.dgvParametro.Name = "dgvParametro"
+        Me.dgvParametro.ReadOnly = True
+        Me.dgvParametro.Size = New System.Drawing.Size(670, 305)
+        Me.dgvParametro.TabIndex = 60030
+        '
         'TextBox4
         '
         Me.TextBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
@@ -282,30 +301,11 @@ Partial Class FormVenta
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Totales"
         '
-        'dgvParametro
-        '
-        Me.dgvParametro.AllowUserToAddRows = False
-        Me.dgvParametro.AllowUserToDeleteRows = False
-        Me.dgvParametro.AllowUserToResizeColumns = False
-        Me.dgvParametro.AllowUserToResizeRows = False
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black
-        Me.dgvParametro.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
-        Me.dgvParametro.BackgroundColor = System.Drawing.Color.White
-        Me.dgvParametro.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvParametro.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.dgQuitar})
-        Me.dgvParametro.Location = New System.Drawing.Point(6, 73)
-        Me.dgvParametro.MultiSelect = False
-        Me.dgvParametro.Name = "dgvParametro"
-        Me.dgvParametro.ReadOnly = True
-        Me.dgvParametro.Size = New System.Drawing.Size(670, 305)
-        Me.dgvParametro.TabIndex = 60030
-        '
         'DataGridViewImageColumn1
         '
         Me.DataGridViewImageColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
         Me.DataGridViewImageColumn1.HeaderText = "Quitar"
-        Me.DataGridViewImageColumn1.Image = Global.ElixisLive.My.Resources.Resources.RecycleBin_Full_icon__2_
+        Me.DataGridViewImageColumn1.Image = Global.Quality.My.Resources.Resources.RecycleBin_Full_icon__2_
         Me.DataGridViewImageColumn1.Name = "DataGridViewImageColumn1"
         Me.DataGridViewImageColumn1.ReadOnly = True
         Me.DataGridViewImageColumn1.Width = 50
@@ -313,19 +313,19 @@ Partial Class FormVenta
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.White
-        Me.Panel1.BackgroundImage = Global.ElixisLive.My.Resources.Resources.fondo_azul
+        Me.Panel1.BackgroundImage = Global.Quality.My.Resources.Resources.fondo_azul
         Me.Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Panel1.Controls.Add(Me.Pimagen)
         Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(980, 42)
+        Me.Panel1.Size = New System.Drawing.Size(900, 42)
         Me.Panel1.TabIndex = 19
         '
         'Pimagen
         '
         Me.Pimagen.BackColor = System.Drawing.Color.Transparent
-        Me.Pimagen.Image = Global.ElixisLive.My.Resources.Resources.dinero
+        Me.Pimagen.Image = Global.Quality.My.Resources.Resources.dinero
         Me.Pimagen.Location = New System.Drawing.Point(4, -7)
         Me.Pimagen.Name = "Pimagen"
         Me.Pimagen.Size = New System.Drawing.Size(69, 53)
@@ -340,15 +340,15 @@ Partial Class FormVenta
         Me.Label1.ForeColor = System.Drawing.Color.White
         Me.Label1.Location = New System.Drawing.Point(0, 1)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(980, 44)
+        Me.Label1.Size = New System.Drawing.Size(900, 44)
         Me.Label1.TabIndex = 1
-        Me.Label1.Text = "Venta de Artículos y servicios"
+        Me.Label1.Text = "Venta de Artículos y Servicios"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'ToolStrip1
         '
         Me.ToolStrip1.BackColor = System.Drawing.Color.White
-        Me.ToolStrip1.BackgroundImage = Global.ElixisLive.My.Resources.Resources.fondo_azul
+        Me.ToolStrip1.BackgroundImage = Global.Quality.My.Resources.Resources.fondo_azul
         Me.ToolStrip1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ToolStrip1.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.ToolStrip1.ImageScalingSize = New System.Drawing.Size(26, 26)
@@ -368,7 +368,7 @@ Partial Class FormVenta
         '
         Me.btNuevo.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btNuevo.ForeColor = System.Drawing.Color.White
-        Me.btNuevo.Image = Global.ElixisLive.My.Resources.Resources.Files_New_File_icon
+        Me.btNuevo.Image = Global.Quality.My.Resources.Resources.Files_New_File_icon
         Me.btNuevo.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.btNuevo.Name = "btNuevo"
         Me.btNuevo.Size = New System.Drawing.Size(82, 30)
@@ -384,7 +384,7 @@ Partial Class FormVenta
         '
         Me.btBuscar.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btBuscar.ForeColor = System.Drawing.Color.White
-        Me.btBuscar.Image = Global.ElixisLive.My.Resources.Resources.Search_icon__1_
+        Me.btBuscar.Image = Global.Quality.My.Resources.Resources.Search_icon__1_
         Me.btBuscar.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.btBuscar.Name = "btBuscar"
         Me.btBuscar.Size = New System.Drawing.Size(86, 30)
@@ -400,7 +400,7 @@ Partial Class FormVenta
         '
         Me.btRegistrar.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btRegistrar.ForeColor = System.Drawing.Color.White
-        Me.btRegistrar.Image = Global.ElixisLive.My.Resources.Resources.Save_icon__1_
+        Me.btRegistrar.Image = Global.Quality.My.Resources.Resources.Save_icon__1_
         Me.btRegistrar.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.btRegistrar.Name = "btRegistrar"
         Me.btRegistrar.Size = New System.Drawing.Size(101, 30)
@@ -416,7 +416,7 @@ Partial Class FormVenta
         '
         Me.btEditar.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btEditar.ForeColor = System.Drawing.Color.White
-        Me.btEditar.Image = Global.ElixisLive.My.Resources.Resources.pencil_icon__1_
+        Me.btEditar.Image = Global.Quality.My.Resources.Resources.pencil_icon__1_
         Me.btEditar.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.btEditar.Name = "btEditar"
         Me.btEditar.Size = New System.Drawing.Size(82, 30)
@@ -432,7 +432,7 @@ Partial Class FormVenta
         '
         Me.btCancelar.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btCancelar.ForeColor = System.Drawing.Color.White
-        Me.btCancelar.Image = Global.ElixisLive.My.Resources.Resources.Actions_blue_arrow_undo_icon
+        Me.btCancelar.Image = Global.Quality.My.Resources.Resources.Actions_blue_arrow_undo_icon
         Me.btCancelar.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.btCancelar.Name = "btCancelar"
         Me.btCancelar.Size = New System.Drawing.Size(100, 30)
@@ -448,7 +448,7 @@ Partial Class FormVenta
         '
         Me.btAnular.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btAnular.ForeColor = System.Drawing.Color.White
-        Me.btAnular.Image = Global.ElixisLive.My.Resources.Resources.document_delete_icon__1_
+        Me.btAnular.Image = Global.Quality.My.Resources.Resources.document_delete_icon__1_
         Me.btAnular.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.btAnular.Name = "btAnular"
         Me.btAnular.Size = New System.Drawing.Size(87, 30)
@@ -464,7 +464,7 @@ Partial Class FormVenta
         '
         Me.ToolStripButton1.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ToolStripButton1.ForeColor = System.Drawing.Color.White
-        Me.ToolStripButton1.Image = Global.ElixisLive.My.Resources.Resources.print_icon
+        Me.ToolStripButton1.Image = Global.Quality.My.Resources.Resources.print_icon
         Me.ToolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.ToolStripButton1.Name = "ToolStripButton1"
         Me.ToolStripButton1.Size = New System.Drawing.Size(99, 30)
@@ -478,7 +478,7 @@ Partial Class FormVenta
         '
         'PictureBox1
         '
-        Me.PictureBox1.Image = Global.ElixisLive.My.Resources.Resources.Quality_logo
+        Me.PictureBox1.Image = Global.Quality.My.Resources.Resources.Quality_logo
         Me.PictureBox1.Location = New System.Drawing.Point(682, 4)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(185, 179)
@@ -489,7 +489,7 @@ Partial Class FormVenta
         'dgQuitar
         '
         Me.dgQuitar.HeaderText = "Quitar"
-        Me.dgQuitar.Image = Global.ElixisLive.My.Resources.Resources.RecycleBin_Full_icon__2_
+        Me.dgQuitar.Image = Global.Quality.My.Resources.Resources.RecycleBin_Full_icon__2_
         Me.dgQuitar.Name = "dgQuitar"
         Me.dgQuitar.ReadOnly = True
         Me.dgQuitar.Width = 50
@@ -500,7 +500,7 @@ Partial Class FormVenta
         Me.Label5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Label5.Font = New System.Drawing.Font("Times New Roman", 14.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.Color.White
-        Me.Label5.Image = Global.ElixisLive.My.Resources.Resources.fondo_azul
+        Me.Label5.Image = Global.Quality.My.Resources.Resources.fondo_azul
         Me.Label5.Location = New System.Drawing.Point(696, 205)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(155, 46)
@@ -514,7 +514,7 @@ Partial Class FormVenta
         Me.Label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Label4.Font = New System.Drawing.Font("Times New Roman", 14.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.White
-        Me.Label4.Image = Global.ElixisLive.My.Resources.Resources.fondo_azul
+        Me.Label4.Image = Global.Quality.My.Resources.Resources.fondo_azul
         Me.Label4.Location = New System.Drawing.Point(696, 265)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(155, 46)
@@ -528,7 +528,7 @@ Partial Class FormVenta
         Me.Label6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Label6.Font = New System.Drawing.Font("Times New Roman", 14.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.ForeColor = System.Drawing.Color.White
-        Me.Label6.Image = Global.ElixisLive.My.Resources.Resources.fondo_azul
+        Me.Label6.Image = Global.Quality.My.Resources.Resources.fondo_azul
         Me.Label6.Location = New System.Drawing.Point(696, 324)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(155, 46)
@@ -546,6 +546,8 @@ Partial Class FormVenta
         Me.Controls.Add(Me.ToolStrip1)
         Me.Controls.Add(Me.GroupBox1)
         Me.MaximizeBox = False
+        Me.MaximumSize = New System.Drawing.Size(916, 565)
+        Me.MinimumSize = New System.Drawing.Size(916, 565)
         Me.Name = "FormVenta"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.GroupBox7.ResumeLayout(False)

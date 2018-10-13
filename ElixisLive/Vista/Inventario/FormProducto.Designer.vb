@@ -1,9 +1,9 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
 Partial Class FormProducto
-    Inherits ElixisLive.FormBase
+    Inherits Quality.FormBase
 
     'Form invalida a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         If disposing AndAlso components IsNot Nothing Then
             components.Dispose()
@@ -34,7 +34,7 @@ Partial Class FormProducto
         'Pimagen
         '
         Me.Pimagen.BackColor = System.Drawing.Color.Transparent
-        Me.Pimagen.Image = Global.ElixisLive.My.Resources.Resources.producto1
+        Me.Pimagen.Image = Global.Quality.My.Resources.Resources.producto1
         Me.Pimagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         '
         'Gbdatos

@@ -178,7 +178,7 @@ Partial Class FormEmpresa
         'ToolStrip1
         '
         Me.ToolStrip1.BackColor = System.Drawing.Color.White
-        Me.ToolStrip1.BackgroundImage = Global.ElixisLive.My.Resources.Resources.fondo_azul
+        Me.ToolStrip1.BackgroundImage = Global.Quality.My.Resources.Resources.fondo_azul
         Me.ToolStrip1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ToolStrip1.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.ToolStrip1.ImageScalingSize = New System.Drawing.Size(26, 26)
@@ -198,7 +198,7 @@ Partial Class FormEmpresa
         '
         Me.btNuevo.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btNuevo.ForeColor = System.Drawing.Color.White
-        Me.btNuevo.Image = Global.ElixisLive.My.Resources.Resources.Files_New_File_icon
+        Me.btNuevo.Image = Global.Quality.My.Resources.Resources.Files_New_File_icon
         Me.btNuevo.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.btNuevo.Name = "btNuevo"
         Me.btNuevo.Size = New System.Drawing.Size(82, 30)
@@ -214,7 +214,7 @@ Partial Class FormEmpresa
         '
         Me.btBuscar.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btBuscar.ForeColor = System.Drawing.Color.White
-        Me.btBuscar.Image = Global.ElixisLive.My.Resources.Resources.Search_icon__1_
+        Me.btBuscar.Image = Global.Quality.My.Resources.Resources.Search_icon__1_
         Me.btBuscar.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.btBuscar.Name = "btBuscar"
         Me.btBuscar.Size = New System.Drawing.Size(86, 30)
@@ -230,7 +230,7 @@ Partial Class FormEmpresa
         '
         Me.btRegistrar.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btRegistrar.ForeColor = System.Drawing.Color.White
-        Me.btRegistrar.Image = Global.ElixisLive.My.Resources.Resources.Save_icon__1_
+        Me.btRegistrar.Image = Global.Quality.My.Resources.Resources.Save_icon__1_
         Me.btRegistrar.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.btRegistrar.Name = "btRegistrar"
         Me.btRegistrar.Size = New System.Drawing.Size(101, 30)
@@ -246,7 +246,7 @@ Partial Class FormEmpresa
         '
         Me.btEditar.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btEditar.ForeColor = System.Drawing.Color.White
-        Me.btEditar.Image = Global.ElixisLive.My.Resources.Resources.pencil_icon__1_
+        Me.btEditar.Image = Global.Quality.My.Resources.Resources.pencil_icon__1_
         Me.btEditar.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.btEditar.Name = "btEditar"
         Me.btEditar.Size = New System.Drawing.Size(82, 30)
@@ -262,7 +262,7 @@ Partial Class FormEmpresa
         '
         Me.btCancelar.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btCancelar.ForeColor = System.Drawing.Color.White
-        Me.btCancelar.Image = Global.ElixisLive.My.Resources.Resources.Actions_blue_arrow_undo_icon
+        Me.btCancelar.Image = Global.Quality.My.Resources.Resources.Actions_blue_arrow_undo_icon
         Me.btCancelar.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.btCancelar.Name = "btCancelar"
         Me.btCancelar.Size = New System.Drawing.Size(100, 30)
@@ -278,7 +278,7 @@ Partial Class FormEmpresa
         '
         Me.btAnular.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btAnular.ForeColor = System.Drawing.Color.White
-        Me.btAnular.Image = Global.ElixisLive.My.Resources.Resources.document_delete_icon__1_
+        Me.btAnular.Image = Global.Quality.My.Resources.Resources.document_delete_icon__1_
         Me.btAnular.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.btAnular.Name = "btAnular"
         Me.btAnular.Size = New System.Drawing.Size(87, 30)
@@ -293,7 +293,7 @@ Partial Class FormEmpresa
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.White
-        Me.Panel1.BackgroundImage = Global.ElixisLive.My.Resources.Resources.fondo_azul
+        Me.Panel1.BackgroundImage = Global.Quality.My.Resources.Resources.fondo_azul
         Me.Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Panel1.Controls.Add(Me.Pimagen)
         Me.Panel1.Controls.Add(Me.LTitulo)
@@ -305,7 +305,7 @@ Partial Class FormEmpresa
         'Pimagen
         '
         Me.Pimagen.BackColor = System.Drawing.Color.Transparent
-        Me.Pimagen.Image = Global.ElixisLive.My.Resources.Resources.glossy_3d_blue_orbs2_060_icon
+        Me.Pimagen.Image = Global.Quality.My.Resources.Resources.glossy_3d_blue_orbs2_060_icon
         Me.Pimagen.Location = New System.Drawing.Point(4, -7)
         Me.Pimagen.Name = "Pimagen"
         Me.Pimagen.Size = New System.Drawing.Size(69, 53)

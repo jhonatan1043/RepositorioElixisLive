@@ -146,7 +146,7 @@ Partial Class FormInicioSesion
         'Pimagen
         '
         Me.Pimagen.BackColor = System.Drawing.Color.Transparent
-        Me.Pimagen.Image = Global.ElixisLive.My.Resources.Resources.Quality_logo
+        Me.Pimagen.Image = Global.Quality.My.Resources.Resources.Quality_logo
         Me.Pimagen.Location = New System.Drawing.Point(6, 13)
         Me.Pimagen.Name = "Pimagen"
         Me.Pimagen.Size = New System.Drawing.Size(130, 156)
@@ -197,7 +197,7 @@ Partial Class FormInicioSesion
         '
         'Panel5
         '
-        Me.Panel5.BackgroundImage = Global.ElixisLive.My.Resources.Resources.fondo_azul
+        Me.Panel5.BackgroundImage = Global.Quality.My.Resources.Resources.fondo_azul
         Me.Panel5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Panel5.Location = New System.Drawing.Point(3, 190)
         Me.Panel5.Name = "Panel5"
@@ -206,7 +206,7 @@ Partial Class FormInicioSesion
         '
         'Panel4
         '
-        Me.Panel4.BackgroundImage = Global.ElixisLive.My.Resources.Resources.fondo_azul
+        Me.Panel4.BackgroundImage = Global.Quality.My.Resources.Resources.fondo_azul
         Me.Panel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Panel4.Location = New System.Drawing.Point(2, -3)
         Me.Panel4.Name = "Panel4"
@@ -216,7 +216,7 @@ Partial Class FormInicioSesion
         'Panel3
         '
         Me.Panel3.BackColor = System.Drawing.Color.Transparent
-        Me.Panel3.BackgroundImage = Global.ElixisLive.My.Resources.Resources.company_building_icon
+        Me.Panel3.BackgroundImage = Global.Quality.My.Resources.Resources.company_building_icon
         Me.Panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Panel3.Location = New System.Drawing.Point(370, 117)
         Me.Panel3.Name = "Panel3"
@@ -226,7 +226,7 @@ Partial Class FormInicioSesion
         'Panel2
         '
         Me.Panel2.BackColor = System.Drawing.Color.Transparent
-        Me.Panel2.BackgroundImage = Global.ElixisLive.My.Resources.Resources.Key_icon__2_
+        Me.Panel2.BackgroundImage = Global.Quality.My.Resources.Resources.Key_icon__2_
         Me.Panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Panel2.Location = New System.Drawing.Point(370, 72)
         Me.Panel2.Name = "Panel2"
@@ -236,7 +236,7 @@ Partial Class FormInicioSesion
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.Transparent
-        Me.Panel1.BackgroundImage = Global.ElixisLive.My.Resources.Resources.user_icon__1_
+        Me.Panel1.BackgroundImage = Global.Quality.My.Resources.Resources.user_icon__1_
         Me.Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Panel1.Location = New System.Drawing.Point(370, 25)
         Me.Panel1.Name = "Panel1"

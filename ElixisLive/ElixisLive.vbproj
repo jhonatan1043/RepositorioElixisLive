@@ -6,9 +6,9 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{4E93D15C-08AE-4EC1-8140-B707CC081A83}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <StartupObject>ElixisLive.My.MyApplication</StartupObject>
-    <RootNamespace>ElixisLive</RootNamespace>
-    <AssemblyName>ElixisLive</AssemblyName>
+    <StartupObject>Quality.My.MyApplication</StartupObject>
+    <RootNamespace>Quality</RootNamespace>
+    <AssemblyName>Quality</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>WindowsForms</MyType>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
@@ -28,6 +28,7 @@
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -36,8 +37,9 @@
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <OutputPath>bin\Debug\</OutputPath>
-    <DocumentationFile>ElixisLive.xml</DocumentationFile>
+    <DocumentationFile>Quality.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -46,8 +48,9 @@
     <DefineTrace>true</DefineTrace>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DocumentationFile>ElixisLive.xml</DocumentationFile>
+    <DocumentationFile>Quality.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
     <OptionExplicit>On</OptionExplicit>
@@ -60,6 +63,9 @@
   </PropertyGroup>
   <PropertyGroup>
     <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Quality_logo.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="CnxElixisLiveBD, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -349,6 +355,9 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="CHFinalIcono.ico" />
+    <Content Include="Quality_ico.ico" />
+    <Content Include="Quality_logo.ico" />
     <Content Include="ReferenciaDLL\ClaseExcel.dll" />
     <Content Include="ReferenciaDLL\CnxElixisLiveBD.dll" />
     <Content Include="ReferenciaDLL\MySql.Data.DLL" />

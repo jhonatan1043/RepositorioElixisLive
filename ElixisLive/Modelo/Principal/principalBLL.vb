@@ -89,7 +89,7 @@ Public Class principalBLL
                 traerAlFrente(elemMenu)
             Else
 
-                Dim nombreTipo = "ElixisLive." & elemMenu.nombre
+                Dim nombreTipo = "Quality." & elemMenu.nombre
 
                 Dim vTipo As Type = Assembly.GetExecutingAssembly.GetType(nombreTipo)
                 If vTipo IsNot Nothing Then
