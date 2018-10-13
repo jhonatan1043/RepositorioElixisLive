@@ -238,9 +238,9 @@ Partial Class FormEmpleado
         'GroupBox3
         '
         Me.GroupBox3.Controls.Add(Me.pictImagen)
-        Me.GroupBox3.Location = New System.Drawing.Point(772, 4)
+        Me.GroupBox3.Location = New System.Drawing.Point(786, 4)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(120, 105)
+        Me.GroupBox3.Size = New System.Drawing.Size(106, 105)
         Me.GroupBox3.TabIndex = 56
         Me.GroupBox3.TabStop = False
         '
@@ -252,7 +252,7 @@ Partial Class FormEmpleado
         Me.pictImagen.Image = Global.Quality.My.Resources.Resources.persona
         Me.pictImagen.Location = New System.Drawing.Point(3, 16)
         Me.pictImagen.Name = "pictImagen"
-        Me.pictImagen.Size = New System.Drawing.Size(114, 86)
+        Me.pictImagen.Size = New System.Drawing.Size(100, 86)
         Me.pictImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
         Me.pictImagen.TabIndex = 0
         Me.pictImagen.TabStop = False
@@ -469,7 +469,7 @@ Partial Class FormEmpleado
         Me.ToolStrip1.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.ToolStrip1.ImageScalingSize = New System.Drawing.Size(26, 26)
         Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripSeparator1, Me.btNuevo, Me.ToolStripSeparator7, Me.btBuscar, Me.ToolStripSeparator2, Me.btRegistrar, Me.ToolStripSeparator4, Me.btEditar, Me.ToolStripSeparator5, Me.btCancelar, Me.ToolStripSeparator3, Me.btAnular, Me.ToolStripSeparator6})
-        Me.ToolStrip1.Location = New System.Drawing.Point(0, 491)
+        Me.ToolStrip1.Location = New System.Drawing.Point(0, 490)
         Me.ToolStrip1.Name = "ToolStrip1"
         Me.ToolStrip1.Size = New System.Drawing.Size(905, 33)
         Me.ToolStrip1.TabIndex = 15
@@ -582,7 +582,7 @@ Partial Class FormEmpleado
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(905, 524)
+        Me.ClientSize = New System.Drawing.Size(905, 523)
         Me.Controls.Add(Me.ToolStrip1)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Panel1)

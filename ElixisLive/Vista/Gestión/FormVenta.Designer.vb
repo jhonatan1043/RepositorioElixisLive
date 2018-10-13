@@ -22,7 +22,7 @@ Partial Class FormVenta
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.GroupBox7 = New System.Windows.Forms.GroupBox()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -33,14 +33,19 @@ Partial Class FormVenta
         Me.Label19 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.dgvParametro = New System.Windows.Forms.DataGridView()
+        Me.dgQuitar = New System.Windows.Forms.DataGridViewImageColumn()
         Me.TextBox4 = New System.Windows.Forms.TextBox()
+        Me.Label5 = New System.Windows.Forms.Label()
         Me.TextBox3 = New System.Windows.Forms.TextBox()
+        Me.Label4 = New System.Windows.Forms.Label()
         Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.TextBox5 = New System.Windows.Forms.TextBox()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.DataGridViewImageColumn1 = New System.Windows.Forms.DataGridViewImageColumn()
         Me.Panel1 = New System.Windows.Forms.Panel()
@@ -62,19 +67,14 @@ Partial Class FormVenta
         Me.ToolStripSeparator6 = New System.Windows.Forms.ToolStripSeparator()
         Me.ToolStripButton1 = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripSeparator8 = New System.Windows.Forms.ToolStripSeparator()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.dgQuitar = New System.Windows.Forms.DataGridViewImageColumn()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
         Me.GroupBox7.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgvParametro, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ToolStrip1.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GroupBox7
@@ -204,15 +204,25 @@ Partial Class FormVenta
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Información de factura"
         '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = Global.Quality.My.Resources.Resources.Quality_logo
+        Me.PictureBox1.Location = New System.Drawing.Point(706, 8)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(142, 179)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 60031
+        Me.PictureBox1.TabStop = False
+        '
         'dgvParametro
         '
         Me.dgvParametro.AllowUserToAddRows = False
         Me.dgvParametro.AllowUserToDeleteRows = False
         Me.dgvParametro.AllowUserToResizeColumns = False
         Me.dgvParametro.AllowUserToResizeRows = False
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black
-        Me.dgvParametro.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
+        Me.dgvParametro.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle2
         Me.dgvParametro.BackgroundColor = System.Drawing.Color.White
         Me.dgvParametro.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvParametro.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.dgQuitar})
@@ -223,6 +233,14 @@ Partial Class FormVenta
         Me.dgvParametro.Size = New System.Drawing.Size(670, 305)
         Me.dgvParametro.TabIndex = 60030
         '
+        'dgQuitar
+        '
+        Me.dgQuitar.HeaderText = "Quitar"
+        Me.dgQuitar.Image = Global.Quality.My.Resources.Resources.RecycleBin_Full_icon__2_
+        Me.dgQuitar.Name = "dgQuitar"
+        Me.dgQuitar.ReadOnly = True
+        Me.dgQuitar.Width = 50
+        '
         'TextBox4
         '
         Me.TextBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
@@ -232,6 +250,20 @@ Partial Class FormVenta
         Me.TextBox4.Size = New System.Drawing.Size(155, 29)
         Me.TextBox4.TabIndex = 25
         '
+        'Label5
+        '
+        Me.Label5.BackColor = System.Drawing.Color.Transparent
+        Me.Label5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Label5.Font = New System.Drawing.Font("Times New Roman", 14.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.ForeColor = System.Drawing.Color.White
+        Me.Label5.Image = Global.Quality.My.Resources.Resources.fondo_azul
+        Me.Label5.Location = New System.Drawing.Point(696, 205)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(155, 46)
+        Me.Label5.TabIndex = 24
+        Me.Label5.Text = "Artículos"
+        Me.Label5.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        '
         'TextBox3
         '
         Me.TextBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
@@ -240,6 +272,20 @@ Partial Class FormVenta
         Me.TextBox3.Name = "TextBox3"
         Me.TextBox3.Size = New System.Drawing.Size(155, 29)
         Me.TextBox3.TabIndex = 23
+        '
+        'Label4
+        '
+        Me.Label4.BackColor = System.Drawing.Color.Transparent
+        Me.Label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Label4.Font = New System.Drawing.Font("Times New Roman", 14.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.ForeColor = System.Drawing.Color.White
+        Me.Label4.Image = Global.Quality.My.Resources.Resources.fondo_azul
+        Me.Label4.Location = New System.Drawing.Point(696, 265)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(155, 46)
+        Me.Label4.TabIndex = 22
+        Me.Label4.Text = "Servicios"
+        Me.Label4.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
         'DateTimePicker1
         '
@@ -291,6 +337,20 @@ Partial Class FormVenta
         Me.Label3.TabIndex = 12
         Me.Label3.Text = "Factura N°:"
         '
+        'Label6
+        '
+        Me.Label6.BackColor = System.Drawing.Color.Transparent
+        Me.Label6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Label6.Font = New System.Drawing.Font("Times New Roman", 14.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.ForeColor = System.Drawing.Color.White
+        Me.Label6.Image = Global.Quality.My.Resources.Resources.fondo_azul
+        Me.Label6.Location = New System.Drawing.Point(696, 324)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(155, 46)
+        Me.Label6.TabIndex = 18
+        Me.Label6.Text = "Total"
+        Me.Label6.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        '
         'GroupBox3
         '
         Me.GroupBox3.ForeColor = System.Drawing.Color.DarkBlue
@@ -308,7 +368,6 @@ Partial Class FormVenta
         Me.DataGridViewImageColumn1.Image = Global.Quality.My.Resources.Resources.RecycleBin_Full_icon__2_
         Me.DataGridViewImageColumn1.Name = "DataGridViewImageColumn1"
         Me.DataGridViewImageColumn1.ReadOnly = True
-        Me.DataGridViewImageColumn1.Width = 50
         '
         'Panel1
         '
@@ -476,66 +535,6 @@ Partial Class FormVenta
         Me.ToolStripSeparator8.Name = "ToolStripSeparator8"
         Me.ToolStripSeparator8.Size = New System.Drawing.Size(6, 33)
         '
-        'PictureBox1
-        '
-        Me.PictureBox1.Image = Global.Quality.My.Resources.Resources.Quality_logo
-        Me.PictureBox1.Location = New System.Drawing.Point(706, 8)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(142, 179)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox1.TabIndex = 60031
-        Me.PictureBox1.TabStop = False
-        '
-        'dgQuitar
-        '
-        Me.dgQuitar.HeaderText = "Quitar"
-        Me.dgQuitar.Image = Global.Quality.My.Resources.Resources.RecycleBin_Full_icon__2_
-        Me.dgQuitar.Name = "dgQuitar"
-        Me.dgQuitar.ReadOnly = True
-        Me.dgQuitar.Width = 50
-        '
-        'Label5
-        '
-        Me.Label5.BackColor = System.Drawing.Color.Transparent
-        Me.Label5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Label5.Font = New System.Drawing.Font("Times New Roman", 14.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.ForeColor = System.Drawing.Color.White
-        Me.Label5.Image = Global.Quality.My.Resources.Resources.fondo_azul
-        Me.Label5.Location = New System.Drawing.Point(696, 205)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(155, 46)
-        Me.Label5.TabIndex = 24
-        Me.Label5.Text = "Artículos"
-        Me.Label5.TextAlign = System.Drawing.ContentAlignment.TopCenter
-        '
-        'Label4
-        '
-        Me.Label4.BackColor = System.Drawing.Color.Transparent
-        Me.Label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Label4.Font = New System.Drawing.Font("Times New Roman", 14.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.ForeColor = System.Drawing.Color.White
-        Me.Label4.Image = Global.Quality.My.Resources.Resources.fondo_azul
-        Me.Label4.Location = New System.Drawing.Point(696, 265)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(155, 46)
-        Me.Label4.TabIndex = 22
-        Me.Label4.Text = "Servicios"
-        Me.Label4.TextAlign = System.Drawing.ContentAlignment.TopCenter
-        '
-        'Label6
-        '
-        Me.Label6.BackColor = System.Drawing.Color.Transparent
-        Me.Label6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Label6.Font = New System.Drawing.Font("Times New Roman", 14.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.ForeColor = System.Drawing.Color.White
-        Me.Label6.Image = Global.Quality.My.Resources.Resources.fondo_azul
-        Me.Label6.Location = New System.Drawing.Point(696, 324)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(155, 46)
-        Me.Label6.TabIndex = 18
-        Me.Label6.Text = "Total"
-        Me.Label6.TextAlign = System.Drawing.ContentAlignment.TopCenter
-        '
         'FormVenta
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -555,12 +554,12 @@ Partial Class FormVenta
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dgvParametro, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ToolStrip1.ResumeLayout(False)
         Me.ToolStrip1.PerformLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
