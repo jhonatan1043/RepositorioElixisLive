@@ -68,8 +68,8 @@
         If EstiloMensajes.mostrarMensajePregunta(MensajeSistema.CANCELAR) = Constantes.SI Then
             Generales.deshabilitarBotones(ToolStrip1)
             Generales.deshabilitarControles(Me)
-            Generales.limpiarControles(Me)
             btNuevo.Enabled = True
+            btBuscar.Enabled = True
         End If
     End Sub
 
@@ -80,6 +80,7 @@
                     Generales.limpiarControles(Me)
                     Generales.deshabilitarBotones(ToolStrip1)
                     btNuevo.Enabled = True
+                    btBuscar.Enabled = True
                     EstiloMensajes.mostrarMensajeAnulado(MensajeSistema.REGISTRO_ANULADO)
                 End If
             Catch ex As Exception
@@ -88,4 +89,32 @@
         End If
     End Sub
 
+    Private Sub btBuscar_Click(sender As Object, e As EventArgs) Handles btBuscar.Click
+        Dim params As New List(Of String)
+        params.Add(String.Empty)
+        Generales.buscarElemento(objPersona.sqlConsulta,
+                                   params,
+                                   AddressOf cargarInfomacion,
+                                   "Busqueda de Empresa",
+                                   True, True)
+    End Sub
+    Private Sub cargarInfomacion(pcodigo As Integer)
+        Dim params As New List(Of String)
+        Dim dfila As DataRow
+        objPersona.codigo = pcodigo
+        params.Add(pcodigo)
+        dfila = Generales.cargarItem(objPersona.sqlCargar, params)
+        Try
+            If Not IsNothing(dfila) Then
+                TextIdentificacion.Text = dfila.Item("Nit")
+                TextNombre.Text = dfila.Item("Nombre")
+                params.Add(ElementoMenu.codigo)
+            End If
+            Generales.habilitarBotones(ToolStrip1)
+            btCancelar.Enabled = False
+            btRegistrar.Enabled = False
+        Catch ex As Exception
+            EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
+        End Try
+    End Sub
 End Class

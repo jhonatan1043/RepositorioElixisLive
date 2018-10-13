@@ -102,7 +102,7 @@ Partial Class FormPersona
         Me.LTitulo.ForeColor = System.Drawing.Color.White
         Me.LTitulo.Location = New System.Drawing.Point(0, 1)
         Me.LTitulo.Name = "LTitulo"
-        Me.LTitulo.Size = New System.Drawing.Size(664, 44)
+        Me.LTitulo.Size = New System.Drawing.Size(654, 44)
         Me.LTitulo.TabIndex = 1
         Me.LTitulo.Text = "Persona"
         Me.LTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -242,6 +242,7 @@ Partial Class FormPersona
         Me.GroupBox5.Controls.Add(Me.TextCelular)
         Me.GroupBox5.Controls.Add(Me.Label9)
         Me.GroupBox5.Controls.Add(Me.Label10)
+        Me.GroupBox5.Font = New System.Drawing.Font("Times New Roman", 8.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox5.ForeColor = System.Drawing.Color.DarkBlue
         Me.GroupBox5.Location = New System.Drawing.Point(7, 177)
         Me.GroupBox5.Name = "GroupBox5"
@@ -321,6 +322,7 @@ Partial Class FormPersona
         Me.GroupBox6.Controls.Add(Me.Label11)
         Me.GroupBox6.Controls.Add(Me.Label12)
         Me.GroupBox6.Controls.Add(Me.Label13)
+        Me.GroupBox6.Font = New System.Drawing.Font("Times New Roman", 8.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox6.ForeColor = System.Drawing.Color.DarkBlue
         Me.GroupBox6.Location = New System.Drawing.Point(7, 90)
         Me.GroupBox6.Name = "GroupBox6"
@@ -403,6 +405,7 @@ Partial Class FormPersona
         Me.GroupBox7.Controls.Add(Me.TextIdentificacion)
         Me.GroupBox7.Controls.Add(Me.Label19)
         Me.GroupBox7.Controls.Add(Me.Label20)
+        Me.GroupBox7.Font = New System.Drawing.Font("Times New Roman", 8.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox7.ForeColor = System.Drawing.Color.DarkBlue
         Me.GroupBox7.Location = New System.Drawing.Point(7, 6)
         Me.GroupBox7.Name = "GroupBox7"
@@ -422,6 +425,7 @@ Partial Class FormPersona
         '
         'TextDV
         '
+        Me.TextDV.BackColor = System.Drawing.SystemColors.ControlLightLight
         Me.TextDV.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TextDV.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextDV.Location = New System.Drawing.Point(604, 17)

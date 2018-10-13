@@ -39,15 +39,15 @@ Partial Class FormInicioSesion
         Me.CbEmpresa = New System.Windows.Forms.ComboBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
-        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.Pimagen = New System.Windows.Forms.PictureBox()
         Me.OK = New System.Windows.Forms.Button()
         Me.Cancel = New System.Windows.Forms.Button()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Pimagen = New System.Windows.Forms.PictureBox()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -143,15 +143,16 @@ Partial Class FormInicioSesion
         Me.GroupBox3.TabIndex = 12
         Me.GroupBox3.TabStop = False
         '
-        'GroupBox2
+        'Pimagen
         '
-        Me.GroupBox2.BackColor = System.Drawing.Color.Transparent
-        Me.GroupBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.GroupBox2.Location = New System.Drawing.Point(154, 7)
-        Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(234, 175)
-        Me.GroupBox2.TabIndex = 6
-        Me.GroupBox2.TabStop = False
+        Me.Pimagen.BackColor = System.Drawing.Color.Transparent
+        Me.Pimagen.Image = Global.ElixisLive.My.Resources.Resources.Quality_logo
+        Me.Pimagen.Location = New System.Drawing.Point(6, 13)
+        Me.Pimagen.Name = "Pimagen"
+        Me.Pimagen.Size = New System.Drawing.Size(130, 156)
+        Me.Pimagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.Pimagen.TabIndex = 0
+        Me.Pimagen.TabStop = False
         '
         'OK
         '
@@ -183,6 +184,16 @@ Partial Class FormInicioSesion
         Me.Cancel.Text = "&Cancelar"
         Me.Cancel.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.Cancel.UseVisualStyleBackColor = False
+        '
+        'GroupBox2
+        '
+        Me.GroupBox2.BackColor = System.Drawing.Color.Transparent
+        Me.GroupBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.GroupBox2.Location = New System.Drawing.Point(154, 7)
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.Size = New System.Drawing.Size(234, 175)
+        Me.GroupBox2.TabIndex = 6
+        Me.GroupBox2.TabStop = False
         '
         'Panel5
         '
@@ -231,17 +242,6 @@ Partial Class FormInicioSesion
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(15, 20)
         Me.Panel1.TabIndex = 8
-        '
-        'Pimagen
-        '
-        Me.Pimagen.BackColor = System.Drawing.Color.Transparent
-        Me.Pimagen.Image = Global.ElixisLive.My.Resources.Resources.Logo_Q
-        Me.Pimagen.Location = New System.Drawing.Point(6, 13)
-        Me.Pimagen.Name = "Pimagen"
-        Me.Pimagen.Size = New System.Drawing.Size(130, 156)
-        Me.Pimagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
-        Me.Pimagen.TabIndex = 0
-        Me.Pimagen.TabStop = False
         '
         'FormInicioSesion
         '

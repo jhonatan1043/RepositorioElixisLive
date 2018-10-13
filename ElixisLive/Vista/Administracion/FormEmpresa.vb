@@ -108,12 +108,21 @@
 
     Private Sub btBuscar_Click(sender As Object, e As EventArgs) Handles btBuscar.Click
         Dim params As New List(Of String)
-        params.Add("")
+        params.Add(String.Empty)
         Generales.buscarElemento(objEmpresa.sqlConsulta,
                                    params,
                                    AddressOf cargarInfomacion,
                                    "Busqueda de Empresa",
-                                   False, True)
+                                   True, True)
+    End Sub
+    Private Sub txtId_TextChanged(sender As Object, e As EventArgs) Handles txtId.TextChanged
+        Dim dV As New DigitoVerificacion
+        Dim numero As Integer
+        numero = dV.calculaNit(txtId.Text)
+        TextDV.Text = CType(numero, String)
+        If txtId.Text = Nothing Then
+            TextDV.Text = Nothing
+        End If
     End Sub
     Private Sub cargarInfomacion(pcodigo As Integer)
         Dim params As New List(Of String)

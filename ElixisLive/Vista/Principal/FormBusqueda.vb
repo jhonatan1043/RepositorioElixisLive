@@ -40,13 +40,17 @@
         For I = 0 To dgvbusqueda.ColumnCount - 1
             dgvbusqueda.Columns(I).SortMode = DataGridViewColumnSortMode.Automatic
         Next
+        establecerPosicionBusqueda()
+        Generales.diseñoDGV(dgvBusqueda)
         If isOcultaCol Then
-            dgvbusqueda.Columns(0).Visible = False
+            dgvBusqueda.Columns(0).Visible = False
         End If
+    End Sub
+    Private Sub establecerPosicionBusqueda()
         Dim x As Integer
         Dim y As Integer
         x = Screen.PrimaryScreen.WorkingArea.Width - 880
-        y = Screen.PrimaryScreen.WorkingArea.Height - 600
+        y = Screen.PrimaryScreen.WorkingArea.Height - 590
         Me.Location = New Point(x, y)
     End Sub
     Private Sub Textbusqueda_TextChanged(sender As Object, e As EventArgs) Handles Textbusqueda.TextChanged

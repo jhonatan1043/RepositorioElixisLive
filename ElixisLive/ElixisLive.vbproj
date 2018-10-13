@@ -143,6 +143,7 @@
     <Compile Include="Modelo\Principal\principalBLL.vb" />
     <Compile Include="Utilidad\Busqueda.vb" />
     <Compile Include="Utilidad\Constantes.vb" />
+    <Compile Include="Utilidad\DigitoVerificacion.vb" />
     <Compile Include="Utilidad\EstiloMensajes.vb" />
     <Compile Include="Utilidad\Funciones.vb" />
     <Compile Include="Utilidad\Generales.vb" />
@@ -186,6 +187,18 @@
       <DependentUpon>FormServicio.vb</DependentUpon>
     </Compile>
     <Compile Include="Vista\Configuracion\FormServicio.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Gestión\FormCompra.Designer.vb">
+      <DependentUpon>FormCompra.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Gestión\FormCompra.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Gestión\FormVenta.Designer.vb">
+      <DependentUpon>FormVenta.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Gestión\FormVenta.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Vista\Inventario\FormCliente.Designer.vb">
@@ -282,6 +295,12 @@
     <EmbeddedResource Include="Vista\Configuracion\FormServicio.resx">
       <DependentUpon>FormServicio.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Gestión\FormCompra.resx">
+      <DependentUpon>FormCompra.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Gestión\FormVenta.resx">
+      <DependentUpon>FormVenta.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vista\Inventario\FormCliente.resx">
       <DependentUpon>FormCliente.vb</DependentUpon>
     </EmbeddedResource>
@@ -334,6 +353,12 @@
     <Content Include="ReferenciaDLL\CnxElixisLiveBD.dll" />
     <Content Include="ReferenciaDLL\MySql.Data.DLL" />
     <Content Include="ReferenciaDLL\NotifySenderControl.dll" />
+    <None Include="Resources\Quality_logo.jpg" />
+    <None Include="Resources\orlando logo copia.jpg" />
+    <None Include="Resources\print-icon.png" />
+    <None Include="Resources\print-icon %281%29.png" />
+    <None Include="Resources\papelera.png" />
+    <None Include="Resources\RecycleBin-Full-icon %282%29.png" />
     <None Include="Resources\Logo Q.png" />
     <None Include="Resources\QUALITY %28Version2%29.jpg" />
     <None Include="Resources\Quality.jpg" />

@@ -55,7 +55,7 @@
                                    params,
                                    AddressOf cargarInfomacion,
                                    "Busqueda de producto",
-                                   False, True)
+                                   True, True)
     End Sub
     Private Sub btNuevo_Click(sender As Object, e As EventArgs) Handles btNuevo.Click
         Generales.deshabilitarBotones(ToolStrip1)

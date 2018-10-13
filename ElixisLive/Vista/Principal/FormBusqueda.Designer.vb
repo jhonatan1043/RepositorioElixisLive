@@ -58,18 +58,18 @@ Partial Class FormBusqueda
         Me.Panel2.BackColor = System.Drawing.Color.Transparent
         Me.Panel2.BackgroundImage = Global.ElixisLive.My.Resources.Resources._error
         Me.Panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Panel2.Location = New System.Drawing.Point(563, 5)
+        Me.Panel2.Location = New System.Drawing.Point(558, 1)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(32, 31)
+        Me.Panel2.Size = New System.Drawing.Size(43, 39)
         Me.Panel2.TabIndex = 1
         '
         'Pimagen
         '
         Me.Pimagen.BackColor = System.Drawing.Color.Transparent
         Me.Pimagen.Image = Global.ElixisLive.My.Resources.Resources.glossy_3d_blue_orbs2_096_icon
-        Me.Pimagen.Location = New System.Drawing.Point(4, 0)
+        Me.Pimagen.Location = New System.Drawing.Point(4, -8)
         Me.Pimagen.Name = "Pimagen"
-        Me.Pimagen.Size = New System.Drawing.Size(60, 46)
+        Me.Pimagen.Size = New System.Drawing.Size(60, 58)
         Me.Pimagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.Pimagen.TabIndex = 1
         Me.Pimagen.TabStop = False
@@ -143,11 +143,11 @@ Partial Class FormBusqueda
         '
         'Textbusqueda
         '
-        Me.Textbusqueda.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Textbusqueda.Location = New System.Drawing.Point(6, 16)
+        Me.Textbusqueda.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Textbusqueda.Location = New System.Drawing.Point(6, 14)
         Me.Textbusqueda.MaxLength = 100
         Me.Textbusqueda.Name = "Textbusqueda"
-        Me.Textbusqueda.Size = New System.Drawing.Size(567, 22)
+        Me.Textbusqueda.Size = New System.Drawing.Size(567, 25)
         Me.Textbusqueda.TabIndex = 2
         '
         'FormBusqueda
