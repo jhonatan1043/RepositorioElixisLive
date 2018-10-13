@@ -65,7 +65,7 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>Quality_logo.ico</ApplicationIcon>
+    <ApplicationIcon>Qual.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
@@ -360,7 +360,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="CHFinalIcono.ico" />
-    <Content Include="Quality_ico.ico" />
+    <Content Include="Qual.ico" />
     <Content Include="Quality_logo.ico" />
     <Content Include="ReferenciaDLL\ClaseExcel.dll" />
     <Content Include="ReferenciaDLL\CnxElixisLiveBD.dll" />
