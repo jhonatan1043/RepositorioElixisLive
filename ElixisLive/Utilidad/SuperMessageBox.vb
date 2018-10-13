@@ -66,7 +66,7 @@
         Me.label2.ForeColor = System.Drawing.Color.White
         Me.label2.Location = New System.Drawing.Point(-1, -1)
         Me.label2.Name = "label2"
-        Me.label2.Size = New System.Drawing.Size(338, 23)
+        Me.label2.Size = New System.Drawing.Size(333, 23)
         Me.label2.TabIndex = 0
         Me.label2.Text = "Quality"
         Me.label2.TextAlign = System.Drawing.ContentAlignment.BottomCenter
@@ -81,7 +81,7 @@
         Me.panel2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.panel2.Location = New System.Drawing.Point(0, 0)
         Me.panel2.Name = "panel2"
-        Me.panel2.Size = New System.Drawing.Size(350, 150)
+        Me.panel2.Size = New System.Drawing.Size(333, 150)
         Me.panel2.TabIndex = 1
         '
         'lblMensaje
@@ -89,9 +89,9 @@
         Me.lblMensaje.BackColor = System.Drawing.Color.Transparent
         Me.lblMensaje.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblMensaje.ForeColor = System.Drawing.Color.White
-        Me.lblMensaje.Location = New System.Drawing.Point(100, 38)
+        Me.lblMensaje.Location = New System.Drawing.Point(85, 38)
         Me.lblMensaje.Name = "lblMensaje"
-        Me.lblMensaje.Size = New System.Drawing.Size(233, 59)
+        Me.lblMensaje.Size = New System.Drawing.Size(233, 68)
         Me.lblMensaje.TabIndex = 0
         Me.lblMensaje.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
@@ -100,14 +100,14 @@
         Me.logo.BackColor = System.Drawing.Color.Transparent
         Me.logo.Location = New System.Drawing.Point(2, 36)
         Me.logo.Name = "logo"
-        Me.logo.Size = New System.Drawing.Size(92, 83)
+        Me.logo.Size = New System.Drawing.Size(78, 70)
         Me.logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.logo.TabIndex = 0
         Me.logo.TabStop = False
         '
         'SuperMessageBox
         '
-        Me.ClientSize = New System.Drawing.Size(350, 150)
+        Me.ClientSize = New System.Drawing.Size(333, 150)
         Me.ControlBox = False
         Me.Controls.Add(Me.panel1)
         Me.Controls.Add(Me.panel2)
@@ -173,6 +173,7 @@
         cmdBoton.Text = Cadena
         cmdBoton.Height = 22 : cmdBoton.Width = mintAncho
         cmdBoton.Font = New Font("Times New Roman", 11, FontStyle.Italic)
+        cmdBoton.ForeColor = Color.DarkBlue
         alstBotones.Add(cmdBoton)
     End Sub
 
@@ -208,7 +209,7 @@
 
         Dim cmdBoton As Button
         Dim intContador As Integer = alstBotones.Count
-        Dim intLargo As Integer = intContador * (mintAncho + 3)
+        Dim intLargo As Integer = intContador * (mintAncho + 2)
         Dim intI As Integer
 
         'seteamos el largo del formulario + 50 unidades
@@ -226,11 +227,11 @@
 
             'situamos la posicion del boton en base a su orden
             If intContador = 1 Then
-                cmdBoton.Location = New Point((mintAncho + 3) * intI + 260, 115)
+                cmdBoton.Location = New Point((mintAncho + 2) * intI + 260, 115)
             ElseIf intContador = 2 Then
-                cmdBoton.Location = New Point((mintAncho + 3) * intI + 160, 115)
+                cmdBoton.Location = New Point((mintAncho + 2) * intI + 160, 115)
             ElseIf intContador = 3 Then
-                cmdBoton.Location = New Point((mintAncho + 3) * intI + 52, 115)
+                cmdBoton.Location = New Point((mintAncho + 2) * intI + 52, 115)
             End If
             'agregamos el controlador del evento click al boton
             AddHandler cmdBoton.Click, AddressOf EventoClick
