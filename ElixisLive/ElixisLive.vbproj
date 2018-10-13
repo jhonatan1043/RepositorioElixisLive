@@ -109,6 +109,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationEvents.vb" />
+    <Compile Include="Controlador\Administracion\EmpleadoDAL.vb" />
     <Compile Include="Controlador\Administracion\EmpresaDAL.vb" />
     <Compile Include="Controlador\Administracion\PersonaDAL.vb" />
     <Compile Include="Controlador\Configuracion\ConfigDAL.vb" />
@@ -142,6 +143,7 @@
     <Compile Include="FormBase\FormBaseProductivo.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Modelo\Administracion\EmpleadoBLL.vb" />
     <Compile Include="Modelo\Administracion\EmpresaBLL.vb" />
     <Compile Include="Modelo\Administracion\PersonaBLL.vb" />
     <Compile Include="Modelo\Configuracion\ConfigBLL.vb" />
