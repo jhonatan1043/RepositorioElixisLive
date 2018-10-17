@@ -164,6 +164,7 @@
     <Compile Include="Utilidad\SuperMessageBox.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Utilidad\ValidarDigitacion.vb" />
     <Compile Include="Vista\Administracion\FormEmpleado.Designer.vb">
       <DependentUpon>FormEmpleado.vb</DependentUpon>
     </Compile>

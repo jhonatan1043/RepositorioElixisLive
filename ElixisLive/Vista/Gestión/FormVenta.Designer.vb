@@ -22,9 +22,9 @@ Partial Class FormVenta
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.GroupBox7 = New System.Windows.Forms.GroupBox()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.TextTelefono = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.TextDV = New System.Windows.Forms.TextBox()
         Me.TextNombre = New System.Windows.Forms.TextBox()
@@ -80,7 +80,7 @@ Partial Class FormVenta
         'GroupBox7
         '
         Me.GroupBox7.BackColor = System.Drawing.Color.Transparent
-        Me.GroupBox7.Controls.Add(Me.TextBox1)
+        Me.GroupBox7.Controls.Add(Me.TextTelefono)
         Me.GroupBox7.Controls.Add(Me.Label2)
         Me.GroupBox7.Controls.Add(Me.TextDV)
         Me.GroupBox7.Controls.Add(Me.TextNombre)
@@ -94,16 +94,16 @@ Partial Class FormVenta
         Me.GroupBox7.Size = New System.Drawing.Size(873, 52)
         Me.GroupBox7.TabIndex = 10
         Me.GroupBox7.TabStop = False
-        Me.GroupBox7.Text = "Información"
+        Me.GroupBox7.Text = "Datos del Clíente"
         '
-        'TextBox1
+        'TextTelefono
         '
-        Me.TextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextBox1.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox1.Location = New System.Drawing.Point(750, 17)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(116, 25)
-        Me.TextBox1.TabIndex = 11
+        Me.TextTelefono.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TextTelefono.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextTelefono.Location = New System.Drawing.Point(750, 17)
+        Me.TextTelefono.Name = "TextTelefono"
+        Me.TextTelefono.Size = New System.Drawing.Size(116, 25)
+        Me.TextTelefono.TabIndex = 2
         '
         'Label2
         '
@@ -124,8 +124,9 @@ Partial Class FormVenta
         Me.TextDV.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextDV.Location = New System.Drawing.Point(235, 17)
         Me.TextDV.Name = "TextDV"
+        Me.TextDV.ReadOnly = True
         Me.TextDV.Size = New System.Drawing.Size(29, 25)
-        Me.TextDV.TabIndex = 8
+        Me.TextDV.TabIndex = 9999
         Me.TextDV.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'TextNombre
@@ -135,7 +136,7 @@ Partial Class FormVenta
         Me.TextNombre.Location = New System.Drawing.Point(337, 17)
         Me.TextNombre.Name = "TextNombre"
         Me.TextNombre.Size = New System.Drawing.Size(339, 25)
-        Me.TextNombre.TabIndex = 9
+        Me.TextNombre.TabIndex = 1
         '
         'Label17
         '
@@ -156,7 +157,7 @@ Partial Class FormVenta
         Me.TextIdentificacion.Location = New System.Drawing.Point(107, 17)
         Me.TextIdentificacion.Name = "TextIdentificacion"
         Me.TextIdentificacion.Size = New System.Drawing.Size(126, 25)
-        Me.TextIdentificacion.TabIndex = 5
+        Me.TextIdentificacion.TabIndex = 0
         '
         'Label19
         '
@@ -202,7 +203,7 @@ Partial Class FormVenta
         Me.GroupBox2.Size = New System.Drawing.Size(873, 384)
         Me.GroupBox2.TabIndex = 11
         Me.GroupBox2.TabStop = False
-        Me.GroupBox2.Text = "Información de factura"
+        Me.GroupBox2.Text = "Información de Factura"
         '
         'PictureBox1
         '
@@ -220,18 +221,18 @@ Partial Class FormVenta
         Me.dgvParametro.AllowUserToDeleteRows = False
         Me.dgvParametro.AllowUserToResizeColumns = False
         Me.dgvParametro.AllowUserToResizeRows = False
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
-        Me.dgvParametro.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black
+        Me.dgvParametro.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.dgvParametro.BackgroundColor = System.Drawing.Color.White
         Me.dgvParametro.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvParametro.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.dgQuitar})
-        Me.dgvParametro.Location = New System.Drawing.Point(6, 73)
+        Me.dgvParametro.Location = New System.Drawing.Point(6, 52)
         Me.dgvParametro.MultiSelect = False
         Me.dgvParametro.Name = "dgvParametro"
         Me.dgvParametro.ReadOnly = True
-        Me.dgvParametro.Size = New System.Drawing.Size(670, 305)
-        Me.dgvParametro.TabIndex = 60030
+        Me.dgvParametro.Size = New System.Drawing.Size(670, 326)
+        Me.dgvParametro.TabIndex = 3
         '
         'dgQuitar
         '
@@ -248,7 +249,7 @@ Partial Class FormVenta
         Me.TextBox4.Location = New System.Drawing.Point(696, 223)
         Me.TextBox4.Name = "TextBox4"
         Me.TextBox4.Size = New System.Drawing.Size(155, 29)
-        Me.TextBox4.TabIndex = 25
+        Me.TextBox4.TabIndex = 999
         '
         'Label5
         '
@@ -271,7 +272,7 @@ Partial Class FormVenta
         Me.TextBox3.Location = New System.Drawing.Point(696, 283)
         Me.TextBox3.Name = "TextBox3"
         Me.TextBox3.Size = New System.Drawing.Size(155, 29)
-        Me.TextBox3.TabIndex = 23
+        Me.TextBox3.TabIndex = 9999
         '
         'Label4
         '
@@ -290,10 +291,10 @@ Partial Class FormVenta
         'DateTimePicker1
         '
         Me.DateTimePicker1.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DateTimePicker1.Location = New System.Drawing.Point(334, 26)
+        Me.DateTimePicker1.Location = New System.Drawing.Point(334, 17)
         Me.DateTimePicker1.Name = "DateTimePicker1"
         Me.DateTimePicker1.Size = New System.Drawing.Size(339, 25)
-        Me.DateTimePicker1.TabIndex = 21
+        Me.DateTimePicker1.TabIndex = 9999
         '
         'Label7
         '
@@ -301,7 +302,7 @@ Partial Class FormVenta
         Me.Label7.BackColor = System.Drawing.Color.Transparent
         Me.Label7.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.ForeColor = System.Drawing.Color.Black
-        Me.Label7.Location = New System.Drawing.Point(268, 28)
+        Me.Label7.Location = New System.Drawing.Point(268, 19)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(54, 19)
         Me.Label7.TabIndex = 20
@@ -314,16 +315,16 @@ Partial Class FormVenta
         Me.TextBox5.Location = New System.Drawing.Point(696, 342)
         Me.TextBox5.Name = "TextBox5"
         Me.TextBox5.Size = New System.Drawing.Size(155, 29)
-        Me.TextBox5.TabIndex = 19
+        Me.TextBox5.TabIndex = 9999
         '
         'TextBox2
         '
         Me.TextBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TextBox2.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox2.Location = New System.Drawing.Point(107, 30)
+        Me.TextBox2.Location = New System.Drawing.Point(107, 21)
         Me.TextBox2.Name = "TextBox2"
         Me.TextBox2.Size = New System.Drawing.Size(126, 25)
-        Me.TextBox2.TabIndex = 13
+        Me.TextBox2.TabIndex = 9999
         '
         'Label3
         '
@@ -331,7 +332,7 @@ Partial Class FormVenta
         Me.Label3.BackColor = System.Drawing.Color.Transparent
         Me.Label3.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.Black
-        Me.Label3.Location = New System.Drawing.Point(3, 32)
+        Me.Label3.Location = New System.Drawing.Point(3, 23)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(87, 19)
         Me.Label3.TabIndex = 12
@@ -415,7 +416,7 @@ Partial Class FormVenta
         Me.ToolStrip1.Location = New System.Drawing.Point(0, 493)
         Me.ToolStrip1.Name = "ToolStrip1"
         Me.ToolStrip1.Size = New System.Drawing.Size(900, 33)
-        Me.ToolStrip1.TabIndex = 17
+        Me.ToolStrip1.TabIndex = 4
         Me.ToolStrip1.Text = "ToolStrip1"
         '
         'ToolStripSeparator1
@@ -590,7 +591,7 @@ Partial Class FormVenta
     Public WithEvents Pimagen As PictureBox
     Public WithEvents Label1 As Label
     Friend WithEvents GroupBox2 As GroupBox
-    Public WithEvents TextBox1 As TextBox
+    Public WithEvents TextTelefono As TextBox
     Public WithEvents Label2 As Label
     Public WithEvents TextBox4 As TextBox
     Public WithEvents Label5 As Label
