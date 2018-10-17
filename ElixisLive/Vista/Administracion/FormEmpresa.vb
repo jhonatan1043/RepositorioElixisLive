@@ -3,6 +3,13 @@
     Private Sub cargarObjeto()
         objEmpresa.identificacion = txtId.Text
         objEmpresa.nombre = TxtDescripcion.Text
+        objEmpresa.telefono = TextTelefono.Text
+        objEmpresa.celular = TextCelular.Text
+        objEmpresa.correo = TextEmail.Text
+        objEmpresa.direccion = TextDireccion.Text
+        objEmpresa.encabezado = txtEncabezado.Text
+        objEmpresa.codigoCiudad = ComboMunicipio.SelectedValue
+        objEmpresa.pie = txtPie.Text
         objEmpresa.dtParametro = dgvParametro.DataSource
     End Sub
     Private Function validarCampos() As Boolean
@@ -11,20 +18,17 @@
             EstiloMensajes.mostrarMensajeAdvertencia("¡Debe digitar el nit de la Empresa!")
         ElseIf String.IsNullOrEmpty(TxtDescripcion.Text) Then
             EstiloMensajes.mostrarMensajeAdvertencia("¡Debe digitar el nombre de la empresa!")
+        ElseIf String.IsNullOrEmpty(TextCelular.Text) Then
+            EstiloMensajes.mostrarMensajeAdvertencia("¡Debe digitar el Numero de celular de la empresa!")
+        ElseIf String.IsNullOrEmpty(ComboMunicipio.SelectedIndex) Then
+            EstiloMensajes.mostrarMensajeAdvertencia("¡Debe seleccionar la ciudad de la empresa!")
+        ElseIf String.IsNullOrEmpty(TextDireccion.Text) Then
+            EstiloMensajes.mostrarMensajeAdvertencia("¡Debe digitar la dirección de la empresa!")
         Else
             resultado = True
         End If
         Return resultado
     End Function
-    Private Sub dgvParametro_CellEnter(sender As Object, e As DataGridViewCellEventArgs) Handles dgvParametro.CellEnter
-        If btRegistrar.Enabled = False Then Exit Sub
-        Try
-            Generales.consultarTipoControl(dgvParametro, dgvParametro.CurrentCell.RowIndex)
-        Catch ex As Exception
-            EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
-        End Try
-    End Sub
-
     Private Sub FormBase_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim params As New List(Of String)
         objEmpresa = New Empresa
@@ -39,6 +43,7 @@
             Generales.llenardgv("SP_CONSULTAR_PARAMETROS", dgvParametro, params)
             Generales.diseñoDGV(dgvParametro)
             Generales.diseñoGrillaParametros(dgvParametro)
+            Generales.cargarCombo("[SP_CONSULTAR_CIUDAD]", Nothing, "descripcion", "Codigo_Municipio", ComboMunicipio)
         Catch ex As Exception
             EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
         End Try
@@ -46,8 +51,7 @@
     Private Sub btNuevo_Click(sender As Object, e As EventArgs) Handles btNuevo.Click
         Generales.deshabilitarBotones(ToolStrip1)
         Generales.habilitarControles(Me)
-        Generales.limpiarControles(GbInform_D)
-        Generales.limpiarControles(GbInform)
+        Generales.limpiarControles(Me)
         btCancelar.Enabled = True
         btRegistrar.Enabled = True
     End Sub
@@ -58,7 +62,6 @@
             Try
                 cargarObjeto()
                 EmpresaBLL.guardar(objEmpresa)
-                Generales.subirArchivoFTP(objEmpresa)
                 Generales.deshabilitarBotones(ToolStrip1)
                 Generales.deshabilitarControles(Me)
                 btNuevo.Enabled = True
@@ -93,8 +96,7 @@
         If EstiloMensajes.mostrarMensajePregunta(MensajeSistema.ANULAR) = Constantes.SI Then
             Try
                 If Generales.ejecutarSQL(objEmpresa.sqlAnular) = True Then
-                    Generales.limpiarControles(GbInform_D)
-                    Generales.limpiarControles(GbInform)
+                    Generales.limpiarControles(Me)
                     Generales.deshabilitarBotones(ToolStrip1)
                     btNuevo.Enabled = True
                     btBuscar.Enabled = True
@@ -134,11 +136,17 @@
             If Not IsNothing(dfila) Then
                 txtId.Text = dfila.Item("Nit")
                 TxtDescripcion.Text = dfila.Item("Nombre")
+                TextTelefono.Text = If(IsDBNull(dfila("Telefono")), Nothing, dfila("Telefono"))
+                TextCelular.Text = dfila("Celular")
+                TextDireccion.Text = dfila("Direccion")
+                TextEmail.Text = dfila("correo")
+                ComboMunicipio.SelectedValue = dfila("Ciudad")
+                txtEncabezado.Text = dfila("Encabezado")
+                txtPie.Text = dfila("Pie_Factura")
                 params.Add(ElementoMenu.codigo)
                 Generales.llenardgv(objEmpresa.sqlCargarDetalle, dgvParametro, params)
                 Generales.diseñoDGV(dgvParametro)
                 Generales.diseñoGrillaParametros(dgvParametro)
-                controlVerificarControl()
             End If
             Generales.habilitarBotones(ToolStrip1)
             btCancelar.Enabled = False
@@ -146,10 +154,5 @@
         Catch ex As Exception
             EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
         End Try
-    End Sub
-    Private Sub controlVerificarControl()
-        For posicion = 0 To dgvParametro.Rows.Count - 1
-            Generales.consultarTipoControl(dgvParametro, posicion)
-        Next
     End Sub
 End Class

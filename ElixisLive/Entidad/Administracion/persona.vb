@@ -3,6 +3,13 @@
     Property codigo As String
     Property identificacion As String
     Property nombre As String
+    Property telefono As String
+    Property celular As String
+    Property direccion As String
+    Property correo As String
+    Property codigoCiudad As String
+    Property encabezado As String
+    Property pie As String
     Property dtParametro As DataTable
     Property dtRegistro As DataTable
     Property ruta As String

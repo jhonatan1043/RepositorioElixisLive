@@ -13,7 +13,13 @@ Public Class EmpresaDAL
                     comando.CommandText = objEmpresa.sqlGuardar
                     comando.Parameters.Add(New SqlParameter("@Codigo", SqlDbType.NVarChar)).Value = objEmpresa.codigo
                     comando.Parameters.Add(New SqlParameter("@Nit", SqlDbType.NVarChar)).Value = objEmpresa.identificacion
-                    comando.Parameters.Add(New SqlParameter("@Nombre", SqlDbType.NVarChar)).Value = objEmpresa.nombre
+                    comando.Parameters.Add(New SqlParameter("@telefono", SqlDbType.NVarChar)).Value = objEmpresa.telefono
+                    comando.Parameters.Add(New SqlParameter("@celular", SqlDbType.NVarChar)).Value = objEmpresa.celular
+                    comando.Parameters.Add(New SqlParameter("@direccion", SqlDbType.NVarChar)).Value = objEmpresa.direccion
+                    comando.Parameters.Add(New SqlParameter("@codigo_ciudad", SqlDbType.Int)).Value = objEmpresa.codigoCiudad
+                    comando.Parameters.Add(New SqlParameter("@correo", SqlDbType.NVarChar)).Value = objEmpresa.correo
+                    comando.Parameters.Add(New SqlParameter("@encabezado", SqlDbType.NVarChar)).Value = objEmpresa.encabezado
+                    comando.Parameters.Add(New SqlParameter("@pie", SqlDbType.NVarChar)).Value = objEmpresa.pie
                     comando.Parameters.Add(New SqlParameter("@Foto", SqlDbType.VarBinary)).Value = objEmpresa.foto
                     comando.Parameters.Add(New SqlParameter("@Tabla", SqlDbType.Structured)).Value = objEmpresa.dtParametro
                     objEmpresa.codigo = CType(comando.ExecuteScalar, String)

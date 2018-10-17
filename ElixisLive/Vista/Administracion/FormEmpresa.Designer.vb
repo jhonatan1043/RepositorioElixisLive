@@ -26,9 +26,9 @@ Partial Class FormEmpresa
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.GbInform = New System.Windows.Forms.GroupBox()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.txtPie = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.txtEncabezado = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
         Me.ComboMunicipio = New System.Windows.Forms.ComboBox()
@@ -98,9 +98,9 @@ Partial Class FormEmpresa
         '
         'GroupBox3
         '
-        Me.GroupBox3.Controls.Add(Me.TextBox2)
+        Me.GroupBox3.Controls.Add(Me.txtPie)
         Me.GroupBox3.Controls.Add(Me.Label4)
-        Me.GroupBox3.Controls.Add(Me.TextBox1)
+        Me.GroupBox3.Controls.Add(Me.txtEncabezado)
         Me.GroupBox3.Controls.Add(Me.Label3)
         Me.GroupBox3.Font = New System.Drawing.Font("Times New Roman", 8.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox3.ForeColor = System.Drawing.Color.DarkBlue
@@ -111,16 +111,16 @@ Partial Class FormEmpresa
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Información de la Factura"
         '
-        'TextBox2
+        'txtPie
         '
-        Me.TextBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextBox2.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox2.Location = New System.Drawing.Point(587, 17)
-        Me.TextBox2.Multiline = True
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.ScrollBars = System.Windows.Forms.ScrollBars.Both
-        Me.TextBox2.Size = New System.Drawing.Size(237, 78)
-        Me.TextBox2.TabIndex = 27
+        Me.txtPie.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtPie.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtPie.Location = New System.Drawing.Point(587, 17)
+        Me.txtPie.Multiline = True
+        Me.txtPie.Name = "txtPie"
+        Me.txtPie.ScrollBars = System.Windows.Forms.ScrollBars.Both
+        Me.txtPie.Size = New System.Drawing.Size(237, 78)
+        Me.txtPie.TabIndex = 27
         '
         'Label4
         '
@@ -134,16 +134,16 @@ Partial Class FormEmpresa
         Me.Label4.TabIndex = 26
         Me.Label4.Text = "Pie de Factura:"
         '
-        'TextBox1
+        'txtEncabezado
         '
-        Me.TextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextBox1.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox1.Location = New System.Drawing.Point(195, 19)
-        Me.TextBox1.Multiline = True
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.ScrollBars = System.Windows.Forms.ScrollBars.Both
-        Me.TextBox1.Size = New System.Drawing.Size(237, 78)
-        Me.TextBox1.TabIndex = 25
+        Me.txtEncabezado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtEncabezado.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtEncabezado.Location = New System.Drawing.Point(195, 19)
+        Me.txtEncabezado.Multiline = True
+        Me.txtEncabezado.Name = "txtEncabezado"
+        Me.txtEncabezado.ScrollBars = System.Windows.Forms.ScrollBars.Both
+        Me.txtEncabezado.Size = New System.Drawing.Size(237, 78)
+        Me.txtEncabezado.TabIndex = 25
         '
         'Label3
         '
@@ -617,8 +617,8 @@ Partial Class FormEmpresa
     Friend WithEvents ComboMunicipio As ComboBox
     Public WithEvents Label12 As Label
     Friend WithEvents GroupBox3 As GroupBox
-    Public WithEvents TextBox2 As TextBox
+    Public WithEvents txtPie As TextBox
     Public WithEvents Label4 As Label
-    Public WithEvents TextBox1 As TextBox
+    Public WithEvents txtEncabezado As TextBox
     Public WithEvents Label3 As Label
 End Class
