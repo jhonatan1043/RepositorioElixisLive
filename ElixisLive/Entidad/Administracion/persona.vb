@@ -1,8 +1,6 @@
 ﻿Public Class persona
     Inherits generalConsulta
     Property codigo As String
-    Property codigoTipoIdentificacion As Integer
-    Property codigoGenero As Integer
     Property identificacion As String
     Property nombre As String
     Property telefono As String
@@ -20,9 +18,9 @@
     Property imagen As PictureBox
     Public Sub New()
         dtRegistro = New DataTable
-        sqlGuardar = "[SP_ADMIN_PERSONA_CREAR]"
-        sqlConsulta = "[SP_ADMIN_PERSONA_CONSULTAR]"
-        sqlCargar = "[SP_ADMIN_PERSONA_CARGAR]"
-        sqlAnular = "[SP_ADMIN_PERSONA_ANULAR] "
+        sqlGuardar = ""
+        sqlConsulta = ""
+        sqlCargar = ""
+        sqlCargarDetalle = ""
     End Sub
 End Class
