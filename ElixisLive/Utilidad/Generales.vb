@@ -182,6 +182,31 @@ Public Class Generales
                 If (value - Int(value / 1000000000000.0#) * 1000000000000.0#) Then Num2Text = Num2Text & " " & Num2Text(value - Int(value / 1000000000000.0#) * 1000000000000.0#)
         End Select
     End Function
+    Public Shared Function validarDatosDgv(dgv As DataGridView, columna As Integer)
+        If (dgv.RowCount = 1) Then
+            EstiloMensajes.mostrarMensajeAdvertencia("¡No se puede guardar registros en blanco!")
+            dgv.Focus()
+            Return False
+        Else
+            For indiceFila = 0 To dgv.Rows.Count - 2
+                If dgv.Rows(indiceFila).Cells(columna).Value.ToString = "" Then
+                    EstiloMensajes.mostrarMensajeAdvertencia("¡Falta ingresar datos en la fila" & indiceFila + 1 & "!")
+                    Return False
+                End If
+            Next
+        End If
+        Return True
+    End Function
+    Public Shared Function digitarEnDgv(consulta As String, params As List(Of String)) As DataRow
+        Dim drCuenta As DataRow
+        drCuenta = Generales.cargarItem(consulta, params)
+        If Not IsNothing(drCuenta) Then
+            Return drCuenta
+        Else
+            EstiloMensajes.mostrarMensajeAdvertencia("¡Esta cuenta no existe!")
+        End If
+        Return Nothing
+    End Function
     Public Shared Sub diseñoDGV(ByRef dgv As DataGridView)
         dgv.BackgroundColor = Color.White
         dgv.DefaultCellStyle.BackColor = Color.White

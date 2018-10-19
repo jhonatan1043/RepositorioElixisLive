@@ -17,7 +17,7 @@
         End If
         formMsgBx.AgregarBoton("Aceptar")
         formMsgBx.AgregarMensaje(mensaje)
-        formMsgBx.Agregarlogo(My.Resources.advertencia)
+        formMsgBx.Agregarlogo(My.Resources.glossy_3d_blue_i_icon)
         formMsgBx.Mostrar()
     End Sub
     Public Shared Sub mostrarMensajeError(mensaje As String, ByVal Optional titulo As String = "")
@@ -37,7 +37,7 @@
         End If
         formMsgBx.AgregarBoton("Aceptar")
         formMsgBx.AgregarMensaje(mensaje)
-        formMsgBx.Agregarlogo(My.Resources.prohibido)
+        formMsgBx.Agregarlogo(My.Resources.advertencia)
         formMsgBx.Mostrar()
     End Sub
     Public Shared Function mostrarMensajePregunta(mensaje As String, ByVal Optional titulo As String = "") As String

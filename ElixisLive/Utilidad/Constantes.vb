@@ -5,7 +5,8 @@
     Public Const USUARIO_FTP = "AdminSoftQuality"
     Public Const CONTRASENA_FTP = "AdminSoft"
     Public Const SIGNO_PESO = "$"
-
+    Public Const ID_PRODUCTO = "P"
+    Public Const ID_SERVICIO = "S"
     Public Enum TIPO_CONTROL
         COMBO = 0
         SELECTOR = 1

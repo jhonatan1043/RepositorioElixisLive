@@ -36,14 +36,14 @@ Partial Class FormPrincipal
         Me.arbolMenu.Dock = System.Windows.Forms.DockStyle.Left
         Me.arbolMenu.Font = New System.Drawing.Font("Times New Roman", 15.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.arbolMenu.ForeColor = System.Drawing.Color.DarkBlue
-        Me.arbolMenu.ImageKey = "Item.png"
+        Me.arbolMenu.ImageKey = "ahmad-hania-logo-icon.png"
         Me.arbolMenu.ImageList = Me.ImageList1
         Me.arbolMenu.LineColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.arbolMenu.Location = New System.Drawing.Point(0, 0)
         Me.arbolMenu.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.arbolMenu.Name = "arbolMenu"
-        Me.arbolMenu.SelectedImageKey = "Item seleccionado.png"
-        Me.arbolMenu.Size = New System.Drawing.Size(226, 567)
+        Me.arbolMenu.SelectedImageKey = "butterfly-icon.png"
+        Me.arbolMenu.Size = New System.Drawing.Size(222, 567)
         Me.arbolMenu.StateImageList = Me.ImageList1
         Me.arbolMenu.TabIndex = 1
         '
@@ -51,17 +51,17 @@ Partial Class FormPrincipal
         '
         Me.ImageList1.ImageStream = CType(resources.GetObject("ImageList1.ImageStream"), System.Windows.Forms.ImageListStreamer)
         Me.ImageList1.TransparentColor = System.Drawing.Color.Transparent
-        Me.ImageList1.Images.SetKeyName(0, "Item seleccionado.png")
-        Me.ImageList1.Images.SetKeyName(1, "Item.png")
+        Me.ImageList1.Images.SetKeyName(0, "ahmad-hania-logo-icon.png")
+        Me.ImageList1.Images.SetKeyName(1, "butterfly-icon.png")
         '
         'StatusStrip1
         '
         Me.StatusStrip1.BackColor = System.Drawing.Color.White
         Me.StatusStrip1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.StatusStrip1.Location = New System.Drawing.Point(226, 545)
+        Me.StatusStrip1.Location = New System.Drawing.Point(222, 545)
         Me.StatusStrip1.Name = "StatusStrip1"
         Me.StatusStrip1.Padding = New System.Windows.Forms.Padding(1, 0, 17, 0)
-        Me.StatusStrip1.Size = New System.Drawing.Size(911, 22)
+        Me.StatusStrip1.Size = New System.Drawing.Size(915, 22)
         Me.StatusStrip1.TabIndex = 2
         Me.StatusStrip1.Text = "StatusStrip1"
         '

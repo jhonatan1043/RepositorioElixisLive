@@ -369,6 +369,8 @@
     <Content Include="ReferenciaDLL\CnxElixisLiveBD.dll" />
     <Content Include="ReferenciaDLL\MySql.Data.DLL" />
     <Content Include="ReferenciaDLL\NotifySenderControl.dll" />
+    <None Include="Resources\printer-icon.png" />
+    <None Include="Resources\glossy-3d-blue-i-icon.png" />
     <None Include="Resources\Quality_logo.jpg" />
     <None Include="Resources\orlando logo copia.jpg" />
     <None Include="Resources\print-icon.png" />
