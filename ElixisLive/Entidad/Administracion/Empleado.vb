@@ -3,6 +3,9 @@
     Property usuario As String
     Property clave As String
     Property codigoPerfil As Integer
+    Property codigoBanco As Integer
+    Property codigoCuenta As Integer
+    Property Cuenta As String
     Property activo As Boolean
     Property imagenEmpleado As Byte()
     Public Sub New()

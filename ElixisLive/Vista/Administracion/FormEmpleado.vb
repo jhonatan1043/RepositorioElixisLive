@@ -13,6 +13,8 @@
             Generales.deshabilitarBotones(ToolStrip1)
             Generales.deshabilitarControles(Me)
             Generales.cargarCombo("[SP_CONSULTAR_PERFIL]", Nothing, "Nombre", "codigo_Perfil", cbPerfil)
+            Generales.cargarCombo("[SP_CONSULTAR_BANCO]", Nothing, "Nombre", "Codigo_Banco", cbBanco)
+            Generales.cargarCombo("[SP_CONSULTAR_TIPO_CUENTA]", Nothing, "Nombre", "Codigo_Tipo_Cuenta", cbTipoCuenta)
             btNuevo.Enabled = True
             btBuscar.Enabled = True
         Catch ex As Exception
@@ -31,6 +33,9 @@
                 txtUsuario.Text = dfila("usuario")
                 txtContraseña.Text = dfila("Contraseña")
                 cbPerfil.SelectedValue = dfila("codigo_perfil")
+                cbBanco.SelectedValue = dfila("codigo_Banco")
+                cbTipoCuenta.SelectedValue = dfila("Codigo_Tipo_Cuenta")
+                txtCuenta.Text = dfila("N_Cuenta")
                 chbActivo.Checked = dfila("Activo")
                 crearImagen(If(IsDBNull(dfila("Foto")), Nothing, dfila("Foto")))
                 params.Add(ElementoMenu.codigo)
@@ -39,10 +44,8 @@
                 Generales.diseñoGrillaParametros(dgvParametro)
                 controlVerificar()
             End If
-            Generales.deshabilitarBotones(ToolStrip1)
-            btEditar.Enabled = True
-            btAnular.Enabled = True
-            btNuevo.Enabled = True
+            Generales.habilitarBotones(ToolStrip1)
+            btRegistrar.Enabled = False
         Catch ex As Exception
             EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
         End Try
@@ -113,9 +116,8 @@
     End Sub
     Private Sub btNuevo_Click(sender As Object, e As EventArgs) Handles btNuevo.Click
         Generales.deshabilitarBotones(ToolStrip1)
-        Generales.habilitarControles(cbInicioSesion)
-        Generales.habilitarControles(gbTipoUsuario)
-        Generales.habilitarControles(GbInform_D)
+        Generales.habilitarControles(Me)
+        Generales.deshabilitarControles(gbInform)
         Generales.limpiarControles(Me)
         btBuscarPersona.Enabled = True
         btCancelar.Enabled = True
@@ -131,6 +133,12 @@
             EstiloMensajes.mostrarMensajeAdvertencia("¡Debe digitar la contraseña!")
         ElseIf cbPerfil.SelectedIndex = 0 Then
             EstiloMensajes.mostrarMensajeAdvertencia("¡Debe Seleccionar un perfil!")
+        ElseIf cbBanco.SelectedIndex = 0 Then
+            EstiloMensajes.mostrarMensajeAdvertencia("¡Debe Seleccionar un banco!")
+        ElseIf cbTipoCuenta.SelectedIndex = 0 Then
+            EstiloMensajes.mostrarMensajeAdvertencia("¡Debe Seleccionar un tipo de cuenta!")
+        ElseIf String.IsNullOrEmpty(txtCuenta.Text) Then
+            EstiloMensajes.mostrarMensajeAdvertencia("¡Debe digitar el numero de cuenta!")
         Else
             resultado = True
         End If
@@ -138,20 +146,20 @@
     End Function
     Private Sub cargarObjeto()
         Dim almImagen As New IO.MemoryStream
-
         If Not IsNothing(pictImagen.Image) Then
             pictImagen.Image.Save(almImagen, Imaging.ImageFormat.Png)
             objEmpleado.imagenEmpleado = almImagen.GetBuffer
         Else
             objEmpleado.imagenEmpleado = Nothing
         End If
-
         objEmpleado.usuario = txtUsuario.Text
         objEmpleado.clave = txtContraseña.Text
         objEmpleado.codigoPerfil = cbPerfil.SelectedValue.ToString
+        objEmpleado.codigoBanco = cbBanco.SelectedValue.ToString
+        objEmpleado.codigoCuenta = cbTipoCuenta.SelectedValue.ToString
+        objEmpleado.Cuenta = txtCuenta.Text
         objEmpleado.activo = chbActivo.Checked
         objEmpleado.dtParametro = dgvParametro.DataSource
-
     End Sub
     Private Sub btRegistrar_Click(sender As Object, e As EventArgs) Handles btRegistrar.Click
         dgvParametro.EndEdit()
@@ -180,9 +188,8 @@
     Private Sub btEditar_Click(sender As Object, e As EventArgs) Handles btEditar.Click
         If EstiloMensajes.mostrarMensajePregunta(MensajeSistema.EDITAR) = Constantes.SI Then
             Generales.deshabilitarBotones(ToolStrip1)
-            Generales.habilitarControles(cbInicioSesion)
-            Generales.habilitarControles(gbTipoUsuario)
-            Generales.habilitarControles(GbInform_D)
+            Generales.habilitarControles(Me)
+            Generales.deshabilitarControles(gbInform)
             btCancelar.Enabled = True
             btRegistrar.Enabled = True
         End If
