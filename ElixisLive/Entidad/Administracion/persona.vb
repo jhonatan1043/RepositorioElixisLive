@@ -5,6 +5,8 @@
     Property nombre As String
     Property telefono As String
     Property celular As String
+    Property codigoGenero As Integer
+    Property codigoTipoIdentificacion As Integer
     Property direccion As String
     Property correo As String
     Property codigoCiudad As String
@@ -18,9 +20,9 @@
     Property imagen As PictureBox
     Public Sub New()
         dtRegistro = New DataTable
-        sqlGuardar = ""
-        sqlConsulta = ""
-        sqlCargar = ""
-        sqlCargarDetalle = ""
+        sqlGuardar = "SP_ADMIN_PERSONA_CREAR"
+        sqlConsulta = "[SP_ADMIN_PERSONA_CONSULTAR]"
+        sqlCargar = "SP_ADMIN_PERSONA_CARGAR"
+        sqlAnular = "SP_ADMIN_PERSONA_ANULAR"
     End Sub
 End Class

@@ -3,13 +3,28 @@
     Private Sub cargarObjeto()
         objPersona.identificacion = TextIdentificacion.Text
         objPersona.nombre = TextNombre.Text
+        objPersona.telefono = TextTelefono.Text
+        objPersona.celular = TextCelular.Text
+        objPersona.correo = TextEmail.Text
+        objPersona.direccion = TextDireccion.Text
+        objPersona.codigoGenero = cbGenero.SelectedValue
+        objPersona.codigoCiudad = ComboMunicipio.SelectedValue
+        objPersona.codigoTipoIdentificacion = CombotipoIdentificacion.SelectedValue
     End Sub
     Private Function validarCampos() As Boolean
         Dim resultado As Boolean
         If String.IsNullOrEmpty(TextIdentificacion.Text) Then
-            EstiloMensajes.mostrarMensajeAdvertencia("¡Debe ingresar el número de identificación de la persona!")
+            EstiloMensajes.mostrarMensajeAdvertencia("¡Debe digitar la identificación de la persona!")
+        ElseIf CombotipoIdentificacion.SelectedIndex = 0 Then
+            EstiloMensajes.mostrarMensajeAdvertencia("¡Debe seleccionar el tipo de identificación!")
         ElseIf String.IsNullOrEmpty(TextNombre.Text) Then
-            EstiloMensajes.mostrarMensajeAdvertencia("¡Debe ingresar el nombre de la persona!")
+            EstiloMensajes.mostrarMensajeAdvertencia("¡Debe digitar el nombre de la persona!")
+        ElseIf String.IsNullOrEmpty(TextCelular.Text) Then
+            EstiloMensajes.mostrarMensajeAdvertencia("¡Debe digitar el Numero de celular de la persona!")
+        ElseIf String.IsNullOrEmpty(ComboMunicipio.SelectedIndex) Then
+            EstiloMensajes.mostrarMensajeAdvertencia("¡Debe seleccionar la ciudad de la persona!")
+        ElseIf String.IsNullOrEmpty(TextDireccion.Text) Then
+            EstiloMensajes.mostrarMensajeAdvertencia("¡Debe digitar la dirección de la persona!")
         Else
             resultado = True
         End If
@@ -17,11 +32,11 @@
     End Function
 
     Private Sub FormBase_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Dim params As New List(Of String)
         objPersona = New persona
         Try
-            params.Add(ElementoMenu.codigo)
-            params.Add(SesionActual.idEmpresa)
+            Generales.cargarCombo("[SP_CONSULTAR_CIUDAD]", Nothing, "descripcion", "Codigo_Municipio", ComboMunicipio)
+            Generales.cargarCombo("[SP_CONSULTAR_GENERO]", Nothing, "Genero", "Codigo", cbGenero)
+            Generales.cargarCombo("[SP_CONSULTAR_TIPO_IDENT]", Nothing, "Nombre", "Codigo", CombotipoIdentificacion)
             Generales.deshabilitarBotones(ToolStrip1)
             Generales.deshabilitarControles(Me)
             btNuevo.Enabled = True
@@ -43,16 +58,14 @@
             Try
                 cargarObjeto()
                 PersonaBLL.guardar(objPersona)
-                Generales.deshabilitarBotones(ToolStrip1)
+                Generales.habilitarBotones(ToolStrip1)
                 Generales.deshabilitarControles(Me)
-                btNuevo.Enabled = True
-                btEditar.Enabled = True
+                btRegistrar.Enabled = False
                 EstiloMensajes.mostrarMensajeExitoso(MensajeSistema.REGISTRO_GUARDADO)
             Catch ex As Exception
                 EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
             End Try
         End If
-
     End Sub
 
     Private Sub btEditar_Click(sender As Object, e As EventArgs) Handles btEditar.Click
@@ -76,7 +89,7 @@
     Private Sub btAnular_Click(sender As Object, e As EventArgs) Handles btAnular.Click
         If EstiloMensajes.mostrarMensajePregunta(MensajeSistema.ANULAR) = Constantes.SI Then
             Try
-                If Generales.ejecutarSQL(objPersona.sqlAnular) = True Then
+                If Generales.ejecutarSQL(objPersona.sqlAnular & objPersona.codigo) = True Then
                     Generales.limpiarControles(Me)
                     Generales.deshabilitarBotones(ToolStrip1)
                     btNuevo.Enabled = True
@@ -92,10 +105,11 @@
     Private Sub btBuscar_Click(sender As Object, e As EventArgs) Handles btBuscar.Click
         Dim params As New List(Of String)
         params.Add(String.Empty)
+        params.Add(SesionActual.idEmpresa)
         Generales.buscarElemento(objPersona.sqlConsulta,
                                    params,
                                    AddressOf cargarInfomacion,
-                                   "Busqueda de Empresa",
+                                   "Busqueda de persona",
                                    True, True)
     End Sub
     Private Sub cargarInfomacion(pcodigo As Integer)
@@ -106,9 +120,15 @@
         dfila = Generales.cargarItem(objPersona.sqlCargar, params)
         Try
             If Not IsNothing(dfila) Then
-                TextIdentificacion.Text = dfila.Item("Nit")
+                TextIdentificacion.Text = dfila.Item("Identificacion")
                 TextNombre.Text = dfila.Item("Nombre")
-                params.Add(ElementoMenu.codigo)
+                TextTelefono.Text = If(IsDBNull(dfila("Telefono")), Nothing, dfila("Telefono"))
+                TextCelular.Text = dfila("Celular")
+                TextDireccion.Text = dfila("Direccion")
+                TextEmail.Text = If(IsDBNull(dfila("Email")), Nothing, dfila("Email"))
+                cbGenero.SelectedValue = dfila("Genero")
+                CombotipoIdentificacion.SelectedValue = dfila("Tipo_Identificacion")
+                ComboMunicipio.SelectedValue = dfila("Ciudad")
             End If
             Generales.habilitarBotones(ToolStrip1)
             btCancelar.Enabled = False
