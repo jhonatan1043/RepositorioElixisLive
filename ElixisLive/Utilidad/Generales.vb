@@ -4,6 +4,7 @@ Imports System.Net
 Public Class Generales
     Public Delegate Sub cargaInfoForm(ByVal codigo As String)
     Public Delegate Sub cargaInfoFormObj(ByVal fila As DataRow)
+    Public Delegate Sub subRutina()
     Private Shared objConexion As New ConexionBD
     Public Shared Sub llenarTabla(ByVal consulta As String,
                                   ByVal params As List(Of String),
@@ -25,6 +26,100 @@ Public Class Generales
         End Try
 
     End Sub
+    Public Shared Function getCadenaSeleccionados(datatable As DataTable, seleccionados As String, posicionCodigo As Integer) As String
+
+        For indice = 0 To datatable.Rows.Count - 2
+            If indice = 0 Then
+                seleccionados = "" & datatable.Rows(indice).Item(posicionCodigo).ToString & ""
+            ElseIf indice <> datatable.Rows.Count - 2 Then
+                seleccionados = seleccionados & "'" & Constantes.SIGNO_PESO & "','" & Constantes.SIGNO_PESO & "'" & datatable.Rows(indice).Item(posicionCodigo).ToString & ""
+            Else
+                seleccionados = seleccionados & "'" & Constantes.SIGNO_PESO & "','" & Constantes.SIGNO_PESO & "'" & datatable.Rows(indice).Item(posicionCodigo).ToString
+            End If
+        Next
+        If String.IsNullOrEmpty(seleccionados) Then
+            seleccionados = Constantes.SIGNO_PESO
+        End If
+        Return seleccionados
+    End Function
+    Public Shared Sub busquedaItems(nombreProc As String,
+                                    params As List(Of String),
+                                    titulo As String,
+                                    datagrid As DataGridView,
+                                    datatable As DataTable,
+                                    indColumnaInicio As Integer,
+                                    indColumnaFin As Integer,
+                                    indColumnaFoco As Integer,
+                                    Optional ocultarCodigo As Boolean = False,
+                                    Optional noRepetir As Boolean = False,
+                                    Optional indColumnaNoRepetible As Integer = 0,
+                                    Optional cerrarBusqueda As Boolean = False,
+                                    Optional pMetodo As subRutina = Nothing
+                                    )
+        Dim seguir As Boolean = False
+        Dim seleccionados As String = ""
+        Do
+            Dim tbl As DataRow = Nothing
+            If noRepetir = True Then
+                seleccionados = getCadenaSeleccionados(datatable, seleccionados, indColumnaNoRepetible)
+                params.Add(seleccionados)
+            End If
+
+            Dim formBusqueda As FormBusqueda = buscarElemento(nombreProc, params, titulo, ocultarCodigo, True)
+            If noRepetir = True Then
+                params.RemoveAt(params.Count - 1)
+            End If
+
+            tbl = formBusqueda.rowResultados
+            Dim ultimaFila = datatable.Rows.Count - 1
+            If tbl IsNot Nothing Then
+                If datatable.Rows.Count = 0 OrElse datatable.Rows(ultimaFila).Item(indColumnaInicio).ToString <> "" Then
+                    datatable.Rows.Add()
+                    ultimaFila = datatable.Rows.Count - 1
+                End If
+
+                For indColumna = indColumnaInicio To indColumnaFin
+                    datatable.Rows(ultimaFila).Item(indColumna) = tbl.Item(indColumna - indColumnaInicio).ToString
+                Next
+                datatable.Rows.Add()
+                ultimaFila = datatable.Rows.Count - 1
+
+                datagrid.EndEdit()
+                Try
+                    datagrid.Rows(ultimaFila - 1).Cells(indColumnaFoco).Selected = True
+                Catch ex As Exception
+
+                End Try
+                seguir = True
+                If Not IsNothing(pMetodo) Then
+                    pMetodo.Invoke()
+                End If
+            Else
+                seguir = False
+            End If
+
+        Loop While (seguir = True AndAlso cerrarBusqueda = False)
+    End Sub
+    Public Shared Function buscarElemento(pConsultaSQL As String,
+                                          plistaParam As List(Of String),
+                                          pTitulo As String,
+                                          pOcultaCol As Boolean,
+                                          Optional pTamanoForm As Integer = 0,
+                                          Optional pBuscarDarEnter As Boolean = False)
+
+        Dim vForm As New FormBusqueda()
+        vForm.Text = pTitulo
+        If Not IsNothing(plistaParam) Then
+            vForm.consulta = pConsultaSQL & Funciones.getParametros(plistaParam)
+        Else
+            vForm.consulta = pConsultaSQL
+        End If
+        vForm.isOcultaCol = pOcultaCol
+        vForm.buscarAlDarEnter = pBuscarDarEnter
+        vForm.ShowDialog()
+        Return vForm
+
+    End Function
     Public Shared Sub buscarElemento(pConsultaSQL As String,
                                      plistaParam As List(Of String),
                                      pMetodo As cargaInfoForm,
@@ -116,70 +211,69 @@ Public Class Generales
     End Sub
     Public Shared Function convertirNumero(ByVal numero As Double) As String
         Dim sValor As String, siValor As Single = Nothing
-        Dim num_entero, num_decimal As Single
-        Dim NumeroConvertido As String
+        Dim numEntero, numDecimal As Single
+        Dim numeroConvertido As String
 
         sValor = Val(Replace(Format(numero, "General Number"), ",", ".").ToString)
-        num_entero = Int(Val(sValor))
-        num_decimal = CInt((sValor - num_entero) * 100)
-        ' A ESPERAS DE DOLARIZACIOn
+        numEntero = Int(Val(sValor))
+        numDecimal = CInt((sValor - numEntero) * 100)
 
-        If num_decimal > 0 Then
-            NumeroConvertido = Num2Text(Val(sValor)) & " PESOS CON " + Num2Text(num_decimal) + " CENTAVOS MCTE"
+        If numDecimal > 0 Then
+            numeroConvertido = asignarNombreNumero(Val(sValor)) & " PESOS CON " + asignarNombreNumero(numDecimal) + " CENTAVOS MCTE"
         Else
-            NumeroConvertido = Num2Text(Val(sValor)) & " PESOS MCTE"
+            numeroConvertido = asignarNombreNumero(Val(sValor)) & " PESOS MCTE"
         End If
-        Return NumeroConvertido
+        Return numeroConvertido
     End Function
-    Public Shared Function Num2Text(ByVal value As Double) As String
+    Public Shared Function asignarNombreNumero(ByVal value As Double) As String
         value = Int(value)
         Select Case value
-            Case 0 : Num2Text = "CERO"
-            Case 1 : Num2Text = "UN"
-            Case 2 : Num2Text = "DOS"
-            Case 3 : Num2Text = "TRES"
-            Case 4 : Num2Text = "CUATRO"
-            Case 5 : Num2Text = "CINCO"
-            Case 6 : Num2Text = "SEIS"
-            Case 7 : Num2Text = "SIETE"
-            Case 8 : Num2Text = "OCHO"
-            Case 9 : Num2Text = "NUEVE"
-            Case 10 : Num2Text = "DIEZ"
-            Case 11 : Num2Text = "ONCE"
-            Case 12 : Num2Text = "DOCE"
-            Case 13 : Num2Text = "TRECE"
-            Case 14 : Num2Text = "CATORCE"
-            Case 15 : Num2Text = "QUINCE"
-            Case Is < 20 : Num2Text = "DIECI" & Num2Text(value - 10)
-            Case 20 : Num2Text = "VEINTE"
-            Case Is < 30 : Num2Text = "VEINTI" & Num2Text(value - 20)
-            Case 30 : Num2Text = "TREINTA"
-            Case 40 : Num2Text = "CUARENTA"
-            Case 50 : Num2Text = "CINCUENTA"
-            Case 60 : Num2Text = "SESENTA"
-            Case 70 : Num2Text = "SETENTA"
-            Case 80 : Num2Text = "OCHENTA"
-            Case 90 : Num2Text = "NOVENTA"
-            Case Is < 100 : Num2Text = Num2Text(Int(value \ 10) * 10) & " Y " & Num2Text(value Mod 10)
-            Case 100 : Num2Text = "CIEN"
-            Case Is < 200 : Num2Text = "CIENTO " & Num2Text(value - 100)
-            Case 200, 300, 400, 600, 800 : Num2Text = Num2Text(Int(value \ 100)) & "CIENTOS"
-            Case 500 : Num2Text = "QUINIENTOS"
-            Case 700 : Num2Text = "SETECIENTOS"
-            Case 900 : Num2Text = "NOVECIENTOS"
-            Case Is < 1000 : Num2Text = Num2Text(Int(value \ 100) * 100) & " " & Num2Text(value Mod 100)
-            Case 1000 : Num2Text = "MIL"
-            Case Is < 2000 : Num2Text = "MIL " & Num2Text(value Mod 1000)
-            Case Is < 1000000 : Num2Text = Num2Text(Int(value \ 1000)) & " MIL"
-                If value Mod 1000 Then Num2Text = Num2Text & " " & Num2Text(value Mod 1000)
-            Case 1000000 : Num2Text = "UN MILLON"
-            Case Is < 2000000 : Num2Text = "UN MILLON" & Num2Text(value Mod 1000000)
-            Case Is < 1000000000000.0# : Num2Text = Num2Text(Int(value / 1000000)) & " MILLONES"
-                If (value - Int(value / 1000000) * 1000000) Then Num2Text = Num2Text & " " & Num2Text(value - Int(value / 1000000) * 1000000)
-            Case 1000000000000.0# : Num2Text = "UN BILLON"
-            Case Is < 2000000000000.0# : Num2Text = "UN BILLON" & Num2Text(value - Int(value / 1000000000000.0#) * 1000000000000.0#)
-            Case Else : Num2Text = Num2Text(Int(value / 1000000000000.0#)) & " BILLONES"
-                If (value - Int(value / 1000000000000.0#) * 1000000000000.0#) Then Num2Text = Num2Text & " " & Num2Text(value - Int(value / 1000000000000.0#) * 1000000000000.0#)
+            Case 0 : asignarNombreNumero = "CERO"
+            Case 1 : asignarNombreNumero = "UN"
+            Case 2 : asignarNombreNumero = "DOS"
+            Case 3 : asignarNombreNumero = "TRES"
+            Case 4 : asignarNombreNumero = "CUATRO"
+            Case 5 : asignarNombreNumero = "CINCO"
+            Case 6 : asignarNombreNumero = "SEIS"
+            Case 7 : asignarNombreNumero = "SIETE"
+            Case 8 : asignarNombreNumero = "OCHO"
+            Case 9 : asignarNombreNumero = "NUEVE"
+            Case 10 : asignarNombreNumero = "DIEZ"
+            Case 11 : asignarNombreNumero = "ONCE"
+            Case 12 : asignarNombreNumero = "DOCE"
+            Case 13 : asignarNombreNumero = "TRECE"
+            Case 14 : asignarNombreNumero = "CATORCE"
+            Case 15 : asignarNombreNumero = "QUINCE"
+            Case Is < 20 : asignarNombreNumero = "DIECI" & asignarNombreNumero(value - 10)
+            Case 20 : asignarNombreNumero = "VEINTE"
+            Case Is < 30 : asignarNombreNumero = "VEINTI" & asignarNombreNumero(value - 20)
+            Case 30 : asignarNombreNumero = "TREINTA"
+            Case 40 : asignarNombreNumero = "CUARENTA"
+            Case 50 : asignarNombreNumero = "CINCUENTA"
+            Case 60 : asignarNombreNumero = "SESENTA"
+            Case 70 : asignarNombreNumero = "SETENTA"
+            Case 80 : asignarNombreNumero = "OCHENTA"
+            Case 90 : asignarNombreNumero = "NOVENTA"
+            Case Is < 100 : asignarNombreNumero = asignarNombreNumero(Int(value \ 10) * 10) & " Y " & asignarNombreNumero(value Mod 10)
+            Case 100 : asignarNombreNumero = "CIEN"
+            Case Is < 200 : asignarNombreNumero = "CIENTO " & asignarNombreNumero(value - 100)
+            Case 200, 300, 400, 600, 800 : asignarNombreNumero = asignarNombreNumero(Int(value \ 100)) & "CIENTOS"
+            Case 500 : asignarNombreNumero = "QUINIENTOS"
+            Case 700 : asignarNombreNumero = "SETECIENTOS"
+            Case 900 : asignarNombreNumero = "NOVECIENTOS"
+            Case Is < 1000 : asignarNombreNumero = asignarNombreNumero(Int(value \ 100) * 100) & " " & asignarNombreNumero(value Mod 100)
+            Case 1000 : asignarNombreNumero = "MIL"
+            Case Is < 2000 : asignarNombreNumero = "MIL " & asignarNombreNumero(value Mod 1000)
+            Case Is < 1000000 : asignarNombreNumero = asignarNombreNumero(Int(value \ 1000)) & " MIL"
+                If value Mod 1000 Then asignarNombreNumero = asignarNombreNumero & " " & asignarNombreNumero(value Mod 1000)
+            Case 1000000 : asignarNombreNumero = "UN MILLON"
+            Case Is < 2000000 : asignarNombreNumero = "UN MILLON" & asignarNombreNumero(value Mod 1000000)
+            Case Is < 1000000000000.0# : asignarNombreNumero = asignarNombreNumero(Int(value / 1000000)) & " MILLONES"
+                If (value - Int(value / 1000000) * 1000000) Then asignarNombreNumero = asignarNombreNumero & " " & asignarNombreNumero(value - Int(value / 1000000) * 1000000)
+            Case 1000000000000.0# : asignarNombreNumero = "UN BILLON"
+            Case Is < 2000000000000.0# : asignarNombreNumero = "UN BILLON" & asignarNombreNumero(value - Int(value / 1000000000000.0#) * 1000000000000.0#)
+            Case Else : asignarNombreNumero = asignarNombreNumero(Int(value / 1000000000000.0#)) & " BILLONES"
+                If (value - Int(value / 1000000000000.0#) * 1000000000000.0#) Then asignarNombreNumero = asignarNombreNumero & " " & asignarNombreNumero(value - Int(value / 1000000000000.0#) * 1000000000000.0#)
         End Select
     End Function
     Public Shared Function validarDatosDgv(dgv As DataGridView, columna As Integer)
@@ -198,12 +292,12 @@ Public Class Generales
         Return True
     End Function
     Public Shared Function digitarEnDgv(consulta As String, params As List(Of String)) As DataRow
-        Dim drCuenta As DataRow
-        drCuenta = Generales.cargarItem(consulta, params)
-        If Not IsNothing(drCuenta) Then
-            Return drCuenta
+        Dim drCodigo As DataRow
+        drCodigo = Generales.cargarItem(consulta, params)
+        If Not IsNothing(drCodigo) Then
+            Return drCodigo
         Else
-            EstiloMensajes.mostrarMensajeAdvertencia("¡Esta cuenta no existe!")
+            EstiloMensajes.mostrarMensajeAdvertencia("¡Este código no existe!")
         End If
         Return Nothing
     End Function
@@ -214,17 +308,18 @@ Public Class Generales
         dgv.DefaultCellStyle.SelectionBackColor = Color.DodgerBlue
         dgv.DefaultCellStyle.SelectionForeColor = Color.White
         dgv.DefaultCellStyle.Font = New Font("Times New Roman", 11, FontStyle.Italic)
-        dgv.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft
+        'dgv.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft
         dgv.AlternatingRowsDefaultCellStyle.BackColor = Color.AliceBlue
         dgv.AlternatingRowsDefaultCellStyle.ForeColor = Nothing
         dgv.AlternatingRowsDefaultCellStyle.SelectionBackColor = Nothing
         dgv.AlternatingRowsDefaultCellStyle.SelectionForeColor = Nothing
         dgv.AlternatingRowsDefaultCellStyle.Font = New Font("Times New Roman", 11, FontStyle.Italic)
-        dgv.AlternatingRowsDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft
+        'dgv.AlternatingRowsDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft
         dgv.ColumnHeadersDefaultCellStyle.Font = New Font("Times New Roman", 12, FontStyle.Italic)
         For indiceColumna = 0 To dgv.Columns.Count - 1
             dgv.Columns(indiceColumna).AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
         Next
+
     End Sub
     Public Shared Sub cargarForm(ByVal form As System.Windows.Forms.Form)
         FormPrincipal.Cursor = Cursors.WaitCursor
@@ -293,6 +388,7 @@ Public Class Generales
         Else
             Return Nothing
         End If
+
     End Function
     Public Shared Function llenarTabla(ByVal consulta As String,
                                    ByVal params As List(Of SqlParameter)) As DataTable
