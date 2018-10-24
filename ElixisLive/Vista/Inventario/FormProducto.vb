@@ -13,6 +13,9 @@
             Generales.llenardgv("SP_CONSULTAR_PARAMETROS", dgRegistro, params)
             Generales.diseñoDGV(dgRegistro)
             Generales.diseñoGrillaParametros(dgRegistro)
+            params.Clear()
+            params.Add(SesionActual.idEmpresa)
+            Generales.cargarCombo("[SP_CONSULTAR_MARCA]", params, "Nombre", "Codigo_Marca", cbMarca)
         Catch ex As Exception
             EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
         End Try
@@ -33,7 +36,7 @@
         dfila = Generales.cargarItem(objProducto.sqlCargar, params)
         Try
             If Not IsNothing(dfila) Then
-                txtcodigo.Text = objProducto.codigo
+                cbMarca.SelectedValue = dfila("Codigo_Marca")
                 txtnombre.Text = dfila("Nombre")
                 params.Add(ElementoMenu.codigo)
                 Generales.llenardgv(objProducto.sqlCargarDetalle, dgRegistro, params)
@@ -62,6 +65,7 @@
         Generales.habilitarControles(Me)
         Generales.limpiarControles(Gbdatos)
         Generales.limpiarGrillaParametro(dgRegistro)
+        objProducto.codigo = Nothing
         dgRegistro.ReadOnly = False
         btCancelar.Enabled = True
         btRegistrar.Enabled = True
@@ -70,13 +74,15 @@
         Dim resultado As Boolean
         If String.IsNullOrEmpty(txtnombre.Text) Then
             EstiloMensajes.mostrarMensajeAdvertencia("¡Debe ingresar el nombre del producto!")
+        ElseIf cbMarca.SelectedIndex = 0 Then
+            EstiloMensajes.mostrarMensajeAdvertencia("¡Debe seleccionar la marca!")
         Else
             resultado = True
         End If
         Return resultado
     End Function
     Private Sub cargarObjeto()
-        objProducto.codigo = If(String.IsNullOrEmpty(txtcodigo.Text), Nothing, txtcodigo.Text)
+        objProducto.codigoMarca = cbMarca.SelectedValue.ToString
         objProducto.nombre = txtnombre.Text
         objProducto.dtParametro = dgRegistro.DataSource
     End Sub

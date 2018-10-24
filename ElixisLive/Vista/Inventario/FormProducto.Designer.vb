@@ -20,6 +20,7 @@ Partial Class FormProducto
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.cbMarca = New System.Windows.Forms.ComboBox()
         Me.Panel1.SuspendLayout()
         CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
@@ -39,25 +40,29 @@ Partial Class FormProducto
         '
         'Gbdatos
         '
+        Me.Gbdatos.Controls.Add(Me.cbMarca)
         Me.Gbdatos.Controls.Add(Me.Label1)
         Me.Gbdatos.Controls.SetChildIndex(Me.Label5, 0)
         Me.Gbdatos.Controls.SetChildIndex(Me.Label3, 0)
         Me.Gbdatos.Controls.SetChildIndex(Me.txtcodigo, 0)
         Me.Gbdatos.Controls.SetChildIndex(Me.txtnombre, 0)
         Me.Gbdatos.Controls.SetChildIndex(Me.Label1, 0)
+        Me.Gbdatos.Controls.SetChildIndex(Me.cbMarca, 0)
         '
         'txtnombre
         '
-        Me.txtnombre.Location = New System.Drawing.Point(238, 17)
-        Me.txtnombre.Size = New System.Drawing.Size(334, 21)
+        Me.txtnombre.Location = New System.Drawing.Point(84, 16)
+        Me.txtnombre.Size = New System.Drawing.Size(207, 25)
         '
         'txtcodigo
         '
-        Me.txtcodigo.Location = New System.Drawing.Point(35, 18)
+        Me.txtcodigo.Location = New System.Drawing.Point(563, 17)
+        Me.txtcodigo.Size = New System.Drawing.Size(12, 25)
+        Me.txtcodigo.Visible = False
         '
         'Label3
         '
-        Me.Label3.Location = New System.Drawing.Point(159, 19)
+        Me.Label3.Location = New System.Drawing.Point(7, 19)
         Me.Label3.Size = New System.Drawing.Size(73, 19)
         Me.Label3.Text = "Producto:"
         '
@@ -70,11 +75,23 @@ Partial Class FormProducto
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(6, 22)
+        Me.Label1.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Italic)
+        Me.Label1.ForeColor = System.Drawing.Color.Black
+        Me.Label1.Location = New System.Drawing.Point(312, 18)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(23, 15)
+        Me.Label1.Size = New System.Drawing.Size(55, 19)
         Me.Label1.TabIndex = 19
-        Me.Label1.Text = "ID:"
+        Me.Label1.Text = "Marca:"
+        '
+        'cbMarca
+        '
+        Me.cbMarca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbMarca.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic)
+        Me.cbMarca.FormattingEnabled = True
+        Me.cbMarca.Location = New System.Drawing.Point(371, 16)
+        Me.cbMarca.Name = "cbMarca"
+        Me.cbMarca.Size = New System.Drawing.Size(201, 25)
+        Me.cbMarca.TabIndex = 20
         '
         'FormProducto
         '
@@ -93,4 +110,5 @@ Partial Class FormProducto
     End Sub
 
     Friend WithEvents Label1 As Label
+    Friend WithEvents cbMarca As ComboBox
 End Class

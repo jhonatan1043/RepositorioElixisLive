@@ -1,5 +1,6 @@
 ﻿Public Class producto
     Inherits persona
+    Property codigoMarca As Integer
     Public Sub New()
         dtRegistro = New DataTable
         sqlGuardar = "[SP_INVEN_PRODUCTO_CREAR]"
