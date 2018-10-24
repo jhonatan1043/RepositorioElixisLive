@@ -2,8 +2,6 @@
     Dim codigoCliente As Integer
     Dim respuesta As Boolean = False
     Dim dtProductos As New DataTable
-    Dim consultaFactura As String
-    Dim consultaItem As String
     Dim titulo As String
     Private Sub FormVenta_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Generales.diseñoDGV(dgvFactura)
@@ -14,59 +12,45 @@
         enlanzarTabla()
     End Sub
     Private Sub enlanzarTabla()
-
-        Dim colCodigo, colDescripcion, colCantidad, colValor, colId, colTotal As New DataColumn
-
-
+        Dim colCodigo, colDescripcion,
+            colCantidad, colValor, colId, colTotal As New DataColumn
         colCodigo.ColumnName = "Codigo"
         colCodigo.DataType = Type.GetType("System.String")
         colCodigo.DefaultValue = String.Empty
         dtProductos.Columns.Add(colCodigo)
-
         colDescripcion.ColumnName = "Descripcion"
         colDescripcion.DataType = Type.GetType("System.String")
         colDescripcion.DefaultValue = String.Empty
         dtProductos.Columns.Add(colDescripcion)
-
         colCantidad.ColumnName = "Cantidad"
         colCantidad.DataType = Type.GetType("System.Int32")
         colCantidad.DefaultValue = 0
         dtProductos.Columns.Add(colCantidad)
-
         colValor.ColumnName = "Valor"
         colValor.DataType = Type.GetType("System.Decimal")
         colValor.DefaultValue = 0
         dtProductos.Columns.Add(colValor)
-
         colId.ColumnName = "Id"
         colId.DataType = Type.GetType("System.String")
         colId.DefaultValue = String.Empty
         dtProductos.Columns.Add(colId)
-
         colTotal.ColumnName = "Total"
         colTotal.DataType = Type.GetType("System.Decimal")
         colTotal.DefaultValue = 0
         dtProductos.Columns.Add(colTotal)
-
         With dgvFactura
             .Columns.Item("dgCodigo").SortMode = DataGridViewColumnSortMode.NotSortable
             .Columns.Item("dgCodigo").DataPropertyName = "Codigo"
-
             .Columns.Item("dgDescripcion").SortMode = DataGridViewColumnSortMode.NotSortable
             .Columns.Item("dgDescripcion").DataPropertyName = "Descripcion"
-
             .Columns.Item("dgCantidad").SortMode = DataGridViewColumnSortMode.NotSortable
             .Columns.Item("dgCantidad").DataPropertyName = "Cantidad"
-
             .Columns.Item("dgValor").SortMode = DataGridViewColumnSortMode.NotSortable
             .Columns.Item("dgValor").DataPropertyName = "Valor"
-
             .Columns.Item("dgId").SortMode = DataGridViewColumnSortMode.NotSortable
             .Columns.Item("dgId").DataPropertyName = "Id"
-
             .Columns.Item("dgTotal").SortMode = DataGridViewColumnSortMode.NotSortable
             .Columns.Item("dgTotal").DataPropertyName = "Total"
-
         End With
         dgvFactura.AutoGenerateColumns = False
         dgvFactura.DataSource = dtProductos
@@ -100,13 +84,23 @@
                 Exit Sub
             End If
             If (dgvFactura.Rows(dgvFactura.CurrentCell.RowIndex).Cells("dgCodigo").Selected = True Or dgvFactura.Rows(dgvFactura.CurrentCell.RowIndex).Cells("dgDescripcion").Selected = True) Then
-                Generales.busquedaItems(consultaFactura, params, titulo, dgvFactura, dtProductos, 0, 4, 0, 0, True)
+                Generales.busquedaItems(Sentencias.PRODUCTOS_SERVICIO_FACTURA_BUSCAR, params, titulo, dgvFactura, dtProductos, 0, 4, 0, 0, True)
             ElseIf dgvFactura.Rows(dgvFactura.CurrentCell.RowIndex).Cells("dgQuitar").Selected = True And dtProductos.Rows(dgvFactura.CurrentCell.RowIndex).Item(0).ToString <> "" Then
                 dtProductos.Rows.RemoveAt(e.RowIndex)
             End If
         Catch ex As Exception
             EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
         End Try
+    End Sub
+    Private Sub dgvFactura_CellFormatting(sender As System.Object, e As System.Windows.Forms.DataGridViewCellFormattingEventArgs) Handles dgvFactura.CellFormatting
+        If e.ColumnIndex = 3 Or e.ColumnIndex = 5 Then
+            If IsDBNull(e.Value) Then
+                e.Value = Format(Val(0), "c2")
+            Else
+                e.Value = Format(Val(e.Value), "c2")
+            End If
+        End If
+
     End Sub
     Private Sub cargarDatosCliente(identificacion As String)
         Dim params As New List(Of String)
@@ -185,12 +179,11 @@
         End If
     End Sub
     Private Sub dgvFactura_CellEndEdit(sender As Object, e As DataGridViewCellEventArgs) Handles dgvFactura.CellEndEdit
-
         If dtProductos.Rows(dgvFactura.CurrentRow.Index).Item(0).ToString <> "" Then
             Dim params As New List(Of String)
             params.Add(dtProductos.Rows(dgvFactura.CurrentRow.Index).Item(0).ToString)
             Dim fila As DataRow
-            fila = Generales.digitarEnDgv(consultaItem, params)
+            fila = Generales.digitarEnDgv(Sentencias.PRODUCTOS_SERVICIO_FACTURA_CARGAR, params)
             If Not IsNothing(fila) Then
                 If dtProductos.Rows(dgvFactura.CurrentRow.Index).Item(0).ToString <> "" And dtProductos.Rows(dgvFactura.CurrentRow.Index).Item(1).ToString = "" Then
                     dtProductos.Rows(dgvFactura.CurrentRow.Index).Item(1) = fila(1)
@@ -198,6 +191,7 @@
                     dtProductos.Rows(dgvFactura.CurrentRow.Index).Item(3) = fila(3)
                     dtProductos.Rows(dgvFactura.CurrentRow.Index).Item(4) = fila(4)
                     dtProductos.Rows.Add()
+                    dgvFactura.Rows(dgvFactura.Rows.Count - 1).Cells(0).Selected = True
                 Else
                     dtProductos.Rows(dgvFactura.CurrentRow.Index).Item(1) = fila(1)
                     dtProductos.Rows(dgvFactura.CurrentRow.Index).Item(3) = fila(3)
@@ -211,7 +205,6 @@
                 dgvFactura.Rows(dgvFactura.CurrentCell.RowIndex).Cells(4).Value = String.Empty
                 If dtProductos.Rows.Count > 1 And dgvFactura.Rows(dgvFactura.CurrentCell.RowIndex).Cells(0).Value = String.Empty And e.RowIndex <> dgvFactura.Rows.Count - 1 Then
                     dtProductos.Rows.RemoveAt(e.RowIndex)
-
                 End If
             End If
             dtProductos.Rows(dgvFactura.CurrentRow.Index).Item("Total") = dtProductos.Rows(dgvFactura.CurrentRow.Index).Item("Valor") * dtProductos.Rows(dgvFactura.CurrentRow.Index).Item("Cantidad")
@@ -228,6 +221,8 @@
         End If
     End Sub
     Private Sub calcularTotales()
+        dgvFactura.EndEdit()
+
         Try
             Dim sumProductos, sumServicio, valorTotal As Double
             If dgvFactura.Rows.Count > 1 Then
@@ -238,7 +233,6 @@
                         Else
                             sumServicio = sumServicio + CDbl(dgvFactura.Rows(indicedgvCuentas).Cells("dgTotal").Value)
                         End If
-
                     End If
                 Next
                 valorTotal = sumProductos + sumServicio
@@ -251,15 +245,6 @@
         End Try
     End Sub
 
-    Private Sub rbProductos_CheckedChanged(sender As Object, e As EventArgs) Handles rbProductos.CheckedChanged
-        If rbProductos.Checked = True Then
-            consultaFactura = Sentencias.PRODUCTOS_FACTURA_BUSCAR
-            consultaItem = Sentencias.PRODUCTOS_FACTURA_CARGAR
-        Else
-            consultaFactura = Sentencias.SERVICIOS_FACTURA_BUSCAR
-            consultaItem = Sentencias.SERVICIOS_FACTURA_CARGAR
-        End If
-    End Sub
     Private Sub bloquearColumnas()
         With dgvFactura
             .Columns("dgValor").ReadOnly = True
@@ -268,12 +253,15 @@
         End With
     End Sub
     Private Sub dgvFactura_DataError(sender As Object, e As DataGridViewDataErrorEventArgs) Handles dgvFactura.DataError
-
+        bloquearColumnas()
     End Sub
 
-    Private Sub dgvFactura_Enter(sender As Object, e As EventArgs) Handles dgvFactura.Enter
-        calcularTotales()
-        dtProductos.Rows(dgvFactura.CurrentRow.Index).Item("Total") = dtProductos.Rows(dgvFactura.CurrentRow.Index).Item("Valor") * dtProductos.Rows(dgvFactura.CurrentRow.Index).Item("Cantidad")
-        dtProductos.AcceptChanges()
+    Private Sub dgvFactura_Enter(sender As Object, e As EventArgs) Handles dgvFactura.CellEnter
+        If dgvFactura.RowCount > 1 Then
+            calcularTotales()
+            For indice = 0 To dgvFactura.RowCount - 1
+                dgvFactura.Rows(indice).Cells("dgTotal").Value = dgvFactura.Rows(indice).Cells("dgValor").Value * dgvFactura.Rows(indice).Cells("dgCantidad").Value
+            Next
+        End If
     End Sub
 End Class
