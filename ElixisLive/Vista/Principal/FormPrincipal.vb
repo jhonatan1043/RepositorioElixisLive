@@ -1,20 +1,18 @@
 ﻿Public Class FormPrincipal
+
     Private Sub formPrincipal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         principalBLL.cargarMenu(arbolMenu)
         Dim ctl As Control
         Dim ctlMDI As MdiClient
-
         For Each ctl In Me.Controls
             Try
-                ' Attempt to cast the control to type MdiClient.
                 ctlMDI = CType(ctl, MdiClient)
-                ' Set the BackColor of the MdiClient control.
                 ctlMDI.BackgroundImage = My.Resources.Quality_logo
                 ctlMDI.BackColor = Me.BackColor
             Catch exc As InvalidCastException
-                ' Catch and ignore the error if casting failed.
             End Try
         Next
+
     End Sub
 
     Private Sub arbolMenu_NodeMouseClick(sender As Object, e As TreeNodeMouseClickEventArgs) Handles arbolMenu.NodeMouseClick
@@ -31,7 +29,7 @@
         Return elemento
     End Function
 
-    Private Sub FormPrincipal_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
-        Application.Exit()
+    Private Sub Panel1_Click(sender As Object, e As EventArgs) Handles Panel1.Click
+        FormCerrarSesion.ShowDialog()
     End Sub
 End Class

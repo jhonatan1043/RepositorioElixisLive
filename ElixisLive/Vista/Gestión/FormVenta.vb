@@ -145,27 +145,33 @@
         params.Add(String.Empty)
         params.Add(SesionActual.idEmpresa)
         Try
-            'Generales.buscarElemento(objEmpleado.sqlConsulta,
-            '                       params,
-            '                       AddressOf cargarInfomacion,
-            '                       "Busqueda de Empleado",
-            '                       True, True)
+            Generales.buscarElemento(Sentencias.BUSCAR_FACTURAS,
+                                   params,
+                                   AddressOf cargarInfomacion,
+                                   "Busqueda de Facturas",
+                                   True, True)
         Catch ex As Exception
             EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
         End Try
     End Sub
+    Private Sub cargarInfomacion()
+
+    End Sub
+    Private Function validarCampos()
+        Return False
+    End Function
     Private Sub btRegistrar_Click(sender As Object, e As EventArgs) Handles btRegistrar.Click
         dgvFactura.EndEdit()
         Try
-            'If validarCampos() = True Then
-            '    cargarObjeto()
-            '    EmpleadoBLL.guardar(objEmpleado)
-            Generales.habilitarBotones(ToolStrip1)
+            If validarCampos() = True Then
+
+                'EmpleadoBLL.guardar(objEmpleado)
+                Generales.habilitarBotones(ToolStrip1)
                 Generales.deshabilitarControles(Me)
                 btCancelar.Enabled = False
                 btRegistrar.Enabled = False
                 EstiloMensajes.mostrarMensajeExitoso(MensajeSistema.REGISTRO_GUARDADO)
-            'End If
+            End If
         Catch ex As Exception
             EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
         End Try
@@ -220,12 +226,15 @@
             e.Cancel = True
         End If
     End Sub
+
     Private Sub calcularTotales()
         dgvFactura.EndEdit()
 
         Try
             Dim sumProductos, sumServicio, valorTotal As Double
-            If dgvFactura.Rows.Count > 1 Then
+            sumProductos = 0
+            sumServicio = 0
+            If dgvFactura.Rows.Count >= 1 Then
                 For indicedgvCuentas = 0 To dgvFactura.Rows.Count - 1
                     If dgvFactura.Rows(indicedgvCuentas).Cells("dgDescripcion").Value.ToString <> "" Then
                         If dgvFactura.Rows(indicedgvCuentas).Cells("dgId").Value.ToString = Constantes.ID_PRODUCTO Then
@@ -233,6 +242,8 @@
                         Else
                             sumServicio = sumServicio + CDbl(dgvFactura.Rows(indicedgvCuentas).Cells("dgTotal").Value)
                         End If
+                    Else
+                        dgvFactura.Rows(indicedgvCuentas).Cells("dgTotal").Value = 0
                     End If
                 Next
                 valorTotal = sumProductos + sumServicio
@@ -257,7 +268,7 @@
     End Sub
 
     Private Sub dgvFactura_Enter(sender As Object, e As EventArgs) Handles dgvFactura.CellEnter
-        If dgvFactura.RowCount > 1 Then
+        If dgvFactura.RowCount >= 1 Then
             calcularTotales()
             For indice = 0 To dgvFactura.RowCount - 1
                 dgvFactura.Rows(indice).Cells("dgTotal").Value = dgvFactura.Rows(indice).Cells("dgValor").Value * dgvFactura.Rows(indice).Cells("dgCantidad").Value

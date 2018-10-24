@@ -243,6 +243,12 @@
     <Compile Include="Vista\Principal\FormBusqueda.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Vista\Principal\FormCerrarSesion.Designer.vb">
+      <DependentUpon>FormCerrarSesion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Principal\FormCerrarSesion.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Vista\Principal\FormInicioSesion.Designer.vb">
       <DependentUpon>FormInicioSesion.vb</DependentUpon>
     </Compile>
@@ -328,6 +334,9 @@
     <EmbeddedResource Include="Vista\Principal\FormBusqueda.resx">
       <DependentUpon>FormBusqueda.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Principal\FormCerrarSesion.resx">
+      <DependentUpon>FormCerrarSesion.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vista\Principal\FormInicioSesion.resx">
       <DependentUpon>FormInicioSesion.vb</DependentUpon>
     </EmbeddedResource>
@@ -369,6 +378,10 @@
     <Content Include="ReferenciaDLL\CnxElixisLiveBD.dll" />
     <Content Include="ReferenciaDLL\MySql.Data.DLL" />
     <Content Include="ReferenciaDLL\NotifySenderControl.dll" />
+    <None Include="Resources\glossy-3d-blue-orbs2-132-icon.png" />
+    <None Include="Resources\glossy-3d-blue-orbs2-093-icon.png" />
+    <None Include="Resources\glossy-3d-blue-orbs2-092-icon.png" />
+    <None Include="Resources\glossy-3d-blue-orbs2-103-icon.png" />
     <None Include="Resources\printer-icon.png" />
     <None Include="Resources\glossy-3d-blue-i-icon.png" />
     <None Include="Resources\Quality_logo.jpg" />

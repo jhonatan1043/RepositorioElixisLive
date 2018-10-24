@@ -18,7 +18,6 @@ Partial Class FormInicioSesion
     Friend WithEvents UsernameLabel As System.Windows.Forms.Label
     Friend WithEvents PasswordLabel As System.Windows.Forms.Label
     Friend WithEvents txtUsuario As System.Windows.Forms.TextBox
-    Friend WithEvents txtContraseña As System.Windows.Forms.TextBox
     Friend WithEvents OK As System.Windows.Forms.Button
     Friend WithEvents Cancel As System.Windows.Forms.Button
 
@@ -289,4 +288,5 @@ Partial Class FormInicioSesion
     Friend WithEvents GroupBox3 As GroupBox
     Friend WithEvents Panel4 As Panel
     Friend WithEvents Panel5 As Panel
+    Public WithEvents txtContraseña As TextBox
 End Class
