@@ -23,6 +23,6 @@
         sqlGuardar = "SP_ADMIN_PERSONA_CREAR"
         sqlConsulta = "[SP_ADMIN_PERSONA_CONSULTAR]"
         sqlCargar = "SP_ADMIN_PERSONA_CARGAR"
-        sqlAnular = "SP_ADMIN_PERSONA_ANULAR"
+        sqlAnular = "SP_ADMIN_PERSONA_ANULAR "
     End Sub
 End Class

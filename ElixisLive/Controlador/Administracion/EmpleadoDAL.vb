@@ -13,7 +13,7 @@ Public Class EmpleadoDAL
                     comando.CommandText = objEmpleado.sqlGuardar
                     comando.Parameters.Add(New SqlParameter("@Codigo", SqlDbType.NVarChar)).Value = objEmpleado.codigo
                     comando.Parameters.Add(New SqlParameter("@Usuario", SqlDbType.NVarChar)).Value = objEmpleado.usuario
-                    comando.Parameters.Add(New SqlParameter("@Contrasena", SqlDbType.VarBinary)).Value = objEmpleado.clave
+                    comando.Parameters.Add(New SqlParameter("@Contrasena", SqlDbType.VarChar)).Value = objEmpleado.clave
                     comando.Parameters.Add(New SqlParameter("@Codigo_Perfil", SqlDbType.Int)).Value = objEmpleado.codigoPerfil
                     comando.Parameters.Add(New SqlParameter("@Estado", SqlDbType.Bit)).Value = objEmpleado.activo
                     comando.Parameters.Add(New SqlParameter("@Foto", SqlDbType.VarBinary)).Value = objEmpleado.imagenEmpleado

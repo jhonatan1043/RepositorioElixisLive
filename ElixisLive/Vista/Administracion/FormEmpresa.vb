@@ -52,6 +52,7 @@
         Generales.deshabilitarBotones(ToolStrip1)
         Generales.habilitarControles(Me)
         Generales.limpiarControles(Me)
+        objEmpresa.codigo = Nothing
         btCancelar.Enabled = True
         btRegistrar.Enabled = True
     End Sub

@@ -119,6 +119,7 @@
         Generales.habilitarControles(Me)
         Generales.deshabilitarControles(gbInform)
         Generales.limpiarControles(Me)
+        objEmpleado.codigo = Nothing
         btBuscarPersona.Enabled = True
         btCancelar.Enabled = True
         btRegistrar.Enabled = True
