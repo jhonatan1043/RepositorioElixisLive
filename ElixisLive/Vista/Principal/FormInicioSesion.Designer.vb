@@ -134,9 +134,9 @@ Partial Class FormInicioSesion
         Me.GroupBox3.BackColor = System.Drawing.Color.Transparent
         Me.GroupBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.GroupBox3.Controls.Add(Me.Pimagen)
-        Me.GroupBox3.Location = New System.Drawing.Point(3, 7)
+        Me.GroupBox3.Location = New System.Drawing.Point(3, 0)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(142, 175)
+        Me.GroupBox3.Size = New System.Drawing.Size(142, 182)
         Me.GroupBox3.TabIndex = 12
         Me.GroupBox3.TabStop = False
         '
@@ -146,7 +146,7 @@ Partial Class FormInicioSesion
         Me.Pimagen.Image = Global.Quality.My.Resources.Resources.Quality_logo
         Me.Pimagen.Location = New System.Drawing.Point(6, 13)
         Me.Pimagen.Name = "Pimagen"
-        Me.Pimagen.Size = New System.Drawing.Size(130, 156)
+        Me.Pimagen.Size = New System.Drawing.Size(130, 163)
         Me.Pimagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.Pimagen.TabIndex = 0
         Me.Pimagen.TabStop = False
@@ -158,7 +158,7 @@ Partial Class FormInicioSesion
         Me.OK.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.OK.Font = New System.Drawing.Font("Times New Roman", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.OK.ForeColor = System.Drawing.Color.White
-        Me.OK.Location = New System.Drawing.Point(209, 147)
+        Me.OK.Location = New System.Drawing.Point(209, 150)
         Me.OK.Name = "OK"
         Me.OK.Size = New System.Drawing.Size(72, 23)
         Me.OK.TabIndex = 4
@@ -174,7 +174,7 @@ Partial Class FormInicioSesion
         Me.Cancel.DialogResult = System.Windows.Forms.DialogResult.Cancel
         Me.Cancel.Font = New System.Drawing.Font("Times New Roman", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Cancel.ForeColor = System.Drawing.Color.White
-        Me.Cancel.Location = New System.Drawing.Point(290, 147)
+        Me.Cancel.Location = New System.Drawing.Point(290, 150)
         Me.Cancel.Name = "Cancel"
         Me.Cancel.Size = New System.Drawing.Size(72, 23)
         Me.Cancel.TabIndex = 5
@@ -186,9 +186,9 @@ Partial Class FormInicioSesion
         '
         Me.GroupBox2.BackColor = System.Drawing.Color.Transparent
         Me.GroupBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.GroupBox2.Location = New System.Drawing.Point(148, 7)
+        Me.GroupBox2.Location = New System.Drawing.Point(148, 0)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(242, 175)
+        Me.GroupBox2.Size = New System.Drawing.Size(242, 182)
         Me.GroupBox2.TabIndex = 6
         Me.GroupBox2.TabStop = False
         '

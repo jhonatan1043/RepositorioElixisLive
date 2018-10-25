@@ -229,7 +229,6 @@
 
     Private Sub calcularTotales()
         dgvFactura.EndEdit()
-
         Try
             Dim sumProductos, sumServicio, valorTotal As Double
             sumProductos = 0

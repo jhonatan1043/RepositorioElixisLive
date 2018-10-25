@@ -44,7 +44,7 @@ Partial Class FormCerrarSesion
         Me.Label3.BackColor = System.Drawing.Color.White
         Me.Label3.Font = New System.Drawing.Font("Times New Roman", 9.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.SteelBlue
-        Me.Label3.Location = New System.Drawing.Point(319, 110)
+        Me.Label3.Location = New System.Drawing.Point(320, 100)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(59, 23)
         Me.Label3.TabIndex = 29
@@ -56,7 +56,7 @@ Partial Class FormCerrarSesion
         Me.Label2.BackColor = System.Drawing.Color.White
         Me.Label2.Font = New System.Drawing.Font("Times New Roman", 9.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.SteelBlue
-        Me.Label2.Location = New System.Drawing.Point(239, 110)
+        Me.Label2.Location = New System.Drawing.Point(239, 100)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(45, 23)
         Me.Label2.TabIndex = 28
@@ -68,7 +68,7 @@ Partial Class FormCerrarSesion
         Me.Label1.BackColor = System.Drawing.Color.White
         Me.Label1.Font = New System.Drawing.Font("Times New Roman", 9.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.SteelBlue
-        Me.Label1.Location = New System.Drawing.Point(124, 110)
+        Me.Label1.Location = New System.Drawing.Point(126, 100)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(85, 23)
         Me.Label1.TabIndex = 27
@@ -78,7 +78,7 @@ Partial Class FormCerrarSesion
         'PictureBox4
         '
         Me.PictureBox4.Image = Global.Quality.My.Resources.Resources.Quality_logo
-        Me.PictureBox4.Location = New System.Drawing.Point(16, 24)
+        Me.PictureBox4.Location = New System.Drawing.Point(16, 23)
         Me.PictureBox4.Name = "PictureBox4"
         Me.PictureBox4.Size = New System.Drawing.Size(94, 104)
         Me.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -88,7 +88,7 @@ Partial Class FormCerrarSesion
         'PicRegresar
         '
         Me.PicRegresar.Image = Global.Quality.My.Resources.Resources.glossy_3d_blue_orbs2_092_icon
-        Me.PicRegresar.Location = New System.Drawing.Point(310, 36)
+        Me.PicRegresar.Location = New System.Drawing.Point(310, 30)
         Me.PicRegresar.Name = "PicRegresar"
         Me.PicRegresar.Size = New System.Drawing.Size(75, 75)
         Me.PicRegresar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -98,7 +98,7 @@ Partial Class FormCerrarSesion
         'PicSalir
         '
         Me.PicSalir.Image = Global.Quality.My.Resources.Resources.glossy_3d_blue_orbs2_132_icon
-        Me.PicSalir.Location = New System.Drawing.Point(218, 36)
+        Me.PicSalir.Location = New System.Drawing.Point(218, 30)
         Me.PicSalir.Name = "PicSalir"
         Me.PicSalir.Size = New System.Drawing.Size(75, 75)
         Me.PicSalir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -108,7 +108,7 @@ Partial Class FormCerrarSesion
         'PicCerrarSesion
         '
         Me.PicCerrarSesion.Image = Global.Quality.My.Resources.Resources.glossy_3d_blue_orbs2_115_icon
-        Me.PicCerrarSesion.Location = New System.Drawing.Point(127, 36)
+        Me.PicCerrarSesion.Location = New System.Drawing.Point(127, 30)
         Me.PicCerrarSesion.Name = "PicCerrarSesion"
         Me.PicCerrarSesion.Size = New System.Drawing.Size(75, 75)
         Me.PicCerrarSesion.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage

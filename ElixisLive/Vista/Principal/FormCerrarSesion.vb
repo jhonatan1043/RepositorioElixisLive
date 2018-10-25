@@ -8,7 +8,7 @@
     End Sub
 
     Private Sub PicSalir_Click(sender As Object, e As EventArgs) Handles PicSalir.Click
-        Application.Exit()
+        FormInicioSesion.Close()
     End Sub
 
     Private Sub PicRegresar_Click(sender As Object, e As EventArgs) Handles PicRegresar.Click
