@@ -42,8 +42,6 @@ Partial Class FormInicioSesion
         Me.OK = New System.Windows.Forms.Button()
         Me.Cancel = New System.Windows.Forms.Button()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.Panel5 = New System.Windows.Forms.Panel()
-        Me.Panel4 = New System.Windows.Forms.Panel()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Panel1 = New System.Windows.Forms.Panel()
@@ -54,7 +52,7 @@ Partial Class FormInicioSesion
         '
         'UsernameLabel
         '
-        Me.UsernameLabel.BackColor = System.Drawing.Color.Transparent
+        Me.UsernameLabel.BackColor = System.Drawing.Color.White
         Me.UsernameLabel.Font = New System.Drawing.Font("Times New Roman", 11.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.UsernameLabel.ForeColor = System.Drawing.Color.SteelBlue
         Me.UsernameLabel.Location = New System.Drawing.Point(155, 22)
@@ -66,7 +64,7 @@ Partial Class FormInicioSesion
         '
         'PasswordLabel
         '
-        Me.PasswordLabel.BackColor = System.Drawing.Color.Transparent
+        Me.PasswordLabel.BackColor = System.Drawing.Color.White
         Me.PasswordLabel.Font = New System.Drawing.Font("Times New Roman", 11.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.PasswordLabel.ForeColor = System.Drawing.Color.SteelBlue
         Me.PasswordLabel.Location = New System.Drawing.Point(155, 69)
@@ -97,7 +95,7 @@ Partial Class FormInicioSesion
         '
         'Label1
         '
-        Me.Label1.BackColor = System.Drawing.Color.Transparent
+        Me.Label1.BackColor = System.Drawing.Color.White
         Me.Label1.Font = New System.Drawing.Font("Times New Roman", 11.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.SteelBlue
         Me.Label1.Location = New System.Drawing.Point(155, 115)
@@ -125,7 +123,7 @@ Partial Class FormInicioSesion
         Me.GroupBox1.Controls.Add(Me.OK)
         Me.GroupBox1.Controls.Add(Me.Cancel)
         Me.GroupBox1.Controls.Add(Me.GroupBox2)
-        Me.GroupBox1.Location = New System.Drawing.Point(3, 2)
+        Me.GroupBox1.Location = New System.Drawing.Point(6, 8)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(394, 188)
         Me.GroupBox1.TabIndex = 11
@@ -136,7 +134,7 @@ Partial Class FormInicioSesion
         Me.GroupBox3.BackColor = System.Drawing.Color.Transparent
         Me.GroupBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.GroupBox3.Controls.Add(Me.Pimagen)
-        Me.GroupBox3.Location = New System.Drawing.Point(4, 7)
+        Me.GroupBox3.Location = New System.Drawing.Point(3, 7)
         Me.GroupBox3.Name = "GroupBox3"
         Me.GroupBox3.Size = New System.Drawing.Size(142, 175)
         Me.GroupBox3.TabIndex = 12
@@ -194,27 +192,9 @@ Partial Class FormInicioSesion
         Me.GroupBox2.TabIndex = 6
         Me.GroupBox2.TabStop = False
         '
-        'Panel5
-        '
-        Me.Panel5.BackgroundImage = Global.Quality.My.Resources.Resources.fondo_azul
-        Me.Panel5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Panel5.Location = New System.Drawing.Point(3, 190)
-        Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(395, 10)
-        Me.Panel5.TabIndex = 12
-        '
-        'Panel4
-        '
-        Me.Panel4.BackgroundImage = Global.Quality.My.Resources.Resources.fondo_azul
-        Me.Panel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Panel4.Location = New System.Drawing.Point(2, -3)
-        Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(395, 10)
-        Me.Panel4.TabIndex = 1
-        '
         'Panel3
         '
-        Me.Panel3.BackColor = System.Drawing.Color.Transparent
+        Me.Panel3.BackColor = System.Drawing.Color.White
         Me.Panel3.BackgroundImage = Global.Quality.My.Resources.Resources.glossy_3d_blue_orbs2_060_icon
         Me.Panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Panel3.Location = New System.Drawing.Point(352, 113)
@@ -224,7 +204,7 @@ Partial Class FormInicioSesion
         '
         'Panel2
         '
-        Me.Panel2.BackColor = System.Drawing.Color.Transparent
+        Me.Panel2.BackColor = System.Drawing.Color.White
         Me.Panel2.BackgroundImage = Global.Quality.My.Resources.Resources.exitoso
         Me.Panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Panel2.Location = New System.Drawing.Point(352, 66)
@@ -234,7 +214,7 @@ Partial Class FormInicioSesion
         '
         'Panel1
         '
-        Me.Panel1.BackColor = System.Drawing.Color.Transparent
+        Me.Panel1.BackColor = System.Drawing.Color.White
         Me.Panel1.BackgroundImage = Global.Quality.My.Resources.Resources.glossy_3d_blue_orbs2_086_icon
         Me.Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Panel1.Location = New System.Drawing.Point(352, 19)
@@ -248,15 +228,14 @@ Partial Class FormInicioSesion
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
+        Me.BackgroundImage = Global.Quality.My.Resources.Resources.fondo_azul
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.CancelButton = Me.Cancel
-        Me.ClientSize = New System.Drawing.Size(401, 197)
+        Me.ClientSize = New System.Drawing.Size(405, 203)
         Me.ControlBox = False
         Me.Controls.Add(Me.CbEmpresa)
         Me.Controls.Add(Me.txtUsuario)
         Me.Controls.Add(Me.txtContraseña)
-        Me.Controls.Add(Me.Panel5)
-        Me.Controls.Add(Me.Panel4)
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
@@ -286,7 +265,5 @@ Partial Class FormInicioSesion
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents GroupBox3 As GroupBox
-    Friend WithEvents Panel4 As Panel
-    Friend WithEvents Panel5 As Panel
     Public WithEvents txtContraseña As TextBox
 End Class

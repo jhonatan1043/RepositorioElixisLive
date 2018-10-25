@@ -28,9 +28,8 @@ Partial Class FormCerrarSesion
         Me.PictureBox4 = New System.Windows.Forms.PictureBox()
         Me.PicRegresar = New System.Windows.Forms.PictureBox()
         Me.PicSalir = New System.Windows.Forms.PictureBox()
-        Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.Panel5 = New System.Windows.Forms.Panel()
         Me.PicCerrarSesion = New System.Windows.Forms.PictureBox()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PicRegresar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PicSalir, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -39,7 +38,7 @@ Partial Class FormCerrarSesion
         '
         'Label3
         '
-        Me.Label3.BackColor = System.Drawing.Color.Transparent
+        Me.Label3.BackColor = System.Drawing.Color.White
         Me.Label3.Font = New System.Drawing.Font("Times New Roman", 9.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.SteelBlue
         Me.Label3.Location = New System.Drawing.Point(319, 110)
@@ -51,7 +50,7 @@ Partial Class FormCerrarSesion
         '
         'Label2
         '
-        Me.Label2.BackColor = System.Drawing.Color.Transparent
+        Me.Label2.BackColor = System.Drawing.Color.White
         Me.Label2.Font = New System.Drawing.Font("Times New Roman", 9.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.SteelBlue
         Me.Label2.Location = New System.Drawing.Point(239, 110)
@@ -63,7 +62,7 @@ Partial Class FormCerrarSesion
         '
         'Label1
         '
-        Me.Label1.BackColor = System.Drawing.Color.Transparent
+        Me.Label1.BackColor = System.Drawing.Color.White
         Me.Label1.Font = New System.Drawing.Font("Times New Roman", 9.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.SteelBlue
         Me.Label1.Location = New System.Drawing.Point(124, 110)
@@ -103,24 +102,6 @@ Partial Class FormCerrarSesion
         Me.PicSalir.TabIndex = 24
         Me.PicSalir.TabStop = False
         '
-        'Panel2
-        '
-        Me.Panel2.BackgroundImage = Global.Quality.My.Resources.Resources.fondo_azul
-        Me.Panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Panel2.Location = New System.Drawing.Point(3, -3)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(395, 10)
-        Me.Panel2.TabIndex = 23
-        '
-        'Panel5
-        '
-        Me.Panel5.BackgroundImage = Global.Quality.My.Resources.Resources.fondo_azul
-        Me.Panel5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Panel5.Location = New System.Drawing.Point(4, 150)
-        Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(395, 10)
-        Me.Panel5.TabIndex = 22
-        '
         'PicCerrarSesion
         '
         Me.PicCerrarSesion.Image = Global.Quality.My.Resources.Resources.glossy_3d_blue_orbs2_115_icon
@@ -131,12 +112,24 @@ Partial Class FormCerrarSesion
         Me.PicCerrarSesion.TabIndex = 21
         Me.PicCerrarSesion.TabStop = False
         '
+        'GroupBox1
+        '
+        Me.GroupBox1.BackColor = System.Drawing.Color.White
+        Me.GroupBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.GroupBox1.Location = New System.Drawing.Point(4, 7)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(392, 132)
+        Me.GroupBox1.TabIndex = 30
+        Me.GroupBox1.TabStop = False
+        '
         'FormCerrarSesion
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(401, 159)
+        Me.BackgroundImage = Global.Quality.My.Resources.Resources.fondo_azul
+        Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.ClientSize = New System.Drawing.Size(401, 146)
         Me.ControlBox = False
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
@@ -144,10 +137,9 @@ Partial Class FormCerrarSesion
         Me.Controls.Add(Me.PictureBox4)
         Me.Controls.Add(Me.PicRegresar)
         Me.Controls.Add(Me.PicSalir)
-        Me.Controls.Add(Me.Panel2)
-        Me.Controls.Add(Me.Panel5)
         Me.Controls.Add(Me.PicCerrarSesion)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.Controls.Add(Me.GroupBox1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "FormCerrarSesion"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
@@ -164,7 +156,6 @@ Partial Class FormCerrarSesion
     Friend WithEvents PictureBox4 As PictureBox
     Friend WithEvents PicRegresar As PictureBox
     Friend WithEvents PicSalir As PictureBox
-    Friend WithEvents Panel2 As Panel
-    Friend WithEvents Panel5 As Panel
     Friend WithEvents PicCerrarSesion As PictureBox
+    Friend WithEvents GroupBox1 As GroupBox
 End Class

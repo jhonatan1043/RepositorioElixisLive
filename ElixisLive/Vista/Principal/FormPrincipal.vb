@@ -1,5 +1,5 @@
 ﻿Public Class FormPrincipal
-
+    Dim formulario As New vForm
     Private Sub formPrincipal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         principalBLL.cargarMenu(arbolMenu)
         Dim ctl As Control
@@ -12,7 +12,8 @@
             Catch exc As InvalidCastException
             End Try
         Next
-
+        formulario.ventana = Me '' se indica el formulario que usara el efecto
+        formulario.redondear() '' se redondean los bordes del formulario
     End Sub
 
     Private Sub arbolMenu_NodeMouseClick(sender As Object, e As TreeNodeMouseClickEventArgs) Handles arbolMenu.NodeMouseClick
@@ -32,4 +33,8 @@
     Private Sub Panel1_Click(sender As Object, e As EventArgs) Handles Panel1.Click
         FormCerrarSesion.ShowDialog()
     End Sub
+
+    '' se instancia a la clase
+
+
 End Class

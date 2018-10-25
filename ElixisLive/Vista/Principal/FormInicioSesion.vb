@@ -1,4 +1,5 @@
 ﻿Public Class FormInicioSesion
+    Dim formulario As New vForm
     Dim objInicioSesionBLL As New InicioSesionBLL
     Private Sub OK_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles OK.Click
         If validarCampos() = True Then
@@ -32,6 +33,8 @@
 
     Private Sub FormInicioSesion_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         cargarComboEmpresa()
+        formulario.ventana = Me '' se indica el formulario que usara el efecto
+        formulario.redondear() '' se redondean los bordes del formulario
     End Sub
     Private Function cargarComboEmpresa() As Boolean
         Dim params As New List(Of String)
