@@ -1,8 +1,9 @@
 ﻿Public Class SuperMessageBox
+
     Inherits System.Windows.Forms.Form
     Dim ex, ey As Integer
     Dim Arrastre As Boolean
-
+    Dim formulario As New vForm
 #Region " Código generado por el Diseñador de Windows Forms "
 
     Public Sub New()
@@ -261,4 +262,8 @@
         Me.Close()
     End Sub
 
+    Private Sub SuperMessageBox_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        formulario.ventana = Me '' se indica el formulario que usara el efecto
+        formulario.redondear() '' se redondean los bordes del formulario
+    End Sub
 End Class

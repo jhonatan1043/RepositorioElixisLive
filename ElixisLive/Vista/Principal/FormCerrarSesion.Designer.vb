@@ -30,10 +30,13 @@ Partial Class FormCerrarSesion
         Me.PicSalir = New System.Windows.Forms.PictureBox()
         Me.PicCerrarSesion = New System.Windows.Forms.PictureBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PicRegresar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PicSalir, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PicCerrarSesion, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
         'Label3
@@ -75,9 +78,9 @@ Partial Class FormCerrarSesion
         'PictureBox4
         '
         Me.PictureBox4.Image = Global.Quality.My.Resources.Resources.Quality_logo
-        Me.PictureBox4.Location = New System.Drawing.Point(7, 20)
+        Me.PictureBox4.Location = New System.Drawing.Point(16, 24)
         Me.PictureBox4.Name = "PictureBox4"
-        Me.PictureBox4.Size = New System.Drawing.Size(109, 118)
+        Me.PictureBox4.Size = New System.Drawing.Size(94, 104)
         Me.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox4.TabIndex = 26
         Me.PictureBox4.TabStop = False
@@ -116,11 +119,29 @@ Partial Class FormCerrarSesion
         '
         Me.GroupBox1.BackColor = System.Drawing.Color.White
         Me.GroupBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.GroupBox1.Controls.Add(Me.GroupBox3)
+        Me.GroupBox1.Controls.Add(Me.GroupBox2)
         Me.GroupBox1.Location = New System.Drawing.Point(4, 7)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(392, 132)
         Me.GroupBox1.TabIndex = 30
         Me.GroupBox1.TabStop = False
+        '
+        'GroupBox3
+        '
+        Me.GroupBox3.Location = New System.Drawing.Point(118, 0)
+        Me.GroupBox3.Name = "GroupBox3"
+        Me.GroupBox3.Size = New System.Drawing.Size(268, 127)
+        Me.GroupBox3.TabIndex = 1
+        Me.GroupBox3.TabStop = False
+        '
+        'GroupBox2
+        '
+        Me.GroupBox2.Location = New System.Drawing.Point(6, 0)
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.Size = New System.Drawing.Size(106, 127)
+        Me.GroupBox2.TabIndex = 0
+        Me.GroupBox2.TabStop = False
         '
         'FormCerrarSesion
         '
@@ -146,6 +167,7 @@ Partial Class FormCerrarSesion
         CType(Me.PicRegresar, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PicSalir, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PicCerrarSesion, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox1.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -158,4 +180,6 @@ Partial Class FormCerrarSesion
     Friend WithEvents PicSalir As PictureBox
     Friend WithEvents PicCerrarSesion As PictureBox
     Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents GroupBox3 As GroupBox
+    Friend WithEvents GroupBox2 As GroupBox
 End Class

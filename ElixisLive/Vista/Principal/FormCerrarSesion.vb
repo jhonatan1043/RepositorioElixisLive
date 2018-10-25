@@ -21,10 +21,6 @@
         x = Screen.PrimaryScreen.WorkingArea.Width - 750
         y = Screen.PrimaryScreen.WorkingArea.Height - 450
         Me.Location = New Point(x, y)
-    End Sub
-
-    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
         formulario.ventana = Me '' se indica el formulario que usara el efecto
         formulario.redondear() '' se redondean los bordes del formulario
 

@@ -59,5 +59,12 @@
         Generales.limpiarControles(Me)
         txtUsuario.Focus()
     End Sub
+    Private Sub FormInicioSesionMouseMove(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) _
+                Handles MyBase.MouseMove '' aca puedes agregar mas controles que quieras usar para mover el formulario ej: label1.MouseMove
 
+        If e.Button = MouseButtons.Left Then
+            formulario.moverForm() '' se llama la función que da el efecto
+        End If
+
+    End Sub
 End Class

@@ -1,4 +1,5 @@
 ﻿Public Class FormBusqueda
+    Dim formulario As New vForm
     Public Property consulta As String
     Public Property isOcultaCol As Boolean
     Public Property buscarAlDarEnter As Boolean
@@ -9,7 +10,7 @@
 
     Dim dtBusqueda As New DataTable
 
-    Private Sub dgvbusqueda_CellMouseDoubleClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles dgvbusqueda.CellMouseDoubleClick
+    Private Sub dgvbusqueda_CellMouseDoubleClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles dgvBusqueda.CellMouseDoubleClick
         If Generales.filaValida(e.RowIndex) Then
             If isRetornaObj Then
                 Dim filaSeleccionada As DataGridViewRow = dgvBusqueda.SelectedRows.Item(0)
@@ -37,14 +38,16 @@
         Textbusqueda.Text = Generales.validarComillaSimple(Textbusqueda.Text)
         llenardgv()
         Textbusqueda.SelectionStart = Textbusqueda.TextLength
-        For I = 0 To dgvbusqueda.ColumnCount - 1
-            dgvbusqueda.Columns(I).SortMode = DataGridViewColumnSortMode.Automatic
+        For I = 0 To dgvBusqueda.ColumnCount - 1
+            dgvBusqueda.Columns(I).SortMode = DataGridViewColumnSortMode.Automatic
         Next
         establecerPosicionBusqueda()
         Generales.diseñoDGV(dgvBusqueda)
         If isOcultaCol Then
             dgvBusqueda.Columns(0).Visible = False
         End If
+        formulario.ventana = Me '' se indica el formulario que usara el efecto
+        formulario.redondear() '' se redondean los bordes del formulario
     End Sub
     Private Sub establecerPosicionBusqueda()
         Dim x As Integer
@@ -85,7 +88,14 @@
             Close()
         End If
     End Sub
+    Private Sub FormBusquedaMouseMove(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) _
+                Handles MyBase.MouseMove '' aca puedes agregar mas controles que quieras usar para mover el formulario ej: label1.MouseMove
 
+        If e.Button = MouseButtons.Left Then
+            formulario.moverForm() '' se llama la función que da el efecto
+        End If
+
+    End Sub
     Private Sub Panel2_Click(sender As Object, e As EventArgs) Handles Panel2.Click
         Me.Close()
     End Sub

@@ -34,7 +34,4 @@
         FormCerrarSesion.ShowDialog()
     End Sub
 
-    '' se instancia a la clase
-
-
 End Class

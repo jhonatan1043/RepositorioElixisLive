@@ -58,9 +58,9 @@ Partial Class FormBusqueda
         Me.Panel2.BackColor = System.Drawing.Color.Transparent
         Me.Panel2.BackgroundImage = Global.Quality.My.Resources.Resources._error
         Me.Panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Panel2.Location = New System.Drawing.Point(558, 1)
+        Me.Panel2.Location = New System.Drawing.Point(569, 1)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(43, 39)
+        Me.Panel2.Size = New System.Drawing.Size(35, 35)
         Me.Panel2.TabIndex = 1
         '
         'Pimagen
@@ -79,16 +79,16 @@ Partial Class FormBusqueda
         Me.LTitulo.BackColor = System.Drawing.Color.Transparent
         Me.LTitulo.Font = New System.Drawing.Font("Times New Roman", 18.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LTitulo.ForeColor = System.Drawing.Color.White
-        Me.LTitulo.Location = New System.Drawing.Point(0, 0)
+        Me.LTitulo.Location = New System.Drawing.Point(-3, 0)
         Me.LTitulo.Name = "LTitulo"
-        Me.LTitulo.Size = New System.Drawing.Size(602, 41)
+        Me.LTitulo.Size = New System.Drawing.Size(613, 41)
         Me.LTitulo.TabIndex = 1
         Me.LTitulo.Text = "Titulo"
         Me.LTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'GroupBox1
         '
-        Me.GroupBox1.BackColor = System.Drawing.Color.Transparent
+        Me.GroupBox1.BackColor = System.Drawing.Color.White
         Me.GroupBox1.Controls.Add(Me.GroupBox5)
         Me.GroupBox1.Controls.Add(Me.GroupBox2)
         Me.GroupBox1.Location = New System.Drawing.Point(8, 42)
@@ -100,7 +100,7 @@ Partial Class FormBusqueda
         'GroupBox5
         '
         Me.GroupBox5.Controls.Add(Me.dgvBusqueda)
-        Me.GroupBox5.Font = New System.Drawing.Font("Times New Roman", 8.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox5.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox5.ForeColor = System.Drawing.Color.DarkBlue
         Me.GroupBox5.Location = New System.Drawing.Point(4, 51)
         Me.GroupBox5.Name = "GroupBox5"
@@ -121,12 +121,12 @@ Partial Class FormBusqueda
         Me.dgvBusqueda.BackgroundColor = System.Drawing.SystemColors.Control
         Me.dgvBusqueda.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvBusqueda.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.dgvBusqueda.Location = New System.Drawing.Point(3, 16)
+        Me.dgvBusqueda.Location = New System.Drawing.Point(3, 17)
         Me.dgvBusqueda.MultiSelect = False
         Me.dgvBusqueda.Name = "dgvBusqueda"
         Me.dgvBusqueda.ReadOnly = True
         Me.dgvBusqueda.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvBusqueda.Size = New System.Drawing.Size(572, 295)
+        Me.dgvBusqueda.Size = New System.Drawing.Size(572, 294)
         Me.dgvBusqueda.TabIndex = 0
         '
         'GroupBox2
@@ -155,6 +155,8 @@ Partial Class FormBusqueda
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
+        Me.BackgroundImage = Global.Quality.My.Resources.Resources.fondo_azul
+        Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(605, 422)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Panel1)
