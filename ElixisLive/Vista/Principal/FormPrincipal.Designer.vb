@@ -81,8 +81,8 @@ Partial Class FormPrincipal
         '
         'FormPrincipal
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
-        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(96.0!, 96.0!)
+        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi
         Me.BackColor = System.Drawing.Color.White
         Me.BackgroundImage = Global.Quality.My.Resources.Resources.Quality_logo
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
@@ -92,7 +92,7 @@ Partial Class FormPrincipal
         Me.Controls.Add(Me.arbolMenu)
         Me.Controls.Add(Me.Panel1)
         Me.DoubleBuffered = True
-        Me.Font = New System.Drawing.Font("Monotype Corsiva", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.IsMdiContainer = True
         Me.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
