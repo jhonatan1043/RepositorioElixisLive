@@ -43,7 +43,7 @@ Partial Class FormPrincipal
         Me.arbolMenu.Location = New System.Drawing.Point(0, 0)
         Me.arbolMenu.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.arbolMenu.Name = "arbolMenu"
-        Me.arbolMenu.SelectedImageIndex = 1
+        Me.arbolMenu.SelectedImageIndex = 3
         Me.arbolMenu.Size = New System.Drawing.Size(222, 567)
         Me.arbolMenu.StateImageList = Me.ImageList1
         Me.arbolMenu.TabIndex = 1
