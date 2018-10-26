@@ -9,6 +9,7 @@
             End If
         End If
     End Sub
+
     Private Function validarCampos() As Boolean
         Dim resultado As Boolean
         If txtUsuario.Text = String.Empty Then

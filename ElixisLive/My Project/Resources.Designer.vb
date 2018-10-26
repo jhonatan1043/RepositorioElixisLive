@@ -433,6 +433,16 @@ Namespace My.Resources
         '''<summary>
         '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         '''</summary>
+        Friend ReadOnly Property glossy_3d_blue_power_icon() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("glossy-3d-blue-power-icon", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        '''</summary>
         Friend ReadOnly Property hojas() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("hojas", resourceCulture)

@@ -21,7 +21,13 @@
         Generales.llenardgv(objConfig.sqlConsulta, dgRegistro, params)
         Generales.diseñoDGV(dgRegistro)
     End Sub
-
+    Private Sub Form_FormClosing(sender As Object, e As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
+        If EstiloMensajes.mostrarMensajePregunta(MensajeSistema.SALIR) = Constantes.SI Then
+            Me.Dispose()
+        Else
+            e.Cancel = True
+        End If
+    End Sub
     Private Sub dgRegistro_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgRegistro.CellClick
         If btRegistrar.Enabled = True Then Exit Sub
         If dgRegistro.RowCount > 0 Then

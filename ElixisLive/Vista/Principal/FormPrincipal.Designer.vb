@@ -28,6 +28,7 @@ Partial Class FormPrincipal
         Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Panel2 = New System.Windows.Forms.Panel()
         Me.SuspendLayout()
         '
         'arbolMenu
@@ -79,6 +80,17 @@ Partial Class FormPrincipal
         Me.Panel1.Size = New System.Drawing.Size(36, 31)
         Me.Panel1.TabIndex = 5
         '
+        'Panel2
+        '
+        Me.Panel2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Panel2.BackColor = System.Drawing.Color.White
+        Me.Panel2.BackgroundImage = Global.Quality.My.Resources.Resources.glossy_3d_blue_power_icon
+        Me.Panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Panel2.Location = New System.Drawing.Point(1071, 2)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(36, 31)
+        Me.Panel2.TabIndex = 7
+        '
         'FormPrincipal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(96.0!, 96.0!)
@@ -88,6 +100,7 @@ Partial Class FormPrincipal
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.ClientSize = New System.Drawing.Size(1137, 567)
         Me.ControlBox = False
+        Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.arbolMenu)
         Me.Controls.Add(Me.Panel1)
@@ -98,9 +111,8 @@ Partial Class FormPrincipal
         Me.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.MaximizeBox = False
         Me.Name = "FormPrincipal"
-        Me.ShowIcon = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "       "
+        Me.Text = "  "
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -111,4 +123,5 @@ Partial Class FormPrincipal
     Friend WithEvents StatusStrip1 As StatusStrip
     Friend WithEvents ImageList1 As ImageList
     Friend WithEvents Panel1 As Panel
+    Friend WithEvents Panel2 As Panel
 End Class

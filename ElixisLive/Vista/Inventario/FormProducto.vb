@@ -20,6 +20,13 @@
             EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
         End Try
     End Sub
+    Private Sub Form_FormClosing(sender As Object, e As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
+        If EstiloMensajes.mostrarMensajePregunta(MensajeSistema.SALIR) = Constantes.SI Then
+            Me.Dispose()
+        Else
+            e.Cancel = True
+        End If
+    End Sub
     Private Sub dgvParametro_CellEnter(sender As Object, e As DataGridViewCellEventArgs) Handles dgRegistro.CellEnter
         If btRegistrar.Enabled = False Then Exit Sub
         Try

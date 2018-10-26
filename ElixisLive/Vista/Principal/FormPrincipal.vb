@@ -34,4 +34,7 @@
         FormCerrarSesion.ShowDialog()
     End Sub
 
+    Private Sub Panel2_Click(sender As Object, e As EventArgs) Handles Panel2.Click
+        Me.WindowState = FormWindowState.Minimized
+    End Sub
 End Class

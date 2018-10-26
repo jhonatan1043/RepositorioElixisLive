@@ -379,6 +379,7 @@
     <Content Include="ReferenciaDLL\CnxElixisLiveBD.dll" />
     <Content Include="ReferenciaDLL\MySql.Data.DLL" />
     <Content Include="ReferenciaDLL\NotifySenderControl.dll" />
+    <None Include="Resources\glossy-3d-blue-power-icon.png" />
     <None Include="Resources\glossy-3d-blue-orbs2-132-icon.png" />
     <None Include="Resources\glossy-3d-blue-orbs2-093-icon.png" />
     <None Include="Resources\glossy-3d-blue-orbs2-092-icon.png" />

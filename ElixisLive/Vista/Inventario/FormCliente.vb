@@ -17,6 +17,13 @@
             EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
         End Try
     End Sub
+    Private Sub Form_FormClosing(sender As Object, e As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
+        If EstiloMensajes.mostrarMensajePregunta(MensajeSistema.SALIR) = Constantes.SI Then
+            Me.Dispose()
+        Else
+            e.Cancel = True
+        End If
+    End Sub
     Private Sub cargarInfomacion(pcodigo As Integer)
         Dim params As New List(Of String)
         Dim dfila As DataRow
