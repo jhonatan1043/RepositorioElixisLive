@@ -20,6 +20,7 @@ Public Class FormCerrarSesion
         Me.Close()
     End Sub
     Private Sub FormCerrarSesion_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Me.Opacity = 100
         Dim x As Integer
         Dim y As Integer
         x = Screen.PrimaryScreen.WorkingArea.Width - 750

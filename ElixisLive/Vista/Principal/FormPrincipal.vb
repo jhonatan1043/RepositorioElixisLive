@@ -37,4 +37,8 @@
     Private Sub Panel2_Click(sender As Object, e As EventArgs) Handles Panel2.Click
         Me.WindowState = FormWindowState.Minimized
     End Sub
+
+    Private Sub FormPrincipal_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        Generales.desvanecer(Me)
+    End Sub
 End Class
