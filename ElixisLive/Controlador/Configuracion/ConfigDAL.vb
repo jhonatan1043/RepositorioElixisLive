@@ -12,7 +12,6 @@ Public Class ConfigDAL
                     comando.Parameters.Clear()
                     comando.CommandText = objConfig.sqlGuardar
                     comando.Parameters.Add(New SqlParameter("@Codigo", SqlDbType.NVarChar)).Value = objConfig.codigo
-                    comando.Parameters.Add(New SqlParameter("@Codigo_Empresa", SqlDbType.Int)).Value = SesionActual.idEmpresa
                     comando.Parameters.Add(New SqlParameter("@Nombre", SqlDbType.NVarChar)).Value = objConfig.descripcion
                     objConfig.codigo = CType(comando.ExecuteScalar, String)
                     trnsccion.Commit()
