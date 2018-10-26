@@ -22,6 +22,7 @@ Partial Class FormVenta
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormVenta))
@@ -76,6 +77,7 @@ Partial Class FormVenta
         Me.ToolStripSeparator6 = New System.Windows.Forms.ToolStripSeparator()
         Me.ToolStripButton1 = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripSeparator8 = New System.Windows.Forms.ToolStripSeparator()
+        Me.ErrorIcono = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.GroupBox7.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -85,6 +87,7 @@ Partial Class FormVenta
         Me.Panel1.SuspendLayout()
         CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ToolStrip1.SuspendLayout()
+        CType(Me.ErrorIcono, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GroupBox7
@@ -110,9 +113,9 @@ Partial Class FormVenta
         '
         Me.TextTelefono.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TextTelefono.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextTelefono.Location = New System.Drawing.Point(753, 17)
+        Me.TextTelefono.Location = New System.Drawing.Point(761, 17)
         Me.TextTelefono.Name = "TextTelefono"
-        Me.TextTelefono.Size = New System.Drawing.Size(116, 25)
+        Me.TextTelefono.Size = New System.Drawing.Size(111, 25)
         Me.TextTelefono.TabIndex = 2
         '
         'TextDV
@@ -120,7 +123,7 @@ Partial Class FormVenta
         Me.TextDV.BackColor = System.Drawing.SystemColors.ControlLightLight
         Me.TextDV.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TextDV.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextDV.Location = New System.Drawing.Point(235, 17)
+        Me.TextDV.Location = New System.Drawing.Point(241, 17)
         Me.TextDV.Name = "TextDV"
         Me.TextDV.ReadOnly = True
         Me.TextDV.Size = New System.Drawing.Size(29, 25)
@@ -131,9 +134,9 @@ Partial Class FormVenta
         '
         Me.TextNombre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TextNombre.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextNombre.Location = New System.Drawing.Point(337, 17)
+        Me.TextNombre.Location = New System.Drawing.Point(342, 17)
         Me.TextNombre.Name = "TextNombre"
-        Me.TextNombre.Size = New System.Drawing.Size(350, 25)
+        Me.TextNombre.Size = New System.Drawing.Size(345, 25)
         Me.TextNombre.TabIndex = 1
         Me.TextNombre.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -153,7 +156,7 @@ Partial Class FormVenta
         '
         Me.TextIdentificacion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TextIdentificacion.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextIdentificacion.Location = New System.Drawing.Point(107, 17)
+        Me.TextIdentificacion.Location = New System.Drawing.Point(113, 17)
         Me.TextIdentificacion.Name = "TextIdentificacion"
         Me.TextIdentificacion.Size = New System.Drawing.Size(126, 25)
         Me.TextIdentificacion.TabIndex = 0
@@ -403,7 +406,7 @@ Partial Class FormVenta
         Me.Label3.BackColor = System.Drawing.Color.Transparent
         Me.Label3.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.Black
-        Me.Label3.Location = New System.Drawing.Point(6, 13)
+        Me.Label3.Location = New System.Drawing.Point(0, 13)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(87, 19)
         Me.Label3.TabIndex = 12
@@ -413,7 +416,7 @@ Partial Class FormVenta
         '
         Me.TextBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TextBox2.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox2.Location = New System.Drawing.Point(101, 11)
+        Me.TextBox2.Location = New System.Drawing.Point(106, 11)
         Me.TextBox2.Name = "TextBox2"
         Me.TextBox2.Size = New System.Drawing.Size(126, 25)
         Me.TextBox2.TabIndex = 9999
@@ -601,6 +604,12 @@ Partial Class FormVenta
         Me.ToolStripSeparator8.Name = "ToolStripSeparator8"
         Me.ToolStripSeparator8.Size = New System.Drawing.Size(6, 33)
         '
+        'ErrorIcono
+        '
+        Me.ErrorIcono.ContainerControl = Me
+        Me.ErrorIcono.Icon = CType(resources.GetObject("ErrorIcono.Icon"), System.Drawing.Icon)
+        Me.ErrorIcono.RightToLeft = True
+        '
         'FormVenta
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -629,6 +638,7 @@ Partial Class FormVenta
         CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ToolStrip1.ResumeLayout(False)
         Me.ToolStrip1.PerformLayout()
+        CType(Me.ErrorIcono, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -684,4 +694,5 @@ Partial Class FormVenta
     Friend WithEvents dgId As DataGridViewTextBoxColumn
     Friend WithEvents dgTotal As DataGridViewTextBoxColumn
     Friend WithEvents dgQuitar As DataGridViewImageColumn
+    Friend WithEvents ErrorIcono As ErrorProvider
 End Class

@@ -12,4 +12,5 @@
     Public Const CONTRASENA_NO_VALIDA = "¡Debe digitar una contraseña valida!"
     Public Const SELECCIONAR_UNA_EMPRESA = "¡Seleccionar la empresa!"
     Public Const CONTRASENA_VALIDA = "¡Usuario o contraseña no valido!"
+    Public Const VALIDAR_CAMPOS = "Los campos marcados son obligatorios"
 End Class

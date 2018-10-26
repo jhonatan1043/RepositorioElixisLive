@@ -1,4 +1,5 @@
-﻿Public Class FormVenta
+﻿Imports System.ComponentModel
+Public Class FormVenta
     Dim codigoCliente As Integer
     Dim respuesta As Boolean = False
     Dim dtProductos As New DataTable
@@ -10,6 +11,7 @@
         btNuevo.Enabled = True
         btBuscar.Enabled = True
         enlanzarTabla()
+        ToolStrip1.Focus()
     End Sub
     Private Sub enlanzarTabla()
         Dim colCodigo, colDescripcion,
@@ -130,6 +132,7 @@
     Private Sub btNuevo_Click(sender As Object, e As EventArgs) Handles btNuevo.Click
         Generales.habilitarControles(Me)
         Generales.deshabilitarBotones(ToolStrip1)
+        Generales.limpiarControles(Me)
         btRegistrar.Enabled = True
         btCancelar.Enabled = True
         TextDV.ReadOnly = True
@@ -137,8 +140,8 @@
         TextTotalArticulos.ReadOnly = True
         TextTotalServicio.ReadOnly = True
         dtProductos.Rows.Add()
-        TextIdentificacion.Focus()
         bloquearColumnas()
+        TextIdentificacion.Focus()
     End Sub
     Private Sub btBuscar_Click(sender As Object, e As EventArgs) Handles btBuscar.Click
         Dim params As New List(Of String)
@@ -158,12 +161,16 @@
 
     End Sub
     Private Function validarCampos()
-        Return False
+        Dim resultado As Boolean = False
+        If TextIdentificacion.Text <> String.Empty And TextNombre.Text <> String.Empty And TextTelefono.Text <> String.Empty Then
+            resultado = True
+        End If
+        Return resultado
     End Function
     Private Sub btRegistrar_Click(sender As Object, e As EventArgs) Handles btRegistrar.Click
         dgvFactura.EndEdit()
         Try
-            If validarCampos() = True Then
+            If validarCampos() Then
 
                 'EmpleadoBLL.guardar(objEmpleado)
                 Generales.habilitarBotones(ToolStrip1)
@@ -171,19 +178,24 @@
                 btCancelar.Enabled = False
                 btRegistrar.Enabled = False
                 EstiloMensajes.mostrarMensajeExitoso(MensajeSistema.REGISTRO_GUARDADO)
+            Else
+                EstiloMensajes.mostrarMensajeAdvertencia(MensajeSistema.VALIDAR_CAMPOS)
             End If
         Catch ex As Exception
             EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
         End Try
     End Sub
+
     Private Sub btCancelar_Click(sender As Object, e As EventArgs) Handles btCancelar.Click
         If EstiloMensajes.mostrarMensajePregunta(MensajeSistema.CANCELAR) = Constantes.SI Then
             Generales.deshabilitarBotones(ToolStrip1)
             Generales.deshabilitarControles(Me)
             btNuevo.Enabled = True
             btBuscar.Enabled = True
+            quitarIconoError()
         End If
     End Sub
+
     Private Sub dgvFactura_CellEndEdit(sender As Object, e As DataGridViewCellEventArgs) Handles dgvFactura.CellEndEdit
         If dtProductos.Rows(dgvFactura.CurrentRow.Index).Item(0).ToString <> "" Then
             Dim params As New List(Of String)
@@ -226,7 +238,32 @@
             e.Cancel = True
         End If
     End Sub
-
+    Private Sub quitarIconoError()
+        Me.ErrorIcono.SetError(TextIdentificacion, "")
+        Me.ErrorIcono.SetError(TextNombre, "")
+        Me.ErrorIcono.SetError(TextTelefono, "")
+    End Sub
+    Public Sub TextIdentificacion_Validating(sender As Object, e As CancelEventArgs) Handles TextIdentificacion.Validating
+        If DirectCast(sender, TextBox).Text.Length = 0 And btRegistrar.Enabled = True Then
+            Me.ErrorIcono.SetError(sender, "Debe Ingresar un número de identificación")
+        Else
+            Me.ErrorIcono.SetError(sender, "")
+        End If
+    End Sub
+    Public Sub TextNombre_Validating(sender As Object, e As CancelEventArgs) Handles TextNombre.Validating
+        If DirectCast(sender, TextBox).Text.Length = 0 And btRegistrar.Enabled = True Then
+            Me.ErrorIcono.SetError(sender, "Debe ingresar un nombre")
+        Else
+            Me.ErrorIcono.SetError(sender, "")
+        End If
+    End Sub
+    Public Sub TextTelefono_Validating(sender As Object, e As CancelEventArgs) Handles TextTelefono.Validating
+        If DirectCast(sender, TextBox).Text.Length = 0 And btRegistrar.Enabled = True Then
+            Me.ErrorIcono.SetError(sender, "Debe ingresar un número de teléfono")
+        Else
+            Me.ErrorIcono.SetError(sender, "")
+        End If
+    End Sub
     Private Sub calcularTotales()
         dgvFactura.EndEdit()
         Try

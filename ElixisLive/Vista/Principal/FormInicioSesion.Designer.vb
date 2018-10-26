@@ -29,6 +29,7 @@ Partial Class FormInicioSesion
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormInicioSesion))
         Me.UsernameLabel = New System.Windows.Forms.Label()
         Me.PasswordLabel = New System.Windows.Forms.Label()
@@ -45,9 +46,11 @@ Partial Class FormInicioSesion
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.ErrorIcono = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ErrorIcono, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'UsernameLabel
@@ -77,7 +80,7 @@ Partial Class FormInicioSesion
         'txtUsuario
         '
         Me.txtUsuario.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtUsuario.Location = New System.Drawing.Point(229, 30)
+        Me.txtUsuario.Location = New System.Drawing.Point(236, 30)
         Me.txtUsuario.MaxLength = 10
         Me.txtUsuario.Name = "txtUsuario"
         Me.txtUsuario.Size = New System.Drawing.Size(120, 22)
@@ -86,7 +89,7 @@ Partial Class FormInicioSesion
         'txtContraseña
         '
         Me.txtContraseña.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtContraseña.Location = New System.Drawing.Point(229, 72)
+        Me.txtContraseña.Location = New System.Drawing.Point(236, 72)
         Me.txtContraseña.MaxLength = 20
         Me.txtContraseña.Name = "txtContraseña"
         Me.txtContraseña.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
@@ -100,7 +103,7 @@ Partial Class FormInicioSesion
         Me.Label1.ForeColor = System.Drawing.Color.SteelBlue
         Me.Label1.Location = New System.Drawing.Point(155, 110)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(77, 23)
+        Me.Label1.Size = New System.Drawing.Size(75, 23)
         Me.Label1.TabIndex = 6
         Me.Label1.Text = "Empresa:"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -110,7 +113,7 @@ Partial Class FormInicioSesion
         Me.CbEmpresa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.CbEmpresa.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CbEmpresa.FormattingEnabled = True
-        Me.CbEmpresa.Location = New System.Drawing.Point(229, 111)
+        Me.CbEmpresa.Location = New System.Drawing.Point(236, 111)
         Me.CbEmpresa.Name = "CbEmpresa"
         Me.CbEmpresa.Size = New System.Drawing.Size(120, 23)
         Me.CbEmpresa.TabIndex = 7
@@ -197,7 +200,7 @@ Partial Class FormInicioSesion
         Me.Panel3.BackColor = System.Drawing.Color.White
         Me.Panel3.BackgroundImage = Global.Quality.My.Resources.Resources.glossy_3d_blue_orbs2_060_icon
         Me.Panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Panel3.Location = New System.Drawing.Point(352, 108)
+        Me.Panel3.Location = New System.Drawing.Point(359, 108)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(30, 30)
         Me.Panel3.TabIndex = 10
@@ -207,7 +210,7 @@ Partial Class FormInicioSesion
         Me.Panel2.BackColor = System.Drawing.Color.White
         Me.Panel2.BackgroundImage = Global.Quality.My.Resources.Resources.exitoso
         Me.Panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Panel2.Location = New System.Drawing.Point(352, 68)
+        Me.Panel2.Location = New System.Drawing.Point(359, 68)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(30, 30)
         Me.Panel2.TabIndex = 9
@@ -217,10 +220,16 @@ Partial Class FormInicioSesion
         Me.Panel1.BackColor = System.Drawing.Color.White
         Me.Panel1.BackgroundImage = Global.Quality.My.Resources.Resources.glossy_3d_blue_orbs2_086_icon
         Me.Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Panel1.Location = New System.Drawing.Point(352, 25)
+        Me.Panel1.Location = New System.Drawing.Point(359, 25)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(30, 30)
         Me.Panel1.TabIndex = 8
+        '
+        'ErrorIcono
+        '
+        Me.ErrorIcono.ContainerControl = Me
+        Me.ErrorIcono.Icon = CType(resources.GetObject("ErrorIcono.Icon"), System.Drawing.Icon)
+        Me.ErrorIcono.RightToLeft = True
         '
         'FormInicioSesion
         '
@@ -251,6 +260,7 @@ Partial Class FormInicioSesion
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox3.ResumeLayout(False)
         CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ErrorIcono, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -265,4 +275,5 @@ Partial Class FormInicioSesion
     Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents GroupBox3 As GroupBox
     Public WithEvents txtContraseña As TextBox
+    Friend WithEvents ErrorIcono As ErrorProvider
 End Class

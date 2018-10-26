@@ -1,4 +1,5 @@
-﻿Imports System.Data.SqlClient
+﻿
+Imports System.Data.SqlClient
 Imports CnxElixisLiveBD
 Imports System.Net
 Imports System.Threading
@@ -8,6 +9,7 @@ Public Class Generales
     Public Delegate Sub cargaInfoFormObj(ByVal fila As DataRow)
     Public Delegate Sub subRutina()
     Private Shared objConexion As New ConexionBD
+
     Public Shared Sub llenarTabla(ByVal consulta As String,
                                   ByVal params As List(Of String),
                                   ByVal dtTabla As DataTable,
@@ -28,6 +30,7 @@ Public Class Generales
         End Try
 
     End Sub
+
     Public Shared Function getCadenaSeleccionados(datatable As DataTable, seleccionados As String, posicionCodigo As Integer) As String
 
         For indice = 0 To datatable.Rows.Count - 2

@@ -1,5 +1,7 @@
 ﻿
 
+Imports System.ComponentModel
+
 Public Class FormInicioSesion
     Dim formulario As New vForm
     Dim objInicioSesionBLL As New InicioSesionBLL
@@ -9,18 +11,14 @@ Public Class FormInicioSesion
             If objInicioSesionBLL.inicioSesionCargar() = True Then
                 Hide()
             End If
+        Else
+            EstiloMensajes.mostrarMensajeAdvertencia(MensajeSistema.VALIDAR_CAMPOS)
         End If
     End Sub
 
     Private Function validarCampos() As Boolean
-        Dim resultado As Boolean
-        If txtUsuario.Text = String.Empty Then
-            EstiloMensajes.mostrarMensajeAdvertencia(MensajeSistema.USUARIO_NO_EXISTE)
-        ElseIf txtContraseña.Text = String.Empty Then
-            EstiloMensajes.mostrarMensajeAdvertencia(MensajeSistema.CONTRASENA_NO_VALIDA)
-        ElseIf CbEmpresa.SelectedIndex = 0 Then
-            EstiloMensajes.mostrarMensajeAdvertencia(MensajeSistema.SELECCIONAR_UNA_EMPRESA)
-        Else
+        Dim resultado As Boolean = False
+        If txtUsuario.Text <> String.Empty And txtContraseña.Text <> String.Empty And CbEmpresa.SelectedIndex > 0 Then
             resultado = True
         End If
         Return resultado
@@ -34,7 +32,27 @@ Public Class FormInicioSesion
         objInicioSesionBLL.contrasena = txtContraseña.Text
         objInicioSesionBLL.idEmpresa = CbEmpresa.SelectedValue
     End Sub
-
+    Private Sub TxtUsuario_Validating(sender As Object, e As CancelEventArgs) Handles txtUsuario.Validating
+        If DirectCast(sender, TextBox).Text.Length = 0 Then
+            Me.ErrorIcono.SetError(txtUsuario, "Debe Ingresar el usuario")
+        Else
+            Me.ErrorIcono.SetError(txtUsuario, "")
+        End If
+    End Sub
+    Private Sub TxtContraseña_Validating(sender As Object, e As CancelEventArgs) Handles txtContraseña.Validating
+        If DirectCast(sender, TextBox).Text.Length = 0 Then
+            Me.ErrorIcono.SetError(sender, "Debe ingresar la contraseña")
+        Else
+            Me.ErrorIcono.SetError(sender, "")
+        End If
+    End Sub
+    Private Sub CbEmpresa_Validating(sender As Object, e As CancelEventArgs) Handles CbEmpresa.Validating
+        If DirectCast(sender, ComboBox).SelectedIndex = 0 Then
+            Me.ErrorIcono.SetError(sender, "Debe Escoger la empresa")
+        Else
+            Me.ErrorIcono.SetError(sender, "")
+        End If
+    End Sub
     Private Sub FormInicioSesion_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         cargarComboEmpresa()
         formulario.ventana = Me '' se indica el formulario que usara el efecto
@@ -64,4 +82,8 @@ Public Class FormInicioSesion
         txtUsuario.Focus()
     End Sub
 
+
 End Class
+
+
+

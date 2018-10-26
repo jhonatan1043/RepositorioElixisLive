@@ -1,4 +1,5 @@
-﻿Imports System.Threading
+﻿Option Explicit On
+Imports System.Threading
 
 Public Class FormCerrarSesion
     Dim formulario As New vForm
@@ -19,7 +20,35 @@ Public Class FormCerrarSesion
         Generales.desvanecer(Me)
         Me.Close()
     End Sub
+    Private Sub PicRegresar_MouseHover(sender As Object, e As EventArgs) Handles PicRegresar.MouseHover
+        PicRegresar.Size = New Size(width:=75, height:=75)
+    End Sub
+    Private Sub PicRegresar_MouseLeave(sender As Object, e As EventArgs) Handles PicRegresar.MouseLeave
+        PicRegresar.Size = New Size(width:=65, height:=65)
+    End Sub
+    Private Sub PicRegresar_MouseMove(sender As Object, e As EventArgs) Handles PicRegresar.MouseMove
+        PicRegresar.Size = New Size(width:=75, height:=75)
+    End Sub
+    Private Sub PicCerrarSesion_MouseHover(sender As Object, e As EventArgs) Handles PicCerrarSesion.MouseHover
+        PicCerrarSesion.Size = New Size(width:=75, height:=75)
+    End Sub
+    Private Sub PicCerrarSesion_MouseMove(sender As Object, e As EventArgs) Handles PicCerrarSesion.MouseMove
+        PicCerrarSesion.Size = New Size(width:=75, height:=75)
+    End Sub
+    Private Sub PicCerrarSesion_MouseLeave(sender As Object, e As EventArgs) Handles PicCerrarSesion.MouseLeave
+        PicCerrarSesion.Size = New Size(width:=65, height:=65)
+    End Sub
+    Private Sub PicSalir_MouseHover(sender As Object, e As EventArgs) Handles PicSalir.MouseHover
+        PicSalir.Size = New Size(width:=75, height:=75)
+    End Sub
+    Private Sub PicSalir_MouseMove(sender As Object, e As EventArgs) Handles PicSalir.MouseMove
+        PicSalir.Size = New Size(width:=75, height:=75)
+    End Sub
+    Private Sub PicSalir_MouseLeave(sender As Object, e As EventArgs) Handles PicSalir.MouseLeave
+        PicSalir.Size = New Size(width:=65, height:=65)
+    End Sub
     Private Sub FormCerrarSesion_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
         Me.Opacity = 100
         Dim x As Integer
         Dim y As Integer
