@@ -7,7 +7,6 @@
         objPersona.celular = TextCelular.Text
         objPersona.correo = TextEmail.Text
         objPersona.direccion = TextDireccion.Text
-        objPersona.codigoGenero = cbGenero.SelectedValue
         objPersona.codigoCiudad = ComboMunicipio.SelectedValue
         objPersona.codigoTipoIdentificacion = CombotipoIdentificacion.SelectedValue
     End Sub
@@ -41,7 +40,6 @@
         objPersona = New persona
         Try
             Generales.cargarCombo("[SP_CONSULTAR_CIUDAD]", Nothing, "descripcion", "Codigo_Municipio", ComboMunicipio)
-            Generales.cargarCombo("[SP_CONSULTAR_GENERO]", Nothing, "Genero", "Codigo", cbGenero)
             Generales.cargarCombo("[SP_CONSULTAR_TIPO_IDENT]", Nothing, "Nombre", "Codigo", CombotipoIdentificacion)
             Generales.deshabilitarBotones(ToolStrip1)
             Generales.deshabilitarControles(Me)
@@ -133,7 +131,6 @@
                 TextCelular.Text = dfila("Celular")
                 TextDireccion.Text = dfila("Direccion")
                 TextEmail.Text = If(IsDBNull(dfila("Email")), Nothing, dfila("Email"))
-                cbGenero.SelectedValue = dfila("Genero")
                 CombotipoIdentificacion.SelectedValue = dfila("Tipo_Identificacion")
                 ComboMunicipio.SelectedValue = dfila("Ciudad")
             End If

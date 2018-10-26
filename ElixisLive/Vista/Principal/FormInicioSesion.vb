@@ -1,4 +1,6 @@
-﻿Public Class FormInicioSesion
+﻿
+
+Public Class FormInicioSesion
     Dim formulario As New vForm
     Dim objInicioSesionBLL As New InicioSesionBLL
     Private Sub OK_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles OK.Click
@@ -24,6 +26,7 @@
         Return resultado
     End Function
     Private Sub Cancel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Cancel.Click
+        Generales.desvanecer(Me)
         Me.Close()
     End Sub
     Private Sub cargarObjeto()

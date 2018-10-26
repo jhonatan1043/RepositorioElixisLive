@@ -1,6 +1,8 @@
 ﻿Imports System.Data.SqlClient
 Imports CnxElixisLiveBD
 Imports System.Net
+Imports System.Threading
+
 Public Class Generales
     Public Delegate Sub cargaInfoForm(ByVal codigo As String)
     Public Delegate Sub cargaInfoFormObj(ByVal fila As DataRow)
@@ -511,6 +513,13 @@ Public Class Generales
         End Try
         Return resultado
     End Function
+    Public Shared Sub desvanecer(form As Form)
+        For contador = 90 To 5 Step -5
+            form.Opacity = contador / 100
+            form.Refresh()
+            Thread.Sleep(80)
+        Next
+    End Sub
     Public Shared Function subirimagen(ByVal objeto As PictureBox, ByVal componente As OpenFileDialog) As OpenFileDialog
         Try
             objeto.Image = Nothing

@@ -87,6 +87,7 @@ Partial Class FormCerrarSesion
         '
         'PicRegresar
         '
+        Me.PicRegresar.BackColor = System.Drawing.Color.White
         Me.PicRegresar.Image = Global.Quality.My.Resources.Resources.glossy_3d_blue_orbs2_092_icon
         Me.PicRegresar.Location = New System.Drawing.Point(310, 30)
         Me.PicRegresar.Name = "PicRegresar"
@@ -97,6 +98,7 @@ Partial Class FormCerrarSesion
         '
         'PicSalir
         '
+        Me.PicSalir.BackColor = System.Drawing.Color.White
         Me.PicSalir.Image = Global.Quality.My.Resources.Resources.glossy_3d_blue_orbs2_132_icon
         Me.PicSalir.Location = New System.Drawing.Point(218, 30)
         Me.PicSalir.Name = "PicSalir"
@@ -107,6 +109,7 @@ Partial Class FormCerrarSesion
         '
         'PicCerrarSesion
         '
+        Me.PicCerrarSesion.BackColor = System.Drawing.Color.White
         Me.PicCerrarSesion.Image = Global.Quality.My.Resources.Resources.glossy_3d_blue_orbs2_115_icon
         Me.PicCerrarSesion.Location = New System.Drawing.Point(127, 30)
         Me.PicCerrarSesion.Name = "PicCerrarSesion"
@@ -147,8 +150,7 @@ Partial Class FormCerrarSesion
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.White
-        Me.BackgroundImage = Global.Quality.My.Resources.Resources.fondo_azul
+        Me.BackColor = System.Drawing.Color.SteelBlue
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(401, 146)
         Me.ControlBox = False

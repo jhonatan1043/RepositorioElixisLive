@@ -5,7 +5,6 @@
     Property nombre As String
     Property telefono As String
     Property celular As String
-    Property codigoGenero As Integer
     Property codigoTipoIdentificacion As Integer
     Property direccion As String
     Property correo As String
