@@ -47,7 +47,7 @@ Public Class principalBLL
         Dim dtmenu As New DataTable("menu")
         Dim params As New List(Of String)
         Try
-            params.Add(SesionActual.idEmpresa)
+            params.Add(SesionActual.idUsuario)
             Generales.llenarTabla("SP_ADMIN_MENU", params, dtmenu)
             dsDatos.Tables.Add(dtmenu)
         Catch ex As Exception
@@ -58,7 +58,7 @@ Public Class principalBLL
         Dim dtmenu As New DataTable("padre")
         Dim params As New List(Of String)
         Try
-            params.Add(SesionActual.idEmpresa)
+            params.Add(SesionActual.idUsuario)
             Generales.llenarTabla("SP_ADMIN_MENU_PADRE", params, dtmenu)
             dsDatos.Tables.Add(dtmenu)
         Catch ex As Exception
@@ -69,7 +69,7 @@ Public Class principalBLL
         Dim dtmenu As New DataTable("hijo")
         Dim params As New List(Of String)
         Try
-            params.Add(SesionActual.idEmpresa)
+            params.Add(SesionActual.idUsuario)
             Generales.llenarTabla("SP_ADMIN_MENU_HIJOS", params, dtmenu)
             dsDatos.Tables.Add(dtmenu)
         Catch ex As Exception

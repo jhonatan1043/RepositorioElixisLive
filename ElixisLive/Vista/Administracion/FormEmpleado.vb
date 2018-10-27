@@ -12,7 +12,6 @@
         objEmpleado = New Empleado
         Try
             params.Add(ElementoMenu.codigo)
-            params.Add(SesionActual.idEmpresa)
             Generales.llenardgv("SP_CONSULTAR_PARAMETROS", dgvParametro, params)
             Generales.diseñoDGV(dgvParametro)
             Generales.diseñoGrillaParametros(dgvParametro)

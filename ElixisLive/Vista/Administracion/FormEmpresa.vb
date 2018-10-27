@@ -42,7 +42,6 @@
         Try
             CheckForIllegalCrossThreadCalls = False
             params.Add(ElementoMenu.codigo)
-            params.Add(SesionActual.idEmpresa)
             Generales.deshabilitarBotones(ToolStrip1)
             Generales.deshabilitarControles(Me)
             btNuevo.Enabled = True
