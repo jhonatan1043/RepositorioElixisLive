@@ -41,6 +41,7 @@ Partial Class FormEmpleado
         Me.GbInform_D = New System.Windows.Forms.GroupBox()
         Me.dgvParametro = New System.Windows.Forms.DataGridView()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.btBuscarPersona = New System.Windows.Forms.Button()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.txtCuenta = New System.Windows.Forms.TextBox()
         Me.Label13 = New System.Windows.Forms.Label()
@@ -51,17 +52,12 @@ Partial Class FormEmpleado
         Me.gbTipoUsuario = New System.Windows.Forms.GroupBox()
         Me.chbActivo = New System.Windows.Forms.CheckBox()
         Me.cbPerfil = New System.Windows.Forms.ComboBox()
-        Me.Label9 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.cbInicioSesion = New System.Windows.Forms.GroupBox()
         Me.txtContraseña = New System.Windows.Forms.MaskedTextBox()
         Me.txtUsuario = New System.Windows.Forms.TextBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
-        Me.btBuscarPersona = New System.Windows.Forms.Button()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Pimagen = New System.Windows.Forms.PictureBox()
-        Me.LTitulo = New System.Windows.Forms.Label()
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
         Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.btNuevo = New System.Windows.Forms.ToolStripButton()
@@ -76,6 +72,10 @@ Partial Class FormEmpleado
         Me.ToolStripSeparator3 = New System.Windows.Forms.ToolStripSeparator()
         Me.btAnular = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripSeparator6 = New System.Windows.Forms.ToolStripSeparator()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Pimagen = New System.Windows.Forms.PictureBox()
+        Me.LTitulo = New System.Windows.Forms.Label()
+        Me.Label9 = New System.Windows.Forms.Label()
         Me.gbInform.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         CType(Me.pictImagen, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -85,9 +85,9 @@ Partial Class FormEmpleado
         Me.GroupBox2.SuspendLayout()
         Me.gbTipoUsuario.SuspendLayout()
         Me.cbInicioSesion.SuspendLayout()
+        Me.ToolStrip1.SuspendLayout()
         Me.Panel1.SuspendLayout()
         CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.ToolStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'gbInform
@@ -107,7 +107,7 @@ Partial Class FormEmpleado
         Me.gbInform.Controls.Add(Me.Label1)
         Me.gbInform.Location = New System.Drawing.Point(4, 7)
         Me.gbInform.Name = "gbInform"
-        Me.gbInform.Size = New System.Drawing.Size(708, 102)
+        Me.gbInform.Size = New System.Drawing.Size(776, 102)
         Me.gbInform.TabIndex = 9
         Me.gbInform.TabStop = False
         '
@@ -118,7 +118,7 @@ Partial Class FormEmpleado
         Me.txtEmail.Location = New System.Drawing.Point(324, 70)
         Me.txtEmail.Name = "txtEmail"
         Me.txtEmail.ReadOnly = True
-        Me.txtEmail.Size = New System.Drawing.Size(378, 25)
+        Me.txtEmail.Size = New System.Drawing.Size(414, 25)
         Me.txtEmail.TabIndex = 21
         '
         'Label5
@@ -140,7 +140,7 @@ Partial Class FormEmpleado
         Me.txtDireccion.Location = New System.Drawing.Point(324, 42)
         Me.txtDireccion.Name = "txtDireccion"
         Me.txtDireccion.ReadOnly = True
-        Me.txtDireccion.Size = New System.Drawing.Size(378, 25)
+        Me.txtDireccion.Size = New System.Drawing.Size(414, 25)
         Me.txtDireccion.TabIndex = 19
         '
         'Label4
@@ -297,10 +297,10 @@ Partial Class FormEmpleado
         'GroupBox1
         '
         Me.GroupBox1.BackColor = System.Drawing.Color.Transparent
+        Me.GroupBox1.Controls.Add(Me.btBuscarPersona)
         Me.GroupBox1.Controls.Add(Me.GroupBox2)
         Me.GroupBox1.Controls.Add(Me.gbTipoUsuario)
         Me.GroupBox1.Controls.Add(Me.cbInicioSesion)
-        Me.GroupBox1.Controls.Add(Me.btBuscarPersona)
         Me.GroupBox1.Controls.Add(Me.GbInform_D)
         Me.GroupBox1.Controls.Add(Me.GroupBox3)
         Me.GroupBox1.Controls.Add(Me.gbInform)
@@ -309,6 +309,17 @@ Partial Class FormEmpleado
         Me.GroupBox1.Size = New System.Drawing.Size(898, 443)
         Me.GroupBox1.TabIndex = 11
         Me.GroupBox1.TabStop = False
+        '
+        'btBuscarPersona
+        '
+        Me.btBuscarPersona.BackgroundImage = Global.Quality.My.Resources.Resources.fondo_azul
+        Me.btBuscarPersona.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btBuscarPersona.Image = Global.Quality.My.Resources.Resources.Zoom_icon1
+        Me.btBuscarPersona.Location = New System.Drawing.Point(711, 19)
+        Me.btBuscarPersona.Name = "btBuscarPersona"
+        Me.btBuscarPersona.Size = New System.Drawing.Size(31, 30)
+        Me.btBuscarPersona.TabIndex = 65
+        Me.btBuscarPersona.UseVisualStyleBackColor = True
         '
         'GroupBox2
         '
@@ -424,17 +435,6 @@ Partial Class FormEmpleado
         Me.cbPerfil.Size = New System.Drawing.Size(248, 25)
         Me.cbPerfil.TabIndex = 2
         '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Italic)
-        Me.Label9.ForeColor = System.Drawing.Color.Black
-        Me.Label9.Location = New System.Drawing.Point(6, 56)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(56, 19)
-        Me.Label9.TabIndex = 1
-        Me.Label9.Text = "Activo:"
-        '
         'Label10
         '
         Me.Label10.AutoSize = True
@@ -504,52 +504,6 @@ Partial Class FormEmpleado
         Me.Label7.TabIndex = 0
         Me.Label7.Text = "Usuario:"
         '
-        'btBuscarPersona
-        '
-        Me.btBuscarPersona.BackgroundImage = Global.Quality.My.Resources.Resources.fondo_azul
-        Me.btBuscarPersona.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btBuscarPersona.Image = Global.Quality.My.Resources.Resources.Search_icon__2_
-        Me.btBuscarPersona.Location = New System.Drawing.Point(718, 41)
-        Me.btBuscarPersona.Name = "btBuscarPersona"
-        Me.btBuscarPersona.Size = New System.Drawing.Size(43, 38)
-        Me.btBuscarPersona.TabIndex = 60
-        Me.btBuscarPersona.UseVisualStyleBackColor = True
-        '
-        'Panel1
-        '
-        Me.Panel1.BackColor = System.Drawing.Color.White
-        Me.Panel1.BackgroundImage = Global.Quality.My.Resources.Resources.fondo_azul
-        Me.Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Panel1.Controls.Add(Me.Pimagen)
-        Me.Panel1.Controls.Add(Me.LTitulo)
-        Me.Panel1.Location = New System.Drawing.Point(1, 0)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(904, 44)
-        Me.Panel1.TabIndex = 0
-        '
-        'Pimagen
-        '
-        Me.Pimagen.BackColor = System.Drawing.Color.Transparent
-        Me.Pimagen.Image = Global.Quality.My.Resources.Resources.proveedor1
-        Me.Pimagen.Location = New System.Drawing.Point(4, -7)
-        Me.Pimagen.Name = "Pimagen"
-        Me.Pimagen.Size = New System.Drawing.Size(69, 53)
-        Me.Pimagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.Pimagen.TabIndex = 1
-        Me.Pimagen.TabStop = False
-        '
-        'LTitulo
-        '
-        Me.LTitulo.BackColor = System.Drawing.Color.Transparent
-        Me.LTitulo.Font = New System.Drawing.Font("Times New Roman", 20.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LTitulo.ForeColor = System.Drawing.Color.White
-        Me.LTitulo.Location = New System.Drawing.Point(-1, 0)
-        Me.LTitulo.Name = "LTitulo"
-        Me.LTitulo.Size = New System.Drawing.Size(905, 40)
-        Me.LTitulo.TabIndex = 1
-        Me.LTitulo.Text = "Empleado"
-        Me.LTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
         'ToolStrip1
         '
         Me.ToolStrip1.BackColor = System.Drawing.Color.White
@@ -558,7 +512,7 @@ Partial Class FormEmpleado
         Me.ToolStrip1.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.ToolStrip1.ImageScalingSize = New System.Drawing.Size(26, 26)
         Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripSeparator1, Me.btNuevo, Me.ToolStripSeparator7, Me.btBuscar, Me.ToolStripSeparator2, Me.btRegistrar, Me.ToolStripSeparator4, Me.btEditar, Me.ToolStripSeparator5, Me.btCancelar, Me.ToolStripSeparator3, Me.btAnular, Me.ToolStripSeparator6})
-        Me.ToolStrip1.Location = New System.Drawing.Point(0, 491)
+        Me.ToolStrip1.Location = New System.Drawing.Point(0, 490)
         Me.ToolStrip1.Name = "ToolStrip1"
         Me.ToolStrip1.Size = New System.Drawing.Size(905, 33)
         Me.ToolStrip1.TabIndex = 15
@@ -665,13 +619,59 @@ Partial Class FormEmpleado
         Me.ToolStripSeparator6.Name = "ToolStripSeparator6"
         Me.ToolStripSeparator6.Size = New System.Drawing.Size(6, 33)
         '
+        'Panel1
+        '
+        Me.Panel1.BackColor = System.Drawing.Color.White
+        Me.Panel1.BackgroundImage = Global.Quality.My.Resources.Resources.fondo_azul
+        Me.Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Panel1.Controls.Add(Me.Pimagen)
+        Me.Panel1.Controls.Add(Me.LTitulo)
+        Me.Panel1.Location = New System.Drawing.Point(1, 0)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(904, 44)
+        Me.Panel1.TabIndex = 0
+        '
+        'Pimagen
+        '
+        Me.Pimagen.BackColor = System.Drawing.Color.Transparent
+        Me.Pimagen.Image = Global.Quality.My.Resources.Resources.proveedor1
+        Me.Pimagen.Location = New System.Drawing.Point(4, -7)
+        Me.Pimagen.Name = "Pimagen"
+        Me.Pimagen.Size = New System.Drawing.Size(69, 53)
+        Me.Pimagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.Pimagen.TabIndex = 1
+        Me.Pimagen.TabStop = False
+        '
+        'LTitulo
+        '
+        Me.LTitulo.BackColor = System.Drawing.Color.Transparent
+        Me.LTitulo.Font = New System.Drawing.Font("Times New Roman", 20.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LTitulo.ForeColor = System.Drawing.Color.White
+        Me.LTitulo.Location = New System.Drawing.Point(-1, 0)
+        Me.LTitulo.Name = "LTitulo"
+        Me.LTitulo.Size = New System.Drawing.Size(905, 40)
+        Me.LTitulo.TabIndex = 1
+        Me.LTitulo.Text = "Empleado"
+        Me.LTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Italic)
+        Me.Label9.ForeColor = System.Drawing.Color.Black
+        Me.Label9.Location = New System.Drawing.Point(6, 56)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(56, 19)
+        Me.Label9.TabIndex = 1
+        Me.Label9.Text = "Activo:"
+        '
         'FormEmpleado
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(905, 524)
+        Me.ClientSize = New System.Drawing.Size(905, 523)
         Me.Controls.Add(Me.ToolStrip1)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Panel1)
@@ -695,10 +695,10 @@ Partial Class FormEmpleado
         Me.gbTipoUsuario.PerformLayout()
         Me.cbInicioSesion.ResumeLayout(False)
         Me.cbInicioSesion.PerformLayout()
-        Me.Panel1.ResumeLayout(False)
-        CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ToolStrip1.ResumeLayout(False)
         Me.ToolStrip1.PerformLayout()
+        Me.Panel1.ResumeLayout(False)
+        CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -738,14 +738,12 @@ Partial Class FormEmpleado
     Public WithEvents Label3 As Label
     Public WithEvents txtTelefono As TextBox
     Public WithEvents Label6 As Label
-    Friend WithEvents btBuscarPersona As Button
     Friend WithEvents cbInicioSesion As GroupBox
     Friend WithEvents txtContraseña As MaskedTextBox
     Public WithEvents txtUsuario As TextBox
     Friend WithEvents Label8 As Label
     Friend WithEvents Label7 As Label
     Friend WithEvents gbTipoUsuario As GroupBox
-    Friend WithEvents Label9 As Label
     Friend WithEvents Label10 As Label
     Friend WithEvents chbActivo As CheckBox
     Friend WithEvents cbPerfil As ComboBox
@@ -756,4 +754,6 @@ Partial Class FormEmpleado
     Friend WithEvents Label11 As Label
     Friend WithEvents cbBanco As ComboBox
     Friend WithEvents Label12 As Label
+    Friend WithEvents btBuscarPersona As Button
+    Friend WithEvents Label9 As Label
 End Class

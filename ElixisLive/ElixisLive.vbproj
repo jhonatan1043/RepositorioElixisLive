@@ -172,6 +172,12 @@
     <Compile Include="Vista\Administracion\FormEmpleado.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Vista\Administracion\FormPerfil.Designer.vb">
+      <DependentUpon>FormPerfil.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Administracion\FormPerfil.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Vista\Administracion\FormPersona.Designer.vb">
       <DependentUpon>FormPersona.vb</DependentUpon>
     </Compile>
@@ -299,6 +305,9 @@
     <EmbeddedResource Include="Vista\Administracion\FormEmpleado.resx">
       <DependentUpon>FormEmpleado.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Administracion\FormPerfil.resx">
+      <DependentUpon>FormPerfil.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vista\Administracion\FormPersona.resx">
       <DependentUpon>FormPersona.vb</DependentUpon>
     </EmbeddedResource>
@@ -379,6 +388,9 @@
     <Content Include="ReferenciaDLL\CnxElixisLiveBD.dll" />
     <Content Include="ReferenciaDLL\MySql.Data.DLL" />
     <Content Include="ReferenciaDLL\NotifySenderControl.dll" />
+    <None Include="Resources\glossy-3d-blue-orbs2-088-icon.png" />
+    <None Include="Resources\Zoom-icon1.png" />
+    <None Include="Resources\Zoom-icon %281%29.png" />
     <None Include="Resources\glossy-3d-blue-power-icon.png" />
     <None Include="Resources\glossy-3d-blue-orbs2-132-icon.png" />
     <None Include="Resources\glossy-3d-blue-orbs2-093-icon.png" />

@@ -141,6 +141,7 @@ Public Class FormVenta
         TextTotalServicio.ReadOnly = True
         dtProductos.Rows.Add()
         bloquearColumnas()
+        dtFechaFactura.Enabled = False
         TextIdentificacion.Focus()
     End Sub
     Private Sub btBuscar_Click(sender As Object, e As EventArgs) Handles btBuscar.Click
@@ -171,7 +172,6 @@ Public Class FormVenta
         dgvFactura.EndEdit()
         Try
             If validarCampos() Then
-
                 'EmpleadoBLL.guardar(objEmpleado)
                 Generales.habilitarBotones(ToolStrip1)
                 Generales.deshabilitarControles(Me)
