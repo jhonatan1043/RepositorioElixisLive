@@ -517,10 +517,17 @@ Public Class Generales
         End Try
         Return resultado
     End Function
-    Public Shared Sub desvanecer(form As Form)
+    Public Shared Sub desvanecerForm(form As Form)
         For contador = 90 To 9 Step -9
             form.Opacity = contador / 100
             form.Refresh()
+            Thread.Sleep(80)
+        Next
+    End Sub
+    Public Shared Sub desvanecerControl(objeto As Object)
+        For contador = 90 To 9 Step -9
+            objeto.Opacity = contador / 100
+            objeto.Refresh()
             Thread.Sleep(80)
         Next
     End Sub

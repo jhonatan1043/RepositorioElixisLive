@@ -34,6 +34,7 @@ Partial Class FormPerfil
         Me.TextNombre = New System.Windows.Forms.TextBox()
         Me.Label17 = New System.Windows.Forms.Label()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.arbolmenu = New System.Windows.Forms.TreeView()
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
         Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
         Me.btNuevo = New System.Windows.Forms.ToolStripButton()
@@ -51,7 +52,6 @@ Partial Class FormPerfil
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Pimagen = New System.Windows.Forms.PictureBox()
         Me.LTitulo = New System.Windows.Forms.Label()
-        Me.arbolmenu = New System.Windows.Forms.TreeView()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         CType(Me.dgvFactura, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -92,9 +92,9 @@ Partial Class FormPerfil
         '
         Me.txtBuscar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtBuscar.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtBuscar.Location = New System.Drawing.Point(102, 22)
+        Me.txtBuscar.Location = New System.Drawing.Point(100, 22)
         Me.txtBuscar.Name = "txtBuscar"
-        Me.txtBuscar.Size = New System.Drawing.Size(525, 22)
+        Me.txtBuscar.Size = New System.Drawing.Size(533, 22)
         Me.txtBuscar.TabIndex = 9
         '
         'Label3
@@ -125,7 +125,7 @@ Partial Class FormPerfil
         Me.dgvFactura.MultiSelect = False
         Me.dgvFactura.Name = "dgvFactura"
         Me.dgvFactura.ReadOnly = True
-        Me.dgvFactura.Size = New System.Drawing.Size(621, 317)
+        Me.dgvFactura.Size = New System.Drawing.Size(627, 317)
         Me.dgvFactura.TabIndex = 4
         '
         'dgCodigo
@@ -159,10 +159,10 @@ Partial Class FormPerfil
         '
         Me.TextNombre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TextNombre.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextNombre.Location = New System.Drawing.Point(102, 20)
+        Me.TextNombre.Location = New System.Drawing.Point(100, 20)
         Me.TextNombre.MaxLength = 50
         Me.TextNombre.Name = "TextNombre"
-        Me.TextNombre.Size = New System.Drawing.Size(525, 25)
+        Me.TextNombre.Size = New System.Drawing.Size(533, 25)
         Me.TextNombre.TabIndex = 9
         '
         'Label17
@@ -185,6 +185,20 @@ Partial Class FormPerfil
         Me.GroupBox3.Size = New System.Drawing.Size(240, 434)
         Me.GroupBox3.TabIndex = 21
         Me.GroupBox3.TabStop = False
+        '
+        'arbolmenu
+        '
+        Me.arbolmenu.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.arbolmenu.CheckBoxes = True
+        Me.arbolmenu.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.arbolmenu.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.arbolmenu.ForeColor = System.Drawing.Color.SteelBlue
+        Me.arbolmenu.LineColor = System.Drawing.Color.SteelBlue
+        Me.arbolmenu.Location = New System.Drawing.Point(3, 16)
+        Me.arbolmenu.Margin = New System.Windows.Forms.Padding(8, 3, 3, 3)
+        Me.arbolmenu.Name = "arbolmenu"
+        Me.arbolmenu.Size = New System.Drawing.Size(234, 415)
+        Me.arbolmenu.TabIndex = 9
         '
         'ToolStrip1
         '
@@ -335,17 +349,6 @@ Partial Class FormPerfil
         Me.LTitulo.TabIndex = 1
         Me.LTitulo.Text = "Perfíles"
         Me.LTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'arbolmenu
-        '
-        Me.arbolmenu.CheckBoxes = True
-        Me.arbolmenu.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.arbolmenu.LineColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(153, Byte), Integer), CType(CType(51, Byte), Integer))
-        Me.arbolmenu.Location = New System.Drawing.Point(3, 16)
-        Me.arbolmenu.Margin = New System.Windows.Forms.Padding(8, 3, 3, 3)
-        Me.arbolmenu.Name = "arbolmenu"
-        Me.arbolmenu.Size = New System.Drawing.Size(234, 415)
-        Me.arbolmenu.TabIndex = 9
         '
         'FormPerfil
         '

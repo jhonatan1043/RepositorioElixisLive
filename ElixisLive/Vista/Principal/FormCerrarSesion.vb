@@ -4,7 +4,7 @@ Imports System.Threading
 Public Class FormCerrarSesion
     Dim formulario As New vForm
     Private Sub PicCerrarSesion_Click(sender As Object, e As EventArgs) Handles PicCerrarSesion.Click
-        Generales.desvanecer(Me)
+        Generales.desvanecerForm(Me)
         FormPrincipal.Close()
         FormInicioSesion.Show()
         FormInicioSesion.txtContraseña.Clear()
@@ -12,12 +12,12 @@ Public Class FormCerrarSesion
     End Sub
 
     Private Sub PicSalir_Click(sender As Object, e As EventArgs) Handles PicSalir.Click
-        Generales.desvanecer(Me)
+        Generales.desvanecerForm(Me)
         FormInicioSesion.Close()
     End Sub
 
     Private Sub PicRegresar_Click(sender As Object, e As EventArgs) Handles PicRegresar.Click
-        Generales.desvanecer(Me)
+        Generales.desvanecerForm(Me)
         Me.Close()
     End Sub
     Private Sub PicRegresar_MouseHover(sender As Object, e As EventArgs) Handles PicRegresar.MouseHover

@@ -40,6 +40,6 @@
 
     Private Sub FormPrincipal_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
         Me.BackgroundImage = Nothing
-        Generales.desvanecer(Me)
+        Generales.desvanecerForm(Me)
     End Sub
 End Class

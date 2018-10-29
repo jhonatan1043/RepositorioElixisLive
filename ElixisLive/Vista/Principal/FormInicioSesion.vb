@@ -24,7 +24,7 @@ Public Class FormInicioSesion
         Return resultado
     End Function
     Private Sub Cancel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Cancel.Click
-        Generales.desvanecer(Me)
+        Generales.desvanecerForm(Me)
         Me.Close()
     End Sub
     Private Sub cargarObjeto()

@@ -40,7 +40,7 @@ Partial Class FormPrincipal
         Me.arbolMenu.ForeColor = System.Drawing.Color.White
         Me.arbolMenu.ImageIndex = 2
         Me.arbolMenu.ImageList = Me.ImageList1
-        Me.arbolMenu.LineColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.arbolMenu.LineColor = System.Drawing.Color.White
         Me.arbolMenu.Location = New System.Drawing.Point(0, 0)
         Me.arbolMenu.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.arbolMenu.Name = "arbolMenu"
