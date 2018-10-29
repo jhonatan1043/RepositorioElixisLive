@@ -314,7 +314,9 @@ Public Class Generales
         dgv.DefaultCellStyle.SelectionBackColor = Color.DodgerBlue
         dgv.DefaultCellStyle.SelectionForeColor = Color.White
         dgv.DefaultCellStyle.Font = New Font("Times New Roman", 11, FontStyle.Italic)
-        'dgv.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft
+        dgv.EnableHeadersVisualStyles = False
+        dgv.ColumnHeadersDefaultCellStyle.BackColor = Color.SteelBlue
+        dgv.ColumnHeadersDefaultCellStyle.ForeColor = Color.White
         dgv.AlternatingRowsDefaultCellStyle.BackColor = Color.AliceBlue
         dgv.AlternatingRowsDefaultCellStyle.ForeColor = Nothing
         dgv.AlternatingRowsDefaultCellStyle.SelectionBackColor = Nothing

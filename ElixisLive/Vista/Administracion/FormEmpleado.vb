@@ -221,4 +221,11 @@
         Generales.subirimagen(pictImagen, open)
     End Sub
 
+    Private Sub dgvParametro_Validating(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles dgvParametro.Validating
+        'If DirectCast(sender, Data).Text.Length = 0 And btRegistrar.Enabled = True Then
+        '    Me.ErrorIcono.SetError(sender, "Debe ingresar un número de teléfono")
+        'Else
+        '    Me.ErrorIcono.SetError(sender, "")
+        'End If
+    End Sub
 End Class

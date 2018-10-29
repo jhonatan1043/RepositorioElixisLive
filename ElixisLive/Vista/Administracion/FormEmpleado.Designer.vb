@@ -22,7 +22,9 @@ Partial Class FormEmpleado
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormEmpleado))
         Me.gbInform = New System.Windows.Forms.GroupBox()
         Me.txtEmail = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
@@ -52,6 +54,7 @@ Partial Class FormEmpleado
         Me.gbTipoUsuario = New System.Windows.Forms.GroupBox()
         Me.chbActivo = New System.Windows.Forms.CheckBox()
         Me.cbPerfil = New System.Windows.Forms.ComboBox()
+        Me.Label9 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.cbInicioSesion = New System.Windows.Forms.GroupBox()
         Me.txtContraseña = New System.Windows.Forms.MaskedTextBox()
@@ -75,7 +78,7 @@ Partial Class FormEmpleado
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Pimagen = New System.Windows.Forms.PictureBox()
         Me.LTitulo = New System.Windows.Forms.Label()
-        Me.Label9 = New System.Windows.Forms.Label()
+        Me.ErrorIcono = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.gbInform.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         CType(Me.pictImagen, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -88,6 +91,7 @@ Partial Class FormEmpleado
         Me.ToolStrip1.SuspendLayout()
         Me.Panel1.SuspendLayout()
         CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ErrorIcono, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'gbInform
@@ -435,6 +439,17 @@ Partial Class FormEmpleado
         Me.cbPerfil.Size = New System.Drawing.Size(248, 25)
         Me.cbPerfil.TabIndex = 2
         '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Italic)
+        Me.Label9.ForeColor = System.Drawing.Color.Black
+        Me.Label9.Location = New System.Drawing.Point(6, 56)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(56, 19)
+        Me.Label9.TabIndex = 1
+        Me.Label9.Text = "Activo:"
+        '
         'Label10
         '
         Me.Label10.AutoSize = True
@@ -654,16 +669,11 @@ Partial Class FormEmpleado
         Me.LTitulo.Text = "Empleado"
         Me.LTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'Label9
+        'ErrorIcono
         '
-        Me.Label9.AutoSize = True
-        Me.Label9.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Italic)
-        Me.Label9.ForeColor = System.Drawing.Color.Black
-        Me.Label9.Location = New System.Drawing.Point(6, 56)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(56, 19)
-        Me.Label9.TabIndex = 1
-        Me.Label9.Text = "Activo:"
+        Me.ErrorIcono.ContainerControl = Me
+        Me.ErrorIcono.Icon = CType(resources.GetObject("ErrorIcono.Icon"), System.Drawing.Icon)
+        Me.ErrorIcono.RightToLeft = True
         '
         'FormEmpleado
         '
@@ -699,6 +709,7 @@ Partial Class FormEmpleado
         Me.ToolStrip1.PerformLayout()
         Me.Panel1.ResumeLayout(False)
         CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ErrorIcono, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -756,4 +767,5 @@ Partial Class FormEmpleado
     Friend WithEvents Label12 As Label
     Friend WithEvents btBuscarPersona As Button
     Friend WithEvents Label9 As Label
+    Friend WithEvents ErrorIcono As ErrorProvider
 End Class
