@@ -110,7 +110,7 @@
     Private Sub btBuscar_Click(sender As Object, e As EventArgs) Handles btBuscar.Click
         Dim params As New List(Of String)
         params.Add(String.Empty)
-        params.Add(SesionActual.idEmpresa)
+        params.Add(SesionActual.codigoSucursal)
         Generales.buscarElemento(objPersona.sqlConsulta,
                                    params,
                                    AddressOf cargarInfomacion,

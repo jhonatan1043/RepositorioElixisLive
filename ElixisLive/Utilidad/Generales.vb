@@ -27,8 +27,9 @@ Public Class Generales
             objConexion.desConectar()
         Catch ex As Exception
             Throw
+        Finally
+            objConexion.desConectar()
         End Try
-
     End Sub
 
     Public Shared Function getCadenaSeleccionados(datatable As DataTable, seleccionados As String, posicionCodigo As Integer) As String

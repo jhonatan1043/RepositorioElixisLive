@@ -13,7 +13,7 @@ Public Class PersonaDAL
                     comando.CommandText = objPersona.sqlGuardar
                     comando.Parameters.Add(New SqlParameter("@Codigo", SqlDbType.NVarChar)).Value = objPersona.codigo
                     comando.Parameters.Add(New SqlParameter("@Nit", SqlDbType.NVarChar)).Value = objPersona.identificacion
-                    comando.Parameters.Add(New SqlParameter("@Codigo_Empresa", SqlDbType.Int)).Value = SesionActual.idEmpresa
+                    comando.Parameters.Add(New SqlParameter("@Codigo_Empresa", SqlDbType.Int)).Value = SesionActual.codigoSucursal
                     comando.Parameters.Add(New SqlParameter("@Nombre", SqlDbType.NVarChar)).Value = objPersona.nombre
                     comando.Parameters.Add(New SqlParameter("@telefono", SqlDbType.NVarChar)).Value = objPersona.telefono
                     comando.Parameters.Add(New SqlParameter("@celular", SqlDbType.NVarChar)).Value = objPersona.celular

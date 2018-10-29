@@ -17,7 +17,7 @@
     Private Sub cargarRegistro()
         Dim params As New List(Of String)
         params.Add(String.Empty)
-        params.Add(SesionActual.idEmpresa)
+        params.Add(SesionActual.codigoSucursal)
         Generales.llenardgv(objConfig.sqlConsulta, dgRegistro, params)
         Generales.diseñoDGV(dgRegistro)
     End Sub

@@ -5,7 +5,7 @@
         objCliente = New Cliente
         Try
             params.Add(ElementoMenu.codigo)
-            params.Add(SesionActual.idEmpresa)
+            params.Add(SesionActual.codigoSucursal)
             Generales.llenardgv("SP_CONSULTAR_PARAMETROS", dgvParametro, params)
             Generales.diseñoDGV(dgvParametro)
             Generales.diseñoGrillaParametros(dgvParametro)
@@ -70,7 +70,7 @@
     Private Sub btBuscar_Click(sender As Object, e As EventArgs) Handles btBuscar.Click
         Dim params As New List(Of String)
         params.Add(String.Empty)
-        params.Add(SesionActual.idEmpresa)
+        params.Add(SesionActual.codigoSucursal)
         Try
             Generales.buscarElemento(objCliente.sqlConsulta,
                                    params,
@@ -84,7 +84,7 @@
     Private Sub btBuscarPersona_Click(sender As Object, e As EventArgs) Handles btBuscarPersona.Click
         Dim params As New List(Of String)
         params.Add(String.Empty)
-        params.Add(SesionActual.idEmpresa)
+        params.Add(SesionActual.codigoSucursal)
         Try
             Generales.buscarElemento("[SP_PERSONA_CLIENTE_CONSULTAR]",
                                    params,

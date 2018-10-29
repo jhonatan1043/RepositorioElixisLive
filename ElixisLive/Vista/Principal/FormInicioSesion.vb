@@ -30,7 +30,7 @@ Public Class FormInicioSesion
     Private Sub cargarObjeto()
         objInicioSesionBLL.usuario = txtUsuario.Text
         objInicioSesionBLL.contrasena = txtContraseña.Text
-        objInicioSesionBLL.idEmpresa = CbEmpresa.SelectedValue
+        objInicioSesionBLL.codigoSucursal = CbEmpresa.SelectedValue
     End Sub
     Private Sub TxtUsuario_Validating(sender As Object, e As CancelEventArgs) Handles txtUsuario.Validating
         If DirectCast(sender, TextBox).Text.Length = 0 Then
@@ -63,7 +63,7 @@ Public Class FormInicioSesion
         Dim resultado As Boolean
         Try
             params.Add(txtUsuario.Text)
-            resultado = Generales.cargarCombo("[SP_ADMIN_CONSULTAR_EMPRESA]", params, "Nombre", "codigo_empresa", CbEmpresa)
+            resultado = Generales.cargarCombo("[SP_ADMIN_CONSULTAR_SUCURSALES]", params, "Nombre", "codigo", CbEmpresa)
         Catch ex As Exception
             EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
         End Try

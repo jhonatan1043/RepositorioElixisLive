@@ -13,7 +13,7 @@
             Generales.diseñoDGV(dgRegistro)
             Generales.diseñoGrillaParametros(dgRegistro)
             params.Clear()
-            params.Add(SesionActual.idEmpresa)
+            params.Add(SesionActual.codigoSucursal)
             Generales.cargarCombo("[SP_CONSULTAR_MARCA]", params, "Nombre", "Codigo_Marca", cbMarca)
         Catch ex As Exception
             EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
@@ -59,7 +59,7 @@
     Private Sub btBuscar_Click(sender As Object, e As EventArgs) Handles btBuscar.Click
         Dim params As New List(Of String)
         params.Add(String.Empty)
-        params.Add(SesionActual.idEmpresa)
+        params.Add(SesionActual.codigoSucursal)
         Generales.buscarElemento(objProducto.sqlConsulta,
                                    params,
                                    AddressOf cargarInfomacion,

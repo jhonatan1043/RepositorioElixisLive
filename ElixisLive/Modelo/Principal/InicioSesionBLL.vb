@@ -1,7 +1,7 @@
 ﻿Public Class InicioSesionBLL
     Property usuario As String
     Property contrasena As String
-    Property idEmpresa As String
+    Property codigoSucursal As String
     Public Function inicioSesionCargar() As Boolean
         Dim params As New List(Of String)
         Dim resultado As String
@@ -9,13 +9,13 @@
 
         params.Add(usuario)
         params.Add(contrasena)
-        params.Add(idEmpresa)
+        params.Add(codigoSucursal)
 
         resultado = Funciones.consulInicioSesion(params)
 
         If Not String.IsNullOrEmpty(resultado) Then
             SesionActual.idUsuario = resultado
-            SesionActual.idEmpresa = idEmpresa
+            SesionActual.codigoSucursal = codigoSucursal
             FormPrincipal.Show()
             banderaForm = True
         Else

@@ -82,7 +82,7 @@
     Private Sub btBuscar_Click(sender As Object, e As EventArgs) Handles btBuscar.Click
         Dim params As New List(Of String)
         params.Add(String.Empty)
-        params.Add(SesionActual.idEmpresa)
+        params.Add(SesionActual.codigoSucursal)
         Try
             Generales.buscarElemento(objEmpleado.sqlConsulta,
                                    params,
@@ -96,7 +96,7 @@
     Private Sub btBuscarPersona_Click(sender As Object, e As EventArgs) Handles btBuscarPersona.Click
         Dim params As New List(Of String)
         params.Add(String.Empty)
-        params.Add(SesionActual.idEmpresa)
+        params.Add(SesionActual.codigoSucursal)
         Try
             Generales.buscarElemento("[SP_PERSONA_EMPLEADO_CONSULTAR]",
                                    params,
