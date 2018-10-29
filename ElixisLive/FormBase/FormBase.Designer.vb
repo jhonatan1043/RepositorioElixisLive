@@ -261,7 +261,7 @@ Partial Class FormBase
         Me.btAnular.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.btAnular.Name = "btAnular"
         Me.btAnular.Size = New System.Drawing.Size(87, 30)
-        Me.btAnular.Text = "Anular"
+        Me.btAnular.Text = "&Anular"
         Me.btAnular.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         '
         'ToolStripSeparator6

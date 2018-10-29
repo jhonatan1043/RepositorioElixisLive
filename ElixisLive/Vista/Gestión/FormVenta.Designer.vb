@@ -325,7 +325,7 @@ Partial Class FormVenta
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(155, 38)
         Me.Label5.TabIndex = 24
-        Me.Label5.Text = "Productos"
+        Me.Label5.Text = "Artículos"
         Me.Label5.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
         'TextTotalServicio

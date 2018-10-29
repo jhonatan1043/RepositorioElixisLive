@@ -28,8 +28,6 @@ Partial Class FormPerfil
         Me.txtBuscar = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.dgvFactura = New System.Windows.Forms.DataGridView()
-        Me.dgCodigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.dgDescripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GroupBox7 = New System.Windows.Forms.GroupBox()
         Me.TextNombre = New System.Windows.Forms.TextBox()
         Me.Label17 = New System.Windows.Forms.Label()
@@ -52,6 +50,8 @@ Partial Class FormPerfil
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Pimagen = New System.Windows.Forms.PictureBox()
         Me.LTitulo = New System.Windows.Forms.Label()
+        Me.dgCodigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dgDescripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         CType(Me.dgvFactura, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -128,19 +128,6 @@ Partial Class FormPerfil
         Me.dgvFactura.Size = New System.Drawing.Size(627, 317)
         Me.dgvFactura.TabIndex = 4
         '
-        'dgCodigo
-        '
-        Me.dgCodigo.HeaderText = "Código"
-        Me.dgCodigo.Name = "dgCodigo"
-        Me.dgCodigo.ReadOnly = True
-        Me.dgCodigo.Visible = False
-        '
-        'dgDescripcion
-        '
-        Me.dgDescripcion.HeaderText = "Descripción"
-        Me.dgDescripcion.Name = "dgDescripcion"
-        Me.dgDescripcion.ReadOnly = True
-        '
         'GroupBox7
         '
         Me.GroupBox7.BackColor = System.Drawing.Color.Transparent
@@ -193,7 +180,7 @@ Partial Class FormPerfil
         Me.arbolmenu.Dock = System.Windows.Forms.DockStyle.Fill
         Me.arbolmenu.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.arbolmenu.ForeColor = System.Drawing.Color.SteelBlue
-        Me.arbolmenu.LineColor = System.Drawing.Color.SteelBlue
+        Me.arbolmenu.LineColor = System.Drawing.Color.DodgerBlue
         Me.arbolmenu.Location = New System.Drawing.Point(3, 16)
         Me.arbolmenu.Margin = New System.Windows.Forms.Padding(8, 3, 3, 3)
         Me.arbolmenu.Name = "arbolmenu"
@@ -350,6 +337,20 @@ Partial Class FormPerfil
         Me.LTitulo.Text = "Perfíles"
         Me.LTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
+        'dgCodigo
+        '
+        Me.dgCodigo.HeaderText = "Código"
+        Me.dgCodigo.Name = "dgCodigo"
+        Me.dgCodigo.ReadOnly = True
+        Me.dgCodigo.Visible = False
+        '
+        'dgDescripcion
+        '
+        Me.dgDescripcion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.dgDescripcion.HeaderText = "Descripción"
+        Me.dgDescripcion.Name = "dgDescripcion"
+        Me.dgDescripcion.ReadOnly = True
+        '
         'FormPerfil
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -405,9 +406,9 @@ Partial Class FormPerfil
     Public WithEvents dgvFactura As DataGridView
     Public WithEvents txtBuscar As TextBox
     Public WithEvents Label3 As Label
-    Friend WithEvents dgCodigo As DataGridViewTextBoxColumn
-    Friend WithEvents dgDescripcion As DataGridViewTextBoxColumn
     Friend WithEvents ToolStripSeparator2 As ToolStripSeparator
     Public WithEvents btNuevo As ToolStripButton
     Friend WithEvents arbolmenu As TreeView
+    Friend WithEvents dgCodigo As DataGridViewTextBoxColumn
+    Friend WithEvents dgDescripcion As DataGridViewTextBoxColumn
 End Class
