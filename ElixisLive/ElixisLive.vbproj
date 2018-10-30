@@ -111,6 +111,7 @@
     <Compile Include="ApplicationEvents.vb" />
     <Compile Include="Controlador\Administracion\EmpleadoDAL.vb" />
     <Compile Include="Controlador\Administracion\EmpresaDAL.vb" />
+    <Compile Include="Controlador\Administracion\PerfilDAL.vb" />
     <Compile Include="Controlador\Administracion\PersonaDAL.vb" />
     <Compile Include="Controlador\Configuracion\ConfigDAL.vb" />
     <Compile Include="Controlador\Inventario\ClienteDAL.vb" />
@@ -124,6 +125,7 @@
     </Compile>
     <Compile Include="Entidad\Administracion\Empleado.vb" />
     <Compile Include="Entidad\Administracion\Empresa.vb" />
+    <Compile Include="Entidad\Administracion\Perfil.vb" />
     <Compile Include="Entidad\Administracion\persona.vb" />
     <Compile Include="Entidad\generalConsulta.vb" />
     <Compile Include="Entidad\Configuracion\Configuracion.vb" />
@@ -145,6 +147,7 @@
     </Compile>
     <Compile Include="Modelo\Administracion\EmpleadoBLL.vb" />
     <Compile Include="Modelo\Administracion\EmpresaBLL.vb" />
+    <Compile Include="Modelo\Administracion\PerfilBLL.vb" />
     <Compile Include="Modelo\Administracion\PersonaBLL.vb" />
     <Compile Include="Modelo\Configuracion\ConfigBLL.vb" />
     <Compile Include="Modelo\Inventario\ProveedorBLL.vb" />
