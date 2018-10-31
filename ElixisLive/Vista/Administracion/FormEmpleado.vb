@@ -227,5 +227,10 @@
         'Else
         '    Me.ErrorIcono.SetError(sender, "")
         'End If
+
+        Dim dt As DataTable = DirectCast(ErrorIcono.DataSource, DataTable)
+        If CBool(dgvParametro.Rows(dgvParametro.CurrentCell.RowIndex).Cells(1).Value) = True Then
+            dt.Rows(dgvParametro.CurrentCell.RowIndex).SetColumnError(1, "Este campo es obligatorio")
+        End If
     End Sub
 End Class

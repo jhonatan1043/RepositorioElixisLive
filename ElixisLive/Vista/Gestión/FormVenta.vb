@@ -117,6 +117,7 @@ Public Class FormVenta
                 respuesta = True
                 TextNombre.ReadOnly = True
                 TextTelefono.ReadOnly = True
+                quitarIconoError()
             Else
                 TextNombre.Clear()
                 TextTelefono.Clear()
@@ -311,4 +312,5 @@ Public Class FormVenta
             Next
         End If
     End Sub
+
 End Class
