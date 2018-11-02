@@ -2,7 +2,7 @@
     Dim objPerfil As Perfil
     Private Sub FormPerfil_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         objPerfil = New Perfil
-        PerfilBLL.cargarMenu(arbolmenu)
+        principalBLL.cargarMenu(arbolmenu)
         listarPerfiles()
         validarCampoGrilla()
         Generales.deshabilitarBotones(ToolStrip1)
@@ -18,15 +18,29 @@
         btCancelar.Enabled = True
     End Sub
     Private Sub cargarInfomacion(pCodigo As Integer)
+        Dim params As New List(Of String)
         objPerfil.codigo = pCodigo
-        PerfilBLL.cargarMenu(arbolmenu, pCodigo)
-        arbolmenu.ExpandAll()
+        params.Add(pCodigo)
+        Generales.llenarTabla("[SP_ADMIN_PERFIL_DETALLE]", params, objPerfil.dtRegistro)
+        chequearArbol()
         Generales.habilitarBotones(ToolStrip1)
         Generales.deshabilitarControles(Me)
         btRegistrar.Enabled = False
     End Sub
+    Private Sub chequearArbol()
+        For Each nodo As TreeNode In arbolmenu.Nodes
+            If IsNothing(nodo.Parent) Then
+                For posicion = 0 To objPerfil.dtRegistro.Rows.Count - 1
+                    If nodo.Name = objPerfil.dtRegistro.Rows(posicion).Item("Codigo") Then
+                        nodo.Checked = True
+                    End If
+                Next
+            End If
+        Next
+    End Sub
     Private Sub btRegistrar_Click(sender As Object, e As EventArgs) Handles btRegistrar.Click
         Try
+            cargarObjeto()
             PerfilBLL.guardarPerfil(objPerfil)
             Generales.deshabilitarBotones(ToolStrip1)
             Generales.deshabilitarControles(Me)
@@ -77,13 +91,16 @@
     End Sub
     Private Sub cargarObjeto()
         objPerfil.nombre = TextNombre.Text
-        For posicion = 0 To arbolmenu.Nodes.Count - 1
-            If arbolmenu.Nodes(posicion).Checked = True Then
-                objPerfil.dtPerfil.Rows.Add()
-                objPerfil.dtPerfil.Rows(objPerfil.dtPerfil.Rows.Count).Item("Codigo") = arbolmenu.Nodes(posicion).Name
+        For Each nodo As TreeNode In arbolmenu.Nodes
+            If IsNothing(nodo.Parent) Then
+                If nodo.Checked = True Then
+                    objPerfil.dtPerfil.Rows.Add()
+                    objPerfil.dtRegistro.Rows(objPerfil.dtPerfil.Rows.Count - 1).Item("Codigo") = nodo.Name
+                End If
             End If
         Next
     End Sub
+
     Private Sub dgvFactura_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvFactura.CellContentClick
         If btRegistrar.Enabled = True Then Exit Sub
         If dgvFactura.Rows.Count > 0 Then
