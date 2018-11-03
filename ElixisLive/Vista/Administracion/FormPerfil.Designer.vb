@@ -48,6 +48,7 @@ Partial Class FormPerfil
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Pimagen = New System.Windows.Forms.PictureBox()
         Me.LTitulo = New System.Windows.Forms.Label()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         CType(Me.dgvFactura, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -56,10 +57,12 @@ Partial Class FormPerfil
         Me.ToolStrip1.SuspendLayout()
         Me.Panel1.SuspendLayout()
         CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.PictureBox1)
         Me.GroupBox1.Controls.Add(Me.GroupBox2)
         Me.GroupBox1.Controls.Add(Me.GroupBox7)
         Me.GroupBox1.Controls.Add(Me.GroupBox3)
@@ -79,7 +82,7 @@ Partial Class FormPerfil
         Me.GroupBox2.ForeColor = System.Drawing.Color.DarkBlue
         Me.GroupBox2.Location = New System.Drawing.Point(5, 63)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(638, 379)
+        Me.GroupBox2.Size = New System.Drawing.Size(474, 379)
         Me.GroupBox2.TabIndex = 11
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Perfíles Guardados"
@@ -88,9 +91,9 @@ Partial Class FormPerfil
         '
         Me.txtBuscar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtBuscar.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtBuscar.Location = New System.Drawing.Point(100, 22)
+        Me.txtBuscar.Location = New System.Drawing.Point(88, 22)
         Me.txtBuscar.Name = "txtBuscar"
-        Me.txtBuscar.Size = New System.Drawing.Size(533, 22)
+        Me.txtBuscar.Size = New System.Drawing.Size(380, 22)
         Me.txtBuscar.TabIndex = 9
         '
         'Label3
@@ -120,7 +123,7 @@ Partial Class FormPerfil
         Me.dgvFactura.MultiSelect = False
         Me.dgvFactura.Name = "dgvFactura"
         Me.dgvFactura.ReadOnly = True
-        Me.dgvFactura.Size = New System.Drawing.Size(379, 317)
+        Me.dgvFactura.Size = New System.Drawing.Size(462, 317)
         Me.dgvFactura.TabIndex = 4
         '
         'GroupBox7
@@ -132,7 +135,7 @@ Partial Class FormPerfil
         Me.GroupBox7.ForeColor = System.Drawing.Color.DarkBlue
         Me.GroupBox7.Location = New System.Drawing.Point(5, 8)
         Me.GroupBox7.Name = "GroupBox7"
-        Me.GroupBox7.Size = New System.Drawing.Size(638, 54)
+        Me.GroupBox7.Size = New System.Drawing.Size(474, 54)
         Me.GroupBox7.TabIndex = 10
         Me.GroupBox7.TabStop = False
         Me.GroupBox7.Text = "Información del perfíl"
@@ -141,10 +144,10 @@ Partial Class FormPerfil
         '
         Me.TextNombre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TextNombre.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextNombre.Location = New System.Drawing.Point(100, 20)
+        Me.TextNombre.Location = New System.Drawing.Point(88, 20)
         Me.TextNombre.MaxLength = 50
         Me.TextNombre.Name = "TextNombre"
-        Me.TextNombre.Size = New System.Drawing.Size(533, 25)
+        Me.TextNombre.Size = New System.Drawing.Size(380, 25)
         Me.TextNombre.TabIndex = 9
         '
         'Label17
@@ -162,9 +165,9 @@ Partial Class FormPerfil
         'GroupBox3
         '
         Me.GroupBox3.Controls.Add(Me.arbolmenu)
-        Me.GroupBox3.Location = New System.Drawing.Point(648, 8)
+        Me.GroupBox3.Location = New System.Drawing.Point(483, 8)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(240, 434)
+        Me.GroupBox3.Size = New System.Drawing.Size(215, 434)
         Me.GroupBox3.TabIndex = 21
         Me.GroupBox3.TabStop = False
         '
@@ -179,7 +182,7 @@ Partial Class FormPerfil
         Me.arbolmenu.Location = New System.Drawing.Point(3, 16)
         Me.arbolmenu.Margin = New System.Windows.Forms.Padding(8, 3, 3, 3)
         Me.arbolmenu.Name = "arbolmenu"
-        Me.arbolmenu.Size = New System.Drawing.Size(234, 415)
+        Me.arbolmenu.Size = New System.Drawing.Size(209, 415)
         Me.arbolmenu.TabIndex = 9
         '
         'ToolStrip1
@@ -316,6 +319,16 @@ Partial Class FormPerfil
         Me.LTitulo.Text = "Perfíles"
         Me.LTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = Global.Quality.My.Resources.Resources.Quality_logo
+        Me.PictureBox1.Location = New System.Drawing.Point(701, 88)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(189, 257)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 60032
+        Me.PictureBox1.TabStop = False
+        '
         'FormPerfil
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -342,6 +355,7 @@ Partial Class FormPerfil
         Me.ToolStrip1.PerformLayout()
         Me.Panel1.ResumeLayout(False)
         CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -372,4 +386,5 @@ Partial Class FormPerfil
     Friend WithEvents ToolStripSeparator2 As ToolStripSeparator
     Public WithEvents btNuevo As ToolStripButton
     Friend WithEvents arbolmenu As TreeView
+    Friend WithEvents PictureBox1 As PictureBox
 End Class
