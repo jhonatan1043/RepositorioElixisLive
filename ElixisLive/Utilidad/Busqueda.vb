@@ -18,6 +18,7 @@ Public Class Busqueda
                 End Using
             End Using
         Catch ex As Exception
+            objConexion.desConectar()
             MsgBox(ex.Message)
         End Try
         objConexion.desConectar()

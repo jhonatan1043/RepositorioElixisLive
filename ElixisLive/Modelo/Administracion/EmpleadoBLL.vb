@@ -5,31 +5,49 @@
     End Function
     Public Shared Sub cargarComboFormaPago(cbCombo As ComboBox)
         Dim tabla As New DataTable
-        Dim drFila As DataRow = tabla.NewRow()
+        Dim drFila As DataRow
         tabla.Columns.Add("Codigo")
         tabla.Columns.Add("Nombre")
+
+        drFila = tabla.NewRow()
         drFila.Item(0) = "-1"
         drFila.Item(1) = " - - - Seleccione - - - "
+        tabla.Rows.Add(drFila)
+
+        drFila = tabla.NewRow()
         drFila.Item(0) = "0"
         drFila.Item(1) = "Efectivo"
+        tabla.Rows.Add(drFila)
+
+        drFila = tabla.NewRow()
         drFila.Item(0) = "1"
         drFila.Item(1) = "Consignación"
         tabla.Rows.Add(drFila)
+
         cargarCombo(tabla, cbCombo)
     End Sub
 
     Public Shared Sub cargarComboCuenta(cbCombo As ComboBox)
         Dim tabla As New DataTable
-        Dim drFila As DataRow = tabla.NewRow()
+        Dim drFila As DataRow
         tabla.Columns.Add("Codigo")
         tabla.Columns.Add("Nombre")
+
+        drFila = tabla.NewRow()
         drFila.Item(0) = "-1"
         drFila.Item(1) = " - - - Seleccione - - - "
+        tabla.Rows.Add(drFila)
+
+        drFila = tabla.NewRow()
         drFila.Item(0) = "0"
         drFila.Item(1) = "Ahorro"
+        tabla.Rows.Add(drFila)
+
+        drFila = tabla.NewRow()
         drFila.Item(0) = "1"
         drFila.Item(1) = "Corriente"
         tabla.Rows.Add(drFila)
+
         cargarCombo(tabla, cbCombo)
     End Sub
 
@@ -43,7 +61,6 @@
                 cbCombo.AutoCompleteSource = AutoCompleteSource.None
                 cbCombo.DropDownStyle = ComboBoxStyle.DropDownList
             End If
-
         Catch ex As Exception
             Throw ex
         End Try

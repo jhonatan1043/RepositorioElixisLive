@@ -462,7 +462,7 @@ Public Class Generales
         For Each vItem In pElemento.Controls
             If ((TypeOf vItem Is TextBox) Or (TypeOf vItem Is RichTextBox) Or (TypeOf vItem Is MaskedTextBox) Or (TypeOf vItem Is DataGridView)) And
                    Not (vItem.name.ToString.ToLower.Contains("txtcodigo")) Then
-                If vItem.name = "dgvParametro" Then
+                If vItem.name = "dgvParametro" AndAlso vItem.ColumnCount > 0 Then
                     habilitarColumnaParametro(vItem)
                 ElseIf vItem.name = "dgRegistro" Then
                     vItem.readonly = True

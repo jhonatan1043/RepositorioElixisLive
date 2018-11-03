@@ -8,23 +8,33 @@
         End If
     End Sub
     Private Sub FormBaseProductivo_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Dim params As New List(Of String)
         objEmpleado = New Empleado
         Try
-            params.Add(ElementoMenu.codigo)
-            Generales.llenardgv("SP_CONSULTAR_PARAMETROS", dgvParametro, params)
-            Generales.diseñoDGV(dgvParametro)
-            Generales.diseñoGrillaParametros(dgvParametro)
             Generales.deshabilitarBotones(ToolStrip1)
             Generales.deshabilitarControles(Me)
-            Generales.cargarCombo("[SP_CONSULTAR_PERFIL]", Nothing, "Nombre", "codigo_Perfil", cbPerfil)
-            Generales.cargarCombo("[SP_CONSULTAR_BANCO]", Nothing, "Nombre", "Codigo_Banco", cbBanco)
-            Generales.cargarCombo("[SP_CONSULTAR_TIPO_CUENTA]", Nothing, "Nombre", "Codigo_Tipo_Cuenta", cbTipoCuenta)
+            combosIniciales()
             btNuevo.Enabled = True
             btBuscar.Enabled = True
         Catch ex As Exception
             EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
         End Try
+    End Sub
+    Private Sub cargarParametros()
+        Dim params As New List(Of String)
+        If dgvParametro.ColumnCount <> 0 Then
+            params.Add(ElementoMenu.codigo)
+            Generales.llenardgv("SP_CONSULTAR_PARAMETROS", dgvParametro, params)
+            Generales.diseñoDGV(dgvParametro)
+            Generales.diseñoGrillaParametros(dgvParametro)
+        End If
+    End Sub
+    Private Sub combosIniciales()
+        EmpleadoBLL.cargarComboFormaPago(cbFormaPago)
+        EmpleadoBLL.cargarComboCuenta(cbTipoCuenta)
+        Generales.cargarCombo("[SP_CONSULTAR_PERFIL]", Nothing, "Nombre", "Codigo", cbPerfil)
+        Generales.cargarCombo("[SP_CONSULTAR_BANCO]", Nothing, "Nombre", "Codigo_Banco", cbBanco)
+        Generales.cargarCombo("[SP_CONSULTAR_CARGO]", Nothing, "Nombre", "Codigo", cbCargo)
+        Generales.cargarCombo("[SP_CONSULTAR_DEPARTAMENTO]", Nothing, "Nombre", "Codigo", cbDepartamento)
     End Sub
     Private Sub cargarInfomacion(pcodigo As Integer)
         Dim params As New List(Of String)
@@ -35,13 +45,12 @@
         Try
             If Not IsNothing(dfila) Then
                 cargarCampos(dfila)
-                txtUsuario.Text = dfila("usuario")
-                txtContraseña.Text = dfila("Contraseña")
-                cbPerfil.SelectedValue = dfila("codigo_perfil")
-                cbBanco.SelectedValue = dfila("codigo_Banco")
-                cbTipoCuenta.SelectedValue = dfila("Codigo_Tipo_Cuenta")
-                txtCuenta.Text = dfila("N_Cuenta")
-                chbActivo.Checked = dfila("Activo")
+                cbCargo.SelectedValue = dfila("Codigo_Cargo")
+                cbDepartamento.SelectedValue = dfila("Codigo_deaprt")
+                cbFormaPago.SelectedValue = dfila("codigo_Banco")
+                cbBanco.SelectedValue = If(String.IsNullOrEmpty(dfila("codigo_Banco")), -1, dfila("codigo_Banco"))
+                cbTipoCuenta.SelectedValue = If(String.IsNullOrEmpty(dfila("Tipo_Cuenta_Banco")), -1, dfila("Tipo_Cuenta_Banco"))
+                txtCuenta.Text = If(cbFormaPago.SelectedIndex = 1, String.Empty, dfila("Numero_Cuenta"))
                 crearImagen(If(IsDBNull(dfila("Foto")), Nothing, dfila("Foto")))
                 params.Add(ElementoMenu.codigo)
                 Generales.llenardgv(objEmpleado.sqlCargarDetalle, dgvParametro, params)
@@ -51,6 +60,7 @@
             End If
             Generales.habilitarBotones(ToolStrip1)
             btRegistrar.Enabled = False
+            btCancelar.Enabled = False
         Catch ex As Exception
             EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
         End Try
@@ -65,6 +75,8 @@
         txtNombre.Text = dfila("Nombre")
         txtDireccion.Text = dfila("Direccion")
         txtEmail.Text = dfila("Email")
+        txtUsuario.Text = dfila("Usuario")
+        cbPerfil.SelectedValue = If(String.IsNullOrEmpty(dfila("Codigo_Perfil")), -1, dfila("Codigo_Perfil"))
     End Sub
     Private Sub controlVerificar()
         For posicion = 0 To dgvParametro.Rows.Count - 1
@@ -82,7 +94,6 @@
     Private Sub btBuscar_Click(sender As Object, e As EventArgs) Handles btBuscar.Click
         Dim params As New List(Of String)
         params.Add(String.Empty)
-        params.Add(SesionActual.codigoSucursal)
         Try
             Generales.buscarElemento(objEmpleado.sqlConsulta,
                                    params,
@@ -96,7 +107,6 @@
     Private Sub btBuscarPersona_Click(sender As Object, e As EventArgs) Handles btBuscarPersona.Click
         Dim params As New List(Of String)
         params.Add(String.Empty)
-        params.Add(SesionActual.codigoSucursal)
         Try
             Generales.buscarElemento("[SP_PERSONA_EMPLEADO_CONSULTAR]",
                                    params,
@@ -123,7 +133,9 @@
         Generales.deshabilitarBotones(ToolStrip1)
         Generales.habilitarControles(Me)
         Generales.deshabilitarControles(gbInform)
+        Generales.deshabilitarControles(gpUsuario)
         Generales.limpiarControles(Me)
+        cargarParametros()
         objEmpleado.codigo = Nothing
         btBuscarPersona.Enabled = True
         btCancelar.Enabled = True
@@ -133,18 +145,12 @@
         Dim resultado As Boolean
         If IsNothing(objEmpleado.codigo) Then
             EstiloMensajes.mostrarMensajeAdvertencia("¡Debe Seleccionar una persona!")
-        ElseIf String.IsNullOrEmpty(txtUsuario.Text) Then
-            EstiloMensajes.mostrarMensajeAdvertencia("¡Debe digitar un usuario!")
-        ElseIf String.IsNullOrEmpty(txtContraseña.Text) Then
-            EstiloMensajes.mostrarMensajeAdvertencia("¡Debe digitar la contraseña!")
-        ElseIf cbPerfil.SelectedIndex = 0 Then
-            EstiloMensajes.mostrarMensajeAdvertencia("¡Debe Seleccionar un perfil!")
-        ElseIf cbBanco.SelectedIndex = 0 Then
-            EstiloMensajes.mostrarMensajeAdvertencia("¡Debe Seleccionar un banco!")
-        ElseIf cbTipoCuenta.SelectedIndex = 0 Then
-            EstiloMensajes.mostrarMensajeAdvertencia("¡Debe Seleccionar un tipo de cuenta!")
-        ElseIf String.IsNullOrEmpty(txtCuenta.Text) Then
-            EstiloMensajes.mostrarMensajeAdvertencia("¡Debe digitar el numero de cuenta!")
+        ElseIf cbFormaPago.SelectedIndex = 0 Then
+            EstiloMensajes.mostrarMensajeAdvertencia("¡Debe seleccionar una forma de pago!")
+        ElseIf cbCargo.SelectedIndex = 0 Then
+            EstiloMensajes.mostrarMensajeAdvertencia("¡Debe Seleccionar un cargo!")
+        ElseIf cbDepartamento.SelectedIndex = 0 Then
+            EstiloMensajes.mostrarMensajeAdvertencia("¡Debe Seleccionar un departamento de trabajo!")
         Else
             resultado = True
         End If
@@ -159,12 +165,9 @@
             objEmpleado.imagenEmpleado = Nothing
         End If
         objEmpleado.usuario = txtUsuario.Text
-        objEmpleado.clave = txtContraseña.Text
-        objEmpleado.codigoPerfil = cbPerfil.SelectedValue.ToString
         objEmpleado.codigoBanco = cbBanco.SelectedValue.ToString
         objEmpleado.codigoCuenta = cbTipoCuenta.SelectedValue.ToString
         objEmpleado.Cuenta = txtCuenta.Text
-        objEmpleado.activo = chbActivo.Checked
         objEmpleado.dtParametro = dgvParametro.DataSource
     End Sub
     Private Sub btRegistrar_Click(sender As Object, e As EventArgs) Handles btRegistrar.Click
@@ -196,6 +199,8 @@
             Generales.deshabilitarBotones(ToolStrip1)
             Generales.habilitarControles(Me)
             Generales.deshabilitarControles(gbInform)
+            Generales.deshabilitarControles(gpUsuario)
+            btBuscarPersona.Enabled = False
             btCancelar.Enabled = True
             btRegistrar.Enabled = True
         End If
@@ -222,15 +227,26 @@
     End Sub
 
     Private Sub dgvParametro_Validating(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles dgvParametro.Validating
-        'If DirectCast(sender, Data).Text.Length = 0 And btRegistrar.Enabled = True Then
-        '    Me.ErrorIcono.SetError(sender, "Debe ingresar un número de teléfono")
-        'Else
-        '    Me.ErrorIcono.SetError(sender, "")
-        'End If
-
         Dim dt As DataTable = DirectCast(ErrorIcono.DataSource, DataTable)
         If CBool(dgvParametro.Rows(dgvParametro.CurrentCell.RowIndex).Cells(1).Value) = True Then
             dt.Rows(dgvParametro.CurrentCell.RowIndex).SetColumnError(1, "Este campo es obligatorio")
         End If
+    End Sub
+    Private Sub cbFormaPago_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbFormaPago.SelectedIndexChanged
+        validarFormaPago()
+    End Sub
+    Private Sub validarFormaPago()
+        If cbFormaPago.SelectedIndex = 1 Then
+            gpPago.Enabled = False
+            Generales.limpiarControles(gpPago)
+        Else
+            gpPago.Enabled = True
+        End If
+    End Sub
+    Private Sub listaSucursales(pcodigo As Integer)
+        Dim params As New List(Of String)
+        Dim tabla As New DataTable
+        params.Add(pcodigo)
+        Generales.llenarTabla("[SP_ADMIN_EMPLEADO_SUCURSALES]", params, tabla)
     End Sub
 End Class

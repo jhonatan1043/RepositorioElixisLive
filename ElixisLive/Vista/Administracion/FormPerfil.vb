@@ -95,13 +95,13 @@
             If IsNothing(nodo.Parent) Then
                 If nodo.Checked = True Then
                     objPerfil.dtPerfil.Rows.Add()
-                    objPerfil.dtRegistro.Rows(objPerfil.dtPerfil.Rows.Count - 1).Item("Codigo") = nodo.Name
+                    objPerfil.dtRegistro.Rows(objPerfil.dtPerfil.Rows.Count - 1).Item("Codigo_Menu") = nodo.Name
                 End If
             End If
         Next
     End Sub
 
-    Private Sub dgvFactura_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvFactura.CellContentClick
+    Private Sub dgvFactura_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvFactura.CellClick
         If btRegistrar.Enabled = True Then Exit Sub
         If dgvFactura.Rows.Count > 0 Then
             TextNombre.Text = dgvFactura.Rows(dgvFactura.CurrentCell.RowIndex).Cells("Descripción").Value
