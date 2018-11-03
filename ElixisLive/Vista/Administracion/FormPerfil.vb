@@ -31,7 +31,7 @@
         For Each nodo As TreeNode In arbolmenu.Nodes
             If IsNothing(nodo.Parent) Then
                 For posicion = 0 To objPerfil.dtRegistro.Rows.Count - 1
-                    If nodo.Name = objPerfil.dtRegistro.Rows(posicion).Item("Codigo") Then
+                    If nodo.Name = objPerfil.dtRegistro.Rows(posicion).Item("Codigo_Menu") Then
                         nodo.Checked = True
                     End If
                 Next
