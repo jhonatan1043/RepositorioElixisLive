@@ -12,9 +12,7 @@
             Generales.llenardgv("SP_CONSULTAR_PARAMETROS", dgRegistro, params)
             Generales.diseñoDGV(dgRegistro)
             Generales.diseñoGrillaParametros(dgRegistro)
-            params.Clear()
-            params.Add(SesionActual.codigoSucursal)
-            Generales.cargarCombo("[SP_CONSULTAR_MARCA]", params, "Nombre", "Codigo_Marca", cbMarca)
+            Generales.cargarCombo("[SP_CONSULTAR_MARCA]", Nothing, "Nombre", "Codigo_Marca", cbMarca)
         Catch ex As Exception
             EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
         End Try
@@ -59,7 +57,6 @@
     Private Sub btBuscar_Click(sender As Object, e As EventArgs) Handles btBuscar.Click
         Dim params As New List(Of String)
         params.Add(String.Empty)
-        params.Add(SesionActual.codigoSucursal)
         Generales.buscarElemento(objProducto.sqlConsulta,
                                    params,
                                    AddressOf cargarInfomacion,
@@ -112,6 +109,7 @@
         If EstiloMensajes.mostrarMensajePregunta(MensajeSistema.CANCELAR) = Constantes.SI Then
             Generales.deshabilitarBotones(ToolStrip1)
             Generales.deshabilitarControles(Me)
+            objProducto.codigo = Nothing
             btNuevo.Enabled = True
             btBuscar.Enabled = True
         End If
@@ -129,7 +127,7 @@
     Private Sub btAnular_Click(sender As Object, e As EventArgs) Handles btAnular.Click
         If EstiloMensajes.mostrarMensajePregunta(MensajeSistema.ANULAR) = Constantes.SI Then
             Try
-                If Generales.ejecutarSQL(objProducto.sqlAnular & txtcodigo.Text) = True Then
+                If Generales.ejecutarSQL(objProducto.sqlAnular & objProducto.codigo) = True Then
                     Generales.deshabilitarBotones(ToolStrip1)
                     Generales.limpiarControles(Gbdatos)
                     btNuevo.Enabled = True

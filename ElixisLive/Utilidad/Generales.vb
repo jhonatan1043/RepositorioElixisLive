@@ -353,6 +353,7 @@ Public Class Generales
                 daAdapter.Fill(dtTabla)
             End Using
         Catch ex As Exception
+            objConexion.desConectar()
             EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
         End Try
         objConexion.desConectar()
@@ -370,11 +371,13 @@ Public Class Generales
             Throw ex
         End Try
         If dtTabla.Rows.Count > 0 Then
+            objConexion.desConectar()
             Return dtTabla.Rows(0)
         Else
+            objConexion.desConectar()
             Return Nothing
         End If
-        objConexion.desConectar()
+
     End Function
     Public Shared Function cargarItem(ByVal consulta As String,
                                   ByVal params As List(Of String)) As DataRow
@@ -390,10 +393,12 @@ Public Class Generales
         Catch ex As Exception
             Throw ex
         End Try
-        objConexion.desConectar()
+
         If dtTabla.Rows.Count > 0 Then
+            objConexion.desConectar()
             Return dtTabla.Rows(0)
         Else
+            objConexion.desConectar()
             Return Nothing
         End If
 
@@ -517,6 +522,7 @@ Public Class Generales
         Catch ex As Exception
             Throw ex
         End Try
+        objConexion.desConectar()
         Return resultado
     End Function
     Public Shared Sub desvanecerForm(form As Form)
