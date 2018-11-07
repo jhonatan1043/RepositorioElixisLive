@@ -58,13 +58,13 @@
         End Try
     End Sub
     Private Sub cargarComboPais()
-        Generales.cargarCombo("[SP_CONSULTAR_PAIS]", Nothing, "Nombre", "Codigo_Pais", cbPais)
+        Generales.cargarCombo("[SP_CONSULTAR_PAIS]", Nothing, "descripcion", "Codigo_Pais", cbPais)
     End Sub
     Private Sub cargarComboDepartamento()
         Dim params As New List(Of String)
         If Not String.IsNullOrEmpty(cbPais.ValueMember) Then
             params.Add(cbPais.SelectedValue)
-            Generales.cargarCombo("[SP_CONSULTAR_DEPARTAMENTO]", params, "Nombre", "Codigo_Departamento", cbDepartamento)
+            Generales.cargarCombo("[SP_CONSULTAR_DEPARTAMENTO]", params, "descripcion", "Codigo_Departamento", cbDepartamento)
         End If
     End Sub
     Private Sub cargarComboCiudad()
@@ -136,7 +136,6 @@
     Private Sub btBuscar_Click(sender As Object, e As EventArgs) Handles btBuscar.Click
         Dim params As New List(Of String)
         params.Add(String.Empty)
-        params.Add(SesionActual.codigoSucursal)
         Generales.buscarElemento(objPersona.sqlConsulta,
                                    params,
                                    AddressOf cargarInfomacion,
@@ -158,9 +157,9 @@
                 TextDireccion.Text = dfila("Direccion")
                 TextEmail.Text = If(IsDBNull(dfila("Email")), Nothing, dfila("Email"))
                 CombotipoIdentificacion.SelectedValue = dfila("Tipo_Identificacion")
-                cbPais.SelectedValue = dfila("pais")
-                cbDepartamento.SelectedValue = dfila("Departamento")
-                ComboMunicipio.SelectedValue = dfila("Ciudad")
+                cbPais.SelectedValue = dfila("Codigo_pais")
+                cbDepartamento.SelectedValue = dfila("Codigo_Departamento")
+                ComboMunicipio.SelectedValue = dfila("Codigo_Ciudad")
             End If
             Generales.habilitarBotones(ToolStrip1)
             btCancelar.Enabled = False
