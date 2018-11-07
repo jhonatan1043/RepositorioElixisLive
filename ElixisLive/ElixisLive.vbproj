@@ -112,6 +112,7 @@
     <Compile Include="Controlador\Administracion\EmpleadoDAL.vb" />
     <Compile Include="Controlador\Administracion\EmpresaDAL.vb" />
     <Compile Include="Controlador\Administracion\PerfilDAL.vb" />
+    <Compile Include="Controlador\Administracion\SucursalDAL.vb" />
     <Compile Include="Controlador\Administracion\PersonaDAL.vb" />
     <Compile Include="Controlador\Configuracion\ConfigDAL.vb" />
     <Compile Include="Controlador\Inventario\ClienteDAL.vb" />
@@ -126,6 +127,7 @@
     <Compile Include="Entidad\Administracion\Empleado.vb" />
     <Compile Include="Entidad\Administracion\Empresa.vb" />
     <Compile Include="Entidad\Administracion\Perfil.vb" />
+    <Compile Include="Entidad\Administracion\Sucursal.vb" />
     <Compile Include="Entidad\Administracion\persona.vb" />
     <Compile Include="Entidad\generalConsulta.vb" />
     <Compile Include="Entidad\Configuracion\Configuracion.vb" />
@@ -148,6 +150,7 @@
     <Compile Include="Modelo\Administracion\EmpleadoBLL.vb" />
     <Compile Include="Modelo\Administracion\EmpresaBLL.vb" />
     <Compile Include="Modelo\Administracion\PerfilBLL.vb" />
+    <Compile Include="Modelo\Administracion\SucursalBLL.vb" />
     <Compile Include="Modelo\Administracion\PersonaBLL.vb" />
     <Compile Include="Modelo\Configuracion\ConfigBLL.vb" />
     <Compile Include="Modelo\Inventario\ProveedorBLL.vb" />
@@ -221,6 +224,12 @@
       <DependentUpon>FormMarca.vb</DependentUpon>
     </Compile>
     <Compile Include="Vista\Configuracion\FormMarca.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Configuracion\FormSucursal.Designer.vb">
+      <DependentUpon>FormSucursal.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Configuracion\FormSucursal.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Vista\Configuracion\FormServicio.Designer.vb">
@@ -349,6 +358,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\Configuracion\FormMarca.resx">
       <DependentUpon>FormMarca.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Configuracion\FormSucursal.resx">
+      <DependentUpon>FormSucursal.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\Configuracion\FormServicio.resx">
       <DependentUpon>FormServicio.vb</DependentUpon>

@@ -8,6 +8,8 @@
     Property codigoTipoIdentificacion As Integer
     Property direccion As String
     Property correo As String
+    Property codigoPais As String
+    Property codigoDepartamento As String
     Property codigoCiudad As String
     Property encabezado As String
     Property pie As String

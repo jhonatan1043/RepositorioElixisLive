@@ -521,8 +521,9 @@ Public Class Generales
             End If
         Catch ex As Exception
             Throw ex
+        Finally
+            objConexion.desConectar()
         End Try
-        objConexion.desConectar()
         Return resultado
     End Function
     Public Shared Sub desvanecerForm(form As Form)
