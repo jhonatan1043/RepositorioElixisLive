@@ -193,10 +193,28 @@
     <Compile Include="Vista\Administracion\FormEmpresa.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Vista\Configuracion\FormBodega.Designer.vb">
+      <DependentUpon>FormBodega.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Configuracion\FormBodega.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Configuracion\FormCargo.Designer.vb">
+      <DependentUpon>FormCargo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Configuracion\FormCargo.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Vista\Configuracion\FormGasto.Designer.vb">
       <DependentUpon>FormGasto.vb</DependentUpon>
     </Compile>
     <Compile Include="Vista\Configuracion\FormGasto.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Configuracion\FormLote.Designer.vb">
+      <DependentUpon>FormLote.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Configuracion\FormLote.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Vista\Configuracion\FormMarca.Designer.vb">
@@ -317,8 +335,17 @@
     <EmbeddedResource Include="Vista\Administracion\FormEmpresa.resx">
       <DependentUpon>FormEmpresa.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Configuracion\FormBodega.resx">
+      <DependentUpon>FormBodega.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Configuracion\FormCargo.resx">
+      <DependentUpon>FormCargo.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vista\Configuracion\FormGasto.resx">
       <DependentUpon>FormGasto.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Configuracion\FormLote.resx">
+      <DependentUpon>FormLote.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\Configuracion\FormMarca.resx">
       <DependentUpon>FormMarca.vb</DependentUpon>
