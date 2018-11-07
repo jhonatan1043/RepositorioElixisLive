@@ -91,6 +91,7 @@
                 Generales.habilitarBotones(ToolStrip1)
                 Generales.deshabilitarControles(Me)
                 btRegistrar.Enabled = False
+                btCancelar.Enabled = False
                 EstiloMensajes.mostrarMensajeExitoso(MensajeSistema.REGISTRO_GUARDADO)
             Catch ex As Exception
                 EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
