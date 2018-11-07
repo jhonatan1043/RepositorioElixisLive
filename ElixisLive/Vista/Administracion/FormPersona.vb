@@ -7,6 +7,8 @@
         objPersona.celular = TextCelular.Text
         objPersona.correo = TextEmail.Text
         objPersona.direccion = TextDireccion.Text
+        objPersona.codigoPais = cbPais.SelectedValue
+        objPersona.codigoDepartamento = cbDepartamento.SelectedValue
         objPersona.codigoCiudad = ComboMunicipio.SelectedValue
         objPersona.codigoTipoIdentificacion = CombotipoIdentificacion.SelectedValue
     End Sub
@@ -20,6 +22,10 @@
             EstiloMensajes.mostrarMensajeAdvertencia("¡Debe digitar el nombre de la persona!")
         ElseIf String.IsNullOrEmpty(TextCelular.Text) Then
             EstiloMensajes.mostrarMensajeAdvertencia("¡Debe digitar el Numero de celular de la persona!")
+        ElseIf String.IsNullOrEmpty(cbPais.SelectedIndex) Then
+            EstiloMensajes.mostrarMensajeAdvertencia("¡Debe seleccionar el pais de la persona!")
+        ElseIf String.IsNullOrEmpty(cbDepartamento.SelectedIndex) Then
+            EstiloMensajes.mostrarMensajeAdvertencia("¡Debe seleccionar la departamento de la persona!")
         ElseIf String.IsNullOrEmpty(ComboMunicipio.SelectedIndex) Then
             EstiloMensajes.mostrarMensajeAdvertencia("¡Debe seleccionar la ciudad de la persona!")
         ElseIf String.IsNullOrEmpty(TextDireccion.Text) Then
@@ -39,7 +45,9 @@
     Private Sub FormBase_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         objPersona = New persona
         Try
-            Generales.cargarCombo("[SP_CONSULTAR_CIUDAD]", Nothing, "descripcion", "Codigo_Municipio", ComboMunicipio)
+            cargarComboPais()
+            cargarComboDepartamento()
+            cargarComboCiudad()
             Generales.cargarCombo("[SP_CONSULTAR_TIPO_IDENT]", Nothing, "Nombre", "Codigo", CombotipoIdentificacion)
             Generales.deshabilitarBotones(ToolStrip1)
             Generales.deshabilitarControles(Me)
@@ -48,6 +56,23 @@
         Catch ex As Exception
             EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
         End Try
+    End Sub
+    Private Sub cargarComboPais()
+        Generales.cargarCombo("[SP_CONSULTAR_PAIS]", Nothing, "Nombre", "Codigo_Pais", cbPais)
+    End Sub
+    Private Sub cargarComboDepartamento()
+        Dim params As New List(Of String)
+        If Not String.IsNullOrEmpty(cbPais.ValueMember) Then
+            params.Add(cbPais.SelectedValue)
+            Generales.cargarCombo("[SP_CONSULTAR_DEPARTAMENTO]", params, "Nombre", "Codigo_Departamento", cbDepartamento)
+        End If
+    End Sub
+    Private Sub cargarComboCiudad()
+        Dim params As New List(Of String)
+        If Not String.IsNullOrEmpty(cbDepartamento.ValueMember) Then
+            params.Add(cbDepartamento.SelectedValue)
+            Generales.cargarCombo("[SP_CONSULTAR_CIUDAD]", params, "descripcion", "Codigo_Municipio", ComboMunicipio)
+        End If
     End Sub
     Private Sub btNuevo_Click(sender As Object, e As EventArgs) Handles btNuevo.Click
         Generales.deshabilitarBotones(ToolStrip1)
@@ -86,6 +111,7 @@
         If EstiloMensajes.mostrarMensajePregunta(MensajeSistema.CANCELAR) = Constantes.SI Then
             Generales.deshabilitarBotones(ToolStrip1)
             Generales.deshabilitarControles(Me)
+            objPersona.codigo = Nothing
             btNuevo.Enabled = True
             btBuscar.Enabled = True
         End If
@@ -132,6 +158,8 @@
                 TextDireccion.Text = dfila("Direccion")
                 TextEmail.Text = If(IsDBNull(dfila("Email")), Nothing, dfila("Email"))
                 CombotipoIdentificacion.SelectedValue = dfila("Tipo_Identificacion")
+                cbPais.SelectedValue = dfila("pais")
+                cbDepartamento.SelectedValue = dfila("Departamento")
                 ComboMunicipio.SelectedValue = dfila("Ciudad")
             End If
             Generales.habilitarBotones(ToolStrip1)
@@ -140,6 +168,12 @@
         Catch ex As Exception
             EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
         End Try
+    End Sub
+    Private Sub cbPais_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbPais.SelectedIndexChanged
+        cargarComboDepartamento()
+    End Sub
+    Private Sub cbDepartamento_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbDepartamento.SelectedIndexChanged
+        cargarComboCiudad()
     End Sub
     Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked
         Generales.cargarForm(FormPerfil)
