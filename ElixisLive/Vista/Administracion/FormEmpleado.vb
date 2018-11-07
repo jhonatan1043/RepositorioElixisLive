@@ -34,7 +34,7 @@
         Generales.cargarCombo("[SP_CONSULTAR_PERFIL]", Nothing, "Nombre", "Codigo", cbPerfil)
         Generales.cargarCombo("[SP_CONSULTAR_BANCO]", Nothing, "Nombre", "Codigo_Banco", cbBanco)
         Generales.cargarCombo("[SP_CONSULTAR_CARGO]", Nothing, "Nombre", "Codigo", cbCargo)
-        Generales.cargarCombo("[SP_CONSULTAR_DEPARTAMENTO]", Nothing, "Nombre", "Codigo", cbDepartamento)
+        Generales.cargarCombo("[SP_CONSULTAR_DEPARTAMENTO_TRABAJO]", Nothing, "Nombre", "Codigo", cbDepartamento)
     End Sub
     Private Sub cargarInfomacion(pcodigo As Integer)
         Dim params As New List(Of String)
