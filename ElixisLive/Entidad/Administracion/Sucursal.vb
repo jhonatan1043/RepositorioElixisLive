@@ -3,9 +3,9 @@
     Property identiResponsable As String
     Property responsable As String
     Public Sub New()
-        sqlAnular = " "
-        sqlCargar = ""
-        sqlConsulta = ""
-        sqlGuardar = ""
+        sqlAnular = "[SP_CONFI_SUCURSAL_ANULAR] "
+        sqlCargar = "[SP_CONFI_SUCURSAL_CARGAR]"
+        sqlConsulta = "[SP_CONFI_SUCURSAL_CONSULTAR]"
+        sqlGuardar = "[SP_CONFI_SUCURSAL_CREAR]"
     End Sub
 End Class

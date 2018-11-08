@@ -6,7 +6,6 @@
         objSucursal.nombre = TextNombre.Text
         objSucursal.telefono = TextTelefono.Text
         objSucursal.celular = TextCelular.Text
-        objSucursal.correo = TextEmail.Text
         objSucursal.direccion = TextDireccion.Text
         objSucursal.codigoPais = cbPais.SelectedValue
         objSucursal.codigoDepartamento = cbDepartamento.SelectedValue
@@ -82,6 +81,7 @@
                 Generales.habilitarBotones(ToolStrip1)
                 Generales.deshabilitarControles(Me)
                 btRegistrar.Enabled = False
+                btCancelar.Enabled = False
                 EstiloMensajes.mostrarMensajeExitoso(MensajeSistema.REGISTRO_GUARDADO)
             Catch ex As Exception
                 EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
@@ -145,12 +145,11 @@
                 TextTelefono.Text = If(IsDBNull(dfila("Telefono")), Nothing, dfila("Telefono"))
                 TextCelular.Text = dfila("Celular")
                 TextDireccion.Text = dfila("Direccion")
-                TextEmail.Text = If(IsDBNull(dfila("Email")), Nothing, dfila("Email"))
                 cbPais.SelectedValue = dfila("pais")
                 cbDepartamento.SelectedValue = dfila("Departamento")
                 ComboMunicipio.SelectedValue = dfila("Ciudad")
-                txtIdentResponsable.Text = dfila("")
-                txtResponsable.Text = dfila("")
+                txtIdentResponsable.Text = dfila("Identi_Responsable")
+                txtResponsable.Text = dfila("Responsable")
             End If
             Generales.habilitarBotones(ToolStrip1)
             btCancelar.Enabled = False

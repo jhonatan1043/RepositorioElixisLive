@@ -21,7 +21,7 @@ Public Class SucursalDAL
                     comando.Parameters.Add(New SqlParameter("@codigo_Pais", SqlDbType.NVarChar)).Value = objSucursal.codigoPais
                     comando.Parameters.Add(New SqlParameter("@codigo_Departamento", SqlDbType.NVarChar)).Value = objSucursal.codigoDepartamento
                     comando.Parameters.Add(New SqlParameter("@codigo_ciudad", SqlDbType.NVarChar)).Value = objSucursal.codigoCiudad
-                    comando.Parameters.Add(New SqlParameter("@correo", SqlDbType.NVarChar)).Value = objSucursal.correo
+                    comando.Parameters.Add(New SqlParameter("@Usuario_Creacion", SqlDbType.NVarChar)).Value = SesionActual.idUsuario
                     objSucursal.codigo = CType(comando.ExecuteScalar, String)
                     trnsccion.Commit()
                 End Using

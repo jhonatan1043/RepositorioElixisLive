@@ -46,8 +46,6 @@ Partial Class FormSucursal
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
-        Me.TextEmail = New System.Windows.Forms.TextBox()
-        Me.Label7 = New System.Windows.Forms.Label()
         Me.TextTelefono = New System.Windows.Forms.TextBox()
         Me.TextCelular = New System.Windows.Forms.TextBox()
         Me.Label9 = New System.Windows.Forms.Label()
@@ -245,7 +243,7 @@ Partial Class FormSucursal
         Me.GroupBox1.Controls.Add(Me.Label5)
         Me.GroupBox1.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox1.ForeColor = System.Drawing.Color.DarkBlue
-        Me.GroupBox1.Location = New System.Drawing.Point(7, 214)
+        Me.GroupBox1.Location = New System.Drawing.Point(7, 184)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(692, 54)
         Me.GroupBox1.TabIndex = 12
@@ -298,8 +296,6 @@ Partial Class FormSucursal
         '
         'GroupBox5
         '
-        Me.GroupBox5.Controls.Add(Me.TextEmail)
-        Me.GroupBox5.Controls.Add(Me.Label7)
         Me.GroupBox5.Controls.Add(Me.TextTelefono)
         Me.GroupBox5.Controls.Add(Me.TextCelular)
         Me.GroupBox5.Controls.Add(Me.Label9)
@@ -308,32 +304,10 @@ Partial Class FormSucursal
         Me.GroupBox5.ForeColor = System.Drawing.Color.DarkBlue
         Me.GroupBox5.Location = New System.Drawing.Point(7, 133)
         Me.GroupBox5.Name = "GroupBox5"
-        Me.GroupBox5.Size = New System.Drawing.Size(692, 75)
+        Me.GroupBox5.Size = New System.Drawing.Size(692, 50)
         Me.GroupBox5.TabIndex = 11
         Me.GroupBox5.TabStop = False
         Me.GroupBox5.Text = "Otros datos"
-        '
-        'TextEmail
-        '
-        Me.TextEmail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextEmail.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextEmail.Location = New System.Drawing.Point(81, 45)
-        Me.TextEmail.MaxLength = 100
-        Me.TextEmail.Name = "TextEmail"
-        Me.TextEmail.Size = New System.Drawing.Size(603, 25)
-        Me.TextEmail.TabIndex = 28
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.BackColor = System.Drawing.Color.Transparent
-        Me.Label7.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.ForeColor = System.Drawing.Color.Black
-        Me.Label7.Location = New System.Drawing.Point(6, 46)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(59, 19)
-        Me.Label7.TabIndex = 26
-        Me.Label7.Text = "Em@il:"
         '
         'TextTelefono
         '
@@ -571,8 +545,6 @@ Partial Class FormSucursal
     Friend WithEvents ToolStripSeparator7 As ToolStripSeparator
     Friend WithEvents GroupBox4 As GroupBox
     Friend WithEvents GroupBox5 As GroupBox
-    Public WithEvents TextEmail As TextBox
-    Public WithEvents Label7 As Label
     Public WithEvents TextTelefono As TextBox
     Public WithEvents TextCelular As TextBox
     Public WithEvents Label9 As Label
