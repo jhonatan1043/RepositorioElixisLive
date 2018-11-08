@@ -33,10 +33,14 @@ Partial Class FormListaPrecio
         Me.Pimagen.Image = Global.Quality.My.Resources.Resources.lista
         Me.Pimagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         '
+        'txtNombre
+        '
+        Me.txtNombre.Size = New System.Drawing.Size(243, 22)
+        '
         'FormListaPrecio
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
-        Me.ClientSize = New System.Drawing.Size(603, 387)
+        Me.ClientSize = New System.Drawing.Size(662, 422)
         Me.Location = New System.Drawing.Point(0, 0)
         Me.Name = "FormListaPrecio"
         Me.Panel1.ResumeLayout(False)

@@ -132,6 +132,7 @@
     <Compile Include="Entidad\generalConsulta.vb" />
     <Compile Include="Entidad\Configuracion\Configuracion.vb" />
     <Compile Include="Entidad\Inventario\Cliente.vb" />
+    <Compile Include="Entidad\Inventario\ListaPrecio.vb" />
     <Compile Include="Entidad\Inventario\Proveedor.vb" />
     <Compile Include="Entidad\Inventario\producto.vb" />
     <Compile Include="Entidad\Principal\ElementoMenu.vb" />
