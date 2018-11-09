@@ -1,4 +1,6 @@
-﻿Public Class Funciones
+﻿Imports System.Data.SqlClient
+Imports System.Data.SqlTypes
+Public Class Funciones
     Public Shared Function getParametros(lista As List(Of String)) As String
 
         If lista Is Nothing OrElse lista.Count = 0 Then 'OrElse lista.First Is Nothing Then
@@ -32,5 +34,29 @@
             EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
         End Try
         Return idUsuario
+    End Function
+    Public Shared Function castFromDbItemVacio(ByVal DbItem As Object) As Object
+        If IsDBNull(DbItem) Then
+            Return ""
+        Else
+            Return DbItem
+        End If
+    End Function
+
+
+    Public Shared Function castFromDbItem(ByVal DbItem As Object) As Object
+        If IsDBNull(DbItem) Then
+            Return Nothing
+        Else
+            Return DbItem
+        End If
+    End Function
+
+    Public Shared Function castToSqlInt32(ByVal item As Integer?) As SqlInt32
+        If item Is Nothing Then
+            Return SqlTypes.SqlInt32.Null
+        Else
+            Return item
+        End If
     End Function
 End Class

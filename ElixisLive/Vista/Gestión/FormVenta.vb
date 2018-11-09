@@ -222,7 +222,7 @@ Public Class FormVenta
                 dgvFactura.Rows(dgvFactura.CurrentCell.RowIndex).Cells(2).Value = String.Empty
                 dgvFactura.Rows(dgvFactura.CurrentCell.RowIndex).Cells(3).Value = String.Empty
                 dgvFactura.Rows(dgvFactura.CurrentCell.RowIndex).Cells(4).Value = String.Empty
-                If dtProductos.Rows.Count > 1 And dgvFactura.Rows(dgvFactura.CurrentCell.RowIndex).Cells(0).Value = String.Empty And e.RowIndex <> dgvFactura.Rows.Count - 1 Then
+                If dtProductos.Rows.Count > 1 And dgvFactura.Rows(dgvFactura.CurrentCell.RowIndex).Cells("dgCodigo").Value = String.Empty And e.RowIndex <> dgvFactura.Rows.Count - 1 Then
                     dtProductos.Rows.RemoveAt(e.RowIndex)
                 End If
             End If
@@ -312,5 +312,25 @@ Public Class FormVenta
             Next
         End If
     End Sub
-
+    Private Sub dgvcartera_EditingControlShowing(sender As Object, e As DataGridViewEditingControlShowingEventArgs) Handles dgvFactura.EditingControlShowing,
+            dgvFactura.EditingControlShowing
+        If dgvFactura.CurrentCell.ColumnIndex = 0 Or dgvFactura.CurrentCell.ColumnIndex = 2 Or dgvFactura.CurrentCell.ColumnIndex = 3 Then
+            AddHandler e.Control.KeyPress, AddressOf ValidacionDigitacion.validarValoresNumericos
+        End If
+    End Sub
+    Private Sub TextTelefono_Leave(sender As Object, e As EventArgs) Handles TextTelefono.Leave
+        dgvFactura.Focus()
+    End Sub
+    Private Sub TextTelefono_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextTelefono.KeyPress
+        ValidacionDigitacion.validarNumerosTelefono(e)
+        If Asc(e.KeyChar) = 13 Then
+            dgvFactura.Focus()
+        End If
+    End Sub
+    Private Sub TextNombre_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextNombre.KeyPress
+        ValidacionDigitacion.validarAlfabetico(e)
+        If Asc(e.KeyChar) = 13 Then
+            TextTelefono.Focus()
+        End If
+    End Sub
 End Class

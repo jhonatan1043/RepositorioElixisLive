@@ -38,7 +38,7 @@
         End If
     End Sub
     Private Sub FormBase_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        objSucursal = New persona
+        objSucursal = New Sucursal
         Try
             cargarComboPais()
             cargarComboDepartamento()

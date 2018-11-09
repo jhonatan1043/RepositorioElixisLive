@@ -1,9 +1,11 @@
 ﻿Public Class Perfil
     Inherits generalConsulta
-    Property codigo As String
+    Property codigoPerfil As String
     Property nombre As String
     Property dtRegistro As DataTable
     Property dtPerfil As DataTable
+    Property codigoPersona As Integer
+    Public Property dtEmpleados As New DataTable
     Public Sub New()
         dtPerfil = New DataTable
         dtRegistro = New DataTable
@@ -12,5 +14,30 @@
         sqlCargar = "[SP_ADMIN_PERFIL_LISTA]"
         sqlAnular = ""
     End Sub
+    Sub New(persona As persona)
+        codigoPersona = persona.codigo
+    End Sub
+    Sub New(drPerfilTercero As DataRow)
+        codigoPerfil = Funciones.castFromDbItem(drPerfilTercero.Item("codigo_perfil"))
+        nombre = Funciones.castFromDbItem(drPerfilTercero.Item("nombre_perfil"))
+    End Sub
+
+    Public Sub guardarPerfil()
+        If String.IsNullOrEmpty(codigoPerfil) Then
+            PerfilDAL.crearPerfil(Me)
+        Else
+            PerfilDAL.actualizarPerfil(Me)
+        End If
+    End Sub
+
+    Friend Sub anularPerfil()
+        PerfilDAL.anularPerfil(Me)
+    End Sub
+    'Public Sub cargarMenu(pcodigoEP As Integer, ByRef dsCuentas As DataSet)
+
+    '    objModulo_perfil_c.cargarMenuPadre(pcodigoEP, dsCuentas)
+    '    objModulo_perfil_c.cargarMenuHijas(pcodigoEP, dsCuentas)
+
+    'End Sub
 
 End Class

@@ -1,31 +1,101 @@
-﻿Public Class FormPerfil
+﻿Imports System.Data.SqlClient
+Public Class FormPerfil
     Dim objPerfil As Perfil
+    Dim sw, sw2, sw3 As Boolean
+    Private dsDatos As DataSet
     Private Sub FormPerfil_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         objPerfil = New Perfil
         principalBLL.cargarMenu(arbolmenu)
         listarPerfiles()
         validarCampoGrilla()
-        Generales.deshabilitarBotones(ToolStrip1)
+        'Generales.deshabilitarBotones(ToolStrip1)
+        'Generales.deshabilitarControles(Me)
+        'btNuevo.Enabled = True
         Generales.deshabilitarControles(Me)
+        Generales.deshabilitarBotones(ToolStrip1)
+        'dgvFactura.DataSource = objPerfil.dtEmpleados
+        txtBuscar.ReadOnly = False
         btNuevo.Enabled = True
     End Sub
     Private Sub btNuevo_Click(sender As Object, e As EventArgs) Handles btNuevo.Click
         Generales.deshabilitarBotones(ToolStrip1)
         Generales.habilitarControles(Me)
         Generales.limpiarControles(Me)
-        objPerfil.codigo = Nothing
+        objPerfil.codigoPerfil = Nothing
         btRegistrar.Enabled = True
         btCancelar.Enabled = True
     End Sub
     Private Sub cargarInfomacion(pCodigo As Integer)
         Dim params As New List(Of String)
-        objPerfil.codigo = pCodigo
+        objPerfil.codigoPerfil = pCodigo
         params.Add(pCodigo)
         Generales.llenarTabla("[SP_ADMIN_PERFIL_DETALLE]", params, objPerfil.dtRegistro)
-        chequearArbol()
+        cargarArbol()
         Generales.habilitarBotones(ToolStrip1)
         Generales.deshabilitarControles(Me)
         btRegistrar.Enabled = False
+    End Sub
+    Public Sub cargarArbol()
+        Dim nodo As TreeNode
+        Dim drCuentaPadre As DataRow()
+
+        arbolmenu.Enabled = True
+        arbolmenu.Nodes.Clear()
+        arbolmenu.ExpandAll()
+
+        Try
+            dsDatos = New DataSet
+            CreaOpciones(dsDatos)
+            'objModulo_perfil_D.cargarMenu(SesionActual.codigoSucursal, dsDatos)
+            drCuentaPadre = dsDatos.Tables("Padre").Select()
+
+            'Se recorren las cuentas Padre
+            For Each drFila As DataRow In drCuentaPadre
+                nodo = New TreeNode
+                nodo.Name = drFila("Codigo_Menu").ToString()
+                nodo.Text = drFila("Descripcion_Menu").ToString()
+                If dsDatos.Tables("Perfil_Menu").Select("[Codigo_Menu]='" + nodo.Name.ToString + "'").Count = 1 Then
+                    nodo.Checked = True
+                Else
+                    nodo.Checked = False
+                End If
+                arbolmenu.Nodes.Add(nodo)
+
+                'Se recorren las cuentas hijas
+                crearSubcuentas(nodo)
+            Next
+
+        Catch ex As Exception
+            EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
+        End Try
+
+        dsDatos.Dispose()
+
+    End Sub
+    Private Sub crearSubcuentas(ByRef nodoPade As TreeNode)
+        Dim expr As String = "Padre_Menu ='" & nodoPade.Name & "'"
+        Dim subnodo As TreeNode
+
+        Try
+            Dim aDrFilas As DataRow()
+            aDrFilas = dsDatos.Tables("Hijas").Select(expr, "Codigo_Menu")
+
+            For Each drFila As DataRow In aDrFilas
+                subnodo = New TreeNode
+                subnodo.Name = drFila("Codigo_Menu").ToString()
+                subnodo.Text = drFila("Descripcion_Menu").ToString()
+                If dsDatos.Tables("Perfil_Menu").Select("[Codigo_Menu]='" + subnodo.Name.ToString + "'").Count = 1 Then
+                    subnodo.Checked = True
+                Else
+                    subnodo.Checked = False
+                End If
+                nodoPade.Nodes.Add(subnodo)
+                crearSubcuentas(subnodo)
+            Next
+        Catch ex As Exception
+            EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
+        End Try
+
     End Sub
     Private Sub chequearArbol()
         For Each nodo As TreeNode In arbolmenu.Nodes
@@ -39,17 +109,37 @@
         Next
     End Sub
     Private Sub btRegistrar_Click(sender As Object, e As EventArgs) Handles btRegistrar.Click
-        Try
-            cargarObjeto()
-            PerfilBLL.guardarPerfil(objPerfil)
-            Generales.deshabilitarBotones(ToolStrip1)
-            Generales.deshabilitarControles(Me)
-            btNuevo.Enabled = True
-            btAnular.Enabled = True
-            EstiloMensajes.mostrarMensajeExitoso(MensajeSistema.REGISTRO_GUARDADO)
-        Catch ex As Exception
-            EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
-        End Try
+        If (txtnombre.Text = "") Then
+            MsgBox("¡ Por favor digite el nombre del perfil de usuario!", MsgBoxStyle.Exclamation)
+            txtnombre.Focus()
+        Else
+            Try
+                objPerfil.codigoPerfil = txtcodigo.Text
+                objPerfil.nombre = txtnombre.Text
+                objPerfil.guardarPerfil()
+                txtcodigo.Text = objPerfil.codigoPerfil
+                guardarPermisos()
+
+                Generales.deshabilitarControles(Me)
+                Generales.habilitarBotones(Me.ToolStrip1)
+                btRegistrar.Enabled = False
+                btCancelar.Enabled = False
+                arbolmenu.Enabled = False
+            Catch ex As Exception
+                EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
+                End Try
+            End If
+        'Try
+        '    cargarObjeto()
+        '    PerfilBLL.guardarPerfil(objPerfil)
+        '    Generales.deshabilitarBotones(ToolStrip1)
+        '    Generales.deshabilitarControles(Me)
+        '    btNuevo.Enabled = True
+        '    btAnular.Enabled = True
+        '    EstiloMensajes.mostrarMensajeExitoso(MensajeSistema.REGISTRO_GUARDADO)
+        'Catch ex As Exception
+        '    EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
+        'End Try
     End Sub
     Private Sub btEditar_Click(sender As Object, e As EventArgs) Handles btEditar.Click
         If EstiloMensajes.mostrarMensajePregunta(MensajeSistema.EDITAR) = Constantes.SI Then
@@ -70,10 +160,10 @@
     Private Sub btAnular_Click(sender As Object, e As EventArgs) Handles btAnular.Click
         If EstiloMensajes.mostrarMensajePregunta(MensajeSistema.ANULAR) = Constantes.SI Then
             Try
-                If Generales.ejecutarSQL("" & objPerfil.codigo) = True Then
+                If Generales.ejecutarSQL("" & objPerfil.codigoPerfil) = True Then
                     Generales.limpiarControles(Me)
                     Generales.deshabilitarBotones(ToolStrip1)
-                    objPerfil.codigo = Nothing
+                    objPerfil.codigoPerfil = Nothing
                     btNuevo.Enabled = True
                     EstiloMensajes.mostrarMensajeAnulado(MensajeSistema.REGISTRO_ANULADO)
                 End If
@@ -90,7 +180,7 @@
         End If
     End Sub
     Private Sub cargarObjeto()
-        objPerfil.nombre = TextNombre.Text
+        objPerfil.nombre = txtnombre.Text
         For Each nodo As TreeNode In arbolmenu.Nodes
             If IsNothing(nodo.Parent) Then
                 If nodo.Checked = True Then
@@ -100,11 +190,56 @@
             End If
         Next
     End Sub
+    Private Sub guardarPermisos()
+        Dim objConexio As New CnxElixisLiveBD.ConexionBD
+        Try
+            Using consulta = New SqlCommand()
+                consulta.Connection = objConexio.cnxbd
+                consulta.CommandType = CommandType.StoredProcedure
+                consulta.CommandText = "SP_PERFIL_MODULO_ELIMINAR"
+                consulta.Parameters.Add(New SqlParameter("@Codigo_perfil", SqlDbType.Int)).Value = objPerfil.codigoPerfil
+                consulta.ExecuteNonQuery()
+                consulta.CommandText = "[SP_PERFIL_MODULO_ASIGNAR]"
+                consulta.Parameters.Add(New SqlParameter("@tbl", SqlDbType.Structured)).Value = dsDatos.Tables("Perfil_Menu")
+                consulta.ExecuteNonQuery()
+                MsgBox("Módulos guardados éxitosamente", MsgBoxStyle.Information)
+            End Using
 
+            'If objPerfil.codigoPerfil = SesionActual.codigoPerfil Then
+            '    fprincipal.eliminarMenu()
+            '    fprincipal.CreaOpciones(SesionActual.idEmpresa, SesionActual.codigoPerfil)
+            '    SesionActual.dtPermisos.Clear()
+            '    SesionActual.dtPermisos = fprincipal.cargarOpciones(SesionActual.codigoPerfil, SesionActual.idEmpresa)
+            'End If
+        Catch ex As Exception
+            EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
+        End Try
+        objConexio.desConectar()
+    End Sub
+    Private Sub CreaOpciones(ByRef dsDatos As DataSet)
+        Dim objConexio As New CnxElixisLiveBD.ConexionBD
+        Dim cadena As String
+        objConexio.conectar()
+        Try
+            cadena = "EXEC [SP_ADMIN_PERFIL_CARGAR] " & objPerfil.codigoPerfil & "," & SesionActual.codigoSucursal & ""
+
+            Using consulta = New SqlCommand(cadena, objConexio.cnxbd)
+                Using daAdaptador = New SqlDataAdapter(consulta)
+                    daAdaptador.Fill(dsDatos, "Perfil_Menu")
+                End Using
+            End Using
+
+        Catch ex As Exception
+            EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
+        Finally
+            objConexio.desConectar()
+        End Try
+
+    End Sub
     Private Sub dgvFactura_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvFactura.CellClick
         If btRegistrar.Enabled = True Then Exit Sub
         If dgvFactura.Rows.Count > 0 Then
-            TextNombre.Text = dgvFactura.Rows(dgvFactura.CurrentCell.RowIndex).Cells("Descripción").Value
+            txtnombre.Text = dgvFactura.Rows(dgvFactura.CurrentCell.RowIndex).Cells("Descripción").Value
             cargarInfomacion(dgvFactura.Rows(dgvFactura.CurrentCell.RowIndex).Cells("Codigo").Value)
         End If
     End Sub
@@ -124,5 +259,101 @@
         If e.KeyCode = Keys.Enter Then
             listarPerfiles()
         End If
+    End Sub
+    Private Sub arbolmenu_AfterCheck(ByVal sender As System.Object, ByVal e As System.Windows.Forms.TreeViewEventArgs) Handles arbolmenu.AfterCheck
+        If e.Node.Checked = True Then
+            If dsDatos.Tables("Perfil_Menu").Select("[Codigo_Menu]='" + e.Node.Name.ToString + "'").Count = 0 Then
+                Dim dr As DataRow = dsDatos.Tables("Perfil_Menu").NewRow
+                dr("Codigo_Menu") = e.Node.Name
+                dr("Codigo_Perfil") = objPerfil.codigoPerfil
+                dsDatos.Tables("Perfil_Menu").Rows.Add(dr)
+            End If
+
+        Else
+            If dsDatos.Tables("Perfil_Menu").Select("[Codigo_Menu]='" + e.Node.Name.ToString + "'").Count > 0 Then
+                Dim dr As DataRow() = dsDatos.Tables("Perfil_Menu").Select("[Codigo_Menu] like '" + e.Node.Name.ToString + "'")
+                For Each adr In dr
+                    dsDatos.Tables("Perfil_Menu").Rows.Remove(adr)
+                Next
+            End If
+        End If
+
+        'nodo principal por cada arbol
+        If e.Node.Nodes.Count > 0 Then
+            If Not IsNothing(e.Node.Parent) AndAlso e.Node.Parent.Checked = False AndAlso e.Node.Checked = True Then
+                sw = True
+                e.Node.Parent.Checked = True
+                sw = False
+                For i As Int32 = 0 To e.Node.Nodes.Count - 1
+                    If e.Node.Checked = True And sw3 = False Then
+                        sw2 = True
+                        e.Node.Nodes.Item(i).Checked = True
+                        sw2 = False
+                    ElseIf e.Node.Checked = False And sw3 = False Then
+                        sw2 = True
+                        e.Node.Nodes.Item(i).Checked = False
+                        sw2 = False
+                    End If
+                Next
+            ElseIf Not IsNothing(e.Node.Parent) AndAlso e.Node.Parent.Checked = True AndAlso e.Node.Checked = False Then
+                Dim con As Integer = 0
+                For i As Int32 = 0 To e.Node.Parent.Nodes.Count - 1
+                    If e.Node.Parent.Nodes.Item(i).Checked = True Then
+                        con = con + 1
+                    End If
+                Next
+                If con = 0 Then
+                    sw = True
+                    e.Node.Parent.Checked = False
+                    sw = False
+                End If
+                For i As Int32 = 0 To e.Node.Nodes.Count - 1
+                    If e.Node.Checked = True And sw = False Then
+                        sw2 = True
+                        e.Node.Nodes.Item(i).Checked = True
+                        sw2 = False
+                    ElseIf e.Node.Checked = False And sw = False Then
+                        sw2 = True
+                        e.Node.Nodes.Item(i).Checked = False
+                        sw2 = False
+                    End If
+                Next
+            Else
+                For i As Int32 = 0 To e.Node.Nodes.Count - 1
+                    If e.Node.Checked = True And sw = False And sw3 = False Then
+                        sw2 = True
+                        e.Node.Nodes.Item(i).Checked = True
+                        sw2 = False
+                    ElseIf e.Node.Checked = False And sw = False And sw3 = False Then
+                        sw2 = True
+                        e.Node.Nodes.Item(i).Checked = False
+                        sw2 = False
+                    End If
+                Next
+
+            End If
+
+
+        ElseIf e.Node.Nodes.Count = 0 Then
+            If IsNothing(e.Node.Parent) Then Exit Sub
+            If e.Node.Parent.Checked = False And e.Node.Checked = True Then
+                sw3 = True
+                e.Node.Parent.Checked = True
+                sw3 = False
+            ElseIf e.Node.Parent.Checked = True And e.Node.Checked = False Then
+                Dim con As Integer = 0
+                For i As Int32 = 0 To e.Node.Parent.Nodes.Count - 1
+                    If e.Node.Parent.Nodes.Item(i).Checked = True Then
+                        con = con + 1
+                    End If
+                Next
+                If con = 0 Then
+                    sw3 = True
+                    e.Node.Parent.Checked = False
+                    sw3 = False
+                End If
+            End If
+        End If
+
     End Sub
 End Class
