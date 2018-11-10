@@ -129,6 +129,17 @@
     <Compile Include="Entidad\Administracion\Perfil.vb" />
     <Compile Include="Entidad\Administracion\Sucursal.vb" />
     <Compile Include="Entidad\Administracion\persona.vb" />
+    <Compile Include="Entidad\Cita\CitaPrevia.vb" />
+    <Compile Include="Entidad\Cita\ConfigCita.vb" />
+    <Compile Include="Entidad\Cita\Dia\CitaDisponible.vb" />
+    <Compile Include="Entidad\Cita\Dia\CitaTomada.vb" />
+    <Compile Include="Entidad\Cita\Dia\HoraCita.vb" />
+    <Compile Include="Entidad\Cita\Dia\HoraDisponible.vb" />
+    <Compile Include="Entidad\Cita\Dia\HoraTomada.vb" />
+    <Compile Include="Entidad\Cita\ListaCita.vb" />
+    <Compile Include="Entidad\Cita\Mes\CitaMes.vb" />
+    <Compile Include="Entidad\Cita\Semana\CitaSemana.vb" />
+    <Compile Include="Entidad\Cita\Semana\HoraSemana.vb" />
     <Compile Include="Entidad\generalConsulta.vb" />
     <Compile Include="Entidad\Configuracion\Configuracion.vb" />
     <Compile Include="Entidad\Inventario\Cliente.vb" />
@@ -153,6 +164,11 @@
     <Compile Include="Modelo\Administracion\PerfilBLL.vb" />
     <Compile Include="Modelo\Administracion\SucursalBLL.vb" />
     <Compile Include="Modelo\Administracion\PersonaBLL.vb" />
+    <Compile Include="Modelo\Cita\ConfigCitaBLL.vb" />
+    <Compile Include="Modelo\Cita\ProgramacionCitaDiaBLL.vb" />
+    <Compile Include="Modelo\Cita\ProgramacionCitaMesesBLL.vb" />
+    <Compile Include="Modelo\Cita\ProgramacionCitaSemanaBLL.vb" />
+    <Compile Include="Modelo\Cita\UtlidadCitaBLL.vb" />
     <Compile Include="Modelo\Configuracion\ConfigBLL.vb" />
     <Compile Include="Modelo\Inventario\ProveedorBLL.vb" />
     <Compile Include="Modelo\Inventario\ClienteBLL.vb" />
@@ -201,6 +217,30 @@
       <DependentUpon>FormProveedor.vb</DependentUpon>
     </Compile>
     <Compile Include="Vista\Administracion\FormProveedor.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Cita\FormCitaMedica.Designer.vb">
+      <DependentUpon>FormCitaMedica.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Cita\FormCitaMedica.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Cita\FormConfigMedicCita.Designer.vb">
+      <DependentUpon>FormConfigMedicCita.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Cita\FormConfigMedicCita.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Cita\FormListaPendienteCita.Designer.vb">
+      <DependentUpon>FormListaPendienteCita.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Cita\FormListaPendienteCita.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Cita\FormProgramacionCita.Designer.vb">
+      <DependentUpon>FormProgramacionCita.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Cita\FormProgramacionCita.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Vista\Configuracion\FormBodega.Designer.vb">
@@ -341,6 +381,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\Administracion\FormProveedor.resx">
       <DependentUpon>FormProveedor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Cita\FormCitaMedica.resx">
+      <DependentUpon>FormCitaMedica.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Cita\FormConfigMedicCita.resx">
+      <DependentUpon>FormConfigMedicCita.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Cita\FormListaPendienteCita.resx">
+      <DependentUpon>FormListaPendienteCita.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Cita\FormProgramacionCita.resx">
+      <DependentUpon>FormProgramacionCita.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\Configuracion\FormBodega.resx">
       <DependentUpon>FormBodega.vb</DependentUpon>
