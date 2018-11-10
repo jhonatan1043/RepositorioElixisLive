@@ -12,7 +12,13 @@ Public Class ProveedorDAL
                     comando.Parameters.Clear()
                     comando.CommandText = objProveedor.sqlGuardar
                     comando.Parameters.Add(New SqlParameter("@Codigo", SqlDbType.NVarChar)).Value = objProveedor.codigo
-                    comando.Parameters.Add(New SqlParameter("@Foto", SqlDbType.VarBinary)).Value = objProveedor.foto
+                    comando.Parameters.Add(New SqlParameter("@Codigo_Regime", SqlDbType.Int)).Value = objProveedor.codigoRegimen
+                    comando.Parameters.Add(New SqlParameter("@Codigo_Forma_pago", SqlDbType.Int)).Value = objProveedor.codigoFormaPago
+                    comando.Parameters.Add(New SqlParameter("@Codigo_Banco", SqlDbType.Int)).Value = objProveedor.codigoBanco
+                    comando.Parameters.Add(New SqlParameter("@Codigo_Tipo_Cuenta", SqlDbType.Int)).Value = objProveedor.codigoCuenta
+                    comando.Parameters.Add(New SqlParameter("@Codigo_Tipo_Pago", SqlDbType.Int)).Value = objProveedor.CodigoTipoPago
+                    comando.Parameters.Add(New SqlParameter("@Numero_Cuenta", SqlDbType.NVarChar)).Value = objProveedor.Cuenta
+                    comando.Parameters.Add(New SqlParameter("@Usuario_Creacion", SqlDbType.Int)).Value = SesionActual.idUsuario
                     comando.Parameters.Add(New SqlParameter("@Tabla", SqlDbType.Structured)).Value = objProveedor.dtParametro
                     objProveedor.codigo = CType(comando.ExecuteScalar, String)
                     trnsccion.Commit()

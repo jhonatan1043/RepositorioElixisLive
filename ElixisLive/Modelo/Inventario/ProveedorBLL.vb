@@ -3,19 +3,42 @@
         ProveedorDAL.guardar(objProveedor)
         Return objProveedor
     End Function
-    'Public Shared Sub verificarTipoControl(ByRef dgv As DataGridView)
-    '    Dim valorTipo As String
-    '    valorTipo = dgv.Rows(dgv.CurrentCell.RowIndex).Cells("Datos").Tag
+    Public Shared Sub cargarComboTipoPago(cbCombo As ComboBox)
+        Dim tabla As New DataTable
+        Dim drFila As DataRow
+        tabla.Columns.Add("Codigo")
+        tabla.Columns.Add("Nombre")
 
-    '    Select Case valorTipo
+        drFila = tabla.NewRow()
+        drFila.Item(0) = "-1"
+        drFila.Item(1) = " - - - Seleccione - - - "
+        tabla.Rows.Add(drFila)
 
-    '        Case Constantes.TIPO_CONTROL.COMBO
-    '            dgv.Rows(dgv.CurrentCell.RowIndex).Cells("ControlEspecial").Value = dgv.Rows(dgv.CurrentCell.RowIndex).Cells("Datos").Value
-    '        Case Constantes.TIPO_CONTROL.SELECTOR
+        drFila = tabla.NewRow()
+        drFila.Item(0) = "0"
+        drFila.Item(1) = "Contado"
+        tabla.Rows.Add(drFila)
 
-    '        Case Constantes.TIPO_CONTROL.TIEMPO
+        drFila = tabla.NewRow()
+        drFila.Item(0) = "1"
+        drFila.Item(1) = "Credito"
+        tabla.Rows.Add(drFila)
 
-    '    End Select
+        cargarCombo(tabla, cbCombo)
+    End Sub
 
-    'End Sub
+    Private Shared Sub cargarCombo(dtTabla As DataTable, cbCombo As ComboBox)
+        Try
+            cbCombo.DataSource = dtTabla
+            cbCombo.DisplayMember = "Nombre"
+            cbCombo.ValueMember = "Codigo"
+            If cbCombo IsNot Nothing Then
+                cbCombo.AutoCompleteMode = AutoCompleteMode.None
+                cbCombo.AutoCompleteSource = AutoCompleteSource.None
+                cbCombo.DropDownStyle = ComboBoxStyle.DropDownList
+            End If
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Sub
 End Class

@@ -197,6 +197,12 @@
     <Compile Include="Vista\Administracion\FormEmpresa.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Vista\Administracion\FormProveedor.Designer.vb">
+      <DependentUpon>FormProveedor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Administracion\FormProveedor.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Vista\Configuracion\FormBodega.Designer.vb">
       <DependentUpon>FormBodega.vb</DependentUpon>
     </Compile>
@@ -251,12 +257,6 @@
     <Compile Include="Vista\Gestión\FormVenta.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vista\Inventario\FormCliente.Designer.vb">
-      <DependentUpon>FormCliente.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Vista\Inventario\FormCliente.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Vista\Inventario\FormListaPrecio.Designer.vb">
       <DependentUpon>FormListaPrecio.vb</DependentUpon>
     </Compile>
@@ -267,12 +267,6 @@
       <DependentUpon>FormProducto.vb</DependentUpon>
     </Compile>
     <Compile Include="Vista\Inventario\FormProducto.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Vista\Inventario\FormProveedor.Designer.vb">
-      <DependentUpon>FormProveedor.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Vista\Inventario\FormProveedor.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Vista\Principal\FormBusqueda.Designer.vb">
@@ -345,6 +339,9 @@
     <EmbeddedResource Include="Vista\Administracion\FormEmpresa.resx">
       <DependentUpon>FormEmpresa.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Administracion\FormProveedor.resx">
+      <DependentUpon>FormProveedor.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vista\Configuracion\FormBodega.resx">
       <DependentUpon>FormBodega.vb</DependentUpon>
     </EmbeddedResource>
@@ -372,17 +369,11 @@
     <EmbeddedResource Include="Vista\Gestión\FormVenta.resx">
       <DependentUpon>FormVenta.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vista\Inventario\FormCliente.resx">
-      <DependentUpon>FormCliente.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Vista\Inventario\FormListaPrecio.resx">
       <DependentUpon>FormListaPrecio.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\Inventario\FormProducto.resx">
       <DependentUpon>FormProducto.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Vista\Inventario\FormProveedor.resx">
-      <DependentUpon>FormProveedor.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\Principal\FormBusqueda.resx">
       <DependentUpon>FormBusqueda.vb</DependentUpon>

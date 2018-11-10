@@ -2,6 +2,7 @@
     Inherits persona
     Property usuario As String
     Property clave As String
+    Property codigoFormaPago As Integer
     Property codigoPerfil As Integer
     Property codigoBanco As Integer
     Property codigoCuenta As Integer
