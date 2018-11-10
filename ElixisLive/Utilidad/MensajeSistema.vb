@@ -1,8 +1,8 @@
 ﻿Public Class MensajeSistema
     '---Mensaje Botones
     Public Const CANCELAR = "¡Desea cancelar el registro!"
-    Public Const ANULAR = "¡Desea Anular el registro!"
-    Public Const EDITAR = "¡Desea Editar el registro!"
+    Public Const ANULAR = "¡Desea anular el registro!"
+    Public Const EDITAR = "¡Desea editar el registro!"
     Public Const SALIR = "¡Desea salir!"
     '-------- Mensaje Accion 
     Public Const USUARIO_NO_EXISTE = "¡Usuario no existe!"
@@ -13,4 +13,5 @@
     Public Const SELECCIONAR_UNA_EMPRESA = "¡Seleccionar la empresa!"
     Public Const CONTRASENA_VALIDA = "¡Usuario o contraseña no valido!"
     Public Const VALIDAR_CAMPOS = "Los campos marcados son obligatorios"
+    Public Const MODULO_ASIGNADO = "¡Se han asignado los modulos correctamente!"
 End Class

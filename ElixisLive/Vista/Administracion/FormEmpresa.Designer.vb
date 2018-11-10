@@ -49,7 +49,6 @@ Partial Class FormEmpresa
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.TextDV = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
         Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.btNuevo = New System.Windows.Forms.ToolStripButton()
@@ -73,7 +72,6 @@ Partial Class FormEmpresa
         Me.GbInform_D.SuspendLayout()
         CType(Me.dgvParametro, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
-        Me.GroupBox1.SuspendLayout()
         Me.ToolStrip1.SuspendLayout()
         Me.Panel1.SuspendLayout()
         CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -89,9 +87,9 @@ Partial Class FormEmpresa
         Me.GbInform.Controls.Add(Me.Label1)
         Me.GbInform.Controls.Add(Me.txtId)
         Me.GbInform.Controls.Add(Me.GroupBox2)
-        Me.GbInform.Location = New System.Drawing.Point(4, 7)
+        Me.GbInform.Location = New System.Drawing.Point(9, 43)
         Me.GbInform.Name = "GbInform"
-        Me.GbInform.Size = New System.Drawing.Size(888, 430)
+        Me.GbInform.Size = New System.Drawing.Size(888, 444)
         Me.GbInform.TabIndex = 9
         Me.GbInform.TabStop = False
         '
@@ -103,9 +101,9 @@ Partial Class FormEmpresa
         Me.GroupBox3.Controls.Add(Me.Label3)
         Me.GroupBox3.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox3.ForeColor = System.Drawing.Color.DarkBlue
-        Me.GroupBox3.Location = New System.Drawing.Point(8, 135)
+        Me.GroupBox3.Location = New System.Drawing.Point(8, 130)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(873, 103)
+        Me.GroupBox3.Size = New System.Drawing.Size(873, 72)
         Me.GroupBox3.TabIndex = 62
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Información de la Factura"
@@ -118,7 +116,7 @@ Partial Class FormEmpresa
         Me.txtPie.Multiline = True
         Me.txtPie.Name = "txtPie"
         Me.txtPie.ScrollBars = System.Windows.Forms.ScrollBars.Both
-        Me.txtPie.Size = New System.Drawing.Size(281, 78)
+        Me.txtPie.Size = New System.Drawing.Size(281, 49)
         Me.txtPie.TabIndex = 27
         '
         'Label4
@@ -127,7 +125,7 @@ Partial Class FormEmpresa
         Me.Label4.BackColor = System.Drawing.Color.Transparent
         Me.Label4.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.Black
-        Me.Label4.Location = New System.Drawing.Point(470, 47)
+        Me.Label4.Location = New System.Drawing.Point(470, 34)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(110, 19)
         Me.Label4.TabIndex = 26
@@ -141,7 +139,7 @@ Partial Class FormEmpresa
         Me.txtEncabezado.Multiline = True
         Me.txtEncabezado.Name = "txtEncabezado"
         Me.txtEncabezado.ScrollBars = System.Windows.Forms.ScrollBars.Both
-        Me.txtEncabezado.Size = New System.Drawing.Size(272, 78)
+        Me.txtEncabezado.Size = New System.Drawing.Size(272, 47)
         Me.txtEncabezado.TabIndex = 25
         '
         'Label3
@@ -150,7 +148,7 @@ Partial Class FormEmpresa
         Me.Label3.BackColor = System.Drawing.Color.Transparent
         Me.Label3.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.Black
-        Me.Label3.Location = New System.Drawing.Point(6, 49)
+        Me.Label3.Location = New System.Drawing.Point(6, 34)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(167, 19)
         Me.Label3.TabIndex = 23
@@ -298,9 +296,9 @@ Partial Class FormEmpresa
         Me.GbInform_D.Controls.Add(Me.dgvParametro)
         Me.GbInform_D.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GbInform_D.ForeColor = System.Drawing.Color.DarkBlue
-        Me.GbInform_D.Location = New System.Drawing.Point(8, 244)
+        Me.GbInform_D.Location = New System.Drawing.Point(8, 208)
         Me.GbInform_D.Name = "GbInform_D"
-        Me.GbInform_D.Size = New System.Drawing.Size(874, 175)
+        Me.GbInform_D.Size = New System.Drawing.Size(874, 230)
         Me.GbInform_D.TabIndex = 59
         Me.GbInform_D.TabStop = False
         Me.GbInform_D.Text = "Otra Información de la Empresa"
@@ -327,7 +325,7 @@ Partial Class FormEmpresa
         Me.dgvParametro.Location = New System.Drawing.Point(3, 16)
         Me.dgvParametro.MultiSelect = False
         Me.dgvParametro.Name = "dgvParametro"
-        Me.dgvParametro.Size = New System.Drawing.Size(835, 153)
+        Me.dgvParametro.Size = New System.Drawing.Size(865, 208)
         Me.dgvParametro.TabIndex = 0
         '
         'Label1
@@ -384,16 +382,6 @@ Partial Class FormEmpresa
         Me.Label2.TabIndex = 3
         Me.Label2.Text = "Razón Social:"
         '
-        'GroupBox1
-        '
-        Me.GroupBox1.BackColor = System.Drawing.Color.Transparent
-        Me.GroupBox1.Controls.Add(Me.GbInform)
-        Me.GroupBox1.Location = New System.Drawing.Point(4, 43)
-        Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(898, 443)
-        Me.GroupBox1.TabIndex = 11
-        Me.GroupBox1.TabStop = False
-        '
         'ToolStrip1
         '
         Me.ToolStrip1.BackColor = System.Drawing.Color.White
@@ -412,6 +400,7 @@ Partial Class FormEmpresa
         '
         Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
         Me.ToolStripSeparator1.Size = New System.Drawing.Size(6, 33)
+        Me.ToolStripSeparator1.Visible = False
         '
         'btNuevo
         '
@@ -423,6 +412,7 @@ Partial Class FormEmpresa
         Me.btNuevo.Size = New System.Drawing.Size(82, 30)
         Me.btNuevo.Text = "Nuevo"
         Me.btNuevo.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btNuevo.Visible = False
         '
         'ToolStripSeparator7
         '
@@ -439,11 +429,13 @@ Partial Class FormEmpresa
         Me.btBuscar.Size = New System.Drawing.Size(86, 30)
         Me.btBuscar.Text = "Buscar"
         Me.btBuscar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btBuscar.Visible = False
         '
         'ToolStripSeparator2
         '
         Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
         Me.ToolStripSeparator2.Size = New System.Drawing.Size(6, 33)
+        Me.ToolStripSeparator2.Visible = False
         '
         'btRegistrar
         '
@@ -503,11 +495,13 @@ Partial Class FormEmpresa
         Me.btAnular.Size = New System.Drawing.Size(87, 30)
         Me.btAnular.Text = "Anular"
         Me.btAnular.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btAnular.Visible = False
         '
         'ToolStripSeparator6
         '
         Me.ToolStripSeparator6.Name = "ToolStripSeparator6"
         Me.ToolStripSeparator6.Size = New System.Drawing.Size(6, 33)
+        Me.ToolStripSeparator6.Visible = False
         '
         'Panel1
         '
@@ -551,8 +545,8 @@ Partial Class FormEmpresa
         Me.BackColor = System.Drawing.Color.White
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(905, 523)
+        Me.Controls.Add(Me.GbInform)
         Me.Controls.Add(Me.ToolStrip1)
-        Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Panel1)
         Me.DoubleBuffered = True
         Me.Location = New System.Drawing.Point(3000, 1000)
@@ -571,7 +565,6 @@ Partial Class FormEmpresa
         CType(Me.dgvParametro, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
-        Me.GroupBox1.ResumeLayout(False)
         Me.ToolStrip1.ResumeLayout(False)
         Me.ToolStrip1.PerformLayout()
         Me.Panel1.ResumeLayout(False)
@@ -602,7 +595,6 @@ Partial Class FormEmpresa
     Public WithEvents TxtDescripcion As TextBox
     Friend WithEvents GbInform_D As GroupBox
     Public WithEvents dgvParametro As DataGridView
-    Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents ToolStripSeparator7 As ToolStripSeparator
     Public WithEvents btBuscar As ToolStripButton
     Friend WithEvents GroupBox2 As GroupBox

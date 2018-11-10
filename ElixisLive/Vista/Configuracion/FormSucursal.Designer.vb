@@ -40,19 +40,12 @@ Partial Class FormSucursal
         Me.btAnular = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripSeparator6 = New System.Windows.Forms.ToolStripSeparator()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.txtIdentResponsable = New System.Windows.Forms.TextBox()
-        Me.txtResponsable = New System.Windows.Forms.TextBox()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
         Me.TextTelefono = New System.Windows.Forms.TextBox()
         Me.TextCelular = New System.Windows.Forms.TextBox()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.GroupBox6 = New System.Windows.Forms.GroupBox()
-        Me.cbPais = New System.Windows.Forms.ComboBox()
-        Me.Label4 = New System.Windows.Forms.Label()
         Me.cbDepartamento = New System.Windows.Forms.ComboBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.ComboMunicipio = New System.Windows.Forms.ComboBox()
@@ -66,7 +59,6 @@ Partial Class FormSucursal
         CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ToolStrip1.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
-        Me.GroupBox1.SuspendLayout()
         Me.GroupBox5.SuspendLayout()
         Me.GroupBox6.SuspendLayout()
         Me.GroupBox7.SuspendLayout()
@@ -81,13 +73,13 @@ Partial Class FormSucursal
         Me.Panel1.Controls.Add(Me.LTitulo)
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(713, 42)
+        Me.Panel1.Size = New System.Drawing.Size(603, 42)
         Me.Panel1.TabIndex = 0
         '
         'Pimagen
         '
         Me.Pimagen.BackColor = System.Drawing.Color.Transparent
-        Me.Pimagen.Image = Global.Quality.My.Resources.Resources.persona
+        Me.Pimagen.Image = Global.Quality.My.Resources.Resources.glossy_3d_blue_orbs2_059_icon
         Me.Pimagen.Location = New System.Drawing.Point(4, -7)
         Me.Pimagen.Name = "Pimagen"
         Me.Pimagen.Size = New System.Drawing.Size(69, 53)
@@ -102,9 +94,9 @@ Partial Class FormSucursal
         Me.LTitulo.ForeColor = System.Drawing.Color.White
         Me.LTitulo.Location = New System.Drawing.Point(0, 1)
         Me.LTitulo.Name = "LTitulo"
-        Me.LTitulo.Size = New System.Drawing.Size(713, 44)
+        Me.LTitulo.Size = New System.Drawing.Size(603, 44)
         Me.LTitulo.TabIndex = 1
-        Me.LTitulo.Text = "Sucursales"
+        Me.LTitulo.Text = "Sedes"
         Me.LTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'ToolStrip1
@@ -115,9 +107,9 @@ Partial Class FormSucursal
         Me.ToolStrip1.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.ToolStrip1.ImageScalingSize = New System.Drawing.Size(26, 26)
         Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripSeparator1, Me.btNuevo, Me.ToolStripSeparator2, Me.btBuscar, Me.ToolStripSeparator7, Me.btRegistrar, Me.ToolStripSeparator4, Me.btEditar, Me.ToolStripSeparator5, Me.btCancelar, Me.ToolStripSeparator3, Me.btAnular, Me.ToolStripSeparator6})
-        Me.ToolStrip1.Location = New System.Drawing.Point(0, 404)
+        Me.ToolStrip1.Location = New System.Drawing.Point(0, 336)
         Me.ToolStrip1.Name = "ToolStrip1"
-        Me.ToolStrip1.Size = New System.Drawing.Size(713, 33)
+        Me.ToolStrip1.Size = New System.Drawing.Size(603, 33)
         Me.ToolStrip1.TabIndex = 16
         Me.ToolStrip1.Text = "ToolStrip1"
         '
@@ -225,74 +217,14 @@ Partial Class FormSucursal
         'GroupBox4
         '
         Me.GroupBox4.BackColor = System.Drawing.Color.Transparent
-        Me.GroupBox4.Controls.Add(Me.GroupBox1)
         Me.GroupBox4.Controls.Add(Me.GroupBox5)
         Me.GroupBox4.Controls.Add(Me.GroupBox6)
         Me.GroupBox4.Controls.Add(Me.GroupBox7)
-        Me.GroupBox4.Location = New System.Drawing.Point(4, 46)
+        Me.GroupBox4.Location = New System.Drawing.Point(8, 46)
         Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Size = New System.Drawing.Size(705, 354)
+        Me.GroupBox4.Size = New System.Drawing.Size(587, 287)
         Me.GroupBox4.TabIndex = 8
         Me.GroupBox4.TabStop = False
-        '
-        'GroupBox1
-        '
-        Me.GroupBox1.Controls.Add(Me.txtIdentResponsable)
-        Me.GroupBox1.Controls.Add(Me.txtResponsable)
-        Me.GroupBox1.Controls.Add(Me.Label2)
-        Me.GroupBox1.Controls.Add(Me.Label5)
-        Me.GroupBox1.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox1.ForeColor = System.Drawing.Color.DarkBlue
-        Me.GroupBox1.Location = New System.Drawing.Point(7, 184)
-        Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(692, 54)
-        Me.GroupBox1.TabIndex = 12
-        Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "Responsable"
-        '
-        'txtIdentResponsable
-        '
-        Me.txtIdentResponsable.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtIdentResponsable.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtIdentResponsable.Location = New System.Drawing.Point(107, 17)
-        Me.txtIdentResponsable.MaxLength = 26
-        Me.txtIdentResponsable.Name = "txtIdentResponsable"
-        Me.txtIdentResponsable.Size = New System.Drawing.Size(146, 25)
-        Me.txtIdentResponsable.TabIndex = 24
-        '
-        'txtResponsable
-        '
-        Me.txtResponsable.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtResponsable.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtResponsable.Location = New System.Drawing.Point(335, 17)
-        Me.txtResponsable.MaxLength = 100
-        Me.txtResponsable.Name = "txtResponsable"
-        Me.txtResponsable.Size = New System.Drawing.Size(349, 25)
-        Me.txtResponsable.TabIndex = 25
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.BackColor = System.Drawing.Color.Transparent
-        Me.Label2.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.Black
-        Me.Label2.Location = New System.Drawing.Point(268, 20)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(65, 19)
-        Me.Label2.TabIndex = 23
-        Me.Label2.Text = "Nombre:"
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.BackColor = System.Drawing.Color.Transparent
-        Me.Label5.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.ForeColor = System.Drawing.Color.Black
-        Me.Label5.Location = New System.Drawing.Point(6, 19)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(102, 19)
-        Me.Label5.TabIndex = 22
-        Me.Label5.Text = "Identificación:"
         '
         'GroupBox5
         '
@@ -302,9 +234,9 @@ Partial Class FormSucursal
         Me.GroupBox5.Controls.Add(Me.Label10)
         Me.GroupBox5.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox5.ForeColor = System.Drawing.Color.DarkBlue
-        Me.GroupBox5.Location = New System.Drawing.Point(7, 133)
+        Me.GroupBox5.Location = New System.Drawing.Point(7, 173)
         Me.GroupBox5.Name = "GroupBox5"
-        Me.GroupBox5.Size = New System.Drawing.Size(692, 50)
+        Me.GroupBox5.Size = New System.Drawing.Size(574, 108)
         Me.GroupBox5.TabIndex = 11
         Me.GroupBox5.TabStop = False
         Me.GroupBox5.Text = "Otros datos"
@@ -313,20 +245,20 @@ Partial Class FormSucursal
         '
         Me.TextTelefono.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TextTelefono.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextTelefono.Location = New System.Drawing.Point(81, 17)
+        Me.TextTelefono.Location = New System.Drawing.Point(117, 17)
         Me.TextTelefono.MaxLength = 10
         Me.TextTelefono.Name = "TextTelefono"
-        Me.TextTelefono.Size = New System.Drawing.Size(187, 25)
+        Me.TextTelefono.Size = New System.Drawing.Size(151, 25)
         Me.TextTelefono.TabIndex = 24
         '
         'TextCelular
         '
         Me.TextCelular.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TextCelular.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextCelular.Location = New System.Drawing.Point(435, 17)
+        Me.TextCelular.Location = New System.Drawing.Point(117, 46)
         Me.TextCelular.MaxLength = 10
         Me.TextCelular.Name = "TextCelular"
-        Me.TextCelular.Size = New System.Drawing.Size(249, 25)
+        Me.TextCelular.Size = New System.Drawing.Size(151, 25)
         Me.TextCelular.TabIndex = 25
         '
         'Label9
@@ -335,7 +267,7 @@ Partial Class FormSucursal
         Me.Label9.BackColor = System.Drawing.Color.Transparent
         Me.Label9.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label9.ForeColor = System.Drawing.Color.Black
-        Me.Label9.Location = New System.Drawing.Point(367, 20)
+        Me.Label9.Location = New System.Drawing.Point(3, 49)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(62, 19)
         Me.Label9.TabIndex = 23
@@ -347,7 +279,7 @@ Partial Class FormSucursal
         Me.Label10.BackColor = System.Drawing.Color.Transparent
         Me.Label10.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label10.ForeColor = System.Drawing.Color.Black
-        Me.Label10.Location = New System.Drawing.Point(6, 19)
+        Me.Label10.Location = New System.Drawing.Point(4, 19)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(69, 19)
         Me.Label10.TabIndex = 22
@@ -355,8 +287,6 @@ Partial Class FormSucursal
         '
         'GroupBox6
         '
-        Me.GroupBox6.Controls.Add(Me.cbPais)
-        Me.GroupBox6.Controls.Add(Me.Label4)
         Me.GroupBox6.Controls.Add(Me.cbDepartamento)
         Me.GroupBox6.Controls.Add(Me.Label3)
         Me.GroupBox6.Controls.Add(Me.ComboMunicipio)
@@ -365,41 +295,20 @@ Partial Class FormSucursal
         Me.GroupBox6.Controls.Add(Me.Label12)
         Me.GroupBox6.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox6.ForeColor = System.Drawing.Color.DarkBlue
-        Me.GroupBox6.Location = New System.Drawing.Point(7, 58)
+        Me.GroupBox6.Location = New System.Drawing.Point(7, 60)
         Me.GroupBox6.Name = "GroupBox6"
-        Me.GroupBox6.Size = New System.Drawing.Size(692, 71)
+        Me.GroupBox6.Size = New System.Drawing.Size(574, 107)
         Me.GroupBox6.TabIndex = 10
         Me.GroupBox6.TabStop = False
         Me.GroupBox6.Text = "Domocilio"
-        '
-        'cbPais
-        '
-        Me.cbPais.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cbPais.FormattingEnabled = True
-        Me.cbPais.Location = New System.Drawing.Point(87, 15)
-        Me.cbPais.Name = "cbPais"
-        Me.cbPais.Size = New System.Drawing.Size(127, 25)
-        Me.cbPais.TabIndex = 38
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.BackColor = System.Drawing.Color.Transparent
-        Me.Label4.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.ForeColor = System.Drawing.Color.Black
-        Me.Label4.Location = New System.Drawing.Point(6, 17)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(37, 19)
-        Me.Label4.TabIndex = 37
-        Me.Label4.Text = "Pais"
         '
         'cbDepartamento
         '
         Me.cbDepartamento.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbDepartamento.FormattingEnabled = True
-        Me.cbDepartamento.Location = New System.Drawing.Point(343, 14)
+        Me.cbDepartamento.Location = New System.Drawing.Point(117, 15)
         Me.cbDepartamento.Name = "cbDepartamento"
-        Me.cbDepartamento.Size = New System.Drawing.Size(127, 25)
+        Me.cbDepartamento.Size = New System.Drawing.Size(168, 25)
         Me.cbDepartamento.TabIndex = 36
         '
         'Label3
@@ -408,7 +317,7 @@ Partial Class FormSucursal
         Me.Label3.BackColor = System.Drawing.Color.Transparent
         Me.Label3.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.Black
-        Me.Label3.Location = New System.Drawing.Point(236, 17)
+        Me.Label3.Location = New System.Drawing.Point(6, 18)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(107, 19)
         Me.Label3.TabIndex = 35
@@ -418,19 +327,19 @@ Partial Class FormSucursal
         '
         Me.ComboMunicipio.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ComboMunicipio.FormattingEnabled = True
-        Me.ComboMunicipio.Location = New System.Drawing.Point(551, 15)
+        Me.ComboMunicipio.Location = New System.Drawing.Point(117, 44)
         Me.ComboMunicipio.Name = "ComboMunicipio"
-        Me.ComboMunicipio.Size = New System.Drawing.Size(133, 25)
+        Me.ComboMunicipio.Size = New System.Drawing.Size(178, 25)
         Me.ComboMunicipio.TabIndex = 34
         '
         'TextDireccion
         '
         Me.TextDireccion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TextDireccion.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextDireccion.Location = New System.Drawing.Point(87, 43)
+        Me.TextDireccion.Location = New System.Drawing.Point(117, 73)
         Me.TextDireccion.MaxLength = 100
         Me.TextDireccion.Name = "TextDireccion"
-        Me.TextDireccion.Size = New System.Drawing.Size(597, 25)
+        Me.TextDireccion.Size = New System.Drawing.Size(451, 25)
         Me.TextDireccion.TabIndex = 28
         '
         'Label11
@@ -439,7 +348,7 @@ Partial Class FormSucursal
         Me.Label11.BackColor = System.Drawing.Color.Transparent
         Me.Label11.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label11.ForeColor = System.Drawing.Color.Black
-        Me.Label11.Location = New System.Drawing.Point(6, 46)
+        Me.Label11.Location = New System.Drawing.Point(5, 76)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(75, 19)
         Me.Label11.TabIndex = 26
@@ -451,7 +360,7 @@ Partial Class FormSucursal
         Me.Label12.BackColor = System.Drawing.Color.Transparent
         Me.Label12.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label12.ForeColor = System.Drawing.Color.Black
-        Me.Label12.Location = New System.Drawing.Point(487, 17)
+        Me.Label12.Location = New System.Drawing.Point(3, 49)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(61, 19)
         Me.Label12.TabIndex = 23
@@ -464,9 +373,9 @@ Partial Class FormSucursal
         Me.GroupBox7.Controls.Add(Me.Label17)
         Me.GroupBox7.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox7.ForeColor = System.Drawing.Color.DarkBlue
-        Me.GroupBox7.Location = New System.Drawing.Point(7, 6)
+        Me.GroupBox7.Location = New System.Drawing.Point(7, 8)
         Me.GroupBox7.Name = "GroupBox7"
-        Me.GroupBox7.Size = New System.Drawing.Size(692, 49)
+        Me.GroupBox7.Size = New System.Drawing.Size(574, 49)
         Me.GroupBox7.TabIndex = 9
         Me.GroupBox7.TabStop = False
         Me.GroupBox7.Text = "Información"
@@ -475,10 +384,10 @@ Partial Class FormSucursal
         '
         Me.TextNombre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TextNombre.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextNombre.Location = New System.Drawing.Point(87, 14)
+        Me.TextNombre.Location = New System.Drawing.Point(117, 14)
         Me.TextNombre.MaxLength = 50
         Me.TextNombre.Name = "TextNombre"
-        Me.TextNombre.Size = New System.Drawing.Size(599, 25)
+        Me.TextNombre.Size = New System.Drawing.Size(451, 25)
         Me.TextNombre.TabIndex = 9
         '
         'Label17
@@ -498,15 +407,15 @@ Partial Class FormSucursal
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(713, 437)
+        Me.ClientSize = New System.Drawing.Size(603, 369)
         Me.Controls.Add(Me.ToolStrip1)
         Me.Controls.Add(Me.GroupBox4)
         Me.Controls.Add(Me.Panel1)
         Me.DoubleBuffered = True
         Me.Location = New System.Drawing.Point(3000, 1000)
         Me.MaximizeBox = False
-        Me.MaximumSize = New System.Drawing.Size(729, 475)
-        Me.MinimumSize = New System.Drawing.Size(729, 475)
+        Me.MaximumSize = New System.Drawing.Size(619, 408)
+        Me.MinimumSize = New System.Drawing.Size(619, 408)
         Me.Name = "FormSucursal"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Panel1.ResumeLayout(False)
@@ -514,8 +423,6 @@ Partial Class FormSucursal
         Me.ToolStrip1.ResumeLayout(False)
         Me.ToolStrip1.PerformLayout()
         Me.GroupBox4.ResumeLayout(False)
-        Me.GroupBox1.ResumeLayout(False)
-        Me.GroupBox1.PerformLayout()
         Me.GroupBox5.ResumeLayout(False)
         Me.GroupBox5.PerformLayout()
         Me.GroupBox6.ResumeLayout(False)
@@ -557,13 +464,6 @@ Partial Class FormSucursal
     Friend WithEvents GroupBox7 As GroupBox
     Public WithEvents TextNombre As TextBox
     Public WithEvents Label17 As Label
-    Friend WithEvents cbPais As ComboBox
-    Public WithEvents Label4 As Label
     Friend WithEvents cbDepartamento As ComboBox
     Public WithEvents Label3 As Label
-    Friend WithEvents GroupBox1 As GroupBox
-    Public WithEvents txtIdentResponsable As TextBox
-    Public WithEvents txtResponsable As TextBox
-    Public WithEvents Label2 As Label
-    Public WithEvents Label5 As Label
 End Class

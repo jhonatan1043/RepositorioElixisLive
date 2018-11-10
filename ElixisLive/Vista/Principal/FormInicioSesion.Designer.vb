@@ -105,7 +105,7 @@ Partial Class FormInicioSesion
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(75, 23)
         Me.Label1.TabIndex = 6
-        Me.Label1.Text = "Empresa:"
+        Me.Label1.Text = "Sede:"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'CbEmpresa
@@ -228,8 +228,6 @@ Partial Class FormInicioSesion
         'ErrorIcono
         '
         Me.ErrorIcono.ContainerControl = Me
-        Me.ErrorIcono.Icon = CType(resources.GetObject("ErrorIcono.Icon"), System.Drawing.Icon)
-        Me.ErrorIcono.RightToLeft = True
         '
         'FormInicioSesion
         '

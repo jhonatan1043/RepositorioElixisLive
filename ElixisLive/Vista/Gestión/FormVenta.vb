@@ -163,11 +163,10 @@ Public Class FormVenta
 
     End Sub
     Private Function validarCampos()
-        Dim resultado As Boolean = False
-        If TextIdentificacion.Text <> String.Empty And TextNombre.Text <> String.Empty And TextTelefono.Text <> String.Empty Then
-            resultado = True
+        If String.IsNullOrEmpty(TextIdentificacion.Text) Or String.IsNullOrEmpty(TextNombre.Text) Then
+            Return True
         End If
-        Return resultado
+        Return False
     End Function
     Private Sub btRegistrar_Click(sender As Object, e As EventArgs) Handles btRegistrar.Click
         dgvFactura.EndEdit()

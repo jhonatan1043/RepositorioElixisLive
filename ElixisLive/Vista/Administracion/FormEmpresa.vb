@@ -13,7 +13,6 @@
         objEmpresa.dtParametro = dgvParametro.DataSource
     End Sub
     Private Function validarCampos() As Boolean
-        Dim resultado As Boolean
         If String.IsNullOrEmpty(txtId.Text) Then
             EstiloMensajes.mostrarMensajeAdvertencia("¡Debe digitar el nit de la Empresa!")
         ElseIf String.IsNullOrEmpty(TxtDescripcion.Text) Then
@@ -25,9 +24,9 @@
         ElseIf String.IsNullOrEmpty(TextDireccion.Text) Then
             EstiloMensajes.mostrarMensajeAdvertencia("¡Debe digitar la dirección de la empresa!")
         Else
-            resultado = True
+            Return True
         End If
-        Return resultado
+        Return False
     End Function
     Private Sub Form_FormClosing(sender As Object, e As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
         If EstiloMensajes.mostrarMensajePregunta(MensajeSistema.SALIR) = Constantes.SI Then
@@ -53,6 +52,9 @@
         Catch ex As Exception
             EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
         End Try
+        If txtId.Text = String.Empty Then
+            btNuevo_Click(sender, e)
+        End If
     End Sub
     Private Sub btNuevo_Click(sender As Object, e As EventArgs) Handles btNuevo.Click
         Generales.deshabilitarBotones(ToolStrip1)

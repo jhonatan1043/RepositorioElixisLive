@@ -1,34 +1,23 @@
 ﻿Public Class FormSucursal
     Dim objSucursal As Sucursal
     Private Sub cargarObjeto()
-        objSucursal.identiResponsable = txtIdentResponsable.Text
-        objSucursal.responsable = txtResponsable.Text
         objSucursal.nombre = TextNombre.Text
         objSucursal.telefono = TextTelefono.Text
         objSucursal.celular = TextCelular.Text
         objSucursal.direccion = TextDireccion.Text
-        objSucursal.codigoPais = cbPais.SelectedValue
         objSucursal.codigoDepartamento = cbDepartamento.SelectedValue
         objSucursal.codigoCiudad = ComboMunicipio.SelectedValue
     End Sub
     Private Function validarCampos() As Boolean
-        Dim resultado As Boolean
-        If String.IsNullOrEmpty(TextNombre.Text) Then
-            EstiloMensajes.mostrarMensajeAdvertencia("¡Debe digitar el nombre !")
-        ElseIf String.IsNullOrEmpty(TextCelular.Text) Then
-            EstiloMensajes.mostrarMensajeAdvertencia("¡Debe digitar el Numero de celular !")
-        ElseIf String.IsNullOrEmpty(cbPais.SelectedIndex) Then
-            EstiloMensajes.mostrarMensajeAdvertencia("¡Debe seleccionar el pais!")
-        ElseIf String.IsNullOrEmpty(cbDepartamento.SelectedIndex) Then
-            EstiloMensajes.mostrarMensajeAdvertencia("¡Debe seleccionar el departamento!")
-        ElseIf String.IsNullOrEmpty(ComboMunicipio.SelectedIndex) Then
-            EstiloMensajes.mostrarMensajeAdvertencia("¡Debe seleccionar la ciudad !")
-        ElseIf String.IsNullOrEmpty(TextDireccion.Text) Then
-            EstiloMensajes.mostrarMensajeAdvertencia("¡Debe digitar la dirección !")
+        If String.IsNullOrEmpty(TextNombre.Text) Or
+            String.IsNullOrEmpty(TextCelular.Text) Or
+            String.IsNullOrEmpty(cbDepartamento.SelectedIndex) Or
+           String.IsNullOrEmpty(ComboMunicipio.SelectedIndex) Or
+           String.IsNullOrEmpty(TextDireccion.Text) Then
         Else
-            resultado = True
+            Return True
         End If
-        Return resultado
+        Return False
     End Function
     Private Sub Form_FormClosing(sender As Object, e As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
         If EstiloMensajes.mostrarMensajePregunta(MensajeSistema.SALIR) = Constantes.SI Then
@@ -40,7 +29,6 @@
     Private Sub FormBase_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         objSucursal = New Sucursal
         Try
-            cargarComboPais()
             cargarComboDepartamento()
             cargarComboCiudad()
             Generales.deshabilitarBotones(ToolStrip1)
@@ -51,12 +39,9 @@
             EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
         End Try
     End Sub
-    Private Sub cargarComboPais()
-        Generales.cargarCombo("[SP_CONSULTAR_PAIS]", Nothing, "Nombre", "Codigo_Pais", cbPais)
-    End Sub
     Private Sub cargarComboDepartamento()
         Dim params As New List(Of String)
-        params.Add(cbPais.SelectedValue)
+
         Generales.cargarCombo("[SP_CONSULTAR_DEPARTAMENTO]", params, "Nombre", "Codigo_Departamento", cbDepartamento)
     End Sub
     Private Sub cargarComboCiudad()
@@ -86,6 +71,8 @@
             Catch ex As Exception
                 EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
             End Try
+        Else
+            EstiloMensajes.mostrarMensajeAdvertencia(MensajeSistema.VALIDAR_CAMPOS)
         End If
     End Sub
 
@@ -145,11 +132,8 @@
                 TextTelefono.Text = If(IsDBNull(dfila("Telefono")), Nothing, dfila("Telefono"))
                 TextCelular.Text = dfila("Celular")
                 TextDireccion.Text = dfila("Direccion")
-                cbPais.SelectedValue = dfila("pais")
                 cbDepartamento.SelectedValue = dfila("Departamento")
                 ComboMunicipio.SelectedValue = dfila("Ciudad")
-                txtIdentResponsable.Text = dfila("Identi_Responsable")
-                txtResponsable.Text = dfila("Responsable")
             End If
             Generales.habilitarBotones(ToolStrip1)
             btCancelar.Enabled = False
@@ -157,11 +141,6 @@
         Catch ex As Exception
             EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
         End Try
-    End Sub
-    Private Sub cbPais_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbPais.SelectedIndexChanged
-        If Not String.IsNullOrEmpty(cbPais.ValueMember) Then
-            cargarComboDepartamento()
-        End If
     End Sub
     Private Sub cbDepartamento_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbDepartamento.SelectedIndexChanged
         If Not String.IsNullOrEmpty(cbDepartamento.ValueMember) Then

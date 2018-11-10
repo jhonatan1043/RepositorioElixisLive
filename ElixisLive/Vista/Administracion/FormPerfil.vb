@@ -206,7 +206,7 @@ Public Class FormPerfil
                 consulta.CommandText = "[SP_PERFIL_MODULO_ASIGNAR]"
                 consulta.Parameters.Add(New SqlParameter("@tbl", SqlDbType.Structured)).Value = dsDatos.Tables("Perfil_Menu")
                 consulta.ExecuteNonQuery()
-                MsgBox("Módulos guardados éxitosamente", MsgBoxStyle.Information)
+                EstiloMensajes.mostrarMensajeExitoso((MensajeSistema.MODULO_ASIGNADO))
             End Using
 
             'If objPerfil.codigoPerfil = SesionActual.codigoPerfil Then

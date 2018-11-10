@@ -13,7 +13,6 @@
         objPersona.codigoTipoIdentificacion = CombotipoIdentificacion.SelectedValue
     End Sub
     Private Function validarCampos() As Boolean
-        Dim resultado As Boolean
         If String.IsNullOrEmpty(TextIdentificacion.Text) Then
             EstiloMensajes.mostrarMensajeAdvertencia("¡Debe digitar la identificación de la persona!")
         ElseIf CombotipoIdentificacion.SelectedIndex = 0 Then
@@ -31,9 +30,9 @@
         ElseIf String.IsNullOrEmpty(TextDireccion.Text) Then
             EstiloMensajes.mostrarMensajeAdvertencia("¡Debe digitar la dirección de la persona!")
         Else
-            resultado = True
+            Return True
         End If
-        Return resultado
+        Return False
     End Function
     Private Sub Form_FormClosing(sender As Object, e As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
         If EstiloMensajes.mostrarMensajePregunta(MensajeSistema.SALIR) = Constantes.SI Then

@@ -15,13 +15,27 @@ Public Class FormInicioSesion
             EstiloMensajes.mostrarMensajeAdvertencia(MensajeSistema.VALIDAR_CAMPOS)
         End If
     End Sub
-
+    Private Sub cargarEmpresa()
+        Dim params As New List(Of String)
+        Dim dfila As DataRow
+        params.Add("")
+        dfila = Generales.cargarItem(Sentencias.EMPRESA_CONSULTAR, params)
+        Try
+            If Not IsNothing(dfila) Then
+                FormEmpresa.ShowDialog()
+            Else
+                Exit Sub
+            End If
+        Catch ex As Exception
+            EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
+        End Try
+    End Sub
     Private Function validarCampos() As Boolean
-        Dim resultado As Boolean = False
-        If txtUsuario.Text <> String.Empty And txtContraseña.Text <> String.Empty And CbEmpresa.SelectedIndex > 0 Then
-            resultado = True
+
+        If String.IsNullOrEmpty(txtUsuario.Text) Or String.IsNullOrEmpty(txtContraseña.Text) Or CbEmpresa.SelectedIndex > 0 Then
+            Return True
         End If
-        Return resultado
+        Return False
     End Function
     Private Sub Cancel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Cancel.Click
         Generales.desvanecerForm(Me)
