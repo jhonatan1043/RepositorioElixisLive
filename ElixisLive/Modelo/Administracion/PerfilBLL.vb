@@ -1,8 +1,8 @@
 ﻿Public Class PerfilBLL
     Private Shared dsDatos As DataSet
-    Public Shared Function guardarPerfil(objPerfil As Perfil) As Perfil
-        PerfilDAL.crearPerfil(objPerfil)
-        Return objPerfil
-    End Function
-
+    Dim objPerfilDal As New PerfilDAL
+    Public Sub cargarMenu(pcodigoEP As Integer, ByRef dsCuentas As DataSet)
+        objPerfilDal.cargarMenuPadre(pcodigoEP, dsCuentas)
+        objPerfilDal.cargarMenuHijas(pcodigoEP, dsCuentas)
+    End Sub
 End Class

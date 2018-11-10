@@ -33,11 +33,6 @@
     Friend Sub anularPerfil()
         PerfilDAL.anularPerfil(Me)
     End Sub
-    'Public Sub cargarMenu(pcodigoEP As Integer, ByRef dsCuentas As DataSet)
 
-    '    objModulo_perfil_c.cargarMenuPadre(pcodigoEP, dsCuentas)
-    '    objModulo_perfil_c.cargarMenuHijas(pcodigoEP, dsCuentas)
-
-    'End Sub
 
 End Class

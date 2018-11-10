@@ -22,12 +22,13 @@ Partial Class FormPerfil
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.txtBuscar = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.dgvFactura = New System.Windows.Forms.DataGridView()
+        Me.dgvParametro = New System.Windows.Forms.DataGridView()
+        Me.txtcodigo = New System.Windows.Forms.TextBox()
         Me.GroupBox7 = New System.Windows.Forms.GroupBox()
         Me.txtnombre = New System.Windows.Forms.TextBox()
         Me.Label17 = New System.Windows.Forms.Label()
@@ -48,10 +49,9 @@ Partial Class FormPerfil
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Pimagen = New System.Windows.Forms.PictureBox()
         Me.LTitulo = New System.Windows.Forms.Label()
-        Me.txtcodigo = New System.Windows.Forms.TextBox()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
-        CType(Me.dgvFactura, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgvParametro, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox7.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         Me.ToolStrip1.SuspendLayout()
@@ -75,7 +75,7 @@ Partial Class FormPerfil
         Me.GroupBox2.BackColor = System.Drawing.Color.Transparent
         Me.GroupBox2.Controls.Add(Me.txtBuscar)
         Me.GroupBox2.Controls.Add(Me.Label3)
-        Me.GroupBox2.Controls.Add(Me.dgvFactura)
+        Me.GroupBox2.Controls.Add(Me.dgvParametro)
         Me.GroupBox2.Controls.Add(Me.txtcodigo)
         Me.GroupBox2.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox2.ForeColor = System.Drawing.Color.DarkBlue
@@ -107,23 +107,32 @@ Partial Class FormPerfil
         Me.Label3.TabIndex = 8
         Me.Label3.Text = "Filtrar:"
         '
-        'dgvFactura
+        'dgvParametro
         '
-        Me.dgvFactura.AllowUserToAddRows = False
-        Me.dgvFactura.AllowUserToDeleteRows = False
-        Me.dgvFactura.AllowUserToResizeColumns = False
-        Me.dgvFactura.AllowUserToResizeRows = False
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
-        Me.dgvFactura.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle2
-        Me.dgvFactura.BackgroundColor = System.Drawing.Color.White
-        Me.dgvFactura.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvFactura.Location = New System.Drawing.Point(6, 56)
-        Me.dgvFactura.MultiSelect = False
-        Me.dgvFactura.Name = "dgvFactura"
-        Me.dgvFactura.ReadOnly = True
-        Me.dgvFactura.Size = New System.Drawing.Size(649, 317)
-        Me.dgvFactura.TabIndex = 4
+        Me.dgvParametro.AllowUserToAddRows = False
+        Me.dgvParametro.AllowUserToDeleteRows = False
+        Me.dgvParametro.AllowUserToResizeColumns = False
+        Me.dgvParametro.AllowUserToResizeRows = False
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black
+        Me.dgvParametro.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        Me.dgvParametro.BackgroundColor = System.Drawing.Color.White
+        Me.dgvParametro.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvParametro.Location = New System.Drawing.Point(6, 56)
+        Me.dgvParametro.MultiSelect = False
+        Me.dgvParametro.Name = "dgvParametro"
+        Me.dgvParametro.ReadOnly = True
+        Me.dgvParametro.Size = New System.Drawing.Size(649, 317)
+        Me.dgvParametro.TabIndex = 4
+        '
+        'txtcodigo
+        '
+        Me.txtcodigo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtcodigo.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtcodigo.Location = New System.Drawing.Point(348, 131)
+        Me.txtcodigo.Name = "txtcodigo"
+        Me.txtcodigo.Size = New System.Drawing.Size(17, 22)
+        Me.txtcodigo.TabIndex = 10
         '
         'GroupBox7
         '
@@ -318,15 +327,6 @@ Partial Class FormPerfil
         Me.LTitulo.Text = "Perfíles"
         Me.LTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'txtcodigo
-        '
-        Me.txtcodigo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtcodigo.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtcodigo.Location = New System.Drawing.Point(348, 131)
-        Me.txtcodigo.Name = "txtcodigo"
-        Me.txtcodigo.Size = New System.Drawing.Size(17, 22)
-        Me.txtcodigo.TabIndex = 10
-        '
         'FormPerfil
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -345,7 +345,7 @@ Partial Class FormPerfil
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
-        CType(Me.dgvFactura, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvParametro, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox7.ResumeLayout(False)
         Me.GroupBox7.PerformLayout()
         Me.GroupBox3.ResumeLayout(False)
@@ -377,7 +377,7 @@ Partial Class FormPerfil
     Friend WithEvents ToolStripSeparator3 As ToolStripSeparator
     Public WithEvents btAnular As ToolStripButton
     Friend WithEvents ToolStripSeparator6 As ToolStripSeparator
-    Public WithEvents dgvFactura As DataGridView
+    Public WithEvents dgvParametro As DataGridView
     Public WithEvents txtBuscar As TextBox
     Public WithEvents Label3 As Label
     Friend WithEvents ToolStripSeparator2 As ToolStripSeparator

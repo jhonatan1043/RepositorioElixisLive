@@ -76,6 +76,7 @@ Public Class principalBLL
             EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
         End Try
     End Sub
+
     Public Shared Sub cargarMenu(ByRef dsCuentas As DataSet)
         cargarMenuPadre(dsCuentas)
         cargarMenuHijas(dsCuentas)

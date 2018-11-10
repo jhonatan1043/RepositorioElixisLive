@@ -3,6 +3,8 @@ Public Class FormPerfil
     Dim objPerfil As Perfil
     Dim sw, sw2, sw3 As Boolean
     Private dsDatos As DataSet
+    Private objPerfilBll As New PerfilBLL
+    Dim fprincipal As New FormPrincipal
     Private Sub FormPerfil_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         objPerfil = New Perfil
         principalBLL.cargarMenu(arbolmenu)
@@ -24,6 +26,7 @@ Public Class FormPerfil
         objPerfil.codigoPerfil = Nothing
         btRegistrar.Enabled = True
         btCancelar.Enabled = True
+        principalBLL.cargarMenu(arbolmenu)
     End Sub
     Private Sub cargarInfomacion(pCodigo As Integer)
         Dim params As New List(Of String)
@@ -46,14 +49,14 @@ Public Class FormPerfil
         Try
             dsDatos = New DataSet
             CreaOpciones(dsDatos)
-            'objModulo_perfil_D.cargarMenu(SesionActual.codigoSucursal, dsDatos)
+            objPerfilBll.cargarMenu(SesionActual.codigoSucursal, dsDatos)
             drCuentaPadre = dsDatos.Tables("Padre").Select()
 
             'Se recorren las cuentas Padre
             For Each drFila As DataRow In drCuentaPadre
                 nodo = New TreeNode
                 nodo.Name = drFila("Codigo_Menu").ToString()
-                nodo.Text = drFila("Descripcion_Menu").ToString()
+                nodo.Text = drFila("Descripcion").ToString()
                 If dsDatos.Tables("Perfil_Menu").Select("[Codigo_Menu]='" + nodo.Name.ToString + "'").Count = 1 Then
                     nodo.Checked = True
                 Else
@@ -73,7 +76,7 @@ Public Class FormPerfil
 
     End Sub
     Private Sub crearSubcuentas(ByRef nodoPade As TreeNode)
-        Dim expr As String = "Padre_Menu ='" & nodoPade.Name & "'"
+        Dim expr As String = "Codigo_Padre ='" & nodoPade.Name & "'"
         Dim subnodo As TreeNode
 
         Try
@@ -83,7 +86,7 @@ Public Class FormPerfil
             For Each drFila As DataRow In aDrFilas
                 subnodo = New TreeNode
                 subnodo.Name = drFila("Codigo_Menu").ToString()
-                subnodo.Text = drFila("Descripcion_Menu").ToString()
+                subnodo.Text = drFila("Descripcion").ToString()
                 If dsDatos.Tables("Perfil_Menu").Select("[Codigo_Menu]='" + subnodo.Name.ToString + "'").Count = 1 Then
                     subnodo.Checked = True
                 Else
@@ -97,17 +100,17 @@ Public Class FormPerfil
         End Try
 
     End Sub
-    Private Sub chequearArbol()
-        For Each nodo As TreeNode In arbolmenu.Nodes
-            If IsNothing(nodo.Parent) Then
-                For posicion = 0 To objPerfil.dtRegistro.Rows.Count - 1
-                    If nodo.Name = objPerfil.dtRegistro.Rows(posicion).Item("Codigo_Menu") Then
-                        nodo.Checked = True
-                    End If
-                Next
-            End If
-        Next
-    End Sub
+    'Private Sub chequearArbol()
+    '    For Each nodo As TreeNode In arbolmenu.Nodes
+    '        If IsNothing(nodo.Parent) Then
+    '            For posicion = 0 To objPerfil.dtRegistro.Rows.Count - 1
+    '                If nodo.Name = objPerfil.dtRegistro.Rows(posicion).Item("Codigo_Menu") Then
+    '                    nodo.Checked = True
+    '                End If
+    '            Next
+    '        End If
+    '    Next
+    'End Sub
     Private Sub btRegistrar_Click(sender As Object, e As EventArgs) Handles btRegistrar.Click
         If (txtnombre.Text = "") Then
             MsgBox("¡ Por favor digite el nombre del perfil de usuario!", MsgBoxStyle.Exclamation)
@@ -192,6 +195,7 @@ Public Class FormPerfil
     End Sub
     Private Sub guardarPermisos()
         Dim objConexio As New CnxElixisLiveBD.ConexionBD
+        objConexio.conectar()
         Try
             Using consulta = New SqlCommand()
                 consulta.Connection = objConexio.cnxbd
@@ -236,20 +240,21 @@ Public Class FormPerfil
         End Try
 
     End Sub
-    Private Sub dgvFactura_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvFactura.CellClick
+    Private Sub dgvFactura_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvParametro.CellClick
         If btRegistrar.Enabled = True Then Exit Sub
-        If dgvFactura.Rows.Count > 0 Then
-            txtnombre.Text = dgvFactura.Rows(dgvFactura.CurrentCell.RowIndex).Cells("Descripción").Value
-            cargarInfomacion(dgvFactura.Rows(dgvFactura.CurrentCell.RowIndex).Cells("Codigo").Value)
+        If dgvParametro.Rows.Count > 0 Then
+            txtnombre.Text = dgvParametro.Rows(dgvParametro.CurrentCell.RowIndex).Cells("Descripción").Value
+            cargarInfomacion(dgvParametro.Rows(dgvParametro.CurrentCell.RowIndex).Cells("Codigo").Value)
+            txtcodigo.Text = dgvParametro.Rows(dgvParametro.CurrentCell.RowIndex).Cells("Codigo").Value
         End If
     End Sub
     Private Sub listarPerfiles()
         Dim params As New List(Of String)
         params.Add(txtBuscar.Text)
-        Generales.llenardgv(objPerfil.sqlCargar, dgvFactura, params)
+        Generales.llenardgv(objPerfil.sqlCargar, dgvParametro, params)
     End Sub
     Private Sub validarCampoGrilla()
-        With dgvFactura
+        With dgvParametro
             .ReadOnly = True
             .Columns("Codigo").Visible = False
             .Columns("Descripción").AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
