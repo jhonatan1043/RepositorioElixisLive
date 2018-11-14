@@ -107,7 +107,7 @@ Partial Class FormSucursal
         Me.ToolStrip1.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.ToolStrip1.ImageScalingSize = New System.Drawing.Size(26, 26)
         Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripSeparator1, Me.btNuevo, Me.ToolStripSeparator2, Me.btBuscar, Me.ToolStripSeparator7, Me.btRegistrar, Me.ToolStripSeparator4, Me.btEditar, Me.ToolStripSeparator5, Me.btCancelar, Me.ToolStripSeparator3, Me.btAnular, Me.ToolStripSeparator6})
-        Me.ToolStrip1.Location = New System.Drawing.Point(0, 336)
+        Me.ToolStrip1.Location = New System.Drawing.Point(0, 337)
         Me.ToolStrip1.Name = "ToolStrip1"
         Me.ToolStrip1.Size = New System.Drawing.Size(603, 33)
         Me.ToolStrip1.TabIndex = 16
@@ -236,7 +236,7 @@ Partial Class FormSucursal
         Me.GroupBox5.ForeColor = System.Drawing.Color.DarkBlue
         Me.GroupBox5.Location = New System.Drawing.Point(7, 173)
         Me.GroupBox5.Name = "GroupBox5"
-        Me.GroupBox5.Size = New System.Drawing.Size(574, 108)
+        Me.GroupBox5.Size = New System.Drawing.Size(574, 55)
         Me.GroupBox5.TabIndex = 11
         Me.GroupBox5.TabStop = False
         Me.GroupBox5.Text = "Otros datos"
@@ -248,17 +248,17 @@ Partial Class FormSucursal
         Me.TextTelefono.Location = New System.Drawing.Point(117, 17)
         Me.TextTelefono.MaxLength = 10
         Me.TextTelefono.Name = "TextTelefono"
-        Me.TextTelefono.Size = New System.Drawing.Size(151, 25)
+        Me.TextTelefono.Size = New System.Drawing.Size(176, 25)
         Me.TextTelefono.TabIndex = 24
         '
         'TextCelular
         '
         Me.TextCelular.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TextCelular.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextCelular.Location = New System.Drawing.Point(117, 46)
+        Me.TextCelular.Location = New System.Drawing.Point(389, 17)
         Me.TextCelular.MaxLength = 10
         Me.TextCelular.Name = "TextCelular"
-        Me.TextCelular.Size = New System.Drawing.Size(151, 25)
+        Me.TextCelular.Size = New System.Drawing.Size(179, 25)
         Me.TextCelular.TabIndex = 25
         '
         'Label9
@@ -267,7 +267,7 @@ Partial Class FormSucursal
         Me.Label9.BackColor = System.Drawing.Color.Transparent
         Me.Label9.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label9.ForeColor = System.Drawing.Color.Black
-        Me.Label9.Location = New System.Drawing.Point(3, 49)
+        Me.Label9.Location = New System.Drawing.Point(321, 19)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(62, 19)
         Me.Label9.TabIndex = 23
@@ -308,7 +308,7 @@ Partial Class FormSucursal
         Me.cbDepartamento.FormattingEnabled = True
         Me.cbDepartamento.Location = New System.Drawing.Point(117, 15)
         Me.cbDepartamento.Name = "cbDepartamento"
-        Me.cbDepartamento.Size = New System.Drawing.Size(168, 25)
+        Me.cbDepartamento.Size = New System.Drawing.Size(237, 25)
         Me.cbDepartamento.TabIndex = 36
         '
         'Label3
@@ -329,7 +329,7 @@ Partial Class FormSucursal
         Me.ComboMunicipio.FormattingEnabled = True
         Me.ComboMunicipio.Location = New System.Drawing.Point(117, 44)
         Me.ComboMunicipio.Name = "ComboMunicipio"
-        Me.ComboMunicipio.Size = New System.Drawing.Size(178, 25)
+        Me.ComboMunicipio.Size = New System.Drawing.Size(237, 25)
         Me.ComboMunicipio.TabIndex = 34
         '
         'TextDireccion
@@ -407,7 +407,7 @@ Partial Class FormSucursal
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(603, 369)
+        Me.ClientSize = New System.Drawing.Size(603, 370)
         Me.Controls.Add(Me.ToolStrip1)
         Me.Controls.Add(Me.GroupBox4)
         Me.Controls.Add(Me.Panel1)

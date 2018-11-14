@@ -9,11 +9,12 @@
         objSucursal.codigoCiudad = ComboMunicipio.SelectedValue
     End Sub
     Private Function validarCampos() As Boolean
-        If String.IsNullOrEmpty(TextNombre.Text) Or
-            String.IsNullOrEmpty(TextCelular.Text) Or
-            String.IsNullOrEmpty(cbDepartamento.SelectedIndex) Or
-           String.IsNullOrEmpty(ComboMunicipio.SelectedIndex) Or
+        If String.IsNullOrEmpty(TextNombre.Text) OrElse
+           String.IsNullOrEmpty(TextCelular.Text) OrElse
+           String.IsNullOrEmpty(cbDepartamento.SelectedIndex) OrElse
+           String.IsNullOrEmpty(ComboMunicipio.SelectedIndex) OrElse
            String.IsNullOrEmpty(TextDireccion.Text) Then
+
         Else
             Return True
         End If
@@ -40,9 +41,7 @@
         End Try
     End Sub
     Private Sub cargarComboDepartamento()
-        Dim params As New List(Of String)
-
-        Generales.cargarCombo("[SP_CONSULTAR_DEPARTAMENTO]", params, "Nombre", "Codigo_Departamento", cbDepartamento)
+        Generales.cargarCombo("[SP_CONSULTAR_DEPARTAMENTO]", Nothing, "descripcion", "Codigo_Departamento", cbDepartamento)
     End Sub
     Private Sub cargarComboCiudad()
         Dim params As New List(Of String)
@@ -94,7 +93,6 @@
             btBuscar.Enabled = True
         End If
     End Sub
-
     Private Sub btAnular_Click(sender As Object, e As EventArgs) Handles btAnular.Click
         If EstiloMensajes.mostrarMensajePregunta(MensajeSistema.ANULAR) = Constantes.SI Then
             Try
@@ -110,7 +108,6 @@
             End Try
         End If
     End Sub
-
     Private Sub btBuscar_Click(sender As Object, e As EventArgs) Handles btBuscar.Click
         Dim params As New List(Of String)
         params.Add(String.Empty)
@@ -132,8 +129,8 @@
                 TextTelefono.Text = If(IsDBNull(dfila("Telefono")), Nothing, dfila("Telefono"))
                 TextCelular.Text = dfila("Celular")
                 TextDireccion.Text = dfila("Direccion")
-                cbDepartamento.SelectedValue = dfila("Departamento")
-                ComboMunicipio.SelectedValue = dfila("Ciudad")
+                cbDepartamento.SelectedValue = dfila("Codigo_Departamento")
+                ComboMunicipio.SelectedValue = dfila("Codigo_Ciudad")
             End If
             Generales.habilitarBotones(ToolStrip1)
             btCancelar.Enabled = False

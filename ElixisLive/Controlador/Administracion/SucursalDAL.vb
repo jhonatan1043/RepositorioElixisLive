@@ -12,13 +12,10 @@ Public Class SucursalDAL
                     comando.Parameters.Clear()
                     comando.CommandText = objSucursal.sqlGuardar
                     comando.Parameters.Add(New SqlParameter("@Codigo", SqlDbType.NVarChar)).Value = objSucursal.codigo
-                    comando.Parameters.Add(New SqlParameter("@Ident_Responsable", SqlDbType.NVarChar)).Value = objSucursal.identiResponsable
-                    comando.Parameters.Add(New SqlParameter("@Responsable", SqlDbType.NVarChar)).Value = objSucursal.responsable
                     comando.Parameters.Add(New SqlParameter("@Nombre", SqlDbType.NVarChar)).Value = objSucursal.nombre
                     comando.Parameters.Add(New SqlParameter("@telefono", SqlDbType.NVarChar)).Value = objSucursal.telefono
                     comando.Parameters.Add(New SqlParameter("@celular", SqlDbType.NVarChar)).Value = objSucursal.celular
                     comando.Parameters.Add(New SqlParameter("@direccion", SqlDbType.NVarChar)).Value = objSucursal.direccion
-                    comando.Parameters.Add(New SqlParameter("@codigo_Pais", SqlDbType.NVarChar)).Value = objSucursal.codigoPais
                     comando.Parameters.Add(New SqlParameter("@codigo_Departamento", SqlDbType.NVarChar)).Value = objSucursal.codigoDepartamento
                     comando.Parameters.Add(New SqlParameter("@codigo_ciudad", SqlDbType.NVarChar)).Value = objSucursal.codigoCiudad
                     comando.Parameters.Add(New SqlParameter("@Usuario_Creacion", SqlDbType.NVarChar)).Value = SesionActual.idUsuario
