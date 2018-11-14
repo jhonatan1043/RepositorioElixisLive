@@ -7,6 +7,7 @@
     Public Const SIGNO_PESO = "$"
     Public Const ID_PRODUCTO = "P"
     Public Const ID_SERVICIO = "S"
+    Public Const CODIGO_EMPRESA = 0
     Public Enum TIPO_CONTROL
         COMBO = 0
         SELECTOR = 1

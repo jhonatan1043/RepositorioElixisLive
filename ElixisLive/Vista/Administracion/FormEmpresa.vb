@@ -8,6 +8,7 @@
         objEmpresa.correo = TextEmail.Text
         objEmpresa.direccion = TextDireccion.Text
         objEmpresa.encabezado = txtEncabezado.Text
+        objEmpresa.codigoDepartamento = cbDepartamento.SelectedValue
         objEmpresa.codigoCiudad = ComboMunicipio.SelectedValue
         objEmpresa.pie = txtPie.Text
         objEmpresa.dtParametro = dgvParametro.DataSource
@@ -41,48 +42,29 @@
         Try
             CheckForIllegalCrossThreadCalls = False
             params.Add(ElementoMenu.codigo)
-            Generales.deshabilitarBotones(ToolStrip1)
-            Generales.deshabilitarControles(Me)
-            btNuevo.Enabled = True
-            btBuscar.Enabled = True
             Generales.llenardgv("SP_CONSULTAR_PARAMETROS", dgvParametro, params)
             Generales.diseñoDGV(dgvParametro)
             Generales.diseñoGrillaParametros(dgvParametro)
-            Generales.cargarCombo("[SP_CONSULTAR_CIUDAD]", Nothing, "descripcion", "Codigo_Municipio", ComboMunicipio)
+            cargarComboDepartamento()
+            cargarComboCiudad()
+            cargarInfomacion(Constantes.CODIGO_EMPRESA)
         Catch ex As Exception
             EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
         End Try
-        If txtId.Text = String.Empty Then
-            btNuevo_Click(sender, e)
-        End If
     End Sub
-    Private Sub btNuevo_Click(sender As Object, e As EventArgs) Handles btNuevo.Click
-        Generales.deshabilitarBotones(ToolStrip1)
-        Generales.habilitarControles(Me)
-        Generales.limpiarControles(Me)
-        objEmpresa.codigo = Nothing
-        btCancelar.Enabled = True
-        btRegistrar.Enabled = True
-    End Sub
-
     Private Sub btRegistrar_Click(sender As Object, e As EventArgs) Handles btRegistrar.Click
         dgvParametro.EndEdit()
         If validarCampos() = True Then
             Try
                 cargarObjeto()
                 EmpresaBLL.guardar(objEmpresa)
-                Generales.deshabilitarBotones(ToolStrip1)
-                Generales.deshabilitarControles(Me)
-                btNuevo.Enabled = True
-                btEditar.Enabled = True
-                btBuscar.Enabled = True
+                cargarInfomacion(Constantes.CODIGO_EMPRESA)
                 EstiloMensajes.mostrarMensajeExitoso(MensajeSistema.REGISTRO_GUARDADO)
             Catch ex As Exception
                 EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
             End Try
         End If
     End Sub
-
     Private Sub btEditar_Click(sender As Object, e As EventArgs) Handles btEditar.Click
         If EstiloMensajes.mostrarMensajePregunta(MensajeSistema.EDITAR) = Constantes.SI Then
             Generales.habilitarControles(Me)
@@ -91,40 +73,10 @@
             btRegistrar.Enabled = True
         End If
     End Sub
-
     Private Sub btCancelar_Click(sender As Object, e As EventArgs) Handles btCancelar.Click
         If EstiloMensajes.mostrarMensajePregunta(MensajeSistema.CANCELAR) = Constantes.SI Then
-            Generales.deshabilitarBotones(ToolStrip1)
-            Generales.deshabilitarControles(Me)
-            btNuevo.Enabled = True
-            btBuscar.Enabled = True
+            cargarInfomacion(Constantes.CODIGO_EMPRESA)
         End If
-    End Sub
-
-    Private Sub btAnular_Click(sender As Object, e As EventArgs) Handles btAnular.Click
-        If EstiloMensajes.mostrarMensajePregunta(MensajeSistema.ANULAR) = Constantes.SI Then
-            Try
-                If Generales.ejecutarSQL(objEmpresa.sqlAnular) = True Then
-                    Generales.limpiarControles(Me)
-                    Generales.deshabilitarBotones(ToolStrip1)
-                    btNuevo.Enabled = True
-                    btBuscar.Enabled = True
-                    EstiloMensajes.mostrarMensajeAnulado(MensajeSistema.REGISTRO_ANULADO)
-                End If
-            Catch ex As Exception
-                EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
-            End Try
-        End If
-    End Sub
-
-    Private Sub btBuscar_Click(sender As Object, e As EventArgs) Handles btBuscar.Click
-        Dim params As New List(Of String)
-        params.Add(String.Empty)
-        Generales.buscarElemento(objEmpresa.sqlConsulta,
-                                   params,
-                                   AddressOf cargarInfomacion,
-                                   "Busqueda de Empresa",
-                                   True, True)
     End Sub
     Private Sub txtId_TextChanged(sender As Object, e As EventArgs) Handles txtId.TextChanged
         Dim dV As New DigitoVerificacion
@@ -149,7 +101,8 @@
                 TextCelular.Text = dfila("Celular")
                 TextDireccion.Text = dfila("Direccion")
                 TextEmail.Text = If(IsDBNull(dfila("Email")), Nothing, dfila("Email"))
-                ComboMunicipio.SelectedValue = dfila("Ciudad")
+                cbDepartamento.SelectedValue = dfila("Codigo_Departamento")
+                ComboMunicipio.SelectedValue = dfila("Codigo_Ciudad")
                 txtEncabezado.Text = If(IsDBNull(dfila("Encabezado")), Nothing, dfila("Encabezado"))
                 txtPie.Text = If(IsDBNull(dfila("Pie_Factura")), Nothing, dfila("Pie_Factura"))
                 params.Add(ElementoMenu.codigo)
@@ -158,10 +111,24 @@
                 Generales.diseñoGrillaParametros(dgvParametro)
             End If
             Generales.habilitarBotones(ToolStrip1)
+            Generales.deshabilitarControles(Me)
             btCancelar.Enabled = False
             btRegistrar.Enabled = False
         Catch ex As Exception
             EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
         End Try
+    End Sub
+    Private Sub cargarComboDepartamento()
+        Generales.cargarCombo("[SP_CONSULTAR_DEPARTAMENTO]", Nothing, "descripcion", "Codigo_Departamento", cbDepartamento)
+    End Sub
+    Private Sub cargarComboCiudad()
+        Dim params As New List(Of String)
+        params.Add(cbDepartamento.SelectedValue)
+        Generales.cargarCombo("[SP_CONSULTAR_CIUDAD]", params, "descripcion", "Codigo_Municipio", ComboMunicipio)
+    End Sub
+    Private Sub cbDepartamento_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbDepartamento.SelectedIndexChanged
+        If cbDepartamento.ValueMember <> String.Empty Then
+            cargarComboCiudad()
+        End If
     End Sub
 End Class

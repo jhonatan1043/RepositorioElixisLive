@@ -25,7 +25,7 @@ Partial Class FormListaPrecio
         '
         'LTitulo
         '
-        Me.LTitulo.Text = "Lista de Precio Gastos"
+        Me.LTitulo.Text = "Lista de Precio "
         '
         'Pimagen
         '
@@ -35,7 +35,11 @@ Partial Class FormListaPrecio
         '
         'txtNombre
         '
-        Me.txtNombre.Size = New System.Drawing.Size(243, 22)
+        Me.txtNombre.Size = New System.Drawing.Size(236, 22)
+        '
+        'Label2
+        '
+        Me.Label2.Location = New System.Drawing.Point(318, 13)
         '
         'FormListaPrecio
         '

@@ -25,14 +25,17 @@ Partial Class FormEmpresa
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.GbInform = New System.Windows.Forms.GroupBox()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.cbDepartamento = New System.Windows.Forms.ComboBox()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.ComboMunicipio = New System.Windows.Forms.ComboBox()
+        Me.Label12 = New System.Windows.Forms.Label()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.txtPie = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.txtEncabezado = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
-        Me.ComboMunicipio = New System.Windows.Forms.ComboBox()
-        Me.Label12 = New System.Windows.Forms.Label()
         Me.TextDireccion = New System.Windows.Forms.TextBox()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.TextEmail = New System.Windows.Forms.TextBox()
@@ -67,6 +70,7 @@ Partial Class FormEmpresa
         Me.Pimagen = New System.Windows.Forms.PictureBox()
         Me.LTitulo = New System.Windows.Forms.Label()
         Me.GbInform.SuspendLayout()
+        Me.GroupBox1.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         Me.GroupBox5.SuspendLayout()
         Me.GbInform_D.SuspendLayout()
@@ -80,6 +84,7 @@ Partial Class FormEmpresa
         'GbInform
         '
         Me.GbInform.BackColor = System.Drawing.Color.Transparent
+        Me.GbInform.Controls.Add(Me.GroupBox1)
         Me.GbInform.Controls.Add(Me.GroupBox3)
         Me.GbInform.Controls.Add(Me.GroupBox5)
         Me.GbInform.Controls.Add(Me.TxtDescripcion)
@@ -93,6 +98,60 @@ Partial Class FormEmpresa
         Me.GbInform.TabIndex = 9
         Me.GbInform.TabStop = False
         '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Me.cbDepartamento)
+        Me.GroupBox1.Controls.Add(Me.Label5)
+        Me.GroupBox1.Controls.Add(Me.ComboMunicipio)
+        Me.GroupBox1.Controls.Add(Me.Label12)
+        Me.GroupBox1.Location = New System.Drawing.Point(6, 127)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(874, 42)
+        Me.GroupBox1.TabIndex = 63
+        Me.GroupBox1.TabStop = False
+        '
+        'cbDepartamento
+        '
+        Me.cbDepartamento.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cbDepartamento.FormattingEnabled = True
+        Me.cbDepartamento.Location = New System.Drawing.Point(124, 11)
+        Me.cbDepartamento.Name = "cbDepartamento"
+        Me.cbDepartamento.Size = New System.Drawing.Size(294, 25)
+        Me.cbDepartamento.TabIndex = 38
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.BackColor = System.Drawing.Color.Transparent
+        Me.Label5.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.ForeColor = System.Drawing.Color.Black
+        Me.Label5.Location = New System.Drawing.Point(9, 14)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(107, 19)
+        Me.Label5.TabIndex = 37
+        Me.Label5.Text = "Departamento:"
+        '
+        'ComboMunicipio
+        '
+        Me.ComboMunicipio.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ComboMunicipio.FormattingEnabled = True
+        Me.ComboMunicipio.Location = New System.Drawing.Point(539, 11)
+        Me.ComboMunicipio.Name = "ComboMunicipio"
+        Me.ComboMunicipio.Size = New System.Drawing.Size(321, 25)
+        Me.ComboMunicipio.TabIndex = 36
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.BackColor = System.Drawing.Color.Transparent
+        Me.Label12.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label12.ForeColor = System.Drawing.Color.Black
+        Me.Label12.Location = New System.Drawing.Point(457, 14)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(78, 19)
+        Me.Label12.TabIndex = 35
+        Me.Label12.Text = "Municipio:"
+        '
         'GroupBox3
         '
         Me.GroupBox3.Controls.Add(Me.txtPie)
@@ -101,7 +160,7 @@ Partial Class FormEmpresa
         Me.GroupBox3.Controls.Add(Me.Label3)
         Me.GroupBox3.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox3.ForeColor = System.Drawing.Color.DarkBlue
-        Me.GroupBox3.Location = New System.Drawing.Point(8, 130)
+        Me.GroupBox3.Location = New System.Drawing.Point(8, 169)
         Me.GroupBox3.Name = "GroupBox3"
         Me.GroupBox3.Size = New System.Drawing.Size(873, 72)
         Me.GroupBox3.TabIndex = 62
@@ -156,8 +215,6 @@ Partial Class FormEmpresa
         '
         'GroupBox5
         '
-        Me.GroupBox5.Controls.Add(Me.ComboMunicipio)
-        Me.GroupBox5.Controls.Add(Me.Label12)
         Me.GroupBox5.Controls.Add(Me.TextDireccion)
         Me.GroupBox5.Controls.Add(Me.Label11)
         Me.GroupBox5.Controls.Add(Me.TextEmail)
@@ -175,32 +232,11 @@ Partial Class FormEmpresa
         Me.GroupBox5.TabStop = False
         Me.GroupBox5.Text = "Información de la Empresa"
         '
-        'ComboMunicipio
-        '
-        Me.ComboMunicipio.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ComboMunicipio.FormattingEnabled = True
-        Me.ComboMunicipio.Location = New System.Drawing.Point(547, 48)
-        Me.ComboMunicipio.Name = "ComboMunicipio"
-        Me.ComboMunicipio.Size = New System.Drawing.Size(321, 25)
-        Me.ComboMunicipio.TabIndex = 36
-        '
-        'Label12
-        '
-        Me.Label12.AutoSize = True
-        Me.Label12.BackColor = System.Drawing.Color.Transparent
-        Me.Label12.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.ForeColor = System.Drawing.Color.Black
-        Me.Label12.Location = New System.Drawing.Point(473, 50)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(78, 19)
-        Me.Label12.TabIndex = 35
-        Me.Label12.Text = "Municipio:"
-        '
         'TextDireccion
         '
         Me.TextDireccion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TextDireccion.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextDireccion.Location = New System.Drawing.Point(547, 14)
+        Me.TextDireccion.Location = New System.Drawing.Point(547, 16)
         Me.TextDireccion.Name = "TextDireccion"
         Me.TextDireccion.Size = New System.Drawing.Size(321, 25)
         Me.TextDireccion.TabIndex = 30
@@ -211,7 +247,7 @@ Partial Class FormEmpresa
         Me.Label11.BackColor = System.Drawing.Color.Transparent
         Me.Label11.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label11.ForeColor = System.Drawing.Color.Black
-        Me.Label11.Location = New System.Drawing.Point(473, 16)
+        Me.Label11.Location = New System.Drawing.Point(467, 20)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(75, 19)
         Me.Label11.TabIndex = 29
@@ -224,7 +260,7 @@ Partial Class FormEmpresa
         Me.TextEmail.Location = New System.Drawing.Point(90, 49)
         Me.TextEmail.MaxLength = 50
         Me.TextEmail.Name = "TextEmail"
-        Me.TextEmail.Size = New System.Drawing.Size(377, 25)
+        Me.TextEmail.Size = New System.Drawing.Size(778, 25)
         Me.TextEmail.TabIndex = 28
         '
         'Label7
@@ -252,7 +288,7 @@ Partial Class FormEmpresa
         '
         Me.TextCelular.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TextCelular.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextCelular.Location = New System.Drawing.Point(336, 14)
+        Me.TextCelular.Location = New System.Drawing.Point(301, 19)
         Me.TextCelular.Name = "TextCelular"
         Me.TextCelular.Size = New System.Drawing.Size(131, 25)
         Me.TextCelular.TabIndex = 25
@@ -263,7 +299,7 @@ Partial Class FormEmpresa
         Me.Label9.BackColor = System.Drawing.Color.Transparent
         Me.Label9.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label9.ForeColor = System.Drawing.Color.Black
-        Me.Label9.Location = New System.Drawing.Point(234, 20)
+        Me.Label9.Location = New System.Drawing.Point(234, 22)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(62, 19)
         Me.Label9.TabIndex = 23
@@ -296,9 +332,9 @@ Partial Class FormEmpresa
         Me.GbInform_D.Controls.Add(Me.dgvParametro)
         Me.GbInform_D.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GbInform_D.ForeColor = System.Drawing.Color.DarkBlue
-        Me.GbInform_D.Location = New System.Drawing.Point(8, 208)
+        Me.GbInform_D.Location = New System.Drawing.Point(8, 246)
         Me.GbInform_D.Name = "GbInform_D"
-        Me.GbInform_D.Size = New System.Drawing.Size(874, 230)
+        Me.GbInform_D.Size = New System.Drawing.Size(874, 192)
         Me.GbInform_D.TabIndex = 59
         Me.GbInform_D.TabStop = False
         Me.GbInform_D.Text = "Otra Información de la Empresa"
@@ -390,7 +426,7 @@ Partial Class FormEmpresa
         Me.ToolStrip1.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.ToolStrip1.ImageScalingSize = New System.Drawing.Size(26, 26)
         Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripSeparator1, Me.btNuevo, Me.ToolStripSeparator7, Me.btBuscar, Me.ToolStripSeparator2, Me.btRegistrar, Me.ToolStripSeparator4, Me.btEditar, Me.ToolStripSeparator5, Me.btCancelar, Me.ToolStripSeparator3, Me.btAnular, Me.ToolStripSeparator6})
-        Me.ToolStrip1.Location = New System.Drawing.Point(0, 490)
+        Me.ToolStrip1.Location = New System.Drawing.Point(0, 491)
         Me.ToolStrip1.Name = "ToolStrip1"
         Me.ToolStrip1.Size = New System.Drawing.Size(905, 33)
         Me.ToolStrip1.TabIndex = 14
@@ -544,7 +580,7 @@ Partial Class FormEmpresa
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(905, 523)
+        Me.ClientSize = New System.Drawing.Size(905, 524)
         Me.Controls.Add(Me.GbInform)
         Me.Controls.Add(Me.ToolStrip1)
         Me.Controls.Add(Me.Panel1)
@@ -557,6 +593,8 @@ Partial Class FormEmpresa
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.GbInform.ResumeLayout(False)
         Me.GbInform.PerformLayout()
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
         Me.GroupBox5.ResumeLayout(False)
@@ -615,4 +653,7 @@ Partial Class FormEmpresa
     Public WithEvents Label4 As Label
     Public WithEvents txtEncabezado As TextBox
     Public WithEvents Label3 As Label
+    Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents cbDepartamento As ComboBox
+    Public WithEvents Label5 As Label
 End Class

@@ -22,18 +22,14 @@ Public Class Funciones
         Return listaParams
 
     End Function
-    Public Shared Function consulInicioSesion(params As List(Of String)) As String
-        Dim idUsuario As String = String.Empty
-        Dim dFila As DataRow
+    Public Shared Function consulInicioSesion(params As List(Of String)) As DataRow
+        Dim dFila As DataRow = Nothing
         Try
             dFila = Generales.cargarItem("[SP_ADMIN_INICIO_SESION]", params)
-            If Not IsDBNull(dFila.Item(0)) Then
-                idUsuario = dFila.Item(0)
-            End If
         Catch ex As Exception
             EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
         End Try
-        Return idUsuario
+        Return dFila
     End Function
     Public Shared Function castFromDbItemVacio(ByVal DbItem As Object) As Object
         If IsDBNull(DbItem) Then

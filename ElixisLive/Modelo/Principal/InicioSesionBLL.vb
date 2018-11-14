@@ -2,19 +2,20 @@
     Property usuario As String
     Property contrasena As String
     Property codigoSucursal As String
+    Property codigoEmpresa As String
     Public Function inicioSesionCargar() As Boolean
         Dim params As New List(Of String)
-        Dim resultado As String
+        Dim Dresultado As DataRow
         Dim banderaForm As Boolean
 
         params.Add(usuario)
         params.Add(contrasena)
         params.Add(codigoSucursal)
 
-        resultado = Funciones.consulInicioSesion(params)
+        Dresultado = Funciones.consulInicioSesion(params)
 
-        If Not String.IsNullOrEmpty(resultado) Then
-            SesionActual.idUsuario = resultado
+        If Not IsNothing(Dresultado) Then
+            SesionActual.idUsuario = Dresultado.Item(0)
             SesionActual.codigoSucursal = codigoSucursal
             FormPrincipal.Show()
             banderaForm = True
