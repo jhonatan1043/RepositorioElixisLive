@@ -8,7 +8,7 @@
     Property codigoTipoIdentificacion As Integer
     Property direccion As String
     Property correo As String
-    Property codigoPais As String
+    Property codigoSede As Int16
     Property codigoDepartamento As String
     Property codigoCiudad As String
     Property encabezado As String
@@ -19,6 +19,8 @@
     Property foto As String
     Property bdraControl As Boolean
     Property imagen As PictureBox
+    Property usuario As String
+    Property codigoPerfil As Integer
     Public Sub New()
         dtRegistro = New DataTable
         sqlGuardar = "SP_ADMIN_PERSONA_CREAR"

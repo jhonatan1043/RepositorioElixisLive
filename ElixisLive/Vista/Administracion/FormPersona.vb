@@ -7,7 +7,7 @@
         objPersona.celular = TextCelular.Text
         objPersona.correo = TextEmail.Text
         objPersona.direccion = TextDireccion.Text
-        objPersona.codigoPais = cbPais.SelectedValue
+        objPersona.codigoSede = cbSede.SelectedValue
         objPersona.codigoDepartamento = cbDepartamento.SelectedValue
         objPersona.codigoCiudad = ComboMunicipio.SelectedValue
         objPersona.codigoTipoIdentificacion = CombotipoIdentificacion.SelectedValue
@@ -21,8 +21,8 @@
             EstiloMensajes.mostrarMensajeAdvertencia("¡Debe digitar el nombre de la persona!")
         ElseIf String.IsNullOrEmpty(TextCelular.Text) Then
             EstiloMensajes.mostrarMensajeAdvertencia("¡Debe digitar el Numero de celular de la persona!")
-        ElseIf String.IsNullOrEmpty(cbPais.SelectedIndex) Then
-            EstiloMensajes.mostrarMensajeAdvertencia("¡Debe seleccionar el pais de la persona!")
+        ElseIf String.IsNullOrEmpty(cbSede.SelectedIndex) Then
+            EstiloMensajes.mostrarMensajeAdvertencia("¡Debe seleccionar la sede de la persona!")
         ElseIf String.IsNullOrEmpty(cbDepartamento.SelectedIndex) Then
             EstiloMensajes.mostrarMensajeAdvertencia("¡Debe seleccionar la departamento de la persona!")
         ElseIf String.IsNullOrEmpty(ComboMunicipio.SelectedIndex) Then
@@ -44,9 +44,9 @@
     Private Sub FormBase_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         objPersona = New persona
         Try
-            cargarComboPais()
             cargarComboDepartamento()
             cargarComboCiudad()
+            Generales.cargarCombo("[SP_CONFI_SUCURSAL_CONSULTAR] ''", Nothing, "Nombre", "Código", cbSede)
             Generales.cargarCombo("[SP_CONSULTAR_TIPO_IDENT]", Nothing, "Nombre", "Codigo", CombotipoIdentificacion)
             Generales.deshabilitarBotones(ToolStrip1)
             Generales.deshabilitarControles(Me)
@@ -56,15 +56,8 @@
             EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
         End Try
     End Sub
-    Private Sub cargarComboPais()
-        Generales.cargarCombo("[SP_CONSULTAR_PAIS]", Nothing, "descripcion", "Codigo_Pais", cbPais)
-    End Sub
     Private Sub cargarComboDepartamento()
-        Dim params As New List(Of String)
-        If Not String.IsNullOrEmpty(cbPais.ValueMember) Then
-            params.Add(cbPais.SelectedValue)
-            Generales.cargarCombo("[SP_CONSULTAR_DEPARTAMENTO]", params, "descripcion", "Codigo_Departamento", cbDepartamento)
-        End If
+        Generales.cargarCombo("[SP_CONSULTAR_DEPARTAMENTO]", Nothing, "descripcion", "Codigo_Departamento", cbDepartamento)
     End Sub
     Private Sub cargarComboCiudad()
         Dim params As New List(Of String)
@@ -76,12 +69,12 @@
     Private Sub btNuevo_Click(sender As Object, e As EventArgs) Handles btNuevo.Click
         Generales.deshabilitarBotones(ToolStrip1)
         Generales.habilitarControles(Me)
+        Generales.deshabilitarControles(GroupBox1)
         Generales.limpiarControles(Me)
         objPersona.codigo = Nothing
         btCancelar.Enabled = True
         btRegistrar.Enabled = True
     End Sub
-
     Private Sub btRegistrar_Click(sender As Object, e As EventArgs) Handles btRegistrar.Click
         If validarCampos() = True Then
             Try
@@ -97,7 +90,6 @@
             End Try
         End If
     End Sub
-
     Private Sub btEditar_Click(sender As Object, e As EventArgs) Handles btEditar.Click
         If EstiloMensajes.mostrarMensajePregunta(MensajeSistema.EDITAR) = Constantes.SI Then
             Generales.deshabilitarBotones(ToolStrip1)
@@ -106,7 +98,6 @@
             btRegistrar.Enabled = True
         End If
     End Sub
-
     Private Sub btCancelar_Click(sender As Object, e As EventArgs) Handles btCancelar.Click
         If EstiloMensajes.mostrarMensajePregunta(MensajeSistema.CANCELAR) = Constantes.SI Then
             Generales.deshabilitarBotones(ToolStrip1)
@@ -116,7 +107,6 @@
             btBuscar.Enabled = True
         End If
     End Sub
-
     Private Sub btAnular_Click(sender As Object, e As EventArgs) Handles btAnular.Click
         If EstiloMensajes.mostrarMensajePregunta(MensajeSistema.ANULAR) = Constantes.SI Then
             Try
@@ -132,7 +122,6 @@
             End Try
         End If
     End Sub
-
     Private Sub btBuscar_Click(sender As Object, e As EventArgs) Handles btBuscar.Click
         Dim params As New List(Of String)
         params.Add(String.Empty)
@@ -157,7 +146,7 @@
                 TextDireccion.Text = dfila("Direccion")
                 TextEmail.Text = If(IsDBNull(dfila("Email")), Nothing, dfila("Email"))
                 CombotipoIdentificacion.SelectedValue = dfila("Tipo_Identificacion")
-                cbPais.SelectedValue = dfila("Codigo_pais")
+                cbSede.SelectedValue = dfila("Codigo_Sucursal")
                 cbDepartamento.SelectedValue = dfila("Codigo_Departamento")
                 ComboMunicipio.SelectedValue = dfila("Codigo_Ciudad")
             End If
@@ -168,13 +157,32 @@
             EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
         End Try
     End Sub
-    Private Sub cbPais_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbPais.SelectedIndexChanged
-        cargarComboDepartamento()
-    End Sub
     Private Sub cbDepartamento_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbDepartamento.SelectedIndexChanged
         cargarComboCiudad()
     End Sub
     Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked
         Generales.cargarForm(FormPerfil)
+    End Sub
+    Private Sub chUsuario_Click(sender As Object, e As EventArgs) Handles chUsuario.Click
+        If chUsuario.Checked = True Then
+            If Not String.IsNullOrWhiteSpace(TextNombre.Text) Then
+                txtUsuario.ReadOnly = False
+                btBuscarPerfil.Enabled = True
+            Else
+                EstiloMensajes.mostrarMensajeAdvertencia(" ¡ Debe digitar el nombre de la persona !")
+                TextNombre.Focus()
+            End If
+        Else
+            btBuscarPerfil.Enabled = False
+            txtPerfil.Clear()
+            txtUsuario.Clear()
+        End If
+    End Sub
+    Private Sub txtUsuario_TextChanged(sender As Object, e As EventArgs) Handles txtUsuario.TextChanged
+        If Funciones.consulUsuario(txtUsuario.Text) = True Then
+            ErrorIcono.SetError(txtUsuario, "Usuario Existente")
+        Else
+            ErrorIcono.SetError(txtUsuario, "")
+        End If
     End Sub
 End Class

@@ -17,7 +17,7 @@ Public Class PersonaDAL
                     comando.Parameters.Add(New SqlParameter("@telefono", SqlDbType.NVarChar)).Value = objPersona.telefono
                     comando.Parameters.Add(New SqlParameter("@celular", SqlDbType.NVarChar)).Value = objPersona.celular
                     comando.Parameters.Add(New SqlParameter("@direccion", SqlDbType.NVarChar)).Value = objPersona.direccion
-                    comando.Parameters.Add(New SqlParameter("@codigo_Pais", SqlDbType.NVarChar)).Value = objPersona.codigoPais
+                    comando.Parameters.Add(New SqlParameter("@codigo_sede", SqlDbType.Int)).Value = objPersona.codigoSede
                     comando.Parameters.Add(New SqlParameter("@codigo_Departamento", SqlDbType.NVarChar)).Value = objPersona.codigoDepartamento
                     comando.Parameters.Add(New SqlParameter("@codigo_ciudad", SqlDbType.NVarChar)).Value = objPersona.codigoCiudad
                     comando.Parameters.Add(New SqlParameter("@codigo_Tipo_Identificacion", SqlDbType.Int)).Value = objPersona.codigoTipoIdentificacion

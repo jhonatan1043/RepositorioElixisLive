@@ -31,6 +31,19 @@ Public Class Funciones
         End Try
         Return dFila
     End Function
+    Public Shared Function consulUsuario(usuario) As Boolean
+        Dim resultado As Boolean
+        Dim dFila As DataRow = Nothing
+        Dim params As New List(Of String)
+        Try
+            params.Add(usuario)
+            dFila = Generales.cargarItem("[FN_PERS_VERIFICAR_USUARIO]", params)
+            resultado = dFila.Item(0)
+        Catch ex As Exception
+            EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
+        End Try
+        Return resultado
+    End Function
     Public Shared Function castFromDbItemVacio(ByVal DbItem As Object) As Object
         If IsDBNull(DbItem) Then
             Return ""

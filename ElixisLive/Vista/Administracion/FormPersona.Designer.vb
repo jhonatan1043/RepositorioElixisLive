@@ -22,6 +22,7 @@ Partial Class FormPersona
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Pimagen = New System.Windows.Forms.PictureBox()
         Me.LTitulo = New System.Windows.Forms.Label()
@@ -42,11 +43,11 @@ Partial Class FormPersona
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
+        Me.chUsuario = New System.Windows.Forms.CheckBox()
         Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.btBuscarPerfil = New System.Windows.Forms.Button()
+        Me.txtPerfil = New System.Windows.Forms.TextBox()
+        Me.txtUsuario = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
         Me.TextEmail = New System.Windows.Forms.TextBox()
@@ -56,6 +57,12 @@ Partial Class FormPersona
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.GroupBox6 = New System.Windows.Forms.GroupBox()
+        Me.cbSede = New System.Windows.Forms.ComboBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.cbDepartamento = New System.Windows.Forms.ComboBox()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.ComboMunicipio = New System.Windows.Forms.ComboBox()
+        Me.Label12 = New System.Windows.Forms.Label()
         Me.TextDireccion = New System.Windows.Forms.TextBox()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.GroupBox7 = New System.Windows.Forms.GroupBox()
@@ -66,12 +73,7 @@ Partial Class FormPersona
         Me.TextIdentificacion = New System.Windows.Forms.TextBox()
         Me.Label19 = New System.Windows.Forms.Label()
         Me.Label20 = New System.Windows.Forms.Label()
-        Me.cbPais = New System.Windows.Forms.ComboBox()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.cbDepartamento = New System.Windows.Forms.ComboBox()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.ComboMunicipio = New System.Windows.Forms.ComboBox()
-        Me.Label12 = New System.Windows.Forms.Label()
+        Me.ErrorIcono = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.Panel1.SuspendLayout()
         CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ToolStrip1.SuspendLayout()
@@ -80,6 +82,7 @@ Partial Class FormPersona
         Me.GroupBox5.SuspendLayout()
         Me.GroupBox6.SuspendLayout()
         Me.GroupBox7.SuspendLayout()
+        CType(Me.ErrorIcono, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
@@ -248,17 +251,17 @@ Partial Class FormPersona
         'GroupBox1
         '
         Me.GroupBox1.Controls.Add(Me.Label2)
-        Me.GroupBox1.Controls.Add(Me.CheckBox1)
+        Me.GroupBox1.Controls.Add(Me.chUsuario)
         Me.GroupBox1.Controls.Add(Me.LinkLabel1)
-        Me.GroupBox1.Controls.Add(Me.Button1)
-        Me.GroupBox1.Controls.Add(Me.TextBox4)
-        Me.GroupBox1.Controls.Add(Me.TextBox1)
+        Me.GroupBox1.Controls.Add(Me.btBuscarPerfil)
+        Me.GroupBox1.Controls.Add(Me.txtPerfil)
+        Me.GroupBox1.Controls.Add(Me.txtUsuario)
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Font = New System.Drawing.Font("Times New Roman", 8.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox1.ForeColor = System.Drawing.Color.DarkBlue
         Me.GroupBox1.Location = New System.Drawing.Point(7, 226)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(692, 122)
+        Me.GroupBox1.Size = New System.Drawing.Size(692, 109)
         Me.GroupBox1.TabIndex = 12
         Me.GroupBox1.TabStop = False
         '
@@ -274,19 +277,19 @@ Partial Class FormPersona
         Me.Label2.TabIndex = 68
         Me.Label2.Text = "Perfíl:"
         '
-        'CheckBox1
+        'chUsuario
         '
-        Me.CheckBox1.AutoSize = True
-        Me.CheckBox1.Checked = True
-        Me.CheckBox1.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.CheckBox1.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CheckBox1.ForeColor = System.Drawing.Color.SteelBlue
-        Me.CheckBox1.Location = New System.Drawing.Point(10, 13)
-        Me.CheckBox1.Name = "CheckBox1"
-        Me.CheckBox1.Size = New System.Drawing.Size(136, 23)
-        Me.CheckBox1.TabIndex = 29
-        Me.CheckBox1.Text = "Asignar usuario"
-        Me.CheckBox1.UseVisualStyleBackColor = True
+        Me.chUsuario.AutoSize = True
+        Me.chUsuario.Checked = True
+        Me.chUsuario.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.chUsuario.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.chUsuario.ForeColor = System.Drawing.Color.SteelBlue
+        Me.chUsuario.Location = New System.Drawing.Point(4, 10)
+        Me.chUsuario.Name = "chUsuario"
+        Me.chUsuario.Size = New System.Drawing.Size(136, 23)
+        Me.chUsuario.TabIndex = 29
+        Me.chUsuario.Text = "Asignar usuario"
+        Me.chUsuario.UseVisualStyleBackColor = True
         '
         'LinkLabel1
         '
@@ -294,43 +297,43 @@ Partial Class FormPersona
         Me.LinkLabel1.AutoSize = True
         Me.LinkLabel1.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LinkLabel1.ForeColor = System.Drawing.Color.SteelBlue
-        Me.LinkLabel1.Location = New System.Drawing.Point(520, 76)
+        Me.LinkLabel1.Location = New System.Drawing.Point(549, 49)
         Me.LinkLabel1.Name = "LinkLabel1"
         Me.LinkLabel1.Size = New System.Drawing.Size(84, 19)
         Me.LinkLabel1.TabIndex = 30
         Me.LinkLabel1.TabStop = True
         Me.LinkLabel1.Text = "Crear perfíl"
         '
-        'Button1
+        'btBuscarPerfil
         '
-        Me.Button1.BackgroundImage = Global.Quality.My.Resources.Resources.fondo_azul
-        Me.Button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button1.Image = Global.Quality.My.Resources.Resources.Zoom_icon1
-        Me.Button1.Location = New System.Drawing.Point(438, 72)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(31, 30)
-        Me.Button1.TabIndex = 67
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.btBuscarPerfil.BackgroundImage = Global.Quality.My.Resources.Resources.fondo_azul
+        Me.btBuscarPerfil.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btBuscarPerfil.Image = Global.Quality.My.Resources.Resources.Zoom_icon1
+        Me.btBuscarPerfil.Location = New System.Drawing.Point(443, 72)
+        Me.btBuscarPerfil.Name = "btBuscarPerfil"
+        Me.btBuscarPerfil.Size = New System.Drawing.Size(31, 30)
+        Me.btBuscarPerfil.TabIndex = 67
+        Me.btBuscarPerfil.UseVisualStyleBackColor = True
         '
-        'TextBox4
+        'txtPerfil
         '
-        Me.TextBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextBox4.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox4.Location = New System.Drawing.Point(138, 74)
-        Me.TextBox4.MaxLength = 50
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(295, 25)
-        Me.TextBox4.TabIndex = 66
+        Me.txtPerfil.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtPerfil.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtPerfil.Location = New System.Drawing.Point(78, 77)
+        Me.txtPerfil.MaxLength = 50
+        Me.txtPerfil.Name = "txtPerfil"
+        Me.txtPerfil.Size = New System.Drawing.Size(362, 25)
+        Me.txtPerfil.TabIndex = 66
         '
-        'TextBox1
+        'txtUsuario
         '
-        Me.TextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextBox1.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox1.Location = New System.Drawing.Point(138, 46)
-        Me.TextBox1.MaxLength = 100
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(154, 25)
-        Me.TextBox1.TabIndex = 28
+        Me.txtUsuario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtUsuario.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtUsuario.Location = New System.Drawing.Point(78, 49)
+        Me.txtUsuario.MaxLength = 100
+        Me.txtUsuario.Name = "txtUsuario"
+        Me.txtUsuario.Size = New System.Drawing.Size(362, 25)
+        Me.txtUsuario.TabIndex = 28
         '
         'Label1
         '
@@ -429,7 +432,7 @@ Partial Class FormPersona
         '
         'GroupBox6
         '
-        Me.GroupBox6.Controls.Add(Me.cbPais)
+        Me.GroupBox6.Controls.Add(Me.cbSede)
         Me.GroupBox6.Controls.Add(Me.Label4)
         Me.GroupBox6.Controls.Add(Me.cbDepartamento)
         Me.GroupBox6.Controls.Add(Me.Label3)
@@ -446,14 +449,77 @@ Partial Class FormPersona
         Me.GroupBox6.TabStop = False
         Me.GroupBox6.Text = "Domocilio"
         '
+        'cbSede
+        '
+        Me.cbSede.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cbSede.FormattingEnabled = True
+        Me.cbSede.Location = New System.Drawing.Point(443, 41)
+        Me.cbSede.Name = "cbSede"
+        Me.cbSede.Size = New System.Drawing.Size(241, 25)
+        Me.cbSede.TabIndex = 44
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.BackColor = System.Drawing.Color.Transparent
+        Me.Label4.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.ForeColor = System.Drawing.Color.Black
+        Me.Label4.Location = New System.Drawing.Point(381, 46)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(44, 19)
+        Me.Label4.TabIndex = 43
+        Me.Label4.Text = "Sede:"
+        '
+        'cbDepartamento
+        '
+        Me.cbDepartamento.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cbDepartamento.FormattingEnabled = True
+        Me.cbDepartamento.Location = New System.Drawing.Point(119, 14)
+        Me.cbDepartamento.Name = "cbDepartamento"
+        Me.cbDepartamento.Size = New System.Drawing.Size(256, 25)
+        Me.cbDepartamento.TabIndex = 42
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.BackColor = System.Drawing.Color.Transparent
+        Me.Label3.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.Black
+        Me.Label3.Location = New System.Drawing.Point(6, 14)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(107, 19)
+        Me.Label3.TabIndex = 41
+        Me.Label3.Text = "Departamento:"
+        '
+        'ComboMunicipio
+        '
+        Me.ComboMunicipio.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ComboMunicipio.FormattingEnabled = True
+        Me.ComboMunicipio.Location = New System.Drawing.Point(443, 14)
+        Me.ComboMunicipio.Name = "ComboMunicipio"
+        Me.ComboMunicipio.Size = New System.Drawing.Size(241, 25)
+        Me.ComboMunicipio.TabIndex = 40
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.BackColor = System.Drawing.Color.Transparent
+        Me.Label12.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label12.ForeColor = System.Drawing.Color.Black
+        Me.Label12.Location = New System.Drawing.Point(381, 17)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(61, 19)
+        Me.Label12.TabIndex = 39
+        Me.Label12.Text = "Ciudad:"
+        '
         'TextDireccion
         '
         Me.TextDireccion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TextDireccion.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextDireccion.Location = New System.Drawing.Point(86, 43)
+        Me.TextDireccion.Location = New System.Drawing.Point(119, 43)
         Me.TextDireccion.MaxLength = 100
         Me.TextDireccion.Name = "TextDireccion"
-        Me.TextDireccion.Size = New System.Drawing.Size(598, 25)
+        Me.TextDireccion.Size = New System.Drawing.Size(256, 25)
         Me.TextDireccion.TabIndex = 28
         '
         'Label11
@@ -563,68 +629,9 @@ Partial Class FormPersona
         Me.Label20.TabIndex = 2
         Me.Label20.Text = "Tipo Identificación:"
         '
-        'cbPais
+        'ErrorIcono
         '
-        Me.cbPais.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cbPais.FormattingEnabled = True
-        Me.cbPais.Location = New System.Drawing.Point(86, 15)
-        Me.cbPais.Name = "cbPais"
-        Me.cbPais.Size = New System.Drawing.Size(127, 25)
-        Me.cbPais.TabIndex = 44
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.BackColor = System.Drawing.Color.Transparent
-        Me.Label4.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.ForeColor = System.Drawing.Color.Black
-        Me.Label4.Location = New System.Drawing.Point(5, 17)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(37, 19)
-        Me.Label4.TabIndex = 43
-        Me.Label4.Text = "Pais"
-        '
-        'cbDepartamento
-        '
-        Me.cbDepartamento.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cbDepartamento.FormattingEnabled = True
-        Me.cbDepartamento.Location = New System.Drawing.Point(342, 14)
-        Me.cbDepartamento.Name = "cbDepartamento"
-        Me.cbDepartamento.Size = New System.Drawing.Size(127, 25)
-        Me.cbDepartamento.TabIndex = 42
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.BackColor = System.Drawing.Color.Transparent
-        Me.Label3.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.ForeColor = System.Drawing.Color.Black
-        Me.Label3.Location = New System.Drawing.Point(235, 17)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(107, 19)
-        Me.Label3.TabIndex = 41
-        Me.Label3.Text = "Departamento:"
-        '
-        'ComboMunicipio
-        '
-        Me.ComboMunicipio.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ComboMunicipio.FormattingEnabled = True
-        Me.ComboMunicipio.Location = New System.Drawing.Point(550, 15)
-        Me.ComboMunicipio.Name = "ComboMunicipio"
-        Me.ComboMunicipio.Size = New System.Drawing.Size(133, 25)
-        Me.ComboMunicipio.TabIndex = 40
-        '
-        'Label12
-        '
-        Me.Label12.AutoSize = True
-        Me.Label12.BackColor = System.Drawing.Color.Transparent
-        Me.Label12.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.ForeColor = System.Drawing.Color.Black
-        Me.Label12.Location = New System.Drawing.Point(486, 17)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(61, 19)
-        Me.Label12.TabIndex = 39
-        Me.Label12.Text = "Ciudad:"
+        Me.ErrorIcono.ContainerControl = Me
         '
         'FormPersona
         '
@@ -655,6 +662,7 @@ Partial Class FormPersona
         Me.GroupBox6.PerformLayout()
         Me.GroupBox7.ResumeLayout(False)
         Me.GroupBox7.PerformLayout()
+        CType(Me.ErrorIcono, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -696,17 +704,18 @@ Partial Class FormPersona
     Public WithEvents Label19 As Label
     Public WithEvents Label20 As Label
     Friend WithEvents GroupBox1 As GroupBox
-    Public WithEvents TextBox1 As TextBox
+    Public WithEvents txtUsuario As TextBox
     Public WithEvents Label1 As Label
-    Friend WithEvents CheckBox1 As CheckBox
-    Friend WithEvents Button1 As Button
-    Public WithEvents TextBox4 As TextBox
+    Friend WithEvents chUsuario As CheckBox
+    Friend WithEvents btBuscarPerfil As Button
+    Public WithEvents txtPerfil As TextBox
     Friend WithEvents LinkLabel1 As LinkLabel
     Public WithEvents Label2 As Label
-    Friend WithEvents cbPais As ComboBox
-    Public WithEvents Label4 As Label
     Friend WithEvents cbDepartamento As ComboBox
     Public WithEvents Label3 As Label
     Friend WithEvents ComboMunicipio As ComboBox
     Public WithEvents Label12 As Label
+    Friend WithEvents cbSede As ComboBox
+    Public WithEvents Label4 As Label
+    Friend WithEvents ErrorIcono As ErrorProvider
 End Class
