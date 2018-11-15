@@ -14,16 +14,11 @@
         objEmpresa.dtParametro = dgvParametro.DataSource
     End Sub
     Private Function validarCampos() As Boolean
-        If String.IsNullOrEmpty(txtId.Text) Then
-            EstiloMensajes.mostrarMensajeAdvertencia("¡Debe digitar el nit de la Empresa!")
-        ElseIf String.IsNullOrEmpty(TxtDescripcion.Text) Then
-            EstiloMensajes.mostrarMensajeAdvertencia("¡Debe digitar el nombre de la empresa!")
-        ElseIf String.IsNullOrEmpty(TextCelular.Text) Then
-            EstiloMensajes.mostrarMensajeAdvertencia("¡Debe digitar el Numero de celular de la empresa!")
-        ElseIf String.IsNullOrEmpty(ComboMunicipio.SelectedIndex) Then
-            EstiloMensajes.mostrarMensajeAdvertencia("¡Debe seleccionar la ciudad de la empresa!")
-        ElseIf String.IsNullOrEmpty(TextDireccion.Text) Then
-            EstiloMensajes.mostrarMensajeAdvertencia("¡Debe digitar la dirección de la empresa!")
+        If String.IsNullOrEmpty(txtId.Text) Or
+           String.IsNullOrEmpty(TxtDescripcion.Text) Or
+           String.IsNullOrEmpty(TextCelular.Text) Or
+           String.IsNullOrEmpty(ComboMunicipio.SelectedIndex) Or
+           String.IsNullOrEmpty(TextDireccion.Text) Then
         Else
             Return True
         End If
@@ -63,6 +58,8 @@
             Catch ex As Exception
                 EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
             End Try
+        Else
+            EstiloMensajes.mostrarMensajeAdvertencia(MensajeSistema.VALIDAR_CAMPOS)
         End If
     End Sub
     Private Sub btEditar_Click(sender As Object, e As EventArgs) Handles btEditar.Click
@@ -131,4 +128,5 @@
             cargarComboCiudad()
         End If
     End Sub
+
 End Class

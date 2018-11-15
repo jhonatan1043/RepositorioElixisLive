@@ -31,7 +31,6 @@ Public Class FormInicioSesion
         End Try
     End Sub
     Private Function validarCampos() As Boolean
-
         If String.IsNullOrEmpty(txtUsuario.Text) Or String.IsNullOrEmpty(txtContraseña.Text) Or CbEmpresa.SelectedIndex > 0 Then
             Return True
         End If

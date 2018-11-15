@@ -22,6 +22,7 @@ Partial Class FormEmpresa
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.GbInform = New System.Windows.Forms.GroupBox()
@@ -69,6 +70,7 @@ Partial Class FormEmpresa
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Pimagen = New System.Windows.Forms.PictureBox()
         Me.LTitulo = New System.Windows.Forms.Label()
+        Me.iconoError = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.GbInform.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -79,6 +81,7 @@ Partial Class FormEmpresa
         Me.ToolStrip1.SuspendLayout()
         Me.Panel1.SuspendLayout()
         CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.iconoError, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GbInform
@@ -114,9 +117,9 @@ Partial Class FormEmpresa
         '
         Me.cbDepartamento.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbDepartamento.FormattingEnabled = True
-        Me.cbDepartamento.Location = New System.Drawing.Point(124, 11)
+        Me.cbDepartamento.Location = New System.Drawing.Point(135, 11)
         Me.cbDepartamento.Name = "cbDepartamento"
-        Me.cbDepartamento.Size = New System.Drawing.Size(294, 25)
+        Me.cbDepartamento.Size = New System.Drawing.Size(283, 25)
         Me.cbDepartamento.TabIndex = 38
         '
         'Label5
@@ -135,9 +138,9 @@ Partial Class FormEmpresa
         '
         Me.ComboMunicipio.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ComboMunicipio.FormattingEnabled = True
-        Me.ComboMunicipio.Location = New System.Drawing.Point(539, 11)
+        Me.ComboMunicipio.Location = New System.Drawing.Point(549, 11)
         Me.ComboMunicipio.Name = "ComboMunicipio"
-        Me.ComboMunicipio.Size = New System.Drawing.Size(321, 25)
+        Me.ComboMunicipio.Size = New System.Drawing.Size(311, 25)
         Me.ComboMunicipio.TabIndex = 36
         '
         'Label12
@@ -247,7 +250,7 @@ Partial Class FormEmpresa
         Me.Label11.BackColor = System.Drawing.Color.Transparent
         Me.Label11.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label11.ForeColor = System.Drawing.Color.Black
-        Me.Label11.Location = New System.Drawing.Point(467, 20)
+        Me.Label11.Location = New System.Drawing.Point(448, 20)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(75, 19)
         Me.Label11.TabIndex = 29
@@ -288,7 +291,7 @@ Partial Class FormEmpresa
         '
         Me.TextCelular.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TextCelular.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextCelular.Location = New System.Drawing.Point(301, 19)
+        Me.TextCelular.Location = New System.Drawing.Point(312, 19)
         Me.TextCelular.Name = "TextCelular"
         Me.TextCelular.Size = New System.Drawing.Size(131, 25)
         Me.TextCelular.TabIndex = 25
@@ -321,9 +324,9 @@ Partial Class FormEmpresa
         '
         Me.TxtDescripcion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TxtDescripcion.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtDescripcion.Location = New System.Drawing.Point(344, 17)
+        Me.TxtDescripcion.Location = New System.Drawing.Point(354, 17)
         Me.TxtDescripcion.Name = "TxtDescripcion"
-        Me.TxtDescripcion.Size = New System.Drawing.Size(532, 25)
+        Me.TxtDescripcion.Size = New System.Drawing.Size(522, 25)
         Me.TxtDescripcion.TabIndex = 5
         Me.TxtDescripcion.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -361,7 +364,7 @@ Partial Class FormEmpresa
         Me.dgvParametro.Location = New System.Drawing.Point(3, 16)
         Me.dgvParametro.MultiSelect = False
         Me.dgvParametro.Name = "dgvParametro"
-        Me.dgvParametro.Size = New System.Drawing.Size(865, 208)
+        Me.dgvParametro.Size = New System.Drawing.Size(865, 176)
         Me.dgvParametro.TabIndex = 0
         '
         'Label1
@@ -426,7 +429,7 @@ Partial Class FormEmpresa
         Me.ToolStrip1.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.ToolStrip1.ImageScalingSize = New System.Drawing.Size(26, 26)
         Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripSeparator1, Me.btNuevo, Me.ToolStripSeparator7, Me.btBuscar, Me.ToolStripSeparator2, Me.btRegistrar, Me.ToolStripSeparator4, Me.btEditar, Me.ToolStripSeparator5, Me.btCancelar, Me.ToolStripSeparator3, Me.btAnular, Me.ToolStripSeparator6})
-        Me.ToolStrip1.Location = New System.Drawing.Point(0, 491)
+        Me.ToolStrip1.Location = New System.Drawing.Point(0, 490)
         Me.ToolStrip1.Name = "ToolStrip1"
         Me.ToolStrip1.Size = New System.Drawing.Size(905, 33)
         Me.ToolStrip1.TabIndex = 14
@@ -574,13 +577,18 @@ Partial Class FormEmpresa
         Me.LTitulo.Text = "Empresa"
         Me.LTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
+        'iconoError
+        '
+        Me.iconoError.ContainerControl = Me
+        Me.iconoError.RightToLeft = True
+        '
         'FormEmpresa
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(905, 524)
+        Me.ClientSize = New System.Drawing.Size(905, 523)
         Me.Controls.Add(Me.GbInform)
         Me.Controls.Add(Me.ToolStrip1)
         Me.Controls.Add(Me.Panel1)
@@ -607,6 +615,7 @@ Partial Class FormEmpresa
         Me.ToolStrip1.PerformLayout()
         Me.Panel1.ResumeLayout(False)
         CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.iconoError, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -656,4 +665,5 @@ Partial Class FormEmpresa
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents cbDepartamento As ComboBox
     Public WithEvents Label5 As Label
+    Friend WithEvents iconoError As ErrorProvider
 End Class

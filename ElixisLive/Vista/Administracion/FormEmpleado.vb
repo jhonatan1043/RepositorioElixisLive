@@ -1,4 +1,5 @@
-﻿Public Class FormEmpleado
+﻿Imports System.ComponentModel
+Public Class FormEmpleado
     Dim objEmpleado As Empleado
     Private Sub Form_FormClosing(sender As Object, e As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
         If EstiloMensajes.mostrarMensajePregunta(MensajeSistema.SALIR) = Constantes.SI Then
@@ -142,19 +143,14 @@
         btRegistrar.Enabled = True
     End Sub
     Private Function validarCampos() As Boolean
-        Dim resultado As Boolean
-        If IsNothing(objEmpleado.codigo) Then
-            EstiloMensajes.mostrarMensajeAdvertencia("¡Debe Seleccionar una persona!")
-        ElseIf cbFormaPago.SelectedIndex = 0 Then
-            EstiloMensajes.mostrarMensajeAdvertencia("¡Debe seleccionar una forma de pago!")
-        ElseIf cbCargo.SelectedIndex = 0 Then
-            EstiloMensajes.mostrarMensajeAdvertencia("¡Debe Seleccionar un cargo!")
-        ElseIf cbDepartamento.SelectedIndex = 0 Then
-            EstiloMensajes.mostrarMensajeAdvertencia("¡Debe Seleccionar un departamento de trabajo!")
+        If IsNothing(objEmpleado.codigo) Or
+         cbFormaPago.SelectedIndex = 0 Or
+         cbCargo.SelectedIndex = 0 Or
+         cbDepartamento.SelectedIndex = 0 Then
         Else
-            resultado = True
+            Return True
         End If
-        Return resultado
+        Return False
     End Function
     Private Sub cargarObjeto()
         Dim almImagen As New IO.MemoryStream
@@ -181,6 +177,8 @@
                 btCancelar.Enabled = False
                 btRegistrar.Enabled = False
                 EstiloMensajes.mostrarMensajeExitoso(MensajeSistema.REGISTRO_GUARDADO)
+            Else
+                EstiloMensajes.mostrarMensajeAdvertencia(MensajeSistema.VALIDAR_CAMPOS)
             End If
         Catch ex As Exception
             EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
@@ -248,5 +246,33 @@
         Dim tabla As New DataTable
         params.Add(pcodigo)
         Generales.llenarTabla("[SP_ADMIN_EMPLEADO_SUCURSALES]", params, tabla)
+    End Sub
+    Private Sub cbDepartamento_Validating(sender As Object, e As CancelEventArgs) Handles cbDepartamento.Validating
+        If DirectCast(sender, ComboBox).SelectedIndex = 0 Then
+            Me.ErrorIcono.SetError(txtUsuario, "Debe escoger el departamento")
+        Else
+            Me.ErrorIcono.SetError(txtUsuario, "")
+        End If
+    End Sub
+    Private Sub cbFormaPago_Validating(sender As Object, e As CancelEventArgs) Handles cbFormaPago.Validating
+        If DirectCast(sender, ComboBox).SelectedIndex = 0 Then
+            Me.ErrorIcono.SetError(sender, "Debe escoger la forma de pago")
+        Else
+            Me.ErrorIcono.SetError(sender, "")
+        End If
+    End Sub
+    Private Sub cbCargo_Validating(sender As Object, e As CancelEventArgs) Handles cbCargo.Validating
+        If DirectCast(sender, ComboBox).SelectedIndex = 0 Then
+            Me.ErrorIcono.SetError(sender, "Debe escoger el cargo")
+        Else
+            Me.ErrorIcono.SetError(sender, "")
+        End If
+    End Sub
+    Private Sub txtIdentificacion_Validating(sender As Object, e As CancelEventArgs) Handles txtIdentificacion.Validating
+        If DirectCast(sender, TextBox).Text.Length = 0 Then
+            Me.ErrorIcono.SetError(sender, "Debe escoger una persona")
+        Else
+            Me.ErrorIcono.SetError(sender, "")
+        End If
     End Sub
 End Class

@@ -24,7 +24,6 @@ Partial Class FormEmpleado
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormEmpleado))
         Me.gbInform = New System.Windows.Forms.GroupBox()
         Me.txtEmail = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
@@ -44,6 +43,7 @@ Partial Class FormEmpleado
         Me.dgvParametro = New System.Windows.Forms.DataGridView()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.gpUsuario = New System.Windows.Forms.GroupBox()
+        Me.cbPerfil = New System.Windows.Forms.ComboBox()
         Me.txtUsuario = New System.Windows.Forms.TextBox()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
@@ -83,7 +83,6 @@ Partial Class FormEmpleado
         Me.Pimagen = New System.Windows.Forms.PictureBox()
         Me.LTitulo = New System.Windows.Forms.Label()
         Me.ErrorIcono = New System.Windows.Forms.ErrorProvider(Me.components)
-        Me.cbPerfil = New System.Windows.Forms.ComboBox()
         Me.gbInform.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         CType(Me.pictImagen, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -337,6 +336,16 @@ Partial Class FormEmpleado
         Me.gpUsuario.TabStop = False
         Me.gpUsuario.Text = "Información del Usuario"
         '
+        'cbPerfil
+        '
+        Me.cbPerfil.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbPerfil.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic)
+        Me.cbPerfil.FormattingEnabled = True
+        Me.cbPerfil.Location = New System.Drawing.Point(97, 43)
+        Me.cbPerfil.Name = "cbPerfil"
+        Me.cbPerfil.Size = New System.Drawing.Size(223, 25)
+        Me.cbPerfil.TabIndex = 15
+        '
         'txtUsuario
         '
         Me.txtUsuario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
@@ -578,7 +587,7 @@ Partial Class FormEmpleado
         Me.ToolStrip1.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.ToolStrip1.ImageScalingSize = New System.Drawing.Size(26, 26)
         Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripSeparator1, Me.btNuevo, Me.ToolStripSeparator7, Me.btBuscar, Me.ToolStripSeparator2, Me.btRegistrar, Me.ToolStripSeparator4, Me.btEditar, Me.ToolStripSeparator5, Me.btCancelar, Me.ToolStripSeparator3, Me.btAnular, Me.ToolStripSeparator6})
-        Me.ToolStrip1.Location = New System.Drawing.Point(0, 491)
+        Me.ToolStrip1.Location = New System.Drawing.Point(0, 490)
         Me.ToolStrip1.Name = "ToolStrip1"
         Me.ToolStrip1.Size = New System.Drawing.Size(905, 33)
         Me.ToolStrip1.TabIndex = 15
@@ -723,18 +732,7 @@ Partial Class FormEmpleado
         'ErrorIcono
         '
         Me.ErrorIcono.ContainerControl = Me
-        Me.ErrorIcono.Icon = CType(resources.GetObject("ErrorIcono.Icon"), System.Drawing.Icon)
         Me.ErrorIcono.RightToLeft = True
-        '
-        'cbPerfil
-        '
-        Me.cbPerfil.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cbPerfil.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic)
-        Me.cbPerfil.FormattingEnabled = True
-        Me.cbPerfil.Location = New System.Drawing.Point(97, 43)
-        Me.cbPerfil.Name = "cbPerfil"
-        Me.cbPerfil.Size = New System.Drawing.Size(223, 25)
-        Me.cbPerfil.TabIndex = 15
         '
         'FormEmpleado
         '
@@ -742,7 +740,7 @@ Partial Class FormEmpleado
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(905, 524)
+        Me.ClientSize = New System.Drawing.Size(905, 523)
         Me.Controls.Add(Me.ToolStrip1)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Panel1)
@@ -815,7 +813,6 @@ Partial Class FormEmpleado
     Public WithEvents Label6 As Label
     Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents btBuscarPersona As Button
-    Friend WithEvents ErrorIcono As ErrorProvider
     Friend WithEvents GroupBox6 As GroupBox
     Friend WithEvents GroupBox5 As GroupBox
     Friend WithEvents cbDepartamento As ComboBox
@@ -837,4 +834,5 @@ Partial Class FormEmpleado
     Friend WithEvents Label10 As Label
     Friend WithEvents ListSucursal As ListView
     Friend WithEvents cbPerfil As ComboBox
+    Friend WithEvents ErrorIcono As ErrorProvider
 End Class

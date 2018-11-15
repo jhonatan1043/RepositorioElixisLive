@@ -22,6 +22,7 @@ Partial Class FormBase
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
@@ -48,6 +49,7 @@ Partial Class FormBase
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Pimagen = New System.Windows.Forms.PictureBox()
         Me.LTitulo = New System.Windows.Forms.Label()
+        Me.errorIcono = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox5.SuspendLayout()
         CType(Me.dgRegistro, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -55,6 +57,7 @@ Partial Class FormBase
         Me.ToolStrip1.SuspendLayout()
         Me.Panel1.SuspendLayout()
         CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.errorIcono, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GroupBox1
@@ -302,6 +305,11 @@ Partial Class FormBase
         Me.LTitulo.Text = "Titulo"
         Me.LTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
+        'errorIcono
+        '
+        Me.errorIcono.ContainerControl = Me
+        Me.errorIcono.RightToLeft = True
+        '
         'FormBase
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -328,6 +336,7 @@ Partial Class FormBase
         Me.ToolStrip1.PerformLayout()
         Me.Panel1.ResumeLayout(False)
         CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.errorIcono, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -357,4 +366,5 @@ Partial Class FormBase
     Friend WithEvents ToolStripSeparator6 As ToolStripSeparator
     Public WithEvents btBuscar As ToolStripButton
     Friend WithEvents ralla1 As ToolStripSeparator
+    Friend WithEvents errorIcono As ErrorProvider
 End Class

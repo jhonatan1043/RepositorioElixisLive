@@ -22,6 +22,7 @@ Partial Class FormBaseProductivo
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.gbInform = New System.Windows.Forms.GroupBox()
@@ -46,6 +47,8 @@ Partial Class FormBaseProductivo
         Me.cbBanco = New System.Windows.Forms.ComboBox()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.cbTipoPago = New System.Windows.Forms.ComboBox()
+        Me.Label9 = New System.Windows.Forms.Label()
         Me.cbRegimen = New System.Windows.Forms.ComboBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.cbFormaPago = New System.Windows.Forms.ComboBox()
@@ -69,8 +72,7 @@ Partial Class FormBaseProductivo
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Pimagen = New System.Windows.Forms.PictureBox()
         Me.LTitulo = New System.Windows.Forms.Label()
-        Me.cbTipoPago = New System.Windows.Forms.ComboBox()
-        Me.Label9 = New System.Windows.Forms.Label()
+        Me.errorIcono = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.GroupBox1.SuspendLayout()
         Me.gbInform.SuspendLayout()
         Me.gpPago.SuspendLayout()
@@ -80,6 +82,7 @@ Partial Class FormBaseProductivo
         Me.ToolStrip1.SuspendLayout()
         Me.Panel1.SuspendLayout()
         CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.errorIcono, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GroupBox1
@@ -352,6 +355,27 @@ Partial Class FormBaseProductivo
         Me.GroupBox2.TabIndex = 63
         Me.GroupBox2.TabStop = False
         '
+        'cbTipoPago
+        '
+        Me.cbTipoPago.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbTipoPago.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic)
+        Me.cbTipoPago.FormattingEnabled = True
+        Me.cbTipoPago.Location = New System.Drawing.Point(109, 66)
+        Me.cbTipoPago.Name = "cbTipoPago"
+        Me.cbTipoPago.Size = New System.Drawing.Size(247, 25)
+        Me.cbTipoPago.TabIndex = 15
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Italic)
+        Me.Label9.ForeColor = System.Drawing.Color.Black
+        Me.Label9.Location = New System.Drawing.Point(10, 70)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(75, 19)
+        Me.Label9.TabIndex = 14
+        Me.Label9.Text = "Tipo Pago"
+        '
         'cbRegimen
         '
         Me.cbRegimen.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
@@ -433,7 +457,7 @@ Partial Class FormBaseProductivo
         Me.ToolStrip1.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.ToolStrip1.ImageScalingSize = New System.Drawing.Size(26, 26)
         Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripSeparator1, Me.btNuevo, Me.ToolStripSeparator7, Me.btBuscar, Me.ToolStripSeparator2, Me.btRegistrar, Me.ToolStripSeparator4, Me.btEditar, Me.ToolStripSeparator5, Me.btCancelar, Me.ToolStripSeparator3, Me.btAnular, Me.ToolStripSeparator6})
-        Me.ToolStrip1.Location = New System.Drawing.Point(0, 473)
+        Me.ToolStrip1.Location = New System.Drawing.Point(0, 472)
         Me.ToolStrip1.Name = "ToolStrip1"
         Me.ToolStrip1.Size = New System.Drawing.Size(804, 33)
         Me.ToolStrip1.TabIndex = 20
@@ -572,33 +596,17 @@ Partial Class FormBaseProductivo
         Me.LTitulo.Text = "Titulo"
         Me.LTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'cbTipoPago
+        'errorIcono
         '
-        Me.cbTipoPago.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cbTipoPago.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic)
-        Me.cbTipoPago.FormattingEnabled = True
-        Me.cbTipoPago.Location = New System.Drawing.Point(109, 66)
-        Me.cbTipoPago.Name = "cbTipoPago"
-        Me.cbTipoPago.Size = New System.Drawing.Size(247, 25)
-        Me.cbTipoPago.TabIndex = 15
-        '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Italic)
-        Me.Label9.ForeColor = System.Drawing.Color.Black
-        Me.Label9.Location = New System.Drawing.Point(10, 70)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(75, 19)
-        Me.Label9.TabIndex = 14
-        Me.Label9.Text = "Tipo Pago"
+        Me.errorIcono.ContainerControl = Me
+        Me.errorIcono.RightToLeft = True
         '
         'FormBaseProductivo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(804, 506)
+        Me.ClientSize = New System.Drawing.Size(804, 505)
         Me.Controls.Add(Me.ToolStrip1)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Panel1)
@@ -622,6 +630,7 @@ Partial Class FormBaseProductivo
         Me.ToolStrip1.PerformLayout()
         Me.Panel1.ResumeLayout(False)
         CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.errorIcono, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -674,4 +683,5 @@ Partial Class FormBaseProductivo
     Friend WithEvents btBuscarPersona As Button
     Friend WithEvents cbTipoPago As ComboBox
     Friend WithEvents Label9 As Label
+    Friend WithEvents errorIcono As ErrorProvider
 End Class

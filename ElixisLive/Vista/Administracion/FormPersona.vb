@@ -1,4 +1,5 @@
-﻿Public Class FormPersona
+﻿Imports System.ComponentModel
+Public Class FormPersona
     Dim objPersona As persona
     Private Sub cargarObjeto()
         objPersona.identificacion = TextIdentificacion.Text
@@ -13,27 +14,85 @@
         objPersona.codigoTipoIdentificacion = CombotipoIdentificacion.SelectedValue
     End Sub
     Private Function validarCampos() As Boolean
-        If String.IsNullOrEmpty(TextIdentificacion.Text) Then
-            EstiloMensajes.mostrarMensajeAdvertencia("¡Debe digitar la identificación de la persona!")
-        ElseIf CombotipoIdentificacion.SelectedIndex = 0 Then
-            EstiloMensajes.mostrarMensajeAdvertencia("¡Debe seleccionar el tipo de identificación!")
-        ElseIf String.IsNullOrEmpty(TextNombre.Text) Then
-            EstiloMensajes.mostrarMensajeAdvertencia("¡Debe digitar el nombre de la persona!")
-        ElseIf String.IsNullOrEmpty(TextCelular.Text) Then
-            EstiloMensajes.mostrarMensajeAdvertencia("¡Debe digitar el Numero de celular de la persona!")
-        ElseIf String.IsNullOrEmpty(cbSede.SelectedIndex) Then
-            EstiloMensajes.mostrarMensajeAdvertencia("¡Debe seleccionar la sede de la persona!")
-        ElseIf String.IsNullOrEmpty(cbDepartamento.SelectedIndex) Then
-            EstiloMensajes.mostrarMensajeAdvertencia("¡Debe seleccionar la departamento de la persona!")
-        ElseIf String.IsNullOrEmpty(ComboMunicipio.SelectedIndex) Then
-            EstiloMensajes.mostrarMensajeAdvertencia("¡Debe seleccionar la ciudad de la persona!")
-        ElseIf String.IsNullOrEmpty(TextDireccion.Text) Then
-            EstiloMensajes.mostrarMensajeAdvertencia("¡Debe digitar la dirección de la persona!")
+        If String.IsNullOrEmpty(TextIdentificacion.Text) Or
+                    CombotipoIdentificacion.SelectedIndex = 0 Or
+                    String.IsNullOrEmpty(TextNombre.Text) Or
+                    String.IsNullOrEmpty(TextCelular.Text) Or
+                    String.IsNullOrEmpty(cbSede.SelectedIndex) Or
+                    String.IsNullOrEmpty(cbDepartamento.SelectedIndex) Or
+                    String.IsNullOrEmpty(ComboMunicipio.SelectedIndex) Or
+                    String.IsNullOrEmpty(TextDireccion.Text) Then
         Else
             Return True
         End If
         Return False
     End Function
+    Private Sub quitarIconoError()
+        Me.ErrorIcono.SetError(CombotipoIdentificacion, "")
+        Me.ErrorIcono.SetError(TextIdentificacion, "")
+        Me.ErrorIcono.SetError(TextNombre, "")
+        Me.ErrorIcono.SetError(TextTelefono, "")
+        Me.ErrorIcono.SetError(cbSede, "")
+        Me.ErrorIcono.SetError(cbDepartamento, "")
+        Me.ErrorIcono.SetError(ComboMunicipio, "")
+        Me.ErrorIcono.SetError(TextDireccion, "")
+    End Sub
+    Private Sub cbDepartamento_Validating(sender As Object, e As CancelEventArgs) Handles cbDepartamento.Validating
+        If DirectCast(sender, ComboBox).SelectedIndex = 0 And btRegistrar.Enabled = True Then
+            Me.ErrorIcono.SetError(sender, "Debe escoger un departamento")
+        Else
+            Me.ErrorIcono.SetError(sender, "")
+        End If
+    End Sub
+    Private Sub ComboMunicipio_Validating(sender As Object, e As CancelEventArgs) Handles ComboMunicipio.Validating
+        If DirectCast(sender, ComboBox).SelectedIndex = 0 And btRegistrar.Enabled = True Then
+            Me.ErrorIcono.SetError(sender, "Debe escoger un municipio")
+        Else
+            Me.ErrorIcono.SetError(sender, "")
+        End If
+    End Sub
+    Private Sub cbSede_Validating(sender As Object, e As CancelEventArgs) Handles cbSede.Validating
+        If DirectCast(sender, ComboBox).SelectedIndex = 0 And btRegistrar.Enabled = True Then
+            Me.ErrorIcono.SetError(sender, "Debe escoger una sede")
+        Else
+            Me.ErrorIcono.SetError(sender, "")
+        End If
+    End Sub
+    Private Sub CombotipoIdentificacion_Validating(sender As Object, e As CancelEventArgs) Handles CombotipoIdentificacion.Validating
+        If DirectCast(sender, ComboBox).SelectedIndex = 0 And btRegistrar.Enabled = True Then
+            Me.ErrorIcono.SetError(sender, "Debe escoger el tipo de identificación")
+        Else
+            Me.ErrorIcono.SetError(sender, "")
+        End If
+    End Sub
+    Private Sub TextIdentificacion_Validating(sender As Object, e As CancelEventArgs) Handles TextIdentificacion.Validating
+        If DirectCast(sender, TextBox).Text.Length = 0 And btRegistrar.Enabled = True Then
+            Me.ErrorIcono.SetError(sender, "Debe escoger la forma de pago")
+        Else
+            Me.ErrorIcono.SetError(sender, "")
+        End If
+    End Sub
+    Private Sub TextNombre_Validating(sender As Object, e As CancelEventArgs) Handles TextNombre.Validating
+        If DirectCast(sender, TextBox).Text.Length = 0 And btRegistrar.Enabled = True Then
+            Me.ErrorIcono.SetError(sender, "Debe digitar el nombre de la persona")
+        Else
+            Me.ErrorIcono.SetError(sender, "")
+        End If
+    End Sub
+    Private Sub TextCelular_Validating(sender As Object, e As CancelEventArgs) Handles TextCelular.Validating
+        If DirectCast(sender, TextBox).Text.Length = 0 And btRegistrar.Enabled = True Then
+            Me.ErrorIcono.SetError(sender, "Debe digitar un número de teéfono")
+        Else
+            Me.ErrorIcono.SetError(sender, "")
+        End If
+    End Sub
+    Private Sub TextDireccion_Validating(sender As Object, e As CancelEventArgs) Handles TextDireccion.Validating
+        If DirectCast(sender, TextBox).Text.Length = 0 And btRegistrar.Enabled = True Then
+            Me.ErrorIcono.SetError(sender, "Debe digitar una dirección")
+        Else
+            Me.ErrorIcono.SetError(sender, "")
+        End If
+    End Sub
     Private Sub Form_FormClosing(sender As Object, e As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
         If EstiloMensajes.mostrarMensajePregunta(MensajeSistema.SALIR) = Constantes.SI Then
             Me.Dispose()
@@ -88,6 +147,8 @@
             Catch ex As Exception
                 EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
             End Try
+        Else
+            EstiloMensajes.mostrarMensajeAdvertencia(MensajeSistema.VALIDAR_CAMPOS)
         End If
     End Sub
     Private Sub btEditar_Click(sender As Object, e As EventArgs) Handles btEditar.Click
@@ -105,6 +166,7 @@
             objPersona.codigo = Nothing
             btNuevo.Enabled = True
             btBuscar.Enabled = True
+            quitarIconoError()
         End If
     End Sub
     Private Sub btAnular_Click(sender As Object, e As EventArgs) Handles btAnular.Click
