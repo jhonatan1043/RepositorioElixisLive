@@ -152,9 +152,9 @@
         objPorveedor.codigoRegimen = cbRegimen.SelectedValue
         objPorveedor.CodigoTipoPago = cbTipoPago.SelectedValue
         objPorveedor.codigoFormaPago = cbFormaPago.SelectedValue
-        objPorveedor.codigoBanco = cbBanco.SelectedValue.ToString
-        objPorveedor.codigoCuenta = cbTipoCuenta.SelectedValue.ToString
-        objPorveedor.Cuenta = txtCuenta.Text
+        objPorveedor.codigoBanco = If(cbBanco.SelectedValue.ToString = -1, Nothing, cbBanco.SelectedValue.ToString)
+        objPorveedor.codigoCuenta = If(cbTipoCuenta.SelectedValue.ToString = -1, Nothing, cbTipoCuenta.SelectedValue.ToString)
+        objPorveedor.Cuenta = If(txtCuenta.Text = String.Empty, Nothing, txtCuenta.Text)
         objPorveedor.dtParametro = dgvParametro.DataSource
     End Sub
     Private Sub btRegistrar_Click(sender As Object, e As EventArgs) Handles btRegistrar.Click
