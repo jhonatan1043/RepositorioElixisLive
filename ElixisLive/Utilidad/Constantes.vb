@@ -8,11 +8,18 @@
     Public Const ID_PRODUCTO = "P"
     Public Const ID_SERVICIO = "S"
     Public Const CODIGO_EMPRESA = 0
+    Public Const EDITABLE = 1
+    Public Const NO_EDITABLE = 0
     Public Enum TIPO_CONTROL
         COMBO = 0
         SELECTOR = 1
         TIEMPO = 2
     End Enum
+
+    Public Const NOMBRE_COMBO = "combo"
+    Public Const NOMBRE_SELECTOR = "Selector"
+    Public Const NOMBRE_TIEMPO = "Tiempo"
+
     Public Const TIPO_LETRA_ELEMENTO = "[FontFamily: Name=Microsoft Sans Serif]"
     Public Const PENDIENTE = 0
     'Citas

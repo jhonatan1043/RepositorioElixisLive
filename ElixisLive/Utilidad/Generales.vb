@@ -595,7 +595,7 @@ Public Class Generales
             Throw ex
         End Try
     End Function
-    Private Shared Function crearControl(controlDgv As String,
+    Public Shared Function crearControl(controlDgv As String,
                                          consulta As String,
                                          valorInterno As String,
                                          valorExterno As String,

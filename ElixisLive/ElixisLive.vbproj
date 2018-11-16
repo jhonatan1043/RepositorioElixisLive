@@ -143,6 +143,7 @@
     <Compile Include="Entidad\generalConsulta.vb" />
     <Compile Include="Entidad\Configuracion\Configuracion.vb" />
     <Compile Include="Entidad\Inventario\Cliente.vb" />
+    <Compile Include="Entidad\Inventario\EntradaInventario.vb" />
     <Compile Include="Entidad\Inventario\ListaPrecio.vb" />
     <Compile Include="Entidad\Inventario\Proveedor.vb" />
     <Compile Include="Entidad\Inventario\producto.vb" />
@@ -297,6 +298,12 @@
     <Compile Include="Vista\Gestión\FormVenta.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Vista\Inventario\FormEntradaInventario.Designer.vb">
+      <DependentUpon>FormEntradaInventario.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Inventario\FormEntradaInventario.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Vista\Inventario\FormListaPrecio.Designer.vb">
       <DependentUpon>FormListaPrecio.vb</DependentUpon>
     </Compile>
@@ -420,6 +427,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\Gestión\FormVenta.resx">
       <DependentUpon>FormVenta.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Inventario\FormEntradaInventario.resx">
+      <DependentUpon>FormEntradaInventario.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\Inventario\FormListaPrecio.resx">
       <DependentUpon>FormListaPrecio.vb</DependentUpon>
