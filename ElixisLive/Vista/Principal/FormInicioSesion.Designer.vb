@@ -228,6 +228,7 @@ Partial Class FormInicioSesion
         'ErrorIcono
         '
         Me.ErrorIcono.ContainerControl = Me
+        Me.ErrorIcono.RightToLeft = True
         '
         'FormInicioSesion
         '

@@ -18,9 +18,9 @@ Public Class FormPersona
                     CombotipoIdentificacion.SelectedIndex = 0 Or
                     String.IsNullOrEmpty(TextNombre.Text) Or
                     String.IsNullOrEmpty(TextCelular.Text) Or
-                    String.IsNullOrEmpty(cbSede.SelectedIndex) Or
-                    String.IsNullOrEmpty(cbDepartamento.SelectedIndex) Or
-                    String.IsNullOrEmpty(ComboMunicipio.SelectedIndex) Or
+                   cbSede.SelectedIndex = 0 Or
+                   cbDepartamento.SelectedIndex = 0 Or
+                   ComboMunicipio.SelectedIndex = 0 Or
                     String.IsNullOrEmpty(TextDireccion.Text) Then
         Else
             Return True
@@ -133,6 +133,7 @@ Public Class FormPersona
         objPersona.codigo = Nothing
         btCancelar.Enabled = True
         btRegistrar.Enabled = True
+        CombotipoIdentificacion.Focus()
     End Sub
     Private Sub btRegistrar_Click(sender As Object, e As EventArgs) Handles btRegistrar.Click
         If validarCampos() = True Then
@@ -231,7 +232,7 @@ Public Class FormPersona
                 txtUsuario.ReadOnly = False
                 btBuscarPerfil.Enabled = True
             Else
-                EstiloMensajes.mostrarMensajeAdvertencia(" ¡ Debe digitar el nombre de la persona !")
+                EstiloMensajes.mostrarMensajeAdvertencia("¡Debe digitar el nombre de la persona !")
                 TextNombre.Focus()
             End If
         Else
@@ -241,7 +242,7 @@ Public Class FormPersona
         End If
     End Sub
     Private Sub txtUsuario_TextChanged(sender As Object, e As EventArgs) Handles txtUsuario.TextChanged
-        If Funciones.consulUsuario(txtUsuario.Text) = True Then
+        If Funciones.consultarUsuario(txtUsuario.Text) = True Then
             ErrorIcono.SetError(txtUsuario, "Usuario Existente")
         Else
             ErrorIcono.SetError(txtUsuario, "")

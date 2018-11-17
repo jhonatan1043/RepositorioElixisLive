@@ -22,7 +22,7 @@ Public Class Funciones
         Return listaParams
 
     End Function
-    Public Shared Function consulInicioSesion(params As List(Of String)) As DataRow
+    Public Shared Function consultarInicioSesion(params As List(Of String)) As DataRow
         Dim dFila As DataRow = Nothing
         Try
             dFila = Generales.cargarItem("[SP_ADMIN_INICIO_SESION]", params)
@@ -31,7 +31,7 @@ Public Class Funciones
         End Try
         Return dFila
     End Function
-    Public Shared Function consulUsuario(usuario) As Boolean
+    Public Shared Function consultarUsuario(usuario) As Boolean
         Dim resultado As Boolean
         Dim dFila As DataRow = Nothing
         Dim params As New List(Of String)

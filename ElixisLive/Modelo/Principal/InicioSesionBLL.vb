@@ -12,7 +12,7 @@
         params.Add(contrasena)
         params.Add(codigoSucursal)
 
-        Dresultado = Funciones.consulInicioSesion(params)
+        Dresultado = Funciones.consultarInicioSesion(params)
 
         If Not IsNothing(Dresultado) Then
             SesionActual.idUsuario = Dresultado.Item(0)
