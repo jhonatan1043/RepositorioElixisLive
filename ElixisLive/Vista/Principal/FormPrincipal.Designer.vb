@@ -45,7 +45,7 @@ Partial Class FormPrincipal
         Me.arbolMenu.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.arbolMenu.Name = "arbolMenu"
         Me.arbolMenu.SelectedImageIndex = 1
-        Me.arbolMenu.Size = New System.Drawing.Size(222, 567)
+        Me.arbolMenu.Size = New System.Drawing.Size(239, 567)
         Me.arbolMenu.StateImageList = Me.ImageList1
         Me.arbolMenu.TabIndex = 1
         '
@@ -61,10 +61,10 @@ Partial Class FormPrincipal
         '
         Me.StatusStrip1.BackColor = System.Drawing.Color.White
         Me.StatusStrip1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.StatusStrip1.Location = New System.Drawing.Point(222, 545)
+        Me.StatusStrip1.Location = New System.Drawing.Point(239, 545)
         Me.StatusStrip1.Name = "StatusStrip1"
         Me.StatusStrip1.Padding = New System.Windows.Forms.Padding(1, 0, 17, 0)
-        Me.StatusStrip1.Size = New System.Drawing.Size(915, 22)
+        Me.StatusStrip1.Size = New System.Drawing.Size(898, 22)
         Me.StatusStrip1.TabIndex = 2
         Me.StatusStrip1.Text = "StatusStrip1"
         '

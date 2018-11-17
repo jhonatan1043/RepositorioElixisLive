@@ -1,6 +1,7 @@
 ﻿Public Class EntradaInventario
     Inherits generalConsulta
     Property codigo As Integer
+    Property codigoCompra As Integer
     Property dtEntrada As DataTable
     Public Sub New()
         dtEntrada = New DataTable
@@ -11,5 +12,11 @@
         dtEntrada.Columns.Add("Total", Type.GetType("System.Decimal"))
         dtEntrada.Columns.Add("Bodega", Type.GetType("System.String"))
         dtEntrada.Columns.Add("Lote", Type.GetType("System.String"))
+
+        sqlAnular = ""
+        sqlGuardar = "SP_INVEN_INVENTARIO_CREAR"
+        sqlConsulta = ""
+        sqlCargarDetalle = ""
+
     End Sub
 End Class

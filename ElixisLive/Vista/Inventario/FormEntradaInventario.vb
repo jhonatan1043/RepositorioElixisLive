@@ -11,8 +11,9 @@
     Private Sub limpiarControl()
         objEntrada.dtEntrada.Clear()
         txtCodigo.Clear()
+        txtSubTotal.Clear()
+        txtTotal.Clear()
     End Sub
-
     Private Sub dgvEntrada_CellEnter(sender As Object, e As DataGridViewCellEventArgs) Handles dgvEntrada.CellEnter
         If btRegistrar.Enabled = False Then Exit Sub
         Try
@@ -68,19 +69,34 @@
     End Sub
 
     Private Sub btBuscar_Click(sender As Object, e As EventArgs) Handles btBuscar.Click
+        Dim params As New List(Of String)
+        params.Add(String.Empty)
+        Try
+            Generales.buscarElemento(objEntrada.sqlConsulta,
+                                   params,
+                                   AddressOf cargarInventario,
+                                   "Busqueda de Inventario",
+                                   True, True)
+        Catch ex As Exception
+            EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
+        End Try
+    End Sub
+    Private Sub cargarInventario(pCodigo As Integer)
 
     End Sub
-
     Private Sub btRegistrar_Click(sender As Object, e As EventArgs) Handles btRegistrar.Click
-
-    End Sub
-
-    Private Sub btEditar_Click(sender As Object, e As EventArgs) Handles btEditar.Click
-        If EstiloMensajes.mostrarMensajePregunta(MensajeSistema.EDITAR) = Constantes.SI Then
+        If String.IsNullOrEmpty(txtCodigo.Text) Then
+            EstiloMensajes.mostrarMensajeAdvertencia("¡ Favor seleccionar la compra !")
+        Else
+            dgvEntrada.EndEdit()
+            EntradaInventarioBLL.guardarEntrada(objEntrada)
             Generales.deshabilitarBotones(ToolStrip1)
-            validarEdicionGrilla(Constantes.EDITABLE)
-            btRegistrar.Enabled = True
-            btCancelar.Enabled = True
+            validarEdicionGrilla(Constantes.NO_EDITABLE)
+            btBuscarCompra.Enabled = False
+            btNuevo.Enabled = True
+            btBuscar.Enabled = True
+            btAnular.Enabled = True
+            EstiloMensajes.mostrarMensajeExitoso(MensajeSistema.REGISTRO_GUARDADO)
         End If
     End Sub
     Private Sub btCancelar_Click(sender As Object, e As EventArgs) Handles btCancelar.Click
@@ -88,13 +104,24 @@
             Generales.deshabilitarBotones(ToolStrip1)
             validarEdicionGrilla(Constantes.NO_EDITABLE)
             limpiarControl()
+            btBuscarCompra.Enabled = False
             btNuevo.Enabled = True
             btBuscar.Enabled = True
         End If
     End Sub
     Private Sub btAnular_Click(sender As Object, e As EventArgs) Handles btAnular.Click
         If EstiloMensajes.mostrarMensajePregunta(MensajeSistema.ANULAR) = Constantes.SI Then
-
+            Try
+                If Generales.ejecutarSQL(objEntrada.sqlAnular & objEntrada.codigo) = True Then
+                    Generales.deshabilitarBotones(ToolStrip1)
+                    Generales.limpiarControles(Me)
+                    btNuevo.Enabled = True
+                    btBuscar.Enabled = True
+                    EstiloMensajes.mostrarMensajeAnulado(MensajeSistema.REGISTRO_ANULADO)
+                End If
+            Catch ex As Exception
+                EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
+            End Try
         End If
     End Sub
     Private Sub validarEdicionGrilla(Estado As Boolean)
@@ -131,6 +158,7 @@
         Dim params As New List(Of String)
         params.Add(pCodigo)
         txtCodigo.Text = pCodigo
+        objEntrada.codigoCompra = pCodigo
         Try
             Generales.llenarTabla("[SP_INVEN_COMPRA_DETALLE]", params, objEntrada.dtEntrada)
             dgvEntrada.DataSource = objEntrada.dtEntrada
