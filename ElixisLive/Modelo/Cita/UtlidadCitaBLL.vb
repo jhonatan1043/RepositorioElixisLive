@@ -44,7 +44,7 @@
         Dim horaExtraida As String = Nothing
         Try
 
-            If objFormCita.comboAreaServicio.SelectedIndex = 0 Then
+            If objFormCita.cbVista.SelectedIndex = 0 Then
                 horaExtraida = If(sender.tag.ToString.Length = 2, sender.tag, sender.tag.ToString.Remove(2))
                 idCita = If(sender.tag.ToString.Length = 2, String.Empty, sender.tag.ToString.Substring(3))
             Else
