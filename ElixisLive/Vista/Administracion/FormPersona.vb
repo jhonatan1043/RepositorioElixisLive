@@ -70,62 +70,7 @@ Public Class FormPersona
             ErrorIcono.SetError(TextDireccion, "")
         End If
     End Sub
-    Private Sub cbDepartamento_Validating(sender As Object, e As CancelEventArgs) Handles cbDepartamento.Validating
-        If DirectCast(sender, ComboBox).SelectedIndex = 0 And btRegistrar.Enabled = True Then
-            Me.ErrorIcono.SetError(sender, "Debe escoger un departamento")
-        Else
-            Me.ErrorIcono.SetError(sender, "")
-        End If
-    End Sub
-    Private Sub ComboMunicipio_Validating(sender As Object, e As CancelEventArgs) Handles ComboMunicipio.Validating
-        If DirectCast(sender, ComboBox).SelectedIndex = 0 And btRegistrar.Enabled = True Then
-            Me.ErrorIcono.SetError(sender, "Debe escoger un municipio")
-        Else
-            Me.ErrorIcono.SetError(sender, "")
-        End If
-    End Sub
-    Private Sub cbSede_Validating(sender As Object, e As CancelEventArgs) Handles cbSede.Validating
-        If DirectCast(sender, ComboBox).SelectedIndex = 0 And btRegistrar.Enabled = True Then
-            Me.ErrorIcono.SetError(sender, "Debe escoger una sede")
-        Else
-            Me.ErrorIcono.SetError(sender, "")
-        End If
-    End Sub
-    Private Sub CombotipoIdentificacion_Validating(sender As Object, e As CancelEventArgs) Handles CombotipoIdentificacion.Validating
-        If DirectCast(sender, ComboBox).SelectedIndex = 0 And btRegistrar.Enabled = True Then
-            Me.ErrorIcono.SetError(sender, "Debe escoger el tipo de identificación")
-        Else
-            Me.ErrorIcono.SetError(sender, "")
-        End If
-    End Sub
-    Private Sub TextIdentificacion_Validating(sender As Object, e As CancelEventArgs) Handles TextIdentificacion.Validating
-        If DirectCast(sender, TextBox).Text.Length = 0 And btRegistrar.Enabled = True Then
-            Me.ErrorIcono.SetError(sender, "Debe digitar la identificación")
-        Else
-            Me.ErrorIcono.SetError(sender, "")
-        End If
-    End Sub
-    Private Sub TextNombre_Validating(sender As Object, e As CancelEventArgs) Handles TextNombre.Validating
-        If DirectCast(sender, TextBox).Text.Length = 0 And btRegistrar.Enabled = True Then
-            Me.ErrorIcono.SetError(sender, "Debe digitar el nombre de la persona")
-        Else
-            Me.ErrorIcono.SetError(sender, "")
-        End If
-    End Sub
-    Private Sub TextCelular_Validating(sender As Object, e As CancelEventArgs) Handles TextCelular.Validating
-        If DirectCast(sender, TextBox).Text.Length = 0 And btRegistrar.Enabled = True Then
-            Me.ErrorIcono.SetError(sender, "Debe digitar un número de teéfono")
-        Else
-            Me.ErrorIcono.SetError(sender, "")
-        End If
-    End Sub
-    Private Sub TextDireccion_Validating(sender As Object, e As CancelEventArgs) Handles TextDireccion.Validating
-        If DirectCast(sender, TextBox).Text.Length = 0 And btRegistrar.Enabled = True Then
-            Me.ErrorIcono.SetError(sender, "Debe digitar una dirección")
-        Else
-            Me.ErrorIcono.SetError(sender, "")
-        End If
-    End Sub
+
     Private Sub Form_FormClosing(sender As Object, e As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
         If EstiloMensajes.mostrarMensajePregunta(MensajeSistema.SALIR) = Constantes.SI Then
             Me.Dispose()

@@ -244,27 +244,6 @@ Public Class FormVenta
         Me.ErrorIcono.SetError(TextNombre, "")
         Me.ErrorIcono.SetError(TextTelefono, "")
     End Sub
-    Public Sub TextIdentificacion_Validating(sender As Object, e As CancelEventArgs) Handles TextIdentificacion.Validating
-        If DirectCast(sender, TextBox).Text.Length = 0 And btRegistrar.Enabled = True Then
-            Me.ErrorIcono.SetError(sender, "Debe Ingresar un número de identificación")
-        Else
-            Me.ErrorIcono.SetError(sender, "")
-        End If
-    End Sub
-    Public Sub TextNombre_Validating(sender As Object, e As CancelEventArgs) Handles TextNombre.Validating
-        If DirectCast(sender, TextBox).Text.Length = 0 And btRegistrar.Enabled = True Then
-            Me.ErrorIcono.SetError(sender, "Debe ingresar un nombre")
-        Else
-            Me.ErrorIcono.SetError(sender, "")
-        End If
-    End Sub
-    Public Sub TextTelefono_Validating(sender As Object, e As CancelEventArgs) Handles TextTelefono.Validating
-        If DirectCast(sender, TextBox).Text.Length = 0 And btRegistrar.Enabled = True Then
-            Me.ErrorIcono.SetError(sender, "Debe ingresar un número de teléfono")
-        Else
-            Me.ErrorIcono.SetError(sender, "")
-        End If
-    End Sub
     Private Sub calcularTotales()
         dgvFactura.EndEdit()
         Try

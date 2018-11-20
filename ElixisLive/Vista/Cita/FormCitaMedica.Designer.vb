@@ -472,7 +472,7 @@ Partial Class FormCitaMedica
         'PictureBox1
         '
         Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox1.Image = Global.Quality.My.Resources.Resources.persona
+        Me.PictureBox1.Image = Global.Quality.My.Resources.Resources.glossy_3d_blue_orbs2_043_icon
         Me.PictureBox1.Location = New System.Drawing.Point(4, -7)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(69, 53)
@@ -487,9 +487,9 @@ Partial Class FormCitaMedica
         Me.Label1.ForeColor = System.Drawing.Color.White
         Me.Label1.Location = New System.Drawing.Point(0, 1)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(699, 41)
+        Me.Label1.Size = New System.Drawing.Size(714, 41)
         Me.Label1.TabIndex = 1
-        Me.Label1.Text = "Agendar Cita"
+        Me.Label1.Text = "Asignación de Citas"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'ToolStrip1
@@ -500,7 +500,7 @@ Partial Class FormCitaMedica
         Me.ToolStrip1.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.ToolStrip1.ImageScalingSize = New System.Drawing.Size(26, 26)
         Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripSeparator1, Me.btNuevo, Me.ToolStripSeparator2, Me.btBuscar, Me.ToolStripSeparator7, Me.btRegistrar, Me.ToolStripSeparator4, Me.btEditar, Me.ToolStripSeparator5, Me.btCancelar, Me.ToolStripSeparator3, Me.btAnular, Me.ToolStripSeparator6})
-        Me.ToolStrip1.Location = New System.Drawing.Point(0, 404)
+        Me.ToolStrip1.Location = New System.Drawing.Point(0, 403)
         Me.ToolStrip1.Name = "ToolStrip1"
         Me.ToolStrip1.Size = New System.Drawing.Size(713, 33)
         Me.ToolStrip1.TabIndex = 37
@@ -612,7 +612,7 @@ Partial Class FormCitaMedica
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(713, 437)
+        Me.ClientSize = New System.Drawing.Size(713, 436)
         Me.Controls.Add(Me.ToolStrip1)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.GroupBox1)
