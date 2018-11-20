@@ -8,7 +8,7 @@
         anchura = Constantes.ANCHURA_CITA_DISPONIBLE
         posicionPanelX = 110 '------- posicion x en el panel
         descripcion = Constantes.CITA_DISPONIBLE
-        posicionLabelX = 394
+        posicionLabelX = 385
         posicionLabelY = 9
     End Sub
     Public Function crearPanelDisponible(posicionPanelY As Integer) As Panel
