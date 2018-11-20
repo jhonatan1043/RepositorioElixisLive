@@ -22,73 +22,19 @@ Partial Class FormCitaMedica
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.TabControl1 = New System.Windows.Forms.TabControl()
-        Me.TabPage6 = New System.Windows.Forms.TabPage()
-        Me.dgvParaclinicos = New System.Windows.Forms.DataGridView()
-        Me.TabPage2 = New System.Windows.Forms.TabPage()
-        Me.dgvProcedimiento = New System.Windows.Forms.DataGridView()
-        Me.dganularps = New System.Windows.Forms.DataGridViewImageColumn()
-        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.dtFecha = New System.Windows.Forms.DateTimePicker()
-        Me.lmnts = New System.Windows.Forms.Label()
-        Me.txtfecha = New System.Windows.Forms.MaskedTextBox()
-        Me.ComboMinuto = New System.Windows.Forms.ComboBox()
-        Me.txtEstado = New System.Windows.Forms.TextBox()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.cbMedico = New System.Windows.Forms.ComboBox()
-        Me.Label12 = New System.Windows.Forms.Label()
-        Me.txtobservacion = New System.Windows.Forms.RichTextBox()
-        Me.Label11 = New System.Windows.Forms.Label()
-        Me.TextCodEPS = New System.Windows.Forms.TextBox()
-        Me.textEPS = New System.Windows.Forms.TextBox()
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.textedad = New System.Windows.Forms.TextBox()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.txtCodigo = New System.Windows.Forms.TextBox()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.TextSexo = New System.Windows.Forms.TextBox()
-        Me.textNombre = New System.Windows.Forms.TextBox()
-        Me.btbuscarPaciente = New System.Windows.Forms.Button()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.textPaciente = New System.Windows.Forms.TextBox()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
-        Me.btnuevo = New System.Windows.Forms.ToolStripButton()
-        Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
-        Me.btguardar = New System.Windows.Forms.ToolStripButton()
-        Me.ToolStripSeparator3 = New System.Windows.Forms.ToolStripSeparator()
-        Me.btbuscar = New System.Windows.Forms.ToolStripButton()
-        Me.bteditar = New System.Windows.Forms.ToolStripButton()
-        Me.ToolStripSeparator5 = New System.Windows.Forms.ToolStripSeparator()
-        Me.btcancelar = New System.Windows.Forms.ToolStripButton()
-        Me.ToolStripSeparator6 = New System.Windows.Forms.ToolStripSeparator()
-        Me.btanular = New System.Windows.Forms.ToolStripButton()
-        Me.ToolStripSeparator7 = New System.Windows.Forms.ToolStripSeparator()
-        Me.btimprimir = New System.Windows.Forms.ToolStripButton()
-        Me.btCancelarCita = New System.Windows.Forms.ToolStripButton()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.btPaciente = New System.Windows.Forms.Button()
-        Me.btConfigCita = New System.Windows.Forms.Button()
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.dgcodigop = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.dgdescripcionps = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.dgCantidadps = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -100,545 +46,58 @@ Partial Class FormCitaMedica
         Me.DataGridViewTextBoxColumn15 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn16 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn17 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.dgCodigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.dgDescripcionp = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.dgcantidadp = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.dgResultadoPara = New System.Windows.Forms.DataGridViewImageColumn()
-        Me.dgAnular = New System.Windows.Forms.DataGridViewImageColumn()
-        Me.GroupBox1.SuspendLayout()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.btBuscarPerfil = New System.Windows.Forms.Button()
+        Me.lmnts = New System.Windows.Forms.Label()
+        Me.txtfecha = New System.Windows.Forms.MaskedTextBox()
+        Me.ComboMinuto = New System.Windows.Forms.ComboBox()
+        Me.txtobservacion = New System.Windows.Forms.RichTextBox()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.textNombre = New System.Windows.Forms.TextBox()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.TabControl1 = New System.Windows.Forms.TabControl()
+        Me.TabPage6 = New System.Windows.Forms.TabPage()
+        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.DataGridViewTextBoxColumn18 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn19 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn20 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewImageColumn1 = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.dgvProcedimiento = New System.Windows.Forms.DataGridView()
+        Me.dgcodigop = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dgdescripcionps = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dgCantidadps = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dganularps = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
+        Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
+        Me.btNuevo = New System.Windows.Forms.ToolStripButton()
+        Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
+        Me.btBuscar = New System.Windows.Forms.ToolStripButton()
+        Me.ToolStripSeparator7 = New System.Windows.Forms.ToolStripSeparator()
+        Me.btRegistrar = New System.Windows.Forms.ToolStripButton()
+        Me.ToolStripSeparator4 = New System.Windows.Forms.ToolStripSeparator()
+        Me.btEditar = New System.Windows.Forms.ToolStripButton()
+        Me.ToolStripSeparator5 = New System.Windows.Forms.ToolStripSeparator()
+        Me.btCancelar = New System.Windows.Forms.ToolStripButton()
+        Me.ToolStripSeparator3 = New System.Windows.Forms.ToolStripSeparator()
+        Me.btAnular = New System.Windows.Forms.ToolStripButton()
+        Me.ToolStripSeparator6 = New System.Windows.Forms.ToolStripSeparator()
+        Me.GroupBox2.SuspendLayout()
         Me.TabControl1.SuspendLayout()
         Me.TabPage6.SuspendLayout()
-        CType(Me.dgvParaclinicos, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage2.SuspendLayout()
         CType(Me.dgvProcedimiento, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GroupBox2.SuspendLayout()
-        Me.ToolStrip1.SuspendLayout()
+        Me.GroupBox1.SuspendLayout()
+        Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.ToolStrip1.SuspendLayout()
         Me.SuspendLayout()
-        '
-        'GroupBox1
-        '
-        Me.GroupBox1.Controls.Add(Me.TabControl1)
-        Me.GroupBox1.Controls.Add(Me.GroupBox2)
-        Me.GroupBox1.Location = New System.Drawing.Point(14, 51)
-        Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(898, 449)
-        Me.GroupBox1.TabIndex = 32
-        Me.GroupBox1.TabStop = False
-        '
-        'TabControl1
-        '
-        Me.TabControl1.Controls.Add(Me.TabPage6)
-        Me.TabControl1.Controls.Add(Me.TabPage2)
-        Me.TabControl1.Location = New System.Drawing.Point(7, 214)
-        Me.TabControl1.Name = "TabControl1"
-        Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(885, 229)
-        Me.TabControl1.TabIndex = 50
-        '
-        'TabPage6
-        '
-        Me.TabPage6.Controls.Add(Me.dgvParaclinicos)
-        Me.TabPage6.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage6.Name = "TabPage6"
-        Me.TabPage6.Size = New System.Drawing.Size(877, 203)
-        Me.TabPage6.TabIndex = 6
-        Me.TabPage6.Text = "Paraclinicos"
-        Me.TabPage6.UseVisualStyleBackColor = True
-        '
-        'dgvParaclinicos
-        '
-        Me.dgvParaclinicos.AllowUserToAddRows = False
-        Me.dgvParaclinicos.AllowUserToDeleteRows = False
-        Me.dgvParaclinicos.AllowUserToResizeColumns = False
-        Me.dgvParaclinicos.AllowUserToResizeRows = False
-        Me.dgvParaclinicos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
-        Me.dgvParaclinicos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
-        Me.dgvParaclinicos.BackgroundColor = System.Drawing.SystemColors.ControlLightLight
-        Me.dgvParaclinicos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvParaclinicos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.dgCodigo, Me.dgDescripcionp, Me.dgcantidadp, Me.dgResultadoPara, Me.dgAnular})
-        Me.dgvParaclinicos.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.dgvParaclinicos.Location = New System.Drawing.Point(0, 0)
-        Me.dgvParaclinicos.MultiSelect = False
-        Me.dgvParaclinicos.Name = "dgvParaclinicos"
-        Me.dgvParaclinicos.RowHeadersVisible = False
-        Me.dgvParaclinicos.Size = New System.Drawing.Size(877, 203)
-        Me.dgvParaclinicos.TabIndex = 10087
-        '
-        'TabPage2
-        '
-        Me.TabPage2.Controls.Add(Me.dgvProcedimiento)
-        Me.TabPage2.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage2.Name = "TabPage2"
-        Me.TabPage2.Size = New System.Drawing.Size(877, 203)
-        Me.TabPage2.TabIndex = 5
-        Me.TabPage2.Text = "Procedimientos"
-        Me.TabPage2.UseVisualStyleBackColor = True
-        '
-        'dgvProcedimiento
-        '
-        Me.dgvProcedimiento.AllowUserToAddRows = False
-        Me.dgvProcedimiento.AllowUserToDeleteRows = False
-        Me.dgvProcedimiento.AllowUserToResizeColumns = False
-        Me.dgvProcedimiento.AllowUserToResizeRows = False
-        Me.dgvProcedimiento.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
-        Me.dgvProcedimiento.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
-        Me.dgvProcedimiento.BackgroundColor = System.Drawing.SystemColors.ControlLightLight
-        Me.dgvProcedimiento.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvProcedimiento.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.dgcodigop, Me.dgdescripcionps, Me.dgCantidadps, Me.dganularps})
-        Me.dgvProcedimiento.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.dgvProcedimiento.Location = New System.Drawing.Point(0, 0)
-        Me.dgvProcedimiento.MultiSelect = False
-        Me.dgvProcedimiento.Name = "dgvProcedimiento"
-        Me.dgvProcedimiento.RowHeadersVisible = False
-        Me.dgvProcedimiento.Size = New System.Drawing.Size(877, 203)
-        Me.dgvProcedimiento.TabIndex = 10087
-        '
-        'dganularps
-        '
-        Me.dganularps.HeaderText = "Quitar"
-        Me.dganularps.Name = "dganularps"
-        Me.dganularps.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dganularps.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
-        Me.dganularps.Width = 60
-        '
-        'GroupBox2
-        '
-        Me.GroupBox2.Controls.Add(Me.dtFecha)
-        Me.GroupBox2.Controls.Add(Me.lmnts)
-        Me.GroupBox2.Controls.Add(Me.txtfecha)
-        Me.GroupBox2.Controls.Add(Me.ComboMinuto)
-        Me.GroupBox2.Controls.Add(Me.txtEstado)
-        Me.GroupBox2.Controls.Add(Me.Label3)
-        Me.GroupBox2.Controls.Add(Me.cbMedico)
-        Me.GroupBox2.Controls.Add(Me.Label12)
-        Me.GroupBox2.Controls.Add(Me.txtobservacion)
-        Me.GroupBox2.Controls.Add(Me.Label11)
-        Me.GroupBox2.Controls.Add(Me.TextCodEPS)
-        Me.GroupBox2.Controls.Add(Me.textEPS)
-        Me.GroupBox2.Controls.Add(Me.Label10)
-        Me.GroupBox2.Controls.Add(Me.textedad)
-        Me.GroupBox2.Controls.Add(Me.Label9)
-        Me.GroupBox2.Controls.Add(Me.txtCodigo)
-        Me.GroupBox2.Controls.Add(Me.Label5)
-        Me.GroupBox2.Controls.Add(Me.Label8)
-        Me.GroupBox2.Controls.Add(Me.TextSexo)
-        Me.GroupBox2.Controls.Add(Me.textNombre)
-        Me.GroupBox2.Controls.Add(Me.btbuscarPaciente)
-        Me.GroupBox2.Controls.Add(Me.Label7)
-        Me.GroupBox2.Controls.Add(Me.textPaciente)
-        Me.GroupBox2.Controls.Add(Me.Label4)
-        Me.GroupBox2.Font = New System.Drawing.Font("Arial Narrow", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.GroupBox2.Location = New System.Drawing.Point(7, 11)
-        Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(885, 197)
-        Me.GroupBox2.TabIndex = 0
-        Me.GroupBox2.TabStop = False
-        Me.GroupBox2.Text = "Información del Paciente:"
-        '
-        'dtFecha
-        '
-        Me.dtFecha.CustomFormat = "dd/MM/yyyy HH:mm"
-        Me.dtFecha.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!)
-        Me.dtFecha.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.dtFecha.Location = New System.Drawing.Point(705, 48)
-        Me.dtFecha.Name = "dtFecha"
-        Me.dtFecha.Size = New System.Drawing.Size(144, 21)
-        Me.dtFecha.TabIndex = 58
-        '
-        'lmnts
-        '
-        Me.lmnts.AutoSize = True
-        Me.lmnts.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lmnts.Location = New System.Drawing.Point(801, 52)
-        Me.lmnts.Name = "lmnts"
-        Me.lmnts.Size = New System.Drawing.Size(37, 15)
-        Me.lmnts.TabIndex = 57
-        Me.lmnts.Text = "Mnts:"
-        '
-        'txtfecha
-        '
-        Me.txtfecha.Font = New System.Drawing.Font("Arial", 9.75!)
-        Me.txtfecha.Location = New System.Drawing.Point(705, 48)
-        Me.txtfecha.Mask = "00/00/0000 00"
-        Me.txtfecha.Name = "txtfecha"
-        Me.txtfecha.Size = New System.Drawing.Size(94, 22)
-        Me.txtfecha.TabIndex = 56
-        '
-        'ComboMinuto
-        '
-        Me.ComboMinuto.Font = New System.Drawing.Font("Arial", 9.75!)
-        Me.ComboMinuto.FormattingEnabled = True
-        Me.ComboMinuto.Location = New System.Drawing.Point(841, 47)
-        Me.ComboMinuto.Name = "ComboMinuto"
-        Me.ComboMinuto.Size = New System.Drawing.Size(40, 24)
-        Me.ComboMinuto.TabIndex = 55
-        '
-        'txtEstado
-        '
-        Me.txtEstado.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtEstado.Location = New System.Drawing.Point(577, 79)
-        Me.txtEstado.Name = "txtEstado"
-        Me.txtEstado.ReadOnly = True
-        Me.txtEstado.Size = New System.Drawing.Size(115, 21)
-        Me.txtEstado.TabIndex = 54
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(522, 82)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(48, 15)
-        Me.Label3.TabIndex = 53
-        Me.Label3.Text = "Estado:"
-        '
-        'cbMedico
-        '
-        Me.cbMedico.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cbMedico.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!)
-        Me.cbMedico.FormattingEnabled = True
-        Me.cbMedico.Location = New System.Drawing.Point(95, 79)
-        Me.cbMedico.Name = "cbMedico"
-        Me.cbMedico.Size = New System.Drawing.Size(421, 23)
-        Me.cbMedico.TabIndex = 52
-        '
-        'Label12
-        '
-        Me.Label12.AutoSize = True
-        Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.Location = New System.Drawing.Point(11, 82)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(51, 15)
-        Me.Label12.TabIndex = 51
-        Me.Label12.Text = "Medico:"
-        '
-        'txtobservacion
-        '
-        Me.txtobservacion.BackColor = System.Drawing.Color.White
-        Me.txtobservacion.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!)
-        Me.txtobservacion.Location = New System.Drawing.Point(126, 108)
-        Me.txtobservacion.Name = "txtobservacion"
-        Me.txtobservacion.ReadOnly = True
-        Me.txtobservacion.Size = New System.Drawing.Size(753, 83)
-        Me.txtobservacion.TabIndex = 49
-        Me.txtobservacion.Text = ""
-        '
-        'Label11
-        '
-        Me.Label11.AutoSize = True
-        Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.Location = New System.Drawing.Point(11, 112)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(114, 15)
-        Me.Label11.TabIndex = 48
-        Me.Label11.Text = "Recomendaciones:"
-        '
-        'TextCodEPS
-        '
-        Me.TextCodEPS.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!)
-        Me.TextCodEPS.Location = New System.Drawing.Point(95, 51)
-        Me.TextCodEPS.Name = "TextCodEPS"
-        Me.TextCodEPS.Size = New System.Drawing.Size(66, 21)
-        Me.TextCodEPS.TabIndex = 47
-        '
-        'textEPS
-        '
-        Me.textEPS.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!)
-        Me.textEPS.Location = New System.Drawing.Point(163, 51)
-        Me.textEPS.Name = "textEPS"
-        Me.textEPS.Size = New System.Drawing.Size(353, 21)
-        Me.textEPS.TabIndex = 46
-        '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.Location = New System.Drawing.Point(11, 54)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(34, 15)
-        Me.Label10.TabIndex = 45
-        Me.Label10.Text = "EPS:"
-        '
-        'textedad
-        '
-        Me.textedad.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!)
-        Me.textedad.Location = New System.Drawing.Point(575, 49)
-        Me.textedad.MaxLength = 20
-        Me.textedad.Name = "textedad"
-        Me.textedad.ReadOnly = True
-        Me.textedad.ShortcutsEnabled = False
-        Me.textedad.Size = New System.Drawing.Size(53, 21)
-        Me.textedad.TabIndex = 44
-        Me.textedad.TabStop = False
-        Me.textedad.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(522, 52)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(39, 15)
-        Me.Label9.TabIndex = 43
-        Me.Label9.Text = "Edad:"
-        '
-        'txtCodigo
-        '
-        Me.txtCodigo.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtCodigo.Location = New System.Drawing.Point(575, 22)
-        Me.txtCodigo.Name = "txtCodigo"
-        Me.txtCodigo.Size = New System.Drawing.Size(53, 21)
-        Me.txtCodigo.TabIndex = 0
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(522, 25)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(50, 15)
-        Me.Label5.TabIndex = 4
-        Me.Label5.Text = "Código:"
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(633, 25)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(38, 15)
-        Me.Label8.TabIndex = 42
-        Me.Label8.Text = "Sexo:"
-        '
-        'TextSexo
-        '
-        Me.TextSexo.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!)
-        Me.TextSexo.Location = New System.Drawing.Point(705, 21)
-        Me.TextSexo.Name = "TextSexo"
-        Me.TextSexo.Size = New System.Drawing.Size(176, 21)
-        Me.TextSexo.TabIndex = 41
-        '
-        'textNombre
-        '
-        Me.textNombre.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!)
-        Me.textNombre.Location = New System.Drawing.Point(209, 23)
-        Me.textNombre.Name = "textNombre"
-        Me.textNombre.Size = New System.Drawing.Size(307, 21)
-        Me.textNombre.TabIndex = 40
-        '
-        'btbuscarPaciente
-        '
-        Me.btbuscarPaciente.Location = New System.Drawing.Point(183, 22)
-        Me.btbuscarPaciente.Name = "btbuscarPaciente"
-        Me.btbuscarPaciente.Size = New System.Drawing.Size(25, 23)
-        Me.btbuscarPaciente.TabIndex = 35
-        Me.btbuscarPaciente.UseVisualStyleBackColor = True
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(11, 26)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(58, 15)
-        Me.Label7.TabIndex = 34
-        Me.Label7.Text = "Paciente:"
-        '
-        'textPaciente
-        '
-        Me.textPaciente.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!)
-        Me.textPaciente.Location = New System.Drawing.Point(95, 23)
-        Me.textPaciente.Name = "textPaciente"
-        Me.textPaciente.Size = New System.Drawing.Size(86, 21)
-        Me.textPaciente.TabIndex = 36
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(633, 52)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(69, 15)
-        Me.Label4.TabIndex = 2
-        Me.Label4.Text = "Fecha Cita:"
-        '
-        'ToolStrip1
-        '
-        Me.ToolStrip1.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.ToolStrip1.ImageScalingSize = New System.Drawing.Size(32, 32)
-        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.btnuevo, Me.ToolStripSeparator1, Me.btguardar, Me.ToolStripSeparator3, Me.btbuscar, Me.bteditar, Me.ToolStripSeparator5, Me.btcancelar, Me.ToolStripSeparator6, Me.btanular, Me.ToolStripSeparator7, Me.btimprimir, Me.btCancelarCita})
-        Me.ToolStrip1.Location = New System.Drawing.Point(0, 503)
-        Me.ToolStrip1.Name = "ToolStrip1"
-        Me.ToolStrip1.Size = New System.Drawing.Size(926, 54)
-        Me.ToolStrip1.TabIndex = 28
-        Me.ToolStrip1.Text = "ToolStrip1"
-        '
-        'btnuevo
-        '
-        Me.btnuevo.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnuevo.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.btnuevo.Name = "btnuevo"
-        Me.btnuevo.Size = New System.Drawing.Size(46, 51)
-        Me.btnuevo.Text = "&Nuevo"
-        Me.btnuevo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
-        '
-        'ToolStripSeparator1
-        '
-        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
-        Me.ToolStripSeparator1.Size = New System.Drawing.Size(6, 54)
-        '
-        'btguardar
-        '
-        Me.btguardar.Enabled = False
-        Me.btguardar.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btguardar.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.btguardar.Name = "btguardar"
-        Me.btguardar.Size = New System.Drawing.Size(53, 51)
-        Me.btguardar.Text = "&Guardar"
-        Me.btguardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
-        '
-        'ToolStripSeparator3
-        '
-        Me.ToolStripSeparator3.Name = "ToolStripSeparator3"
-        Me.ToolStripSeparator3.Size = New System.Drawing.Size(6, 54)
-        '
-        'btbuscar
-        '
-        Me.btbuscar.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btbuscar.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.btbuscar.Name = "btbuscar"
-        Me.btbuscar.Size = New System.Drawing.Size(46, 51)
-        Me.btbuscar.Text = "&Buscar"
-        Me.btbuscar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
-        Me.btbuscar.Visible = False
-        '
-        'bteditar
-        '
-        Me.bteditar.Enabled = False
-        Me.bteditar.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.bteditar.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.bteditar.Name = "bteditar"
-        Me.bteditar.Size = New System.Drawing.Size(41, 51)
-        Me.bteditar.Text = "&Editar"
-        Me.bteditar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
-        '
-        'ToolStripSeparator5
-        '
-        Me.ToolStripSeparator5.Name = "ToolStripSeparator5"
-        Me.ToolStripSeparator5.Size = New System.Drawing.Size(6, 54)
-        '
-        'btcancelar
-        '
-        Me.btcancelar.Enabled = False
-        Me.btcancelar.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btcancelar.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.btcancelar.Name = "btcancelar"
-        Me.btcancelar.Size = New System.Drawing.Size(56, 51)
-        Me.btcancelar.Text = "&Cancelar"
-        Me.btcancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
-        '
-        'ToolStripSeparator6
-        '
-        Me.ToolStripSeparator6.Name = "ToolStripSeparator6"
-        Me.ToolStripSeparator6.Size = New System.Drawing.Size(6, 54)
-        '
-        'btanular
-        '
-        Me.btanular.Enabled = False
-        Me.btanular.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btanular.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.btanular.Name = "btanular"
-        Me.btanular.Size = New System.Drawing.Size(46, 51)
-        Me.btanular.Text = "&Anular"
-        Me.btanular.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
-        '
-        'ToolStripSeparator7
-        '
-        Me.ToolStripSeparator7.Name = "ToolStripSeparator7"
-        Me.ToolStripSeparator7.Size = New System.Drawing.Size(6, 54)
-        '
-        'btimprimir
-        '
-        Me.btimprimir.Enabled = False
-        Me.btimprimir.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btimprimir.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.btimprimir.Name = "btimprimir"
-        Me.btimprimir.Size = New System.Drawing.Size(58, 51)
-        Me.btimprimir.Text = "&Imprimir"
-        Me.btimprimir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
-        '
-        'btCancelarCita
-        '
-        Me.btCancelarCita.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
-        Me.btCancelarCita.Enabled = False
-        Me.btCancelarCita.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btCancelarCita.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.btCancelarCita.Name = "btCancelarCita"
-        Me.btCancelarCita.Size = New System.Drawing.Size(79, 51)
-        Me.btCancelarCita.Text = "Cancelar Cita"
-        Me.btCancelarCita.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.Location = New System.Drawing.Point(12, 8)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(40, 40)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox1.TabIndex = 30
-        Me.PictureBox1.TabStop = False
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Arial Narrow", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(58, 20)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(144, 16)
-        Me.Label1.TabIndex = 29
-        Me.Label1.Text = "PROGRAMACION DE CITA"
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Arial Narrow", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.SeaGreen
-        Me.Label2.Location = New System.Drawing.Point(54, 24)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(856, 20)
-        Me.Label2.TabIndex = 31
-        Me.Label2.Text = "_________________________________________________________________________________" &
-    "________________________________________"
-        '
-        'btPaciente
-        '
-        Me.btPaciente.BackColor = System.Drawing.Color.Transparent
-        Me.btPaciente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.btPaciente.Font = New System.Drawing.Font("Arial Narrow", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btPaciente.ForeColor = System.Drawing.Color.Black
-        Me.btPaciente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btPaciente.Location = New System.Drawing.Point(818, 3)
-        Me.btPaciente.Name = "btPaciente"
-        Me.btPaciente.Size = New System.Drawing.Size(92, 36)
-        Me.btPaciente.TabIndex = 10062
-        Me.btPaciente.Text = "Paciente"
-        Me.btPaciente.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btPaciente.UseVisualStyleBackColor = False
-        '
-        'btConfigCita
-        '
-        Me.btConfigCita.BackColor = System.Drawing.Color.Transparent
-        Me.btConfigCita.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.btConfigCita.Font = New System.Drawing.Font("Arial Narrow", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btConfigCita.ForeColor = System.Drawing.Color.Black
-        Me.btConfigCita.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btConfigCita.Location = New System.Drawing.Point(725, 3)
-        Me.btConfigCita.Name = "btConfigCita"
-        Me.btConfigCita.Size = New System.Drawing.Size(91, 36)
-        Me.btConfigCita.TabIndex = 10088
-        Me.btConfigCita.Text = "Confi. Cita"
-        Me.btConfigCita.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btConfigCita.UseVisualStyleBackColor = False
         '
         'DataGridViewTextBoxColumn1
         '
@@ -655,11 +114,10 @@ Partial Class FormCitaMedica
         'DataGridViewTextBoxColumn3
         '
         Me.DataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.DataGridViewTextBoxColumn3.DefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.DataGridViewTextBoxColumn3.DefaultCellStyle = DataGridViewCellStyle1
         Me.DataGridViewTextBoxColumn3.HeaderText = "Cantidad"
         Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
-        Me.DataGridViewTextBoxColumn3.Width = 74
         '
         'DataGridViewTextBoxColumn4
         '
@@ -675,31 +133,11 @@ Partial Class FormCitaMedica
         '
         'DataGridViewTextBoxColumn6
         '
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.DataGridViewTextBoxColumn6.DefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.DataGridViewTextBoxColumn6.DefaultCellStyle = DataGridViewCellStyle2
         Me.DataGridViewTextBoxColumn6.HeaderText = "Cantidad"
         Me.DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6"
         Me.DataGridViewTextBoxColumn6.Width = 82
-        '
-        'dgcodigop
-        '
-        Me.dgcodigop.HeaderText = "Codigo"
-        Me.dgcodigop.Name = "dgcodigop"
-        Me.dgcodigop.Width = 65
-        '
-        'dgdescripcionps
-        '
-        Me.dgdescripcionps.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.dgdescripcionps.HeaderText = "Descripción"
-        Me.dgdescripcionps.Name = "dgdescripcionps"
-        '
-        'dgCantidadps
-        '
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.dgCantidadps.DefaultCellStyle = DataGridViewCellStyle2
-        Me.dgCantidadps.HeaderText = "Cantidad"
-        Me.dgCantidadps.Name = "dgCantidadps"
-        Me.dgCantidadps.Width = 74
         '
         'DataGridViewTextBoxColumn7
         '
@@ -715,8 +153,8 @@ Partial Class FormCitaMedica
         '
         'DataGridViewTextBoxColumn9
         '
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.DataGridViewTextBoxColumn9.DefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.DataGridViewTextBoxColumn9.DefaultCellStyle = DataGridViewCellStyle3
         Me.DataGridViewTextBoxColumn9.HeaderText = "Cantidad"
         Me.DataGridViewTextBoxColumn9.Name = "DataGridViewTextBoxColumn9"
         Me.DataGridViewTextBoxColumn9.Width = 82
@@ -743,8 +181,8 @@ Partial Class FormCitaMedica
         '
         'DataGridViewTextBoxColumn13
         '
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.DataGridViewTextBoxColumn13.DefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.DataGridViewTextBoxColumn13.DefaultCellStyle = DataGridViewCellStyle4
         Me.DataGridViewTextBoxColumn13.HeaderText = "Codigo"
         Me.DataGridViewTextBoxColumn13.Name = "DataGridViewTextBoxColumn13"
         Me.DataGridViewTextBoxColumn13.Width = 71
@@ -769,113 +207,436 @@ Partial Class FormCitaMedica
         '
         'DataGridViewTextBoxColumn17
         '
-        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.DataGridViewTextBoxColumn17.DefaultCellStyle = DataGridViewCellStyle7
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.DataGridViewTextBoxColumn17.DefaultCellStyle = DataGridViewCellStyle5
         Me.DataGridViewTextBoxColumn17.HeaderText = "Cantidad"
         Me.DataGridViewTextBoxColumn17.Name = "DataGridViewTextBoxColumn17"
         Me.DataGridViewTextBoxColumn17.Width = 82
         '
-        'dgCodigo
+        'GroupBox2
         '
-        Me.dgCodigo.HeaderText = "Codigo"
-        Me.dgCodigo.Name = "dgCodigo"
-        Me.dgCodigo.Width = 65
+        Me.GroupBox2.Controls.Add(Me.btBuscarPerfil)
+        Me.GroupBox2.Controls.Add(Me.lmnts)
+        Me.GroupBox2.Controls.Add(Me.txtfecha)
+        Me.GroupBox2.Controls.Add(Me.ComboMinuto)
+        Me.GroupBox2.Controls.Add(Me.txtobservacion)
+        Me.GroupBox2.Controls.Add(Me.Label11)
+        Me.GroupBox2.Controls.Add(Me.textNombre)
+        Me.GroupBox2.Controls.Add(Me.Label7)
+        Me.GroupBox2.Controls.Add(Me.Label4)
+        Me.GroupBox2.Font = New System.Drawing.Font("Times New Roman", 10.0!, System.Drawing.FontStyle.Italic)
+        Me.GroupBox2.Location = New System.Drawing.Point(6, 13)
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.Size = New System.Drawing.Size(697, 116)
+        Me.GroupBox2.TabIndex = 0
+        Me.GroupBox2.TabStop = False
+        Me.GroupBox2.Text = "Información:"
         '
-        'dgDescripcionp
+        'btBuscarPerfil
         '
-        Me.dgDescripcionp.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.dgDescripcionp.HeaderText = "Descripción"
-        Me.dgDescripcionp.Name = "dgDescripcionp"
+        Me.btBuscarPerfil.BackgroundImage = Global.Quality.My.Resources.Resources.fondo_azul
+        Me.btBuscarPerfil.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btBuscarPerfil.Image = Global.Quality.My.Resources.Resources.Zoom_icon1
+        Me.btBuscarPerfil.Location = New System.Drawing.Point(340, 18)
+        Me.btBuscarPerfil.Name = "btBuscarPerfil"
+        Me.btBuscarPerfil.Size = New System.Drawing.Size(31, 30)
+        Me.btBuscarPerfil.TabIndex = 58
+        Me.btBuscarPerfil.UseVisualStyleBackColor = True
         '
-        'dgcantidadp
+        'lmnts
         '
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle1.NullValue = Nothing
-        Me.dgcantidadp.DefaultCellStyle = DataGridViewCellStyle1
-        Me.dgcantidadp.HeaderText = "Cantidad"
-        Me.dgcantidadp.Name = "dgcantidadp"
-        Me.dgcantidadp.Width = 74
+        Me.lmnts.AutoSize = True
+        Me.lmnts.Font = New System.Drawing.Font("Times New Roman", 10.0!, System.Drawing.FontStyle.Italic)
+        Me.lmnts.Location = New System.Drawing.Point(592, 26)
+        Me.lmnts.Name = "lmnts"
+        Me.lmnts.Size = New System.Drawing.Size(41, 16)
+        Me.lmnts.TabIndex = 57
+        Me.lmnts.Text = "Mnts:"
         '
-        'dgResultadoPara
+        'txtfecha
         '
-        Me.dgResultadoPara.HeaderText = "Resultado"
-        Me.dgResultadoPara.Name = "dgResultadoPara"
-        Me.dgResultadoPara.Visible = False
-        Me.dgResultadoPara.Width = 61
+        Me.txtfecha.Font = New System.Drawing.Font("Times New Roman", 10.0!, System.Drawing.FontStyle.Italic)
+        Me.txtfecha.Location = New System.Drawing.Point(478, 22)
+        Me.txtfecha.Mask = "00/00/0000 00"
+        Me.txtfecha.Name = "txtfecha"
+        Me.txtfecha.Size = New System.Drawing.Size(105, 23)
+        Me.txtfecha.TabIndex = 56
         '
-        'dgAnular
+        'ComboMinuto
         '
-        Me.dgAnular.HeaderText = "Quitar"
-        Me.dgAnular.Name = "dgAnular"
-        Me.dgAnular.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgAnular.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
-        Me.dgAnular.Width = 60
+        Me.ComboMinuto.Font = New System.Drawing.Font("Times New Roman", 10.0!, System.Drawing.FontStyle.Italic)
+        Me.ComboMinuto.FormattingEnabled = True
+        Me.ComboMinuto.Location = New System.Drawing.Point(637, 22)
+        Me.ComboMinuto.Name = "ComboMinuto"
+        Me.ComboMinuto.Size = New System.Drawing.Size(52, 23)
+        Me.ComboMinuto.TabIndex = 55
+        '
+        'txtobservacion
+        '
+        Me.txtobservacion.BackColor = System.Drawing.Color.White
+        Me.txtobservacion.Font = New System.Drawing.Font("Times New Roman", 10.0!, System.Drawing.FontStyle.Italic)
+        Me.txtobservacion.Location = New System.Drawing.Point(145, 54)
+        Me.txtobservacion.Name = "txtobservacion"
+        Me.txtobservacion.ReadOnly = True
+        Me.txtobservacion.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedBoth
+        Me.txtobservacion.Size = New System.Drawing.Size(546, 55)
+        Me.txtobservacion.TabIndex = 49
+        Me.txtobservacion.Text = ""
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Font = New System.Drawing.Font("Times New Roman", 10.0!, System.Drawing.FontStyle.Italic)
+        Me.Label11.Location = New System.Drawing.Point(11, 57)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(113, 16)
+        Me.Label11.TabIndex = 48
+        Me.Label11.Text = "Recomendaciones:"
+        '
+        'textNombre
+        '
+        Me.textNombre.Font = New System.Drawing.Font("Times New Roman", 10.0!, System.Drawing.FontStyle.Italic)
+        Me.textNombre.Location = New System.Drawing.Point(73, 24)
+        Me.textNombre.Name = "textNombre"
+        Me.textNombre.Size = New System.Drawing.Size(263, 23)
+        Me.textNombre.TabIndex = 40
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Times New Roman", 10.0!, System.Drawing.FontStyle.Italic)
+        Me.Label7.Location = New System.Drawing.Point(11, 26)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(53, 16)
+        Me.Label7.TabIndex = 34
+        Me.Label7.Text = "Cliente:"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Italic)
+        Me.Label4.Location = New System.Drawing.Point(389, 24)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(86, 19)
+        Me.Label4.TabIndex = 2
+        Me.Label4.Text = "Fecha Cita:"
+        '
+        'TabControl1
+        '
+        Me.TabControl1.Controls.Add(Me.TabPage6)
+        Me.TabControl1.Controls.Add(Me.TabPage2)
+        Me.TabControl1.Font = New System.Drawing.Font("Times New Roman", 10.0!, System.Drawing.FontStyle.Italic)
+        Me.TabControl1.Location = New System.Drawing.Point(6, 132)
+        Me.TabControl1.Name = "TabControl1"
+        Me.TabControl1.SelectedIndex = 0
+        Me.TabControl1.Size = New System.Drawing.Size(697, 213)
+        Me.TabControl1.TabIndex = 50
+        '
+        'TabPage6
+        '
+        Me.TabPage6.Controls.Add(Me.DataGridView1)
+        Me.TabPage6.Location = New System.Drawing.Point(4, 24)
+        Me.TabPage6.Name = "TabPage6"
+        Me.TabPage6.Size = New System.Drawing.Size(689, 185)
+        Me.TabPage6.TabIndex = 6
+        Me.TabPage6.Text = "Servicio"
+        Me.TabPage6.UseVisualStyleBackColor = True
+        '
+        'DataGridView1
+        '
+        Me.DataGridView1.AllowUserToAddRows = False
+        Me.DataGridView1.AllowUserToDeleteRows = False
+        Me.DataGridView1.AllowUserToResizeColumns = False
+        Me.DataGridView1.AllowUserToResizeRows = False
+        Me.DataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
+        Me.DataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
+        Me.DataGridView1.BackgroundColor = System.Drawing.SystemColors.ControlLightLight
+        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn18, Me.DataGridViewTextBoxColumn19, Me.DataGridViewTextBoxColumn20, Me.DataGridViewImageColumn1})
+        Me.DataGridView1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.DataGridView1.Location = New System.Drawing.Point(0, 0)
+        Me.DataGridView1.MultiSelect = False
+        Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridView1.RowHeadersVisible = False
+        Me.DataGridView1.Size = New System.Drawing.Size(689, 185)
+        Me.DataGridView1.TabIndex = 10088
+        '
+        'DataGridViewTextBoxColumn18
+        '
+        Me.DataGridViewTextBoxColumn18.HeaderText = "Codigo"
+        Me.DataGridViewTextBoxColumn18.Name = "DataGridViewTextBoxColumn18"
+        Me.DataGridViewTextBoxColumn18.Width = 74
+        '
+        'DataGridViewTextBoxColumn19
+        '
+        Me.DataGridViewTextBoxColumn19.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.DataGridViewTextBoxColumn19.HeaderText = "Descripción"
+        Me.DataGridViewTextBoxColumn19.Name = "DataGridViewTextBoxColumn19"
+        '
+        'DataGridViewTextBoxColumn20
+        '
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.DataGridViewTextBoxColumn20.DefaultCellStyle = DataGridViewCellStyle6
+        Me.DataGridViewTextBoxColumn20.HeaderText = "Cantidad"
+        Me.DataGridViewTextBoxColumn20.Name = "DataGridViewTextBoxColumn20"
+        Me.DataGridViewTextBoxColumn20.Width = 85
+        '
+        'DataGridViewImageColumn1
+        '
+        Me.DataGridViewImageColumn1.HeaderText = "Quitar"
+        Me.DataGridViewImageColumn1.Name = "DataGridViewImageColumn1"
+        Me.DataGridViewImageColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridViewImageColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
+        Me.DataGridViewImageColumn1.Width = 70
+        '
+        'TabPage2
+        '
+        Me.TabPage2.Controls.Add(Me.dgvProcedimiento)
+        Me.TabPage2.Location = New System.Drawing.Point(4, 24)
+        Me.TabPage2.Name = "TabPage2"
+        Me.TabPage2.Size = New System.Drawing.Size(689, 185)
+        Me.TabPage2.TabIndex = 5
+        Me.TabPage2.Text = "Producto"
+        Me.TabPage2.UseVisualStyleBackColor = True
+        '
+        'dgvProcedimiento
+        '
+        Me.dgvProcedimiento.AllowUserToAddRows = False
+        Me.dgvProcedimiento.AllowUserToDeleteRows = False
+        Me.dgvProcedimiento.AllowUserToResizeColumns = False
+        Me.dgvProcedimiento.AllowUserToResizeRows = False
+        Me.dgvProcedimiento.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
+        Me.dgvProcedimiento.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
+        Me.dgvProcedimiento.BackgroundColor = System.Drawing.SystemColors.ControlLightLight
+        Me.dgvProcedimiento.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvProcedimiento.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.dgcodigop, Me.dgdescripcionps, Me.dgCantidadps, Me.dganularps})
+        Me.dgvProcedimiento.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.dgvProcedimiento.Location = New System.Drawing.Point(0, 0)
+        Me.dgvProcedimiento.MultiSelect = False
+        Me.dgvProcedimiento.Name = "dgvProcedimiento"
+        Me.dgvProcedimiento.RowHeadersVisible = False
+        Me.dgvProcedimiento.Size = New System.Drawing.Size(689, 185)
+        Me.dgvProcedimiento.TabIndex = 10087
+        '
+        'dgcodigop
+        '
+        Me.dgcodigop.HeaderText = "Codigo"
+        Me.dgcodigop.Name = "dgcodigop"
+        Me.dgcodigop.Width = 74
+        '
+        'dgdescripcionps
+        '
+        Me.dgdescripcionps.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.dgdescripcionps.HeaderText = "Descripción"
+        Me.dgdescripcionps.Name = "dgdescripcionps"
+        '
+        'dgCantidadps
+        '
+        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.dgCantidadps.DefaultCellStyle = DataGridViewCellStyle7
+        Me.dgCantidadps.HeaderText = "Cantidad"
+        Me.dgCantidadps.Name = "dgCantidadps"
+        Me.dgCantidadps.Width = 85
+        '
+        'dganularps
+        '
+        Me.dganularps.HeaderText = "Quitar"
+        Me.dganularps.Name = "dganularps"
+        Me.dganularps.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dganularps.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
+        Me.dganularps.Width = 70
+        '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Me.TabControl1)
+        Me.GroupBox1.Controls.Add(Me.GroupBox2)
+        Me.GroupBox1.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Italic)
+        Me.GroupBox1.Location = New System.Drawing.Point(3, 46)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(709, 355)
+        Me.GroupBox1.TabIndex = 32
+        Me.GroupBox1.TabStop = False
+        '
+        'Panel1
+        '
+        Me.Panel1.BackColor = System.Drawing.Color.White
+        Me.Panel1.BackgroundImage = Global.Quality.My.Resources.Resources.fondo_azul
+        Me.Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Panel1.Controls.Add(Me.PictureBox1)
+        Me.Panel1.Controls.Add(Me.Label1)
+        Me.Panel1.Location = New System.Drawing.Point(-1, 1)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(713, 42)
+        Me.Panel1.TabIndex = 36
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
+        Me.PictureBox1.Image = Global.Quality.My.Resources.Resources.persona
+        Me.PictureBox1.Location = New System.Drawing.Point(4, -7)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(69, 53)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 1
+        Me.PictureBox1.TabStop = False
+        '
+        'Label1
+        '
+        Me.Label1.BackColor = System.Drawing.Color.Transparent
+        Me.Label1.Font = New System.Drawing.Font("Times New Roman", 20.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.White
+        Me.Label1.Location = New System.Drawing.Point(0, 1)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(699, 41)
+        Me.Label1.TabIndex = 1
+        Me.Label1.Text = "Agendar Cita"
+        Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'ToolStrip1
+        '
+        Me.ToolStrip1.BackColor = System.Drawing.Color.White
+        Me.ToolStrip1.BackgroundImage = Global.Quality.My.Resources.Resources.fondo_azul
+        Me.ToolStrip1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.ToolStrip1.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.ToolStrip1.ImageScalingSize = New System.Drawing.Size(26, 26)
+        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripSeparator1, Me.btNuevo, Me.ToolStripSeparator2, Me.btBuscar, Me.ToolStripSeparator7, Me.btRegistrar, Me.ToolStripSeparator4, Me.btEditar, Me.ToolStripSeparator5, Me.btCancelar, Me.ToolStripSeparator3, Me.btAnular, Me.ToolStripSeparator6})
+        Me.ToolStrip1.Location = New System.Drawing.Point(0, 404)
+        Me.ToolStrip1.Name = "ToolStrip1"
+        Me.ToolStrip1.Size = New System.Drawing.Size(713, 33)
+        Me.ToolStrip1.TabIndex = 37
+        Me.ToolStrip1.Text = "ToolStrip1"
+        '
+        'ToolStripSeparator1
+        '
+        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
+        Me.ToolStripSeparator1.Size = New System.Drawing.Size(6, 33)
+        '
+        'btNuevo
+        '
+        Me.btNuevo.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btNuevo.ForeColor = System.Drawing.Color.White
+        Me.btNuevo.Image = Global.Quality.My.Resources.Resources.Files_New_File_icon
+        Me.btNuevo.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.btNuevo.Name = "btNuevo"
+        Me.btNuevo.Size = New System.Drawing.Size(82, 30)
+        Me.btNuevo.Text = "&Nuevo"
+        Me.btNuevo.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        '
+        'ToolStripSeparator2
+        '
+        Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
+        Me.ToolStripSeparator2.Size = New System.Drawing.Size(6, 33)
+        '
+        'btBuscar
+        '
+        Me.btBuscar.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btBuscar.ForeColor = System.Drawing.Color.White
+        Me.btBuscar.Image = Global.Quality.My.Resources.Resources.Search_icon__1_
+        Me.btBuscar.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.btBuscar.Name = "btBuscar"
+        Me.btBuscar.Size = New System.Drawing.Size(86, 30)
+        Me.btBuscar.Text = "&Buscar"
+        Me.btBuscar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        '
+        'ToolStripSeparator7
+        '
+        Me.ToolStripSeparator7.Name = "ToolStripSeparator7"
+        Me.ToolStripSeparator7.Size = New System.Drawing.Size(6, 33)
+        '
+        'btRegistrar
+        '
+        Me.btRegistrar.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btRegistrar.ForeColor = System.Drawing.Color.White
+        Me.btRegistrar.Image = Global.Quality.My.Resources.Resources.Save_icon__1_
+        Me.btRegistrar.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.btRegistrar.Name = "btRegistrar"
+        Me.btRegistrar.Size = New System.Drawing.Size(101, 30)
+        Me.btRegistrar.Text = "&Registrar"
+        Me.btRegistrar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        '
+        'ToolStripSeparator4
+        '
+        Me.ToolStripSeparator4.Name = "ToolStripSeparator4"
+        Me.ToolStripSeparator4.Size = New System.Drawing.Size(6, 33)
+        '
+        'btEditar
+        '
+        Me.btEditar.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btEditar.ForeColor = System.Drawing.Color.White
+        Me.btEditar.Image = Global.Quality.My.Resources.Resources.pencil_icon__1_
+        Me.btEditar.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.btEditar.Name = "btEditar"
+        Me.btEditar.Size = New System.Drawing.Size(82, 30)
+        Me.btEditar.Text = "&Editar"
+        Me.btEditar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        '
+        'ToolStripSeparator5
+        '
+        Me.ToolStripSeparator5.Name = "ToolStripSeparator5"
+        Me.ToolStripSeparator5.Size = New System.Drawing.Size(6, 33)
+        '
+        'btCancelar
+        '
+        Me.btCancelar.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btCancelar.ForeColor = System.Drawing.Color.White
+        Me.btCancelar.Image = Global.Quality.My.Resources.Resources.Actions_blue_arrow_undo_icon
+        Me.btCancelar.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.btCancelar.Name = "btCancelar"
+        Me.btCancelar.Size = New System.Drawing.Size(100, 30)
+        Me.btCancelar.Text = "&Cancelar"
+        Me.btCancelar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        '
+        'ToolStripSeparator3
+        '
+        Me.ToolStripSeparator3.Name = "ToolStripSeparator3"
+        Me.ToolStripSeparator3.Size = New System.Drawing.Size(6, 33)
+        '
+        'btAnular
+        '
+        Me.btAnular.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btAnular.ForeColor = System.Drawing.Color.White
+        Me.btAnular.Image = Global.Quality.My.Resources.Resources.document_delete_icon__1_
+        Me.btAnular.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.btAnular.Name = "btAnular"
+        Me.btAnular.Size = New System.Drawing.Size(87, 30)
+        Me.btAnular.Text = "&Anular"
+        Me.btAnular.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        '
+        'ToolStripSeparator6
+        '
+        Me.ToolStripSeparator6.Name = "ToolStripSeparator6"
+        Me.ToolStripSeparator6.Size = New System.Drawing.Size(6, 33)
         '
         'FormCitaMedica
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(926, 557)
-        Me.Controls.Add(Me.btConfigCita)
-        Me.Controls.Add(Me.btPaciente)
-        Me.Controls.Add(Me.GroupBox1)
+        Me.ClientSize = New System.Drawing.Size(713, 437)
         Me.Controls.Add(Me.ToolStrip1)
-        Me.Controls.Add(Me.PictureBox1)
-        Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.Panel1)
+        Me.Controls.Add(Me.GroupBox1)
         Me.MaximizeBox = False
-        Me.MaximumSize = New System.Drawing.Size(942, 596)
-        Me.MinimumSize = New System.Drawing.Size(942, 596)
+        Me.MaximumSize = New System.Drawing.Size(729, 475)
+        Me.MinimumSize = New System.Drawing.Size(729, 475)
         Me.Name = "FormCitaMedica"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.GroupBox1.ResumeLayout(False)
-        Me.TabControl1.ResumeLayout(False)
-        Me.TabPage6.ResumeLayout(False)
-        CType(Me.dgvParaclinicos, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.TabPage2.ResumeLayout(False)
-        CType(Me.dgvProcedimiento, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
+        Me.TabControl1.ResumeLayout(False)
+        Me.TabPage6.ResumeLayout(False)
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TabPage2.ResumeLayout(False)
+        CType(Me.dgvProcedimiento, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox1.ResumeLayout(False)
+        Me.Panel1.ResumeLayout(False)
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ToolStrip1.ResumeLayout(False)
         Me.ToolStrip1.PerformLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-
-    Public WithEvents GroupBox1 As GroupBox
-    Public WithEvents GroupBox2 As GroupBox
-    Friend WithEvents txtCodigo As TextBox
-    Friend WithEvents Label5 As Label
-    Friend WithEvents Label4 As Label
-    Public WithEvents ToolStrip1 As ToolStrip
-    Public WithEvents btnuevo As ToolStripButton
-    Public WithEvents ToolStripSeparator1 As ToolStripSeparator
-    Public WithEvents btguardar As ToolStripButton
-    Public WithEvents ToolStripSeparator3 As ToolStripSeparator
-    Public WithEvents btbuscar As ToolStripButton
-    Public WithEvents bteditar As ToolStripButton
-    Public WithEvents ToolStripSeparator5 As ToolStripSeparator
-    Public WithEvents btcancelar As ToolStripButton
-    Public WithEvents ToolStripSeparator6 As ToolStripSeparator
-    Public WithEvents btanular As ToolStripButton
-    Public WithEvents ToolStripSeparator7 As ToolStripSeparator
-    Public WithEvents PictureBox1 As PictureBox
-    Public WithEvents Label1 As Label
-    Public WithEvents Label2 As Label
-    Public WithEvents btbuscarPaciente As Button
-    Friend WithEvents Label7 As Label
-    Friend WithEvents textPaciente As TextBox
-    Friend WithEvents textNombre As TextBox
-    Public WithEvents textedad As TextBox
-    Friend WithEvents Label9 As Label
-    Friend WithEvents Label8 As Label
-    Friend WithEvents TextSexo As TextBox
-    Friend WithEvents TextCodEPS As TextBox
-    Friend WithEvents textEPS As TextBox
-    Friend WithEvents Label10 As Label
     Friend WithEvents DataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn
@@ -893,32 +654,45 @@ Partial Class FormCitaMedica
     Friend WithEvents DataGridViewTextBoxColumn15 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn16 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn17 As DataGridViewTextBoxColumn
+    Public WithEvents GroupBox2 As GroupBox
+    Friend WithEvents lmnts As Label
+    Friend WithEvents txtfecha As MaskedTextBox
+    Friend WithEvents ComboMinuto As ComboBox
     Friend WithEvents txtobservacion As RichTextBox
     Friend WithEvents Label11 As Label
-    Public WithEvents btimprimir As ToolStripButton
+    Friend WithEvents textNombre As TextBox
+    Friend WithEvents Label7 As Label
+    Friend WithEvents Label4 As Label
     Friend WithEvents TabControl1 As TabControl
     Friend WithEvents TabPage6 As TabPage
-    Friend WithEvents dgvParaclinicos As DataGridView
+    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents DataGridViewTextBoxColumn18 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn19 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn20 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewImageColumn1 As DataGridViewImageColumn
     Friend WithEvents TabPage2 As TabPage
     Friend WithEvents dgvProcedimiento As DataGridView
     Friend WithEvents dgcodigop As DataGridViewTextBoxColumn
     Friend WithEvents dgdescripcionps As DataGridViewTextBoxColumn
     Friend WithEvents dgCantidadps As DataGridViewTextBoxColumn
     Friend WithEvents dganularps As DataGridViewImageColumn
-    Friend WithEvents cbMedico As ComboBox
-    Friend WithEvents Label12 As Label
-    Friend WithEvents btPaciente As Button
-    Friend WithEvents txtEstado As TextBox
-    Friend WithEvents Label3 As Label
-    Friend WithEvents ComboMinuto As ComboBox
-    Public WithEvents btCancelarCita As ToolStripButton
-    Friend WithEvents txtfecha As MaskedTextBox
-    Friend WithEvents lmnts As Label
-    Friend WithEvents dtFecha As DateTimePicker
-    Friend WithEvents btConfigCita As Button
-    Friend WithEvents dgCodigo As DataGridViewTextBoxColumn
-    Friend WithEvents dgDescripcionp As DataGridViewTextBoxColumn
-    Friend WithEvents dgcantidadp As DataGridViewTextBoxColumn
-    Friend WithEvents dgResultadoPara As DataGridViewImageColumn
-    Friend WithEvents dgAnular As DataGridViewImageColumn
+    Public WithEvents GroupBox1 As GroupBox
+    Public WithEvents Panel1 As Panel
+    Public WithEvents PictureBox1 As PictureBox
+    Public WithEvents Label1 As Label
+    Public WithEvents ToolStrip1 As ToolStrip
+    Friend WithEvents ToolStripSeparator1 As ToolStripSeparator
+    Public WithEvents btNuevo As ToolStripButton
+    Friend WithEvents ToolStripSeparator2 As ToolStripSeparator
+    Public WithEvents btBuscar As ToolStripButton
+    Friend WithEvents ToolStripSeparator7 As ToolStripSeparator
+    Public WithEvents btRegistrar As ToolStripButton
+    Friend WithEvents ToolStripSeparator4 As ToolStripSeparator
+    Public WithEvents btEditar As ToolStripButton
+    Friend WithEvents ToolStripSeparator5 As ToolStripSeparator
+    Public WithEvents btCancelar As ToolStripButton
+    Friend WithEvents ToolStripSeparator3 As ToolStripSeparator
+    Public WithEvents btAnular As ToolStripButton
+    Friend WithEvents ToolStripSeparator6 As ToolStripSeparator
+    Friend WithEvents btBuscarPerfil As Button
 End Class

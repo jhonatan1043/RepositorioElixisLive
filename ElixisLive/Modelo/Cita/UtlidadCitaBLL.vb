@@ -137,15 +137,15 @@
             drFila.Item(1) = "Dias"
             dtTabla.Rows.Add(drFila)
 
-            drFila = dtTabla.NewRow()
-            drFila.Item(0) = 1
-            drFila.Item(1) = "Semana"
-            dtTabla.Rows.Add(drFila)
+            'drFila = dtTabla.NewRow()
+            'drFila.Item(0) = 1
+            'drFila.Item(1) = "Semana"
+            'dtTabla.Rows.Add(drFila)
 
-            drFila = dtTabla.NewRow()
-            drFila.Item(0) = 2
-            drFila.Item(1) = "Mes"
-            dtTabla.Rows.Add(drFila)
+            'drFila = dtTabla.NewRow()
+            'drFila.Item(0) = 2
+            'drFila.Item(1) = "Mes"
+            'dtTabla.Rows.Add(drFila)
 
             comboAreaServicio.DataSource = dtTabla
             comboAreaServicio.DisplayMember = "Descripcion"

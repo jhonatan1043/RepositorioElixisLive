@@ -1,4 +1,7 @@
 ﻿Public Class FormCitaMedica
+    Private Sub FormCitaMedica_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
     'Dim perG As New Buscar_Permisos_generales
     'Dim objCita As New ProgramCitaMedica
     'Dim reporte As New ftp_reportes

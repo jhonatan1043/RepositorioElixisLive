@@ -38,71 +38,14 @@ Partial Class FormProgramacionCita
         Me.txtRealizado = New System.Windows.Forms.ToolStripTextBox()
         Me.ToolStripLabel4 = New System.Windows.Forms.ToolStripLabel()
         Me.ToolStripTextBox1 = New System.Windows.Forms.ToolStripTextBox()
-        Me.PanelMes = New System.Windows.Forms.Panel()
-        Me.PanelContenedorMes = New System.Windows.Forms.Panel()
-        Me.Panel78 = New System.Windows.Forms.Panel()
-        Me.LbDia7 = New System.Windows.Forms.Label()
-        Me.Panel18 = New System.Windows.Forms.Panel()
-        Me.LbDia6 = New System.Windows.Forms.Label()
-        Me.Panel19 = New System.Windows.Forms.Panel()
-        Me.LbDia5 = New System.Windows.Forms.Label()
-        Me.Panel20 = New System.Windows.Forms.Panel()
-        Me.LbDia4 = New System.Windows.Forms.Label()
-        Me.Panel21 = New System.Windows.Forms.Panel()
-        Me.LbDia3 = New System.Windows.Forms.Label()
-        Me.Panel22 = New System.Windows.Forms.Panel()
-        Me.LbDia2 = New System.Windows.Forms.Label()
-        Me.Panel23 = New System.Windows.Forms.Panel()
-        Me.LbDia1 = New System.Windows.Forms.Label()
-        Me.PanelSemana = New System.Windows.Forms.Panel()
-        Me.PanelContenedorSem = New System.Windows.Forms.Panel()
-        Me.ptSiguiente = New System.Windows.Forms.PictureBox()
-        Me.ptAtras = New System.Windows.Forms.PictureBox()
-        Me.Panel8 = New System.Windows.Forms.Panel()
-        Me.Label13 = New System.Windows.Forms.Label()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.lbD6 = New System.Windows.Forms.Label()
-        Me.Label20 = New System.Windows.Forms.Label()
-        Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.lbD5 = New System.Windows.Forms.Label()
-        Me.Label18 = New System.Windows.Forms.Label()
-        Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.lbD4 = New System.Windows.Forms.Label()
-        Me.Label16 = New System.Windows.Forms.Label()
-        Me.Panel4 = New System.Windows.Forms.Panel()
-        Me.lbD3 = New System.Windows.Forms.Label()
-        Me.Label11 = New System.Windows.Forms.Label()
-        Me.Panel5 = New System.Windows.Forms.Panel()
-        Me.lbD2 = New System.Windows.Forms.Label()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.Panel6 = New System.Windows.Forms.Panel()
-        Me.LbD1 = New System.Windows.Forms.Label()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.Panel7 = New System.Windows.Forms.Panel()
-        Me.LbD0 = New System.Windows.Forms.Label()
-        Me.Label12 = New System.Windows.Forms.Label()
         Me.PanelDia = New System.Windows.Forms.Panel()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox4.SuspendLayout()
         Me.ToolStrip1.SuspendLayout()
-        Me.PanelMes.SuspendLayout()
-        Me.Panel78.SuspendLayout()
-        Me.Panel18.SuspendLayout()
-        Me.Panel19.SuspendLayout()
-        Me.Panel20.SuspendLayout()
-        Me.Panel21.SuspendLayout()
-        Me.Panel22.SuspendLayout()
-        Me.Panel23.SuspendLayout()
-        Me.PanelSemana.SuspendLayout()
-        CType(Me.ptSiguiente, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ptAtras, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Panel8.SuspendLayout()
         Me.Panel1.SuspendLayout()
-        Me.Panel2.SuspendLayout()
-        Me.Panel3.SuspendLayout()
-        Me.Panel4.SuspendLayout()
-        Me.Panel5.SuspendLayout()
-        Me.Panel6.SuspendLayout()
-        Me.Panel7.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GroupBox4
@@ -113,62 +56,62 @@ Partial Class FormProgramacionCita
         Me.GroupBox4.Controls.Add(Me.cbVista)
         Me.GroupBox4.Controls.Add(Me.Label6)
         Me.GroupBox4.Controls.Add(Me.Label5)
-        Me.GroupBox4.Font = New System.Drawing.Font("Arial Narrow", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox4.Location = New System.Drawing.Point(11, 25)
+        Me.GroupBox4.Font = New System.Drawing.Font("Times New Roman", 10.0!, System.Drawing.FontStyle.Italic)
+        Me.GroupBox4.Location = New System.Drawing.Point(5, 46)
         Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Size = New System.Drawing.Size(783, 54)
+        Me.GroupBox4.Size = New System.Drawing.Size(789, 54)
         Me.GroupBox4.TabIndex = 10052
         Me.GroupBox4.TabStop = False
         Me.GroupBox4.Text = "Filtros de busqueda:"
         '
         'txtBusqueda
         '
-        Me.txtBusqueda.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtBusqueda.Font = New System.Drawing.Font("Times New Roman", 10.0!, System.Drawing.FontStyle.Italic)
         Me.txtBusqueda.Location = New System.Drawing.Point(569, 20)
         Me.txtBusqueda.Name = "txtBusqueda"
-        Me.txtBusqueda.Size = New System.Drawing.Size(209, 21)
+        Me.txtBusqueda.Size = New System.Drawing.Size(209, 23)
         Me.txtBusqueda.TabIndex = 10066
         '
         'Label3
         '
         Me.Label3.AutoSize = True
         Me.Label3.BackColor = System.Drawing.Color.Transparent
-        Me.Label3.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(524, 22)
+        Me.Label3.Font = New System.Drawing.Font("Times New Roman", 10.0!, System.Drawing.FontStyle.Italic)
+        Me.Label3.Location = New System.Drawing.Point(519, 23)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(41, 16)
+        Me.Label3.Size = New System.Drawing.Size(45, 16)
         Me.Label3.TabIndex = 10065
         Me.Label3.Text = "Filtro:"
         '
         'dFecha
         '
         Me.dFecha.CustomFormat = "MMMM\dddd,dd\yyyy"
-        Me.dFecha.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.dFecha.Font = New System.Drawing.Font("Times New Roman", 10.0!, System.Drawing.FontStyle.Italic)
         Me.dFecha.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.dFecha.Location = New System.Drawing.Point(73, 20)
+        Me.dFecha.Location = New System.Drawing.Point(68, 20)
         Me.dFecha.Name = "dFecha"
-        Me.dFecha.Size = New System.Drawing.Size(208, 22)
+        Me.dFecha.Size = New System.Drawing.Size(208, 23)
         Me.dFecha.TabIndex = 10059
         '
         'cbVista
         '
         Me.cbVista.BackColor = System.Drawing.Color.White
         Me.cbVista.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cbVista.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cbVista.Font = New System.Drawing.Font("Times New Roman", 10.0!, System.Drawing.FontStyle.Italic)
         Me.cbVista.FormattingEnabled = True
-        Me.cbVista.Location = New System.Drawing.Point(361, 20)
+        Me.cbVista.Location = New System.Drawing.Point(361, 19)
         Me.cbVista.Name = "cbVista"
-        Me.cbVista.Size = New System.Drawing.Size(133, 24)
+        Me.cbVista.Size = New System.Drawing.Size(133, 23)
         Me.cbVista.TabIndex = 10063
         '
         'Label6
         '
         Me.Label6.AutoSize = True
         Me.Label6.BackColor = System.Drawing.Color.Transparent
-        Me.Label6.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(300, 23)
+        Me.Label6.Font = New System.Drawing.Font("Times New Roman", 10.0!, System.Drawing.FontStyle.Italic)
+        Me.Label6.Location = New System.Drawing.Point(302, 23)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(55, 16)
+        Me.Label6.Size = New System.Drawing.Size(56, 16)
         Me.Label6.TabIndex = 10062
         Me.Label6.Text = "Ver Por:"
         '
@@ -176,8 +119,8 @@ Partial Class FormProgramacionCita
         '
         Me.Label5.AutoSize = True
         Me.Label5.BackColor = System.Drawing.Color.Transparent
-        Me.Label5.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(21, 23)
+        Me.Label5.Font = New System.Drawing.Font("Times New Roman", 10.0!, System.Drawing.FontStyle.Italic)
+        Me.Label5.Location = New System.Drawing.Point(15, 23)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(48, 16)
         Me.Label5.TabIndex = 10061
@@ -253,486 +196,51 @@ Partial Class FormProgramacionCita
         Me.ToolStripTextBox1.Size = New System.Drawing.Size(55, 25)
         Me.ToolStripTextBox1.TextBoxTextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'PanelMes
-        '
-        Me.PanelMes.AutoScroll = True
-        Me.PanelMes.Controls.Add(Me.PanelContenedorMes)
-        Me.PanelMes.Controls.Add(Me.Panel78)
-        Me.PanelMes.Controls.Add(Me.Panel18)
-        Me.PanelMes.Controls.Add(Me.Panel19)
-        Me.PanelMes.Controls.Add(Me.Panel20)
-        Me.PanelMes.Controls.Add(Me.Panel21)
-        Me.PanelMes.Controls.Add(Me.Panel22)
-        Me.PanelMes.Controls.Add(Me.Panel23)
-        Me.PanelMes.Location = New System.Drawing.Point(7, 92)
-        Me.PanelMes.Name = "PanelMes"
-        Me.PanelMes.Size = New System.Drawing.Size(786, 78)
-        Me.PanelMes.TabIndex = 10062
-        Me.PanelMes.Visible = False
-        '
-        'PanelContenedorMes
-        '
-        Me.PanelContenedorMes.AutoScroll = True
-        Me.PanelContenedorMes.Location = New System.Drawing.Point(5, 48)
-        Me.PanelContenedorMes.Name = "PanelContenedorMes"
-        Me.PanelContenedorMes.Size = New System.Drawing.Size(777, 30)
-        Me.PanelContenedorMes.TabIndex = 10059
-        '
-        'Panel78
-        '
-        Me.Panel78.AutoScroll = True
-        Me.Panel78.BackColor = System.Drawing.Color.LightYellow
-        Me.Panel78.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel78.Controls.Add(Me.LbDia7)
-        Me.Panel78.Location = New System.Drawing.Point(671, 5)
-        Me.Panel78.Name = "Panel78"
-        Me.Panel78.Size = New System.Drawing.Size(111, 43)
-        Me.Panel78.TabIndex = 10085
-        '
-        'LbDia7
-        '
-        Me.LbDia7.AutoSize = True
-        Me.LbDia7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LbDia7.Location = New System.Drawing.Point(20, 14)
-        Me.LbDia7.Name = "LbDia7"
-        Me.LbDia7.Size = New System.Drawing.Size(50, 15)
-        Me.LbDia7.TabIndex = 1
-        Me.LbDia7.Text = "Sabado"
-        '
-        'Panel18
-        '
-        Me.Panel18.AutoScroll = True
-        Me.Panel18.BackColor = System.Drawing.Color.LightYellow
-        Me.Panel18.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel18.Controls.Add(Me.LbDia6)
-        Me.Panel18.Location = New System.Drawing.Point(560, 5)
-        Me.Panel18.Name = "Panel18"
-        Me.Panel18.Size = New System.Drawing.Size(111, 43)
-        Me.Panel18.TabIndex = 10059
-        '
-        'LbDia6
-        '
-        Me.LbDia6.AutoSize = True
-        Me.LbDia6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LbDia6.Location = New System.Drawing.Point(18, 14)
-        Me.LbDia6.Name = "LbDia6"
-        Me.LbDia6.Size = New System.Drawing.Size(48, 15)
-        Me.LbDia6.TabIndex = 1
-        Me.LbDia6.Text = "Viernes"
-        '
-        'Panel19
-        '
-        Me.Panel19.AutoScroll = True
-        Me.Panel19.BackColor = System.Drawing.Color.LightYellow
-        Me.Panel19.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel19.Controls.Add(Me.LbDia5)
-        Me.Panel19.Location = New System.Drawing.Point(449, 5)
-        Me.Panel19.Name = "Panel19"
-        Me.Panel19.Size = New System.Drawing.Size(111, 43)
-        Me.Panel19.TabIndex = 10059
-        '
-        'LbDia5
-        '
-        Me.LbDia5.AutoSize = True
-        Me.LbDia5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LbDia5.Location = New System.Drawing.Point(22, 14)
-        Me.LbDia5.Name = "LbDia5"
-        Me.LbDia5.Size = New System.Drawing.Size(45, 15)
-        Me.LbDia5.TabIndex = 1
-        Me.LbDia5.Text = "Jueves"
-        '
-        'Panel20
-        '
-        Me.Panel20.AutoScroll = True
-        Me.Panel20.BackColor = System.Drawing.Color.LightYellow
-        Me.Panel20.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel20.Controls.Add(Me.LbDia4)
-        Me.Panel20.Location = New System.Drawing.Point(338, 5)
-        Me.Panel20.Name = "Panel20"
-        Me.Panel20.Size = New System.Drawing.Size(111, 43)
-        Me.Panel20.TabIndex = 10059
-        '
-        'LbDia4
-        '
-        Me.LbDia4.AutoSize = True
-        Me.LbDia4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LbDia4.Location = New System.Drawing.Point(11, 14)
-        Me.LbDia4.Name = "LbDia4"
-        Me.LbDia4.Size = New System.Drawing.Size(61, 15)
-        Me.LbDia4.TabIndex = 3
-        Me.LbDia4.Text = "Miercoles"
-        '
-        'Panel21
-        '
-        Me.Panel21.AutoScroll = True
-        Me.Panel21.BackColor = System.Drawing.Color.LightYellow
-        Me.Panel21.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel21.Controls.Add(Me.LbDia3)
-        Me.Panel21.Location = New System.Drawing.Point(227, 5)
-        Me.Panel21.Name = "Panel21"
-        Me.Panel21.Size = New System.Drawing.Size(111, 43)
-        Me.Panel21.TabIndex = 10059
-        '
-        'LbDia3
-        '
-        Me.LbDia3.AutoSize = True
-        Me.LbDia3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LbDia3.Location = New System.Drawing.Point(20, 14)
-        Me.LbDia3.Name = "LbDia3"
-        Me.LbDia3.Size = New System.Drawing.Size(45, 15)
-        Me.LbDia3.TabIndex = 2
-        Me.LbDia3.Text = "Martes"
-        '
-        'Panel22
-        '
-        Me.Panel22.AutoScroll = True
-        Me.Panel22.BackColor = System.Drawing.Color.LightYellow
-        Me.Panel22.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel22.Controls.Add(Me.LbDia2)
-        Me.Panel22.Location = New System.Drawing.Point(116, 5)
-        Me.Panel22.Name = "Panel22"
-        Me.Panel22.Size = New System.Drawing.Size(111, 43)
-        Me.Panel22.TabIndex = 10059
-        '
-        'LbDia2
-        '
-        Me.LbDia2.AutoSize = True
-        Me.LbDia2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LbDia2.Location = New System.Drawing.Point(19, 14)
-        Me.LbDia2.Name = "LbDia2"
-        Me.LbDia2.Size = New System.Drawing.Size(41, 15)
-        Me.LbDia2.TabIndex = 1
-        Me.LbDia2.Text = "Lunes"
-        '
-        'Panel23
-        '
-        Me.Panel23.AutoScroll = True
-        Me.Panel23.BackColor = System.Drawing.Color.LightYellow
-        Me.Panel23.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel23.Controls.Add(Me.LbDia1)
-        Me.Panel23.Location = New System.Drawing.Point(5, 5)
-        Me.Panel23.Name = "Panel23"
-        Me.Panel23.Size = New System.Drawing.Size(111, 43)
-        Me.Panel23.TabIndex = 10058
-        '
-        'LbDia1
-        '
-        Me.LbDia1.AutoSize = True
-        Me.LbDia1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LbDia1.Location = New System.Drawing.Point(12, 14)
-        Me.LbDia1.Name = "LbDia1"
-        Me.LbDia1.Size = New System.Drawing.Size(58, 15)
-        Me.LbDia1.TabIndex = 0
-        Me.LbDia1.Text = "Domingo"
-        '
-        'PanelSemana
-        '
-        Me.PanelSemana.AutoScroll = True
-        Me.PanelSemana.Controls.Add(Me.PanelContenedorSem)
-        Me.PanelSemana.Controls.Add(Me.ptSiguiente)
-        Me.PanelSemana.Controls.Add(Me.ptAtras)
-        Me.PanelSemana.Controls.Add(Me.Panel8)
-        Me.PanelSemana.Controls.Add(Me.Panel1)
-        Me.PanelSemana.Controls.Add(Me.Panel2)
-        Me.PanelSemana.Controls.Add(Me.Panel3)
-        Me.PanelSemana.Controls.Add(Me.Panel4)
-        Me.PanelSemana.Controls.Add(Me.Panel5)
-        Me.PanelSemana.Controls.Add(Me.Panel6)
-        Me.PanelSemana.Controls.Add(Me.Panel7)
-        Me.PanelSemana.Location = New System.Drawing.Point(7, 174)
-        Me.PanelSemana.Name = "PanelSemana"
-        Me.PanelSemana.Size = New System.Drawing.Size(787, 108)
-        Me.PanelSemana.TabIndex = 10086
-        '
-        'PanelContenedorSem
-        '
-        Me.PanelContenedorSem.AutoScroll = True
-        Me.PanelContenedorSem.Location = New System.Drawing.Point(26, 46)
-        Me.PanelContenedorSem.Name = "PanelContenedorSem"
-        Me.PanelContenedorSem.Size = New System.Drawing.Size(729, 59)
-        Me.PanelContenedorSem.TabIndex = 10095
-        '
-        'ptSiguiente
-        '
-        Me.ptSiguiente.BackColor = System.Drawing.Color.LightGray
-        Me.ptSiguiente.Location = New System.Drawing.Point(757, 3)
-        Me.ptSiguiente.Name = "ptSiguiente"
-        Me.ptSiguiente.Size = New System.Drawing.Size(21, 43)
-        Me.ptSiguiente.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.ptSiguiente.TabIndex = 10094
-        Me.ptSiguiente.TabStop = False
-        '
-        'ptAtras
-        '
-        Me.ptAtras.BackColor = System.Drawing.Color.LightGray
-        Me.ptAtras.Location = New System.Drawing.Point(4, 3)
-        Me.ptAtras.Name = "ptAtras"
-        Me.ptAtras.Size = New System.Drawing.Size(21, 43)
-        Me.ptAtras.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.ptAtras.TabIndex = 10093
-        Me.ptAtras.TabStop = False
-        '
-        'Panel8
-        '
-        Me.Panel8.AutoScroll = True
-        Me.Panel8.BackColor = System.Drawing.Color.LightYellow
-        Me.Panel8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel8.Controls.Add(Me.Label13)
-        Me.Panel8.Location = New System.Drawing.Point(26, 3)
-        Me.Panel8.Name = "Panel8"
-        Me.Panel8.Size = New System.Drawing.Size(71, 43)
-        Me.Panel8.TabIndex = 10087
-        '
-        'Label13
-        '
-        Me.Label13.AutoSize = True
-        Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label13.Location = New System.Drawing.Point(17, 13)
-        Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(34, 15)
-        Me.Label13.TabIndex = 0
-        Me.Label13.Text = "Hora"
-        '
-        'Panel1
-        '
-        Me.Panel1.AutoScroll = True
-        Me.Panel1.BackColor = System.Drawing.Color.LightYellow
-        Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel1.Controls.Add(Me.lbD6)
-        Me.Panel1.Controls.Add(Me.Label20)
-        Me.Panel1.Location = New System.Drawing.Point(661, 3)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(94, 43)
-        Me.Panel1.TabIndex = 10092
-        '
-        'lbD6
-        '
-        Me.lbD6.AutoSize = True
-        Me.lbD6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbD6.Location = New System.Drawing.Point(34, 22)
-        Me.lbD6.Name = "lbD6"
-        Me.lbD6.Size = New System.Drawing.Size(14, 15)
-        Me.lbD6.TabIndex = 3
-        Me.lbD6.Text = "#"
-        Me.lbD6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'Label20
-        '
-        Me.Label20.AutoSize = True
-        Me.Label20.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label20.Location = New System.Drawing.Point(19, 4)
-        Me.Label20.Name = "Label20"
-        Me.Label20.Size = New System.Drawing.Size(50, 15)
-        Me.Label20.TabIndex = 2
-        Me.Label20.Text = "Sabado"
-        '
-        'Panel2
-        '
-        Me.Panel2.AutoScroll = True
-        Me.Panel2.BackColor = System.Drawing.Color.LightYellow
-        Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel2.Controls.Add(Me.lbD5)
-        Me.Panel2.Controls.Add(Me.Label18)
-        Me.Panel2.Location = New System.Drawing.Point(567, 3)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(94, 43)
-        Me.Panel2.TabIndex = 10087
-        '
-        'lbD5
-        '
-        Me.lbD5.AutoSize = True
-        Me.lbD5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbD5.Location = New System.Drawing.Point(33, 22)
-        Me.lbD5.Name = "lbD5"
-        Me.lbD5.Size = New System.Drawing.Size(14, 15)
-        Me.lbD5.TabIndex = 3
-        Me.lbD5.Text = "#"
-        Me.lbD5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'Label18
-        '
-        Me.Label18.AutoSize = True
-        Me.Label18.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label18.Location = New System.Drawing.Point(18, 4)
-        Me.Label18.Name = "Label18"
-        Me.Label18.Size = New System.Drawing.Size(48, 15)
-        Me.Label18.TabIndex = 2
-        Me.Label18.Text = "Viernes"
-        '
-        'Panel3
-        '
-        Me.Panel3.AutoScroll = True
-        Me.Panel3.BackColor = System.Drawing.Color.LightYellow
-        Me.Panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel3.Controls.Add(Me.lbD4)
-        Me.Panel3.Controls.Add(Me.Label16)
-        Me.Panel3.Location = New System.Drawing.Point(473, 3)
-        Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(94, 43)
-        Me.Panel3.TabIndex = 10088
-        '
-        'lbD4
-        '
-        Me.lbD4.AutoSize = True
-        Me.lbD4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbD4.Location = New System.Drawing.Point(34, 22)
-        Me.lbD4.Name = "lbD4"
-        Me.lbD4.Size = New System.Drawing.Size(14, 15)
-        Me.lbD4.TabIndex = 3
-        Me.lbD4.Text = "#"
-        Me.lbD4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'Label16
-        '
-        Me.Label16.AutoSize = True
-        Me.Label16.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label16.Location = New System.Drawing.Point(21, 4)
-        Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(45, 15)
-        Me.Label16.TabIndex = 2
-        Me.Label16.Text = "Jueves"
-        '
-        'Panel4
-        '
-        Me.Panel4.AutoScroll = True
-        Me.Panel4.BackColor = System.Drawing.Color.LightYellow
-        Me.Panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel4.Controls.Add(Me.lbD3)
-        Me.Panel4.Controls.Add(Me.Label11)
-        Me.Panel4.Location = New System.Drawing.Point(379, 3)
-        Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(94, 43)
-        Me.Panel4.TabIndex = 10089
-        '
-        'lbD3
-        '
-        Me.lbD3.AutoSize = True
-        Me.lbD3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbD3.Location = New System.Drawing.Point(38, 22)
-        Me.lbD3.Name = "lbD3"
-        Me.lbD3.Size = New System.Drawing.Size(14, 15)
-        Me.lbD3.TabIndex = 3
-        Me.lbD3.Text = "#"
-        Me.lbD3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'Label11
-        '
-        Me.Label11.AutoSize = True
-        Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.Location = New System.Drawing.Point(16, 4)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(61, 15)
-        Me.Label11.TabIndex = 2
-        Me.Label11.Text = "Miercoles"
-        '
-        'Panel5
-        '
-        Me.Panel5.AutoScroll = True
-        Me.Panel5.BackColor = System.Drawing.Color.LightYellow
-        Me.Panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel5.Controls.Add(Me.lbD2)
-        Me.Panel5.Controls.Add(Me.Label9)
-        Me.Panel5.Location = New System.Drawing.Point(285, 3)
-        Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(94, 43)
-        Me.Panel5.TabIndex = 10090
-        '
-        'lbD2
-        '
-        Me.lbD2.AutoSize = True
-        Me.lbD2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbD2.Location = New System.Drawing.Point(31, 22)
-        Me.lbD2.Name = "lbD2"
-        Me.lbD2.Size = New System.Drawing.Size(14, 15)
-        Me.lbD2.TabIndex = 3
-        Me.lbD2.Text = "#"
-        Me.lbD2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(18, 4)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(45, 15)
-        Me.Label9.TabIndex = 2
-        Me.Label9.Text = "Martes"
-        '
-        'Panel6
-        '
-        Me.Panel6.AutoScroll = True
-        Me.Panel6.BackColor = System.Drawing.Color.LightYellow
-        Me.Panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel6.Controls.Add(Me.LbD1)
-        Me.Panel6.Controls.Add(Me.Label7)
-        Me.Panel6.Location = New System.Drawing.Point(191, 3)
-        Me.Panel6.Name = "Panel6"
-        Me.Panel6.Size = New System.Drawing.Size(94, 43)
-        Me.Panel6.TabIndex = 10091
-        '
-        'LbD1
-        '
-        Me.LbD1.AutoSize = True
-        Me.LbD1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LbD1.Location = New System.Drawing.Point(33, 22)
-        Me.LbD1.Name = "LbD1"
-        Me.LbD1.Size = New System.Drawing.Size(14, 15)
-        Me.LbD1.TabIndex = 3
-        Me.LbD1.Text = "#"
-        Me.LbD1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(21, 4)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(41, 15)
-        Me.Label7.TabIndex = 2
-        Me.Label7.Text = "Lunes"
-        '
-        'Panel7
-        '
-        Me.Panel7.AutoScroll = True
-        Me.Panel7.BackColor = System.Drawing.Color.LightYellow
-        Me.Panel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel7.Controls.Add(Me.LbD0)
-        Me.Panel7.Controls.Add(Me.Label12)
-        Me.Panel7.Location = New System.Drawing.Point(97, 3)
-        Me.Panel7.Name = "Panel7"
-        Me.Panel7.Size = New System.Drawing.Size(94, 43)
-        Me.Panel7.TabIndex = 10086
-        '
-        'LbD0
-        '
-        Me.LbD0.AutoSize = True
-        Me.LbD0.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LbD0.Location = New System.Drawing.Point(36, 22)
-        Me.LbD0.Name = "LbD0"
-        Me.LbD0.Size = New System.Drawing.Size(14, 15)
-        Me.LbD0.TabIndex = 1
-        Me.LbD0.Text = "#"
-        Me.LbD0.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'Label12
-        '
-        Me.Label12.AutoSize = True
-        Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.Location = New System.Drawing.Point(16, 4)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(58, 15)
-        Me.Label12.TabIndex = 0
-        Me.Label12.Text = "Domingo"
-        '
         'PanelDia
         '
         Me.PanelDia.AutoScroll = True
         Me.PanelDia.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.PanelDia.Location = New System.Drawing.Point(6, 287)
+        Me.PanelDia.Font = New System.Drawing.Font("Times New Roman", 10.0!, System.Drawing.FontStyle.Italic)
+        Me.PanelDia.Location = New System.Drawing.Point(5, 106)
         Me.PanelDia.Name = "PanelDia"
-        Me.PanelDia.Size = New System.Drawing.Size(788, 62)
+        Me.PanelDia.Size = New System.Drawing.Size(789, 390)
         Me.PanelDia.TabIndex = 10056
         Me.PanelDia.Visible = False
+        '
+        'Panel1
+        '
+        Me.Panel1.BackColor = System.Drawing.Color.White
+        Me.Panel1.BackgroundImage = Global.Quality.My.Resources.Resources.fondo_azul
+        Me.Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Panel1.Controls.Add(Me.PictureBox1)
+        Me.Panel1.Controls.Add(Me.Label1)
+        Me.Panel1.Location = New System.Drawing.Point(1, 0)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(798, 42)
+        Me.Panel1.TabIndex = 10058
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
+        Me.PictureBox1.Image = Global.Quality.My.Resources.Resources.persona
+        Me.PictureBox1.Location = New System.Drawing.Point(4, -7)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(69, 53)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 1
+        Me.PictureBox1.TabStop = False
+        '
+        'Label1
+        '
+        Me.Label1.BackColor = System.Drawing.Color.Transparent
+        Me.Label1.Font = New System.Drawing.Font("Times New Roman", 20.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.White
+        Me.Label1.Location = New System.Drawing.Point(0, 1)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(798, 41)
+        Me.Label1.TabIndex = 1
+        Me.Label1.Text = "Agendar Cita"
+        Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'FormProgramacionCita
         '
@@ -740,9 +248,8 @@ Partial Class FormProgramacionCita
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(799, 524)
-        Me.Controls.Add(Me.PanelSemana)
+        Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.PanelDia)
-        Me.Controls.Add(Me.PanelMes)
         Me.Controls.Add(Me.ToolStrip1)
         Me.Controls.Add(Me.GroupBox4)
         Me.Location = New System.Drawing.Point(921, 562)
@@ -754,40 +261,8 @@ Partial Class FormProgramacionCita
         Me.GroupBox4.PerformLayout()
         Me.ToolStrip1.ResumeLayout(False)
         Me.ToolStrip1.PerformLayout()
-        Me.PanelMes.ResumeLayout(False)
-        Me.Panel78.ResumeLayout(False)
-        Me.Panel78.PerformLayout()
-        Me.Panel18.ResumeLayout(False)
-        Me.Panel18.PerformLayout()
-        Me.Panel19.ResumeLayout(False)
-        Me.Panel19.PerformLayout()
-        Me.Panel20.ResumeLayout(False)
-        Me.Panel20.PerformLayout()
-        Me.Panel21.ResumeLayout(False)
-        Me.Panel21.PerformLayout()
-        Me.Panel22.ResumeLayout(False)
-        Me.Panel22.PerformLayout()
-        Me.Panel23.ResumeLayout(False)
-        Me.Panel23.PerformLayout()
-        Me.PanelSemana.ResumeLayout(False)
-        CType(Me.ptSiguiente, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ptAtras, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Panel8.ResumeLayout(False)
-        Me.Panel8.PerformLayout()
         Me.Panel1.ResumeLayout(False)
-        Me.Panel1.PerformLayout()
-        Me.Panel2.ResumeLayout(False)
-        Me.Panel2.PerformLayout()
-        Me.Panel3.ResumeLayout(False)
-        Me.Panel3.PerformLayout()
-        Me.Panel4.ResumeLayout(False)
-        Me.Panel4.PerformLayout()
-        Me.Panel5.ResumeLayout(False)
-        Me.Panel5.PerformLayout()
-        Me.Panel6.ResumeLayout(False)
-        Me.Panel6.PerformLayout()
-        Me.Panel7.ResumeLayout(False)
-        Me.Panel7.PerformLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -804,53 +279,13 @@ Partial Class FormProgramacionCita
     Friend WithEvents txtRealizado As ToolStripTextBox
     Friend WithEvents ToolStripLabel3 As ToolStripLabel
     Friend WithEvents txtCancelado As ToolStripTextBox
-    Friend WithEvents PanelMes As Panel
-    Friend WithEvents Panel18 As Panel
-    Friend WithEvents Panel19 As Panel
-    Friend WithEvents Panel20 As Panel
-    Friend WithEvents Panel21 As Panel
-    Friend WithEvents Panel22 As Panel
-    Friend WithEvents Panel23 As Panel
-    Friend WithEvents PanelSemana As Panel
-    Friend WithEvents Panel78 As Panel
-    Friend WithEvents LbDia7 As Label
-    Friend WithEvents LbDia6 As Label
-    Friend WithEvents LbDia5 As Label
-    Friend WithEvents LbDia4 As Label
-    Friend WithEvents LbDia3 As Label
-    Friend WithEvents LbDia2 As Label
-    Friend WithEvents LbDia1 As Label
-    Friend WithEvents PanelContenedorMes As Panel
     Friend WithEvents txtBusqueda As TextBox
     Friend WithEvents Label3 As Label
-    Friend WithEvents Panel8 As Panel
-    Friend WithEvents Label13 As Label
-    Friend WithEvents Panel1 As Panel
-    Friend WithEvents Panel2 As Panel
-    Friend WithEvents Panel3 As Panel
-    Friend WithEvents Panel4 As Panel
-    Friend WithEvents Panel5 As Panel
-    Friend WithEvents Panel6 As Panel
-    Friend WithEvents Panel7 As Panel
-    Friend WithEvents Label12 As Label
     Friend WithEvents PanelDia As Panel
-    Friend WithEvents PanelContenedorSem As Panel
-    Friend WithEvents ptSiguiente As PictureBox
-    Friend WithEvents ptAtras As PictureBox
-    Friend WithEvents lbD6 As Label
-    Friend WithEvents Label20 As Label
-    Friend WithEvents lbD5 As Label
-    Friend WithEvents Label18 As Label
-    Friend WithEvents lbD4 As Label
-    Friend WithEvents Label16 As Label
-    Friend WithEvents lbD3 As Label
-    Friend WithEvents Label11 As Label
-    Friend WithEvents lbD2 As Label
-    Friend WithEvents Label9 As Label
-    Friend WithEvents LbD1 As Label
-    Friend WithEvents Label7 As Label
-    Friend WithEvents LbD0 As Label
     Friend WithEvents ToolStripLabel4 As ToolStripLabel
     Friend WithEvents ToolStripTextBox1 As ToolStripTextBox
     Friend WithEvents ToolStripLabel1 As ToolStripLabel
+    Public WithEvents Panel1 As Panel
+    Public WithEvents PictureBox1 As PictureBox
+    Public WithEvents Label1 As Label
 End Class

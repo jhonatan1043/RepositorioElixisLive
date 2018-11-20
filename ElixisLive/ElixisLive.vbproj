@@ -228,18 +228,6 @@
     <Compile Include="Vista\Cita\FormCitaMedica.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vista\Cita\FormConfigMedicCita.Designer.vb">
-      <DependentUpon>FormConfigMedicCita.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Vista\Cita\FormConfigMedicCita.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Vista\Cita\FormListaPendienteCita.Designer.vb">
-      <DependentUpon>FormListaPendienteCita.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Vista\Cita\FormListaPendienteCita.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Vista\Cita\FormProgramacionCita.Designer.vb">
       <DependentUpon>FormProgramacionCita.vb</DependentUpon>
     </Compile>
@@ -262,12 +250,6 @@
       <DependentUpon>FormGasto.vb</DependentUpon>
     </Compile>
     <Compile Include="Vista\Configuracion\FormGasto.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Vista\Configuracion\FormLote.Designer.vb">
-      <DependentUpon>FormLote.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Vista\Configuracion\FormLote.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Vista\Configuracion\FormMarca.Designer.vb">
@@ -394,12 +376,6 @@
     <EmbeddedResource Include="Vista\Cita\FormCitaMedica.resx">
       <DependentUpon>FormCitaMedica.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vista\Cita\FormConfigMedicCita.resx">
-      <DependentUpon>FormConfigMedicCita.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Vista\Cita\FormListaPendienteCita.resx">
-      <DependentUpon>FormListaPendienteCita.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Vista\Cita\FormProgramacionCita.resx">
       <DependentUpon>FormProgramacionCita.vb</DependentUpon>
     </EmbeddedResource>
@@ -411,9 +387,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\Configuracion\FormGasto.resx">
       <DependentUpon>FormGasto.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Vista\Configuracion\FormLote.resx">
-      <DependentUpon>FormLote.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\Configuracion\FormMarca.resx">
       <DependentUpon>FormMarca.vb</DependentUpon>

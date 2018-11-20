@@ -22,7 +22,7 @@
     Public Function crearEtiquetaHora(posicionLabelY As Integer) As Label
         Dim etiqueta As New Label
         etiqueta.Location = New Point(posicionLabelX, posicionLabelY)
-        etiqueta.Size = New Point(34, 13)
+        etiqueta.Size = New Point(40, 13)
         etiqueta.Text = hora
         Return etiqueta
     End Function
