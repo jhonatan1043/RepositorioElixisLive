@@ -27,15 +27,48 @@ Public Class FormPersona
         End If
         Return False
     End Function
-    Private Sub quitarIconoError()
-        Me.ErrorIcono.SetError(CombotipoIdentificacion, "")
-        Me.ErrorIcono.SetError(TextIdentificacion, "")
-        Me.ErrorIcono.SetError(TextNombre, "")
-        Me.ErrorIcono.SetError(TextTelefono, "")
-        Me.ErrorIcono.SetError(cbSede, "")
-        Me.ErrorIcono.SetError(cbDepartamento, "")
-        Me.ErrorIcono.SetError(ComboMunicipio, "")
-        Me.ErrorIcono.SetError(TextDireccion, "")
+
+    Private Sub mostrarIconoError()
+        If CombotipoIdentificacion.SelectedIndex = 0 Then
+            ErrorIcono.SetError(CombotipoIdentificacion, " Error")
+        Else
+            ErrorIcono.SetError(CombotipoIdentificacion, "")
+        End If
+        If TextIdentificacion.Text.Length = 0 Then
+            ErrorIcono.SetError(TextIdentificacion, " Error")
+        Else
+            ErrorIcono.SetError(TextIdentificacion, "")
+        End If
+        If TextNombre.Text.Length = 0 Then
+            ErrorIcono.SetError(TextNombre, " Error")
+        Else
+            ErrorIcono.SetError(TextNombre, "")
+        End If
+        If TextTelefono.Text.Length = 0 Then
+            ErrorIcono.SetError(TextTelefono, " Error")
+        Else
+            ErrorIcono.SetError(TextTelefono, "")
+        End If
+        If cbSede.SelectedIndex = 0 Then
+            ErrorIcono.SetError(cbSede, " Error")
+        Else
+            ErrorIcono.SetError(cbSede, "")
+        End If
+        If cbDepartamento.SelectedIndex = 0 Then
+            ErrorIcono.SetError(cbDepartamento, " Error")
+        Else
+            ErrorIcono.SetError(cbDepartamento, "")
+        End If
+        If ComboMunicipio.SelectedIndex = 0 Then
+            ErrorIcono.SetError(ComboMunicipio, " Error")
+        Else
+            ErrorIcono.SetError(ComboMunicipio, "")
+        End If
+        If TextDireccion.Text.Length = 0 Then
+            ErrorIcono.SetError(TextDireccion, " Error")
+        Else
+            ErrorIcono.SetError(TextDireccion, "")
+        End If
     End Sub
     Private Sub cbDepartamento_Validating(sender As Object, e As CancelEventArgs) Handles cbDepartamento.Validating
         If DirectCast(sender, ComboBox).SelectedIndex = 0 And btRegistrar.Enabled = True Then
@@ -67,7 +100,7 @@ Public Class FormPersona
     End Sub
     Private Sub TextIdentificacion_Validating(sender As Object, e As CancelEventArgs) Handles TextIdentificacion.Validating
         If DirectCast(sender, TextBox).Text.Length = 0 And btRegistrar.Enabled = True Then
-            Me.ErrorIcono.SetError(sender, "Debe escoger la forma de pago")
+            Me.ErrorIcono.SetError(sender, "Debe digitar la identificación")
         Else
             Me.ErrorIcono.SetError(sender, "")
         End If
@@ -130,6 +163,7 @@ Public Class FormPersona
         Generales.habilitarControles(Me)
         Generales.deshabilitarControles(GroupBox1)
         Generales.limpiarControles(Me)
+        TextDV.Enabled = False
         objPersona.codigo = Nothing
         btCancelar.Enabled = True
         btRegistrar.Enabled = True
@@ -151,6 +185,7 @@ Public Class FormPersona
         Else
             EstiloMensajes.mostrarMensajeAdvertencia(MensajeSistema.VALIDAR_CAMPOS)
         End If
+        mostrarIconoError()
     End Sub
     Private Sub btEditar_Click(sender As Object, e As EventArgs) Handles btEditar.Click
         If EstiloMensajes.mostrarMensajePregunta(MensajeSistema.EDITAR) = Constantes.SI Then
@@ -167,7 +202,7 @@ Public Class FormPersona
             objPersona.codigo = Nothing
             btNuevo.Enabled = True
             btBuscar.Enabled = True
-            quitarIconoError()
+            mostrarIconoError()
         End If
     End Sub
     Private Sub btAnular_Click(sender As Object, e As EventArgs) Handles btAnular.Click

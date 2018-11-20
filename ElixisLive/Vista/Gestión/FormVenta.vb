@@ -177,6 +177,7 @@ Public Class FormVenta
                 Generales.deshabilitarControles(Me)
                 btCancelar.Enabled = False
                 btRegistrar.Enabled = False
+                quitarIconoError()
                 EstiloMensajes.mostrarMensajeExitoso(MensajeSistema.REGISTRO_GUARDADO)
             Else
                 EstiloMensajes.mostrarMensajeAdvertencia(MensajeSistema.VALIDAR_CAMPOS)
