@@ -294,6 +294,12 @@
     <Compile Include="Vista\Inventario\FormListaPrecio.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Vista\Inventario\FormLote.Designer.vb">
+      <DependentUpon>FormLote.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Inventario\FormLote.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Vista\Inventario\FormProducto.Designer.vb">
       <DependentUpon>FormProducto.vb</DependentUpon>
     </Compile>
@@ -408,6 +414,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\Inventario\FormListaPrecio.resx">
       <DependentUpon>FormListaPrecio.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Inventario\FormLote.resx">
+      <DependentUpon>FormLote.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\Inventario\FormProducto.resx">
       <DependentUpon>FormProducto.vb</DependentUpon>

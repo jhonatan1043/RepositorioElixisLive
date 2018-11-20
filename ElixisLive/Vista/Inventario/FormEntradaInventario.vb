@@ -22,9 +22,6 @@
                     If e.ColumnIndex = 5 Then
                         dgvEntrada.Rows(dgvEntrada.CurrentCell.RowIndex).Cells("dgBodega") =
                                         Generales.crearControl(Constantes.NOMBRE_COMBO, "[SP_CONFI_BODEGA_CONSULTAR] ''", "Codigo", "nombre", Nothing)
-                    ElseIf e.ColumnIndex = 6 Then
-                        dgvEntrada.Rows(dgvEntrada.CurrentCell.RowIndex).Cells("dgLote") =
-                                         Generales.crearControl(Constantes.NOMBRE_COMBO, "[SP_CONFI_LOTE_CONSULTAR] ''", "Codigo", "nombre", Nothing)
                     End If
                 End If
             End If
@@ -176,6 +173,13 @@
             If e.ColumnIndex = 2 _
                 OrElse e.ColumnIndex = 4 Then
                 e.Value = If(Not IsDBNull(e.Value), Format(Val(e.Value), "c2"), 0)
+            End If
+        End If
+    End Sub
+    Private Sub dgvEntrada_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvEntrada.CellClick
+        If objEntrada.dtEntrada.Rows.Count > 0 Then
+            If e.ColumnIndex = 6 Then
+
             End If
         End If
     End Sub
