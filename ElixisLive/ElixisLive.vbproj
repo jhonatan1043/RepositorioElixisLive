@@ -130,6 +130,7 @@
     <Compile Include="Entidad\Administracion\Perfil.vb" />
     <Compile Include="Entidad\Administracion\Sucursal.vb" />
     <Compile Include="Entidad\Administracion\persona.vb" />
+    <Compile Include="Entidad\Cita\AgendarCita.vb" />
     <Compile Include="Entidad\Cita\CitaPrevia.vb" />
     <Compile Include="Entidad\Cita\ConfigCita.vb" />
     <Compile Include="Entidad\Cita\Dia\CitaDisponible.vb" />
