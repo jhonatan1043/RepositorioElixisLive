@@ -22,12 +22,12 @@ Partial Class FormCitaMedica
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -46,7 +46,7 @@ Partial Class FormCitaMedica
         Me.DataGridViewTextBoxColumn16 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn17 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.btBuscarPerfil = New System.Windows.Forms.Button()
+        Me.btBuscarCliente = New System.Windows.Forms.Button()
         Me.txtfecha = New System.Windows.Forms.MaskedTextBox()
         Me.txtobservacion = New System.Windows.Forms.RichTextBox()
         Me.Label11 = New System.Windows.Forms.Label()
@@ -59,16 +59,13 @@ Partial Class FormCitaMedica
         Me.DataGridViewTextBoxColumn20 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewImageColumn1 = New System.Windows.Forms.DataGridViewImageColumn()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
         Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
-        Me.btNuevo = New System.Windows.Forms.ToolStripButton()
-        Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
-        Me.btBuscar = New System.Windows.Forms.ToolStripButton()
-        Me.ToolStripSeparator7 = New System.Windows.Forms.ToolStripSeparator()
         Me.btRegistrar = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripSeparator4 = New System.Windows.Forms.ToolStripSeparator()
         Me.btEditar = New System.Windows.Forms.ToolStripButton()
@@ -77,14 +74,13 @@ Partial Class FormCitaMedica
         Me.ToolStripSeparator3 = New System.Windows.Forms.ToolStripSeparator()
         Me.btAnular = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripSeparator6 = New System.Windows.Forms.ToolStripSeparator()
-        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.GroupBox2.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
+        Me.GroupBox3.SuspendLayout()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ToolStrip1.SuspendLayout()
-        Me.GroupBox3.SuspendLayout()
         Me.SuspendLayout()
         '
         'DataGridViewTextBoxColumn1
@@ -102,8 +98,8 @@ Partial Class FormCitaMedica
         'DataGridViewTextBoxColumn3
         '
         Me.DataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.DataGridViewTextBoxColumn3.DefaultCellStyle = DataGridViewCellStyle7
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.DataGridViewTextBoxColumn3.DefaultCellStyle = DataGridViewCellStyle1
         Me.DataGridViewTextBoxColumn3.HeaderText = "Cantidad"
         Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
         '
@@ -121,8 +117,8 @@ Partial Class FormCitaMedica
         '
         'DataGridViewTextBoxColumn6
         '
-        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.DataGridViewTextBoxColumn6.DefaultCellStyle = DataGridViewCellStyle8
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.DataGridViewTextBoxColumn6.DefaultCellStyle = DataGridViewCellStyle2
         Me.DataGridViewTextBoxColumn6.HeaderText = "Cantidad"
         Me.DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6"
         Me.DataGridViewTextBoxColumn6.Width = 82
@@ -141,8 +137,8 @@ Partial Class FormCitaMedica
         '
         'DataGridViewTextBoxColumn9
         '
-        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.DataGridViewTextBoxColumn9.DefaultCellStyle = DataGridViewCellStyle9
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.DataGridViewTextBoxColumn9.DefaultCellStyle = DataGridViewCellStyle3
         Me.DataGridViewTextBoxColumn9.HeaderText = "Cantidad"
         Me.DataGridViewTextBoxColumn9.Name = "DataGridViewTextBoxColumn9"
         Me.DataGridViewTextBoxColumn9.Width = 82
@@ -169,8 +165,8 @@ Partial Class FormCitaMedica
         '
         'DataGridViewTextBoxColumn13
         '
-        DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.DataGridViewTextBoxColumn13.DefaultCellStyle = DataGridViewCellStyle10
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.DataGridViewTextBoxColumn13.DefaultCellStyle = DataGridViewCellStyle4
         Me.DataGridViewTextBoxColumn13.HeaderText = "Codigo"
         Me.DataGridViewTextBoxColumn13.Name = "DataGridViewTextBoxColumn13"
         Me.DataGridViewTextBoxColumn13.Width = 71
@@ -195,15 +191,15 @@ Partial Class FormCitaMedica
         '
         'DataGridViewTextBoxColumn17
         '
-        DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.DataGridViewTextBoxColumn17.DefaultCellStyle = DataGridViewCellStyle11
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.DataGridViewTextBoxColumn17.DefaultCellStyle = DataGridViewCellStyle5
         Me.DataGridViewTextBoxColumn17.HeaderText = "Cantidad"
         Me.DataGridViewTextBoxColumn17.Name = "DataGridViewTextBoxColumn17"
         Me.DataGridViewTextBoxColumn17.Width = 82
         '
         'GroupBox2
         '
-        Me.GroupBox2.Controls.Add(Me.btBuscarPerfil)
+        Me.GroupBox2.Controls.Add(Me.btBuscarCliente)
         Me.GroupBox2.Controls.Add(Me.txtfecha)
         Me.GroupBox2.Controls.Add(Me.txtobservacion)
         Me.GroupBox2.Controls.Add(Me.Label11)
@@ -218,24 +214,24 @@ Partial Class FormCitaMedica
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Información:"
         '
-        'btBuscarPerfil
+        'btBuscarCliente
         '
-        Me.btBuscarPerfil.BackgroundImage = Global.Quality.My.Resources.Resources.fondo_azul
-        Me.btBuscarPerfil.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btBuscarPerfil.Image = Global.Quality.My.Resources.Resources.Zoom_icon1
-        Me.btBuscarPerfil.Location = New System.Drawing.Point(423, 19)
-        Me.btBuscarPerfil.Name = "btBuscarPerfil"
-        Me.btBuscarPerfil.Size = New System.Drawing.Size(26, 25)
-        Me.btBuscarPerfil.TabIndex = 58
-        Me.btBuscarPerfil.UseVisualStyleBackColor = True
+        Me.btBuscarCliente.BackgroundImage = Global.Quality.My.Resources.Resources.fondo_azul
+        Me.btBuscarCliente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btBuscarCliente.Image = Global.Quality.My.Resources.Resources.Zoom_icon1
+        Me.btBuscarCliente.Location = New System.Drawing.Point(423, 19)
+        Me.btBuscarCliente.Name = "btBuscarCliente"
+        Me.btBuscarCliente.Size = New System.Drawing.Size(26, 25)
+        Me.btBuscarCliente.TabIndex = 58
+        Me.btBuscarCliente.UseVisualStyleBackColor = True
         '
         'txtfecha
         '
         Me.txtfecha.Font = New System.Drawing.Font("Times New Roman", 10.0!, System.Drawing.FontStyle.Italic)
-        Me.txtfecha.Location = New System.Drawing.Point(560, 22)
-        Me.txtfecha.Mask = "00/00/0000 00"
+        Me.txtfecha.Location = New System.Drawing.Point(550, 22)
+        Me.txtfecha.Mask = "00/00/0000 00:00"
         Me.txtfecha.Name = "txtfecha"
-        Me.txtfecha.Size = New System.Drawing.Size(105, 23)
+        Me.txtfecha.Size = New System.Drawing.Size(116, 23)
         Me.txtfecha.TabIndex = 56
         '
         'txtobservacion
@@ -282,7 +278,7 @@ Partial Class FormCitaMedica
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Italic)
-        Me.Label4.Location = New System.Drawing.Point(475, 24)
+        Me.Label4.Location = New System.Drawing.Point(463, 24)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(86, 19)
         Me.Label4.TabIndex = 2
@@ -311,7 +307,7 @@ Partial Class FormCitaMedica
         '
         Me.DataGridViewTextBoxColumn18.HeaderText = "Codigo"
         Me.DataGridViewTextBoxColumn18.Name = "DataGridViewTextBoxColumn18"
-        Me.DataGridViewTextBoxColumn18.Width = 81
+        Me.DataGridViewTextBoxColumn18.Width = 68
         '
         'DataGridViewTextBoxColumn19
         '
@@ -321,8 +317,8 @@ Partial Class FormCitaMedica
         '
         'DataGridViewTextBoxColumn20
         '
-        DataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.DataGridViewTextBoxColumn20.DefaultCellStyle = DataGridViewCellStyle12
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.DataGridViewTextBoxColumn20.DefaultCellStyle = DataGridViewCellStyle6
         Me.DataGridViewTextBoxColumn20.HeaderText = "Cantidad"
         Me.DataGridViewTextBoxColumn20.Name = "DataGridViewTextBoxColumn20"
         Me.DataGridViewTextBoxColumn20.Width = 78
@@ -333,7 +329,7 @@ Partial Class FormCitaMedica
         Me.DataGridViewImageColumn1.Name = "DataGridViewImageColumn1"
         Me.DataGridViewImageColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
         Me.DataGridViewImageColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
-        Me.DataGridViewImageColumn1.Width = 76
+        Me.DataGridViewImageColumn1.Width = 65
         '
         'GroupBox1
         '
@@ -345,6 +341,17 @@ Partial Class FormCitaMedica
         Me.GroupBox1.Size = New System.Drawing.Size(692, 370)
         Me.GroupBox1.TabIndex = 32
         Me.GroupBox1.TabStop = False
+        '
+        'GroupBox3
+        '
+        Me.GroupBox3.Controls.Add(Me.DataGridView1)
+        Me.GroupBox3.Font = New System.Drawing.Font("Times New Roman", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox3.Location = New System.Drawing.Point(9, 129)
+        Me.GroupBox3.Name = "GroupBox3"
+        Me.GroupBox3.Size = New System.Drawing.Size(679, 235)
+        Me.GroupBox3.TabIndex = 10089
+        Me.GroupBox3.TabStop = False
+        Me.GroupBox3.Text = "Servicios"
         '
         'Panel1
         '
@@ -399,7 +406,7 @@ Partial Class FormCitaMedica
         Me.ToolStrip1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ToolStrip1.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.ToolStrip1.ImageScalingSize = New System.Drawing.Size(26, 26)
-        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripSeparator1, Me.btNuevo, Me.ToolStripSeparator2, Me.btBuscar, Me.ToolStripSeparator7, Me.btRegistrar, Me.ToolStripSeparator4, Me.btEditar, Me.ToolStripSeparator5, Me.btCancelar, Me.ToolStripSeparator3, Me.btAnular, Me.ToolStripSeparator6})
+        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripSeparator1, Me.btRegistrar, Me.ToolStripSeparator4, Me.btEditar, Me.ToolStripSeparator5, Me.btCancelar, Me.ToolStripSeparator3, Me.btAnular, Me.ToolStripSeparator6})
         Me.ToolStrip1.Location = New System.Drawing.Point(0, 427)
         Me.ToolStrip1.Name = "ToolStrip1"
         Me.ToolStrip1.Size = New System.Drawing.Size(714, 33)
@@ -410,38 +417,6 @@ Partial Class FormCitaMedica
         '
         Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
         Me.ToolStripSeparator1.Size = New System.Drawing.Size(6, 33)
-        '
-        'btNuevo
-        '
-        Me.btNuevo.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btNuevo.ForeColor = System.Drawing.Color.White
-        Me.btNuevo.Image = Global.Quality.My.Resources.Resources.Files_New_File_icon
-        Me.btNuevo.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.btNuevo.Name = "btNuevo"
-        Me.btNuevo.Size = New System.Drawing.Size(82, 30)
-        Me.btNuevo.Text = "&Nuevo"
-        Me.btNuevo.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        '
-        'ToolStripSeparator2
-        '
-        Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
-        Me.ToolStripSeparator2.Size = New System.Drawing.Size(6, 33)
-        '
-        'btBuscar
-        '
-        Me.btBuscar.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btBuscar.ForeColor = System.Drawing.Color.White
-        Me.btBuscar.Image = Global.Quality.My.Resources.Resources.Search_icon__1_
-        Me.btBuscar.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.btBuscar.Name = "btBuscar"
-        Me.btBuscar.Size = New System.Drawing.Size(86, 30)
-        Me.btBuscar.Text = "&Buscar"
-        Me.btBuscar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        '
-        'ToolStripSeparator7
-        '
-        Me.ToolStripSeparator7.Name = "ToolStripSeparator7"
-        Me.ToolStripSeparator7.Size = New System.Drawing.Size(6, 33)
         '
         'btRegistrar
         '
@@ -507,17 +482,6 @@ Partial Class FormCitaMedica
         Me.ToolStripSeparator6.Name = "ToolStripSeparator6"
         Me.ToolStripSeparator6.Size = New System.Drawing.Size(6, 33)
         '
-        'GroupBox3
-        '
-        Me.GroupBox3.Controls.Add(Me.DataGridView1)
-        Me.GroupBox3.Font = New System.Drawing.Font("Times New Roman", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox3.Location = New System.Drawing.Point(9, 129)
-        Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(679, 235)
-        Me.GroupBox3.TabIndex = 10089
-        Me.GroupBox3.TabStop = False
-        Me.GroupBox3.Text = "Servicios"
-        '
         'FormCitaMedica
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -540,11 +504,11 @@ Partial Class FormCitaMedica
         Me.GroupBox2.PerformLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox3.ResumeLayout(False)
         Me.Panel1.ResumeLayout(False)
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ToolStrip1.ResumeLayout(False)
         Me.ToolStrip1.PerformLayout()
-        Me.GroupBox3.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -584,10 +548,6 @@ Partial Class FormCitaMedica
     Public WithEvents Label1 As Label
     Public WithEvents ToolStrip1 As ToolStrip
     Friend WithEvents ToolStripSeparator1 As ToolStripSeparator
-    Public WithEvents btNuevo As ToolStripButton
-    Friend WithEvents ToolStripSeparator2 As ToolStripSeparator
-    Public WithEvents btBuscar As ToolStripButton
-    Friend WithEvents ToolStripSeparator7 As ToolStripSeparator
     Public WithEvents btRegistrar As ToolStripButton
     Friend WithEvents ToolStripSeparator4 As ToolStripSeparator
     Public WithEvents btEditar As ToolStripButton
@@ -596,7 +556,7 @@ Partial Class FormCitaMedica
     Friend WithEvents ToolStripSeparator3 As ToolStripSeparator
     Public WithEvents btAnular As ToolStripButton
     Friend WithEvents ToolStripSeparator6 As ToolStripSeparator
-    Friend WithEvents btBuscarPerfil As Button
+    Friend WithEvents btBuscarCliente As Button
     Friend WithEvents Panel2 As Panel
     Friend WithEvents GroupBox3 As GroupBox
 End Class

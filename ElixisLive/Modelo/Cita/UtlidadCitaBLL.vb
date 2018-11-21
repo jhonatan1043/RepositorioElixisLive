@@ -43,28 +43,15 @@
         Dim formCitaMedica As New FormCitaMedica
         Dim horaExtraida As String = Nothing
         Try
-
-            If objFormCita.cbVista.SelectedIndex = 0 Then
-                horaExtraida = If(sender.tag.ToString.Length = 2, sender.tag, sender.tag.ToString.Remove(2))
-                idCita = If(sender.tag.ToString.Length = 2, String.Empty, sender.tag.ToString.Substring(3))
-            Else
-                idCita = sender.tag
+            horaExtraida = If(sender.tag.ToString.Length = 2, sender.tag, sender.tag.ToString.Remove(2))
+            idCita = If(sender.tag.ToString.Length = 2, String.Empty, sender.tag.ToString.Substring(3))
+            If Not String.IsNullOrEmpty(idCita) Then
+                formCitaMedica.estadoRegistro = True
+                'formCitaMedica.cargarPaciente(idCita)
             End If
-
-            'If Not String.IsNullOrEmpty(idCita) Then
-            '    formCitaMedica.bandera = True
-            '    formCitaMedica.cargarPaciente(idCita)
-            'End If
-
-            'formCitaMedica.objFormularioProgram = objFormCita
-            'If objFormCita.comboAreaServicio.SelectedIndex = 0 Then
-            '    formCitaMedica.fechaHora = fechaDia.AddHours(-fechaDia.Hour).AddHours(horaExtraida)
-            'Else
-            '    formCitaMedica.fechaHora = fechaDia
-            'End If
-            formCitaMedica.Tag = objFormCita.Tag
+            formCitaMedica.objFormularioProgram = objFormCita
+            formCitaMedica.fechaHora = fechaDia.AddHours(-fechaDia.Hour).AddHours(horaExtraida)
             formCitaMedica.ShowDialog()
-
         Catch ex As Exception
             Throw ex
         End Try

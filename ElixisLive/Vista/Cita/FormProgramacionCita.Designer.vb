@@ -26,8 +26,6 @@ Partial Class FormProgramacionCita
         Me.txtBusqueda = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.dFecha = New System.Windows.Forms.DateTimePicker()
-        Me.cbVista = New System.Windows.Forms.ComboBox()
-        Me.Label6 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
         Me.ToolStripLabel1 = New System.Windows.Forms.ToolStripLabel()
@@ -53,8 +51,6 @@ Partial Class FormProgramacionCita
         Me.GroupBox4.Controls.Add(Me.txtBusqueda)
         Me.GroupBox4.Controls.Add(Me.Label3)
         Me.GroupBox4.Controls.Add(Me.dFecha)
-        Me.GroupBox4.Controls.Add(Me.cbVista)
-        Me.GroupBox4.Controls.Add(Me.Label6)
         Me.GroupBox4.Controls.Add(Me.Label5)
         Me.GroupBox4.Font = New System.Drawing.Font("Times New Roman", 10.0!, System.Drawing.FontStyle.Italic)
         Me.GroupBox4.Location = New System.Drawing.Point(5, 46)
@@ -67,9 +63,9 @@ Partial Class FormProgramacionCita
         'txtBusqueda
         '
         Me.txtBusqueda.Font = New System.Drawing.Font("Times New Roman", 10.0!, System.Drawing.FontStyle.Italic)
-        Me.txtBusqueda.Location = New System.Drawing.Point(569, 20)
+        Me.txtBusqueda.Location = New System.Drawing.Point(415, 20)
         Me.txtBusqueda.Name = "txtBusqueda"
-        Me.txtBusqueda.Size = New System.Drawing.Size(209, 23)
+        Me.txtBusqueda.Size = New System.Drawing.Size(363, 23)
         Me.txtBusqueda.TabIndex = 10066
         '
         'Label3
@@ -77,7 +73,7 @@ Partial Class FormProgramacionCita
         Me.Label3.AutoSize = True
         Me.Label3.BackColor = System.Drawing.Color.Transparent
         Me.Label3.Font = New System.Drawing.Font("Times New Roman", 10.0!, System.Drawing.FontStyle.Italic)
-        Me.Label3.Location = New System.Drawing.Point(519, 23)
+        Me.Label3.Location = New System.Drawing.Point(367, 23)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(45, 16)
         Me.Label3.TabIndex = 10065
@@ -92,28 +88,6 @@ Partial Class FormProgramacionCita
         Me.dFecha.Name = "dFecha"
         Me.dFecha.Size = New System.Drawing.Size(208, 23)
         Me.dFecha.TabIndex = 10059
-        '
-        'cbVista
-        '
-        Me.cbVista.BackColor = System.Drawing.Color.White
-        Me.cbVista.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cbVista.Font = New System.Drawing.Font("Times New Roman", 10.0!, System.Drawing.FontStyle.Italic)
-        Me.cbVista.FormattingEnabled = True
-        Me.cbVista.Location = New System.Drawing.Point(361, 19)
-        Me.cbVista.Name = "cbVista"
-        Me.cbVista.Size = New System.Drawing.Size(133, 23)
-        Me.cbVista.TabIndex = 10063
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.BackColor = System.Drawing.Color.Transparent
-        Me.Label6.Font = New System.Drawing.Font("Times New Roman", 10.0!, System.Drawing.FontStyle.Italic)
-        Me.Label6.Location = New System.Drawing.Point(302, 23)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(56, 16)
-        Me.Label6.TabIndex = 10062
-        Me.Label6.Text = "Ver Por:"
         '
         'Label5
         '
@@ -130,7 +104,7 @@ Partial Class FormProgramacionCita
         '
         Me.ToolStrip1.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripLabel1, Me.txtPendiente, Me.ToolStripLabel3, Me.txtCancelado, Me.ToolStripLabel2, Me.txtRealizado, Me.ToolStripLabel4, Me.ToolStripTextBox1})
-        Me.ToolStrip1.Location = New System.Drawing.Point(0, 498)
+        Me.ToolStrip1.Location = New System.Drawing.Point(0, 499)
         Me.ToolStrip1.Name = "ToolStrip1"
         Me.ToolStrip1.Size = New System.Drawing.Size(799, 25)
         Me.ToolStrip1.TabIndex = 10057
@@ -247,7 +221,7 @@ Partial Class FormProgramacionCita
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(799, 523)
+        Me.ClientSize = New System.Drawing.Size(799, 524)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.PanelDia)
         Me.Controls.Add(Me.ToolStrip1)
@@ -270,8 +244,6 @@ Partial Class FormProgramacionCita
 
     Friend WithEvents GroupBox4 As GroupBox
     Friend WithEvents dFecha As DateTimePicker
-    Friend WithEvents cbVista As ComboBox
-    Friend WithEvents Label6 As Label
     Friend WithEvents Label5 As Label
     Friend WithEvents ToolStrip1 As ToolStrip
     Friend WithEvents txtPendiente As ToolStripTextBox

@@ -1,20 +1,14 @@
 ﻿Public Class FormProgramacionCita
     Dim fecha As DateTime
     Private Sub FormProgramacionCita_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        UtlidadCitaBLL.cargarComboVista(cbVista)
         fecha = dFecha.Value
         UtlidadCitaBLL.objFormCita = Me
+        validarControles()
     End Sub
-
-    Public Sub validarControles(Optional disSemana As Integer = Constantes.SIN_VALOR_NUMERICO)
-        Dim formato As String = Nothing
+    Public Sub validarControles()
         Try
-            Select Case cbVista.SelectedIndex
-                Case 0
-                    cargarDia()
-                    formato = Constantes.FORMATO_FECHA_LARGA
-            End Select
-            dFecha.CustomFormat = formato
+            cargarDia()
+            dFecha.CustomFormat = Constantes.FORMATO_FECHA_LARGA
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
@@ -38,9 +32,7 @@
         End If
     End Sub
     Private Sub dFecha_TextChanged(sender As Object, e As EventArgs) Handles dFecha.TextChanged
-        If Not IsNothing(cbVista.ValueMember) Then
-            validarControles()
-        End If
+        validarControles()
     End Sub
     Private Sub limpiarPanel(panel As Panel)
         Dim numeroControles As Integer
@@ -62,10 +54,5 @@
         txtPendiente.Text = params.Item(0)
         txtCancelado.Text = params.Item(1)
         txtRealizado.Text = params.Item(2)
-    End Sub
-    Private Sub comboAreaServicio_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbVista.SelectedIndexChanged
-        If Not IsNothing(cbVista.ValueMember) Then
-            validarControles()
-        End If
     End Sub
 End Class

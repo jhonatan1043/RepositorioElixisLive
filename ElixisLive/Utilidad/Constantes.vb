@@ -16,12 +16,16 @@
         TIEMPO = 2
     End Enum
     Public Const SIN_VALOR_NUMERICO = 0
+
     Public Const NOMBRE_COMBO = "combo"
     Public Const NOMBRE_SELECTOR = "Selector"
     Public Const NOMBRE_TIEMPO = "Tiempo"
+
     Public Const FORMATO_FECHA_LARGA = "MMMM \ dddd ,dd \ yyyy"
     Public Const FORMATO_FECHA_CORTA = "MMMM, MM \ yyyy"
     Public Const FORMATO_FECHA = "yyyy-MM-dd"
+    Public Const FORMATO_FECHA_HORA = "dd-MM-yyyy HH:mm"
+
     Public Const DIA_SEMANA = 7
     Public Const TIPO_LETRA_ELEMENTO = "[FontFamily: Name=Microsoft Sans Serif]"
     Public Const PENDIENTE = 0
@@ -45,5 +49,7 @@
     '--------
     Public Const VALOR_INICIAL = 10
     Public Const VALOR_INCREMENTO = 30
+
+    Public Const PANEL_POCISION_X = 110
 
 End Class

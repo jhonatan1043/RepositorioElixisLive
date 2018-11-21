@@ -9,15 +9,15 @@
         anchura = Constantes.ANCHURA_CITA_TOMADA
     End Sub
     Public Function crearPanel(posicionX As Integer,
-                          posicionY As Integer,
+                               posicionY As Integer,
                                pendiente As Integer) As Panel
         Dim panel As New Panel
         Try
             panel.Location = New Point(posicionX, posicionY)
             panel.Size = New Point(anchura, altura)
             panel.BackColor = If(pendiente = Constantes.PENDIENTE, Control.DefaultBackColor, colorLabel())
-            panel.Controls.Add(creaCajaTexto(4, 3, idCita, "Paciente: " & nombre & vbNewLine & " # " & cedula))
-            panel.Controls.Add(creaCajaTexto(4, 36, idCita, "Fecha: " & CStr(fechaCita)))
+            panel.Controls.Add(creaCajaTexto(4, 3, idCita, " Cliente: " & nombre & vbNewLine & " # " & cedula))
+            panel.Controls.Add(creaCajaTexto(4, 36, idCita, " Fecha: " & CStr(fechaCita)))
             panel.Tag = hora & "-" & idCita
             panel.Cursor = Cursors.Hand
             panel.Show()

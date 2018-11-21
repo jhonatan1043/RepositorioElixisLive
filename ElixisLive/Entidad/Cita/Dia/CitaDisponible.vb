@@ -6,7 +6,7 @@
     Public Sub New()
         altura = Constantes.ALTURA_CITA_DISPONIBLE
         anchura = Constantes.ANCHURA_CITA_DISPONIBLE
-        posicionPanelX = 110 '------- posicion x en el panel
+        posicionPanelX = Constantes.PANEL_POCISION_X '------- posicion x en el panel
         descripcion = Constantes.CITA_DISPONIBLE
         posicionLabelX = 385
         posicionLabelY = 9

@@ -11,7 +11,7 @@
         contenedorPanelDispon = Constantes.VALOR_INICIAL
         incrementoPanel = Constantes.VALOR_INCREMENTO
         incrementoX = 190
-        contenedorPanelX = 120
+        contenedorPanelX = Constantes.PANEL_POCISION_X
         incrementoSaltoLinea = 72
     End Sub
 #Region "Citas Asignadas"
@@ -35,8 +35,8 @@
 
                 If fil < filas.Count Then
                     objTomada.idCita = filas(fil).Item("codigo_cita")
-                    objTomada.cedula = filas(fil).Item("Documento_Paciente")
-                    objTomada.nombre = filas(fil).Item("paciente")
+                    objTomada.cedula = filas(fil).Item("Identificacion")
+                    objTomada.nombre = filas(fil).Item("Nombre")
                     objTomada.fechaCita = filas(fil).Item("Fecha_cita")
                     objTomada.estado = filas(fil).Item("Estado_Atencion")
                     pendiente = 1
@@ -48,7 +48,7 @@
 
                 If contenedorPanelX >= Constantes.ANCHURA_CITA_DISPONIBLE Then
                     contenedorPanelDispon = contenedorPanelDispon + incrementoSaltoLinea
-                    contenedorPanelX = 120
+                    contenedorPanelX = Constantes.PANEL_POCISION_X
                 End If
 
                 panelCreado = objTomada.crearPanel(contenedorPanelX, contenedorPanelDispon, pendiente)
@@ -59,7 +59,7 @@
                 contenedorPanelX = contenedorPanelX + incrementoX
 
             Next
-            contenedorPanelX = 120
+            contenedorPanelX = Constantes.PANEL_POCISION_X
         Catch ex As Exception
             Throw ex
         End Try

@@ -1,31 +1,22 @@
 ﻿Public Class FormCitaMedica
-<<<<<<< .mine
     Dim objCita As AgendarCita
     Public Property estadoRegistro As Boolean
-||||||| .r166
-=======
+    Public Property objFormularioProgram As FormProgramacionCita
+    Property fechaHora As DateTime
     Dim formulario As New vForm
->>>>>>> .r168
     Private Sub FormCitaMedica_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-<<<<<<< .mine
         objCita = New AgendarCita
         Generales.deshabilitarBotones(ToolStrip1)
         Generales.deshabilitarControles(Me)
         If estadoRegistro = True Then
-            txtobservacion.ReadOnly = False
             btEditar.Enabled = True
             btAnular.Enabled = True
         Else
-            btBuscarPerfil.Enabled = True
+            txtobservacion.ReadOnly = False
+            txtfecha.Text = Format(fechaHora, Constantes.FORMATO_FECHA_HORA)
+            btBuscarCliente.Enabled = True
             btRegistrar.Enabled = True
             btCancelar.Enabled = True
-        End If
-    End Sub
-    Private Sub Form_FormClosing(sender As Object, e As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
-        If EstiloMensajes.mostrarMensajePregunta(MensajeSistema.SALIR) = Constantes.SI Then
-            Me.Dispose()
-        Else
-            e.Cancel = True
         End If
     End Sub
     Private Sub btEditar_Click(sender As Object, e As EventArgs) Handles btEditar.Click
@@ -38,12 +29,17 @@
     End Sub
     Private Sub btCancelar_Click(sender As Object, e As EventArgs) Handles btCancelar.Click
         If EstiloMensajes.mostrarMensajePregunta(MensajeSistema.CANCELAR) = Constantes.SI Then
-            Close()
+            If Not IsNothing(objCita.codigo) Then
+                Generales.deshabilitarBotones(ToolStrip1)
+                Generales.deshabilitarControles(Me)
+                btEditar.Enabled = True
+                btAnular.Enabled = True
+            Else
+                Close()
+            End If
         End If
     End Sub
     Private Sub btAnular_Click(sender As Object, e As EventArgs) Handles btAnular.Click
-||||||| .r166
-=======
         establecerPosicion()
         formulario.ventana = Me '' se indica el formulario que usara el efecto
         formulario.redondear() '' se redondean los bordes del formulario
@@ -62,63 +58,32 @@
     End Sub
     Private Sub FormBusquedaMouseMove(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) _
                 Handles MyBase.MouseMove '' aca puedes agregar mas controles que quieras usar para mover el formulario ej: label1.MouseMove
->>>>>>> .r168
-
         If e.Button = MouseButtons.Left Then
             formulario.moverForm() '' se llama la función que da el efecto
         End If
-
     End Sub
-<<<<<<< .mine
     Private Sub btRegistrar_Click(sender As Object, e As EventArgs) Handles btRegistrar.Click
-||||||| .r166
-    'Dim perG As New Buscar_Permisos_generales
-    'Dim objCita As New ProgramCitaMedica
-    'Dim reporte As New ftp_reportes
-    'Dim permiso_general, Pnuevo, Peditar, Panular, PBuscar As String
-    'Property objFormularioProgram As FormProgramacionCita
-    'Property fechaHora As DateTime
-    'Public Property bandera As Boolean
-    'Private Sub btbuscarPaciente_Click(sender As Object, e As EventArgs) Handles btbuscarPaciente.Click
-    '    Dim params As New List(Of String)
-    '    params.Add(Nothing)
-    '    General.buscarElemento(Consultas.PACIENTE_EXTERNOS_BUSCAR,
-    '                         params,
-    '                         AddressOf cargarPacienteAM,
-    '                         TitulosForm.BUSQUEDA_PACIENTE,
-    '                         True, 0, True)
-    'End Sub
-=======
+        Try
+            AgendarCitaBLL.guardarCita(objCita)
+            Generales.deshabilitarBotones(ToolStrip1)
+            Generales.deshabilitarControles(Me)
+            btEditar.Enabled = True
+            btAnular.Enabled = True
+            EstiloMensajes.mostrarMensajeExitoso(MensajeSistema.REGISTRO_GUARDADO)
+        Catch ex As Exception
+            EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
+        End Try
+    End Sub
     Private Sub Panel2_Click(sender As Object, e As EventArgs) Handles Panel2.Click
         If EstiloMensajes.mostrarMensajePregunta(MensajeSistema.SALIR) = Constantes.SI Then
             Me.Close()
         End If
     End Sub
-
-    'Dim perG As New Buscar_Permisos_generales
-    'Dim objCita As New ProgramCitaMedica
-    'Dim reporte As New ftp_reportes
-    'Dim permiso_general, Pnuevo, Peditar, Panular, PBuscar As String
-    'Property objFormularioProgram As FormProgramacionCita
-    'Property fechaHora As DateTime
-    'Public Property bandera As Boolean
-    'Private Sub btbuscarPaciente_Click(sender As Object, e As EventArgs) Handles btbuscarPaciente.Click
-    '    Dim params As New List(Of String)
-    '    params.Add(Nothing)
-    '    General.buscarElemento(Consultas.PACIENTE_EXTERNOS_BUSCAR,
-    '                         params,
-    '                         AddressOf cargarPacienteAM,
-    '                         TitulosForm.BUSQUEDA_PACIENTE,
-    '                         True, 0, True)
-    'End Sub
->>>>>>> .r168
-
-    End Sub
-    Private Sub btBuscarPerfil_Click(sender As Object, e As EventArgs) Handles btBuscarPerfil.Click
+    Private Sub btBuscarCliente_Click(sender As Object, e As EventArgs) Handles btBuscarCliente.Click
         Dim params As New List(Of String)
         params.Add(String.Empty)
         Try
-            Generales.buscarElemento("[SP_PERSONA_EMPLEADO_CONSULTAR]",
+            Generales.buscarElemento("[SP_ADMIN_PERSONA_CONSULTAR]",
                                    params,
                                    AddressOf cargarPersona,
                                    "Busqueda de persona",
@@ -139,4 +104,6 @@
             EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
         End Try
     End Sub
+
+
 End Class

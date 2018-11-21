@@ -114,6 +114,7 @@
     <Compile Include="Controlador\Administracion\PerfilDAL.vb" />
     <Compile Include="Controlador\Administracion\SucursalDAL.vb" />
     <Compile Include="Controlador\Administracion\PersonaDAL.vb" />
+    <Compile Include="Controlador\Cita\AgendarCitaDAL.vb" />
     <Compile Include="Controlador\Configuracion\ConfigDAL.vb" />
     <Compile Include="Controlador\Inventario\ClienteDAL.vb" />
     <Compile Include="Controlador\Inventario\EntradaInventarioDAL.vb" />
@@ -167,6 +168,7 @@
     <Compile Include="Modelo\Administracion\PerfilBLL.vb" />
     <Compile Include="Modelo\Administracion\SucursalBLL.vb" />
     <Compile Include="Modelo\Administracion\PersonaBLL.vb" />
+    <Compile Include="Modelo\Cita\AgendarCitaBLL.vb" />
     <Compile Include="Modelo\Cita\ConfigCitaBLL.vb" />
     <Compile Include="Modelo\Cita\ProgramacionCitaDiaBLL.vb" />
     <Compile Include="Modelo\Cita\ProgramacionCitaMesesBLL.vb" />
