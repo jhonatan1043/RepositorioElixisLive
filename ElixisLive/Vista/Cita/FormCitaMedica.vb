@@ -1,7 +1,36 @@
 ﻿Public Class FormCitaMedica
+    Dim formulario As New vForm
     Private Sub FormCitaMedica_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        establecerPosicion()
+        formulario.ventana = Me '' se indica el formulario que usara el efecto
+        formulario.redondear() '' se redondean los bordes del formulario
+    End Sub
+    Private Sub establecerPosicion()
+        Dim x As Integer
+        Dim y As Integer
+        x = Screen.PrimaryScreen.WorkingArea.Width - 920
+        y = Screen.PrimaryScreen.WorkingArea.Height - 570
+        Me.Location = New Point(x, y)
+    End Sub
+    Private Sub formBusqueda_KeyPress(sender As System.Object, e As System.Windows.Forms.KeyPressEventArgs) Handles MyBase.KeyPress
+        If e.KeyChar = ChrW(Keys.Escape) Then
+            Close()
+        End If
+    End Sub
+    Private Sub FormBusquedaMouseMove(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) _
+                Handles MyBase.MouseMove '' aca puedes agregar mas controles que quieras usar para mover el formulario ej: label1.MouseMove
+
+        If e.Button = MouseButtons.Left Then
+            formulario.moverForm() '' se llama la función que da el efecto
+        End If
 
     End Sub
+    Private Sub Panel2_Click(sender As Object, e As EventArgs) Handles Panel2.Click
+        If EstiloMensajes.mostrarMensajePregunta(MensajeSistema.SALIR) = Constantes.SI Then
+            Me.Close()
+        End If
+    End Sub
+
     'Dim perG As New Buscar_Permisos_generales
     'Dim objCita As New ProgramCitaMedica
     'Dim reporte As New ftp_reportes

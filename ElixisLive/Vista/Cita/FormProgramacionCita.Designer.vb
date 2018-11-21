@@ -139,12 +139,12 @@ Partial Class FormProgramacionCita
         'ToolStripLabel1
         '
         Me.ToolStripLabel1.Name = "ToolStripLabel1"
-        Me.ToolStripLabel1.Size = New System.Drawing.Size(81, 22)
-        Me.ToolStripLabel1.Text = "Programados:"
+        Me.ToolStripLabel1.Size = New System.Drawing.Size(70, 22)
+        Me.ToolStripLabel1.Text = "Agendados:"
         '
         'txtPendiente
         '
-        Me.txtPendiente.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtPendiente.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtPendiente.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtPendiente.Name = "txtPendiente"
         Me.txtPendiente.ReadOnly = True
@@ -174,7 +174,7 @@ Partial Class FormProgramacionCita
         '
         'txtRealizado
         '
-        Me.txtRealizado.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.txtRealizado.BackColor = System.Drawing.Color.Silver
         Me.txtRealizado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtRealizado.Name = "txtRealizado"
         Me.txtRealizado.ReadOnly = True
@@ -189,7 +189,7 @@ Partial Class FormProgramacionCita
         '
         'ToolStripTextBox1
         '
-        Me.ToolStripTextBox1.BackColor = System.Drawing.SystemColors.Control
+        Me.ToolStripTextBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.ToolStripTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.ToolStripTextBox1.Name = "ToolStripTextBox1"
         Me.ToolStripTextBox1.ReadOnly = True

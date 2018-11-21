@@ -527,7 +527,7 @@ Public Class Generales
         Return resultado
     End Function
     Public Shared Sub desvanecerForm(form As Form)
-        For contador = 90 To 9 Step -9
+        For contador = 90 To 9 Step -18
             form.Opacity = contador / 100
             form.Refresh()
             Thread.Sleep(80)

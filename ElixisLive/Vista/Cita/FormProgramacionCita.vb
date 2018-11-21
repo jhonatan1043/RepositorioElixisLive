@@ -5,6 +5,7 @@
         fecha = dFecha.Value
         UtlidadCitaBLL.objFormCita = Me
     End Sub
+
     Public Sub validarControles(Optional disSemana As Integer = Constantes.SIN_VALOR_NUMERICO)
         Dim formato As String = Nothing
         Try
