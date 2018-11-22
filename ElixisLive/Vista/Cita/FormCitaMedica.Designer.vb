@@ -219,7 +219,7 @@ Partial Class FormCitaMedica
         Me.btBuscarCliente.BackgroundImage = Global.Quality.My.Resources.Resources.fondo_azul
         Me.btBuscarCliente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btBuscarCliente.Image = Global.Quality.My.Resources.Resources.Zoom_icon1
-        Me.btBuscarCliente.Location = New System.Drawing.Point(423, 19)
+        Me.btBuscarCliente.Location = New System.Drawing.Point(399, 19)
         Me.btBuscarCliente.Name = "btBuscarCliente"
         Me.btBuscarCliente.Size = New System.Drawing.Size(26, 25)
         Me.btBuscarCliente.TabIndex = 58
@@ -228,10 +228,10 @@ Partial Class FormCitaMedica
         'txtfecha
         '
         Me.txtfecha.Font = New System.Drawing.Font("Times New Roman", 10.0!, System.Drawing.FontStyle.Italic)
-        Me.txtfecha.Location = New System.Drawing.Point(550, 22)
+        Me.txtfecha.Location = New System.Drawing.Point(541, 22)
         Me.txtfecha.Mask = "00/00/0000 00:00"
         Me.txtfecha.Name = "txtfecha"
-        Me.txtfecha.Size = New System.Drawing.Size(116, 23)
+        Me.txtfecha.Size = New System.Drawing.Size(125, 23)
         Me.txtfecha.TabIndex = 56
         '
         'txtobservacion
@@ -261,7 +261,7 @@ Partial Class FormCitaMedica
         Me.textNombre.Font = New System.Drawing.Font("Times New Roman", 10.0!, System.Drawing.FontStyle.Italic)
         Me.textNombre.Location = New System.Drawing.Point(73, 20)
         Me.textNombre.Name = "textNombre"
-        Me.textNombre.Size = New System.Drawing.Size(344, 23)
+        Me.textNombre.Size = New System.Drawing.Size(323, 23)
         Me.textNombre.TabIndex = 40
         '
         'Label7
@@ -278,7 +278,7 @@ Partial Class FormCitaMedica
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Italic)
-        Me.Label4.Location = New System.Drawing.Point(463, 24)
+        Me.Label4.Location = New System.Drawing.Point(454, 24)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(86, 19)
         Me.Label4.TabIndex = 2

@@ -1,7 +1,12 @@
 ﻿Public Class FormEntradaInventario
     Dim objEntrada As EntradaInventario
+    Property dtContenedor As DataTable
+    Property cantidadEntrante As Integer
+    Property codigoProducto As Integer
+
     Private Sub FormEntradaInventario_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         objEntrada = New EntradaInventario
+        dtContenedor = New DataTable
         Generales.deshabilitarBotones(ToolStrip1)
         Generales.deshabilitarControles(Me)
         validarGrilla()
@@ -177,10 +182,17 @@
         End If
     End Sub
     Private Sub dgvEntrada_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvEntrada.CellClick
+        Dim lote As FormLote
         If objEntrada.dtEntrada.Rows.Count > 0 Then
             If e.ColumnIndex = 6 Then
-
+                lote = New FormLote
+                codigoProducto = objEntrada.dtEntrada.Rows(dgvEntrada.CurrentCell.RowIndex).Item("Codigo")
+                cantidadEntrante = objEntrada.dtEntrada.Rows(dgvEntrada.CurrentCell.RowIndex).Item("Cantidad")
+                lote.MdiParent = FormPrincipal
+                lote.Show()
+                lote.Focus()
             End If
         End If
     End Sub
+
 End Class

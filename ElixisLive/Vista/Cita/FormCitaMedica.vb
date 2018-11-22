@@ -62,8 +62,13 @@
             formulario.moverForm() '' se llama la función que da el efecto
         End If
     End Sub
+    Private Sub cargarObjeto()
+        objCita.dtFechaCita = Format(Convert.ToDateTime(txtfecha.Text), Constantes.FORMATO_FECHA_HORA)
+        objCita.observacion = txtobservacion.Text
+    End Sub
     Private Sub btRegistrar_Click(sender As Object, e As EventArgs) Handles btRegistrar.Click
         Try
+            cargarObjeto()
             AgendarCitaBLL.guardarCita(objCita)
             Generales.deshabilitarBotones(ToolStrip1)
             Generales.deshabilitarControles(Me)
