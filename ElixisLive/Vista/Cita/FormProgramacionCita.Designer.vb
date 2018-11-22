@@ -104,7 +104,7 @@ Partial Class FormProgramacionCita
         '
         Me.ToolStrip1.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripLabel1, Me.txtPendiente, Me.ToolStripLabel3, Me.txtCancelado, Me.ToolStripLabel2, Me.txtRealizado, Me.ToolStripLabel4, Me.ToolStripTextBox1})
-        Me.ToolStrip1.Location = New System.Drawing.Point(0, 499)
+        Me.ToolStrip1.Location = New System.Drawing.Point(0, 498)
         Me.ToolStrip1.Name = "ToolStrip1"
         Me.ToolStrip1.Size = New System.Drawing.Size(799, 25)
         Me.ToolStrip1.TabIndex = 10057
@@ -148,7 +148,7 @@ Partial Class FormProgramacionCita
         '
         'txtRealizado
         '
-        Me.txtRealizado.BackColor = System.Drawing.Color.Silver
+        Me.txtRealizado.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.txtRealizado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtRealizado.Name = "txtRealizado"
         Me.txtRealizado.ReadOnly = True
@@ -221,7 +221,7 @@ Partial Class FormProgramacionCita
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(799, 524)
+        Me.ClientSize = New System.Drawing.Size(799, 523)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.PanelDia)
         Me.Controls.Add(Me.ToolStrip1)

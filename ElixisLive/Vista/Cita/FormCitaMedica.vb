@@ -18,6 +18,7 @@
             btRegistrar.Enabled = True
             btCancelar.Enabled = True
         End If
+        establecerPosicion()
     End Sub
     Private Sub btEditar_Click(sender As Object, e As EventArgs) Handles btEditar.Click
         If EstiloMensajes.mostrarMensajePregunta(MensajeSistema.EDITAR) = Constantes.SI Then
