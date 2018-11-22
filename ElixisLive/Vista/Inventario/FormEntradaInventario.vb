@@ -1,14 +1,16 @@
 ﻿Public Class FormEntradaInventario
     Dim objEntrada As EntradaInventario
-    Property dtContenedor As DataTable
+    Property dtContenedorLote As DataTable
     Property cantidadEntrante As Integer
     Property codigoProducto As Integer
+    Property registroGuardado As Boolean
 
     Private Sub FormEntradaInventario_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         objEntrada = New EntradaInventario
-        dtContenedor = New DataTable
+        dtContenedorLote = New DataTable
         Generales.deshabilitarBotones(ToolStrip1)
         Generales.deshabilitarControles(Me)
+        validarDatatble()
         validarGrilla()
         btNuevo.Enabled = True
         btBuscar.Enabled = True
@@ -34,6 +36,12 @@
             EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
         End Try
     End Sub
+    Private Sub validarDatatble()
+        dtContenedorLote.Columns.Add("CodigoProducto", Type.GetType("System.Int32"))
+        dtContenedorLote.Columns.Add("Nombre", Type.GetType("System.String"))
+        dtContenedorLote.Columns.Add("CantidadExistente", Type.GetType("System.Int32"))
+        dtContenedorLote.Columns.Add("FechaVencimiento", Type.GetType("System.DateTime"))
+    End Sub
     Private Sub validarGrilla()
         With dgvEntrada
             '----------- Asociar datatable con grilla
@@ -44,6 +52,7 @@
             .Columns("dgTotal").DataPropertyName = "Total"
             .Columns("dgBodega").DataPropertyName = "Bodega"
             .Columns("dgLote").DataPropertyName = "Lote"
+            .Columns("dgCodigoBarra").DataPropertyName = "CodigoBarra"
             '------------------------------------------------------
             .Columns("dgProducto").AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
             .Columns("dgValor").AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
@@ -51,6 +60,7 @@
             .Columns("dgTotal").AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
             .Columns("dgBodega").AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
             .Columns("dgLote").AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
+            .Columns("dgCodigoBarra").AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
             .DataSource = objEntrada.dtEntrada
             .AutoGenerateColumns = False
         End With
@@ -65,6 +75,7 @@
     Private Sub btNuevo_Click(sender As Object, e As EventArgs) Handles btNuevo.Click
         Generales.deshabilitarBotones(ToolStrip1)
         limpiarControl()
+        registroGuardado = False
         btBuscarCompra.Enabled = True
         btRegistrar.Enabled = True
         btCancelar.Enabled = True
@@ -84,7 +95,7 @@
         End Try
     End Sub
     Private Sub cargarInventario(pCodigo As Integer)
-
+        registroGuardado = True
     End Sub
     Private Sub btRegistrar_Click(sender As Object, e As EventArgs) Handles btRegistrar.Click
         If String.IsNullOrEmpty(txtCodigo.Text) Then
@@ -106,6 +117,7 @@
             Generales.deshabilitarBotones(ToolStrip1)
             validarEdicionGrilla(Constantes.NO_EDITABLE)
             limpiarControl()
+            dtContenedorLote.Clear()
             btBuscarCompra.Enabled = False
             btNuevo.Enabled = True
             btBuscar.Enabled = True
@@ -135,6 +147,7 @@
             .Columns("dgTotal").ReadOnly = True
             .Columns("dgBodega").ReadOnly = True
             .Columns("dgLote").ReadOnly = True
+            .Columns("dgCodigoBarra").ReadOnly = True
         End With
         If Estado = True Then
             With dgvEntrada
@@ -188,6 +201,8 @@
                 lote = New FormLote
                 codigoProducto = objEntrada.dtEntrada.Rows(dgvEntrada.CurrentCell.RowIndex).Item("Codigo")
                 cantidadEntrante = objEntrada.dtEntrada.Rows(dgvEntrada.CurrentCell.RowIndex).Item("Cantidad")
+                lote.objInventarioEntrada = Me
+                lote.cargarRegistros()
                 lote.MdiParent = FormPrincipal
                 lote.Show()
                 lote.Focus()

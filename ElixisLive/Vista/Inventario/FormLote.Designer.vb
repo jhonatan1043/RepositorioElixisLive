@@ -200,7 +200,7 @@ Partial Class FormLote
         Me.ToolStrip1.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.ToolStrip1.ImageScalingSize = New System.Drawing.Size(26, 26)
         Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripSeparator1, Me.btRegistrar, Me.ToolStripSeparator4})
-        Me.ToolStrip1.Location = New System.Drawing.Point(0, 164)
+        Me.ToolStrip1.Location = New System.Drawing.Point(0, 165)
         Me.ToolStrip1.Name = "ToolStrip1"
         Me.ToolStrip1.Size = New System.Drawing.Size(603, 33)
         Me.ToolStrip1.TabIndex = 16
@@ -231,7 +231,7 @@ Partial Class FormLote
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(603, 197)
+        Me.ClientSize = New System.Drawing.Size(603, 198)
         Me.Controls.Add(Me.ToolStrip1)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Panel1)
@@ -240,6 +240,7 @@ Partial Class FormLote
         Me.MinimizeBox = False
         Me.MinimumSize = New System.Drawing.Size(619, 236)
         Me.Name = "FormLote"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.TopMost = True
         Me.Panel1.ResumeLayout(False)
         CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).EndInit()
