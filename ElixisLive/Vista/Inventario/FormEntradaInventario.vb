@@ -40,6 +40,7 @@
         dtContenedorLote.Columns.Add("CodigoProducto", Type.GetType("System.Int32"))
         dtContenedorLote.Columns.Add("Nombre", Type.GetType("System.String"))
         dtContenedorLote.Columns.Add("CantidadExistente", Type.GetType("System.Int32"))
+        dtContenedorLote.Columns.Add("CantidadEntrante", Type.GetType("System.Int32"))
         dtContenedorLote.Columns.Add("FechaVencimiento", Type.GetType("System.DateTime"))
     End Sub
     Private Sub validarGrilla()
@@ -101,15 +102,20 @@
         If String.IsNullOrEmpty(txtCodigo.Text) Then
             EstiloMensajes.mostrarMensajeAdvertencia("¡ Favor seleccionar la compra !")
         Else
-            dgvEntrada.EndEdit()
-            EntradaInventarioBLL.guardarEntrada(objEntrada)
-            Generales.deshabilitarBotones(ToolStrip1)
-            validarEdicionGrilla(Constantes.NO_EDITABLE)
-            btBuscarCompra.Enabled = False
-            btNuevo.Enabled = True
-            btBuscar.Enabled = True
-            btAnular.Enabled = True
-            EstiloMensajes.mostrarMensajeExitoso(MensajeSistema.REGISTRO_GUARDADO)
+            Try
+                dgvEntrada.EndEdit()
+                objEntrada.dtLote = dtContenedorLote.Copy
+                EntradaInventarioBLL.guardarEntrada(objEntrada)
+                Generales.deshabilitarBotones(ToolStrip1)
+                validarEdicionGrilla(Constantes.NO_EDITABLE)
+                btBuscarCompra.Enabled = False
+                btNuevo.Enabled = True
+                btBuscar.Enabled = True
+                btAnular.Enabled = True
+                EstiloMensajes.mostrarMensajeExitoso(MensajeSistema.REGISTRO_GUARDADO)
+            Catch ex As Exception
+                EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
+            End Try
         End If
     End Sub
     Private Sub btCancelar_Click(sender As Object, e As EventArgs) Handles btCancelar.Click
@@ -151,6 +157,7 @@
         End With
         If Estado = True Then
             With dgvEntrada
+                .Columns("dgCantidad").ReadOnly = False
                 .Columns("dgBodega").ReadOnly = False
                 .Columns("dgLote").ReadOnly = False
             End With

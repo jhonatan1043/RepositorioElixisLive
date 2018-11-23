@@ -9,23 +9,35 @@
     Private Sub btRegistrar_Click(sender As Object, e As EventArgs) Handles btRegistrar.Click
         If String.IsNullOrEmpty(txtNombre.Text) Then
             EstiloMensajes.mostrarMensajeAdvertencia("¡ Debe ingresar el registro lote !")
+        ElseIf String.IsNullOrEmpty(txtCantidadExistete.Text) Then
+            EstiloMensajes.mostrarMensajeAdvertencia("¡ Faltan Campos por llenar !")
         Else
-            If objInventarioEntrada.dtContenedorLote.Select("[CodigoProducto]='" & objInventarioEntrada.codigoProducto & "'").Count > 0 Then
-                objInventarioEntrada.dtContenedorLote.Rows.Remove(getFila)
-            End If
-            dtLote.Rows.Add()
-            dtLote.Rows(dtLote.Rows.Count - 1).Item("CodigoProducto") = objInventarioEntrada.codigoProducto
-            dtLote.Rows(dtLote.Rows.Count - 1).Item("Nombre") = txtNombre.Text
-            dtLote.Rows(dtLote.Rows.Count - 1).Item("CantidadExistente") = txtCantidadExistete.Text
-            dtLote.Rows(dtLote.Rows.Count - 1).Item("FechaVencimiento") = dtFechaVencimiento.Value
-            objInventarioEntrada.dtContenedorLote.ImportRow(dtLote.Rows(0))
-            Close()
+                Try
+                If objInventarioEntrada.dtContenedorLote.Select("[CodigoProducto]='" & objInventarioEntrada.codigoProducto & "'").Count > 0 Then
+                    objInventarioEntrada.dtContenedorLote.Rows.Remove(getFila)
+                End If
+                dtLote.Rows.Add()
+                dtLote.Rows(dtLote.Rows.Count - 1).Item("CodigoProducto") = objInventarioEntrada.codigoProducto
+                dtLote.Rows(dtLote.Rows.Count - 1).Item("Nombre") = txtNombre.Text
+                dtLote.Rows(dtLote.Rows.Count - 1).Item("CantidadExistente") = txtCantidadExistete.Text
+                dtLote.Rows(dtLote.Rows.Count - 1).Item("CantidadEntrante") = objInventarioEntrada.cantidadEntrante
+                dtLote.Rows(dtLote.Rows.Count - 1).Item("FechaVencimiento") = dtFechaVencimiento.Value
+                objInventarioEntrada.dtContenedorLote.ImportRow(dtLote.Rows(0))
+                Close()
+            Catch ex As Exception
+                EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
+            End Try
         End If
     End Sub
     Private Sub txtNombre_KeyDown(sender As Object, e As KeyEventArgs) Handles txtNombre.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            ConsultarLote()
+        End If
+    End Sub
+    Private Sub ConsultarLote()
         Dim fila As DataRow
         Dim params As New List(Of String)
-        If e.KeyCode = Keys.Enter Then
+        Try
             params.Add(txtNombre.Text)
             fila = Generales.cargarItem("[SP_CONSULTAR_LOTE]", params)
             If Not IsNothing(fila) Then
@@ -33,7 +45,9 @@
             Else
                 txtCantidadExistete.Text = Constantes.SIN_VALOR_NUMERICO
             End If
-        End If
+        Catch ex As Exception
+            EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
+        End Try
     End Sub
     Private Sub FormLote_LostFocus(sender As Object, e As EventArgs) Handles Me.LostFocus
         Close()
@@ -72,5 +86,8 @@
             btRegistrar.Enabled = True
         End If
 
+    End Sub
+    Private Sub txtNombre_LostFocus(sender As Object, e As EventArgs) Handles txtNombre.LostFocus
+        ConsultarLote()
     End Sub
 End Class
