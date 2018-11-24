@@ -145,6 +145,7 @@
     <Compile Include="Entidad\Cita\Semana\HoraSemana.vb" />
     <Compile Include="Entidad\generalConsulta.vb" />
     <Compile Include="Entidad\Configuracion\Configuracion.vb" />
+    <Compile Include="Entidad\Gestion\Compra.vb" />
     <Compile Include="Entidad\Inventario\Cliente.vb" />
     <Compile Include="Entidad\Inventario\EntradaInventario.vb" />
     <Compile Include="Entidad\Inventario\ListaPrecio.vb" />
