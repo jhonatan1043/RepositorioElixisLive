@@ -118,7 +118,7 @@ Partial Class FormProgramacionCita
         '
         'txtPendiente
         '
-        Me.txtPendiente.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtPendiente.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.txtPendiente.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtPendiente.Name = "txtPendiente"
         Me.txtPendiente.ReadOnly = True
@@ -163,7 +163,7 @@ Partial Class FormProgramacionCita
         '
         'ToolStripTextBox1
         '
-        Me.ToolStripTextBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.ToolStripTextBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.ToolStripTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.ToolStripTextBox1.Name = "ToolStripTextBox1"
         Me.ToolStripTextBox1.ReadOnly = True
@@ -173,6 +173,7 @@ Partial Class FormProgramacionCita
         'PanelDia
         '
         Me.PanelDia.AutoScroll = True
+        Me.PanelDia.BackColor = System.Drawing.Color.White
         Me.PanelDia.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.PanelDia.Font = New System.Drawing.Font("Times New Roman", 10.0!, System.Drawing.FontStyle.Italic)
         Me.PanelDia.Location = New System.Drawing.Point(5, 106)

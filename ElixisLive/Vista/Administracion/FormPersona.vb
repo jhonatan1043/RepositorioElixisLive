@@ -70,7 +70,16 @@ Public Class FormPersona
             ErrorIcono.SetError(TextDireccion, "")
         End If
     End Sub
-
+    Private Sub quitarIconoError()
+        ErrorIcono.SetError(TextDireccion, "")
+        ErrorIcono.SetError(ComboMunicipio, "")
+        ErrorIcono.SetError(cbDepartamento, "")
+        ErrorIcono.SetError(cbSede, "")
+        ErrorIcono.SetError(TextTelefono, "")
+        ErrorIcono.SetError(TextNombre, "")
+        ErrorIcono.SetError(TextIdentificacion, "")
+        ErrorIcono.SetError(CombotipoIdentificacion, "")
+    End Sub
     Private Sub Form_FormClosing(sender As Object, e As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
         If EstiloMensajes.mostrarMensajePregunta(MensajeSistema.SALIR) = Constantes.SI Then
             Me.Dispose()
@@ -147,7 +156,7 @@ Public Class FormPersona
             objPersona.codigo = Nothing
             btNuevo.Enabled = True
             btBuscar.Enabled = True
-            mostrarIconoError()
+            quitarIconoError()
         End If
     End Sub
     Private Sub btAnular_Click(sender As Object, e As EventArgs) Handles btAnular.Click

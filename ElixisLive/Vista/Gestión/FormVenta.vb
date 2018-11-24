@@ -294,7 +294,7 @@ Public Class FormVenta
     Private Sub dgvcartera_EditingControlShowing(sender As Object, e As DataGridViewEditingControlShowingEventArgs) Handles dgvFactura.EditingControlShowing,
             dgvFactura.EditingControlShowing
         If dgvFactura.CurrentCell.ColumnIndex = 0 Or dgvFactura.CurrentCell.ColumnIndex = 2 Or dgvFactura.CurrentCell.ColumnIndex = 3 Then
-            AddHandler e.Control.KeyPress, AddressOf ValidacionDigitacion.validarValoresNumericos
+            AddHandler e.Control.KeyPress, AddressOf ValidacionDigitacion.validarSoloNumerosNegativo
         End If
     End Sub
     Private Sub TextTelefono_Leave(sender As Object, e As EventArgs) Handles TextTelefono.Leave
