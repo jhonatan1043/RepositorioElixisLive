@@ -188,12 +188,10 @@
     Private Function validarIngresoFecha() As Boolean
         Dim resultado As Boolean
         Dim fechaCitaHora As String = Format(fechaHora, "ddMMyyy HH")
-        Dim fechaModificada As String = Format(txtfecha.Text, "ddMMyyy HH")
+        Dim fechaModificada As String = Format(Convert.ToDateTime(txtfecha.Text), "ddMMyyy HH")
         If fechaCitaHora <> fechaModificada Then
             resultado = True
         End If
         Return resultado
     End Function
-
-
 End Class
