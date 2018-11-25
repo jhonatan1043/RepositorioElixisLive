@@ -70,7 +70,7 @@ Public Class FormProveedor
         txtCelular.Text = dfila("Celular")
         txtNombre.Text = dfila("Nombre")
         txtDireccion.Text = dfila("Direccion")
-        txtEmail.Text = dfila("Email")
+        txtEmail.Text = If(IsDBNull(dfila("Email")), Nothing, dfila("Email"))
     End Sub
     Private Sub controlVerificar()
         For posicion = 0 To dgvParametro.Rows.Count - 1

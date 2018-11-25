@@ -32,7 +32,7 @@
         Dim txtbox As New TextBox
         Try
             txtbox.BorderStyle = BorderStyle.None
-            txtbox.Size = New Point(179, 29)
+            txtbox.Size = New Point(130, 29)
             txtbox.Location = New Point(posicionX, posicionY)
             txtbox.TextAlign = HorizontalAlignment.Center
             txtbox.BackColor = Color.White

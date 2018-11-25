@@ -8,7 +8,7 @@
         anchura = Constantes.ANCHURA_CITA_DISPONIBLE
         posicionPanelX = Constantes.PANEL_POCISION_X '------- posicion x en el panel
         descripcion = Constantes.CITA_DISPONIBLE
-        posicionLabelX = 385
+        posicionLabelX = 360
         posicionLabelY = 9
     End Sub
     Public Function crearPanelDisponible(posicionPanelY As Integer) As Panel
@@ -26,7 +26,7 @@
     Public Function crearEtiquetaDisponible() As Label
         Dim etiqueta As New Label
         etiqueta.Location = New Point(posicionLabelX, posicionLabelY)
-        etiqueta.Size = New Point(70, 13)
+        etiqueta.Size = New Point(70, 20)
         etiqueta.Text = descripcion
         Return etiqueta
     End Function

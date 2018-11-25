@@ -10,7 +10,7 @@
     Private Shared Sub valoresInicialesDia()
         contenedorPanelDispon = Constantes.VALOR_INICIAL
         incrementoPanel = Constantes.VALOR_INCREMENTO
-        incrementoX = 190
+        incrementoX = 145
         contenedorPanelX = Constantes.PANEL_POCISION_X
         incrementoSaltoLinea = 72
     End Sub
@@ -107,7 +107,7 @@
             params.Add(dtCitas.Select("Estado_Atencion='C'").Count.ToString)
             params.Add(dtCitas.Select("Estado_Atencion='R'").Count.ToString)
 
-            For posicion = 0 To 23
+            For posicion = 0 To 18
 
                 horaCita = UtlidadCitaBLL.horaDia(posicion)
                 extratoHora = horaCita.Remove(2)

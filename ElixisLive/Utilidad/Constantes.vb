@@ -44,7 +44,7 @@
     Public Const ANCHURA_CITA_DISPONIBLE = 783
     '----
     Public Const ALTURA_CITA_TOMADA = 66
-    Public Const ANCHURA_CITA_TOMADA = 187
+    Public Const ANCHURA_CITA_TOMADA = 140
     '----- 
     Public Const CITA_DISPONIBLE = "Disponible"
     '----
@@ -52,7 +52,7 @@
     Public Const HORA_POCISION_LABEL_X = 32
     '--------
     Public Const VALOR_INICIAL = 10
-    Public Const VALOR_INCREMENTO = 30
+    Public Const VALOR_INCREMENTO = 32
 
     Public Const PANEL_POCISION_X = 110
 

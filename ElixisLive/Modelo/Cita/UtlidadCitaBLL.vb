@@ -60,6 +60,7 @@
         Dim hora As String
         Dim fecha As DateTime = DateTime.Now
         fecha = fecha.AddHours(-fecha.Hour)
+        fecha = fecha.AddHours(+6)
         fecha = fecha.AddHours(+posicion)
         hora = Format(fecha, "HH:00:00")
         Return hora
