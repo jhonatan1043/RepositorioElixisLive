@@ -322,7 +322,6 @@ Public Class Generales
         dgv.AlternatingRowsDefaultCellStyle.SelectionBackColor = Nothing
         dgv.AlternatingRowsDefaultCellStyle.SelectionForeColor = Nothing
         dgv.AlternatingRowsDefaultCellStyle.Font = New Font("Times New Roman", 11, FontStyle.Italic)
-        'dgv.AlternatingRowsDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft
         dgv.ColumnHeadersDefaultCellStyle.Font = New Font("Times New Roman", 12, FontStyle.Italic)
         For indiceColumna = 0 To dgv.Columns.Count - 1
             dgv.Columns(indiceColumna).AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells

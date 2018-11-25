@@ -58,13 +58,13 @@ Partial Class FormPersona
         Me.Label10 = New System.Windows.Forms.Label()
         Me.GroupBox6 = New System.Windows.Forms.GroupBox()
         Me.cbSede = New System.Windows.Forms.ComboBox()
-        Me.Label4 = New System.Windows.Forms.Label()
         Me.cbDepartamento = New System.Windows.Forms.ComboBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.ComboMunicipio = New System.Windows.Forms.ComboBox()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.TextDireccion = New System.Windows.Forms.TextBox()
         Me.Label11 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
         Me.GroupBox7 = New System.Windows.Forms.GroupBox()
         Me.CombotipoIdentificacion = New System.Windows.Forms.ComboBox()
         Me.TextDV = New System.Windows.Forms.TextBox()
@@ -307,7 +307,7 @@ Partial Class FormPersona
         Me.btBuscarPerfil.BackgroundImage = Global.Quality.My.Resources.Resources.fondo_azul
         Me.btBuscarPerfil.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btBuscarPerfil.Image = Global.Quality.My.Resources.Resources.Zoom_icon1
-        Me.btBuscarPerfil.Location = New System.Drawing.Point(443, 67)
+        Me.btBuscarPerfil.Location = New System.Drawing.Point(443, 70)
         Me.btBuscarPerfil.Name = "btBuscarPerfil"
         Me.btBuscarPerfil.Size = New System.Drawing.Size(31, 30)
         Me.btBuscarPerfil.TabIndex = 15
@@ -456,18 +456,6 @@ Partial Class FormPersona
         Me.cbSede.Size = New System.Drawing.Size(233, 25)
         Me.cbSede.TabIndex = 44
         '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.BackColor = System.Drawing.Color.Transparent
-        Me.Label4.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.ForeColor = System.Drawing.Color.Black
-        Me.Label4.Location = New System.Drawing.Point(374, 41)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(44, 19)
-        Me.Label4.TabIndex = 43
-        Me.Label4.Text = "Sede:"
-        '
         'cbDepartamento
         '
         Me.cbDepartamento.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -531,6 +519,18 @@ Partial Class FormPersona
         Me.Label11.Size = New System.Drawing.Size(75, 19)
         Me.Label11.TabIndex = 26
         Me.Label11.Text = "Dirección:"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.BackColor = System.Drawing.Color.Transparent
+        Me.Label4.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.ForeColor = System.Drawing.Color.Black
+        Me.Label4.Location = New System.Drawing.Point(374, 41)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(44, 19)
+        Me.Label4.TabIndex = 43
+        Me.Label4.Text = "Sede:"
         '
         'GroupBox7
         '

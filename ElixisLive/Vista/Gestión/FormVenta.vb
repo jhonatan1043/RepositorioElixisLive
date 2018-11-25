@@ -182,6 +182,7 @@ Public Class FormVenta
             Else
                 EstiloMensajes.mostrarMensajeAdvertencia(MensajeSistema.VALIDAR_CAMPOS)
             End If
+            mostrarIconoError()
         Catch ex As Exception
             EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
         End Try
@@ -244,6 +245,26 @@ Public Class FormVenta
         Me.ErrorIcono.SetError(TextNombre, "")
         Me.ErrorIcono.SetError(TextTelefono, "")
     End Sub
+    Private Sub mostrarIconoError()
+
+        If TextIdentificacion.Text.Length = 0 Then
+            ErrorIcono.SetError(TextIdentificacion, " Error")
+        Else
+            ErrorIcono.SetError(TextIdentificacion, "")
+        End If
+        If TextNombre.Text.Length = 0 Then
+            ErrorIcono.SetError(TextNombre, " Error")
+        Else
+            ErrorIcono.SetError(TextNombre, "")
+        End If
+        If TextTelefono.Text.Length = 0 Then
+            ErrorIcono.SetError(TextTelefono, " Error")
+        Else
+            ErrorIcono.SetError(TextTelefono, "")
+        End If
+
+    End Sub
+
     Private Sub calcularTotales()
         dgvFactura.EndEdit()
         Try

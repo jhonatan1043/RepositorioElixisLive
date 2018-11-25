@@ -230,11 +230,70 @@ Public Class FormPersona
             txtUsuario.Clear()
         End If
     End Sub
-    Private Sub txtUsuario_TextChanged(sender As Object, e As EventArgs) Handles txtUsuario.TextChanged
+    Private Sub txtUsuario_TextChanged(sender As Object, e As EventArgs) Handles txtUsuario.Leave
         If Funciones.consultarUsuario(txtUsuario.Text) = True Then
-            ErrorIcono.SetError(txtUsuario, "Usuario Existente")
+            ErrorIcono.SetError(txtUsuario, "Este usuario ya existe")
+            txtUsuario.Focus()
         Else
             ErrorIcono.SetError(txtUsuario, "")
+        End If
+    End Sub
+    Private Sub TextTelefono_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextTelefono.KeyPress
+        ValidacionDigitacion.validarNumerosTelefono(e)
+        If Asc(e.KeyChar) = 13 Then
+            TextCelular.Focus()
+        End If
+    End Sub
+    Private Sub TextCelular_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextCelular.KeyPress
+        ValidacionDigitacion.validarNumerosTelefono(e)
+        If Asc(e.KeyChar) = 13 Then
+            TextEmail.Focus()
+        End If
+    End Sub
+    Private Sub TextNombre_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextNombre.KeyPress
+        ValidacionDigitacion.validarAlfabetico(e)
+        If Asc(e.KeyChar) = 13 Then
+            cbDepartamento.Focus()
+        End If
+    End Sub
+    Private Sub TextDireccion_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextDireccion.KeyPress
+        If Asc(e.KeyChar) = 13 Then
+            TextTelefono.Focus()
+        End If
+    End Sub
+    Private Sub TextIdentificacion_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextIdentificacion.KeyPress
+        ValidacionDigitacion.validarSoloNumerosPositivo(e)
+        If Asc(e.KeyChar) = 13 Then
+            TextNombre.Focus()
+        End If
+    End Sub
+    Private Sub CombotipoIdentificacion_KeyPress(sender As Object, e As KeyPressEventArgs) Handles CombotipoIdentificacion.KeyPress
+        If Asc(e.KeyChar) = 13 Then
+            TextIdentificacion.Focus()
+        End If
+    End Sub
+    Private Sub cbDepartamento_KeyPress(sender As Object, e As KeyPressEventArgs) Handles cbDepartamento.KeyPress
+        If Asc(e.KeyChar) = 13 Then
+            ComboMunicipio.Focus()
+        End If
+    End Sub
+    Private Sub ComboMunicipio_KeyPress(sender As Object, e As KeyPressEventArgs) Handles ComboMunicipio.KeyPress
+        If Asc(e.KeyChar) = 13 Then
+            cbSede.Focus()
+        End If
+    End Sub
+    Private Sub cbSede_KeyPress(sender As Object, e As KeyPressEventArgs) Handles cbSede.KeyPress
+        If Asc(e.KeyChar) = 13 Then
+            TextDireccion.Focus()
+        End If
+    End Sub
+    Private Sub TextIdentificacion_TextChanged(sender As Object, e As EventArgs) Handles TextIdentificacion.TextChanged
+        Dim dV As New DigitoVerificacion
+        Dim numero As Integer
+        numero = dV.calculaNit(TextIdentificacion.Text)
+        TextDV.Text = CType(numero, String)
+        If TextIdentificacion.Text = Nothing Then
+            TextDV.Text = Nothing
         End If
     End Sub
 End Class
