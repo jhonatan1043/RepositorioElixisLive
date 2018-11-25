@@ -61,9 +61,10 @@ Partial Class FormLote
         'Pimagen
         '
         Me.Pimagen.BackColor = System.Drawing.Color.Transparent
-        Me.Pimagen.Location = New System.Drawing.Point(4, -7)
+        Me.Pimagen.Image = Global.Quality.My.Resources.Resources.palet_01_icon
+        Me.Pimagen.Location = New System.Drawing.Point(4, 0)
         Me.Pimagen.Name = "Pimagen"
-        Me.Pimagen.Size = New System.Drawing.Size(69, 53)
+        Me.Pimagen.Size = New System.Drawing.Size(58, 40)
         Me.Pimagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.Pimagen.TabIndex = 1
         Me.Pimagen.TabStop = False
@@ -200,7 +201,7 @@ Partial Class FormLote
         Me.ToolStrip1.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.ToolStrip1.ImageScalingSize = New System.Drawing.Size(26, 26)
         Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripSeparator1, Me.btRegistrar, Me.ToolStripSeparator4})
-        Me.ToolStrip1.Location = New System.Drawing.Point(0, 165)
+        Me.ToolStrip1.Location = New System.Drawing.Point(0, 164)
         Me.ToolStrip1.Name = "ToolStrip1"
         Me.ToolStrip1.Size = New System.Drawing.Size(603, 33)
         Me.ToolStrip1.TabIndex = 16
@@ -231,7 +232,7 @@ Partial Class FormLote
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(603, 198)
+        Me.ClientSize = New System.Drawing.Size(603, 197)
         Me.Controls.Add(Me.ToolStrip1)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Panel1)

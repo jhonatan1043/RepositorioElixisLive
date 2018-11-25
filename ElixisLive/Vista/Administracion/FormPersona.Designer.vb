@@ -28,6 +28,7 @@ Partial Class FormPersona
         Me.Label2 = New System.Windows.Forms.Label()
         Me.chUsuario = New System.Windows.Forms.CheckBox()
         Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
+        Me.btBuscarPerfil = New System.Windows.Forms.Button()
         Me.txtPerfil = New System.Windows.Forms.TextBox()
         Me.txtUsuario = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -70,7 +71,6 @@ Partial Class FormPersona
         Me.ToolStripSeparator3 = New System.Windows.Forms.ToolStripSeparator()
         Me.btAnular = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripSeparator6 = New System.Windows.Forms.ToolStripSeparator()
-        Me.btBuscarPerfil = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Pimagen = New System.Windows.Forms.PictureBox()
         Me.LTitulo = New System.Windows.Forms.Label()
@@ -151,6 +151,17 @@ Partial Class FormPersona
         Me.LinkLabel1.TabIndex = 30
         Me.LinkLabel1.TabStop = True
         Me.LinkLabel1.Text = "Crear perfíl"
+        '
+        'btBuscarPerfil
+        '
+        Me.btBuscarPerfil.BackgroundImage = Global.Quality.My.Resources.Resources.fondo_azul
+        Me.btBuscarPerfil.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btBuscarPerfil.Image = Global.Quality.My.Resources.Resources.Zoom_icon1
+        Me.btBuscarPerfil.Location = New System.Drawing.Point(443, 70)
+        Me.btBuscarPerfil.Name = "btBuscarPerfil"
+        Me.btBuscarPerfil.Size = New System.Drawing.Size(31, 30)
+        Me.btBuscarPerfil.TabIndex = 15
+        Me.btBuscarPerfil.UseVisualStyleBackColor = True
         '
         'txtPerfil
         '
@@ -526,7 +537,7 @@ Partial Class FormPersona
         '
         Me.btRegistrar.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btRegistrar.ForeColor = System.Drawing.Color.White
-        Me.btRegistrar.Image = Global.Quality.My.Resources.Resources.Floppy_Drive_icon
+        Me.btRegistrar.Image = Global.Quality.My.Resources.Resources.Save_icon__1_
         Me.btRegistrar.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.btRegistrar.Name = "btRegistrar"
         Me.btRegistrar.Size = New System.Drawing.Size(105, 34)
@@ -586,17 +597,6 @@ Partial Class FormPersona
         Me.ToolStripSeparator6.Name = "ToolStripSeparator6"
         Me.ToolStripSeparator6.Size = New System.Drawing.Size(6, 37)
         '
-        'btBuscarPerfil
-        '
-        Me.btBuscarPerfil.BackgroundImage = Global.Quality.My.Resources.Resources.fondo_azul
-        Me.btBuscarPerfil.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btBuscarPerfil.Image = Global.Quality.My.Resources.Resources.Zoom_icon1
-        Me.btBuscarPerfil.Location = New System.Drawing.Point(443, 70)
-        Me.btBuscarPerfil.Name = "btBuscarPerfil"
-        Me.btBuscarPerfil.Size = New System.Drawing.Size(31, 30)
-        Me.btBuscarPerfil.TabIndex = 15
-        Me.btBuscarPerfil.UseVisualStyleBackColor = True
-        '
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.White
@@ -612,7 +612,7 @@ Partial Class FormPersona
         'Pimagen
         '
         Me.Pimagen.BackColor = System.Drawing.Color.Transparent
-        Me.Pimagen.Image = Global.Quality.My.Resources.Resources.Admin_icon
+        Me.Pimagen.Image = Global.Quality.My.Resources.Resources.user_group_icon
         Me.Pimagen.Location = New System.Drawing.Point(4, 0)
         Me.Pimagen.Name = "Pimagen"
         Me.Pimagen.Size = New System.Drawing.Size(48, 42)

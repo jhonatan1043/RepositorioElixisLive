@@ -30,7 +30,9 @@ Partial Class FormListaPrecio
         'Pimagen
         '
         Me.Pimagen.BackColor = System.Drawing.Color.Transparent
-        Me.Pimagen.Image = Global.Quality.My.Resources.Resources.lista
+        Me.Pimagen.Image = Global.Quality.My.Resources.Resources.Checklist_icon
+        Me.Pimagen.Location = New System.Drawing.Point(4, -1)
+        Me.Pimagen.Size = New System.Drawing.Size(39, 39)
         Me.Pimagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         '
         'txtNombre
@@ -44,7 +46,7 @@ Partial Class FormListaPrecio
         'FormListaPrecio
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
-        Me.ClientSize = New System.Drawing.Size(662, 422)
+        Me.ClientSize = New System.Drawing.Size(662, 421)
         Me.Location = New System.Drawing.Point(0, 0)
         Me.Name = "FormListaPrecio"
         Me.Panel1.ResumeLayout(False)

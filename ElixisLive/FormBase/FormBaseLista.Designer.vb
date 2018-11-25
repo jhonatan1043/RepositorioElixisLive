@@ -229,7 +229,7 @@ Partial Class FormBaseLista
         Me.ToolStrip1.BackgroundImage = Global.Quality.My.Resources.Resources.fondo_azul
         Me.ToolStrip1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ToolStrip1.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.ToolStrip1.ImageScalingSize = New System.Drawing.Size(26, 26)
+        Me.ToolStrip1.ImageScalingSize = New System.Drawing.Size(30, 30)
         Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripSeparator1, Me.btNuevo, Me.ToolStripSeparator2, Me.btBuscar, Me.ToolStripSeparator7, Me.btRegistrar, Me.ToolStripSeparator4, Me.btEditar, Me.ToolStripSeparator5, Me.btCancelar, Me.ToolStripSeparator3, Me.btAnular, Me.ToolStripSeparator6})
         Me.ToolStrip1.Location = New System.Drawing.Point(0, 388)
         Me.ToolStrip1.Name = "ToolStrip1"
@@ -262,7 +262,7 @@ Partial Class FormBaseLista
         '
         Me.btBuscar.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btBuscar.ForeColor = System.Drawing.Color.White
-        Me.btBuscar.Image = Global.Quality.My.Resources.Resources.Search_icon__1_
+        Me.btBuscar.Image = Global.Quality.My.Resources.Resources.Search_icon
         Me.btBuscar.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.btBuscar.Name = "btBuscar"
         Me.btBuscar.Size = New System.Drawing.Size(86, 30)
@@ -278,7 +278,7 @@ Partial Class FormBaseLista
         '
         Me.btRegistrar.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btRegistrar.ForeColor = System.Drawing.Color.White
-        Me.btRegistrar.Image = Global.Quality.My.Resources.Resources.Save_icon__1_
+        Me.btRegistrar.Image = Global.Quality.My.Resources.Resources.Floppy_Drive_icon
         Me.btRegistrar.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.btRegistrar.Name = "btRegistrar"
         Me.btRegistrar.Size = New System.Drawing.Size(101, 30)

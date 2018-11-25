@@ -33,13 +33,15 @@ Partial Class FormMarca
         'Pimagen
         '
         Me.Pimagen.BackColor = System.Drawing.Color.Transparent
-        Me.Pimagen.Image = Global.Quality.My.Resources.Resources.glossy_3d_blue_orbs2_117_icon
+        Me.Pimagen.Image = Global.Quality.My.Resources.Resources.price_tag_icon1
+        Me.Pimagen.Location = New System.Drawing.Point(4, 3)
+        Me.Pimagen.Size = New System.Drawing.Size(48, 35)
         Me.Pimagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         '
         'FormMarca
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
-        Me.ClientSize = New System.Drawing.Size(571, 345)
+        Me.ClientSize = New System.Drawing.Size(603, 369)
         Me.Location = New System.Drawing.Point(0, 0)
         Me.Name = "FormMarca"
         Me.Panel1.ResumeLayout(False)

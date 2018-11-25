@@ -29,10 +29,18 @@ Partial Class FormBodega
         '
         Me.LTitulo.Text = "Bodega"
         '
+        'Pimagen
+        '
+        Me.Pimagen.BackColor = System.Drawing.Color.Transparent
+        Me.Pimagen.Image = Global.Quality.My.Resources.Resources.Building_icon
+        Me.Pimagen.Location = New System.Drawing.Point(4, 0)
+        Me.Pimagen.Size = New System.Drawing.Size(50, 41)
+        Me.Pimagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        '
         'FormBodega
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
-        Me.ClientSize = New System.Drawing.Size(603, 370)
+        Me.ClientSize = New System.Drawing.Size(603, 369)
         Me.Location = New System.Drawing.Point(0, 0)
         Me.Name = "FormBodega"
         Me.Panel1.ResumeLayout(False)

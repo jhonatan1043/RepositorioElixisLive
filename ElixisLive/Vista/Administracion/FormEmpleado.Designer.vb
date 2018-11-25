@@ -65,6 +65,7 @@ Partial Class FormEmpleado
         Me.Label12 = New System.Windows.Forms.Label()
         Me.cbFormaPago = New System.Windows.Forms.ComboBox()
         Me.Label7 = New System.Windows.Forms.Label()
+        Me.ErrorIcono = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
         Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.btNuevo = New System.Windows.Forms.ToolStripButton()
@@ -82,7 +83,6 @@ Partial Class FormEmpleado
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Pimagen = New System.Windows.Forms.PictureBox()
         Me.LTitulo = New System.Windows.Forms.Label()
-        Me.ErrorIcono = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.gbInform.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         CType(Me.pictImagen, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -94,10 +94,10 @@ Partial Class FormEmpleado
         Me.GroupBox5.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.gpPago.SuspendLayout()
+        CType(Me.ErrorIcono, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ToolStrip1.SuspendLayout()
         Me.Panel1.SuspendLayout()
         CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ErrorIcono, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'gbInform
@@ -265,20 +265,19 @@ Partial Class FormEmpleado
         'pictImagen
         '
         Me.pictImagen.BackgroundImage = Global.Quality.My.Resources.Resources.fondo_azul
-        Me.pictImagen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.pictImagen.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.pictImagen.Image = Global.Quality.My.Resources.Resources.persona
-        Me.pictImagen.Location = New System.Drawing.Point(3, 16)
+        Me.pictImagen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.pictImagen.Image = Global.Quality.My.Resources.Resources.usuario
+        Me.pictImagen.Location = New System.Drawing.Point(3, 14)
         Me.pictImagen.Name = "pictImagen"
-        Me.pictImagen.Size = New System.Drawing.Size(100, 86)
-        Me.pictImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
+        Me.pictImagen.Size = New System.Drawing.Size(100, 88)
+        Me.pictImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.pictImagen.TabIndex = 0
         Me.pictImagen.TabStop = False
         '
         'GbInform_D
         '
         Me.GbInform_D.Controls.Add(Me.dgvParametro)
-        Me.GbInform_D.Font = New System.Drawing.Font("Times New Roman", 8.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GbInform_D.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GbInform_D.ForeColor = System.Drawing.Color.DarkBlue
         Me.GbInform_D.Location = New System.Drawing.Point(4, 265)
         Me.GbInform_D.Name = "GbInform_D"
@@ -472,7 +471,7 @@ Partial Class FormEmpleado
         Me.GroupBox2.Controls.Add(Me.gpPago)
         Me.GroupBox2.Controls.Add(Me.cbFormaPago)
         Me.GroupBox2.Controls.Add(Me.Label7)
-        Me.GroupBox2.Font = New System.Drawing.Font("Times New Roman", 8.25!, System.Drawing.FontStyle.Italic)
+        Me.GroupBox2.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox2.ForeColor = System.Drawing.Color.DarkBlue
         Me.GroupBox2.Location = New System.Drawing.Point(4, 111)
         Me.GroupBox2.Name = "GroupBox2"
@@ -579,13 +578,18 @@ Partial Class FormEmpleado
         Me.Label7.TabIndex = 8
         Me.Label7.Text = "Forma Pago:"
         '
+        'ErrorIcono
+        '
+        Me.ErrorIcono.ContainerControl = Me
+        Me.ErrorIcono.RightToLeft = True
+        '
         'ToolStrip1
         '
         Me.ToolStrip1.BackColor = System.Drawing.Color.White
         Me.ToolStrip1.BackgroundImage = Global.Quality.My.Resources.Resources.fondo_azul
         Me.ToolStrip1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ToolStrip1.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.ToolStrip1.ImageScalingSize = New System.Drawing.Size(26, 26)
+        Me.ToolStrip1.ImageScalingSize = New System.Drawing.Size(30, 30)
         Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripSeparator1, Me.btNuevo, Me.ToolStripSeparator7, Me.btBuscar, Me.ToolStripSeparator2, Me.btRegistrar, Me.ToolStripSeparator4, Me.btEditar, Me.ToolStripSeparator5, Me.btCancelar, Me.ToolStripSeparator3, Me.btAnular, Me.ToolStripSeparator6})
         Me.ToolStrip1.Location = New System.Drawing.Point(0, 490)
         Me.ToolStrip1.Name = "ToolStrip1"
@@ -618,7 +622,7 @@ Partial Class FormEmpleado
         '
         Me.btBuscar.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btBuscar.ForeColor = System.Drawing.Color.White
-        Me.btBuscar.Image = Global.Quality.My.Resources.Resources.Search_icon__1_
+        Me.btBuscar.Image = Global.Quality.My.Resources.Resources.Search_icon
         Me.btBuscar.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.btBuscar.Name = "btBuscar"
         Me.btBuscar.Size = New System.Drawing.Size(86, 30)
@@ -709,10 +713,10 @@ Partial Class FormEmpleado
         'Pimagen
         '
         Me.Pimagen.BackColor = System.Drawing.Color.Transparent
-        Me.Pimagen.Image = Global.Quality.My.Resources.Resources.proveedor1
-        Me.Pimagen.Location = New System.Drawing.Point(4, -7)
+        Me.Pimagen.Image = Global.Quality.My.Resources.Resources.administrator_icon
+        Me.Pimagen.Location = New System.Drawing.Point(4, 0)
         Me.Pimagen.Name = "Pimagen"
-        Me.Pimagen.Size = New System.Drawing.Size(69, 53)
+        Me.Pimagen.Size = New System.Drawing.Size(53, 46)
         Me.Pimagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.Pimagen.TabIndex = 1
         Me.Pimagen.TabStop = False
@@ -728,11 +732,6 @@ Partial Class FormEmpleado
         Me.LTitulo.TabIndex = 1
         Me.LTitulo.Text = "Empleado"
         Me.LTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'ErrorIcono
-        '
-        Me.ErrorIcono.ContainerControl = Me
-        Me.ErrorIcono.RightToLeft = True
         '
         'FormEmpleado
         '
@@ -767,11 +766,11 @@ Partial Class FormEmpleado
         Me.GroupBox2.PerformLayout()
         Me.gpPago.ResumeLayout(False)
         Me.gpPago.PerformLayout()
+        CType(Me.ErrorIcono, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ToolStrip1.ResumeLayout(False)
         Me.ToolStrip1.PerformLayout()
         Me.Panel1.ResumeLayout(False)
         CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ErrorIcono, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

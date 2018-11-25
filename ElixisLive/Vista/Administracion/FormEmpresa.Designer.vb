@@ -53,6 +53,7 @@ Partial Class FormEmpresa
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.TextDV = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.iconoError = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
         Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.btNuevo = New System.Windows.Forms.ToolStripButton()
@@ -70,7 +71,6 @@ Partial Class FormEmpresa
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Pimagen = New System.Windows.Forms.PictureBox()
         Me.LTitulo = New System.Windows.Forms.Label()
-        Me.iconoError = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.GbInform.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -78,10 +78,10 @@ Partial Class FormEmpresa
         Me.GbInform_D.SuspendLayout()
         CType(Me.dgvParametro, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
+        CType(Me.iconoError, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ToolStrip1.SuspendLayout()
         Me.Panel1.SuspendLayout()
         CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.iconoError, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GbInform
@@ -421,17 +421,22 @@ Partial Class FormEmpresa
         Me.Label2.TabIndex = 3
         Me.Label2.Text = "Razón Social:"
         '
+        'iconoError
+        '
+        Me.iconoError.ContainerControl = Me
+        Me.iconoError.RightToLeft = True
+        '
         'ToolStrip1
         '
         Me.ToolStrip1.BackColor = System.Drawing.Color.White
         Me.ToolStrip1.BackgroundImage = Global.Quality.My.Resources.Resources.fondo_azul
         Me.ToolStrip1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ToolStrip1.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.ToolStrip1.ImageScalingSize = New System.Drawing.Size(26, 26)
+        Me.ToolStrip1.ImageScalingSize = New System.Drawing.Size(30, 30)
         Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripSeparator1, Me.btNuevo, Me.ToolStripSeparator7, Me.btBuscar, Me.ToolStripSeparator2, Me.btRegistrar, Me.ToolStripSeparator4, Me.btEditar, Me.ToolStripSeparator5, Me.btCancelar, Me.ToolStripSeparator3, Me.btAnular, Me.ToolStripSeparator6})
-        Me.ToolStrip1.Location = New System.Drawing.Point(0, 490)
+        Me.ToolStrip1.Location = New System.Drawing.Point(0, 486)
         Me.ToolStrip1.Name = "ToolStrip1"
-        Me.ToolStrip1.Size = New System.Drawing.Size(905, 33)
+        Me.ToolStrip1.Size = New System.Drawing.Size(905, 37)
         Me.ToolStrip1.TabIndex = 14
         Me.ToolStrip1.Text = "ToolStrip1"
         '
@@ -448,7 +453,7 @@ Partial Class FormEmpresa
         Me.btNuevo.Image = Global.Quality.My.Resources.Resources.Files_New_File_icon
         Me.btNuevo.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.btNuevo.Name = "btNuevo"
-        Me.btNuevo.Size = New System.Drawing.Size(82, 30)
+        Me.btNuevo.Size = New System.Drawing.Size(86, 34)
         Me.btNuevo.Text = "Nuevo"
         Me.btNuevo.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btNuevo.Visible = False
@@ -456,7 +461,7 @@ Partial Class FormEmpresa
         'ToolStripSeparator7
         '
         Me.ToolStripSeparator7.Name = "ToolStripSeparator7"
-        Me.ToolStripSeparator7.Size = New System.Drawing.Size(6, 33)
+        Me.ToolStripSeparator7.Size = New System.Drawing.Size(6, 37)
         '
         'btBuscar
         '
@@ -465,7 +470,7 @@ Partial Class FormEmpresa
         Me.btBuscar.Image = Global.Quality.My.Resources.Resources.Search_icon__1_
         Me.btBuscar.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.btBuscar.Name = "btBuscar"
-        Me.btBuscar.Size = New System.Drawing.Size(86, 30)
+        Me.btBuscar.Size = New System.Drawing.Size(90, 34)
         Me.btBuscar.Text = "Buscar"
         Me.btBuscar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btBuscar.Visible = False
@@ -473,7 +478,7 @@ Partial Class FormEmpresa
         'ToolStripSeparator2
         '
         Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
-        Me.ToolStripSeparator2.Size = New System.Drawing.Size(6, 33)
+        Me.ToolStripSeparator2.Size = New System.Drawing.Size(6, 37)
         Me.ToolStripSeparator2.Visible = False
         '
         'btRegistrar
@@ -483,14 +488,14 @@ Partial Class FormEmpresa
         Me.btRegistrar.Image = Global.Quality.My.Resources.Resources.Save_icon__1_
         Me.btRegistrar.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.btRegistrar.Name = "btRegistrar"
-        Me.btRegistrar.Size = New System.Drawing.Size(101, 30)
+        Me.btRegistrar.Size = New System.Drawing.Size(105, 34)
         Me.btRegistrar.Text = "Registrar"
         Me.btRegistrar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         '
         'ToolStripSeparator4
         '
         Me.ToolStripSeparator4.Name = "ToolStripSeparator4"
-        Me.ToolStripSeparator4.Size = New System.Drawing.Size(6, 33)
+        Me.ToolStripSeparator4.Size = New System.Drawing.Size(6, 37)
         '
         'btEditar
         '
@@ -499,14 +504,14 @@ Partial Class FormEmpresa
         Me.btEditar.Image = Global.Quality.My.Resources.Resources.pencil_icon__1_
         Me.btEditar.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.btEditar.Name = "btEditar"
-        Me.btEditar.Size = New System.Drawing.Size(82, 30)
+        Me.btEditar.Size = New System.Drawing.Size(86, 34)
         Me.btEditar.Text = "Editar"
         Me.btEditar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         '
         'ToolStripSeparator5
         '
         Me.ToolStripSeparator5.Name = "ToolStripSeparator5"
-        Me.ToolStripSeparator5.Size = New System.Drawing.Size(6, 33)
+        Me.ToolStripSeparator5.Size = New System.Drawing.Size(6, 37)
         '
         'btCancelar
         '
@@ -515,14 +520,14 @@ Partial Class FormEmpresa
         Me.btCancelar.Image = Global.Quality.My.Resources.Resources.Actions_blue_arrow_undo_icon
         Me.btCancelar.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.btCancelar.Name = "btCancelar"
-        Me.btCancelar.Size = New System.Drawing.Size(100, 30)
+        Me.btCancelar.Size = New System.Drawing.Size(104, 34)
         Me.btCancelar.Text = "Cancelar"
         Me.btCancelar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         '
         'ToolStripSeparator3
         '
         Me.ToolStripSeparator3.Name = "ToolStripSeparator3"
-        Me.ToolStripSeparator3.Size = New System.Drawing.Size(6, 33)
+        Me.ToolStripSeparator3.Size = New System.Drawing.Size(6, 37)
         '
         'btAnular
         '
@@ -531,7 +536,7 @@ Partial Class FormEmpresa
         Me.btAnular.Image = Global.Quality.My.Resources.Resources.document_delete_icon__1_
         Me.btAnular.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.btAnular.Name = "btAnular"
-        Me.btAnular.Size = New System.Drawing.Size(87, 30)
+        Me.btAnular.Size = New System.Drawing.Size(91, 34)
         Me.btAnular.Text = "Anular"
         Me.btAnular.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btAnular.Visible = False
@@ -539,7 +544,7 @@ Partial Class FormEmpresa
         'ToolStripSeparator6
         '
         Me.ToolStripSeparator6.Name = "ToolStripSeparator6"
-        Me.ToolStripSeparator6.Size = New System.Drawing.Size(6, 33)
+        Me.ToolStripSeparator6.Size = New System.Drawing.Size(6, 37)
         Me.ToolStripSeparator6.Visible = False
         '
         'Panel1
@@ -557,10 +562,10 @@ Partial Class FormEmpresa
         'Pimagen
         '
         Me.Pimagen.BackColor = System.Drawing.Color.Transparent
-        Me.Pimagen.Image = Global.Quality.My.Resources.Resources.glossy_3d_blue_orbs2_060_icon
-        Me.Pimagen.Location = New System.Drawing.Point(4, -7)
+        Me.Pimagen.Image = Global.Quality.My.Resources.Resources.company_building_icon
+        Me.Pimagen.Location = New System.Drawing.Point(4, 0)
         Me.Pimagen.Name = "Pimagen"
-        Me.Pimagen.Size = New System.Drawing.Size(69, 53)
+        Me.Pimagen.Size = New System.Drawing.Size(44, 46)
         Me.Pimagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.Pimagen.TabIndex = 1
         Me.Pimagen.TabStop = False
@@ -576,11 +581,6 @@ Partial Class FormEmpresa
         Me.LTitulo.TabIndex = 1
         Me.LTitulo.Text = "Empresa"
         Me.LTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'iconoError
-        '
-        Me.iconoError.ContainerControl = Me
-        Me.iconoError.RightToLeft = True
         '
         'FormEmpresa
         '
@@ -611,11 +611,11 @@ Partial Class FormEmpresa
         CType(Me.dgvParametro, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
+        CType(Me.iconoError, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ToolStrip1.ResumeLayout(False)
         Me.ToolStrip1.PerformLayout()
         Me.Panel1.ResumeLayout(False)
         CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.iconoError, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

@@ -143,27 +143,7 @@ Public Class FormProveedor
         End If
         Return False
     End Function
-    Private Sub cbFormaPago_Validating(sender As Object, e As CancelEventArgs) Handles cbFormaPago.Validating
-        If DirectCast(sender, TextBox).Text.Length = 0 Then
-            Me.ErrorIcono.SetError(sender, "Debe Ingresar el usuario")
-        Else
-            Me.errorIcono.SetError(sender, Constantes.CADENA_VACIA)
-        End If
-    End Sub
-    Private Sub cbRegimen_Validating(sender As Object, e As CancelEventArgs) Handles cbRegimen.Validating
-        If DirectCast(sender, TextBox).Text.Length = 0 Then
-            Me.ErrorIcono.SetError(sender, "Debe ingresar la contraseña")
-        Else
-            Me.errorIcono.SetError(sender, Constantes.CADENA_VACIA)
-        End If
-    End Sub
-    Private Sub txtIdentificacion_Validating(sender As Object, e As CancelEventArgs) Handles txtIdentificacion.Validating
-        If DirectCast(sender, ComboBox).SelectedIndex = 0 Then
-            Me.ErrorIcono.SetError(sender, "Debe Escoger la empresa")
-        Else
-            Me.errorIcono.SetError(sender, Constantes.CADENA_VACIA)
-        End If
-    End Sub
+
     Private Sub cargarObjeto()
         objPorveedor.codigoRegimen = cbRegimen.SelectedValue
         objPorveedor.CodigoTipoPago = cbTipoPago.SelectedValue

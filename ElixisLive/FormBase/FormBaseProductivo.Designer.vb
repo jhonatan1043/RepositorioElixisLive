@@ -421,7 +421,7 @@ Partial Class FormBaseProductivo
         'gbInformD
         '
         Me.gbInformD.Controls.Add(Me.dgvParametro)
-        Me.gbInformD.Font = New System.Drawing.Font("Times New Roman", 8.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.gbInformD.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.gbInformD.ForeColor = System.Drawing.Color.DarkBlue
         Me.gbInformD.Location = New System.Drawing.Point(6, 216)
         Me.gbInformD.Name = "gbInformD"
@@ -442,11 +442,11 @@ Partial Class FormBaseProductivo
         Me.dgvParametro.BackgroundColor = System.Drawing.Color.White
         Me.dgvParametro.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvParametro.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.dgvParametro.Location = New System.Drawing.Point(3, 16)
+        Me.dgvParametro.Location = New System.Drawing.Point(3, 17)
         Me.dgvParametro.MultiSelect = False
         Me.dgvParametro.Name = "dgvParametro"
         Me.dgvParametro.ReadOnly = True
-        Me.dgvParametro.Size = New System.Drawing.Size(777, 173)
+        Me.dgvParametro.Size = New System.Drawing.Size(777, 172)
         Me.dgvParametro.TabIndex = 0
         '
         'ToolStrip1
@@ -488,7 +488,7 @@ Partial Class FormBaseProductivo
         '
         Me.btBuscar.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btBuscar.ForeColor = System.Drawing.Color.White
-        Me.btBuscar.Image = Global.Quality.My.Resources.Resources.Search_icon__1_
+        Me.btBuscar.Image = Global.Quality.My.Resources.Resources.Search_icon
         Me.btBuscar.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.btBuscar.Name = "btBuscar"
         Me.btBuscar.Size = New System.Drawing.Size(86, 30)

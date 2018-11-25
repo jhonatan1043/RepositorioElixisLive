@@ -23,10 +23,16 @@ Partial Class FormProveedor
         CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
+        'Pimagen
+        '
+        Me.Pimagen.Image = Global.Quality.My.Resources.Resources.administrator_icon__1_
+        Me.Pimagen.Location = New System.Drawing.Point(4, 0)
+        Me.Pimagen.Size = New System.Drawing.Size(51, 42)
+        '
         'FormProveedor
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
-        Me.ClientSize = New System.Drawing.Size(804, 506)
+        Me.ClientSize = New System.Drawing.Size(804, 505)
         Me.Location = New System.Drawing.Point(0, 0)
         Me.Name = "FormProveedor"
         Me.Panel1.ResumeLayout(False)

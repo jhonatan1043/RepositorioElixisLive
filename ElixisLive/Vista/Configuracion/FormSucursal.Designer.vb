@@ -79,10 +79,10 @@ Partial Class FormSucursal
         'Pimagen
         '
         Me.Pimagen.BackColor = System.Drawing.Color.Transparent
-        Me.Pimagen.Image = Global.Quality.My.Resources.Resources.glossy_3d_blue_orbs2_059_icon
-        Me.Pimagen.Location = New System.Drawing.Point(4, -7)
+        Me.Pimagen.Image = Global.Quality.My.Resources.Resources.dribbble_shop_icon
+        Me.Pimagen.Location = New System.Drawing.Point(4, 1)
         Me.Pimagen.Name = "Pimagen"
-        Me.Pimagen.Size = New System.Drawing.Size(69, 53)
+        Me.Pimagen.Size = New System.Drawing.Size(40, 41)
         Me.Pimagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.Pimagen.TabIndex = 1
         Me.Pimagen.TabStop = False
@@ -107,7 +107,7 @@ Partial Class FormSucursal
         Me.ToolStrip1.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.ToolStrip1.ImageScalingSize = New System.Drawing.Size(26, 26)
         Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripSeparator1, Me.btNuevo, Me.ToolStripSeparator2, Me.btBuscar, Me.ToolStripSeparator7, Me.btRegistrar, Me.ToolStripSeparator4, Me.btEditar, Me.ToolStripSeparator5, Me.btCancelar, Me.ToolStripSeparator3, Me.btAnular, Me.ToolStripSeparator6})
-        Me.ToolStrip1.Location = New System.Drawing.Point(0, 337)
+        Me.ToolStrip1.Location = New System.Drawing.Point(0, 336)
         Me.ToolStrip1.Name = "ToolStrip1"
         Me.ToolStrip1.Size = New System.Drawing.Size(603, 33)
         Me.ToolStrip1.TabIndex = 16
@@ -138,7 +138,7 @@ Partial Class FormSucursal
         '
         Me.btBuscar.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btBuscar.ForeColor = System.Drawing.Color.White
-        Me.btBuscar.Image = Global.Quality.My.Resources.Resources.Search_icon__1_
+        Me.btBuscar.Image = Global.Quality.My.Resources.Resources.Search_icon
         Me.btBuscar.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.btBuscar.Name = "btBuscar"
         Me.btBuscar.Size = New System.Drawing.Size(86, 30)
@@ -407,7 +407,7 @@ Partial Class FormSucursal
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(603, 370)
+        Me.ClientSize = New System.Drawing.Size(603, 369)
         Me.Controls.Add(Me.ToolStrip1)
         Me.Controls.Add(Me.GroupBox4)
         Me.Controls.Add(Me.Panel1)

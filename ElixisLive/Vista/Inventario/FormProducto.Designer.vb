@@ -35,7 +35,9 @@ Partial Class FormProducto
         'Pimagen
         '
         Me.Pimagen.BackColor = System.Drawing.Color.Transparent
-        Me.Pimagen.Image = Global.Quality.My.Resources.Resources.producto1
+        Me.Pimagen.Image = Global.Quality.My.Resources.Resources.palet_03_icon
+        Me.Pimagen.Location = New System.Drawing.Point(4, -3)
+        Me.Pimagen.Size = New System.Drawing.Size(43, 46)
         Me.Pimagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         '
         'Gbdatos
@@ -96,7 +98,7 @@ Partial Class FormProducto
         'FormProducto
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
-        Me.ClientSize = New System.Drawing.Size(603, 370)
+        Me.ClientSize = New System.Drawing.Size(603, 369)
         Me.Location = New System.Drawing.Point(0, 0)
         Me.Name = "FormProducto"
         Me.Panel1.ResumeLayout(False)

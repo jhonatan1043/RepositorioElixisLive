@@ -27,6 +27,14 @@ Partial Class FormEntradaInventario
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.GbInform_D = New System.Windows.Forms.GroupBox()
         Me.dgvEntrada = New System.Windows.Forms.DataGridView()
+        Me.dgCodigoProducto = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dgProducto = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dgValor = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dgCantidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dgTotal = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dgBodega = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dgLote = New System.Windows.Forms.DataGridViewButtonColumn()
+        Me.dgCodigoBarra = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.txtTotal = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -36,6 +44,7 @@ Partial Class FormEntradaInventario
         Me.btBuscarCompra = New System.Windows.Forms.Button()
         Me.txtCodigo = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.ErrorIcono = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
         Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.btNuevo = New System.Windows.Forms.ToolStripButton()
@@ -51,23 +60,14 @@ Partial Class FormEntradaInventario
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Pimagen = New System.Windows.Forms.PictureBox()
         Me.LTitulo = New System.Windows.Forms.Label()
-        Me.ErrorIcono = New System.Windows.Forms.ErrorProvider(Me.components)
-        Me.dgCodigoProducto = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.dgProducto = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.dgValor = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.dgCantidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.dgTotal = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.dgBodega = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.dgLote = New System.Windows.Forms.DataGridViewButtonColumn()
-        Me.dgCodigoBarra = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GbInform_D.SuspendLayout()
         CType(Me.dgvEntrada, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
+        CType(Me.ErrorIcono, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ToolStrip1.SuspendLayout()
         Me.Panel1.SuspendLayout()
         CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ErrorIcono, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GbInform_D
@@ -107,6 +107,59 @@ Partial Class FormEntradaInventario
         Me.dgvEntrada.RowHeadersVisible = False
         Me.dgvEntrada.Size = New System.Drawing.Size(879, 329)
         Me.dgvEntrada.TabIndex = 0
+        '
+        'dgCodigoProducto
+        '
+        Me.dgCodigoProducto.HeaderText = "Codigo"
+        Me.dgCodigoProducto.Name = "dgCodigoProducto"
+        Me.dgCodigoProducto.Visible = False
+        '
+        'dgProducto
+        '
+        Me.dgProducto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.dgProducto.HeaderText = "Producto"
+        Me.dgProducto.Name = "dgProducto"
+        '
+        'dgValor
+        '
+        Me.dgValor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.dgValor.HeaderText = "Vr. Unitario"
+        Me.dgValor.Name = "dgValor"
+        Me.dgValor.Width = 85
+        '
+        'dgCantidad
+        '
+        Me.dgCantidad.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.dgCantidad.HeaderText = "Cantidad"
+        Me.dgCantidad.Name = "dgCantidad"
+        Me.dgCantidad.Width = 75
+        '
+        'dgTotal
+        '
+        Me.dgTotal.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.dgTotal.HeaderText = "Total"
+        Me.dgTotal.Name = "dgTotal"
+        Me.dgTotal.Width = 55
+        '
+        'dgBodega
+        '
+        Me.dgBodega.HeaderText = "Bodega"
+        Me.dgBodega.Name = "dgBodega"
+        Me.dgBodega.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgBodega.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
+        '
+        'dgLote
+        '
+        Me.dgLote.HeaderText = "Lote"
+        Me.dgLote.Name = "dgLote"
+        Me.dgLote.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgLote.Text = "Lote"
+        Me.dgLote.UseColumnTextForButtonValue = True
+        '
+        'dgCodigoBarra
+        '
+        Me.dgCodigoBarra.HeaderText = "C. de Barra"
+        Me.dgCodigoBarra.Name = "dgCodigoBarra"
         '
         'GroupBox1
         '
@@ -205,6 +258,11 @@ Partial Class FormEntradaInventario
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Orden de Compra:"
         '
+        'ErrorIcono
+        '
+        Me.ErrorIcono.ContainerControl = Me
+        Me.ErrorIcono.RightToLeft = True
+        '
         'ToolStrip1
         '
         Me.ToolStrip1.BackColor = System.Drawing.Color.White
@@ -213,7 +271,7 @@ Partial Class FormEntradaInventario
         Me.ToolStrip1.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.ToolStrip1.ImageScalingSize = New System.Drawing.Size(26, 26)
         Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripSeparator1, Me.btNuevo, Me.ToolStripSeparator7, Me.btBuscar, Me.ToolStripSeparator2, Me.btRegistrar, Me.ToolStripSeparator4, Me.btCancelar, Me.ToolStripSeparator3, Me.btAnular, Me.ToolStripSeparator6})
-        Me.ToolStrip1.Location = New System.Drawing.Point(0, 491)
+        Me.ToolStrip1.Location = New System.Drawing.Point(0, 490)
         Me.ToolStrip1.Name = "ToolStrip1"
         Me.ToolStrip1.Size = New System.Drawing.Size(905, 33)
         Me.ToolStrip1.TabIndex = 15
@@ -244,7 +302,7 @@ Partial Class FormEntradaInventario
         '
         Me.btBuscar.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btBuscar.ForeColor = System.Drawing.Color.White
-        Me.btBuscar.Image = Global.Quality.My.Resources.Resources.Search_icon__1_
+        Me.btBuscar.Image = Global.Quality.My.Resources.Resources.Search_icon
         Me.btBuscar.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.btBuscar.Name = "btBuscar"
         Me.btBuscar.Size = New System.Drawing.Size(86, 30)
@@ -319,9 +377,10 @@ Partial Class FormEntradaInventario
         'Pimagen
         '
         Me.Pimagen.BackColor = System.Drawing.Color.Transparent
-        Me.Pimagen.Location = New System.Drawing.Point(4, -7)
+        Me.Pimagen.Image = Global.Quality.My.Resources.Resources.fork_1_icon
+        Me.Pimagen.Location = New System.Drawing.Point(6, 0)
         Me.Pimagen.Name = "Pimagen"
-        Me.Pimagen.Size = New System.Drawing.Size(69, 53)
+        Me.Pimagen.Size = New System.Drawing.Size(41, 42)
         Me.Pimagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.Pimagen.TabIndex = 1
         Me.Pimagen.TabStop = False
@@ -338,71 +397,13 @@ Partial Class FormEntradaInventario
         Me.LTitulo.Text = "Entrada Inventario"
         Me.LTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'ErrorIcono
-        '
-        Me.ErrorIcono.ContainerControl = Me
-        Me.ErrorIcono.RightToLeft = True
-        '
-        'dgCodigoProducto
-        '
-        Me.dgCodigoProducto.HeaderText = "Codigo"
-        Me.dgCodigoProducto.Name = "dgCodigoProducto"
-        Me.dgCodigoProducto.Visible = False
-        '
-        'dgProducto
-        '
-        Me.dgProducto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.dgProducto.HeaderText = "Producto"
-        Me.dgProducto.Name = "dgProducto"
-        '
-        'dgValor
-        '
-        Me.dgValor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.dgValor.HeaderText = "Vr. Unitario"
-        Me.dgValor.Name = "dgValor"
-        Me.dgValor.Width = 85
-        '
-        'dgCantidad
-        '
-        Me.dgCantidad.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.dgCantidad.HeaderText = "Cantidad"
-        Me.dgCantidad.Name = "dgCantidad"
-        Me.dgCantidad.Width = 75
-        '
-        'dgTotal
-        '
-        Me.dgTotal.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.dgTotal.HeaderText = "Total"
-        Me.dgTotal.Name = "dgTotal"
-        Me.dgTotal.Width = 55
-        '
-        'dgBodega
-        '
-        Me.dgBodega.HeaderText = "Bodega"
-        Me.dgBodega.Name = "dgBodega"
-        Me.dgBodega.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgBodega.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
-        '
-        'dgLote
-        '
-        Me.dgLote.HeaderText = "Lote"
-        Me.dgLote.Name = "dgLote"
-        Me.dgLote.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgLote.Text = "Lote"
-        Me.dgLote.UseColumnTextForButtonValue = True
-        '
-        'dgCodigoBarra
-        '
-        Me.dgCodigoBarra.HeaderText = "C. de Barra"
-        Me.dgCodigoBarra.Name = "dgCodigoBarra"
-        '
         'FormEntradaInventario
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(905, 524)
+        Me.ClientSize = New System.Drawing.Size(905, 523)
         Me.Controls.Add(Me.ToolStrip1)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Panel1)
@@ -419,11 +420,11 @@ Partial Class FormEntradaInventario
         Me.GroupBox1.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
+        CType(Me.ErrorIcono, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ToolStrip1.ResumeLayout(False)
         Me.ToolStrip1.PerformLayout()
         Me.Panel1.ResumeLayout(False)
         CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ErrorIcono, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
