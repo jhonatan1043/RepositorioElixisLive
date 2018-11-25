@@ -14,7 +14,6 @@
            String.IsNullOrEmpty(cbDepartamento.SelectedIndex) OrElse
            String.IsNullOrEmpty(ComboMunicipio.SelectedIndex) OrElse
            String.IsNullOrEmpty(TextDireccion.Text) Then
-
         Else
             Return True
         End If
@@ -41,12 +40,12 @@
         End Try
     End Sub
     Private Sub cargarComboDepartamento()
-        Generales.cargarCombo("[SP_CONSULTAR_DEPARTAMENTO]", Nothing, "descripcion", "Codigo_Departamento", cbDepartamento)
+        Generales.cargarCombo(Sentencias.DEPARTAMENTO_CONSULTAR, Nothing, "descripcion", "Codigo_Departamento", cbDepartamento)
     End Sub
     Private Sub cargarComboCiudad()
         Dim params As New List(Of String)
         params.Add(cbDepartamento.SelectedValue)
-        Generales.cargarCombo("[SP_CONSULTAR_CIUDAD]", params, "descripcion", "Codigo_Municipio", ComboMunicipio)
+        Generales.cargarCombo(Sentencias.CIUDAD_CONSULTAR, params, "descripcion", "Codigo_Municipio", ComboMunicipio)
     End Sub
     Private Sub btNuevo_Click(sender As Object, e As EventArgs) Handles btNuevo.Click
         Generales.deshabilitarBotones(ToolStrip1)
@@ -114,7 +113,7 @@
         Generales.buscarElemento(objSucursal.sqlConsulta,
                                    params,
                                    AddressOf cargarInfomacion,
-                                   "Busqueda de Sucursales",
+                                   Titulo.BUSQUEDA_SUCURSAL,
                                    True, True)
     End Sub
     Private Sub cargarInfomacion(pcodigo As Integer)

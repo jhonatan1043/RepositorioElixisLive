@@ -39,7 +39,7 @@
         Dim params As New List(Of String)
         Try
             params.Add(txtNombre.Text)
-            fila = Generales.cargarItem("[SP_CONSULTAR_LOTE]", params)
+            fila = Generales.cargarItem(Sentencias.LOTE_CONSULTAR, params)
             If Not IsNothing(fila) Then
                 txtCantidadExistete.Text = fila("Cantidad")
             Else
@@ -55,8 +55,8 @@
     Private Sub establecerPosicion()
         Dim x As Integer
         Dim y As Integer
-        x = Screen.PrimaryScreen.WorkingArea.Width - 920
-        y = Screen.PrimaryScreen.WorkingArea.Height - 570
+        x = Screen.PrimaryScreen.WorkingArea.Width - 619
+        y = Screen.PrimaryScreen.WorkingArea.Height - 236
         Me.Location = New Point(x, y)
     End Sub
     Private Function getFila() As DataRow

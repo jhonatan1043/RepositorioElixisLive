@@ -37,7 +37,7 @@
         Try
             CheckForIllegalCrossThreadCalls = False
             params.Add(ElementoMenu.codigo)
-            Generales.llenardgv("SP_CONSULTAR_PARAMETROS", dgvParametro, params)
+            Generales.llenardgv(Sentencias.PARAMETROS_CONSULTAR, dgvParametro, params)
             Generales.diseñoDGV(dgvParametro)
             Generales.diseñoGrillaParametros(dgvParametro)
             cargarComboDepartamento()
@@ -116,12 +116,12 @@
         End Try
     End Sub
     Private Sub cargarComboDepartamento()
-        Generales.cargarCombo("[SP_CONSULTAR_DEPARTAMENTO]", Nothing, "descripcion", "Codigo_Departamento", cbDepartamento)
+        Generales.cargarCombo(Sentencias.DEPARTAMENTO_CONSULTAR, Nothing, "descripcion", "Codigo_Departamento", cbDepartamento)
     End Sub
     Private Sub cargarComboCiudad()
         Dim params As New List(Of String)
         params.Add(cbDepartamento.SelectedValue)
-        Generales.cargarCombo("[SP_CONSULTAR_CIUDAD]", params, "descripcion", "Codigo_Municipio", ComboMunicipio)
+        Generales.cargarCombo(Sentencias.CIUDAD_CONSULTAR, params, "descripcion", "Codigo_Municipio", ComboMunicipio)
     End Sub
     Private Sub cbDepartamento_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbDepartamento.SelectedIndexChanged
         If cbDepartamento.ValueMember <> String.Empty Then

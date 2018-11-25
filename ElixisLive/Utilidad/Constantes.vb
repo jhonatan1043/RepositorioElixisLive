@@ -26,6 +26,10 @@
     Public Const FORMATO_FECHA = "yyyy-MM-dd"
     Public Const FORMATO_FECHA_HORA = "dd-MM-yyyy HH:mm"
 
+    Public Const FORMATO_MONEDA = "c2"
+
+    Public Const CADENA_VACIA = ""
+
     Public Const DIA_SEMANA = 7
     Public Const TIPO_LETRA_ELEMENTO = "[FontFamily: Name=Microsoft Sans Serif]"
     Public Const PENDIENTE = 0

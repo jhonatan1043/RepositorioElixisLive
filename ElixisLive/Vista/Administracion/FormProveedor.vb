@@ -24,7 +24,7 @@ Public Class FormProveedor
         Dim params As New List(Of String)
         If dgvParametro.ColumnCount <> 0 Then
             params.Add(ElementoMenu.codigo)
-            Generales.llenardgv("SP_CONSULTAR_PARAMETROS", dgvParametro, params)
+            Generales.llenardgv(Sentencias.PARAMETROS_CONSULTAR, dgvParametro, params)
             Generales.diseñoDGV(dgvParametro)
             Generales.diseñoGrillaParametros(dgvParametro)
         End If
@@ -33,8 +33,8 @@ Public Class FormProveedor
         EmpleadoBLL.cargarComboFormaPago(cbFormaPago)
         EmpleadoBLL.cargarComboCuenta(cbTipoCuenta)
         ProveedorBLL.cargarComboTipoPago(cbTipoPago)
-        Generales.cargarCombo("[SP_CONSULTAR_TIPO_REGIMEN]", Nothing, "Nombre", "Codigo", cbRegimen)
-        Generales.cargarCombo("[SP_CONSULTAR_BANCO]", Nothing, "Nombre", "Codigo_Banco", cbBanco)
+        Generales.cargarCombo(Sentencias.REGIMEN_CONSULTAR, Nothing, "Nombre", "Codigo", cbRegimen)
+        Generales.cargarCombo(Sentencias.BANCO_CONSULTAR, Nothing, "Nombre", "Codigo_Banco", cbBanco)
     End Sub
     Private Sub cargarInfomacion(pcodigo As Integer)
         Dim params As New List(Of String)
@@ -92,7 +92,7 @@ Public Class FormProveedor
             Generales.buscarElemento(objPorveedor.sqlConsulta,
                                    params,
                                    AddressOf cargarInfomacion,
-                                   "Busqueda de Proveedor",
+                                   Titulo.BUSQUEDA_PROVEEDOR,
                                    True, True)
         Catch ex As Exception
             EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
@@ -102,10 +102,10 @@ Public Class FormProveedor
         Dim params As New List(Of String)
         params.Add(String.Empty)
         Try
-            Generales.buscarElemento("[SP_PERSONA_PROVEEDOR_CONSULTAR]",
+            Generales.buscarElemento(Sentencias.PERSONA_PROVEEDOR_CONSULTAR,
                                    params,
                                    AddressOf cargarPersona,
-                                   "Busqueda de persona",
+                                   Titulo.BUSQUEDA_PERSONA,
                                    True, True)
         Catch ex As Exception
             EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
@@ -117,7 +117,7 @@ Public Class FormProveedor
         objPorveedor.codigo = pCodigo
         params.Add(pCodigo)
         Try
-            dfila = Generales.cargarItem("SP_PERSONA_CARGAR", params)
+            dfila = Generales.cargarItem(Sentencias.PERSONA_CARGAR, params)
             cargarCampos(dfila)
         Catch ex As Exception
             EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
@@ -147,21 +147,21 @@ Public Class FormProveedor
         If DirectCast(sender, TextBox).Text.Length = 0 Then
             Me.ErrorIcono.SetError(sender, "Debe Ingresar el usuario")
         Else
-            Me.ErrorIcono.SetError(sender, "")
+            Me.errorIcono.SetError(sender, Constantes.CADENA_VACIA)
         End If
     End Sub
     Private Sub cbRegimen_Validating(sender As Object, e As CancelEventArgs) Handles cbRegimen.Validating
         If DirectCast(sender, TextBox).Text.Length = 0 Then
             Me.ErrorIcono.SetError(sender, "Debe ingresar la contraseña")
         Else
-            Me.ErrorIcono.SetError(sender, "")
+            Me.errorIcono.SetError(sender, Constantes.CADENA_VACIA)
         End If
     End Sub
     Private Sub txtIdentificacion_Validating(sender As Object, e As CancelEventArgs) Handles txtIdentificacion.Validating
         If DirectCast(sender, ComboBox).SelectedIndex = 0 Then
             Me.ErrorIcono.SetError(sender, "Debe Escoger la empresa")
         Else
-            Me.ErrorIcono.SetError(sender, "")
+            Me.errorIcono.SetError(sender, Constantes.CADENA_VACIA)
         End If
     End Sub
     Private Sub cargarObjeto()

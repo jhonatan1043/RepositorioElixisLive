@@ -75,7 +75,7 @@
 
     Public Sub llenardgv()
         Dim busqueda As New Busqueda
-        If consulta <> "" Then
+        If consulta <> String.Empty Then
             dtBusqueda = Busqueda.llenar(consulta, Textbusqueda.Text)
             dgvBusqueda.DataSource = dtBusqueda
             dgvBusqueda.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter

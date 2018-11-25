@@ -9,10 +9,10 @@
             Generales.deshabilitarControles(Me)
             btNuevo.Enabled = True
             btBuscar.Enabled = True
-            Generales.llenardgv("SP_CONSULTAR_PARAMETROS", dgRegistro, params)
+            Generales.llenardgv(Sentencias.PARAMETROS_CONSULTAR, dgRegistro, params)
             Generales.diseñoDGV(dgRegistro)
             Generales.diseñoGrillaParametros(dgRegistro)
-            Generales.cargarCombo("[SP_CONSULTAR_MARCA]", Nothing, "Nombre", "Codigo_Marca", cbMarca)
+            Generales.cargarCombo(Sentencias.MARCA_CONSULTAR, Nothing, "Nombre", "Codigo_Marca", cbMarca)
         Catch ex As Exception
             EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
         End Try
@@ -60,7 +60,7 @@
         Generales.buscarElemento(objProducto.sqlConsulta,
                                    params,
                                    AddressOf cargarInfomacion,
-                                   "Busqueda de producto",
+                                   Titulo.BUSQUEDA_PRODUCTO,
                                    True, True)
     End Sub
     Private Sub btNuevo_Click(sender As Object, e As EventArgs) Handles btNuevo.Click

@@ -14,11 +14,9 @@
         dtEntrada.Columns.Add("Bodega", Type.GetType("System.String"))
         dtEntrada.Columns.Add("Lote", Type.GetType("System.String"))
         dtEntrada.Columns.Add("CodigoBarra", Type.GetType("System.String"))
-
         sqlAnular = ""
         sqlGuardar = "SP_INVEN_INVENTARIO_CREAR"
         sqlConsulta = ""
         sqlCargarDetalle = ""
-
     End Sub
 End Class

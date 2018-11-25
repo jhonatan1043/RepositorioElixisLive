@@ -18,7 +18,7 @@ Public Class FormInicioSesion
     Private Sub cargarEmpresa()
         Dim params As New List(Of String)
         Dim dfila As DataRow
-        params.Add("")
+        params.Add(Constantes.CADENA_VACIA)
         dfila = Generales.cargarItem(Sentencias.EMPRESA_CONSULTAR, params)
         Try
             If Not IsNothing(dfila) Then
@@ -49,21 +49,21 @@ Public Class FormInicioSesion
         If DirectCast(sender, TextBox).Text.Length = 0 Then
             Me.ErrorIcono.SetError(txtUsuario, "Debe Ingresar el usuario")
         Else
-            Me.ErrorIcono.SetError(txtUsuario, "")
+            Me.ErrorIcono.SetError(txtUsuario, Constantes.CADENA_VACIA)
         End If
     End Sub
     Private Sub TxtContraseña_Validating(sender As Object, e As CancelEventArgs) Handles txtContraseña.Validating
         If DirectCast(sender, TextBox).Text.Length = 0 Then
             Me.ErrorIcono.SetError(sender, "Debe ingresar la contraseña")
         Else
-            Me.ErrorIcono.SetError(sender, "")
+            Me.ErrorIcono.SetError(sender, Constantes.CADENA_VACIA)
         End If
     End Sub
     Private Sub CbEmpresa_Validating(sender As Object, e As CancelEventArgs) Handles CbEmpresa.Validating
         If DirectCast(sender, ComboBox).SelectedIndex = 0 Then
             Me.ErrorIcono.SetError(sender, "Debe Escoger la empresa")
         Else
-            Me.ErrorIcono.SetError(sender, "")
+            Me.ErrorIcono.SetError(sender, Constantes.CADENA_VACIA)
         End If
     End Sub
     Private Sub FormInicioSesion_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -76,7 +76,7 @@ Public Class FormInicioSesion
         Dim resultado As Boolean
         Try
             params.Add(txtUsuario.Text)
-            resultado = Generales.cargarCombo("[SP_ADMIN_CONSULTAR_SUCURSALES]", params, "Nombre", "codigo", CbEmpresa)
+            resultado = Generales.cargarCombo(Sentencias.SUCURSALES_CONSULTAR, params, "Nombre", "codigo", CbEmpresa)
         Catch ex As Exception
             EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
         End Try

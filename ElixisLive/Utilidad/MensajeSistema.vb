@@ -14,4 +14,5 @@
     Public Const CONTRASENA_VALIDA = "¡Usuario o contraseña no valido!"
     Public Const VALIDAR_CAMPOS = "Los campos marcados son obligatorios"
     Public Const MODULO_ASIGNADO = "¡Se han asignado los modulos correctamente!"
+    Public Const INGRESAR_VALOR_VALIDO = "¡Debe ingresar un valor válido!"
 End Class

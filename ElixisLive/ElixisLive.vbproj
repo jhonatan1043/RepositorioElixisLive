@@ -116,6 +116,7 @@
     <Compile Include="Controlador\Administracion\PersonaDAL.vb" />
     <Compile Include="Controlador\Cita\AgendarCitaDAL.vb" />
     <Compile Include="Controlador\Configuracion\ConfigDAL.vb" />
+    <Compile Include="Controlador\Gestion\CompraDAL.vb" />
     <Compile Include="Controlador\Inventario\ClienteDAL.vb" />
     <Compile Include="Controlador\Inventario\EntradaInventarioDAL.vb" />
     <Compile Include="Controlador\Inventario\ProveedorDAL.vb" />
@@ -176,6 +177,7 @@
     <Compile Include="Modelo\Cita\ProgramacionCitaSemanaBLL.vb" />
     <Compile Include="Modelo\Cita\UtlidadCitaBLL.vb" />
     <Compile Include="Modelo\Configuracion\ConfigBLL.vb" />
+    <Compile Include="Modelo\Gestion\CompraBLL.vb" />
     <Compile Include="Modelo\Inventario\EntradaInventarioBLL.vb" />
     <Compile Include="Modelo\Inventario\ProveedorBLL.vb" />
     <Compile Include="Modelo\Inventario\ClienteBLL.vb" />
@@ -194,6 +196,7 @@
     <Compile Include="Utilidad\SuperMessageBox.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Utilidad\Titulo.vb" />
     <Compile Include="Utilidad\ValidarDigitacion.vb" />
     <Compile Include="Utilidad\vForm.vb" />
     <Compile Include="Vista\Administracion\FormEmpleado.Designer.vb">

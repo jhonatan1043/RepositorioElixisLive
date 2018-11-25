@@ -41,10 +41,10 @@ Partial Class FormCompra
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.txtCantidadArticulos = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
+        Me.dtFecha = New System.Windows.Forms.DateTimePicker()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.txtValorTotal = New System.Windows.Forms.TextBox()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.txtNumeroFatura = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
@@ -134,10 +134,10 @@ Partial Class FormCompra
         Me.GroupBox2.Controls.Add(Me.PictureBox1)
         Me.GroupBox2.Controls.Add(Me.txtCantidadArticulos)
         Me.GroupBox2.Controls.Add(Me.Label5)
-        Me.GroupBox2.Controls.Add(Me.DateTimePicker1)
+        Me.GroupBox2.Controls.Add(Me.dtFecha)
         Me.GroupBox2.Controls.Add(Me.Label7)
         Me.GroupBox2.Controls.Add(Me.txtValorTotal)
-        Me.GroupBox2.Controls.Add(Me.TextBox2)
+        Me.GroupBox2.Controls.Add(Me.txtNumeroFatura)
         Me.GroupBox2.Controls.Add(Me.Label3)
         Me.GroupBox2.Controls.Add(Me.Label6)
         Me.GroupBox2.Controls.Add(Me.GroupBox3)
@@ -253,13 +253,13 @@ Partial Class FormCompra
         Me.Label5.Text = "Artículos"
         Me.Label5.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
-        'DateTimePicker1
+        'dtFecha
         '
-        Me.DateTimePicker1.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DateTimePicker1.Location = New System.Drawing.Point(590, 20)
-        Me.DateTimePicker1.Name = "DateTimePicker1"
-        Me.DateTimePicker1.Size = New System.Drawing.Size(272, 25)
-        Me.DateTimePicker1.TabIndex = 21
+        Me.dtFecha.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.dtFecha.Location = New System.Drawing.Point(590, 20)
+        Me.dtFecha.Name = "dtFecha"
+        Me.dtFecha.Size = New System.Drawing.Size(272, 25)
+        Me.dtFecha.TabIndex = 21
         '
         'Label7
         '
@@ -283,14 +283,14 @@ Partial Class FormCompra
         Me.txtValorTotal.TabIndex = 19
         Me.txtValorTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'TextBox2
+        'txtNumeroFatura
         '
-        Me.TextBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextBox2.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox2.Location = New System.Drawing.Point(97, 20)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(167, 25)
-        Me.TextBox2.TabIndex = 13
+        Me.txtNumeroFatura.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtNumeroFatura.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtNumeroFatura.Location = New System.Drawing.Point(97, 20)
+        Me.txtNumeroFatura.Name = "txtNumeroFatura"
+        Me.txtNumeroFatura.Size = New System.Drawing.Size(167, 25)
+        Me.txtNumeroFatura.TabIndex = 13
         '
         'Label3
         '
@@ -441,7 +441,7 @@ Partial Class FormCompra
         Me.ToolStrip1.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.ToolStrip1.ImageScalingSize = New System.Drawing.Size(26, 26)
         Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripSeparator1, Me.btNuevo, Me.ToolStripSeparator2, Me.btBuscar, Me.ToolStripSeparator7, Me.btRegistrar, Me.ToolStripSeparator4, Me.btEditar, Me.ToolStripSeparator5, Me.btCancelar, Me.ToolStripSeparator3, Me.btAnular, Me.ToolStripSeparator6, Me.ToolStripButton1, Me.ToolStripSeparator8})
-        Me.ToolStrip1.Location = New System.Drawing.Point(0, 494)
+        Me.ToolStrip1.Location = New System.Drawing.Point(0, 493)
         Me.ToolStrip1.Name = "ToolStrip1"
         Me.ToolStrip1.Size = New System.Drawing.Size(900, 33)
         Me.ToolStrip1.TabIndex = 22
@@ -569,7 +569,7 @@ Partial Class FormCompra
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(900, 527)
+        Me.ClientSize = New System.Drawing.Size(900, 526)
         Me.Controls.Add(Me.ToolStrip1)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Panel1)
@@ -602,10 +602,10 @@ Partial Class FormCompra
     Friend WithEvents PictureBox1 As PictureBox
     Public WithEvents txtCantidadArticulos As TextBox
     Public WithEvents Label5 As Label
-    Friend WithEvents DateTimePicker1 As DateTimePicker
+    Friend WithEvents dtFecha As DateTimePicker
     Public WithEvents Label7 As Label
     Public WithEvents txtValorTotal As TextBox
-    Public WithEvents TextBox2 As TextBox
+    Public WithEvents txtNumeroFatura As TextBox
     Public WithEvents Label3 As Label
     Public WithEvents Label6 As Label
     Friend WithEvents GroupBox3 As GroupBox

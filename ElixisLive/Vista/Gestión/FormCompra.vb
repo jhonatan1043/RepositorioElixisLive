@@ -42,10 +42,44 @@
         End Try
     End Sub
     Private Sub cargarCompra(pCodigo As Integer)
-
+        Dim params As New List(Of String)
+        Dim dFila As DataRow
+        Try
+            params.Add(pCodigo)
+            objCompra.codigo = pCodigo
+            dFila = Generales.cargarItem("", params)
+            TextIdentificacion.Text = dFila("")
+            TextNombre.Text = dFila("")
+            txtTelefono.Text = dFila("")
+            txtNumeroFatura.Text = dFila("")
+            Generales.llenarTabla("", params, objCompra.dtCompra)
+            dgvFactura.DataSource = objCompra.dtCompra
+            calcularTotales()
+        Catch ex As Exception
+            EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
+        End Try
+        Generales.habilitarBotones(ToolStrip1)
+        Generales.deshabilitarControles(Me)
+        btRegistrar.Enabled = False
+        btCancelar.Enabled = False
+    End Sub
+    Private Sub cargarObjeto()
+        objCompra.numeroFactura = txtNumeroFatura.Text
+        objCompra.fechaCompra = Format(dtFecha.Value, Constantes.FORMATO_FECHA_HORA)
     End Sub
     Private Sub btRegistrar_Click(sender As Object, e As EventArgs) Handles btRegistrar.Click
-
+        Try
+            dgvFactura.EndEdit()
+            cargarObjeto()
+            CompraBLL.guardarCompra(objCompra)
+            Generales.habilitarBotones(ToolStrip1)
+            Generales.deshabilitarControles(Me)
+            btRegistrar.Enabled = False
+            btCancelar.Enabled = False
+            EstiloMensajes.mostrarMensajeExitoso(MensajeSistema.REGISTRO_GUARDADO)
+        Catch ex As Exception
+            EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
+        End Try
     End Sub
     Private Sub btEditar_Click(sender As Object, e As EventArgs) Handles btEditar.Click
         If EstiloMensajes.mostrarMensajePregunta(MensajeSistema.EDITAR) = Constantes.SI Then
@@ -70,7 +104,17 @@
     End Sub
     Private Sub btAnular_Click(sender As Object, e As EventArgs) Handles btAnular.Click
         If EstiloMensajes.mostrarMensajePregunta(MensajeSistema.ANULAR) = Constantes.SI Then
-
+            Try
+                If Generales.ejecutarSQL(objCompra.sqlAnular & objCompra.codigo) = True Then
+                    Generales.deshabilitarBotones(ToolStrip1)
+                    Generales.limpiarControles(Me)
+                    btNuevo.Enabled = True
+                    btBuscar.Enabled = True
+                    EstiloMensajes.mostrarMensajeAnulado(MensajeSistema.REGISTRO_ANULADO)
+                End If
+            Catch ex As Exception
+                EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
+            End Try
         End If
     End Sub
     Private Sub dgvFactura_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvFactura.CellDoubleClick
@@ -79,7 +123,6 @@
         If TextIdentificacion.Text <> String.Empty Then
             Try
                 If btRegistrar.Enabled = False Then Exit Sub
-
                 If (dgvFactura.Rows(dgvFactura.CurrentCell.RowIndex).Cells("dgCodigo").Selected = True _
                     Or dgvFactura.Rows(dgvFactura.CurrentCell.RowIndex).Cells("dgDescripcion").Selected = True) Then
                     Generales.busquedaItems("[SP_PRODUCTOS_COMPRA_CONSULTAR]",
@@ -109,7 +152,6 @@
                 e.Value = Format(Val(e.Value), "c2")
             End If
         End If
-
     End Sub
     Private Sub dgvFactura_Enter(sender As Object, e As EventArgs) Handles dgvFactura.CellEnter
         If dgvFactura.RowCount >= 1 Then
@@ -127,7 +169,8 @@
                                    params,
                                    AddressOf cargarProveedor,
                                    "Busqueda de proveedor",
-                                   True, True)
+                                   True,
+                                   True)
         Catch ex As Exception
             EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
         End Try

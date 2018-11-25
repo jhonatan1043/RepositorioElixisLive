@@ -24,7 +24,7 @@ Public Class FormEmpleado
         Dim params As New List(Of String)
         If dgvParametro.ColumnCount <> 0 Then
             params.Add(ElementoMenu.codigo)
-            Generales.llenardgv("SP_CONSULTAR_PARAMETROS", dgvParametro, params)
+            Generales.llenardgv(Sentencias.PARAMETROS_CONSULTAR, dgvParametro, params)
             Generales.diseñoDGV(dgvParametro)
             Generales.diseñoGrillaParametros(dgvParametro)
         End If
@@ -32,10 +32,10 @@ Public Class FormEmpleado
     Private Sub combosIniciales()
         EmpleadoBLL.cargarComboFormaPago(cbFormaPago)
         EmpleadoBLL.cargarComboCuenta(cbTipoCuenta)
-        Generales.cargarCombo("[SP_CONSULTAR_PERFIL]", Nothing, "Nombre", "Codigo", cbPerfil)
-        Generales.cargarCombo("[SP_CONSULTAR_BANCO]", Nothing, "Nombre", "Codigo_Banco", cbBanco)
-        Generales.cargarCombo("[SP_CONSULTAR_CARGO]", Nothing, "Nombre", "Codigo", cbCargo)
-        Generales.cargarCombo("[SP_CONSULTAR_DEPARTAMENTO_TRABAJO]", Nothing, "Nombre", "Codigo", cbDepartamento)
+        Generales.cargarCombo(Sentencias.PERFIL_CONSULTAR, Nothing, "Nombre", "Codigo", cbPerfil)
+        Generales.cargarCombo(Sentencias.BANCO_CONSULTAR, Nothing, "Nombre", "Codigo_Banco", cbBanco)
+        Generales.cargarCombo(Sentencias.CARGOR_CONSULTAR, Nothing, "Nombre", "Codigo", cbCargo)
+        Generales.cargarCombo(Sentencias.DEPARTAMENTO_TRABAJO_CONSULTAR, Nothing, "Nombre", "Codigo", cbDepartamento)
     End Sub
     Private Sub cargarInfomacion(pcodigo As Integer)
         Dim params As New List(Of String)
@@ -99,7 +99,7 @@ Public Class FormEmpleado
             Generales.buscarElemento(objEmpleado.sqlConsulta,
                                    params,
                                    AddressOf cargarInfomacion,
-                                   "Busqueda de Empleado",
+                                   Titulo.BUSQUEDA_EMPLEADO,
                                    True, True)
         Catch ex As Exception
             EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
@@ -109,10 +109,10 @@ Public Class FormEmpleado
         Dim params As New List(Of String)
         params.Add(String.Empty)
         Try
-            Generales.buscarElemento("[SP_PERSONA_EMPLEADO_CONSULTAR]",
+            Generales.buscarElemento(Sentencias.PERSONA_EMPLEADO_CONSULTAR,
                                    params,
                                    AddressOf cargarPersona,
-                                   "Busqueda de persona",
+                                   Titulo.BUSQUEDA_PERSONA,
                                    True, True)
         Catch ex As Exception
             EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
@@ -124,7 +124,7 @@ Public Class FormEmpleado
         objEmpleado.codigo = pCodigo
         params.Add(pCodigo)
         Try
-            dfila = Generales.cargarItem("SP_PERSONA_CARGAR", params)
+            dfila = Generales.cargarItem(Sentencias.PERSONA_CARGAR, params)
             cargarCampos(dfila)
         Catch ex As Exception
             EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
@@ -245,34 +245,34 @@ Public Class FormEmpleado
         Dim params As New List(Of String)
         Dim tabla As New DataTable
         params.Add(pcodigo)
-        Generales.llenarTabla("[SP_ADMIN_EMPLEADO_SUCURSALES]", params, tabla)
+        Generales.llenarTabla(Sentencias.SUCURSAL_EMPLEADO_CONSULTAR, params, tabla)
     End Sub
     Private Sub cbDepartamento_Validating(sender As Object, e As CancelEventArgs) Handles cbDepartamento.Validating
         If DirectCast(sender, ComboBox).SelectedIndex = 0 Then
             Me.ErrorIcono.SetError(txtUsuario, "Debe escoger el departamento")
         Else
-            Me.ErrorIcono.SetError(txtUsuario, "")
+            Me.ErrorIcono.SetError(txtUsuario, Constantes.CADENA_VACIA)
         End If
     End Sub
     Private Sub cbFormaPago_Validating(sender As Object, e As CancelEventArgs) Handles cbFormaPago.Validating
         If DirectCast(sender, ComboBox).SelectedIndex = 0 Then
             Me.ErrorIcono.SetError(sender, "Debe escoger la forma de pago")
         Else
-            Me.ErrorIcono.SetError(sender, "")
+            Me.ErrorIcono.SetError(sender, Constantes.CADENA_VACIA)
         End If
     End Sub
     Private Sub cbCargo_Validating(sender As Object, e As CancelEventArgs) Handles cbCargo.Validating
         If DirectCast(sender, ComboBox).SelectedIndex = 0 Then
             Me.ErrorIcono.SetError(sender, "Debe escoger el cargo")
         Else
-            Me.ErrorIcono.SetError(sender, "")
+            Me.ErrorIcono.SetError(sender, Constantes.CADENA_VACIA)
         End If
     End Sub
     Private Sub txtIdentificacion_Validating(sender As Object, e As CancelEventArgs) Handles txtIdentificacion.Validating
         If DirectCast(sender, TextBox).Text.Length = 0 Then
             Me.ErrorIcono.SetError(sender, "Debe escoger una persona")
         Else
-            Me.ErrorIcono.SetError(sender, "")
+            Me.ErrorIcono.SetError(sender, Constantes.CADENA_VACIA)
         End If
     End Sub
 End Class
