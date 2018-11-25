@@ -39,18 +39,18 @@ Partial Class FormInicioSesion
         Me.CbEmpresa = New System.Windows.Forms.ComboBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
-        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.ErrorIcono = New System.Windows.Forms.ErrorProvider(Me.components)
+        Me.Pimagen = New System.Windows.Forms.PictureBox()
         Me.OK = New System.Windows.Forms.Button()
         Me.Cancel = New System.Windows.Forms.Button()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.ErrorIcono = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Pimagen = New System.Windows.Forms.PictureBox()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
-        CType(Me.ErrorIcono, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ErrorIcono, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'UsernameLabel
@@ -58,7 +58,7 @@ Partial Class FormInicioSesion
         Me.UsernameLabel.BackColor = System.Drawing.Color.White
         Me.UsernameLabel.Font = New System.Drawing.Font("Times New Roman", 11.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.UsernameLabel.ForeColor = System.Drawing.Color.SteelBlue
-        Me.UsernameLabel.Location = New System.Drawing.Point(155, 28)
+        Me.UsernameLabel.Location = New System.Drawing.Point(149, 28)
         Me.UsernameLabel.Name = "UsernameLabel"
         Me.UsernameLabel.Size = New System.Drawing.Size(66, 24)
         Me.UsernameLabel.TabIndex = 0
@@ -70,7 +70,7 @@ Partial Class FormInicioSesion
         Me.PasswordLabel.BackColor = System.Drawing.Color.White
         Me.PasswordLabel.Font = New System.Drawing.Font("Times New Roman", 11.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.PasswordLabel.ForeColor = System.Drawing.Color.SteelBlue
-        Me.PasswordLabel.Location = New System.Drawing.Point(155, 71)
+        Me.PasswordLabel.Location = New System.Drawing.Point(149, 71)
         Me.PasswordLabel.Name = "PasswordLabel"
         Me.PasswordLabel.Size = New System.Drawing.Size(58, 23)
         Me.PasswordLabel.TabIndex = 2
@@ -79,21 +79,21 @@ Partial Class FormInicioSesion
         '
         'txtUsuario
         '
-        Me.txtUsuario.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtUsuario.Location = New System.Drawing.Point(219, 31)
+        Me.txtUsuario.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtUsuario.Location = New System.Drawing.Point(229, 31)
         Me.txtUsuario.MaxLength = 10
         Me.txtUsuario.Name = "txtUsuario"
-        Me.txtUsuario.Size = New System.Drawing.Size(134, 22)
+        Me.txtUsuario.Size = New System.Drawing.Size(152, 25)
         Me.txtUsuario.TabIndex = 1
         '
         'txtContraseña
         '
-        Me.txtContraseña.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtContraseña.Location = New System.Drawing.Point(219, 73)
+        Me.txtContraseña.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtContraseña.Location = New System.Drawing.Point(229, 73)
         Me.txtContraseña.MaxLength = 20
         Me.txtContraseña.Name = "txtContraseña"
         Me.txtContraseña.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.txtContraseña.Size = New System.Drawing.Size(134, 22)
+        Me.txtContraseña.Size = New System.Drawing.Size(152, 25)
         Me.txtContraseña.TabIndex = 3
         '
         'Label1
@@ -101,7 +101,7 @@ Partial Class FormInicioSesion
         Me.Label1.BackColor = System.Drawing.Color.White
         Me.Label1.Font = New System.Drawing.Font("Times New Roman", 11.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.SteelBlue
-        Me.Label1.Location = New System.Drawing.Point(155, 111)
+        Me.Label1.Location = New System.Drawing.Point(149, 111)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(75, 23)
         Me.Label1.TabIndex = 6
@@ -111,11 +111,11 @@ Partial Class FormInicioSesion
         'CbEmpresa
         '
         Me.CbEmpresa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.CbEmpresa.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CbEmpresa.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CbEmpresa.FormattingEnabled = True
-        Me.CbEmpresa.Location = New System.Drawing.Point(219, 112)
+        Me.CbEmpresa.Location = New System.Drawing.Point(229, 112)
         Me.CbEmpresa.Name = "CbEmpresa"
-        Me.CbEmpresa.Size = New System.Drawing.Size(134, 23)
+        Me.CbEmpresa.Size = New System.Drawing.Size(152, 25)
         Me.CbEmpresa.TabIndex = 7
         '
         'GroupBox1
@@ -126,9 +126,9 @@ Partial Class FormInicioSesion
         Me.GroupBox1.Controls.Add(Me.OK)
         Me.GroupBox1.Controls.Add(Me.Cancel)
         Me.GroupBox1.Controls.Add(Me.GroupBox2)
-        Me.GroupBox1.Location = New System.Drawing.Point(5, 8)
+        Me.GroupBox1.Location = New System.Drawing.Point(7, 7)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(394, 188)
+        Me.GroupBox1.Size = New System.Drawing.Size(429, 179)
         Me.GroupBox1.TabIndex = 11
         Me.GroupBox1.TabStop = False
         '
@@ -137,26 +137,22 @@ Partial Class FormInicioSesion
         Me.GroupBox3.BackColor = System.Drawing.Color.Transparent
         Me.GroupBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.GroupBox3.Controls.Add(Me.Pimagen)
-        Me.GroupBox3.Location = New System.Drawing.Point(3, 0)
+        Me.GroupBox3.Location = New System.Drawing.Point(3, 1)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(142, 182)
+        Me.GroupBox3.Size = New System.Drawing.Size(129, 169)
         Me.GroupBox3.TabIndex = 12
         Me.GroupBox3.TabStop = False
         '
-        'GroupBox2
+        'Pimagen
         '
-        Me.GroupBox2.BackColor = System.Drawing.Color.Transparent
-        Me.GroupBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.GroupBox2.Location = New System.Drawing.Point(148, 0)
-        Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(242, 182)
-        Me.GroupBox2.TabIndex = 6
-        Me.GroupBox2.TabStop = False
-        '
-        'ErrorIcono
-        '
-        Me.ErrorIcono.ContainerControl = Me
-        Me.ErrorIcono.RightToLeft = True
+        Me.Pimagen.BackColor = System.Drawing.Color.Transparent
+        Me.Pimagen.Image = Global.Quality.My.Resources.Resources.Quality_logo
+        Me.Pimagen.Location = New System.Drawing.Point(3, 10)
+        Me.Pimagen.Name = "Pimagen"
+        Me.Pimagen.Size = New System.Drawing.Size(120, 155)
+        Me.Pimagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.Pimagen.TabIndex = 0
+        Me.Pimagen.TabStop = False
         '
         'OK
         '
@@ -165,12 +161,11 @@ Partial Class FormInicioSesion
         Me.OK.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.OK.Font = New System.Drawing.Font("Times New Roman", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.OK.ForeColor = System.Drawing.Color.White
-        Me.OK.Location = New System.Drawing.Point(209, 150)
+        Me.OK.Location = New System.Drawing.Point(220, 138)
         Me.OK.Name = "OK"
-        Me.OK.Size = New System.Drawing.Size(72, 23)
+        Me.OK.Size = New System.Drawing.Size(90, 30)
         Me.OK.TabIndex = 4
         Me.OK.Text = "&Aceptar"
-        Me.OK.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.OK.UseVisualStyleBackColor = False
         '
         'Cancel
@@ -181,22 +176,36 @@ Partial Class FormInicioSesion
         Me.Cancel.DialogResult = System.Windows.Forms.DialogResult.Cancel
         Me.Cancel.Font = New System.Drawing.Font("Times New Roman", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Cancel.ForeColor = System.Drawing.Color.White
-        Me.Cancel.Location = New System.Drawing.Point(290, 150)
+        Me.Cancel.Location = New System.Drawing.Point(319, 138)
         Me.Cancel.Name = "Cancel"
-        Me.Cancel.Size = New System.Drawing.Size(72, 23)
+        Me.Cancel.Size = New System.Drawing.Size(90, 30)
         Me.Cancel.TabIndex = 5
         Me.Cancel.Text = "&Cancelar"
-        Me.Cancel.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.Cancel.UseVisualStyleBackColor = False
+        '
+        'GroupBox2
+        '
+        Me.GroupBox2.BackColor = System.Drawing.Color.Transparent
+        Me.GroupBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.GroupBox2.Location = New System.Drawing.Point(127, 1)
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.Size = New System.Drawing.Size(302, 169)
+        Me.GroupBox2.TabIndex = 6
+        Me.GroupBox2.TabStop = False
+        '
+        'ErrorIcono
+        '
+        Me.ErrorIcono.ContainerControl = Me
+        Me.ErrorIcono.RightToLeft = True
         '
         'Panel3
         '
         Me.Panel3.BackColor = System.Drawing.Color.White
         Me.Panel3.BackgroundImage = Global.Quality.My.Resources.Resources.dribbble_shop_icon
         Me.Panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Panel3.Location = New System.Drawing.Point(360, 108)
+        Me.Panel3.Location = New System.Drawing.Point(396, 112)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(30, 30)
+        Me.Panel3.Size = New System.Drawing.Size(29, 25)
         Me.Panel3.TabIndex = 10
         '
         'Panel2
@@ -204,9 +213,9 @@ Partial Class FormInicioSesion
         Me.Panel2.BackColor = System.Drawing.Color.White
         Me.Panel2.BackgroundImage = Global.Quality.My.Resources.Resources.Keys_icon
         Me.Panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Panel2.Location = New System.Drawing.Point(360, 68)
+        Me.Panel2.Location = New System.Drawing.Point(396, 73)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(30, 30)
+        Me.Panel2.Size = New System.Drawing.Size(29, 25)
         Me.Panel2.TabIndex = 9
         '
         'Panel1
@@ -214,21 +223,10 @@ Partial Class FormInicioSesion
         Me.Panel1.BackColor = System.Drawing.Color.White
         Me.Panel1.BackgroundImage = Global.Quality.My.Resources.Resources.Admin_icon
         Me.Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Panel1.Location = New System.Drawing.Point(360, 25)
+        Me.Panel1.Location = New System.Drawing.Point(397, 32)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(30, 30)
+        Me.Panel1.Size = New System.Drawing.Size(29, 24)
         Me.Panel1.TabIndex = 8
-        '
-        'Pimagen
-        '
-        Me.Pimagen.BackColor = System.Drawing.Color.Transparent
-        Me.Pimagen.Image = Global.Quality.My.Resources.Resources.Quality_logo
-        Me.Pimagen.Location = New System.Drawing.Point(6, 13)
-        Me.Pimagen.Name = "Pimagen"
-        Me.Pimagen.Size = New System.Drawing.Size(130, 163)
-        Me.Pimagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.Pimagen.TabIndex = 0
-        Me.Pimagen.TabStop = False
         '
         'FormInicioSesion
         '
@@ -238,7 +236,7 @@ Partial Class FormInicioSesion
         Me.BackColor = System.Drawing.Color.SteelBlue
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.CancelButton = Me.Cancel
-        Me.ClientSize = New System.Drawing.Size(405, 203)
+        Me.ClientSize = New System.Drawing.Size(443, 193)
         Me.ControlBox = False
         Me.Controls.Add(Me.CbEmpresa)
         Me.Controls.Add(Me.txtUsuario)
@@ -258,8 +256,8 @@ Partial Class FormInicioSesion
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox3.ResumeLayout(False)
-        CType(Me.ErrorIcono, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ErrorIcono, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

@@ -49,7 +49,7 @@
         formMsgBx.AgregarBoton(Constantes.SI)
         formMsgBx.AgregarBoton(Constantes.NO)
         formMsgBx.AgregarMensaje(mensaje)
-        formMsgBx.Agregarlogo(My.Resources.azul)
+        formMsgBx.Agregarlogo(My.Resources.Help_icon)
         respuesta = formMsgBx.Mostrar()
         Return respuesta
 

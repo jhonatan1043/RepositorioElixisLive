@@ -240,7 +240,7 @@ Partial Class FormProgramacionCita
         Me.Panel2.BackColor = System.Drawing.Color.White
         Me.Panel2.BackgroundImage = Global.Quality.My.Resources.Resources.calendar_icon
         Me.Panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Panel2.Location = New System.Drawing.Point(62, 21)
+        Me.Panel2.Location = New System.Drawing.Point(67, 20)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(30, 23)
         Me.Panel2.TabIndex = 10067
