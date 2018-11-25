@@ -7,4 +7,5 @@
     Public Const BUSQUEDA_EMPLEADO = "Busqueda de Empleado"
     Public Const BUSQUEDA_PERSONA = "Busqueda de persona"
     Public Const BUSQUEDA_PROVEEDOR = "Busqueda de Proveedor"
+    Public Const BUSQUEDA_SERVICIO = "Busqueda de servicio"
 End Class

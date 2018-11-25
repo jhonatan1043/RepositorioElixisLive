@@ -6,9 +6,13 @@
     Property dtFechaCita As DateTime
     Property observacion As String
     Public Sub New()
+        dtServicio = New DataTable
+        dtServicio.Columns.Add("codigo", Type.GetType("System.Int32"))
+        dtServicio.Columns.Add("Descripcion", Type.GetType("System.String"))
+        dtServicio.Columns.Add("Cantidad", Type.GetType("System.Int32")).DefaultValue = 0
         sqlGuardar = "[SP_ADMIN_CITA_CREAR]"
         sqlCargar = ""
-        sqlAnular = ""
+        sqlAnular = "SP_ADMIN_CITA_ANULAR "
     End Sub
 
 End Class

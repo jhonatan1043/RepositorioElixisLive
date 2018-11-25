@@ -18,7 +18,18 @@
             btRegistrar.Enabled = True
             btCancelar.Enabled = True
         End If
+        validarGrilla()
         establecerPosicion()
+    End Sub
+    Private Sub validarGrilla()
+        With dgvServicio
+            .Columns("dgCodigo").DataPropertyName = "codigo"
+            .Columns("dgDescripcion").DataPropertyName = "Descripcion"
+            .Columns("dgCantidad").DataPropertyName = "Cantidad"
+            .Columns("dgQuitar").DisplayIndex = 4
+            .DataSource = objCita.dtServicio
+            .AutoGenerateColumns = False
+        End With
     End Sub
     Private Sub btEditar_Click(sender As Object, e As EventArgs) Handles btEditar.Click
         If EstiloMensajes.mostrarMensajePregunta(MensajeSistema.EDITAR) = Constantes.SI Then
@@ -41,9 +52,20 @@
         End If
     End Sub
     Private Sub btAnular_Click(sender As Object, e As EventArgs) Handles btAnular.Click
-        establecerPosicion()
-        formulario.ventana = Me '' se indica el formulario que usara el efecto
-        formulario.redondear() '' se redondean los bordes del formulario
+        If EstiloMensajes.mostrarMensajePregunta(MensajeSistema.ANULAR) = Constantes.SI Then
+            Try
+                If Generales.ejecutarSQL(objCita.sqlAnular & objCita.codigo) = True Then
+                    Generales.deshabilitarBotones(ToolStrip1)
+                    Generales.limpiarControles(Me)
+                    Close()
+                End If
+            Catch ex As Exception
+                EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
+            End Try
+        End If
+        'establecerPosicion()
+        'formulario.ventana = Me '' se indica el formulario que usara el efecto
+        'formulario.redondear() '' se redondean los bordes del formulario
     End Sub
     Private Sub establecerPosicion()
         Dim x As Integer
@@ -89,10 +111,10 @@
         Dim params As New List(Of String)
         params.Add(String.Empty)
         Try
-            Generales.buscarElemento("[SP_ADMIN_PERSONA_CONSULTAR]",
+            Generales.buscarElemento(Sentencias.PERSONA_CONSULTAR,
                                    params,
                                    AddressOf cargarPersona,
-                                   "Busqueda de persona",
+                                   Titulo.BUSQUEDA_PERSONA,
                                    True, True)
         Catch ex As Exception
             EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
@@ -104,12 +126,38 @@
         objCita.codigoPersona = pCodigo
         params.Add(pCodigo)
         Try
-            dfila = Generales.cargarItem("SP_PERSONA_CARGAR", params)
+            dfila = Generales.cargarItem(Sentencias.PERSONA_CARGAR, params)
             textNombre.Text = dfila("Nombre")
         Catch ex As Exception
             EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
         End Try
     End Sub
 
-
+    Private Sub dgvServicio_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvServicio.CellDoubleClick
+        Dim params As New List(Of String)
+        params.Add(String.Empty)
+        If textNombre.Text <> String.Empty Then
+            Try
+                If btRegistrar.Enabled = False Then Exit Sub
+                If (dgvServicio.Rows(dgvServicio.CurrentCell.RowIndex).Cells("dgCodigo").Selected = True _
+                    Or dgvServicio.Rows(dgvServicio.CurrentCell.RowIndex).Cells("dgServicio").Selected = True) Then
+                    Generales.busquedaItems(Sentencias.SERVICIO_CONSULTAR,
+                                              params,
+                                              Titulo.BUSQUEDA_SERVICIO,
+                                              dgvServicio,
+                                              objCita.dtServicio,
+                                              0,
+                                              1,
+                                              0,
+                                              0,
+                                              True)
+                ElseIf dgvServicio.Rows(dgvServicio.CurrentCell.RowIndex).Cells("dgQuitar").Selected = True _
+                    And objCita.dtServicio.Rows(dgvServicio.CurrentCell.RowIndex).Item(0).ToString <> String.Empty Then
+                    objCita.dtServicio.Rows.RemoveAt(e.RowIndex)
+                End If
+            Catch ex As Exception
+                EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
+            End Try
+        End If
+    End Sub
 End Class

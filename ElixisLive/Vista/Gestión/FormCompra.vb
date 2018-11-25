@@ -119,7 +119,7 @@
     End Sub
     Private Sub dgvFactura_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvFactura.CellDoubleClick
         Dim params As New List(Of String)
-        params.Add("")
+        params.Add(String.Empty)
         If TextIdentificacion.Text <> String.Empty Then
             Try
                 If btRegistrar.Enabled = False Then Exit Sub
