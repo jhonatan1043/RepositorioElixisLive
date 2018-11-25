@@ -17,6 +17,7 @@
             txtobservacion.ReadOnly = False
             txtfecha.Text = Format(fechaHora, Constantes.FORMATO_FECHA_HORA)
             validarEdicionGrilla(Constantes.EDITABLE)
+            txtfecha.ReadOnly = False
             btBuscarCliente.Enabled = True
             btRegistrar.Enabled = True
             btCancelar.Enabled = True
@@ -176,4 +177,22 @@
             End Try
         End If
     End Sub
+    Private Sub txtfecha_Leave(sender As Object, e As EventArgs) Handles txtfecha.Leave
+        If btRegistrar.Enabled = False Then Exit Sub
+        If validarIngresoFecha() = True Then
+            EstiloMensajes.mostrarMensajeAdvertencia("¡ No se puede modificar la fecha, Solo minutos dentro de la hora establecida !")
+            txtfecha.Focus()
+        End If
+    End Sub
+    Private Function validarIngresoFecha() As Boolean
+        Dim resultado As Boolean
+        Dim fechaCitaHora As String = Format(fechaHora, "ddMMyyy HH")
+        Dim fechaModificada As String = Format(txtfecha.Text, "ddMMyyy HH")
+        If fechaCitaHora <> fechaModificada Then
+            resultado = True
+        End If
+        Return resultado
+    End Function
+
+
 End Class
