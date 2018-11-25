@@ -114,6 +114,7 @@
             Generales.deshabilitarControles(Me)
             btEditar.Enabled = True
             btAnular.Enabled = True
+            objFormularioProgram.validarControles()
             EstiloMensajes.mostrarMensajeExitoso(MensajeSistema.REGISTRO_GUARDADO)
         Catch ex As Exception
             EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
