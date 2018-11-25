@@ -7,7 +7,7 @@
         End If
         formMsgBx.AgregarBoton("Aceptar")
         formMsgBx.AgregarMensaje(mensaje)
-        formMsgBx.Agregarlogo(My.Resources.exitoso)
+        formMsgBx.Agregarlogo(My.Resources.verde)
         formMsgBx.Mostrar()
     End Sub
     Public Shared Sub mostrarMensajeAnulado(mensaje As String, ByVal Optional titulo As String = "")
@@ -17,7 +17,7 @@
         End If
         formMsgBx.AgregarBoton("Aceptar")
         formMsgBx.AgregarMensaje(mensaje)
-        formMsgBx.Agregarlogo(My.Resources.glossy_3d_blue_i_icon)
+        formMsgBx.Agregarlogo(My.Resources.Amarillo)
         formMsgBx.Mostrar()
     End Sub
     Public Shared Sub mostrarMensajeError(mensaje As String, ByVal Optional titulo As String = "")
@@ -37,7 +37,7 @@
         End If
         formMsgBx.AgregarBoton("Aceptar")
         formMsgBx.AgregarMensaje(mensaje)
-        formMsgBx.Agregarlogo(My.Resources.advertencia)
+        formMsgBx.Agregarlogo(My.Resources.rojo)
         formMsgBx.Mostrar()
     End Sub
     Public Shared Function mostrarMensajePregunta(mensaje As String, ByVal Optional titulo As String = "") As String
@@ -49,7 +49,7 @@
         formMsgBx.AgregarBoton(Constantes.SI)
         formMsgBx.AgregarBoton(Constantes.NO)
         formMsgBx.AgregarMensaje(mensaje)
-        formMsgBx.Agregarlogo(My.Resources.pregunta)
+        formMsgBx.Agregarlogo(My.Resources.azul)
         respuesta = formMsgBx.Mostrar()
         Return respuesta
 

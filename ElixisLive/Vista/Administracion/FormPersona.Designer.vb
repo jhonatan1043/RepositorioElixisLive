@@ -27,8 +27,6 @@ Partial Class FormPersona
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.chUsuario = New System.Windows.Forms.CheckBox()
-        Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
-        Me.btBuscarPerfil = New System.Windows.Forms.Button()
         Me.txtPerfil = New System.Windows.Forms.TextBox()
         Me.txtUsuario = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -71,6 +69,8 @@ Partial Class FormPersona
         Me.ToolStripSeparator3 = New System.Windows.Forms.ToolStripSeparator()
         Me.btAnular = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripSeparator6 = New System.Windows.Forms.ToolStripSeparator()
+        Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
+        Me.btBuscarPerfil = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Pimagen = New System.Windows.Forms.PictureBox()
         Me.LTitulo = New System.Windows.Forms.Label()
@@ -138,30 +138,6 @@ Partial Class FormPersona
         Me.chUsuario.TabIndex = 13
         Me.chUsuario.Text = "Asignar usuario"
         Me.chUsuario.UseVisualStyleBackColor = True
-        '
-        'LinkLabel1
-        '
-        Me.LinkLabel1.ActiveLinkColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.LinkLabel1.AutoSize = True
-        Me.LinkLabel1.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LinkLabel1.ForeColor = System.Drawing.Color.SteelBlue
-        Me.LinkLabel1.Location = New System.Drawing.Point(549, 44)
-        Me.LinkLabel1.Name = "LinkLabel1"
-        Me.LinkLabel1.Size = New System.Drawing.Size(84, 19)
-        Me.LinkLabel1.TabIndex = 30
-        Me.LinkLabel1.TabStop = True
-        Me.LinkLabel1.Text = "Crear perfíl"
-        '
-        'btBuscarPerfil
-        '
-        Me.btBuscarPerfil.BackgroundImage = Global.Quality.My.Resources.Resources.fondo_azul
-        Me.btBuscarPerfil.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btBuscarPerfil.Image = Global.Quality.My.Resources.Resources.Zoom_icon1
-        Me.btBuscarPerfil.Location = New System.Drawing.Point(443, 70)
-        Me.btBuscarPerfil.Name = "btBuscarPerfil"
-        Me.btBuscarPerfil.Size = New System.Drawing.Size(31, 30)
-        Me.btBuscarPerfil.TabIndex = 15
-        Me.btBuscarPerfil.UseVisualStyleBackColor = True
         '
         'txtPerfil
         '
@@ -596,6 +572,33 @@ Partial Class FormPersona
         '
         Me.ToolStripSeparator6.Name = "ToolStripSeparator6"
         Me.ToolStripSeparator6.Size = New System.Drawing.Size(6, 37)
+        '
+        'LinkLabel1
+        '
+        Me.LinkLabel1.ActiveLinkColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.LinkLabel1.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LinkLabel1.ForeColor = System.Drawing.Color.SteelBlue
+        Me.LinkLabel1.Image = Global.Quality.My.Resources.Resources.User_Files_icon
+        Me.LinkLabel1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.LinkLabel1.LinkColor = System.Drawing.Color.DarkBlue
+        Me.LinkLabel1.Location = New System.Drawing.Point(519, 35)
+        Me.LinkLabel1.Name = "LinkLabel1"
+        Me.LinkLabel1.Size = New System.Drawing.Size(154, 55)
+        Me.LinkLabel1.TabIndex = 30
+        Me.LinkLabel1.TabStop = True
+        Me.LinkLabel1.Text = "Crear perfíl"
+        Me.LinkLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'btBuscarPerfil
+        '
+        Me.btBuscarPerfil.BackgroundImage = Global.Quality.My.Resources.Resources.fondo_azul
+        Me.btBuscarPerfil.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btBuscarPerfil.Image = Global.Quality.My.Resources.Resources.Zoom_icon1
+        Me.btBuscarPerfil.Location = New System.Drawing.Point(443, 70)
+        Me.btBuscarPerfil.Name = "btBuscarPerfil"
+        Me.btBuscarPerfil.Size = New System.Drawing.Size(31, 30)
+        Me.btBuscarPerfil.TabIndex = 15
+        Me.btBuscarPerfil.UseVisualStyleBackColor = True
         '
         'Panel1
         '

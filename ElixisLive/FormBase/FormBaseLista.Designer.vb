@@ -231,16 +231,16 @@ Partial Class FormBaseLista
         Me.ToolStrip1.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.ToolStrip1.ImageScalingSize = New System.Drawing.Size(30, 30)
         Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripSeparator1, Me.btNuevo, Me.ToolStripSeparator2, Me.btBuscar, Me.ToolStripSeparator7, Me.btRegistrar, Me.ToolStripSeparator4, Me.btEditar, Me.ToolStripSeparator5, Me.btCancelar, Me.ToolStripSeparator3, Me.btAnular, Me.ToolStripSeparator6})
-        Me.ToolStrip1.Location = New System.Drawing.Point(0, 388)
+        Me.ToolStrip1.Location = New System.Drawing.Point(0, 384)
         Me.ToolStrip1.Name = "ToolStrip1"
-        Me.ToolStrip1.Size = New System.Drawing.Size(662, 33)
+        Me.ToolStrip1.Size = New System.Drawing.Size(662, 37)
         Me.ToolStrip1.TabIndex = 15
         Me.ToolStrip1.Text = "ToolStrip1"
         '
         'ToolStripSeparator1
         '
         Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
-        Me.ToolStripSeparator1.Size = New System.Drawing.Size(6, 33)
+        Me.ToolStripSeparator1.Size = New System.Drawing.Size(6, 37)
         '
         'btNuevo
         '
@@ -249,14 +249,14 @@ Partial Class FormBaseLista
         Me.btNuevo.Image = Global.Quality.My.Resources.Resources.Files_New_File_icon
         Me.btNuevo.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.btNuevo.Name = "btNuevo"
-        Me.btNuevo.Size = New System.Drawing.Size(82, 30)
+        Me.btNuevo.Size = New System.Drawing.Size(86, 34)
         Me.btNuevo.Text = "Nuevo"
         Me.btNuevo.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         '
         'ToolStripSeparator2
         '
         Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
-        Me.ToolStripSeparator2.Size = New System.Drawing.Size(6, 33)
+        Me.ToolStripSeparator2.Size = New System.Drawing.Size(6, 37)
         '
         'btBuscar
         '
@@ -265,30 +265,30 @@ Partial Class FormBaseLista
         Me.btBuscar.Image = Global.Quality.My.Resources.Resources.Search_icon
         Me.btBuscar.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.btBuscar.Name = "btBuscar"
-        Me.btBuscar.Size = New System.Drawing.Size(86, 30)
+        Me.btBuscar.Size = New System.Drawing.Size(90, 34)
         Me.btBuscar.Text = "Buscar"
         Me.btBuscar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         '
         'ToolStripSeparator7
         '
         Me.ToolStripSeparator7.Name = "ToolStripSeparator7"
-        Me.ToolStripSeparator7.Size = New System.Drawing.Size(6, 33)
+        Me.ToolStripSeparator7.Size = New System.Drawing.Size(6, 37)
         '
         'btRegistrar
         '
         Me.btRegistrar.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btRegistrar.ForeColor = System.Drawing.Color.White
-        Me.btRegistrar.Image = Global.Quality.My.Resources.Resources.Floppy_Drive_icon
+        Me.btRegistrar.Image = Global.Quality.My.Resources.Resources.Save_icon__1_
         Me.btRegistrar.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.btRegistrar.Name = "btRegistrar"
-        Me.btRegistrar.Size = New System.Drawing.Size(101, 30)
+        Me.btRegistrar.Size = New System.Drawing.Size(105, 34)
         Me.btRegistrar.Text = "Registrar"
         Me.btRegistrar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         '
         'ToolStripSeparator4
         '
         Me.ToolStripSeparator4.Name = "ToolStripSeparator4"
-        Me.ToolStripSeparator4.Size = New System.Drawing.Size(6, 33)
+        Me.ToolStripSeparator4.Size = New System.Drawing.Size(6, 37)
         '
         'btEditar
         '
@@ -297,14 +297,14 @@ Partial Class FormBaseLista
         Me.btEditar.Image = Global.Quality.My.Resources.Resources.pencil_icon__1_
         Me.btEditar.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.btEditar.Name = "btEditar"
-        Me.btEditar.Size = New System.Drawing.Size(82, 30)
+        Me.btEditar.Size = New System.Drawing.Size(86, 34)
         Me.btEditar.Text = "Editar"
         Me.btEditar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         '
         'ToolStripSeparator5
         '
         Me.ToolStripSeparator5.Name = "ToolStripSeparator5"
-        Me.ToolStripSeparator5.Size = New System.Drawing.Size(6, 33)
+        Me.ToolStripSeparator5.Size = New System.Drawing.Size(6, 37)
         '
         'btCancelar
         '
@@ -313,14 +313,14 @@ Partial Class FormBaseLista
         Me.btCancelar.Image = Global.Quality.My.Resources.Resources.Actions_blue_arrow_undo_icon
         Me.btCancelar.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.btCancelar.Name = "btCancelar"
-        Me.btCancelar.Size = New System.Drawing.Size(100, 30)
+        Me.btCancelar.Size = New System.Drawing.Size(104, 34)
         Me.btCancelar.Text = "Cancelar"
         Me.btCancelar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         '
         'ToolStripSeparator3
         '
         Me.ToolStripSeparator3.Name = "ToolStripSeparator3"
-        Me.ToolStripSeparator3.Size = New System.Drawing.Size(6, 33)
+        Me.ToolStripSeparator3.Size = New System.Drawing.Size(6, 37)
         '
         'btAnular
         '
@@ -329,14 +329,14 @@ Partial Class FormBaseLista
         Me.btAnular.Image = Global.Quality.My.Resources.Resources.document_delete_icon__1_
         Me.btAnular.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.btAnular.Name = "btAnular"
-        Me.btAnular.Size = New System.Drawing.Size(87, 30)
+        Me.btAnular.Size = New System.Drawing.Size(91, 34)
         Me.btAnular.Text = "Anular"
         Me.btAnular.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         '
         'ToolStripSeparator6
         '
         Me.ToolStripSeparator6.Name = "ToolStripSeparator6"
-        Me.ToolStripSeparator6.Size = New System.Drawing.Size(6, 33)
+        Me.ToolStripSeparator6.Size = New System.Drawing.Size(6, 37)
         '
         'errorIcono
         '

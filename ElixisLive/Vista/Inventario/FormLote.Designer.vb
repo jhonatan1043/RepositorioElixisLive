@@ -53,9 +53,9 @@ Partial Class FormLote
         Me.Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Panel1.Controls.Add(Me.Pimagen)
         Me.Panel1.Controls.Add(Me.LTitulo)
-        Me.Panel1.Location = New System.Drawing.Point(2, 3)
+        Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(600, 44)
+        Me.Panel1.Size = New System.Drawing.Size(602, 44)
         Me.Panel1.TabIndex = 1
         '
         'Pimagen
@@ -74,9 +74,9 @@ Partial Class FormLote
         Me.LTitulo.BackColor = System.Drawing.Color.Transparent
         Me.LTitulo.Font = New System.Drawing.Font("Times New Roman", 20.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LTitulo.ForeColor = System.Drawing.Color.White
-        Me.LTitulo.Location = New System.Drawing.Point(-1, 0)
+        Me.LTitulo.Location = New System.Drawing.Point(-2, -2)
         Me.LTitulo.Name = "LTitulo"
-        Me.LTitulo.Size = New System.Drawing.Size(598, 40)
+        Me.LTitulo.Size = New System.Drawing.Size(605, 40)
         Me.LTitulo.TabIndex = 1
         Me.LTitulo.Text = "Lote"
         Me.LTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -199,7 +199,7 @@ Partial Class FormLote
         Me.ToolStrip1.BackgroundImage = Global.Quality.My.Resources.Resources.fondo_azul
         Me.ToolStrip1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ToolStrip1.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.ToolStrip1.ImageScalingSize = New System.Drawing.Size(26, 26)
+        Me.ToolStrip1.ImageScalingSize = New System.Drawing.Size(30, 30)
         Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripSeparator1, Me.btRegistrar, Me.ToolStripSeparator4})
         Me.ToolStrip1.Location = New System.Drawing.Point(0, 164)
         Me.ToolStrip1.Name = "ToolStrip1"

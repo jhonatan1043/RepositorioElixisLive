@@ -77,7 +77,7 @@ Partial Class FormEntradaInventario
         Me.GbInform_D.ForeColor = System.Drawing.Color.DarkBlue
         Me.GbInform_D.Location = New System.Drawing.Point(4, 57)
         Me.GbInform_D.Name = "GbInform_D"
-        Me.GbInform_D.Size = New System.Drawing.Size(888, 353)
+        Me.GbInform_D.Size = New System.Drawing.Size(888, 336)
         Me.GbInform_D.TabIndex = 59
         Me.GbInform_D.TabStop = False
         '
@@ -105,7 +105,7 @@ Partial Class FormEntradaInventario
         Me.dgvEntrada.MultiSelect = False
         Me.dgvEntrada.Name = "dgvEntrada"
         Me.dgvEntrada.RowHeadersVisible = False
-        Me.dgvEntrada.Size = New System.Drawing.Size(879, 329)
+        Me.dgvEntrada.Size = New System.Drawing.Size(879, 311)
         Me.dgvEntrada.TabIndex = 0
         '
         'dgCodigoProducto
@@ -172,14 +172,14 @@ Partial Class FormEntradaInventario
         Me.GroupBox1.Controls.Add(Me.GbInform_D)
         Me.GroupBox1.Location = New System.Drawing.Point(4, 43)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(898, 443)
+        Me.GroupBox1.Size = New System.Drawing.Size(898, 435)
         Me.GroupBox1.TabIndex = 11
         Me.GroupBox1.TabStop = False
         '
         'txtTotal
         '
         Me.txtTotal.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic)
-        Me.txtTotal.Location = New System.Drawing.Point(295, 411)
+        Me.txtTotal.Location = New System.Drawing.Point(295, 398)
         Me.txtTotal.Name = "txtTotal"
         Me.txtTotal.ReadOnly = True
         Me.txtTotal.Size = New System.Drawing.Size(130, 25)
@@ -190,7 +190,7 @@ Partial Class FormEntradaInventario
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Italic)
-        Me.Label3.Location = New System.Drawing.Point(244, 415)
+        Me.Label3.Location = New System.Drawing.Point(244, 402)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(47, 19)
         Me.Label3.TabIndex = 63
@@ -199,7 +199,7 @@ Partial Class FormEntradaInventario
         'txtSubTotal
         '
         Me.txtSubTotal.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic)
-        Me.txtSubTotal.Location = New System.Drawing.Point(89, 412)
+        Me.txtSubTotal.Location = New System.Drawing.Point(89, 399)
         Me.txtSubTotal.Name = "txtSubTotal"
         Me.txtSubTotal.ReadOnly = True
         Me.txtSubTotal.Size = New System.Drawing.Size(130, 25)
@@ -210,7 +210,7 @@ Partial Class FormEntradaInventario
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Italic)
-        Me.Label2.Location = New System.Drawing.Point(10, 416)
+        Me.Label2.Location = New System.Drawing.Point(10, 403)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(75, 19)
         Me.Label2.TabIndex = 61
@@ -269,18 +269,18 @@ Partial Class FormEntradaInventario
         Me.ToolStrip1.BackgroundImage = Global.Quality.My.Resources.Resources.fondo_azul
         Me.ToolStrip1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ToolStrip1.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.ToolStrip1.ImageScalingSize = New System.Drawing.Size(26, 26)
+        Me.ToolStrip1.ImageScalingSize = New System.Drawing.Size(30, 30)
         Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripSeparator1, Me.btNuevo, Me.ToolStripSeparator7, Me.btBuscar, Me.ToolStripSeparator2, Me.btRegistrar, Me.ToolStripSeparator4, Me.btCancelar, Me.ToolStripSeparator3, Me.btAnular, Me.ToolStripSeparator6})
-        Me.ToolStrip1.Location = New System.Drawing.Point(0, 490)
+        Me.ToolStrip1.Location = New System.Drawing.Point(0, 486)
         Me.ToolStrip1.Name = "ToolStrip1"
-        Me.ToolStrip1.Size = New System.Drawing.Size(905, 33)
+        Me.ToolStrip1.Size = New System.Drawing.Size(905, 37)
         Me.ToolStrip1.TabIndex = 15
         Me.ToolStrip1.Text = "ToolStrip1"
         '
         'ToolStripSeparator1
         '
         Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
-        Me.ToolStripSeparator1.Size = New System.Drawing.Size(6, 33)
+        Me.ToolStripSeparator1.Size = New System.Drawing.Size(6, 37)
         '
         'btNuevo
         '
@@ -289,14 +289,14 @@ Partial Class FormEntradaInventario
         Me.btNuevo.Image = Global.Quality.My.Resources.Resources.Files_New_File_icon
         Me.btNuevo.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.btNuevo.Name = "btNuevo"
-        Me.btNuevo.Size = New System.Drawing.Size(82, 30)
+        Me.btNuevo.Size = New System.Drawing.Size(86, 34)
         Me.btNuevo.Text = "Nuevo"
         Me.btNuevo.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         '
         'ToolStripSeparator7
         '
         Me.ToolStripSeparator7.Name = "ToolStripSeparator7"
-        Me.ToolStripSeparator7.Size = New System.Drawing.Size(6, 33)
+        Me.ToolStripSeparator7.Size = New System.Drawing.Size(6, 37)
         '
         'btBuscar
         '
@@ -305,14 +305,14 @@ Partial Class FormEntradaInventario
         Me.btBuscar.Image = Global.Quality.My.Resources.Resources.Search_icon
         Me.btBuscar.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.btBuscar.Name = "btBuscar"
-        Me.btBuscar.Size = New System.Drawing.Size(86, 30)
+        Me.btBuscar.Size = New System.Drawing.Size(90, 34)
         Me.btBuscar.Text = "Buscar"
         Me.btBuscar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         '
         'ToolStripSeparator2
         '
         Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
-        Me.ToolStripSeparator2.Size = New System.Drawing.Size(6, 33)
+        Me.ToolStripSeparator2.Size = New System.Drawing.Size(6, 37)
         '
         'btRegistrar
         '
@@ -321,14 +321,14 @@ Partial Class FormEntradaInventario
         Me.btRegistrar.Image = Global.Quality.My.Resources.Resources.Save_icon__1_
         Me.btRegistrar.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.btRegistrar.Name = "btRegistrar"
-        Me.btRegistrar.Size = New System.Drawing.Size(101, 30)
+        Me.btRegistrar.Size = New System.Drawing.Size(105, 34)
         Me.btRegistrar.Text = "Registrar"
         Me.btRegistrar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         '
         'ToolStripSeparator4
         '
         Me.ToolStripSeparator4.Name = "ToolStripSeparator4"
-        Me.ToolStripSeparator4.Size = New System.Drawing.Size(6, 33)
+        Me.ToolStripSeparator4.Size = New System.Drawing.Size(6, 37)
         '
         'btCancelar
         '
@@ -337,14 +337,14 @@ Partial Class FormEntradaInventario
         Me.btCancelar.Image = Global.Quality.My.Resources.Resources.Actions_blue_arrow_undo_icon
         Me.btCancelar.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.btCancelar.Name = "btCancelar"
-        Me.btCancelar.Size = New System.Drawing.Size(100, 30)
+        Me.btCancelar.Size = New System.Drawing.Size(104, 34)
         Me.btCancelar.Text = "Cancelar"
         Me.btCancelar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         '
         'ToolStripSeparator3
         '
         Me.ToolStripSeparator3.Name = "ToolStripSeparator3"
-        Me.ToolStripSeparator3.Size = New System.Drawing.Size(6, 33)
+        Me.ToolStripSeparator3.Size = New System.Drawing.Size(6, 37)
         '
         'btAnular
         '
@@ -353,14 +353,14 @@ Partial Class FormEntradaInventario
         Me.btAnular.Image = Global.Quality.My.Resources.Resources.document_delete_icon__1_
         Me.btAnular.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.btAnular.Name = "btAnular"
-        Me.btAnular.Size = New System.Drawing.Size(87, 30)
+        Me.btAnular.Size = New System.Drawing.Size(91, 34)
         Me.btAnular.Text = "Anular"
         Me.btAnular.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         '
         'ToolStripSeparator6
         '
         Me.ToolStripSeparator6.Name = "ToolStripSeparator6"
-        Me.ToolStripSeparator6.Size = New System.Drawing.Size(6, 33)
+        Me.ToolStripSeparator6.Size = New System.Drawing.Size(6, 37)
         '
         'Panel1
         '
@@ -369,9 +369,9 @@ Partial Class FormEntradaInventario
         Me.Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Panel1.Controls.Add(Me.Pimagen)
         Me.Panel1.Controls.Add(Me.LTitulo)
-        Me.Panel1.Location = New System.Drawing.Point(1, 0)
+        Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(904, 44)
+        Me.Panel1.Size = New System.Drawing.Size(905, 44)
         Me.Panel1.TabIndex = 0
         '
         'Pimagen
@@ -390,9 +390,9 @@ Partial Class FormEntradaInventario
         Me.LTitulo.BackColor = System.Drawing.Color.Transparent
         Me.LTitulo.Font = New System.Drawing.Font("Times New Roman", 20.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LTitulo.ForeColor = System.Drawing.Color.White
-        Me.LTitulo.Location = New System.Drawing.Point(-1, 0)
+        Me.LTitulo.Location = New System.Drawing.Point(0, 0)
         Me.LTitulo.Name = "LTitulo"
-        Me.LTitulo.Size = New System.Drawing.Size(905, 40)
+        Me.LTitulo.Size = New System.Drawing.Size(904, 40)
         Me.LTitulo.TabIndex = 1
         Me.LTitulo.Text = "Entrada Inventario"
         Me.LTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter

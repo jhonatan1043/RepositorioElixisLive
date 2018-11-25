@@ -250,7 +250,7 @@ Partial Class FormEmpresa
         Me.Label11.BackColor = System.Drawing.Color.Transparent
         Me.Label11.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label11.ForeColor = System.Drawing.Color.Black
-        Me.Label11.Location = New System.Drawing.Point(448, 20)
+        Me.Label11.Location = New System.Drawing.Point(460, 20)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(75, 19)
         Me.Label11.TabIndex = 29
@@ -443,7 +443,7 @@ Partial Class FormEmpresa
         'ToolStripSeparator1
         '
         Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
-        Me.ToolStripSeparator1.Size = New System.Drawing.Size(6, 33)
+        Me.ToolStripSeparator1.Size = New System.Drawing.Size(6, 37)
         Me.ToolStripSeparator1.Visible = False
         '
         'btNuevo

@@ -22,7 +22,7 @@ Partial Class FormBusqueda
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Pimagen = New System.Windows.Forms.PictureBox()
@@ -32,6 +32,7 @@ Partial Class FormBusqueda
         Me.dgvBusqueda = New System.Windows.Forms.DataGridView()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.Textbusqueda = New System.Windows.Forms.TextBox()
+        Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Panel1.SuspendLayout()
         CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
@@ -115,9 +116,9 @@ Partial Class FormBusqueda
         Me.dgvBusqueda.AllowUserToDeleteRows = False
         Me.dgvBusqueda.AllowUserToResizeColumns = False
         Me.dgvBusqueda.AllowUserToResizeRows = False
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black
-        Me.dgvBusqueda.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
+        Me.dgvBusqueda.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle2
         Me.dgvBusqueda.BackgroundColor = System.Drawing.SystemColors.Control
         Me.dgvBusqueda.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvBusqueda.Dock = System.Windows.Forms.DockStyle.Fill
@@ -131,6 +132,7 @@ Partial Class FormBusqueda
         '
         'GroupBox2
         '
+        Me.GroupBox2.Controls.Add(Me.Panel3)
         Me.GroupBox2.Controls.Add(Me.Textbusqueda)
         Me.GroupBox2.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox2.ForeColor = System.Drawing.Color.DarkBlue
@@ -144,11 +146,21 @@ Partial Class FormBusqueda
         'Textbusqueda
         '
         Me.Textbusqueda.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Textbusqueda.Location = New System.Drawing.Point(6, 14)
+        Me.Textbusqueda.Location = New System.Drawing.Point(38, 14)
         Me.Textbusqueda.MaxLength = 100
         Me.Textbusqueda.Name = "Textbusqueda"
-        Me.Textbusqueda.Size = New System.Drawing.Size(567, 25)
+        Me.Textbusqueda.Size = New System.Drawing.Size(535, 25)
         Me.Textbusqueda.TabIndex = 2
+        '
+        'Panel3
+        '
+        Me.Panel3.BackColor = System.Drawing.Color.White
+        Me.Panel3.BackgroundImage = Global.Quality.My.Resources.Resources.Actions_zoom_out_icon
+        Me.Panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Panel3.Location = New System.Drawing.Point(4, 14)
+        Me.Panel3.Name = "Panel3"
+        Me.Panel3.Size = New System.Drawing.Size(30, 23)
+        Me.Panel3.TabIndex = 10069
         '
         'FormBusqueda
         '
@@ -186,4 +198,5 @@ Partial Class FormBusqueda
     Public WithEvents GroupBox2 As GroupBox
     Public WithEvents Textbusqueda As TextBox
     Friend WithEvents Panel2 As Panel
+    Friend WithEvents Panel3 As Panel
 End Class

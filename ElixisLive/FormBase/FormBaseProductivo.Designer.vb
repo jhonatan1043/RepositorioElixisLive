@@ -360,9 +360,9 @@ Partial Class FormBaseProductivo
         Me.cbTipoPago.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbTipoPago.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic)
         Me.cbTipoPago.FormattingEnabled = True
-        Me.cbTipoPago.Location = New System.Drawing.Point(109, 66)
+        Me.cbTipoPago.Location = New System.Drawing.Point(127, 66)
         Me.cbTipoPago.Name = "cbTipoPago"
-        Me.cbTipoPago.Size = New System.Drawing.Size(247, 25)
+        Me.cbTipoPago.Size = New System.Drawing.Size(229, 25)
         Me.cbTipoPago.TabIndex = 15
         '
         'Label9
@@ -381,9 +381,9 @@ Partial Class FormBaseProductivo
         Me.cbRegimen.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbRegimen.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic)
         Me.cbRegimen.FormattingEnabled = True
-        Me.cbRegimen.Location = New System.Drawing.Point(108, 38)
+        Me.cbRegimen.Location = New System.Drawing.Point(126, 38)
         Me.cbRegimen.Name = "cbRegimen"
-        Me.cbRegimen.Size = New System.Drawing.Size(247, 25)
+        Me.cbRegimen.Size = New System.Drawing.Size(229, 25)
         Me.cbRegimen.TabIndex = 13
         '
         'Label6
@@ -402,9 +402,9 @@ Partial Class FormBaseProductivo
         Me.cbFormaPago.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbFormaPago.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic)
         Me.cbFormaPago.FormattingEnabled = True
-        Me.cbFormaPago.Location = New System.Drawing.Point(108, 10)
+        Me.cbFormaPago.Location = New System.Drawing.Point(126, 10)
         Me.cbFormaPago.Name = "cbFormaPago"
-        Me.cbFormaPago.Size = New System.Drawing.Size(247, 25)
+        Me.cbFormaPago.Size = New System.Drawing.Size(229, 25)
         Me.cbFormaPago.TabIndex = 11
         '
         'Label7

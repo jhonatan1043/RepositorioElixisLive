@@ -307,10 +307,10 @@ Partial Class FormPerfil
         'Pimagen
         '
         Me.Pimagen.BackColor = System.Drawing.Color.Transparent
-        Me.Pimagen.Image = Global.Quality.My.Resources.Resources.glossy_3d_blue_orbs2_088_icon
-        Me.Pimagen.Location = New System.Drawing.Point(2, -7)
+        Me.Pimagen.Image = Global.Quality.My.Resources.Resources.User_Files_icon
+        Me.Pimagen.Location = New System.Drawing.Point(2, 0)
         Me.Pimagen.Name = "Pimagen"
-        Me.Pimagen.Size = New System.Drawing.Size(69, 53)
+        Me.Pimagen.Size = New System.Drawing.Size(44, 41)
         Me.Pimagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.Pimagen.TabIndex = 1
         Me.Pimagen.TabStop = False

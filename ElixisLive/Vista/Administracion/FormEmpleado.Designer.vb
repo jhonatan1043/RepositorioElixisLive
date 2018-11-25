@@ -490,7 +490,7 @@ Partial Class FormEmpleado
         Me.gpPago.Controls.Add(Me.Label12)
         Me.gpPago.Location = New System.Drawing.Point(4, 41)
         Me.gpPago.Name = "gpPago"
-        Me.gpPago.Size = New System.Drawing.Size(321, 102)
+        Me.gpPago.Size = New System.Drawing.Size(325, 102)
         Me.gpPago.TabIndex = 10
         Me.gpPago.TabStop = False
         '
@@ -498,9 +498,9 @@ Partial Class FormEmpleado
         '
         Me.txtCuenta.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtCuenta.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtCuenta.Location = New System.Drawing.Point(101, 67)
+        Me.txtCuenta.Location = New System.Drawing.Point(121, 67)
         Me.txtCuenta.Name = "txtCuenta"
-        Me.txtCuenta.Size = New System.Drawing.Size(214, 25)
+        Me.txtCuenta.Size = New System.Drawing.Size(199, 25)
         Me.txtCuenta.TabIndex = 13
         Me.txtCuenta.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -520,9 +520,9 @@ Partial Class FormEmpleado
         Me.cbTipoCuenta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbTipoCuenta.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic)
         Me.cbTipoCuenta.FormattingEnabled = True
-        Me.cbTipoCuenta.Location = New System.Drawing.Point(100, 39)
+        Me.cbTipoCuenta.Location = New System.Drawing.Point(120, 39)
         Me.cbTipoCuenta.Name = "cbTipoCuenta"
-        Me.cbTipoCuenta.Size = New System.Drawing.Size(215, 25)
+        Me.cbTipoCuenta.Size = New System.Drawing.Size(200, 25)
         Me.cbTipoCuenta.TabIndex = 11
         '
         'Label11
@@ -541,9 +541,9 @@ Partial Class FormEmpleado
         Me.cbBanco.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbBanco.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic)
         Me.cbBanco.FormattingEnabled = True
-        Me.cbBanco.Location = New System.Drawing.Point(100, 11)
+        Me.cbBanco.Location = New System.Drawing.Point(120, 11)
         Me.cbBanco.Name = "cbBanco"
-        Me.cbBanco.Size = New System.Drawing.Size(215, 25)
+        Me.cbBanco.Size = New System.Drawing.Size(200, 25)
         Me.cbBanco.TabIndex = 9
         '
         'Label12
@@ -562,9 +562,9 @@ Partial Class FormEmpleado
         Me.cbFormaPago.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbFormaPago.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic)
         Me.cbFormaPago.FormattingEnabled = True
-        Me.cbFormaPago.Location = New System.Drawing.Point(105, 16)
+        Me.cbFormaPago.Location = New System.Drawing.Point(125, 16)
         Me.cbFormaPago.Name = "cbFormaPago"
-        Me.cbFormaPago.Size = New System.Drawing.Size(219, 25)
+        Me.cbFormaPago.Size = New System.Drawing.Size(199, 25)
         Me.cbFormaPago.TabIndex = 9
         '
         'Label7
@@ -591,16 +591,16 @@ Partial Class FormEmpleado
         Me.ToolStrip1.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.ToolStrip1.ImageScalingSize = New System.Drawing.Size(30, 30)
         Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripSeparator1, Me.btNuevo, Me.ToolStripSeparator7, Me.btBuscar, Me.ToolStripSeparator2, Me.btRegistrar, Me.ToolStripSeparator4, Me.btEditar, Me.ToolStripSeparator5, Me.btCancelar, Me.ToolStripSeparator3, Me.btAnular, Me.ToolStripSeparator6})
-        Me.ToolStrip1.Location = New System.Drawing.Point(0, 490)
+        Me.ToolStrip1.Location = New System.Drawing.Point(0, 486)
         Me.ToolStrip1.Name = "ToolStrip1"
-        Me.ToolStrip1.Size = New System.Drawing.Size(905, 33)
+        Me.ToolStrip1.Size = New System.Drawing.Size(905, 37)
         Me.ToolStrip1.TabIndex = 15
         Me.ToolStrip1.Text = "ToolStrip1"
         '
         'ToolStripSeparator1
         '
         Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
-        Me.ToolStripSeparator1.Size = New System.Drawing.Size(6, 33)
+        Me.ToolStripSeparator1.Size = New System.Drawing.Size(6, 37)
         '
         'btNuevo
         '
@@ -609,14 +609,14 @@ Partial Class FormEmpleado
         Me.btNuevo.Image = Global.Quality.My.Resources.Resources.Files_New_File_icon
         Me.btNuevo.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.btNuevo.Name = "btNuevo"
-        Me.btNuevo.Size = New System.Drawing.Size(82, 30)
+        Me.btNuevo.Size = New System.Drawing.Size(86, 34)
         Me.btNuevo.Text = "Nuevo"
         Me.btNuevo.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         '
         'ToolStripSeparator7
         '
         Me.ToolStripSeparator7.Name = "ToolStripSeparator7"
-        Me.ToolStripSeparator7.Size = New System.Drawing.Size(6, 33)
+        Me.ToolStripSeparator7.Size = New System.Drawing.Size(6, 37)
         '
         'btBuscar
         '
@@ -625,14 +625,14 @@ Partial Class FormEmpleado
         Me.btBuscar.Image = Global.Quality.My.Resources.Resources.Search_icon
         Me.btBuscar.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.btBuscar.Name = "btBuscar"
-        Me.btBuscar.Size = New System.Drawing.Size(86, 30)
+        Me.btBuscar.Size = New System.Drawing.Size(90, 34)
         Me.btBuscar.Text = "Buscar"
         Me.btBuscar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         '
         'ToolStripSeparator2
         '
         Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
-        Me.ToolStripSeparator2.Size = New System.Drawing.Size(6, 33)
+        Me.ToolStripSeparator2.Size = New System.Drawing.Size(6, 37)
         '
         'btRegistrar
         '
@@ -641,14 +641,14 @@ Partial Class FormEmpleado
         Me.btRegistrar.Image = Global.Quality.My.Resources.Resources.Save_icon__1_
         Me.btRegistrar.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.btRegistrar.Name = "btRegistrar"
-        Me.btRegistrar.Size = New System.Drawing.Size(101, 30)
+        Me.btRegistrar.Size = New System.Drawing.Size(105, 34)
         Me.btRegistrar.Text = "Registrar"
         Me.btRegistrar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         '
         'ToolStripSeparator4
         '
         Me.ToolStripSeparator4.Name = "ToolStripSeparator4"
-        Me.ToolStripSeparator4.Size = New System.Drawing.Size(6, 33)
+        Me.ToolStripSeparator4.Size = New System.Drawing.Size(6, 37)
         '
         'btEditar
         '
@@ -657,14 +657,14 @@ Partial Class FormEmpleado
         Me.btEditar.Image = Global.Quality.My.Resources.Resources.pencil_icon__1_
         Me.btEditar.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.btEditar.Name = "btEditar"
-        Me.btEditar.Size = New System.Drawing.Size(82, 30)
+        Me.btEditar.Size = New System.Drawing.Size(86, 34)
         Me.btEditar.Text = "Editar"
         Me.btEditar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         '
         'ToolStripSeparator5
         '
         Me.ToolStripSeparator5.Name = "ToolStripSeparator5"
-        Me.ToolStripSeparator5.Size = New System.Drawing.Size(6, 33)
+        Me.ToolStripSeparator5.Size = New System.Drawing.Size(6, 37)
         '
         'btCancelar
         '
@@ -673,14 +673,14 @@ Partial Class FormEmpleado
         Me.btCancelar.Image = Global.Quality.My.Resources.Resources.Actions_blue_arrow_undo_icon
         Me.btCancelar.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.btCancelar.Name = "btCancelar"
-        Me.btCancelar.Size = New System.Drawing.Size(100, 30)
+        Me.btCancelar.Size = New System.Drawing.Size(104, 34)
         Me.btCancelar.Text = "Cancelar"
         Me.btCancelar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         '
         'ToolStripSeparator3
         '
         Me.ToolStripSeparator3.Name = "ToolStripSeparator3"
-        Me.ToolStripSeparator3.Size = New System.Drawing.Size(6, 33)
+        Me.ToolStripSeparator3.Size = New System.Drawing.Size(6, 37)
         '
         'btAnular
         '
@@ -689,14 +689,14 @@ Partial Class FormEmpleado
         Me.btAnular.Image = Global.Quality.My.Resources.Resources.document_delete_icon__1_
         Me.btAnular.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.btAnular.Name = "btAnular"
-        Me.btAnular.Size = New System.Drawing.Size(87, 30)
+        Me.btAnular.Size = New System.Drawing.Size(91, 34)
         Me.btAnular.Text = "Anular"
         Me.btAnular.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         '
         'ToolStripSeparator6
         '
         Me.ToolStripSeparator6.Name = "ToolStripSeparator6"
-        Me.ToolStripSeparator6.Size = New System.Drawing.Size(6, 33)
+        Me.ToolStripSeparator6.Size = New System.Drawing.Size(6, 37)
         '
         'Panel1
         '

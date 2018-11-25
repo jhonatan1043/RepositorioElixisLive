@@ -40,6 +40,8 @@ Partial Class FormProgramacionCita
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.Panel2 = New System.Windows.Forms.Panel()
         Me.GroupBox4.SuspendLayout()
         Me.ToolStrip1.SuspendLayout()
         Me.Panel1.SuspendLayout()
@@ -48,6 +50,8 @@ Partial Class FormProgramacionCita
         '
         'GroupBox4
         '
+        Me.GroupBox4.Controls.Add(Me.Panel3)
+        Me.GroupBox4.Controls.Add(Me.Panel2)
         Me.GroupBox4.Controls.Add(Me.txtBusqueda)
         Me.GroupBox4.Controls.Add(Me.Label3)
         Me.GroupBox4.Controls.Add(Me.dFecha)
@@ -63,9 +67,9 @@ Partial Class FormProgramacionCita
         'txtBusqueda
         '
         Me.txtBusqueda.Font = New System.Drawing.Font("Times New Roman", 10.0!, System.Drawing.FontStyle.Italic)
-        Me.txtBusqueda.Location = New System.Drawing.Point(415, 20)
+        Me.txtBusqueda.Location = New System.Drawing.Point(447, 20)
         Me.txtBusqueda.Name = "txtBusqueda"
-        Me.txtBusqueda.Size = New System.Drawing.Size(363, 23)
+        Me.txtBusqueda.Size = New System.Drawing.Size(331, 23)
         Me.txtBusqueda.TabIndex = 10066
         '
         'Label3
@@ -84,7 +88,7 @@ Partial Class FormProgramacionCita
         Me.dFecha.CustomFormat = "MMMM\dddd,dd\yyyy"
         Me.dFecha.Font = New System.Drawing.Font("Times New Roman", 10.0!, System.Drawing.FontStyle.Italic)
         Me.dFecha.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.dFecha.Location = New System.Drawing.Point(68, 20)
+        Me.dFecha.Location = New System.Drawing.Point(98, 21)
         Me.dFecha.Name = "dFecha"
         Me.dFecha.Size = New System.Drawing.Size(208, 23)
         Me.dFecha.TabIndex = 10059
@@ -94,7 +98,7 @@ Partial Class FormProgramacionCita
         Me.Label5.AutoSize = True
         Me.Label5.BackColor = System.Drawing.Color.Transparent
         Me.Label5.Font = New System.Drawing.Font("Times New Roman", 10.0!, System.Drawing.FontStyle.Italic)
-        Me.Label5.Location = New System.Drawing.Point(15, 23)
+        Me.Label5.Location = New System.Drawing.Point(8, 24)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(48, 16)
         Me.Label5.TabIndex = 10061
@@ -120,6 +124,7 @@ Partial Class FormProgramacionCita
         '
         Me.txtPendiente.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.txtPendiente.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtPendiente.Enabled = False
         Me.txtPendiente.Name = "txtPendiente"
         Me.txtPendiente.ReadOnly = True
         Me.txtPendiente.Size = New System.Drawing.Size(55, 25)
@@ -135,6 +140,7 @@ Partial Class FormProgramacionCita
         '
         Me.txtCancelado.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.txtCancelado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtCancelado.Enabled = False
         Me.txtCancelado.Name = "txtCancelado"
         Me.txtCancelado.ReadOnly = True
         Me.txtCancelado.Size = New System.Drawing.Size(55, 25)
@@ -150,6 +156,7 @@ Partial Class FormProgramacionCita
         '
         Me.txtRealizado.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.txtRealizado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtRealizado.Enabled = False
         Me.txtRealizado.Name = "txtRealizado"
         Me.txtRealizado.ReadOnly = True
         Me.txtRealizado.Size = New System.Drawing.Size(55, 25)
@@ -165,6 +172,7 @@ Partial Class FormProgramacionCita
         '
         Me.ToolStripTextBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.ToolStripTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.ToolStripTextBox1.Enabled = False
         Me.ToolStripTextBox1.Name = "ToolStripTextBox1"
         Me.ToolStripTextBox1.ReadOnly = True
         Me.ToolStripTextBox1.Size = New System.Drawing.Size(55, 25)
@@ -197,7 +205,7 @@ Partial Class FormProgramacionCita
         'PictureBox1
         '
         Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox1.Image = Global.Quality.My.Resources.Resources.glossy_3d_blue_orbs2_095_icon
+        Me.PictureBox1.Image = Global.Quality.My.Resources.Resources.Resume_icon
         Me.PictureBox1.Location = New System.Drawing.Point(4, -7)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(69, 53)
@@ -216,6 +224,26 @@ Partial Class FormProgramacionCita
         Me.Label1.TabIndex = 1
         Me.Label1.Text = "Agenda de Citas"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Panel3
+        '
+        Me.Panel3.BackColor = System.Drawing.Color.White
+        Me.Panel3.BackgroundImage = Global.Quality.My.Resources.Resources.Actions_zoom_out_icon
+        Me.Panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Panel3.Location = New System.Drawing.Point(413, 20)
+        Me.Panel3.Name = "Panel3"
+        Me.Panel3.Size = New System.Drawing.Size(30, 23)
+        Me.Panel3.TabIndex = 10068
+        '
+        'Panel2
+        '
+        Me.Panel2.BackColor = System.Drawing.Color.White
+        Me.Panel2.BackgroundImage = Global.Quality.My.Resources.Resources.calendar_icon
+        Me.Panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Panel2.Location = New System.Drawing.Point(62, 21)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(30, 23)
+        Me.Panel2.TabIndex = 10067
         '
         'FormProgramacionCita
         '
@@ -261,4 +289,6 @@ Partial Class FormProgramacionCita
     Public WithEvents Panel1 As Panel
     Public WithEvents PictureBox1 As PictureBox
     Public WithEvents Label1 As Label
+    Friend WithEvents Panel2 As Panel
+    Friend WithEvents Panel3 As Panel
 End Class
