@@ -475,6 +475,15 @@
     <Content Include="ReferenciaDLL\CnxElixisLiveBD.dll" />
     <Content Include="ReferenciaDLL\MySql.Data.DLL" />
     <Content Include="ReferenciaDLL\NotifySenderControl.dll" />
+    <None Include="Resources\Cart-icon.png" />
+    <None Include="Resources\shop-cart-icon.png" />
+    <None Include="Resources\Admin-icon.png" />
+    <None Include="Resources\Zoom-icon.png" />
+    <None Include="Resources\app-search-icon1.png" />
+    <None Include="Resources\Printer-icon %281%29.png" />
+    <None Include="Resources\Arrows-Undo-icon.png" />
+    <None Include="Resources\edit-file-icon.png" />
+    <None Include="Resources\cash-register-icon %283%29.png" />
     <None Include="Resources\printer-icon1.png" />
     <None Include="Resources\delete-file-icon %281%29.png" />
     <None Include="Resources\Floppy-Drive-icon.png" />
