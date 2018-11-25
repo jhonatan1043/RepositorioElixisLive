@@ -8,33 +8,49 @@
         objCita = New AgendarCita
         Generales.deshabilitarBotones(ToolStrip1)
         Generales.deshabilitarControles(Me)
+        validarGrilla()
+        establecerPosicion()
         If estadoRegistro = True Then
             btEditar.Enabled = True
             btAnular.Enabled = True
         Else
             txtobservacion.ReadOnly = False
             txtfecha.Text = Format(fechaHora, Constantes.FORMATO_FECHA_HORA)
+            validarEdicionGrilla(Constantes.EDITABLE)
             btBuscarCliente.Enabled = True
             btRegistrar.Enabled = True
             btCancelar.Enabled = True
+            objCita.dtServicio.Rows.Add()
         End If
-        validarGrilla()
-        establecerPosicion()
     End Sub
     Private Sub validarGrilla()
         With dgvServicio
+            .Columns("dgCodigo").Visible = False
             .Columns("dgCodigo").DataPropertyName = "codigo"
-            .Columns("dgDescripcion").DataPropertyName = "Descripcion"
+            .Columns("dgServicio").DataPropertyName = "Descripcion"
             .Columns("dgCantidad").DataPropertyName = "Cantidad"
-            .Columns("dgQuitar").DisplayIndex = 4
+            .Columns("dgQuitar").DisplayIndex = 3
             .DataSource = objCita.dtServicio
             .AutoGenerateColumns = False
         End With
+    End Sub
+    Private Sub validarEdicionGrilla(Estado As Boolean)
+        With dgvServicio
+            .ReadOnly = False
+            .Columns("dgServicio").ReadOnly = True
+            .Columns("dgCantidad").ReadOnly = True
+        End With
+        If Estado = True Then
+            With dgvServicio
+                .Columns("dgCantidad").ReadOnly = False
+            End With
+        End If
     End Sub
     Private Sub btEditar_Click(sender As Object, e As EventArgs) Handles btEditar.Click
         If EstiloMensajes.mostrarMensajePregunta(MensajeSistema.EDITAR) = Constantes.SI Then
             Generales.deshabilitarBotones(ToolStrip1)
             Generales.habilitarControles(Me)
+            validarEdicionGrilla(Constantes.EDITABLE)
             btRegistrar.Enabled = True
             btCancelar.Enabled = True
         End If
