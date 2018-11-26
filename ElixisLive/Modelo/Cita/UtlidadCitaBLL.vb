@@ -41,12 +41,15 @@
         Dim formCitaMedica As New FormCitaMedica
         Dim horaExtraida As String = Nothing
         Try
+
             horaExtraida = If(sender.tag.ToString.Length = 2, sender.tag, sender.tag.ToString.Remove(2))
             idCita = If(sender.tag.ToString.Length = 2, String.Empty, sender.tag.ToString.Substring(3))
+
             If Not String.IsNullOrEmpty(idCita) Then
                 formCitaMedica.estadoRegistro = True
-                'formCitaMedica.cargarPaciente(idCita)
+                formCitaMedica.codigoCita = idCita
             End If
+
             formCitaMedica.objFormularioProgram = objFormCita
             formCitaMedica.fechaHora = fechaDia.AddHours(-fechaDia.Hour).AddHours(horaExtraida)
             formCitaMedica.ShowDialog()

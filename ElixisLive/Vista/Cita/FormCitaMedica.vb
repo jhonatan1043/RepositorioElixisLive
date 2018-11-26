@@ -3,7 +3,9 @@
     Public Property estadoRegistro As Boolean
     Public Property objFormularioProgram As FormProgramacionCita
     Property fechaHora As DateTime
+    Property codigoCita As Integer
     Dim formulario As New vForm
+
     Private Sub FormCitaMedica_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         objCita = New AgendarCita
         Generales.deshabilitarBotones(ToolStrip1)
@@ -11,6 +13,7 @@
         validarGrilla()
         establecerPosicion()
         If estadoRegistro = True Then
+            cargarCita(codigoCita)
             btEditar.Enabled = True
             btAnular.Enabled = True
         Else
@@ -194,4 +197,19 @@
         End If
         Return resultado
     End Function
+    Public Sub cargarCita(idCita As Integer)
+        Dim params As New List(Of String)
+        Dim fila As DataRow
+        Try
+            params.Add(idCita)
+            fila = Generales.cargarItem("[SP_ADMIN_CITA_CARGAR]", params)
+            textNombre.Text = fila("Nombre")
+            txtfecha.Text = Format(fila("Fecha_Cita"), Constantes.FORMATO_FECHA_HORA)
+            txtobservacion.Text = fila("Observacion")
+            Generales.llenarTabla("[SP_ADMIN_CITA_CARGAR_DETALLE]", params, objCita.dtServicio)
+            dgvServicio.DataSource = objCita.dtServicio
+        Catch ex As Exception
+            EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
+        End Try
+    End Sub
 End Class
