@@ -23,14 +23,12 @@
         Return dt
     End Function
     Public Shared Function cargarProgramacionCita(Fecha As Date,
-                                                  busqueda As String,
-                                                  vista As Integer) As DataTable
+                                                  busqueda As String) As DataTable
         Dim params As New List(Of String)
         Dim dtable As New DataTable
         Try
             params.Add(Fecha)
-            params.Add(vista)
-            params.Add(busqueda)
+            params.Add(If(String.IsNullOrEmpty(busqueda), Nothing, busqueda))
             Generales.llenarTabla("[SP_ADMIN_PROGRAMACION_CITA]", params, dtable)
         Catch ex As Exception
             Throw ex

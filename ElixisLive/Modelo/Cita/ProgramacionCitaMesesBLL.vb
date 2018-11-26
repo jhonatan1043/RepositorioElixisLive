@@ -25,7 +25,7 @@ Public Class ProgramacionCitaMesesBLL
         Dim params As New List(Of String)
         Try
             valoresInicialesMes()
-            dtDia = UtlidadCitaBLL.cargarProgramacionCita(fecha, busqueda, 1)
+            dtDia = UtlidadCitaBLL.cargarProgramacionCita(fecha, busqueda)
             dtFectivo = UtlidadCitaBLL.cargarFestivosMes(fecha)
 
             UtlidadCitaBLL.fechaDia = fecha

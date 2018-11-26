@@ -84,7 +84,7 @@
 
         Try
             valoresInicialesDia()
-            dtCita = UtlidadCitaBLL.cargarProgramacionCita(fecha, busqueda, 1)
+            dtCita = UtlidadCitaBLL.cargarProgramacionCita(fecha, busqueda)
             UtlidadCitaBLL.fechaDia = fecha
             params.Add(dtCita.Select("Estado_Atencion='P'").Count.ToString)
             params.Add(dtCita.Select("Estado_Atencion='C'").Count.ToString)

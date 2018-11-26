@@ -100,7 +100,7 @@
         Dim params As New List(Of String)
 
         Try
-            dtCitas = UtlidadCitaBLL.cargarProgramacionCita(fecha, busqueda, 0)
+            dtCitas = UtlidadCitaBLL.cargarProgramacionCita(fecha, busqueda)
             valoresInicialesDia()
 
             params.Add(dtCitas.Select("Estado_Atencion='P'").Count.ToString)
