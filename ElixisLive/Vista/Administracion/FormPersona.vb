@@ -17,7 +17,7 @@ Public Class FormPersona
         If String.IsNullOrEmpty(TextIdentificacion.Text) Or
                     CombotipoIdentificacion.SelectedIndex = 0 Or
                     String.IsNullOrEmpty(TextNombre.Text) Or
-                    String.IsNullOrEmpty(TextCelular.Text) Or
+                    String.IsNullOrEmpty(TextTelefono.Text) Or
                    cbSede.SelectedIndex = 0 Or
                    cbDepartamento.SelectedIndex = 0 Or
                    ComboMunicipio.SelectedIndex = 0 Or
@@ -28,48 +28,7 @@ Public Class FormPersona
         Return False
     End Function
 
-    Private Sub mostrarIconoError()
-        If CombotipoIdentificacion.SelectedIndex = 0 Then
-            ErrorIcono.SetError(CombotipoIdentificacion, " Error")
-        Else
-            ErrorIcono.SetError(CombotipoIdentificacion, "")
-        End If
-        If TextIdentificacion.Text.Length = 0 Then
-            ErrorIcono.SetError(TextIdentificacion, " Error")
-        Else
-            ErrorIcono.SetError(TextIdentificacion, "")
-        End If
-        If TextNombre.Text.Length = 0 Then
-            ErrorIcono.SetError(TextNombre, " Error")
-        Else
-            ErrorIcono.SetError(TextNombre, "")
-        End If
-        If TextTelefono.Text.Length = 0 Then
-            ErrorIcono.SetError(TextTelefono, " Error")
-        Else
-            ErrorIcono.SetError(TextTelefono, "")
-        End If
-        If cbSede.SelectedIndex = 0 Then
-            ErrorIcono.SetError(cbSede, " Error")
-        Else
-            ErrorIcono.SetError(cbSede, "")
-        End If
-        If cbDepartamento.SelectedIndex = 0 Then
-            ErrorIcono.SetError(cbDepartamento, " Error")
-        Else
-            ErrorIcono.SetError(cbDepartamento, "")
-        End If
-        If ComboMunicipio.SelectedIndex = 0 Then
-            ErrorIcono.SetError(ComboMunicipio, " Error")
-        Else
-            ErrorIcono.SetError(ComboMunicipio, "")
-        End If
-        If TextDireccion.Text.Length = 0 Then
-            ErrorIcono.SetError(TextDireccion, " Error")
-        Else
-            ErrorIcono.SetError(TextDireccion, "")
-        End If
-    End Sub
+
     Private Sub quitarIconoError()
         ErrorIcono.SetError(TextDireccion, "")
         ErrorIcono.SetError(ComboMunicipio, "")
@@ -118,6 +77,7 @@ Public Class FormPersona
         Generales.deshabilitarControles(GroupBox1)
         Generales.limpiarControles(Me)
         TextDV.Enabled = False
+        chUsuario.Enabled = True
         objPersona.codigo = Nothing
         btCancelar.Enabled = True
         btRegistrar.Enabled = True
@@ -296,4 +256,122 @@ Public Class FormPersona
             TextDV.Text = Nothing
         End If
     End Sub
+
+    Private Sub CombotipoIdentificacion_Validating(sender As Object, e As EventArgs) Handles CombotipoIdentificacion.LostFocus
+        If btRegistrar.Enabled = True Then
+            If CombotipoIdentificacion.SelectedIndex = 0 Then
+                ErrorIcono.SetError(CombotipoIdentificacion, "Debe escoger un tipo de identifición")
+            Else
+                ErrorIcono.SetError(CombotipoIdentificacion, "")
+            End If
+        End If
+    End Sub
+    Private Sub TextNombre_Validating(sender As Object, e As EventArgs) Handles TextNombre.LostFocus
+        If btRegistrar.Enabled = True Then
+            If TextNombre.Text.Length = 0 Then
+                ErrorIcono.SetError(TextNombre, "Debe Digitar el nombre")
+            Else
+                ErrorIcono.SetError(TextNombre, "")
+            End If
+        End If
+    End Sub
+    Private Sub TextIdentificacion_Validating(sender As Object, e As EventArgs) Handles TextIdentificacion.LostFocus
+        If btRegistrar.Enabled = True Then
+            If TextIdentificacion.Text.Length = 0 Then
+                ErrorIcono.SetError(TextIdentificacion, "Debe Digitar el número de identificación")
+            Else
+                ErrorIcono.SetError(TextIdentificacion, "")
+            End If
+        End If
+    End Sub
+    Private Sub TextDireccion_Validating(sender As Object, e As EventArgs) Handles TextDireccion.LostFocus
+        If btRegistrar.Enabled = True Then
+            If TextDireccion.Text.Length = 0 Then
+                ErrorIcono.SetError(TextDireccion, "Debe Digitar una dirección")
+            Else
+                ErrorIcono.SetError(TextDireccion, "")
+            End If
+        End If
+    End Sub
+    Private Sub TextTelefono_Validating(sender As Object, e As EventArgs) Handles TextTelefono.LostFocus
+        If btRegistrar.Enabled = True Then
+            If TextTelefono.Text.Length = 0 Then
+                ErrorIcono.SetError(TextTelefono, "Debe Digitar un número de teléfono")
+            Else
+                ErrorIcono.SetError(TextTelefono, "")
+            End If
+        End If
+    End Sub
+    Private Sub cbDepartamento_Validating(sender As Object, e As EventArgs) Handles cbDepartamento.LostFocus
+        If btRegistrar.Enabled = True Then
+            If cbDepartamento.SelectedIndex = 0 Then
+                ErrorIcono.SetError(cbDepartamento, "Debe escoger un departamento")
+            Else
+                ErrorIcono.SetError(cbDepartamento, "")
+            End If
+        End If
+    End Sub
+    Private Sub ComboMunicipio_Validating(sender As Object, e As EventArgs) Handles ComboMunicipio.LostFocus
+        If btRegistrar.Enabled = True Then
+            If ComboMunicipio.SelectedIndex = 0 Then
+                ErrorIcono.SetError(ComboMunicipio, "Debe escoger un municipio")
+            Else
+                ErrorIcono.SetError(ComboMunicipio, "")
+            End If
+        End If
+    End Sub
+    Private Sub cbSede_Validating(sender As Object, e As EventArgs) Handles cbSede.LostFocus
+        If btRegistrar.Enabled = True Then
+            If ComboMunicipio.SelectedIndex = 0 Then
+                ErrorIcono.SetError(ComboMunicipio, "Debe escoger un municipio")
+            Else
+                ErrorIcono.SetError(ComboMunicipio, "")
+            End If
+        End If
+    End Sub
+    Private Sub mostrarIconoError()
+        If CombotipoIdentificacion.SelectedIndex = 0 Then
+            ErrorIcono.SetError(CombotipoIdentificacion, "Debe escoger un tipo de identifición")
+        Else
+            ErrorIcono.SetError(CombotipoIdentificacion, "")
+        End If
+        If TextIdentificacion.Text.Length = 0 Then
+            ErrorIcono.SetError(TextIdentificacion, "Debe Digitar el número de identificación")
+        Else
+            ErrorIcono.SetError(TextIdentificacion, "")
+        End If
+        If TextNombre.Text.Length = 0 Then
+            ErrorIcono.SetError(TextNombre, "Debe Digitar el nombre")
+        Else
+            ErrorIcono.SetError(TextNombre, "")
+        End If
+        If cbDepartamento.SelectedIndex = 0 Then
+            ErrorIcono.SetError(cbDepartamento, "Debe escoger un departamento")
+        Else
+            ErrorIcono.SetError(cbDepartamento, "")
+        End If
+        If ComboMunicipio.SelectedIndex = 0 Then
+            ErrorIcono.SetError(ComboMunicipio, "Debe escoger un municipio")
+        Else
+            ErrorIcono.SetError(ComboMunicipio, "")
+        End If
+        If cbSede.SelectedIndex = 0 Then
+            ErrorIcono.SetError(cbSede, "Debe escoger una sede")
+        Else
+            ErrorIcono.SetError(cbSede, "")
+        End If
+        If TextDireccion.Text.Length = 0 Then
+            ErrorIcono.SetError(TextDireccion, "Debe Digitar una dirección")
+        Else
+            ErrorIcono.SetError(TextDireccion, "")
+        End If
+        If TextTelefono.Text.Length = 0 Then
+            ErrorIcono.SetError(TextTelefono, "Debe Digitar un número de teléfono")
+        Else
+            ErrorIcono.SetError(TextTelefono, "")
+        End If
+    End Sub
+
+
+
 End Class

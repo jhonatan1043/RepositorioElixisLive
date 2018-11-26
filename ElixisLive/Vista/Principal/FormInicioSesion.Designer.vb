@@ -203,9 +203,9 @@ Partial Class FormInicioSesion
         Me.Panel3.BackColor = System.Drawing.Color.White
         Me.Panel3.BackgroundImage = Global.Quality.My.Resources.Resources.dribbble_shop_icon
         Me.Panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Panel3.Location = New System.Drawing.Point(396, 112)
+        Me.Panel3.Location = New System.Drawing.Point(398, 115)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(29, 25)
+        Me.Panel3.Size = New System.Drawing.Size(25, 21)
         Me.Panel3.TabIndex = 10
         '
         'Panel2

@@ -61,6 +61,7 @@
         Else
             EstiloMensajes.mostrarMensajeAdvertencia(MensajeSistema.VALIDAR_CAMPOS)
         End If
+        mostrarIconoError()
     End Sub
     Private Sub btEditar_Click(sender As Object, e As EventArgs) Handles btEditar.Click
         If EstiloMensajes.mostrarMensajePregunta(MensajeSistema.EDITAR) = Constantes.SI Then
@@ -73,6 +74,7 @@
     Private Sub btCancelar_Click(sender As Object, e As EventArgs) Handles btCancelar.Click
         If EstiloMensajes.mostrarMensajePregunta(MensajeSistema.CANCELAR) = Constantes.SI Then
             cargarInfomacion(Constantes.CODIGO_EMPRESA)
+            quitarIconoError()
         End If
     End Sub
     Private Sub txtId_TextChanged(sender As Object, e As EventArgs) Handles txtId.TextChanged
@@ -129,4 +131,63 @@
         End If
     End Sub
 
+    Private Sub txtId_Click(sender As Object, e As EventArgs) Handles txtPie.LostFocus, txtId.LostFocus,
+        txtEncabezado.LostFocus, TxtDescripcion.LostFocus, TextTelefono.LostFocus, TextDireccion.LostFocus,
+        TextCelular.LostFocus, ComboMunicipio.LostFocus, cbDepartamento.LostFocus
+        mostrarIconoError()
+    End Sub
+    Private Sub mostrarIconoError()
+
+        If txtId.Text.Length = 0 Then
+            ErrorIcono.SetError(txtId, "Debe digitar un nit")
+        Else
+            ErrorIcono.SetError(txtId, "")
+        End If
+        If TxtDescripcion.Text.Length = 0 Then
+            ErrorIcono.SetError(TxtDescripcion, "Debe digitar una razón social")
+        Else
+            ErrorIcono.SetError(TxtDescripcion, "")
+        End If
+        If TextTelefono.Text.Length = 0 Then
+            ErrorIcono.SetError(TextTelefono, "Debe digitar un número de teléfono")
+        Else
+            ErrorIcono.SetError(TextTelefono, "")
+        End If
+        If TextDireccion.Text.Length = 0 Then
+            ErrorIcono.SetError(TextDireccion, "Debe digitar una dirección")
+        Else
+            ErrorIcono.SetError(TextDireccion, "")
+        End If
+        If cbDepartamento.SelectedIndex = 0 Then
+            ErrorIcono.SetError(cbDepartamento, "Debe escoger un departamento")
+        Else
+            ErrorIcono.SetError(cbDepartamento, "")
+        End If
+        If ComboMunicipio.SelectedIndex = 0 Then
+            ErrorIcono.SetError(ComboMunicipio, "Debe escoger un municipio")
+        Else
+            ErrorIcono.SetError(ComboMunicipio, "")
+        End If
+
+        If txtPie.Text.Length = 0 Then
+            ErrorIcono.SetError(txtPie, "Debe digitar información del pié de factura")
+        Else
+            ErrorIcono.SetError(txtPie, "")
+        End If
+        If txtEncabezado.Text.Length = 0 Then
+            ErrorIcono.SetError(txtEncabezado, "Debe digitar el encabezado de la factura")
+        Else
+            ErrorIcono.SetError(txtEncabezado, "")
+        End If
+    End Sub
+    Private Sub quitarIconoError()
+        ErrorIcono.SetError(TextDireccion, "")
+        ErrorIcono.SetError(ComboMunicipio, "")
+        ErrorIcono.SetError(cbDepartamento, "")
+        ErrorIcono.SetError(txtEncabezado, "")
+        ErrorIcono.SetError(TextTelefono, "")
+        ErrorIcono.SetError(txtPie, "")
+        ErrorIcono.SetError(TxtDescripcion, "")
+        ErrorIcono.SetError(txtId, "")
+    End Sub
 End Class

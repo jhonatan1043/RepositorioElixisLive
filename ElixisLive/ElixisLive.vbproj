@@ -475,6 +475,7 @@
     <Content Include="ReferenciaDLL\CnxElixisLiveBD.dll" />
     <Content Include="ReferenciaDLL\MySql.Data.DLL" />
     <Content Include="ReferenciaDLL\NotifySenderControl.dll" />
+    <None Include="Resources\Preview-icon.png" />
     <None Include="Resources\Help-icon.png" />
     <None Include="Resources\verde.png" />
     <None Include="Resources\rojo.png" />

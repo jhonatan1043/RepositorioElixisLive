@@ -1,6 +1,7 @@
 ﻿Imports System.ComponentModel
 Public Class FormProveedor
-    Dim objPorveedor As Proveedor
+
+    Dim objProveedor As Proveedor
     Private Sub Form_FormClosing(sender As Object, e As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
         If EstiloMensajes.mostrarMensajePregunta(MensajeSistema.SALIR) = Constantes.SI Then
             Me.Dispose()
@@ -9,7 +10,7 @@ Public Class FormProveedor
         End If
     End Sub
     Private Sub FormBaseProductivo_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        objPorveedor = New Proveedor
+        objProveedor = New Proveedor
         Try
             Generales.deshabilitarBotones(ToolStrip1)
             Generales.deshabilitarControles(Me)
@@ -39,9 +40,9 @@ Public Class FormProveedor
     Private Sub cargarInfomacion(pcodigo As Integer)
         Dim params As New List(Of String)
         Dim dfila As DataRow
-        objPorveedor.codigo = pcodigo
-        params.Add(objPorveedor.codigo)
-        dfila = Generales.cargarItem(objPorveedor.sqlCargar, params)
+        objProveedor.codigo = pcodigo
+        params.Add(objProveedor.codigo)
+        dfila = Generales.cargarItem(objProveedor.sqlCargar, params)
         Try
             If Not IsNothing(dfila) Then
                 cargarCampos(dfila)
@@ -52,7 +53,7 @@ Public Class FormProveedor
                 cbTipoCuenta.SelectedValue = If(String.IsNullOrEmpty(dfila("Tipo_Cuenta_Banco")), -1, dfila("Tipo_Cuenta_Banco"))
                 txtCuenta.Text = If(cbFormaPago.SelectedValue = 0, String.Empty, dfila("Numero_Cuenta"))
                 params.Add(ElementoMenu.codigo)
-                Generales.llenardgv(objPorveedor.sqlCargarDetalle, dgvParametro, params)
+                Generales.llenardgv(objProveedor.sqlCargarDetalle, dgvParametro, params)
                 Generales.diseñoDGV(dgvParametro)
                 Generales.diseñoGrillaParametros(dgvParametro)
                 controlVerificar()
@@ -89,7 +90,7 @@ Public Class FormProveedor
         Dim params As New List(Of String)
         params.Add(String.Empty)
         Try
-            Generales.buscarElemento(objPorveedor.sqlConsulta,
+            Generales.buscarElemento(objProveedor.sqlConsulta,
                                    params,
                                    AddressOf cargarInfomacion,
                                    Titulo.BUSQUEDA_PROVEEDOR,
@@ -114,7 +115,7 @@ Public Class FormProveedor
     Private Sub cargarPersona(pCodigo As Integer)
         Dim params As New List(Of String)
         Dim dfila As DataRow
-        objPorveedor.codigo = pCodigo
+        objProveedor.codigo = pCodigo
         params.Add(pCodigo)
         Try
             dfila = Generales.cargarItem(Sentencias.PERSONA_CARGAR, params)
@@ -129,13 +130,13 @@ Public Class FormProveedor
         Generales.deshabilitarControles(gbInform)
         Generales.limpiarControles(Me)
         cargarParametros()
-        objPorveedor.codigo = Nothing
+        objProveedor.codigo = Nothing
         btBuscarPersona.Enabled = True
         btCancelar.Enabled = True
         btRegistrar.Enabled = True
     End Sub
     Private Function validarCampos() As Boolean
-        If IsNothing(objPorveedor.codigo) Or
+        If IsNothing(objProveedor.codigo) Or
            cbFormaPago.SelectedIndex = 0 Or
            cbRegimen.SelectedIndex = 0 Then
         Else
@@ -145,20 +146,20 @@ Public Class FormProveedor
     End Function
 
     Private Sub cargarObjeto()
-        objPorveedor.codigoRegimen = cbRegimen.SelectedValue
-        objPorveedor.CodigoTipoPago = cbTipoPago.SelectedValue
-        objPorveedor.codigoFormaPago = cbFormaPago.SelectedValue
-        objPorveedor.codigoBanco = If(cbBanco.SelectedValue.ToString = -1, Nothing, cbBanco.SelectedValue.ToString)
-        objPorveedor.codigoCuenta = If(cbTipoCuenta.SelectedValue.ToString = -1, Nothing, cbTipoCuenta.SelectedValue.ToString)
-        objPorveedor.Cuenta = If(txtCuenta.Text = String.Empty, Nothing, txtCuenta.Text)
-        objPorveedor.dtParametro = dgvParametro.DataSource
+        objProveedor.codigoRegimen = cbRegimen.SelectedValue
+        objProveedor.CodigoTipoPago = cbTipoPago.SelectedValue
+        objProveedor.codigoFormaPago = cbFormaPago.SelectedValue
+        objProveedor.codigoBanco = If(cbBanco.SelectedValue.ToString = -1, Nothing, cbBanco.SelectedValue.ToString)
+        objProveedor.codigoCuenta = If(cbTipoCuenta.SelectedValue.ToString = -1, Nothing, cbTipoCuenta.SelectedValue.ToString)
+        objProveedor.Cuenta = If(txtCuenta.Text = String.Empty, Nothing, txtCuenta.Text)
+        objProveedor.dtParametro = dgvParametro.DataSource
     End Sub
     Private Sub btRegistrar_Click(sender As Object, e As EventArgs) Handles btRegistrar.Click
         dgvParametro.EndEdit()
         Try
             If validarCampos() = True Then
                 cargarObjeto()
-                ProveedorBLL.guardar(objPorveedor)
+                ProveedorBLL.guardar(objProveedor)
                 Generales.habilitarBotones(ToolStrip1)
                 Generales.deshabilitarControles(Me)
                 btCancelar.Enabled = False
@@ -167,6 +168,7 @@ Public Class FormProveedor
             Else
                 EstiloMensajes.mostrarMensajeAdvertencia(MensajeSistema.VALIDAR_CAMPOS)
             End If
+            mostrarIconoError()
         Catch ex As Exception
             EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
         End Try
@@ -192,7 +194,7 @@ Public Class FormProveedor
     Private Sub btAnular_Click(sender As Object, e As EventArgs) Handles btAnular.Click
         If EstiloMensajes.mostrarMensajePregunta(MensajeSistema.ANULAR) = Constantes.SI Then
             Try
-                If Generales.ejecutarSQL(objPorveedor.sqlAnular & objPorveedor.codigo) = True Then
+                If Generales.ejecutarSQL(objProveedor.sqlAnular & objProveedor.codigo) = True Then
                     Generales.limpiarControles(Me)
                     Generales.deshabilitarBotones(ToolStrip1)
                     btNuevo.Enabled = True
@@ -202,6 +204,13 @@ Public Class FormProveedor
             Catch ex As Exception
                 EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
             End Try
+        End If
+    End Sub
+    Private Sub cbFormaPago_Validating(sender As Object, e As EventArgs) Handles cbFormaPago.LostFocus,
+       txtNombre.LostFocus, cbRegimen.LostFocus,
+      cbTipoPago.LostFocus
+        If btRegistrar.Enabled = True Then
+            mostrarIconoError()
         End If
     End Sub
     Private Sub cbFormaPago_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbFormaPago.SelectedIndexChanged
@@ -214,6 +223,34 @@ Public Class FormProveedor
         Else
             gpPago.Enabled = True
         End If
+    End Sub
+    Private Sub mostrarIconoError()
+        If cbRegimen.SelectedIndex = 0 Then
+            Me.ErrorIcono.SetError(cbRegimen, "Debe escoger un regimen")
+        Else
+            Me.ErrorIcono.SetError(cbRegimen, Constantes.CADENA_VACIA)
+        End If
+        If cbFormaPago.SelectedIndex = 0 Then
+            Me.ErrorIcono.SetError(cbFormaPago, "Debe escoger una forma de pago")
+        Else
+            Me.ErrorIcono.SetError(cbFormaPago, Constantes.CADENA_VACIA)
+        End If
+        If cbTipoPago.SelectedIndex = 0 Then
+            Me.ErrorIcono.SetError(cbTipoPago, "Debe escoger un tipo de pago")
+        Else
+            Me.ErrorIcono.SetError(cbTipoPago, Constantes.CADENA_VACIA)
+        End If
+        If txtNombre.Text.Length = 0 Then
+            Me.ErrorIcono.SetError(txtNombre, "Debe escoger una persona")
+        Else
+            Me.ErrorIcono.SetError(txtNombre, Constantes.CADENA_VACIA)
+        End If
+    End Sub
+    Private Sub quitarIcono()
+        Me.ErrorIcono.SetError(txtNombre, Constantes.CADENA_VACIA)
+        Me.ErrorIcono.SetError(cbFormaPago, Constantes.CADENA_VACIA)
+        Me.ErrorIcono.SetError(cbTipoPago, Constantes.CADENA_VACIA)
+        Me.ErrorIcono.SetError(cbRegimen, Constantes.CADENA_VACIA)
     End Sub
 
 End Class

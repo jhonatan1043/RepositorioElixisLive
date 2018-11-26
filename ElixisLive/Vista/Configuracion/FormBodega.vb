@@ -48,6 +48,7 @@
             Generales.deshabilitarControles(Me)
             btNuevo.Enabled = True
             btBuscar.Enabled = True
+            Me.ErrorIcono.SetError(txtnombre, Constantes.CADENA_VACIA)
         End If
     End Sub
     Private Sub btEditar_Click(sender As Object, e As EventArgs) Handles btEditar.Click
@@ -101,6 +102,11 @@
                 txtcodigo.Text = objConfig.codigo
                 cargarRegistro()
                 EstiloMensajes.mostrarMensajeExitoso(MensajeSistema.REGISTRO_GUARDADO)
+            End If
+            If txtnombre.Text.Length = 0 Then
+                ErrorIcono.SetError(txtnombre, "Digite un nombre")
+            Else
+                ErrorIcono.SetError(txtnombre, "")
             End If
         Catch ex As Exception
             EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))

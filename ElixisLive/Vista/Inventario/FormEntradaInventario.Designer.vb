@@ -233,9 +233,9 @@ Partial Class FormEntradaInventario
         Me.btBuscarCompra.BackgroundImage = Global.Quality.My.Resources.Resources.fondo_azul
         Me.btBuscarCompra.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btBuscarCompra.Image = Global.Quality.My.Resources.Resources.Zoom_icon1
-        Me.btBuscarCompra.Location = New System.Drawing.Point(308, 12)
+        Me.btBuscarCompra.Location = New System.Drawing.Point(308, 14)
         Me.btBuscarCompra.Name = "btBuscarCompra"
-        Me.btBuscarCompra.Size = New System.Drawing.Size(31, 30)
+        Me.btBuscarCompra.Size = New System.Drawing.Size(28, 25)
         Me.btBuscarCompra.TabIndex = 66
         Me.btBuscarCompra.UseVisualStyleBackColor = True
         '

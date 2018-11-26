@@ -180,6 +180,7 @@ Public Class FormEmpleado
             Else
                 EstiloMensajes.mostrarMensajeAdvertencia(MensajeSistema.VALIDAR_CAMPOS)
             End If
+            mostrarIconoError()
         Catch ex As Exception
             EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
         End Try
@@ -190,6 +191,7 @@ Public Class FormEmpleado
             Generales.deshabilitarControles(Me)
             btNuevo.Enabled = True
             btBuscar.Enabled = True
+            quitarIcono()
         End If
     End Sub
     Private Sub btEditar_Click(sender As Object, e As EventArgs) Handles btEditar.Click
@@ -247,32 +249,42 @@ Public Class FormEmpleado
         params.Add(pcodigo)
         Generales.llenarTabla(Sentencias.SUCURSAL_EMPLEADO_CONSULTAR, params, tabla)
     End Sub
-    Private Sub cbDepartamento_Validating(sender As Object, e As CancelEventArgs) Handles cbDepartamento.Validating
-        If DirectCast(sender, ComboBox).SelectedIndex = 0 Then
-            Me.ErrorIcono.SetError(txtUsuario, "Debe escoger el departamento")
+    Private Sub mostrarIconoError()
+        If cbDepartamento.SelectedIndex = 0 Then
+            Me.ErrorIcono.SetError(cbDepartamento, "Debe escoger un departamento")
         Else
-            Me.ErrorIcono.SetError(txtUsuario, Constantes.CADENA_VACIA)
+            Me.ErrorIcono.SetError(cbDepartamento, Constantes.CADENA_VACIA)
+        End If
+        If cbFormaPago.SelectedIndex = 0 Then
+            Me.ErrorIcono.SetError(cbFormaPago, "Debe escoger una forma de pago")
+        Else
+            Me.ErrorIcono.SetError(cbFormaPago, Constantes.CADENA_VACIA)
+        End If
+        If cbCargo.SelectedIndex = 0 Then
+            Me.ErrorIcono.SetError(cbCargo, "Debe escoger un cargo")
+        Else
+            Me.ErrorIcono.SetError(cbCargo, Constantes.CADENA_VACIA)
+        End If
+        If txtNombre.Text.Length = 0 Then
+            Me.ErrorIcono.SetError(txtNombre, "Debe escoger una persona")
+        Else
+            Me.ErrorIcono.SetError(txtNombre, Constantes.CADENA_VACIA)
         End If
     End Sub
-    Private Sub cbFormaPago_Validating(sender As Object, e As CancelEventArgs) Handles cbFormaPago.Validating
-        If DirectCast(sender, ComboBox).SelectedIndex = 0 Then
-            Me.ErrorIcono.SetError(sender, "Debe escoger la forma de pago")
-        Else
-            Me.ErrorIcono.SetError(sender, Constantes.CADENA_VACIA)
-        End If
+    Private Sub quitarIcono()
+        Me.ErrorIcono.SetError(txtNombre, Constantes.CADENA_VACIA)
+        Me.ErrorIcono.SetError(cbFormaPago, Constantes.CADENA_VACIA)
+        Me.ErrorIcono.SetError(cbCargo, Constantes.CADENA_VACIA)
+        Me.ErrorIcono.SetError(cbDepartamento, Constantes.CADENA_VACIA)
     End Sub
-    Private Sub cbCargo_Validating(sender As Object, e As CancelEventArgs) Handles cbCargo.Validating
-        If DirectCast(sender, ComboBox).SelectedIndex = 0 Then
-            Me.ErrorIcono.SetError(sender, "Debe escoger el cargo")
-        Else
-            Me.ErrorIcono.SetError(sender, Constantes.CADENA_VACIA)
-        End If
-    End Sub
-    Private Sub txtIdentificacion_Validating(sender As Object, e As CancelEventArgs) Handles txtIdentificacion.Validating
-        If DirectCast(sender, TextBox).Text.Length = 0 Then
-            Me.ErrorIcono.SetError(sender, "Debe escoger una persona")
-        Else
-            Me.ErrorIcono.SetError(sender, Constantes.CADENA_VACIA)
+    Private Sub cbFormaPago_Validating(sender As Object, e As EventArgs) Handles cbFormaPago.LostFocus,
+       txtNombre.LostFocus, cbCargo.LostFocus,
+      cbDepartamento.LostFocus
+        If btRegistrar.Enabled = True Then
+            mostrarIconoError()
         End If
     End Sub
 End Class
+
+
+

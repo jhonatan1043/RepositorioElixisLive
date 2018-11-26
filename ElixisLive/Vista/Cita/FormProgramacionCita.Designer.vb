@@ -40,8 +40,6 @@ Partial Class FormProgramacionCita
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.Panel2 = New System.Windows.Forms.Panel()
         Me.GroupBox4.SuspendLayout()
         Me.ToolStrip1.SuspendLayout()
         Me.Panel1.SuspendLayout()
@@ -50,8 +48,6 @@ Partial Class FormProgramacionCita
         '
         'GroupBox4
         '
-        Me.GroupBox4.Controls.Add(Me.Panel3)
-        Me.GroupBox4.Controls.Add(Me.Panel2)
         Me.GroupBox4.Controls.Add(Me.txtBusqueda)
         Me.GroupBox4.Controls.Add(Me.Label3)
         Me.GroupBox4.Controls.Add(Me.dFecha)
@@ -67,7 +63,7 @@ Partial Class FormProgramacionCita
         'txtBusqueda
         '
         Me.txtBusqueda.Font = New System.Drawing.Font("Times New Roman", 10.0!, System.Drawing.FontStyle.Italic)
-        Me.txtBusqueda.Location = New System.Drawing.Point(447, 20)
+        Me.txtBusqueda.Location = New System.Drawing.Point(447, 21)
         Me.txtBusqueda.Name = "txtBusqueda"
         Me.txtBusqueda.Size = New System.Drawing.Size(331, 23)
         Me.txtBusqueda.TabIndex = 10066
@@ -77,7 +73,7 @@ Partial Class FormProgramacionCita
         Me.Label3.AutoSize = True
         Me.Label3.BackColor = System.Drawing.Color.Transparent
         Me.Label3.Font = New System.Drawing.Font("Times New Roman", 10.0!, System.Drawing.FontStyle.Italic)
-        Me.Label3.Location = New System.Drawing.Point(367, 23)
+        Me.Label3.Location = New System.Drawing.Point(404, 23)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(45, 16)
         Me.Label3.TabIndex = 10065
@@ -86,11 +82,10 @@ Partial Class FormProgramacionCita
         'dFecha
         '
         Me.dFecha.CustomFormat = "MMMM\dddd,dd\yyyy"
-        Me.dFecha.Font = New System.Drawing.Font("Times New Roman", 10.0!, System.Drawing.FontStyle.Italic)
-        Me.dFecha.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.dFecha.Location = New System.Drawing.Point(98, 21)
+        Me.dFecha.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.dFecha.Location = New System.Drawing.Point(62, 21)
         Me.dFecha.Name = "dFecha"
-        Me.dFecha.Size = New System.Drawing.Size(208, 23)
+        Me.dFecha.Size = New System.Drawing.Size(295, 25)
         Me.dFecha.TabIndex = 10059
         '
         'Label5
@@ -225,26 +220,6 @@ Partial Class FormProgramacionCita
         Me.Label1.Text = "Agenda de Citas"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'Panel3
-        '
-        Me.Panel3.BackColor = System.Drawing.Color.White
-        Me.Panel3.BackgroundImage = Global.Quality.My.Resources.Resources.Actions_zoom_out_icon
-        Me.Panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Panel3.Location = New System.Drawing.Point(413, 20)
-        Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(30, 23)
-        Me.Panel3.TabIndex = 10068
-        '
-        'Panel2
-        '
-        Me.Panel2.BackColor = System.Drawing.Color.White
-        Me.Panel2.BackgroundImage = Global.Quality.My.Resources.Resources.calendar_icon
-        Me.Panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Panel2.Location = New System.Drawing.Point(67, 20)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(30, 23)
-        Me.Panel2.TabIndex = 10067
-        '
         'FormProgramacionCita
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -289,6 +264,4 @@ Partial Class FormProgramacionCita
     Public WithEvents Panel1 As Panel
     Public WithEvents PictureBox1 As PictureBox
     Public WithEvents Label1 As Label
-    Friend WithEvents Panel2 As Panel
-    Friend WithEvents Panel3 As Panel
 End Class

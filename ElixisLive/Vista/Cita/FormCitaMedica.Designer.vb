@@ -46,7 +46,6 @@ Partial Class FormCitaMedica
         Me.DataGridViewTextBoxColumn16 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn17 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.Panel3 = New System.Windows.Forms.Panel()
         Me.btBuscarCliente = New System.Windows.Forms.Button()
         Me.txtfecha = New System.Windows.Forms.MaskedTextBox()
         Me.txtobservacion = New System.Windows.Forms.RichTextBox()
@@ -75,6 +74,7 @@ Partial Class FormCitaMedica
         Me.ToolStripSeparator3 = New System.Windows.Forms.ToolStripSeparator()
         Me.btAnular = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripSeparator6 = New System.Windows.Forms.ToolStripSeparator()
+        Me.Panel3 = New System.Windows.Forms.Panel()
         Me.GroupBox2.SuspendLayout()
         CType(Me.dgvServicio, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
@@ -216,16 +216,6 @@ Partial Class FormCitaMedica
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Información:"
         '
-        'Panel3
-        '
-        Me.Panel3.BackColor = System.Drawing.Color.White
-        Me.Panel3.BackgroundImage = Global.Quality.My.Resources.Resources.calendar_icon
-        Me.Panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Panel3.Location = New System.Drawing.Point(518, 20)
-        Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(30, 23)
-        Me.Panel3.TabIndex = 10068
-        '
         'btBuscarCliente
         '
         Me.btBuscarCliente.BackgroundImage = Global.Quality.My.Resources.Resources.fondo_azul
@@ -240,10 +230,10 @@ Partial Class FormCitaMedica
         'txtfecha
         '
         Me.txtfecha.Font = New System.Drawing.Font("Times New Roman", 10.0!, System.Drawing.FontStyle.Italic)
-        Me.txtfecha.Location = New System.Drawing.Point(550, 22)
+        Me.txtfecha.Location = New System.Drawing.Point(521, 22)
         Me.txtfecha.Mask = "00/00/0000 00:00"
         Me.txtfecha.Name = "txtfecha"
-        Me.txtfecha.Size = New System.Drawing.Size(125, 23)
+        Me.txtfecha.Size = New System.Drawing.Size(154, 23)
         Me.txtfecha.TabIndex = 56
         '
         'txtobservacion
@@ -494,6 +484,16 @@ Partial Class FormCitaMedica
         '
         Me.ToolStripSeparator6.Name = "ToolStripSeparator6"
         Me.ToolStripSeparator6.Size = New System.Drawing.Size(6, 33)
+        '
+        'Panel3
+        '
+        Me.Panel3.BackColor = System.Drawing.Color.White
+        Me.Panel3.BackgroundImage = Global.Quality.My.Resources.Resources.calendar_icon
+        Me.Panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Panel3.Location = New System.Drawing.Point(648, 23)
+        Me.Panel3.Name = "Panel3"
+        Me.Panel3.Size = New System.Drawing.Size(23, 20)
+        Me.Panel3.TabIndex = 10068
         '
         'FormCitaMedica
         '

@@ -333,4 +333,10 @@ Public Class FormVenta
             TextTelefono.Focus()
         End If
     End Sub
+    Private Sub TextIdentificacion_Validating(sender As Object, e As EventArgs) Handles TextTelefono.LostFocus,
+       TextNombre.LostFocus, TextIdentificacion.LostFocus
+        If btRegistrar.Enabled = True Then
+            mostrarIconoError()
+        End If
+    End Sub
 End Class

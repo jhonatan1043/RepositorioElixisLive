@@ -53,7 +53,7 @@ Partial Class FormEmpresa
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.TextDV = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.iconoError = New System.Windows.Forms.ErrorProvider(Me.components)
+        Me.ErrorIcono = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
         Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.btNuevo = New System.Windows.Forms.ToolStripButton()
@@ -78,7 +78,7 @@ Partial Class FormEmpresa
         Me.GbInform_D.SuspendLayout()
         CType(Me.dgvParametro, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
-        CType(Me.iconoError, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ErrorIcono, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ToolStrip1.SuspendLayout()
         Me.Panel1.SuspendLayout()
         CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -421,10 +421,10 @@ Partial Class FormEmpresa
         Me.Label2.TabIndex = 3
         Me.Label2.Text = "Razón Social:"
         '
-        'iconoError
+        'ErrorIcono
         '
-        Me.iconoError.ContainerControl = Me
-        Me.iconoError.RightToLeft = True
+        Me.ErrorIcono.ContainerControl = Me
+        Me.ErrorIcono.RightToLeft = True
         '
         'ToolStrip1
         '
@@ -611,7 +611,7 @@ Partial Class FormEmpresa
         CType(Me.dgvParametro, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
-        CType(Me.iconoError, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ErrorIcono, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ToolStrip1.ResumeLayout(False)
         Me.ToolStrip1.PerformLayout()
         Me.Panel1.ResumeLayout(False)
@@ -665,5 +665,5 @@ Partial Class FormEmpresa
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents cbDepartamento As ComboBox
     Public WithEvents Label5 As Label
-    Friend WithEvents iconoError As ErrorProvider
+    Friend WithEvents ErrorIcono As ErrorProvider
 End Class
