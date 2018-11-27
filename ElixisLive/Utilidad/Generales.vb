@@ -539,7 +539,8 @@ Public Class Generales
             Thread.Sleep(80)
         Next
     End Sub
-    Public Shared Function subirimagen(ByVal objeto As PictureBox, ByVal componente As OpenFileDialog) As OpenFileDialog
+    Public Shared Function subirimagen(ByVal objeto As PictureBox, ByVal componente As OpenFileDialog) As Boolean
+        Dim resultado As Boolean
         Try
             objeto.Image = Nothing
             objeto.SizeMode = PictureBoxSizeMode.StretchImage
@@ -555,12 +556,13 @@ Public Class Generales
                 With objeto
                     documento = Nothing
                     .Image = Image.FromFile(componente.FileName)
+                    resultado = True
                 End With
             End If
         Catch ex As Exception
             EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
         End Try
-        Return componente
+        Return resultado
     End Function
     Public Shared Function consultarTipoControl(dgv As DataGridView,
                                                 posicion As Integer) As Boolean

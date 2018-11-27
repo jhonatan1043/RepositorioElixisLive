@@ -22,7 +22,7 @@ Public Class FormEmpleado
     End Sub
     Private Sub cargarParametros()
         Dim params As New List(Of String)
-        If dgvParametro.ColumnCount <> 0 Then
+        If dgvParametro.ColumnCount = 0 Then
             params.Add(ElementoMenu.codigo)
             Generales.llenardgv(Sentencias.PARAMETROS_CONSULTAR, dgvParametro, params)
             Generales.diseñoDGV(dgvParametro)
@@ -67,7 +67,7 @@ Public Class FormEmpleado
         End Try
     End Sub
     Private Sub crearImagen(imagen As Byte())
-
+        objEmpleado.banderaImagen = False
     End Sub
     Private Sub cargarCampos(dfila As DataRow)
         txtIdentificacion.Text = dfila("Identificacion")
@@ -75,9 +75,9 @@ Public Class FormEmpleado
         txtCelular.Text = dfila("Celular")
         txtNombre.Text = dfila("Nombre")
         txtDireccion.Text = dfila("Direccion")
-        txtEmail.Text = dfila("Email")
+        txtEmail.Text = If(String.IsNullOrEmpty(dfila("Email")), Nothing, dfila("Email"))
         txtUsuario.Text = dfila("Usuario")
-        cbPerfil.SelectedValue = If(String.IsNullOrEmpty(dfila("Codigo_Perfil")), -1, dfila("Codigo_Perfil"))
+        cbPerfil.SelectedValue = If(IsDBNull(dfila("Codigo_Perfil")), -1, dfila("Codigo_Perfil"))
     End Sub
     Private Sub controlVerificar()
         For posicion = 0 To dgvParametro.Rows.Count - 1
@@ -126,6 +126,7 @@ Public Class FormEmpleado
         Try
             dfila = Generales.cargarItem(Sentencias.PERSONA_CARGAR, params)
             cargarCampos(dfila)
+            listaSucursales(pCodigo)
         Catch ex As Exception
             EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
         End Try
@@ -154,16 +155,20 @@ Public Class FormEmpleado
     End Function
     Private Sub cargarObjeto()
         Dim almImagen As New IO.MemoryStream
-        If Not IsNothing(pictImagen.Image) Then
+
+        If objEmpleado.banderaImagen = True Then
             pictImagen.Image.Save(almImagen, Imaging.ImageFormat.Png)
             objEmpleado.imagenEmpleado = almImagen.GetBuffer
         Else
             objEmpleado.imagenEmpleado = Nothing
         End If
         objEmpleado.usuario = txtUsuario.Text
-        objEmpleado.codigoBanco = cbBanco.SelectedValue.ToString
-        objEmpleado.codigoCuenta = cbTipoCuenta.SelectedValue.ToString
-        objEmpleado.Cuenta = txtCuenta.Text
+        objEmpleado.codigoFormaPago = cbFormaPago.SelectedValue
+        objEmpleado.codigoBanco = If(cbBanco.SelectedValue.ToString = -1, Nothing, cbBanco.SelectedValue)
+        objEmpleado.codigoCuenta = If(cbTipoCuenta.SelectedValue.ToString = -1, Nothing, cbTipoCuenta.SelectedValue)
+        objEmpleado.Cuenta = If(txtCuenta.Text = String.Empty, Nothing, txtCuenta.Text)
+        objEmpleado.cargo = cbCargo.SelectedValue
+        objEmpleado.deparTrabajo = cbDepartamento.SelectedValue
         objEmpleado.dtParametro = dgvParametro.DataSource
     End Sub
     Private Sub btRegistrar_Click(sender As Object, e As EventArgs) Handles btRegistrar.Click
@@ -223,7 +228,7 @@ Public Class FormEmpleado
     Private Sub pictImagen_Click(sender As Object, e As EventArgs) Handles pictImagen.Click
         If btRegistrar.Enabled = False Then Exit Sub
         Dim open As New OpenFileDialog
-        Generales.subirimagen(pictImagen, open)
+        objEmpleado.banderaImagen = Generales.subirimagen(pictImagen, open)
     End Sub
 
     Private Sub dgvParametro_Validating(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles dgvParametro.Validating
@@ -245,9 +250,18 @@ Public Class FormEmpleado
     End Sub
     Private Sub listaSucursales(pcodigo As Integer)
         Dim params As New List(Of String)
-        Dim tabla As New DataTable
         params.Add(pcodigo)
-        Generales.llenarTabla(Sentencias.SUCURSAL_EMPLEADO_CONSULTAR, params, tabla)
+        Try
+            Generales.llenarTabla(Sentencias.SUCURSAL_EMPLEADO_CONSULTAR, params, objEmpleado.dtSucursal)
+            ListSucursal.DataSource = objEmpleado.dtSucursal
+            ListSucursal.ValueMember = "Codigo"
+            ListSucursal.DisplayMember = "Nombre"
+            For item = 0 To objEmpleado.dtSucursal.Rows.Count - 1
+                ListSucursal.SetItemChecked(item, objEmpleado.dtSucursal.Rows(item).Item("Realizado"))
+            Next
+        Catch ex As Exception
+            EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
+        End Try
     End Sub
     Private Sub mostrarIconoError()
         If cbDepartamento.SelectedIndex = 0 Then
@@ -283,6 +297,18 @@ Public Class FormEmpleado
         If btRegistrar.Enabled = True Then
             mostrarIconoError()
         End If
+    End Sub
+    Private Sub ListSucursal_Click(sender As Object, e As EventArgs) Handles ListSucursal.Click
+
+        If btRegistrar.Enabled = False Then Exit Sub
+
+        If ListSucursal.Items.Count > 0 Then
+            If objEmpleado.dtSucursal.Rows(ListSucursal.SelectedIndex).Item("Editable") = Constantes.SIN_VALOR_NUMERICO Then
+                EstiloMensajes.mostrarMensajeAdvertencia("¡ Sucursal predeterminada, imposible quitar !")
+                ListSucursal.SetItemChecked(ListSucursal.SelectedIndex, True)
+            End If
+        End If
+
     End Sub
 End Class
 

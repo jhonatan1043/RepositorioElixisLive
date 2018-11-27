@@ -48,7 +48,7 @@ Partial Class FormEmpleado
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.GroupBox6 = New System.Windows.Forms.GroupBox()
-        Me.ListSucursal = New System.Windows.Forms.ListView()
+        Me.ListSucursal = New System.Windows.Forms.CheckedListBox()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
         Me.cbDepartamento = New System.Windows.Forms.ComboBox()
         Me.Label8 = New System.Windows.Forms.Label()
@@ -267,6 +267,7 @@ Partial Class FormEmpleado
         Me.pictImagen.BackgroundImage = Global.Quality.My.Resources.Resources.fondo_azul
         Me.pictImagen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.pictImagen.Image = Global.Quality.My.Resources.Resources.usuario
+        Me.pictImagen.InitialImage = Global.Quality.My.Resources.Resources.usuario
         Me.pictImagen.Location = New System.Drawing.Point(3, 14)
         Me.pictImagen.Name = "pictImagen"
         Me.pictImagen.Size = New System.Drawing.Size(100, 88)
@@ -392,11 +393,12 @@ Partial Class FormEmpleado
         'ListSucursal
         '
         Me.ListSucursal.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.ListSucursal.FormattingEnabled = True
         Me.ListSucursal.Location = New System.Drawing.Point(3, 16)
+        Me.ListSucursal.MultiColumn = True
         Me.ListSucursal.Name = "ListSucursal"
         Me.ListSucursal.Size = New System.Drawing.Size(212, 134)
         Me.ListSucursal.TabIndex = 0
-        Me.ListSucursal.UseCompatibleStateImageBehavior = False
         '
         'GroupBox5
         '
@@ -591,7 +593,7 @@ Partial Class FormEmpleado
         Me.ToolStrip1.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.ToolStrip1.ImageScalingSize = New System.Drawing.Size(30, 30)
         Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripSeparator1, Me.btNuevo, Me.ToolStripSeparator7, Me.btBuscar, Me.ToolStripSeparator2, Me.btRegistrar, Me.ToolStripSeparator4, Me.btEditar, Me.ToolStripSeparator5, Me.btCancelar, Me.ToolStripSeparator3, Me.btAnular, Me.ToolStripSeparator6})
-        Me.ToolStrip1.Location = New System.Drawing.Point(0, 486)
+        Me.ToolStrip1.Location = New System.Drawing.Point(0, 487)
         Me.ToolStrip1.Name = "ToolStrip1"
         Me.ToolStrip1.Size = New System.Drawing.Size(905, 37)
         Me.ToolStrip1.TabIndex = 15
@@ -739,7 +741,7 @@ Partial Class FormEmpleado
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(905, 523)
+        Me.ClientSize = New System.Drawing.Size(905, 524)
         Me.Controls.Add(Me.ToolStrip1)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Panel1)
@@ -831,7 +833,7 @@ Partial Class FormEmpleado
     Public WithEvents txtUsuario As TextBox
     Friend WithEvents Label9 As Label
     Friend WithEvents Label10 As Label
-    Friend WithEvents ListSucursal As ListView
     Friend WithEvents cbPerfil As ComboBox
     Friend WithEvents ErrorIcono As ErrorProvider
+    Friend WithEvents ListSucursal As CheckedListBox
 End Class

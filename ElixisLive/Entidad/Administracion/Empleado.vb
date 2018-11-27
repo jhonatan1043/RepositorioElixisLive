@@ -6,8 +6,14 @@
     Property codigoCuenta As String
     Property Cuenta As String
     Property activo As Boolean
+    Property cargo As Integer
+    Property deparTrabajo As Integer
     Property imagenEmpleado As Byte()
+    Property dtSucursal As DataTable
+    Property fechaIngreso As DateTime
+    Property banderaImagen As Boolean
     Public Sub New()
+        dtSucursal = New DataTable
         dtRegistro = New DataTable
         sqlGuardar = "[SP_ADMIN_EMPLEADO_CREAR]"
         sqlConsulta = "[SP_ADMIN_EMPLEADO_CONSULTAR]"
