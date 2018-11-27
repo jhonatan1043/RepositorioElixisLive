@@ -57,6 +57,7 @@ Public Class FormEmpleado
                 Generales.llenardgv(objEmpleado.sqlCargarDetalle, dgvParametro, params)
                 Generales.diseñoDGV(dgvParametro)
                 Generales.diseñoGrillaParametros(dgvParametro)
+                listaSucursales(pcodigo, Sentencias.SUCURSAL_EMPLEADO_CARGAR)
                 controlVerificar()
             End If
             Generales.habilitarBotones(ToolStrip1)
@@ -126,7 +127,7 @@ Public Class FormEmpleado
         Try
             dfila = Generales.cargarItem(Sentencias.PERSONA_CARGAR, params)
             cargarCampos(dfila)
-            listaSucursales(pCodigo)
+            listaSucursales(pCodigo, Sentencias.SUCURSAL_EMPLEADO_CONSULTAR)
         Catch ex As Exception
             EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
         End Try
@@ -248,11 +249,11 @@ Public Class FormEmpleado
             gpPago.Enabled = True
         End If
     End Sub
-    Private Sub listaSucursales(pcodigo As Integer)
+    Private Sub listaSucursales(pcodigo As Integer, consulta As String)
         Dim params As New List(Of String)
         params.Add(pcodigo)
         Try
-            Generales.llenarTabla(Sentencias.SUCURSAL_EMPLEADO_CONSULTAR, params, objEmpleado.dtSucursal)
+            Generales.llenarTabla(consulta, params, objEmpleado.dtSucursal)
             ListSucursal.DataSource = objEmpleado.dtSucursal
             ListSucursal.ValueMember = "Codigo"
             ListSucursal.DisplayMember = "Nombre"
@@ -299,16 +300,13 @@ Public Class FormEmpleado
         End If
     End Sub
     Private Sub ListSucursal_Click(sender As Object, e As EventArgs) Handles ListSucursal.Click
-
         If btRegistrar.Enabled = False Then Exit Sub
-
         If ListSucursal.Items.Count > 0 Then
             If objEmpleado.dtSucursal.Rows(ListSucursal.SelectedIndex).Item("Editable") = Constantes.SIN_VALOR_NUMERICO Then
                 EstiloMensajes.mostrarMensajeAdvertencia("¡ Sucursal predeterminada, imposible quitar !")
                 ListSucursal.SetItemChecked(ListSucursal.SelectedIndex, True)
             End If
         End If
-
     End Sub
 End Class
 
