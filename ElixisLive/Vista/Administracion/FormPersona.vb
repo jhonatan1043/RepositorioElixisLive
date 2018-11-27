@@ -269,7 +269,7 @@ Public Class FormPersona
     Private Sub TextNombre_Validating(sender As Object, e As EventArgs) Handles TextNombre.LostFocus
         If btRegistrar.Enabled = True Then
             If TextNombre.Text.Length = 0 Then
-                ErrorIcono.SetError(TextNombre, "Debe Digitar el nombre")
+                ErrorIcono.SetError(TextNombre, "Debe digitar el nombre")
             Else
                 ErrorIcono.SetError(TextNombre, "")
             End If
@@ -278,7 +278,7 @@ Public Class FormPersona
     Private Sub TextIdentificacion_Validating(sender As Object, e As EventArgs) Handles TextIdentificacion.LostFocus
         If btRegistrar.Enabled = True Then
             If TextIdentificacion.Text.Length = 0 Then
-                ErrorIcono.SetError(TextIdentificacion, "Debe Digitar el número de identificación")
+                ErrorIcono.SetError(TextIdentificacion, "Debe digitar el número de identificación")
             Else
                 ErrorIcono.SetError(TextIdentificacion, "")
             End If
@@ -287,7 +287,7 @@ Public Class FormPersona
     Private Sub TextDireccion_Validating(sender As Object, e As EventArgs) Handles TextDireccion.LostFocus
         If btRegistrar.Enabled = True Then
             If TextDireccion.Text.Length = 0 Then
-                ErrorIcono.SetError(TextDireccion, "Debe Digitar una dirección")
+                ErrorIcono.SetError(TextDireccion, "Debe digitar una dirección")
             Else
                 ErrorIcono.SetError(TextDireccion, "")
             End If
@@ -296,7 +296,7 @@ Public Class FormPersona
     Private Sub TextTelefono_Validating(sender As Object, e As EventArgs) Handles TextTelefono.LostFocus
         If btRegistrar.Enabled = True Then
             If TextTelefono.Text.Length = 0 Then
-                ErrorIcono.SetError(TextTelefono, "Debe Digitar un número de teléfono")
+                ErrorIcono.SetError(TextTelefono, "Debe digitar un número de teléfono")
             Else
                 ErrorIcono.SetError(TextTelefono, "")
             End If
@@ -336,12 +336,12 @@ Public Class FormPersona
             ErrorIcono.SetError(CombotipoIdentificacion, "")
         End If
         If TextIdentificacion.Text.Length = 0 Then
-            ErrorIcono.SetError(TextIdentificacion, "Debe Digitar el número de identificación")
+            ErrorIcono.SetError(TextIdentificacion, "Debe digitar el número de identificación")
         Else
             ErrorIcono.SetError(TextIdentificacion, "")
         End If
         If TextNombre.Text.Length = 0 Then
-            ErrorIcono.SetError(TextNombre, "Debe Digitar el nombre")
+            ErrorIcono.SetError(TextNombre, "Debe digitar el nombre")
         Else
             ErrorIcono.SetError(TextNombre, "")
         End If
@@ -361,12 +361,12 @@ Public Class FormPersona
             ErrorIcono.SetError(cbSede, "")
         End If
         If TextDireccion.Text.Length = 0 Then
-            ErrorIcono.SetError(TextDireccion, "Debe Digitar una dirección")
+            ErrorIcono.SetError(TextDireccion, "Debe digitar una dirección")
         Else
             ErrorIcono.SetError(TextDireccion, "")
         End If
         If TextTelefono.Text.Length = 0 Then
-            ErrorIcono.SetError(TextTelefono, "Debe Digitar un número de teléfono")
+            ErrorIcono.SetError(TextTelefono, "Debe digitar un número de teléfono")
         Else
             ErrorIcono.SetError(TextTelefono, "")
         End If
