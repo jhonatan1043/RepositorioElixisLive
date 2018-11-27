@@ -200,10 +200,10 @@ Partial Class FormProgramacionCita
         'PictureBox1
         '
         Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox1.Image = Global.Quality.My.Resources.Resources.Resume_icon
-        Me.PictureBox1.Location = New System.Drawing.Point(4, -7)
+        Me.PictureBox1.Image = Global.Quality.My.Resources.Resources.Apps_preferences_system_time_icon
+        Me.PictureBox1.Location = New System.Drawing.Point(4, 0)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(69, 53)
+        Me.PictureBox1.Size = New System.Drawing.Size(47, 42)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 1
         Me.PictureBox1.TabStop = False
