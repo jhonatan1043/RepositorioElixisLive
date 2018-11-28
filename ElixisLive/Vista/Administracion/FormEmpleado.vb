@@ -296,11 +296,32 @@ Public Class FormEmpleado
         Me.ErrorIcono.SetError(cbCargo, Constantes.CADENA_VACIA)
         Me.ErrorIcono.SetError(cbDepartamento, Constantes.CADENA_VACIA)
     End Sub
-    Private Sub cbFormaPago_Validating(sender As Object, e As EventArgs) Handles cbFormaPago.LostFocus,
-       txtNombre.LostFocus, cbCargo.LostFocus,
-      cbDepartamento.LostFocus
-        If btRegistrar.Enabled = True Then
-            mostrarIconoError()
+    Private Sub cbFormaPago_Validating(sender As Object, e As EventArgs) Handles cbFormaPago.LostFocus
+        If cbCargo.SelectedIndex = 0 And btRegistrar.Enabled = True Then
+            Me.ErrorIcono.SetError(cbFormaPago, "Debe escoger una forma de pago")
+        Else
+            Me.ErrorIcono.SetError(cbFormaPago, Constantes.CADENA_VACIA)
+        End If
+    End Sub
+    Private Sub cbDepartamento_Validating(sender As Object, e As EventArgs) Handles cbDepartamento.LostFocus
+        If cbDepartamento.SelectedIndex = 0 And btRegistrar.Enabled = True Then
+            Me.ErrorIcono.SetError(cbDepartamento, "Debe escoger un departamento")
+        Else
+            Me.ErrorIcono.SetError(cbDepartamento, Constantes.CADENA_VACIA)
+        End If
+    End Sub
+    Private Sub cbCargo_Validating(sender As Object, e As EventArgs) Handles cbCargo.LostFocus
+        If cbCargo.SelectedIndex = 0 And btRegistrar.Enabled = True Then
+            Me.ErrorIcono.SetError(cbCargo, "Debe escoger un cargo")
+        Else
+            Me.ErrorIcono.SetError(cbCargo, Constantes.CADENA_VACIA)
+        End If
+    End Sub
+    Private Sub btBuscarPersona_Validating(sender As Object, e As EventArgs) Handles btBuscarPersona.LostFocus
+        If txtNombre.TextLength = 0 And btRegistrar.Enabled = True Then
+            Me.ErrorIcono.SetError(btBuscarPersona, "Debe escoger una persona")
+        Else
+            Me.ErrorIcono.SetError(btBuscarPersona, Constantes.CADENA_VACIA)
         End If
     End Sub
     Private Sub ListSucursal_Click(sender As Object, e As EventArgs) Handles ListSucursal.Click

@@ -25,13 +25,7 @@
             validarControles()
         End If
     End Sub
-
-    Private Sub txtBusqueda_KeyDown(sender As Object, e As KeyEventArgs) Handles txtBusqueda.KeyDown
-        If e.KeyCode = Keys.Enter Then
-            validarControles()
-        End If
-    End Sub
-    Private Sub dFecha_TextChanged(sender As Object, e As EventArgs) Handles dFecha.TextChanged
+    Private Sub dFecha_TextChanged(sender As Object, e As EventArgs) Handles dFecha.ValueChanged
         validarControles()
     End Sub
     Private Sub limpiarPanel(panel As Panel)
@@ -54,5 +48,9 @@
         txtPendiente.Text = params.Item(0)
         txtCancelado.Text = params.Item(1)
         txtRealizado.Text = params.Item(2)
+    End Sub
+
+    Private Sub MonthCalendar1_DateChanged(sender As Object, e As DateRangeEventArgs) Handles MonthCalendar1.DateChanged
+        dFecha.Value = MonthCalendar1.SelectionStart.ToString
     End Sub
 End Class

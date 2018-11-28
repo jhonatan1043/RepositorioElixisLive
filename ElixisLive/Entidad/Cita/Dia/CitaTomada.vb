@@ -16,8 +16,8 @@
             panel.Location = New Point(posicionX, posicionY)
             panel.Size = New Point(anchura, altura)
             panel.BackColor = If(pendiente = Constantes.PENDIENTE, Color.FromArgb(192, 255, 255), colorLabel())
-            panel.Controls.Add(creaCajaTexto(4, 3, idCita, " Cliente: " & nombre & vbNewLine & " # " & cedula))
-            panel.Controls.Add(creaCajaTexto(4, 36, idCita, " Fecha: " & CStr(fechaCita)))
+            panel.Controls.Add(creaBotones(4, 3, idCita, " Cliente: " & nombre & vbNewLine & " # " & cedula))
+            panel.Controls.Add(creaBotones(4, 36, idCita, " Fecha: " & CStr(fechaCita)))
             panel.Tag = hora & "-" & idCita
             panel.Cursor = Cursors.Hand
             panel.Show()
@@ -26,27 +26,27 @@
         End Try
         Return panel
     End Function
-    Private Function creaCajaTexto(posicionX As Integer,
+    Private Function creaBotones(posicionX As Integer,
                                    posicionY As Integer,
-                                   idCita As String, Texto As String) As TextBox
-        Dim txtbox As New TextBox
+                                   idCita As String, Texto As String) As Button
+        Dim boton As New Button
         Try
-            txtbox.BorderStyle = BorderStyle.None
-            txtbox.Size = New Point(130, 29)
-            txtbox.Location = New Point(posicionX, posicionY)
-            txtbox.TextAlign = HorizontalAlignment.Center
-            txtbox.BackColor = Color.White
-            txtbox.Font = New Font(Constantes.TIPO_LETRA_ELEMENTO, 7)
-            txtbox.BorderStyle = BorderStyle.FixedSingle
-            txtbox.Cursor = Cursors.Hand
-            txtbox.Multiline = True
-            txtbox.ReadOnly = True
-            txtbox.Text = Texto
-            txtbox.Tag = hora & "-" & idCita
-            AddHandler txtbox.DoubleClick, AddressOf UtlidadCitaBLL.llamarFormularioCita
+            'boton.BorderStyle = BorderStyle.None
+            boton.Size = New Point(130, 29)
+            boton.Location = New Point(posicionX, posicionY)
+            boton.TextAlign = HorizontalAlignment.Center
+            boton.BackColor = Color.White
+            boton.Font = New Font(Constantes.TIPO_LETRA_ELEMENTO, 7)
+            'boton.BorderStyle = BorderStyle.FixedSingle
+            boton.Cursor = Cursors.Hand
+            'boton.Multiline = True
+            'boton.ReadOnly = True
+            boton.Text = Texto
+            boton.Tag = hora & "-" & idCita
+            AddHandler boton.DoubleClick, AddressOf UtlidadCitaBLL.llamarFormularioCita
         Catch ex As Exception
             Throw ex
         End Try
-        Return txtbox
+        Return boton
     End Function
 End Class

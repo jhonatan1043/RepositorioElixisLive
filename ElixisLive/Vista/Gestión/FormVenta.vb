@@ -245,25 +245,7 @@ Public Class FormVenta
         Me.ErrorIcono.SetError(TextNombre, "")
         Me.ErrorIcono.SetError(TextTelefono, "")
     End Sub
-    Private Sub mostrarIconoError()
 
-        If TextIdentificacion.Text.Length = 0 Then
-            ErrorIcono.SetError(TextIdentificacion, " Error")
-        Else
-            ErrorIcono.SetError(TextIdentificacion, "")
-        End If
-        If TextNombre.Text.Length = 0 Then
-            ErrorIcono.SetError(TextNombre, " Error")
-        Else
-            ErrorIcono.SetError(TextNombre, "")
-        End If
-        If TextTelefono.Text.Length = 0 Then
-            ErrorIcono.SetError(TextTelefono, " Error")
-        Else
-            ErrorIcono.SetError(TextTelefono, "")
-        End If
-
-    End Sub
 
     Private Sub calcularTotales()
         dgvFactura.EndEdit()
@@ -333,10 +315,42 @@ Public Class FormVenta
             TextTelefono.Focus()
         End If
     End Sub
-    Private Sub TextIdentificacion_Validating(sender As Object, e As EventArgs) Handles TextTelefono.LostFocus,
-       TextNombre.LostFocus, TextIdentificacion.LostFocus
-        If btRegistrar.Enabled = True Then
-            mostrarIconoError()
+    Private Sub mostrarIconoError()
+        If TextIdentificacion.Text.Length = 0 Then
+            ErrorIcono.SetError(TextIdentificacion, " Error")
+        Else
+            ErrorIcono.SetError(TextIdentificacion, "")
+        End If
+        If TextNombre.Text.Length = 0 Then
+            ErrorIcono.SetError(TextNombre, " Error")
+        Else
+            ErrorIcono.SetError(TextNombre, "")
+        End If
+        If TextTelefono.Text.Length = 0 Then
+            ErrorIcono.SetError(TextTelefono, " Error")
+        Else
+            ErrorIcono.SetError(TextTelefono, "")
+        End If
+    End Sub
+    Private Sub TextIdentificacion_Validating(sender As Object, e As EventArgs) Handles TextIdentificacion.LostFocus
+        If TextIdentificacion.Text.Length = 0 And btRegistrar.Enabled = True Then
+            ErrorIcono.SetError(TextIdentificacion, " Error")
+        Else
+            ErrorIcono.SetError(TextIdentificacion, "")
+        End If
+    End Sub
+    Private Sub TextNombre_Validating(sender As Object, e As EventArgs) Handles TextNombre.LostFocus
+        If TextNombre.Text.Length = 0 And btRegistrar.Enabled = True Then
+            ErrorIcono.SetError(TextNombre, " Error")
+        Else
+            ErrorIcono.SetError(TextNombre, "")
+        End If
+    End Sub
+    Private Sub TextTelefono_Validating(sender As Object, e As EventArgs) Handles TextTelefono.LostFocus
+        If TextTelefono.Text.Length = 0 And btRegistrar.Enabled = True Then
+            ErrorIcono.SetError(TextIdentificacion, " Error")
+        Else
+            ErrorIcono.SetError(TextIdentificacion, "")
         End If
     End Sub
 End Class

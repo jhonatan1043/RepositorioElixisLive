@@ -12,7 +12,7 @@
             Case "C"
                 color = Color.FromArgb(255, 192, 192)
             Case "R"
-                color = Color.FromArgb(255, 224, 192)
+                color = Color.FromArgb(192, 192, 255)
         End Select
         Return color
     End Function

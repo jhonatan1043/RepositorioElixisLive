@@ -22,156 +22,36 @@ Partial Class FormProgramacionCita
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.GroupBox4 = New System.Windows.Forms.GroupBox()
-        Me.txtBusqueda = New System.Windows.Forms.TextBox()
-        Me.Label3 = New System.Windows.Forms.Label()
         Me.dFecha = New System.Windows.Forms.DateTimePicker()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
-        Me.ToolStripLabel1 = New System.Windows.Forms.ToolStripLabel()
-        Me.txtPendiente = New System.Windows.Forms.ToolStripTextBox()
-        Me.ToolStripLabel3 = New System.Windows.Forms.ToolStripLabel()
-        Me.txtCancelado = New System.Windows.Forms.ToolStripTextBox()
-        Me.ToolStripLabel2 = New System.Windows.Forms.ToolStripLabel()
-        Me.txtRealizado = New System.Windows.Forms.ToolStripTextBox()
-        Me.ToolStripLabel4 = New System.Windows.Forms.ToolStripLabel()
-        Me.ToolStripTextBox1 = New System.Windows.Forms.ToolStripTextBox()
         Me.PanelDia = New System.Windows.Forms.Panel()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.GroupBox4.SuspendLayout()
-        Me.ToolStrip1.SuspendLayout()
+        Me.MonthCalendar1 = New System.Windows.Forms.MonthCalendar()
+        Me.txtBusqueda = New System.Windows.Forms.TextBox()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.RadioButton2 = New System.Windows.Forms.RadioButton()
+        Me.rbCancelados = New System.Windows.Forms.RadioButton()
+        Me.rbAgendados = New System.Windows.Forms.RadioButton()
+        Me.txtPendiente = New System.Windows.Forms.Button()
+        Me.txtCancelado = New System.Windows.Forms.Button()
+        Me.txtRealizado = New System.Windows.Forms.Button()
+        Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
+        Me.lbInformacionCliente = New System.Windows.Forms.ToolStripLabel()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.ToolStrip1.SuspendLayout()
         Me.SuspendLayout()
-        '
-        'GroupBox4
-        '
-        Me.GroupBox4.Controls.Add(Me.txtBusqueda)
-        Me.GroupBox4.Controls.Add(Me.Label3)
-        Me.GroupBox4.Controls.Add(Me.dFecha)
-        Me.GroupBox4.Controls.Add(Me.Label5)
-        Me.GroupBox4.Font = New System.Drawing.Font("Times New Roman", 10.0!, System.Drawing.FontStyle.Italic)
-        Me.GroupBox4.Location = New System.Drawing.Point(5, 46)
-        Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Size = New System.Drawing.Size(789, 54)
-        Me.GroupBox4.TabIndex = 10052
-        Me.GroupBox4.TabStop = False
-        Me.GroupBox4.Text = "Filtros de busqueda:"
-        '
-        'txtBusqueda
-        '
-        Me.txtBusqueda.Font = New System.Drawing.Font("Times New Roman", 10.0!, System.Drawing.FontStyle.Italic)
-        Me.txtBusqueda.Location = New System.Drawing.Point(447, 21)
-        Me.txtBusqueda.Name = "txtBusqueda"
-        Me.txtBusqueda.Size = New System.Drawing.Size(331, 23)
-        Me.txtBusqueda.TabIndex = 10066
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.BackColor = System.Drawing.Color.Transparent
-        Me.Label3.Font = New System.Drawing.Font("Times New Roman", 10.0!, System.Drawing.FontStyle.Italic)
-        Me.Label3.Location = New System.Drawing.Point(404, 23)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(45, 16)
-        Me.Label3.TabIndex = 10065
-        Me.Label3.Text = "Filtro:"
         '
         'dFecha
         '
         Me.dFecha.CustomFormat = "MMMM\dddd,dd\yyyy"
         Me.dFecha.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.dFecha.Location = New System.Drawing.Point(62, 21)
+        Me.dFecha.Location = New System.Drawing.Point(731, 104)
         Me.dFecha.Name = "dFecha"
-        Me.dFecha.Size = New System.Drawing.Size(295, 25)
+        Me.dFecha.Size = New System.Drawing.Size(80, 25)
         Me.dFecha.TabIndex = 10059
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.BackColor = System.Drawing.Color.Transparent
-        Me.Label5.Font = New System.Drawing.Font("Times New Roman", 10.0!, System.Drawing.FontStyle.Italic)
-        Me.Label5.Location = New System.Drawing.Point(8, 24)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(48, 16)
-        Me.Label5.TabIndex = 10061
-        Me.Label5.Text = "Fecha:"
-        '
-        'ToolStrip1
-        '
-        Me.ToolStrip1.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripLabel1, Me.txtPendiente, Me.ToolStripLabel3, Me.txtCancelado, Me.ToolStripLabel2, Me.txtRealizado, Me.ToolStripLabel4, Me.ToolStripTextBox1})
-        Me.ToolStrip1.Location = New System.Drawing.Point(0, 498)
-        Me.ToolStrip1.Name = "ToolStrip1"
-        Me.ToolStrip1.Size = New System.Drawing.Size(799, 25)
-        Me.ToolStrip1.TabIndex = 10057
-        Me.ToolStrip1.Text = "ToolStrip1"
-        '
-        'ToolStripLabel1
-        '
-        Me.ToolStripLabel1.Name = "ToolStripLabel1"
-        Me.ToolStripLabel1.Size = New System.Drawing.Size(70, 22)
-        Me.ToolStripLabel1.Text = "Agendados:"
-        '
-        'txtPendiente
-        '
-        Me.txtPendiente.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.txtPendiente.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtPendiente.Enabled = False
-        Me.txtPendiente.Name = "txtPendiente"
-        Me.txtPendiente.ReadOnly = True
-        Me.txtPendiente.Size = New System.Drawing.Size(55, 25)
-        Me.txtPendiente.TextBoxTextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'ToolStripLabel3
-        '
-        Me.ToolStripLabel3.Name = "ToolStripLabel3"
-        Me.ToolStripLabel3.Size = New System.Drawing.Size(71, 22)
-        Me.ToolStripLabel3.Text = "Cancelados:"
-        '
-        'txtCancelado
-        '
-        Me.txtCancelado.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.txtCancelado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtCancelado.Enabled = False
-        Me.txtCancelado.Name = "txtCancelado"
-        Me.txtCancelado.ReadOnly = True
-        Me.txtCancelado.Size = New System.Drawing.Size(55, 25)
-        Me.txtCancelado.TextBoxTextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'ToolStripLabel2
-        '
-        Me.ToolStripLabel2.Name = "ToolStripLabel2"
-        Me.ToolStripLabel2.Size = New System.Drawing.Size(65, 22)
-        Me.ToolStripLabel2.Text = "Realizados:"
-        '
-        'txtRealizado
-        '
-        Me.txtRealizado.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.txtRealizado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtRealizado.Enabled = False
-        Me.txtRealizado.Name = "txtRealizado"
-        Me.txtRealizado.ReadOnly = True
-        Me.txtRealizado.Size = New System.Drawing.Size(55, 25)
-        Me.txtRealizado.TextBoxTextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'ToolStripLabel4
-        '
-        Me.ToolStripLabel4.Name = "ToolStripLabel4"
-        Me.ToolStripLabel4.Size = New System.Drawing.Size(66, 22)
-        Me.ToolStripLabel4.Text = "Disponible:"
-        '
-        'ToolStripTextBox1
-        '
-        Me.ToolStripTextBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.ToolStripTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.ToolStripTextBox1.Enabled = False
-        Me.ToolStripTextBox1.Name = "ToolStripTextBox1"
-        Me.ToolStripTextBox1.ReadOnly = True
-        Me.ToolStripTextBox1.Size = New System.Drawing.Size(55, 25)
-        Me.ToolStripTextBox1.TextBoxTextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.dFecha.Visible = False
         '
         'PanelDia
         '
@@ -179,9 +59,9 @@ Partial Class FormProgramacionCita
         Me.PanelDia.BackColor = System.Drawing.Color.White
         Me.PanelDia.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.PanelDia.Font = New System.Drawing.Font("Times New Roman", 10.0!, System.Drawing.FontStyle.Italic)
-        Me.PanelDia.Location = New System.Drawing.Point(5, 106)
+        Me.PanelDia.Location = New System.Drawing.Point(5, 46)
         Me.PanelDia.Name = "PanelDia"
-        Me.PanelDia.Size = New System.Drawing.Size(789, 390)
+        Me.PanelDia.Size = New System.Drawing.Size(688, 448)
         Me.PanelDia.TabIndex = 10056
         Me.PanelDia.Visible = False
         '
@@ -194,7 +74,7 @@ Partial Class FormProgramacionCita
         Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Location = New System.Drawing.Point(1, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(798, 42)
+        Me.Panel1.Size = New System.Drawing.Size(944, 42)
         Me.Panel1.TabIndex = 10058
         '
         'PictureBox1
@@ -215,53 +95,192 @@ Partial Class FormProgramacionCita
         Me.Label1.ForeColor = System.Drawing.Color.White
         Me.Label1.Location = New System.Drawing.Point(0, 1)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(798, 41)
+        Me.Label1.Size = New System.Drawing.Size(944, 41)
         Me.Label1.TabIndex = 1
         Me.Label1.Text = "Agenda de Citas"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'MonthCalendar1
+        '
+        Me.MonthCalendar1.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.MonthCalendar1.Font = New System.Drawing.Font("Times New Roman", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.MonthCalendar1.ForeColor = System.Drawing.Color.SteelBlue
+        Me.MonthCalendar1.Location = New System.Drawing.Point(694, 45)
+        Me.MonthCalendar1.Name = "MonthCalendar1"
+        Me.MonthCalendar1.TabIndex = 0
+        Me.MonthCalendar1.TitleBackColor = System.Drawing.Color.SteelBlue
+        Me.MonthCalendar1.TitleForeColor = System.Drawing.Color.White
+        Me.MonthCalendar1.TrailingForeColor = System.Drawing.Color.SteelBlue
+        '
+        'txtBusqueda
+        '
+        Me.txtBusqueda.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtBusqueda.Font = New System.Drawing.Font("Times New Roman", 14.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtBusqueda.ForeColor = System.Drawing.Color.Black
+        Me.txtBusqueda.Location = New System.Drawing.Point(695, 248)
+        Me.txtBusqueda.Name = "txtBusqueda"
+        Me.txtBusqueda.Size = New System.Drawing.Size(247, 29)
+        Me.txtBusqueda.TabIndex = 10068
+        Me.txtBusqueda.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'Label5
+        '
+        Me.Label5.BackColor = System.Drawing.Color.Transparent
+        Me.Label5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Label5.Font = New System.Drawing.Font("Times New Roman", 14.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.ForeColor = System.Drawing.Color.White
+        Me.Label5.Image = Global.Quality.My.Resources.Resources.fondo_azul
+        Me.Label5.Location = New System.Drawing.Point(695, 230)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(247, 38)
+        Me.Label5.TabIndex = 10067
+        Me.Label5.Text = "Filtro"
+        Me.Label5.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        '
+        'RadioButton2
+        '
+        Me.RadioButton2.Appearance = System.Windows.Forms.Appearance.Button
+        Me.RadioButton2.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.RadioButton2.Checked = True
+        Me.RadioButton2.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.RadioButton2.ForeColor = System.Drawing.Color.Black
+        Me.RadioButton2.Location = New System.Drawing.Point(696, 354)
+        Me.RadioButton2.Name = "RadioButton2"
+        Me.RadioButton2.Size = New System.Drawing.Size(72, 24)
+        Me.RadioButton2.TabIndex = 10070
+        Me.RadioButton2.TabStop = True
+        Me.RadioButton2.Text = "Realizados"
+        Me.RadioButton2.UseVisualStyleBackColor = False
+        '
+        'rbCancelados
+        '
+        Me.rbCancelados.Appearance = System.Windows.Forms.Appearance.Button
+        Me.rbCancelados.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.rbCancelados.Checked = True
+        Me.rbCancelados.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.rbCancelados.ForeColor = System.Drawing.Color.Black
+        Me.rbCancelados.Location = New System.Drawing.Point(696, 326)
+        Me.rbCancelados.Name = "rbCancelados"
+        Me.rbCancelados.Size = New System.Drawing.Size(72, 24)
+        Me.rbCancelados.TabIndex = 10071
+        Me.rbCancelados.TabStop = True
+        Me.rbCancelados.Text = "Cancelados"
+        Me.rbCancelados.UseVisualStyleBackColor = False
+        '
+        'rbAgendados
+        '
+        Me.rbAgendados.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.rbAgendados.Appearance = System.Windows.Forms.Appearance.Button
+        Me.rbAgendados.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.rbAgendados.Checked = True
+        Me.rbAgendados.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.rbAgendados.ForeColor = System.Drawing.Color.Black
+        Me.rbAgendados.Location = New System.Drawing.Point(696, 298)
+        Me.rbAgendados.Name = "rbAgendados"
+        Me.rbAgendados.Size = New System.Drawing.Size(72, 24)
+        Me.rbAgendados.TabIndex = 10072
+        Me.rbAgendados.TabStop = True
+        Me.rbAgendados.Text = "Agendados"
+        Me.rbAgendados.UseVisualStyleBackColor = False
+        '
+        'txtPendiente
+        '
+        Me.txtPendiente.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.txtPendiente.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.txtPendiente.Location = New System.Drawing.Point(769, 299)
+        Me.txtPendiente.Name = "txtPendiente"
+        Me.txtPendiente.Size = New System.Drawing.Size(32, 22)
+        Me.txtPendiente.TabIndex = 10074
+        Me.txtPendiente.UseVisualStyleBackColor = False
+        '
+        'txtCancelado
+        '
+        Me.txtCancelado.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.txtCancelado.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.txtCancelado.Location = New System.Drawing.Point(769, 327)
+        Me.txtCancelado.Name = "txtCancelado"
+        Me.txtCancelado.Size = New System.Drawing.Size(32, 22)
+        Me.txtCancelado.TabIndex = 10075
+        Me.txtCancelado.UseVisualStyleBackColor = False
+        '
+        'txtRealizado
+        '
+        Me.txtRealizado.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtRealizado.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.txtRealizado.Location = New System.Drawing.Point(769, 355)
+        Me.txtRealizado.Name = "txtRealizado"
+        Me.txtRealizado.Size = New System.Drawing.Size(32, 22)
+        Me.txtRealizado.TabIndex = 10076
+        Me.txtRealizado.UseVisualStyleBackColor = False
+        '
+        'ToolStrip1
+        '
+        Me.ToolStrip1.BackColor = System.Drawing.Color.White
+        Me.ToolStrip1.BackgroundImage = Global.Quality.My.Resources.Resources.fondo_azul
+        Me.ToolStrip1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.ToolStrip1.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.ToolStrip1.ImageScalingSize = New System.Drawing.Size(30, 30)
+        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.lbInformacionCliente})
+        Me.ToolStrip1.Location = New System.Drawing.Point(0, 498)
+        Me.ToolStrip1.Name = "ToolStrip1"
+        Me.ToolStrip1.Size = New System.Drawing.Size(945, 25)
+        Me.ToolStrip1.TabIndex = 10077
+        Me.ToolStrip1.Text = "ToolStrip1"
+        '
+        'lbInformacionCliente
+        '
+        Me.lbInformacionCliente.Font = New System.Drawing.Font("Times New Roman", 9.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbInformacionCliente.ForeColor = System.Drawing.Color.White
+        Me.lbInformacionCliente.Name = "lbInformacionCliente"
+        Me.lbInformacionCliente.Size = New System.Drawing.Size(0, 22)
         '
         'FormProgramacionCita
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(799, 523)
-        Me.Controls.Add(Me.Panel1)
-        Me.Controls.Add(Me.PanelDia)
+        Me.ClientSize = New System.Drawing.Size(945, 523)
         Me.Controls.Add(Me.ToolStrip1)
-        Me.Controls.Add(Me.GroupBox4)
+        Me.Controls.Add(Me.txtRealizado)
+        Me.Controls.Add(Me.txtCancelado)
+        Me.Controls.Add(Me.txtPendiente)
+        Me.Controls.Add(Me.rbAgendados)
+        Me.Controls.Add(Me.rbCancelados)
+        Me.Controls.Add(Me.RadioButton2)
+        Me.Controls.Add(Me.txtBusqueda)
+        Me.Controls.Add(Me.Label5)
+        Me.Controls.Add(Me.PanelDia)
+        Me.Controls.Add(Me.MonthCalendar1)
+        Me.Controls.Add(Me.Panel1)
+        Me.Controls.Add(Me.dFecha)
         Me.Location = New System.Drawing.Point(921, 562)
-        Me.MaximumSize = New System.Drawing.Size(815, 562)
         Me.MinimumSize = New System.Drawing.Size(815, 562)
         Me.Name = "FormProgramacionCita"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.GroupBox4.ResumeLayout(False)
-        Me.GroupBox4.PerformLayout()
-        Me.ToolStrip1.ResumeLayout(False)
-        Me.ToolStrip1.PerformLayout()
         Me.Panel1.ResumeLayout(False)
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.ToolStrip1.ResumeLayout(False)
+        Me.ToolStrip1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-
-    Friend WithEvents GroupBox4 As GroupBox
     Friend WithEvents dFecha As DateTimePicker
-    Friend WithEvents Label5 As Label
-    Friend WithEvents ToolStrip1 As ToolStrip
-    Friend WithEvents txtPendiente As ToolStripTextBox
-    Friend WithEvents ToolStripLabel2 As ToolStripLabel
-    Friend WithEvents txtRealizado As ToolStripTextBox
-    Friend WithEvents ToolStripLabel3 As ToolStripLabel
-    Friend WithEvents txtCancelado As ToolStripTextBox
-    Friend WithEvents txtBusqueda As TextBox
-    Friend WithEvents Label3 As Label
     Friend WithEvents PanelDia As Panel
-    Friend WithEvents ToolStripLabel4 As ToolStripLabel
-    Friend WithEvents ToolStripTextBox1 As ToolStripTextBox
-    Friend WithEvents ToolStripLabel1 As ToolStripLabel
     Public WithEvents Panel1 As Panel
     Public WithEvents PictureBox1 As PictureBox
     Public WithEvents Label1 As Label
+    Friend WithEvents MonthCalendar1 As MonthCalendar
+    Public WithEvents txtBusqueda As TextBox
+    Public WithEvents Label5 As Label
+    Friend WithEvents RadioButton2 As RadioButton
+    Friend WithEvents rbCancelados As RadioButton
+    Friend WithEvents rbAgendados As RadioButton
+    Friend WithEvents txtPendiente As Button
+    Friend WithEvents txtCancelado As Button
+    Friend WithEvents txtRealizado As Button
+    Public WithEvents ToolStrip1 As ToolStrip
+    Friend WithEvents lbInformacionCliente As ToolStripLabel
 End Class
