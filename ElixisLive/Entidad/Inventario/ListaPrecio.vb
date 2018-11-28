@@ -11,11 +11,11 @@
         dtPrecio.Columns.Add("Descripcion", Type.GetType("System.String"))
         dtPrecio.Columns.Add("Precio", Type.GetType("System.Decimal")).DefaultValue = 0
 
-        sqlConsulta = ""
-        sqlCargar = ""
+        sqlConsulta = "[SP_INVEN_PRECIO_CONSULTAR]"
+        sqlCargar = "[SP_INVEN_PRECIO_CARGAR]"
         sqlGuardar = ""
-        sqlAnular = ""
-
+        sqlAnular = "[SP_INVEN_LISTA_PRECIO_ANULADO] "
+        sqlCargarDetalle = "[SP_INVEN_PRECIO_DETALLE]"
     End Sub
 
 End Class

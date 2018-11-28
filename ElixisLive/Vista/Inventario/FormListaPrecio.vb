@@ -45,8 +45,8 @@
         objListaPrecio.codigo = pCodigo
         Try
             dFila = Generales.cargarItem(objListaPrecio.sqlCargar, params)
-            txtNombre.Text = dFila("")
-            cbTipoLista.SelectedValue = dFila("")
+            txtNombre.Text = dFila("Nombre")
+            cbTipoLista.SelectedValue = dFila("Tipo_Lista")
             Generales.llenarTabla(objListaPrecio.sqlCargarDetalle, params, objListaPrecio.dtPrecio)
             dgvLista.DataSource = objListaPrecio.dtPrecio
             Generales.habilitarBotones(ToolStrip1)
@@ -81,9 +81,7 @@
         End Try
     End Sub
     Private Sub btRegistrar_Click(sender As Object, e As EventArgs) Handles btRegistrar.Click
-        If String.IsNullOrEmpty(txtNombre.Text) Then
-            EstiloMensajes.mostrarMensajeAdvertencia("¡ Favor digitar el nombre de la lista !")
-        Else
+        If validarCampos() = True Then
             Try
                 dgvLista.EndEdit()
                 ListaPrecioBLL.guardarListaPrecio(objListaPrecio)
@@ -96,7 +94,10 @@
             Catch ex As Exception
                 EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
             End Try
+        Else
+            EstiloMensajes.mostrarMensajeAdvertencia(MensajeSistema.VALIDAR_CAMPOS)
         End If
+        mostrarIconoError()
     End Sub
     Private Sub btEditar_Click(sender As Object, e As EventArgs) Handles btEditar.Click
         If EstiloMensajes.mostrarMensajePregunta(MensajeSistema.EDITAR) = Constantes.SI Then
@@ -174,6 +175,26 @@
             cbTipoLista.Enabled = False
             btRegistrar.Enabled = True
             btCancelar.Enabled = True
+        End If
+    End Sub
+    Private Function validarCampos() As Boolean
+        If String.IsNullOrEmpty(txtNombre.Text) Or
+                    cbTipoLista.SelectedIndex = 0 Then
+        Else
+            Return True
+        End If
+        Return False
+    End Function
+    Private Sub mostrarIconoError()
+        If String.IsNullOrEmpty(txtNombre.Text) Then
+            errorIcono.SetError(txtNombre, "¡ Debe digitar el nombre de la lista !")
+        Else
+            errorIcono.SetError(txtNombre, String.Empty)
+        End If
+        If cbTipoLista.SelectedIndex = 0 Then
+            errorIcono.SetError(cbTipoLista, "¡ Debe seleccionar el tipo de lista !")
+        Else
+            errorIcono.SetError(cbTipoLista, String.Empty)
         End If
     End Sub
 End Class
