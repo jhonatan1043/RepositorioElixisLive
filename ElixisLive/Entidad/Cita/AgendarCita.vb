@@ -11,7 +11,8 @@
         dtServicio.Columns.Add("Descripcion", Type.GetType("System.String"))
         dtServicio.Columns.Add("Cantidad", Type.GetType("System.Int32")).DefaultValue = 0
         sqlGuardar = "[SP_ADMIN_CITA_CREAR]"
-        sqlCargar = ""
+        sqlCargar = "[SP_ADMIN_CITA_CARGAR]"
+        sqlCargarDetalle = "[SP_ADMIN_CITA_CARGAR_DETALLE]"
         sqlAnular = "SP_ADMIN_CITA_ANULAR "
     End Sub
 

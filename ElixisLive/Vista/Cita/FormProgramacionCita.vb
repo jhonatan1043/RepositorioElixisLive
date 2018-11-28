@@ -1,7 +1,7 @@
 ﻿Public Class FormProgramacionCita
     Dim fecha As DateTime
     Private Sub FormProgramacionCita_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        fecha = dFecha.Value
+        fecha = Format(dFecha.Value, Constantes.FORMATO_FECHA_HORA)
         UtlidadCitaBLL.objFormCita = Me
         validarControles()
     End Sub

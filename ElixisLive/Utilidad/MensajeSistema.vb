@@ -4,6 +4,7 @@
     Public Const ANULAR = "¡Desea anular el registro!"
     Public Const EDITAR = "¡Desea editar el registro!"
     Public Const SALIR = "¡Desea salir!"
+    Public Const DUPLICAR = "¡Desea duplicar el registro!"
     '-------- Mensaje Accion 
     Public Const USUARIO_NO_EXISTE = "¡Usuario no existe!"
     Public Const REGISTRO_GUARDADO = "¡Registro guardado!"

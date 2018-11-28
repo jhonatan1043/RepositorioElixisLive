@@ -203,14 +203,20 @@
         Dim fila As DataRow
         Try
             params.Add(idCita)
-            fila = Generales.cargarItem("[SP_ADMIN_CITA_CARGAR]", params)
+            fila = Generales.cargarItem(objCita.sqlCargar, params)
             textNombre.Text = fila("Nombre")
             txtfecha.Text = Format(fila("Fecha_Cita"), Constantes.FORMATO_FECHA_HORA)
             txtobservacion.Text = fila("Observacion")
-            Generales.llenarTabla("[SP_ADMIN_CITA_CARGAR_DETALLE]", params, objCita.dtServicio)
+            Generales.llenarTabla(objCita.sqlCargarDetalle, params, objCita.dtServicio)
             dgvServicio.DataSource = objCita.dtServicio
         Catch ex As Exception
             EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
         End Try
+    End Sub
+
+    Private Sub dgvServicio_DataError(sender As Object, e As DataGridViewDataErrorEventArgs) Handles dgvServicio.DataError
+        If e.ColumnIndex = 3 Then
+            EstiloMensajes.mostrarMensajeError(MensajeSistema.INGRESAR_VALOR_VALIDO)
+        End If
     End Sub
 End Class

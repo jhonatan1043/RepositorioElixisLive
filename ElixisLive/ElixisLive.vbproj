@@ -119,6 +119,7 @@
     <Compile Include="Controlador\Gestion\CompraDAL.vb" />
     <Compile Include="Controlador\Inventario\ClienteDAL.vb" />
     <Compile Include="Controlador\Inventario\EntradaInventarioDAL.vb" />
+    <Compile Include="Controlador\Inventario\ListaPrecioDAL.vb" />
     <Compile Include="Controlador\Inventario\ProveedorDAL.vb" />
     <Compile Include="Controlador\Inventario\ProductoDAL.vb" />
     <Compile Include="ControlesElixisLive\TextFiltrarRegistro.Designer.vb">
@@ -179,6 +180,7 @@
     <Compile Include="Modelo\Configuracion\ConfigBLL.vb" />
     <Compile Include="Modelo\Gestion\CompraBLL.vb" />
     <Compile Include="Modelo\Inventario\EntradaInventarioBLL.vb" />
+    <Compile Include="Modelo\Inventario\ListaPrecioBLL.vb" />
     <Compile Include="Modelo\Inventario\ProveedorBLL.vb" />
     <Compile Include="Modelo\Inventario\ClienteBLL.vb" />
     <Compile Include="Modelo\Inventario\ProductoBLL.vb" />

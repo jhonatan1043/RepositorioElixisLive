@@ -46,6 +46,7 @@ Public Class FormEmpleado
         Try
             If Not IsNothing(dfila) Then
                 cargarCampos(dfila)
+                txtCodigoEmpleado.Text = objEmpleado.codigo
                 cbCargo.SelectedValue = dfila("Codigo_Cargo")
                 cbDepartamento.SelectedValue = dfila("Codigo_deaprt")
                 cbFormaPago.SelectedValue = dfila("codigo_Banco")
@@ -126,6 +127,7 @@ Public Class FormEmpleado
         params.Add(pCodigo)
         Try
             dfila = Generales.cargarItem(Sentencias.PERSONA_CARGAR, params)
+            txtCodigoEmpleado.Text = pCodigo
             cargarCampos(dfila)
             listaSucursales(pCodigo, Sentencias.SUCURSAL_EMPLEADO_CONSULTAR)
         Catch ex As Exception
@@ -139,6 +141,7 @@ Public Class FormEmpleado
         Generales.deshabilitarControles(gpUsuario)
         Generales.limpiarControles(Me)
         cargarParametros()
+        txtCodigoEmpleado.ReadOnly = True
         objEmpleado.codigo = Nothing
         btBuscarPersona.Enabled = True
         btCancelar.Enabled = True
@@ -206,6 +209,7 @@ Public Class FormEmpleado
             Generales.habilitarControles(Me)
             Generales.deshabilitarControles(gbInform)
             Generales.deshabilitarControles(gpUsuario)
+            txtCodigoEmpleado.ReadOnly = True
             btBuscarPersona.Enabled = False
             btCancelar.Enabled = True
             btRegistrar.Enabled = True

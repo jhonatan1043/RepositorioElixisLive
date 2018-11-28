@@ -31,7 +31,7 @@ Partial Class FormBaseLista
         Me.Label3 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.cbTipoLista = New System.Windows.Forms.ComboBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.btDuplicar = New System.Windows.Forms.Button()
         Me.txtNombre = New System.Windows.Forms.TextBox()
@@ -132,7 +132,7 @@ Partial Class FormBaseLista
         '
         'GroupBox2
         '
-        Me.GroupBox2.Controls.Add(Me.ComboBox1)
+        Me.GroupBox2.Controls.Add(Me.cbTipoLista)
         Me.GroupBox2.Controls.Add(Me.Label2)
         Me.GroupBox2.Controls.Add(Me.btDuplicar)
         Me.GroupBox2.Controls.Add(Me.txtNombre)
@@ -143,14 +143,14 @@ Partial Class FormBaseLista
         Me.GroupBox2.TabIndex = 62
         Me.GroupBox2.TabStop = False
         '
-        'ComboBox1
+        'cbTipoLista
         '
-        Me.ComboBox1.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Italic)
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(387, 12)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(167, 23)
-        Me.ComboBox1.TabIndex = 11
+        Me.cbTipoLista.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Italic)
+        Me.cbTipoLista.FormattingEnabled = True
+        Me.cbTipoLista.Location = New System.Drawing.Point(387, 12)
+        Me.cbTipoLista.Name = "cbTipoLista"
+        Me.cbTipoLista.Size = New System.Drawing.Size(167, 23)
+        Me.cbTipoLista.TabIndex = 11
         '
         'Label2
         '
@@ -401,7 +401,7 @@ Partial Class FormBaseLista
     Public WithEvents txtNombre As TextBox
     Public WithEvents Label1 As Label
     Friend WithEvents btDuplicar As Button
-    Friend WithEvents ComboBox1 As ComboBox
+    Friend WithEvents cbTipoLista As ComboBox
     Public WithEvents Label2 As Label
     Friend WithEvents errorIcono As ErrorProvider
 End Class

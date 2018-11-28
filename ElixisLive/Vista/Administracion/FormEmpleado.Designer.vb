@@ -23,7 +23,7 @@ Partial Class FormEmpleado
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.gbInform = New System.Windows.Forms.GroupBox()
         Me.txtEmail = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
@@ -83,6 +83,8 @@ Partial Class FormEmpleado
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Pimagen = New System.Windows.Forms.PictureBox()
         Me.LTitulo = New System.Windows.Forms.Label()
+        Me.Label15 = New System.Windows.Forms.Label()
+        Me.txtCodigoEmpleado = New System.Windows.Forms.TextBox()
         Me.gbInform.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         CType(Me.pictImagen, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -128,7 +130,7 @@ Partial Class FormEmpleado
         Me.txtEmail.Location = New System.Drawing.Point(324, 70)
         Me.txtEmail.Name = "txtEmail"
         Me.txtEmail.ReadOnly = True
-        Me.txtEmail.Size = New System.Drawing.Size(414, 25)
+        Me.txtEmail.Size = New System.Drawing.Size(446, 25)
         Me.txtEmail.TabIndex = 21
         '
         'Label5
@@ -150,7 +152,7 @@ Partial Class FormEmpleado
         Me.txtDireccion.Location = New System.Drawing.Point(324, 42)
         Me.txtDireccion.Name = "txtDireccion"
         Me.txtDireccion.ReadOnly = True
-        Me.txtDireccion.Size = New System.Drawing.Size(414, 25)
+        Me.txtDireccion.Size = New System.Drawing.Size(446, 25)
         Me.txtDireccion.TabIndex = 19
         '
         'Label4
@@ -238,7 +240,7 @@ Partial Class FormEmpleado
         Me.txtNombre.Location = New System.Drawing.Point(324, 14)
         Me.txtNombre.Name = "txtNombre"
         Me.txtNombre.ReadOnly = True
-        Me.txtNombre.Size = New System.Drawing.Size(378, 25)
+        Me.txtNombre.Size = New System.Drawing.Size(414, 25)
         Me.txtNombre.TabIndex = 5
         '
         'Label1
@@ -285,7 +287,7 @@ Partial Class FormEmpleado
         Me.GbInform_D.Size = New System.Drawing.Size(888, 169)
         Me.GbInform_D.TabIndex = 59
         Me.GbInform_D.TabStop = False
-        Me.GbInform_D.Text = "Información del Empleado"
+        Me.GbInform_D.Text = "Otros Datos del Empleado"
         '
         'dgvParametro
         '
@@ -293,9 +295,9 @@ Partial Class FormEmpleado
         Me.dgvParametro.AllowUserToDeleteRows = False
         Me.dgvParametro.AllowUserToResizeColumns = False
         Me.dgvParametro.AllowUserToResizeRows = False
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black
-        Me.dgvParametro.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black
+        Me.dgvParametro.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle3
         Me.dgvParametro.BackgroundColor = System.Drawing.SystemColors.Control
         Me.dgvParametro.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvParametro.Location = New System.Drawing.Point(3, 18)
@@ -307,6 +309,8 @@ Partial Class FormEmpleado
         'GroupBox1
         '
         Me.GroupBox1.BackColor = System.Drawing.Color.Transparent
+        Me.GroupBox1.Controls.Add(Me.txtCodigoEmpleado)
+        Me.GroupBox1.Controls.Add(Me.Label15)
         Me.GroupBox1.Controls.Add(Me.gpUsuario)
         Me.GroupBox1.Controls.Add(Me.GroupBox6)
         Me.GroupBox1.Controls.Add(Me.GroupBox5)
@@ -341,18 +345,18 @@ Partial Class FormEmpleado
         Me.cbPerfil.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbPerfil.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic)
         Me.cbPerfil.FormattingEnabled = True
-        Me.cbPerfil.Location = New System.Drawing.Point(97, 43)
+        Me.cbPerfil.Location = New System.Drawing.Point(126, 43)
         Me.cbPerfil.Name = "cbPerfil"
-        Me.cbPerfil.Size = New System.Drawing.Size(223, 25)
+        Me.cbPerfil.Size = New System.Drawing.Size(194, 25)
         Me.cbPerfil.TabIndex = 15
         '
         'txtUsuario
         '
         Me.txtUsuario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtUsuario.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtUsuario.Location = New System.Drawing.Point(97, 16)
+        Me.txtUsuario.Location = New System.Drawing.Point(126, 16)
         Me.txtUsuario.Name = "txtUsuario"
-        Me.txtUsuario.Size = New System.Drawing.Size(223, 25)
+        Me.txtUsuario.Size = New System.Drawing.Size(194, 25)
         Me.txtUsuario.TabIndex = 14
         Me.txtUsuario.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -383,9 +387,9 @@ Partial Class FormEmpleado
         Me.GroupBox6.Controls.Add(Me.ListSucursal)
         Me.GroupBox6.Font = New System.Drawing.Font("Times New Roman", 8.25!, System.Drawing.FontStyle.Italic)
         Me.GroupBox6.ForeColor = System.Drawing.Color.DarkBlue
-        Me.GroupBox6.Location = New System.Drawing.Point(674, 110)
+        Me.GroupBox6.Location = New System.Drawing.Point(674, 150)
         Me.GroupBox6.Name = "GroupBox6"
-        Me.GroupBox6.Size = New System.Drawing.Size(218, 153)
+        Me.GroupBox6.Size = New System.Drawing.Size(218, 113)
         Me.GroupBox6.TabIndex = 67
         Me.GroupBox6.TabStop = False
         Me.GroupBox6.Text = "Información de Sucursal"
@@ -397,7 +401,7 @@ Partial Class FormEmpleado
         Me.ListSucursal.Location = New System.Drawing.Point(3, 16)
         Me.ListSucursal.MultiColumn = True
         Me.ListSucursal.Name = "ListSucursal"
-        Me.ListSucursal.Size = New System.Drawing.Size(212, 134)
+        Me.ListSucursal.Size = New System.Drawing.Size(212, 94)
         Me.ListSucursal.TabIndex = 0
         '
         'GroupBox5
@@ -462,7 +466,7 @@ Partial Class FormEmpleado
         Me.btBuscarPersona.BackgroundImage = Global.Quality.My.Resources.Resources.fondo_azul
         Me.btBuscarPersona.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btBuscarPersona.Image = Global.Quality.My.Resources.Resources.Zoom_icon1
-        Me.btBuscarPersona.Location = New System.Drawing.Point(711, 18)
+        Me.btBuscarPersona.Location = New System.Drawing.Point(744, 18)
         Me.btBuscarPersona.Name = "btBuscarPersona"
         Me.btBuscarPersona.Size = New System.Drawing.Size(31, 30)
         Me.btBuscarPersona.TabIndex = 65
@@ -500,7 +504,7 @@ Partial Class FormEmpleado
         '
         Me.txtCuenta.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtCuenta.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtCuenta.Location = New System.Drawing.Point(121, 67)
+        Me.txtCuenta.Location = New System.Drawing.Point(121, 72)
         Me.txtCuenta.Name = "txtCuenta"
         Me.txtCuenta.Size = New System.Drawing.Size(199, 25)
         Me.txtCuenta.TabIndex = 13
@@ -511,7 +515,7 @@ Partial Class FormEmpleado
         Me.Label13.AutoSize = True
         Me.Label13.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Italic)
         Me.Label13.ForeColor = System.Drawing.Color.Black
-        Me.Label13.Location = New System.Drawing.Point(1, 70)
+        Me.Label13.Location = New System.Drawing.Point(1, 77)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(61, 19)
         Me.Label13.TabIndex = 12
@@ -522,7 +526,7 @@ Partial Class FormEmpleado
         Me.cbTipoCuenta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbTipoCuenta.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic)
         Me.cbTipoCuenta.FormattingEnabled = True
-        Me.cbTipoCuenta.Location = New System.Drawing.Point(120, 39)
+        Me.cbTipoCuenta.Location = New System.Drawing.Point(120, 42)
         Me.cbTipoCuenta.Name = "cbTipoCuenta"
         Me.cbTipoCuenta.Size = New System.Drawing.Size(200, 25)
         Me.cbTipoCuenta.TabIndex = 11
@@ -532,7 +536,7 @@ Partial Class FormEmpleado
         Me.Label11.AutoSize = True
         Me.Label11.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Italic)
         Me.Label11.ForeColor = System.Drawing.Color.Black
-        Me.Label11.Location = New System.Drawing.Point(1, 42)
+        Me.Label11.Location = New System.Drawing.Point(1, 46)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(93, 19)
         Me.Label11.TabIndex = 10
@@ -543,7 +547,7 @@ Partial Class FormEmpleado
         Me.cbBanco.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbBanco.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic)
         Me.cbBanco.FormattingEnabled = True
-        Me.cbBanco.Location = New System.Drawing.Point(120, 11)
+        Me.cbBanco.Location = New System.Drawing.Point(120, 13)
         Me.cbBanco.Name = "cbBanco"
         Me.cbBanco.Size = New System.Drawing.Size(200, 25)
         Me.cbBanco.TabIndex = 9
@@ -553,7 +557,7 @@ Partial Class FormEmpleado
         Me.Label12.AutoSize = True
         Me.Label12.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Italic)
         Me.Label12.ForeColor = System.Drawing.Color.Black
-        Me.Label12.Location = New System.Drawing.Point(1, 14)
+        Me.Label12.Location = New System.Drawing.Point(1, 15)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(54, 19)
         Me.Label12.TabIndex = 8
@@ -593,7 +597,7 @@ Partial Class FormEmpleado
         Me.ToolStrip1.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.ToolStrip1.ImageScalingSize = New System.Drawing.Size(30, 30)
         Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripSeparator1, Me.btNuevo, Me.ToolStripSeparator7, Me.btBuscar, Me.ToolStripSeparator2, Me.btRegistrar, Me.ToolStripSeparator4, Me.btEditar, Me.ToolStripSeparator5, Me.btCancelar, Me.ToolStripSeparator3, Me.btAnular, Me.ToolStripSeparator6})
-        Me.ToolStrip1.Location = New System.Drawing.Point(0, 487)
+        Me.ToolStrip1.Location = New System.Drawing.Point(0, 486)
         Me.ToolStrip1.Name = "ToolStrip1"
         Me.ToolStrip1.Size = New System.Drawing.Size(905, 37)
         Me.ToolStrip1.TabIndex = 15
@@ -735,13 +739,36 @@ Partial Class FormEmpleado
         Me.LTitulo.Text = "Empleado"
         Me.LTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
+        'Label15
+        '
+        Me.Label15.AutoSize = True
+        Me.Label15.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Italic)
+        Me.Label15.ForeColor = System.Drawing.Color.Black
+        Me.Label15.Location = New System.Drawing.Point(676, 121)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(61, 19)
+        Me.Label15.TabIndex = 68
+        Me.Label15.Text = "Codigo:"
+        '
+        'txtCodigoEmpleado
+        '
+        Me.txtCodigoEmpleado.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.txtCodigoEmpleado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtCodigoEmpleado.Font = New System.Drawing.Font("Times New Roman", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtCodigoEmpleado.ForeColor = System.Drawing.Color.Red
+        Me.txtCodigoEmpleado.Location = New System.Drawing.Point(745, 115)
+        Me.txtCodigoEmpleado.Name = "txtCodigoEmpleado"
+        Me.txtCodigoEmpleado.Size = New System.Drawing.Size(144, 29)
+        Me.txtCodigoEmpleado.TabIndex = 16
+        Me.txtCodigoEmpleado.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
         'FormEmpleado
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(905, 524)
+        Me.ClientSize = New System.Drawing.Size(905, 523)
         Me.Controls.Add(Me.ToolStrip1)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Panel1)
@@ -759,6 +786,7 @@ Partial Class FormEmpleado
         Me.GbInform_D.ResumeLayout(False)
         CType(Me.dgvParametro, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
         Me.gpUsuario.ResumeLayout(False)
         Me.gpUsuario.PerformLayout()
         Me.GroupBox6.ResumeLayout(False)
@@ -836,4 +864,6 @@ Partial Class FormEmpleado
     Friend WithEvents cbPerfil As ComboBox
     Friend WithEvents ErrorIcono As ErrorProvider
     Friend WithEvents ListSucursal As CheckedListBox
+    Public WithEvents txtCodigoEmpleado As TextBox
+    Friend WithEvents Label15 As Label
 End Class

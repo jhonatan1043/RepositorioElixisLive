@@ -56,4 +56,9 @@
 
     Public Const PANEL_POCISION_X = 110
 
+    Public Const COLOR_DISPONIBLE = "192, 255, 255"
+    Public Const COLOR_CANCELADO = "255, 192, 192"
+    Public Const COLOR_AGENDADO = "192; 255; 192"
+    Public Const COLOR_REALIZADO = "255, 224, 192"
+
 End Class

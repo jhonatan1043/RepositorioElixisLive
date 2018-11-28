@@ -32,10 +32,10 @@
         Dim params As New List(Of String)
         params.Add(String.Empty)
         Try
-            Generales.buscarElemento("",
+            Generales.buscarElemento(Sentencias.COMPRA_CONSULTAR,
                                    params,
                                    AddressOf cargarCompra,
-                                   "Busqueda de Compra",
+                                   Titulo.BUSQUEDA_COMPRA,
                                    True, True)
         Catch ex As Exception
             EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
@@ -125,9 +125,9 @@
                 If btRegistrar.Enabled = False Then Exit Sub
                 If (dgvFactura.Rows(dgvFactura.CurrentCell.RowIndex).Cells("dgCodigo").Selected = True _
                     Or dgvFactura.Rows(dgvFactura.CurrentCell.RowIndex).Cells("dgDescripcion").Selected = True) Then
-                    Generales.busquedaItems("[SP_PRODUCTOS_COMPRA_CONSULTAR]",
+                    Generales.busquedaItems(Sentencias.PRODUCTO_CONSULTAR,
                                               params,
-                                              "Buscar Producto",
+                                              Titulo.BUSQUEDA_PRODUCTO,
                                               dgvFactura,
                                               objCompra.dtCompra,
                                               0,
@@ -147,9 +147,9 @@
     Private Sub dgvFactura_CellFormatting(sender As System.Object, e As System.Windows.Forms.DataGridViewCellFormattingEventArgs) Handles dgvFactura.CellFormatting
         If e.ColumnIndex = 4 Or e.ColumnIndex = 5 Then
             If IsDBNull(e.Value) Then
-                e.Value = Format(Val(0), "c2")
+                e.Value = Format(Val(0), Constantes.FORMATO_MONEDA)
             Else
-                e.Value = Format(Val(e.Value), "c2")
+                e.Value = Format(Val(e.Value), Constantes.FORMATO_MONEDA)
             End If
         End If
     End Sub
@@ -165,12 +165,12 @@
         Dim params As New List(Of String)
         params.Add(String.Empty)
         Try
-            Generales.buscarElemento("[SP_ADMIN_PROVEEDOR_CONSULTAR]",
-                                   params,
-                                   AddressOf cargarProveedor,
-                                   "Busqueda de proveedor",
-                                   True,
-                                   True)
+            Generales.buscarElemento(Sentencias.PROVEEDOR_ADMIN_CONSULTAR,
+                                     params,
+                                     AddressOf cargarProveedor,
+                                     Titulo.BUSQUEDA_PROVEEDOR,
+                                     True,
+                                     True)
         Catch ex As Exception
             EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
         End Try
@@ -181,7 +181,7 @@
         objCompra.codigoPersona = pCodigo
         params.Add(objCompra.codigoPersona)
         Try
-            dfila = Generales.cargarItem("[SP_ADMIN_PROVEEDOR_CARGAR]", params)
+            dfila = Generales.cargarItem(Sentencias.PROVEEDOR_ADMIN_CARGAR, params)
             TextIdentificacion.Text = dfila("Identificacion")
             txtTelefono.Text = If(IsDBNull(dfila("Telefono")), dfila("Celular"), dfila("Telefono"))
             TextNombre.Text = dfila("Nombre")
@@ -234,7 +234,7 @@
                 valorTotal = Constantes.SIN_VALOR_NUMERICO
             End If
             txtCantidadArticulos.Text = cantidadArticulos
-            txtValorTotal.Text = CDbl(valorTotal).ToString("C2")
+            txtValorTotal.Text = CDbl(valorTotal).ToString(Constantes.FORMATO_MONEDA)
         Catch ex As Exception
             EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
         End Try
