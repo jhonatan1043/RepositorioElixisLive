@@ -62,6 +62,7 @@
         Generales.deshabilitarBotones(ToolStrip1)
         Generales.habilitarControles(Me)
         Generales.limpiarControles(Me)
+        validarEdicionGrilla(Constantes.EDITABLE)
         objListaPrecio.codigo = Nothing
         btDuplicar.Enabled = False
         btRegistrar.Enabled = True
@@ -114,7 +115,6 @@
             Generales.deshabilitarBotones(ToolStrip1)
             Generales.limpiarControles(Me)
             Generales.deshabilitarControles(Me)
-            validarEdicionGrilla(Constantes.NO_EDITABLE)
             objListaPrecio.codigo = Nothing
             btNuevo.Enabled = True
             btBuscar.Enabled = True
