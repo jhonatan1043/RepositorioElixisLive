@@ -15,7 +15,7 @@
         Try
             panel.Location = New Point(posicionX, posicionY)
             panel.Size = New Point(anchura, altura)
-            panel.BackColor = If(pendiente = Constantes.PENDIENTE, Control.DefaultBackColor, colorLabel())
+            panel.BackColor = If(pendiente = Constantes.PENDIENTE, Color.FromArgb(192, 255, 255), colorLabel())
             panel.Controls.Add(creaCajaTexto(4, 3, idCita, " Cliente: " & nombre & vbNewLine & " # " & cedula))
             panel.Controls.Add(creaCajaTexto(4, 36, idCita, " Fecha: " & CStr(fechaCita)))
             panel.Tag = hora & "-" & idCita

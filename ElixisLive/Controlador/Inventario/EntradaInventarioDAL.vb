@@ -14,7 +14,6 @@ Public Class EntradaInventarioDAL
                     comando.Parameters.Add(New SqlParameter("@Codigo_Compra", SqlDbType.Int)).Value = objEntrada.codigoCompra
                     comando.Parameters.Add(New SqlParameter("@Usuario", SqlDbType.Int)).Value = SesionActual.idUsuario
                     comando.Parameters.Add(New SqlParameter("@Tabla", SqlDbType.Structured)).Value = objEntrada.dtEntrada
-                    comando.Parameters.Add(New SqlParameter("@TablaLote", SqlDbType.Structured)).Value = objEntrada.dtLote
                     objEntrada.codigo = CType(comando.ExecuteScalar, String)
                     trnsccion.Commit()
                 End Using

@@ -107,7 +107,6 @@
             End Try
         End If
     End Sub
-
     Private Sub btBuscarCompra_Click(sender As Object, e As EventArgs) Handles btBuscarCompra.Click
         Dim params As New List(Of String)
         params.Add(String.Empty)
@@ -156,14 +155,12 @@
             .Columns("dgCantidad").ReadOnly = True
             .Columns("dgTotal").ReadOnly = True
             .Columns("dgBodega").ReadOnly = True
-            .Columns("dgLote").ReadOnly = True
             .Columns("dgCodigoBarra").ReadOnly = True
         End With
         If Estado = True Then
             With dgvEntrada
                 .Columns("dgCantidad").ReadOnly = False
                 .Columns("dgBodega").ReadOnly = False
-                .Columns("dgLote").ReadOnly = False
             End With
         End If
     End Sub
@@ -183,7 +180,6 @@
             .Columns("dgCantidad").DataPropertyName = "Cantidad"
             .Columns("dgTotal").DataPropertyName = "Total"
             .Columns("dgBodega").DataPropertyName = "Bodega"
-            .Columns("dgLote").DataPropertyName = "Lote"
             .Columns("dgCodigoBarra").DataPropertyName = "CodigoBarra"
             '------------------------------------------------------
             .Columns("dgProducto").AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
@@ -191,7 +187,6 @@
             .Columns("dgCantidad").AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
             .Columns("dgTotal").AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
             .Columns("dgBodega").AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
-            .Columns("dgLote").AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
             .Columns("dgCodigoBarra").AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
             .DataSource = objEntrada.dtEntrada
             .AutoGenerateColumns = False
@@ -219,5 +214,10 @@
         txtCodigo.Clear()
         txtSubTotal.Clear()
         txtTotal.Clear()
+    End Sub
+    Private Sub dgvEntrada_DataError(sender As Object, e As DataGridViewDataErrorEventArgs) Handles dgvEntrada.DataError
+        If e.ColumnIndex = 2 Then
+            EstiloMensajes.mostrarMensajeError(MensajeSistema.INGRESAR_VALOR_VALIDO)
+        End If
     End Sub
 End Class

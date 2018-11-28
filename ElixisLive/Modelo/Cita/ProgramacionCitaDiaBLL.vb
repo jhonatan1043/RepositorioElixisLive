@@ -70,7 +70,7 @@
     Private Shared Sub cargarPanelHoraDisponible(ByRef panel As Panel, hora As String)
         Try
             objHoraDisponible = New HoraDisponible
-            objHoraDisponible.color = Color.FromArgb(Constantes.COLOR_DISPONIBLE)
+            objHoraDisponible.color = Color.FromArgb(192, 255, 255)
             objHoraDisponible.hora = hora
             panel.Controls.Add(objHoraDisponible.crearPanelHoraDisponible(contenedorPanelDispon, 8))
         Catch ex As Exception
@@ -80,7 +80,7 @@
     Private Shared Sub cargarPanelDisponible(ByRef panel As Panel, hora As String)
         Try
             objDisponible = New CitaDisponible
-            objDisponible.color = Color.FromArgb(Constantes.COLOR_DISPONIBLE)
+            objDisponible.color = Color.FromArgb(192, 255, 255)
             objDisponible.hora = hora
             panelCreado = objDisponible.crearPanelDisponible(contenedorPanelDispon)
             panel.Controls.Add(panelCreado)

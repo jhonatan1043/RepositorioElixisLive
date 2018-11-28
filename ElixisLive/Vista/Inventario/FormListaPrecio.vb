@@ -18,16 +18,15 @@
     End Sub
     Private Sub validarGrilla()
         With dgvLista
+            .DataSource = objListaPrecio.dtPrecio
             .Columns("Codigo").AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
             .Columns("Descripcion").AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
             .Columns("Precio").AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
-            .DataSource = objListaPrecio.dtPrecio
             .AutoGenerateColumns = False
         End With
     End Sub
     Private Sub validarEdicionGrilla(Estado As Boolean)
         With dgvLista
-            .ReadOnly = False
             .Columns("Codigo").ReadOnly = True
             .Columns("Descripcion").ReadOnly = True
             .Columns("Precio").ReadOnly = True
@@ -64,6 +63,7 @@
         Generales.habilitarControles(Me)
         Generales.limpiarControles(Me)
         objListaPrecio.codigo = Nothing
+        btDuplicar.Enabled = False
         btRegistrar.Enabled = True
         btCancelar.Enabled = True
     End Sub
@@ -145,7 +145,7 @@
     End Sub
     Private Sub cbTipoLista_TextChanged(sender As Object, e As EventArgs) Handles cbTipoLista.TextChanged
         If btRegistrar.Enabled = False Then Exit Sub
-        Select Case cbTipoLista.SelectedIndex
+        Select Case cbTipoLista.SelectedValue
             Case 0 ' producto
                 cargarItems(Sentencias.PRODUCTO_CONSULTAR)
             Case 1 ' servicio

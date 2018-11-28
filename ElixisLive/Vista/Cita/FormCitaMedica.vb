@@ -83,9 +83,6 @@
                 EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
             End Try
         End If
-        'establecerPosicion()
-        'formulario.ventana = Me '' se indica el formulario que usara el efecto
-        'formulario.redondear() '' se redondean los bordes del formulario
     End Sub
     Private Sub establecerPosicion()
         Dim x As Integer

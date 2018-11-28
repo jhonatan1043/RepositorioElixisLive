@@ -8,11 +8,11 @@
     Public Function colorLabel() As Color
         Select Case estado
             Case "P"
-                color = Color.FromArgb(Constantes.COLOR_AGENDADO)
+                color = Color.FromArgb(192, 255, 192)
             Case "C"
-                color = Color.FromArgb(Constantes.COLOR_CANCELADO)
+                color = Color.FromArgb(255, 192, 192)
             Case "R"
-                color = Color.FromArgb(Constantes.COLOR_REALIZADO)
+                color = Color.FromArgb(255, 224, 192)
         End Select
         Return color
     End Function

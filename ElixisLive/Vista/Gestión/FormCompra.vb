@@ -15,7 +15,6 @@
         btNuevo.Enabled = True
         btBuscar.Enabled = True
     End Sub
-
     Private Sub btNuevo_Click(sender As Object, e As EventArgs) Handles btNuevo.Click
         Generales.deshabilitarBotones(ToolStrip1)
         Generales.habilitarControles(Me)
@@ -32,7 +31,7 @@
         Dim params As New List(Of String)
         params.Add(String.Empty)
         Try
-            Generales.buscarElemento(Sentencias.COMPRA_CONSULTAR,
+            Generales.buscarElemento(objCompra.sqlConsulta,
                                    params,
                                    AddressOf cargarCompra,
                                    Titulo.BUSQUEDA_COMPRA,
@@ -47,12 +46,13 @@
         Try
             params.Add(pCodigo)
             objCompra.codigo = pCodigo
-            dFila = Generales.cargarItem("", params)
-            TextIdentificacion.Text = dFila("")
-            TextNombre.Text = dFila("")
-            txtTelefono.Text = dFila("")
-            txtNumeroFatura.Text = dFila("")
-            Generales.llenarTabla("", params, objCompra.dtCompra)
+            dFila = Generales.cargarItem(objCompra.sqlCargar, params)
+            TextIdentificacion.Text = dFila("Identificacion")
+            TextNombre.Text = dFila("Nombre")
+            txtTelefono.Text = dFila("Telefono")
+            txtNumeroFatura.Text = dFila("Numero_Factura")
+            dtFecha.Value = dFila("Fecha_Compra")
+            Generales.llenarTabla(objCompra.sqlCargarDetalle, params, objCompra.dtCompra)
             dgvFactura.DataSource = objCompra.dtCompra
             calcularTotales()
         Catch ex As Exception
@@ -225,7 +225,10 @@
     Private Sub calcularTotales()
         dgvFactura.EndEdit()
         Try
-            Dim cantidadArticulos, valorTotal As Double
+
+            Dim cantidadArticulos,
+                valorTotal As Double
+
             If dgvFactura.Rows.Count >= 1 Then
                 valorTotal = objCompra.dtCompra.Compute("SUM(Total)", "")
                 cantidadArticulos = objCompra.dtCompra.Compute("SUM(Cantidad)", "")
@@ -233,10 +236,17 @@
                 cantidadArticulos = Constantes.SIN_VALOR_NUMERICO
                 valorTotal = Constantes.SIN_VALOR_NUMERICO
             End If
+
             txtCantidadArticulos.Text = cantidadArticulos
             txtValorTotal.Text = CDbl(valorTotal).ToString(Constantes.FORMATO_MONEDA)
+
         Catch ex As Exception
             EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
         End Try
+    End Sub
+    Private Sub dgvFactura_DataError(sender As Object, e As DataGridViewDataErrorEventArgs) Handles dgvFactura.DataError
+        If e.ColumnIndex = 2 OrElse e.ColumnIndex = 3 Then
+            EstiloMensajes.mostrarMensajeError(MensajeSistema.INGRESAR_VALOR_VALIDO)
+        End If
     End Sub
 End Class

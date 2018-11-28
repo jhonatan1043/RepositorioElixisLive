@@ -126,16 +126,6 @@
             drFila.Item(1) = "Dias"
             dtTabla.Rows.Add(drFila)
 
-            'drFila = dtTabla.NewRow()
-            'drFila.Item(0) = 1
-            'drFila.Item(1) = "Semana"
-            'dtTabla.Rows.Add(drFila)
-
-            'drFila = dtTabla.NewRow()
-            'drFila.Item(0) = 2
-            'drFila.Item(1) = "Mes"
-            'dtTabla.Rows.Add(drFila)
-
             comboAreaServicio.DataSource = dtTabla
             comboAreaServicio.DisplayMember = "Descripcion"
             comboAreaServicio.ValueMember = "Codigo"
@@ -144,41 +134,5 @@
             Throw ex
         End Try
     End Sub
-    'Public Shared Function cargarCombo(ByVal consulta As String,
-    '                            ByVal params As List(Of String),
-    '                            ByVal vlrDisplayMember As String,
-    '                            ByVal vlrValueMember As String,
-    '                            ByVal cbCombo As ComboBox) As Boolean
-    '    Dim dtTabla As New DataTable
-    '    Dim bandera As Boolean
-    '    Try
 
-    '        dtTabla.Columns.Add(vlrValueMember)
-    '        dtTabla.Columns.Add(vlrDisplayMember)
-
-    '        Using da = New SqlDataAdapter(consulta & Funciones.getParametros(params), FormPrincipal.cnxion)
-    '            da.Fill(dtTabla)
-    '        End Using
-
-    '        cbCombo.DataSource = dtTabla
-    '        cbCombo.DisplayMember = vlrDisplayMember
-    '        cbCombo.ValueMember = vlrValueMember
-
-    '        If cbCombo IsNot Nothing Then
-    '            cbCombo.AutoCompleteMode = AutoCompleteMode.None
-    '            cbCombo.AutoCompleteSource = AutoCompleteSource.None
-    '            cbCombo.DropDownStyle = ComboBoxStyle.DropDownList
-    '        End If
-
-    '        If dtTabla.Rows.Count > 0 Then
-    '            bandera = True
-    '        End If
-
-    '    Catch ex As Exception
-    '        EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
-    '    End Try
-
-    '    Return bandera
-
-    'End Function
 End Class

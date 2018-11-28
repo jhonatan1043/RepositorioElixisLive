@@ -12,10 +12,12 @@
         dtCompra.Columns.Add("Cantidad", Type.GetType("System.Int32")).DefaultValue = 0
         dtCompra.Columns.Add("valor", Type.GetType("System.Int32")).DefaultValue = 0
         dtCompra.Columns.Add("Total", Type.GetType("System.Int32")).DefaultValue = 0
+
         sqlAnular = ""
-        sqlConsulta = ""
-        sqlCargar = ""
-        sqlCargarDetalle = ""
+        sqlConsulta = Sentencias.COMPRA_CONSULTAR
+        sqlCargar = Sentencias.COMPRA_CARGAR
+        sqlCargarDetalle = Sentencias.COMPRA_CARGAR_DETALLE
         sqlGuardar = ""
+
     End Sub
 End Class

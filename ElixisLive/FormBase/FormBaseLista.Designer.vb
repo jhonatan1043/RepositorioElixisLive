@@ -219,7 +219,7 @@ Partial Class FormBaseLista
         Me.dgvLista.Location = New System.Drawing.Point(3, 16)
         Me.dgvLista.MultiSelect = False
         Me.dgvLista.Name = "dgvLista"
-        Me.dgvLista.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dgvLista.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect
         Me.dgvLista.Size = New System.Drawing.Size(635, 232)
         Me.dgvLista.TabIndex = 0
         '
@@ -231,7 +231,7 @@ Partial Class FormBaseLista
         Me.ToolStrip1.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.ToolStrip1.ImageScalingSize = New System.Drawing.Size(30, 30)
         Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripSeparator1, Me.btNuevo, Me.ToolStripSeparator2, Me.btBuscar, Me.ToolStripSeparator7, Me.btRegistrar, Me.ToolStripSeparator4, Me.btEditar, Me.ToolStripSeparator5, Me.btCancelar, Me.ToolStripSeparator3, Me.btAnular, Me.ToolStripSeparator6})
-        Me.ToolStrip1.Location = New System.Drawing.Point(0, 384)
+        Me.ToolStrip1.Location = New System.Drawing.Point(0, 385)
         Me.ToolStrip1.Name = "ToolStrip1"
         Me.ToolStrip1.Size = New System.Drawing.Size(662, 37)
         Me.ToolStrip1.TabIndex = 15
@@ -349,7 +349,7 @@ Partial Class FormBaseLista
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(662, 421)
+        Me.ClientSize = New System.Drawing.Size(662, 422)
         Me.Controls.Add(Me.ToolStrip1)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.GroupBox1)
