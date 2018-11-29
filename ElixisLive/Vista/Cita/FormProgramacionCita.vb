@@ -46,8 +46,7 @@
     End Sub
     Private Sub cargarInformacion(params As List(Of String))
         txtPendiente.Text = params.Item(0)
-        txtCancelado.Text = params.Item(1)
-        txtRealizado.Text = params.Item(2)
+        txtRealizado.Text = params.Item(1)
     End Sub
 
     Private Sub MonthCalendar1_DateChanged(sender As Object, e As DateRangeEventArgs) Handles MonthCalendar1.DateChanged

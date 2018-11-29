@@ -108,7 +108,6 @@
             valoresInicialesDia()
 
             params.Add(dtCitas.Select("Estado_Atencion='P'").Count.ToString)
-            params.Add(dtCitas.Select("Estado_Atencion='C'").Count.ToString)
             params.Add(dtCitas.Select("Estado_Atencion='R'").Count.ToString)
 
             For posicion = 0 To 18

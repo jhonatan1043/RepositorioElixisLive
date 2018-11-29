@@ -9,10 +9,8 @@
         Select Case estado
             Case "P"
                 color = Color.FromArgb(192, 255, 192)
-            Case "C"
-                color = Color.FromArgb(255, 192, 192)
             Case "R"
-                color = Color.FromArgb(192, 192, 255)
+                color = Color.FromArgb(255, 192, 192)
         End Select
         Return color
     End Function

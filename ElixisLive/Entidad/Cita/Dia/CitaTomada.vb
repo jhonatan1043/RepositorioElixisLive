@@ -19,7 +19,7 @@
             panel.BackColor = If(pendiente = Constantes.PENDIENTE, Color.AliceBlue, colorLabel())
             panel.Controls.Add(creaBotones(4, 3, idCita, If(pendiente = Constantes.PENDIENTE, Constantes.CITA_DISPONIBLE, nombre)))
             panel.Controls.Add(creaBotones(4, 36, idCita, If(pendiente = Constantes.PENDIENTE, Constantes.CITA_DISPONIBLE, CStr(Format(fechaCita, "HH:mm")))))
-            panel.Tag = hora & "-" & idCita
+            panel.Tag = hora & "-" & idCita & "-" & UtlidadCitaBLL.estadoCita
             panel.Cursor = Cursors.Hand
             panel.Show()
         Catch ex As Exception
@@ -39,7 +39,7 @@
             boton.Font = New Font(Constantes.TIPO_LETRA_ELEMENTO, 6)
             boton.Cursor = Cursors.Hand
             boton.Text = Texto
-            boton.Tag = hora & "-" & idCita
+            boton.Tag = hora & "-" & idCita & "-" & UtlidadCitaBLL.estadoCita
             AddHandler boton.Click, AddressOf UtlidadCitaBLL.llamarFormularioCita
         Catch ex As Exception
             Throw ex

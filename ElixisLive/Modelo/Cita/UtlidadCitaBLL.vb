@@ -48,22 +48,7 @@
             idCita = If(sender.tag.ToString.Length = 2, String.Empty, sender.tag.ToString.Substring(3))
 
             Select Case estadoCita
-                Case Constantes.CITA_CANCELADA
-                    'If fechaCita = fechaDia.Date Then
-                    '    If EstiloMensajes.mostrarMensajePregunta("¿Desea Agendar Nuevamente la cita ?") = Constantes.SI Then
-                    FormEstadoCita.txtRealizado.Visible = False
-                    FormEstadoCita.txtCancelado.Visible = False
-                    FormEstadoCita.txtPendiente.Visible = True
-                    FormEstadoCita.ShowDialog()
-                    '    End If
-                    'End If
                 Case Constantes.CITA_PENDIENTE
-                    'If EstiloMensajes.mostrarMensajePregunta("¿Desea Cancelar la cita?") = Constantes.SI Then
-                    '    If Generales.ejecutarSQL(Sentencias.CITAS_CANCELAR & Constantes.EDITABLE & "," & idCita & "," & SesionActual.idUsuario) = True Then
-                    '        EstiloMensajes.mostrarMensajeExitoso("Cita Cancelada")
-                    '        objFormCita.validarControles()
-                    '    End If
-                    'End If
                     FormEstadoCita.txtRealizado.Visible = True
                     FormEstadoCita.txtCancelado.Visible = True
                     FormEstadoCita.txtPendiente.Visible = False
@@ -77,8 +62,6 @@
                     formCitaMedica.fechaHora = fechaDia.AddHours(-fechaDia.Hour).AddHours(horaExtraida)
                     formCitaMedica.ShowDialog()
             End Select
-
-            estadoCita = Nothing
 
         Catch ex As Exception
             Throw ex
