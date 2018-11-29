@@ -106,7 +106,7 @@ Partial Class FormProgramacionCita
         Me.MonthCalendar1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.MonthCalendar1.Font = New System.Drawing.Font("Times New Roman", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.MonthCalendar1.ForeColor = System.Drawing.Color.SteelBlue
-        Me.MonthCalendar1.Location = New System.Drawing.Point(706, 45)
+        Me.MonthCalendar1.Location = New System.Drawing.Point(717, 55)
         Me.MonthCalendar1.Name = "MonthCalendar1"
         Me.MonthCalendar1.TabIndex = 0
         Me.MonthCalendar1.TitleBackColor = System.Drawing.Color.SteelBlue
@@ -145,7 +145,7 @@ Partial Class FormProgramacionCita
         Me.RadioButton2.Checked = True
         Me.RadioButton2.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.RadioButton2.ForeColor = System.Drawing.Color.Black
-        Me.RadioButton2.Location = New System.Drawing.Point(706, 356)
+        Me.RadioButton2.Location = New System.Drawing.Point(775, 356)
         Me.RadioButton2.Name = "RadioButton2"
         Me.RadioButton2.Size = New System.Drawing.Size(72, 24)
         Me.RadioButton2.TabIndex = 10070
@@ -160,7 +160,7 @@ Partial Class FormProgramacionCita
         Me.rbCancelados.Checked = True
         Me.rbCancelados.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.rbCancelados.ForeColor = System.Drawing.Color.Black
-        Me.rbCancelados.Location = New System.Drawing.Point(706, 328)
+        Me.rbCancelados.Location = New System.Drawing.Point(775, 328)
         Me.rbCancelados.Name = "rbCancelados"
         Me.rbCancelados.Size = New System.Drawing.Size(72, 24)
         Me.rbCancelados.TabIndex = 10071
@@ -178,7 +178,7 @@ Partial Class FormProgramacionCita
         Me.rbAgendados.Checked = True
         Me.rbAgendados.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.rbAgendados.ForeColor = System.Drawing.Color.Black
-        Me.rbAgendados.Location = New System.Drawing.Point(706, 300)
+        Me.rbAgendados.Location = New System.Drawing.Point(775, 300)
         Me.rbAgendados.Name = "rbAgendados"
         Me.rbAgendados.Size = New System.Drawing.Size(72, 24)
         Me.rbAgendados.TabIndex = 10072
@@ -190,7 +190,7 @@ Partial Class FormProgramacionCita
         '
         Me.txtPendiente.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.txtPendiente.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.txtPendiente.Location = New System.Drawing.Point(779, 301)
+        Me.txtPendiente.Location = New System.Drawing.Point(848, 301)
         Me.txtPendiente.Name = "txtPendiente"
         Me.txtPendiente.Size = New System.Drawing.Size(32, 22)
         Me.txtPendiente.TabIndex = 10074
@@ -200,7 +200,7 @@ Partial Class FormProgramacionCita
         '
         Me.txtCancelado.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.txtCancelado.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.txtCancelado.Location = New System.Drawing.Point(779, 329)
+        Me.txtCancelado.Location = New System.Drawing.Point(848, 329)
         Me.txtCancelado.Name = "txtCancelado"
         Me.txtCancelado.Size = New System.Drawing.Size(32, 22)
         Me.txtCancelado.TabIndex = 10075
@@ -210,7 +210,7 @@ Partial Class FormProgramacionCita
         '
         Me.txtRealizado.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtRealizado.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.txtRealizado.Location = New System.Drawing.Point(779, 357)
+        Me.txtRealizado.Location = New System.Drawing.Point(848, 357)
         Me.txtRealizado.Name = "txtRealizado"
         Me.txtRealizado.Size = New System.Drawing.Size(32, 22)
         Me.txtRealizado.TabIndex = 10076
@@ -224,7 +224,7 @@ Partial Class FormProgramacionCita
         Me.ToolStrip1.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.ToolStrip1.ImageScalingSize = New System.Drawing.Size(30, 30)
         Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.lbInformacionCliente})
-        Me.ToolStrip1.Location = New System.Drawing.Point(0, 499)
+        Me.ToolStrip1.Location = New System.Drawing.Point(0, 498)
         Me.ToolStrip1.Name = "ToolStrip1"
         Me.ToolStrip1.Size = New System.Drawing.Size(945, 25)
         Me.ToolStrip1.TabIndex = 10077
@@ -242,7 +242,7 @@ Partial Class FormProgramacionCita
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(945, 524)
+        Me.ClientSize = New System.Drawing.Size(945, 523)
         Me.Controls.Add(Me.ToolStrip1)
         Me.Controls.Add(Me.txtRealizado)
         Me.Controls.Add(Me.txtCancelado)
@@ -258,7 +258,7 @@ Partial Class FormProgramacionCita
         Me.Controls.Add(Me.dFecha)
         Me.Location = New System.Drawing.Point(921, 562)
         Me.MaximumSize = New System.Drawing.Size(961, 562)
-        Me.MinimumSize = New System.Drawing.Size(815, 562)
+        Me.MinimumSize = New System.Drawing.Size(961, 562)
         Me.Name = "FormProgramacionCita"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Panel1.ResumeLayout(False)

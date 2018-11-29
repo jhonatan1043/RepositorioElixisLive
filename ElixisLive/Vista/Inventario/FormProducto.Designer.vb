@@ -19,12 +19,15 @@ Partial Class FormProducto
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.cbMarca = New System.Windows.Forms.ComboBox()
+        Me.ErrorIcono = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.Panel1.SuspendLayout()
         CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.Gbdatos.SuspendLayout()
+        CType(Me.ErrorIcono, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'LTitulo
@@ -53,8 +56,8 @@ Partial Class FormProducto
         '
         'txtnombre
         '
-        Me.txtnombre.Location = New System.Drawing.Point(84, 16)
-        Me.txtnombre.Size = New System.Drawing.Size(207, 25)
+        Me.txtnombre.Location = New System.Drawing.Point(87, 16)
+        Me.txtnombre.Size = New System.Drawing.Size(219, 25)
         '
         'txtcodigo
         '
@@ -90,10 +93,15 @@ Partial Class FormProducto
         Me.cbMarca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbMarca.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic)
         Me.cbMarca.FormattingEnabled = True
-        Me.cbMarca.Location = New System.Drawing.Point(371, 16)
+        Me.cbMarca.Location = New System.Drawing.Point(373, 16)
         Me.cbMarca.Name = "cbMarca"
         Me.cbMarca.Size = New System.Drawing.Size(201, 25)
         Me.cbMarca.TabIndex = 20
+        '
+        'ErrorIcono
+        '
+        Me.ErrorIcono.ContainerControl = Me
+        Me.ErrorIcono.RightToLeft = True
         '
         'FormProducto
         '
@@ -106,6 +114,7 @@ Partial Class FormProducto
         Me.GroupBox1.ResumeLayout(False)
         Me.Gbdatos.ResumeLayout(False)
         Me.Gbdatos.PerformLayout()
+        CType(Me.ErrorIcono, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -113,4 +122,5 @@ Partial Class FormProducto
 
     Friend WithEvents Label1 As Label
     Friend WithEvents cbMarca As ComboBox
+    Friend WithEvents ErrorIcono As ErrorProvider
 End Class

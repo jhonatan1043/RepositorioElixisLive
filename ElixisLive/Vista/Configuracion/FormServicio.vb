@@ -10,6 +10,13 @@
         btNuevo.Enabled = True
         btBuscar.Enabled = True
     End Sub
+    Private Sub txtnombre_LostFocus(sender As Object, e As EventArgs) Handles txtnombre.LostFocus
+        If txtnombre.TextLength = 0 And btRegistrar.Enabled = True Then
+            errorIcono.SetError(txtnombre, "Debe digitar un nombre")
+        Else
+            errorIcono.SetError(txtnombre, "")
+        End If
+    End Sub
     Private Sub visibleConfig()
         btBuscar.Visible = False
         ralla1.Visible = False
@@ -44,6 +51,7 @@
             Generales.deshabilitarControles(Me)
             btNuevo.Enabled = True
             btBuscar.Enabled = True
+            errorIcono.SetError(txtnombre, "")
         End If
     End Sub
     Private Sub btEditar_Click(sender As Object, e As EventArgs) Handles btEditar.Click
@@ -78,13 +86,11 @@
         btCancelar.Enabled = True
     End Sub
     Private Function validaciones() As Boolean
-        Dim badraResultado As Boolean
         If txtnombre.Text = String.Empty Then
-            EstiloMensajes.mostrarMensajeAdvertencia(MensajeSistema.INGRESAR_VALOR_VALIDO)
         Else
-            badraResultado = True
+            Return True
         End If
-        Return badraResultado
+        Return False
     End Function
     Private Sub btRegistrar_Click(sender As Object, e As EventArgs) Handles btRegistrar.Click
         Try
@@ -99,6 +105,13 @@
                 txtcodigo.Text = objConfig.codigo
                 cargarRegistro()
                 EstiloMensajes.mostrarMensajeExitoso(MensajeSistema.REGISTRO_GUARDADO)
+            Else
+                EstiloMensajes.mostrarMensajeAdvertencia(MensajeSistema.VALIDAR_CAMPOS)
+            End If
+            If txtnombre.TextLength = 0 And btRegistrar.Enabled = True Then
+                errorIcono.SetError(txtnombre, "Debe digitar un nombre")
+            Else
+                errorIcono.SetError(txtnombre, "")
             End If
         Catch ex As Exception
             EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))

@@ -206,11 +206,32 @@ Public Class FormProveedor
             End Try
         End If
     End Sub
-    Private Sub cbFormaPago_Validating(sender As Object, e As EventArgs) Handles cbFormaPago.LostFocus,
-       txtNombre.LostFocus, cbRegimen.LostFocus,
-      cbTipoPago.LostFocus
-        If btRegistrar.Enabled = True Then
-            mostrarIconoError()
+    Private Sub cbFormaPago_Validating(sender As Object, e As EventArgs) Handles cbFormaPago.LostFocus
+        If cbFormaPago.SelectedIndex = 0 And btRegistrar.Enabled = True Then
+            Me.ErrorIcono.SetError(cbFormaPago, "Debe escoger una forma de pago")
+        Else
+            Me.ErrorIcono.SetError(cbFormaPago, Constantes.CADENA_VACIA)
+        End If
+    End Sub
+    Private Sub btBuscarPersona_Validating(sender As Object, e As EventArgs) Handles btBuscarPersona.LostFocus
+        If txtNombre.TextLength = 0 And btRegistrar.Enabled = True Then
+            Me.ErrorIcono.SetError(btBuscarPersona, "Debe escoger una persona")
+        Else
+            Me.ErrorIcono.SetError(btBuscarPersona, Constantes.CADENA_VACIA)
+        End If
+    End Sub
+    Private Sub cbRegimen_Validating(sender As Object, e As EventArgs) Handles cbRegimen.LostFocus
+        If cbRegimen.SelectedIndex = 0 And btRegistrar.Enabled = True Then
+            Me.ErrorIcono.SetError(cbRegimen, "Debe escoger una regimen")
+        Else
+            Me.ErrorIcono.SetError(cbRegimen, Constantes.CADENA_VACIA)
+        End If
+    End Sub
+    Private Sub cbTipoPago_Validating(sender As Object, e As EventArgs) Handles cbTipoPago.LostFocus
+        If cbTipoPago.SelectedIndex = 0 And btRegistrar.Enabled = True Then
+            Me.ErrorIcono.SetError(cbTipoPago, "Debe escoger un tipo de pago")
+        Else
+            Me.ErrorIcono.SetError(cbTipoPago, Constantes.CADENA_VACIA)
         End If
     End Sub
     Private Sub cbFormaPago_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbFormaPago.SelectedIndexChanged

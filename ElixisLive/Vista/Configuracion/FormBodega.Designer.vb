@@ -40,6 +40,11 @@ Partial Class FormBodega
         Me.Pimagen.Size = New System.Drawing.Size(50, 41)
         Me.Pimagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         '
+        'txtnombre
+        '
+        Me.txtnombre.Location = New System.Drawing.Point(260, 20)
+        Me.txtnombre.Size = New System.Drawing.Size(315, 25)
+        '
         'ErrorIcono
         '
         Me.ErrorIcono.ContainerControl = Me

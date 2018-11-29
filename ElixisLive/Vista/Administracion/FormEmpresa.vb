@@ -131,10 +131,61 @@
         End If
     End Sub
 
-    Private Sub txtId_Click(sender As Object, e As EventArgs) Handles txtPie.LostFocus, txtId.LostFocus,
-        txtEncabezado.LostFocus, TxtDescripcion.LostFocus, TextTelefono.LostFocus, TextDireccion.LostFocus,
-        TextCelular.LostFocus, ComboMunicipio.LostFocus, cbDepartamento.LostFocus
-        mostrarIconoError()
+    Private Sub txtPie_Click(sender As Object, e As EventArgs) Handles txtPie.LostFocus
+        If txtPie.Text.Length = 0 Then
+            ErrorIcono.SetError(txtPie, "Debe digitar información del pié de factura")
+        Else
+            ErrorIcono.SetError(txtPie, "")
+        End If
+    End Sub
+    Private Sub cbDepartamento_Click(sender As Object, e As EventArgs) Handles cbDepartamento.LostFocus
+        If cbDepartamento.SelectedIndex = 0 And btRegistrar.Enabled = True Then
+            ErrorIcono.SetError(cbDepartamento, "Debe escoger un departamento")
+        Else
+            ErrorIcono.SetError(cbDepartamento, "")
+        End If
+    End Sub
+    Private Sub txtId_Click(sender As Object, e As EventArgs) Handles txtId.LostFocus
+        If txtId.Text.Length = 0 And btRegistrar.Enabled = True Then
+            ErrorIcono.SetError(txtId, "Debe digitar un nit")
+        Else
+            ErrorIcono.SetError(txtId, "")
+        End If
+    End Sub
+    Private Sub txtEncabezado_Click(sender As Object, e As EventArgs) Handles txtEncabezado.LostFocus
+        If txtEncabezado.Text.Length = 0 And btRegistrar.Enabled = True Then
+            ErrorIcono.SetError(txtEncabezado, "Debe digitar el encabezado de la factura")
+        Else
+            ErrorIcono.SetError(txtEncabezado, "")
+        End If
+    End Sub
+    Private Sub TxtDescripcion_Click(sender As Object, e As EventArgs) Handles TxtDescripcion.LostFocus
+        If TxtDescripcion.Text.Length = 0 And btRegistrar.Enabled = True Then
+            ErrorIcono.SetError(TxtDescripcion, "Debe digitar una razón social")
+        Else
+            ErrorIcono.SetError(TxtDescripcion, "")
+        End If
+    End Sub
+    Private Sub TextTelefono_Click(sender As Object, e As EventArgs) Handles TextTelefono.LostFocus
+        If TextTelefono.Text.Length = 0 And btRegistrar.Enabled = True Then
+            ErrorIcono.SetError(TextTelefono, "Debe digitar un número de teléfono")
+        Else
+            ErrorIcono.SetError(TextTelefono, "")
+        End If
+    End Sub
+    Private Sub TextDireccion_Click(sender As Object, e As EventArgs) Handles TextDireccion.LostFocus
+        If TextDireccion.Text.Length = 0 And btRegistrar.Enabled = True Then
+            ErrorIcono.SetError(TextDireccion, "Debe digitar una dirección")
+        Else
+            ErrorIcono.SetError(TextDireccion, "")
+        End If
+    End Sub
+    Private Sub ComboMunicipio_Click(sender As Object, e As EventArgs) Handles ComboMunicipio.LostFocus
+        If ComboMunicipio.SelectedIndex = 0 And btRegistrar.Enabled = True Then
+            ErrorIcono.SetError(ComboMunicipio, "Debe escoger un municipio")
+        Else
+            ErrorIcono.SetError(ComboMunicipio, "")
+        End If
     End Sub
     Private Sub mostrarIconoError()
 

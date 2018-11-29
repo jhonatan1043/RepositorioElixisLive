@@ -477,6 +477,7 @@
     <Content Include="ReferenciaDLL\CnxElixisLiveBD.dll" />
     <Content Include="ReferenciaDLL\MySql.Data.DLL" />
     <Content Include="ReferenciaDLL\NotifySenderControl.dll" />
+    <None Include="Resources\User-Files-icon1.png" />
     <None Include="Resources\3floppy-unmount-icon.png" />
     <None Include="Resources\Apps-preferences-system-time-icon.png" />
     <None Include="Resources\App-user-icon.png" />

@@ -1,5 +1,12 @@
 ﻿Public Class FormBodega
     Private objConfig As Configuracion
+    Private Sub txtnombre_LostFocus(sender As Object, e As EventArgs) Handles txtnombre.LostFocus
+        If txtnombre.TextLength = 0 And btRegistrar.Enabled = True Then
+            ErrorIcono.SetError(txtnombre, "Debe digitar un nombre")
+        Else
+            ErrorIcono.SetError(txtnombre, "")
+        End If
+    End Sub
     Private Sub FormBase_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         objConfig = New Configuracion
         cargarConsultas()
@@ -82,13 +89,11 @@
         btCancelar.Enabled = True
     End Sub
     Private Function validaciones() As Boolean
-        Dim badraResultado As Boolean
         If txtnombre.Text = String.Empty Then
-            EstiloMensajes.mostrarMensajeAdvertencia(MensajeSistema.INGRESAR_VALOR_VALIDO)
         Else
-            badraResultado = True
+            Return True
         End If
-        Return badraResultado
+        Return False
     End Function
     Private Sub btRegistrar_Click(sender As Object, e As EventArgs) Handles btRegistrar.Click
         Try
@@ -102,6 +107,8 @@
                 txtcodigo.Text = objConfig.codigo
                 cargarRegistro()
                 EstiloMensajes.mostrarMensajeExitoso(MensajeSistema.REGISTRO_GUARDADO)
+            Else
+                EstiloMensajes.mostrarMensajeAdvertencia(MensajeSistema.VALIDAR_CAMPOS)
             End If
             If txtnombre.Text.Length = 0 Then
                 ErrorIcono.SetError(txtnombre, "Digite un nombre")

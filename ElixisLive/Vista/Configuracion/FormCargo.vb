@@ -48,6 +48,7 @@
             Generales.deshabilitarControles(Me)
             btNuevo.Enabled = True
             btBuscar.Enabled = True
+            ErrorIcono.SetError(txtnombre, "")
         End If
     End Sub
     Private Sub btEditar_Click(sender As Object, e As EventArgs) Handles btEditar.Click
@@ -81,13 +82,11 @@
         btCancelar.Enabled = True
     End Sub
     Private Function validaciones() As Boolean
-        Dim badraResultado As Boolean
         If txtnombre.Text = String.Empty Then
-            EstiloMensajes.mostrarMensajeAdvertencia(MensajeSistema.INGRESAR_VALOR_VALIDO)
         Else
-            badraResultado = True
+            Return True
         End If
-        Return badraResultado
+        Return False
     End Function
     Private Sub btRegistrar_Click(sender As Object, e As EventArgs) Handles btRegistrar.Click
         Try
@@ -101,10 +100,17 @@
                 txtcodigo.Text = objConfig.codigo
                 cargarRegistro()
                 EstiloMensajes.mostrarMensajeExitoso(MensajeSistema.REGISTRO_GUARDADO)
+            Else
+                EstiloMensajes.mostrarMensajeAdvertencia(MensajeSistema.VALIDAR_CAMPOS)
             End If
         Catch ex As Exception
             EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
         End Try
+        If txtnombre.TextLength = 0 And btRegistrar.Enabled = True Then
+            ErrorIcono.SetError(txtnombre, "Debe digitar un nombre")
+        Else
+            ErrorIcono.SetError(txtnombre, "")
+        End If
     End Sub
     Private Sub cargarObjeto()
         objConfig.codigo = If(String.IsNullOrEmpty(txtcodigo.Text), Nothing, txtcodigo.Text)
@@ -115,5 +121,12 @@
         objConfig.sqlConsulta = "[SP_CONFI_CARGO_CONSULTAR]"
         objConfig.sqlAnular = "[SP_CONFI_CARGO_ANULADO] "
         objConfig.sqlGuardar = "[SP_CONFI_CARGO_CREAR]"
+    End Sub
+    Private Sub txtnombre_LostFocus(sender As Object, e As EventArgs) Handles txtnombre.LostFocus
+        If txtnombre.TextLength = 0 And btRegistrar.Enabled = True Then
+            ErrorIcono.SetError(txtnombre, "Debe digitar un nombre")
+        Else
+            ErrorIcono.SetError(txtnombre, "")
+        End If
     End Sub
 End Class

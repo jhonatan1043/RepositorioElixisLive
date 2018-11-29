@@ -1,4 +1,30 @@
 ﻿Public Class FormProducto
+    Private Sub txtnombre_LostFocus(sender As Object, e As EventArgs) Handles txtnombre.LostFocus
+        If txtnombre.TextLength = 0 And btRegistrar.Enabled = True Then
+            ErrorIcono.SetError(txtnombre, "Debe digitar un nombre")
+        Else
+            ErrorIcono.SetError(txtnombre, "")
+        End If
+    End Sub
+    Private Sub cbMarca_LostFocus(sender As Object, e As EventArgs) Handles cbMarca.LostFocus
+        If cbMarca.SelectedIndex = 0 And btRegistrar.Enabled = True Then
+            ErrorIcono.SetError(cbMarca, "Debe escoger una marca")
+        Else
+            ErrorIcono.SetError(cbMarca, "")
+        End If
+    End Sub
+    Private Sub mostrarIconoError()
+        If cbMarca.SelectedIndex = 0 And btRegistrar.Enabled = True Then
+            ErrorIcono.SetError(cbMarca, "Debe escoger una marca")
+        Else
+            ErrorIcono.SetError(cbMarca, "")
+        End If
+        If txtnombre.TextLength = 0 And btRegistrar.Enabled = True Then
+            ErrorIcono.SetError(txtnombre, "Debe digitar un nombre")
+        Else
+            ErrorIcono.SetError(txtnombre, "")
+        End If
+    End Sub
     Dim objProducto As producto
     Private Sub FormBaseProductivo_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim params As New List(Of String)
@@ -74,15 +100,12 @@
         btRegistrar.Enabled = True
     End Sub
     Private Function validarCampos() As Boolean
-        Dim resultado As Boolean
         If String.IsNullOrEmpty(txtnombre.Text) Then
-            EstiloMensajes.mostrarMensajeAdvertencia("¡Debe ingresar el nombre del producto!")
         ElseIf cbMarca.SelectedIndex = 0 Then
-            EstiloMensajes.mostrarMensajeAdvertencia("¡Debe seleccionar la marca!")
         Else
-            resultado = True
+            Return True
         End If
-        Return resultado
+        Return False
     End Function
     Private Sub cargarObjeto()
         objProducto.codigoMarca = cbMarca.SelectedValue.ToString
@@ -103,7 +126,14 @@
             Catch ex As Exception
                 EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
             End Try
+        Else
+            EstiloMensajes.mostrarMensajeAdvertencia(MensajeSistema.VALIDAR_CAMPOS)
         End If
+        mostrarIconoError()
+    End Sub
+    Private Sub quitarIconoError()
+        ErrorIcono.SetError(txtnombre, "")
+        ErrorIcono.SetError(cbMarca, "")
     End Sub
     Private Sub btCancelar_Click(sender As Object, e As EventArgs) Handles btCancelar.Click
         If EstiloMensajes.mostrarMensajePregunta(MensajeSistema.CANCELAR) = Constantes.SI Then
@@ -112,6 +142,7 @@
             objProducto.codigo = Nothing
             btNuevo.Enabled = True
             btBuscar.Enabled = True
+            quitarIconoError()
         End If
     End Sub
 
