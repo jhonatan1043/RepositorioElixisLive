@@ -18,7 +18,7 @@
     Private Shared Function cargarPanelHoraTomada(ByRef panel As Panel, hora As String) As Integer
         Try
             objHoraTomada = New HoraTomada
-            objHoraTomada.color = Color.FromArgb(192, 255, 192)
+            objHoraTomada.color = Color.SteelBlue
             objHoraTomada.hora = hora
             panel.Controls.Add(objHoraTomada.crearPanelHoraTomada(contenedorPanelDispon, 30))
         Catch ex As Exception
@@ -34,11 +34,16 @@
                 objTomada = New CitaTomada
 
                 If fil < filas.Count Then
+
                     objTomada.idCita = filas(fil).Item("codigo_cita")
                     objTomada.cedula = filas(fil).Item("Identificacion")
                     objTomada.nombre = filas(fil).Item("Nombre")
                     objTomada.fechaCita = filas(fil).Item("Fecha_cita")
                     objTomada.estado = filas(fil).Item("Estado_Atencion")
+
+                    UtlidadCitaBLL.estadoCita = filas(fil).Item("Estado_Atencion")
+                    UtlidadCitaBLL.fechaCita = filas(fil).Item("Fecha_cita")
+
                     pendiente = 1
                 Else
                     pendiente = Constantes.PENDIENTE
@@ -54,7 +59,7 @@
                 panelCreado = objTomada.crearPanel(contenedorPanelX, contenedorPanelDispon, pendiente)
                 panel.Controls.Add(panelCreado)
 
-                AddHandler panelCreado.DoubleClick, AddressOf UtlidadCitaBLL.llamarFormularioCita
+                AddHandler panelCreado.Click, AddressOf UtlidadCitaBLL.llamarFormularioCita
 
                 contenedorPanelX = contenedorPanelX + incrementoX
 
@@ -70,7 +75,7 @@
     Private Shared Sub cargarPanelHoraDisponible(ByRef panel As Panel, hora As String)
         Try
             objHoraDisponible = New HoraDisponible
-            objHoraDisponible.color = Color.FromArgb(192, 255, 255)
+            objHoraDisponible.color = Color.SteelBlue
             objHoraDisponible.hora = hora
             panel.Controls.Add(objHoraDisponible.crearPanelHoraDisponible(contenedorPanelDispon, 8))
         Catch ex As Exception
@@ -84,7 +89,6 @@
             objDisponible.hora = hora
             panelCreado = objDisponible.crearPanelDisponible(contenedorPanelDispon)
             panel.Controls.Add(panelCreado)
-            AddHandler panelCreado.DoubleClick, AddressOf UtlidadCitaBLL.llamarFormularioCita
         Catch ex As Exception
             Throw ex
         End Try

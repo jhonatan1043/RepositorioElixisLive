@@ -20,6 +20,7 @@
         panel.Controls.Add(crearEtiquetaDisponible())
         panel.Cursor = Cursors.Hand
         panel.Tag = hora
+        AddHandler panel.Click, AddressOf UtlidadCitaBLL.llamarFormularioCita
         panel.Show()
         Return panel
     End Function
@@ -28,6 +29,8 @@
         etiqueta.Location = New Point(posicionLabelX, posicionLabelY)
         etiqueta.Size = New Point(70, 20)
         etiqueta.Text = descripcion
+        etiqueta.Tag = hora
+        AddHandler etiqueta.Click, AddressOf UtlidadCitaBLL.llamarFormularioCita
         Return etiqueta
     End Function
 End Class

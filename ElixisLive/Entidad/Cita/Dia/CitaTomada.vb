@@ -12,12 +12,13 @@
                                posicionY As Integer,
                                pendiente As Integer) As Panel
         Dim panel As New Panel
+
         Try
             panel.Location = New Point(posicionX, posicionY)
             panel.Size = New Point(anchura, altura)
             panel.BackColor = If(pendiente = Constantes.PENDIENTE, Color.FromArgb(192, 255, 255), colorLabel())
-            panel.Controls.Add(creaBotones(4, 3, idCita, " Cliente: " & nombre & vbNewLine & " # " & cedula))
-            panel.Controls.Add(creaBotones(4, 36, idCita, " Fecha: " & CStr(fechaCita)))
+            panel.Controls.Add(creaBotones(4, 3, idCita, If(pendiente = Constantes.PENDIENTE, Constantes.CITA_DISPONIBLE, nombre)))
+            panel.Controls.Add(creaBotones(4, 36, idCita, If(pendiente = Constantes.PENDIENTE, Constantes.CITA_DISPONIBLE, CStr(Format(fechaCita, "HH:mm")))))
             panel.Tag = hora & "-" & idCita
             panel.Cursor = Cursors.Hand
             panel.Show()
@@ -31,19 +32,15 @@
                                    idCita As String, Texto As String) As Button
         Dim boton As New Button
         Try
-            'boton.BorderStyle = BorderStyle.None
             boton.Size = New Point(130, 29)
             boton.Location = New Point(posicionX, posicionY)
             boton.TextAlign = HorizontalAlignment.Center
             boton.BackColor = Color.White
-            boton.Font = New Font(Constantes.TIPO_LETRA_ELEMENTO, 7)
-            'boton.BorderStyle = BorderStyle.FixedSingle
+            boton.Font = New Font(Constantes.TIPO_LETRA_ELEMENTO, 6)
             boton.Cursor = Cursors.Hand
-            'boton.Multiline = True
-            'boton.ReadOnly = True
             boton.Text = Texto
             boton.Tag = hora & "-" & idCita
-            AddHandler boton.DoubleClick, AddressOf UtlidadCitaBLL.llamarFormularioCita
+            AddHandler boton.Click, AddressOf UtlidadCitaBLL.llamarFormularioCita
         Catch ex As Exception
             Throw ex
         End Try

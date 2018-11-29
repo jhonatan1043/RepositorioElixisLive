@@ -1,6 +1,8 @@
 ﻿Public Class UtlidadCitaBLL
     Shared Property objFormCita As FormProgramacionCita
     Shared Property fechaDia As DateTime
+    Shared Property fechaCita As Date
+    Shared Property estadoCita As String
     Public Shared Function cargarFestivosMes(fecha As Date) As DataTable
         Dim dt As New DataTable
         Dim params As New List(Of String)
@@ -45,14 +47,33 @@
             horaExtraida = If(sender.tag.ToString.Length = 2, sender.tag, sender.tag.ToString.Remove(2))
             idCita = If(sender.tag.ToString.Length = 2, String.Empty, sender.tag.ToString.Substring(3))
 
-            If Not String.IsNullOrEmpty(idCita) Then
-                formCitaMedica.estadoRegistro = True
-                formCitaMedica.codigoCita = idCita
-            End If
+            Select Case estadoCita
+                Case Constantes.CITA_CANCELADA
+                    If fechaCita = fechaDia.Date Then
+                        If EstiloMensajes.mostrarMensajePregunta("¿Desea Agendar Nuevamente la cita ?") = Constantes.SI Then
 
-            formCitaMedica.objFormularioProgram = objFormCita
-            formCitaMedica.fechaHora = fechaDia.AddHours(-fechaDia.Hour).AddHours(horaExtraida)
-            formCitaMedica.ShowDialog()
+                        End If
+                    End If
+                Case Constantes.CITA_PENDIENTE
+                    If EstiloMensajes.mostrarMensajePregunta("¿Desea Cancelar la cita?") = Constantes.SI Then
+                        If Generales.ejecutarSQL(Sentencias.CITAS_CANCELAR & Constantes.EDITABLE & "," & idCita & "," & SesionActual.idUsuario) = True Then
+                            EstiloMensajes.mostrarMensajeExitoso("Cita Cancelada")
+                            objFormCita.validarControles()
+                        End If
+                    End If
+
+                Case Else
+                    If Not String.IsNullOrEmpty(idCita) Then
+                        formCitaMedica.estadoRegistro = True
+                        formCitaMedica.codigoCita = idCita
+                    End If
+                    formCitaMedica.objFormularioProgram = objFormCita
+                    formCitaMedica.fechaHora = fechaDia.AddHours(-fechaDia.Hour).AddHours(horaExtraida)
+                    formCitaMedica.ShowDialog()
+            End Select
+
+            estadoCita = Nothing
+
         Catch ex As Exception
             Throw ex
         End Try

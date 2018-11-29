@@ -55,5 +55,8 @@
     Public Const VALOR_INCREMENTO = 32
 
     Public Const PANEL_POCISION_X = 110
+    Public Const CITA_CANCELADA = "C"
+    Public Const CITA_PENDIENTE = "P"
+    Public Const CITA_REALIZADA = "R"
 
 End Class
