@@ -2,7 +2,7 @@
     Shared Property objFormCita As FormProgramacionCita
     Shared Property fechaDia As DateTime
     Shared Property fechaCita As Date
-    Shared Property estadoCita As String
+
     Public Shared Function cargarFestivosMes(fecha As Date) As DataTable
         Dim dt As New DataTable
         Dim params As New List(Of String)
@@ -42,10 +42,13 @@
         Dim idCita As String = Nothing
         Dim formCitaMedica As New FormCitaMedica
         Dim horaExtraida As String = Nothing
+        Dim estadoCita As String
         Try
+            Dim auxiliar As Integer = sender.tag.ToString.Length
 
-            horaExtraida = If(sender.tag.ToString.Length = 2, sender.tag, sender.tag.ToString.Remove(2))
-            idCita = If(sender.tag.ToString.Length = 2, String.Empty, sender.tag.ToString.Substring(3))
+            horaExtraida = If(auxiliar = 4, sender.tag.ToString.Remove(2), sender.tag.ToString.Remove(2))
+            idCita = If(auxiliar = 4, Nothing, sender.tag.ToString.Substring(3).Remove(2))
+            estadoCita = If(auxiliar = 4, Nothing, sender.tag.ToString.Substring(6))
 
             Select Case estadoCita
                 Case Constantes.CITA_PENDIENTE

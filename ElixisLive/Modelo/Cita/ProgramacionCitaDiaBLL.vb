@@ -40,8 +40,6 @@
                     objTomada.nombre = filas(fil).Item("Nombre")
                     objTomada.fechaCita = filas(fil).Item("Fecha_cita")
                     objTomada.estado = filas(fil).Item("Estado_Atencion")
-
-                    UtlidadCitaBLL.estadoCita = filas(fil).Item("Estado_Atencion")
                     UtlidadCitaBLL.fechaCita = filas(fil).Item("Fecha_cita")
 
                     pendiente = 1
@@ -59,7 +57,7 @@
                 panelCreado = objTomada.crearPanel(contenedorPanelX, contenedorPanelDispon, pendiente)
                 panel.Controls.Add(panelCreado)
 
-                AddHandler panelCreado.Click, AddressOf UtlidadCitaBLL.llamarFormularioCita
+                AddHandler panelCreado.DoubleClick, AddressOf UtlidadCitaBLL.llamarFormularioCita
 
                 contenedorPanelX = contenedorPanelX + incrementoX
 
