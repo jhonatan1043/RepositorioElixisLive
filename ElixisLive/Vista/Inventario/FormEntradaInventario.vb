@@ -10,7 +10,6 @@
         dtContenedorLote = New DataTable
         Generales.deshabilitarBotones(ToolStrip1)
         Generales.deshabilitarControles(Me)
-        validarDatatble()
         validarGrilla()
         btNuevo.Enabled = True
         btBuscar.Enabled = True
@@ -21,7 +20,7 @@
         Try
             If dgvEntrada.Rows.Count > 0 Then
                 If Not IsNothing(dgvEntrada.Rows(dgvEntrada.CurrentCell.RowIndex).Cells("dgCodigoProducto").Value) Then
-                    If e.ColumnIndex = 5 Then
+                    If e.ColumnIndex = 6 Then
                         dgvEntrada.Rows(dgvEntrada.CurrentCell.RowIndex).Cells("dgBodega") =
                                         Generales.crearControl(Constantes.NOMBRE_COMBO, Sentencias.BADEGA_CONSULTAR, "Codigo", "nombre", Nothing)
                     End If
@@ -43,7 +42,8 @@
         Generales.deshabilitarBotones(ToolStrip1)
         limpiarControl()
         registroGuardado = False
-        btBuscarCompra.Enabled = True
+        Generales.habilitarControles(gbModo)
+        validarEdicionGrilla(Constantes.EDITABLE)
         btRegistrar.Enabled = True
         btCancelar.Enabled = True
     End Sub
@@ -62,12 +62,11 @@
         End Try
     End Sub
     Private Sub btRegistrar_Click(sender As Object, e As EventArgs) Handles btRegistrar.Click
-        If String.IsNullOrEmpty(txtCodigo.Text) Then
+        If String.IsNullOrEmpty(txtCodigo.Text) And rbCompra.Checked = True Then
             EstiloMensajes.mostrarMensajeAdvertencia("¡ Favor seleccionar la compra !")
         Else
             Try
                 dgvEntrada.EndEdit()
-                objEntrada.dtLote = dtContenedorLote.Copy
                 EntradaInventarioBLL.guardarEntrada(objEntrada)
                 Generales.deshabilitarBotones(ToolStrip1)
                 validarEdicionGrilla(Constantes.NO_EDITABLE)
@@ -123,25 +122,42 @@
 
     Private Sub dgvEntrada_CellFormatting(sender As Object, e As DataGridViewCellFormattingEventArgs) Handles dgvEntrada.CellFormatting
         If objEntrada.dtEntrada.Rows.Count > 0 Then
-            If e.ColumnIndex = 2 _
-                OrElse e.ColumnIndex = 4 Then
+            If e.ColumnIndex = 4 _
+                OrElse e.ColumnIndex = 5 Then
                 e.Value = If(Not IsDBNull(e.Value), Format(Val(e.Value), Constantes.FORMATO_MONEDA), 0)
             End If
         End If
     End Sub
     Private Sub dgvEntrada_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvEntrada.CellClick
-        Dim lote As FormLote
+        Dim params As New List(Of String)
+        params.Add(String.Empty)
+
+        If btRegistrar.Enabled = False Then Exit Sub
+
         If objEntrada.dtEntrada.Rows.Count > 0 Then
-            If e.ColumnIndex = 6 Then
-                lote = New FormLote
-                codigoProducto = objEntrada.dtEntrada.Rows(dgvEntrada.CurrentCell.RowIndex).Item("Codigo")
-                cantidadEntrante = objEntrada.dtEntrada.Rows(dgvEntrada.CurrentCell.RowIndex).Item("Cantidad")
-                lote.objInventarioEntrada = Me
-                lote.cargarRegistros()
-                lote.MdiParent = FormPrincipal
-                lote.Show()
-                lote.Focus()
-            End If
+            Try
+                If btRegistrar.Enabled = False Then Exit Sub
+                If (dgvEntrada.Rows(dgvEntrada.CurrentCell.RowIndex).Cells("dgCodigoProducto").Selected = True _
+                    Or dgvEntrada.Rows(dgvEntrada.CurrentCell.RowIndex).Cells("dgDescripcion").Selected = True) Then
+                    Generales.busquedaItems(Sentencias.PRODUCTO_CONSULTAR,
+                                              params,
+                                              Titulo.BUSQUEDA_PRODUCTO,
+                                              dgvEntrada,
+                                              objEntrada.dtEntrada,
+                                              0,
+                                              1,
+                                              0,
+                                              0,
+                                              True)
+                ElseIf dgvEntrada.Rows(dgvEntrada.CurrentCell.RowIndex).Cells("dgQuitar").Selected = True _
+                    And objEntrada.dtEntrada.Rows(dgvEntrada.CurrentCell.RowIndex).Item(0).ToString <> String.Empty Then
+                    If rbCompra.Checked = False Then
+                        objEntrada.dtEntrada.Rows.RemoveAt(e.RowIndex)
+                    End If
+                End If
+            Catch ex As Exception
+                EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
+            End Try
         End If
     End Sub
     Private Sub cargarInventario(pCodigo As Integer)
@@ -150,7 +166,7 @@
     Private Sub validarEdicionGrilla(Estado As Boolean)
         With dgvEntrada
             .ReadOnly = False
-            .Columns("dgProducto").ReadOnly = True
+            .Columns("dgDescripcion").ReadOnly = True
             .Columns("dgValor").ReadOnly = True
             .Columns("dgCantidad").ReadOnly = True
             .Columns("dgTotal").ReadOnly = True
@@ -160,29 +176,24 @@
         If Estado = True Then
             With dgvEntrada
                 .Columns("dgCantidad").ReadOnly = False
+                .Columns("dgValor").ReadOnly = False
                 .Columns("dgBodega").ReadOnly = False
             End With
         End If
     End Sub
-    Private Sub validarDatatble()
-        dtContenedorLote.Columns.Add("CodigoProducto", Type.GetType("System.Int32"))
-        dtContenedorLote.Columns.Add("Nombre", Type.GetType("System.String"))
-        dtContenedorLote.Columns.Add("CantidadExistente", Type.GetType("System.Int32"))
-        dtContenedorLote.Columns.Add("CantidadEntrante", Type.GetType("System.Int32"))
-        dtContenedorLote.Columns.Add("FechaVencimiento", Type.GetType("System.DateTime"))
-    End Sub
     Private Sub validarGrilla()
         With dgvEntrada
+
             '----------- Asociar datatable con grilla
             .Columns("dgCodigoProducto").DataPropertyName = "Codigo"
-            .Columns("dgProducto").DataPropertyName = "producto"
+            .Columns("dgDescripcion").DataPropertyName = "Descripcion"
             .Columns("dgValor").DataPropertyName = "valor"
             .Columns("dgCantidad").DataPropertyName = "Cantidad"
             .Columns("dgTotal").DataPropertyName = "Total"
             .Columns("dgBodega").DataPropertyName = "Bodega"
             .Columns("dgCodigoBarra").DataPropertyName = "CodigoBarra"
             '------------------------------------------------------
-            .Columns("dgProducto").AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
+            .Columns("dgDescripcion").AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
             .Columns("dgValor").AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
             .Columns("dgCantidad").AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
             .Columns("dgTotal").AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
@@ -190,6 +201,7 @@
             .Columns("dgCodigoBarra").AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
             .DataSource = objEntrada.dtEntrada
             .AutoGenerateColumns = False
+            .Columns("dgQuitar").DisplayIndex = 7
         End With
     End Sub
     Private Sub cargarCompra(pCodigo As Integer)
@@ -218,6 +230,25 @@
     Private Sub dgvEntrada_DataError(sender As Object, e As DataGridViewDataErrorEventArgs) Handles dgvEntrada.DataError
         If e.ColumnIndex = 2 Then
             EstiloMensajes.mostrarMensajeError(MensajeSistema.INGRESAR_VALOR_VALIDO)
+        End If
+    End Sub
+    Private Sub rbCompra_Click(sender As Object, e As EventArgs) Handles rbCompra.Click
+        limpiar()
+    End Sub
+    Private Sub rvManual_Click(sender As Object, e As EventArgs) Handles rvManual.Click
+        limpiar()
+    End Sub
+    Private Sub limpiar()
+        txtSubTotal.Clear()
+        txtTotal.Clear()
+        If rbCompra.Checked = True Then
+            objEntrada.dtEntrada.Clear()
+            btBuscarCompra.Enabled = True
+        Else
+            objEntrada.dtEntrada.Clear()
+            txtCodigo.Clear()
+            btBuscarCompra.Enabled = False
+            objEntrada.dtEntrada.Rows.Add()
         End If
     End Sub
 End Class

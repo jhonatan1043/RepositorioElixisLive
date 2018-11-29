@@ -27,19 +27,15 @@ Partial Class FormEntradaInventario
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.GbInform_D = New System.Windows.Forms.GroupBox()
         Me.dgvEntrada = New System.Windows.Forms.DataGridView()
-        Me.dgCodigoProducto = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.dgProducto = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.dgValor = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.dgCantidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.dgTotal = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.dgBodega = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.dgCodigoBarra = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.txtTotal = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.txtSubTotal = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.gbModo = New System.Windows.Forms.GroupBox()
+        Me.rvManual = New System.Windows.Forms.RadioButton()
+        Me.rbCompra = New System.Windows.Forms.RadioButton()
         Me.btBuscarCompra = New System.Windows.Forms.Button()
         Me.txtCodigo = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -59,18 +55,23 @@ Partial Class FormEntradaInventario
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Pimagen = New System.Windows.Forms.PictureBox()
         Me.LTitulo = New System.Windows.Forms.Label()
-        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
-        Me.rbCompra = New System.Windows.Forms.RadioButton()
-        Me.rvManual = New System.Windows.Forms.RadioButton()
+        Me.dgCodigoProducto = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dgDescripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dgCantidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dgValor = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dgTotal = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dgBodega = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dgCodigoBarra = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dgQuitar = New System.Windows.Forms.DataGridViewImageColumn()
         Me.GbInform_D.SuspendLayout()
         CType(Me.dgvEntrada, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
+        Me.gbModo.SuspendLayout()
         CType(Me.ErrorIcono, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ToolStrip1.SuspendLayout()
         Me.Panel1.SuspendLayout()
         CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GroupBox3.SuspendLayout()
         Me.SuspendLayout()
         '
         'GbInform_D
@@ -103,58 +104,13 @@ Partial Class FormEntradaInventario
         DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.dgvEntrada.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.dgvEntrada.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvEntrada.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.dgCodigoProducto, Me.dgProducto, Me.dgValor, Me.dgCantidad, Me.dgTotal, Me.dgBodega, Me.dgCodigoBarra})
+        Me.dgvEntrada.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.dgCodigoProducto, Me.dgDescripcion, Me.dgCantidad, Me.dgValor, Me.dgTotal, Me.dgBodega, Me.dgCodigoBarra, Me.dgQuitar})
         Me.dgvEntrada.Location = New System.Drawing.Point(3, 18)
         Me.dgvEntrada.MultiSelect = False
         Me.dgvEntrada.Name = "dgvEntrada"
         Me.dgvEntrada.RowHeadersVisible = False
         Me.dgvEntrada.Size = New System.Drawing.Size(879, 311)
         Me.dgvEntrada.TabIndex = 0
-        '
-        'dgCodigoProducto
-        '
-        Me.dgCodigoProducto.HeaderText = "Codigo"
-        Me.dgCodigoProducto.Name = "dgCodigoProducto"
-        Me.dgCodigoProducto.Visible = False
-        '
-        'dgProducto
-        '
-        Me.dgProducto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.dgProducto.HeaderText = "Producto"
-        Me.dgProducto.Name = "dgProducto"
-        '
-        'dgValor
-        '
-        Me.dgValor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.dgValor.HeaderText = "Vr. Unitario"
-        Me.dgValor.Name = "dgValor"
-        Me.dgValor.Width = 85
-        '
-        'dgCantidad
-        '
-        Me.dgCantidad.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.dgCantidad.HeaderText = "Cantidad"
-        Me.dgCantidad.Name = "dgCantidad"
-        Me.dgCantidad.Width = 75
-        '
-        'dgTotal
-        '
-        Me.dgTotal.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.dgTotal.HeaderText = "Total"
-        Me.dgTotal.Name = "dgTotal"
-        Me.dgTotal.Width = 55
-        '
-        'dgBodega
-        '
-        Me.dgBodega.HeaderText = "Bodega"
-        Me.dgBodega.Name = "dgBodega"
-        Me.dgBodega.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgBodega.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
-        '
-        'dgCodigoBarra
-        '
-        Me.dgCodigoBarra.HeaderText = "C. de Barra"
-        Me.dgCodigoBarra.Name = "dgCodigoBarra"
         '
         'GroupBox1
         '
@@ -213,7 +169,7 @@ Partial Class FormEntradaInventario
         '
         'GroupBox2
         '
-        Me.GroupBox2.Controls.Add(Me.GroupBox3)
+        Me.GroupBox2.Controls.Add(Me.gbModo)
         Me.GroupBox2.Controls.Add(Me.btBuscarCompra)
         Me.GroupBox2.Controls.Add(Me.txtCodigo)
         Me.GroupBox2.Controls.Add(Me.Label1)
@@ -223,6 +179,38 @@ Partial Class FormEntradaInventario
         Me.GroupBox2.Size = New System.Drawing.Size(885, 45)
         Me.GroupBox2.TabIndex = 60
         Me.GroupBox2.TabStop = False
+        '
+        'gbModo
+        '
+        Me.gbModo.Controls.Add(Me.rvManual)
+        Me.gbModo.Controls.Add(Me.rbCompra)
+        Me.gbModo.Location = New System.Drawing.Point(6, 4)
+        Me.gbModo.Name = "gbModo"
+        Me.gbModo.Size = New System.Drawing.Size(247, 36)
+        Me.gbModo.TabIndex = 67
+        Me.gbModo.TabStop = False
+        '
+        'rvManual
+        '
+        Me.rvManual.AutoSize = True
+        Me.rvManual.Location = New System.Drawing.Point(139, 11)
+        Me.rvManual.Name = "rvManual"
+        Me.rvManual.Size = New System.Drawing.Size(76, 23)
+        Me.rvManual.TabIndex = 1
+        Me.rvManual.TabStop = True
+        Me.rvManual.Text = "Manual"
+        Me.rvManual.UseVisualStyleBackColor = True
+        '
+        'rbCompra
+        '
+        Me.rbCompra.AutoSize = True
+        Me.rbCompra.Location = New System.Drawing.Point(6, 10)
+        Me.rbCompra.Name = "rbCompra"
+        Me.rbCompra.Size = New System.Drawing.Size(102, 23)
+        Me.rbCompra.TabIndex = 0
+        Me.rbCompra.TabStop = True
+        Me.rbCompra.Text = "por compra"
+        Me.rbCompra.UseVisualStyleBackColor = True
         '
         'btBuscarCompra
         '
@@ -393,37 +381,56 @@ Partial Class FormEntradaInventario
         Me.LTitulo.Text = "Entrada Inventario"
         Me.LTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'GroupBox3
+        'dgCodigoProducto
         '
-        Me.GroupBox3.Controls.Add(Me.rvManual)
-        Me.GroupBox3.Controls.Add(Me.rbCompra)
-        Me.GroupBox3.Location = New System.Drawing.Point(6, 4)
-        Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(247, 36)
-        Me.GroupBox3.TabIndex = 67
-        Me.GroupBox3.TabStop = False
+        Me.dgCodigoProducto.HeaderText = "Codigo"
+        Me.dgCodigoProducto.Name = "dgCodigoProducto"
+        Me.dgCodigoProducto.Visible = False
         '
-        'rbCompra
+        'dgDescripcion
         '
-        Me.rbCompra.AutoSize = True
-        Me.rbCompra.Location = New System.Drawing.Point(6, 10)
-        Me.rbCompra.Name = "rbCompra"
-        Me.rbCompra.Size = New System.Drawing.Size(102, 23)
-        Me.rbCompra.TabIndex = 0
-        Me.rbCompra.TabStop = True
-        Me.rbCompra.Text = "por compra"
-        Me.rbCompra.UseVisualStyleBackColor = True
+        Me.dgDescripcion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.dgDescripcion.HeaderText = "Producto"
+        Me.dgDescripcion.Name = "dgDescripcion"
         '
-        'rvManual
+        'dgCantidad
         '
-        Me.rvManual.AutoSize = True
-        Me.rvManual.Location = New System.Drawing.Point(139, 11)
-        Me.rvManual.Name = "rvManual"
-        Me.rvManual.Size = New System.Drawing.Size(76, 23)
-        Me.rvManual.TabIndex = 1
-        Me.rvManual.TabStop = True
-        Me.rvManual.Text = "Manual"
-        Me.rvManual.UseVisualStyleBackColor = True
+        Me.dgCantidad.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.dgCantidad.HeaderText = "Cantidad"
+        Me.dgCantidad.Name = "dgCantidad"
+        Me.dgCantidad.Width = 75
+        '
+        'dgValor
+        '
+        Me.dgValor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.dgValor.HeaderText = "Vr. Unitario"
+        Me.dgValor.Name = "dgValor"
+        Me.dgValor.Width = 85
+        '
+        'dgTotal
+        '
+        Me.dgTotal.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.dgTotal.HeaderText = "Total"
+        Me.dgTotal.Name = "dgTotal"
+        Me.dgTotal.Width = 55
+        '
+        'dgBodega
+        '
+        Me.dgBodega.HeaderText = "Bodega"
+        Me.dgBodega.Name = "dgBodega"
+        Me.dgBodega.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgBodega.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
+        '
+        'dgCodigoBarra
+        '
+        Me.dgCodigoBarra.HeaderText = "C. de Barra"
+        Me.dgCodigoBarra.Name = "dgCodigoBarra"
+        '
+        'dgQuitar
+        '
+        Me.dgQuitar.HeaderText = "Quitar"
+        Me.dgQuitar.Image = Global.Quality.My.Resources.Resources.papelera
+        Me.dgQuitar.Name = "dgQuitar"
         '
         'FormEntradaInventario
         '
@@ -448,13 +455,13 @@ Partial Class FormEntradaInventario
         Me.GroupBox1.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
+        Me.gbModo.ResumeLayout(False)
+        Me.gbModo.PerformLayout()
         CType(Me.ErrorIcono, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ToolStrip1.ResumeLayout(False)
         Me.ToolStrip1.PerformLayout()
         Me.Panel1.ResumeLayout(False)
         CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.GroupBox3.ResumeLayout(False)
-        Me.GroupBox3.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -486,14 +493,15 @@ Partial Class FormEntradaInventario
     Friend WithEvents Label3 As Label
     Friend WithEvents txtSubTotal As TextBox
     Friend WithEvents Label2 As Label
+    Friend WithEvents gbModo As GroupBox
+    Friend WithEvents rvManual As RadioButton
+    Friend WithEvents rbCompra As RadioButton
     Friend WithEvents dgCodigoProducto As DataGridViewTextBoxColumn
-    Friend WithEvents dgProducto As DataGridViewTextBoxColumn
-    Friend WithEvents dgValor As DataGridViewTextBoxColumn
+    Friend WithEvents dgDescripcion As DataGridViewTextBoxColumn
     Friend WithEvents dgCantidad As DataGridViewTextBoxColumn
+    Friend WithEvents dgValor As DataGridViewTextBoxColumn
     Friend WithEvents dgTotal As DataGridViewTextBoxColumn
     Friend WithEvents dgBodega As DataGridViewTextBoxColumn
     Friend WithEvents dgCodigoBarra As DataGridViewTextBoxColumn
-    Friend WithEvents GroupBox3 As GroupBox
-    Friend WithEvents rvManual As RadioButton
-    Friend WithEvents rbCompra As RadioButton
+    Friend WithEvents dgQuitar As DataGridViewImageColumn
 End Class

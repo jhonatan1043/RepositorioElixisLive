@@ -55,10 +55,6 @@ Partial Class FormCitaMedica
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.dgvServicio = New System.Windows.Forms.DataGridView()
-        Me.dgCodigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.dgServicio = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.dgCantidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.dgQuitar = New System.Windows.Forms.DataGridViewImageColumn()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
@@ -75,6 +71,10 @@ Partial Class FormCitaMedica
         Me.ToolStripSeparator3 = New System.Windows.Forms.ToolStripSeparator()
         Me.btAnular = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripSeparator6 = New System.Windows.Forms.ToolStripSeparator()
+        Me.dgCodigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dgServicio = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dgCantidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dgQuitar = New System.Windows.Forms.DataGridViewImageColumn()
         Me.GroupBox2.SuspendLayout()
         CType(Me.dgvServicio, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
@@ -315,34 +315,6 @@ Partial Class FormCitaMedica
         Me.dgvServicio.Size = New System.Drawing.Size(673, 215)
         Me.dgvServicio.TabIndex = 10088
         '
-        'dgCodigo
-        '
-        Me.dgCodigo.HeaderText = "Codigo"
-        Me.dgCodigo.Name = "dgCodigo"
-        Me.dgCodigo.Width = 67
-        '
-        'dgServicio
-        '
-        Me.dgServicio.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.dgServicio.HeaderText = "Descripción"
-        Me.dgServicio.Name = "dgServicio"
-        '
-        'dgCantidad
-        '
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.dgCantidad.DefaultCellStyle = DataGridViewCellStyle6
-        Me.dgCantidad.HeaderText = "Cantidad"
-        Me.dgCantidad.Name = "dgCantidad"
-        Me.dgCantidad.Width = 76
-        '
-        'dgQuitar
-        '
-        Me.dgQuitar.HeaderText = "Quitar"
-        Me.dgQuitar.Name = "dgQuitar"
-        Me.dgQuitar.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgQuitar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
-        Me.dgQuitar.Width = 64
-        '
         'GroupBox1
         '
         Me.GroupBox1.Controls.Add(Me.GroupBox3)
@@ -495,6 +467,35 @@ Partial Class FormCitaMedica
         Me.ToolStripSeparator6.Name = "ToolStripSeparator6"
         Me.ToolStripSeparator6.Size = New System.Drawing.Size(6, 33)
         '
+        'dgCodigo
+        '
+        Me.dgCodigo.HeaderText = "Codigo"
+        Me.dgCodigo.Name = "dgCodigo"
+        Me.dgCodigo.Width = 67
+        '
+        'dgServicio
+        '
+        Me.dgServicio.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.dgServicio.HeaderText = "Descripción"
+        Me.dgServicio.Name = "dgServicio"
+        '
+        'dgCantidad
+        '
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.dgCantidad.DefaultCellStyle = DataGridViewCellStyle6
+        Me.dgCantidad.HeaderText = "Cantidad"
+        Me.dgCantidad.Name = "dgCantidad"
+        Me.dgCantidad.Width = 76
+        '
+        'dgQuitar
+        '
+        Me.dgQuitar.HeaderText = "Quitar"
+        Me.dgQuitar.Image = Global.Quality.My.Resources.Resources.papelera
+        Me.dgQuitar.Name = "dgQuitar"
+        Me.dgQuitar.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgQuitar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
+        Me.dgQuitar.Width = 64
+        '
         'FormCitaMedica
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -568,9 +569,9 @@ Partial Class FormCitaMedica
     Friend WithEvents btBuscarCliente As Button
     Friend WithEvents Panel2 As Panel
     Friend WithEvents GroupBox3 As GroupBox
+    Friend WithEvents Panel3 As Panel
     Friend WithEvents dgCodigo As DataGridViewTextBoxColumn
     Friend WithEvents dgServicio As DataGridViewTextBoxColumn
     Friend WithEvents dgCantidad As DataGridViewTextBoxColumn
     Friend WithEvents dgQuitar As DataGridViewImageColumn
-    Friend WithEvents Panel3 As Panel
 End Class
