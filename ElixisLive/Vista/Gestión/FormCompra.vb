@@ -87,6 +87,7 @@
             Generales.habilitarControles(Me)
             Generales.deshabilitarControles(GpDatos)
             validarEdicionGrilla(Constantes.EDITABLE)
+            objCompra.dtCompra.Rows.Add()
             btRegistrar.Enabled = True
             btCancelar.Enabled = True
         End If
@@ -153,12 +154,18 @@
             End If
         End If
     End Sub
-    Private Sub dgvFactura_Enter(sender As Object, e As EventArgs) Handles dgvFactura.CellEnter
+    Private Sub dgvFactura_CellEndEdit(sender As Object, e As EventArgs) Handles dgvFactura.CellEndEdit
         If dgvFactura.RowCount >= 1 Then
-            calcularTotales()
-            For indice = 0 To dgvFactura.RowCount - 1
-                dgvFactura.Rows(indice).Cells("dgTotal").Value = dgvFactura.Rows(indice).Cells("dgValor").Value * dgvFactura.Rows(indice).Cells("dgCantidad").Value
-            Next
+            Try
+                calcularTotales()
+                For indice = 0 To dgvFactura.RowCount - 1
+                    If Not IsDBNull(dgvFactura.Rows(indice).Cells("dgValor").Value) AndAlso Not IsDBNull(dgvFactura.Rows(indice).Cells("dgCantidad").Value) Then
+                        dgvFactura.Rows(indice).Cells("dgTotal").Value = dgvFactura.Rows(indice).Cells("dgValor").Value * dgvFactura.Rows(indice).Cells("dgCantidad").Value
+                    End If
+                Next
+            Catch ex As Exception
+                EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
+            End Try
         End If
     End Sub
     Private Sub btBuscarProveedor_Click(sender As Object, e As EventArgs) Handles btBuscarProveedor.Click

@@ -11,7 +11,7 @@ Public Class CompraDAL
                     comando.CommandType = CommandType.StoredProcedure
                     comando.Parameters.Clear()
                     comando.CommandText = objCompra.sqlGuardar
-                    comando.Parameters.Add(New SqlParameter("@Codigo", SqlDbType.Int)).Value = objCompra.codigo
+                    comando.Parameters.Add(New SqlParameter("@Codigo", SqlDbType.NVarChar)).Value = objCompra.codigo
                     comando.Parameters.Add(New SqlParameter("@Codigo_persona", SqlDbType.Int)).Value = objCompra.codigoPersona
                     comando.Parameters.Add(New SqlParameter("@Fecha_Compra", SqlDbType.DateTime)).Value = objCompra.fechaCompra
                     comando.Parameters.Add(New SqlParameter("@Numero_Factura", SqlDbType.NVarChar)).Value = objCompra.numeroFactura

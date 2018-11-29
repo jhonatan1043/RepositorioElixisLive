@@ -17,7 +17,7 @@
         sqlConsulta = Sentencias.COMPRA_CONSULTAR
         sqlCargar = Sentencias.COMPRA_CARGAR
         sqlCargarDetalle = Sentencias.COMPRA_CARGAR_DETALLE
-        sqlGuardar = ""
+        sqlGuardar = "[SP_INVEN_COMPRA_CREAR]"
 
     End Sub
 End Class

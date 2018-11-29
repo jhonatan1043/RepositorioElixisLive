@@ -81,10 +81,15 @@
             EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
         End Try
     End Sub
+    Private Sub cargarObjeto()
+        objListaPrecio.nombre = txtNombre.Text
+        objListaPrecio.codigoTipoLista = cbTipoLista.SelectedValue
+    End Sub
     Private Sub btRegistrar_Click(sender As Object, e As EventArgs) Handles btRegistrar.Click
         If validarCampos() = True Then
             Try
                 dgvLista.EndEdit()
+                cargarObjeto()
                 ListaPrecioBLL.guardarListaPrecio(objListaPrecio)
                 Generales.deshabilitarBotones(ToolStrip1)
                 Generales.deshabilitarControles(Me)

@@ -13,7 +13,7 @@
 
         sqlConsulta = "[SP_INVEN_PRECIO_CONSULTAR]"
         sqlCargar = "[SP_INVEN_PRECIO_CARGAR]"
-        sqlGuardar = ""
+        sqlGuardar = "[SP_INVEN_PRECIO_CREAR]"
         sqlAnular = "[SP_INVEN_LISTA_PRECIO_ANULADO] "
         sqlCargarDetalle = "[SP_INVEN_PRECIO_DETALLE]"
     End Sub
