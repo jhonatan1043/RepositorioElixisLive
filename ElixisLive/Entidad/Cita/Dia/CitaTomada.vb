@@ -16,7 +16,7 @@
         Try
             panel.Location = New Point(posicionX, posicionY)
             panel.Size = New Point(anchura, altura)
-            panel.BackColor = If(pendiente = Constantes.PENDIENTE, Color.FromArgb(192, 255, 255), colorLabel())
+            panel.BackColor = If(pendiente = Constantes.PENDIENTE, Color.AliceBlue, colorLabel())
             panel.Controls.Add(creaBotones(4, 3, idCita, If(pendiente = Constantes.PENDIENTE, Constantes.CITA_DISPONIBLE, nombre)))
             panel.Controls.Add(creaBotones(4, 36, idCita, If(pendiente = Constantes.PENDIENTE, Constantes.CITA_DISPONIBLE, CStr(Format(fechaCita, "HH:mm")))))
             panel.Tag = hora & "-" & idCita
