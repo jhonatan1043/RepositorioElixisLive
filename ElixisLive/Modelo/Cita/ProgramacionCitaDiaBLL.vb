@@ -85,7 +85,7 @@
     Private Shared Sub cargarPanelDisponible(ByRef panel As Panel, hora As String)
         Try
             objDisponible = New CitaDisponible
-            objDisponible.color = Color.FromArgb(192, 255, 255)
+            objDisponible.color = Color.AliceBlue
             objDisponible.hora = hora
             panelCreado = objDisponible.crearPanelDisponible(contenedorPanelDispon)
             panel.Controls.Add(panelCreado)

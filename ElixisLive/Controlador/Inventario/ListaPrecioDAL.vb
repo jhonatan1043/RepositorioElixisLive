@@ -12,6 +12,7 @@ Public Class ListaPrecioDAL
                     comando.Parameters.Clear()
                     comando.CommandText = objLista.sqlGuardar
                     comando.Parameters.Add(New SqlParameter("@Codigo", SqlDbType.NVarChar)).Value = objLista.codigo
+                    comando.Parameters.Add(New SqlParameter("@Nombre", SqlDbType.NVarChar)).Value = objLista.nombre
                     comando.Parameters.Add(New SqlParameter("@Codigo_Tipo_Lista", SqlDbType.Int)).Value = objLista.codigoTipoLista
                     comando.Parameters.Add(New SqlParameter("@Tabla", SqlDbType.Structured)).Value = objLista.dtPrecio
                     objLista.codigo = CType(comando.ExecuteScalar, String)
