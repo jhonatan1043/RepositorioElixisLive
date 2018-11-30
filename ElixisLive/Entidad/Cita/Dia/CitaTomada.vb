@@ -41,7 +41,7 @@
             boton.Cursor = Cursors.Hand
             boton.Text = Texto
             boton.Tag = hora & "-" & idCita & "-" & estado
-            AddHandler boton.DoubleClick, AddressOf UtlidadCitaBLL.llamarFormularioCita
+            AddHandler boton.Click, AddressOf UtlidadCitaBLL.llamarFormularioCita
         Catch ex As Exception
             Throw ex
         End Try
