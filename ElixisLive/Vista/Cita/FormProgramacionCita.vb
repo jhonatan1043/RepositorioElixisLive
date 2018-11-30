@@ -18,8 +18,8 @@
             limpiarPanel(PanelDia)
             PanelDia.Visible = True
             cargarInformacion(ProgramacionCitaDiaBLL.cargarCitas(PanelDia,
-                                                     Format(CDate(dFecha.Value), Constantes.FORMATO_FECHA),
-                                                     txtBusqueda.Text))
+                                                                 Format(CDate(dFecha.Value), Constantes.FORMATO_FECHA),
+                                                                 txtBusqueda.Text))
         Catch ex As Exception
             EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
