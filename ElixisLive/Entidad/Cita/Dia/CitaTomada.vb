@@ -13,7 +13,7 @@
                                pendiente As Integer) As Panel
         Dim panel As New Panel
         Dim texto As String
-        texto = nombre & vbNewLine & CStr(Format(fechaCita, "HH:mm"))
+        texto = nombre & vbNewLine & vbNewLine & CStr(Format(fechaCita, "HH:mm"))
 
         Try
             panel.Location = New Point(posicionX, posicionY)
@@ -35,9 +35,9 @@
         Try
             boton.Size = New Point(130, 60)
             boton.Location = New Point(posicionX, posicionY)
-            boton.TextAlign = HorizontalAlignment.Center
+            boton.TextAlign = ContentAlignment.MiddleCenter
             boton.BackColor = Color.White
-            boton.Font = New Font(Constantes.TIPO_LETRA_ELEMENTO, 6)
+            boton.Font = New Font(Constantes.TIPO_LETRA_ELEMENTO, 8)
             boton.Cursor = Cursors.Hand
             boton.Text = Texto
             boton.Tag = hora & "-" & idCita & "-" & estado
