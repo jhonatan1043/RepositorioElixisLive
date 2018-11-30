@@ -1,12 +1,16 @@
 ﻿Public Class FormEstadoCita
     Property codigoCita As Integer
     Private Sub txtRealizado_Click(sender As Object, e As EventArgs) Handles txtRealizado.Click
-        cambiarEstado(Constantes.CITA_REALIZADA)
-        Close()
+        If EstiloMensajes.mostrarMensajePregunta("¿ Desea Confirmar la cita ?") = Constantes.SI Then
+            cambiarEstado(Constantes.CITA_REALIZADA)
+            Close()
+        End If
     End Sub
     Private Sub txtCancelado_Click(sender As Object, e As EventArgs) Handles txtCancelado.Click
-        cambiarEstado(Constantes.CITA_CANCELADA)
-        Close()
+        If EstiloMensajes.mostrarMensajePregunta("¿ Desea Cancelar la cita ?") = Constantes.SI Then
+            cambiarEstado(Constantes.CITA_CANCELADA)
+            Close()
+        End If
     End Sub
     Public Sub posicionFormulario(posicionX As Integer,
                                   posicionY As Integer, contenedor As Panel)

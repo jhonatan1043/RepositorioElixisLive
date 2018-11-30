@@ -62,8 +62,11 @@
                     formEstadCita.codigoCita = idCita
                     formEstadCita.txtRealizado.Visible = True
                     formEstadCita.txtCancelado.Visible = True
-                    formEstadCita.posicionFormulario(sender.Location.X, sender.Location.Y, objFormCita.PanelDia)
+                    formEstadCita.posicionFormulario(sender.Location.X,
+                                                     sender.Location.Y,
+                                                     objFormCita.PanelDia)
                     formEstadCita.Show()
+                    formEstadCita.Focus()
                 Case Else
                     If Not String.IsNullOrEmpty(idCita) Then
                         formCitaMedica.estadoRegistro = True
@@ -75,7 +78,7 @@
             End Select
 
         Catch ex As Exception
-            Throw ex
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
     End Sub
     Public Shared Function horaDia(posicion As Integer) As String

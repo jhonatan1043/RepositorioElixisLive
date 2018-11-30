@@ -62,7 +62,6 @@ Partial Class FormEstadoCita
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Name = "FormEstadoCita"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
-        Me.TopMost = True
         Me.ResumeLayout(False)
 
     End Sub
