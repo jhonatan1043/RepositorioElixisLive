@@ -8,8 +8,10 @@
         cambiarEstado(Constantes.CITA_CANCELADA)
         Close()
     End Sub
-    Public Sub posicionFormulario(posicionX As Integer, posicionY As Integer)
+    Public Sub posicionFormulario(posicionX As Integer,
+                                  posicionY As Integer, contenedor As Panel)
         Me.Location = New Point(posicionX, posicionY)
+        contenedor.Controls.Add(Me)
     End Sub
     Private Sub cambiarEstado(Estado As String)
         Dim params As New List(Of String)

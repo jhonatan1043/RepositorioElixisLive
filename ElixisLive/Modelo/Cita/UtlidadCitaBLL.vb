@@ -41,9 +41,10 @@
     Public Shared Sub llamarFormularioCita(sender As Object, e As EventArgs)
         Dim idCita As String = Nothing
         Dim formCitaMedica As New FormCitaMedica
+        Dim formEstadCita As FormEstadoCita
         Dim horaExtraida As String = Nothing
         Dim estadoCita As String = Nothing
-        Dim formEstadCita As FormEstadoCita
+
         Try
             Dim auxiliar As Integer = sender.tag.ToString.Length
 
@@ -61,7 +62,7 @@
                     formEstadCita.codigoCita = idCita
                     formEstadCita.txtRealizado.Visible = True
                     formEstadCita.txtCancelado.Visible = True
-                    formEstadCita.posicionFormulario(sender.Location.X, sender.Location.Y)
+                    formEstadCita.posicionFormulario(sender.Location.X, sender.Location.Y, objFormCita.PanelDia)
                     formEstadCita.Show()
                 Case Else
                     If Not String.IsNullOrEmpty(idCita) Then
