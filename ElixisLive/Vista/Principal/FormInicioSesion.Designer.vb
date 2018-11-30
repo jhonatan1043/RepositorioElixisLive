@@ -80,7 +80,7 @@ Partial Class FormInicioSesion
         Me.txtUsuario.Location = New System.Drawing.Point(229, 31)
         Me.txtUsuario.MaxLength = 10
         Me.txtUsuario.Name = "txtUsuario"
-        Me.txtUsuario.Size = New System.Drawing.Size(152, 25)
+        Me.txtUsuario.Size = New System.Drawing.Size(163, 25)
         Me.txtUsuario.TabIndex = 1
         '
         'txtContraseña
@@ -90,7 +90,7 @@ Partial Class FormInicioSesion
         Me.txtContraseña.MaxLength = 20
         Me.txtContraseña.Name = "txtContraseña"
         Me.txtContraseña.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.txtContraseña.Size = New System.Drawing.Size(152, 25)
+        Me.txtContraseña.Size = New System.Drawing.Size(163, 25)
         Me.txtContraseña.TabIndex = 3
         '
         'Label1
@@ -112,7 +112,7 @@ Partial Class FormInicioSesion
         Me.CbEmpresa.FormattingEnabled = True
         Me.CbEmpresa.Location = New System.Drawing.Point(229, 112)
         Me.CbEmpresa.Name = "CbEmpresa"
-        Me.CbEmpresa.Size = New System.Drawing.Size(152, 25)
+        Me.CbEmpresa.Size = New System.Drawing.Size(163, 25)
         Me.CbEmpresa.TabIndex = 7
         '
         'GroupBox1
@@ -158,9 +158,9 @@ Partial Class FormInicioSesion
         Me.OK.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.OK.Font = New System.Drawing.Font("Times New Roman", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.OK.ForeColor = System.Drawing.Color.White
-        Me.OK.Location = New System.Drawing.Point(184, 138)
+        Me.OK.Location = New System.Drawing.Point(221, 138)
         Me.OK.Name = "OK"
-        Me.OK.Size = New System.Drawing.Size(90, 30)
+        Me.OK.Size = New System.Drawing.Size(75, 30)
         Me.OK.TabIndex = 4
         Me.OK.Text = "&Aceptar"
         Me.OK.UseVisualStyleBackColor = False
@@ -173,9 +173,9 @@ Partial Class FormInicioSesion
         Me.Cancel.DialogResult = System.Windows.Forms.DialogResult.Cancel
         Me.Cancel.Font = New System.Drawing.Font("Times New Roman", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Cancel.ForeColor = System.Drawing.Color.White
-        Me.Cancel.Location = New System.Drawing.Point(283, 138)
+        Me.Cancel.Location = New System.Drawing.Point(311, 138)
         Me.Cancel.Name = "Cancel"
-        Me.Cancel.Size = New System.Drawing.Size(90, 30)
+        Me.Cancel.Size = New System.Drawing.Size(75, 30)
         Me.Cancel.TabIndex = 5
         Me.Cancel.Text = "&Cancelar"
         Me.Cancel.UseVisualStyleBackColor = False
