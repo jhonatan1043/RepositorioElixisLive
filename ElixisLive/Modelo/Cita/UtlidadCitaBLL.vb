@@ -43,6 +43,7 @@
         Dim formCitaMedica As New FormCitaMedica
         Dim horaExtraida As String = Nothing
         Dim estadoCita As String
+        Dim formEstadCita As FormEstadoCita
         Try
             Dim auxiliar As Integer = sender.tag.ToString.Length
 
@@ -52,10 +53,12 @@
 
             Select Case estadoCita
                 Case Constantes.CITA_PENDIENTE
-                    FormEstadoCita.txtRealizado.Visible = True
-                    FormEstadoCita.txtCancelado.Visible = True
-                    FormEstadoCita.txtPendiente.Visible = False
-                    FormEstadoCita.ShowDialog()
+                    formEstadCita = New FormEstadoCita
+                    formEstadCita.txtRealizado.Visible = True
+                    formEstadCita.txtCancelado.Visible = True
+                    formEstadCita.txtPendiente.Visible = False
+                    formEstadCita.posicionFormulario(sender.Location.X, sender.Location.Y)
+                    formEstadCita.ShowDialog()
                 Case Else
                     If Not String.IsNullOrEmpty(idCita) Then
                         formCitaMedica.estadoRegistro = True

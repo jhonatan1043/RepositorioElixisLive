@@ -244,11 +244,28 @@
         If rbCompra.Checked = True Then
             objEntrada.dtEntrada.Clear()
             btBuscarCompra.Enabled = True
+            dgvEntrada.Columns("dgQuitar").Visible = False
         Else
             objEntrada.dtEntrada.Clear()
             txtCodigo.Clear()
             btBuscarCompra.Enabled = False
             objEntrada.dtEntrada.Rows.Add()
+            dgvEntrada.Columns("dgQuitar").Visible = True
+        End If
+    End Sub
+    Private Sub dgvEntrada_CellEndEdit(sender As Object, e As DataGridViewCellEventArgs) Handles dgvEntrada.CellEndEdit
+        If dgvEntrada.RowCount >= 1 Then
+            Try
+                For indice = 0 To dgvEntrada.RowCount - 1
+                    If Not IsDBNull(dgvEntrada.Rows(indice).Cells("dgValor").Value) AndAlso Not IsDBNull(dgvEntrada.Rows(indice).Cells("dgCantidad").Value) Then
+                        dgvEntrada.Rows(indice).Cells("dgTotal").Value = dgvEntrada.Rows(indice).Cells("dgValor").Value * dgvEntrada.Rows(indice).Cells("dgCantidad").Value
+                    End If
+                Next
+                txtSubTotal.Text = Format(objEntrada.dtEntrada.Compute("Sum(Valor)", Constantes.CADENA_VACIA), Constantes.FORMATO_MONEDA)
+                txtTotal.Text = Format(objEntrada.dtEntrada.Compute("Sum(Total)", Constantes.CADENA_VACIA), Constantes.FORMATO_MONEDA)
+            Catch ex As Exception
+                EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
+            End Try
         End If
     End Sub
 End Class

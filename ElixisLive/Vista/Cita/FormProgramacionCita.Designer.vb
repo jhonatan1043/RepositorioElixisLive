@@ -31,10 +31,8 @@ Partial Class FormProgramacionCita
         Me.txtBusqueda = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.RadioButton2 = New System.Windows.Forms.RadioButton()
-        Me.rbCancelados = New System.Windows.Forms.RadioButton()
         Me.rbAgendados = New System.Windows.Forms.RadioButton()
         Me.txtPendiente = New System.Windows.Forms.Button()
-        Me.txtCancelado = New System.Windows.Forms.Button()
         Me.txtRealizado = New System.Windows.Forms.Button()
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
         Me.lbInformacionCliente = New System.Windows.Forms.ToolStripLabel()
@@ -141,32 +139,17 @@ Partial Class FormProgramacionCita
         'RadioButton2
         '
         Me.RadioButton2.Appearance = System.Windows.Forms.Appearance.Button
-        Me.RadioButton2.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.RadioButton2.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.RadioButton2.Checked = True
         Me.RadioButton2.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.RadioButton2.ForeColor = System.Drawing.Color.Black
-        Me.RadioButton2.Location = New System.Drawing.Point(775, 356)
+        Me.RadioButton2.Location = New System.Drawing.Point(775, 325)
         Me.RadioButton2.Name = "RadioButton2"
         Me.RadioButton2.Size = New System.Drawing.Size(72, 24)
         Me.RadioButton2.TabIndex = 10070
         Me.RadioButton2.TabStop = True
         Me.RadioButton2.Text = "Realizados"
         Me.RadioButton2.UseVisualStyleBackColor = False
-        '
-        'rbCancelados
-        '
-        Me.rbCancelados.Appearance = System.Windows.Forms.Appearance.Button
-        Me.rbCancelados.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.rbCancelados.Checked = True
-        Me.rbCancelados.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.rbCancelados.ForeColor = System.Drawing.Color.Black
-        Me.rbCancelados.Location = New System.Drawing.Point(775, 328)
-        Me.rbCancelados.Name = "rbCancelados"
-        Me.rbCancelados.Size = New System.Drawing.Size(72, 24)
-        Me.rbCancelados.TabIndex = 10071
-        Me.rbCancelados.TabStop = True
-        Me.rbCancelados.Text = "Cancelados"
-        Me.rbCancelados.UseVisualStyleBackColor = False
         '
         'rbAgendados
         '
@@ -196,21 +179,11 @@ Partial Class FormProgramacionCita
         Me.txtPendiente.TabIndex = 10074
         Me.txtPendiente.UseVisualStyleBackColor = False
         '
-        'txtCancelado
-        '
-        Me.txtCancelado.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.txtCancelado.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.txtCancelado.Location = New System.Drawing.Point(848, 329)
-        Me.txtCancelado.Name = "txtCancelado"
-        Me.txtCancelado.Size = New System.Drawing.Size(32, 22)
-        Me.txtCancelado.TabIndex = 10075
-        Me.txtCancelado.UseVisualStyleBackColor = False
-        '
         'txtRealizado
         '
-        Me.txtRealizado.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtRealizado.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.txtRealizado.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.txtRealizado.Location = New System.Drawing.Point(848, 357)
+        Me.txtRealizado.Location = New System.Drawing.Point(848, 326)
         Me.txtRealizado.Name = "txtRealizado"
         Me.txtRealizado.Size = New System.Drawing.Size(32, 22)
         Me.txtRealizado.TabIndex = 10076
@@ -245,10 +218,8 @@ Partial Class FormProgramacionCita
         Me.ClientSize = New System.Drawing.Size(945, 523)
         Me.Controls.Add(Me.ToolStrip1)
         Me.Controls.Add(Me.txtRealizado)
-        Me.Controls.Add(Me.txtCancelado)
         Me.Controls.Add(Me.txtPendiente)
         Me.Controls.Add(Me.rbAgendados)
-        Me.Controls.Add(Me.rbCancelados)
         Me.Controls.Add(Me.RadioButton2)
         Me.Controls.Add(Me.txtBusqueda)
         Me.Controls.Add(Me.Label5)
@@ -278,10 +249,8 @@ Partial Class FormProgramacionCita
     Public WithEvents txtBusqueda As TextBox
     Public WithEvents Label5 As Label
     Friend WithEvents RadioButton2 As RadioButton
-    Friend WithEvents rbCancelados As RadioButton
     Friend WithEvents rbAgendados As RadioButton
     Friend WithEvents txtPendiente As Button
-    Friend WithEvents txtCancelado As Button
     Friend WithEvents txtRealizado As Button
     Public WithEvents ToolStrip1 As ToolStrip
     Friend WithEvents lbInformacionCliente As ToolStripLabel
