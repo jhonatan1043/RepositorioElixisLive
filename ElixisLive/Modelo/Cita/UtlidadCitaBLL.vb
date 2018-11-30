@@ -64,7 +64,7 @@
                     formEstadCita.txtCancelado.Visible = True
                     formEstadCita.posicionFormulario(sender.Location.X,
                                                      sender.Location.Y,
-                                                     objFormCita.PanelDia)
+                                                     sender.Container)
                     formEstadCita.Show()
                     formEstadCita.Focus()
                 Case Else
