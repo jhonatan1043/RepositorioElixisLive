@@ -14,11 +14,15 @@
         End Try
     End Sub
     Private Sub cargarDia()
-        limpiarPanel(PanelDia)
-        PanelDia.Visible = True
-        cargarInformacion(ProgramacionCitaDiaBLL.cargarCitas(PanelDia,
-                                                 Format(CDate(dFecha.Value), Constantes.FORMATO_FECHA),
-                                                 txtBusqueda.Text))
+        Try
+            limpiarPanel(PanelDia)
+            PanelDia.Visible = True
+            cargarInformacion(ProgramacionCitaDiaBLL.cargarCitas(PanelDia,
+                                                     Format(CDate(dFecha.Value), Constantes.FORMATO_FECHA),
+                                                     txtBusqueda.Text))
+        Catch ex As Exception
+            EstiloMensajes.mostrarMensajeError(ex.Message)
+        End Try
     End Sub
     Private Sub txtBusqueda_TextChanged(sender As Object, e As EventArgs) Handles txtBusqueda.TextChanged
         If String.IsNullOrEmpty(txtBusqueda.Text) Then

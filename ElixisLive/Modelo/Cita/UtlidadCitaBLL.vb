@@ -54,10 +54,11 @@
             Select Case estadoCita
                 Case Constantes.CITA_PENDIENTE
                     formEstadCita = New FormEstadoCita
+                    formEstadCita.codigoCita = idCita
                     formEstadCita.txtRealizado.Visible = True
                     formEstadCita.txtCancelado.Visible = True
                     formEstadCita.posicionFormulario(sender.Location.X, sender.Location.Y)
-                    formEstadCita.ShowDialog()
+                    formEstadCita.Show()
                 Case Else
                     If Not String.IsNullOrEmpty(idCita) Then
                         formCitaMedica.estadoRegistro = True

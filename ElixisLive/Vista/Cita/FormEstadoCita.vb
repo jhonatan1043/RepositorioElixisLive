@@ -5,7 +5,7 @@
         Close()
     End Sub
     Private Sub txtCancelado_Click(sender As Object, e As EventArgs) Handles txtCancelado.Click
-        cambiarEstado("C")
+        cambiarEstado(Constantes.CITA_CANCELADA)
         Close()
     End Sub
     Public Sub posicionFormulario(posicionX As Integer, posicionY As Integer)
@@ -17,8 +17,8 @@
         params.Add(codigoCita)
         params.Add(Estado)
         cadenaPrametros = Funciones.getParametros(params)
-        If Generales.ejecutarSQL(" " & cadenaPrametros) Then
-
+        If Generales.ejecutarSQL(Sentencias.CITA_CAMBIO_ESTADO & cadenaPrametros) Then
+            EstiloMensajes.mostrarMensajeExitoso(MensajeSistema.REGISTRO_GUARDADO)
         End If
     End Sub
     Private Sub FormEstadoCita_KeyDown(sender As Object, e As KeyEventArgs) Handles MyBase.KeyDown
