@@ -7,7 +7,7 @@ Public Class FormPerfil
     Dim fprincipal As New FormPrincipal
     Private Sub FormPerfil_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         objPerfil = New Perfil
-        principalBLL.cargarMenu(arbolmenu)
+        'principalBLL.cargarMenu(arbolmenu)
         listarPerfiles()
         validarCampoGrilla()
         'Generales.deshabilitarBotones(ToolStrip1)
@@ -23,10 +23,10 @@ Public Class FormPerfil
         Generales.deshabilitarBotones(ToolStrip1)
         Generales.habilitarControles(Me)
         Generales.limpiarControles(Me)
-        objPerfil.codigoPerfil = Nothing
+        objPerfil.codigoPerfil = -1
         btRegistrar.Enabled = True
         btCancelar.Enabled = True
-        principalBLL.cargarMenu(arbolmenu)
+        cargarArbol()
     End Sub
     Private Sub cargarInfomacion(pCodigo As Integer)
         Dim params As New List(Of String)
@@ -130,8 +130,8 @@ Public Class FormPerfil
                 arbolmenu.Enabled = False
             Catch ex As Exception
                 EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
-                End Try
-            End If
+            End Try
+        End If
         'Try
         '    cargarObjeto()
         '    PerfilBLL.guardarPerfil(objPerfil)
@@ -208,13 +208,6 @@ Public Class FormPerfil
                 consulta.ExecuteNonQuery()
                 EstiloMensajes.mostrarMensajeExitoso((MensajeSistema.MODULO_ASIGNADO))
             End Using
-
-            'If objPerfil.codigoPerfil = SesionActual.codigoPerfil Then
-            '    fprincipal.eliminarMenu()
-            '    fprincipal.CreaOpciones(SesionActual.idEmpresa, SesionActual.codigoPerfil)
-            '    SesionActual.dtPermisos.Clear()
-            '    SesionActual.dtPermisos = fprincipal.cargarOpciones(SesionActual.codigoPerfil, SesionActual.idEmpresa)
-            'End If
         Catch ex As Exception
             EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
         End Try

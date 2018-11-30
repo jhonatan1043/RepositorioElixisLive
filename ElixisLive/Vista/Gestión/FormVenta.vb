@@ -131,20 +131,20 @@ Public Class FormVenta
     End Sub
 
     Private Sub btNuevo_Click(sender As Object, e As EventArgs) Handles btNuevo.Click
-        'Generales.habilitarControles(Me)
-        'Generales.deshabilitarBotones(ToolStrip1)
-        'Generales.limpiarControles(Me)
-        'btRegistrar.Enabled = True
-        'btCancelar.Enabled = True
-        'TextDV.ReadOnly = True
-        'TextTotal.ReadOnly = True
-        'TextTotalArticulos.ReadOnly = True
-        'TextTotalServicio.ReadOnly = True
-        'dtProductos.Rows.Add()
-        'bloquearColumnas()
-        'dtFechaFactura.Enabled = False
-        'TextIdentificacion.Focus()
-        Generales.cargarForm(FormAgendaCitas)
+        Generales.habilitarControles(Me)
+        Generales.deshabilitarBotones(ToolStrip1)
+        Generales.limpiarControles(Me)
+        btRegistrar.Enabled = True
+        btCancelar.Enabled = True
+        TextDV.ReadOnly = True
+        TextTotal.ReadOnly = True
+        TextTotalArticulos.ReadOnly = True
+        TextTotalServicio.ReadOnly = True
+        dtProductos.Rows.Add()
+        bloquearColumnas()
+        dtFechaFactura.Enabled = False
+        TextIdentificacion.Focus()
+
     End Sub
     Private Sub btBuscar_Click(sender As Object, e As EventArgs) Handles btBuscar.Click
         Dim params As New List(Of String)

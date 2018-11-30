@@ -1,7 +1,7 @@
 ﻿Imports System.IO
 Imports System.Reflection
 Public Class principalBLL
-    Private Shared dsDatos As DataSet
+    Public Shared dsDatos As DataSet
     Public Shared Sub cargarMenu(arbolMenu As TreeView)
         Dim nodo As TreeNode
         Dim drCuentaPadre As DataRow()

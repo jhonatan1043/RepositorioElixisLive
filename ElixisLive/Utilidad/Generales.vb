@@ -211,9 +211,9 @@ Public Class Generales
         End With
     End Sub
     Public Shared Sub limpiarGrillaParametro(dgv As DataGridView)
-        For posicion = 0 To dgv.Rows.Count - 1
-            dgv.Rows(posicion).Cells("Datos").Value = Nothing
-        Next
+        'For posicion = 0 To dgv.Rows.Count - 1
+        '    dgv.Rows(posicion).Cells("Datos").Value = Nothing
+        'Next
     End Sub
     Public Shared Function convertirNumero(ByVal numero As Double) As String
         Dim sValor As String, siValor As Single = Nothing
@@ -482,10 +482,10 @@ Public Class Generales
         Next
     End Sub
     Private Shared Sub habilitarColumnaParametro(dgv As DataGridView)
-        With dgv
-            .ReadOnly = False
-            .Columns("Informacion").ReadOnly = True
-        End With
+        'With dgv
+        '    .ReadOnly = False
+        '    .Columns("Informacion").ReadOnly = True
+        'End With
     End Sub
 
     Public Shared Function cargarCombo(ByVal consulta As String,

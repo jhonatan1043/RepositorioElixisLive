@@ -9,7 +9,7 @@
         End If
     End Sub
     Private Sub txtCancelado_Click(sender As Object, e As EventArgs) Handles txtCancelado.Click
-        If EstiloMensajes.mostrarMensajePregunta("¿ Desea Cancelar la cita ?") = Constantes.SI Then
+        If EstiloMensajes.mostrarMensajePregunta("¿ Desea cancelar la cita ?") = Constantes.SI Then
             cambiarEstado(Constantes.CITA_CANCELADA)
             objFormProgram.validarControles()
             Close()
