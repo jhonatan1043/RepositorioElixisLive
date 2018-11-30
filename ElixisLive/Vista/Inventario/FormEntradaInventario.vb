@@ -132,7 +132,7 @@
         Dim params As New List(Of String)
         params.Add(String.Empty)
 
-        If btRegistrar.Enabled = False Then Exit Sub
+        If rbCompra.Checked = True Then Exit Sub
 
         If objEntrada.dtEntrada.Rows.Count > 0 Then
             Try

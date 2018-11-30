@@ -58,11 +58,8 @@
                 panel.Controls.Add(panelCreado)
 
                 contenedorPanelX = contenedorPanelX + incrementoX
-
             Next
-
             contenedorPanelX = Constantes.PANEL_POCISION_X
-
         Catch ex As Exception
             Throw ex
         End Try
