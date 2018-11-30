@@ -44,6 +44,7 @@
         Dim formEstadCita As FormEstadoCita
         Dim horaExtraida As String = Nothing
         Dim estadoCita As String = Nothing
+        Dim panelPrincipal As String = Nothing
 
         Try
             Dim auxiliar As Integer = sender.tag.ToString.Length
@@ -52,6 +53,7 @@
                 horaExtraida = If(auxiliar = 4, sender.tag.ToString.Remove(2), sender.tag.ToString.Remove(2))
                 idCita = If(auxiliar = 4, Nothing, sender.tag.ToString.Substring(3).Remove(2))
                 estadoCita = If(auxiliar = 4, Nothing, sender.tag.ToString.Substring(6))
+                panelPrincipal = sender.Name.ToString.Substring(1)
             Else
                 horaExtraida = sender.tag
             End If
@@ -64,8 +66,9 @@
                     formEstadCita.txtCancelado.Visible = True
                     formEstadCita.posicionFormulario(sender.Location.X,
                                                      sender.Location.Y,
-                                                     sender.Container)
+                                                     GetReference(panelPrincipal, objFormCita.PanelDia))
                     formEstadCita.Show()
+                    formEstadCita.Focus()
                     formEstadCita.BringToFront()
                 Case Else
                     If Not String.IsNullOrEmpty(idCita) Then
@@ -128,11 +131,9 @@
     Public Shared Function GetReference(ByVal nombreControl As String, panel As Panel) As Control
         For Each controlSuperior As Control In panel.Controls
             If (TypeOf controlSuperior Is Panel) Then
-                For Each subControles As Control In controlSuperior.Controls
-                    If subControles.Name.ToLower = nombreControl.ToLower Then
-                        Return subControles
-                    End If
-                Next
+                If controlSuperior.Name.ToLower = nombreControl.ToLower Then
+                    Return controlSuperior
+                End If
             End If
         Next
         Return Nothing

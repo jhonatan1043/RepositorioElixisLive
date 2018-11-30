@@ -12,14 +12,16 @@
                                posicionY As Integer,
                                pendiente As Integer) As Panel
         Dim panel As New Panel
-        Dim texto As String
-        texto = nombre & vbNewLine & vbNewLine & CStr(Format(fechaCita, "HH:mm"))
+        Dim texto, contener As String
+        texto = nombre & vbNewLine & CStr(Format(fechaCita, "HH:mm"))
+        contener = posicionX & posicionY
 
         Try
+            panel.Name = contener
             panel.Location = New Point(posicionX, posicionY)
             panel.Size = New Point(anchura, altura)
             panel.BackColor = If(pendiente = Constantes.PENDIENTE, Color.AliceBlue, colorLabel())
-            panel.Controls.Add(creaBotones(4, 3, idCita, If(pendiente = Constantes.PENDIENTE, Constantes.CITA_DISPONIBLE, texto)))
+            panel.Controls.Add(creaBotones(4, 3, idCita, If(pendiente = Constantes.PENDIENTE, Constantes.CITA_DISPONIBLE, texto), contener))
             panel.Tag = hora & "-" & idCita & "-" & estado
             panel.Cursor = Cursors.Hand
             panel.Show()
@@ -29,10 +31,13 @@
         Return panel
     End Function
     Private Function creaBotones(posicionX As Integer,
-                                   posicionY As Integer,
-                                   idCita As String, Texto As String) As Button
+                                 posicionY As Integer,
+                                 idCita As String,
+                                 Texto As String,
+                                 nombrePrincipal As String) As Button
         Dim boton As New Button
         Try
+            boton.Name = "-" & nombrePrincipal
             boton.Size = New Point(130, 60)
             boton.Location = New Point(posicionX, posicionY)
             boton.TextAlign = ContentAlignment.MiddleCenter
