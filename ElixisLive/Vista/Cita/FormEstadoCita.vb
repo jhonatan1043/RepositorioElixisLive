@@ -16,7 +16,6 @@
                                   posicionY As Integer, contenedor As Panel)
         Me.TopLevel = False
         Me.Location = New Point(posicionX, posicionY)
-        Me.BringToFront()
         contenedor.Controls.Add(Me)
     End Sub
     Private Sub cambiarEstado(Estado As String)

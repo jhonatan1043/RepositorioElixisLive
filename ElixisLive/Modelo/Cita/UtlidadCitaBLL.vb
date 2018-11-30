@@ -66,7 +66,7 @@
                                                      sender.Location.Y,
                                                      sender.Container)
                     formEstadCita.Show()
-                    formEstadCita.Focus()
+                    formEstadCita.BringToFront()
                 Case Else
                     If Not String.IsNullOrEmpty(idCita) Then
                         formCitaMedica.estadoRegistro = True
