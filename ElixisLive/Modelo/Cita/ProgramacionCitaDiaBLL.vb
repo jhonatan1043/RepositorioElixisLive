@@ -57,10 +57,7 @@
                 panelCreado = objTomada.crearPanel(contenedorPanelX, contenedorPanelDispon, pendiente)
                 panel.Controls.Add(panelCreado)
 
-                AddHandler panelCreado.DoubleClick, AddressOf UtlidadCitaBLL.llamarFormularioCita
-
                 contenedorPanelX = contenedorPanelX + incrementoX
-
             Next
             contenedorPanelX = Constantes.PANEL_POCISION_X
         Catch ex As Exception
