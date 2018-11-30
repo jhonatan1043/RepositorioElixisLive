@@ -1,14 +1,17 @@
 ﻿Public Class FormEstadoCita
     Property codigoCita As Integer
+    Property objFormProgram As FormProgramacionCita
     Private Sub txtRealizado_Click(sender As Object, e As EventArgs) Handles txtRealizado.Click
         If EstiloMensajes.mostrarMensajePregunta("¿ Desea Confirmar la cita ?") = Constantes.SI Then
             cambiarEstado(Constantes.CITA_REALIZADA)
+            objFormProgram.validarControles()
             Close()
         End If
     End Sub
     Private Sub txtCancelado_Click(sender As Object, e As EventArgs) Handles txtCancelado.Click
         If EstiloMensajes.mostrarMensajePregunta("¿ Desea Cancelar la cita ?") = Constantes.SI Then
             cambiarEstado(Constantes.CITA_CANCELADA)
+            objFormProgram.validarControles()
             Close()
         End If
     End Sub

@@ -27,8 +27,6 @@ Public Class FormPersona
         End If
         Return False
     End Function
-
-
     Private Sub quitarIconoError()
         ErrorIcono.SetError(TextDireccion, "")
         ErrorIcono.SetError(ComboMunicipio, "")
@@ -191,12 +189,15 @@ Public Class FormPersona
         End If
     End Sub
     Private Sub txtUsuario_TextChanged(sender As Object, e As EventArgs) Handles txtUsuario.Leave
+        If btRegistrar.Enabled = False Then Exit Sub
+
         If Funciones.consultarUsuario(txtUsuario.Text) = True Then
             ErrorIcono.SetError(txtUsuario, "Este usuario ya existe")
             txtUsuario.Focus()
         Else
             ErrorIcono.SetError(txtUsuario, "")
         End If
+
     End Sub
     Private Sub TextTelefono_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextTelefono.KeyPress
         ValidacionDigitacion.validarNumerosTelefono(e)

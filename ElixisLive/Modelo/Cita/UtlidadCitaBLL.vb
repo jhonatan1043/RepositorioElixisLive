@@ -62,6 +62,7 @@
                 Case Constantes.CITA_PENDIENTE
                     formEstadCita = New FormEstadoCita
                     formEstadCita.codigoCita = idCita
+                    formEstadCita.objFormProgram = objFormCita
                     formEstadCita.txtRealizado.Visible = True
                     formEstadCita.txtCancelado.Visible = True
                     formEstadCita.posicionFormulario(sender.Location.X,
