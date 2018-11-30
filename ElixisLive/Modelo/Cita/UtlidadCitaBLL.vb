@@ -133,26 +133,4 @@
         Next
         Return Nothing
     End Function
-    Public Shared Sub cargarComboVista(comboAreaServicio As ComboBox)
-        Dim dtTabla As New DataTable
-        dtTabla.Columns.Add("Codigo")
-        dtTabla.Columns.Add("Descripcion")
-        Dim drFila As DataRow
-        Try
-
-            drFila = dtTabla.NewRow()
-
-            drFila.Item(0) = 0
-            drFila.Item(1) = "Dias"
-            dtTabla.Rows.Add(drFila)
-
-            comboAreaServicio.DataSource = dtTabla
-            comboAreaServicio.DisplayMember = "Descripcion"
-            comboAreaServicio.ValueMember = "Codigo"
-            comboAreaServicio.SelectedIndex = 0
-        Catch ex As Exception
-            Throw ex
-        End Try
-    End Sub
-
 End Class
