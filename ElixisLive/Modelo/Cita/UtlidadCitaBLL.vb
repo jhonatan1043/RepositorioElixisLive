@@ -56,7 +56,6 @@
                     formEstadCita = New FormEstadoCita
                     formEstadCita.txtRealizado.Visible = True
                     formEstadCita.txtCancelado.Visible = True
-                    formEstadCita.txtPendiente.Visible = False
                     formEstadCita.posicionFormulario(sender.Location.X, sender.Location.Y)
                     formEstadCita.ShowDialog()
                 Case Else
