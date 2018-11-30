@@ -14,6 +14,7 @@
     End Sub
     Public Sub posicionFormulario(posicionX As Integer,
                                   posicionY As Integer, contenedor As Panel)
+        Me.TopLevel = False
         Me.Location = New Point(posicionX, posicionY)
         contenedor.Controls.Add(Me)
     End Sub
