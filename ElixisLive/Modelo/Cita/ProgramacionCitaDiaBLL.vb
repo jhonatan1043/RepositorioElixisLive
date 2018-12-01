@@ -10,7 +10,7 @@
     Private Shared Sub valoresInicialesDia()
         contenedorPanelDispon = Constantes.VALOR_INICIAL
         incrementoPanel = Constantes.VALOR_INCREMENTO
-        incrementoX = 135
+        incrementoX = 140
         contenedorPanelX = Constantes.PANEL_POCISION_X
         incrementoSaltoLinea = 72
     End Sub

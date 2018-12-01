@@ -9,7 +9,7 @@
         dtServicio = New DataTable
         dtServicio.Columns.Add("codigo", Type.GetType("System.Int32"))
         dtServicio.Columns.Add("Descripcion", Type.GetType("System.String"))
-        dtServicio.Columns.Add("Cantidad", Type.GetType("System.Int32")).DefaultValue = 0
+        dtServicio.Columns.Add("Cantidad", Type.GetType("System.Int32")).DefaultValue = 1
         sqlGuardar = "[SP_ADMIN_CITA_CREAR]"
         sqlCargar = "[SP_ADMIN_CITA_CARGAR]"
         sqlCargarDetalle = "[SP_ADMIN_CITA_CARGAR_DETALLE]"

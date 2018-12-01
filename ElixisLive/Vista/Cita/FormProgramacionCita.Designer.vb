@@ -26,8 +26,8 @@ Partial Class FormProgramacionCita
         Me.dFecha = New System.Windows.Forms.DateTimePicker()
         Me.PanelDia = New System.Windows.Forms.Panel()
         Me.pnEstado = New System.Windows.Forms.Panel()
-        Me.txtCancelado = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.btCancelar = New System.Windows.Forms.Button()
+        Me.btRealizado = New System.Windows.Forms.Button()
         Me.MonthCalendar1 = New System.Windows.Forms.MonthCalendar()
         Me.txtBusqueda = New System.Windows.Forms.TextBox()
         Me.RadioButton2 = New System.Windows.Forms.RadioButton()
@@ -41,7 +41,6 @@ Partial Class FormProgramacionCita
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
-        Me.PanelDia.SuspendLayout()
         Me.pnEstado.SuspendLayout()
         Me.ToolStrip1.SuspendLayout()
         Me.Panel1.SuspendLayout()
@@ -64,7 +63,6 @@ Partial Class FormProgramacionCita
         Me.PanelDia.AutoScroll = True
         Me.PanelDia.BackColor = System.Drawing.Color.White
         Me.PanelDia.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.PanelDia.Controls.Add(Me.pnEstado)
         Me.PanelDia.Font = New System.Drawing.Font("Times New Roman", 10.0!, System.Drawing.FontStyle.Italic)
         Me.PanelDia.Location = New System.Drawing.Point(5, 45)
         Me.PanelDia.Name = "PanelDia"
@@ -75,37 +73,39 @@ Partial Class FormProgramacionCita
         'pnEstado
         '
         Me.pnEstado.BackColor = System.Drawing.Color.Black
-        Me.pnEstado.Controls.Add(Me.txtCancelado)
-        Me.pnEstado.Controls.Add(Me.Button1)
-        Me.pnEstado.Location = New System.Drawing.Point(288, 202)
+        Me.pnEstado.Controls.Add(Me.btCancelar)
+        Me.pnEstado.Controls.Add(Me.btRealizado)
+        Me.pnEstado.Location = New System.Drawing.Point(788, 369)
         Me.pnEstado.Name = "pnEstado"
-        Me.pnEstado.Size = New System.Drawing.Size(120, 55)
+        Me.pnEstado.Size = New System.Drawing.Size(117, 55)
         Me.pnEstado.TabIndex = 0
         Me.pnEstado.Visible = False
         '
-        'txtCancelado
+        'btCancelar
         '
-        Me.txtCancelado.BackColor = System.Drawing.Color.AliceBlue
-        Me.txtCancelado.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.txtCancelado.Font = New System.Drawing.Font("Times New Roman", 6.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtCancelado.Location = New System.Drawing.Point(3, 2)
-        Me.txtCancelado.Name = "txtCancelado"
-        Me.txtCancelado.Size = New System.Drawing.Size(58, 51)
-        Me.txtCancelado.TabIndex = 10080
-        Me.txtCancelado.Text = "Cancelar Cita"
-        Me.txtCancelado.UseVisualStyleBackColor = False
+        Me.btCancelar.BackColor = System.Drawing.Color.AliceBlue
+        Me.btCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btCancelar.Font = New System.Drawing.Font("Times New Roman", 6.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btCancelar.Location = New System.Drawing.Point(0, 2)
+        Me.btCancelar.Name = "btCancelar"
+        Me.btCancelar.Size = New System.Drawing.Size(58, 51)
+        Me.btCancelar.TabIndex = 10080
+        Me.btCancelar.Text = "Cancelar Cita"
+        Me.ToolTip1.SetToolTip(Me.btCancelar, "Cancelar Cita")
+        Me.btCancelar.UseVisualStyleBackColor = False
         '
-        'Button1
+        'btRealizado
         '
-        Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.Button1.Font = New System.Drawing.Font("Times New Roman", 6.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Location = New System.Drawing.Point(60, 2)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(58, 51)
-        Me.Button1.TabIndex = 10081
-        Me.Button1.Text = "Confirmar Cita"
-        Me.Button1.UseVisualStyleBackColor = False
+        Me.btRealizado.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.btRealizado.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btRealizado.Font = New System.Drawing.Font("Times New Roman", 6.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btRealizado.Location = New System.Drawing.Point(58, 2)
+        Me.btRealizado.Name = "btRealizado"
+        Me.btRealizado.Size = New System.Drawing.Size(58, 51)
+        Me.btRealizado.TabIndex = 10081
+        Me.btRealizado.Text = "Confirmar Cita"
+        Me.ToolTip1.SetToolTip(Me.btRealizado, "Confirmar Cita")
+        Me.btRealizado.UseVisualStyleBackColor = False
         '
         'MonthCalendar1
         '
@@ -191,7 +191,7 @@ Partial Class FormProgramacionCita
         Me.ToolStrip1.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.ToolStrip1.ImageScalingSize = New System.Drawing.Size(30, 30)
         Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.lbInformacionCliente})
-        Me.ToolStrip1.Location = New System.Drawing.Point(0, 498)
+        Me.ToolStrip1.Location = New System.Drawing.Point(0, 499)
         Me.ToolStrip1.Name = "ToolStrip1"
         Me.ToolStrip1.Size = New System.Drawing.Size(945, 25)
         Me.ToolStrip1.TabIndex = 10077
@@ -263,7 +263,8 @@ Partial Class FormProgramacionCita
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(945, 523)
+        Me.ClientSize = New System.Drawing.Size(945, 524)
+        Me.Controls.Add(Me.pnEstado)
         Me.Controls.Add(Me.ToolStrip1)
         Me.Controls.Add(Me.txtRealizado)
         Me.Controls.Add(Me.txtPendiente)
@@ -280,7 +281,6 @@ Partial Class FormProgramacionCita
         Me.MinimumSize = New System.Drawing.Size(961, 562)
         Me.Name = "FormProgramacionCita"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.PanelDia.ResumeLayout(False)
         Me.pnEstado.ResumeLayout(False)
         Me.ToolStrip1.ResumeLayout(False)
         Me.ToolStrip1.PerformLayout()
@@ -305,7 +305,7 @@ Partial Class FormProgramacionCita
     Public WithEvents ToolStrip1 As ToolStrip
     Friend WithEvents lbInformacionCliente As ToolStripLabel
     Friend WithEvents pnEstado As Panel
-    Friend WithEvents txtCancelado As Button
-    Friend WithEvents Button1 As Button
     Friend WithEvents ToolTip1 As ToolTip
+    Friend WithEvents btCancelar As Button
+    Friend WithEvents btRealizado As Button
 End Class
