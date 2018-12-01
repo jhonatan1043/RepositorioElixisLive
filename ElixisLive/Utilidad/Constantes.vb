@@ -41,7 +41,7 @@
     Public Const ANCHURA_HORA_TOMADA = 100
     '----
     Public Const ALTURA_CITA_DISPONIBLE = 30
-    Public Const ANCHURA_CITA_DISPONIBLE = 680
+    Public Const ANCHURA_CITA_DISPONIBLE = 720
     '----
     Public Const ALTURA_CITA_TOMADA = 66
     Public Const ANCHURA_CITA_TOMADA = 140

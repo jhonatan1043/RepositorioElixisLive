@@ -10,7 +10,7 @@
     Private Shared Sub valoresInicialesDia()
         contenedorPanelDispon = Constantes.VALOR_INICIAL
         incrementoPanel = Constantes.VALOR_INCREMENTO
-        incrementoX = 145
+        incrementoX = 135
         contenedorPanelX = Constantes.PANEL_POCISION_X
         incrementoSaltoLinea = 72
     End Sub
@@ -58,8 +58,11 @@
                 panel.Controls.Add(panelCreado)
 
                 contenedorPanelX = contenedorPanelX + incrementoX
+
             Next
+
             contenedorPanelX = Constantes.PANEL_POCISION_X
+
         Catch ex As Exception
             Throw ex
         End Try

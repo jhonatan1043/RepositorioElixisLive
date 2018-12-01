@@ -22,8 +22,12 @@ Partial Class FormProgramacionCita
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.dFecha = New System.Windows.Forms.DateTimePicker()
         Me.PanelDia = New System.Windows.Forms.Panel()
+        Me.pnEstado = New System.Windows.Forms.Panel()
+        Me.txtCancelado = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.MonthCalendar1 = New System.Windows.Forms.MonthCalendar()
         Me.txtBusqueda = New System.Windows.Forms.TextBox()
         Me.RadioButton2 = New System.Windows.Forms.RadioButton()
@@ -36,6 +40,9 @@ Partial Class FormProgramacionCita
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
+        Me.PanelDia.SuspendLayout()
+        Me.pnEstado.SuspendLayout()
         Me.ToolStrip1.SuspendLayout()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -45,7 +52,7 @@ Partial Class FormProgramacionCita
         '
         Me.dFecha.CustomFormat = "MMMM\dddd,dd\yyyy"
         Me.dFecha.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.dFecha.Location = New System.Drawing.Point(731, 104)
+        Me.dFecha.Location = New System.Drawing.Point(818, 99)
         Me.dFecha.Name = "dFecha"
         Me.dFecha.Size = New System.Drawing.Size(80, 25)
         Me.dFecha.TabIndex = 10059
@@ -57,20 +64,55 @@ Partial Class FormProgramacionCita
         Me.PanelDia.AutoScroll = True
         Me.PanelDia.BackColor = System.Drawing.Color.White
         Me.PanelDia.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.PanelDia.Controls.Add(Me.pnEstado)
         Me.PanelDia.Font = New System.Drawing.Font("Times New Roman", 10.0!, System.Drawing.FontStyle.Italic)
         Me.PanelDia.Location = New System.Drawing.Point(5, 45)
         Me.PanelDia.Name = "PanelDia"
-        Me.PanelDia.Size = New System.Drawing.Size(695, 448)
+        Me.PanelDia.Size = New System.Drawing.Size(732, 448)
         Me.PanelDia.TabIndex = 10056
         Me.PanelDia.Visible = False
         '
+        'pnEstado
+        '
+        Me.pnEstado.BackColor = System.Drawing.Color.Black
+        Me.pnEstado.Controls.Add(Me.txtCancelado)
+        Me.pnEstado.Controls.Add(Me.Button1)
+        Me.pnEstado.Location = New System.Drawing.Point(288, 202)
+        Me.pnEstado.Name = "pnEstado"
+        Me.pnEstado.Size = New System.Drawing.Size(120, 55)
+        Me.pnEstado.TabIndex = 0
+        Me.pnEstado.Visible = False
+        '
+        'txtCancelado
+        '
+        Me.txtCancelado.BackColor = System.Drawing.Color.AliceBlue
+        Me.txtCancelado.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.txtCancelado.Font = New System.Drawing.Font("Times New Roman", 6.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtCancelado.Location = New System.Drawing.Point(3, 2)
+        Me.txtCancelado.Name = "txtCancelado"
+        Me.txtCancelado.Size = New System.Drawing.Size(58, 51)
+        Me.txtCancelado.TabIndex = 10080
+        Me.txtCancelado.Text = "Cancelar Cita"
+        Me.txtCancelado.UseVisualStyleBackColor = False
+        '
+        'Button1
+        '
+        Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.Button1.Font = New System.Drawing.Font("Times New Roman", 6.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.Location = New System.Drawing.Point(60, 2)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(58, 51)
+        Me.Button1.TabIndex = 10081
+        Me.Button1.Text = "Confirmar Cita"
+        Me.Button1.UseVisualStyleBackColor = False
+        '
         'MonthCalendar1
         '
-        Me.MonthCalendar1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.MonthCalendar1.BackColor = System.Drawing.Color.White
         Me.MonthCalendar1.Font = New System.Drawing.Font("Times New Roman", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.MonthCalendar1.ForeColor = System.Drawing.Color.White
-        Me.MonthCalendar1.Location = New System.Drawing.Point(717, 55)
+        Me.MonthCalendar1.Location = New System.Drawing.Point(743, 55)
         Me.MonthCalendar1.Name = "MonthCalendar1"
         Me.MonthCalendar1.TabIndex = 0
         Me.MonthCalendar1.TitleBackColor = System.Drawing.Color.SteelBlue
@@ -82,9 +124,9 @@ Partial Class FormProgramacionCita
         Me.txtBusqueda.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtBusqueda.Font = New System.Drawing.Font("Times New Roman", 14.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtBusqueda.ForeColor = System.Drawing.Color.Black
-        Me.txtBusqueda.Location = New System.Drawing.Point(706, 248)
+        Me.txtBusqueda.Location = New System.Drawing.Point(743, 248)
         Me.txtBusqueda.Name = "txtBusqueda"
-        Me.txtBusqueda.Size = New System.Drawing.Size(236, 29)
+        Me.txtBusqueda.Size = New System.Drawing.Size(199, 29)
         Me.txtBusqueda.TabIndex = 10068
         Me.txtBusqueda.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
@@ -95,7 +137,7 @@ Partial Class FormProgramacionCita
         Me.RadioButton2.Checked = True
         Me.RadioButton2.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.RadioButton2.ForeColor = System.Drawing.Color.Black
-        Me.RadioButton2.Location = New System.Drawing.Point(775, 325)
+        Me.RadioButton2.Location = New System.Drawing.Point(788, 325)
         Me.RadioButton2.Name = "RadioButton2"
         Me.RadioButton2.Size = New System.Drawing.Size(72, 24)
         Me.RadioButton2.TabIndex = 10070
@@ -113,7 +155,7 @@ Partial Class FormProgramacionCita
         Me.rbAgendados.Checked = True
         Me.rbAgendados.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.rbAgendados.ForeColor = System.Drawing.Color.Black
-        Me.rbAgendados.Location = New System.Drawing.Point(775, 300)
+        Me.rbAgendados.Location = New System.Drawing.Point(788, 300)
         Me.rbAgendados.Name = "rbAgendados"
         Me.rbAgendados.Size = New System.Drawing.Size(72, 24)
         Me.rbAgendados.TabIndex = 10072
@@ -125,7 +167,7 @@ Partial Class FormProgramacionCita
         '
         Me.txtPendiente.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.txtPendiente.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.txtPendiente.Location = New System.Drawing.Point(848, 301)
+        Me.txtPendiente.Location = New System.Drawing.Point(861, 301)
         Me.txtPendiente.Name = "txtPendiente"
         Me.txtPendiente.Size = New System.Drawing.Size(32, 22)
         Me.txtPendiente.TabIndex = 10074
@@ -135,7 +177,7 @@ Partial Class FormProgramacionCita
         '
         Me.txtRealizado.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.txtRealizado.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.txtRealizado.Location = New System.Drawing.Point(848, 326)
+        Me.txtRealizado.Location = New System.Drawing.Point(861, 326)
         Me.txtRealizado.Name = "txtRealizado"
         Me.txtRealizado.Size = New System.Drawing.Size(32, 22)
         Me.txtRealizado.TabIndex = 10076
@@ -169,9 +211,9 @@ Partial Class FormProgramacionCita
         Me.Label5.Font = New System.Drawing.Font("Times New Roman", 14.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.Color.White
         Me.Label5.Image = Global.Quality.My.Resources.Resources.fondo_azul
-        Me.Label5.Location = New System.Drawing.Point(706, 230)
+        Me.Label5.Location = New System.Drawing.Point(743, 230)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(236, 38)
+        Me.Label5.Size = New System.Drawing.Size(199, 38)
         Me.Label5.TabIndex = 10067
         Me.Label5.Text = "Filtro"
         Me.Label5.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -211,6 +253,11 @@ Partial Class FormProgramacionCita
         Me.Label1.Text = "Agenda de Citas"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
+        'ToolTip1
+        '
+        Me.ToolTip1.IsBalloon = True
+        Me.ToolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info
+        '
         'FormProgramacionCita
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -233,6 +280,8 @@ Partial Class FormProgramacionCita
         Me.MinimumSize = New System.Drawing.Size(961, 562)
         Me.Name = "FormProgramacionCita"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.PanelDia.ResumeLayout(False)
+        Me.pnEstado.ResumeLayout(False)
         Me.ToolStrip1.ResumeLayout(False)
         Me.ToolStrip1.PerformLayout()
         Me.Panel1.ResumeLayout(False)
@@ -255,4 +304,8 @@ Partial Class FormProgramacionCita
     Friend WithEvents txtRealizado As Button
     Public WithEvents ToolStrip1 As ToolStrip
     Friend WithEvents lbInformacionCliente As ToolStripLabel
+    Friend WithEvents pnEstado As Panel
+    Friend WithEvents txtCancelado As Button
+    Friend WithEvents Button1 As Button
+    Friend WithEvents ToolTip1 As ToolTip
 End Class

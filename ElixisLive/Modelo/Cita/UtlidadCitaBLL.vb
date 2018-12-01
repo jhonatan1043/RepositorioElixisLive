@@ -41,7 +41,6 @@
     Public Shared Sub llamarFormularioCita(sender As Object, e As EventArgs)
         Dim idCita As String = Nothing
         Dim formCitaMedica As New FormCitaMedica
-        Dim formEstadCita As FormEstadoCita
         Dim horaExtraida As String = Nothing
         Dim estadoCita As String = Nothing
         Dim panelPrincipal As String = Nothing
@@ -60,17 +59,10 @@
 
             Select Case estadoCita
                 Case Constantes.CITA_PENDIENTE
-                    formEstadCita = New FormEstadoCita
-                    formEstadCita.codigoCita = idCita
-                    formEstadCita.objFormProgram = objFormCita
-                    formEstadCita.txtRealizado.Visible = True
-                    formEstadCita.txtCancelado.Visible = True
-                    formEstadCita.posicionFormulario(sender.Location.X,
-                                                     sender.Location.Y,
-                                                     GetReference(panelPrincipal, objFormCita.PanelDia))
-                    formEstadCita.Show()
-                    formEstadCita.Focus()
-                    formEstadCita.BringToFront()
+                    objFormCita.codigoCita = idCita
+                    objFormCita.posicionFormulario(sender.Location.X,
+                                                   sender.Location.Y,
+                                                   GetReference(panelPrincipal, objFormCita.PanelDia))
                 Case Else
                     If Not String.IsNullOrEmpty(idCita) Then
                         formCitaMedica.estadoRegistro = True
