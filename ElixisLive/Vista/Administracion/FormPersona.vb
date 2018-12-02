@@ -1,6 +1,7 @@
 ﻿Imports System.ComponentModel
 Public Class FormPersona
     Dim objPersona As persona
+    Dim idPerfil As Integer
     Private Sub cargarObjeto()
         objPersona.identificacion = TextIdentificacion.Text
         objPersona.nombre = TextNombre.Text
@@ -354,6 +355,28 @@ Public Class FormPersona
             ErrorIcono.SetError(TextTelefono, "Debe digitar un número de teléfono")
         Else
             ErrorIcono.SetError(TextTelefono, "")
+        End If
+    End Sub
+
+    Private Sub btBuscarPerfil_Click(sender As Object, e As EventArgs) Handles btBuscarPerfil.Click
+        Dim params As New List(Of String)
+        'params.Add(String.Empty)
+        'Try
+        '    Generales.buscarElemento(Sentencias.PERSONA_CONSULTAR,
+        '                           params,
+        '                           AddressOf cargarPerfil,
+        '                           Titulo.BUSQUEDA_PERSONA,
+        '                           True, True)
+        'Catch ex As Exception
+        '    EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
+        'End Try
+        Dim tblPerfil As DataRow = Nothing
+        params.Add(String.Empty)
+        Dim formBusqueda As FormBusqueda = Generales.buscarElemento(Sentencias.PERFIL_LISTA, params, "Busqueda de perfiles de usuario", True)
+        tblPerfil = formBusqueda.rowResultados
+        If tblPerfil IsNot Nothing Then
+            idPerfil = tblPerfil(0)
+            txtPerfil.Text = tblPerfil(1)
         End If
     End Sub
 End Class

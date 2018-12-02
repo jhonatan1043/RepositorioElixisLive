@@ -27,6 +27,8 @@ Partial Class FormPersona
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.chUsuario = New System.Windows.Forms.CheckBox()
+        Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
+        Me.btBuscarPerfil = New System.Windows.Forms.Button()
         Me.txtPerfil = New System.Windows.Forms.TextBox()
         Me.txtUsuario = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -69,8 +71,6 @@ Partial Class FormPersona
         Me.ToolStripSeparator3 = New System.Windows.Forms.ToolStripSeparator()
         Me.btAnular = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripSeparator6 = New System.Windows.Forms.ToolStripSeparator()
-        Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
-        Me.btBuscarPerfil = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Pimagen = New System.Windows.Forms.PictureBox()
         Me.LTitulo = New System.Windows.Forms.Label()
@@ -138,6 +138,33 @@ Partial Class FormPersona
         Me.chUsuario.TabIndex = 13
         Me.chUsuario.Text = "Asignar usuario"
         Me.chUsuario.UseVisualStyleBackColor = True
+        '
+        'LinkLabel1
+        '
+        Me.LinkLabel1.ActiveLinkColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.LinkLabel1.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LinkLabel1.ForeColor = System.Drawing.Color.SteelBlue
+        Me.LinkLabel1.Image = Global.Quality.My.Resources.Resources.administrator_icon1
+        Me.LinkLabel1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.LinkLabel1.LinkColor = System.Drawing.Color.DarkBlue
+        Me.LinkLabel1.Location = New System.Drawing.Point(519, 35)
+        Me.LinkLabel1.Name = "LinkLabel1"
+        Me.LinkLabel1.Size = New System.Drawing.Size(154, 55)
+        Me.LinkLabel1.TabIndex = 30
+        Me.LinkLabel1.TabStop = True
+        Me.LinkLabel1.Text = "Crear perfíl"
+        Me.LinkLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'btBuscarPerfil
+        '
+        Me.btBuscarPerfil.BackgroundImage = Global.Quality.My.Resources.Resources.fondo_azul
+        Me.btBuscarPerfil.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btBuscarPerfil.Image = Global.Quality.My.Resources.Resources.Zoom_icon1
+        Me.btBuscarPerfil.Location = New System.Drawing.Point(443, 73)
+        Me.btBuscarPerfil.Name = "btBuscarPerfil"
+        Me.btBuscarPerfil.Size = New System.Drawing.Size(26, 25)
+        Me.btBuscarPerfil.TabIndex = 15
+        Me.btBuscarPerfil.UseVisualStyleBackColor = True
         '
         'txtPerfil
         '
@@ -224,10 +251,10 @@ Partial Class FormPersona
         '
         Me.TextCelular.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TextCelular.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextCelular.Location = New System.Drawing.Point(453, 17)
+        Me.TextCelular.Location = New System.Drawing.Point(455, 17)
         Me.TextCelular.MaxLength = 10
         Me.TextCelular.Name = "TextCelular"
-        Me.TextCelular.Size = New System.Drawing.Size(233, 25)
+        Me.TextCelular.Size = New System.Drawing.Size(231, 25)
         Me.TextCelular.TabIndex = 10
         '
         'Label9
@@ -277,9 +304,9 @@ Partial Class FormPersona
         '
         Me.cbSede.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbSede.FormattingEnabled = True
-        Me.cbSede.Location = New System.Drawing.Point(453, 38)
+        Me.cbSede.Location = New System.Drawing.Point(455, 38)
         Me.cbSede.Name = "cbSede"
-        Me.cbSede.Size = New System.Drawing.Size(233, 25)
+        Me.cbSede.Size = New System.Drawing.Size(231, 25)
         Me.cbSede.TabIndex = 44
         '
         'cbDepartamento
@@ -307,9 +334,9 @@ Partial Class FormPersona
         '
         Me.ComboMunicipio.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ComboMunicipio.FormattingEnabled = True
-        Me.ComboMunicipio.Location = New System.Drawing.Point(453, 11)
+        Me.ComboMunicipio.Location = New System.Drawing.Point(455, 11)
         Me.ComboMunicipio.Name = "ComboMunicipio"
-        Me.ComboMunicipio.Size = New System.Drawing.Size(233, 25)
+        Me.ComboMunicipio.Size = New System.Drawing.Size(231, 25)
         Me.ComboMunicipio.TabIndex = 6
         '
         'Label12
@@ -573,33 +600,6 @@ Partial Class FormPersona
         Me.ToolStripSeparator6.Name = "ToolStripSeparator6"
         Me.ToolStripSeparator6.Size = New System.Drawing.Size(6, 37)
         '
-        'LinkLabel1
-        '
-        Me.LinkLabel1.ActiveLinkColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.LinkLabel1.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LinkLabel1.ForeColor = System.Drawing.Color.SteelBlue
-        Me.LinkLabel1.Image = Global.Quality.My.Resources.Resources.administrator_icon1
-        Me.LinkLabel1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.LinkLabel1.LinkColor = System.Drawing.Color.DarkBlue
-        Me.LinkLabel1.Location = New System.Drawing.Point(519, 35)
-        Me.LinkLabel1.Name = "LinkLabel1"
-        Me.LinkLabel1.Size = New System.Drawing.Size(154, 55)
-        Me.LinkLabel1.TabIndex = 30
-        Me.LinkLabel1.TabStop = True
-        Me.LinkLabel1.Text = "Crear perfíl"
-        Me.LinkLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'btBuscarPerfil
-        '
-        Me.btBuscarPerfil.BackgroundImage = Global.Quality.My.Resources.Resources.fondo_azul
-        Me.btBuscarPerfil.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btBuscarPerfil.Image = Global.Quality.My.Resources.Resources.Zoom_icon1
-        Me.btBuscarPerfil.Location = New System.Drawing.Point(443, 70)
-        Me.btBuscarPerfil.Name = "btBuscarPerfil"
-        Me.btBuscarPerfil.Size = New System.Drawing.Size(31, 30)
-        Me.btBuscarPerfil.TabIndex = 15
-        Me.btBuscarPerfil.UseVisualStyleBackColor = True
-        '
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.White
@@ -616,9 +616,9 @@ Partial Class FormPersona
         '
         Me.Pimagen.BackColor = System.Drawing.Color.Transparent
         Me.Pimagen.Image = Global.Quality.My.Resources.Resources.App_user_icon
-        Me.Pimagen.Location = New System.Drawing.Point(4, 0)
+        Me.Pimagen.Location = New System.Drawing.Point(4, 3)
         Me.Pimagen.Name = "Pimagen"
-        Me.Pimagen.Size = New System.Drawing.Size(48, 42)
+        Me.Pimagen.Size = New System.Drawing.Size(39, 36)
         Me.Pimagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.Pimagen.TabIndex = 1
         Me.Pimagen.TabStop = False

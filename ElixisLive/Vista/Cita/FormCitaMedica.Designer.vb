@@ -49,7 +49,6 @@ Partial Class FormCitaMedica
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.btBuscarCliente = New System.Windows.Forms.Button()
         Me.txtfecha = New System.Windows.Forms.MaskedTextBox()
-        Me.txtobservacion = New System.Windows.Forms.RichTextBox()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.textNombre = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
@@ -75,6 +74,7 @@ Partial Class FormCitaMedica
         Me.ToolStripSeparator3 = New System.Windows.Forms.ToolStripSeparator()
         Me.btAnular = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripSeparator6 = New System.Windows.Forms.ToolStripSeparator()
+        Me.txtobservacion = New System.Windows.Forms.RichTextBox()
         Me.GroupBox2.SuspendLayout()
         CType(Me.dgvServicio, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
@@ -208,7 +208,8 @@ Partial Class FormCitaMedica
         Me.GroupBox2.Controls.Add(Me.textNombre)
         Me.GroupBox2.Controls.Add(Me.Label7)
         Me.GroupBox2.Controls.Add(Me.Label4)
-        Me.GroupBox2.Font = New System.Drawing.Font("Times New Roman", 10.0!, System.Drawing.FontStyle.Italic)
+        Me.GroupBox2.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox2.ForeColor = System.Drawing.Color.DarkBlue
         Me.GroupBox2.Location = New System.Drawing.Point(9, 13)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(679, 116)
@@ -246,50 +247,41 @@ Partial Class FormCitaMedica
         Me.txtfecha.Size = New System.Drawing.Size(154, 23)
         Me.txtfecha.TabIndex = 56
         '
-        'txtobservacion
-        '
-        Me.txtobservacion.BackColor = System.Drawing.Color.White
-        Me.txtobservacion.Font = New System.Drawing.Font("Times New Roman", 10.0!, System.Drawing.FontStyle.Italic)
-        Me.txtobservacion.Location = New System.Drawing.Point(145, 54)
-        Me.txtobservacion.Name = "txtobservacion"
-        Me.txtobservacion.ReadOnly = True
-        Me.txtobservacion.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedBoth
-        Me.txtobservacion.Size = New System.Drawing.Size(530, 55)
-        Me.txtobservacion.TabIndex = 49
-        Me.txtobservacion.Text = ""
-        '
         'Label11
         '
         Me.Label11.AutoSize = True
-        Me.Label11.Font = New System.Drawing.Font("Times New Roman", 10.0!, System.Drawing.FontStyle.Italic)
-        Me.Label11.Location = New System.Drawing.Point(11, 57)
+        Me.Label11.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label11.ForeColor = System.Drawing.Color.Black
+        Me.Label11.Location = New System.Drawing.Point(11, 73)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(113, 16)
+        Me.Label11.Size = New System.Drawing.Size(128, 19)
         Me.Label11.TabIndex = 48
         Me.Label11.Text = "Recomendaciones:"
         '
         'textNombre
         '
-        Me.textNombre.Font = New System.Drawing.Font("Times New Roman", 10.0!, System.Drawing.FontStyle.Italic)
+        Me.textNombre.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.textNombre.Location = New System.Drawing.Point(73, 21)
         Me.textNombre.Name = "textNombre"
-        Me.textNombre.Size = New System.Drawing.Size(323, 23)
+        Me.textNombre.Size = New System.Drawing.Size(323, 25)
         Me.textNombre.TabIndex = 40
         '
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Times New Roman", 10.0!, System.Drawing.FontStyle.Italic)
+        Me.Label7.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.ForeColor = System.Drawing.Color.Black
         Me.Label7.Location = New System.Drawing.Point(11, 23)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(53, 16)
+        Me.Label7.Size = New System.Drawing.Size(60, 19)
         Me.Label7.TabIndex = 34
         Me.Label7.Text = "Cliente:"
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Italic)
+        Me.Label4.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.ForeColor = System.Drawing.Color.Black
         Me.Label4.Location = New System.Drawing.Point(429, 24)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(86, 19)
@@ -496,6 +488,19 @@ Partial Class FormCitaMedica
         Me.ToolStripSeparator6.Name = "ToolStripSeparator6"
         Me.ToolStripSeparator6.Size = New System.Drawing.Size(6, 37)
         '
+        'txtobservacion
+        '
+        Me.txtobservacion.BackColor = System.Drawing.Color.White
+        Me.txtobservacion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtobservacion.Font = New System.Drawing.Font("Times New Roman", 10.0!, System.Drawing.FontStyle.Italic)
+        Me.txtobservacion.Location = New System.Drawing.Point(145, 54)
+        Me.txtobservacion.Name = "txtobservacion"
+        Me.txtobservacion.ReadOnly = True
+        Me.txtobservacion.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedBoth
+        Me.txtobservacion.Size = New System.Drawing.Size(530, 55)
+        Me.txtobservacion.TabIndex = 49
+        Me.txtobservacion.Text = ""
+        '
         'FormCitaMedica
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -503,7 +508,7 @@ Partial Class FormCitaMedica
         Me.BackColor = System.Drawing.Color.White
         Me.BackgroundImage = Global.Quality.My.Resources.Resources.fondo_azul
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(712, 458)
+        Me.ClientSize = New System.Drawing.Size(714, 460)
         Me.ControlBox = False
         Me.Controls.Add(Me.ToolStrip1)
         Me.Controls.Add(Me.Panel1)
@@ -546,7 +551,6 @@ Partial Class FormCitaMedica
     Friend WithEvents DataGridViewTextBoxColumn17 As DataGridViewTextBoxColumn
     Public WithEvents GroupBox2 As GroupBox
     Friend WithEvents txtfecha As MaskedTextBox
-    Friend WithEvents txtobservacion As RichTextBox
     Friend WithEvents Label11 As Label
     Friend WithEvents textNombre As TextBox
     Friend WithEvents Label7 As Label
@@ -574,4 +578,5 @@ Partial Class FormCitaMedica
     Friend WithEvents dgServicio As DataGridViewTextBoxColumn
     Friend WithEvents dgCantidad As DataGridViewTextBoxColumn
     Friend WithEvents dgQuitar As DataGridViewImageColumn
+    Friend WithEvents txtobservacion As RichTextBox
 End Class

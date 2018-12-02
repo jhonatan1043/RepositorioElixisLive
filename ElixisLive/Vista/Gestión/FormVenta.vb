@@ -86,7 +86,7 @@ Public Class FormVenta
                 Exit Sub
             End If
             If (dgvFactura.Rows(dgvFactura.CurrentCell.RowIndex).Cells("dgCodigo").Selected = True Or dgvFactura.Rows(dgvFactura.CurrentCell.RowIndex).Cells("dgDescripcion").Selected = True) Then
-                Generales.busquedaItems(Sentencias.PRODUCTOS_SERVICIO_FACTURA_BUSCAR, params, titulo, dgvFactura, dtProductos, 0, 4, 0, 0, True)
+                Generales.busquedaItems(Sentencias.PRODUCTO_SERVICIO_FACTURA_BUSCAR, params, titulo, dgvFactura, dtProductos, 0, 4, 0, 0, True)
             ElseIf dgvFactura.Rows(dgvFactura.CurrentCell.RowIndex).Cells("dgQuitar").Selected = True And dtProductos.Rows(dgvFactura.CurrentCell.RowIndex).Item(0).ToString <> "" Then
                 dtProductos.Rows.RemoveAt(e.RowIndex)
             End If
@@ -151,7 +151,7 @@ Public Class FormVenta
         params.Add(String.Empty)
         params.Add(SesionActual.codigoSucursal)
         Try
-            Generales.buscarElemento(Sentencias.BUSCAR_FACTURAS,
+            Generales.buscarElemento(Sentencias.FACTURA_BUSCAR,
                                    params,
                                    AddressOf cargarInfomacion,
                                    "Busqueda de Facturas",
@@ -204,7 +204,7 @@ Public Class FormVenta
             Dim params As New List(Of String)
             params.Add(dtProductos.Rows(dgvFactura.CurrentRow.Index).Item(0).ToString)
             Dim fila As DataRow
-            fila = Generales.digitarEnDgv(Sentencias.PRODUCTOS_SERVICIO_FACTURA_CARGAR, params)
+            fila = Generales.digitarEnDgv(Sentencias.PRODUCTO_SERVICIO_FACTURA_CARGAR, params)
             If Not IsNothing(fila) Then
                 If dtProductos.Rows(dgvFactura.CurrentRow.Index).Item(0).ToString <> "" And dtProductos.Rows(dgvFactura.CurrentRow.Index).Item(1).ToString = "" Then
                     dtProductos.Rows(dgvFactura.CurrentRow.Index).Item(1) = fila(1)

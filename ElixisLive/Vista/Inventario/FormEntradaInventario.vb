@@ -22,7 +22,7 @@
                 If Not IsNothing(dgvEntrada.Rows(dgvEntrada.CurrentCell.RowIndex).Cells("dgCodigoProducto").Value) Then
                     If e.ColumnIndex = 6 Then
                         dgvEntrada.Rows(dgvEntrada.CurrentCell.RowIndex).Cells("dgBodega") =
-                                        Generales.crearControl(Constantes.NOMBRE_COMBO, Sentencias.BADEGA_CONSULTAR, "Codigo", "nombre", Nothing)
+                                        Generales.crearControl(Constantes.NOMBRE_COMBO, Sentencias.BODEGA_CONSULTAR, "Codigo", "nombre", Nothing)
                     End If
                 End If
             End If

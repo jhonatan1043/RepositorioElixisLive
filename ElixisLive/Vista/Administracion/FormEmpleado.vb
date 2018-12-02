@@ -34,7 +34,7 @@ Public Class FormEmpleado
         EmpleadoBLL.cargarComboCuenta(cbTipoCuenta)
         Generales.cargarCombo(Sentencias.PERFIL_CONSULTAR, Nothing, "Nombre", "Codigo", cbPerfil)
         Generales.cargarCombo(Sentencias.BANCO_CONSULTAR, Nothing, "Nombre", "Codigo_Banco", cbBanco)
-        Generales.cargarCombo(Sentencias.CARGOR_CONSULTAR, Nothing, "Nombre", "Codigo", cbCargo)
+        Generales.cargarCombo(Sentencias.CARGO_CONSULTAR, Nothing, "Nombre", "Codigo", cbCargo)
         Generales.cargarCombo(Sentencias.DEPARTAMENTO_TRABAJO_CONSULTAR, Nothing, "Nombre", "Codigo", cbDepartamento)
     End Sub
     Private Sub cargarInfomacion(pcodigo As Integer)
