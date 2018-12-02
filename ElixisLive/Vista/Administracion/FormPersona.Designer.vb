@@ -147,7 +147,7 @@ Partial Class FormPersona
         Me.LinkLabel1.Image = Global.Quality.My.Resources.Resources.administrator_icon1
         Me.LinkLabel1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.LinkLabel1.LinkColor = System.Drawing.Color.DarkBlue
-        Me.LinkLabel1.Location = New System.Drawing.Point(519, 35)
+        Me.LinkLabel1.Location = New System.Drawing.Point(513, 35)
         Me.LinkLabel1.Name = "LinkLabel1"
         Me.LinkLabel1.Size = New System.Drawing.Size(154, 55)
         Me.LinkLabel1.TabIndex = 30
@@ -160,7 +160,7 @@ Partial Class FormPersona
         Me.btBuscarPerfil.BackgroundImage = Global.Quality.My.Resources.Resources.fondo_azul
         Me.btBuscarPerfil.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btBuscarPerfil.Image = Global.Quality.My.Resources.Resources.Zoom_icon1
-        Me.btBuscarPerfil.Location = New System.Drawing.Point(443, 73)
+        Me.btBuscarPerfil.Location = New System.Drawing.Point(368, 73)
         Me.btBuscarPerfil.Name = "btBuscarPerfil"
         Me.btBuscarPerfil.Size = New System.Drawing.Size(26, 25)
         Me.btBuscarPerfil.TabIndex = 15
@@ -173,7 +173,7 @@ Partial Class FormPersona
         Me.txtPerfil.Location = New System.Drawing.Point(138, 72)
         Me.txtPerfil.MaxLength = 50
         Me.txtPerfil.Name = "txtPerfil"
-        Me.txtPerfil.Size = New System.Drawing.Size(302, 25)
+        Me.txtPerfil.Size = New System.Drawing.Size(226, 25)
         Me.txtPerfil.TabIndex = 99
         '
         'txtUsuario
@@ -181,9 +181,9 @@ Partial Class FormPersona
         Me.txtUsuario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtUsuario.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtUsuario.Location = New System.Drawing.Point(138, 44)
-        Me.txtUsuario.MaxLength = 100
+        Me.txtUsuario.MaxLength = 10
         Me.txtUsuario.Name = "txtUsuario"
-        Me.txtUsuario.Size = New System.Drawing.Size(302, 25)
+        Me.txtUsuario.Size = New System.Drawing.Size(226, 25)
         Me.txtUsuario.TabIndex = 14
         '
         'Label1

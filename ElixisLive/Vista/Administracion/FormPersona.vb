@@ -178,13 +178,8 @@ Public Class FormPersona
     End Sub
     Private Sub chUsuario_Click(sender As Object, e As EventArgs) Handles chUsuario.Click
         If chUsuario.Checked = True Then
-            If Not String.IsNullOrWhiteSpace(TextNombre.Text) Then
-                txtUsuario.ReadOnly = False
-                btBuscarPerfil.Enabled = True
-            Else
-                EstiloMensajes.mostrarMensajeAdvertencia("¡Debe digitar el nombre de la persona !")
-                TextNombre.Focus()
-            End If
+            txtUsuario.ReadOnly = False
+            btBuscarPerfil.Enabled = True
         Else
             btBuscarPerfil.Enabled = False
             txtPerfil.Clear()

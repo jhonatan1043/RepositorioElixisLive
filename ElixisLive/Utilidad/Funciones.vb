@@ -31,18 +31,19 @@ Public Class Funciones
         End Try
         Return dFila
     End Function
-    Public Shared Function consultarUsuario(usuario) As Boolean
-        Dim resultado As Boolean
-        Dim dFila As DataRow = Nothing
+    Public Shared Function consultarUsuario(usuario As String) As Boolean
+        Dim dt As New DataTable
         Dim params As New List(Of String)
         Try
             params.Add(usuario)
-            dFila = Generales.cargarItem("[FN_PERS_VERIFICAR_USUARIO]", params)
-            resultado = dFila.Item(0)
+            Generales.llenarTabla("[SP_VERIFICAR_USUARIO]", params, dt)
+            If dt.Rows.Count > 0 Then
+                Return True
+            End If
         Catch ex As Exception
             EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
         End Try
-        Return resultado
+        Return False
     End Function
     Public Shared Function castFromDbItemVacio(ByVal DbItem As Object) As Object
         If IsDBNull(DbItem) Then
