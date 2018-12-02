@@ -25,7 +25,7 @@ Public Class Funciones
     Public Shared Function consultarInicioSesion(params As List(Of String)) As DataRow
         Dim dFila As DataRow = Nothing
         Try
-            dFila = Generales.cargarItem("[SP_ADMIN_INICIO_SESION]", params)
+            dFila = Generales.cargarItem(Sentencias.ADMIN_INICIO_SESION, params)
         Catch ex As Exception
             EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
         End Try
@@ -36,7 +36,7 @@ Public Class Funciones
         Dim params As New List(Of String)
         Try
             params.Add(usuario)
-            Generales.llenarTabla("[SP_VERIFICAR_USUARIO]", params, dt)
+            Generales.llenarTabla(Sentencias.PERSONA_VERIFICAR_USUARIO, params, dt)
             If dt.Rows.Count > 0 Then
                 Return True
             End If

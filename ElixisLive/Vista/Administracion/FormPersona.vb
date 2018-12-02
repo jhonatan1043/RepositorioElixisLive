@@ -25,6 +25,8 @@ Public Class FormPersona
                    cbDepartamento.SelectedIndex = 0 Or
                    ComboMunicipio.SelectedIndex = 0 Or
                     String.IsNullOrEmpty(TextDireccion.Text) Then
+        ElseIf chUsuario.Checked = True And Funciones.consultarUsuario(txtUsuario.Text) = True Then
+        ElseIf chUsuario.Checked = True And txtPerfil.Text = "" Then
         Else
             Return True
         End If
@@ -52,8 +54,8 @@ Public Class FormPersona
         Try
             cargarComboDepartamento()
             cargarComboCiudad()
-            Generales.cargarCombo("[SP_CONFI_SUCURSAL_CONSULTAR] ''", Nothing, "Nombre", "Código", cbSede)
-            Generales.cargarCombo("[SP_CONSULTAR_TIPO_IDENT]", Nothing, "Nombre", "Codigo", CombotipoIdentificacion)
+            Generales.cargarCombo(Sentencias.SUCURSAL_LISTA, Nothing, "Nombre", "Código", cbSede)
+            Generales.cargarCombo(Sentencias.TIPO_IDENTENTIFICACION_LISTA, Nothing, "Nombre", "Codigo", CombotipoIdentificacion)
             Generales.deshabilitarBotones(ToolStrip1)
             Generales.deshabilitarControles(Me)
             btNuevo.Enabled = True
@@ -63,13 +65,13 @@ Public Class FormPersona
         End Try
     End Sub
     Private Sub cargarComboDepartamento()
-        Generales.cargarCombo("[SP_CONSULTAR_DEPARTAMENTO]", Nothing, "descripcion", "Codigo_Departamento", cbDepartamento)
+        Generales.cargarCombo(Sentencias.DEPARTAMENTO_CONSULTAR, Nothing, "descripcion", "Codigo_Departamento", cbDepartamento)
     End Sub
     Private Sub cargarComboCiudad()
         Dim params As New List(Of String)
         If Not String.IsNullOrEmpty(cbDepartamento.ValueMember) Then
             params.Add(cbDepartamento.SelectedValue)
-            Generales.cargarCombo("[SP_CONSULTAR_CIUDAD]", params, "descripcion", "Codigo_Municipio", ComboMunicipio)
+            Generales.cargarCombo(Sentencias.CIUDAD_CONSULTAR, params, "descripcion", "Codigo_Municipio", ComboMunicipio)
         End If
     End Sub
     Private Sub btNuevo_Click(sender As Object, e As EventArgs) Handles btNuevo.Click
@@ -352,6 +354,17 @@ Public Class FormPersona
             ErrorIcono.SetError(TextTelefono, "Debe digitar un número de teléfono")
         Else
             ErrorIcono.SetError(TextTelefono, "")
+        End If
+
+        If chUsuario.Checked = True And txtUsuario.Text.Length = 0 Then
+            ErrorIcono.SetError(txtUsuario, "Debe digitar un nombre de usuario")
+        Else
+            ErrorIcono.SetError(txtUsuario, "")
+        End If
+        If chUsuario.Checked = True And txtPerfil.Text.Length = 0 Then
+            ErrorIcono.SetError(txtPerfil, "Debe escoger un perfil de usuario")
+        Else
+            ErrorIcono.SetError(txtPerfil, "")
         End If
     End Sub
 
