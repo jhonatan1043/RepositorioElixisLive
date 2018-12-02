@@ -13,6 +13,8 @@ Public Class FormPersona
         objPersona.codigoDepartamento = cbDepartamento.SelectedValue
         objPersona.codigoCiudad = ComboMunicipio.SelectedValue
         objPersona.codigoTipoIdentificacion = CombotipoIdentificacion.SelectedValue
+        objPersona.asignar = chUsuario.Checked
+        objPersona.usuario = txtUsuario.Text
     End Sub
     Private Function validarCampos() As Boolean
         If String.IsNullOrEmpty(TextIdentificacion.Text) Or
@@ -360,21 +362,12 @@ Public Class FormPersona
 
     Private Sub btBuscarPerfil_Click(sender As Object, e As EventArgs) Handles btBuscarPerfil.Click
         Dim params As New List(Of String)
-        'params.Add(String.Empty)
-        'Try
-        '    Generales.buscarElemento(Sentencias.PERSONA_CONSULTAR,
-        '                           params,
-        '                           AddressOf cargarPerfil,
-        '                           Titulo.BUSQUEDA_PERSONA,
-        '                           True, True)
-        'Catch ex As Exception
-        '    EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
-        'End Try
         Dim tblPerfil As DataRow = Nothing
         params.Add(String.Empty)
         Dim formBusqueda As FormBusqueda = Generales.buscarElemento(Sentencias.PERFIL_LISTA, params, "Busqueda de perfiles de usuario", True)
         tblPerfil = formBusqueda.rowResultados
         If tblPerfil IsNot Nothing Then
+            objPersona.codigoPerfil = tblPerfil(0)
             idPerfil = tblPerfil(0)
             txtPerfil.Text = tblPerfil(1)
         End If

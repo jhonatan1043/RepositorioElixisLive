@@ -21,6 +21,7 @@
     Property imagen As PictureBox
     Property usuario As String
     Property codigoPerfil As Integer
+    Property asignar As Boolean
     Public Sub New()
         dtRegistro = New DataTable
         sqlGuardar = "SP_ADMIN_PERSONA_CREAR"

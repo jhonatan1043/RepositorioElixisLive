@@ -22,6 +22,9 @@ Public Class PersonaDAL
                     comando.Parameters.Add(New SqlParameter("@codigo_ciudad", SqlDbType.NVarChar)).Value = objPersona.codigoCiudad
                     comando.Parameters.Add(New SqlParameter("@codigo_Tipo_Identificacion", SqlDbType.Int)).Value = objPersona.codigoTipoIdentificacion
                     comando.Parameters.Add(New SqlParameter("@correo", SqlDbType.NVarChar)).Value = objPersona.correo
+                    comando.Parameters.Add(New SqlParameter("@CodigoPerfil", SqlDbType.Int)).Value = objPersona.codigoPerfil
+                    comando.Parameters.Add(New SqlParameter("@Usuario", SqlDbType.NVarChar)).Value = objPersona.usuario
+                    comando.Parameters.Add(New SqlParameter("@Asignar", SqlDbType.Bit)).Value = objPersona.asignar
                     objPersona.codigo = CType(comando.ExecuteScalar, String)
                     trnsccion.Commit()
                 End Using
