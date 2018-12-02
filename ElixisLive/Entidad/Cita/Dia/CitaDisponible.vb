@@ -16,7 +16,7 @@
         panel.Location = New Point(posicionPanelX, posicionPanelY)
         panel.Size = New Point(anchura, altura)
         panel.BackColor = color
-        panel.BorderStyle = BorderStyle.FixedSingle
+        panel.BorderStyle = BorderStyle.None
         panel.Controls.Add(crearEtiquetaDisponible())
         panel.Cursor = Cursors.Hand
         panel.Tag = hora
@@ -24,10 +24,10 @@
         panel.Show()
         Return panel
     End Function
-    Public Function crearEtiquetaDisponible() As Label
-        Dim etiqueta As New Label
+    Public Function crearEtiquetaDisponible() As LinkLabel
+        Dim etiqueta As New LinkLabel
         etiqueta.Location = New Point(posicionLabelX, posicionLabelY)
-        etiqueta.Size = New Point(70, 20)
+        etiqueta.Size = New Point(100, 20)
         etiqueta.Text = descripcion
         etiqueta.Tag = hora
         AddHandler etiqueta.DoubleClick, AddressOf UtlidadCitaBLL.llamarFormularioCita

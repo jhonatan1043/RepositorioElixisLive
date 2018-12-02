@@ -63,7 +63,7 @@
                     objFormCita.posicionFormulario(sender.Location.X,
                                                    sender.Location.Y,
                                                    GetReference(panelPrincipal, objFormCita.PanelDia))
-                Case Else
+                Case Nothing
                     If Not String.IsNullOrEmpty(idCita) Then
                         formCitaMedica.estadoRegistro = True
                         formCitaMedica.codigoCita = idCita

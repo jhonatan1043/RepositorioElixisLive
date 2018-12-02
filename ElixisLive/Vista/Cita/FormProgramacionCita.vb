@@ -58,49 +58,63 @@
     Private Sub MonthCalendar1_DateChanged(sender As Object, e As DateRangeEventArgs) Handles MonthCalendar1.DateChanged
         dFecha.Value = MonthCalendar1.SelectionStart.ToString
     End Sub
-    Private Sub btRealizado_Click(sender As Object, e As EventArgs) Handles btRealizado.Click
-        If EstiloMensajes.mostrarMensajePregunta("¿ Desea Confirmar la cita ?") = Constantes.SI Then
-            cambiarEstado(Constantes.CITA_REALIZADA)
-            validarControles()
-        End If
-    End Sub
-    Private Sub btCancelar_Click(sender As Object, e As EventArgs) Handles btCancelar.Click
-        If EstiloMensajes.mostrarMensajePregunta("¿ Desea Cancelar la cita ?") = Constantes.SI Then
-            cambiarEstado(Constantes.CITA_CANCELADA)
-            validarControles()
-        End If
-    End Sub
     Public Sub posicionFormulario(posicionX As Integer,
                                   posicionY As Integer,
                                   contenedor As Panel)
-        panelAux = clonarControl(pnEstado, posicionX, posicionY)
+        panelAux = New Panel
+        panelAux.Location = New Point(posicionX, posicionY)
+        panelAux.Size = New Point(130, 58)
+        panelAux.BackColor = Color.Black
+        panelAux.Controls.Add(crearBotones(1, 1, Constantes.CITA_CANCELADA, Color.AliceBlue, "Cancelar Cita"))
+        panelAux.Controls.Add(crearBotones(65, 1, Constantes.CITA_REALIZADA, Color.FromArgb(255, 192, 192), "Confirmar Cita"))
         contenedor.Controls.Add(panelAux)
+        AddHandler panelAux.PreviewKeyDown, AddressOf eventoEscape
+        AddHandler panelAux.LostFocus, AddressOf eventoSalir
+        panelAux.Focus()
         panelAux.BringToFront()
+        panelAux.Show()
     End Sub
-    Private Function clonarControl(ByVal Pclonar As Panel,
-                                   posicionX As Integer,
-                                   posicionY As Integer) As Panel
-        Pclonar.Visible = True
-        Pclonar.Location = New Point(posicionX, posicionY)
-        Pclonar.Focus()
-        Return Pclonar
+    Private Function crearBotones(tamanoX As Integer,
+                                  tamanoY As Integer,
+                                  estado As String,
+                                  color As Color, texto As String) As Button
+        Dim boton As New Button
+        boton.Size = New Point(64, 57)
+        boton.Location = New Point(tamanoX, tamanoY)
+        boton.Tag = estado
+        boton.BackColor = color
+        boton.Text = texto
+        ToolTip1.SetToolTip(boton, texto)
+        boton.TextAlign = ContentAlignment.MiddleCenter
+        boton.Font = New Font(Constantes.TIPO_LETRA_ELEMENTO, 8)
+        AddHandler boton.Click, AddressOf cambiarEstado
+        boton.Show()
+        Return boton
     End Function
-    Private Sub cambiarEstado(Estado As String)
+    Private Sub cambiarEstado(sender As Object, e As EventArgs)
         Dim params As New List(Of String)
         Dim cadenaPrametros As String
-        params.Add(codigoCita)
-        params.Add(Estado)
-        cadenaPrametros = Funciones.getParametros(params)
-        If Generales.ejecutarSQL(Sentencias.CITA_CAMBIO_ESTADO & cadenaPrametros) Then
-            EstiloMensajes.mostrarMensajeExitoso(MensajeSistema.REGISTRO_GUARDADO)
+        Dim msjCita As String
+        msjCita = If(sender.tag = Constantes.CITA_CANCELADA,
+                                  "¿ Desea Cancelar la cita ?",
+                                  "¿ Desea Confirmar la cita ?")
+
+        If EstiloMensajes.mostrarMensajePregunta(msjCita) = Constantes.SI Then
+            params.Add(codigoCita)
+            params.Add(sender.tag)
+            cadenaPrametros = Funciones.getParametros(params)
+            If Generales.ejecutarSQL(Sentencias.CITA_CAMBIO_ESTADO & cadenaPrametros) Then
+                EstiloMensajes.mostrarMensajeExitoso(MensajeSistema.REGISTRO_GUARDADO)
+            End If
+            validarControles()
         End If
     End Sub
-    Private Sub pnEstado_KeyDown(sender As Object, e As KeyEventArgs) Handles pnEstado.KeyDown
+    Private Sub eventoEscape(sender As Object, e As PreviewKeyDownEventArgs)
         If e.KeyCode = Keys.Escape Then
-            panelAux.Visible = False
+            panelAux.Dispose()
         End If
     End Sub
-    Private Sub pnEstado_Leave(sender As Object, e As EventArgs) Handles pnEstado.Leave
-        panelAux.Visible = False
+    Private Sub eventoSalir()
+        panelAux.Dispose()
     End Sub
 End Class

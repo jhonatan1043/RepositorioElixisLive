@@ -46,7 +46,7 @@
     Public Const ALTURA_CITA_TOMADA = 66
     Public Const ANCHURA_CITA_TOMADA = 140
     '----- 
-    Public Const CITA_DISPONIBLE = "Disponible"
+    Public Const CITA_DISPONIBLE = "Nueva Cita"
     '----
     Public Const HORA_POCISION_PANEL_X = 5
     Public Const HORA_POCISION_LABEL_X = 32
