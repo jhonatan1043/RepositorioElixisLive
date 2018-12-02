@@ -22,7 +22,8 @@ Partial Class FormPerfil
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Me.components = New System.ComponentModel.Container()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.txtBuscar = New System.Windows.Forms.TextBox()
@@ -49,6 +50,7 @@ Partial Class FormPerfil
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Pimagen = New System.Windows.Forms.PictureBox()
         Me.LTitulo = New System.Windows.Forms.Label()
+        Me.ErrorIcono = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         CType(Me.dgvParametro, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -57,6 +59,7 @@ Partial Class FormPerfil
         Me.ToolStrip1.SuspendLayout()
         Me.Panel1.SuspendLayout()
         CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ErrorIcono, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GroupBox1
@@ -64,9 +67,9 @@ Partial Class FormPerfil
         Me.GroupBox1.Controls.Add(Me.GroupBox2)
         Me.GroupBox1.Controls.Add(Me.GroupBox7)
         Me.GroupBox1.Controls.Add(Me.GroupBox3)
-        Me.GroupBox1.Location = New System.Drawing.Point(3, 50)
+        Me.GroupBox1.Location = New System.Drawing.Point(4, 46)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(893, 440)
+        Me.GroupBox1.Size = New System.Drawing.Size(767, 407)
         Me.GroupBox1.TabIndex = 4
         Me.GroupBox1.TabStop = False
         '
@@ -81,7 +84,7 @@ Partial Class FormPerfil
         Me.GroupBox2.ForeColor = System.Drawing.Color.DarkBlue
         Me.GroupBox2.Location = New System.Drawing.Point(5, 63)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(661, 379)
+        Me.GroupBox2.Size = New System.Drawing.Size(523, 334)
         Me.GroupBox2.TabIndex = 11
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Perfíles Guardados"
@@ -90,9 +93,9 @@ Partial Class FormPerfil
         '
         Me.txtBuscar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtBuscar.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtBuscar.Location = New System.Drawing.Point(88, 22)
+        Me.txtBuscar.Location = New System.Drawing.Point(98, 22)
         Me.txtBuscar.Name = "txtBuscar"
-        Me.txtBuscar.Size = New System.Drawing.Size(567, 22)
+        Me.txtBuscar.Size = New System.Drawing.Size(419, 22)
         Me.txtBuscar.TabIndex = 9
         '
         'Label3
@@ -113,16 +116,16 @@ Partial Class FormPerfil
         Me.dgvParametro.AllowUserToDeleteRows = False
         Me.dgvParametro.AllowUserToResizeColumns = False
         Me.dgvParametro.AllowUserToResizeRows = False
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black
-        Me.dgvParametro.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black
+        Me.dgvParametro.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.dgvParametro.BackgroundColor = System.Drawing.Color.White
         Me.dgvParametro.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvParametro.Location = New System.Drawing.Point(6, 56)
         Me.dgvParametro.MultiSelect = False
         Me.dgvParametro.Name = "dgvParametro"
         Me.dgvParametro.ReadOnly = True
-        Me.dgvParametro.Size = New System.Drawing.Size(649, 317)
+        Me.dgvParametro.Size = New System.Drawing.Size(501, 272)
         Me.dgvParametro.TabIndex = 4
         '
         'txtcodigo
@@ -143,7 +146,7 @@ Partial Class FormPerfil
         Me.GroupBox7.ForeColor = System.Drawing.Color.DarkBlue
         Me.GroupBox7.Location = New System.Drawing.Point(5, 8)
         Me.GroupBox7.Name = "GroupBox7"
-        Me.GroupBox7.Size = New System.Drawing.Size(661, 54)
+        Me.GroupBox7.Size = New System.Drawing.Size(523, 54)
         Me.GroupBox7.TabIndex = 10
         Me.GroupBox7.TabStop = False
         Me.GroupBox7.Text = "Información del perfíl"
@@ -152,10 +155,10 @@ Partial Class FormPerfil
         '
         Me.txtnombre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtnombre.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtnombre.Location = New System.Drawing.Point(88, 20)
+        Me.txtnombre.Location = New System.Drawing.Point(98, 20)
         Me.txtnombre.MaxLength = 50
         Me.txtnombre.Name = "txtnombre"
-        Me.txtnombre.Size = New System.Drawing.Size(567, 25)
+        Me.txtnombre.Size = New System.Drawing.Size(419, 25)
         Me.txtnombre.TabIndex = 9
         '
         'Label17
@@ -173,9 +176,9 @@ Partial Class FormPerfil
         'GroupBox3
         '
         Me.GroupBox3.Controls.Add(Me.arbolmenu)
-        Me.GroupBox3.Location = New System.Drawing.Point(672, 8)
+        Me.GroupBox3.Location = New System.Drawing.Point(534, 8)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(215, 434)
+        Me.GroupBox3.Size = New System.Drawing.Size(227, 389)
         Me.GroupBox3.TabIndex = 21
         Me.GroupBox3.TabStop = False
         '
@@ -190,7 +193,7 @@ Partial Class FormPerfil
         Me.arbolmenu.Location = New System.Drawing.Point(3, 16)
         Me.arbolmenu.Margin = New System.Windows.Forms.Padding(8, 3, 3, 3)
         Me.arbolmenu.Name = "arbolmenu"
-        Me.arbolmenu.Size = New System.Drawing.Size(209, 415)
+        Me.arbolmenu.Size = New System.Drawing.Size(221, 370)
         Me.arbolmenu.TabIndex = 9
         '
         'ToolStrip1
@@ -201,9 +204,9 @@ Partial Class FormPerfil
         Me.ToolStrip1.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.ToolStrip1.ImageScalingSize = New System.Drawing.Size(26, 26)
         Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripSeparator2, Me.btNuevo, Me.ToolStripSeparator1, Me.btRegistrar, Me.ToolStripSeparator4, Me.btEditar, Me.ToolStripSeparator5, Me.btCancelar, Me.ToolStripSeparator3, Me.btAnular, Me.ToolStripSeparator6})
-        Me.ToolStrip1.Location = New System.Drawing.Point(0, 493)
+        Me.ToolStrip1.Location = New System.Drawing.Point(0, 456)
         Me.ToolStrip1.Name = "ToolStrip1"
-        Me.ToolStrip1.Size = New System.Drawing.Size(900, 33)
+        Me.ToolStrip1.Size = New System.Drawing.Size(775, 33)
         Me.ToolStrip1.TabIndex = 21
         Me.ToolStrip1.Text = "ToolStrip1"
         '
@@ -299,9 +302,9 @@ Partial Class FormPerfil
         Me.Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Panel1.Controls.Add(Me.Pimagen)
         Me.Panel1.Controls.Add(Me.LTitulo)
-        Me.Panel1.Location = New System.Drawing.Point(1, -1)
+        Me.Panel1.Location = New System.Drawing.Point(1, -3)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(899, 46)
+        Me.Panel1.Size = New System.Drawing.Size(774, 46)
         Me.Panel1.TabIndex = 3
         '
         'Pimagen
@@ -320,25 +323,30 @@ Partial Class FormPerfil
         Me.LTitulo.BackColor = System.Drawing.Color.Transparent
         Me.LTitulo.Font = New System.Drawing.Font("Times New Roman", 20.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LTitulo.ForeColor = System.Drawing.Color.White
-        Me.LTitulo.Location = New System.Drawing.Point(-7, 3)
+        Me.LTitulo.Location = New System.Drawing.Point(-7, 1)
         Me.LTitulo.Name = "LTitulo"
-        Me.LTitulo.Size = New System.Drawing.Size(893, 41)
+        Me.LTitulo.Size = New System.Drawing.Size(781, 41)
         Me.LTitulo.TabIndex = 1
         Me.LTitulo.Text = "Perfíles"
         Me.LTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'ErrorIcono
+        '
+        Me.ErrorIcono.ContainerControl = Me
+        Me.ErrorIcono.RightToLeft = True
         '
         'FormPerfil
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(900, 526)
+        Me.ClientSize = New System.Drawing.Size(775, 489)
         Me.Controls.Add(Me.ToolStrip1)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Panel1)
         Me.MaximizeBox = False
-        Me.MaximumSize = New System.Drawing.Size(916, 565)
-        Me.MinimumSize = New System.Drawing.Size(916, 565)
+        Me.MaximumSize = New System.Drawing.Size(791, 528)
+        Me.MinimumSize = New System.Drawing.Size(791, 528)
         Me.Name = "FormPerfil"
         Me.ShowIcon = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
@@ -353,6 +361,7 @@ Partial Class FormPerfil
         Me.ToolStrip1.PerformLayout()
         Me.Panel1.ResumeLayout(False)
         CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ErrorIcono, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -384,4 +393,5 @@ Partial Class FormPerfil
     Public WithEvents btNuevo As ToolStripButton
     Friend WithEvents arbolmenu As TreeView
     Public WithEvents txtcodigo As TextBox
+    Friend WithEvents ErrorIcono As ErrorProvider
 End Class

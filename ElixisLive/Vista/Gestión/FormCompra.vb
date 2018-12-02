@@ -70,17 +70,95 @@
     Private Sub btRegistrar_Click(sender As Object, e As EventArgs) Handles btRegistrar.Click
         Try
             dgvFactura.EndEdit()
-            cargarObjeto()
-            CompraBLL.guardarCompra(objCompra)
-            Generales.habilitarBotones(ToolStrip1)
-            Generales.deshabilitarControles(Me)
-            btRegistrar.Enabled = False
-            btCancelar.Enabled = False
-            EstiloMensajes.mostrarMensajeExitoso(MensajeSistema.REGISTRO_GUARDADO)
+            If validarCampos() Then
+                cargarObjeto()
+                CompraBLL.guardarCompra(objCompra)
+                Generales.habilitarBotones(ToolStrip1)
+                Generales.deshabilitarControles(Me)
+                btRegistrar.Enabled = False
+                btCancelar.Enabled = False
+                EstiloMensajes.mostrarMensajeExitoso(MensajeSistema.REGISTRO_GUARDADO)
+            Else
+                EstiloMensajes.mostrarMensajeAdvertencia(MensajeSistema.VALIDAR_CAMPOS)
+            End If
+            mostrarIconoError()
         Catch ex As Exception
             EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
         End Try
     End Sub
+    Private Sub mostrarIconoError()
+        If TextIdentificacion.Text.Length = 0 Then
+            ErrorIcono.SetError(TextIdentificacion, "Debe digitar un número de identificación")
+        Else
+            ErrorIcono.SetError(TextIdentificacion, "")
+        End If
+        If TextNombre.Text.Length = 0 Then
+            ErrorIcono.SetError(TextNombre, "Debe digitar un nombre")
+        Else
+            ErrorIcono.SetError(TextNombre, "")
+        End If
+        If txtTelefono.Text.Length = 0 Then
+            ErrorIcono.SetError(txtTelefono, "Debe digitar un número de teléfono")
+        Else
+            ErrorIcono.SetError(txtTelefono, "")
+        End If
+        If txtNumeroFatura.Text.Length = 0 Then
+            ErrorIcono.SetError(txtNumeroFatura, "Debe digitar un número de factura")
+        Else
+            ErrorIcono.SetError(txtNumeroFatura, "")
+        End If
+
+    End Sub
+    Private Sub TextTelefono_Validating(sender As Object, e As EventArgs) Handles txtTelefono.LostFocus
+        If txtTelefono.Text.Length = 0 And btRegistrar.Enabled = True Then
+            ErrorIcono.SetError(txtTelefono, "Debe digitar un número de teléfono")
+        Else
+            ErrorIcono.SetError(txtTelefono, "")
+        End If
+    End Sub
+    Private Sub TextIdentificacion_Validating(sender As Object, e As EventArgs) Handles TextIdentificacion.LostFocus
+        If TextIdentificacion.Text.Length = 0 And btRegistrar.Enabled = True Then
+            ErrorIcono.SetError(TextIdentificacion, "Debe digitar un número de identificación")
+        Else
+            ErrorIcono.SetError(TextIdentificacion, "")
+        End If
+    End Sub
+    Private Sub TextNombre_Validating(sender As Object, e As EventArgs) Handles TextNombre.LostFocus
+        If TextNombre.Text.Length = 0 And btRegistrar.Enabled = True Then
+            ErrorIcono.SetError(TextNombre, "Debe digitar un nombre")
+        Else
+            ErrorIcono.SetError(TextNombre, "")
+        End If
+    End Sub
+    Private Sub txtNumeroFatura_Validating(sender As Object, e As EventArgs) Handles txtNumeroFatura.LostFocus
+        If txtNumeroFatura.Text.Length = 0 And btRegistrar.Enabled = True Then
+            ErrorIcono.SetError(txtNumeroFatura, "Debe digitar un número de factura")
+        Else
+            ErrorIcono.SetError(txtNumeroFatura, "")
+        End If
+    End Sub
+    Private Sub txtNumeroFatura_Leave(sender As Object, e As EventArgs) Handles txtNumeroFatura.Leave
+        dgvFactura.Focus()
+    End Sub
+    Private Sub txtNumeroFatura_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtNumeroFatura.KeyPress
+        If Asc(e.KeyChar) = 13 Then
+            dgvFactura.Focus()
+        End If
+    End Sub
+
+    Private Sub TextTelefono_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtTelefono.KeyPress
+        ValidacionDigitacion.validarNumerosTelefono(e)
+        If Asc(e.KeyChar) = 13 Then
+            txtNumeroFatura.Focus()
+        End If
+    End Sub
+    Private Sub TextNombre_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextNombre.KeyPress
+        ValidacionDigitacion.validarAlfabetico(e)
+        If Asc(e.KeyChar) = 13 Then
+            txtTelefono.Focus()
+        End If
+    End Sub
+
     Private Sub btEditar_Click(sender As Object, e As EventArgs) Handles btEditar.Click
         If EstiloMensajes.mostrarMensajePregunta(MensajeSistema.EDITAR) = Constantes.SI Then
             Generales.deshabilitarBotones(ToolStrip1)
@@ -256,4 +334,11 @@
             EstiloMensajes.mostrarMensajeError(MensajeSistema.INGRESAR_VALOR_VALIDO)
         End If
     End Sub
+
+    Private Function validarCampos()
+        If String.IsNullOrEmpty(TextIdentificacion.Text) Or String.IsNullOrEmpty(TextNombre.Text) Then
+            Return True
+        End If
+        Return False
+    End Function
 End Class

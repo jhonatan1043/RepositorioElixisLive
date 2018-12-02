@@ -318,40 +318,40 @@ Public Class FormVenta
     End Sub
     Private Sub mostrarIconoError()
         If TextIdentificacion.Text.Length = 0 Then
-            ErrorIcono.SetError(TextIdentificacion, " Error")
+            ErrorIcono.SetError(TextIdentificacion, "Debe digitar un número de identificación")
         Else
             ErrorIcono.SetError(TextIdentificacion, "")
         End If
         If TextNombre.Text.Length = 0 Then
-            ErrorIcono.SetError(TextNombre, " Error")
+            ErrorIcono.SetError(TextNombre, "Debe digitar un nombre")
         Else
             ErrorIcono.SetError(TextNombre, "")
         End If
         If TextTelefono.Text.Length = 0 Then
-            ErrorIcono.SetError(TextTelefono, " Error")
+            ErrorIcono.SetError(TextTelefono, "Debe digitar un número de teléfono")
         Else
             ErrorIcono.SetError(TextTelefono, "")
         End If
     End Sub
     Private Sub TextIdentificacion_Validating(sender As Object, e As EventArgs) Handles TextIdentificacion.LostFocus
         If TextIdentificacion.Text.Length = 0 And btRegistrar.Enabled = True Then
-            ErrorIcono.SetError(TextIdentificacion, " Error")
+            ErrorIcono.SetError(TextIdentificacion, "Debe digitar un número de identificación")
         Else
             ErrorIcono.SetError(TextIdentificacion, "")
         End If
     End Sub
     Private Sub TextNombre_Validating(sender As Object, e As EventArgs) Handles TextNombre.LostFocus
         If TextNombre.Text.Length = 0 And btRegistrar.Enabled = True Then
-            ErrorIcono.SetError(TextNombre, " Error")
+            ErrorIcono.SetError(TextNombre, "Debe digitar un nombre")
         Else
             ErrorIcono.SetError(TextNombre, "")
         End If
     End Sub
     Private Sub TextTelefono_Validating(sender As Object, e As EventArgs) Handles TextTelefono.LostFocus
         If TextTelefono.Text.Length = 0 And btRegistrar.Enabled = True Then
-            ErrorIcono.SetError(TextIdentificacion, " Error")
+            ErrorIcono.SetError(TextTelefono, "Debe digitar un número de teléfono")
         Else
-            ErrorIcono.SetError(TextIdentificacion, "")
+            ErrorIcono.SetError(TextTelefono, "")
         End If
     End Sub
 

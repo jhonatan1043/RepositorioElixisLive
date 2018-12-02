@@ -7,15 +7,10 @@ Public Class FormPerfil
     Dim fprincipal As New FormPrincipal
     Private Sub FormPerfil_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         objPerfil = New Perfil
-        'principalBLL.cargarMenu(arbolmenu)
         listarPerfiles()
         validarCampoGrilla()
-        'Generales.deshabilitarBotones(ToolStrip1)
-        'Generales.deshabilitarControles(Me)
-        'btNuevo.Enabled = True
         Generales.deshabilitarControles(Me)
         Generales.deshabilitarBotones(ToolStrip1)
-        'dgvFactura.DataSource = objPerfil.dtEmpleados
         txtBuscar.ReadOnly = False
         btNuevo.Enabled = True
     End Sub
@@ -27,6 +22,7 @@ Public Class FormPerfil
         btRegistrar.Enabled = True
         btCancelar.Enabled = True
         cargarArbol()
+        txtnombre.Focus()
     End Sub
     Private Sub cargarInfomacion(pCodigo As Integer)
         Dim params As New List(Of String)
@@ -37,6 +33,7 @@ Public Class FormPerfil
         Generales.habilitarBotones(ToolStrip1)
         Generales.deshabilitarControles(Me)
         btRegistrar.Enabled = False
+        btCancelar.Enabled = False
     End Sub
     Public Sub cargarArbol()
         Dim nodo As TreeNode
@@ -100,20 +97,8 @@ Public Class FormPerfil
         End Try
 
     End Sub
-    'Private Sub chequearArbol()
-    '    For Each nodo As TreeNode In arbolmenu.Nodes
-    '        If IsNothing(nodo.Parent) Then
-    '            For posicion = 0 To objPerfil.dtRegistro.Rows.Count - 1
-    '                If nodo.Name = objPerfil.dtRegistro.Rows(posicion).Item("Codigo_Menu") Then
-    '                    nodo.Checked = True
-    '                End If
-    '            Next
-    '        End If
-    '    Next
-    'End Sub
     Private Sub btRegistrar_Click(sender As Object, e As EventArgs) Handles btRegistrar.Click
         If (txtnombre.Text = "") Then
-            MsgBox("¡ Por favor digite el nombre del perfil de usuario!", MsgBoxStyle.Exclamation)
             txtnombre.Focus()
         Else
             Try
@@ -132,17 +117,7 @@ Public Class FormPerfil
                 EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
             End Try
         End If
-        'Try
-        '    cargarObjeto()
-        '    PerfilBLL.guardarPerfil(objPerfil)
-        '    Generales.deshabilitarBotones(ToolStrip1)
-        '    Generales.deshabilitarControles(Me)
-        '    btNuevo.Enabled = True
-        '    btAnular.Enabled = True
-        '    EstiloMensajes.mostrarMensajeExitoso(MensajeSistema.REGISTRO_GUARDADO)
-        'Catch ex As Exception
-        '    EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
-        'End Try
+
     End Sub
     Private Sub btEditar_Click(sender As Object, e As EventArgs) Handles btEditar.Click
         If EstiloMensajes.mostrarMensajePregunta(MensajeSistema.EDITAR) = Constantes.SI Then
@@ -158,6 +133,7 @@ Public Class FormPerfil
             Generales.deshabilitarControles(Me)
             Generales.limpiarControles(Me)
             btNuevo.Enabled = True
+            ErrorIcono.SetError(txtnombre, "")
         End If
     End Sub
     Private Sub btAnular_Click(sender As Object, e As EventArgs) Handles btAnular.Click
@@ -234,7 +210,6 @@ Public Class FormPerfil
 
     End Sub
     Private Sub dgvFactura_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvParametro.CellClick
-        If btRegistrar.Enabled = True Then Exit Sub
         If dgvParametro.Rows.Count > 0 Then
             txtnombre.Text = dgvParametro.Rows(dgvParametro.CurrentCell.RowIndex).Cells("Descripción").Value
             cargarInfomacion(dgvParametro.Rows(dgvParametro.CurrentCell.RowIndex).Cells("Codigo").Value)

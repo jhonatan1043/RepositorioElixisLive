@@ -22,11 +22,12 @@ Partial Class FormCompra
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Me.components = New System.ComponentModel.Container()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormCompra))
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.dgvFactura = New System.Windows.Forms.DataGridView()
@@ -75,6 +76,7 @@ Partial Class FormCompra
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Pimagen = New System.Windows.Forms.PictureBox()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.ErrorIcono = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         CType(Me.dgvFactura, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -83,6 +85,7 @@ Partial Class FormCompra
         Me.ToolStrip1.SuspendLayout()
         Me.Panel1.SuspendLayout()
         CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ErrorIcono, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GroupBox1
@@ -123,18 +126,18 @@ Partial Class FormCompra
         Me.dgvFactura.AllowUserToDeleteRows = False
         Me.dgvFactura.AllowUserToResizeColumns = False
         Me.dgvFactura.AllowUserToResizeRows = False
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black
-        Me.dgvFactura.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black
+        Me.dgvFactura.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle5
         Me.dgvFactura.BackgroundColor = System.Drawing.Color.White
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.SteelBlue
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvFactura.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle6.BackColor = System.Drawing.Color.SteelBlue
+        DataGridViewCellStyle6.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvFactura.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle6
         Me.dgvFactura.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvFactura.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.dgCodigo, Me.dgDescripcion, Me.dgCantidad, Me.dgValor, Me.dgTotal, Me.dgQuitar})
         Me.dgvFactura.Location = New System.Drawing.Point(10, 56)
@@ -176,10 +179,10 @@ Partial Class FormCompra
         '
         'dgQuitar
         '
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle3.NullValue = CType(resources.GetObject("DataGridViewCellStyle3.NullValue"), Object)
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.White
-        Me.dgQuitar.DefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle7.NullValue = CType(resources.GetObject("DataGridViewCellStyle7.NullValue"), Object)
+        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.White
+        Me.dgQuitar.DefaultCellStyle = DataGridViewCellStyle7
         Me.dgQuitar.HeaderText = "Quitar"
         Me.dgQuitar.Image = Global.Quality.My.Resources.Resources.papelera
         Me.dgQuitar.Name = "dgQuitar"
@@ -223,9 +226,9 @@ Partial Class FormCompra
         'dtFecha
         '
         Me.dtFecha.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.dtFecha.Location = New System.Drawing.Point(342, 20)
+        Me.dtFecha.Location = New System.Drawing.Point(375, 20)
         Me.dtFecha.Name = "dtFecha"
-        Me.dtFecha.Size = New System.Drawing.Size(305, 25)
+        Me.dtFecha.Size = New System.Drawing.Size(272, 25)
         Me.dtFecha.TabIndex = 21
         '
         'Label7
@@ -234,7 +237,7 @@ Partial Class FormCompra
         Me.Label7.BackColor = System.Drawing.Color.Transparent
         Me.Label7.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.ForeColor = System.Drawing.Color.Black
-        Me.Label7.Location = New System.Drawing.Point(272, 23)
+        Me.Label7.Location = New System.Drawing.Point(305, 23)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(54, 19)
         Me.Label7.TabIndex = 20
@@ -320,7 +323,7 @@ Partial Class FormCompra
         Me.btBuscarProveedor.BackgroundImage = Global.Quality.My.Resources.Resources.fondo_azul
         Me.btBuscarProveedor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btBuscarProveedor.Image = Global.Quality.My.Resources.Resources.Zoom_icon1
-        Me.btBuscarProveedor.Location = New System.Drawing.Point(837, 15)
+        Me.btBuscarProveedor.Location = New System.Drawing.Point(271, 15)
         Me.btBuscarProveedor.Name = "btBuscarProveedor"
         Me.btBuscarProveedor.Size = New System.Drawing.Size(31, 30)
         Me.btBuscarProveedor.TabIndex = 67
@@ -330,7 +333,7 @@ Partial Class FormCompra
         '
         Me.txtTelefono.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtTelefono.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtTelefono.Location = New System.Drawing.Point(693, 18)
+        Me.txtTelefono.Location = New System.Drawing.Point(731, 18)
         Me.txtTelefono.Name = "txtTelefono"
         Me.txtTelefono.Size = New System.Drawing.Size(138, 25)
         Me.txtTelefono.TabIndex = 11
@@ -341,7 +344,7 @@ Partial Class FormCompra
         Me.Label2.BackColor = System.Drawing.Color.Transparent
         Me.Label2.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.Black
-        Me.Label2.Location = New System.Drawing.Point(621, 20)
+        Me.Label2.Location = New System.Drawing.Point(654, 20)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(69, 19)
         Me.Label2.TabIndex = 10
@@ -352,7 +355,7 @@ Partial Class FormCompra
         Me.TextDV.BackColor = System.Drawing.SystemColors.ControlLightLight
         Me.TextDV.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TextDV.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextDV.Location = New System.Drawing.Point(235, 17)
+        Me.TextDV.Location = New System.Drawing.Point(239, 17)
         Me.TextDV.Name = "TextDV"
         Me.TextDV.Size = New System.Drawing.Size(29, 25)
         Me.TextDV.TabIndex = 8
@@ -362,7 +365,7 @@ Partial Class FormCompra
         '
         Me.TextNombre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TextNombre.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextNombre.Location = New System.Drawing.Point(342, 17)
+        Me.TextNombre.Location = New System.Drawing.Point(379, 17)
         Me.TextNombre.Name = "TextNombre"
         Me.TextNombre.Size = New System.Drawing.Size(274, 25)
         Me.TextNombre.TabIndex = 9
@@ -373,7 +376,7 @@ Partial Class FormCompra
         Me.Label17.BackColor = System.Drawing.Color.Transparent
         Me.Label17.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label17.ForeColor = System.Drawing.Color.Black
-        Me.Label17.Location = New System.Drawing.Point(273, 20)
+        Me.Label17.Location = New System.Drawing.Point(306, 20)
         Me.Label17.Name = "Label17"
         Me.Label17.Size = New System.Drawing.Size(65, 19)
         Me.Label17.TabIndex = 7
@@ -383,7 +386,7 @@ Partial Class FormCompra
         '
         Me.TextIdentificacion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TextIdentificacion.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextIdentificacion.Location = New System.Drawing.Point(107, 17)
+        Me.TextIdentificacion.Location = New System.Drawing.Point(111, 17)
         Me.TextIdentificacion.Name = "TextIdentificacion"
         Me.TextIdentificacion.Size = New System.Drawing.Size(126, 25)
         Me.TextIdentificacion.TabIndex = 5
@@ -402,10 +405,10 @@ Partial Class FormCompra
         '
         'DataGridViewImageColumn1
         '
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle4.NullValue = CType(resources.GetObject("DataGridViewCellStyle4.NullValue"), Object)
-        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.White
-        Me.DataGridViewImageColumn1.DefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle8.NullValue = CType(resources.GetObject("DataGridViewCellStyle8.NullValue"), Object)
+        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.White
+        Me.DataGridViewImageColumn1.DefaultCellStyle = DataGridViewCellStyle8
         Me.DataGridViewImageColumn1.HeaderText = "Quitar"
         Me.DataGridViewImageColumn1.Image = Global.Quality.My.Resources.Resources.papelera
         Me.DataGridViewImageColumn1.Name = "DataGridViewImageColumn1"
@@ -571,12 +574,17 @@ Partial Class FormCompra
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("Times New Roman", 20.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(11, 1)
+        Me.Label1.Location = New System.Drawing.Point(3, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(888, 44)
+        Me.Label1.Size = New System.Drawing.Size(891, 44)
         Me.Label1.TabIndex = 1
         Me.Label1.Text = "Compras"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'ErrorIcono
+        '
+        Me.ErrorIcono.ContainerControl = Me
+        Me.ErrorIcono.RightToLeft = True
         '
         'FormCompra
         '
@@ -603,6 +611,7 @@ Partial Class FormCompra
         Me.ToolStrip1.PerformLayout()
         Me.Panel1.ResumeLayout(False)
         CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ErrorIcono, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -656,4 +665,5 @@ Partial Class FormCompra
     Friend WithEvents dgTotal As DataGridViewTextBoxColumn
     Friend WithEvents dgQuitar As DataGridViewImageColumn
     Friend WithEvents DataGridViewImageColumn1 As DataGridViewImageColumn
+    Friend WithEvents ErrorIcono As ErrorProvider
 End Class

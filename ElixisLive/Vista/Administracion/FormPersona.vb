@@ -321,12 +321,12 @@ Public Class FormPersona
             ErrorIcono.SetError(CombotipoIdentificacion, "")
         End If
         If TextIdentificacion.Text.Length = 0 Then
-            ErrorIcono.SetError(TextIdentificacion, "Debe digitar el número de identificación")
+            ErrorIcono.SetError(TextIdentificacion, "Debe digitar un número de identificación")
         Else
             ErrorIcono.SetError(TextIdentificacion, "")
         End If
         If TextNombre.Text.Length = 0 Then
-            ErrorIcono.SetError(TextNombre, "Debe digitar el nombre")
+            ErrorIcono.SetError(TextNombre, "Debe digitar un nombre")
         Else
             ErrorIcono.SetError(TextNombre, "")
         End If
