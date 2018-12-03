@@ -26,11 +26,6 @@
             EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
     End Sub
-    Private Sub txtBusqueda_TextChanged(sender As Object, e As EventArgs) Handles txtBusqueda.TextChanged
-        If String.IsNullOrEmpty(txtBusqueda.Text) Then
-            validarControles()
-        End If
-    End Sub
     Private Sub dFecha_TextChanged(sender As Object, e As EventArgs) Handles dFecha.ValueChanged
         validarControles()
     End Sub
@@ -69,8 +64,6 @@
         panelAux.Controls.Add(crearBotones(65, 1, Constantes.CITA_REALIZADA, Color.FromArgb(255, 192, 192), "Confirmar Cita"))
         contenedor.Controls.Add(panelAux)
         AddHandler panelAux.PreviewKeyDown, AddressOf eventoEscape
-        AddHandler panelAux.LostFocus, AddressOf eventoSalir
-        panelAux.Focus()
         panelAux.BringToFront()
         panelAux.Show()
     End Sub
@@ -88,7 +81,9 @@
         boton.TextAlign = ContentAlignment.MiddleCenter
         boton.Font = New Font(Constantes.TIPO_LETRA_ELEMENTO, 8)
         AddHandler boton.Click, AddressOf cambiarEstado
+        AddHandler boton.Leave, AddressOf eventoSalir
         boton.Show()
+        boton.Focus()
         Return boton
     End Function
     Private Sub cambiarEstado(sender As Object, e As EventArgs)
@@ -111,10 +106,16 @@
     End Sub
     Private Sub eventoEscape(sender As Object, e As PreviewKeyDownEventArgs)
         If e.KeyCode = Keys.Escape Then
-            panelAux.Dispose()
+            panelAux.Hide()
         End If
     End Sub
     Private Sub eventoSalir()
-        panelAux.Dispose()
+        panelAux.Hide()
+    End Sub
+
+    Private Sub txtBusqueda_KeyDown(sender As Object, e As KeyEventArgs) Handles txtBusqueda.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            validarControles()
+        End If
     End Sub
 End Class

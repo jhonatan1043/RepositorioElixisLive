@@ -22,6 +22,11 @@
             .Columns("Codigo").AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
             .Columns("Descripcion").AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
             .Columns("Precio").AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
+
+            .Columns("Codigo").SortMode = DataGridViewColumnSortMode.NotSortable
+            .Columns("Descripcion").SortMode = DataGridViewColumnSortMode.NotSortable
+            .Columns("Precio").SortMode = DataGridViewColumnSortMode.NotSortable
+
             .AutoGenerateColumns = False
         End With
     End Sub

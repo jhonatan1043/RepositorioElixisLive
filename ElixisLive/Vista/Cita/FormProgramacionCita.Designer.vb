@@ -87,7 +87,6 @@ Partial Class FormProgramacionCita
         Me.txtBusqueda.Name = "txtBusqueda"
         Me.txtBusqueda.Size = New System.Drawing.Size(199, 29)
         Me.txtBusqueda.TabIndex = 10068
-        Me.txtBusqueda.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'RadioButton2
         '

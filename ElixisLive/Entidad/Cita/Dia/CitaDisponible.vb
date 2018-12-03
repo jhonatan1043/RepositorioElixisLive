@@ -30,7 +30,7 @@
         etiqueta.Size = New Point(100, 20)
         etiqueta.Text = descripcion
         etiqueta.Tag = hora
-        AddHandler etiqueta.DoubleClick, AddressOf UtlidadCitaBLL.llamarFormularioCita
+        AddHandler etiqueta.Click, AddressOf UtlidadCitaBLL.llamarFormularioCita
         Return etiqueta
     End Function
 End Class
