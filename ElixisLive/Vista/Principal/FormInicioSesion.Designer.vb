@@ -78,7 +78,7 @@ Partial Class FormInicioSesion
         '
         Me.txtUsuario.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtUsuario.Location = New System.Drawing.Point(229, 31)
-        Me.txtUsuario.MaxLength = 10
+        Me.txtUsuario.MaxLength = 15
         Me.txtUsuario.Name = "txtUsuario"
         Me.txtUsuario.Size = New System.Drawing.Size(163, 25)
         Me.txtUsuario.TabIndex = 1

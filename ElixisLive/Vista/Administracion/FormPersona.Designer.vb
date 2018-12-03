@@ -181,7 +181,7 @@ Partial Class FormPersona
         Me.txtUsuario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtUsuario.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtUsuario.Location = New System.Drawing.Point(138, 44)
-        Me.txtUsuario.MaxLength = 10
+        Me.txtUsuario.MaxLength = 15
         Me.txtUsuario.Name = "txtUsuario"
         Me.txtUsuario.Size = New System.Drawing.Size(226, 25)
         Me.txtUsuario.TabIndex = 14
