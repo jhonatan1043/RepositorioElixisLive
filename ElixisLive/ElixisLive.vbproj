@@ -186,6 +186,7 @@
     <Compile Include="Modelo\Inventario\ProductoBLL.vb" />
     <Compile Include="Modelo\Principal\InicioSesionBLL.vb" />
     <Compile Include="Modelo\Principal\principalBLL.vb" />
+    <Compile Include="ReferenciaDLL\DataGridViewDateTimePickerColumn.vb" />
     <Compile Include="Utilidad\Busqueda.vb" />
     <Compile Include="Utilidad\Constantes.vb" />
     <Compile Include="Utilidad\DigitoVerificacion.vb" />
