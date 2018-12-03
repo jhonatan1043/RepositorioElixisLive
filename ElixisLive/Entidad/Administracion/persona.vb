@@ -8,7 +8,6 @@
     Property codigoTipoIdentificacion As Integer
     Property direccion As String
     Property correo As String
-    Property codigoSede As Int16
     Property codigoDepartamento As String
     Property codigoCiudad As String
     Property encabezado As String
@@ -22,7 +21,9 @@
     Property usuario As String
     Property codigoPerfil As Integer
     Property asignar As Boolean
+    Property dtSucursal As DataTable
     Public Sub New()
+        dtSucursal = New DataTable
         dtRegistro = New DataTable
         sqlGuardar = "SP_ADMIN_PERSONA_CREAR"
         sqlConsulta = "[SP_ADMIN_PERSONA_CONSULTAR]"

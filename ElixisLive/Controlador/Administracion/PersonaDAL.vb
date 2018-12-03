@@ -17,7 +17,6 @@ Public Class PersonaDAL
                     comando.Parameters.Add(New SqlParameter("@telefono", SqlDbType.NVarChar)).Value = objPersona.telefono
                     comando.Parameters.Add(New SqlParameter("@celular", SqlDbType.NVarChar)).Value = objPersona.celular
                     comando.Parameters.Add(New SqlParameter("@direccion", SqlDbType.NVarChar)).Value = objPersona.direccion
-                    comando.Parameters.Add(New SqlParameter("@codigo_sede", SqlDbType.Int)).Value = objPersona.codigoSede
                     comando.Parameters.Add(New SqlParameter("@codigo_Departamento", SqlDbType.NVarChar)).Value = objPersona.codigoDepartamento
                     comando.Parameters.Add(New SqlParameter("@codigo_ciudad", SqlDbType.NVarChar)).Value = objPersona.codigoCiudad
                     comando.Parameters.Add(New SqlParameter("@codigo_Tipo_Identificacion", SqlDbType.Int)).Value = objPersona.codigoTipoIdentificacion
@@ -25,6 +24,7 @@ Public Class PersonaDAL
                     comando.Parameters.Add(New SqlParameter("@CodigoPerfil", SqlDbType.Int)).Value = objPersona.codigoPerfil
                     comando.Parameters.Add(New SqlParameter("@Usuario", SqlDbType.NVarChar)).Value = objPersona.usuario
                     comando.Parameters.Add(New SqlParameter("@Asignar", SqlDbType.Bit)).Value = objPersona.asignar
+                    comando.Parameters.Add(New SqlParameter("@TablaSucursal", SqlDbType.Structured)).Value = extrarColumna(objPersona)
                     objPersona.codigo = CType(comando.ExecuteScalar, String)
                     trnsccion.Commit()
                 End Using
@@ -35,5 +35,17 @@ Public Class PersonaDAL
             objConexio.desConectar()
         End Try
         Return objPersona
+    End Function
+    Private Shared Function extrarColumna(objPersona As persona) As DataTable
+        Dim tabla As New DataTable
+        tabla = objPersona.dtSucursal.Clone
+        For Each fila As DataRow In objPersona.dtSucursal.Rows
+            If fila("Editable") <> Constantes.SIN_VALOR_NUMERICO Then
+                tabla.ImportRow(fila)
+            End If
+        Next
+        tabla.Columns.Remove("Nombre")
+        tabla.Columns.Remove("Realizado")
+        Return tabla
     End Function
 End Class

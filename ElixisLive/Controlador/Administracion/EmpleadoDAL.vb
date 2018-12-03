@@ -22,7 +22,6 @@ Public Class EmpleadoDAL
                     comando.Parameters.Add(New SqlParameter("@Codigo_Departamento_t", SqlDbType.Int)).Value = objEmpleado.deparTrabajo
                     comando.Parameters.Add(New SqlParameter("@Foto", SqlDbType.VarBinary)).Value = objEmpleado.imagenEmpleado
                     comando.Parameters.Add(New SqlParameter("@Tabla", SqlDbType.Structured)).Value = objEmpleado.dtParametro
-                    comando.Parameters.Add(New SqlParameter("@TablaSucursal", SqlDbType.Structured)).Value = extrarColumna(objEmpleado)
                     comando.ExecuteNonQuery()
                     trnsccion.Commit()
                 End Using
@@ -34,20 +33,5 @@ Public Class EmpleadoDAL
         End Try
         Return objEmpleado
     End Function
-    Private Shared Function extrarColumna(objEmpleado As Empleado) As DataTable
-        Dim tabla As New DataTable
-        tabla = objEmpleado.dtSucursal.Clone
 
-        For Each fila As DataRow In objEmpleado.dtSucursal.Rows
-            If fila("Editable") <> Constantes.SIN_VALOR_NUMERICO Then
-                tabla.ImportRow(fila)
-            End If
-        Next
-
-        tabla.Columns.Remove("Nombre")
-        tabla.Columns.Remove("Editable")
-        tabla.Columns.Remove("Realizado")
-
-        Return tabla
-    End Function
 End Class

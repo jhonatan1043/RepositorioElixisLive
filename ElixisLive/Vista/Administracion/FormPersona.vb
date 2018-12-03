@@ -9,7 +9,6 @@ Public Class FormPersona
         objPersona.celular = TextCelular.Text
         objPersona.correo = TextEmail.Text
         objPersona.direccion = TextDireccion.Text
-        objPersona.codigoSede = cbSede.SelectedValue
         objPersona.codigoDepartamento = cbDepartamento.SelectedValue
         objPersona.codigoCiudad = ComboMunicipio.SelectedValue
         objPersona.codigoTipoIdentificacion = CombotipoIdentificacion.SelectedValue
@@ -21,7 +20,6 @@ Public Class FormPersona
                     CombotipoIdentificacion.SelectedIndex = 0 Or
                     String.IsNullOrEmpty(TextNombre.Text) Or
                     String.IsNullOrEmpty(TextTelefono.Text) Or
-                   cbSede.SelectedIndex = 0 Or
                    cbDepartamento.SelectedIndex = 0 Or
                    ComboMunicipio.SelectedIndex = 0 Or
                     String.IsNullOrEmpty(TextDireccion.Text) Then
@@ -36,7 +34,6 @@ Public Class FormPersona
         ErrorIcono.SetError(TextDireccion, "")
         ErrorIcono.SetError(ComboMunicipio, "")
         ErrorIcono.SetError(cbDepartamento, "")
-        ErrorIcono.SetError(cbSede, "")
         ErrorIcono.SetError(TextTelefono, "")
         ErrorIcono.SetError(TextNombre, "")
         ErrorIcono.SetError(TextIdentificacion, "")
@@ -54,7 +51,6 @@ Public Class FormPersona
         Try
             cargarComboDepartamento()
             cargarComboCiudad()
-            Generales.cargarCombo(Sentencias.SUCURSAL_LISTA, Nothing, "Nombre", "Código", cbSede)
             Generales.cargarCombo(Sentencias.TIPO_IDENTENTIFICACION_LISTA, Nothing, "Nombre", "Codigo", CombotipoIdentificacion)
             Generales.deshabilitarBotones(ToolStrip1)
             Generales.deshabilitarControles(Me)
@@ -85,6 +81,7 @@ Public Class FormPersona
         btCancelar.Enabled = True
         btRegistrar.Enabled = True
         CombotipoIdentificacion.Focus()
+        listaSucursalesListar()
     End Sub
     Private Sub btRegistrar_Click(sender As Object, e As EventArgs) Handles btRegistrar.Click
         If validarCampos() = True Then
@@ -143,7 +140,7 @@ Public Class FormPersona
         Generales.buscarElemento(objPersona.sqlConsulta,
                                    params,
                                    AddressOf cargarInfomacion,
-                                   "Busqueda de persona",
+                                   Titulo.BUSQUEDA_PERSONA,
                                    True, True)
     End Sub
     Private Sub cargarInfomacion(pcodigo As Integer)
@@ -161,9 +158,9 @@ Public Class FormPersona
                 TextDireccion.Text = dfila("Direccion")
                 TextEmail.Text = If(IsDBNull(dfila("Email")), Nothing, dfila("Email"))
                 CombotipoIdentificacion.SelectedValue = dfila("Tipo_Identificacion")
-                cbSede.SelectedValue = dfila("Codigo_Sucursal")
                 cbDepartamento.SelectedValue = dfila("Codigo_Departamento")
                 ComboMunicipio.SelectedValue = dfila("Codigo_Ciudad")
+                listaSucursalesCargar(pcodigo)
             End If
             Generales.habilitarBotones(ToolStrip1)
             btCancelar.Enabled = False
@@ -175,7 +172,7 @@ Public Class FormPersona
     Private Sub cbDepartamento_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbDepartamento.SelectedIndexChanged
         cargarComboCiudad()
     End Sub
-    Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked
+    Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs)
         Generales.cargarForm(FormPerfil)
     End Sub
     Private Sub chUsuario_Click(sender As Object, e As EventArgs) Handles chUsuario.Click
@@ -238,12 +235,7 @@ Public Class FormPersona
             ComboMunicipio.Focus()
         End If
     End Sub
-    Private Sub ComboMunicipio_KeyPress(sender As Object, e As KeyPressEventArgs) Handles ComboMunicipio.KeyPress
-        If Asc(e.KeyChar) = 13 Then
-            cbSede.Focus()
-        End If
-    End Sub
-    Private Sub cbSede_KeyPress(sender As Object, e As KeyPressEventArgs) Handles cbSede.KeyPress
+    Private Sub cbSede_KeyPress(sender As Object, e As KeyPressEventArgs)
         If Asc(e.KeyChar) = 13 Then
             TextDireccion.Focus()
         End If
@@ -307,7 +299,7 @@ Public Class FormPersona
             ErrorIcono.SetError(ComboMunicipio, "")
         End If
     End Sub
-    Private Sub cbSede_Validating(sender As Object, e As EventArgs) Handles cbSede.LostFocus
+    Private Sub cbSede_Validating(sender As Object, e As EventArgs)
         If ComboMunicipio.SelectedIndex = 0 And btRegistrar.Enabled = True Then
             ErrorIcono.SetError(ComboMunicipio, "Debe escoger un municipio")
         Else
@@ -339,11 +331,6 @@ Public Class FormPersona
             ErrorIcono.SetError(ComboMunicipio, "Debe escoger un municipio")
         Else
             ErrorIcono.SetError(ComboMunicipio, "")
-        End If
-        If cbSede.SelectedIndex = 0 Then
-            ErrorIcono.SetError(cbSede, "Debe escoger una sede")
-        Else
-            ErrorIcono.SetError(cbSede, "")
         End If
         If TextDireccion.Text.Length = 0 Then
             ErrorIcono.SetError(TextDireccion, "Debe digitar una dirección")
@@ -379,5 +366,30 @@ Public Class FormPersona
             idPerfil = tblPerfil(0)
             txtPerfil.Text = tblPerfil(1)
         End If
+    End Sub
+    Private Sub listaSucursalesCargar(codigo As Integer)
+        Dim params As New List(Of String)
+        params.Add(codigo)
+        Try
+            Generales.llenarTabla("[SP_PERSONA_SUCURSALES_ASIGNADO]", params, objPersona.dtSucursal)
+            ListSucursal.DataSource = objPersona.dtSucursal
+            ListSucursal.ValueMember = "Codigo"
+            ListSucursal.DisplayMember = "Nombre"
+            For item = 0 To objPersona.dtSucursal.Rows.Count - 1
+                ListSucursal.SetItemChecked(item, objPersona.dtSucursal.Rows(item).Item("Realizado"))
+            Next
+        Catch ex As Exception
+            EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
+        End Try
+    End Sub
+    Private Sub listaSucursalesListar()
+        Try
+            Generales.llenarTabla("[SP_PERSONA_SUCURSALES_SIN_ASIGNAR]", Nothing, objPersona.dtSucursal)
+            ListSucursal.DataSource = objPersona.dtSucursal
+            ListSucursal.ValueMember = "Codigo"
+            ListSucursal.DisplayMember = "Nombre"
+        Catch ex As Exception
+            EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
+        End Try
     End Sub
 End Class

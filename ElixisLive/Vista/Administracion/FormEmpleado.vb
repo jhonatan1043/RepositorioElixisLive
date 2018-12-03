@@ -58,7 +58,6 @@ Public Class FormEmpleado
                 Generales.llenardgv(objEmpleado.sqlCargarDetalle, dgvParametro, params)
                 Generales.diseñoDGV(dgvParametro)
                 Generales.diseñoGrillaParametros(dgvParametro)
-                listaSucursales(pcodigo, Sentencias.SUCURSAL_EMPLEADO_CARGAR)
                 controlVerificar()
             End If
             Generales.habilitarBotones(ToolStrip1)
@@ -129,7 +128,6 @@ Public Class FormEmpleado
             dfila = Generales.cargarItem(Sentencias.PERSONA_CARGAR, params)
             txtCodigoEmpleado.Text = pCodigo
             cargarCampos(dfila)
-            listaSucursales(pCodigo, Sentencias.SUCURSAL_EMPLEADO_CONSULTAR)
         Catch ex As Exception
             EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
         End Try
@@ -253,21 +251,7 @@ Public Class FormEmpleado
             gpPago.Enabled = True
         End If
     End Sub
-    Private Sub listaSucursales(pcodigo As Integer, consulta As String)
-        Dim params As New List(Of String)
-        params.Add(pcodigo)
-        Try
-            Generales.llenarTabla(consulta, params, objEmpleado.dtSucursal)
-            ListSucursal.DataSource = objEmpleado.dtSucursal
-            ListSucursal.ValueMember = "Codigo"
-            ListSucursal.DisplayMember = "Nombre"
-            For item = 0 To objEmpleado.dtSucursal.Rows.Count - 1
-                ListSucursal.SetItemChecked(item, objEmpleado.dtSucursal.Rows(item).Item("Realizado"))
-            Next
-        Catch ex As Exception
-            EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
-        End Try
-    End Sub
+
     Private Sub mostrarIconoError()
         If cbDepartamento.SelectedIndex = 0 Then
             Me.ErrorIcono.SetError(cbDepartamento, "Debe escoger un departamento")
@@ -324,15 +308,7 @@ Public Class FormEmpleado
             Me.ErrorIcono.SetError(btBuscarPersona, Constantes.CADENA_VACIA)
         End If
     End Sub
-    Private Sub ListSucursal_Click(sender As Object, e As EventArgs) Handles ListSucursal.Click
-        If btRegistrar.Enabled = False Then Exit Sub
-        If ListSucursal.Items.Count > 0 Then
-            If objEmpleado.dtSucursal.Rows(ListSucursal.SelectedIndex).Item("Editable") = Constantes.SIN_VALOR_NUMERICO Then
-                EstiloMensajes.mostrarMensajeAdvertencia("¡ Sucursal predeterminada, imposible quitar !")
-                ListSucursal.SetItemChecked(ListSucursal.SelectedIndex, True)
-            End If
-        End If
-    End Sub
+
 End Class
 
 

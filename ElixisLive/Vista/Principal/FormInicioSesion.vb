@@ -1,7 +1,4 @@
-﻿
-
-Imports System.ComponentModel
-
+﻿Imports System.ComponentModel
 Public Class FormInicioSesion
     Dim formulario As New vForm
     Dim objInicioSesionBLL As New InicioSesionBLL
@@ -94,8 +91,6 @@ Public Class FormInicioSesion
         Generales.limpiarControles(Me)
         txtUsuario.Focus()
     End Sub
-
-
 End Class
 
 

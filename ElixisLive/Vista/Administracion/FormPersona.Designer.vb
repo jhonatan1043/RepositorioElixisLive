@@ -27,7 +27,6 @@ Partial Class FormPersona
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.chUsuario = New System.Windows.Forms.CheckBox()
-        Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
         Me.btBuscarPerfil = New System.Windows.Forms.Button()
         Me.txtPerfil = New System.Windows.Forms.TextBox()
         Me.txtUsuario = New System.Windows.Forms.TextBox()
@@ -40,14 +39,12 @@ Partial Class FormPersona
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.GroupBox6 = New System.Windows.Forms.GroupBox()
-        Me.cbSede = New System.Windows.Forms.ComboBox()
         Me.cbDepartamento = New System.Windows.Forms.ComboBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.ComboMunicipio = New System.Windows.Forms.ComboBox()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.TextDireccion = New System.Windows.Forms.TextBox()
         Me.Label11 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
         Me.GroupBox7 = New System.Windows.Forms.GroupBox()
         Me.CombotipoIdentificacion = New System.Windows.Forms.ComboBox()
         Me.TextDV = New System.Windows.Forms.TextBox()
@@ -74,6 +71,8 @@ Partial Class FormPersona
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Pimagen = New System.Windows.Forms.PictureBox()
         Me.LTitulo = New System.Windows.Forms.Label()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.ListSucursal = New System.Windows.Forms.CheckedListBox()
         Me.GroupBox4.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox5.SuspendLayout()
@@ -83,11 +82,13 @@ Partial Class FormPersona
         Me.ToolStrip1.SuspendLayout()
         Me.Panel1.SuspendLayout()
         CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
         '
         'GroupBox4
         '
         Me.GroupBox4.BackColor = System.Drawing.Color.Transparent
+        Me.GroupBox4.Controls.Add(Me.GroupBox2)
         Me.GroupBox4.Controls.Add(Me.GroupBox1)
         Me.GroupBox4.Controls.Add(Me.GroupBox5)
         Me.GroupBox4.Controls.Add(Me.GroupBox6)
@@ -102,16 +103,15 @@ Partial Class FormPersona
         '
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Controls.Add(Me.chUsuario)
-        Me.GroupBox1.Controls.Add(Me.LinkLabel1)
         Me.GroupBox1.Controls.Add(Me.btBuscarPerfil)
         Me.GroupBox1.Controls.Add(Me.txtPerfil)
         Me.GroupBox1.Controls.Add(Me.txtUsuario)
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Font = New System.Drawing.Font("Times New Roman", 8.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox1.ForeColor = System.Drawing.Color.DarkBlue
-        Me.GroupBox1.Location = New System.Drawing.Point(7, 247)
+        Me.GroupBox1.Location = New System.Drawing.Point(7, 232)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(692, 101)
+        Me.GroupBox1.Size = New System.Drawing.Size(417, 116)
         Me.GroupBox1.TabIndex = 12
         Me.GroupBox1.TabStop = False
         '
@@ -121,7 +121,7 @@ Partial Class FormPersona
         Me.Label2.BackColor = System.Drawing.Color.Transparent
         Me.Label2.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.Black
-        Me.Label2.Location = New System.Drawing.Point(6, 71)
+        Me.Label2.Location = New System.Drawing.Point(7, 87)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(50, 19)
         Me.Label2.TabIndex = 68
@@ -139,28 +139,12 @@ Partial Class FormPersona
         Me.chUsuario.Text = "Asignar usuario"
         Me.chUsuario.UseVisualStyleBackColor = True
         '
-        'LinkLabel1
-        '
-        Me.LinkLabel1.ActiveLinkColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.LinkLabel1.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LinkLabel1.ForeColor = System.Drawing.Color.SteelBlue
-        Me.LinkLabel1.Image = Global.Quality.My.Resources.Resources.administrator_icon1
-        Me.LinkLabel1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.LinkLabel1.LinkColor = System.Drawing.Color.DarkBlue
-        Me.LinkLabel1.Location = New System.Drawing.Point(513, 35)
-        Me.LinkLabel1.Name = "LinkLabel1"
-        Me.LinkLabel1.Size = New System.Drawing.Size(154, 55)
-        Me.LinkLabel1.TabIndex = 30
-        Me.LinkLabel1.TabStop = True
-        Me.LinkLabel1.Text = "Crear perfíl"
-        Me.LinkLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
         'btBuscarPerfil
         '
         Me.btBuscarPerfil.BackgroundImage = Global.Quality.My.Resources.Resources.fondo_azul
         Me.btBuscarPerfil.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btBuscarPerfil.Image = Global.Quality.My.Resources.Resources.Zoom_icon1
-        Me.btBuscarPerfil.Location = New System.Drawing.Point(368, 73)
+        Me.btBuscarPerfil.Location = New System.Drawing.Point(368, 84)
         Me.btBuscarPerfil.Name = "btBuscarPerfil"
         Me.btBuscarPerfil.Size = New System.Drawing.Size(26, 25)
         Me.btBuscarPerfil.TabIndex = 15
@@ -170,7 +154,7 @@ Partial Class FormPersona
         '
         Me.txtPerfil.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtPerfil.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtPerfil.Location = New System.Drawing.Point(138, 72)
+        Me.txtPerfil.Location = New System.Drawing.Point(138, 83)
         Me.txtPerfil.MaxLength = 50
         Me.txtPerfil.Name = "txtPerfil"
         Me.txtPerfil.Size = New System.Drawing.Size(226, 25)
@@ -180,7 +164,7 @@ Partial Class FormPersona
         '
         Me.txtUsuario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtUsuario.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtUsuario.Location = New System.Drawing.Point(138, 44)
+        Me.txtUsuario.Location = New System.Drawing.Point(138, 48)
         Me.txtUsuario.MaxLength = 15
         Me.txtUsuario.Name = "txtUsuario"
         Me.txtUsuario.Size = New System.Drawing.Size(226, 25)
@@ -192,7 +176,7 @@ Partial Class FormPersona
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.Black
-        Me.Label1.Location = New System.Drawing.Point(6, 44)
+        Me.Label1.Location = New System.Drawing.Point(6, 52)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(66, 19)
         Me.Label1.TabIndex = 26
@@ -208,7 +192,7 @@ Partial Class FormPersona
         Me.GroupBox5.Controls.Add(Me.Label10)
         Me.GroupBox5.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox5.ForeColor = System.Drawing.Color.DarkBlue
-        Me.GroupBox5.Location = New System.Drawing.Point(7, 171)
+        Me.GroupBox5.Location = New System.Drawing.Point(7, 154)
         Me.GroupBox5.Name = "GroupBox5"
         Me.GroupBox5.Size = New System.Drawing.Size(692, 75)
         Me.GroupBox5.TabIndex = 8
@@ -283,31 +267,20 @@ Partial Class FormPersona
         '
         'GroupBox6
         '
-        Me.GroupBox6.Controls.Add(Me.cbSede)
         Me.GroupBox6.Controls.Add(Me.cbDepartamento)
         Me.GroupBox6.Controls.Add(Me.Label3)
         Me.GroupBox6.Controls.Add(Me.ComboMunicipio)
         Me.GroupBox6.Controls.Add(Me.Label12)
         Me.GroupBox6.Controls.Add(Me.TextDireccion)
         Me.GroupBox6.Controls.Add(Me.Label11)
-        Me.GroupBox6.Controls.Add(Me.Label4)
         Me.GroupBox6.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox6.ForeColor = System.Drawing.Color.DarkBlue
         Me.GroupBox6.Location = New System.Drawing.Point(7, 76)
         Me.GroupBox6.Name = "GroupBox6"
-        Me.GroupBox6.Size = New System.Drawing.Size(692, 93)
+        Me.GroupBox6.Size = New System.Drawing.Size(692, 75)
         Me.GroupBox6.TabIndex = 4
         Me.GroupBox6.TabStop = False
         Me.GroupBox6.Text = "Domocilio"
-        '
-        'cbSede
-        '
-        Me.cbSede.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cbSede.FormattingEnabled = True
-        Me.cbSede.Location = New System.Drawing.Point(455, 38)
-        Me.cbSede.Name = "cbSede"
-        Me.cbSede.Size = New System.Drawing.Size(231, 25)
-        Me.cbSede.TabIndex = 44
         '
         'cbDepartamento
         '
@@ -334,7 +307,7 @@ Partial Class FormPersona
         '
         Me.ComboMunicipio.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ComboMunicipio.FormattingEnabled = True
-        Me.ComboMunicipio.Location = New System.Drawing.Point(455, 11)
+        Me.ComboMunicipio.Location = New System.Drawing.Point(455, 14)
         Me.ComboMunicipio.Name = "ComboMunicipio"
         Me.ComboMunicipio.Size = New System.Drawing.Size(231, 25)
         Me.ComboMunicipio.TabIndex = 6
@@ -345,7 +318,7 @@ Partial Class FormPersona
         Me.Label12.BackColor = System.Drawing.Color.Transparent
         Me.Label12.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label12.ForeColor = System.Drawing.Color.Black
-        Me.Label12.Location = New System.Drawing.Point(374, 14)
+        Me.Label12.Location = New System.Drawing.Point(374, 18)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(61, 19)
         Me.Label12.TabIndex = 39
@@ -355,7 +328,7 @@ Partial Class FormPersona
         '
         Me.TextDireccion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TextDireccion.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextDireccion.Location = New System.Drawing.Point(138, 64)
+        Me.TextDireccion.Location = New System.Drawing.Point(138, 45)
         Me.TextDireccion.MaxLength = 100
         Me.TextDireccion.Name = "TextDireccion"
         Me.TextDireccion.Size = New System.Drawing.Size(548, 25)
@@ -367,23 +340,11 @@ Partial Class FormPersona
         Me.Label11.BackColor = System.Drawing.Color.Transparent
         Me.Label11.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label11.ForeColor = System.Drawing.Color.Black
-        Me.Label11.Location = New System.Drawing.Point(6, 67)
+        Me.Label11.Location = New System.Drawing.Point(6, 46)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(75, 19)
         Me.Label11.TabIndex = 26
         Me.Label11.Text = "Dirección:"
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.BackColor = System.Drawing.Color.Transparent
-        Me.Label4.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.ForeColor = System.Drawing.Color.Black
-        Me.Label4.Location = New System.Drawing.Point(374, 41)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(44, 19)
-        Me.Label4.TabIndex = 43
-        Me.Label4.Text = "Sede:"
         '
         'GroupBox7
         '
@@ -493,7 +454,7 @@ Partial Class FormPersona
         Me.ToolStrip1.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.ToolStrip1.ImageScalingSize = New System.Drawing.Size(30, 30)
         Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripSeparator1, Me.btNuevo, Me.ToolStripSeparator2, Me.btBuscar, Me.ToolStripSeparator7, Me.btRegistrar, Me.ToolStripSeparator4, Me.btEditar, Me.ToolStripSeparator5, Me.btCancelar, Me.ToolStripSeparator3, Me.btAnular, Me.ToolStripSeparator6})
-        Me.ToolStrip1.Location = New System.Drawing.Point(0, 399)
+        Me.ToolStrip1.Location = New System.Drawing.Point(0, 400)
         Me.ToolStrip1.Name = "ToolStrip1"
         Me.ToolStrip1.Size = New System.Drawing.Size(713, 37)
         Me.ToolStrip1.TabIndex = 16
@@ -635,12 +596,34 @@ Partial Class FormPersona
         Me.LTitulo.Text = "Persona"
         Me.LTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
+        'GroupBox2
+        '
+        Me.GroupBox2.Controls.Add(Me.ListSucursal)
+        Me.GroupBox2.Font = New System.Drawing.Font("Times New Roman", 8.25!, System.Drawing.FontStyle.Italic)
+        Me.GroupBox2.ForeColor = System.Drawing.Color.DarkBlue
+        Me.GroupBox2.Location = New System.Drawing.Point(430, 235)
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.Size = New System.Drawing.Size(269, 113)
+        Me.GroupBox2.TabIndex = 68
+        Me.GroupBox2.TabStop = False
+        Me.GroupBox2.Text = "Información de Sucursal"
+        '
+        'ListSucursal
+        '
+        Me.ListSucursal.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.ListSucursal.FormattingEnabled = True
+        Me.ListSucursal.Location = New System.Drawing.Point(3, 16)
+        Me.ListSucursal.MultiColumn = True
+        Me.ListSucursal.Name = "ListSucursal"
+        Me.ListSucursal.Size = New System.Drawing.Size(263, 94)
+        Me.ListSucursal.TabIndex = 0
+        '
         'FormPersona
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(713, 436)
+        Me.ClientSize = New System.Drawing.Size(713, 437)
         Me.Controls.Add(Me.ToolStrip1)
         Me.Controls.Add(Me.GroupBox4)
         Me.Controls.Add(Me.Panel1)
@@ -665,6 +648,7 @@ Partial Class FormPersona
         Me.ToolStrip1.PerformLayout()
         Me.Panel1.ResumeLayout(False)
         CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox2.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -711,13 +695,12 @@ Partial Class FormPersona
     Friend WithEvents chUsuario As CheckBox
     Friend WithEvents btBuscarPerfil As Button
     Public WithEvents txtPerfil As TextBox
-    Friend WithEvents LinkLabel1 As LinkLabel
     Public WithEvents Label2 As Label
     Friend WithEvents cbDepartamento As ComboBox
     Public WithEvents Label3 As Label
     Friend WithEvents ComboMunicipio As ComboBox
     Public WithEvents Label12 As Label
-    Friend WithEvents cbSede As ComboBox
-    Public WithEvents Label4 As Label
     Friend WithEvents ErrorIcono As ErrorProvider
+    Friend WithEvents GroupBox2 As GroupBox
+    Friend WithEvents ListSucursal As CheckedListBox
 End Class
