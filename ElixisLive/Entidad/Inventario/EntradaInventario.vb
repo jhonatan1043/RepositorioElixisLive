@@ -1,7 +1,7 @@
 ﻿Public Class EntradaInventario
     Inherits generalConsulta
     Property codigo As Integer
-    Property codigoCompra As Integer
+    Property codigoCompra As String
     Property dtEntrada As DataTable
     Public Sub New()
         dtEntrada = New DataTable

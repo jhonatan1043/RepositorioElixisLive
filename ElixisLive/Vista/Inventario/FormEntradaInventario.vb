@@ -62,14 +62,20 @@
         End Try
     End Sub
     Private Sub btRegistrar_Click(sender As Object, e As EventArgs) Handles btRegistrar.Click
+        dgvEntrada.EndEdit()
+        Dim bodega As Integer = objEntrada.dtEntrada.Select("[Codigo] IS NOT NULL AND [Bodega] IS NULL").Count
         If String.IsNullOrEmpty(txtCodigo.Text) And rbCompra.Checked = True Then
             EstiloMensajes.mostrarMensajeAdvertencia("¡ Favor seleccionar la compra !")
+        ElseIf bodega > 0 Then
+            EstiloMensajes.mostrarMensajeAdvertencia("¡ Faltan productos por asignar bodega !")
         Else
             Try
-                dgvEntrada.EndEdit()
+                objEntrada.codigoCompra = If(String.IsNullOrEmpty(txtCodigo.Text), Nothing, txtCodigo.Text)
                 EntradaInventarioBLL.guardarEntrada(objEntrada)
+                rbCompra.Checked = False
+                rvManual.Checked = False
+                Generales.deshabilitarControles(Me)
                 Generales.deshabilitarBotones(ToolStrip1)
-                validarEdicionGrilla(Constantes.NO_EDITABLE)
                 btBuscarCompra.Enabled = False
                 btNuevo.Enabled = True
                 btBuscar.Enabled = True
