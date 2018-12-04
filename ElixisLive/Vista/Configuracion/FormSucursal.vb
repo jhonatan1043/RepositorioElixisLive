@@ -108,10 +108,8 @@
         End If
     End Sub
     Private Sub btBuscar_Click(sender As Object, e As EventArgs) Handles btBuscar.Click
-        Dim params As New List(Of String)
-        params.Add(String.Empty)
         Generales.buscarElemento(objSucursal.sqlConsulta,
-                                   params,
+                                   Nothing,
                                    AddressOf cargarInfomacion,
                                    Titulo.BUSQUEDA_SUCURSAL,
                                    True, True)

@@ -5,7 +5,7 @@
     Public Sub New()
         sqlAnular = "[SP_CONFI_SUCURSAL_ANULAR] "
         sqlCargar = "[SP_CONFI_SUCURSAL_CARGAR]"
-        sqlConsulta = "[SP_CONFI_SUCURSAL_CONSULTAR]"
+        sqlConsulta = Sentencias.SUCURSAL_LISTA
         sqlGuardar = "[SP_CONFI_SUCURSAL_CREAR]"
     End Sub
 End Class
