@@ -42,8 +42,6 @@ Partial Class FormEmpleado
         Me.GbInform_D = New System.Windows.Forms.GroupBox()
         Me.dgvParametro = New System.Windows.Forms.DataGridView()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.txtCodigoEmpleado = New System.Windows.Forms.TextBox()
-        Me.Label15 = New System.Windows.Forms.Label()
         Me.gpUsuario = New System.Windows.Forms.GroupBox()
         Me.cbPerfil = New System.Windows.Forms.ComboBox()
         Me.txtUsuario = New System.Windows.Forms.TextBox()
@@ -104,6 +102,7 @@ Partial Class FormEmpleado
         Me.gbInform.BackColor = System.Drawing.Color.Transparent
         Me.gbInform.Controls.Add(Me.txtEmail)
         Me.gbInform.Controls.Add(Me.Label5)
+        Me.gbInform.Controls.Add(Me.btBuscarPersona)
         Me.gbInform.Controls.Add(Me.txtDireccion)
         Me.gbInform.Controls.Add(Me.Label4)
         Me.gbInform.Controls.Add(Me.txtCelular)
@@ -116,7 +115,7 @@ Partial Class FormEmpleado
         Me.gbInform.Controls.Add(Me.Label1)
         Me.gbInform.Location = New System.Drawing.Point(4, 7)
         Me.gbInform.Name = "gbInform"
-        Me.gbInform.Size = New System.Drawing.Size(776, 102)
+        Me.gbInform.Size = New System.Drawing.Size(888, 102)
         Me.gbInform.TabIndex = 9
         Me.gbInform.TabStop = False
         '
@@ -124,7 +123,7 @@ Partial Class FormEmpleado
         '
         Me.txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtEmail.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtEmail.Location = New System.Drawing.Point(324, 70)
+        Me.txtEmail.Location = New System.Drawing.Point(419, 70)
         Me.txtEmail.Name = "txtEmail"
         Me.txtEmail.ReadOnly = True
         Me.txtEmail.Size = New System.Drawing.Size(446, 25)
@@ -136,7 +135,7 @@ Partial Class FormEmpleado
         Me.Label5.BackColor = System.Drawing.Color.Transparent
         Me.Label5.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.Color.Black
-        Me.Label5.Location = New System.Drawing.Point(250, 71)
+        Me.Label5.Location = New System.Drawing.Point(345, 71)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(59, 19)
         Me.Label5.TabIndex = 20
@@ -146,7 +145,7 @@ Partial Class FormEmpleado
         '
         Me.txtDireccion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtDireccion.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtDireccion.Location = New System.Drawing.Point(324, 42)
+        Me.txtDireccion.Location = New System.Drawing.Point(419, 42)
         Me.txtDireccion.Name = "txtDireccion"
         Me.txtDireccion.ReadOnly = True
         Me.txtDireccion.Size = New System.Drawing.Size(446, 25)
@@ -158,7 +157,7 @@ Partial Class FormEmpleado
         Me.Label4.BackColor = System.Drawing.Color.Transparent
         Me.Label4.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.Black
-        Me.Label4.Location = New System.Drawing.Point(250, 43)
+        Me.Label4.Location = New System.Drawing.Point(345, 43)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(75, 19)
         Me.Label4.TabIndex = 18
@@ -171,7 +170,7 @@ Partial Class FormEmpleado
         Me.txtCelular.Location = New System.Drawing.Point(125, 70)
         Me.txtCelular.Name = "txtCelular"
         Me.txtCelular.ReadOnly = True
-        Me.txtCelular.Size = New System.Drawing.Size(112, 25)
+        Me.txtCelular.Size = New System.Drawing.Size(186, 25)
         Me.txtCelular.TabIndex = 17
         '
         'Label3
@@ -193,7 +192,7 @@ Partial Class FormEmpleado
         Me.txtTelefono.Location = New System.Drawing.Point(125, 42)
         Me.txtTelefono.Name = "txtTelefono"
         Me.txtTelefono.ReadOnly = True
-        Me.txtTelefono.Size = New System.Drawing.Size(112, 25)
+        Me.txtTelefono.Size = New System.Drawing.Size(186, 25)
         Me.txtTelefono.TabIndex = 15
         '
         'Label6
@@ -214,7 +213,7 @@ Partial Class FormEmpleado
         Me.Label2.BackColor = System.Drawing.Color.Transparent
         Me.Label2.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.Black
-        Me.Label2.Location = New System.Drawing.Point(250, 14)
+        Me.Label2.Location = New System.Drawing.Point(345, 14)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(65, 19)
         Me.Label2.TabIndex = 3
@@ -227,14 +226,14 @@ Partial Class FormEmpleado
         Me.txtIdentificacion.Location = New System.Drawing.Point(125, 14)
         Me.txtIdentificacion.Name = "txtIdentificacion"
         Me.txtIdentificacion.ReadOnly = True
-        Me.txtIdentificacion.Size = New System.Drawing.Size(112, 25)
+        Me.txtIdentificacion.Size = New System.Drawing.Size(186, 25)
         Me.txtIdentificacion.TabIndex = 4
         '
         'txtNombre
         '
         Me.txtNombre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtNombre.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtNombre.Location = New System.Drawing.Point(324, 14)
+        Me.txtNombre.Location = New System.Drawing.Point(419, 14)
         Me.txtNombre.Name = "txtNombre"
         Me.txtNombre.ReadOnly = True
         Me.txtNombre.Size = New System.Drawing.Size(414, 25)
@@ -255,9 +254,9 @@ Partial Class FormEmpleado
         'GroupBox3
         '
         Me.GroupBox3.Controls.Add(Me.pictImagen)
-        Me.GroupBox3.Location = New System.Drawing.Point(786, 4)
+        Me.GroupBox3.Location = New System.Drawing.Point(676, 109)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(106, 105)
+        Me.GroupBox3.Size = New System.Drawing.Size(216, 154)
         Me.GroupBox3.TabIndex = 56
         Me.GroupBox3.TabStop = False
         '
@@ -267,9 +266,9 @@ Partial Class FormEmpleado
         Me.pictImagen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.pictImagen.Image = Global.Quality.My.Resources.Resources.usuario
         Me.pictImagen.InitialImage = Global.Quality.My.Resources.Resources.usuario
-        Me.pictImagen.Location = New System.Drawing.Point(3, 14)
+        Me.pictImagen.Location = New System.Drawing.Point(4, 13)
         Me.pictImagen.Name = "pictImagen"
-        Me.pictImagen.Size = New System.Drawing.Size(100, 88)
+        Me.pictImagen.Size = New System.Drawing.Size(207, 134)
         Me.pictImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.pictImagen.TabIndex = 0
         Me.pictImagen.TabStop = False
@@ -306,11 +305,8 @@ Partial Class FormEmpleado
         'GroupBox1
         '
         Me.GroupBox1.BackColor = System.Drawing.Color.Transparent
-        Me.GroupBox1.Controls.Add(Me.txtCodigoEmpleado)
-        Me.GroupBox1.Controls.Add(Me.Label15)
         Me.GroupBox1.Controls.Add(Me.gpUsuario)
         Me.GroupBox1.Controls.Add(Me.GroupBox5)
-        Me.GroupBox1.Controls.Add(Me.btBuscarPersona)
         Me.GroupBox1.Controls.Add(Me.GroupBox2)
         Me.GroupBox1.Controls.Add(Me.GbInform_D)
         Me.GroupBox1.Controls.Add(Me.GroupBox3)
@@ -321,29 +317,6 @@ Partial Class FormEmpleado
         Me.GroupBox1.TabIndex = 11
         Me.GroupBox1.TabStop = False
         '
-        'txtCodigoEmpleado
-        '
-        Me.txtCodigoEmpleado.BackColor = System.Drawing.SystemColors.HotTrack
-        Me.txtCodigoEmpleado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtCodigoEmpleado.Font = New System.Drawing.Font("Times New Roman", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtCodigoEmpleado.ForeColor = System.Drawing.Color.Red
-        Me.txtCodigoEmpleado.Location = New System.Drawing.Point(745, 115)
-        Me.txtCodigoEmpleado.Name = "txtCodigoEmpleado"
-        Me.txtCodigoEmpleado.Size = New System.Drawing.Size(144, 29)
-        Me.txtCodigoEmpleado.TabIndex = 16
-        Me.txtCodigoEmpleado.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'Label15
-        '
-        Me.Label15.AutoSize = True
-        Me.Label15.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Italic)
-        Me.Label15.ForeColor = System.Drawing.Color.Black
-        Me.Label15.Location = New System.Drawing.Point(676, 121)
-        Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(61, 19)
-        Me.Label15.TabIndex = 68
-        Me.Label15.Text = "Codigo:"
-        '
         'gpUsuario
         '
         Me.gpUsuario.Controls.Add(Me.cbPerfil)
@@ -352,7 +325,7 @@ Partial Class FormEmpleado
         Me.gpUsuario.Controls.Add(Me.Label10)
         Me.gpUsuario.Font = New System.Drawing.Font("Times New Roman", 8.25!, System.Drawing.FontStyle.Italic)
         Me.gpUsuario.ForeColor = System.Drawing.Color.DarkBlue
-        Me.gpUsuario.Location = New System.Drawing.Point(342, 186)
+        Me.gpUsuario.Location = New System.Drawing.Point(344, 186)
         Me.gpUsuario.Name = "gpUsuario"
         Me.gpUsuario.Size = New System.Drawing.Size(326, 77)
         Me.gpUsuario.TabIndex = 67
@@ -463,7 +436,7 @@ Partial Class FormEmpleado
         Me.btBuscarPersona.BackgroundImage = Global.Quality.My.Resources.Resources.fondo_azul
         Me.btBuscarPersona.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btBuscarPersona.Image = Global.Quality.My.Resources.Resources.Zoom_icon1
-        Me.btBuscarPersona.Location = New System.Drawing.Point(744, 18)
+        Me.btBuscarPersona.Location = New System.Drawing.Point(837, 11)
         Me.btBuscarPersona.Name = "btBuscarPersona"
         Me.btBuscarPersona.Size = New System.Drawing.Size(31, 30)
         Me.btBuscarPersona.TabIndex = 65
@@ -760,7 +733,6 @@ Partial Class FormEmpleado
         Me.GbInform_D.ResumeLayout(False)
         CType(Me.dgvParametro, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
-        Me.GroupBox1.PerformLayout()
         Me.gpUsuario.ResumeLayout(False)
         Me.gpUsuario.PerformLayout()
         Me.GroupBox5.ResumeLayout(False)
@@ -835,6 +807,4 @@ Partial Class FormEmpleado
     Friend WithEvents Label10 As Label
     Friend WithEvents cbPerfil As ComboBox
     Friend WithEvents ErrorIcono As ErrorProvider
-    Public WithEvents txtCodigoEmpleado As TextBox
-    Friend WithEvents Label15 As Label
 End Class

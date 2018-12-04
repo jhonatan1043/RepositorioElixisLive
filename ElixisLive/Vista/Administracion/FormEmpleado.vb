@@ -46,14 +46,13 @@ Public Class FormEmpleado
         Try
             If Not IsNothing(dfila) Then
                 cargarCampos(dfila)
-                txtCodigoEmpleado.Text = objEmpleado.codigo
                 cbCargo.SelectedValue = dfila("Codigo_Cargo")
                 cbDepartamento.SelectedValue = dfila("Codigo_deaprt")
                 cbFormaPago.SelectedValue = dfila("codigo_Banco")
                 cbBanco.SelectedValue = If(String.IsNullOrEmpty(dfila("codigo_Banco")), -1, dfila("codigo_Banco"))
                 cbTipoCuenta.SelectedValue = If(String.IsNullOrEmpty(dfila("Tipo_Cuenta_Banco")), -1, dfila("Tipo_Cuenta_Banco"))
                 txtCuenta.Text = If(cbFormaPago.SelectedIndex = 1, String.Empty, dfila("Numero_Cuenta"))
-                crearImagen(If(IsDBNull(dfila("Foto")), Nothing, dfila("Foto")))
+                crearImagen(dfila)
                 params.Add(ElementoMenu.codigo)
                 Generales.llenardgv(objEmpleado.sqlCargarDetalle, dgvParametro, params)
                 Generales.diseñoDGV(dgvParametro)
@@ -67,8 +66,13 @@ Public Class FormEmpleado
             EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
         End Try
     End Sub
-    Private Sub crearImagen(imagen As Byte())
-        objEmpleado.banderaImagen = False
+    Private Sub crearImagen(dImagen As DataRow)
+        Dim almImagen As New IO.MemoryStream
+        Dim bytes() As Byte = Funciones.castFromDbItem(dImagen.Item("foto"))
+        If bytes IsNot Nothing Then
+            pictImagen.Image = Image.FromStream(New IO.MemoryStream(bytes))
+            objEmpleado.banderaImagen = False
+        End If
     End Sub
     Private Sub cargarCampos(dfila As DataRow)
         txtIdentificacion.Text = dfila("Identificacion")
@@ -77,7 +81,7 @@ Public Class FormEmpleado
         txtNombre.Text = dfila("Nombre")
         txtDireccion.Text = dfila("Direccion")
         txtEmail.Text = If(String.IsNullOrEmpty(dfila("Email")), Nothing, dfila("Email"))
-        txtUsuario.Text = dfila("Usuario")
+        txtUsuario.Text = If(IsDBNull(dfila("Usuario")), Nothing, dfila("Usuario"))
         cbPerfil.SelectedValue = If(IsDBNull(dfila("Codigo_Perfil")), -1, dfila("Codigo_Perfil"))
     End Sub
     Private Sub controlVerificar()
@@ -126,7 +130,6 @@ Public Class FormEmpleado
         params.Add(pCodigo)
         Try
             dfila = Generales.cargarItem(Sentencias.PERSONA_CARGAR, params)
-            txtCodigoEmpleado.Text = pCodigo
             cargarCampos(dfila)
         Catch ex As Exception
             EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
@@ -139,7 +142,6 @@ Public Class FormEmpleado
         Generales.deshabilitarControles(gpUsuario)
         Generales.limpiarControles(Me)
         cargarParametros()
-        txtCodigoEmpleado.ReadOnly = True
         objEmpleado.codigo = Nothing
         btBuscarPersona.Enabled = True
         btCancelar.Enabled = True
@@ -157,7 +159,6 @@ Public Class FormEmpleado
     End Function
     Private Sub cargarObjeto()
         Dim almImagen As New IO.MemoryStream
-
         If objEmpleado.banderaImagen = True Then
             pictImagen.Image.Save(almImagen, Imaging.ImageFormat.Png)
             objEmpleado.imagenEmpleado = almImagen.GetBuffer
@@ -207,7 +208,6 @@ Public Class FormEmpleado
             Generales.habilitarControles(Me)
             Generales.deshabilitarControles(gbInform)
             Generales.deshabilitarControles(gpUsuario)
-            txtCodigoEmpleado.ReadOnly = True
             btBuscarPersona.Enabled = False
             btCancelar.Enabled = True
             btRegistrar.Enabled = True
