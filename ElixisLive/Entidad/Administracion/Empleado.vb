@@ -9,7 +9,6 @@
     Property cargo As Integer
     Property deparTrabajo As Integer
     Property imagenEmpleado As Byte()
-    Property dtSucursal As DataTable
     Property fechaIngreso As DateTime
     Property banderaImagen As Boolean
     Public Sub New()

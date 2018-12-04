@@ -71,7 +71,7 @@ Partial Class FormProgramacionCita
         Me.MonthCalendar1.BackColor = System.Drawing.Color.White
         Me.MonthCalendar1.Font = New System.Drawing.Font("Times New Roman", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.MonthCalendar1.ForeColor = System.Drawing.Color.White
-        Me.MonthCalendar1.Location = New System.Drawing.Point(762, 55)
+        Me.MonthCalendar1.Location = New System.Drawing.Point(749, 55)
         Me.MonthCalendar1.Name = "MonthCalendar1"
         Me.MonthCalendar1.TabIndex = 0
         Me.MonthCalendar1.TitleBackColor = System.Drawing.Color.SteelBlue
@@ -149,7 +149,7 @@ Partial Class FormProgramacionCita
         Me.ToolStrip1.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.ToolStrip1.ImageScalingSize = New System.Drawing.Size(30, 30)
         Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.lbInformacionCliente})
-        Me.ToolStrip1.Location = New System.Drawing.Point(0, 498)
+        Me.ToolStrip1.Location = New System.Drawing.Point(0, 499)
         Me.ToolStrip1.Name = "ToolStrip1"
         Me.ToolStrip1.Size = New System.Drawing.Size(945, 25)
         Me.ToolStrip1.TabIndex = 10077
@@ -221,7 +221,7 @@ Partial Class FormProgramacionCita
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(945, 523)
+        Me.ClientSize = New System.Drawing.Size(945, 524)
         Me.Controls.Add(Me.ToolStrip1)
         Me.Controls.Add(Me.txtRealizado)
         Me.Controls.Add(Me.txtPendiente)

@@ -6,6 +6,7 @@
         fecha = Format(dFecha.Value, Constantes.FORMATO_FECHA_HORA)
         UtlidadCitaBLL.objFormCita = Me
         validarControles()
+        'tamañoVentana()
     End Sub
     Public Sub validarControles()
         Try
@@ -64,7 +65,9 @@
         panelAux.Controls.Add(crearBotones(65, 1, Constantes.CITA_REALIZADA, Color.FromArgb(255, 192, 192), "Confirmar Cita"))
         contenedor.Controls.Add(panelAux)
         AddHandler panelAux.PreviewKeyDown, AddressOf eventoEscape
+        AddHandler panelAux.Leave, AddressOf eventoSalir
         panelAux.BringToFront()
+        panelAux.Focus()
         panelAux.Show()
     End Sub
     Private Function crearBotones(tamanoX As Integer,
@@ -81,9 +84,7 @@
         boton.TextAlign = ContentAlignment.MiddleCenter
         boton.Font = New Font(Constantes.TIPO_LETRA_ELEMENTO, 8)
         AddHandler boton.Click, AddressOf cambiarEstado
-        AddHandler boton.Leave, AddressOf eventoSalir
         boton.Show()
-        boton.Focus()
         Return boton
     End Function
     Private Sub cambiarEstado(sender As Object, e As EventArgs)
@@ -117,5 +118,8 @@
         If e.KeyCode = Keys.Enter Then
             validarControles()
         End If
+    End Sub
+    Private Sub tamañoVentana()
+        Me.Size = New Point(987, 562)
     End Sub
 End Class
