@@ -107,6 +107,7 @@ Public Class FormPersona
             Generales.habilitarControles(Me)
             btCancelar.Enabled = True
             btRegistrar.Enabled = True
+            listaSucursalesCargar(objPersona.codigo, Constantes.EDITABLE)
         End If
     End Sub
     Private Sub btCancelar_Click(sender As Object, e As EventArgs) Handles btCancelar.Click
@@ -160,7 +161,11 @@ Public Class FormPersona
                 CombotipoIdentificacion.SelectedValue = dfila("Tipo_Identificacion")
                 cbDepartamento.SelectedValue = dfila("Codigo_Departamento")
                 ComboMunicipio.SelectedValue = dfila("Codigo_Ciudad")
-                listaSucursalesCargar(pcodigo)
+                objPersona.codigoPerfil = If(IsDBNull(dfila("Codigo_Perfil")), Nothing, dfila("Codigo_Perfil"))
+                chUsuario.Checked = If(IsDBNull(dfila("Codigo_Perfil")), False, True)
+                txtUsuario.Text = dfila("Usuario")
+                txtPerfil.Text = dfila("Perfil")
+                listaSucursalesCargar(pcodigo, Constantes.NO_EDITABLE)
             End If
             Generales.habilitarBotones(ToolStrip1)
             btCancelar.Enabled = False
@@ -367,9 +372,10 @@ Public Class FormPersona
             txtPerfil.Text = tblPerfil(1)
         End If
     End Sub
-    Private Sub listaSucursalesCargar(codigo As Integer)
+    Private Sub listaSucursalesCargar(codigo As Integer, editable As Integer)
         Dim params As New List(Of String)
         params.Add(codigo)
+        params.Add(editable)
         Try
             Generales.llenarTabla("[SP_PERSONA_SUCURSALES_ASIGNADO]", params, objPersona.dtSucursal)
             ListSucursal.DataSource = objPersona.dtSucursal

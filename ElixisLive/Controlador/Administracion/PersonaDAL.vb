@@ -38,12 +38,7 @@ Public Class PersonaDAL
     End Function
     Private Shared Function extrarColumna(objPersona As persona) As DataTable
         Dim tabla As New DataTable
-        tabla = objPersona.dtSucursal.Clone
-        For Each fila As DataRow In objPersona.dtSucursal.Rows
-            If fila("Editable") <> Constantes.SIN_VALOR_NUMERICO Then
-                tabla.ImportRow(fila)
-            End If
-        Next
+        tabla = objPersona.dtSucursal.Copy
         tabla.Columns.Remove("Nombre")
         tabla.Columns.Remove("Realizado")
         Return tabla

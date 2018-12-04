@@ -171,7 +171,7 @@ Public Class Generales
             ElseIf (TypeOf vControl Is CheckBox) Then
                 vControl.Checked = False
             ElseIf (TypeOf vControl Is CheckedListBox) Then
-                vControl.Items.Clear()
+                vControl.DataSource = Nothing
             ElseIf (TypeOf vControl Is RadioButton) Then
                 Dim vCurrentRB = vControl.Location.X + vControl.Location.Y
                 If (vFrtRB > vCurrentRB) Then
@@ -434,7 +434,8 @@ Public Class Generales
             If (TypeOf vItem Is TextBox) Or (TypeOf vItem Is RichTextBox) Or (TypeOf vItem Is MaskedTextBox) Or (TypeOf vItem Is DataGridView) Then
                 vItem.readonly = True
             ElseIf (TypeOf vItem Is CheckBox) Or (TypeOf vItem Is RadioButton) Or (TypeOf vItem Is ComboBox) Or
-                   ((TypeOf vItem Is Button) Or (TypeOf vItem Is TreeView) Or (TypeOf vItem Is DateTimePicker) Or (TypeOf vItem Is NumericUpDown)) Then
+                   ((TypeOf vItem Is Button) Or (TypeOf vItem Is TreeView) Or (TypeOf vItem Is DateTimePicker) Or (TypeOf vItem Is NumericUpDown)) Or
+                   (TypeOf vItem Is CheckedListBox) Then
                 vItem.enabled = False
             ElseIf (TypeOf vItem Is GroupBox) Or (vItem.hasChildren) Then
                 deshabilitarControles(vItem)
@@ -474,7 +475,8 @@ Public Class Generales
                     vItem.readonly = False
                 End If
             ElseIf (TypeOf vItem Is CheckBox) Or (TypeOf vItem Is RadioButton) Or (TypeOf vItem Is ComboBox) Or
-                (TypeOf vItem Is Button) Or (TypeOf vItem Is TreeView) Or (TypeOf vItem Is DateTimePicker) Or (TypeOf vItem Is NumericUpDown) Then
+                (TypeOf vItem Is Button) Or (TypeOf vItem Is TreeView) Or (TypeOf vItem Is DateTimePicker) Or (TypeOf vItem Is NumericUpDown) Or
+                   (TypeOf vItem Is CheckedListBox) Then
                 vItem.enabled = True
             ElseIf (TypeOf vItem Is GroupBox) Or (vItem.hasChildren) Then
                 habilitarControles(vItem)
