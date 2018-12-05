@@ -336,7 +336,7 @@
     End Sub
 
     Private Function validarCampos()
-        If String.IsNullOrEmpty(TextIdentificacion.Text) Or String.IsNullOrEmpty(TextNombre.Text) Then
+        If String.IsNullOrEmpty(TextIdentificacion.Text) OrElse String.IsNullOrEmpty(TextNombre.Text) Then
             Return True
         End If
         Return False
