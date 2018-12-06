@@ -611,7 +611,7 @@ Public Class Generales
             Case "seleccion"
                 Dim tipoControl As New DataGridViewCheckBoxCell
                 cell = tipoControl
-            Case "tiempo"
+            Case "Fecha"
                 'Dim contedor As New DataGridView
                 'cell = contedor
         End Select
