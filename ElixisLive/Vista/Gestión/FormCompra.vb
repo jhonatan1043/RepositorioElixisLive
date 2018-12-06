@@ -70,7 +70,7 @@
     Private Sub btRegistrar_Click(sender As Object, e As EventArgs) Handles btRegistrar.Click
         Try
             dgvFactura.EndEdit()
-            If validarCampos() Then
+            If validarCampos() = False Then
                 cargarObjeto()
                 CompraBLL.guardarCompra(objCompra)
                 Generales.habilitarBotones(ToolStrip1)

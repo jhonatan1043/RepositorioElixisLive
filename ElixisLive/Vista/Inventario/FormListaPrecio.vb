@@ -115,6 +115,7 @@
             Generales.deshabilitarBotones(ToolStrip1)
             Generales.habilitarControles(Me)
             validarEdicionGrilla(Constantes.EDITABLE)
+            cargarItems("[SP_INVEN_PRECIO_CONSULTAR_EDITAR]", Constantes.EDITABLE)
             cbTipoLista.Enabled = False
             btRegistrar.Enabled = True
             btCancelar.Enabled = True
@@ -164,12 +165,19 @@
                 objListaPrecio.dtPrecio.Clear()
         End Select
     End Sub
-    Private Sub cargarItems(consulta As String)
+    Private Sub cargarItems(consulta As String, Optional nuevo As Integer = 0)
         Dim params As New List(Of String)
         params.Add(String.Empty)
         params.Add(String.Empty)
         Try
-            Generales.llenarTabla(consulta, params, objListaPrecio.dtPrecio)
+            If nuevo = 0 Then
+                Generales.llenarTabla(consulta, params, objListaPrecio.dtPrecio)
+            Else
+                params.Clear()
+                params.Add(cbTipoLista.SelectedValue)
+                params.Add(objListaPrecio.codigo)
+                Generales.llenarTabla(consulta, params, objListaPrecio.dtPrecio)
+            End If
             dgvLista.DataSource = objListaPrecio.dtPrecio
         Catch ex As Exception
             EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
@@ -180,6 +188,7 @@
             Generales.deshabilitarBotones(ToolStrip1)
             Generales.habilitarControles(Me)
             validarEdicionGrilla(Constantes.EDITABLE)
+            cargarItems("[SP_INVEN_PRECIO_CONSULTAR_EDITAR]", Constantes.EDITABLE)
             objListaPrecio.codigo = Nothing
             txtNombre.Clear()
             cbTipoLista.Enabled = False

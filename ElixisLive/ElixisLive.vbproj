@@ -117,6 +117,7 @@
     <Compile Include="Controlador\Cita\AgendarCitaDAL.vb" />
     <Compile Include="Controlador\Configuracion\ConfigDAL.vb" />
     <Compile Include="Controlador\Gestion\CompraDAL.vb" />
+    <Compile Include="Controlador\Gestion\VentaDAL.vb" />
     <Compile Include="Controlador\Inventario\ClienteDAL.vb" />
     <Compile Include="Controlador\Inventario\EntradaInventarioDAL.vb" />
     <Compile Include="Controlador\Inventario\ListaPrecioDAL.vb" />
@@ -180,6 +181,7 @@
     <Compile Include="Modelo\Cita\UtlidadCitaBLL.vb" />
     <Compile Include="Modelo\Configuracion\ConfigBLL.vb" />
     <Compile Include="Modelo\Gestion\CompraBLL.vb" />
+    <Compile Include="Modelo\Gestion\VentaBLL.vb" />
     <Compile Include="Modelo\Inventario\EntradaInventarioBLL.vb" />
     <Compile Include="Modelo\Inventario\ListaPrecioBLL.vb" />
     <Compile Include="Modelo\Inventario\ProveedorBLL.vb" />
