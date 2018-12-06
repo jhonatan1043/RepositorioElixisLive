@@ -188,7 +188,6 @@
             Generales.deshabilitarBotones(ToolStrip1)
             Generales.habilitarControles(Me)
             validarEdicionGrilla(Constantes.EDITABLE)
-            cargarItems("[SP_INVEN_PRECIO_CONSULTAR_EDITAR]", Constantes.EDITABLE)
             objListaPrecio.codigo = Nothing
             txtNombre.Clear()
             cbTipoLista.Enabled = False
