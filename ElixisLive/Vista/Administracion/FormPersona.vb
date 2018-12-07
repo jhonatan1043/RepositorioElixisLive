@@ -23,7 +23,9 @@ Public Class FormPersona
                    cbDepartamento.SelectedIndex = 0 Or
                    ComboMunicipio.SelectedIndex = 0 Or
                     String.IsNullOrEmpty(TextDireccion.Text) Then
-        ElseIf chUsuario.Checked = True And Funciones.consultarUsuario(txtUsuario.Text) = True Then
+        ElseIf chUsuario.Checked = True _
+            And Funciones.consultarUsuario(txtUsuario.Text) = True _
+            And IsNothing(objPersona.codigo) Then
         ElseIf chUsuario.Checked = True And txtPerfil.Text = "" Then
         Else
             Return True

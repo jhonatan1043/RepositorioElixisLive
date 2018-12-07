@@ -116,6 +116,7 @@
     <Compile Include="Controlador\Administracion\PersonaDAL.vb" />
     <Compile Include="Controlador\Cita\AgendarCitaDAL.vb" />
     <Compile Include="Controlador\Configuracion\ConfigDAL.vb" />
+    <Compile Include="Controlador\Configuracion\ConfigVentaDAL.vb" />
     <Compile Include="Controlador\Gestion\CompraDAL.vb" />
     <Compile Include="Controlador\Gestion\VentaDAL.vb" />
     <Compile Include="Controlador\Inventario\ClienteDAL.vb" />
@@ -146,6 +147,7 @@
     <Compile Include="Entidad\Cita\Mes\CitaMes.vb" />
     <Compile Include="Entidad\Cita\Semana\CitaSemana.vb" />
     <Compile Include="Entidad\Cita\Semana\HoraSemana.vb" />
+    <Compile Include="Entidad\Configuracion\ConfigVenta.vb" />
     <Compile Include="Entidad\generalConsulta.vb" />
     <Compile Include="Entidad\Configuracion\Configuracion.vb" />
     <Compile Include="Entidad\Gestion\Compra.vb" />
@@ -180,6 +182,7 @@
     <Compile Include="Modelo\Cita\ProgramacionCitaSemanaBLL.vb" />
     <Compile Include="Modelo\Cita\UtlidadCitaBLL.vb" />
     <Compile Include="Modelo\Configuracion\ConfigBLL.vb" />
+    <Compile Include="Modelo\Configuracion\ConfigVentaBLL.vb" />
     <Compile Include="Modelo\Gestion\CompraBLL.vb" />
     <Compile Include="Modelo\Gestion\VentaBLL.vb" />
     <Compile Include="Modelo\Inventario\EntradaInventarioBLL.vb" />
@@ -245,6 +248,12 @@
       <DependentUpon>FormProgramacionCita.vb</DependentUpon>
     </Compile>
     <Compile Include="Vista\Cita\FormProgramacionCita.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Configuracion\FormConfigVenta.Designer.vb">
+      <DependentUpon>FormConfigVenta.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Configuracion\FormConfigVenta.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Vista\Configuracion\FormBodega.Designer.vb">
@@ -391,6 +400,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\Cita\FormProgramacionCita.resx">
       <DependentUpon>FormProgramacionCita.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Configuracion\FormConfigVenta.resx">
+      <DependentUpon>FormConfigVenta.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\Configuracion\FormBodega.resx">
       <DependentUpon>FormBodega.vb</DependentUpon>

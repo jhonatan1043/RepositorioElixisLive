@@ -41,8 +41,10 @@ Public Class FormVenta
         If dgvFactura.RowCount >= 1 Then
             Try
                 For indice = 0 To dgvFactura.RowCount - 1
-                    If Not IsDBNull(dgvFactura.Rows(indice).Cells("dgValor").Value) AndAlso Not IsDBNull(dgvFactura.Rows(indice).Cells("dgCantidad").Value) Then
-                        dgvFactura.Rows(indice).Cells("dgTotal").Value = dgvFactura.Rows(indice).Cells("dgValor").Value * dgvFactura.Rows(indice).Cells("dgCantidad").Value
+                    If Not IsDBNull(dgvFactura.Rows(indice).Cells("dgValor").Value) AndAlso
+                       Not IsDBNull(dgvFactura.Rows(indice).Cells("dgCantidad").Value) Then
+                        dgvFactura.Rows(indice).Cells("dgTotal").Value =
+                            dgvFactura.Rows(indice).Cells("dgValor").Value * dgvFactura.Rows(indice).Cells("dgCantidad").Value
                     End If
                 Next
                 calcularTotales()
