@@ -45,6 +45,21 @@ Public Class Funciones
         End Try
         Return False
     End Function
+    Public Shared Function consultarEmpleado(codigo As String) As String
+        Dim dt As New DataTable
+        Dim params As New List(Of String)
+        Dim nombre As String = Nothing
+        Try
+            params.Add(codigo)
+            Generales.llenarTabla(Sentencias.PERSONA_CARGAR, params, dt)
+            If dt.Rows.Count > 0 Then
+                nombre = dt.Rows(0).Item("Nombre")
+            End If
+        Catch ex As Exception
+            EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
+        End Try
+        Return nombre
+    End Function
     Public Shared Function castFromDbItemVacio(ByVal DbItem As Object) As Object
         If IsDBNull(DbItem) Then
             Return ""

@@ -98,8 +98,8 @@ Public Class FormPerfil
 
     End Sub
     Private Sub btRegistrar_Click(sender As Object, e As EventArgs) Handles btRegistrar.Click
-        If (txtnombre.Text = "") Then
-            txtnombre.Focus()
+        If txtnombre.Text.Length = 0 Then
+            Me.ErrorIcono.SetError(txtnombre, "Debe ingresar un nombre")
         Else
             Try
                 objPerfil.codigoPerfil = txtcodigo.Text
@@ -113,6 +113,7 @@ Public Class FormPerfil
                 btRegistrar.Enabled = False
                 btCancelar.Enabled = False
                 arbolmenu.Enabled = False
+                Me.ErrorIcono.SetError(txtnombre, Constantes.CADENA_VACIA)
             Catch ex As Exception
                 EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
             End Try
