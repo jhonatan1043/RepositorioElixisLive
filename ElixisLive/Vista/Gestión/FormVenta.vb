@@ -82,7 +82,7 @@ Public Class FormVenta
                 If Not IsNothing(nombre) Then
                     dgvServicio.Rows(dgvServicio.CurrentCell.RowIndex).Cells("dgNombreEmpleado").Value = nombre
                 Else
-                    dgvServicio.Rows(dgvServicio.CurrentCell.RowIndex).Cells("dgIdEmpleado").Value = String.Empty
+                    dgvServicio.Rows(dgvServicio.CurrentCell.RowIndex).Cells("dgIdEmpleado").Value = Nothing
                     dgvServicio.Rows(dgvServicio.CurrentCell.RowIndex).Cells("dgIdEmpleado").Selected = True
                     EstiloMensajes.mostrarMensajeError("¡ Empleado no valido !")
                 End If

@@ -18,8 +18,8 @@
         dtServicio.Columns.Add("codigo", Type.GetType("System.Int32"))
         dtServicio.Columns.Add("Descripcion", Type.GetType("System.String"))
         dtServicio.Columns.Add("ValorServicio", Type.GetType("System.Decimal")).DefaultValue = 0
-        dtServicio.Columns.Add("codigo_Empleado", Type.GetType("System.Int32"))
-        dtServicio.Columns.Add("NombreEmpleado", Type.GetType("System.Decimal"))
+        dtServicio.Columns.Add("codigo_Empleado", Type.GetType("System.String"))
+        dtServicio.Columns.Add("NombreEmpleado", Type.GetType("System.String"))
 
         sqlAnular = ""
         sqlCargar = ""
