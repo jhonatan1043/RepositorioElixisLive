@@ -32,7 +32,7 @@ Public Class FormVenta
                 dgvServicio.Rows(dgvServicio.CurrentCell.RowIndex).Cells("dgDescripcionServ").Selected = True) Then
                 buscarServicio()
             ElseIf dgvServicio.Rows(dgvServicio.CurrentCell.RowIndex).Cells("dgQuitarServ").Selected = True And
-                   objVenta.dtServicio.Rows(dgvServicio.CurrentCell.RowIndex).Item("dgCodigoServ").ToString <> Constantes.CADENA_VACIA Then
+                   objVenta.dtServicio.Rows(dgvServicio.CurrentCell.RowIndex).Item("dgCodigo").ToString <> Constantes.CADENA_VACIA Then
                 objVenta.dtServicio.Rows.RemoveAt(e.RowIndex)
             End If
             calcularTotales()
@@ -75,20 +75,33 @@ Public Class FormVenta
         End If
     End Sub
     Private Sub dgvServicio_CellEndEdit(sender As Object, e As EventArgs) Handles dgvServicio.CellEndEdit
-        Dim nombre As String = Nothing
+        Dim dFila As DataRow = Nothing
         If dgvServicio.RowCount >= 1 Then
             Try
-                nombre = consultarEmpleado(dgvServicio.Rows(dgvServicio.CurrentCell.RowIndex).Cells("dgIdEmpleado").Value)
-                If Not IsNothing(nombre) Then
-                    dgvServicio.Rows(dgvServicio.CurrentCell.RowIndex).Cells("dgNombreEmpleado").Value = nombre
+
+                dFila = consultarEmpleado(dgvServicio.Rows(dgvServicio.CurrentCell.RowIndex).Cells("dgIdEmpleado").Value)
+
+                If Not IsNothing(dFila) Then
+                    dgvServicio.Rows(dgvServicio.CurrentCell.RowIndex).Cells("dgNombreEmpleado").Value = dFila("Nombre")
                 Else
                     dgvServicio.Rows(dgvServicio.CurrentCell.RowIndex).Cells("dgIdEmpleado").Value = Nothing
                     dgvServicio.Rows(dgvServicio.CurrentCell.RowIndex).Cells("dgIdEmpleado").Selected = True
                     EstiloMensajes.mostrarMensajeError("¡ Empleado no valido !")
                 End If
+
             Catch ex As Exception
                 EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
             End Try
+        End If
+    End Sub
+    Private Sub dgvProducto_EditingControlShowing(sender As Object, e As DataGridViewEditingControlShowingEventArgs) Handles dgvProducto.EditingControlShowing
+        If objVenta.dtProductos.Rows.Count > 0 Then
+            AddHandler e.Control.KeyPress, AddressOf ValidacionDigitacion.validarValoresNumericos
+        End If
+    End Sub
+    Private Sub dgvServicio_EditingControlShowing(sender As Object, e As DataGridViewEditingControlShowingEventArgs) Handles dgvServicio.EditingControlShowing
+        If objVenta.dtServicio.Rows.Count > 0 Then
+            AddHandler e.Control.KeyPress, AddressOf ValidacionDigitacion.validarValoresNumericos
         End If
     End Sub
     Private Sub btNuevo_Click(sender As Object, e As EventArgs) Handles btNuevo.Click
@@ -167,12 +180,22 @@ Public Class FormVenta
     End Sub
     Private Sub txtIdentificacion_Leave(sender As Object, e As EventArgs) Handles txtIdentificacion.Leave
         If Not String.IsNullOrEmpty(txtIdentificacion.Text) Then
-
+            Try
+                cargarCliente(txtIdentificacion.Text)
+            Catch ex As Exception
+                EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
+            End Try
         End If
     End Sub
     Private Sub txtIdentificacion_KeyDown(sender As Object, e As KeyEventArgs) Handles txtIdentificacion.KeyDown
         If Not String.IsNullOrEmpty(txtIdentificacion.Text) Then
-
+            Try
+                If e.KeyCode = Keys.Enter Then
+                    cargarCliente(txtIdentificacion.Text)
+                End If
+            Catch ex As Exception
+                EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
+            End Try
         End If
     End Sub
     Private Sub calcularTotales()
@@ -306,9 +329,24 @@ Public Class FormVenta
             End With
         End If
     End Sub
-    Private Function consultarEmpleado(codigo As String)
-        Dim nombre As String
+    Private Function consultarEmpleado(codigo As String) As DataRow
+        Dim nombre As DataRow
         nombre = Funciones.consultarEmpleado(codigo)
         Return nombre
     End Function
+    Private Sub cargarCliente(txtIdent As String)
+        Dim dRows As DataRow
+        dRows = Funciones.consultarClienteIdent(txtIdentificacion.Text)
+        If Not IsNothing(dRows) Then
+            objVenta.codigoPersonaCliente = dRows("codigo")
+            TextNombre.Text = dRows("Nombre")
+            TextTelefono.Text = dRows("Telefono")
+        Else
+            objVenta.codigoPersonaCliente = Nothing
+            TextNombre.Clear()
+            TextTelefono.Clear()
+            txtIdentificacion.Focus()
+        End If
+    End Sub
+
 End Class

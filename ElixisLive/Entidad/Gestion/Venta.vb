@@ -25,7 +25,7 @@
         sqlCargar = ""
         sqlCargarDetalle = ""
         sqlConsulta = ""
-        sqlGuardar = ""
+        sqlGuardar = "[SP_INVEN_VENTA_CREAR]"
 
     End Sub
 End Class
