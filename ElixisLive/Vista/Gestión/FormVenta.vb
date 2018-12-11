@@ -41,7 +41,7 @@ Public Class FormVenta
         End Try
     End Sub
     Private Sub dgvProducto_CellFormatting(sender As System.Object, e As System.Windows.Forms.DataGridViewCellFormattingEventArgs) Handles dgvProducto.CellFormatting
-        If e.ColumnIndex = 4 OrElse e.ColumnIndex = 5 Then
+        If e.ColumnIndex = 6 OrElse e.ColumnIndex = 7 Then
             If IsDBNull(e.Value) Then
                 e.Value = Format(Val(0), Constantes.FORMATO_MONEDA)
             Else
@@ -61,11 +61,18 @@ Public Class FormVenta
     Private Sub dgvProducto_CellEndEdit(sender As Object, e As EventArgs) Handles dgvProducto.CellEndEdit
         If dgvProducto.RowCount >= 1 Then
             Try
+                If dgvProducto.Rows(dgvProducto.CurrentCell.RowIndex).Cells("dgCantidad").Value >
+                    dgvProducto.Rows(dgvProducto.CurrentCell.RowIndex).Cells("dgStock").Value Then
+                    dgvProducto.Rows(dgvProducto.CurrentCell.RowIndex).Cells("dgCantidad").Value = 0
+                    dgvProducto.Rows(dgvProducto.CurrentCell.RowIndex).Cells("dgCantidad").Selected = True
+                    EstiloMensajes.mostrarMensajeAdvertencia("¡ la Cantidad supera la existencia !")
+                    Exit Sub
+                End If
                 For indice = 0 To dgvProducto.RowCount - 1
                     If Not IsDBNull(dgvProducto.Rows(indice).Cells("dgValor").Value) AndAlso
                        Not IsDBNull(dgvProducto.Rows(indice).Cells("dgCantidad").Value) Then
                         dgvProducto.Rows(indice).Cells("dgTotal").Value =
-                            dgvProducto.Rows(indice).Cells("dgValor").Value * dgvProducto.Rows(indice).Cells("dgCantidad").Value
+                              dgvProducto.Rows(indice).Cells("dgCantidad").Value * dgvProducto.Rows(indice).Cells("dgValor").Value
                     End If
                 Next
                 calcularTotales()
@@ -132,9 +139,28 @@ Public Class FormVenta
             EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
         End Try
     End Sub
+    Private Sub btExistencia_Click(sender As Object, e As EventArgs) Handles btExistencia.Click
+        Dim params As New List(Of String)
+        params.Add(String.Empty)
+        Try
+            Generales.buscarElemento(Sentencias.FACTURA_BUSCAR,
+                                   params,
+                                   AddressOf verExistencia,
+                                   Titulo.BUSQUEDA_FACTURA,
+                                   True,
+                                   True)
+        Catch ex As Exception
+            EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
+        End Try
+    End Sub
+    Private Sub verExistencia()
+
+    End Sub
     Private Sub btRegistrar_Click(sender As Object, e As EventArgs) Handles btRegistrar.Click
         dgvProducto.EndEdit()
+        dgvServicio.EndEdit()
         Try
+            objVenta.codigo = If(String.IsNullOrEmpty(txtCodigo.Text), Nothing, txtCodigo.Text)
             VentaBLL.guardarVenta(objVenta)
             Generales.habilitarBotones(ToolStrip1)
             Generales.deshabilitarControles(Me)
@@ -264,6 +290,7 @@ Public Class FormVenta
             .ReadOnly = False
             .Columns("dgCodigo").DataPropertyName = "codigo"
             .Columns("dgDescripcion").DataPropertyName = "Descripcion"
+            .Columns("dgStock").DataPropertyName = "Stock"
             .Columns("dgCantidad").DataPropertyName = "Cantidad"
             .Columns("dgValor").DataPropertyName = "Valor"
             .Columns("dgTotal").DataPropertyName = "Total"
