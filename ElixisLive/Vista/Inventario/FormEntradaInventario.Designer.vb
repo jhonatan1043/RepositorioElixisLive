@@ -27,6 +27,15 @@ Partial Class FormEntradaInventario
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.GbInform_D = New System.Windows.Forms.GroupBox()
         Me.dgvEntrada = New System.Windows.Forms.DataGridView()
+        Me.dgCodigoProducto = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dgDescripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dgCantidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dgValor = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dgTotal = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dgBodega = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dgFechaVencimiento = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dgCodigoBarra = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dgQuitar = New System.Windows.Forms.DataGridViewImageColumn()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.txtTotal = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -55,15 +64,8 @@ Partial Class FormEntradaInventario
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Pimagen = New System.Windows.Forms.PictureBox()
         Me.LTitulo = New System.Windows.Forms.Label()
-        Me.dgCodigoProducto = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.dgDescripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.dgCantidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.dgValor = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.dgTotal = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.dgBodega = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.dgFechaVencimiento = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.dgCodigoBarra = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.dgQuitar = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.cbMovimiento = New System.Windows.Forms.ComboBox()
+        Me.Label4 = New System.Windows.Forms.Label()
         Me.GbInform_D.SuspendLayout()
         CType(Me.dgvEntrada, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
@@ -112,6 +114,62 @@ Partial Class FormEntradaInventario
         Me.dgvEntrada.RowHeadersVisible = False
         Me.dgvEntrada.Size = New System.Drawing.Size(879, 311)
         Me.dgvEntrada.TabIndex = 0
+        '
+        'dgCodigoProducto
+        '
+        Me.dgCodigoProducto.HeaderText = "Codigo"
+        Me.dgCodigoProducto.Name = "dgCodigoProducto"
+        Me.dgCodigoProducto.Visible = False
+        '
+        'dgDescripcion
+        '
+        Me.dgDescripcion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.dgDescripcion.HeaderText = "Producto"
+        Me.dgDescripcion.Name = "dgDescripcion"
+        '
+        'dgCantidad
+        '
+        Me.dgCantidad.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.dgCantidad.HeaderText = "Cantidad"
+        Me.dgCantidad.Name = "dgCantidad"
+        Me.dgCantidad.Width = 75
+        '
+        'dgValor
+        '
+        Me.dgValor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.dgValor.HeaderText = "Vr. Unitario"
+        Me.dgValor.Name = "dgValor"
+        Me.dgValor.Width = 85
+        '
+        'dgTotal
+        '
+        Me.dgTotal.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.dgTotal.HeaderText = "Total"
+        Me.dgTotal.Name = "dgTotal"
+        Me.dgTotal.Width = 55
+        '
+        'dgBodega
+        '
+        Me.dgBodega.HeaderText = "Bodega"
+        Me.dgBodega.Name = "dgBodega"
+        Me.dgBodega.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgBodega.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
+        '
+        'dgFechaVencimiento
+        '
+        Me.dgFechaVencimiento.HeaderText = "F. Vencimiento"
+        Me.dgFechaVencimiento.Name = "dgFechaVencimiento"
+        '
+        'dgCodigoBarra
+        '
+        Me.dgCodigoBarra.HeaderText = "C. de Barra"
+        Me.dgCodigoBarra.Name = "dgCodigoBarra"
+        '
+        'dgQuitar
+        '
+        Me.dgQuitar.HeaderText = "Quitar"
+        Me.dgQuitar.Image = Global.Quality.My.Resources.Resources.papelera
+        Me.dgQuitar.Name = "dgQuitar"
         '
         'GroupBox1
         '
@@ -170,6 +228,8 @@ Partial Class FormEntradaInventario
         '
         'GroupBox2
         '
+        Me.GroupBox2.Controls.Add(Me.Label4)
+        Me.GroupBox2.Controls.Add(Me.cbMovimiento)
         Me.GroupBox2.Controls.Add(Me.gbModo)
         Me.GroupBox2.Controls.Add(Me.btBuscarCompra)
         Me.GroupBox2.Controls.Add(Me.txtCodigo)
@@ -218,7 +278,7 @@ Partial Class FormEntradaInventario
         Me.btBuscarCompra.BackgroundImage = Global.Quality.My.Resources.Resources.fondo_azul
         Me.btBuscarCompra.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btBuscarCompra.Image = Global.Quality.My.Resources.Resources.Zoom_icon1
-        Me.btBuscarCompra.Location = New System.Drawing.Point(577, 14)
+        Me.btBuscarCompra.Location = New System.Drawing.Point(511, 14)
         Me.btBuscarCompra.Name = "btBuscarCompra"
         Me.btBuscarCompra.Size = New System.Drawing.Size(28, 25)
         Me.btBuscarCompra.TabIndex = 66
@@ -230,14 +290,14 @@ Partial Class FormEntradaInventario
         Me.txtCodigo.Location = New System.Drawing.Point(408, 14)
         Me.txtCodigo.Name = "txtCodigo"
         Me.txtCodigo.ReadOnly = True
-        Me.txtCodigo.Size = New System.Drawing.Size(167, 25)
+        Me.txtCodigo.Size = New System.Drawing.Size(97, 25)
         Me.txtCodigo.TabIndex = 1
         Me.txtCodigo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(273, 16)
+        Me.Label1.Location = New System.Drawing.Point(273, 17)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(129, 19)
         Me.Label1.TabIndex = 0
@@ -382,61 +442,23 @@ Partial Class FormEntradaInventario
         Me.LTitulo.Text = "Entrada Inventario"
         Me.LTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'dgCodigoProducto
+        'cbMovimiento
         '
-        Me.dgCodigoProducto.HeaderText = "Codigo"
-        Me.dgCodigoProducto.Name = "dgCodigoProducto"
-        Me.dgCodigoProducto.Visible = False
+        Me.cbMovimiento.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Italic)
+        Me.cbMovimiento.FormattingEnabled = True
+        Me.cbMovimiento.Location = New System.Drawing.Point(710, 15)
+        Me.cbMovimiento.Name = "cbMovimiento"
+        Me.cbMovimiento.Size = New System.Drawing.Size(167, 23)
+        Me.cbMovimiento.TabIndex = 68
         '
-        'dgDescripcion
+        'Label4
         '
-        Me.dgDescripcion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.dgDescripcion.HeaderText = "Producto"
-        Me.dgDescripcion.Name = "dgDescripcion"
-        '
-        'dgCantidad
-        '
-        Me.dgCantidad.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.dgCantidad.HeaderText = "Cantidad"
-        Me.dgCantidad.Name = "dgCantidad"
-        Me.dgCantidad.Width = 75
-        '
-        'dgValor
-        '
-        Me.dgValor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.dgValor.HeaderText = "Vr. Unitario"
-        Me.dgValor.Name = "dgValor"
-        Me.dgValor.Width = 85
-        '
-        'dgTotal
-        '
-        Me.dgTotal.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.dgTotal.HeaderText = "Total"
-        Me.dgTotal.Name = "dgTotal"
-        Me.dgTotal.Width = 55
-        '
-        'dgBodega
-        '
-        Me.dgBodega.HeaderText = "Bodega"
-        Me.dgBodega.Name = "dgBodega"
-        Me.dgBodega.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgBodega.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
-        '
-        'dgFechaVencimiento
-        '
-        Me.dgFechaVencimiento.HeaderText = "F. Vencimiento"
-        Me.dgFechaVencimiento.Name = "dgFechaVencimiento"
-        '
-        'dgCodigoBarra
-        '
-        Me.dgCodigoBarra.HeaderText = "C. de Barra"
-        Me.dgCodigoBarra.Name = "dgCodigoBarra"
-        '
-        'dgQuitar
-        '
-        Me.dgQuitar.HeaderText = "Quitar"
-        Me.dgQuitar.Image = Global.Quality.My.Resources.Resources.papelera
-        Me.dgQuitar.Name = "dgQuitar"
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(617, 17)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(86, 19)
+        Me.Label4.TabIndex = 69
+        Me.Label4.Text = "Movimiento"
         '
         'FormEntradaInventario
         '
@@ -511,4 +533,6 @@ Partial Class FormEntradaInventario
     Friend WithEvents dgFechaVencimiento As DataGridViewTextBoxColumn
     Friend WithEvents dgCodigoBarra As DataGridViewTextBoxColumn
     Friend WithEvents dgQuitar As DataGridViewImageColumn
+    Friend WithEvents Label4 As Label
+    Friend WithEvents cbMovimiento As ComboBox
 End Class

@@ -10,6 +10,7 @@
         dtContenedorLote = New DataTable
         Generales.deshabilitarBotones(ToolStrip1)
         Generales.deshabilitarControles(Me)
+        Generales.cargarCombo(Sentencias.MOVIMIENTO_CONSULTAR, Nothing, "Nombre", "Codigo", cbMovimiento)
         validarGrilla()
         btNuevo.Enabled = True
         btBuscar.Enabled = True
@@ -89,9 +90,8 @@
     Private Sub btCancelar_Click(sender As Object, e As EventArgs) Handles btCancelar.Click
         If EstiloMensajes.mostrarMensajePregunta(MensajeSistema.CANCELAR) = Constantes.SI Then
             Generales.deshabilitarBotones(ToolStrip1)
-            validarEdicionGrilla(Constantes.NO_EDITABLE)
+            Generales.deshabilitarControles(Me)
             limpiarControl()
-            dtContenedorLote.Clear()
             btBuscarCompra.Enabled = False
             btNuevo.Enabled = True
             btBuscar.Enabled = True
@@ -255,12 +255,15 @@
             objEntrada.dtEntrada.Clear()
             btBuscarCompra.Enabled = True
             dgvEntrada.Columns("dgQuitar").Visible = False
+            cbMovimiento.SelectedValue = 1
+            cbMovimiento.Enabled = False
         Else
             objEntrada.dtEntrada.Clear()
             txtCodigo.Clear()
             btBuscarCompra.Enabled = False
             objEntrada.dtEntrada.Rows.Add()
             dgvEntrada.Columns("dgQuitar").Visible = True
+            cbMovimiento.Enabled = True
         End If
     End Sub
     Private Sub dgvEntrada_CellEndEdit(sender As Object, e As DataGridViewCellEventArgs) Handles dgvEntrada.CellEndEdit
