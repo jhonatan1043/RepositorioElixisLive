@@ -2,6 +2,7 @@
 Public Class FormInicioSesion
     Dim formulario As New vForm
     Dim objInicioSesionBLL As New InicioSesionBLL
+    Property respuesta As Boolean
     Private Sub OK_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles OK.Click
         If validarCampos() = True Then
             cargarObjeto()
@@ -15,13 +16,15 @@ Public Class FormInicioSesion
     Private Sub cargarEmpresa()
         Dim params As New List(Of String)
         Dim dfila As DataRow
+        Dim formEmpresa As FormEmpresa
         params.Add(Constantes.CADENA_VACIA)
         dfila = Generales.cargarItem(Sentencias.EMPRESA_CONSULTAR, params)
         Try
-            If Not IsNothing(dfila) Then
-                FormEmpresa.ShowDialog()
-            Else
-                Exit Sub
+            If IsNothing(dfila) Then
+                respuesta = True
+                formEmpresa = New FormEmpresa
+                formEmpresa.inicioSesion = Me
+                formEmpresa.ShowDialog()
             End If
         Catch ex As Exception
             EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
@@ -64,9 +67,14 @@ Public Class FormInicioSesion
         End If
     End Sub
     Private Sub FormInicioSesion_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        cargarComboEmpresa()
-        formulario.ventana = Me '' se indica el formulario que usara el efecto
-        formulario.redondear() '' se redondean los bordes del formulario
+        cargarEmpresa()
+        If respuesta = False Then
+            cargarComboEmpresa()
+            formulario.ventana = Me '' se indica el formulario que usara el efecto
+            formulario.redondear() '' se redondean los bordes del formulario
+        Else
+            Close()
+        End If
     End Sub
     Private Function cargarComboEmpresa() As Boolean
         Dim params As New List(Of String)

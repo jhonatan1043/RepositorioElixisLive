@@ -1,5 +1,6 @@
 ﻿Public Class FormEmpresa
     Dim objEmpresa As Empresa
+    Property inicioSesion As FormInicioSesion
     Private Sub cargarObjeto()
         objEmpresa.identificacion = txtId.Text
         objEmpresa.nombre = TxtDescripcion.Text
@@ -55,6 +56,11 @@
                 EmpresaBLL.guardar(objEmpresa)
                 cargarInfomacion(Constantes.CODIGO_EMPRESA)
                 EstiloMensajes.mostrarMensajeExitoso(MensajeSistema.REGISTRO_GUARDADO)
+                If Not IsNothing(inicioSesion) Then
+                    Close()
+                    inicioSesion.respuesta = False
+                    inicioSesion.Show()
+                End If
             Catch ex As Exception
                 EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
             End Try
@@ -75,6 +81,9 @@
         If EstiloMensajes.mostrarMensajePregunta(MensajeSistema.CANCELAR) = Constantes.SI Then
             cargarInfomacion(Constantes.CODIGO_EMPRESA)
             quitarIconoError()
+            If Not IsNothing(inicioSesion) Then
+                Close()
+            End If
         End If
     End Sub
     Private Sub txtId_TextChanged(sender As Object, e As EventArgs) Handles txtId.TextChanged
@@ -108,11 +117,17 @@
                 Generales.llenardgv(objEmpresa.sqlCargarDetalle, dgvParametro, params)
                 Generales.diseñoDGV(dgvParametro)
                 Generales.diseñoGrillaParametros(dgvParametro)
+                Generales.habilitarBotones(ToolStrip1)
+                Generales.deshabilitarControles(Me)
+                btCancelar.Enabled = False
+                btRegistrar.Enabled = False
+            Else
+                Generales.deshabilitarBotones(ToolStrip1)
+                Generales.habilitarControles(Me)
+                btRegistrar.Enabled = True
+                btCancelar.Enabled = True
             End If
-            Generales.habilitarBotones(ToolStrip1)
-            Generales.deshabilitarControles(Me)
-            btCancelar.Enabled = False
-            btRegistrar.Enabled = False
+
         Catch ex As Exception
             EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
         End Try
