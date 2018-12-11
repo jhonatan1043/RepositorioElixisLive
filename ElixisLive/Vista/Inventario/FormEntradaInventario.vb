@@ -71,7 +71,10 @@
             EstiloMensajes.mostrarMensajeAdvertencia("¡ Faltan productos por asignar bodega !")
         Else
             Try
+
                 objEntrada.codigoCompra = If(String.IsNullOrEmpty(txtCodigo.Text), Nothing, txtCodigo.Text)
+                objEntrada.codigoMovimiento = cbMovimiento.SelectedValue
+
                 EntradaInventarioBLL.guardarEntrada(objEntrada)
                 rbCompra.Checked = False
                 rvManual.Checked = False

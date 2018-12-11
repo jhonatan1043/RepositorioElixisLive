@@ -3,6 +3,7 @@
     Property codigo As Integer
     Property codigoCompra As String
     Property dtEntrada As DataTable
+    Property codigoMovimiento As Integer
     Public Sub New()
         dtEntrada = New DataTable
         dtEntrada.Columns.Add("Codigo", Type.GetType("System.Int32"))

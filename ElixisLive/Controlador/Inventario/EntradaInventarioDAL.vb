@@ -12,6 +12,7 @@ Public Class EntradaInventarioDAL
                     comando.Parameters.Clear()
                     comando.CommandText = objEntrada.sqlGuardar
                     comando.Parameters.Add(New SqlParameter("@Codigo_Compra", SqlDbType.Int)).Value = objEntrada.codigoCompra
+                    comando.Parameters.Add(New SqlParameter("@Codigo_Movimiento", SqlDbType.Int)).Value = objEntrada.codigoMovimiento
                     comando.Parameters.Add(New SqlParameter("@Usuario", SqlDbType.Int)).Value = SesionActual.idUsuario
                     comando.Parameters.Add(New SqlParameter("@Tabla", SqlDbType.Structured)).Value = objEntrada.dtEntrada
                     objEntrada.codigo = CType(comando.ExecuteScalar, String)
