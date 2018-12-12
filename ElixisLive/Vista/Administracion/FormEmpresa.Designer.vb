@@ -110,7 +110,7 @@ Partial Class FormEmpresa
         Me.GroupBox1.Location = New System.Drawing.Point(6, 127)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(874, 42)
-        Me.GroupBox1.TabIndex = 63
+        Me.GroupBox1.TabIndex = 3
         Me.GroupBox1.TabStop = False
         '
         'cbDepartamento
@@ -120,7 +120,7 @@ Partial Class FormEmpresa
         Me.cbDepartamento.Location = New System.Drawing.Point(135, 11)
         Me.cbDepartamento.Name = "cbDepartamento"
         Me.cbDepartamento.Size = New System.Drawing.Size(283, 25)
-        Me.cbDepartamento.TabIndex = 38
+        Me.cbDepartamento.TabIndex = 2
         '
         'Label5
         '
@@ -131,7 +131,7 @@ Partial Class FormEmpresa
         Me.Label5.Location = New System.Drawing.Point(9, 14)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(107, 19)
-        Me.Label5.TabIndex = 37
+        Me.Label5.TabIndex = 1
         Me.Label5.Text = "Departamento:"
         '
         'ComboMunicipio
@@ -141,7 +141,7 @@ Partial Class FormEmpresa
         Me.ComboMunicipio.Location = New System.Drawing.Point(549, 11)
         Me.ComboMunicipio.Name = "ComboMunicipio"
         Me.ComboMunicipio.Size = New System.Drawing.Size(311, 25)
-        Me.ComboMunicipio.TabIndex = 36
+        Me.ComboMunicipio.TabIndex = 3
         '
         'Label12
         '
@@ -166,7 +166,7 @@ Partial Class FormEmpresa
         Me.GroupBox3.Location = New System.Drawing.Point(8, 169)
         Me.GroupBox3.Name = "GroupBox3"
         Me.GroupBox3.Size = New System.Drawing.Size(873, 72)
-        Me.GroupBox3.TabIndex = 62
+        Me.GroupBox3.TabIndex = 4
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Información de la Factura"
         '
@@ -179,7 +179,7 @@ Partial Class FormEmpresa
         Me.txtPie.Name = "txtPie"
         Me.txtPie.ScrollBars = System.Windows.Forms.ScrollBars.Both
         Me.txtPie.Size = New System.Drawing.Size(281, 49)
-        Me.txtPie.TabIndex = 27
+        Me.txtPie.TabIndex = 1
         '
         'Label4
         '
@@ -202,7 +202,7 @@ Partial Class FormEmpresa
         Me.txtEncabezado.Name = "txtEncabezado"
         Me.txtEncabezado.ScrollBars = System.Windows.Forms.ScrollBars.Both
         Me.txtEncabezado.Size = New System.Drawing.Size(272, 47)
-        Me.txtEncabezado.TabIndex = 25
+        Me.txtEncabezado.TabIndex = 0
         '
         'Label3
         '
@@ -231,7 +231,7 @@ Partial Class FormEmpresa
         Me.GroupBox5.Location = New System.Drawing.Point(8, 49)
         Me.GroupBox5.Name = "GroupBox5"
         Me.GroupBox5.Size = New System.Drawing.Size(874, 80)
-        Me.GroupBox5.TabIndex = 61
+        Me.GroupBox5.TabIndex = 2
         Me.GroupBox5.TabStop = False
         Me.GroupBox5.Text = "Información de la Empresa"
         '
@@ -242,7 +242,7 @@ Partial Class FormEmpresa
         Me.TextDireccion.Location = New System.Drawing.Point(547, 16)
         Me.TextDireccion.Name = "TextDireccion"
         Me.TextDireccion.Size = New System.Drawing.Size(321, 25)
-        Me.TextDireccion.TabIndex = 30
+        Me.TextDireccion.TabIndex = 2
         '
         'Label11
         '
@@ -264,7 +264,7 @@ Partial Class FormEmpresa
         Me.TextEmail.MaxLength = 50
         Me.TextEmail.Name = "TextEmail"
         Me.TextEmail.Size = New System.Drawing.Size(778, 25)
-        Me.TextEmail.TabIndex = 28
+        Me.TextEmail.TabIndex = 3
         '
         'Label7
         '
@@ -285,7 +285,7 @@ Partial Class FormEmpresa
         Me.TextTelefono.Location = New System.Drawing.Point(90, 20)
         Me.TextTelefono.Name = "TextTelefono"
         Me.TextTelefono.Size = New System.Drawing.Size(103, 25)
-        Me.TextTelefono.TabIndex = 24
+        Me.TextTelefono.TabIndex = 0
         '
         'TextCelular
         '
@@ -294,7 +294,7 @@ Partial Class FormEmpresa
         Me.TextCelular.Location = New System.Drawing.Point(312, 19)
         Me.TextCelular.Name = "TextCelular"
         Me.TextCelular.Size = New System.Drawing.Size(131, 25)
-        Me.TextCelular.TabIndex = 25
+        Me.TextCelular.TabIndex = 1
         '
         'Label9
         '
@@ -327,7 +327,7 @@ Partial Class FormEmpresa
         Me.TxtDescripcion.Location = New System.Drawing.Point(354, 17)
         Me.TxtDescripcion.Name = "TxtDescripcion"
         Me.TxtDescripcion.Size = New System.Drawing.Size(522, 25)
-        Me.TxtDescripcion.TabIndex = 5
+        Me.TxtDescripcion.TabIndex = 1
         Me.TxtDescripcion.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'GbInform_D
@@ -386,7 +386,7 @@ Partial Class FormEmpresa
         Me.txtId.Location = New System.Drawing.Point(98, 17)
         Me.txtId.Name = "txtId"
         Me.txtId.Size = New System.Drawing.Size(103, 25)
-        Me.txtId.TabIndex = 4
+        Me.txtId.TabIndex = 0
         '
         'GroupBox2
         '
@@ -406,7 +406,7 @@ Partial Class FormEmpresa
         Me.TextDV.Location = New System.Drawing.Point(196, 10)
         Me.TextDV.Name = "TextDV"
         Me.TextDV.Size = New System.Drawing.Size(29, 25)
-        Me.TextDV.TabIndex = 10
+        Me.TextDV.TabIndex = 0
         Me.TextDV.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label2
