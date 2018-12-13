@@ -3,13 +3,30 @@ Imports System.Data.SqlClient
 Imports CnxElixisLiveBD
 Imports System.Net
 Imports System.Threading
+Imports CrystalDecisions.CrystalReports.Engine
+Imports CrystalDecisions.Shared
 
 Public Class Generales
     Public Delegate Sub cargaInfoForm(ByVal codigo As String)
     Public Delegate Sub cargaInfoFormObj(ByVal fila As DataRow)
     Public Delegate Sub subRutina()
     Private Shared objConexion As New ConexionBD
+    Public Shared Sub getConnReporte(Itblas As Tables)
+        Dim connReporte As New ConnectionInfo
 
+        connReporte.ServerName = objConexion.cnxbd.DataSource
+        connReporte.DatabaseName = objConexion.cnxbd.Database
+        connReporte.UserID = ""
+        connReporte.Password = ""
+
+        connReporte.Type = ConnectionInfoType.SQL
+
+        For Each tbla As Table In Itblas
+            Dim boTableLogOnInfo As TableLogOnInfo = tbla.LogOnInfo
+            boTableLogOnInfo.ConnectionInfo = connReporte
+            tbla.ApplyLogOnInfo(boTableLogOnInfo)
+        Next
+    End Sub
     Public Shared Sub llenarTabla(ByVal consulta As String,
                                   ByVal params As List(Of String),
                                   ByVal dtTabla As DataTable,

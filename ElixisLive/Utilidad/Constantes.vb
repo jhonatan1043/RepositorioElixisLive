@@ -59,4 +59,8 @@
     Public Const CITA_PENDIENTE = "P"
     Public Const CITA_REALIZADA = "R"
 
+    Public Const NOMBRE_PDF_SEPARADOR = "-"
+
+    Public Const EXTENSION_ARCHIVO_PDF = ".pdf"
+
 End Class

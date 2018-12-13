@@ -375,5 +375,26 @@ Public Class FormVenta
             txtIdentificacion.Focus()
         End If
     End Sub
+    Private Sub ToolStripButton1_Click(sender As Object, e As EventArgs) Handles ToolStripButton1.Click
+        Dim nombreArchivo, ruta, formula, nombreReporte As String
+        Dim reporte As New CrearInforme
+        Try
+            nombreReporte = "Factura"
 
+            Cursor = Cursors.WaitCursor
+
+            nombreArchivo = nombreReporte & Constantes.NOMBRE_PDF_SEPARADOR & objVenta.codigo & Constantes.EXTENSION_ARCHIVO_PDF
+            ruta = IO.Path.GetTempPath() & nombreArchivo
+
+            formula = "= " & objVenta.codigo
+
+            reporte.crearReportePDF(New rptFactura, objVenta.codigo, formula, nombreReporte, ruta,
+                                  nombreReporte, IO.Path.GetTempPath)
+
+        Catch ex As Exception
+            EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
+        Finally
+            Cursor = Cursors.Default
+        End Try
+    End Sub
 End Class
