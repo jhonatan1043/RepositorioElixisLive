@@ -22,7 +22,7 @@ Public Class EmpresaDAL
                     comando.Parameters.Add(New SqlParameter("@correo", SqlDbType.NVarChar)).Value = objEmpresa.correo
                     comando.Parameters.Add(New SqlParameter("@encabezado", SqlDbType.NVarChar)).Value = objEmpresa.encabezado
                     comando.Parameters.Add(New SqlParameter("@pie", SqlDbType.NVarChar)).Value = objEmpresa.pie
-                    comando.Parameters.Add(New SqlParameter("@Foto", SqlDbType.VarBinary)).Value = objEmpresa.foto
+                    comando.Parameters.Add(New SqlParameter("@Foto", SqlDbType.VarBinary)).Value = objEmpresa.imagenEmpresa
                     comando.Parameters.Add(New SqlParameter("@Tabla", SqlDbType.Structured)).Value = objEmpresa.dtParametro
                     objEmpresa.codigo = CType(comando.ExecuteScalar, String)
                     trnsccion.Commit()

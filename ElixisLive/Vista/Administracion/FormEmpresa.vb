@@ -2,6 +2,13 @@
     Dim objEmpresa As Empresa
     Property inicioSesion As FormInicioSesion
     Private Sub cargarObjeto()
+        Dim almImagen As New IO.MemoryStream
+        If objEmpresa.banderaImagen = True Then
+            pictImagen.Image.Save(almImagen, Imaging.ImageFormat.Png)
+            objEmpresa.imagenEmpresa = almImagen.GetBuffer
+        Else
+            objEmpresa.imagenEmpresa = Nothing
+        End If
         objEmpresa.identificacion = txtId.Text
         objEmpresa.nombre = TxtDescripcion.Text
         objEmpresa.telefono = TextTelefono.Text
@@ -113,6 +120,7 @@
                 ComboMunicipio.SelectedValue = dfila("Codigo_Ciudad")
                 txtEncabezado.Text = If(IsDBNull(dfila("Encabezado")), Nothing, dfila("Encabezado"))
                 txtPie.Text = If(IsDBNull(dfila("Pie_Factura")), Nothing, dfila("Pie_Factura"))
+                crearImagen(If(IsDBNull(dfila("logo")), Nothing, dfila("logo")))
                 params.Add(ElementoMenu.codigo)
                 Generales.llenardgv(objEmpresa.sqlCargarDetalle, dgvParametro, params)
                 Generales.diseñoDGV(dgvParametro)
@@ -131,6 +139,14 @@
         Catch ex As Exception
             EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
         End Try
+    End Sub
+    Private Sub crearImagen(dImagen As DataRow)
+        Dim almImagen As New IO.MemoryStream
+        Dim bytes() As Byte = Funciones.castFromDbItem(dImagen.Item("foto"))
+        If bytes IsNot Nothing Then
+            pictImagen.Image = Image.FromStream(New IO.MemoryStream(bytes))
+            objEmpresa.banderaImagen = False
+        End If
     End Sub
     Private Sub cargarComboDepartamento()
         Generales.cargarCombo(Sentencias.DEPARTAMENTO_CONSULTAR, Nothing, "descripcion", "Codigo_Departamento", cbDepartamento)
@@ -255,5 +271,10 @@
         ErrorIcono.SetError(txtPie, "")
         ErrorIcono.SetError(TxtDescripcion, "")
         ErrorIcono.SetError(txtId, "")
+    End Sub
+    Private Sub pictImagen_Click(sender As Object, e As EventArgs) Handles pictImagen.Click
+        If btRegistrar.Enabled = False Then Exit Sub
+        Dim open As New OpenFileDialog
+        objEmpresa.banderaImagen = Generales.subirimagen(pictImagen, open)
     End Sub
 End Class
