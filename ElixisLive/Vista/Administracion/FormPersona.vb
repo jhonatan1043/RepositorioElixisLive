@@ -161,8 +161,8 @@ Public Class FormPersona
                 TextDireccion.Text = If(IsDBNull(dfila("Direccion")), Nothing, dfila("Direccion"))
                 TextEmail.Text = If(IsDBNull(dfila("Email")), Nothing, dfila("Email"))
                 CombotipoIdentificacion.SelectedValue = dfila("Tipo_Identificacion")
-                cbDepartamento.SelectedValue = If(IsDBNull(dfila("Codigo_Departamento")), Nothing, dfila("Codigo_Departamento"))
-                ComboMunicipio.SelectedValue = If(IsDBNull(dfila("Codigo_Ciudad")), Nothing, dfila("Codigo_Ciudad"))
+                cbDepartamento.SelectedValue = If(IsDBNull(dfila("Codigo_Departamento")), -1, dfila("Codigo_Departamento"))
+                ComboMunicipio.SelectedValue = If(IsDBNull(dfila("Codigo_Ciudad")), -1, dfila("Codigo_Ciudad"))
                 objPersona.codigoPerfil = If(IsDBNull(dfila("Codigo_Perfil")), Nothing, dfila("Codigo_Perfil"))
                 chUsuario.Checked = If(IsDBNull(dfila("Codigo_Perfil")), False, True)
                 txtUsuario.Text = dfila("Usuario")
@@ -380,12 +380,14 @@ Public Class FormPersona
         params.Add(editable)
         Try
             Generales.llenarTabla("[SP_PERSONA_SUCURSALES_ASIGNADO]", params, objPersona.dtSucursal)
+
             ListSucursal.DataSource = objPersona.dtSucursal
             ListSucursal.ValueMember = "Codigo"
             ListSucursal.DisplayMember = "Nombre"
             For item = 0 To objPersona.dtSucursal.Rows.Count - 1
                 ListSucursal.SetItemChecked(item, objPersona.dtSucursal.Rows(item).Item("Realizado"))
             Next
+
         Catch ex As Exception
             EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
         End Try
