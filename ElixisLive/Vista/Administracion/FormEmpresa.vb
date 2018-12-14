@@ -120,7 +120,7 @@
                 ComboMunicipio.SelectedValue = dfila("Codigo_Ciudad")
                 txtEncabezado.Text = If(IsDBNull(dfila("Encabezado")), Nothing, dfila("Encabezado"))
                 txtPie.Text = If(IsDBNull(dfila("Pie_Factura")), Nothing, dfila("Pie_Factura"))
-                crearImagen(If(IsDBNull(dfila("logo")), Nothing, dfila("logo")))
+                crearImagen(dfila)
                 params.Add(ElementoMenu.codigo)
                 Generales.llenardgv(objEmpresa.sqlCargarDetalle, dgvParametro, params)
                 Generales.diseñoDGV(dgvParametro)
@@ -135,14 +135,13 @@
                 btRegistrar.Enabled = True
                 btCancelar.Enabled = True
             End If
-
         Catch ex As Exception
             EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
         End Try
     End Sub
     Private Sub crearImagen(dImagen As DataRow)
         Dim almImagen As New IO.MemoryStream
-        Dim bytes() As Byte = Funciones.castFromDbItem(dImagen.Item("foto"))
+        Dim bytes() As Byte = Funciones.castFromDbItem(dImagen.Item("logo"))
         If bytes IsNot Nothing Then
             pictImagen.Image = Image.FromStream(New IO.MemoryStream(bytes))
             objEmpresa.banderaImagen = False
