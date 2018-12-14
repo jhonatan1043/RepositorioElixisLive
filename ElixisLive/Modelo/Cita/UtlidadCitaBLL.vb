@@ -50,8 +50,8 @@
 
             If auxiliar > 2 Then
                 horaExtraida = If(auxiliar = 4, sender.tag.ToString.Remove(2), sender.tag.ToString.Remove(2))
-                idCita = If(auxiliar = 4, Nothing, sender.tag.ToString.Substring(3).Remove(2))
-                estadoCita = If(auxiliar = 4, Nothing, sender.tag.ToString.Substring(6))
+                idCita = If(auxiliar = 4, Nothing, sender.tag.ToString.Substring(3).Remove(1))
+                estadoCita = If(auxiliar = 4, Nothing, sender.tag.ToString.Substring(5))
                 panelPrincipal = sender.Name.ToString.Substring(1)
             Else
                 horaExtraida = sender.tag

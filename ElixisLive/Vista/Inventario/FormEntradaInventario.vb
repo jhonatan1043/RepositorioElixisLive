@@ -69,12 +69,13 @@
             EstiloMensajes.mostrarMensajeAdvertencia("¡ Favor seleccionar la compra !")
         ElseIf bodega > 0 Then
             EstiloMensajes.mostrarMensajeAdvertencia("¡ Faltan productos por asignar bodega !")
+        ElseIf cbMovimiento.SelectedIndex = 0 Then
+            EstiloMensajes.mostrarMensajeAdvertencia("¡ Seleccione un movimiento al inventario !")
         Else
             Try
 
                 objEntrada.codigoCompra = If(String.IsNullOrEmpty(txtCodigo.Text), Nothing, txtCodigo.Text)
                 objEntrada.codigoMovimiento = cbMovimiento.SelectedValue
-
                 EntradaInventarioBLL.guardarEntrada(objEntrada)
                 rbCompra.Checked = False
                 rvManual.Checked = False
