@@ -86,17 +86,19 @@ Public Class FormVenta
         Dim dFila As DataRow = Nothing
         If dgvServicio.RowCount >= 1 Then
             Try
-
-                dFila = consultarEmpleado(dgvServicio.Rows(dgvServicio.CurrentCell.RowIndex).Cells("dgIdEmpleado").Value)
-
-                If Not IsNothing(dFila) Then
-                    dgvServicio.Rows(dgvServicio.CurrentCell.RowIndex).Cells("dgNombreEmpleado").Value = dFila("Nombre")
+                If Not IsDBNull(dgvServicio.Rows(dgvServicio.CurrentCell.RowIndex).Cells("dgIdEmpleado").Value) Then
+                    dFila = consultarEmpleado(dgvServicio.Rows(dgvServicio.CurrentCell.RowIndex).Cells("dgIdEmpleado").Value)
+                    If Not IsNothing(dFila) Then
+                        dgvServicio.Rows(dgvServicio.CurrentCell.RowIndex).Cells("dgNombreEmpleado").Value = dFila("Nombre")
+                    Else
+                        dgvServicio.Rows(dgvServicio.CurrentCell.RowIndex).Cells("dgIdEmpleado").Value = Nothing
+                        dgvServicio.Rows(dgvServicio.CurrentCell.RowIndex).Cells("dgNombreEmpleado").Value = Nothing
+                        EstiloMensajes.mostrarMensajeError("¡ Empleado no valido !")
+                    End If
                 Else
                     dgvServicio.Rows(dgvServicio.CurrentCell.RowIndex).Cells("dgIdEmpleado").Value = Nothing
-                    dgvServicio.Rows(dgvServicio.CurrentCell.RowIndex).Cells("dgIdEmpleado").Selected = True
-                    EstiloMensajes.mostrarMensajeError("¡ Empleado no valido !")
+                    dgvServicio.Rows(dgvServicio.CurrentCell.RowIndex).Cells("dgNombreEmpleado").Value = Nothing
                 End If
-
             Catch ex As Exception
                 EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
             End Try
@@ -150,18 +152,31 @@ Public Class FormVenta
         objVenta.nombre = TextNombre.Text
         objVenta.identificacion = txtIdentificacion.Text
     End Sub
+    Private Function validarCampos()
+        If dgvProducto.Rows.Count <= 1 _
+            AndAlso dgvServicio.Rows.Count <= 1 Then
+            EstiloMensajes.mostrarMensajeAdvertencia("¡ No hay ningun movimiento para guardar !")
+        ElseIf objVenta.dtProductos.Select("[codigo] Not is null And [Cantidad] = 0").Count > 0 Then
+            EstiloMensajes.mostrarMensajeAdvertencia("¡ Hay productos con cantidad en 0 !")
+        Else
+            Return True
+        End If
+        Return False
+    End Function
     Private Sub btRegistrar_Click(sender As Object, e As EventArgs) Handles btRegistrar.Click
         dgvProducto.EndEdit()
         dgvServicio.EndEdit()
         Try
-            cargarObjeto()
-            VentaBLL.guardarVenta(objVenta)
-            Generales.habilitarBotones(ToolStrip1)
-            Generales.deshabilitarControles(Me)
-            txtCodigo.Text = objVenta.codigo
-            btCancelar.Enabled = False
-            btRegistrar.Enabled = False
-            EstiloMensajes.mostrarMensajeExitoso(MensajeSistema.REGISTRO_GUARDADO)
+            If validarCampos() = True Then
+                cargarObjeto()
+                VentaBLL.guardarVenta(objVenta)
+                Generales.habilitarBotones(ToolStrip1)
+                Generales.deshabilitarControles(Me)
+                txtCodigo.Text = objVenta.codigo
+                btCancelar.Enabled = False
+                btRegistrar.Enabled = False
+                EstiloMensajes.mostrarMensajeExitoso(MensajeSistema.REGISTRO_GUARDADO)
+            End If
         Catch ex As Exception
             EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
         End Try
