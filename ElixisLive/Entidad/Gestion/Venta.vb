@@ -2,6 +2,9 @@
     Inherits generalConsulta
     Property codigo As String
     Property codigoPersonaCliente As String
+    Property identificacion As String
+    Property nombre As String
+    Property telefono As String
     Property dtProductos As DataTable
     Property dtServicio As DataTable
     Public Sub New()

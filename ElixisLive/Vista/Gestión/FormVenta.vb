@@ -144,11 +144,17 @@ Public Class FormVenta
         formExistencia = New FormExistencia
         formExistencia.ShowDialog()
     End Sub
+    Private Sub cargarObjeto()
+        objVenta.codigo = If(String.IsNullOrEmpty(txtCodigo.Text), Nothing, txtCodigo.Text)
+        objVenta.telefono = TextTelefono.Text
+        objVenta.nombre = TextNombre.Text
+        objVenta.identificacion = txtIdentificacion.Text
+    End Sub
     Private Sub btRegistrar_Click(sender As Object, e As EventArgs) Handles btRegistrar.Click
         dgvProducto.EndEdit()
         dgvServicio.EndEdit()
         Try
-            objVenta.codigo = If(String.IsNullOrEmpty(txtCodigo.Text), Nothing, txtCodigo.Text)
+            cargarObjeto()
             VentaBLL.guardarVenta(objVenta)
             Generales.habilitarBotones(ToolStrip1)
             Generales.deshabilitarControles(Me)
