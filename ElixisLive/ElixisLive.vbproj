@@ -303,6 +303,12 @@
     <Compile Include="Vista\Configuracion\FormServicio.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Vista\Gestión\FormExistencia.Designer.vb">
+      <DependentUpon>FormExistencia.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Gestión\FormExistencia.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Vista\Gestión\FormCompra.Designer.vb">
       <DependentUpon>FormCompra.vb</DependentUpon>
     </Compile>
@@ -436,6 +442,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\Configuracion\FormServicio.resx">
       <DependentUpon>FormServicio.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Gestión\FormExistencia.resx">
+      <DependentUpon>FormExistencia.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\Gestión\FormCompra.resx">
       <DependentUpon>FormCompra.vb</DependentUpon>

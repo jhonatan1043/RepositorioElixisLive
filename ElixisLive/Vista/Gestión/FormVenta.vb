@@ -1,6 +1,7 @@
 ﻿Imports System.ComponentModel
 Public Class FormVenta
     Dim objVenta As Venta
+    Dim formExistencia As FormExistencia
     Private Sub FormVenta_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         objVenta = New Venta
         Generales.diseñoDGV(dgvProducto)
@@ -140,21 +141,8 @@ Public Class FormVenta
         End Try
     End Sub
     Private Sub btExistencia_Click(sender As Object, e As EventArgs) Handles btExistencia.Click
-        Dim params As New List(Of String)
-        params.Add(String.Empty)
-        Try
-            Generales.buscarElemento(Sentencias.FACTURA_BUSCAR,
-                                   params,
-                                   AddressOf verExistencia,
-                                   Titulo.BUSQUEDA_FACTURA,
-                                   True,
-                                   True)
-        Catch ex As Exception
-            EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
-        End Try
-    End Sub
-    Private Sub verExistencia()
-
+        formExistencia = New FormExistencia
+        formExistencia.ShowDialog()
     End Sub
     Private Sub btRegistrar_Click(sender As Object, e As EventArgs) Handles btRegistrar.Click
         dgvProducto.EndEdit()
@@ -192,11 +180,9 @@ Public Class FormVenta
     End Sub
     Private Sub dgvProducto_KeyDown(sender As Object, e As KeyEventArgs) Handles dgvProducto.KeyDown
         If btRegistrar.Enabled = False Then Exit Sub
-
         If e.KeyCode = Keys.Space Then
             buscarProducto()
         End If
-
     End Sub
     Private Sub dgvServicio_KeyDown(sender As Object, e As KeyEventArgs) Handles dgvServicio.KeyDown
         If btRegistrar.Enabled = False Then Exit Sub
@@ -205,6 +191,7 @@ Public Class FormVenta
         End If
     End Sub
     Private Sub txtIdentificacion_Leave(sender As Object, e As EventArgs) Handles txtIdentificacion.Leave
+        If btRegistrar.Enabled = False Then Exit Sub
         If Not String.IsNullOrEmpty(txtIdentificacion.Text) Then
             Try
                 cargarCliente(txtIdentificacion.Text)
@@ -372,7 +359,7 @@ Public Class FormVenta
             objVenta.codigoPersonaCliente = Nothing
             TextNombre.Clear()
             TextTelefono.Clear()
-            txtIdentificacion.Focus()
+            TextNombre.Focus()
         End If
     End Sub
     Private Sub ToolStripButton1_Click(sender As Object, e As EventArgs) Handles ToolStripButton1.Click
@@ -396,5 +383,11 @@ Public Class FormVenta
         Finally
             Cursor = Cursors.Default
         End Try
+    End Sub
+    Private Sub FormVenta_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
+        If e.KeyCode = Keys.F3 Then
+            formExistencia = New FormExistencia
+            formExistencia.ShowDialog()
+        End If
     End Sub
 End Class
