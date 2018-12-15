@@ -202,6 +202,12 @@
     <Compile Include="Modelo\Principal\InicioSesionBLL.vb" />
     <Compile Include="Modelo\Principal\principalBLL.vb" />
     <Compile Include="ReferenciaDLL\DataGridViewDateTimePickerColumn.vb" />
+    <Compile Include="Reportes\factura.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>factura.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Utilidad\Busqueda.vb" />
     <Compile Include="Utilidad\Constantes.vb" />
     <Compile Include="Utilidad\ConvertirNumeros.vb" />
@@ -399,6 +405,10 @@
     <EmbeddedResource Include="Informes\Gestion\rptFactura.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptFactura.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\factura.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>factura.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Utilidad\SuperMessageBox.resx" />
     <EmbeddedResource Include="Vista\Administracion\FormEmpleado.resx">

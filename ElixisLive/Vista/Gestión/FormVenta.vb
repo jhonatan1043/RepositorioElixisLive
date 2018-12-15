@@ -143,8 +143,9 @@ Public Class FormVenta
         End Try
     End Sub
     Private Sub btExistencia_Click(sender As Object, e As EventArgs) Handles btExistencia.Click
-        formExistencia = New FormExistencia
-        formExistencia.ShowDialog()
+        'formExistencia = New FormExistencia
+        'formExistencia.ShowDialog()
+
     End Sub
     Private Sub cargarObjeto()
         objVenta.codigo = If(String.IsNullOrEmpty(txtCodigo.Text), Nothing, txtCodigo.Text)
@@ -383,7 +384,7 @@ Public Class FormVenta
             TextNombre.Focus()
         End If
     End Sub
-    Private Sub ToolStripButton1_Click(sender As Object, e As EventArgs) Handles ToolStripButton1.Click
+    Private Sub ToolStripButton1_Click(sender As Object, e As EventArgs) Handles btImprimir.Click
         Dim nombreArchivo, ruta, formula, nombreReporte As String
         Dim reporte As New CrearInforme
         Try
