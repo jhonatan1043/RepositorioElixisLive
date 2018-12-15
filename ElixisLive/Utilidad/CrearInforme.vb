@@ -15,7 +15,7 @@ Public Class CrearInforme
             Dim tblas As Tables = reporte.Database.Tables
             Generales.getConnReporte(tblas)
             reporte.Refresh()
-            'enviarParametros(area, reporte, texto, params)
+            enviarParametros(nombreArchivo, reporte, params)
             If ruta.Contains("\/") Then
                 ruta = ruta.Replace("\/", "\")
             End If
@@ -26,6 +26,16 @@ Public Class CrearInforme
         Catch ex As Exception
             Throw ex
         End Try
+    End Sub
+    Private Shared Sub enviarParametros(area As String,
+                                        ByRef reporte As Object,
+                                        ByRef params As List(Of String))
+        Select Case area
+            Case "Factura"
+                reporte.SetParameterValue("@TotalProducto", params(0))
+                reporte.SetParameterValue("@TotalServicio", params(1))
+                reporte.SetParameterValue("@TotalVenta", params(2))
+        End Select
     End Sub
     Public Sub crearReportePDF(reporte As Object,
                                codigo As String,

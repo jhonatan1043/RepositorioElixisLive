@@ -173,12 +173,6 @@
     <Compile Include="FormBase\FormBaseProductivo.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Informes\Gestion\rptFactura.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>rptFactura.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="Modelo\Administracion\EmpleadoBLL.vb" />
     <Compile Include="Modelo\Administracion\EmpresaBLL.vb" />
     <Compile Include="Modelo\Administracion\PerfilBLL.vb" />
@@ -401,10 +395,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormBase\FormBaseProductivo.resx">
       <DependentUpon>FormBaseProductivo.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Informes\Gestion\rptFactura.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>rptFactura.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\factura.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

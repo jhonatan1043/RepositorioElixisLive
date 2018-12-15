@@ -1,6 +1,5 @@
 ﻿Imports System.Data.SqlClient
 Public Class VentaDAL
-
     Public Shared Function guardarVenta(objVenta As Venta) As Venta
         Dim objConexio As New CnxElixisLiveBD.ConexionBD
         Try
@@ -21,6 +20,30 @@ Public Class VentaDAL
                     comando.Parameters.Add(New SqlParameter("@tablaProducto", SqlDbType.Structured)).Value = objVenta.dtProductos
                     comando.Parameters.Add(New SqlParameter("@tablaServicio", SqlDbType.Structured)).Value = objVenta.dtServicio
                     objVenta.codigo = CType(comando.ExecuteScalar, String)
+                    trnsccion.Commit()
+                End Using
+            End Using
+        Catch ex As Exception
+            Throw ex
+        Finally
+            objConexio.desConectar()
+        End Try
+        Return objVenta
+    End Function
+    Public Shared Function anularVenta(objVenta As Venta) As Venta
+        Dim objConexio As New CnxElixisLiveBD.ConexionBD
+        Try
+            objConexio.conectar()
+            Using comando = New SqlCommand()
+                Using trnsccion = objConexio.cnxbd.BeginTransaction()
+                    comando.Connection = objConexio.cnxbd
+                    comando.Transaction = trnsccion
+                    comando.CommandType = CommandType.StoredProcedure
+                    comando.Parameters.Clear()
+                    comando.CommandText = objVenta.sqlAnular
+                    comando.Parameters.Add(New SqlParameter("@Codigo", SqlDbType.Int)).Value = objVenta.codigo
+                    comando.Parameters.Add(New SqlParameter("@tablaProducto", SqlDbType.Structured)).Value = objVenta.dtProductos
+                    objVenta.estadoAnulado = comando.ExecuteScalar
                     trnsccion.Commit()
                 End Using
             End Using

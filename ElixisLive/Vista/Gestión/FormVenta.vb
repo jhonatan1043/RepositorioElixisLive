@@ -233,6 +233,22 @@ Public Class FormVenta
             End Try
         End If
     End Sub
+    Private Sub btAnular_Click(sender As Object, e As EventArgs) Handles btAnular.Click
+        If EstiloMensajes.mostrarMensajePregunta(MensajeSistema.ANULAR) = Constantes.SI Then
+            Try
+                VentaBLL.anularVenta(objVenta)
+                If objVenta.estadoAnulado = True Then
+                    Generales.deshabilitarBotones(ToolStrip1)
+                    Generales.limpiarControles(Me)
+                    btNuevo.Enabled = True
+                    btBuscar.Enabled = True
+                    EstiloMensajes.mostrarMensajeAnulado(MensajeSistema.REGISTRO_ANULADO)
+                End If
+            Catch ex As Exception
+                EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
+            End Try
+        End If
+    End Sub
     Private Sub calcularTotales()
         dgvProducto.EndEdit()
         dgvServicio.EndEdit()
@@ -387,6 +403,7 @@ Public Class FormVenta
     Private Sub ToolStripButton1_Click(sender As Object, e As EventArgs) Handles btImprimir.Click
         Dim nombreArchivo, ruta, formula, nombreReporte As String
         Dim reporte As New CrearInforme
+        Dim params As New List(Of String)
         Try
             nombreReporte = "Factura"
 
@@ -395,10 +412,13 @@ Public Class FormVenta
             nombreArchivo = nombreReporte & Constantes.NOMBRE_PDF_SEPARADOR & objVenta.codigo & Constantes.EXTENSION_ARCHIVO_PDF
             ruta = IO.Path.GetTempPath() & nombreArchivo
 
-            formula = "= " & objVenta.codigo
+            formula = "{VISTA_VENTA.Codigo_Factura} = " & objVenta.codigo
 
-            reporte.crearReportePDF(New rptFactura, objVenta.codigo, formula, nombreReporte, ruta,
-                                  nombreReporte, IO.Path.GetTempPath)
+            params.Add(TextTotalArticulos.Text)
+            params.Add(TextTotalServicio.Text)
+            params.Add(TextTotal.Text)
+
+            reporte.crearReportePDF(New factura, objVenta.codigo, formula, nombreReporte, ruta,,, params)
 
         Catch ex As Exception
             EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))

@@ -7,6 +7,7 @@
     Property telefono As String
     Property dtProductos As DataTable
     Property dtServicio As DataTable
+    Property estadoAnulado As Boolean
     Public Sub New()
         dtProductos = New DataTable
         dtServicio = New DataTable
@@ -24,7 +25,7 @@
         dtServicio.Columns.Add("codigo_Empleado", Type.GetType("System.String"))
         dtServicio.Columns.Add("NombreEmpleado", Type.GetType("System.String"))
 
-        sqlAnular = ""
+        sqlAnular = "[SP_INVEN_VENTA_ANULAR]"
         sqlCargar = ""
         sqlCargarDetalle = ""
         sqlConsulta = ""
