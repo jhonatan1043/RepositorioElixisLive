@@ -15,14 +15,13 @@
         Dim texto, contener As String
         texto = nombre & vbNewLine & CStr(Format(fechaCita, "HH:mm"))
         contener = posicionX & posicionY
-
         Try
             panel.Name = contener
             panel.Location = New Point(posicionX, posicionY)
             panel.Size = New Point(anchura, altura)
             panel.BackColor = If(pendiente = Constantes.PENDIENTE, Color.AliceBlue, colorLabel())
             panel.Controls.Add(creaBotones(4, 3, idCita, If(pendiente = Constantes.PENDIENTE, Constantes.CITA_DISPONIBLE, texto), contener))
-            panel.Tag = hora & "-" & idCita & "-" & estado
+            panel.Tag = hora & "-" & estado & "-" & idCita
             panel.Cursor = Cursors.Hand
             panel.Show()
         Catch ex As Exception
@@ -45,7 +44,7 @@
             boton.Font = New Font(Constantes.TIPO_LETRA_ELEMENTO, 8)
             boton.Cursor = Cursors.Hand
             boton.Text = Texto
-            boton.Tag = hora & "-" & idCita & "-" & estado
+            boton.Tag = hora & "-" & estado & "-" & idCita
             AddHandler boton.Click, AddressOf UtlidadCitaBLL.llamarFormularioCita
         Catch ex As Exception
             Throw ex

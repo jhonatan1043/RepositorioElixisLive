@@ -44,14 +44,13 @@
         Dim horaExtraida As String = Nothing
         Dim estadoCita As String = Nothing
         Dim panelPrincipal As String = Nothing
-
+        Dim auxiliar As Integer
         Try
-            Dim auxiliar As Integer = sender.tag.ToString.Length
-
+            auxiliar = sender.tag.ToString.Length
             If auxiliar > 2 Then
                 horaExtraida = If(auxiliar = 4, sender.tag.ToString.Remove(2), sender.tag.ToString.Remove(2))
-                idCita = If(auxiliar = 4, Nothing, sender.tag.ToString.Substring(3).Remove(1))
-                estadoCita = If(auxiliar = 4, Nothing, sender.tag.ToString.Substring(5))
+                idCita = If(auxiliar = 4, Nothing, sender.tag.ToString.Substring(5))
+                estadoCita = If(auxiliar = 4, Nothing, sender.tag.ToString.Substring(3).Remove(1))
                 panelPrincipal = sender.Name.ToString.Substring(1)
             Else
                 horaExtraida = sender.tag
