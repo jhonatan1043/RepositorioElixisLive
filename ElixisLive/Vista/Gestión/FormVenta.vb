@@ -410,7 +410,7 @@ Public Class FormVenta
             Cursor = Cursors.WaitCursor
 
             nombreArchivo = nombreReporte & Constantes.NOMBRE_PDF_SEPARADOR & objVenta.codigo & Constantes.EXTENSION_ARCHIVO_PDF
-            ruta = IO.Path.GetTempPath() & nombreArchivo
+            ruta = IO.Path.GetTempPath() & nombreReporte
 
             formula = "{VISTA_VENTA.Codigo_Factura} = " & objVenta.codigo
 
@@ -418,7 +418,7 @@ Public Class FormVenta
             params.Add(TextTotalServicio.Text)
             params.Add(TextTotal.Text)
 
-            reporte.crearReportePDF(New factura, objVenta.codigo, formula, nombreReporte, ruta,,, params)
+            reporte.crearReportePDF(New factura, objVenta.codigo, formula, nombreReporte, IO.Path.GetTempPath(),,, params)
 
         Catch ex As Exception
             EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))

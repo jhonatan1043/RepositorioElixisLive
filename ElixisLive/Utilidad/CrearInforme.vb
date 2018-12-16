@@ -32,9 +32,9 @@ Public Class CrearInforme
                                         ByRef params As List(Of String))
         Select Case area
             Case "Factura"
-                reporte.SetParameterValue("@TotalProducto", params(0))
-                reporte.SetParameterValue("@TotalServicio", params(1))
-                reporte.SetParameterValue("@TotalVenta", params(2))
+                reporte.SetParameterValue("TotalProducto", params(0))
+                reporte.SetParameterValue("TotalServicio", params(1))
+                reporte.SetParameterValue("TotalVenta", params(2))
         End Select
     End Sub
     Public Sub crearReportePDF(reporte As Object,
@@ -50,7 +50,7 @@ Public Class CrearInforme
         reporte.Close()
         If String.IsNullOrWhiteSpace(rutaDiferente) Then
             cnd = nombreArchivo & Constantes.NOMBRE_PDF_SEPARADOR & codigo & Now.Hour & Now.Minute & Now.Second & Now.Millisecond & Constantes.EXTENSION_ARCHIVO_PDF
-            ruta = ruta & "/" & cnd
+            ruta = ruta & cnd
         Else
             ruta = rutaDiferente
         End If
