@@ -151,6 +151,7 @@
     <Compile Include="Entidad\Cita\Semana\CitaSemana.vb" />
     <Compile Include="Entidad\Cita\Semana\HoraSemana.vb" />
     <Compile Include="Entidad\Configuracion\ConfigVenta.vb" />
+    <Compile Include="Entidad\Configuracion\CostoServicio.vb" />
     <Compile Include="Entidad\generalConsulta.vb" />
     <Compile Include="Entidad\Configuracion\Configuracion.vb" />
     <Compile Include="Entidad\Gestion\Compra.vb" />
@@ -303,6 +304,12 @@
     <Compile Include="Vista\Configuracion\FormServicio.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Vista\Configuracion\FormCostoServicio.Designer.vb">
+      <DependentUpon>FormCostoServicio.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Configuracion\FormCostoServicio.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Vista\Gestión\FormExistencia.Designer.vb">
       <DependentUpon>FormExistencia.vb</DependentUpon>
     </Compile>
@@ -442,6 +449,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\Configuracion\FormServicio.resx">
       <DependentUpon>FormServicio.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Configuracion\FormCostoServicio.resx">
+      <DependentUpon>FormCostoServicio.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\Gestión\FormExistencia.resx">
       <DependentUpon>FormExistencia.vb</DependentUpon>

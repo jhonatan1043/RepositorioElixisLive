@@ -51,7 +51,7 @@ Public Class Funciones
         Dim dRows As DataRow = Nothing
         Try
             params.Add(codigo)
-            Generales.llenarTabla(Sentencias.PERSONA_CARGAR, params, dt)
+            Generales.llenarTabla(Sentencias.PERSONA_EMPLEADO_CARGAR, params, dt)
             If dt.Rows.Count > 0 Then
                 dRows = dt.Rows(0)
             End If
