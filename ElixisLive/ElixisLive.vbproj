@@ -262,6 +262,12 @@
     <Compile Include="Vista\Cita\FormProgramacionCita.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Vista\Configuracion\FormAreaTrabajo.Designer.vb">
+      <DependentUpon>FormAreaTrabajo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Configuracion\FormAreaTrabajo.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Vista\Configuracion\FormConfigVenta.Designer.vb">
       <DependentUpon>FormConfigVenta.vb</DependentUpon>
     </Compile>
@@ -428,6 +434,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\Cita\FormProgramacionCita.resx">
       <DependentUpon>FormProgramacionCita.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Configuracion\FormAreaTrabajo.resx">
+      <DependentUpon>FormAreaTrabajo.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\Configuracion\FormConfigVenta.resx">
       <DependentUpon>FormConfigVenta.vb</DependentUpon>
