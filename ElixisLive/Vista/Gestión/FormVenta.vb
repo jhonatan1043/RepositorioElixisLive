@@ -62,20 +62,15 @@ Public Class FormVenta
     Private Sub dgvProducto_CellEndEdit(sender As Object, e As EventArgs) Handles dgvProducto.CellEndEdit
         If dgvProducto.RowCount >= 1 Then
             Try
-                If dgvProducto.Rows(dgvProducto.CurrentCell.RowIndex).Cells("dgCantidad").Value >
-                    dgvProducto.Rows(dgvProducto.CurrentCell.RowIndex).Cells("dgStock").Value Then
-                    dgvProducto.Rows(dgvProducto.CurrentCell.RowIndex).Cells("dgCantidad").Value = 0
-                    dgvProducto.Rows(dgvProducto.CurrentCell.RowIndex).Cells("dgCantidad").Selected = True
-                    EstiloMensajes.mostrarMensajeAdvertencia("¡ la Cantidad supera la existencia !")
-                    Exit Sub
-                End If
-                For indice = 0 To dgvProducto.RowCount - 1
-                    If Not IsDBNull(dgvProducto.Rows(indice).Cells("dgValor").Value) AndAlso
-                       Not IsDBNull(dgvProducto.Rows(indice).Cells("dgCantidad").Value) Then
-                        dgvProducto.Rows(indice).Cells("dgTotal").Value =
-                              dgvProducto.Rows(indice).Cells("dgCantidad").Value * dgvProducto.Rows(indice).Cells("dgValor").Value
+                If dgvProducto.Rows(dgvProducto.CurrentCell.RowIndex).Cells("dgCodigo").Selected = True Then
+                    dgvProducto.EditMode = DataGridViewEditMode.EditOnEnter
+                    cargarItemProducto(If(IsDBNull(dgvProducto.Rows(dgvProducto.CurrentCell.RowIndex).Cells("dgCodigo").Value),
+                                            Nothing, dgvProducto.Rows(dgvProducto.CurrentCell.RowIndex).Cells("dgCodigo").Value))
+                Else
+                    If Not IsDBNull(objVenta.dtProductos.Rows(dgvProducto.CurrentCell.RowIndex).Item("Codigo")) Then
+                        calcularCampos()
                     End If
-                Next
+                End If
                 calcularTotales()
             Catch ex As Exception
                 EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
@@ -114,6 +109,13 @@ Public Class FormVenta
             AddHandler e.Control.KeyPress, AddressOf ValidacionDigitacion.validarValoresNumericos
         End If
     End Sub
+    Private Sub dgvProducto_CellEnter(sender As Object, e As DataGridViewCellEventArgs) Handles dgvProducto.CellEnter
+        If dgvProducto.Rows(dgvProducto.CurrentCell.RowIndex).Cells("dgCodigo").Selected = True Then
+            dgvProducto.EditMode = DataGridViewEditMode.EditOnEnter
+        Else
+            dgvProducto.EndEdit()
+        End If
+    End Sub
     Private Sub btNuevo_Click(sender As Object, e As EventArgs) Handles btNuevo.Click
         Generales.habilitarControles(Me)
         Generales.deshabilitarBotones(ToolStrip1)
@@ -130,22 +132,35 @@ Public Class FormVenta
     Private Sub btBuscar_Click(sender As Object, e As EventArgs) Handles btBuscar.Click
         Dim params As New List(Of String)
         params.Add(String.Empty)
-        params.Add(SesionActual.codigoSucursal)
         Try
-            Generales.buscarElemento(Sentencias.FACTURA_BUSCAR,
-                                   params,
-                                   AddressOf cargarInfomacion,
-                                   Titulo.BUSQUEDA_FACTURA,
-                                   True,
-                                   True)
+            Generales.buscarElemento(Sentencias.VENTA_BUSCAR,
+                                     params,
+                                     AddressOf cargarInfomacion,
+                                     Titulo.BUSQUEDA_FACTURA,
+                                     True,
+                                     True)
         Catch ex As Exception
             EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
         End Try
     End Sub
     Private Sub btExistencia_Click(sender As Object, e As EventArgs) Handles btExistencia.Click
-        'formExistencia = New FormExistencia
-        'formExistencia.ShowDialog()
-
+        formExistencia = New FormExistencia
+        formExistencia.ShowDialog()
+    End Sub
+    Private Sub cargarItemProducto(codigo As String)
+        Dim params As New List(Of String)
+        Dim dRows As DataRow
+        params.Add(codigo)
+        dRows = Generales.cargarItem("[SP_PRODUCTOS_FACTURA_CARGAR]", params)
+        If Not IsNothing(dRows) Then
+            objVenta.dtProductos(dgvProducto.CurrentCell.RowIndex).Item("Descripcion") = dRows("Descripcion")
+            objVenta.dtProductos(dgvProducto.CurrentCell.RowIndex).Item("Stock") = dRows("Stock")
+            objVenta.dtProductos(dgvProducto.CurrentCell.RowIndex).Item("Valor") = dRows("Valor")
+            dgvProducto.Rows(dgvProducto.CurrentCell.RowIndex).Cells("dgCantidad").Selected = True
+            objVenta.dtProductos.Rows.Add()
+        Else
+            EstiloMensajes.mostrarMensajeAdvertencia(" Producto no Encontrado ")
+        End If
     End Sub
     Private Sub cargarObjeto()
         objVenta.codigo = If(String.IsNullOrEmpty(txtCodigo.Text), Nothing, txtCodigo.Text)
@@ -249,6 +264,22 @@ Public Class FormVenta
             End Try
         End If
     End Sub
+    Private Sub calcularCampos()
+        If dgvProducto.Rows(dgvProducto.CurrentCell.RowIndex).Cells("dgCantidad").Value >
+             dgvProducto.Rows(dgvProducto.CurrentCell.RowIndex).Cells("dgStock").Value Then
+            dgvProducto.Rows(dgvProducto.CurrentCell.RowIndex).Cells("dgCantidad").Value = 0
+            dgvProducto.Rows(dgvProducto.CurrentCell.RowIndex).Cells("dgCantidad").Selected = True
+            EstiloMensajes.mostrarMensajeAdvertencia("¡ la Cantidad supera la existencia !")
+            Exit Sub
+        End If
+        For indice = 0 To dgvProducto.RowCount - 1
+            If Not IsDBNull(dgvProducto.Rows(indice).Cells("dgValor").Value) AndAlso
+               Not IsDBNull(dgvProducto.Rows(indice).Cells("dgCantidad").Value) Then
+                dgvProducto.Rows(indice).Cells("dgTotal").Value =
+                      dgvProducto.Rows(indice).Cells("dgCantidad").Value * dgvProducto.Rows(indice).Cells("dgValor").Value
+            End If
+        Next
+    End Sub
     Private Sub calcularTotales()
         dgvProducto.EndEdit()
         dgvServicio.EndEdit()
@@ -272,8 +303,28 @@ Public Class FormVenta
             EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
         End Try
     End Sub
-    Private Sub cargarInfomacion()
+    Private Sub cargarInfomacion(pCodigo As Integer)
+        Dim params As New List(Of String)
+        Dim dRows As DataRow
+        params.Add(pCodigo)
+        objVenta.codigo = pCodigo
+        dRows = Generales.cargarItem("[SP_INVEN_VENTA_CARGAR]", params)
 
+        txtCodigo.Text = pCodigo
+        txtIdentificacion.Text = dRows("Identificacion")
+        TextNombre.Text = dRows("Nombre")
+        TextTelefono.Text = dRows("Telefono")
+
+        Generales.llenarTabla("[SP_VENTA_CARGAR_PRODUCTO]", params, objVenta.dtProductos)
+        Generales.llenarTabla("[SP_VENTA_CARGAR_SERVICIO]", params, objVenta.dtServicio)
+        dgvProducto.DataSource = objVenta.dtProductos
+        dgvServicio.DataSource = objVenta.dtServicio
+        calcularTotales()
+
+        Generales.deshabilitarBotones(ToolStrip1)
+        Generales.deshabilitarControles(Me)
+        btRegistrar.Enabled = False
+        btCancelar.Enabled = False
     End Sub
     Private Sub desactivadoPermante()
         TextTotal.ReadOnly = True
@@ -309,9 +360,7 @@ Public Class FormVenta
                                    True)
     End Sub
     Private Sub validarGrilla()
-
         With dgvProducto
-
             .ReadOnly = False
             .Columns("dgCodigo").DataPropertyName = "codigo"
             .Columns("dgDescripcion").DataPropertyName = "Descripcion"
@@ -348,7 +397,6 @@ Public Class FormVenta
             .DataSource = objVenta.dtServicio
             .AutoGenerateColumns = False
         End With
-
     End Sub
     Private Sub validarEdicionGrilla(Estado As Boolean)
 
@@ -362,6 +410,7 @@ Public Class FormVenta
         End With
         If Estado = True Then
             With dgvProducto
+                .Columns("dgCodigo").ReadOnly = False
                 .Columns("dgCantidad").ReadOnly = False
                 .Columns("dgValor").ReadOnly = False
             End With
