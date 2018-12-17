@@ -23,11 +23,12 @@ Partial Class FormCostoServicio
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
         Me.dgvRegistro = New System.Windows.Forms.DataGridView()
         Me.Gbdatos = New System.Windows.Forms.GroupBox()
+        Me.btBuscarServicio = New System.Windows.Forms.Button()
         Me.txtnombre = New System.Windows.Forms.TextBox()
         Me.txtcodigo = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -50,7 +51,6 @@ Partial Class FormCostoServicio
         Me.Pimagen = New System.Windows.Forms.PictureBox()
         Me.LTitulo = New System.Windows.Forms.Label()
         Me.errorIcono = New System.Windows.Forms.ErrorProvider(Me.components)
-        Me.btBuscarProveedor = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox5.SuspendLayout()
         CType(Me.dgvRegistro, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -89,9 +89,9 @@ Partial Class FormCostoServicio
         Me.dgvRegistro.AllowUserToDeleteRows = False
         Me.dgvRegistro.AllowUserToResizeColumns = False
         Me.dgvRegistro.AllowUserToResizeRows = False
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
-        Me.dgvRegistro.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black
+        Me.dgvRegistro.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.dgvRegistro.BackgroundColor = System.Drawing.SystemColors.Control
         Me.dgvRegistro.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvRegistro.Dock = System.Windows.Forms.DockStyle.Fill
@@ -104,7 +104,7 @@ Partial Class FormCostoServicio
         '
         'Gbdatos
         '
-        Me.Gbdatos.Controls.Add(Me.btBuscarProveedor)
+        Me.Gbdatos.Controls.Add(Me.btBuscarServicio)
         Me.Gbdatos.Controls.Add(Me.txtnombre)
         Me.Gbdatos.Controls.Add(Me.txtcodigo)
         Me.Gbdatos.Controls.Add(Me.Label3)
@@ -117,6 +117,17 @@ Partial Class FormCostoServicio
         Me.Gbdatos.TabIndex = 0
         Me.Gbdatos.TabStop = False
         Me.Gbdatos.Text = "Información "
+        '
+        'btBuscarServicio
+        '
+        Me.btBuscarServicio.BackgroundImage = Global.Quality.My.Resources.Resources.fondo_azul
+        Me.btBuscarServicio.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btBuscarServicio.Image = Global.Quality.My.Resources.Resources.Zoom_icon1
+        Me.btBuscarServicio.Location = New System.Drawing.Point(544, 12)
+        Me.btBuscarServicio.Name = "btBuscarServicio"
+        Me.btBuscarServicio.Size = New System.Drawing.Size(31, 30)
+        Me.btBuscarServicio.TabIndex = 68
+        Me.btBuscarServicio.UseVisualStyleBackColor = True
         '
         'txtnombre
         '
@@ -311,17 +322,6 @@ Partial Class FormCostoServicio
         Me.errorIcono.ContainerControl = Me
         Me.errorIcono.RightToLeft = True
         '
-        'btBuscarProveedor
-        '
-        Me.btBuscarProveedor.BackgroundImage = Global.Quality.My.Resources.Resources.fondo_azul
-        Me.btBuscarProveedor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btBuscarProveedor.Image = Global.Quality.My.Resources.Resources.Zoom_icon1
-        Me.btBuscarProveedor.Location = New System.Drawing.Point(544, 12)
-        Me.btBuscarProveedor.Name = "btBuscarProveedor"
-        Me.btBuscarProveedor.Size = New System.Drawing.Size(31, 30)
-        Me.btBuscarProveedor.TabIndex = 68
-        Me.btBuscarProveedor.UseVisualStyleBackColor = True
-        '
         'FormCostoServicio
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -379,5 +379,5 @@ Partial Class FormCostoServicio
     Public WithEvents btBuscar As ToolStripButton
     Friend WithEvents ralla1 As ToolStripSeparator
     Friend WithEvents errorIcono As ErrorProvider
-    Friend WithEvents btBuscarProveedor As Button
+    Friend WithEvents btBuscarServicio As Button
 End Class

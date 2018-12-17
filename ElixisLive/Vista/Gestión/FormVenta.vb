@@ -321,7 +321,7 @@ Public Class FormVenta
         dgvServicio.DataSource = objVenta.dtServicio
         calcularTotales()
 
-        Generales.deshabilitarBotones(ToolStrip1)
+        Generales.habilitarBotones(ToolStrip1)
         Generales.deshabilitarControles(Me)
         btRegistrar.Enabled = False
         btCancelar.Enabled = False
