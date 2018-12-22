@@ -6,6 +6,7 @@
         Generales.deshabilitarControles(Me)
         btNuevo.Enabled = True
         btBuscar.Enabled = True
+        Generales.tabularConEnter(Me)
     End Sub
     Private Sub btBuscarServicio_Click(sender As Object, e As EventArgs) Handles btBuscarServicio.Click
 

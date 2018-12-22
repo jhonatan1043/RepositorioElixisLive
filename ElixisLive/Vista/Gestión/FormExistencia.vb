@@ -2,6 +2,7 @@
     Private Sub FormExistencia_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         cargarExistencia()
         Generales.diseñoDGV(dgvLista)
+        Generales.tabularConEnter(Me)
     End Sub
     Private Sub cargarExistencia()
         Dim params As New List(Of String)

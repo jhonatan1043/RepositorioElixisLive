@@ -13,6 +13,7 @@ Public Class FormPerfil
         Generales.deshabilitarBotones(ToolStrip1)
         txtBuscar.ReadOnly = False
         btNuevo.Enabled = True
+        Generales.tabularConEnter(Me)
     End Sub
     Private Sub btNuevo_Click(sender As Object, e As EventArgs) Handles btNuevo.Click
         Generales.deshabilitarBotones(ToolStrip1)

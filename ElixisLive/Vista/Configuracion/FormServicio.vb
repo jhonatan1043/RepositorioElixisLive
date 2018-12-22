@@ -9,6 +9,7 @@
         visibleConfig()
         btNuevo.Enabled = True
         btBuscar.Enabled = True
+        Generales.tabularConEnter(Me)
     End Sub
     Private Sub txtnombre_LostFocus(sender As Object, e As EventArgs) Handles txtnombre.LostFocus
         If txtnombre.TextLength = 0 And btRegistrar.Enabled = True Then

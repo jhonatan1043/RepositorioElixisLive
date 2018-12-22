@@ -14,6 +14,7 @@
         validarGrilla()
         btNuevo.Enabled = True
         btBuscar.Enabled = True
+        Generales.tabularConEnter(Me)
     End Sub
 
     Private Sub dgvEntrada_CellEnter(sender As Object, e As DataGridViewCellEventArgs) Handles dgvEntrada.CellEnter

@@ -10,6 +10,7 @@ Public Class FormVenta
         validarGrilla()
         btNuevo.Enabled = True
         btBuscar.Enabled = True
+        Generales.tabularConEnter(Me)
     End Sub
     Private Sub dgvProducto_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvProducto.CellDoubleClick
         Try

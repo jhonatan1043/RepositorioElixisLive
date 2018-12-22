@@ -26,6 +26,7 @@
             btCancelar.Enabled = True
             objCita.dtServicio.Rows.Add()
         End If
+        Generales.tabularConEnter(Me)
     End Sub
     Private Sub validarGrilla()
         With dgvServicio

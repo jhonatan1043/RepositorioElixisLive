@@ -61,6 +61,7 @@ Public Class FormPersona
         Catch ex As Exception
             EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
         End Try
+        Generales.tabularConEnter(Me)
     End Sub
     Private Sub cargarComboDepartamento()
         Generales.cargarCombo(Sentencias.DEPARTAMENTO_CONSULTAR, Nothing, "descripcion", "Codigo_Departamento", cbDepartamento)
@@ -203,50 +204,7 @@ Public Class FormPersona
         End If
 
     End Sub
-    Private Sub TextTelefono_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextTelefono.KeyPress
-        ValidacionDigitacion.validarNumerosTelefono(e)
-        If Asc(e.KeyChar) = 13 Then
-            TextCelular.Focus()
-        End If
-    End Sub
-    Private Sub TextCelular_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextCelular.KeyPress
-        ValidacionDigitacion.validarNumerosTelefono(e)
-        If Asc(e.KeyChar) = 13 Then
-            TextEmail.Focus()
-        End If
-    End Sub
-    Private Sub TextNombre_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextNombre.KeyPress
-        ValidacionDigitacion.validarAlfabetico(e)
-        If Asc(e.KeyChar) = 13 Then
-            cbDepartamento.Focus()
-        End If
-    End Sub
-    Private Sub TextDireccion_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextDireccion.KeyPress
-        If Asc(e.KeyChar) = 13 Then
-            TextTelefono.Focus()
-        End If
-    End Sub
-    Private Sub TextIdentificacion_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextIdentificacion.KeyPress
-        ValidacionDigitacion.validarSoloNumerosPositivo(e)
-        If Asc(e.KeyChar) = 13 Then
-            TextNombre.Focus()
-        End If
-    End Sub
-    Private Sub CombotipoIdentificacion_KeyPress(sender As Object, e As KeyPressEventArgs) Handles CombotipoIdentificacion.KeyPress
-        If Asc(e.KeyChar) = 13 Then
-            TextIdentificacion.Focus()
-        End If
-    End Sub
-    Private Sub cbDepartamento_KeyPress(sender As Object, e As KeyPressEventArgs) Handles cbDepartamento.KeyPress
-        If Asc(e.KeyChar) = 13 Then
-            ComboMunicipio.Focus()
-        End If
-    End Sub
-    Private Sub cbSede_KeyPress(sender As Object, e As KeyPressEventArgs)
-        If Asc(e.KeyChar) = 13 Then
-            TextDireccion.Focus()
-        End If
-    End Sub
+
     Private Sub TextIdentificacion_TextChanged(sender As Object, e As EventArgs) Handles TextIdentificacion.TextChanged
         Dim dV As New DigitoVerificacion
         Dim numero As Integer

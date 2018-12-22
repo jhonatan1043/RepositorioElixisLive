@@ -15,6 +15,7 @@
         ListaPrecioBLL.cargarComboTipoLista(cbTipoLista)
         btNuevo.Enabled = True
         btBuscar.Enabled = True
+        Generales.tabularConEnter(Me)
     End Sub
     Private Sub validarGrilla()
         With dgvLista

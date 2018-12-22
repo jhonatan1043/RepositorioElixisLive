@@ -38,6 +38,7 @@
         Catch ex As Exception
             EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
         End Try
+        Generales.tabularConEnter(Me)
     End Sub
     Private Sub cargarComboDepartamento()
         Generales.cargarCombo(Sentencias.DEPARTAMENTO_CONSULTAR, Nothing, "descripcion", "Codigo_Departamento", cbDepartamento)

@@ -745,4 +745,36 @@ Public Class Generales
             End Try
         End If
     End Sub
+
+    Public Shared Sub tabularConEnter(ByRef form As Form)
+        Try
+            'Get the first control in the tab order.
+            Dim ctl As Control = form.GetNextControl(form, True)
+            Do Until ctl Is Nothing
+                If TypeOf ctl Is System.Windows.Forms.TextBox Or TypeOf ctl Is System.Windows.Forms.ComboBox _
+Or TypeOf ctl Is System.Windows.Forms.CheckBox Or TypeOf ctl Is System.Windows.Forms.DateTimePicker Then
+
+                    AddHandler ctl.KeyDown, AddressOf ReturnKeyTabs
+                End If
+                'Get the next control in the tab order.
+                ctl = form.GetNextControl(ctl, True)
+            Loop
+        Catch ex As Exception
+        End Try
+    End Sub
+
+    Private Shared Sub ReturnKeyTabs(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs)
+        If e.KeyCode = System.Windows.Forms.Keys.Return Then
+            e.Handled = True
+            e.SuppressKeyPress = True
+        End If
+        ReturnKeyTabs(e.KeyCode)
+    End Sub
+
+    Private Shared Sub ReturnKeyTabs(ByVal KeyCode As System.Windows.Forms.Keys)
+        If KeyCode = System.Windows.Forms.Keys.Return Then
+            System.Windows.Forms.SendKeys.Send("{Tab}")
+            KeyCode = 0
+        End If
+    End Sub
 End Class

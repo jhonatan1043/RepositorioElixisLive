@@ -16,6 +16,7 @@
         btNuevo.Enabled = True
         btBuscar.Enabled = True
         visibleConfig()
+        Generales.tabularConEnter(Me)
     End Sub
     Private Sub visibleConfig()
         btBuscar.Visible = False

@@ -6,7 +6,7 @@
         fecha = Format(dFecha.Value, Constantes.FORMATO_FECHA_HORA)
         UtlidadCitaBLL.objFormCita = Me
         validarControles()
-        'tamañoVentana()
+        Generales.tabularConEnter(Me)
     End Sub
     Public Sub validarControles()
         Try
