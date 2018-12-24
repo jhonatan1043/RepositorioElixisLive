@@ -34,7 +34,7 @@ Public Class FormVenta
                 dgvServicio.Rows(dgvServicio.CurrentCell.RowIndex).Cells("dgDescripcionServ").Selected = True) Then
                 buscarServicio()
             ElseIf dgvServicio.Rows(dgvServicio.CurrentCell.RowIndex).Cells("dgQuitarServ").Selected = True And
-                   objVenta.dtServicio.Rows(dgvServicio.CurrentCell.RowIndex).Item("dgCodigo").ToString <> Constantes.CADENA_VACIA Then
+                   objVenta.dtServicio.Rows(dgvServicio.CurrentCell.RowIndex).Item("Codigo").ToString <> Constantes.CADENA_VACIA Then
                 objVenta.dtServicio.Rows.RemoveAt(e.RowIndex)
             End If
             calcularTotales()
@@ -65,8 +65,9 @@ Public Class FormVenta
             Try
                 If dgvProducto.Rows(dgvProducto.CurrentCell.RowIndex).Cells("dgCodigo").Selected = True Then
                     dgvProducto.EditMode = DataGridViewEditMode.EditOnEnter
-                    cargarItemProducto(If(IsDBNull(dgvProducto.Rows(dgvProducto.CurrentCell.RowIndex).Cells("dgCodigo").Value),
-                                            Nothing, dgvProducto.Rows(dgvProducto.CurrentCell.RowIndex).Cells("dgCodigo").Value))
+                    If Not IsDBNull(dgvProducto.Rows(dgvProducto.CurrentCell.RowIndex).Cells("dgCodigo").Value) Then
+                        cargarItemProducto(dgvProducto.Rows(dgvProducto.CurrentCell.RowIndex).Cells("dgCodigo").Value)
+                    End If
                 Else
                     If Not IsDBNull(objVenta.dtProductos.Rows(dgvProducto.CurrentCell.RowIndex).Item("Codigo")) Then
                         calcularCampos()
@@ -266,20 +267,24 @@ Public Class FormVenta
         End If
     End Sub
     Private Sub calcularCampos()
-        If dgvProducto.Rows(dgvProducto.CurrentCell.RowIndex).Cells("dgCantidad").Value >
+        If Not IsDBNull(dgvProducto.Rows(dgvProducto.CurrentCell.RowIndex).Cells("dgStock").Value) Then
+            If dgvProducto.Rows(dgvProducto.CurrentCell.RowIndex).Cells("dgCantidad").Value >
              dgvProducto.Rows(dgvProducto.CurrentCell.RowIndex).Cells("dgStock").Value Then
-            dgvProducto.Rows(dgvProducto.CurrentCell.RowIndex).Cells("dgCantidad").Value = 0
-            dgvProducto.Rows(dgvProducto.CurrentCell.RowIndex).Cells("dgCantidad").Selected = True
-            EstiloMensajes.mostrarMensajeAdvertencia("¡ la Cantidad supera la existencia !")
-            Exit Sub
-        End If
-        For indice = 0 To dgvProducto.RowCount - 1
-            If Not IsDBNull(dgvProducto.Rows(indice).Cells("dgValor").Value) AndAlso
-               Not IsDBNull(dgvProducto.Rows(indice).Cells("dgCantidad").Value) Then
-                dgvProducto.Rows(indice).Cells("dgTotal").Value =
-                      dgvProducto.Rows(indice).Cells("dgCantidad").Value * dgvProducto.Rows(indice).Cells("dgValor").Value
+                dgvProducto.Rows(dgvProducto.CurrentCell.RowIndex).Cells("dgCantidad").Value = 0
+                dgvProducto.Rows(dgvProducto.CurrentCell.RowIndex).Cells("dgCantidad").Selected = True
+                EstiloMensajes.mostrarMensajeAdvertencia("¡ la Cantidad supera la existencia !")
+                Exit Sub
             End If
-        Next
+            For indice = 0 To dgvProducto.RowCount - 1
+                If Not IsDBNull(dgvProducto.Rows(indice).Cells("dgValor").Value) AndAlso
+                   Not IsDBNull(dgvProducto.Rows(indice).Cells("dgCantidad").Value) Then
+                    dgvProducto.Rows(indice).Cells("dgTotal").Value =
+                          dgvProducto.Rows(indice).Cells("dgCantidad").Value * dgvProducto.Rows(indice).Cells("dgValor").Value
+                End If
+            Next
+        Else
+            cargarItemProducto(dgvProducto.Rows(dgvProducto.CurrentCell.RowIndex).Cells("dgCodigo").Value)
+        End If
     End Sub
     Private Sub calcularTotales()
         dgvProducto.EndEdit()

@@ -12,7 +12,7 @@
         dtProductos = New DataTable
         dtServicio = New DataTable
 
-        dtProductos.Columns.Add("codigo", Type.GetType("System.Int32"))
+        dtProductos.Columns.Add("codigo", Type.GetType("System.String"))
         dtProductos.Columns.Add("Descripcion", Type.GetType("System.String"))
         dtProductos.Columns.Add("Stock", Type.GetType("System.Int32"))
         dtProductos.Columns.Add("Cantidad", Type.GetType("System.Int32")).DefaultValue = 0
