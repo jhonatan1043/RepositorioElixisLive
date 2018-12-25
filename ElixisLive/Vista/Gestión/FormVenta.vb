@@ -158,8 +158,10 @@ Public Class FormVenta
             objVenta.dtProductos(dgvProducto.CurrentCell.RowIndex).Item("Descripcion") = dRows("Descripcion")
             objVenta.dtProductos(dgvProducto.CurrentCell.RowIndex).Item("Stock") = dRows("Stock")
             objVenta.dtProductos(dgvProducto.CurrentCell.RowIndex).Item("Valor") = dRows("Valor")
-            dgvProducto.Rows(dgvProducto.CurrentCell.RowIndex).Cells("dgCantidad").Selected = True
+            dgvProducto.Columns("dgCantidad").Selected = True
+
             objVenta.dtProductos.Rows.Add()
+
         Else
             EstiloMensajes.mostrarMensajeAdvertencia(" Producto no Encontrado ")
         End If
