@@ -22,6 +22,9 @@ Partial Class FormCostoServicios
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.dgvServicio = New System.Windows.Forms.DataGridView()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.LTitulo = New System.Windows.Forms.Label()
@@ -39,11 +42,21 @@ Partial Class FormCostoServicios
         '
         'dgvServicio
         '
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.AliceBlue
+        Me.dgvServicio.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.dgvServicio.BackgroundColor = System.Drawing.Color.White
         Me.dgvServicio.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvServicio.Location = New System.Drawing.Point(6, 32)
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Times New Roman", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgvServicio.DefaultCellStyle = DataGridViewCellStyle2
+        Me.dgvServicio.Location = New System.Drawing.Point(6, 37)
         Me.dgvServicio.Name = "dgvServicio"
-        Me.dgvServicio.Size = New System.Drawing.Size(217, 446)
+        Me.dgvServicio.Size = New System.Drawing.Size(228, 438)
         Me.dgvServicio.TabIndex = 0
         '
         'GroupBox1
@@ -52,9 +65,9 @@ Partial Class FormCostoServicios
         Me.GroupBox1.Controls.Add(Me.Label5)
         Me.GroupBox1.Controls.Add(Me.dgvProducto)
         Me.GroupBox1.Controls.Add(Me.dgvServicio)
-        Me.GroupBox1.Location = New System.Drawing.Point(7, 43)
+        Me.GroupBox1.Location = New System.Drawing.Point(4, 42)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(1001, 482)
+        Me.GroupBox1.Size = New System.Drawing.Size(895, 481)
         Me.GroupBox1.TabIndex = 1
         Me.GroupBox1.TabStop = False
         '
@@ -65,9 +78,9 @@ Partial Class FormCostoServicios
         Me.LTitulo.ForeColor = System.Drawing.Color.White
         Me.LTitulo.Location = New System.Drawing.Point(5, 0)
         Me.LTitulo.Name = "LTitulo"
-        Me.LTitulo.Size = New System.Drawing.Size(1016, 40)
+        Me.LTitulo.Size = New System.Drawing.Size(901, 40)
         Me.LTitulo.TabIndex = 1
-        Me.LTitulo.Text = "Empleado"
+        Me.LTitulo.Text = "Costo de Servicios"
         Me.LTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Panel1
@@ -79,7 +92,7 @@ Partial Class FormCostoServicios
         Me.Panel1.Controls.Add(Me.LTitulo)
         Me.Panel1.Location = New System.Drawing.Point(-4, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1024, 44)
+        Me.Panel1.Size = New System.Drawing.Size(906, 44)
         Me.Panel1.TabIndex = 2
         '
         'Pimagen
@@ -95,25 +108,27 @@ Partial Class FormCostoServicios
         '
         'dgvProducto
         '
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.AliceBlue
+        Me.dgvProducto.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle3
         Me.dgvProducto.BackgroundColor = System.Drawing.Color.White
         Me.dgvProducto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvProducto.Location = New System.Drawing.Point(229, 32)
+        Me.dgvProducto.Location = New System.Drawing.Point(240, 37)
         Me.dgvProducto.Name = "dgvProducto"
-        Me.dgvProducto.Size = New System.Drawing.Size(766, 445)
+        Me.dgvProducto.RowHeadersVisible = False
+        Me.dgvProducto.Size = New System.Drawing.Size(649, 438)
         Me.dgvProducto.TabIndex = 1
         '
         'Label5
         '
-        Me.Label5.BackColor = System.Drawing.Color.Transparent
+        Me.Label5.BackColor = System.Drawing.Color.SteelBlue
         Me.Label5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Label5.Font = New System.Drawing.Font("Times New Roman", 14.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.Color.White
-        Me.Label5.Image = Global.Quality.My.Resources.Resources.fondo_azul
-        Me.Label5.Location = New System.Drawing.Point(6, 7)
+        Me.Label5.Location = New System.Drawing.Point(6, 12)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(217, 25)
+        Me.Label5.Size = New System.Drawing.Size(228, 25)
         Me.Label5.TabIndex = 25
-        Me.Label5.Text = "Artículos"
+        Me.Label5.Text = "Servicios"
         Me.Label5.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
         'Label1
@@ -122,11 +137,11 @@ Partial Class FormCostoServicios
         Me.Label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Label1.Font = New System.Drawing.Font("Times New Roman", 14.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(229, 7)
+        Me.Label1.Location = New System.Drawing.Point(240, 12)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(766, 25)
+        Me.Label1.Size = New System.Drawing.Size(649, 25)
         Me.Label1.TabIndex = 26
-        Me.Label1.Text = "Artículos"
+        Me.Label1.Text = "Productos Utilizados"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
         'FormCostoServicios
@@ -134,10 +149,12 @@ Partial Class FormCostoServicios
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(1016, 533)
+        Me.ClientSize = New System.Drawing.Size(900, 526)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.GroupBox1)
         Me.MaximizeBox = False
+        Me.MaximumSize = New System.Drawing.Size(916, 565)
+        Me.MinimumSize = New System.Drawing.Size(916, 565)
         Me.Name = "FormCostoServicios"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         CType(Me.dgvServicio, System.ComponentModel.ISupportInitialize).EndInit()

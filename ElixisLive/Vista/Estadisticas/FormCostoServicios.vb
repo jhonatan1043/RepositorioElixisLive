@@ -6,6 +6,8 @@
     Private Sub cargarServicios()
         Generales.llenarTabla("[SP_CONFIGURACION_COSTO_SERVICIO_LISTAR]", Nothing, dtServicios)
         dgvServicio.DataSource = dtServicios
+        dgvServicio.Columns(0).Visible = False
+        dgvServicio.Columns(1).AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
     End Sub
 
     Private Sub dgvServicio_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvServicio.CellContentClick
