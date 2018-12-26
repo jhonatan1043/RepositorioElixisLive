@@ -457,7 +457,7 @@ Public Class FormVenta
             TextNombre.Focus()
         End If
     End Sub
-    Private Sub ToolStripButton1_Click(sender As Object, e As EventArgs) Handles btImprimir.Click
+    Private Sub btImprimir_Click(sender As Object, e As EventArgs) Handles btImprimir.Click
         Dim nombreArchivo, ruta, formula, nombreReporte As String
         Dim reporte As New CrearInforme
         Dim params As New List(Of String)

@@ -316,6 +316,12 @@
     <Compile Include="Vista\Configuracion\FormCostoServicio.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Vista\Estadisticas\FormCostoServicios.Designer.vb">
+      <DependentUpon>FormCostoServicios.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Estadisticas\FormCostoServicios.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Vista\Gestión\FormExistencia.Designer.vb">
       <DependentUpon>FormExistencia.vb</DependentUpon>
     </Compile>
@@ -461,6 +467,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\Configuracion\FormCostoServicio.resx">
       <DependentUpon>FormCostoServicio.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Estadisticas\FormCostoServicios.resx">
+      <DependentUpon>FormCostoServicios.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\Gestión\FormExistencia.resx">
       <DependentUpon>FormExistencia.vb</DependentUpon>

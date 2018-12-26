@@ -25,6 +25,12 @@ Partial Class FormEmpleado
         Me.components = New System.ComponentModel.Container()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.gbInform = New System.Windows.Forms.GroupBox()
+        Me.txtEmail = New System.Windows.Forms.Label()
+        Me.txtDireccion = New System.Windows.Forms.Label()
+        Me.txtNombre = New System.Windows.Forms.Label()
+        Me.txtCelular = New System.Windows.Forms.Label()
+        Me.txtTelefono = New System.Windows.Forms.Label()
+        Me.txtIdentificacion = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.btBuscarPersona = New System.Windows.Forms.Button()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -75,12 +81,6 @@ Partial Class FormEmpleado
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Pimagen = New System.Windows.Forms.PictureBox()
         Me.LTitulo = New System.Windows.Forms.Label()
-        Me.txtIdentificacion = New System.Windows.Forms.Label()
-        Me.txtDireccion = New System.Windows.Forms.Label()
-        Me.txtCelular = New System.Windows.Forms.Label()
-        Me.txtTelefono = New System.Windows.Forms.Label()
-        Me.txtNombre = New System.Windows.Forms.Label()
-        Me.txtEmail = New System.Windows.Forms.Label()
         Me.gbInform.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         CType(Me.pictImagen, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -118,6 +118,66 @@ Partial Class FormEmpleado
         Me.gbInform.Size = New System.Drawing.Size(888, 102)
         Me.gbInform.TabIndex = 9
         Me.gbInform.TabStop = False
+        '
+        'txtEmail
+        '
+        Me.txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtEmail.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtEmail.Location = New System.Drawing.Point(419, 70)
+        Me.txtEmail.Name = "txtEmail"
+        Me.txtEmail.Size = New System.Drawing.Size(463, 25)
+        Me.txtEmail.TabIndex = 69
+        Me.txtEmail.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'txtDireccion
+        '
+        Me.txtDireccion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtDireccion.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtDireccion.Location = New System.Drawing.Point(419, 42)
+        Me.txtDireccion.Name = "txtDireccion"
+        Me.txtDireccion.Size = New System.Drawing.Size(463, 25)
+        Me.txtDireccion.TabIndex = 67
+        Me.txtDireccion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'txtNombre
+        '
+        Me.txtNombre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtNombre.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtNombre.Location = New System.Drawing.Point(419, 14)
+        Me.txtNombre.Name = "txtNombre"
+        Me.txtNombre.Size = New System.Drawing.Size(416, 25)
+        Me.txtNombre.TabIndex = 68
+        Me.txtNombre.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'txtCelular
+        '
+        Me.txtCelular.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtCelular.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtCelular.Location = New System.Drawing.Point(125, 71)
+        Me.txtCelular.Name = "txtCelular"
+        Me.txtCelular.Size = New System.Drawing.Size(186, 25)
+        Me.txtCelular.TabIndex = 68
+        Me.txtCelular.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'txtTelefono
+        '
+        Me.txtTelefono.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtTelefono.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtTelefono.Location = New System.Drawing.Point(125, 43)
+        Me.txtTelefono.Name = "txtTelefono"
+        Me.txtTelefono.Size = New System.Drawing.Size(186, 25)
+        Me.txtTelefono.TabIndex = 69
+        Me.txtTelefono.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'txtIdentificacion
+        '
+        Me.txtIdentificacion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtIdentificacion.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtIdentificacion.Location = New System.Drawing.Point(125, 15)
+        Me.txtIdentificacion.Name = "txtIdentificacion"
+        Me.txtIdentificacion.Size = New System.Drawing.Size(186, 25)
+        Me.txtIdentificacion.TabIndex = 66
+        Me.txtIdentificacion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Label5
         '
@@ -648,66 +708,6 @@ Partial Class FormEmpleado
         Me.LTitulo.TabIndex = 1
         Me.LTitulo.Text = "Empleado"
         Me.LTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'txtIdentificacion
-        '
-        Me.txtIdentificacion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtIdentificacion.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtIdentificacion.Location = New System.Drawing.Point(125, 15)
-        Me.txtIdentificacion.Name = "txtIdentificacion"
-        Me.txtIdentificacion.Size = New System.Drawing.Size(186, 25)
-        Me.txtIdentificacion.TabIndex = 66
-        Me.txtIdentificacion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'txtDireccion
-        '
-        Me.txtDireccion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtDireccion.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtDireccion.Location = New System.Drawing.Point(419, 42)
-        Me.txtDireccion.Name = "txtDireccion"
-        Me.txtDireccion.Size = New System.Drawing.Size(463, 25)
-        Me.txtDireccion.TabIndex = 67
-        Me.txtDireccion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'txtCelular
-        '
-        Me.txtCelular.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtCelular.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtCelular.Location = New System.Drawing.Point(125, 71)
-        Me.txtCelular.Name = "txtCelular"
-        Me.txtCelular.Size = New System.Drawing.Size(186, 25)
-        Me.txtCelular.TabIndex = 68
-        Me.txtCelular.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'txtTelefono
-        '
-        Me.txtTelefono.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtTelefono.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtTelefono.Location = New System.Drawing.Point(125, 43)
-        Me.txtTelefono.Name = "txtTelefono"
-        Me.txtTelefono.Size = New System.Drawing.Size(186, 25)
-        Me.txtTelefono.TabIndex = 69
-        Me.txtTelefono.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'txtNombre
-        '
-        Me.txtNombre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtNombre.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtNombre.Location = New System.Drawing.Point(419, 14)
-        Me.txtNombre.Name = "txtNombre"
-        Me.txtNombre.Size = New System.Drawing.Size(416, 25)
-        Me.txtNombre.TabIndex = 68
-        Me.txtNombre.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'txtEmail
-        '
-        Me.txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtEmail.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtEmail.Location = New System.Drawing.Point(419, 70)
-        Me.txtEmail.Name = "txtEmail"
-        Me.txtEmail.Size = New System.Drawing.Size(463, 25)
-        Me.txtEmail.TabIndex = 69
-        Me.txtEmail.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'FormEmpleado
         '
