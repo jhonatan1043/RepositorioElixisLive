@@ -27,21 +27,24 @@ Partial Class FormCostoServicios
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.dgvServicio = New System.Windows.Forms.DataGridView()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.LTitulo = New System.Windows.Forms.Label()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Pimagen = New System.Windows.Forms.PictureBox()
         Me.dgvProducto = New System.Windows.Forms.DataGridView()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Pimagen = New System.Windows.Forms.PictureBox()
+        Me.LTitulo = New System.Windows.Forms.Label()
         CType(Me.dgvServicio, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
+        CType(Me.dgvProducto, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.dgvProducto, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'dgvServicio
         '
+        Me.dgvServicio.AllowUserToAddRows = False
+        Me.dgvServicio.AllowUserToDeleteRows = False
+        Me.dgvServicio.AllowUserToOrderColumns = True
         DataGridViewCellStyle1.BackColor = System.Drawing.Color.AliceBlue
         Me.dgvServicio.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.dgvServicio.BackgroundColor = System.Drawing.Color.White
@@ -71,43 +74,11 @@ Partial Class FormCostoServicios
         Me.GroupBox1.TabIndex = 1
         Me.GroupBox1.TabStop = False
         '
-        'LTitulo
-        '
-        Me.LTitulo.BackColor = System.Drawing.Color.Transparent
-        Me.LTitulo.Font = New System.Drawing.Font("Times New Roman", 20.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LTitulo.ForeColor = System.Drawing.Color.White
-        Me.LTitulo.Location = New System.Drawing.Point(5, 0)
-        Me.LTitulo.Name = "LTitulo"
-        Me.LTitulo.Size = New System.Drawing.Size(901, 40)
-        Me.LTitulo.TabIndex = 1
-        Me.LTitulo.Text = "Costo de Servicios"
-        Me.LTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'Panel1
-        '
-        Me.Panel1.BackColor = System.Drawing.Color.White
-        Me.Panel1.BackgroundImage = Global.Quality.My.Resources.Resources.fondo_azul
-        Me.Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Panel1.Controls.Add(Me.Pimagen)
-        Me.Panel1.Controls.Add(Me.LTitulo)
-        Me.Panel1.Location = New System.Drawing.Point(-4, 0)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(906, 44)
-        Me.Panel1.TabIndex = 2
-        '
-        'Pimagen
-        '
-        Me.Pimagen.BackColor = System.Drawing.Color.Transparent
-        Me.Pimagen.Image = Global.Quality.My.Resources.Resources.administrator_icon
-        Me.Pimagen.Location = New System.Drawing.Point(7, 0)
-        Me.Pimagen.Name = "Pimagen"
-        Me.Pimagen.Size = New System.Drawing.Size(53, 46)
-        Me.Pimagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.Pimagen.TabIndex = 1
-        Me.Pimagen.TabStop = False
-        '
         'dgvProducto
         '
+        Me.dgvProducto.AllowUserToAddRows = False
+        Me.dgvProducto.AllowUserToDeleteRows = False
+        Me.dgvProducto.AllowUserToOrderColumns = True
         DataGridViewCellStyle3.BackColor = System.Drawing.Color.AliceBlue
         Me.dgvProducto.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle3
         Me.dgvProducto.BackgroundColor = System.Drawing.Color.White
@@ -144,6 +115,41 @@ Partial Class FormCostoServicios
         Me.Label1.Text = "Productos Utilizados"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
+        'Panel1
+        '
+        Me.Panel1.BackColor = System.Drawing.Color.White
+        Me.Panel1.BackgroundImage = Global.Quality.My.Resources.Resources.fondo_azul
+        Me.Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Panel1.Controls.Add(Me.Pimagen)
+        Me.Panel1.Controls.Add(Me.LTitulo)
+        Me.Panel1.Location = New System.Drawing.Point(-4, 0)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(906, 44)
+        Me.Panel1.TabIndex = 2
+        '
+        'Pimagen
+        '
+        Me.Pimagen.BackColor = System.Drawing.Color.Transparent
+        Me.Pimagen.Image = Global.Quality.My.Resources.Resources.Money_Bag_icon
+        Me.Pimagen.Location = New System.Drawing.Point(7, 0)
+        Me.Pimagen.Name = "Pimagen"
+        Me.Pimagen.Size = New System.Drawing.Size(52, 41)
+        Me.Pimagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.Pimagen.TabIndex = 1
+        Me.Pimagen.TabStop = False
+        '
+        'LTitulo
+        '
+        Me.LTitulo.BackColor = System.Drawing.Color.Transparent
+        Me.LTitulo.Font = New System.Drawing.Font("Times New Roman", 20.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LTitulo.ForeColor = System.Drawing.Color.White
+        Me.LTitulo.Location = New System.Drawing.Point(5, 0)
+        Me.LTitulo.Name = "LTitulo"
+        Me.LTitulo.Size = New System.Drawing.Size(901, 40)
+        Me.LTitulo.TabIndex = 1
+        Me.LTitulo.Text = "Costo de Servicios"
+        Me.LTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
         'FormCostoServicios
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -159,9 +165,9 @@ Partial Class FormCostoServicios
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         CType(Me.dgvServicio, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
+        CType(Me.dgvProducto, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.dgvProducto, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

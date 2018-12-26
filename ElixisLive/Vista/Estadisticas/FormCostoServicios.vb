@@ -19,5 +19,14 @@
         params.Add(pCodigo)
         Generales.llenarTabla("[SP_COSTO_SERVICIO_CARGAR]", params, dtProductos)
         dgvProducto.DataSource = dtProductos
+        If dtProductos.Rows.Count > 0 Then
+            dgvProducto.Columns(0).Visible = False
+            dgvProducto.Columns(1).AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
+            dgvProducto.Columns(2).AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
+            dgvProducto.Columns(3).AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
+            dgvProducto.Columns(4).AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
+            dgvProducto.Columns(5).AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
+            dgvProducto.Columns(6).AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
+        End If
     End Sub
 End Class

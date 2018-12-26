@@ -536,6 +536,7 @@
     <Content Include="ReferenciaDLL\CnxElixisLiveBD.dll" />
     <Content Include="ReferenciaDLL\MySql.Data.DLL" />
     <Content Include="ReferenciaDLL\NotifySenderControl.dll" />
+    <None Include="Resources\Money-Bag-icon.png" />
     <None Include="Resources\note-add-icon1.png" />
     <None Include="Resources\User-Files-icon1.png" />
     <None Include="Resources\3floppy-unmount-icon.png" />
