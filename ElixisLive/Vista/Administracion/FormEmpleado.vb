@@ -80,8 +80,8 @@ Public Class FormEmpleado
         txtTelefono.Text = If(IsDBNull(dfila("Telefono")), Nothing, dfila("Telefono"))
         txtCelular.Text = dfila("Celular")
         txtNombre.Text = dfila("Nombre")
-        txtDireccion.Text = dfila("Direccion")
-        txtEmail.Text = If(String.IsNullOrEmpty(dfila("Email")), Nothing, dfila("Email"))
+        txtDireccion.Text = If(IsDBNull(dfila("Direccion")), Nothing, dfila("Direccion"))
+        txtEmail.Text = If(IsDBNull(dfila("Email")), Nothing, dfila("Email"))
         txtUsuario.Text = If(IsDBNull(dfila("Usuario")), Nothing, dfila("Usuario"))
         cbPerfil.SelectedValue = If(IsDBNull(dfila("Codigo_Perfil")), -1, dfila("Codigo_Perfil"))
     End Sub
