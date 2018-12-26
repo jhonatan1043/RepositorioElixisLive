@@ -360,4 +360,13 @@ Public Class FormPersona
             EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
         End Try
     End Sub
+
+    Private Sub TextIdentificacion_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextTelefono.KeyPress,
+        TextIdentificacion.KeyPress, TextCelular.KeyPress
+        ValidacionDigitacion.validarValoresNumericos(e)
+    End Sub
+
+    Private Sub FormPersona_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextNombre.KeyPress, MyBase.KeyPress
+        ValidacionDigitacion.validarAlfabetico(e)
+    End Sub
 End Class

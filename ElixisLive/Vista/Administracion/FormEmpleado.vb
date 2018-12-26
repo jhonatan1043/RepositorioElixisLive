@@ -236,10 +236,10 @@ Public Class FormEmpleado
     End Sub
 
     Private Sub dgvParametro_Validating(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles dgvParametro.Validating
-        Dim dt As DataTable = DirectCast(ErrorIcono.DataSource, DataTable)
-        If CBool(dgvParametro.Rows(dgvParametro.CurrentCell.RowIndex).Cells(1).Value) = True Then
-            dt.Rows(dgvParametro.CurrentCell.RowIndex).SetColumnError(1, "Este campo es obligatorio")
-        End If
+        'Dim dt As DataTable = DirectCast(ErrorIcono.DataSource, DataTable)
+        'If CBool(dgvParametro.Rows(dgvParametro.CurrentCell.RowIndex).Cells(1).Value) = True Then
+        '    dt.Rows(dgvParametro.CurrentCell.RowIndex).SetColumnError(1, "Este campo es obligatorio")
+        'End If
     End Sub
     Private Sub cbFormaPago_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbFormaPago.SelectedIndexChanged
         validarFormaPago()
@@ -303,7 +303,7 @@ Public Class FormEmpleado
         End If
     End Sub
     Private Sub btBuscarPersona_Validating(sender As Object, e As EventArgs) Handles btBuscarPersona.LostFocus
-        If txtNombre.TextLength = 0 And btRegistrar.Enabled = True Then
+        If txtNombre.Text = "" And btRegistrar.Enabled = True Then
             Me.ErrorIcono.SetError(btBuscarPersona, "Debe escoger una persona")
         Else
             Me.ErrorIcono.SetError(btBuscarPersona, Constantes.CADENA_VACIA)

@@ -24,6 +24,8 @@ Partial Class FormPersona
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.ListSucursal = New System.Windows.Forms.CheckedListBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.chUsuario = New System.Windows.Forms.CheckBox()
@@ -71,9 +73,8 @@ Partial Class FormPersona
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Pimagen = New System.Windows.Forms.PictureBox()
         Me.LTitulo = New System.Windows.Forms.Label()
-        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.ListSucursal = New System.Windows.Forms.CheckedListBox()
         Me.GroupBox4.SuspendLayout()
+        Me.GroupBox2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox5.SuspendLayout()
         Me.GroupBox6.SuspendLayout()
@@ -82,7 +83,6 @@ Partial Class FormPersona
         Me.ToolStrip1.SuspendLayout()
         Me.Panel1.SuspendLayout()
         CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
         '
         'GroupBox4
@@ -98,6 +98,28 @@ Partial Class FormPersona
         Me.GroupBox4.Size = New System.Drawing.Size(705, 354)
         Me.GroupBox4.TabIndex = 8
         Me.GroupBox4.TabStop = False
+        '
+        'GroupBox2
+        '
+        Me.GroupBox2.Controls.Add(Me.ListSucursal)
+        Me.GroupBox2.Font = New System.Drawing.Font("Times New Roman", 8.25!, System.Drawing.FontStyle.Italic)
+        Me.GroupBox2.ForeColor = System.Drawing.Color.DarkBlue
+        Me.GroupBox2.Location = New System.Drawing.Point(430, 235)
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.Size = New System.Drawing.Size(269, 113)
+        Me.GroupBox2.TabIndex = 68
+        Me.GroupBox2.TabStop = False
+        Me.GroupBox2.Text = "Información de Sucursal"
+        '
+        'ListSucursal
+        '
+        Me.ListSucursal.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.ListSucursal.FormattingEnabled = True
+        Me.ListSucursal.Location = New System.Drawing.Point(3, 16)
+        Me.ListSucursal.MultiColumn = True
+        Me.ListSucursal.Name = "ListSucursal"
+        Me.ListSucursal.Size = New System.Drawing.Size(263, 94)
+        Me.ListSucursal.TabIndex = 0
         '
         'GroupBox1
         '
@@ -454,7 +476,7 @@ Partial Class FormPersona
         Me.ToolStrip1.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.ToolStrip1.ImageScalingSize = New System.Drawing.Size(30, 30)
         Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripSeparator1, Me.btNuevo, Me.ToolStripSeparator2, Me.btBuscar, Me.ToolStripSeparator7, Me.btRegistrar, Me.ToolStripSeparator4, Me.btEditar, Me.ToolStripSeparator5, Me.btCancelar, Me.ToolStripSeparator3, Me.btAnular, Me.ToolStripSeparator6})
-        Me.ToolStrip1.Location = New System.Drawing.Point(0, 400)
+        Me.ToolStrip1.Location = New System.Drawing.Point(0, 399)
         Me.ToolStrip1.Name = "ToolStrip1"
         Me.ToolStrip1.Size = New System.Drawing.Size(713, 37)
         Me.ToolStrip1.TabIndex = 16
@@ -596,34 +618,12 @@ Partial Class FormPersona
         Me.LTitulo.Text = "Persona"
         Me.LTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'GroupBox2
-        '
-        Me.GroupBox2.Controls.Add(Me.ListSucursal)
-        Me.GroupBox2.Font = New System.Drawing.Font("Times New Roman", 8.25!, System.Drawing.FontStyle.Italic)
-        Me.GroupBox2.ForeColor = System.Drawing.Color.DarkBlue
-        Me.GroupBox2.Location = New System.Drawing.Point(430, 235)
-        Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(269, 113)
-        Me.GroupBox2.TabIndex = 68
-        Me.GroupBox2.TabStop = False
-        Me.GroupBox2.Text = "Información de Sucursal"
-        '
-        'ListSucursal
-        '
-        Me.ListSucursal.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.ListSucursal.FormattingEnabled = True
-        Me.ListSucursal.Location = New System.Drawing.Point(3, 16)
-        Me.ListSucursal.MultiColumn = True
-        Me.ListSucursal.Name = "ListSucursal"
-        Me.ListSucursal.Size = New System.Drawing.Size(263, 94)
-        Me.ListSucursal.TabIndex = 0
-        '
         'FormPersona
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(713, 437)
+        Me.ClientSize = New System.Drawing.Size(713, 436)
         Me.Controls.Add(Me.ToolStrip1)
         Me.Controls.Add(Me.GroupBox4)
         Me.Controls.Add(Me.Panel1)
@@ -635,6 +635,7 @@ Partial Class FormPersona
         Me.Name = "FormPersona"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.GroupBox4.ResumeLayout(False)
+        Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.GroupBox5.ResumeLayout(False)
@@ -648,7 +649,6 @@ Partial Class FormPersona
         Me.ToolStrip1.PerformLayout()
         Me.Panel1.ResumeLayout(False)
         CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.GroupBox2.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
