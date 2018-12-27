@@ -39,17 +39,17 @@
     Private Sub txtClaveNueva_Leave(sender As Object, e As EventArgs) Handles txtClaveNueva.Leave
         If String.IsNullOrEmpty(txtClaveNueva.Text) Then Exit Sub
         If txtClaveNueva.Text = txtContraseña.Text Then
-            ErrorIcono.SetError(txtClaveNueva, "Esta contraseña no puede ser igual a la actual")
+            ErrorIcono.SetError(txtClaveNueva, "la clave no puede ser igual a la actual")
             txtClaveNueva.ResetText()
             txtClaveNueva.Focus()
             nuevo.Visible = True
             nuevo.Image = My.Resources.rojo
         ElseIf txtClaveNueva.Text = "" Then
-            ErrorIcono.SetError(txtClaveNueva, "Digite una nueva contraseña")
+            ErrorIcono.SetError(txtClaveNueva, "Digite una nueva clave")
             txtClaveNueva.Focus()
             nuevo.Visible = True
         ElseIf (txtClaveNueva.Text.Length < 4 Or txtClaveNueva.Text.Length > 15) Then
-            EstiloMensajes.mostrarMensajeAdvertencia("¡Por favor digite una contraseña de usuario válida (entre 6-15 caracteres)!")
+            EstiloMensajes.mostrarMensajeAdvertencia("¡Por favor digite una clave de usuario válida (entre 6-15 caracteres)!")
             nuevo.Visible = True
             txtClaveNueva.Focus()
         Else
@@ -59,8 +59,6 @@
             nuevo.Image = My.Resources.verde
         End If
     End Sub
-
-
     Public Function validarControles()
         objClave.claveActual = txtContraseña.Text
         If Not objClave.verificarClave Then
@@ -70,17 +68,17 @@
             txtContraseña.Focus()
             Return False
         ElseIf String.IsNullOrEmpty(txtConfirmarClave.Text) Then
-            MsgBox("Confirme su contraseña", MsgBoxStyle.Exclamation)
+            MsgBox("Confirme su clave", MsgBoxStyle.Exclamation)
             txtConfirmarClave.Focus()
             Return False
         ElseIf txtConfirmarClave.Text <> txtClaveNueva.Text Then
-            MsgBox("La contraseña no coinciden", MsgBoxStyle.Exclamation)
+            MsgBox("La clave no coincide", MsgBoxStyle.Exclamation)
             txtConfirmarClave.ResetText()
             confirmar.Visible = True
             txtConfirmarClave.Focus()
             Return False
         ElseIf String.IsNullOrEmpty(txtClaveNueva.Text) Then
-            MsgBox("Digite su contraseña nueva", MsgBoxStyle.Exclamation)
+            MsgBox("Digite una clave nueva", MsgBoxStyle.Exclamation)
             txtClaveNueva.Focus()
             Return False
         Else

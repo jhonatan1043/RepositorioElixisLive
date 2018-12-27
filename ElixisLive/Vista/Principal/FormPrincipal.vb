@@ -30,11 +30,11 @@
         Return elemento
     End Function
 
-    Private Sub Panel1_Click(sender As Object, e As EventArgs) Handles Panel1.Click
+    Private Sub Panel1_Click(sender As Object, e As EventArgs)
         FormCerrarSesion.ShowDialog()
     End Sub
 
-    Private Sub Panel2_Click(sender As Object, e As EventArgs) Handles Panel2.Click
+    Private Sub Panel2_Click(sender As Object, e As EventArgs) 
         Me.WindowState = FormWindowState.Minimized
     End Sub
 
