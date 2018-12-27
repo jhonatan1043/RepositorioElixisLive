@@ -1,21 +1,22 @@
 ﻿Public Class FormCambioClave
     Dim objClave As New CambioClave
     Private Sub FormCambiarClave_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        If SesionActual.idUsuario = 0 Then
-            txtContraseña.ReadOnly = True
-            txtClaveNueva.ReadOnly = True
-            txtConfirmarClave.ReadOnly = True
-            btRegistrar.Enabled = False
-            Exit Sub
-        End If
-        txtUsuario.Text = SesionActual.idUsuario
+        'If SesionActual.idUsuario = 0 Then
+        'txtContraseña.ReadOnly = True
+        '    txtClaveNueva.ReadOnly = True
+        '    txtConfirmarClave.ReadOnly = True
+        '    btRegistrar.Enabled = False
+        '    Exit Sub
+        'End If
+        txtUsuario.Text = "admin"
+        Generales.tabularConEnter(Me)
     End Sub
 
     Private Sub txtContraseña_Leave(sender As Object, e As EventArgs) Handles txtContraseña.Leave
         objClave.claveActual = txtContraseña.Text
         If String.IsNullOrEmpty(objClave.claveActual) Then Exit Sub
         If Not objClave.verificarClave() Then
-            ErrorIcono.SetError(txtContraseña, "Contraseña incorrecta")
+            ErrorIcono.SetError(txtContraseña, "Clave incorrecta")
             txtContraseña.Focus()
             erroractual.Visible = True
             erroractual.Image = My.Resources.rojo
@@ -66,26 +67,23 @@
             erroractual.Image = My.Resources.rojo
             txtContraseña.ResetText()
             txtContraseña.Focus()
-            Return False
         ElseIf String.IsNullOrEmpty(txtConfirmarClave.Text) Then
             MsgBox("Confirme su clave", MsgBoxStyle.Exclamation)
             txtConfirmarClave.Focus()
-            Return False
         ElseIf txtConfirmarClave.Text <> txtClaveNueva.Text Then
             MsgBox("La clave no coincide", MsgBoxStyle.Exclamation)
             txtConfirmarClave.ResetText()
             confirmar.Visible = True
             txtConfirmarClave.Focus()
-            Return False
         ElseIf String.IsNullOrEmpty(txtClaveNueva.Text) Then
             MsgBox("Digite una clave nueva", MsgBoxStyle.Exclamation)
             txtClaveNueva.Focus()
-            Return False
         Else
             confirmar.Image = My.Resources.verde
             confirmar.Visible = True
+            Return True
         End If
-        Return True
+        Return False
     End Function
 
     Public Sub guardar()

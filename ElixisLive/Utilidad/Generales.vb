@@ -700,6 +700,7 @@ Public Class Generales
             pConsultaSQL = pConsultaSQL & Funciones.getParametros(plistaParam)
         End If
         Try
+            objConexion.conectar()
             Using consulta As New SqlCommand(pConsultaSQL)
                 consulta.Connection = objConexion.cnxbd
                 respuesta = consulta.ExecuteScalar()
@@ -709,6 +710,7 @@ Public Class Generales
             EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
             Return False
         End Try
+        objConexion.desConectar()
     End Function
     Public Shared Sub subirArchivoFTP(objeto As Object)
         Dim segundoPlano As System.Threading.Thread
