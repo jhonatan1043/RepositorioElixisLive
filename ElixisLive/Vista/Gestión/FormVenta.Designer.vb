@@ -23,28 +23,29 @@ Partial Class FormVenta
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle30 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle31 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle32 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle33 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle23 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle24 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle25 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle26 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle27 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle28 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle35 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle36 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle37 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle38 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle39 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle40 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle41 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle42 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle43 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle44 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle34 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle29 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormVenta))
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle13 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle14 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle15 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle16 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle17 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle18 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle19 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle20 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle21 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.GroupBox7 = New System.Windows.Forms.GroupBox()
         Me.TextTelefono = New System.Windows.Forms.TextBox()
         Me.TextNombre = New System.Windows.Forms.TextBox()
@@ -62,7 +63,6 @@ Partial Class FormVenta
         Me.dgValorServ = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.dgidEmpleado = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.dgNombreEmpleado = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.dgQuitarServ = New System.Windows.Forms.DataGridViewImageColumn()
         Me.dgvProducto = New System.Windows.Forms.DataGridView()
         Me.dgCodigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.dgDescripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -71,38 +71,15 @@ Partial Class FormVenta
         Me.dgValor = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.dgTotal = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.dgTipo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.dgQuitar = New System.Windows.Forms.DataGridViewImageColumn()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
-        Me.TextTotalArticulos = New System.Windows.Forms.TextBox()
-        Me.Label5 = New System.Windows.Forms.Label()
         Me.TextTotalServicio = New System.Windows.Forms.TextBox()
-        Me.Label4 = New System.Windows.Forms.Label()
         Me.TextTotal = New System.Windows.Forms.TextBox()
-        Me.Label6 = New System.Windows.Forms.Label()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.btExistencia = New System.Windows.Forms.Button()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.txtCodigo = New System.Windows.Forms.TextBox()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.ErrorIcono = New System.Windows.Forms.ErrorProvider(Me.components)
-        Me.DataGridViewImageColumn1 = New System.Windows.Forms.DataGridViewImageColumn()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Pimagen = New System.Windows.Forms.PictureBox()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
-        Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
-        Me.btNuevo = New System.Windows.Forms.ToolStripButton()
-        Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
-        Me.btBuscar = New System.Windows.Forms.ToolStripButton()
-        Me.ToolStripSeparator7 = New System.Windows.Forms.ToolStripSeparator()
-        Me.btRegistrar = New System.Windows.Forms.ToolStripButton()
-        Me.ToolStripSeparator4 = New System.Windows.Forms.ToolStripSeparator()
-        Me.btCancelar = New System.Windows.Forms.ToolStripButton()
-        Me.ToolStripSeparator6 = New System.Windows.Forms.ToolStripSeparator()
-        Me.btAnular = New System.Windows.Forms.ToolStripButton()
-        Me.btImprimir = New System.Windows.Forms.ToolStripButton()
-        Me.ToolStripSeparator8 = New System.Windows.Forms.ToolStripSeparator()
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -115,7 +92,32 @@ Partial Class FormVenta
         Me.DataGridViewTextBoxColumn10 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn11 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn12 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewImageColumn1 = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.DataGridViewImageColumn2 = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Pimagen = New System.Windows.Forms.PictureBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
+        Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
+        Me.btNuevo = New System.Windows.Forms.ToolStripButton()
+        Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
+        Me.btBuscar = New System.Windows.Forms.ToolStripButton()
+        Me.ToolStripSeparator7 = New System.Windows.Forms.ToolStripSeparator()
+        Me.btRegistrar = New System.Windows.Forms.ToolStripButton()
+        Me.ToolStripSeparator4 = New System.Windows.Forms.ToolStripSeparator()
+        Me.btCancelar = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripSeparator3 = New System.Windows.Forms.ToolStripSeparator()
+        Me.btAnular = New System.Windows.Forms.ToolStripButton()
+        Me.ToolStripSeparator6 = New System.Windows.Forms.ToolStripSeparator()
+        Me.btImprimir = New System.Windows.Forms.ToolStripButton()
+        Me.ToolStripSeparator8 = New System.Windows.Forms.ToolStripSeparator()
+        Me.dgQuitarServ = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.dgQuitar = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.TextTotalArticulos = New System.Windows.Forms.TextBox()
         Me.GroupBox7.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox6.SuspendLayout()
@@ -124,11 +126,11 @@ Partial Class FormVenta
         CType(Me.dgvServicio, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgvProducto, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox4.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ErrorIcono, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ToolStrip1.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GroupBox7
@@ -274,18 +276,18 @@ Partial Class FormVenta
         Me.dgvServicio.AllowUserToDeleteRows = False
         Me.dgvServicio.AllowUserToResizeColumns = False
         Me.dgvServicio.AllowUserToResizeRows = False
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black
-        Me.dgvServicio.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle30.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle30.ForeColor = System.Drawing.Color.Black
+        Me.dgvServicio.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle30
         Me.dgvServicio.BackgroundColor = System.Drawing.Color.White
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.SteelBlue
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvServicio.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle31.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle31.BackColor = System.Drawing.Color.SteelBlue
+        DataGridViewCellStyle31.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle31.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle31.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle31.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle31.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvServicio.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle31
         Me.dgvServicio.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvServicio.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.dgCodigoServ, Me.dgDescripcionServ, Me.dgValorServ, Me.dgidEmpleado, Me.dgNombreEmpleado, Me.dgQuitarServ})
         Me.dgvServicio.Location = New System.Drawing.Point(4, 18)
@@ -297,8 +299,8 @@ Partial Class FormVenta
         '
         'dgCodigoServ
         '
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.dgCodigoServ.DefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle32.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.dgCodigoServ.DefaultCellStyle = DataGridViewCellStyle32
         Me.dgCodigoServ.HeaderText = "Código"
         Me.dgCodigoServ.Name = "dgCodigoServ"
         Me.dgCodigoServ.ReadOnly = True
@@ -311,8 +313,8 @@ Partial Class FormVenta
         '
         'dgValorServ
         '
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        Me.dgValorServ.DefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle33.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        Me.dgValorServ.DefaultCellStyle = DataGridViewCellStyle33
         Me.dgValorServ.HeaderText = "V.Unitario"
         Me.dgValorServ.Name = "dgValorServ"
         Me.dgValorServ.ReadOnly = True
@@ -332,36 +334,24 @@ Partial Class FormVenta
         Me.dgNombreEmpleado.Name = "dgNombreEmpleado"
         Me.dgNombreEmpleado.ReadOnly = True
         '
-        'dgQuitarServ
-        '
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle5.NullValue = CType(resources.GetObject("DataGridViewCellStyle5.NullValue"), Object)
-        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.White
-        Me.dgQuitarServ.DefaultCellStyle = DataGridViewCellStyle5
-        Me.dgQuitarServ.HeaderText = "Quitar"
-        Me.dgQuitarServ.Image = Global.Quality.My.Resources.Resources.papelera
-        Me.dgQuitarServ.Name = "dgQuitarServ"
-        Me.dgQuitarServ.ReadOnly = True
-        Me.dgQuitarServ.Width = 50
-        '
         'dgvProducto
         '
         Me.dgvProducto.AllowUserToAddRows = False
         Me.dgvProducto.AllowUserToDeleteRows = False
         Me.dgvProducto.AllowUserToResizeColumns = False
         Me.dgvProducto.AllowUserToResizeRows = False
-        DataGridViewCellStyle6.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black
-        Me.dgvProducto.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle23.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle23.ForeColor = System.Drawing.Color.Black
+        Me.dgvProducto.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle23
         Me.dgvProducto.BackgroundColor = System.Drawing.Color.White
-        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle7.BackColor = System.Drawing.Color.SteelBlue
-        DataGridViewCellStyle7.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle7.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvProducto.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle7
+        DataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle24.BackColor = System.Drawing.Color.SteelBlue
+        DataGridViewCellStyle24.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle24.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle24.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle24.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvProducto.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle24
         Me.dgvProducto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvProducto.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.dgCodigo, Me.dgDescripcion, Me.dgStock, Me.dgCantidad, Me.dgValor, Me.dgTotal, Me.dgTipo, Me.dgQuitar})
         Me.dgvProducto.Location = New System.Drawing.Point(9, 71)
@@ -373,8 +363,8 @@ Partial Class FormVenta
         '
         'dgCodigo
         '
-        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.dgCodigo.DefaultCellStyle = DataGridViewCellStyle8
+        DataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.dgCodigo.DefaultCellStyle = DataGridViewCellStyle25
         Me.dgCodigo.HeaderText = "Código"
         Me.dgCodigo.Name = "dgCodigo"
         Me.dgCodigo.ReadOnly = True
@@ -394,24 +384,24 @@ Partial Class FormVenta
         '
         'dgCantidad
         '
-        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.dgCantidad.DefaultCellStyle = DataGridViewCellStyle9
+        DataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.dgCantidad.DefaultCellStyle = DataGridViewCellStyle26
         Me.dgCantidad.HeaderText = "Cantidad"
         Me.dgCantidad.Name = "dgCantidad"
         Me.dgCantidad.ReadOnly = True
         '
         'dgValor
         '
-        DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        Me.dgValor.DefaultCellStyle = DataGridViewCellStyle10
+        DataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        Me.dgValor.DefaultCellStyle = DataGridViewCellStyle27
         Me.dgValor.HeaderText = "V.Unitario"
         Me.dgValor.Name = "dgValor"
         Me.dgValor.ReadOnly = True
         '
         'dgTotal
         '
-        DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        Me.dgTotal.DefaultCellStyle = DataGridViewCellStyle11
+        DataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        Me.dgTotal.DefaultCellStyle = DataGridViewCellStyle28
         Me.dgTotal.HeaderText = "Total"
         Me.dgTotal.Name = "dgTotal"
         Me.dgTotal.ReadOnly = True
@@ -423,18 +413,6 @@ Partial Class FormVenta
         Me.dgTipo.ReadOnly = True
         Me.dgTipo.Visible = False
         '
-        'dgQuitar
-        '
-        DataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle12.NullValue = CType(resources.GetObject("DataGridViewCellStyle12.NullValue"), Object)
-        DataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.White
-        Me.dgQuitar.DefaultCellStyle = DataGridViewCellStyle12
-        Me.dgQuitar.HeaderText = "Quitar"
-        Me.dgQuitar.Image = Global.Quality.My.Resources.Resources.papelera
-        Me.dgQuitar.Name = "dgQuitar"
-        Me.dgQuitar.ReadOnly = True
-        Me.dgQuitar.Width = 50
-        '
         'GroupBox5
         '
         Me.GroupBox5.Location = New System.Drawing.Point(6, 53)
@@ -443,31 +421,6 @@ Partial Class FormVenta
         Me.GroupBox5.TabIndex = 60035
         Me.GroupBox5.TabStop = False
         Me.GroupBox5.Text = "Articulos"
-        '
-        'TextTotalArticulos
-        '
-        Me.TextTotalArticulos.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextTotalArticulos.Font = New System.Drawing.Font("Times New Roman", 14.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextTotalArticulos.ForeColor = System.Drawing.Color.Black
-        Me.TextTotalArticulos.Location = New System.Drawing.Point(703, 223)
-        Me.TextTotalArticulos.Name = "TextTotalArticulos"
-        Me.TextTotalArticulos.Size = New System.Drawing.Size(155, 29)
-        Me.TextTotalArticulos.TabIndex = 999
-        Me.TextTotalArticulos.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-        '
-        'Label5
-        '
-        Me.Label5.BackColor = System.Drawing.Color.Transparent
-        Me.Label5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Label5.Font = New System.Drawing.Font("Times New Roman", 14.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.ForeColor = System.Drawing.Color.White
-        Me.Label5.Image = Global.Quality.My.Resources.Resources.fondo_azul
-        Me.Label5.Location = New System.Drawing.Point(703, 205)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(155, 38)
-        Me.Label5.TabIndex = 24
-        Me.Label5.Text = "Artículos"
-        Me.Label5.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
         'TextTotalServicio
         '
@@ -480,20 +433,6 @@ Partial Class FormVenta
         Me.TextTotalServicio.TabIndex = 9999
         Me.TextTotalServicio.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
-        'Label4
-        '
-        Me.Label4.BackColor = System.Drawing.Color.Transparent
-        Me.Label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Label4.Font = New System.Drawing.Font("Times New Roman", 14.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.ForeColor = System.Drawing.Color.White
-        Me.Label4.Image = Global.Quality.My.Resources.Resources.fondo_azul
-        Me.Label4.Location = New System.Drawing.Point(703, 265)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(155, 38)
-        Me.Label4.TabIndex = 22
-        Me.Label4.Text = "Servicios"
-        Me.Label4.TextAlign = System.Drawing.ContentAlignment.TopCenter
-        '
         'TextTotal
         '
         Me.TextTotal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
@@ -504,20 +443,6 @@ Partial Class FormVenta
         Me.TextTotal.Size = New System.Drawing.Size(155, 29)
         Me.TextTotal.TabIndex = 9999
         Me.TextTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-        '
-        'Label6
-        '
-        Me.Label6.BackColor = System.Drawing.Color.Transparent
-        Me.Label6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Label6.Font = New System.Drawing.Font("Times New Roman", 14.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.ForeColor = System.Drawing.Color.White
-        Me.Label6.Image = Global.Quality.My.Resources.Resources.fondo_azul
-        Me.Label6.Location = New System.Drawing.Point(703, 324)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(155, 36)
-        Me.Label6.TabIndex = 18
-        Me.Label6.Text = "Total"
-        Me.Label6.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
         'GroupBox3
         '
@@ -567,38 +492,121 @@ Partial Class FormVenta
         '
         Me.txtCodigo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtCodigo.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtCodigo.Location = New System.Drawing.Point(92, 11)
+        Me.txtCodigo.Location = New System.Drawing.Point(103, 11)
         Me.txtCodigo.Name = "txtCodigo"
-        Me.txtCodigo.Size = New System.Drawing.Size(108, 25)
+        Me.txtCodigo.Size = New System.Drawing.Size(109, 25)
         Me.txtCodigo.TabIndex = 9999
         Me.txtCodigo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.Image = Global.Quality.My.Resources.Resources.Quality_logo
-        Me.PictureBox1.Location = New System.Drawing.Point(693, 13)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(175, 174)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox1.TabIndex = 60031
-        Me.PictureBox1.TabStop = False
         '
         'ErrorIcono
         '
         Me.ErrorIcono.ContainerControl = Me
         Me.ErrorIcono.RightToLeft = True
         '
+        'DataGridViewTextBoxColumn1
+        '
+        DataGridViewCellStyle35.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.DataGridViewTextBoxColumn1.DefaultCellStyle = DataGridViewCellStyle35
+        Me.DataGridViewTextBoxColumn1.HeaderText = "Código"
+        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
+        '
+        'DataGridViewTextBoxColumn2
+        '
+        Me.DataGridViewTextBoxColumn2.HeaderText = "Descripción"
+        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
+        '
+        'DataGridViewTextBoxColumn3
+        '
+        DataGridViewCellStyle36.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.DataGridViewTextBoxColumn3.DefaultCellStyle = DataGridViewCellStyle36
+        Me.DataGridViewTextBoxColumn3.HeaderText = "Cantidad"
+        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
+        '
+        'DataGridViewTextBoxColumn4
+        '
+        Me.DataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        DataGridViewCellStyle37.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        Me.DataGridViewTextBoxColumn4.DefaultCellStyle = DataGridViewCellStyle37
+        Me.DataGridViewTextBoxColumn4.HeaderText = "V.Unitario"
+        Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
+        '
+        'DataGridViewTextBoxColumn5
+        '
+        Me.DataGridViewTextBoxColumn5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        DataGridViewCellStyle38.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        Me.DataGridViewTextBoxColumn5.DefaultCellStyle = DataGridViewCellStyle38
+        Me.DataGridViewTextBoxColumn5.HeaderText = "Total"
+        Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
+        '
+        'DataGridViewTextBoxColumn6
+        '
+        DataGridViewCellStyle39.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.DataGridViewTextBoxColumn6.DefaultCellStyle = DataGridViewCellStyle39
+        Me.DataGridViewTextBoxColumn6.HeaderText = "Id"
+        Me.DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6"
+        Me.DataGridViewTextBoxColumn6.Visible = False
+        '
+        'DataGridViewTextBoxColumn7
+        '
+        Me.DataGridViewTextBoxColumn7.HeaderText = "Descripción"
+        Me.DataGridViewTextBoxColumn7.Name = "DataGridViewTextBoxColumn7"
+        '
+        'DataGridViewTextBoxColumn8
+        '
+        Me.DataGridViewTextBoxColumn8.HeaderText = "Stock"
+        Me.DataGridViewTextBoxColumn8.Name = "DataGridViewTextBoxColumn8"
+        Me.DataGridViewTextBoxColumn8.Visible = False
+        '
+        'DataGridViewTextBoxColumn9
+        '
+        DataGridViewCellStyle40.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.DataGridViewTextBoxColumn9.DefaultCellStyle = DataGridViewCellStyle40
+        Me.DataGridViewTextBoxColumn9.HeaderText = "Cantidad"
+        Me.DataGridViewTextBoxColumn9.Name = "DataGridViewTextBoxColumn9"
+        '
+        'DataGridViewTextBoxColumn10
+        '
+        DataGridViewCellStyle41.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        Me.DataGridViewTextBoxColumn10.DefaultCellStyle = DataGridViewCellStyle41
+        Me.DataGridViewTextBoxColumn10.HeaderText = "V.Unitario"
+        Me.DataGridViewTextBoxColumn10.Name = "DataGridViewTextBoxColumn10"
+        '
+        'DataGridViewTextBoxColumn11
+        '
+        DataGridViewCellStyle42.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        Me.DataGridViewTextBoxColumn11.DefaultCellStyle = DataGridViewCellStyle42
+        Me.DataGridViewTextBoxColumn11.HeaderText = "Total"
+        Me.DataGridViewTextBoxColumn11.Name = "DataGridViewTextBoxColumn11"
+        '
+        'DataGridViewTextBoxColumn12
+        '
+        Me.DataGridViewTextBoxColumn12.HeaderText = "Id"
+        Me.DataGridViewTextBoxColumn12.Name = "DataGridViewTextBoxColumn12"
+        Me.DataGridViewTextBoxColumn12.Visible = False
+        '
         'DataGridViewImageColumn1
         '
         Me.DataGridViewImageColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        DataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle13.NullValue = CType(resources.GetObject("DataGridViewCellStyle13.NullValue"), Object)
-        DataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.White
-        Me.DataGridViewImageColumn1.DefaultCellStyle = DataGridViewCellStyle13
+        DataGridViewCellStyle43.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle43.NullValue = CType(resources.GetObject("DataGridViewCellStyle43.NullValue"), Object)
+        DataGridViewCellStyle43.SelectionBackColor = System.Drawing.Color.White
+        Me.DataGridViewImageColumn1.DefaultCellStyle = DataGridViewCellStyle43
         Me.DataGridViewImageColumn1.HeaderText = "Quitar"
         Me.DataGridViewImageColumn1.Image = Global.Quality.My.Resources.Resources.RecycleBin_Full_icon__2_
         Me.DataGridViewImageColumn1.Name = "DataGridViewImageColumn1"
         Me.DataGridViewImageColumn1.ReadOnly = True
+        Me.DataGridViewImageColumn1.Width = 50
+        '
+        'DataGridViewImageColumn2
+        '
+        DataGridViewCellStyle44.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle44.NullValue = CType(resources.GetObject("DataGridViewCellStyle44.NullValue"), Object)
+        DataGridViewCellStyle44.SelectionBackColor = System.Drawing.Color.White
+        Me.DataGridViewImageColumn2.DefaultCellStyle = DataGridViewCellStyle44
+        Me.DataGridViewImageColumn2.HeaderText = "Quitar"
+        Me.DataGridViewImageColumn2.Image = Global.Quality.My.Resources.Resources.papelera
+        Me.DataGridViewImageColumn2.Name = "DataGridViewImageColumn2"
+        Me.DataGridViewImageColumn2.Width = 50
         '
         'Panel1
         '
@@ -713,10 +721,10 @@ Partial Class FormVenta
         Me.btCancelar.Text = "&Cancelar"
         Me.btCancelar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         '
-        'ToolStripSeparator6
+        'ToolStripSeparator3
         '
-        Me.ToolStripSeparator6.Name = "ToolStripSeparator6"
-        Me.ToolStripSeparator6.Size = New System.Drawing.Size(6, 37)
+        Me.ToolStripSeparator3.Name = "ToolStripSeparator3"
+        Me.ToolStripSeparator3.Size = New System.Drawing.Size(6, 37)
         '
         'btAnular
         '
@@ -728,6 +736,11 @@ Partial Class FormVenta
         Me.btAnular.Size = New System.Drawing.Size(91, 34)
         Me.btAnular.Text = "&Anular"
         Me.btAnular.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        '
+        'ToolStripSeparator6
+        '
+        Me.ToolStripSeparator6.Name = "ToolStripSeparator6"
+        Me.ToolStripSeparator6.Size = New System.Drawing.Size(6, 37)
         '
         'btImprimir
         '
@@ -745,91 +758,92 @@ Partial Class FormVenta
         Me.ToolStripSeparator8.Name = "ToolStripSeparator8"
         Me.ToolStripSeparator8.Size = New System.Drawing.Size(6, 37)
         '
-        'DataGridViewTextBoxColumn1
+        'dgQuitarServ
         '
-        DataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.DataGridViewTextBoxColumn1.DefaultCellStyle = DataGridViewCellStyle14
-        Me.DataGridViewTextBoxColumn1.HeaderText = "Código"
-        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
+        DataGridViewCellStyle34.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle34.NullValue = CType(resources.GetObject("DataGridViewCellStyle34.NullValue"), Object)
+        DataGridViewCellStyle34.SelectionBackColor = System.Drawing.Color.White
+        Me.dgQuitarServ.DefaultCellStyle = DataGridViewCellStyle34
+        Me.dgQuitarServ.HeaderText = "Quitar"
+        Me.dgQuitarServ.Image = Global.Quality.My.Resources.Resources.papelera
+        Me.dgQuitarServ.Name = "dgQuitarServ"
+        Me.dgQuitarServ.ReadOnly = True
+        Me.dgQuitarServ.Width = 50
         '
-        'DataGridViewTextBoxColumn2
+        'dgQuitar
         '
-        Me.DataGridViewTextBoxColumn2.HeaderText = "Descripción"
-        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
+        DataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle29.NullValue = CType(resources.GetObject("DataGridViewCellStyle29.NullValue"), Object)
+        DataGridViewCellStyle29.SelectionBackColor = System.Drawing.Color.White
+        Me.dgQuitar.DefaultCellStyle = DataGridViewCellStyle29
+        Me.dgQuitar.HeaderText = "Quitar"
+        Me.dgQuitar.Image = Global.Quality.My.Resources.Resources.papelera
+        Me.dgQuitar.Name = "dgQuitar"
+        Me.dgQuitar.ReadOnly = True
+        Me.dgQuitar.Width = 50
         '
-        'DataGridViewTextBoxColumn3
+        'Label5
         '
-        DataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.DataGridViewTextBoxColumn3.DefaultCellStyle = DataGridViewCellStyle15
-        Me.DataGridViewTextBoxColumn3.HeaderText = "Cantidad"
-        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
+        Me.Label5.BackColor = System.Drawing.Color.Transparent
+        Me.Label5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Label5.Font = New System.Drawing.Font("Times New Roman", 14.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.ForeColor = System.Drawing.Color.White
+        Me.Label5.Image = Global.Quality.My.Resources.Resources.fondo_azul
+        Me.Label5.Location = New System.Drawing.Point(703, 205)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(155, 38)
+        Me.Label5.TabIndex = 24
+        Me.Label5.Text = "Artículos"
+        Me.Label5.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
-        'DataGridViewTextBoxColumn4
+        'Label4
         '
-        Me.DataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        DataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        Me.DataGridViewTextBoxColumn4.DefaultCellStyle = DataGridViewCellStyle16
-        Me.DataGridViewTextBoxColumn4.HeaderText = "V.Unitario"
-        Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
+        Me.Label4.BackColor = System.Drawing.Color.Transparent
+        Me.Label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Label4.Font = New System.Drawing.Font("Times New Roman", 14.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.ForeColor = System.Drawing.Color.White
+        Me.Label4.Image = Global.Quality.My.Resources.Resources.fondo_azul
+        Me.Label4.Location = New System.Drawing.Point(703, 265)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(155, 38)
+        Me.Label4.TabIndex = 22
+        Me.Label4.Text = "Servicios"
+        Me.Label4.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
-        'DataGridViewTextBoxColumn5
+        'Label6
         '
-        Me.DataGridViewTextBoxColumn5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        DataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        Me.DataGridViewTextBoxColumn5.DefaultCellStyle = DataGridViewCellStyle17
-        Me.DataGridViewTextBoxColumn5.HeaderText = "Total"
-        Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
+        Me.Label6.BackColor = System.Drawing.Color.Transparent
+        Me.Label6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Label6.Font = New System.Drawing.Font("Times New Roman", 14.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.ForeColor = System.Drawing.Color.White
+        Me.Label6.Image = Global.Quality.My.Resources.Resources.fondo_azul
+        Me.Label6.Location = New System.Drawing.Point(703, 324)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(155, 36)
+        Me.Label6.TabIndex = 18
+        Me.Label6.Text = "Total"
+        Me.Label6.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
-        'DataGridViewTextBoxColumn6
+        'PictureBox1
         '
-        DataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.DataGridViewTextBoxColumn6.DefaultCellStyle = DataGridViewCellStyle18
-        Me.DataGridViewTextBoxColumn6.HeaderText = "Id"
-        Me.DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6"
-        Me.DataGridViewTextBoxColumn6.Visible = False
+        Me.PictureBox1.Image = Global.Quality.My.Resources.Resources.Quality_logo
+        Me.PictureBox1.Location = New System.Drawing.Point(693, 13)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(175, 174)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 60031
+        Me.PictureBox1.TabStop = False
         '
-        'DataGridViewTextBoxColumn7
+        'TextTotalArticulos
         '
-        Me.DataGridViewTextBoxColumn7.HeaderText = "Descripción"
-        Me.DataGridViewTextBoxColumn7.Name = "DataGridViewTextBoxColumn7"
-        '
-        'DataGridViewTextBoxColumn8
-        '
-        Me.DataGridViewTextBoxColumn8.HeaderText = "Stock"
-        Me.DataGridViewTextBoxColumn8.Name = "DataGridViewTextBoxColumn8"
-        Me.DataGridViewTextBoxColumn8.Visible = False
-        '
-        'DataGridViewTextBoxColumn9
-        '
-        DataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.DataGridViewTextBoxColumn9.DefaultCellStyle = DataGridViewCellStyle19
-        Me.DataGridViewTextBoxColumn9.HeaderText = "Cantidad"
-        Me.DataGridViewTextBoxColumn9.Name = "DataGridViewTextBoxColumn9"
-        '
-        'DataGridViewTextBoxColumn10
-        '
-        DataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        Me.DataGridViewTextBoxColumn10.DefaultCellStyle = DataGridViewCellStyle20
-        Me.DataGridViewTextBoxColumn10.HeaderText = "V.Unitario"
-        Me.DataGridViewTextBoxColumn10.Name = "DataGridViewTextBoxColumn10"
-        '
-        'DataGridViewTextBoxColumn11
-        '
-        DataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        Me.DataGridViewTextBoxColumn11.DefaultCellStyle = DataGridViewCellStyle21
-        Me.DataGridViewTextBoxColumn11.HeaderText = "Total"
-        Me.DataGridViewTextBoxColumn11.Name = "DataGridViewTextBoxColumn11"
-        '
-        'DataGridViewTextBoxColumn12
-        '
-        Me.DataGridViewTextBoxColumn12.HeaderText = "Id"
-        Me.DataGridViewTextBoxColumn12.Name = "DataGridViewTextBoxColumn12"
-        Me.DataGridViewTextBoxColumn12.Visible = False
-        '
-        'ToolStripSeparator3
-        '
-        Me.ToolStripSeparator3.Name = "ToolStripSeparator3"
-        Me.ToolStripSeparator3.Size = New System.Drawing.Size(6, 37)
+        Me.TextTotalArticulos.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TextTotalArticulos.Font = New System.Drawing.Font("Times New Roman", 14.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextTotalArticulos.ForeColor = System.Drawing.Color.Black
+        Me.TextTotalArticulos.Location = New System.Drawing.Point(703, 223)
+        Me.TextTotalArticulos.Name = "TextTotalArticulos"
+        Me.TextTotalArticulos.Size = New System.Drawing.Size(155, 29)
+        Me.TextTotalArticulos.TabIndex = 999
+        Me.TextTotalArticulos.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'FormVenta
         '
@@ -858,12 +872,12 @@ Partial Class FormVenta
         CType(Me.dgvProducto, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox4.ResumeLayout(False)
         Me.GroupBox4.PerformLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ErrorIcono, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ToolStrip1.ResumeLayout(False)
         Me.ToolStrip1.PerformLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -890,7 +904,6 @@ Partial Class FormVenta
     Friend WithEvents GroupBox2 As GroupBox
     Public WithEvents TextTelefono As TextBox
     Public WithEvents Label2 As Label
-    Public WithEvents TextTotalArticulos As TextBox
     Public WithEvents Label5 As Label
     Public WithEvents TextTotalServicio As TextBox
     Public WithEvents Label4 As Label
@@ -940,4 +953,6 @@ Partial Class FormVenta
     Friend WithEvents dgTipo As DataGridViewTextBoxColumn
     Friend WithEvents dgQuitar As DataGridViewImageColumn
     Friend WithEvents ToolStripSeparator3 As ToolStripSeparator
+    Friend WithEvents DataGridViewImageColumn2 As DataGridViewImageColumn
+    Public WithEvents TextTotalArticulos As TextBox
 End Class

@@ -342,7 +342,7 @@ Public Class FormVenta
     Private Sub buscarServicio()
         Dim params As New List(Of String)
         params.Add(String.Empty)
-        Generales.busquedaItems("[SP_SERVICIO_FACTURA_CONSULTAR]",
+        Generales.busquedaItems(Sentencias.SERVICIO_FACTURA_CONSULTAR,
                                    params,
                                    Titulo.BUSQUEDA_SERVICIO,
                                    dgvServicio,
@@ -356,7 +356,7 @@ Public Class FormVenta
     Private Sub buscarProducto()
         Dim params As New List(Of String)
         params.Add(String.Empty)
-        Generales.busquedaItems("[SP_PRODUCTOS_FACTURA_CONSULTAR]",
+        Generales.busquedaItems(Sentencias.PRODUCTOS_FACTURA_CONSULTAR,
                                    params,
                                    Titulo.BUSQUEDA_PRODUCTO,
                                    dgvProducto,

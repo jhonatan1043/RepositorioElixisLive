@@ -304,9 +304,9 @@ Public Class FormEmpleado
     End Sub
     Private Sub btBuscarPersona_Validating(sender As Object, e As EventArgs) Handles btBuscarPersona.LostFocus
         If txtNombre.Text = "" And btRegistrar.Enabled = True Then
-            Me.ErrorIcono.SetError(btBuscarPersona, "Debe escoger una persona")
+            Me.ErrorIcono.SetError(txtNombre, "Debe escoger una persona")
         Else
-            Me.ErrorIcono.SetError(btBuscarPersona, Constantes.CADENA_VACIA)
+            Me.ErrorIcono.SetError(txtNombre, Constantes.CADENA_VACIA)
         End If
     End Sub
 

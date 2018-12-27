@@ -29,7 +29,6 @@ Partial Class FormPersona
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.chUsuario = New System.Windows.Forms.CheckBox()
-        Me.btBuscarPerfil = New System.Windows.Forms.Button()
         Me.txtPerfil = New System.Windows.Forms.TextBox()
         Me.txtUsuario = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -49,7 +48,6 @@ Partial Class FormPersona
         Me.Label11 = New System.Windows.Forms.Label()
         Me.GroupBox7 = New System.Windows.Forms.GroupBox()
         Me.CombotipoIdentificacion = New System.Windows.Forms.ComboBox()
-        Me.TextDV = New System.Windows.Forms.TextBox()
         Me.TextNombre = New System.Windows.Forms.TextBox()
         Me.Label17 = New System.Windows.Forms.Label()
         Me.TextIdentificacion = New System.Windows.Forms.TextBox()
@@ -70,9 +68,11 @@ Partial Class FormPersona
         Me.ToolStripSeparator3 = New System.Windows.Forms.ToolStripSeparator()
         Me.btAnular = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripSeparator6 = New System.Windows.Forms.ToolStripSeparator()
+        Me.btBuscarPerfil = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Pimagen = New System.Windows.Forms.PictureBox()
         Me.LTitulo = New System.Windows.Forms.Label()
+        Me.TextDV = New System.Windows.Forms.Label()
         Me.GroupBox4.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -160,17 +160,6 @@ Partial Class FormPersona
         Me.chUsuario.TabIndex = 13
         Me.chUsuario.Text = "Asignar usuario"
         Me.chUsuario.UseVisualStyleBackColor = True
-        '
-        'btBuscarPerfil
-        '
-        Me.btBuscarPerfil.BackgroundImage = Global.Quality.My.Resources.Resources.fondo_azul
-        Me.btBuscarPerfil.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btBuscarPerfil.Image = Global.Quality.My.Resources.Resources.Zoom_icon1
-        Me.btBuscarPerfil.Location = New System.Drawing.Point(368, 84)
-        Me.btBuscarPerfil.Name = "btBuscarPerfil"
-        Me.btBuscarPerfil.Size = New System.Drawing.Size(26, 25)
-        Me.btBuscarPerfil.TabIndex = 15
-        Me.btBuscarPerfil.UseVisualStyleBackColor = True
         '
         'txtPerfil
         '
@@ -371,8 +360,8 @@ Partial Class FormPersona
         'GroupBox7
         '
         Me.GroupBox7.BackColor = System.Drawing.Color.Transparent
-        Me.GroupBox7.Controls.Add(Me.CombotipoIdentificacion)
         Me.GroupBox7.Controls.Add(Me.TextDV)
+        Me.GroupBox7.Controls.Add(Me.CombotipoIdentificacion)
         Me.GroupBox7.Controls.Add(Me.TextNombre)
         Me.GroupBox7.Controls.Add(Me.Label17)
         Me.GroupBox7.Controls.Add(Me.TextIdentificacion)
@@ -395,17 +384,6 @@ Partial Class FormPersona
         Me.CombotipoIdentificacion.Name = "CombotipoIdentificacion"
         Me.CombotipoIdentificacion.Size = New System.Drawing.Size(154, 25)
         Me.CombotipoIdentificacion.TabIndex = 1
-        '
-        'TextDV
-        '
-        Me.TextDV.BackColor = System.Drawing.SystemColors.ControlLightLight
-        Me.TextDV.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextDV.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextDV.Location = New System.Drawing.Point(660, 15)
-        Me.TextDV.Name = "TextDV"
-        Me.TextDV.Size = New System.Drawing.Size(26, 25)
-        Me.TextDV.TabIndex = 999
-        Me.TextDV.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'TextNombre
         '
@@ -583,6 +561,17 @@ Partial Class FormPersona
         Me.ToolStripSeparator6.Name = "ToolStripSeparator6"
         Me.ToolStripSeparator6.Size = New System.Drawing.Size(6, 37)
         '
+        'btBuscarPerfil
+        '
+        Me.btBuscarPerfil.BackgroundImage = Global.Quality.My.Resources.Resources.fondo_azul
+        Me.btBuscarPerfil.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btBuscarPerfil.Image = Global.Quality.My.Resources.Resources.Zoom_icon1
+        Me.btBuscarPerfil.Location = New System.Drawing.Point(368, 83)
+        Me.btBuscarPerfil.Name = "btBuscarPerfil"
+        Me.btBuscarPerfil.Size = New System.Drawing.Size(26, 25)
+        Me.btBuscarPerfil.TabIndex = 15
+        Me.btBuscarPerfil.UseVisualStyleBackColor = True
+        '
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.White
@@ -617,6 +606,16 @@ Partial Class FormPersona
         Me.LTitulo.TabIndex = 1
         Me.LTitulo.Text = "Persona"
         Me.LTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'TextDV
+        '
+        Me.TextDV.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TextDV.ForeColor = System.Drawing.Color.Black
+        Me.TextDV.Location = New System.Drawing.Point(660, 15)
+        Me.TextDV.Name = "TextDV"
+        Me.TextDV.Size = New System.Drawing.Size(26, 25)
+        Me.TextDV.TabIndex = 1000
+        Me.TextDV.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'FormPersona
         '
@@ -683,7 +682,6 @@ Partial Class FormPersona
     Public WithEvents Label11 As Label
     Friend WithEvents GroupBox7 As GroupBox
     Friend WithEvents CombotipoIdentificacion As ComboBox
-    Public WithEvents TextDV As TextBox
     Public WithEvents TextNombre As TextBox
     Public WithEvents Label17 As Label
     Public WithEvents TextIdentificacion As TextBox
@@ -703,4 +701,5 @@ Partial Class FormPersona
     Friend WithEvents ErrorIcono As ErrorProvider
     Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents ListSucursal As CheckedListBox
+    Friend WithEvents TextDV As Label
 End Class
