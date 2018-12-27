@@ -12,7 +12,7 @@ Public Class CambioClaveDAL
                     comando.Parameters.Clear()
                     comando.CommandText = "SP_CAMBIAR_CLAVE_GUARDAR"
                     comando.Parameters.Add(New SqlParameter("@contranueva", SqlDbType.NVarChar)).Value = objClave.confirmarClave
-                    comando.Parameters.Add(New SqlParameter("@usuario", SqlDbType.Int)).Value = objClave.nombreUsuario
+                    comando.Parameters.Add(New SqlParameter("@usuario", SqlDbType.NVarChar)).Value = objClave.nombreUsuario
                     comando.ExecuteNonQuery()
                     trnsccion.Commit()
                 End Using
