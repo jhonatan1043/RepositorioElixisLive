@@ -18,13 +18,9 @@
         If Not objClave.verificarClave() Then
             ErrorIcono.SetError(txtContraseña, "Clave incorrecta")
             txtContraseña.Focus()
-            erroractual.Visible = True
-            erroractual.Image = My.Resources.rojo
             txtContraseña.ResetText()
         Else
             ErrorIcono.SetError(txtContraseña, "")
-            erroractual.Visible = True
-            erroractual.Image = My.Resources.verde
             txtContraseña.ReadOnly = True
         End If
     End Sub
@@ -43,44 +39,37 @@
             ErrorIcono.SetError(txtClaveNueva, "la clave no puede ser igual a la actual")
             txtClaveNueva.ResetText()
             txtClaveNueva.Focus()
-            nuevo.Visible = True
-            nuevo.Image = My.Resources.rojo
         ElseIf txtClaveNueva.Text = "" Then
             ErrorIcono.SetError(txtClaveNueva, "Digite una nueva clave")
             txtClaveNueva.Focus()
-            nuevo.Visible = True
         ElseIf (txtClaveNueva.Text.Length < 4 Or txtClaveNueva.Text.Length > 15) Then
             EstiloMensajes.mostrarMensajeAdvertencia("¡Por favor digite una clave de usuario válida (entre 6-15 caracteres)!")
-            nuevo.Visible = True
             txtClaveNueva.Focus()
         Else
             ErrorIcono.SetError(txtClaveNueva, "")
             ErrorIcono.SetError(txtClaveNueva, "")
-            nuevo.Visible = True
-            nuevo.Image = My.Resources.verde
         End If
     End Sub
     Public Function validarControles()
         objClave.claveActual = txtContraseña.Text
         If Not objClave.verificarClave Then
-            erroractual.Visible = True
-            erroractual.Image = My.Resources.rojo
+            ErrorIcono.SetError(txtContraseña, "Clave incorrecta")
             txtContraseña.ResetText()
             txtContraseña.Focus()
         ElseIf String.IsNullOrEmpty(txtConfirmarClave.Text) Then
-            MsgBox("Confirme su clave", MsgBoxStyle.Exclamation)
+            ErrorIcono.SetError(txtConfirmarClave, "Confirme su clave")
             txtConfirmarClave.Focus()
         ElseIf txtConfirmarClave.Text <> txtClaveNueva.Text Then
-            MsgBox("La clave no coincide", MsgBoxStyle.Exclamation)
             txtConfirmarClave.ResetText()
-            confirmar.Visible = True
+            ErrorIcono.SetError(txtConfirmarClave, "La clave no coincide")
             txtConfirmarClave.Focus()
         ElseIf String.IsNullOrEmpty(txtClaveNueva.Text) Then
-            MsgBox("Digite una clave nueva", MsgBoxStyle.Exclamation)
+            ErrorIcono.SetError(txtClaveNueva, "Digite una clave nueva")
             txtClaveNueva.Focus()
         Else
-            confirmar.Image = My.Resources.verde
-            confirmar.Visible = True
+            ErrorIcono.SetError(txtClaveNueva, "")
+            ErrorIcono.SetError(txtContraseña, "")
+            ErrorIcono.SetError(txtConfirmarClave, "")
             Return True
         End If
         Return False
@@ -94,12 +83,8 @@
             EstiloMensajes.mostrarMensajeExitoso(MensajeSistema.REGISTRO_GUARDADO)
             txtContraseña.Focus()
             txtContraseña.ReadOnly = False
-            nuevo.Visible = False
-            confirmar.Visible = False
-            erroractual.Visible = False
             txtContraseña.Clear()
             txtClaveNueva.Clear()
-            erroractual.Visible = False
             txtConfirmarClave.Clear()
         Catch ex As Exception
             EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
@@ -108,12 +93,6 @@
     Private Sub btRegistrar_Click(sender As Object, e As EventArgs) Handles btRegistrar.Click
         If validarControles() Then
             guardar()
-        End If
-    End Sub
-
-    Private Sub txtClaveNueva_TextChanged(sender As Object, e As EventArgs) Handles txtClaveNueva.TextChanged
-        If txtClaveNueva.Text = "" Then
-            nuevo.Visible = False
         End If
     End Sub
 

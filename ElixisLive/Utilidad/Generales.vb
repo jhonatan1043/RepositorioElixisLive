@@ -643,7 +643,6 @@ Public Class Generales
         Dim dtTabla As New DataTable
         Dim resultado As Boolean
         Try
-
             dtTabla.Columns.Add(valorInterno)
             dtTabla.Columns.Add(valorExterno)
 
@@ -651,17 +650,13 @@ Public Class Generales
             drFila.Item(0) = "-1"
             drFila.Item(1) = " - - - Seleccione - - - "
             dtTabla.Rows.Add(drFila)
-
             objConexion.conectar()
-
             Using da = New SqlDataAdapter(consulta & Funciones.getParametros(params), objConexion.cnxbd)
                 da.Fill(dtTabla)
             End Using
-
             If dtTabla.Rows.Count > 1 Then
                 resultado = True
             End If
-
             contedor.DataSource = dtTabla
             contedor.DisplayMember = valorExterno
             contedor.ValueMember = valorInterno
@@ -669,9 +664,7 @@ Public Class Generales
         Catch ex As Exception
             Throw ex
         End Try
-
         objConexion.desConectar()
-
         Return contedor
     End Function
     Public Shared Sub mostrarMensaje(ByVal mensaje As String, icono As Image)
@@ -708,6 +701,7 @@ Public Class Generales
             Return respuesta
         Catch ex As Exception
             EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
+            objConexion.desConectar()
             Return False
         End Try
         objConexion.desConectar()

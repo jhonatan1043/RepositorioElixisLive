@@ -25,9 +25,6 @@ Partial Class FormCambioClave
         Me.components = New System.ComponentModel.Container()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.txtUsuario = New System.Windows.Forms.Label()
-        Me.confirmar = New System.Windows.Forms.PictureBox()
-        Me.nuevo = New System.Windows.Forms.PictureBox()
-        Me.erroractual = New System.Windows.Forms.PictureBox()
         Me.txtConfirmarClave = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.txtClaveNueva = New System.Windows.Forms.TextBox()
@@ -44,9 +41,6 @@ Partial Class FormCambioClave
         Me.ToolStripSeparator4 = New System.Windows.Forms.ToolStripSeparator()
         Me.ErrorIcono = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.GroupBox2.SuspendLayout()
-        CType(Me.confirmar, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.nuevo, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.erroractual, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ToolStrip1.SuspendLayout()
@@ -58,9 +52,6 @@ Partial Class FormCambioClave
         Me.GroupBox2.BackColor = System.Drawing.Color.Transparent
         Me.GroupBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.GroupBox2.Controls.Add(Me.txtUsuario)
-        Me.GroupBox2.Controls.Add(Me.confirmar)
-        Me.GroupBox2.Controls.Add(Me.nuevo)
-        Me.GroupBox2.Controls.Add(Me.erroractual)
         Me.GroupBox2.Controls.Add(Me.txtConfirmarClave)
         Me.GroupBox2.Controls.Add(Me.Label2)
         Me.GroupBox2.Controls.Add(Me.txtClaveNueva)
@@ -82,39 +73,9 @@ Partial Class FormCambioClave
         Me.txtUsuario.ForeColor = System.Drawing.Color.Black
         Me.txtUsuario.Location = New System.Drawing.Point(161, 14)
         Me.txtUsuario.Name = "txtUsuario"
-        Me.txtUsuario.Size = New System.Drawing.Size(163, 25)
+        Me.txtUsuario.Size = New System.Drawing.Size(191, 25)
         Me.txtUsuario.TabIndex = 1003
         Me.txtUsuario.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'confirmar
-        '
-        Me.confirmar.Location = New System.Drawing.Point(328, 103)
-        Me.confirmar.Name = "confirmar"
-        Me.confirmar.Size = New System.Drawing.Size(24, 21)
-        Me.confirmar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.confirmar.TabIndex = 32
-        Me.confirmar.TabStop = False
-        Me.confirmar.Visible = False
-        '
-        'nuevo
-        '
-        Me.nuevo.Location = New System.Drawing.Point(328, 75)
-        Me.nuevo.Name = "nuevo"
-        Me.nuevo.Size = New System.Drawing.Size(24, 21)
-        Me.nuevo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.nuevo.TabIndex = 31
-        Me.nuevo.TabStop = False
-        Me.nuevo.Visible = False
-        '
-        'erroractual
-        '
-        Me.erroractual.Location = New System.Drawing.Point(328, 46)
-        Me.erroractual.Name = "erroractual"
-        Me.erroractual.Size = New System.Drawing.Size(24, 21)
-        Me.erroractual.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.erroractual.TabIndex = 30
-        Me.erroractual.TabStop = False
-        Me.erroractual.Visible = False
         '
         'txtConfirmarClave
         '
@@ -124,7 +85,7 @@ Partial Class FormCambioClave
         Me.txtConfirmarClave.MaxLength = 20
         Me.txtConfirmarClave.Name = "txtConfirmarClave"
         Me.txtConfirmarClave.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.txtConfirmarClave.Size = New System.Drawing.Size(163, 25)
+        Me.txtConfirmarClave.Size = New System.Drawing.Size(191, 25)
         Me.txtConfirmarClave.TabIndex = 11
         '
         'Label2
@@ -147,7 +108,7 @@ Partial Class FormCambioClave
         Me.txtClaveNueva.MaxLength = 20
         Me.txtClaveNueva.Name = "txtClaveNueva"
         Me.txtClaveNueva.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.txtClaveNueva.Size = New System.Drawing.Size(163, 25)
+        Me.txtClaveNueva.Size = New System.Drawing.Size(191, 25)
         Me.txtClaveNueva.TabIndex = 9
         '
         'Label1
@@ -170,7 +131,7 @@ Partial Class FormCambioClave
         Me.txtContraseña.MaxLength = 20
         Me.txtContraseña.Name = "txtContraseña"
         Me.txtContraseña.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.txtContraseña.Size = New System.Drawing.Size(163, 25)
+        Me.txtContraseña.Size = New System.Drawing.Size(191, 25)
         Me.txtContraseña.TabIndex = 7
         '
         'PasswordLabel
@@ -287,9 +248,6 @@ Partial Class FormCambioClave
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
-        CType(Me.confirmar, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.nuevo, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.erroractual, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ToolStrip1.ResumeLayout(False)
@@ -315,9 +273,6 @@ Partial Class FormCambioClave
     Public WithEvents Panel1 As Panel
     Public WithEvents Pimagen As PictureBox
     Public WithEvents LTitulo As Label
-    Public WithEvents confirmar As PictureBox
-    Public WithEvents nuevo As PictureBox
-    Public WithEvents erroractual As PictureBox
     Friend WithEvents txtUsuario As Label
     Friend WithEvents ErrorIcono As ErrorProvider
 End Class
