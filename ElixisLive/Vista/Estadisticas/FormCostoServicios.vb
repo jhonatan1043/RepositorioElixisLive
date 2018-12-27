@@ -4,7 +4,7 @@
         cargarServicios()
     End Sub
     Private Sub cargarServicios()
-        Generales.llenarTabla("[SP_CONFIGURACION_COSTO_SERVICIO_LISTAR]", Nothing, dtServicios)
+        Generales.llenarTabla(Sentencias.CONFIGURACION_COSTO_SERVICIO_LISTAR, Nothing, dtServicios)
         dgvServicio.DataSource = dtServicios
         dgvServicio.Columns(0).Visible = False
         dgvServicio.Columns(1).AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
@@ -17,7 +17,7 @@
     Private Sub cargarProductos(pCodigo As Integer)
         Dim params As New List(Of String)
         params.Add(pCodigo)
-        Generales.llenarTabla("[SP_COSTO_SERVICIO_CARGAR]", params, dtProductos)
+        Generales.llenarTabla(Sentencias.COSTO_SERVICIO_CARGAR, params, dtProductos)
         dgvProducto.DataSource = dtProductos
         If dtProductos.Rows.Count > 0 Then
             dgvProducto.Columns(0).Visible = False

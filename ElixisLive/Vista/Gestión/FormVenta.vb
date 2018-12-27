@@ -153,7 +153,7 @@ Public Class FormVenta
         Dim params As New List(Of String)
         Dim dRows As DataRow
         params.Add(codigo)
-        dRows = Generales.cargarItem("[SP_PRODUCTOS_FACTURA_CARGAR]", params)
+        dRows = Generales.cargarItem(Sentencias.PRODUCTOS_FACTURA_CARGAR, params)
         If Not IsNothing(dRows) Then
             objVenta.dtProductos(dgvProducto.CurrentCell.RowIndex).Item("Descripcion") = dRows("Descripcion")
             objVenta.dtProductos(dgvProducto.CurrentCell.RowIndex).Item("Stock") = dRows("Stock")
@@ -316,15 +316,15 @@ Public Class FormVenta
         Dim dRows As DataRow
         params.Add(pCodigo)
         objVenta.codigo = pCodigo
-        dRows = Generales.cargarItem("[SP_INVEN_VENTA_CARGAR]", params)
+        dRows = Generales.cargarItem(Sentencias.INVEN_VENTA_CARGAR, params)
 
         txtCodigo.Text = pCodigo
         txtIdentificacion.Text = dRows("Identificacion")
         TextNombre.Text = dRows("Nombre")
         TextTelefono.Text = dRows("Telefono")
 
-        Generales.llenarTabla("[SP_VENTA_CARGAR_PRODUCTO]", params, objVenta.dtProductos)
-        Generales.llenarTabla("[SP_VENTA_CARGAR_SERVICIO]", params, objVenta.dtServicio)
+        Generales.llenarTabla(Sentencias.VENTA_CARGAR_PRODUCTO, params, objVenta.dtProductos)
+        Generales.llenarTabla(Sentencias.VENTA_CARGAR_SERVICIO, params, objVenta.dtServicio)
         dgvProducto.DataSource = objVenta.dtProductos
         dgvServicio.DataSource = objVenta.dtServicio
         calcularTotales()
