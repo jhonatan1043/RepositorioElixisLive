@@ -337,7 +337,7 @@ Public Class FormPersona
         params.Add(codigo)
         params.Add(editable)
         Try
-            Generales.llenarTabla("[SP_PERSONA_SUCURSALES_ASIGNADO]", params, objPersona.dtSucursal)
+            Generales.llenarTabla(Sentencias.PERSONA_SUCURSALES_ASIGNADO, params, objPersona.dtSucursal)
 
             ListSucursal.DataSource = objPersona.dtSucursal
             ListSucursal.ValueMember = "Codigo"
@@ -352,7 +352,7 @@ Public Class FormPersona
     End Sub
     Private Sub listaSucursalesListar()
         Try
-            Generales.llenarTabla("[SP_PERSONA_SUCURSALES_SIN_ASIGNAR]", Nothing, objPersona.dtSucursal)
+            Generales.llenarTabla(Sentencias.PERSONA_SUCURSALES_SIN_ASIGNAR, Nothing, objPersona.dtSucursal)
             ListSucursal.DataSource = objPersona.dtSucursal
             ListSucursal.ValueMember = "Codigo"
             ListSucursal.DisplayMember = "Nombre"

@@ -277,4 +277,8 @@
         Dim open As New OpenFileDialog
         objEmpresa.banderaImagen = Generales.subirimagen(pictImagen, open)
     End Sub
+
+    Private Sub txtId_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtId.KeyPress, TextTelefono.KeyPress, TextCelular.KeyPress
+        ValidacionDigitacion.validarValoresNumericos(e)
+    End Sub
 End Class

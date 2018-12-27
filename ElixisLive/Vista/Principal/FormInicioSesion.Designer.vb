@@ -76,6 +76,7 @@ Partial Class FormInicioSesion
         '
         'txtUsuario
         '
+        Me.txtUsuario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtUsuario.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtUsuario.Location = New System.Drawing.Point(229, 31)
         Me.txtUsuario.MaxLength = 15
@@ -85,6 +86,7 @@ Partial Class FormInicioSesion
         '
         'txtContraseña
         '
+        Me.txtContraseña.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtContraseña.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtContraseña.Location = New System.Drawing.Point(229, 73)
         Me.txtContraseña.MaxLength = 20

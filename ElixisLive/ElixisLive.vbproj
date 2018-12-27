@@ -112,6 +112,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationEvents.vb" />
+    <Compile Include="Controlador\Administracion\CambioClaveDAL.vb" />
     <Compile Include="Controlador\Administracion\EmpleadoDAL.vb" />
     <Compile Include="Controlador\Administracion\EmpresaDAL.vb" />
     <Compile Include="Controlador\Administracion\PerfilDAL.vb" />
@@ -133,6 +134,7 @@
     <Compile Include="ControlesElixisLive\TextFiltrarRegistro.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Entidad\Administracion\CambioClave.vb" />
     <Compile Include="Entidad\Administracion\Empleado.vb" />
     <Compile Include="Entidad\Administracion\Empresa.vb" />
     <Compile Include="Entidad\Administracion\Perfil.vb" />
@@ -364,6 +366,12 @@
     <Compile Include="Vista\Principal\FormBusqueda.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Vista\Principal\FormCambioClave.Designer.vb">
+      <DependentUpon>FormCambioClave.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Principal\FormCambioClave.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Vista\Principal\FormCerrarSesion.Designer.vb">
       <DependentUpon>FormCerrarSesion.vb</DependentUpon>
     </Compile>
@@ -492,6 +500,9 @@
     <EmbeddedResource Include="Vista\Principal\FormBusqueda.resx">
       <DependentUpon>FormBusqueda.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Principal\FormCambioClave.resx">
+      <DependentUpon>FormCambioClave.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vista\Principal\FormCerrarSesion.resx">
       <DependentUpon>FormCerrarSesion.vb</DependentUpon>
     </EmbeddedResource>
@@ -536,6 +547,7 @@
     <Content Include="ReferenciaDLL\CnxElixisLiveBD.dll" />
     <Content Include="ReferenciaDLL\MySql.Data.DLL" />
     <Content Include="ReferenciaDLL\NotifySenderControl.dll" />
+    <None Include="Resources\Keys-icon1.png" />
     <None Include="Resources\Money-Bag-icon.png" />
     <None Include="Resources\note-add-icon1.png" />
     <None Include="Resources\User-Files-icon1.png" />

@@ -693,6 +693,23 @@ Public Class Generales
         objConexion.desConectar()
         Return True
     End Function
+    Public Shared Function getEstadoVF(pConsultaSQL As String,
+                                     plistaParam As List(Of String)) As Boolean
+        Dim respuesta As Boolean
+        If Not IsNothing(plistaParam) Then
+            pConsultaSQL = pConsultaSQL & Funciones.getParametros(plistaParam)
+        End If
+        Try
+            Using consulta As New SqlCommand(pConsultaSQL)
+                consulta.Connection = objConexion.cnxbd
+                respuesta = consulta.ExecuteScalar()
+            End Using
+            Return respuesta
+        Catch ex As Exception
+            EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
+            Return False
+        End Try
+    End Function
     Public Shared Sub subirArchivoFTP(objeto As Object)
         Dim segundoPlano As System.Threading.Thread
         Try
@@ -777,4 +794,5 @@ Or TypeOf ctl Is System.Windows.Forms.CheckBox Or TypeOf ctl Is System.Windows.F
             KeyCode = 0
         End If
     End Sub
+
 End Class

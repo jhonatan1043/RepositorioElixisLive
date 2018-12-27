@@ -53,7 +53,7 @@ Partial Class FormEmpresa
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txtId = New System.Windows.Forms.TextBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.TextDV = New System.Windows.Forms.TextBox()
+        Me.TextDV = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.ErrorIcono = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
@@ -425,14 +425,15 @@ Partial Class FormEmpresa
         '
         'TextDV
         '
-        Me.TextDV.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.TextDV.BackColor = System.Drawing.Color.White
         Me.TextDV.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TextDV.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextDV.Location = New System.Drawing.Point(196, 10)
+        Me.TextDV.ForeColor = System.Drawing.Color.Black
+        Me.TextDV.Location = New System.Drawing.Point(195, 10)
         Me.TextDV.Name = "TextDV"
-        Me.TextDV.Size = New System.Drawing.Size(29, 25)
-        Me.TextDV.TabIndex = 0
-        Me.TextDV.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.TextDV.Size = New System.Drawing.Size(26, 22)
+        Me.TextDV.TabIndex = 1001
+        Me.TextDV.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Label2
         '
@@ -672,7 +673,6 @@ Partial Class FormEmpresa
     Friend WithEvents ToolStripSeparator7 As ToolStripSeparator
     Public WithEvents btBuscar As ToolStripButton
     Friend WithEvents GroupBox2 As GroupBox
-    Public WithEvents TextDV As TextBox
     Friend WithEvents GroupBox5 As GroupBox
     Public WithEvents TextEmail As TextBox
     Public WithEvents Label7 As Label
@@ -695,4 +695,5 @@ Partial Class FormEmpresa
     Friend WithEvents ErrorIcono As ErrorProvider
     Public WithEvents GroupBox4 As GroupBox
     Friend WithEvents pictImagen As PictureBox
+    Friend WithEvents TextDV As Label
 End Class
