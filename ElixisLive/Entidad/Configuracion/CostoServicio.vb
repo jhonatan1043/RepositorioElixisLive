@@ -1,5 +1,6 @@
 ﻿Public Class CostoServicio
     Inherits generalConsulta
+    Property codigo As String
     Property codigoServicio As Integer
     Property dtRegistro As DataTable
     Public Sub New()
