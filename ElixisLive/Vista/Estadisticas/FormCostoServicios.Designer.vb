@@ -27,9 +27,9 @@ Partial Class FormCostoServicios
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.dgvServicio = New System.Windows.Forms.DataGridView()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.dgvProducto = New System.Windows.Forms.DataGridView()
-        Me.Label5 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.dgvProducto = New System.Windows.Forms.DataGridView()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Pimagen = New System.Windows.Forms.PictureBox()
         Me.LTitulo = New System.Windows.Forms.Label()
@@ -59,6 +59,7 @@ Partial Class FormCostoServicios
         Me.dgvServicio.DefaultCellStyle = DataGridViewCellStyle2
         Me.dgvServicio.Location = New System.Drawing.Point(6, 37)
         Me.dgvServicio.Name = "dgvServicio"
+        Me.dgvServicio.ReadOnly = True
         Me.dgvServicio.Size = New System.Drawing.Size(228, 438)
         Me.dgvServicio.TabIndex = 0
         '
@@ -74,20 +75,18 @@ Partial Class FormCostoServicios
         Me.GroupBox1.TabIndex = 1
         Me.GroupBox1.TabStop = False
         '
-        'dgvProducto
+        'Label1
         '
-        Me.dgvProducto.AllowUserToAddRows = False
-        Me.dgvProducto.AllowUserToDeleteRows = False
-        Me.dgvProducto.AllowUserToOrderColumns = True
-        DataGridViewCellStyle3.BackColor = System.Drawing.Color.AliceBlue
-        Me.dgvProducto.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle3
-        Me.dgvProducto.BackgroundColor = System.Drawing.Color.White
-        Me.dgvProducto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvProducto.Location = New System.Drawing.Point(240, 37)
-        Me.dgvProducto.Name = "dgvProducto"
-        Me.dgvProducto.RowHeadersVisible = False
-        Me.dgvProducto.Size = New System.Drawing.Size(649, 438)
-        Me.dgvProducto.TabIndex = 1
+        Me.Label1.BackColor = System.Drawing.Color.SteelBlue
+        Me.Label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Label1.Font = New System.Drawing.Font("Times New Roman", 14.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.White
+        Me.Label1.Location = New System.Drawing.Point(240, 12)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(649, 25)
+        Me.Label1.TabIndex = 26
+        Me.Label1.Text = "Productos Utilizados"
+        Me.Label1.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
         'Label5
         '
@@ -102,18 +101,21 @@ Partial Class FormCostoServicios
         Me.Label5.Text = "Servicios"
         Me.Label5.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
-        'Label1
+        'dgvProducto
         '
-        Me.Label1.BackColor = System.Drawing.Color.SteelBlue
-        Me.Label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Label1.Font = New System.Drawing.Font("Times New Roman", 14.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(240, 12)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(649, 25)
-        Me.Label1.TabIndex = 26
-        Me.Label1.Text = "Productos Utilizados"
-        Me.Label1.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.dgvProducto.AllowUserToAddRows = False
+        Me.dgvProducto.AllowUserToDeleteRows = False
+        Me.dgvProducto.AllowUserToOrderColumns = True
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.AliceBlue
+        Me.dgvProducto.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle3
+        Me.dgvProducto.BackgroundColor = System.Drawing.Color.White
+        Me.dgvProducto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvProducto.Location = New System.Drawing.Point(240, 37)
+        Me.dgvProducto.Name = "dgvProducto"
+        Me.dgvProducto.ReadOnly = True
+        Me.dgvProducto.RowHeadersVisible = False
+        Me.dgvProducto.Size = New System.Drawing.Size(649, 438)
+        Me.dgvProducto.TabIndex = 1
         '
         'Panel1
         '
