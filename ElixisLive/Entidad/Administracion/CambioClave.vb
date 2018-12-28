@@ -2,6 +2,7 @@
     Public Property claveActual As String
     Public Property claveNueva As String
     Public Property confirmarClave As String
+    Public Property nombreUsuario As String
 
     Public Function verificarClave() As Boolean
         Dim params As New List(Of String)

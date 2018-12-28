@@ -15,8 +15,11 @@
         Dresultado = Funciones.consultarInicioSesion(params)
 
         If Not IsNothing(Dresultado) Then
+
             SesionActual.idUsuario = Dresultado.Item(0)
             SesionActual.codigoSucursal = codigoSucursal
+            SesionActual.usuario = usuario
+
             FormPrincipal.Show()
             banderaForm = True
         Else

@@ -11,8 +11,8 @@ Public Class CambioClaveDAL
                     comando.CommandType = CommandType.StoredProcedure
                     comando.Parameters.Clear()
                     comando.CommandText = "SP_CAMBIAR_CLAVE_GUARDAR"
-                    comando.Parameters.Add(New SqlParameter("@contranueva", SqlDbType.NVarChar)).Value = objClave.confirmarClave
-                    comando.Parameters.Add(New SqlParameter("@usuario", SqlDbType.NVarChar)).Value = objClave.nombreUsuario
+                    comando.Parameters.Add(New SqlParameter("@clave", SqlDbType.NVarChar)).Value = objClave.confirmarClave
+                    comando.Parameters.Add(New SqlParameter("@codigoPersona", SqlDbType.Int)).Value = SesionActual.idUsuario
                     comando.ExecuteNonQuery()
                     trnsccion.Commit()
                 End Using

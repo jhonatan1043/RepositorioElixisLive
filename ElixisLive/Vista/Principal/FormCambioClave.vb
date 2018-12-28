@@ -8,7 +8,7 @@
         '    btRegistrar.Enabled = False
         '    Exit Sub
         'End If
-        txtUsuario.Text = "admin"
+        txtUsuario.Text = SesionActual.usuario
         Generales.tabularConEnter(Me)
     End Sub
 

@@ -698,6 +698,7 @@ Public Class Generales
                 consulta.Connection = objConexion.cnxbd
                 respuesta = consulta.ExecuteScalar()
             End Using
+            objConexion.desConectar()
             Return respuesta
         Catch ex As Exception
             EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
