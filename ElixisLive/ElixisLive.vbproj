@@ -222,6 +222,12 @@
     <Compile Include="Utilidad\Titulo.vb" />
     <Compile Include="Utilidad\ValidarDigitacion.vb" />
     <Compile Include="Utilidad\vForm.vb" />
+    <Compile Include="Vista\Administracion\FormCliente.Designer.vb">
+      <DependentUpon>FormCliente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Administracion\FormCliente.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Vista\Administracion\FormEmpleado.Designer.vb">
       <DependentUpon>FormEmpleado.vb</DependentUpon>
     </Compile>
@@ -360,6 +366,12 @@
     <Compile Include="Vista\Inventario\FormProducto.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Vista\Nomina\FormNomina.Designer.vb">
+      <DependentUpon>FormNomina.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Nomina\FormNomina.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Vista\Principal\FormBusqueda.Designer.vb">
       <DependentUpon>FormBusqueda.vb</DependentUpon>
     </Compile>
@@ -428,6 +440,9 @@
       <LastGenOutput>factura.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Utilidad\SuperMessageBox.resx" />
+    <EmbeddedResource Include="Vista\Administracion\FormCliente.resx">
+      <DependentUpon>FormCliente.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vista\Administracion\FormEmpleado.resx">
       <DependentUpon>FormEmpleado.vb</DependentUpon>
     </EmbeddedResource>
@@ -497,6 +512,9 @@
     <EmbeddedResource Include="Vista\Inventario\FormProducto.resx">
       <DependentUpon>FormProducto.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Nomina\FormNomina.resx">
+      <DependentUpon>FormNomina.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vista\Principal\FormBusqueda.resx">
       <DependentUpon>FormBusqueda.vb</DependentUpon>
     </EmbeddedResource>
@@ -547,6 +565,7 @@
     <Content Include="ReferenciaDLL\CnxElixisLiveBD.dll" />
     <Content Include="ReferenciaDLL\MySql.Data.DLL" />
     <Content Include="ReferenciaDLL\NotifySenderControl.dll" />
+    <None Include="Resources\folder-invoices-icon.png" />
     <None Include="Resources\Keys-icon1.png" />
     <None Include="Resources\Money-Bag-icon.png" />
     <None Include="Resources\note-add-icon1.png" />

@@ -77,7 +77,6 @@
 
     Public Sub guardar()
         Try
-            objClave.nombreUsuario = txtUsuario.Text
             objClave.confirmarClave = txtConfirmarClave.Text
             objClave.guardarClave()
             EstiloMensajes.mostrarMensajeExitoso(MensajeSistema.REGISTRO_GUARDADO)
