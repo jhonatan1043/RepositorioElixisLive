@@ -41,11 +41,17 @@
     End Sub
     Private Sub btRegistrar_Click(sender As Object, e As EventArgs) Handles btRegistrar.Click
         Try
+
+            objConfigVenta.codigoListaProducto = cbListaProducto.SelectedValue
+            objConfigVenta.codigoListaServicio = cbListaServicio.SelectedValue
+
             ConfigVentaBLL.guardarConfVenta(objConfigVenta)
             Generales.deshabilitarBotones(ToolStrip1)
             Generales.deshabilitarControles(Me)
+
             btEditar.Enabled = True
             EstiloMensajes.mostrarMensajeExitoso(MensajeSistema.REGISTRO_GUARDADO)
+
         Catch ex As Exception
             EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
         End Try
