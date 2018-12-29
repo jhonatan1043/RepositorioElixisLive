@@ -23,7 +23,7 @@ Partial Class FormCostoServicio
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
         Me.dgvRegistro = New System.Windows.Forms.DataGridView()
@@ -51,6 +51,7 @@ Partial Class FormCostoServicio
         Me.Pimagen = New System.Windows.Forms.PictureBox()
         Me.LTitulo = New System.Windows.Forms.Label()
         Me.errorIcono = New System.Windows.Forms.ErrorProvider(Me.components)
+        Me.dgQuitar = New System.Windows.Forms.DataGridViewImageColumn()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox5.SuspendLayout()
         CType(Me.dgvRegistro, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -89,16 +90,18 @@ Partial Class FormCostoServicio
         Me.dgvRegistro.AllowUserToDeleteRows = False
         Me.dgvRegistro.AllowUserToResizeColumns = False
         Me.dgvRegistro.AllowUserToResizeRows = False
-        DataGridViewCellStyle5.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black
-        Me.dgvRegistro.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black
+        Me.dgvRegistro.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.dgvRegistro.BackgroundColor = System.Drawing.SystemColors.Control
         Me.dgvRegistro.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvRegistro.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.dgQuitar})
         Me.dgvRegistro.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dgvRegistro.Location = New System.Drawing.Point(3, 16)
         Me.dgvRegistro.MultiSelect = False
         Me.dgvRegistro.Name = "dgvRegistro"
-        Me.dgvRegistro.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dgvRegistro.RowHeadersVisible = False
+        Me.dgvRegistro.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect
         Me.dgvRegistro.Size = New System.Drawing.Size(574, 203)
         Me.dgvRegistro.TabIndex = 0
         '
@@ -322,6 +325,12 @@ Partial Class FormCostoServicio
         Me.errorIcono.ContainerControl = Me
         Me.errorIcono.RightToLeft = True
         '
+        'dgQuitar
+        '
+        Me.dgQuitar.HeaderText = "Quitar"
+        Me.dgQuitar.Image = Global.Quality.My.Resources.Resources.papelera
+        Me.dgQuitar.Name = "dgQuitar"
+        '
         'FormCostoServicio
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -380,4 +389,5 @@ Partial Class FormCostoServicio
     Friend WithEvents ralla1 As ToolStripSeparator
     Friend WithEvents errorIcono As ErrorProvider
     Friend WithEvents btBuscarServicio As Button
+    Friend WithEvents dgQuitar As DataGridViewImageColumn
 End Class
