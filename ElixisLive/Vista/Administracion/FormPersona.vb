@@ -2,6 +2,7 @@
 Public Class FormPersona
     Dim objPersona As persona
     Dim idPerfil As Integer
+
     Private Sub cargarObjeto()
         objPersona.identificacion = TextIdentificacion.Text
         objPersona.nombre = TextNombre.Text
@@ -41,13 +42,7 @@ Public Class FormPersona
         ErrorIcono.SetError(TextIdentificacion, "")
         ErrorIcono.SetError(CombotipoIdentificacion, "")
     End Sub
-    Private Sub Form_FormClosing(sender As Object, e As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
-        If EstiloMensajes.mostrarMensajePregunta(MensajeSistema.SALIR) = Constantes.SI Then
-            Me.Dispose()
-        Else
-            e.Cancel = True
-        End If
-    End Sub
+
     Private Sub FormBase_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         objPersona = New persona
         Try
@@ -143,11 +138,11 @@ Public Class FormPersona
         params.Add(String.Empty)
         Generales.buscarElemento(objPersona.sqlConsulta,
                                    params,
-                                   AddressOf cargarInfomacion,
+                                   AddressOf cargarInformacion,
                                    Titulo.BUSQUEDA_PERSONA,
                                    True, True)
     End Sub
-    Private Sub cargarInfomacion(pcodigo As Integer)
+    Private Sub cargarInformacion(pcodigo As Integer)
         Dim params As New List(Of String)
         Dim dfila As DataRow
         objPersona.codigo = pcodigo

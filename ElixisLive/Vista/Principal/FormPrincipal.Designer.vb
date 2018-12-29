@@ -27,6 +27,7 @@ Partial Class FormPrincipal
         Me.arbolMenu = New System.Windows.Forms.TreeView()
         Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
+        Me.lbUsuario = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'arbolMenu
@@ -43,7 +44,7 @@ Partial Class FormPrincipal
         Me.arbolMenu.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.arbolMenu.Name = "arbolMenu"
         Me.arbolMenu.SelectedImageIndex = 1
-        Me.arbolMenu.Size = New System.Drawing.Size(239, 567)
+        Me.arbolMenu.Size = New System.Drawing.Size(239, 733)
         Me.arbolMenu.StateImageList = Me.ImageList1
         Me.arbolMenu.TabIndex = 1
         '
@@ -59,12 +60,25 @@ Partial Class FormPrincipal
         '
         Me.StatusStrip1.BackColor = System.Drawing.Color.White
         Me.StatusStrip1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.StatusStrip1.Location = New System.Drawing.Point(239, 545)
+        Me.StatusStrip1.Location = New System.Drawing.Point(239, 711)
         Me.StatusStrip1.Name = "StatusStrip1"
         Me.StatusStrip1.Padding = New System.Windows.Forms.Padding(1, 0, 17, 0)
-        Me.StatusStrip1.Size = New System.Drawing.Size(898, 22)
+        Me.StatusStrip1.Size = New System.Drawing.Size(777, 22)
         Me.StatusStrip1.TabIndex = 2
         Me.StatusStrip1.Text = "StatusStrip1"
+        '
+        'lbUsuario
+        '
+        Me.lbUsuario.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lbUsuario.BackColor = System.Drawing.Color.White
+        Me.lbUsuario.Font = New System.Drawing.Font("Times New Roman", 11.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbUsuario.ForeColor = System.Drawing.Color.SteelBlue
+        Me.lbUsuario.Location = New System.Drawing.Point(806, 714)
+        Me.lbUsuario.Name = "lbUsuario"
+        Me.lbUsuario.Size = New System.Drawing.Size(188, 19)
+        Me.lbUsuario.TabIndex = 28
+        Me.lbUsuario.Text = "Usuario"
+        Me.lbUsuario.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'FormPrincipal
         '
@@ -73,8 +87,9 @@ Partial Class FormPrincipal
         Me.BackColor = System.Drawing.Color.White
         Me.BackgroundImage = Global.Quality.My.Resources.Resources.Quality_logo
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.ClientSize = New System.Drawing.Size(1137, 567)
+        Me.ClientSize = New System.Drawing.Size(1016, 733)
         Me.ControlBox = False
+        Me.Controls.Add(Me.lbUsuario)
         Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.arbolMenu)
         Me.DoubleBuffered = True
@@ -95,4 +110,5 @@ Partial Class FormPrincipal
     Friend WithEvents arbolMenu As TreeView
     Friend WithEvents StatusStrip1 As StatusStrip
     Friend WithEvents ImageList1 As ImageList
+    Friend WithEvents lbUsuario As Label
 End Class

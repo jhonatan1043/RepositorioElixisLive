@@ -23,8 +23,6 @@ Partial Class FormNomina
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.gbOpciones = New System.Windows.Forms.GroupBox()
-        Me.rbHasta = New System.Windows.Forms.RadioButton()
-        Me.dtFechaHasta = New System.Windows.Forms.DateTimePicker()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.dateFechaNomina = New System.Windows.Forms.DateTimePicker()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
@@ -45,6 +43,8 @@ Partial Class FormNomina
         Me.ToolStripSeparator3 = New System.Windows.Forms.ToolStripSeparator()
         Me.btAnular = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripSeparator6 = New System.Windows.Forms.ToolStripSeparator()
+        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.gbOpciones.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -56,8 +56,8 @@ Partial Class FormNomina
         '
         'gbOpciones
         '
-        Me.gbOpciones.Controls.Add(Me.dtFechaHasta)
-        Me.gbOpciones.Controls.Add(Me.rbHasta)
+        Me.gbOpciones.Controls.Add(Me.DateTimePicker1)
+        Me.gbOpciones.Controls.Add(Me.Label1)
         Me.gbOpciones.Controls.Add(Me.dateFechaNomina)
         Me.gbOpciones.Controls.Add(Me.Label3)
         Me.gbOpciones.Location = New System.Drawing.Point(5, 8)
@@ -66,45 +66,22 @@ Partial Class FormNomina
         Me.gbOpciones.TabIndex = 26
         Me.gbOpciones.TabStop = False
         '
-        'rbHasta
-        '
-        Me.rbHasta.AutoSize = True
-        Me.rbHasta.Enabled = False
-        Me.rbHasta.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.rbHasta.Location = New System.Drawing.Point(376, 16)
-        Me.rbHasta.Name = "rbHasta"
-        Me.rbHasta.Size = New System.Drawing.Size(95, 19)
-        Me.rbHasta.TabIndex = 31
-        Me.rbHasta.Text = "Hasta el Día:"
-        Me.rbHasta.UseVisualStyleBackColor = True
-        '
-        'dtFechaHasta
-        '
-        Me.dtFechaHasta.CustomFormat = "      dd"
-        Me.dtFechaHasta.Enabled = False
-        Me.dtFechaHasta.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.dtFechaHasta.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.dtFechaHasta.Location = New System.Drawing.Point(477, 15)
-        Me.dtFechaHasta.Name = "dtFechaHasta"
-        Me.dtFechaHasta.Size = New System.Drawing.Size(72, 21)
-        Me.dtFechaHasta.TabIndex = 29
-        '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.Location = New System.Drawing.Point(11, 16)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(34, 15)
+        Me.Label3.Size = New System.Drawing.Size(92, 17)
         Me.Label3.TabIndex = 24
-        Me.Label3.Text = "Mes:"
+        Me.Label3.Text = "Fecha Inicio:"
         '
         'dateFechaNomina
         '
         Me.dateFechaNomina.CustomFormat = "MMMM |  yyyy"
         Me.dateFechaNomina.Enabled = False
         Me.dateFechaNomina.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.dateFechaNomina.Location = New System.Drawing.Point(48, 13)
+        Me.dateFechaNomina.Location = New System.Drawing.Point(102, 12)
         Me.dateFechaNomina.Name = "dateFechaNomina"
         Me.dateFechaNomina.Size = New System.Drawing.Size(275, 25)
         Me.dateFechaNomina.TabIndex = 25
@@ -272,6 +249,26 @@ Partial Class FormNomina
         Me.ToolStripSeparator6.Name = "ToolStripSeparator6"
         Me.ToolStripSeparator6.Size = New System.Drawing.Size(6, 37)
         '
+        'DateTimePicker1
+        '
+        Me.DateTimePicker1.CustomFormat = "MMMM |  yyyy"
+        Me.DateTimePicker1.Enabled = False
+        Me.DateTimePicker1.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DateTimePicker1.Location = New System.Drawing.Point(539, 12)
+        Me.DateTimePicker1.Name = "DateTimePicker1"
+        Me.DateTimePicker1.Size = New System.Drawing.Size(275, 25)
+        Me.DateTimePicker1.TabIndex = 27
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(449, 16)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(89, 17)
+        Me.Label1.TabIndex = 26
+        Me.Label1.Text = "Fecha Final:"
+        '
         'FormNomina
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -316,11 +313,11 @@ Partial Class FormNomina
     Public WithEvents LTitulo As Label
     Public WithEvents Panel1 As Panel
     Friend WithEvents gbOpciones As GroupBox
-    Friend WithEvents rbHasta As RadioButton
-    Public WithEvents dtFechaHasta As DateTimePicker
     Public WithEvents Label3 As Label
     Public WithEvents dateFechaNomina As DateTimePicker
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents dgvNomina As DataGridView
+    Public WithEvents DateTimePicker1 As DateTimePicker
+    Public WithEvents Label1 As Label
 End Class

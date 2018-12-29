@@ -1,21 +1,22 @@
 ﻿Public Class FormNomina
-    Private Sub cambiarFechaHasta()
-        Dim fechaInicio As Date = New DateTime(dateFechaNomina.Value.Year, dateFechaNomina.Value.Month, 15)
-        Dim fechaFin As Date = New DateTime(dateFechaNomina.Value.Year, dateFechaNomina.Value.Month, DateTime.DaysInMonth(dateFechaNomina.Value.Year, dateFechaNomina.Value.Month))
-        If fechaFin.Date < dtFechaHasta.MaxDate.Date Then
-            dtFechaHasta.MinDate = fechaInicio
-            dtFechaHasta.MaxDate = fechaFin.AddDays(1).AddSeconds(-1)
-        Else
-            dtFechaHasta.MaxDate = fechaFin.AddDays(1).AddSeconds(-1)
-            dtFechaHasta.MinDate = fechaInicio
+    Dim dtNomina As New DataTable
+    Private Sub cargarNomina()
+        Dim params As New List(Of String)
+        params.Add(dateFechaNomina.Value.Date)
+        params.Add(dtFechaHasta.Value.Date)
+        Generales.llenarTabla(Sentencias.NOMINA_EMPLEADO_CARGAR, params, dtNomina)
+        dgvNomina.DataSource = dtNomina
+        If dtNomina.Rows.Count > 0 Then
+            dgvNomina.Columns(0).Visible = False
+            dgvNomina.Columns(1).AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
+            dgvNomina.Columns(2).AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
+            dgvNomina.Columns(3).AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
+            dgvNomina.Columns(4).AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
+            dgvNomina.Columns(5).AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
+            dgvNomina.Columns(6).AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
         End If
-        dtFechaHasta.Value = fechaFin
-        'objNomina.mes = fechaInicio
-        'objNomina.hasta = dtFechaHasta.Value
-
     End Sub
-
     Private Sub FormNomina_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        cambiarFechaHasta()
+        cargarNomina()
     End Sub
 End Class

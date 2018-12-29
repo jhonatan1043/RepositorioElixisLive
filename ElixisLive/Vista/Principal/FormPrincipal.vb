@@ -1,5 +1,7 @@
-﻿Public Class FormPrincipal
+﻿
+Public Class FormPrincipal
     Dim formulario As New vForm
+
     Private Sub formPrincipal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         principalBLL.cargarMenu(arbolMenu)
         Dim ctl As Control
@@ -29,17 +31,19 @@
         elemento.nombre = e.Node.Tag
         Return elemento
     End Function
+    'Private Sub FormPrincipal_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+    '    If EstiloMensajes.mostrarMensajePregunta(MensajeSistema.SALIR) = Constantes.SI Then
+    '        Me.Dispose()
+    '        FormInicioSesion.Close()
+    '    Else
+    '        e.Cancel = True
+    '    End If
+    'End Sub
 
-    Private Sub Panel1_Click(sender As Object, e As EventArgs)
-        FormCerrarSesion.ShowDialog()
+    Sub click_Global(ByVal sender As System.Object, ByVal e As System.EventArgs)
+        If Not IsNothing(Me.ActiveMdiChild) AndAlso ActiveMdiChild.WindowState = FormWindowState.Maximized Then
+            ActiveMdiChild.WindowState = FormWindowState.Normal
+        End If
     End Sub
 
-    Private Sub Panel2_Click(sender As Object, e As EventArgs) 
-        Me.WindowState = FormWindowState.Minimized
-    End Sub
-
-    Private Sub FormPrincipal_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
-        Me.BackgroundImage = Nothing
-        Generales.desvanecerForm(Me)
-    End Sub
 End Class
