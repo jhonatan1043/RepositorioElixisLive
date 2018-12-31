@@ -31,14 +31,6 @@ Public Class FormPrincipal
         elemento.nombre = e.Node.Tag
         Return elemento
     End Function
-    'Private Sub FormPrincipal_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
-    '    If EstiloMensajes.mostrarMensajePregunta(MensajeSistema.SALIR) = Constantes.SI Then
-    '        Me.Dispose()
-    '        FormInicioSesion.Close()
-    '    Else
-    '        e.Cancel = True
-    '    End If
-    'End Sub
 
     Sub click_Global(ByVal sender As System.Object, ByVal e As System.EventArgs)
         If Not IsNothing(Me.ActiveMdiChild) AndAlso ActiveMdiChild.WindowState = FormWindowState.Maximized Then
