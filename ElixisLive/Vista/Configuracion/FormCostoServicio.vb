@@ -42,9 +42,32 @@
     End Sub
 
     Private Sub btBuscar_Click(sender As Object, e As EventArgs) Handles btBuscar.Click
-
+        Dim params As New List(Of String)
+        params.Add(String.Empty)
+        Generales.buscarElemento("[SP_COSTO_CONSULTAR]",
+                                  params,
+                                  AddressOf cargarCostoServicio,
+                                  Titulo.BUSQUEDA_SERVICIO,
+                                  False,
+                                  True)
     End Sub
+    Private Sub cargarCostoServicio(pCodigo As Integer)
+        Dim paramas As New List(Of String)
+        Dim dRows As DataRow
+        paramas.Add(pCodigo)
 
+        dRows = Generales.cargarItem("SP_SERVICIO_CARGAR", paramas)
+        objCostoServicio.codigoServicio = pCodigo
+        txtnombre.Text = dRows("Descripcion")
+
+        Generales.llenarTabla("[SP_COSTO_CARGAR]", paramas, objCostoServicio.dtRegistro)
+        dgvRegistro.DataSource = objCostoServicio.dtRegistro
+
+        Generales.habilitarBotones(ToolStrip1)
+        Generales.deshabilitarControles(Me)
+        btRegistrar.Enabled = False
+        btCancelar.Enabled = False
+    End Sub
     Private Sub btRegistrar_Click(sender As Object, e As EventArgs) Handles btRegistrar.Click
         Try
             If validarCampos() = True Then
@@ -96,7 +119,7 @@
             .Columns("Recomendacion").SortMode = DataGridViewColumnSortMode.NotSortable
 
             .Columns("Codigo").AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
-            .Columns("Descripcion").AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
+            .Columns("Descripcion").AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
             .Columns("Valor").AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
             .Columns("Concentracion").AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
             .Columns("U.Medida").AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
