@@ -25,6 +25,7 @@
         Dim dRows As DataRow
         params.Add(pCodigo)
         dRows = Generales.cargarItem("[SP_SERVICIO_CARGAR]", params)
+        objCostoServicio.codigoServicio = pCodigo
         txtcodigo.Text = pCodigo
         txtnombre.Text = dRows("Descripcion")
     End Sub
@@ -34,7 +35,7 @@
         Generales.limpiarControles(Me)
         validarEdicionGrilla(Constantes.EDITABLE)
         objCostoServicio.dtRegistro.Rows.Add()
-        objCostoServicio.codigo = Nothing
+        objCostoServicio.codigoServicio = Nothing
         btBuscarServicio.Enabled = True
         btRegistrar.Enabled = True
         btCancelar.Enabled = True
@@ -46,14 +47,16 @@
 
     Private Sub btRegistrar_Click(sender As Object, e As EventArgs) Handles btRegistrar.Click
         Try
-            CostoServicioBLL.guardarCostoServicio(objCostoServicio)
-            Generales.habilitarBotones(ToolStrip1)
-            Generales.deshabilitarControles(Me)
-            btCancelar.Enabled = False
-            btRegistrar.Enabled = False
-            EstiloMensajes.mostrarMensajeExitoso(MensajeSistema.REGISTRO_GUARDADO)
+            If validarCampos() = True Then
+                CostoServicioBLL.guardarCostoServicio(objCostoServicio)
+                Generales.habilitarBotones(ToolStrip1)
+                Generales.deshabilitarControles(Me)
+                btCancelar.Enabled = False
+                btRegistrar.Enabled = False
+                EstiloMensajes.mostrarMensajeExitoso(MensajeSistema.REGISTRO_GUARDADO)
+            End If
         Catch ex As Exception
-
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
     End Sub
 
@@ -73,7 +76,7 @@
             Generales.deshabilitarBotones(ToolStrip1)
             Generales.deshabilitarControles(Me)
             Generales.limpiarControles(Me)
-            objCostoServicio.codigo = Nothing
+            objCostoServicio.codigoServicio = Nothing
             btNuevo.Enabled = True
             btBuscar.Enabled = True
         End If
@@ -101,6 +104,13 @@
             .Columns("Costo").AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
             .Columns("Recomendacion").AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
 
+            .Columns("Valor").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+            .Columns("Concentracion").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+            .Columns("U.Medida").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+            .Columns("Servicios").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+            .Columns("Costo").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+            .Columns("Recomendacion").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+
             .Columns("dgQuitar").DisplayIndex = 8
 
             .AutoGenerateColumns = False
@@ -123,7 +133,7 @@
         If Estado = True Then
             With dgvRegistro
                 .Columns("Valor").ReadOnly = False
-                .Columns("Servicios").ReadOnly = False
+                .Columns("Recomendacion").ReadOnly = False
             End With
         End If
     End Sub
@@ -160,10 +170,39 @@
     End Sub
     Private Sub dgvRegistro_CellFormatting(sender As Object, e As DataGridViewCellFormattingEventArgs) Handles dgvRegistro.CellFormatting
         If objCostoServicio.dtRegistro.Rows.Count > 0 Then
-            If e.ColumnIndex = 3 _
-                OrElse e.ColumnIndex = 7 Then
+            If e.ColumnIndex = 5 _
+                OrElse e.ColumnIndex = 8 Then
                 e.Value = If(Not IsDBNull(e.Value), Format(Val(e.Value), Constantes.FORMATO_MONEDA), 0)
             End If
         End If
     End Sub
+
+    Private Sub dgvRegistro_CellEndEdit(sender As Object, e As DataGridViewCellEventArgs) Handles dgvRegistro.CellEndEdit
+        Dim costo As Integer
+        Dim servicio As Integer
+        If btRegistrar.Enabled = False Then Exit Sub
+        If objCostoServicio.dtRegistro.Rows.Count > 0 Then
+            If e.ColumnIndex = 6 Then
+                If objCostoServicio.dtRegistro.Select("Codigo Is Not Null and Concentracion <> 0 and Recomendacion <> 0").Count > 0 Then
+                    servicio = (dgvRegistro.Rows(dgvRegistro.CurrentCell.RowIndex).Cells("Concentracion").Value / dgvRegistro.Rows(dgvRegistro.CurrentCell.RowIndex).Cells("Recomendacion").Value)
+                    dgvRegistro.Rows(dgvRegistro.CurrentCell.RowIndex).Cells("Servicios").Value = servicio
+                End If
+                objCostoServicio.dtRegistro.AcceptChanges()
+                If objCostoServicio.dtRegistro.Select("Codigo Is Not Null and Valor <> 0 and Servicios <> 0").Count > 0 Then
+                    costo = (dgvRegistro.Rows(dgvRegistro.CurrentCell.RowIndex).Cells("Valor").Value / dgvRegistro.Rows(dgvRegistro.CurrentCell.RowIndex).Cells("Servicios").Value)
+                    dgvRegistro.Rows(dgvRegistro.CurrentCell.RowIndex).Cells("Costo").Value = costo
+                End If
+            End If
+        End If
+    End Sub
+    Private Function validarCampos() As Boolean
+        If IsNothing(objCostoServicio.codigoServicio) Then
+            EstiloMensajes.mostrarMensajeAdvertencia("Favor seleccionar un servicio")
+        ElseIf objCostoServicio.dtRegistro.Rows.Count <= 1
+            EstiloMensajes.mostrarMensajeAdvertencia("Favor agregar algun movimiento")
+        Else
+            Return True
+        End If
+        Return False
+    End Function
 End Class

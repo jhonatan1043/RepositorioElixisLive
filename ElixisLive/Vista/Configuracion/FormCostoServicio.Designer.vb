@@ -27,6 +27,7 @@ Partial Class FormCostoServicio
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
         Me.dgvRegistro = New System.Windows.Forms.DataGridView()
+        Me.dgQuitar = New System.Windows.Forms.DataGridViewImageColumn()
         Me.Gbdatos = New System.Windows.Forms.GroupBox()
         Me.btBuscarServicio = New System.Windows.Forms.Button()
         Me.txtnombre = New System.Windows.Forms.TextBox()
@@ -51,7 +52,6 @@ Partial Class FormCostoServicio
         Me.Pimagen = New System.Windows.Forms.PictureBox()
         Me.LTitulo = New System.Windows.Forms.Label()
         Me.errorIcono = New System.Windows.Forms.ErrorProvider(Me.components)
-        Me.dgQuitar = New System.Windows.Forms.DataGridViewImageColumn()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox5.SuspendLayout()
         CType(Me.dgvRegistro, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -104,6 +104,12 @@ Partial Class FormCostoServicio
         Me.dgvRegistro.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect
         Me.dgvRegistro.Size = New System.Drawing.Size(574, 203)
         Me.dgvRegistro.TabIndex = 0
+        '
+        'dgQuitar
+        '
+        Me.dgQuitar.HeaderText = "Quitar"
+        Me.dgQuitar.Image = Global.Quality.My.Resources.Resources.papelera
+        Me.dgQuitar.Name = "dgQuitar"
         '
         'Gbdatos
         '
@@ -324,12 +330,6 @@ Partial Class FormCostoServicio
         '
         Me.errorIcono.ContainerControl = Me
         Me.errorIcono.RightToLeft = True
-        '
-        'dgQuitar
-        '
-        Me.dgQuitar.HeaderText = "Quitar"
-        Me.dgQuitar.Image = Global.Quality.My.Resources.Resources.papelera
-        Me.dgQuitar.Name = "dgQuitar"
         '
         'FormCostoServicio
         '
