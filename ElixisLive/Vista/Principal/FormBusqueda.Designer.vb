@@ -113,6 +113,7 @@ Partial Class FormBusqueda
         Me.dgvBusqueda.MultiSelect = False
         Me.dgvBusqueda.Name = "dgvBusqueda"
         Me.dgvBusqueda.ReadOnly = True
+        Me.dgvBusqueda.RowHeadersVisible = False
         Me.dgvBusqueda.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvBusqueda.Size = New System.Drawing.Size(572, 294)
         Me.dgvBusqueda.TabIndex = 0
