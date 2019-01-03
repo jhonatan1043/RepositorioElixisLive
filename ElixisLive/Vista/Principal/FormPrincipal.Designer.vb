@@ -71,13 +71,13 @@ Partial Class FormPrincipal
         '
         Me.lbUsuario.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.lbUsuario.BackColor = System.Drawing.Color.White
-        Me.lbUsuario.Font = New System.Drawing.Font("Times New Roman", 11.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbUsuario.Font = New System.Drawing.Font("Times New Roman", 14.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbUsuario.ForeColor = System.Drawing.Color.SteelBlue
-        Me.lbUsuario.Location = New System.Drawing.Point(806, 714)
+        Me.lbUsuario.Location = New System.Drawing.Point(612, 712)
         Me.lbUsuario.Name = "lbUsuario"
-        Me.lbUsuario.Size = New System.Drawing.Size(188, 19)
+        Me.lbUsuario.Size = New System.Drawing.Size(388, 22)
         Me.lbUsuario.TabIndex = 28
-        Me.lbUsuario.Text = "Usuario"
+        Me.lbUsuario.Text = "Administrador del sistema"
         Me.lbUsuario.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'FormPrincipal
@@ -89,8 +89,8 @@ Partial Class FormPrincipal
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.ClientSize = New System.Drawing.Size(1016, 733)
         Me.ControlBox = False
-        Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.lbUsuario)
+        Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.arbolMenu)
         Me.DoubleBuffered = True
         Me.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
