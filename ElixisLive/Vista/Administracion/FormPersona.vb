@@ -175,9 +175,6 @@ Public Class FormPersona
     Private Sub cbDepartamento_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbDepartamento.SelectedIndexChanged
         cargarComboCiudad()
     End Sub
-    Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs)
-        Generales.cargarForm(FormPerfil)
-    End Sub
     Private Sub chUsuario_Click(sender As Object, e As EventArgs) Handles chUsuario.Click
         If chUsuario.Checked = True Then
             txtUsuario.ReadOnly = False

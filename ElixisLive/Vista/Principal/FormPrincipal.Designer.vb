@@ -44,7 +44,7 @@ Partial Class FormPrincipal
         Me.arbolMenu.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.arbolMenu.Name = "arbolMenu"
         Me.arbolMenu.SelectedImageIndex = 1
-        Me.arbolMenu.Size = New System.Drawing.Size(239, 711)
+        Me.arbolMenu.Size = New System.Drawing.Size(239, 733)
         Me.arbolMenu.StateImageList = Me.ImageList1
         Me.arbolMenu.TabIndex = 1
         '
@@ -60,10 +60,10 @@ Partial Class FormPrincipal
         '
         Me.StatusStrip1.BackColor = System.Drawing.Color.White
         Me.StatusStrip1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.StatusStrip1.Location = New System.Drawing.Point(0, 711)
+        Me.StatusStrip1.Location = New System.Drawing.Point(239, 711)
         Me.StatusStrip1.Name = "StatusStrip1"
         Me.StatusStrip1.Padding = New System.Windows.Forms.Padding(1, 0, 17, 0)
-        Me.StatusStrip1.Size = New System.Drawing.Size(1016, 22)
+        Me.StatusStrip1.Size = New System.Drawing.Size(777, 22)
         Me.StatusStrip1.TabIndex = 2
         Me.StatusStrip1.Text = "StatusStrip1"
         '
@@ -89,15 +89,14 @@ Partial Class FormPrincipal
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.ClientSize = New System.Drawing.Size(1016, 733)
         Me.ControlBox = False
+        Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.lbUsuario)
         Me.Controls.Add(Me.arbolMenu)
-        Me.Controls.Add(Me.StatusStrip1)
         Me.DoubleBuffered = True
         Me.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.IsMdiContainer = True
         Me.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
-        Me.MaximizeBox = False
         Me.Name = "FormPrincipal"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "  "

@@ -14,8 +14,8 @@ Public Class FormPrincipal
             Catch exc As InvalidCastException
             End Try
         Next
-        formulario.ventana = Me '' se indica el formulario que usara el efecto
-        formulario.redondear() '' se redondean los bordes del formulario
+        'formulario.ventana = Me '' se indica el formulario que usara el efecto
+        'formulario.redondear() '' se redondean los bordes del formulario
     End Sub
 
     Private Sub arbolMenu_NodeMouseClick(sender As Object, e As TreeNodeMouseClickEventArgs) Handles arbolMenu.NodeMouseClick
@@ -31,11 +31,5 @@ Public Class FormPrincipal
         elemento.nombre = e.Node.Tag
         Return elemento
     End Function
-
-    Sub click_Global(ByVal sender As System.Object, ByVal e As System.EventArgs)
-        If Not IsNothing(Me.ActiveMdiChild) AndAlso ActiveMdiChild.WindowState = FormWindowState.Maximized Then
-            ActiveMdiChild.WindowState = FormWindowState.Normal
-        End If
-    End Sub
 
 End Class

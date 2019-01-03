@@ -40,4 +40,17 @@
         cargarNomina()
     End Sub
 
+    Private Sub btRegistrar_Click(sender As Object, e As EventArgs) Handles btRegistrar.Click
+        'Try
+        '    cargarObjeto()
+        '    PersonaBLL.guardar(objPersona)
+        '    Generales.habilitarBotones(ToolStrip1)
+        '    Generales.deshabilitarControles(Me)
+        '    btRegistrar.Enabled = False
+        '    btCancelar.Enabled = False
+        '    EstiloMensajes.mostrarMensajeExitoso(MensajeSistema.REGISTRO_GUARDADO)
+        'Catch ex As Exception
+        '    EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
+        'End Try
+    End Sub
 End Class
