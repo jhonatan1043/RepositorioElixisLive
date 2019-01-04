@@ -1,7 +1,7 @@
 ﻿Imports System.Data.SqlClient
 Public Class PerfilDAL
     'Public Shared Function guardarPerfil(objPerfil As Perfil) As Perfil
-    '    Dim objConexio As New CnxElixisLiveBD.ConexionBD
+    '    Dim objConexio As New  ConexionBD
     '    Try
     '        objConexio.conectar()
     '        Using comando = New SqlCommand()
@@ -26,7 +26,7 @@ Public Class PerfilDAL
     '    Return objPerfil
     'End Function
     Public Shared Sub crearPerfil(pPerfil As Perfil)
-        Dim objConexio As New CnxElixisLiveBD.ConexionBD
+        Dim objConexio As New ConexionBD
         objConexio.conectar()
         Try
             Using consulta = New SqlCommand()
@@ -41,7 +41,7 @@ Public Class PerfilDAL
     End Sub
 
     Public Shared Sub actualizarPerfil(pPerfil As Perfil)
-        Dim objConexio As New CnxElixisLiveBD.ConexionBD
+        Dim objConexio As New ConexionBD
         objConexio.conectar()
         Try
             Using consulta = New SqlCommand()
@@ -55,7 +55,7 @@ Public Class PerfilDAL
         objConexio.desConectar()
     End Sub
     Friend Shared Sub anularPerfil(perfil As Perfil)
-        Dim objConexio As New CnxElixisLiveBD.ConexionBD
+        Dim objConexio As New ConexionBD
         objConexio.conectar()
         Try
             Using consulta = New SqlCommand()
@@ -71,7 +71,7 @@ Public Class PerfilDAL
 
     Public Sub cargarMenuPadre(ByVal pCodigo As String,
                                   ByRef dsCuentas As DataSet)
-        Dim objConexio As New CnxElixisLiveBD.ConexionBD
+        Dim objConexio As New ConexionBD
         objConexio.conectar()
         Try
             Using dbCommand As New SqlCommand("SP_MENU_PADRE_CARGAR " & pCodigo, objConexio.cnxbd)
@@ -88,7 +88,7 @@ Public Class PerfilDAL
 
     Public Sub cargarMenuHijas(ByVal pCodigo As String,
                                   ByRef dsCuentas As DataSet)
-        Dim objConexio As New CnxElixisLiveBD.ConexionBD
+        Dim objConexio As New ConexionBD
         objConexio.conectar()
         Try
             Using dbCommand As New SqlCommand("SP_MENU_HIJO_CARGAR " & pCodigo, objConexio.cnxbd)

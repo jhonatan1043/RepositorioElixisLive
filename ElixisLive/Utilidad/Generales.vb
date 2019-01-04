@@ -1,6 +1,5 @@
 ﻿
 Imports System.Data.SqlClient
-Imports CnxElixisLiveBD
 Imports System.Net
 Imports System.Threading
 Imports CrystalDecisions.CrystalReports.Engine

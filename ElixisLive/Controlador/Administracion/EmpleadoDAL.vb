@@ -1,7 +1,7 @@
 ﻿Imports System.Data.SqlClient
 Public Class EmpleadoDAL
     Public Shared Function guardar(objEmpleado As Empleado) As Empleado
-        Dim objConexio As New CnxElixisLiveBD.ConexionBD
+        Dim objConexio As New ConexionBD
 
         Try
             objConexio.conectar()

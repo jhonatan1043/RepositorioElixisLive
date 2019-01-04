@@ -1,7 +1,7 @@
 ﻿Imports System.Data.SqlClient
 Public Class ConfigVentaDAL
     Public Shared Function guardar(objConfig As ConfigVenta) As ConfigVenta
-        Dim objConexio As New CnxElixisLiveBD.ConexionBD
+        Dim objConexio As New  ConexionBD
         Try
             objConexio.conectar()
             Using comando = New SqlCommand()

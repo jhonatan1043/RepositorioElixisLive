@@ -1,7 +1,7 @@
 ﻿Imports System.Data.SqlClient
 Public Class SucursalDAL
     Public Shared Function guardar(objSucursal As Sucursal) As Sucursal
-        Dim objConexio As New CnxElixisLiveBD.ConexionBD
+        Dim objConexio As New ConexionBD
         Try
             objConexio.conectar()
             Using comando = New SqlCommand()

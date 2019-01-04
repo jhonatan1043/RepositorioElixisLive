@@ -1,7 +1,7 @@
 ﻿Imports System.Data.SqlClient
 Public Class CostoServicioDAL
     Public Shared Function guardarCostoServicio(objCostoServicio As CostoServicio) As CostoServicio
-        Dim objConexio As New CnxElixisLiveBD.ConexionBD
+        Dim objConexio As New  ConexionBD
         Try
             objConexio.conectar()
             Using comando = New SqlCommand()

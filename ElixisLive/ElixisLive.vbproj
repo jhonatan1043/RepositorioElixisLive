@@ -71,10 +71,6 @@
     <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="CnxElixisLiveBD, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\CnxElixisLiveBD\CnxElixisLiveBD\bin\Debug\CnxElixisLiveBD.dll</HintPath>
-    </Reference>
     <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
@@ -208,6 +204,7 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Utilidad\Busqueda.vb" />
+    <Compile Include="Utilidad\ConexionBD.vb" />
     <Compile Include="Utilidad\Constantes.vb" />
     <Compile Include="Utilidad\ConvertirNumeros.vb" />
     <Compile Include="Utilidad\CrearInforme.vb" />

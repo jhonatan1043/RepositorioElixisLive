@@ -1,7 +1,7 @@
 ﻿Imports System.Data.SqlClient
 Public Class AgendarCitaDAL
     Public Shared Function guardarCita(objCita As AgendarCita) As AgendarCita
-        Dim objConexio As New CnxElixisLiveBD.ConexionBD
+        Dim objConexio As New ConexionBD
         Try
             objConexio.conectar()
             Using comando = New SqlCommand()

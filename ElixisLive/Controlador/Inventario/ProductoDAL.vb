@@ -1,7 +1,7 @@
 ﻿Imports System.Data.SqlClient
 Public Class ProductoDAL
     Public Shared Function guardar(objProducto As producto) As producto
-        Dim objConexio As New CnxElixisLiveBD.ConexionBD
+        Dim objConexio As New  ConexionBD
         Try
             objConexio.conectar()
             Using comando = New SqlCommand()

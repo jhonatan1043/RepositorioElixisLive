@@ -1,7 +1,7 @@
 ﻿Imports System.Data.SqlClient
 Public Class EntradaInventarioDAL
     Public Shared Function guardarEntrada(objEntrada As EntradaInventario) As EntradaInventario
-        Dim objConexio As New CnxElixisLiveBD.ConexionBD
+        Dim objConexio As New  ConexionBD
         Try
             objConexio.conectar()
             Using comando = New SqlCommand()
