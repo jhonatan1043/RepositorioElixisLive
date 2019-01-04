@@ -1,10 +1,27 @@
 ﻿Public Class FormNomina
     Dim dtNomina As New DataTable
-    Private Sub cargarNomina()
+    Private Sub cargarListaEmpleados()
         Dim params As New List(Of String)
         params.Add(dtFechaInicio.Value.Date)
         params.Add(dtFechaFinal.Value.Date)
-        Generales.llenarTabla(Sentencias.NOMINA_EMPLEADO_CARGAR, params, dtNomina)
+        Generales.llenarTabla(Sentencias.NOMINA_EMPLEADO_LISTAR, params, dtNomina)
+        dgvNomina.DataSource = dtNomina
+        If dtNomina.Rows.Count > 0 Then
+            dgvNomina.Columns(0).Visible = False
+            dgvNomina.Columns(1).AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
+            dgvNomina.Columns(2).AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
+            dgvNomina.Columns(3).AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
+            dgvNomina.Columns(4).AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
+            dgvNomina.Columns(5).AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
+            dgvNomina.Columns(3).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+            dgvNomina.Columns(4).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+            dgvNomina.Columns(5).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
+        End If
+    End Sub
+    Private Sub cargarNominaDetalle(codigoNomina)
+        Dim params As New List(Of String)
+        params.Add(codigoNomina)
+        Generales.llenarTabla(Sentencias.NOMINA_EMPLEADOS_CARGAR, params, dtNomina)
         dgvNomina.DataSource = dtNomina
         If dtNomina.Rows.Count > 0 Then
             dgvNomina.Columns(0).Visible = False
@@ -32,14 +49,14 @@
         dtFechaInicio.Enabled = True
         dtFechaFinal.Enabled = True
         dtFechaInicio.Value = DateSerial(Year(dtFechaInicio.Value), Month(dtFechaInicio.Value), 1)
-        cargarNomina()
+        cargarListaEmpleados()
     End Sub
     Private Sub dtFechaInicio_ValueChanged(sender As Object, e As EventArgs) Handles dtFechaInicio.ValueChanged
         dtFechaFinal.Value = dtFechaInicio.Value.AddDays(14)
-        cargarNomina()
+        cargarListaEmpleados()
     End Sub
     Private Sub dtFechaFinal_ValueChanged(sender As Object, e As EventArgs) Handles dtFechaFinal.ValueChanged
-        cargarNomina()
+        cargarListaEmpleados()
     End Sub
     Public Function crearObjeto() As Nomina
         Dim nomina As New Nomina
@@ -61,5 +78,52 @@
         Catch ex As Exception
             EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
         End Try
+    End Sub
+
+    Private Sub btBuscar_Click(sender As Object, e As EventArgs) Handles btBuscar.Click
+        Dim params As New List(Of String)
+        params.Add(String.Empty)
+        Generales.buscarElemento(Sentencias.NOMINA_BUSCAR,
+                                   params,
+                                   AddressOf cargarNomina,
+                                   Titulo.BUSQUEDA_PERSONA,
+                                   True, True)
+    End Sub
+
+    Private Sub cargarNomina(codigoNomina As String)
+
+        Dim params As New List(Of String)
+        Dim dfila As DataRow
+        params.Add(codigoNomina)
+        dfila = Generales.cargarItem(Sentencias.NOMINA_CARGAR, params)
+        Try
+            If Not IsNothing(dfila) Then
+                txtCodigo.Text = codigoNomina
+                dtFechaInicio.Value = dfila.Item("Fecha_Inicio")
+                dtFechaFinal.Value = dfila.Item("Fecha_Final")
+                cargarNominaDetalle(codigoNomina)
+                Generales.habilitarBotones(ToolStrip1)
+                btCancelar.Enabled = False
+                btRegistrar.Enabled = False
+            End If
+        Catch ex As Exception
+            EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
+        End Try
+    End Sub
+
+    Private Sub btAnular_Click(sender As Object, e As EventArgs) Handles btAnular.Click
+        If EstiloMensajes.mostrarMensajePregunta(MensajeSistema.ANULAR) = Constantes.SI Then
+            Try
+                If Generales.ejecutarSQL(Sentencias.NOMINA_ANULAR & txtCodigo.Text) = True Then
+                    Generales.limpiarControles(Me)
+                    Generales.deshabilitarBotones(ToolStrip1)
+                    btNuevo.Enabled = True
+                    btBuscar.Enabled = True
+                    EstiloMensajes.mostrarMensajeAnulado(MensajeSistema.REGISTRO_ANULADO)
+                End If
+            Catch ex As Exception
+                EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
+            End Try
+        End If
     End Sub
 End Class

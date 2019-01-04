@@ -43,8 +43,10 @@ Partial Class FormNomina
         Me.ToolStripSeparator4 = New System.Windows.Forms.ToolStripSeparator()
         Me.btAnular = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripSeparator6 = New System.Windows.Forms.ToolStripSeparator()
-        Me.txtIdentificacion = New System.Windows.Forms.Label()
+        Me.txtCodigo = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
+        Me.btCancelar = New System.Windows.Forms.ToolStripButton()
+        Me.ToolStripSeparator5 = New System.Windows.Forms.ToolStripSeparator()
         Me.gbOpciones.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -56,7 +58,7 @@ Partial Class FormNomina
         '
         'gbOpciones
         '
-        Me.gbOpciones.Controls.Add(Me.txtIdentificacion)
+        Me.gbOpciones.Controls.Add(Me.txtCodigo)
         Me.gbOpciones.Controls.Add(Me.Label8)
         Me.gbOpciones.Controls.Add(Me.dtFechaFinal)
         Me.gbOpciones.Controls.Add(Me.Label1)
@@ -185,7 +187,7 @@ Partial Class FormNomina
         Me.ToolStrip1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ToolStrip1.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.ToolStrip1.ImageScalingSize = New System.Drawing.Size(30, 30)
-        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripSeparator1, Me.btNuevo, Me.ToolStripSeparator7, Me.btBuscar, Me.ToolStripSeparator2, Me.btRegistrar, Me.ToolStripSeparator4, Me.btAnular, Me.ToolStripSeparator6})
+        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripSeparator1, Me.btNuevo, Me.ToolStripSeparator7, Me.btBuscar, Me.ToolStripSeparator2, Me.btRegistrar, Me.ToolStripSeparator4, Me.btCancelar, Me.ToolStripSeparator5, Me.btAnular, Me.ToolStripSeparator6})
         Me.ToolStrip1.Location = New System.Drawing.Point(0, 486)
         Me.ToolStrip1.Name = "ToolStrip1"
         Me.ToolStrip1.Size = New System.Drawing.Size(905, 37)
@@ -261,15 +263,15 @@ Partial Class FormNomina
         Me.ToolStripSeparator6.Name = "ToolStripSeparator6"
         Me.ToolStripSeparator6.Size = New System.Drawing.Size(6, 37)
         '
-        'txtIdentificacion
+        'txtCodigo
         '
-        Me.txtIdentificacion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtIdentificacion.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtIdentificacion.Location = New System.Drawing.Point(98, 13)
-        Me.txtIdentificacion.Name = "txtIdentificacion"
-        Me.txtIdentificacion.Size = New System.Drawing.Size(119, 25)
-        Me.txtIdentificacion.TabIndex = 73
-        Me.txtIdentificacion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.txtCodigo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtCodigo.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtCodigo.Location = New System.Drawing.Point(98, 13)
+        Me.txtCodigo.Name = "txtCodigo"
+        Me.txtCodigo.Size = New System.Drawing.Size(73, 25)
+        Me.txtCodigo.TabIndex = 73
+        Me.txtCodigo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Label8
         '
@@ -282,6 +284,22 @@ Partial Class FormNomina
         Me.Label8.Size = New System.Drawing.Size(86, 19)
         Me.Label8.TabIndex = 72
         Me.Label8.Text = "N° Nómina:"
+        '
+        'btCancelar
+        '
+        Me.btCancelar.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btCancelar.ForeColor = System.Drawing.Color.White
+        Me.btCancelar.Image = Global.Quality.My.Resources.Resources.Actions_blue_arrow_undo_icon
+        Me.btCancelar.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.btCancelar.Name = "btCancelar"
+        Me.btCancelar.Size = New System.Drawing.Size(104, 34)
+        Me.btCancelar.Text = "&Cancelar"
+        Me.btCancelar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        '
+        'ToolStripSeparator5
+        '
+        Me.ToolStripSeparator5.Name = "ToolStripSeparator5"
+        Me.ToolStripSeparator5.Size = New System.Drawing.Size(6, 37)
         '
         'FormNomina
         '
@@ -332,6 +350,8 @@ Partial Class FormNomina
     Friend WithEvents dgvNomina As DataGridView
     Public WithEvents dtFechaFinal As DateTimePicker
     Public WithEvents Label1 As Label
-    Friend WithEvents txtIdentificacion As Label
+    Friend WithEvents txtCodigo As Label
     Public WithEvents Label8 As Label
+    Friend WithEvents ToolStripSeparator5 As ToolStripSeparator
+    Public WithEvents btCancelar As ToolStripButton
 End Class
