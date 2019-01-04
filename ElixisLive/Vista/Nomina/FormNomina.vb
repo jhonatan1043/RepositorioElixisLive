@@ -48,8 +48,10 @@
     End Sub
     Private Sub FormNomina_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Generales.deshabilitarBotones(ToolStrip1)
+        Generales.deshabilitarControles(Me)
         btNuevo.Enabled = True
         btBuscar.Enabled = True
+        btCalcular.Image = My.Resources.calculator_icon1
     End Sub
     Private Sub dtFechaInicio_ValueChanged(sender As Object, e As EventArgs) Handles dtFechaInicio.ValueChanged
         dtFechaFinal.Value = dtFechaInicio.Value.AddDays(14)

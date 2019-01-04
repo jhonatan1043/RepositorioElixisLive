@@ -31,8 +31,14 @@ Partial Class FormNomina
         Me.dtFechaInicio = New System.Windows.Forms.DateTimePicker()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.TextTotalServicios = New System.Windows.Forms.TextBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.TextValoTotal = New System.Windows.Forms.TextBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.TextTotalEmpleados = New System.Windows.Forms.TextBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.dgvNomina = New System.Windows.Forms.DataGridView()
+        Me.Label5 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Pimagen = New System.Windows.Forms.PictureBox()
         Me.LTitulo = New System.Windows.Forms.Label()
@@ -43,17 +49,11 @@ Partial Class FormNomina
         Me.btBuscar = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
         Me.btRegistrar = New System.Windows.Forms.ToolStripButton()
-        Me.ToolStripSeparator4 = New System.Windows.Forms.ToolStripSeparator()
-        Me.btCancelar = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripSeparator5 = New System.Windows.Forms.ToolStripSeparator()
         Me.btAnular = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripSeparator6 = New System.Windows.Forms.ToolStripSeparator()
-        Me.TextTotalEmpleados = New System.Windows.Forms.TextBox()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.TextValoTotal = New System.Windows.Forms.TextBox()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.TextTotalServicios = New System.Windows.Forms.TextBox()
-        Me.Label4 = New System.Windows.Forms.Label()
+        Me.btCancelar = New System.Windows.Forms.ToolStripButton()
+        Me.ToolStripSeparator4 = New System.Windows.Forms.ToolStripSeparator()
         Me.gbOpciones.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -83,7 +83,7 @@ Partial Class FormNomina
         Me.btCalcular.BackColor = System.Drawing.Color.AliceBlue
         Me.btCalcular.Font = New System.Drawing.Font("Times New Roman", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btCalcular.ForeColor = System.Drawing.Color.SteelBlue
-        Me.btCalcular.Image = Global.Quality.My.Resources.Resources.calculator_icon1
+        Me.btCalcular.Image = Global.Quality.My.Resources.Resources.calculator_icon
         Me.btCalcular.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btCalcular.Location = New System.Drawing.Point(805, 10)
         Me.btCalcular.Name = "btCalcular"
@@ -173,6 +173,67 @@ Partial Class FormNomina
         Me.GroupBox1.TabIndex = 27
         Me.GroupBox1.TabStop = False
         '
+        'TextTotalServicios
+        '
+        Me.TextTotalServicios.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TextTotalServicios.Font = New System.Drawing.Font("Times New Roman", 14.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextTotalServicios.ForeColor = System.Drawing.Color.Black
+        Me.TextTotalServicios.Location = New System.Drawing.Point(391, 412)
+        Me.TextTotalServicios.Name = "TextTotalServicios"
+        Me.TextTotalServicios.Size = New System.Drawing.Size(155, 29)
+        Me.TextTotalServicios.TabIndex = 1005
+        Me.TextTotalServicios.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Label4
+        '
+        Me.Label4.BackColor = System.Drawing.Color.Transparent
+        Me.Label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Label4.Font = New System.Drawing.Font("Times New Roman", 14.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.ForeColor = System.Drawing.Color.White
+        Me.Label4.Image = Global.Quality.My.Resources.Resources.fondo_azul
+        Me.Label4.Location = New System.Drawing.Point(391, 394)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(155, 38)
+        Me.Label4.TabIndex = 1004
+        Me.Label4.Text = "Total Servicios"
+        Me.Label4.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        '
+        'TextValoTotal
+        '
+        Me.TextValoTotal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TextValoTotal.Font = New System.Drawing.Font("Times New Roman", 14.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextValoTotal.ForeColor = System.Drawing.Color.Black
+        Me.TextValoTotal.Location = New System.Drawing.Point(735, 412)
+        Me.TextValoTotal.Name = "TextValoTotal"
+        Me.TextValoTotal.Size = New System.Drawing.Size(155, 29)
+        Me.TextValoTotal.TabIndex = 1003
+        Me.TextValoTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'Label2
+        '
+        Me.Label2.BackColor = System.Drawing.Color.Transparent
+        Me.Label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Label2.Font = New System.Drawing.Font("Times New Roman", 14.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.White
+        Me.Label2.Image = Global.Quality.My.Resources.Resources.fondo_azul
+        Me.Label2.Location = New System.Drawing.Point(735, 394)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(155, 38)
+        Me.Label2.TabIndex = 1002
+        Me.Label2.Text = "Valor Total"
+        Me.Label2.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        '
+        'TextTotalEmpleados
+        '
+        Me.TextTotalEmpleados.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TextTotalEmpleados.Font = New System.Drawing.Font("Times New Roman", 14.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextTotalEmpleados.ForeColor = System.Drawing.Color.Black
+        Me.TextTotalEmpleados.Location = New System.Drawing.Point(563, 412)
+        Me.TextTotalEmpleados.Name = "TextTotalEmpleados"
+        Me.TextTotalEmpleados.Size = New System.Drawing.Size(155, 29)
+        Me.TextTotalEmpleados.TabIndex = 1001
+        Me.TextTotalEmpleados.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
         'GroupBox2
         '
         Me.GroupBox2.Controls.Add(Me.dgvNomina)
@@ -195,6 +256,20 @@ Partial Class FormNomina
         Me.dgvNomina.Name = "dgvNomina"
         Me.dgvNomina.Size = New System.Drawing.Size(882, 319)
         Me.dgvNomina.TabIndex = 0
+        '
+        'Label5
+        '
+        Me.Label5.BackColor = System.Drawing.Color.Transparent
+        Me.Label5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Label5.Font = New System.Drawing.Font("Times New Roman", 14.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.ForeColor = System.Drawing.Color.White
+        Me.Label5.Image = Global.Quality.My.Resources.Resources.fondo_azul
+        Me.Label5.Location = New System.Drawing.Point(563, 394)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(155, 38)
+        Me.Label5.TabIndex = 1000
+        Me.Label5.Text = "Total Empleados"
+        Me.Label5.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
         'Panel1
         '
@@ -293,22 +368,6 @@ Partial Class FormNomina
         Me.btRegistrar.Text = "Registrar"
         Me.btRegistrar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         '
-        'ToolStripSeparator4
-        '
-        Me.ToolStripSeparator4.Name = "ToolStripSeparator4"
-        Me.ToolStripSeparator4.Size = New System.Drawing.Size(6, 37)
-        '
-        'btCancelar
-        '
-        Me.btCancelar.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btCancelar.ForeColor = System.Drawing.Color.White
-        Me.btCancelar.Image = Global.Quality.My.Resources.Resources.Actions_blue_arrow_undo_icon
-        Me.btCancelar.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.btCancelar.Name = "btCancelar"
-        Me.btCancelar.Size = New System.Drawing.Size(104, 34)
-        Me.btCancelar.Text = "&Cancelar"
-        Me.btCancelar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        '
         'ToolStripSeparator5
         '
         Me.ToolStripSeparator5.Name = "ToolStripSeparator5"
@@ -330,80 +389,21 @@ Partial Class FormNomina
         Me.ToolStripSeparator6.Name = "ToolStripSeparator6"
         Me.ToolStripSeparator6.Size = New System.Drawing.Size(6, 37)
         '
-        'TextTotalEmpleados
+        'btCancelar
         '
-        Me.TextTotalEmpleados.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextTotalEmpleados.Font = New System.Drawing.Font("Times New Roman", 14.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextTotalEmpleados.ForeColor = System.Drawing.Color.Black
-        Me.TextTotalEmpleados.Location = New System.Drawing.Point(563, 412)
-        Me.TextTotalEmpleados.Name = "TextTotalEmpleados"
-        Me.TextTotalEmpleados.Size = New System.Drawing.Size(155, 29)
-        Me.TextTotalEmpleados.TabIndex = 1001
-        Me.TextTotalEmpleados.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.btCancelar.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btCancelar.ForeColor = System.Drawing.Color.White
+        Me.btCancelar.Image = Global.Quality.My.Resources.Resources.Actions_blue_arrow_undo_icon
+        Me.btCancelar.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.btCancelar.Name = "btCancelar"
+        Me.btCancelar.Size = New System.Drawing.Size(104, 34)
+        Me.btCancelar.Text = "&Cancelar"
+        Me.btCancelar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         '
-        'Label5
+        'ToolStripSeparator4
         '
-        Me.Label5.BackColor = System.Drawing.Color.Transparent
-        Me.Label5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Label5.Font = New System.Drawing.Font("Times New Roman", 14.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.ForeColor = System.Drawing.Color.White
-        Me.Label5.Image = Global.Quality.My.Resources.Resources.fondo_azul
-        Me.Label5.Location = New System.Drawing.Point(563, 394)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(155, 38)
-        Me.Label5.TabIndex = 1000
-        Me.Label5.Text = "Total Empleados"
-        Me.Label5.TextAlign = System.Drawing.ContentAlignment.TopCenter
-        '
-        'TextValoTotal
-        '
-        Me.TextValoTotal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextValoTotal.Font = New System.Drawing.Font("Times New Roman", 14.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextValoTotal.ForeColor = System.Drawing.Color.Black
-        Me.TextValoTotal.Location = New System.Drawing.Point(735, 412)
-        Me.TextValoTotal.Name = "TextValoTotal"
-        Me.TextValoTotal.Size = New System.Drawing.Size(155, 29)
-        Me.TextValoTotal.TabIndex = 1003
-        Me.TextValoTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-        '
-        'Label2
-        '
-        Me.Label2.BackColor = System.Drawing.Color.Transparent
-        Me.Label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Label2.Font = New System.Drawing.Font("Times New Roman", 14.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.Image = Global.Quality.My.Resources.Resources.fondo_azul
-        Me.Label2.Location = New System.Drawing.Point(735, 394)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(155, 38)
-        Me.Label2.TabIndex = 1002
-        Me.Label2.Text = "Valor Total"
-        Me.Label2.TextAlign = System.Drawing.ContentAlignment.TopCenter
-        '
-        'TextTotalServicios
-        '
-        Me.TextTotalServicios.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextTotalServicios.Font = New System.Drawing.Font("Times New Roman", 14.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextTotalServicios.ForeColor = System.Drawing.Color.Black
-        Me.TextTotalServicios.Location = New System.Drawing.Point(391, 412)
-        Me.TextTotalServicios.Name = "TextTotalServicios"
-        Me.TextTotalServicios.Size = New System.Drawing.Size(155, 29)
-        Me.TextTotalServicios.TabIndex = 1005
-        Me.TextTotalServicios.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'Label4
-        '
-        Me.Label4.BackColor = System.Drawing.Color.Transparent
-        Me.Label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Label4.Font = New System.Drawing.Font("Times New Roman", 14.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.ForeColor = System.Drawing.Color.White
-        Me.Label4.Image = Global.Quality.My.Resources.Resources.fondo_azul
-        Me.Label4.Location = New System.Drawing.Point(391, 394)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(155, 38)
-        Me.Label4.TabIndex = 1004
-        Me.Label4.Text = "Total Servicios"
-        Me.Label4.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.ToolStripSeparator4.Name = "ToolStripSeparator4"
+        Me.ToolStripSeparator4.Size = New System.Drawing.Size(6, 37)
         '
         'FormNomina
         '
