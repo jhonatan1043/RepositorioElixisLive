@@ -17,6 +17,7 @@
             dgvNomina.Columns(4).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
             dgvNomina.Columns(5).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
         End If
+        calcularTotales()
     End Sub
     Private Sub cargarNominaDetalle(codigoNomina)
         Dim params As New List(Of String)
@@ -34,6 +35,7 @@
             dgvNomina.Columns(4).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
             dgvNomina.Columns(5).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
         End If
+        calcularTotales()
     End Sub
     Private Sub dgvNomina_CellFormatting(sender As System.Object, e As System.Windows.Forms.DataGridViewCellFormattingEventArgs) Handles dgvNomina.CellFormatting
         If e.ColumnIndex = 5 Then
@@ -46,17 +48,11 @@
     End Sub
     Private Sub FormNomina_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Generales.deshabilitarBotones(ToolStrip1)
-        dtFechaInicio.Enabled = True
-        dtFechaFinal.Enabled = True
-        dtFechaInicio.Value = DateSerial(Year(dtFechaInicio.Value), Month(dtFechaInicio.Value), 1)
-        cargarListaEmpleados()
+        btNuevo.Enabled = True
+        btBuscar.Enabled = True
     End Sub
     Private Sub dtFechaInicio_ValueChanged(sender As Object, e As EventArgs) Handles dtFechaInicio.ValueChanged
         dtFechaFinal.Value = dtFechaInicio.Value.AddDays(14)
-        cargarListaEmpleados()
-    End Sub
-    Private Sub dtFechaFinal_ValueChanged(sender As Object, e As EventArgs) Handles dtFechaFinal.ValueChanged
-        cargarListaEmpleados()
     End Sub
     Public Function crearObjeto() As Nomina
         Dim nomina As New Nomina
@@ -66,7 +62,7 @@
         For Each drFila As DataRow In dtNomina.Rows
             Dim drCuenta As DataRow = nomina.dtNomina.NewRow
             drCuenta.Item("codigoPersona") = drFila.Item("Código")
-            drCuenta.Item("valorPagado") = drFila.Item("Valor a Pagar")
+            drCuenta.Item("valorPagado") = drFila.Item("Total a Pagar")
             nomina.dtNomina.Rows.Add(drCuenta)
         Next
         Return nomina
@@ -74,12 +70,37 @@
     Private Sub btRegistrar_Click(sender As Object, e As EventArgs) Handles btRegistrar.Click
         Dim nominaBLL As New NominaBLL
         Try
-            nominaBLL.guardarNomina(crearObjeto())
+            txtCodigo.Text = nominaBLL.guardarNomina(crearObjeto())
+            Generales.habilitarBotones(ToolStrip1)
+            Generales.deshabilitarControles(Me)
+            btRegistrar.Enabled = False
+            btCancelar.Enabled = False
+            EstiloMensajes.mostrarMensajeExitoso(MensajeSistema.REGISTRO_GUARDADO)
         Catch ex As Exception
             EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
         End Try
     End Sub
+    Private Sub calcularTotales()
+        dgvNomina.EndEdit()
 
+        Try
+            Dim valorTotal As Double
+            Dim totalServicios As Integer
+            If dgvNomina.Rows.Count >= 1 Then
+                valorTotal = dtNomina.Compute("SUM([Total a Pagar])", "")
+                totalServicios = dtNomina.Compute("SUM(Servicios)", "")
+            Else
+                valorTotal = Constantes.SIN_VALOR_NUMERICO
+                totalServicios = Constantes.SIN_VALOR_NUMERICO
+            End If
+
+            TextTotalEmpleados.Text = dgvNomina.Rows.Count
+            TextValoTotal.Text = CDbl(valorTotal).ToString(Constantes.FORMATO_MONEDA)
+            TextTotalServicios.Text = totalServicios.ToString(Constantes.SIN_VALOR_NUMERICO)
+        Catch ex As Exception
+            EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
+        End Try
+    End Sub
     Private Sub btBuscar_Click(sender As Object, e As EventArgs) Handles btBuscar.Click
         Dim params As New List(Of String)
         params.Add(String.Empty)
@@ -91,7 +112,6 @@
     End Sub
 
     Private Sub cargarNomina(codigoNomina As String)
-
         Dim params As New List(Of String)
         Dim dfila As DataRow
         params.Add(codigoNomina)
@@ -114,9 +134,10 @@
     Private Sub btAnular_Click(sender As Object, e As EventArgs) Handles btAnular.Click
         If EstiloMensajes.mostrarMensajePregunta(MensajeSistema.ANULAR) = Constantes.SI Then
             Try
-                If Generales.ejecutarSQL(Sentencias.NOMINA_ANULAR & txtCodigo.Text) = True Then
+                If Generales.ejecutarSQL(Sentencias.NOMINA_ANULAR & " " & txtCodigo.Text) = True Then
                     Generales.limpiarControles(Me)
                     Generales.deshabilitarBotones(ToolStrip1)
+                    txtCodigo.Text = ""
                     btNuevo.Enabled = True
                     btBuscar.Enabled = True
                     EstiloMensajes.mostrarMensajeAnulado(MensajeSistema.REGISTRO_ANULADO)
@@ -124,6 +145,38 @@
             Catch ex As Exception
                 EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
             End Try
+        End If
+    End Sub
+
+    Private Sub btNuevo_Click(sender As Object, e As EventArgs) Handles btNuevo.Click
+        dtFechaFinal.Enabled = True
+        dtFechaInicio.Enabled = True
+        Generales.limpiarControles(Me)
+        Generales.deshabilitarBotones(ToolStrip1)
+        txtCodigo.Text = ""
+        btRegistrar.Enabled = True
+        btCancelar.Enabled = True
+        dtFechaInicio.Value = DateSerial(Year(dtFechaInicio.Value), Month(dtFechaInicio.Value), 1)
+    End Sub
+
+    Private Sub btCalcular_Click(sender As Object, e As EventArgs) Handles btCalcular.Click
+        cargarListaEmpleados()
+    End Sub
+
+    Private Sub btCancelar_Click(sender As Object, e As EventArgs) Handles btCancelar.Click
+        If EstiloMensajes.mostrarMensajePregunta(MensajeSistema.CANCELAR) = Constantes.SI Then
+            Generales.deshabilitarBotones(ToolStrip1)
+            Generales.deshabilitarControles(Me)
+            btNuevo.Enabled = True
+            btBuscar.Enabled = True
+        End If
+    End Sub
+
+    Private Sub FormNomina_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        If EstiloMensajes.mostrarMensajePregunta(MensajeSistema.SALIR) = Constantes.SI Then
+            Me.Dispose()
+        Else
+            e.Cancel = True
         End If
     End Sub
 End Class

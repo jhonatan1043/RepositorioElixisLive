@@ -361,4 +361,12 @@ Public Class FormPersona
     Private Sub FormPersona_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextNombre.KeyPress, MyBase.KeyPress
         ValidacionDigitacion.validarAlfabetico(e)
     End Sub
+
+    Private Sub FormPersona_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        If EstiloMensajes.mostrarMensajePregunta(MensajeSistema.SALIR) = Constantes.SI Then
+            Me.Dispose()
+        Else
+            e.Cancel = True
+        End If
+    End Sub
 End Class

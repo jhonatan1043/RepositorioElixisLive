@@ -14,7 +14,7 @@ Public Class NominaDAL
                     comando.Parameters.Add(New SqlParameter("@fechaInicio", SqlDbType.Date)).Value = nomina.fechaInicio
                     comando.Parameters.Add(New SqlParameter("@fechaFinal", SqlDbType.Date)).Value = nomina.fechaFin
                     comando.Parameters.Add(New SqlParameter("@usuario", SqlDbType.Int)).Value = SesionActual.idUsuario
-                    comando.Parameters.Add(New SqlParameter("@TABLA_NOMINA", SqlDbType.Structured)).Value = nomina.dtNomina
+                    comando.Parameters.Add(New SqlParameter("@nomina", SqlDbType.Structured)).Value = nomina.dtNomina
                     nomina.codigoNomina = CType(comando.ExecuteScalar, Integer)
                     trnsccion.Commit()
                 End Using
