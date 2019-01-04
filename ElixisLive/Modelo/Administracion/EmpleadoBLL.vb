@@ -50,6 +50,29 @@
 
         cargarCombo(tabla, cbCombo)
     End Sub
+    Public Shared Sub cargarComboTipoSalario(cbCombo As ComboBox)
+        Dim tabla As New DataTable
+        Dim drFila As DataRow
+        tabla.Columns.Add("Codigo")
+        tabla.Columns.Add("Nombre")
+
+        drFila = tabla.NewRow()
+        drFila.Item(0) = "-1"
+        drFila.Item(1) = " - - - Seleccione - - - "
+        tabla.Rows.Add(drFila)
+
+        drFila = tabla.NewRow()
+        drFila.Item(0) = "0"
+        drFila.Item(1) = "Salario Fijo"
+        tabla.Rows.Add(drFila)
+
+        drFila = tabla.NewRow()
+        drFila.Item(0) = "1"
+        drFila.Item(1) = "Por Cimisión"
+        tabla.Rows.Add(drFila)
+
+        cargarCombo(tabla, cbCombo)
+    End Sub
 
     Private Shared Sub cargarCombo(dtTabla As DataTable, cbCombo As ComboBox)
         Try

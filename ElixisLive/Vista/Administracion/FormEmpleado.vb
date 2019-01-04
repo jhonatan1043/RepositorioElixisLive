@@ -11,6 +11,7 @@ Public Class FormEmpleado
     Private Sub FormBaseProductivo_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         objEmpleado = New Empleado
         Try
+            formatMoneda()
             Generales.deshabilitarBotones(ToolStrip1)
             Generales.deshabilitarControles(Me)
             combosIniciales()
@@ -33,6 +34,7 @@ Public Class FormEmpleado
     Private Sub combosIniciales()
         EmpleadoBLL.cargarComboFormaPago(cbFormaPago)
         EmpleadoBLL.cargarComboCuenta(cbTipoCuenta)
+        EmpleadoBLL.cargarComboTipoSalario(cbTipoSalario)
         Generales.cargarCombo(Sentencias.PERFIL_CONSULTAR, Nothing, "Nombre", "Codigo", cbPerfil)
         Generales.cargarCombo(Sentencias.BANCO_CONSULTAR, Nothing, "Nombre", "Codigo_Banco", cbBanco)
         Generales.cargarCombo(Sentencias.CARGO_CONSULTAR, Nothing, "Nombre", "Codigo", cbCargo)
@@ -309,7 +311,33 @@ Public Class FormEmpleado
             Me.ErrorIcono.SetError(txtNombre, Constantes.CADENA_VACIA)
         End If
     End Sub
+    Private Sub cbTipoSalario_TextChanged(sender As Object, e As EventArgs) Handles cbTipoSalario.TextChanged
+        If btRegistrar.Enabled = False Then Exit Sub
 
+        desHabilitarTxtSalario()
+        If cbTipoSalario.SelectedValue = 0 Then
+            txtSalario.ReadOnly = False
+        ElseIf cbTipoSalario.SelectedValue = 1
+            txtComision.ReadOnly = False
+        End If
+
+    End Sub
+    Private Sub desHabilitarTxtSalario()
+        txtComision.ReadOnly = True
+        txtSalario.ReadOnly = True
+    End Sub
+
+    Private Sub txtComision_Leave(sender As Object, e As EventArgs) Handles txtComision.Leave
+        txtComision.Text = FormatCurrency(txtComision.Text, Constantes.FORMATO_MONEDA)
+    End Sub
+    Private Sub txtSalario_Leave(sender As Object, e As EventArgs) Handles txtSalario.Leave
+        txtSalario.Text = FormatCurrency(txtSalario.Text, Constantes.FORMATO_MONEDA)
+    End Sub
+
+    Private Sub formatMoneda()
+        txtComision.Text = FormatCurrency(txtComision.Text, Constantes.FORMATO_MONEDA)
+        txtSalario.Text = FormatCurrency(txtSalario.Text, Constantes.FORMATO_MONEDA)
+    End Sub
 End Class
 
 

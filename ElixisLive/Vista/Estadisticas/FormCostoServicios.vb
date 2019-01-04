@@ -9,11 +9,18 @@
         dgvServicio.Columns(0).Visible = False
         dgvServicio.Columns(1).AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
     End Sub
-
     Private Sub dgvServicio_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvServicio.CellContentClick
         cargarProductos(dgvServicio.CurrentRow.Cells(0).Value)
     End Sub
-
+    Private Sub dgvProducto_CellFormatting(sender As Object, e As DataGridViewCellFormattingEventArgs) Handles dgvProducto.CellFormatting
+        If e.ColumnIndex = 6 Then
+            If IsDBNull(e.Value) Then
+                e.Value = Format(Val(0), Constantes.FORMATO_MONEDA)
+            Else
+                e.Value = Format(Val(e.Value), Constantes.FORMATO_MONEDA)
+            End If
+        End If
+    End Sub
     Private Sub cargarProductos(pCodigo As Integer)
         Dim params As New List(Of String)
         params.Add(pCodigo)

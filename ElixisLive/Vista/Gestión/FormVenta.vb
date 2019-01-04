@@ -43,7 +43,7 @@ Public Class FormVenta
         End Try
     End Sub
     Private Sub dgvProducto_CellFormatting(sender As System.Object, e As System.Windows.Forms.DataGridViewCellFormattingEventArgs) Handles dgvProducto.CellFormatting
-        If e.ColumnIndex = 6 OrElse e.ColumnIndex = 7 Then
+        If e.ColumnIndex = 5 OrElse e.ColumnIndex = 6 Then
             If IsDBNull(e.Value) Then
                 e.Value = Format(Val(0), Constantes.FORMATO_MONEDA)
             Else
@@ -52,7 +52,7 @@ Public Class FormVenta
         End If
     End Sub
     Private Sub dgvServicio_CellFormatting(sender As System.Object, e As System.Windows.Forms.DataGridViewCellFormattingEventArgs) Handles dgvServicio.CellFormatting
-        If e.ColumnIndex = 3 Then
+        If e.ColumnIndex = 4 Then
             If IsDBNull(e.Value) Then
                 e.Value = Format(Val(0), Constantes.FORMATO_MONEDA)
             Else
@@ -61,24 +61,35 @@ Public Class FormVenta
         End If
     End Sub
     Private Sub dgvProducto_CellEndEdit(sender As Object, e As EventArgs) Handles dgvProducto.CellEndEdit
+        Dim dFila As DataRow = Nothing
         If dgvProducto.RowCount >= 1 Then
             Try
-                If dgvProducto.Rows(dgvProducto.CurrentCell.RowIndex).Cells("dgCodigo").Selected = True Then
-                    dgvProducto.EditMode = DataGridViewEditMode.EditOnEnter
-                    If Not IsDBNull(dgvProducto.Rows(dgvProducto.CurrentCell.RowIndex).Cells("dgCodigo").Value) Then
-                        cargarItemProducto(dgvProducto.Rows(dgvProducto.CurrentCell.RowIndex).Cells("dgCodigo").Value)
+                'If dgvProducto.Rows(dgvProducto.CurrentCell.RowIndex).Cells("dgCodigo").Selected = True Then
+                '    dgvProducto.EditMode = DataGridViewEditMode.EditOnEnter
+                '    If Not IsDBNull(dgvProducto.Rows(dgvProducto.CurrentCell.RowIndex).Cells("dgCodigo").Value) Then
+                '        objVenta.estadoFilaNueva = True
+                '        cargarItemProducto(dgvProducto.Rows(dgvProducto.CurrentCell.RowIndex).Cells("dgCodigo").Value)
+                '    End If
+                If Not IsDBNull(dgvProducto.Rows(dgvProducto.CurrentCell.RowIndex).Cells("dgEmpleadoP").Value) Then
+                    dFila = consultarEmpleado(dgvProducto.Rows(dgvProducto.CurrentCell.RowIndex).Cells("dgEmpleadoP").Value)
+                    If Not IsNothing(dFila) Then
+                        dgvProducto.Rows(dgvProducto.CurrentCell.RowIndex).Cells("dgEmpleadoN").Value = dFila("Nombre")
+                    Else
+                        dgvProducto.Rows(dgvProducto.CurrentCell.RowIndex).Cells("dgEmpleadoP").Value = Nothing
+                        dgvProducto.Rows(dgvProducto.CurrentCell.RowIndex).Cells("dgEmpleadoN").Value = Nothing
+                        EstiloMensajes.mostrarMensajeError("¡ Empleado no valido !")
                     End If
                 Else
                     If Not IsDBNull(objVenta.dtProductos.Rows(dgvProducto.CurrentCell.RowIndex).Item("Codigo")) Then
                         calcularCampos()
                     End If
                 End If
-                calcularTotales()
             Catch ex As Exception
                 EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
             End Try
         End If
     End Sub
+
     Private Sub dgvServicio_CellEndEdit(sender As Object, e As EventArgs) Handles dgvServicio.CellEndEdit
         Dim dFila As DataRow = Nothing
         If dgvServicio.RowCount >= 1 Then
@@ -111,31 +122,25 @@ Public Class FormVenta
             AddHandler e.Control.KeyPress, AddressOf ValidacionDigitacion.validarValoresNumericos
         End If
     End Sub
-    Private Sub dgvProducto_CellEnter(sender As Object, e As DataGridViewCellEventArgs) Handles dgvProducto.CellEnter
-        If dgvProducto.Rows(dgvProducto.CurrentCell.RowIndex).Cells("dgCodigo").Selected = True Then
-            dgvProducto.EditMode = DataGridViewEditMode.EditOnEnter
-        Else
-            dgvProducto.EndEdit()
-        End If
-    End Sub
     Private Sub btNuevo_Click(sender As Object, e As EventArgs) Handles btNuevo.Click
         Generales.habilitarControles(Me)
+        Generales.deshabilitarControles(gbRelevante)
         Generales.deshabilitarBotones(ToolStrip1)
         Generales.limpiarControles(Me)
-        btRegistrar.Enabled = True
-        btCancelar.Enabled = True
         desactivadoPermante()
         validarEdicionGrilla(Constantes.EDITABLE)
         objVenta.codigo = Nothing
         objVenta.dtProductos.Rows.Add()
         objVenta.dtServicio.Rows.Add()
+        btRegistrar.Enabled = True
+        btCancelar.Enabled = True
         dgvProducto.Rows(0).Cells("dgCodigo").Selected = True
     End Sub
     Private Sub btBuscar_Click(sender As Object, e As EventArgs) Handles btBuscar.Click
         Dim params As New List(Of String)
         params.Add(String.Empty)
         Try
-            Generales.buscarElemento(Sentencias.VENTA_BUSCAR,
+            Generales.buscarElemento(objVenta.sqlConsulta,
                                      params,
                                      AddressOf cargarInfomacion,
                                      Titulo.BUSQUEDA_FACTURA,
@@ -155,13 +160,16 @@ Public Class FormVenta
         params.Add(codigo)
         dRows = Generales.cargarItem(Sentencias.PRODUCTOS_FACTURA_CARGAR, params)
         If Not IsNothing(dRows) Then
+
             objVenta.dtProductos(dgvProducto.CurrentCell.RowIndex).Item("Descripcion") = dRows("Descripcion")
             objVenta.dtProductos(dgvProducto.CurrentCell.RowIndex).Item("Stock") = dRows("Stock")
             objVenta.dtProductos(dgvProducto.CurrentCell.RowIndex).Item("Valor") = dRows("Valor")
             dgvProducto.Columns("dgCantidad").Selected = True
 
-            objVenta.dtProductos.Rows.Add()
-
+            If IsDBNull(objVenta.dtProductos.Rows(objVenta.dtProductos.Rows.Count).Item("Codigo")) And objVenta.estadoFilaNueva = True Then
+                objVenta.dtProductos.Rows.Add()
+                objVenta.estadoFilaNueva = False
+            End If
         Else
             EstiloMensajes.mostrarMensajeAdvertencia(" Producto no Encontrado ")
         End If
@@ -316,7 +324,7 @@ Public Class FormVenta
         Dim dRows As DataRow
         params.Add(pCodigo)
         objVenta.codigo = pCodigo
-        dRows = Generales.cargarItem(Sentencias.INVEN_VENTA_CARGAR, params)
+        dRows = Generales.cargarItem(objVenta.sqlCargar, params)
 
         txtCodigo.Text = pCodigo
         txtIdentificacion.Text = dRows("Identificacion")
@@ -338,6 +346,7 @@ Public Class FormVenta
         TextTotal.ReadOnly = True
         TextTotalArticulos.ReadOnly = True
         TextTotalServicio.ReadOnly = True
+        txtTotalGastos.ReadOnly = True
     End Sub
     Private Sub buscarServicio()
         Dim params As New List(Of String)
@@ -376,12 +385,15 @@ Public Class FormVenta
             .Columns("dgCantidad").DataPropertyName = "Cantidad"
             .Columns("dgValor").DataPropertyName = "Valor"
             .Columns("dgTotal").DataPropertyName = "Total"
+            .Columns("dgEmpleadoP").DataPropertyName = "EmpleadoP"
+            .Columns("dgEmpleadoN").DataPropertyName = "EmpleadoN"
 
             .Columns("dgCodigo").SortMode = DataGridViewColumnSortMode.NotSortable
             .Columns("dgDescripcion").SortMode = DataGridViewColumnSortMode.NotSortable
             .Columns("dgCantidad").SortMode = DataGridViewColumnSortMode.NotSortable
             .Columns("dgValor").SortMode = DataGridViewColumnSortMode.NotSortable
             .Columns("dgTotal").SortMode = DataGridViewColumnSortMode.NotSortable
+            .Columns("dgEmpleadoP").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
 
             .DataSource = objVenta.dtProductos
             .AutoGenerateColumns = False
@@ -401,7 +413,7 @@ Public Class FormVenta
             .Columns("dgValorServ").SortMode = DataGridViewColumnSortMode.NotSortable
             .Columns("dgIdEmpleado").SortMode = DataGridViewColumnSortMode.NotSortable
             .Columns("dgNombreEmpleado").SortMode = DataGridViewColumnSortMode.NotSortable
-
+            .Columns("dgIdEmpleado").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
             .DataSource = objVenta.dtServicio
             .AutoGenerateColumns = False
         End With
@@ -415,12 +427,14 @@ Public Class FormVenta
             .Columns("dgValor").ReadOnly = True
             .Columns("dgCantidad").ReadOnly = True
             .Columns("dgTotal").ReadOnly = True
+            .Columns("dgEmpleadoP").ReadOnly = True
         End With
         If Estado = True Then
             With dgvProducto
-                .Columns("dgCodigo").ReadOnly = False
+                '  .Columns("dgCodigo").ReadOnly = False
                 .Columns("dgCantidad").ReadOnly = False
                 .Columns("dgValor").ReadOnly = False
+                .Columns("dgEmpleadoP").ReadOnly = False
             End With
         End If
 
@@ -488,5 +502,59 @@ Public Class FormVenta
             formExistencia = New FormExistencia
             formExistencia.ShowDialog()
         End If
+    End Sub
+    Private Sub dgvProducto_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvProducto.CellClick
+        cargarTxtEmpleadoVenta(objVenta.dtProductos, If(IsDBNull(objVenta.dtProductos.Rows(dgvProducto.CurrentCell.RowIndex).Item("EmpleadoP")), Nothing,
+                                                                  objVenta.dtProductos.Rows(dgvProducto.CurrentCell.RowIndex).Item("EmpleadoP")),
+                           If(IsDBNull(objVenta.dtProductos.Rows(dgvProducto.CurrentCell.RowIndex).Item("EmpleadoN")), Nothing,
+                                                                  objVenta.dtProductos.Rows(dgvProducto.CurrentCell.RowIndex).Item("EmpleadoN")))
+    End Sub
+    Private Sub dgvServicio_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvServicio.CellClick
+        If e.ColumnIndex = 0 Then
+            If objVenta.dtServicio.Rows.Count > 0 Then
+                cargarCostosServicio(If(IsDBNull(objVenta.dtServicio.Rows(dgvServicio.CurrentCell.RowIndex).Item("codigo")), Nothing,
+                                     objVenta.dtServicio.Rows(dgvServicio.CurrentCell.RowIndex).Item("codigo")))
+            End If
+        Else
+            cargarTxtEmpleadoVenta(objVenta.dtServicio, If(IsDBNull(objVenta.dtServicio.Rows(dgvServicio.CurrentCell.RowIndex).Item("codigo_Empleado")), Nothing,
+                                                                   objVenta.dtServicio.Rows(dgvServicio.CurrentCell.RowIndex).Item("codigo_Empleado")),
+                            If(IsDBNull(objVenta.dtServicio.Rows(dgvServicio.CurrentCell.RowIndex).Item("NombreEmpleado")), Nothing,
+                                                                   objVenta.dtServicio.Rows(dgvServicio.CurrentCell.RowIndex).Item("NombreEmpleado")))
+        End If
+    End Sub
+
+    Private Sub cargarTxtEmpleadoVenta(dt As DataTable,
+                                       codigo As String,
+                                       Nombre As String)
+        If dt.Rows.Count > 0 Then
+            If Not IsNothing(codigo) Then
+                txtEmpleadoVenta.Text = Nombre
+            Else
+                txtEmpleadoVenta.Clear()
+            End If
+        End If
+    End Sub
+    Private Sub cargarCostosServicio(pcodigo)
+        Dim params As New List(Of String)
+        Dim dtServicioCosto As New DataTable
+        params.Add(pcodigo)
+        Generales.llenarTabla("[SP_COSTO_FACTURA_SERVICIO_CARGAR]", params, dtServicioCosto)
+        dgvDetalle.DataSource = dtServicioCosto
+        If dtServicioCosto.Rows.Count > 0 Then
+
+            With dgvDetalle
+                .ReadOnly = True
+                .Columns("Descripcion").AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
+                .Columns("Costo").AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
+            End With
+
+            PanelGastos.Visible = True
+            txtTotalGastos.Text = Format(dtServicioCosto.Compute("SUM(Costo)", String.Empty), Constantes.FORMATO_MONEDA)
+            PanelGastos.Focus()
+
+        End If
+    End Sub
+    Private Sub PanelGastos_LostFocus(sender As Object, e As EventArgs) Handles PanelGastos.LostFocus
+        PanelGastos.Visible = False
     End Sub
 End Class

@@ -1,5 +1,7 @@
 ﻿Public Class FormCostoServicio
     Dim objCostoServicio As CostoServicio
+    Dim costo As Integer
+    Dim servicio As Integer
     Private Sub FormCostoServicio_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         objCostoServicio = New CostoServicio
         Generales.deshabilitarBotones(ToolStrip1)
@@ -163,6 +165,11 @@
     Private Sub dgvRegistro_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvRegistro.CellDoubleClick
         consultarProducto()
     End Sub
+    Private Sub dgvRegistro_EditingControlShowing(sender As Object, e As DataGridViewEditingControlShowingEventArgs) Handles dgvRegistro.EditingControlShowing
+        If objCostoServicio.dtRegistro.Rows.Count > 0 Then
+            AddHandler e.Control.KeyPress, AddressOf ValidacionDigitacion.validarValoresNumericos
+        End If
+    End Sub
     Private Sub consultarProducto()
         Dim params As New List(Of String)
         params.Add(String.Empty)
@@ -201,22 +208,24 @@
     End Sub
 
     Private Sub dgvRegistro_CellEndEdit(sender As Object, e As DataGridViewCellEventArgs) Handles dgvRegistro.CellEndEdit
-        Dim costo As Integer
-        Dim servicio As Integer
         If btRegistrar.Enabled = False Then Exit Sub
         If objCostoServicio.dtRegistro.Rows.Count > 0 Then
             If e.ColumnIndex = 6 Then
-                If objCostoServicio.dtRegistro.Select("Codigo Is Not Null and Concentracion <> 0 and Recomendacion <> 0").Count > 0 Then
-                    servicio = (dgvRegistro.Rows(dgvRegistro.CurrentCell.RowIndex).Cells("Concentracion").Value / dgvRegistro.Rows(dgvRegistro.CurrentCell.RowIndex).Cells("Recomendacion").Value)
-                    dgvRegistro.Rows(dgvRegistro.CurrentCell.RowIndex).Cells("Servicios").Value = servicio
-                End If
-                objCostoServicio.dtRegistro.AcceptChanges()
-                If objCostoServicio.dtRegistro.Select("Codigo Is Not Null and Valor <> 0 and Servicios <> 0").Count > 0 Then
-                    costo = (dgvRegistro.Rows(dgvRegistro.CurrentCell.RowIndex).Cells("Valor").Value / dgvRegistro.Rows(dgvRegistro.CurrentCell.RowIndex).Cells("Servicios").Value)
-                    dgvRegistro.Rows(dgvRegistro.CurrentCell.RowIndex).Cells("Costo").Value = costo
+                If Not IsDBNull(objCostoServicio.dtRegistro.Rows(dgvRegistro.CurrentCell.RowIndex).Item("Recomendacion")) Then
+                    If objCostoServicio.dtRegistro.Select("Codigo Is Not Null and Concentracion <> 0 and Recomendacion <> 0").Count > 0 Then
+                        servicio = (dgvRegistro.Rows(dgvRegistro.CurrentCell.RowIndex).Cells("Concentracion").Value / dgvRegistro.Rows(dgvRegistro.CurrentCell.RowIndex).Cells("Recomendacion").Value)
+                        dgvRegistro.Rows(dgvRegistro.CurrentCell.RowIndex).Cells("Servicios").Value = servicio
+                    End If
+                    dgvRegistro.CommitEdit(DataGridViewDataErrorContexts.Commit)
+                    dgvRegistro.EndEdit()
+                    objCostoServicio.dtRegistro.AcceptChanges()
+                    If objCostoServicio.dtRegistro.Select("Codigo Is Not Null and Valor <> 0 and Servicios <> 0").Count > 0 Then
+                        costo = (dgvRegistro.Rows(dgvRegistro.CurrentCell.RowIndex).Cells("Valor").Value / dgvRegistro.Rows(dgvRegistro.CurrentCell.RowIndex).Cells("Servicios").Value)
+                        dgvRegistro.Rows(dgvRegistro.CurrentCell.RowIndex).Cells("Costo").Value = costo
+                    End If
                 End If
             End If
-        End If
+            End If
     End Sub
     Private Function validarCampos() As Boolean
         If IsNothing(objCostoServicio.codigoServicio) Then
