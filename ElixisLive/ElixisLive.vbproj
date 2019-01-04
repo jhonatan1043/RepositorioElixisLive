@@ -567,6 +567,9 @@
     <Content Include="ReferenciaDLL\CnxElixisLiveBD.dll" />
     <Content Include="ReferenciaDLL\MySql.Data.DLL" />
     <Content Include="ReferenciaDLL\NotifySenderControl.dll" />
+    <None Include="Resources\DesAnclar.png" />
+    <None Include="Resources\Anclar.png" />
+    <None Include="Resources\anchor-icon.png" />
     <None Include="Resources\folder-invoices-icon.png" />
     <None Include="Resources\Keys-icon1.png" />
     <None Include="Resources\Money-Bag-icon.png" />

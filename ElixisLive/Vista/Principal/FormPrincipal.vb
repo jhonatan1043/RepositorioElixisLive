@@ -1,11 +1,11 @@
 ﻿
 Public Class FormPrincipal
     Dim formulario As New vForm
-
+    Dim banderaAncla As Boolean
+    Dim ctlMDI As MdiClient
     Private Sub formPrincipal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         principalBLL.cargarMenu(arbolMenu)
         Dim ctl As Control
-        Dim ctlMDI As MdiClient
         For Each ctl In Me.Controls
             Try
                 ctlMDI = CType(ctl, MdiClient)
@@ -31,5 +31,46 @@ Public Class FormPrincipal
         elemento.nombre = e.Node.Tag
         Return elemento
     End Function
-
+    'Private Sub pitImagen_Click(sender As Object, e As EventArgs) Handles pitImagen.Click
+    '    If banderaAncla = False Then
+    '        desAnclar()
+    '    Else
+    '        anclar()
+    '    End If
+    'End Sub
+    'Private Sub anclar()
+    '    ' pitImagen.Location = New Point(213, 3)
+    '    arbolMenu.Size = New Point(239, 733)
+    '    pitImagen.Image = My.Resources.Anclar
+    '    ctlMDI.BackgroundImage = My.Resources.Quality_logo
+    '    pitImagen.Visible = True
+    '    banderaAncla = False
+    'End Sub
+    'Private Sub desAnclar()
+    '    'pitImagen.Location = New Point(10, 3)
+    '    arbolMenu.Size = New Point(5, 733)
+    '    pitImagen.Image = My.Resources.DesAnclar
+    '    ctlMDI.BackgroundImage = My.Resources.Quality_logo
+    '    pitImagen.Visible = False
+    '    banderaAncla = True
+    '    arbolMenu.Update()
+    'End Sub
+    'Private Sub arbolMenu_MouseMove(sender As Object, e As MouseEventArgs) Handles arbolMenu.MouseMove
+    '    If banderaAncla = True Then
+    '        arbolMenu.Size = New Point(239, 733)
+    '        ctlMDI.BackgroundImage = Nothing
+    '        ctlMDI.BackgroundImage = My.Resources.Quality_logo
+    '        pitImagen.Visible = True
+    '        arbolMenu.Update()
+    '        pitImagen.Update()
+    '    End If
+    'End Sub
+    'Private Sub arbolMenu_MouseLeave(sender As Object, e As EventArgs) Handles arbolMenu.MouseLeave
+    '    If banderaAncla = True Then
+    '        arbolMenu.Size = New Point(5, 733)
+    '        ctlMDI.BackgroundImage = My.Resources.Quality_logo
+    '        pitImagen.Visible = False
+    '        arbolMenu.Update()
+    '    End If
+    'End Sub
 End Class

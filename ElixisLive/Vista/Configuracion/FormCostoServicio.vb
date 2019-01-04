@@ -72,6 +72,7 @@
     End Sub
     Private Sub btRegistrar_Click(sender As Object, e As EventArgs) Handles btRegistrar.Click
         Try
+            dgvRegistro.EndEdit()
             If validarCampos() = True Then
                 CostoServicioBLL.guardarCostoServicio(objCostoServicio)
                 Generales.habilitarBotones(ToolStrip1)

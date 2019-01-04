@@ -114,6 +114,8 @@
         objProducto.dtParametro = dgRegistro.DataSource
     End Sub
     Private Sub btRegistrar_Click(sender As Object, e As EventArgs) Handles btRegistrar.Click
+        dgRegistro.EndEdit()
+
         If validarCampos() = True Then
             cargarObjeto()
             Try
