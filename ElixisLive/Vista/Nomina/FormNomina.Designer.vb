@@ -43,6 +43,8 @@ Partial Class FormNomina
         Me.ToolStripSeparator4 = New System.Windows.Forms.ToolStripSeparator()
         Me.btAnular = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripSeparator6 = New System.Windows.Forms.ToolStripSeparator()
+        Me.txtIdentificacion = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
         Me.gbOpciones.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -54,6 +56,8 @@ Partial Class FormNomina
         '
         'gbOpciones
         '
+        Me.gbOpciones.Controls.Add(Me.txtIdentificacion)
+        Me.gbOpciones.Controls.Add(Me.Label8)
         Me.gbOpciones.Controls.Add(Me.dtFechaFinal)
         Me.gbOpciones.Controls.Add(Me.Label1)
         Me.gbOpciones.Controls.Add(Me.dtFechaInicio)
@@ -66,19 +70,20 @@ Partial Class FormNomina
         '
         'dtFechaFinal
         '
-        Me.dtFechaFinal.CustomFormat = "MMMM |  yyyy"
+        Me.dtFechaFinal.CustomFormat = "dd |  MMMM |  yyyy"
         Me.dtFechaFinal.Enabled = False
         Me.dtFechaFinal.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.dtFechaFinal.Location = New System.Drawing.Point(539, 12)
+        Me.dtFechaFinal.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.dtFechaFinal.Location = New System.Drawing.Point(690, 13)
         Me.dtFechaFinal.Name = "dtFechaFinal"
-        Me.dtFechaFinal.Size = New System.Drawing.Size(275, 25)
+        Me.dtFechaFinal.Size = New System.Drawing.Size(189, 25)
         Me.dtFechaFinal.TabIndex = 27
         '
         'Label1
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(449, 16)
+        Me.Label1.Location = New System.Drawing.Point(600, 17)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(89, 17)
         Me.Label1.TabIndex = 26
@@ -86,19 +91,20 @@ Partial Class FormNomina
         '
         'dtFechaInicio
         '
-        Me.dtFechaInicio.CustomFormat = "MMMM |  yyyy"
+        Me.dtFechaInicio.CustomFormat = "dd |  MMMM |  yyyy"
         Me.dtFechaInicio.Enabled = False
         Me.dtFechaInicio.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.dtFechaInicio.Location = New System.Drawing.Point(102, 12)
+        Me.dtFechaInicio.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.dtFechaInicio.Location = New System.Drawing.Point(382, 12)
         Me.dtFechaInicio.Name = "dtFechaInicio"
-        Me.dtFechaInicio.Size = New System.Drawing.Size(275, 25)
+        Me.dtFechaInicio.Size = New System.Drawing.Size(189, 25)
         Me.dtFechaInicio.TabIndex = 25
         '
         'Label3
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(11, 16)
+        Me.Label3.Location = New System.Drawing.Point(291, 16)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(92, 17)
         Me.Label3.TabIndex = 24
@@ -255,6 +261,28 @@ Partial Class FormNomina
         Me.ToolStripSeparator6.Name = "ToolStripSeparator6"
         Me.ToolStripSeparator6.Size = New System.Drawing.Size(6, 37)
         '
+        'txtIdentificacion
+        '
+        Me.txtIdentificacion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtIdentificacion.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtIdentificacion.Location = New System.Drawing.Point(98, 13)
+        Me.txtIdentificacion.Name = "txtIdentificacion"
+        Me.txtIdentificacion.Size = New System.Drawing.Size(119, 25)
+        Me.txtIdentificacion.TabIndex = 73
+        Me.txtIdentificacion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.BackColor = System.Drawing.Color.Transparent
+        Me.Label8.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.ForeColor = System.Drawing.Color.Black
+        Me.Label8.Location = New System.Drawing.Point(9, 15)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(86, 19)
+        Me.Label8.TabIndex = 72
+        Me.Label8.Text = "N° Nómina:"
+        '
         'FormNomina
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -304,4 +332,6 @@ Partial Class FormNomina
     Friend WithEvents dgvNomina As DataGridView
     Public WithEvents dtFechaFinal As DateTimePicker
     Public WithEvents Label1 As Label
+    Friend WithEvents txtIdentificacion As Label
+    Public WithEvents Label8 As Label
 End Class

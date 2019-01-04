@@ -28,8 +28,10 @@
         End If
     End Sub
     Private Sub FormNomina_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Generales.deshabilitarBotones(ToolStrip1)
         dtFechaInicio.Enabled = True
         dtFechaFinal.Enabled = True
+        dtFechaInicio.Value = DateSerial(Year(dtFechaInicio.Value), Month(dtFechaInicio.Value), 1)
         cargarNomina()
     End Sub
     Private Sub dtFechaInicio_ValueChanged(sender As Object, e As EventArgs) Handles dtFechaInicio.ValueChanged
@@ -39,18 +41,25 @@
     Private Sub dtFechaFinal_ValueChanged(sender As Object, e As EventArgs) Handles dtFechaFinal.ValueChanged
         cargarNomina()
     End Sub
-
+    Public Function crearObjeto() As Nomina
+        Dim nomina As New Nomina
+        nomina.fechaInicio = dtFechaInicio.Value
+        nomina.fechaFin = dtFechaFinal.Value
+        nomina.usuarioCreacion = SesionActual.idUsuario
+        For Each drFila As DataRow In dtNomina.Rows
+            Dim drCuenta As DataRow = nomina.dtNomina.NewRow
+            drCuenta.Item("codigoPersona") = drFila.Item("Código")
+            drCuenta.Item("valorPagado") = drFila.Item("Valor a Pagar")
+            nomina.dtNomina.Rows.Add(drCuenta)
+        Next
+        Return nomina
+    End Function
     Private Sub btRegistrar_Click(sender As Object, e As EventArgs) Handles btRegistrar.Click
-        'Try
-        '    cargarObjeto()
-        '    PersonaBLL.guardar(objPersona)
-        '    Generales.habilitarBotones(ToolStrip1)
-        '    Generales.deshabilitarControles(Me)
-        '    btRegistrar.Enabled = False
-        '    btCancelar.Enabled = False
-        '    EstiloMensajes.mostrarMensajeExitoso(MensajeSistema.REGISTRO_GUARDADO)
-        'Catch ex As Exception
-        '    EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
-        'End Try
+        Dim nominaBLL As New NominaBLL
+        Try
+            nominaBLL.guardarNomina(crearObjeto())
+        Catch ex As Exception
+            EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
+        End Try
     End Sub
 End Class

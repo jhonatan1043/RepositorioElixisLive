@@ -1,7 +1,7 @@
 ﻿Imports System.Data.SqlClient
 Public Class VentaDAL
     Public Shared Function guardarVenta(objVenta As Venta) As Venta
-        Dim objConexio As New CnxElixisLiveBD.ConexionBD
+        Dim objConexio As New ConexionBD
         Try
             objConexio.conectar()
             Using comando = New SqlCommand()
@@ -31,7 +31,7 @@ Public Class VentaDAL
         Return objVenta
     End Function
     Public Shared Function anularVenta(objVenta As Venta) As Venta
-        Dim objConexio As New CnxElixisLiveBD.ConexionBD
+        Dim objConexio As New ConexionBD
         Try
             objConexio.conectar()
             Using comando = New SqlCommand()

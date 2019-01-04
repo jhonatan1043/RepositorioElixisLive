@@ -125,6 +125,7 @@
     <Compile Include="Controlador\Inventario\ListaPrecioDAL.vb" />
     <Compile Include="Controlador\Inventario\ProveedorDAL.vb" />
     <Compile Include="Controlador\Inventario\ProductoDAL.vb" />
+    <Compile Include="Controlador\Nomina\NominaDAL.vb" />
     <Compile Include="ControlesElixisLive\TextFiltrarRegistro.Designer.vb">
       <DependentUpon>TextFiltrarRegistro.vb</DependentUpon>
     </Compile>
@@ -160,6 +161,7 @@
     <Compile Include="Entidad\Inventario\ListaPrecio.vb" />
     <Compile Include="Entidad\Inventario\Proveedor.vb" />
     <Compile Include="Entidad\Inventario\producto.vb" />
+    <Compile Include="Entidad\Nomina\Nomina.vb" />
     <Compile Include="Entidad\Principal\ElementoMenu.vb" />
     <Compile Include="FormBase\FormBaseLista.Designer.vb">
       <DependentUpon>FormBaseLista.vb</DependentUpon>
@@ -194,6 +196,7 @@
     <Compile Include="Modelo\Inventario\ProveedorBLL.vb" />
     <Compile Include="Modelo\Inventario\ClienteBLL.vb" />
     <Compile Include="Modelo\Inventario\ProductoBLL.vb" />
+    <Compile Include="Modelo\Nomina\NominaBLL.vb" />
     <Compile Include="Modelo\Principal\InicioSesionBLL.vb" />
     <Compile Include="Modelo\Principal\principalBLL.vb" />
     <Compile Include="ReferenciaDLL\DataGridViewDateTimePickerColumn.vb" />

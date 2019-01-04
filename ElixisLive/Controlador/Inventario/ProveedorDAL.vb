@@ -1,7 +1,7 @@
 ﻿Imports System.Data.SqlClient
 Public Class ProveedorDAL
     Public Shared Function guardar(objProveedor As Proveedor) As Proveedor
-        Dim objConexio As New CnxElixisLiveBD.ConexionBD
+        Dim objConexio As New ConexionBD
         Try
             objConexio.conectar()
             Using comando = New SqlCommand()

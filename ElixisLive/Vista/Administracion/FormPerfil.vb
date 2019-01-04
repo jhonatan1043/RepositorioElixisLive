@@ -172,7 +172,7 @@ Public Class FormPerfil
         Next
     End Sub
     Private Sub guardarPermisos()
-        Dim objConexio As New CnxElixisLiveBD.ConexionBD
+        Dim objConexio As New ConexionBD
         objConexio.conectar()
         Try
             Using consulta = New SqlCommand()
@@ -192,7 +192,7 @@ Public Class FormPerfil
         objConexio.desConectar()
     End Sub
     Private Sub CreaOpciones(ByRef dsDatos As DataSet)
-        Dim objConexio As New CnxElixisLiveBD.ConexionBD
+        Dim objConexio As New ConexionBD
         Dim cadena As String
         objConexio.conectar()
         Try
