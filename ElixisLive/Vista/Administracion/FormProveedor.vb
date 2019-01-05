@@ -71,7 +71,7 @@ Public Class FormProveedor
         txtTelefono.Text = If(IsDBNull(dfila("Telefono")), Nothing, dfila("Telefono"))
         txtCelular.Text = dfila("Celular")
         txtNombre.Text = dfila("Nombre")
-        txtDireccion.Text = dfila("Direccion")
+        txtDireccion.Text = If(IsDBNull(dfila("Direccion")), Nothing, dfila("Direccion"))
         txtEmail.Text = If(IsDBNull(dfila("Email")), Nothing, dfila("Email"))
     End Sub
     Private Sub controlVerificar()

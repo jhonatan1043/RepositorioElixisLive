@@ -184,7 +184,16 @@
         End If
         cbMovimiento.SelectedValue = dRows("Codigo_Movimiento")
         registroGuardado = True
-
+        Generales.llenarTabla(objEntrada.sqlCargarDetalle, params, objEntrada.dtEntrada)
+        dgvEntrada.DataSource = objEntrada.dtEntrada
+        If dgvEntrada.Rows.Count > 0 Then
+            txtSubTotal.Text = Format(objEntrada.dtEntrada.Compute("Sum(Valor)", Constantes.CADENA_VACIA), Constantes.FORMATO_MONEDA)
+            txtTotal.Text = Format(objEntrada.dtEntrada.Compute("Sum(Total)", Constantes.CADENA_VACIA), Constantes.FORMATO_MONEDA)
+        End If
+        Generales.habilitarBotones(ToolStrip1)
+        Generales.deshabilitarControles(Me)
+        btRegistrar.Enabled = False
+        btCancelar.Enabled = False
     End Sub
     Private Sub validarEdicionGrilla(Estado As Boolean)
         With dgvEntrada
@@ -194,7 +203,6 @@
             .Columns("dgCantidad").ReadOnly = True
             .Columns("dgTotal").ReadOnly = True
             .Columns("dgBodega").ReadOnly = True
-            .Columns("dgFechaVencimiento").ReadOnly = True
             .Columns("dgCodigoBarra").ReadOnly = True
         End With
         If Estado = True Then
@@ -202,7 +210,6 @@
                 .Columns("dgCantidad").ReadOnly = False
                 .Columns("dgValor").ReadOnly = False
                 .Columns("dgBodega").ReadOnly = False
-                .Columns("dgFechaVencimiento").ReadOnly = False
             End With
         End If
     End Sub
@@ -217,18 +224,16 @@
             .Columns("dgTotal").DataPropertyName = "Total"
             .Columns("dgBodega").DataPropertyName = "Bodega"
             .Columns("dgCodigoBarra").DataPropertyName = "CodigoBarra"
-            .Columns("dgFechaVencimiento").DataPropertyName = "FechaVencimiento"
             '------------------------------------------------------
             .Columns("dgDescripcion").AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
             .Columns("dgValor").AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
             .Columns("dgCantidad").AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
             .Columns("dgTotal").AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
             .Columns("dgBodega").AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
-            .Columns("dgFechaVencimiento").AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
             .Columns("dgCodigoBarra").AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
             .DataSource = objEntrada.dtEntrada
             .AutoGenerateColumns = False
-            .Columns("dgQuitar").DisplayIndex = 8
+            .Columns("dgQuitar").DisplayIndex = 7
         End With
     End Sub
     Private Sub cargarCompra(pCodigo As Integer)
