@@ -16,6 +16,7 @@ Public Class FormPrincipal
         Next
         'formulario.ventana = Me '' se indica el formulario que usara el efecto
         'formulario.redondear() '' se redondean los bordes del formulario
+        lbUsuario.Text = SesionActual.nombreUsuario
     End Sub
 
     Private Sub arbolMenu_NodeMouseClick(sender As Object, e As TreeNodeMouseClickEventArgs) Handles arbolMenu.NodeMouseClick
