@@ -157,6 +157,7 @@
         txtCodigo.Text = ""
         btRegistrar.Enabled = True
         btCancelar.Enabled = True
+        btCalcular.Enabled = True
         dtFechaInicio.Value = DateSerial(Year(dtFechaInicio.Value), Month(dtFechaInicio.Value), 1)
     End Sub
 
