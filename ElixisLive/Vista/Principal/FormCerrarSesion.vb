@@ -52,4 +52,16 @@ Public Class FormCerrarSesion
         formulario.ventana = Me '' se indica el formulario que usara el efecto
         formulario.redondear() '' se redondean los bordes del formulario
     End Sub
+
+    Private Sub PicRegresar_MouseMove(sender As Object, e As MouseEventArgs) Handles PicRegresar.MouseMove
+
+    End Sub
+
+    Private Sub PicSalir_MouseMove(sender As Object, e As MouseEventArgs) Handles PicSalir.MouseMove
+
+    End Sub
+
+    Private Sub PicCerrarSesion_MouseMove(sender As Object, e As MouseEventArgs) Handles PicCerrarSesion.MouseMove
+
+    End Sub
 End Class

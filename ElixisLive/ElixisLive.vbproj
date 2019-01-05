@@ -567,6 +567,10 @@
     <Content Include="ReferenciaDLL\CnxElixisLiveBD.dll" />
     <Content Include="ReferenciaDLL\MySql.Data.DLL" />
     <Content Include="ReferenciaDLL\NotifySenderControl.dll" />
+    <None Include="Resources\Actions-button-cancel-icon.png" />
+    <None Include="Resources\Apps-session-halt-icon.png" />
+    <None Include="Resources\Apps-session-quit-icon.png" />
+    <None Include="Resources\Apps-session-reboot-icon.png" />
     <Content Include="Resources\calculator-icon1.png" />
     <None Include="Resources\calculator-icon2.png" />
     <None Include="Resources\DesAnclar.png" />
