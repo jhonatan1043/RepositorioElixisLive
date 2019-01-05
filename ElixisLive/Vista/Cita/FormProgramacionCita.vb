@@ -100,9 +100,13 @@
             params.Add(sender.tag)
             cadenaPrametros = Funciones.getParametros(params)
             If Generales.ejecutarSQL(Sentencias.CITA_CAMBIO_ESTADO & cadenaPrametros) Then
-                EstiloMensajes.mostrarMensajeExitoso(MensajeSistema.REGISTRO_GUARDADO)
+                If sender.tag = Constantes.CITA_CANCELADA Then
+                    EstiloMensajes.mostrarMensajeExitoso(MensajeSistema.REGISTRO_CANCELADO)
+                Else
+                    EstiloMensajes.mostrarMensajeExitoso(MensajeSistema.REGISTRO_CONFIRMADO)
+                End If
             End If
-            validarControles()
+                validarControles()
         End If
     End Sub
     Private Sub eventoEscape(sender As Object, e As PreviewKeyDownEventArgs)

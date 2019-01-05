@@ -328,15 +328,17 @@ Public Class FormEmpleado
     End Sub
 
     Private Sub txtComision_Leave(sender As Object, e As EventArgs) Handles txtComision.Leave
-        txtComision.Text = FormatCurrency(txtComision.Text, Constantes.FORMATO_MONEDA)
+        If btRegistrar.Enabled = False Then Exit Sub
+        txtComision.Text = Format(txtComision.Text, Constantes.FORMATO_MONEDA)
     End Sub
     Private Sub txtSalario_Leave(sender As Object, e As EventArgs) Handles txtSalario.Leave
-        txtSalario.Text = FormatCurrency(txtSalario.Text, Constantes.FORMATO_MONEDA)
+        If btRegistrar.Enabled = False Then Exit Sub
+        txtSalario.Text = Format(txtSalario.Text, Constantes.FORMATO_MONEDA)
     End Sub
 
     Private Sub formatMoneda()
-        txtComision.Text = FormatCurrency(txtComision.Text, Constantes.FORMATO_MONEDA)
-        txtSalario.Text = FormatCurrency(txtSalario.Text, Constantes.FORMATO_MONEDA)
+        txtComision.Text = Format(0, Constantes.FORMATO_MONEDA)
+        txtSalario.Text = Format(0, Constantes.FORMATO_MONEDA)
     End Sub
 End Class
 

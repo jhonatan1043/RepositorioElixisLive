@@ -12,11 +12,10 @@
         dtEntrada.Columns.Add("valor", Type.GetType("System.Int32")).DefaultValue = 0
         dtEntrada.Columns.Add("Total", Type.GetType("System.Int32")).DefaultValue = 0
         dtEntrada.Columns.Add("Bodega", Type.GetType("System.String"))
-        dtEntrada.Columns.Add("FechaVencimiento", Type.GetType("System.DateTime"))
         dtEntrada.Columns.Add("CodigoBarra", Type.GetType("System.String"))
         sqlAnular = ""
         sqlGuardar = "SP_INVEN_INVENTARIO_CREAR"
-        sqlConsulta = ""
+        sqlConsulta = "[SP_INVEN_INVENTARIO_CONSULTAR]"
         sqlCargarDetalle = ""
     End Sub
 End Class

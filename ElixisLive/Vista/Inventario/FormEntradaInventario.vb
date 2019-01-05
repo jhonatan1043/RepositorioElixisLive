@@ -172,7 +172,19 @@
         End If
     End Sub
     Private Sub cargarInventario(pCodigo As Integer)
+        Dim params As New List(Of String)
+        Dim dRows As DataRow
+        params.Add(pCodigo)
+        dRows = Generales.cargarItem(objEntrada.sqlCargar, params)
+        If Not IsDBNull(dRows("Codigo_Compra")) Then
+            rbCompra.Checked = True
+            txtCodigo.Text = dRows("Codigo_Compra")
+        Else
+            rvManual.Checked = True
+        End If
+        cbMovimiento.SelectedValue = dRows("Codigo_Movimiento")
         registroGuardado = True
+
     End Sub
     Private Sub validarEdicionGrilla(Estado As Boolean)
         With dgvEntrada

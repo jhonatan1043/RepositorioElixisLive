@@ -281,7 +281,7 @@ Public Class FormVenta
             If dgvProducto.Rows(dgvProducto.CurrentCell.RowIndex).Cells("dgCantidad").Value >
              dgvProducto.Rows(dgvProducto.CurrentCell.RowIndex).Cells("dgStock").Value Then
                 dgvProducto.Rows(dgvProducto.CurrentCell.RowIndex).Cells("dgCantidad").Value = 0
-                dgvProducto.Rows(dgvProducto.CurrentCell.RowIndex).Cells("dgCantidad").Selected = True
+                ' dgvProducto.Rows(dgvProducto.CurrentCell.RowIndex).Cells("dgCantidad").Selected = True
                 EstiloMensajes.mostrarMensajeAdvertencia("¡ la Cantidad supera la existencia !")
                 Exit Sub
             End If
