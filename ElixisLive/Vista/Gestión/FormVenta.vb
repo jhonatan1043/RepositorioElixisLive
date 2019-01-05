@@ -134,7 +134,7 @@ Public Class FormVenta
         objVenta.dtServicio.Rows.Add()
         btRegistrar.Enabled = True
         btCancelar.Enabled = True
-        dgvProducto.Rows(0).Cells("dgCodigo").Selected = True
+        txtIdentificacion.Focus()
     End Sub
     Private Sub btBuscar_Click(sender As Object, e As EventArgs) Handles btBuscar.Click
         Dim params As New List(Of String)
@@ -468,7 +468,6 @@ Public Class FormVenta
             objVenta.codigoPersonaCliente = Nothing
             TextNombre.Clear()
             TextTelefono.Clear()
-            TextNombre.Focus()
         End If
     End Sub
     Private Sub btImprimir_Click(sender As Object, e As EventArgs) Handles btImprimir.Click
@@ -556,5 +555,13 @@ Public Class FormVenta
     End Sub
     Private Sub PanelGastos_LostFocus(sender As Object, e As EventArgs) Handles PanelGastos.LostFocus
         PanelGastos.Visible = False
+    End Sub
+
+    Private Sub TextNombre_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextNombre.KeyPress
+        ValidacionDigitacion.validarAlfabetico(e)
+    End Sub
+
+    Private Sub txtIdentificacion_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtIdentificacion.KeyPress, TextTelefono.KeyPress
+        ValidacionDigitacion.validarValoresNumericos(e)
     End Sub
 End Class
