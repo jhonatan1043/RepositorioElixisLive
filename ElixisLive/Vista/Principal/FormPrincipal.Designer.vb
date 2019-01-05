@@ -28,8 +28,6 @@ Partial Class FormPrincipal
         Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.lbUsuario = New System.Windows.Forms.Label()
-        Me.pitImagen = New System.Windows.Forms.PictureBox()
-        CType(Me.pitImagen, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'arbolMenu
@@ -82,17 +80,6 @@ Partial Class FormPrincipal
         Me.lbUsuario.Text = "Administrador del sistema"
         Me.lbUsuario.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
-        'pitImagen
-        '
-        Me.pitImagen.BackColor = System.Drawing.Color.SteelBlue
-        Me.pitImagen.Image = Global.Quality.My.Resources.Resources.Anclar
-        Me.pitImagen.Location = New System.Drawing.Point(212, 3)
-        Me.pitImagen.Name = "pitImagen"
-        Me.pitImagen.Size = New System.Drawing.Size(24, 24)
-        Me.pitImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
-        Me.pitImagen.TabIndex = 32
-        Me.pitImagen.TabStop = False
-        '
         'FormPrincipal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(96.0!, 96.0!)
@@ -102,7 +89,6 @@ Partial Class FormPrincipal
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.ClientSize = New System.Drawing.Size(1016, 733)
         Me.ControlBox = False
-        Me.Controls.Add(Me.pitImagen)
         Me.Controls.Add(Me.lbUsuario)
         Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.arbolMenu)
@@ -115,7 +101,6 @@ Partial Class FormPrincipal
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "  "
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
-        CType(Me.pitImagen, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -125,5 +110,4 @@ Partial Class FormPrincipal
     Friend WithEvents StatusStrip1 As StatusStrip
     Friend WithEvents ImageList1 As ImageList
     Friend WithEvents lbUsuario As Label
-    Friend WithEvents pitImagen As PictureBox
 End Class
