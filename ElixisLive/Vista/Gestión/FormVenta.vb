@@ -43,7 +43,7 @@ Public Class FormVenta
         End Try
     End Sub
     Private Sub dgvProducto_CellFormatting(sender As System.Object, e As System.Windows.Forms.DataGridViewCellFormattingEventArgs) Handles dgvProducto.CellFormatting
-        If e.ColumnIndex = 5 OrElse e.ColumnIndex = 6 Then
+        If e.ColumnIndex = 6 OrElse e.ColumnIndex = 7 Then
             If IsDBNull(e.Value) Then
                 e.Value = Format(Val(0), Constantes.FORMATO_MONEDA)
             Else
@@ -52,7 +52,7 @@ Public Class FormVenta
         End If
     End Sub
     Private Sub dgvServicio_CellFormatting(sender As System.Object, e As System.Windows.Forms.DataGridViewCellFormattingEventArgs) Handles dgvServicio.CellFormatting
-        If e.ColumnIndex = 4 Then
+        If e.ColumnIndex = 5 Then
             If IsDBNull(e.Value) Then
                 e.Value = Format(Val(0), Constantes.FORMATO_MONEDA)
             Else
@@ -84,6 +84,7 @@ Public Class FormVenta
                         calcularCampos()
                     End If
                 End If
+                calcularTotales()
             Catch ex As Exception
                 EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
             End Try
@@ -107,6 +108,7 @@ Public Class FormVenta
                     dgvServicio.Rows(dgvServicio.CurrentCell.RowIndex).Cells("dgIdEmpleado").Value = Nothing
                     dgvServicio.Rows(dgvServicio.CurrentCell.RowIndex).Cells("dgNombreEmpleado").Value = Nothing
                 End If
+                calcularTotales()
             Catch ex As Exception
                 EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
             End Try
@@ -129,6 +131,7 @@ Public Class FormVenta
         Generales.limpiarControles(Me)
         desactivadoPermante()
         validarEdicionGrilla(Constantes.EDITABLE)
+        dtFecha.Text = Format(DateTime.Now, Constantes.FORMATO_FECHA2)
         objVenta.codigo = Nothing
         objVenta.dtProductos.Rows.Add()
         objVenta.dtServicio.Rows.Add()
@@ -281,7 +284,6 @@ Public Class FormVenta
             If dgvProducto.Rows(dgvProducto.CurrentCell.RowIndex).Cells("dgCantidad").Value >
              dgvProducto.Rows(dgvProducto.CurrentCell.RowIndex).Cells("dgStock").Value Then
                 dgvProducto.Rows(dgvProducto.CurrentCell.RowIndex).Cells("dgCantidad").Value = 0
-                ' dgvProducto.Rows(dgvProducto.CurrentCell.RowIndex).Cells("dgCantidad").Selected = True
                 EstiloMensajes.mostrarMensajeAdvertencia("¡ la Cantidad supera la existencia !")
                 Exit Sub
             End If
@@ -330,9 +332,11 @@ Public Class FormVenta
         txtIdentificacion.Text = dRows("Identificacion")
         TextNombre.Text = dRows("Nombre")
         TextTelefono.Text = dRows("Telefono")
+        dtFecha.Text = Format(dRows("Fecha_Venta"), Constantes.FORMATO_FECHA2)
 
         Generales.llenarTabla(Sentencias.VENTA_CARGAR_PRODUCTO, params, objVenta.dtProductos)
         Generales.llenarTabla(Sentencias.VENTA_CARGAR_SERVICIO, params, objVenta.dtServicio)
+
         dgvProducto.DataSource = objVenta.dtProductos
         dgvServicio.DataSource = objVenta.dtServicio
         calcularTotales()
@@ -357,7 +361,7 @@ Public Class FormVenta
                                    dgvServicio,
                                    objVenta.dtServicio,
                                    0,
-                                   2,
+                                   3,
                                    0,
                                    0,
                                    True)
@@ -371,7 +375,7 @@ Public Class FormVenta
                                    dgvProducto,
                                    objVenta.dtProductos,
                                    0,
-                                   4,
+                                   5,
                                    0,
                                    0,
                                    True)
@@ -383,6 +387,7 @@ Public Class FormVenta
             .Columns("dgDescripcion").DataPropertyName = "Descripcion"
             .Columns("dgStock").DataPropertyName = "Stock"
             .Columns("dgCantidad").DataPropertyName = "Cantidad"
+            .Columns("dgDescuento").DataPropertyName = "descuento"
             .Columns("dgValor").DataPropertyName = "Valor"
             .Columns("dgTotal").DataPropertyName = "Total"
             .Columns("dgEmpleadoP").DataPropertyName = "EmpleadoP"
@@ -391,6 +396,7 @@ Public Class FormVenta
             .Columns("dgCodigo").SortMode = DataGridViewColumnSortMode.NotSortable
             .Columns("dgDescripcion").SortMode = DataGridViewColumnSortMode.NotSortable
             .Columns("dgCantidad").SortMode = DataGridViewColumnSortMode.NotSortable
+            .Columns("dgDescuento").SortMode = DataGridViewColumnSortMode.NotSortable
             .Columns("dgValor").SortMode = DataGridViewColumnSortMode.NotSortable
             .Columns("dgTotal").SortMode = DataGridViewColumnSortMode.NotSortable
             .Columns("dgEmpleadoP").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
@@ -404,12 +410,14 @@ Public Class FormVenta
             .ReadOnly = False
             .Columns("dgCodigoServ").DataPropertyName = "codigo"
             .Columns("dgDescripcionServ").DataPropertyName = "Descripcion"
+            .Columns("dgDescuentoS").DataPropertyName = "Descuento"
             .Columns("dgValorServ").DataPropertyName = "ValorServicio"
             .Columns("dgIdEmpleado").DataPropertyName = "codigo_Empleado"
             .Columns("dgNombreEmpleado").DataPropertyName = "NombreEmpleado"
 
             .Columns("dgCodigoServ").SortMode = DataGridViewColumnSortMode.NotSortable
             .Columns("dgDescripcionServ").SortMode = DataGridViewColumnSortMode.NotSortable
+            .Columns("dgDescuentoS").SortMode = DataGridViewColumnSortMode.NotSortable
             .Columns("dgValorServ").SortMode = DataGridViewColumnSortMode.NotSortable
             .Columns("dgIdEmpleado").SortMode = DataGridViewColumnSortMode.NotSortable
             .Columns("dgNombreEmpleado").SortMode = DataGridViewColumnSortMode.NotSortable
@@ -424,6 +432,7 @@ Public Class FormVenta
             .ReadOnly = False
             .Columns("dgCodigo").ReadOnly = True
             .Columns("dgDescripcion").ReadOnly = True
+            .Columns("dgDescuento").ReadOnly = True
             .Columns("dgValor").ReadOnly = True
             .Columns("dgCantidad").ReadOnly = True
             .Columns("dgTotal").ReadOnly = True
@@ -433,7 +442,7 @@ Public Class FormVenta
             With dgvProducto
                 '  .Columns("dgCodigo").ReadOnly = False
                 .Columns("dgCantidad").ReadOnly = False
-                .Columns("dgValor").ReadOnly = False
+                '.Columns("dgValor").ReadOnly = False
                 .Columns("dgEmpleadoP").ReadOnly = False
             End With
         End If
@@ -443,6 +452,7 @@ Public Class FormVenta
             .Columns("dgCodigoServ").ReadOnly = True
             .Columns("dgDescripcionServ").ReadOnly = True
             .Columns("dgValorServ").ReadOnly = True
+            .Columns("dgDescuentoS").ReadOnly = True
             .Columns("dgIdEmpleado").ReadOnly = True
             .Columns("dgNombreEmpleado").ReadOnly = True
         End With

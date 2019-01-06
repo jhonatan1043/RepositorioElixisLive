@@ -24,6 +24,7 @@
     Public Const FORMATO_FECHA_LARGA = "MMMM \ dddd ,dd \ yyyy"
     Public Const FORMATO_FECHA_CORTA = "MMMM, MM \ yyyy"
     Public Const FORMATO_FECHA = "yyyy-MM-dd"
+    Public Const FORMATO_FECHA2 = "dd-MM-yyyy"
     Public Const FORMATO_FECHA_HORA = "dd-MM-yyyy HH:mm"
 
     Public Const FORMATO_MONEDA = "c2"
