@@ -15,12 +15,12 @@
         tabla.Rows.Add(drFila)
 
         drFila = tabla.NewRow()
-        drFila.Item(0) = "0"
+        drFila.Item(0) = "1"
         drFila.Item(1) = "Efectivo"
         tabla.Rows.Add(drFila)
 
         drFila = tabla.NewRow()
-        drFila.Item(0) = "1"
+        drFila.Item(0) = "2"
         drFila.Item(1) = "Consignación"
         tabla.Rows.Add(drFila)
 
@@ -39,12 +39,12 @@
         tabla.Rows.Add(drFila)
 
         drFila = tabla.NewRow()
-        drFila.Item(0) = "0"
+        drFila.Item(0) = "1"
         drFila.Item(1) = "Ahorro"
         tabla.Rows.Add(drFila)
 
         drFila = tabla.NewRow()
-        drFila.Item(0) = "1"
+        drFila.Item(0) = "2"
         drFila.Item(1) = "Corriente"
         tabla.Rows.Add(drFila)
 
@@ -62,13 +62,13 @@
         tabla.Rows.Add(drFila)
 
         drFila = tabla.NewRow()
-        drFila.Item(0) = "0"
+        drFila.Item(0) = "1"
         drFila.Item(1) = "Salario Fijo"
         tabla.Rows.Add(drFila)
 
         drFila = tabla.NewRow()
-        drFila.Item(0) = "1"
-        drFila.Item(1) = "Por Cimisión"
+        drFila.Item(0) = "2"
+        drFila.Item(1) = "Por Comisión"
         tabla.Rows.Add(drFila)
 
         cargarCombo(tabla, cbCombo)

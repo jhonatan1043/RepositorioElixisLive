@@ -23,7 +23,7 @@ Partial Class FormEmpleado
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.gbInform = New System.Windows.Forms.GroupBox()
         Me.txtEmail = New System.Windows.Forms.Label()
         Me.txtDireccion = New System.Windows.Forms.Label()
@@ -43,9 +43,9 @@ Partial Class FormEmpleado
         Me.GbInform_D = New System.Windows.Forms.GroupBox()
         Me.dgvParametro = New System.Windows.Forms.DataGridView()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.GroupBox4 = New System.Windows.Forms.GroupBox()
+        Me.gpPagare = New System.Windows.Forms.GroupBox()
+        Me.NumComision = New System.Windows.Forms.NumericUpDown()
         Me.txtSalario = New System.Windows.Forms.TextBox()
-        Me.txtComision = New System.Windows.Forms.TextBox()
         Me.Label17 = New System.Windows.Forms.Label()
         Me.Label15 = New System.Windows.Forms.Label()
         Me.cbTipoSalario = New System.Windows.Forms.ComboBox()
@@ -94,7 +94,8 @@ Partial Class FormEmpleado
         Me.GbInform_D.SuspendLayout()
         CType(Me.dgvParametro, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
-        Me.GroupBox4.SuspendLayout()
+        Me.gpPagare.SuspendLayout()
+        CType(Me.NumComision, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gpUsuario.SuspendLayout()
         Me.GroupBox5.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -310,9 +311,9 @@ Partial Class FormEmpleado
         Me.dgvParametro.AllowUserToDeleteRows = False
         Me.dgvParametro.AllowUserToResizeColumns = False
         Me.dgvParametro.AllowUserToResizeRows = False
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black
-        Me.dgvParametro.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
+        Me.dgvParametro.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle2
         Me.dgvParametro.BackgroundColor = System.Drawing.SystemColors.Control
         Me.dgvParametro.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvParametro.Location = New System.Drawing.Point(3, 18)
@@ -324,7 +325,7 @@ Partial Class FormEmpleado
         'GroupBox1
         '
         Me.GroupBox1.BackColor = System.Drawing.Color.Transparent
-        Me.GroupBox1.Controls.Add(Me.GroupBox4)
+        Me.GroupBox1.Controls.Add(Me.gpPagare)
         Me.GroupBox1.Controls.Add(Me.gpUsuario)
         Me.GroupBox1.Controls.Add(Me.GroupBox5)
         Me.GroupBox1.Controls.Add(Me.GroupBox2)
@@ -337,22 +338,31 @@ Partial Class FormEmpleado
         Me.GroupBox1.TabIndex = 11
         Me.GroupBox1.TabStop = False
         '
-        'GroupBox4
+        'gpPagare
         '
-        Me.GroupBox4.Controls.Add(Me.txtSalario)
-        Me.GroupBox4.Controls.Add(Me.txtComision)
-        Me.GroupBox4.Controls.Add(Me.Label17)
-        Me.GroupBox4.Controls.Add(Me.Label15)
-        Me.GroupBox4.Controls.Add(Me.cbTipoSalario)
-        Me.GroupBox4.Controls.Add(Me.Label16)
-        Me.GroupBox4.Font = New System.Drawing.Font("Times New Roman", 8.25!, System.Drawing.FontStyle.Italic)
-        Me.GroupBox4.ForeColor = System.Drawing.Color.DarkBlue
-        Me.GroupBox4.Location = New System.Drawing.Point(620, 115)
-        Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Size = New System.Drawing.Size(272, 145)
-        Me.GroupBox4.TabIndex = 68
-        Me.GroupBox4.TabStop = False
-        Me.GroupBox4.Text = "Información Salarial"
+        Me.gpPagare.Controls.Add(Me.NumComision)
+        Me.gpPagare.Controls.Add(Me.txtSalario)
+        Me.gpPagare.Controls.Add(Me.Label17)
+        Me.gpPagare.Controls.Add(Me.Label15)
+        Me.gpPagare.Controls.Add(Me.cbTipoSalario)
+        Me.gpPagare.Controls.Add(Me.Label16)
+        Me.gpPagare.Font = New System.Drawing.Font("Times New Roman", 8.25!, System.Drawing.FontStyle.Italic)
+        Me.gpPagare.ForeColor = System.Drawing.Color.DarkBlue
+        Me.gpPagare.Location = New System.Drawing.Point(620, 115)
+        Me.gpPagare.Name = "gpPagare"
+        Me.gpPagare.Size = New System.Drawing.Size(272, 145)
+        Me.gpPagare.TabIndex = 68
+        Me.gpPagare.TabStop = False
+        Me.gpPagare.Text = "Información Salarial"
+        '
+        'NumComision
+        '
+        Me.NumComision.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic)
+        Me.NumComision.Location = New System.Drawing.Point(103, 46)
+        Me.NumComision.Name = "NumComision"
+        Me.NumComision.Size = New System.Drawing.Size(163, 25)
+        Me.NumComision.TabIndex = 18
+        Me.NumComision.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txtSalario
         '
@@ -362,26 +372,14 @@ Partial Class FormEmpleado
         Me.txtSalario.Name = "txtSalario"
         Me.txtSalario.Size = New System.Drawing.Size(164, 25)
         Me.txtSalario.TabIndex = 17
-        Me.txtSalario.Text = "0"
         Me.txtSalario.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'txtComision
-        '
-        Me.txtComision.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtComision.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtComision.Location = New System.Drawing.Point(103, 47)
-        Me.txtComision.Name = "txtComision"
-        Me.txtComision.Size = New System.Drawing.Size(164, 25)
-        Me.txtComision.TabIndex = 16
-        Me.txtComision.Text = "0"
-        Me.txtComision.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label17
         '
         Me.Label17.AutoSize = True
         Me.Label17.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Italic)
         Me.Label17.ForeColor = System.Drawing.Color.Black
-        Me.Label17.Location = New System.Drawing.Point(5, 80)
+        Me.Label17.Location = New System.Drawing.Point(5, 79)
         Me.Label17.Name = "Label17"
         Me.Label17.Size = New System.Drawing.Size(60, 19)
         Me.Label17.TabIndex = 11
@@ -392,7 +390,7 @@ Partial Class FormEmpleado
         Me.Label15.AutoSize = True
         Me.Label15.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Italic)
         Me.Label15.ForeColor = System.Drawing.Color.Black
-        Me.Label15.Location = New System.Drawing.Point(5, 50)
+        Me.Label15.Location = New System.Drawing.Point(5, 49)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(92, 19)
         Me.Label15.TabIndex = 10
@@ -824,8 +822,9 @@ Partial Class FormEmpleado
         Me.GbInform_D.ResumeLayout(False)
         CType(Me.dgvParametro, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
-        Me.GroupBox4.ResumeLayout(False)
-        Me.GroupBox4.PerformLayout()
+        Me.gpPagare.ResumeLayout(False)
+        Me.gpPagare.PerformLayout()
+        CType(Me.NumComision, System.ComponentModel.ISupportInitialize).EndInit()
         Me.gpUsuario.ResumeLayout(False)
         Me.gpUsuario.PerformLayout()
         Me.GroupBox5.ResumeLayout(False)
@@ -900,11 +899,11 @@ Partial Class FormEmpleado
     Friend WithEvents txtCelular As Label
     Friend WithEvents txtTelefono As Label
     Friend WithEvents txtIdentificacion As Label
-    Friend WithEvents GroupBox4 As GroupBox
+    Friend WithEvents gpPagare As GroupBox
     Public WithEvents txtSalario As TextBox
-    Public WithEvents txtComision As TextBox
     Friend WithEvents Label17 As Label
     Friend WithEvents Label15 As Label
     Friend WithEvents cbTipoSalario As ComboBox
     Friend WithEvents Label16 As Label
+    Friend WithEvents NumComision As NumericUpDown
 End Class

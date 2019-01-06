@@ -51,10 +51,13 @@ Public Class FormEmpleado
                 cargarCampos(dfila)
                 cbCargo.SelectedValue = dfila("Codigo_Cargo")
                 cbDepartamento.SelectedValue = dfila("Codigo_deaprt")
-                cbFormaPago.SelectedValue = dfila("codigo_Banco")
-                cbBanco.SelectedValue = If(String.IsNullOrEmpty(dfila("codigo_Banco")), -1, dfila("codigo_Banco"))
+                cbFormaPago.SelectedValue = dfila("Forma_Pago")
+                cbBanco.SelectedValue = If(IsDBNull(dfila("codigo_Banco")), -1, dfila("codigo_Banco"))
                 cbTipoCuenta.SelectedValue = If(String.IsNullOrEmpty(dfila("Tipo_Cuenta_Banco")), -1, dfila("Tipo_Cuenta_Banco"))
                 txtCuenta.Text = If(cbFormaPago.SelectedIndex = 1, String.Empty, dfila("Numero_Cuenta"))
+                cbTipoSalario.SelectedValue = dfila("Codigo_Tipo_Pagare")
+                NumComision.Value = dfila("Porcentaje")
+                txtSalario.Text = Format(dfila("salario"), Constantes.FORMATO_MONEDA)
                 crearImagen(dfila)
                 params.Add(ElementoMenu.codigo)
                 Generales.llenardgv(objEmpleado.sqlCargarDetalle, dgvParametro, params)
@@ -143,8 +146,11 @@ Public Class FormEmpleado
         Generales.habilitarControles(Me)
         Generales.deshabilitarControles(gbInform)
         Generales.deshabilitarControles(gpUsuario)
+        Generales.deshabilitarControles(gpPagare)
         Generales.limpiarControles(Me)
         cargarParametros()
+        formatMoneda()
+        cbTipoSalario.Enabled = True
         objEmpleado.codigo = Nothing
         btBuscarPersona.Enabled = True
         btCancelar.Enabled = True
@@ -154,7 +160,8 @@ Public Class FormEmpleado
         If IsNothing(objEmpleado.codigo) Or
          cbFormaPago.SelectedIndex = 0 Or
          cbCargo.SelectedIndex = 0 Or
-         cbDepartamento.SelectedIndex = 0 Then
+         cbDepartamento.SelectedIndex = 0 Or
+         cbTipoSalario.SelectedIndex = 0 Then
         Else
             Return True
         End If
@@ -175,6 +182,9 @@ Public Class FormEmpleado
         objEmpleado.Cuenta = If(txtCuenta.Text = String.Empty, Nothing, txtCuenta.Text)
         objEmpleado.cargo = cbCargo.SelectedValue
         objEmpleado.deparTrabajo = cbDepartamento.SelectedValue
+        objEmpleado.codigoTipoPagare = cbTipoSalario.SelectedValue
+        objEmpleado.salario = txtSalario.Text
+        objEmpleado.Comision = NumComision.Value
         objEmpleado.dtParametro = dgvParametro.DataSource
     End Sub
     Private Sub btRegistrar_Click(sender As Object, e As EventArgs) Handles btRegistrar.Click
@@ -200,6 +210,9 @@ Public Class FormEmpleado
         If EstiloMensajes.mostrarMensajePregunta(MensajeSistema.CANCELAR) = Constantes.SI Then
             Generales.deshabilitarBotones(ToolStrip1)
             Generales.deshabilitarControles(Me)
+            Generales.limpiarControles(Me)
+            objEmpleado.codigo = Nothing
+            formatMoneda()
             btNuevo.Enabled = True
             btBuscar.Enabled = True
             quitarIcono()
@@ -211,6 +224,8 @@ Public Class FormEmpleado
             Generales.habilitarControles(Me)
             Generales.deshabilitarControles(gbInform)
             Generales.deshabilitarControles(gpUsuario)
+            Generales.deshabilitarControles(gpPagare)
+            cbTipoSalario.Enabled = True
             btBuscarPersona.Enabled = False
             btCancelar.Enabled = True
             btRegistrar.Enabled = True
@@ -282,6 +297,7 @@ Public Class FormEmpleado
         Me.ErrorIcono.SetError(cbFormaPago, Constantes.CADENA_VACIA)
         Me.ErrorIcono.SetError(cbCargo, Constantes.CADENA_VACIA)
         Me.ErrorIcono.SetError(cbDepartamento, Constantes.CADENA_VACIA)
+        Me.ErrorIcono.SetError(cbTipoSalario, Constantes.CADENA_VACIA)
     End Sub
     Private Sub cbFormaPago_Validating(sender As Object, e As EventArgs) Handles cbFormaPago.LostFocus
         If cbCargo.SelectedIndex = 0 And btRegistrar.Enabled = True Then
@@ -304,6 +320,13 @@ Public Class FormEmpleado
             Me.ErrorIcono.SetError(cbCargo, Constantes.CADENA_VACIA)
         End If
     End Sub
+    Private Sub cbTipoSalario_Validating(sender As Object, e As EventArgs) Handles cbTipoSalario.LostFocus
+        If cbTipoSalario.SelectedIndex = 0 And btRegistrar.Enabled = True Then
+            Me.ErrorIcono.SetError(cbTipoSalario, "Debe escoger el tipo pagare")
+        Else
+            Me.ErrorIcono.SetError(cbTipoSalario, Constantes.CADENA_VACIA)
+        End If
+    End Sub
     Private Sub btBuscarPersona_Validating(sender As Object, e As EventArgs) Handles btBuscarPersona.LostFocus
         If txtNombre.Text = "" And btRegistrar.Enabled = True Then
             Me.ErrorIcono.SetError(txtNombre, "Debe escoger una persona")
@@ -313,31 +336,25 @@ Public Class FormEmpleado
     End Sub
     Private Sub cbTipoSalario_TextChanged(sender As Object, e As EventArgs) Handles cbTipoSalario.TextChanged
         If btRegistrar.Enabled = False Then Exit Sub
-
         desHabilitarTxtSalario()
-        If cbTipoSalario.SelectedValue = 0 Then
+        formatMoneda()
+        NumComision.Value = 0
+        If cbTipoSalario.SelectedValue = 1 Then
             txtSalario.ReadOnly = False
-        ElseIf cbTipoSalario.SelectedValue = 1
-            txtComision.ReadOnly = False
+        ElseIf cbTipoSalario.SelectedValue = 2
+            NumComision.Enabled = True
+            NumComision.ReadOnly = False
         End If
-
     End Sub
     Private Sub desHabilitarTxtSalario()
-        txtComision.ReadOnly = True
+        NumComision.ReadOnly = True
         txtSalario.ReadOnly = True
-    End Sub
-
-    Private Sub txtComision_Leave(sender As Object, e As EventArgs) Handles txtComision.Leave
-        If btRegistrar.Enabled = False Then Exit Sub
-        txtComision.Text = Format(txtComision.Text, Constantes.FORMATO_MONEDA)
     End Sub
     Private Sub txtSalario_Leave(sender As Object, e As EventArgs) Handles txtSalario.Leave
         If btRegistrar.Enabled = False Then Exit Sub
-        txtSalario.Text = Format(txtSalario.Text, Constantes.FORMATO_MONEDA)
+        txtSalario.Text = Format(CInt(txtSalario.Text), Constantes.FORMATO_MONEDA)
     End Sub
-
     Private Sub formatMoneda()
-        txtComision.Text = Format(0, Constantes.FORMATO_MONEDA)
         txtSalario.Text = Format(0, Constantes.FORMATO_MONEDA)
     End Sub
 End Class

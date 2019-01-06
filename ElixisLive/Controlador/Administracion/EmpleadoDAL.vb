@@ -20,6 +20,9 @@ Public Class EmpleadoDAL
                     comando.Parameters.Add(New SqlParameter("@Usuario", SqlDbType.Int)).Value = SesionActual.idUsuario
                     comando.Parameters.Add(New SqlParameter("@Codigo_Cargo", SqlDbType.Int)).Value = objEmpleado.cargo
                     comando.Parameters.Add(New SqlParameter("@Codigo_Departamento_t", SqlDbType.Int)).Value = objEmpleado.deparTrabajo
+                    comando.Parameters.Add(New SqlParameter("@Tipo_Pagare", SqlDbType.Int)).Value = objEmpleado.codigoTipoPagare
+                    comando.Parameters.Add(New SqlParameter("@Comision", SqlDbType.Int)).Value = objEmpleado.Comision
+                    comando.Parameters.Add(New SqlParameter("@Salario", SqlDbType.Decimal)).Value = objEmpleado.salario
                     comando.Parameters.Add(New SqlParameter("@Foto", SqlDbType.VarBinary)).Value = objEmpleado.imagenEmpleado
                     comando.Parameters.Add(New SqlParameter("@Tabla", SqlDbType.Structured)).Value = objEmpleado.dtParametro
                     comando.ExecuteNonQuery()
