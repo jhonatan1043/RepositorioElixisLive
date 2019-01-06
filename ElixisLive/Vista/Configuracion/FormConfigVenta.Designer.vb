@@ -23,10 +23,17 @@ Partial Class FormConfigVenta
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.btCargarServicio = New System.Windows.Forms.Button()
+        Me.btCargarProducto = New System.Windows.Forms.Button()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
         Me.dgRegistro = New System.Windows.Forms.DataGridView()
+        Me.dgCodigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dgDescripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dgDescuento = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dgFechaDescuento = New Quality.DataGridViewDateTimePickerColumn()
         Me.Gbdatos = New System.Windows.Forms.GroupBox()
         Me.cbListaServicio = New System.Windows.Forms.ComboBox()
         Me.cbListaProducto = New System.Windows.Forms.ComboBox()
@@ -44,7 +51,10 @@ Partial Class FormConfigVenta
         Me.Pimagen = New System.Windows.Forms.PictureBox()
         Me.LTitulo = New System.Windows.Forms.Label()
         Me.errorIcono = New System.Windows.Forms.ErrorProvider(Me.components)
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.txtFiltro = New System.Windows.Forms.TextBox()
         Me.GroupBox1.SuspendLayout()
+        Me.GroupBox2.SuspendLayout()
         Me.GroupBox5.SuspendLayout()
         CType(Me.dgRegistro, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Gbdatos.SuspendLayout()
@@ -57,22 +67,57 @@ Partial Class FormConfigVenta
         'GroupBox1
         '
         Me.GroupBox1.BackColor = System.Drawing.Color.Transparent
+        Me.GroupBox1.Controls.Add(Me.GroupBox2)
         Me.GroupBox1.Controls.Add(Me.GroupBox5)
         Me.GroupBox1.Controls.Add(Me.Gbdatos)
-        Me.GroupBox1.Location = New System.Drawing.Point(6, 44)
+        Me.GroupBox1.Location = New System.Drawing.Point(3, 44)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(590, 289)
+        Me.GroupBox1.Size = New System.Drawing.Size(656, 337)
         Me.GroupBox1.TabIndex = 18
         Me.GroupBox1.TabStop = False
+        '
+        'GroupBox2
+        '
+        Me.GroupBox2.Controls.Add(Me.txtFiltro)
+        Me.GroupBox2.Controls.Add(Me.Label1)
+        Me.GroupBox2.Controls.Add(Me.btCargarServicio)
+        Me.GroupBox2.Controls.Add(Me.btCargarProducto)
+        Me.GroupBox2.Location = New System.Drawing.Point(6, 60)
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.Size = New System.Drawing.Size(644, 46)
+        Me.GroupBox2.TabIndex = 62
+        Me.GroupBox2.TabStop = False
+        '
+        'btCargarServicio
+        '
+        Me.btCargarServicio.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btCargarServicio.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Italic)
+        Me.btCargarServicio.Location = New System.Drawing.Point(499, 10)
+        Me.btCargarServicio.Name = "btCargarServicio"
+        Me.btCargarServicio.Size = New System.Drawing.Size(140, 33)
+        Me.btCargarServicio.TabIndex = 1
+        Me.btCargarServicio.Text = "C. Servicio"
+        Me.btCargarServicio.UseVisualStyleBackColor = True
+        '
+        'btCargarProducto
+        '
+        Me.btCargarProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btCargarProducto.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Italic)
+        Me.btCargarProducto.Location = New System.Drawing.Point(352, 10)
+        Me.btCargarProducto.Name = "btCargarProducto"
+        Me.btCargarProducto.Size = New System.Drawing.Size(140, 33)
+        Me.btCargarProducto.TabIndex = 0
+        Me.btCargarProducto.Text = "C. Productos"
+        Me.btCargarProducto.UseVisualStyleBackColor = True
         '
         'GroupBox5
         '
         Me.GroupBox5.Controls.Add(Me.dgRegistro)
         Me.GroupBox5.Font = New System.Drawing.Font("Times New Roman", 8.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox5.ForeColor = System.Drawing.Color.DarkBlue
-        Me.GroupBox5.Location = New System.Drawing.Point(4, 61)
+        Me.GroupBox5.Location = New System.Drawing.Point(4, 106)
         Me.GroupBox5.Name = "GroupBox5"
-        Me.GroupBox5.Size = New System.Drawing.Size(580, 222)
+        Me.GroupBox5.Size = New System.Drawing.Size(646, 225)
         Me.GroupBox5.TabIndex = 61
         Me.GroupBox5.TabStop = False
         Me.GroupBox5.Text = "Eventos"
@@ -83,18 +128,50 @@ Partial Class FormConfigVenta
         Me.dgRegistro.AllowUserToDeleteRows = False
         Me.dgRegistro.AllowUserToResizeColumns = False
         Me.dgRegistro.AllowUserToResizeRows = False
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black
-        Me.dgRegistro.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black
+        Me.dgRegistro.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle3
         Me.dgRegistro.BackgroundColor = System.Drawing.SystemColors.Control
         Me.dgRegistro.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgRegistro.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.dgCodigo, Me.dgDescripcion, Me.dgDescuento, Me.dgFechaDescuento})
         Me.dgRegistro.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dgRegistro.Location = New System.Drawing.Point(3, 16)
         Me.dgRegistro.MultiSelect = False
         Me.dgRegistro.Name = "dgRegistro"
         Me.dgRegistro.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgRegistro.Size = New System.Drawing.Size(574, 203)
+        Me.dgRegistro.Size = New System.Drawing.Size(640, 206)
         Me.dgRegistro.TabIndex = 0
+        '
+        'dgCodigo
+        '
+        Me.dgCodigo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.dgCodigo.HeaderText = "Codigo"
+        Me.dgCodigo.Name = "dgCodigo"
+        Me.dgCodigo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
+        Me.dgCodigo.Width = 47
+        '
+        'dgDescripcion
+        '
+        Me.dgDescripcion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.dgDescripcion.HeaderText = "Descripcion"
+        Me.dgDescripcion.Name = "dgDescripcion"
+        Me.dgDescripcion.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
+        '
+        'dgDescuento
+        '
+        Me.dgDescuento.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.dgDescuento.HeaderText = "% Descuento"
+        Me.dgDescuento.Name = "dgDescuento"
+        Me.dgDescuento.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
+        Me.dgDescuento.Width = 74
+        '
+        'dgFechaDescuento
+        '
+        Me.dgFechaDescuento.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.dgFechaDescuento.HeaderText = "F.Descuento"
+        Me.dgFechaDescuento.Name = "dgFechaDescuento"
+        Me.dgFechaDescuento.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgFechaDescuento.Width = 70
         '
         'Gbdatos
         '
@@ -106,7 +183,7 @@ Partial Class FormConfigVenta
         Me.Gbdatos.ForeColor = System.Drawing.Color.DarkBlue
         Me.Gbdatos.Location = New System.Drawing.Point(6, 9)
         Me.Gbdatos.Name = "Gbdatos"
-        Me.Gbdatos.Size = New System.Drawing.Size(578, 48)
+        Me.Gbdatos.Size = New System.Drawing.Size(644, 47)
         Me.Gbdatos.TabIndex = 0
         Me.Gbdatos.TabStop = False
         Me.Gbdatos.Text = "Información "
@@ -116,9 +193,9 @@ Partial Class FormConfigVenta
         Me.cbListaServicio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbListaServicio.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic)
         Me.cbListaServicio.FormattingEnabled = True
-        Me.cbListaServicio.Location = New System.Drawing.Point(403, 16)
+        Me.cbListaServicio.Location = New System.Drawing.Point(450, 14)
         Me.cbListaServicio.Name = "cbListaServicio"
-        Me.cbListaServicio.Size = New System.Drawing.Size(171, 25)
+        Me.cbListaServicio.Size = New System.Drawing.Size(179, 25)
         Me.cbListaServicio.TabIndex = 20
         '
         'cbListaProducto
@@ -126,9 +203,9 @@ Partial Class FormConfigVenta
         Me.cbListaProducto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbListaProducto.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic)
         Me.cbListaProducto.FormattingEnabled = True
-        Me.cbListaProducto.Location = New System.Drawing.Point(125, 16)
+        Me.cbListaProducto.Location = New System.Drawing.Point(125, 14)
         Me.cbListaProducto.Name = "cbListaProducto"
-        Me.cbListaProducto.Size = New System.Drawing.Size(160, 25)
+        Me.cbListaProducto.Size = New System.Drawing.Size(168, 25)
         Me.cbListaProducto.TabIndex = 19
         '
         'Label3
@@ -136,7 +213,7 @@ Partial Class FormConfigVenta
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.Black
-        Me.Label3.Location = New System.Drawing.Point(292, 19)
+        Me.Label3.Location = New System.Drawing.Point(337, 18)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(108, 19)
         Me.Label3.TabIndex = 18
@@ -147,7 +224,7 @@ Partial Class FormConfigVenta
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.Color.Black
-        Me.Label5.Location = New System.Drawing.Point(5, 19)
+        Me.Label5.Location = New System.Drawing.Point(5, 17)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(115, 19)
         Me.Label5.TabIndex = 17
@@ -161,9 +238,9 @@ Partial Class FormConfigVenta
         Me.ToolStrip1.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.ToolStrip1.ImageScalingSize = New System.Drawing.Size(30, 30)
         Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripSeparator1, Me.btRegistrar, Me.ToolStripSeparator3, Me.btCancelar, Me.ToolStripSeparator4, Me.btEditar, Me.ToolStripSeparator5})
-        Me.ToolStrip1.Location = New System.Drawing.Point(0, 333)
+        Me.ToolStrip1.Location = New System.Drawing.Point(0, 384)
         Me.ToolStrip1.Name = "ToolStrip1"
-        Me.ToolStrip1.Size = New System.Drawing.Size(603, 37)
+        Me.ToolStrip1.Size = New System.Drawing.Size(662, 37)
         Me.ToolStrip1.TabIndex = 19
         Me.ToolStrip1.Text = "ToolStrip1"
         '
@@ -229,7 +306,7 @@ Partial Class FormConfigVenta
         Me.Panel1.Controls.Add(Me.LTitulo)
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(603, 42)
+        Me.Panel1.Size = New System.Drawing.Size(662, 42)
         Me.Panel1.TabIndex = 0
         '
         'Pimagen
@@ -258,24 +335,45 @@ Partial Class FormConfigVenta
         Me.errorIcono.ContainerControl = Me
         Me.errorIcono.RightToLeft = True
         '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.Black
+        Me.Label1.Location = New System.Drawing.Point(6, 16)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(50, 19)
+        Me.Label1.TabIndex = 21
+        Me.Label1.Text = "Filtro:"
+        '
+        'txtFiltro
+        '
+        Me.txtFiltro.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic)
+        Me.txtFiltro.Location = New System.Drawing.Point(58, 13)
+        Me.txtFiltro.Name = "txtFiltro"
+        Me.txtFiltro.Size = New System.Drawing.Size(284, 25)
+        Me.txtFiltro.TabIndex = 22
+        '
         'FormConfigVenta
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(603, 370)
+        Me.ClientSize = New System.Drawing.Size(662, 421)
         Me.Controls.Add(Me.ToolStrip1)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Panel1)
         Me.DoubleBuffered = True
         Me.Location = New System.Drawing.Point(3000, 1000)
         Me.MaximizeBox = False
-        Me.MaximumSize = New System.Drawing.Size(619, 408)
-        Me.MinimumSize = New System.Drawing.Size(619, 408)
+        Me.MaximumSize = New System.Drawing.Size(678, 460)
+        Me.MinimumSize = New System.Drawing.Size(678, 460)
         Me.Name = "FormConfigVenta"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox2.ResumeLayout(False)
+        Me.GroupBox2.PerformLayout()
         Me.GroupBox5.ResumeLayout(False)
         CType(Me.dgRegistro, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Gbdatos.ResumeLayout(False)
@@ -309,4 +407,13 @@ Partial Class FormConfigVenta
     Public WithEvents Label5 As Label
     Friend WithEvents cbListaServicio As ComboBox
     Friend WithEvents cbListaProducto As ComboBox
+    Friend WithEvents GroupBox2 As GroupBox
+    Friend WithEvents btCargarServicio As Button
+    Friend WithEvents btCargarProducto As Button
+    Friend WithEvents dgCodigo As DataGridViewTextBoxColumn
+    Friend WithEvents dgDescripcion As DataGridViewTextBoxColumn
+    Friend WithEvents dgDescuento As DataGridViewTextBoxColumn
+    Friend WithEvents dgFechaDescuento As DataGridViewDateTimePickerColumn
+    Friend WithEvents txtFiltro As TextBox
+    Public WithEvents Label1 As Label
 End Class

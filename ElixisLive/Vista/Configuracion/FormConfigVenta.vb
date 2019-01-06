@@ -1,9 +1,11 @@
 ﻿Public Class FormConfigVenta
     Dim objConfigVenta As ConfigVenta
+    Dim bdNavegador As New BindingSource
     Private Sub FormConfigVenta_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         objConfigVenta = New ConfigVenta
         Generales.deshabilitarBotones(ToolStrip1)
         Generales.deshabilitarControles(Me)
+        validarGrilla()
         Generales.cargarCombo("[SP_INVEN_PRODUCTO_LISTA]", Nothing, "Nombre", "codigo", cbListaProducto)
         Generales.cargarCombo("[SP_INVEN_SERVICIO_LISTA]", Nothing, "Nombre", "codigo", cbListaServicio)
         cargarConfVenta()
@@ -42,8 +44,8 @@
     Private Sub btRegistrar_Click(sender As Object, e As EventArgs) Handles btRegistrar.Click
         Try
 
-            objConfigVenta.codigoListaProducto = cbListaProducto.SelectedValue
-            objConfigVenta.codigoListaServicio = cbListaServicio.SelectedValue
+            objConfigVenta.codigoListaProducto = If(cbListaProducto.SelectedIndex = 0, Nothing, cbListaProducto.SelectedValue)
+            objConfigVenta.codigoListaServicio = If(cbListaServicio.SelectedIndex = 0, Nothing, cbListaServicio.SelectedValue)
 
             ConfigVentaBLL.guardarConfVenta(objConfigVenta)
             Generales.deshabilitarBotones(ToolStrip1)
@@ -55,5 +57,44 @@
         Catch ex As Exception
             EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
         End Try
+    End Sub
+    Private Sub dgRegistro_EditingControlShowing(sender As Object, e As DataGridViewEditingControlShowingEventArgs) Handles dgRegistro.EditingControlShowing
+        AddHandler e.Control.KeyPress, AddressOf ValidacionDigitacion.validarValoresNumericos
+    End Sub
+    Private Sub validarGrilla()
+        With dgRegistro
+            .Columns("dgCodigo").DataPropertyName = "Codigo"
+            .Columns("dgDescripcion").DataPropertyName = "Descripcion"
+            .Columns("dgDescuento").DataPropertyName = "Descuento"
+            .Columns("dgFechaDescuento").DataPropertyName = "F_Descuento"
+            .AutoGenerateColumns = False
+        End With
+    End Sub
+
+    Private Sub btCargarProducto_Click(sender As Object, e As EventArgs) Handles btCargarProducto.Click
+        cargarDgview("[SP_CONFI_LISTA_PRODUCTO_DESCUENTO]", cbListaProducto.SelectedValue)
+        If objConfigVenta.dtEvento.Rows.Count > 0 Then
+            btCargarProducto.Enabled = False
+            btCargarServicio.Enabled = True
+        End If
+    End Sub
+    Private Sub btCargarServicio_Click(sender As Object, e As EventArgs) Handles btCargarServicio.Click
+        cargarDgview("[SP_CONFI_LISTA_SERVICIO_DESCUENTO]", cbListaServicio.SelectedValue)
+        If objConfigVenta.dtEvento.Rows.Count > 0 Then
+            btCargarServicio.Enabled = False
+            btCargarProducto.Enabled = True
+        End If
+    End Sub
+    Private Sub cargarDgview(consulta As String, codigo As String)
+        Dim params As New List(Of String)
+        params.Add(codigo)
+        Generales.llenarTabla(consulta, params, objConfigVenta.dtEvento)
+        bdNavegador.DataSource = objConfigVenta.dtEvento
+        dgRegistro.DataSource = bdNavegador.DataSource
+    End Sub
+    Private Sub txtFiltro_KeyDown(sender As Object, e As KeyEventArgs) Handles txtFiltro.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            bdNavegador.Filter = "codigo Like %" & txtFiltro.Text & "% Descripcion Like %" & txtFiltro.Text & "%"
+        End If
     End Sub
 End Class
