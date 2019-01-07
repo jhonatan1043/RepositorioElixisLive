@@ -22,8 +22,10 @@ Public Class FormVenta
                    objVenta.dtProductos.Rows(dgvProducto.CurrentCell.RowIndex).Item("Codigo").ToString <> Constantes.CADENA_VACIA Then
                 objVenta.dtProductos.Rows.RemoveAt(e.RowIndex)
                 calcularTotales()
+            ElseIf dgvProducto.Rows(dgvProducto.CurrentCell.RowIndex).Cells("dgEmpleadoN").Selected = True And
+                    Not IsDBNull(dgvProducto.Rows(dgvProducto.CurrentCell.RowIndex).Cells("dgCodigo").Value)
+                consultarEmpleado()
             End If
-
         Catch ex As Exception
             EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
         End Try
@@ -38,6 +40,9 @@ Public Class FormVenta
                    objVenta.dtServicio.Rows(dgvServicio.CurrentCell.RowIndex).Item("Codigo").ToString <> Constantes.CADENA_VACIA Then
                 objVenta.dtServicio.Rows.RemoveAt(e.RowIndex)
                 calcularTotales()
+            ElseIf dgvServicio.Rows(dgvServicio.CurrentCell.RowIndex).Cells("dgNombreEmpleado").Selected = True And
+                    Not IsDBNull(dgvServicio.Rows(dgvServicio.CurrentCell.RowIndex).Cells("dgCodigoServ").Value)
+                consultarEmpleado()
             End If
         Catch ex As Exception
             EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
@@ -137,6 +142,7 @@ Public Class FormVenta
         objVenta.dtServicio.Rows.Add()
         btRegistrar.Enabled = True
         btCancelar.Enabled = True
+        btExistencia.Enabled = True
         txtIdentificacion.Focus()
     End Sub
     Private Sub btBuscar_Click(sender As Object, e As EventArgs) Handles btBuscar.Click
@@ -390,8 +396,8 @@ Public Class FormVenta
             .Columns("dgDescripcion").DataPropertyName = "Descripcion"
             .Columns("dgStock").DataPropertyName = "Stock"
             .Columns("dgCantidad").DataPropertyName = "Cantidad"
-            .Columns("dgDescuento").DataPropertyName = "descuento"
             .Columns("dgValor").DataPropertyName = "Valor"
+            .Columns("dgDescuento").DataPropertyName = "descuento"
             .Columns("dgTotal").DataPropertyName = "Total"
             .Columns("dgEmpleadoP").DataPropertyName = "EmpleadoP"
             .Columns("dgEmpleadoN").DataPropertyName = "EmpleadoN"
@@ -575,12 +581,33 @@ Public Class FormVenta
     Private Sub txtIdentificacion_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtIdentificacion.KeyPress, TextTelefono.KeyPress, TextBox5.KeyPress, TextBox4.KeyPress, TextBox32.KeyPress, TextBox31.KeyPress, TextBox23.KeyPress, TextBox22.KeyPress, TextBox14.KeyPress, TextBox13.KeyPress
         ValidacionDigitacion.validarValoresNumericos(e)
     End Sub
-
-    Private Sub dgvServicio_CellEndEdit(sender As Object, e As DataGridViewCellEventArgs) Handles dgvServicio.CellEndEdit, DataGridView8.CellEndEdit, DataGridView5.CellEndEdit, DataGridView2.CellEndEdit, DataGridView11.CellEndEdit
-
+    Private Sub consultarEmpleado()
+        Dim params As New List(Of String)
+        params.Add(String.Empty)
+        Try
+            Generales.buscarElemento(Sentencias.PERSONA_EMPLEADO_CONSULTAR,
+                                     params,
+                                     AddressOf empleadoCargar,
+                                     Titulo.BUSQUEDA_EMPLEADO,
+                                     True,
+                                     True)
+        Catch ex As Exception
+            EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
+        End Try
     End Sub
-
-    Private Sub dgvProducto_CellEndEdit(sender As Object, e As DataGridViewCellEventArgs) Handles dgvProducto.CellEndEdit, DataGridView9.CellEndEdit, DataGridView6.CellEndEdit, DataGridView3.CellEndEdit, DataGridView12.CellEndEdit
-
+    Private Sub empleadoCargar(pCodigo)
+        Dim params As New List(Of String)
+        Dim dRows As DataRow
+        params.Add(pCodigo)
+        dRows = Generales.cargarItem(Sentencias.PERSONA_EMPLEADO_CARGAR, params)
+        If dgvProducto.Focused = True Then
+            objVenta.dtProductos.Rows(dgvProducto.CurrentCell.RowIndex).Item("EmpleadoP") = pCodigo
+            objVenta.dtProductos.Rows(dgvProducto.CurrentCell.RowIndex).Item("EmpleadoN") = dRows("Nombre")
+            objVenta.dtProductos.AcceptChanges()
+        ElseIf dgvServicio.Focused = True
+            objVenta.dtServicio.Rows(dgvServicio.CurrentCell.RowIndex).Item("codigo_Empleado") = pCodigo
+            objVenta.dtServicio.Rows(dgvServicio.CurrentCell.RowIndex).Item("NombreEmpleado") = dRows("Nombre")
+            objVenta.dtServicio.AcceptChanges()
+        End If
     End Sub
 End Class

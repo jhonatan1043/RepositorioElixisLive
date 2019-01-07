@@ -24,6 +24,7 @@ Partial Class FormCliente
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Pimagen = New System.Windows.Forms.PictureBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.LTitulo = New System.Windows.Forms.Label()
@@ -32,11 +33,6 @@ Partial Class FormCliente
         Me.Label3 = New System.Windows.Forms.Label()
         Me.gbInformD = New System.Windows.Forms.GroupBox()
         Me.dgvCliente = New System.Windows.Forms.DataGridView()
-        Me.dgCodigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.dgNombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.dgTelefono = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.dgDescuento = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.dgFechaD = New Quality.DataGridViewDateTimePickerColumn()
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
         Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.btRegistrar = New System.Windows.Forms.ToolStripButton()
@@ -46,6 +42,11 @@ Partial Class FormCliente
         Me.btCancelar = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripSeparator3 = New System.Windows.Forms.ToolStripSeparator()
         Me.ErrorIcono = New System.Windows.Forms.ErrorProvider(Me.components)
+        Me.dgCodigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dgNombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dgDescuento = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dgFechaD = New Quality.DataGridViewDateTimePickerColumn()
+        Me.dgFechaDF = New Quality.DataGridViewDateTimePickerColumn()
         CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -146,7 +147,7 @@ Partial Class FormCliente
         Me.dgvCliente.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.dgvCliente.BackgroundColor = System.Drawing.Color.White
         Me.dgvCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvCliente.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.dgCodigo, Me.dgNombre, Me.dgTelefono, Me.dgDescuento, Me.dgFechaD})
+        Me.dgvCliente.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.dgCodigo, Me.dgNombre, Me.dgDescuento, Me.dgFechaD, Me.dgFechaDF})
         Me.dgvCliente.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dgvCliente.Location = New System.Drawing.Point(3, 17)
         Me.dgvCliente.MultiSelect = False
@@ -154,45 +155,6 @@ Partial Class FormCliente
         Me.dgvCliente.ReadOnly = True
         Me.dgvCliente.Size = New System.Drawing.Size(777, 351)
         Me.dgvCliente.TabIndex = 0
-        '
-        'dgCodigo
-        '
-        Me.dgCodigo.HeaderText = "Codigo"
-        Me.dgCodigo.Name = "dgCodigo"
-        Me.dgCodigo.ReadOnly = True
-        Me.dgCodigo.Visible = False
-        '
-        'dgNombre
-        '
-        Me.dgNombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.dgNombre.HeaderText = "Nombre"
-        Me.dgNombre.Name = "dgNombre"
-        Me.dgNombre.ReadOnly = True
-        Me.dgNombre.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
-        '
-        'dgTelefono
-        '
-        Me.dgTelefono.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.dgTelefono.HeaderText = "Telefono"
-        Me.dgTelefono.Name = "dgTelefono"
-        Me.dgTelefono.ReadOnly = True
-        Me.dgTelefono.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
-        Me.dgTelefono.Width = 53
-        '
-        'dgDescuento
-        '
-        Me.dgDescuento.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.dgDescuento.HeaderText = "Descuento"
-        Me.dgDescuento.Name = "dgDescuento"
-        Me.dgDescuento.ReadOnly = True
-        Me.dgDescuento.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
-        Me.dgDescuento.Width = 63
-        '
-        'dgFechaD
-        '
-        Me.dgFechaD.HeaderText = "Fecha Descuento"
-        Me.dgFechaD.Name = "dgFechaD"
-        Me.dgFechaD.ReadOnly = True
         '
         'ToolStrip1
         '
@@ -266,6 +228,44 @@ Partial Class FormCliente
         Me.ErrorIcono.ContainerControl = Me
         Me.ErrorIcono.RightToLeft = True
         '
+        'dgCodigo
+        '
+        Me.dgCodigo.HeaderText = "Codigo"
+        Me.dgCodigo.Name = "dgCodigo"
+        Me.dgCodigo.ReadOnly = True
+        Me.dgCodigo.Visible = False
+        '
+        'dgNombre
+        '
+        Me.dgNombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.dgNombre.HeaderText = "Cliente"
+        Me.dgNombre.Name = "dgNombre"
+        Me.dgNombre.ReadOnly = True
+        Me.dgNombre.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
+        '
+        'dgDescuento
+        '
+        Me.dgDescuento.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.dgDescuento.DefaultCellStyle = DataGridViewCellStyle2
+        Me.dgDescuento.HeaderText = "Descuento"
+        Me.dgDescuento.Name = "dgDescuento"
+        Me.dgDescuento.ReadOnly = True
+        Me.dgDescuento.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
+        Me.dgDescuento.Width = 63
+        '
+        'dgFechaD
+        '
+        Me.dgFechaD.HeaderText = "Fecha Inicio"
+        Me.dgFechaD.Name = "dgFechaD"
+        Me.dgFechaD.ReadOnly = True
+        '
+        'dgFechaDF
+        '
+        Me.dgFechaDF.HeaderText = "Fecha Fin"
+        Me.dgFechaDF.Name = "dgFechaDF"
+        Me.dgFechaDF.ReadOnly = True
+        '
         'FormCliente
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -313,7 +313,7 @@ Partial Class FormCliente
     Public WithEvents Label3 As Label
     Friend WithEvents dgCodigo As DataGridViewTextBoxColumn
     Friend WithEvents dgNombre As DataGridViewTextBoxColumn
-    Friend WithEvents dgTelefono As DataGridViewTextBoxColumn
     Friend WithEvents dgDescuento As DataGridViewTextBoxColumn
     Friend WithEvents dgFechaD As DataGridViewDateTimePickerColumn
+    Friend WithEvents dgFechaDF As DataGridViewDateTimePickerColumn
 End Class

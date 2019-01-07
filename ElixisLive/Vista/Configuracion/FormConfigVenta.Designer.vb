@@ -32,10 +32,6 @@ Partial Class FormConfigVenta
         Me.btCargarProducto = New System.Windows.Forms.Button()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
         Me.dgRegistro = New System.Windows.Forms.DataGridView()
-        Me.dgCodigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.dgDescripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.dgDescuento = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.dgFechaDescuento = New Quality.DataGridViewDateTimePickerColumn()
         Me.Gbdatos = New System.Windows.Forms.GroupBox()
         Me.cbListaServicio = New System.Windows.Forms.ComboBox()
         Me.cbListaProducto = New System.Windows.Forms.ComboBox()
@@ -53,6 +49,11 @@ Partial Class FormConfigVenta
         Me.Pimagen = New System.Windows.Forms.PictureBox()
         Me.LTitulo = New System.Windows.Forms.Label()
         Me.errorIcono = New System.Windows.Forms.ErrorProvider(Me.components)
+        Me.dgCodigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dgDescripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dgDescuento = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dgFechaDescuento = New Quality.DataGridViewDateTimePickerColumn()
+        Me.dgFechaDF = New Quality.DataGridViewDateTimePickerColumn()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox5.SuspendLayout()
@@ -152,7 +153,7 @@ Partial Class FormConfigVenta
         Me.dgRegistro.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.dgRegistro.BackgroundColor = System.Drawing.SystemColors.Control
         Me.dgRegistro.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgRegistro.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.dgCodigo, Me.dgDescripcion, Me.dgDescuento, Me.dgFechaDescuento})
+        Me.dgRegistro.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.dgCodigo, Me.dgDescripcion, Me.dgDescuento, Me.dgFechaDescuento, Me.dgFechaDF})
         Me.dgRegistro.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dgRegistro.Location = New System.Drawing.Point(3, 16)
         Me.dgRegistro.MultiSelect = False
@@ -160,37 +161,6 @@ Partial Class FormConfigVenta
         Me.dgRegistro.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect
         Me.dgRegistro.Size = New System.Drawing.Size(640, 206)
         Me.dgRegistro.TabIndex = 0
-        '
-        'dgCodigo
-        '
-        Me.dgCodigo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.dgCodigo.HeaderText = "Codigo"
-        Me.dgCodigo.Name = "dgCodigo"
-        Me.dgCodigo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
-        Me.dgCodigo.Width = 47
-        '
-        'dgDescripcion
-        '
-        Me.dgDescripcion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.dgDescripcion.HeaderText = "Descripcion"
-        Me.dgDescripcion.Name = "dgDescripcion"
-        Me.dgDescripcion.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
-        '
-        'dgDescuento
-        '
-        Me.dgDescuento.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.dgDescuento.HeaderText = "% Descuento"
-        Me.dgDescuento.Name = "dgDescuento"
-        Me.dgDescuento.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
-        Me.dgDescuento.Width = 74
-        '
-        'dgFechaDescuento
-        '
-        Me.dgFechaDescuento.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.dgFechaDescuento.HeaderText = "F.Descuento"
-        Me.dgFechaDescuento.Name = "dgFechaDescuento"
-        Me.dgFechaDescuento.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgFechaDescuento.Width = 70
         '
         'Gbdatos
         '
@@ -354,6 +324,46 @@ Partial Class FormConfigVenta
         Me.errorIcono.ContainerControl = Me
         Me.errorIcono.RightToLeft = True
         '
+        'dgCodigo
+        '
+        Me.dgCodigo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.dgCodigo.HeaderText = "Codigo"
+        Me.dgCodigo.Name = "dgCodigo"
+        Me.dgCodigo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
+        Me.dgCodigo.Width = 47
+        '
+        'dgDescripcion
+        '
+        Me.dgDescripcion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.dgDescripcion.HeaderText = "Descripcion"
+        Me.dgDescripcion.Name = "dgDescripcion"
+        Me.dgDescripcion.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
+        '
+        'dgDescuento
+        '
+        Me.dgDescuento.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.dgDescuento.HeaderText = "% Descuento"
+        Me.dgDescuento.Name = "dgDescuento"
+        Me.dgDescuento.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
+        Me.dgDescuento.Width = 74
+        '
+        'dgFechaDescuento
+        '
+        Me.dgFechaDescuento.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.dgFechaDescuento.HeaderText = "F. Inicio"
+        Me.dgFechaDescuento.Name = "dgFechaDescuento"
+        Me.dgFechaDescuento.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgFechaDescuento.Width = 52
+        '
+        'dgFechaDF
+        '
+        Me.dgFechaDF.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.dgFechaDF.HeaderText = "F.Fin"
+        Me.dgFechaDF.Name = "dgFechaDF"
+        Me.dgFechaDF.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgFechaDF.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
+        Me.dgFechaDF.Width = 57
+        '
         'FormConfigVenta
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -410,10 +420,11 @@ Partial Class FormConfigVenta
     Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents btCargarServicio As Button
     Friend WithEvents btCargarProducto As Button
+    Friend WithEvents txtFiltro As TextBox
+    Public WithEvents Label1 As Label
     Friend WithEvents dgCodigo As DataGridViewTextBoxColumn
     Friend WithEvents dgDescripcion As DataGridViewTextBoxColumn
     Friend WithEvents dgDescuento As DataGridViewTextBoxColumn
     Friend WithEvents dgFechaDescuento As DataGridViewDateTimePickerColumn
-    Friend WithEvents txtFiltro As TextBox
-    Public WithEvents Label1 As Label
+    Friend WithEvents dgFechaDF As DataGridViewDateTimePickerColumn
 End Class

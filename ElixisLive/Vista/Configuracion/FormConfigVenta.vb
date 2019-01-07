@@ -68,7 +68,8 @@
             .Columns("dgCodigo").DataPropertyName = "Codigo"
             .Columns("dgDescripcion").DataPropertyName = "Descripcion"
             .Columns("dgDescuento").DataPropertyName = "Descuento"
-            .Columns("dgFechaDescuento").DataPropertyName = "F_Descuento"
+            .Columns("dgFechaDescuento").DataPropertyName = "F_Inicio"
+            .Columns("dgFechaDF").DataPropertyName = "F_Fin"
             .AutoGenerateColumns = False
         End With
     End Sub
@@ -108,11 +109,13 @@
             .Columns("dgDescripcion").ReadOnly = True
             .Columns("dgDescuento").ReadOnly = True
             .Columns("dgFechaDescuento").ReadOnly = True
+            .Columns("dgFechaDF").ReadOnly = True
         End With
         If Estado = True Then
             With dgRegistro
                 .Columns("dgDescuento").ReadOnly = False
                 .Columns("dgFechaDescuento").ReadOnly = False
+                .Columns("dgFechaDF").ReadOnly = False
             End With
         End If
     End Sub

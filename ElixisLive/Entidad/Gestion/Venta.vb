@@ -17,8 +17,8 @@
         dtProductos.Columns.Add("Descripcion", Type.GetType("System.String"))
         dtProductos.Columns.Add("Stock", Type.GetType("System.Int32"))
         dtProductos.Columns.Add("Cantidad", Type.GetType("System.Int32")).DefaultValue = 0
-        dtProductos.Columns.Add("descuento", Type.GetType("System.Decimal")).DefaultValue = 0
         dtProductos.Columns.Add("Valor", Type.GetType("System.Decimal")).DefaultValue = 0
+        dtProductos.Columns.Add("descuento", Type.GetType("System.Decimal")).DefaultValue = 0
         dtProductos.Columns.Add("Total", Type.GetType("System.Decimal")).DefaultValue = 0
         dtProductos.Columns.Add("EmpleadoP", Type.GetType("System.String"))
         dtProductos.Columns.Add("EmpleadoN", Type.GetType("System.String"))

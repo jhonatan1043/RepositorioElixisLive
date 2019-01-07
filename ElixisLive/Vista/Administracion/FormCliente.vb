@@ -12,9 +12,9 @@
         With dgvCliente
             .Columns("dgCodigo").DataPropertyName = "Codigo"
             .Columns("dgNombre").DataPropertyName = "Nombre"
-            .Columns("dgTelefono").DataPropertyName = "Telefono"
             .Columns("dgDescuento").DataPropertyName = "Descuento"
-            .Columns("dgFechaD").DataPropertyName = "Fecha_Descuento"
+            .Columns("dgFechaD").DataPropertyName = "Fecha_Inicio"
+            .Columns("dgFechaDF").DataPropertyName = "Fecha_Fin"
             .AutoGenerateColumns = False
             .DataSource = objCliente.dtCliente
         End With
@@ -26,11 +26,13 @@
             .Columns("dgNombre").ReadOnly = True
             .Columns("dgDescuento").ReadOnly = True
             .Columns("dgFechaD").ReadOnly = True
+            .Columns("dgFechaDF").ReadOnly = True
         End With
         If Estado = True Then
             With dgvCliente
                 .Columns("dgDescuento").ReadOnly = False
                 .Columns("dgFechaD").ReadOnly = False
+                .Columns("dgFechaDF").ReadOnly = False
             End With
         End If
     End Sub
