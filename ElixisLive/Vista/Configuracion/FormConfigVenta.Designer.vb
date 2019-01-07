@@ -23,9 +23,11 @@ Partial Class FormConfigVenta
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.txtFiltro = New System.Windows.Forms.TextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.btCargarServicio = New System.Windows.Forms.Button()
         Me.btCargarProducto = New System.Windows.Forms.Button()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
@@ -51,8 +53,6 @@ Partial Class FormConfigVenta
         Me.Pimagen = New System.Windows.Forms.PictureBox()
         Me.LTitulo = New System.Windows.Forms.Label()
         Me.errorIcono = New System.Windows.Forms.ErrorProvider(Me.components)
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.txtFiltro = New System.Windows.Forms.TextBox()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox5.SuspendLayout()
@@ -87,6 +87,25 @@ Partial Class FormConfigVenta
         Me.GroupBox2.Size = New System.Drawing.Size(644, 46)
         Me.GroupBox2.TabIndex = 62
         Me.GroupBox2.TabStop = False
+        '
+        'txtFiltro
+        '
+        Me.txtFiltro.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic)
+        Me.txtFiltro.Location = New System.Drawing.Point(58, 13)
+        Me.txtFiltro.Name = "txtFiltro"
+        Me.txtFiltro.Size = New System.Drawing.Size(284, 25)
+        Me.txtFiltro.TabIndex = 22
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.Black
+        Me.Label1.Location = New System.Drawing.Point(6, 16)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(50, 19)
+        Me.Label1.TabIndex = 21
+        Me.Label1.Text = "Filtro:"
         '
         'btCargarServicio
         '
@@ -128,9 +147,9 @@ Partial Class FormConfigVenta
         Me.dgRegistro.AllowUserToDeleteRows = False
         Me.dgRegistro.AllowUserToResizeColumns = False
         Me.dgRegistro.AllowUserToResizeRows = False
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black
-        Me.dgRegistro.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black
+        Me.dgRegistro.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.dgRegistro.BackgroundColor = System.Drawing.SystemColors.Control
         Me.dgRegistro.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgRegistro.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.dgCodigo, Me.dgDescripcion, Me.dgDescuento, Me.dgFechaDescuento})
@@ -138,7 +157,7 @@ Partial Class FormConfigVenta
         Me.dgRegistro.Location = New System.Drawing.Point(3, 16)
         Me.dgRegistro.MultiSelect = False
         Me.dgRegistro.Name = "dgRegistro"
-        Me.dgRegistro.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dgRegistro.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect
         Me.dgRegistro.Size = New System.Drawing.Size(640, 206)
         Me.dgRegistro.TabIndex = 0
         '
@@ -323,9 +342,9 @@ Partial Class FormConfigVenta
         Me.LTitulo.BackColor = System.Drawing.Color.Transparent
         Me.LTitulo.Font = New System.Drawing.Font("Times New Roman", 20.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LTitulo.ForeColor = System.Drawing.Color.White
-        Me.LTitulo.Location = New System.Drawing.Point(-7, 0)
+        Me.LTitulo.Location = New System.Drawing.Point(3, 0)
         Me.LTitulo.Name = "LTitulo"
-        Me.LTitulo.Size = New System.Drawing.Size(603, 41)
+        Me.LTitulo.Size = New System.Drawing.Size(659, 41)
         Me.LTitulo.TabIndex = 1
         Me.LTitulo.Text = "Venta"
         Me.LTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -334,25 +353,6 @@ Partial Class FormConfigVenta
         '
         Me.errorIcono.ContainerControl = Me
         Me.errorIcono.RightToLeft = True
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.Black
-        Me.Label1.Location = New System.Drawing.Point(6, 16)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(50, 19)
-        Me.Label1.TabIndex = 21
-        Me.Label1.Text = "Filtro:"
-        '
-        'txtFiltro
-        '
-        Me.txtFiltro.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic)
-        Me.txtFiltro.Location = New System.Drawing.Point(58, 13)
-        Me.txtFiltro.Name = "txtFiltro"
-        Me.txtFiltro.Size = New System.Drawing.Size(284, 25)
-        Me.txtFiltro.TabIndex = 22
         '
         'FormConfigVenta
         '

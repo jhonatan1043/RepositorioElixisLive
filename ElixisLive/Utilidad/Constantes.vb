@@ -10,6 +10,9 @@
     Public Const CODIGO_EMPRESA = 0
     Public Const EDITABLE = 1
     Public Const NO_EDITABLE = 0
+    Public Const CSERVICIO = 2
+    Public Const CPRODUCTO = 1
+
     Public Enum TIPO_CONTROL
         COMBO = 0
         SELECTOR = 1

@@ -18,8 +18,8 @@
         Try
             dFila = Generales.cargarItem(objConfigVenta.sqlCargar, params)
             If Not IsNothing(dFila) Then
-                cbListaProducto.SelectedValue = dFila("codigo_lista_producto")
-                cbListaServicio.SelectedValue = dFila("codigo_lista_servicio")
+                cbListaProducto.SelectedValue = If(IsDBNull(dFila("codigo_lista_producto")), -1, dFila("codigo_lista_producto"))
+                cbListaServicio.SelectedValue = If(IsDBNull(dFila("codigo_lista_servicio")), -1, dFila("codigo_lista_servicio"))
             End If
         Catch ex As Exception
             EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
@@ -29,6 +29,7 @@
         If EstiloMensajes.mostrarMensajePregunta(MensajeSistema.EDITAR) = Constantes.SI Then
             Generales.deshabilitarBotones(ToolStrip1)
             Generales.habilitarControles(Me)
+            validarEdicionGrilla(Constantes.EDITABLE)
             btRegistrar.Enabled = True
             btCancelar.Enabled = True
         End If
@@ -43,6 +44,7 @@
     End Sub
     Private Sub btRegistrar_Click(sender As Object, e As EventArgs) Handles btRegistrar.Click
         Try
+            dgRegistro.EndEdit()
 
             objConfigVenta.codigoListaProducto = If(cbListaProducto.SelectedIndex = 0, Nothing, cbListaProducto.SelectedValue)
             objConfigVenta.codigoListaServicio = If(cbListaServicio.SelectedIndex = 0, Nothing, cbListaServicio.SelectedValue)
@@ -76,6 +78,7 @@
         If objConfigVenta.dtEvento.Rows.Count > 0 Then
             btCargarProducto.Enabled = False
             btCargarServicio.Enabled = True
+            objConfigVenta.indice = Constantes.CPRODUCTO
         End If
     End Sub
     Private Sub btCargarServicio_Click(sender As Object, e As EventArgs) Handles btCargarServicio.Click
@@ -83,6 +86,7 @@
         If objConfigVenta.dtEvento.Rows.Count > 0 Then
             btCargarServicio.Enabled = False
             btCargarProducto.Enabled = True
+            objConfigVenta.indice = Constantes.CSERVICIO
         End If
     End Sub
     Private Sub cargarDgview(consulta As String, codigo As String)
@@ -94,7 +98,22 @@
     End Sub
     Private Sub txtFiltro_KeyDown(sender As Object, e As KeyEventArgs) Handles txtFiltro.KeyDown
         If e.KeyCode = Keys.Enter Then
-            bdNavegador.Filter = "codigo Like %" & txtFiltro.Text & "% Descripcion Like %" & txtFiltro.Text & "%"
+            bdNavegador.Filter = "Descripcion Like '%" & txtFiltro.Text & "%'"
+        End If
+    End Sub
+    Private Sub validarEdicionGrilla(Estado As Boolean)
+        With dgRegistro
+            .ReadOnly = False
+            .Columns("dgCodigo").ReadOnly = True
+            .Columns("dgDescripcion").ReadOnly = True
+            .Columns("dgDescuento").ReadOnly = True
+            .Columns("dgFechaDescuento").ReadOnly = True
+        End With
+        If Estado = True Then
+            With dgRegistro
+                .Columns("dgDescuento").ReadOnly = False
+                .Columns("dgFechaDescuento").ReadOnly = False
+            End With
         End If
     End Sub
 End Class

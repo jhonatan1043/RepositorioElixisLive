@@ -21,8 +21,9 @@ Public Class FormVenta
             ElseIf dgvProducto.Rows(dgvProducto.CurrentCell.RowIndex).Cells("dgQuitar").Selected = True And
                    objVenta.dtProductos.Rows(dgvProducto.CurrentCell.RowIndex).Item("Codigo").ToString <> Constantes.CADENA_VACIA Then
                 objVenta.dtProductos.Rows.RemoveAt(e.RowIndex)
+                calcularTotales()
             End If
-            calcularTotales()
+
         Catch ex As Exception
             EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
         End Try
@@ -36,19 +37,23 @@ Public Class FormVenta
             ElseIf dgvServicio.Rows(dgvServicio.CurrentCell.RowIndex).Cells("dgQuitarServ").Selected = True And
                    objVenta.dtServicio.Rows(dgvServicio.CurrentCell.RowIndex).Item("Codigo").ToString <> Constantes.CADENA_VACIA Then
                 objVenta.dtServicio.Rows.RemoveAt(e.RowIndex)
+                calcularTotales()
             End If
-            calcularTotales()
         Catch ex As Exception
             EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
         End Try
     End Sub
     Private Sub dgvProducto_CellFormatting(sender As System.Object, e As System.Windows.Forms.DataGridViewCellFormattingEventArgs) Handles dgvProducto.CellFormatting
-        If e.ColumnIndex = 6 OrElse e.ColumnIndex = 7 Then
+
+        If e.ColumnIndex = 6 _
+            OrElse e.ColumnIndex = 7 Then
             If IsDBNull(e.Value) Then
                 e.Value = Format(Val(0), Constantes.FORMATO_MONEDA)
             Else
                 e.Value = Format(Val(e.Value), Constantes.FORMATO_MONEDA)
             End If
+        ElseIf e.ColumnIndex = 5
+            e.Value = Replace(Format(Val(e.Value), "P"), ",00", "")
         End If
     End Sub
     Private Sub dgvServicio_CellFormatting(sender As System.Object, e As System.Windows.Forms.DataGridViewCellFormattingEventArgs) Handles dgvServicio.CellFormatting
@@ -58,18 +63,14 @@ Public Class FormVenta
             Else
                 e.Value = Format(Val(e.Value), Constantes.FORMATO_MONEDA)
             End If
+        ElseIf e.ColumnIndex = 4
+            e.Value = Replace(Format(Val(e.Value), "P"), ",00", "")
         End If
     End Sub
     Private Sub dgvProducto_CellEndEdit(sender As Object, e As EventArgs) Handles dgvProducto.CellEndEdit
         Dim dFila As DataRow = Nothing
         If dgvProducto.RowCount >= 1 Then
             Try
-                'If dgvProducto.Rows(dgvProducto.CurrentCell.RowIndex).Cells("dgCodigo").Selected = True Then
-                '    dgvProducto.EditMode = DataGridViewEditMode.EditOnEnter
-                '    If Not IsDBNull(dgvProducto.Rows(dgvProducto.CurrentCell.RowIndex).Cells("dgCodigo").Value) Then
-                '        objVenta.estadoFilaNueva = True
-                '        cargarItemProducto(dgvProducto.Rows(dgvProducto.CurrentCell.RowIndex).Cells("dgCodigo").Value)
-                '    End If
                 If Not IsDBNull(dgvProducto.Rows(dgvProducto.CurrentCell.RowIndex).Cells("dgEmpleadoP").Value) Then
                     dFila = consultarEmpleado(dgvProducto.Rows(dgvProducto.CurrentCell.RowIndex).Cells("dgEmpleadoP").Value)
                     If Not IsNothing(dFila) Then
@@ -108,7 +109,6 @@ Public Class FormVenta
                     dgvServicio.Rows(dgvServicio.CurrentCell.RowIndex).Cells("dgIdEmpleado").Value = Nothing
                     dgvServicio.Rows(dgvServicio.CurrentCell.RowIndex).Cells("dgNombreEmpleado").Value = Nothing
                 End If
-                calcularTotales()
             Catch ex As Exception
                 EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
             End Try
@@ -351,6 +351,7 @@ Public Class FormVenta
         TextTotalArticulos.ReadOnly = True
         TextTotalServicio.ReadOnly = True
         txtTotalGastos.ReadOnly = True
+        txtDescuento.ReadOnly = True
     End Sub
     Private Sub buscarServicio()
         Dim params As New List(Of String)
@@ -365,6 +366,7 @@ Public Class FormVenta
                                    0,
                                    0,
                                    True)
+        calcularTotales()
     End Sub
     Private Sub buscarProducto()
         Dim params As New List(Of String)
@@ -379,6 +381,7 @@ Public Class FormVenta
                                    0,
                                    0,
                                    True)
+        calcularTotales()
     End Sub
     Private Sub validarGrilla()
         With dgvProducto
@@ -440,9 +443,7 @@ Public Class FormVenta
         End With
         If Estado = True Then
             With dgvProducto
-                '  .Columns("dgCodigo").ReadOnly = False
                 .Columns("dgCantidad").ReadOnly = False
-                '.Columns("dgValor").ReadOnly = False
                 .Columns("dgEmpleadoP").ReadOnly = False
             End With
         End If

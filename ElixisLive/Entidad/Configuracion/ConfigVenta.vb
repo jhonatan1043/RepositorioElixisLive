@@ -2,6 +2,7 @@
     Inherits generalConsulta
     Property codigoListaProducto As String
     Property codigoListaServicio As String
+    Property indice As Integer
     Property dtEvento As DataTable
     Public Sub New()
         dtEvento = New DataTable

@@ -12,6 +12,8 @@ Public Class ConfigVentaDAL
                 comando.Parameters.Add(New SqlParameter("@codigo_Empresa", SqlDbType.Int)).Value = SesionActual.codigoEmpresa
                 comando.Parameters.Add(New SqlParameter("@Codigo_Lista_Producto", SqlDbType.Int)).Value = objConfig.codigoListaProducto
                 comando.Parameters.Add(New SqlParameter("@Codigo_Lista_Servicio", SqlDbType.Int)).Value = objConfig.codigoListaServicio
+                comando.Parameters.Add(New SqlParameter("@Indice", SqlDbType.Int)).Value = objConfig.indice
+                comando.Parameters.Add(New SqlParameter("@Tabla", SqlDbType.Structured)).Value = objConfig.dtEvento
                 comando.ExecuteNonQuery()
             End Using
             objConexio.desConectar()
