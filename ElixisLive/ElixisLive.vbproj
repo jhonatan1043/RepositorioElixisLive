@@ -120,7 +120,7 @@
     <Compile Include="Controlador\Configuracion\CostoServicioDAL.vb" />
     <Compile Include="Controlador\Gestion\CompraDAL.vb" />
     <Compile Include="Controlador\Gestion\VentaDAL.vb" />
-    <Compile Include="Controlador\Inventario\ClienteDAL.vb" />
+    <Compile Include="Controlador\Administracion\ClienteDAL.vb" />
     <Compile Include="Controlador\Inventario\EntradaInventarioDAL.vb" />
     <Compile Include="Controlador\Inventario\ListaPrecioDAL.vb" />
     <Compile Include="Controlador\Inventario\ProveedorDAL.vb" />
@@ -156,7 +156,7 @@
     <Compile Include="Entidad\Configuracion\Configuracion.vb" />
     <Compile Include="Entidad\Gestion\Compra.vb" />
     <Compile Include="Entidad\Gestion\Venta.vb" />
-    <Compile Include="Entidad\Inventario\Cliente.vb" />
+    <Compile Include="Entidad\Administracion\Cliente.vb" />
     <Compile Include="Entidad\Inventario\EntradaInventario.vb" />
     <Compile Include="Entidad\Inventario\ListaPrecio.vb" />
     <Compile Include="Entidad\Inventario\Proveedor.vb" />
@@ -194,7 +194,7 @@
     <Compile Include="Modelo\Inventario\EntradaInventarioBLL.vb" />
     <Compile Include="Modelo\Inventario\ListaPrecioBLL.vb" />
     <Compile Include="Modelo\Inventario\ProveedorBLL.vb" />
-    <Compile Include="Modelo\Inventario\ClienteBLL.vb" />
+    <Compile Include="Modelo\Administracion\ClienteBLL.vb" />
     <Compile Include="Modelo\Inventario\ProductoBLL.vb" />
     <Compile Include="Modelo\Nomina\NominaBLL.vb" />
     <Compile Include="Modelo\Principal\InicioSesionBLL.vb" />

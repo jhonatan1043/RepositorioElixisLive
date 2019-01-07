@@ -12,7 +12,7 @@ Public Class FormVenta
         btBuscar.Enabled = True
         Generales.tabularConEnter(Me)
     End Sub
-    Private Sub dgvProducto_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvProducto.CellDoubleClick
+    Private Sub dgvProducto_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvProducto.CellDoubleClick, DataGridView9.CellDoubleClick, DataGridView6.CellDoubleClick, DataGridView3.CellDoubleClick, DataGridView12.CellDoubleClick
         Try
             If btRegistrar.Enabled = False Then Exit Sub
             If (dgvProducto.Rows(dgvProducto.CurrentCell.RowIndex).Cells("dgCodigo").Selected = True Or
@@ -28,7 +28,7 @@ Public Class FormVenta
             EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
         End Try
     End Sub
-    Private Sub dgvServicio_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvServicio.CellDoubleClick
+    Private Sub dgvServicio_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvServicio.CellDoubleClick, DataGridView8.CellDoubleClick, DataGridView5.CellDoubleClick, DataGridView2.CellDoubleClick, DataGridView11.CellDoubleClick
         Try
             If btRegistrar.Enabled = False Then Exit Sub
             If (dgvServicio.Rows(dgvServicio.CurrentCell.RowIndex).Cells("dgCodigoServ").Selected = True Or
@@ -43,27 +43,27 @@ Public Class FormVenta
             EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
         End Try
     End Sub
-    Private Sub dgvProducto_CellFormatting(sender As System.Object, e As System.Windows.Forms.DataGridViewCellFormattingEventArgs) Handles dgvProducto.CellFormatting
+    Private Sub dgvProducto_CellFormatting(sender As System.Object, e As System.Windows.Forms.DataGridViewCellFormattingEventArgs) Handles dgvProducto.CellFormatting, DataGridView9.CellFormatting, DataGridView6.CellFormatting, DataGridView3.CellFormatting, DataGridView12.CellFormatting
 
-        If e.ColumnIndex = 6 _
+        If e.ColumnIndex = 5 _
             OrElse e.ColumnIndex = 7 Then
             If IsDBNull(e.Value) Then
                 e.Value = Format(Val(0), Constantes.FORMATO_MONEDA)
             Else
                 e.Value = Format(Val(e.Value), Constantes.FORMATO_MONEDA)
             End If
-        ElseIf e.ColumnIndex = 5
+        ElseIf e.ColumnIndex = 6
             e.Value = Replace(Format(Val(e.Value), "P"), ",00", "")
         End If
     End Sub
-    Private Sub dgvServicio_CellFormatting(sender As System.Object, e As System.Windows.Forms.DataGridViewCellFormattingEventArgs) Handles dgvServicio.CellFormatting
-        If e.ColumnIndex = 5 Then
+    Private Sub dgvServicio_CellFormatting(sender As System.Object, e As System.Windows.Forms.DataGridViewCellFormattingEventArgs) Handles dgvServicio.CellFormatting, DataGridView8.CellFormatting, DataGridView5.CellFormatting, DataGridView2.CellFormatting, DataGridView11.CellFormatting
+        If e.ColumnIndex = 4 Then
             If IsDBNull(e.Value) Then
                 e.Value = Format(Val(0), Constantes.FORMATO_MONEDA)
             Else
                 e.Value = Format(Val(e.Value), Constantes.FORMATO_MONEDA)
             End If
-        ElseIf e.ColumnIndex = 4
+        ElseIf e.ColumnIndex = 5
             e.Value = Replace(Format(Val(e.Value), "P"), ",00", "")
         End If
     End Sub
@@ -114,12 +114,12 @@ Public Class FormVenta
             End Try
         End If
     End Sub
-    Private Sub dgvProducto_EditingControlShowing(sender As Object, e As DataGridViewEditingControlShowingEventArgs) Handles dgvProducto.EditingControlShowing
+    Private Sub dgvProducto_EditingControlShowing(sender As Object, e As DataGridViewEditingControlShowingEventArgs) Handles dgvProducto.EditingControlShowing, DataGridView9.EditingControlShowing, DataGridView6.EditingControlShowing, DataGridView3.EditingControlShowing, DataGridView12.EditingControlShowing
         If objVenta.dtProductos.Rows.Count > 0 Then
             AddHandler e.Control.KeyPress, AddressOf ValidacionDigitacion.validarValoresNumericos
         End If
     End Sub
-    Private Sub dgvServicio_EditingControlShowing(sender As Object, e As DataGridViewEditingControlShowingEventArgs) Handles dgvServicio.EditingControlShowing
+    Private Sub dgvServicio_EditingControlShowing(sender As Object, e As DataGridViewEditingControlShowingEventArgs) Handles dgvServicio.EditingControlShowing, DataGridView8.EditingControlShowing, DataGridView5.EditingControlShowing, DataGridView2.EditingControlShowing, DataGridView11.EditingControlShowing
         If objVenta.dtServicio.Rows.Count > 0 Then
             AddHandler e.Control.KeyPress, AddressOf ValidacionDigitacion.validarValoresNumericos
         End If
@@ -153,7 +153,7 @@ Public Class FormVenta
             EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
         End Try
     End Sub
-    Private Sub btExistencia_Click(sender As Object, e As EventArgs) Handles btExistencia.Click
+    Private Sub btExistencia_Click(sender As Object, e As EventArgs) Handles btExistencia.Click, Button4.Click, Button3.Click, Button2.Click, Button1.Click
         formExistencia = New FormExistencia
         formExistencia.ShowDialog()
     End Sub
@@ -230,19 +230,19 @@ Public Class FormVenta
             e.Cancel = True
         End If
     End Sub
-    Private Sub dgvProducto_KeyDown(sender As Object, e As KeyEventArgs) Handles dgvProducto.KeyDown
+    Private Sub dgvProducto_KeyDown(sender As Object, e As KeyEventArgs) Handles dgvProducto.KeyDown, DataGridView9.KeyDown, DataGridView6.KeyDown, DataGridView3.KeyDown, DataGridView12.KeyDown
         If btRegistrar.Enabled = False Then Exit Sub
         If e.KeyCode = Keys.Space Then
             buscarProducto()
         End If
     End Sub
-    Private Sub dgvServicio_KeyDown(sender As Object, e As KeyEventArgs) Handles dgvServicio.KeyDown
+    Private Sub dgvServicio_KeyDown(sender As Object, e As KeyEventArgs) Handles dgvServicio.KeyDown, DataGridView8.KeyDown, DataGridView5.KeyDown, DataGridView2.KeyDown, DataGridView11.KeyDown
         If btRegistrar.Enabled = False Then Exit Sub
         If e.KeyCode = Keys.Space Then
             buscarServicio()
         End If
     End Sub
-    Private Sub txtIdentificacion_Leave(sender As Object, e As EventArgs) Handles txtIdentificacion.Leave
+    Private Sub txtIdentificacion_Leave(sender As Object, e As EventArgs) Handles txtIdentificacion.Leave, TextBox4.Leave, TextBox31.Leave, TextBox22.Leave, TextBox13.Leave
         If btRegistrar.Enabled = False Then Exit Sub
         If Not String.IsNullOrEmpty(txtIdentificacion.Text) Then
             Try
@@ -252,7 +252,7 @@ Public Class FormVenta
             End Try
         End If
     End Sub
-    Private Sub txtIdentificacion_KeyDown(sender As Object, e As KeyEventArgs) Handles txtIdentificacion.KeyDown
+    Private Sub txtIdentificacion_KeyDown(sender As Object, e As KeyEventArgs) Handles txtIdentificacion.KeyDown, TextBox4.KeyDown, TextBox31.KeyDown, TextBox22.KeyDown, TextBox13.KeyDown
         If Not String.IsNullOrEmpty(txtIdentificacion.Text) Then
             Try
                 If e.KeyCode = Keys.Enter Then
@@ -513,13 +513,13 @@ Public Class FormVenta
             formExistencia.ShowDialog()
         End If
     End Sub
-    Private Sub dgvProducto_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvProducto.CellClick
+    Private Sub dgvProducto_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvProducto.CellClick, DataGridView9.CellClick, DataGridView6.CellClick, DataGridView3.CellClick, DataGridView12.CellClick
         cargarTxtEmpleadoVenta(objVenta.dtProductos, If(IsDBNull(objVenta.dtProductos.Rows(dgvProducto.CurrentCell.RowIndex).Item("EmpleadoP")), Nothing,
                                                                   objVenta.dtProductos.Rows(dgvProducto.CurrentCell.RowIndex).Item("EmpleadoP")),
                            If(IsDBNull(objVenta.dtProductos.Rows(dgvProducto.CurrentCell.RowIndex).Item("EmpleadoN")), Nothing,
                                                                   objVenta.dtProductos.Rows(dgvProducto.CurrentCell.RowIndex).Item("EmpleadoN")))
     End Sub
-    Private Sub dgvServicio_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvServicio.CellClick
+    Private Sub dgvServicio_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvServicio.CellClick, DataGridView8.CellClick, DataGridView5.CellClick, DataGridView2.CellClick, DataGridView11.CellClick
         If e.ColumnIndex = 0 Then
             If objVenta.dtServicio.Rows.Count > 0 Then
                 cargarCostosServicio(If(IsDBNull(objVenta.dtServicio.Rows(dgvServicio.CurrentCell.RowIndex).Item("codigo")), Nothing,
@@ -538,9 +538,9 @@ Public Class FormVenta
                                        Nombre As String)
         If dt.Rows.Count > 0 Then
             If Not IsNothing(codigo) Then
-                txtEmpleadoVenta.Text = Nombre
+                'txtEmpleadoVenta.Text = Nombre
             Else
-                txtEmpleadoVenta.Clear()
+                'txtEmpleadoVenta.Clear()
             End If
         End If
     End Sub
@@ -564,15 +564,23 @@ Public Class FormVenta
 
         End If
     End Sub
-    Private Sub PanelGastos_LostFocus(sender As Object, e As EventArgs) Handles PanelGastos.LostFocus
+    Private Sub PanelGastos_LostFocus(sender As Object, e As EventArgs) Handles PanelGastos.LostFocus, Panel5.LostFocus, Panel4.LostFocus, Panel3.LostFocus, Panel2.LostFocus
         PanelGastos.Visible = False
     End Sub
 
-    Private Sub TextNombre_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextNombre.KeyPress
+    Private Sub TextNombre_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextNombre.KeyPress, TextBox6.KeyPress, TextBox33.KeyPress, TextBox24.KeyPress, TextBox15.KeyPress
         ValidacionDigitacion.validarAlfabetico(e)
     End Sub
 
-    Private Sub txtIdentificacion_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtIdentificacion.KeyPress, TextTelefono.KeyPress
+    Private Sub txtIdentificacion_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtIdentificacion.KeyPress, TextTelefono.KeyPress, TextBox5.KeyPress, TextBox4.KeyPress, TextBox32.KeyPress, TextBox31.KeyPress, TextBox23.KeyPress, TextBox22.KeyPress, TextBox14.KeyPress, TextBox13.KeyPress
         ValidacionDigitacion.validarValoresNumericos(e)
+    End Sub
+
+    Private Sub dgvServicio_CellEndEdit(sender As Object, e As DataGridViewCellEventArgs) Handles dgvServicio.CellEndEdit, DataGridView8.CellEndEdit, DataGridView5.CellEndEdit, DataGridView2.CellEndEdit, DataGridView11.CellEndEdit
+
+    End Sub
+
+    Private Sub dgvProducto_CellEndEdit(sender As Object, e As DataGridViewCellEventArgs) Handles dgvProducto.CellEndEdit, DataGridView9.CellEndEdit, DataGridView6.CellEndEdit, DataGridView3.CellEndEdit, DataGridView12.CellEndEdit
+
     End Sub
 End Class
