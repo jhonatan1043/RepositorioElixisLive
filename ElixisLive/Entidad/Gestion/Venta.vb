@@ -9,6 +9,7 @@
     Property dtServicio As DataTable
     Property estadoAnulado As Boolean
     Property estadoFilaNueva As Boolean
+    Property indice As Integer
     Public Sub New()
         dtProductos = New DataTable
         dtServicio = New DataTable

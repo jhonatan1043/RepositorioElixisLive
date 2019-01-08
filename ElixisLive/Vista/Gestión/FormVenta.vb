@@ -24,7 +24,7 @@ Public Class FormVenta
                 calcularTotales()
             ElseIf dgvProducto.Rows(dgvProducto.CurrentCell.RowIndex).Cells("dgEmpleadoN").Selected = True And
                     Not IsDBNull(dgvProducto.Rows(dgvProducto.CurrentCell.RowIndex).Cells("dgCodigo").Value)
-                consultarEmpleado()
+                consultarEmpleado(1)
             End If
         Catch ex As Exception
             EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
@@ -42,7 +42,7 @@ Public Class FormVenta
                 calcularTotales()
             ElseIf dgvServicio.Rows(dgvServicio.CurrentCell.RowIndex).Cells("dgNombreEmpleado").Selected = True And
                     Not IsDBNull(dgvServicio.Rows(dgvServicio.CurrentCell.RowIndex).Cells("dgCodigoServ").Value)
-                consultarEmpleado()
+                consultarEmpleado(2)
             End If
         Catch ex As Exception
             EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
@@ -62,13 +62,13 @@ Public Class FormVenta
         End If
     End Sub
     Private Sub dgvServicio_CellFormatting(sender As System.Object, e As System.Windows.Forms.DataGridViewCellFormattingEventArgs) Handles dgvServicio.CellFormatting, DataGridView8.CellFormatting, DataGridView5.CellFormatting, DataGridView2.CellFormatting, DataGridView11.CellFormatting
-        If e.ColumnIndex = 4 Then
+        If e.ColumnIndex = 5 Then
             If IsDBNull(e.Value) Then
                 e.Value = Format(Val(0), Constantes.FORMATO_MONEDA)
             Else
                 e.Value = Format(Val(e.Value), Constantes.FORMATO_MONEDA)
             End If
-        ElseIf e.ColumnIndex = 5
+        ElseIf e.ColumnIndex = 4
             e.Value = Replace(Format(Val(e.Value), "P"), ",00", "")
         End If
     End Sub
@@ -76,19 +76,8 @@ Public Class FormVenta
         Dim dFila As DataRow = Nothing
         If dgvProducto.RowCount >= 1 Then
             Try
-                If Not IsDBNull(dgvProducto.Rows(dgvProducto.CurrentCell.RowIndex).Cells("dgEmpleadoP").Value) Then
-                    dFila = consultarEmpleado(dgvProducto.Rows(dgvProducto.CurrentCell.RowIndex).Cells("dgEmpleadoP").Value)
-                    If Not IsNothing(dFila) Then
-                        dgvProducto.Rows(dgvProducto.CurrentCell.RowIndex).Cells("dgEmpleadoN").Value = dFila("Nombre")
-                    Else
-                        dgvProducto.Rows(dgvProducto.CurrentCell.RowIndex).Cells("dgEmpleadoP").Value = Nothing
-                        dgvProducto.Rows(dgvProducto.CurrentCell.RowIndex).Cells("dgEmpleadoN").Value = Nothing
-                        EstiloMensajes.mostrarMensajeError("¡ Empleado no valido !")
-                    End If
-                Else
-                    If Not IsDBNull(objVenta.dtProductos.Rows(dgvProducto.CurrentCell.RowIndex).Item("Codigo")) Then
-                        calcularCampos()
-                    End If
+                If Not IsDBNull(objVenta.dtProductos.Rows(dgvProducto.CurrentCell.RowIndex).Item("Codigo")) Then
+                    calcularCampos()
                 End If
                 calcularTotales()
             Catch ex As Exception
@@ -97,28 +86,28 @@ Public Class FormVenta
         End If
     End Sub
 
-    Private Sub dgvServicio_CellEndEdit(sender As Object, e As EventArgs) Handles dgvServicio.CellEndEdit
-        Dim dFila As DataRow = Nothing
-        If dgvServicio.RowCount >= 1 Then
-            Try
-                If Not IsDBNull(dgvServicio.Rows(dgvServicio.CurrentCell.RowIndex).Cells("dgIdEmpleado").Value) Then
-                    dFila = consultarEmpleado(dgvServicio.Rows(dgvServicio.CurrentCell.RowIndex).Cells("dgIdEmpleado").Value)
-                    If Not IsNothing(dFila) Then
-                        dgvServicio.Rows(dgvServicio.CurrentCell.RowIndex).Cells("dgNombreEmpleado").Value = dFila("Nombre")
-                    Else
-                        dgvServicio.Rows(dgvServicio.CurrentCell.RowIndex).Cells("dgIdEmpleado").Value = Nothing
-                        dgvServicio.Rows(dgvServicio.CurrentCell.RowIndex).Cells("dgNombreEmpleado").Value = Nothing
-                        EstiloMensajes.mostrarMensajeError("¡ Empleado no valido !")
-                    End If
-                Else
-                    dgvServicio.Rows(dgvServicio.CurrentCell.RowIndex).Cells("dgIdEmpleado").Value = Nothing
-                    dgvServicio.Rows(dgvServicio.CurrentCell.RowIndex).Cells("dgNombreEmpleado").Value = Nothing
-                End If
-            Catch ex As Exception
-                EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
-            End Try
-        End If
-    End Sub
+    'Private Sub dgvServicio_CellEndEdit(sender As Object, e As EventArgs) Handles dgvServicio.CellEndEdit
+    '    Dim dFila As DataRow = Nothing
+    '    If dgvServicio.RowCount >= 1 Then
+    '        Try
+    '            If Not IsDBNull(dgvServicio.Rows(dgvServicio.CurrentCell.RowIndex).Cells("dgIdEmpleado").Value) Then
+    '                dFila = consultarEmpleado(dgvServicio.Rows(dgvServicio.CurrentCell.RowIndex).Cells("dgIdEmpleado").Value)
+    '                If Not IsNothing(dFila) Then
+    '                    dgvServicio.Rows(dgvServicio.CurrentCell.RowIndex).Cells("dgNombreEmpleado").Value = dFila("Nombre")
+    '                Else
+    '                    dgvServicio.Rows(dgvServicio.CurrentCell.RowIndex).Cells("dgIdEmpleado").Value = Nothing
+    '                    dgvServicio.Rows(dgvServicio.CurrentCell.RowIndex).Cells("dgNombreEmpleado").Value = Nothing
+    '                    EstiloMensajes.mostrarMensajeError("¡ Empleado no valido !")
+    '                End If
+    '            Else
+    '                dgvServicio.Rows(dgvServicio.CurrentCell.RowIndex).Cells("dgIdEmpleado").Value = Nothing
+    '                dgvServicio.Rows(dgvServicio.CurrentCell.RowIndex).Cells("dgNombreEmpleado").Value = Nothing
+    '            End If
+    '        Catch ex As Exception
+    '            EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
+    '        End Try
+    '    End If
+    'End Sub
     Private Sub dgvProducto_EditingControlShowing(sender As Object, e As DataGridViewEditingControlShowingEventArgs) Handles dgvProducto.EditingControlShowing, DataGridView9.EditingControlShowing, DataGridView6.EditingControlShowing, DataGridView3.EditingControlShowing, DataGridView12.EditingControlShowing
         If objVenta.dtProductos.Rows.Count > 0 Then
             AddHandler e.Control.KeyPress, AddressOf ValidacionDigitacion.validarValoresNumericos
@@ -286,6 +275,9 @@ Public Class FormVenta
         End If
     End Sub
     Private Sub calcularCampos()
+        Dim descuento As Double
+        Dim valor As Integer
+
         If Not IsDBNull(dgvProducto.Rows(dgvProducto.CurrentCell.RowIndex).Cells("dgStock").Value) Then
             If dgvProducto.Rows(dgvProducto.CurrentCell.RowIndex).Cells("dgCantidad").Value >
              dgvProducto.Rows(dgvProducto.CurrentCell.RowIndex).Cells("dgStock").Value Then
@@ -296,8 +288,9 @@ Public Class FormVenta
             For indice = 0 To dgvProducto.RowCount - 1
                 If Not IsDBNull(dgvProducto.Rows(indice).Cells("dgValor").Value) AndAlso
                    Not IsDBNull(dgvProducto.Rows(indice).Cells("dgCantidad").Value) Then
-                    dgvProducto.Rows(indice).Cells("dgTotal").Value =
-                          dgvProducto.Rows(indice).Cells("dgCantidad").Value * dgvProducto.Rows(indice).Cells("dgValor").Value
+                    valor = dgvProducto.Rows(indice).Cells("dgCantidad").Value * dgvProducto.Rows(indice).Cells("dgValor").Value
+                    descuento = (valor * dgvProducto.Rows(indice).Cells("dgDescuento").Value)
+                    dgvProducto.Rows(indice).Cells("dgTotal").Value = (valor - descuento)
                 End If
             Next
         Else
@@ -581,11 +574,12 @@ Public Class FormVenta
     Private Sub txtIdentificacion_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtIdentificacion.KeyPress, TextTelefono.KeyPress, TextBox5.KeyPress, TextBox4.KeyPress, TextBox32.KeyPress, TextBox31.KeyPress, TextBox23.KeyPress, TextBox22.KeyPress, TextBox14.KeyPress, TextBox13.KeyPress
         ValidacionDigitacion.validarValoresNumericos(e)
     End Sub
-    Private Sub consultarEmpleado()
+    Private Sub consultarEmpleado(indice As Integer)
         Dim params As New List(Of String)
         params.Add(String.Empty)
+        objVenta.indice = indice
         Try
-            Generales.buscarElemento(Sentencias.PERSONA_EMPLEADO_CONSULTAR,
+            Generales.buscarElemento("[SP_ADMIN_EMPLEADO_CONSULTAR]",
                                      params,
                                      AddressOf empleadoCargar,
                                      Titulo.BUSQUEDA_EMPLEADO,
@@ -600,11 +594,11 @@ Public Class FormVenta
         Dim dRows As DataRow
         params.Add(pCodigo)
         dRows = Generales.cargarItem(Sentencias.PERSONA_EMPLEADO_CARGAR, params)
-        If dgvProducto.Focused = True Then
+        If objVenta.indice = 1 Then
             objVenta.dtProductos.Rows(dgvProducto.CurrentCell.RowIndex).Item("EmpleadoP") = pCodigo
             objVenta.dtProductos.Rows(dgvProducto.CurrentCell.RowIndex).Item("EmpleadoN") = dRows("Nombre")
             objVenta.dtProductos.AcceptChanges()
-        ElseIf dgvServicio.Focused = True
+        ElseIf objVenta.indice = 2
             objVenta.dtServicio.Rows(dgvServicio.CurrentCell.RowIndex).Item("codigo_Empleado") = pCodigo
             objVenta.dtServicio.Rows(dgvServicio.CurrentCell.RowIndex).Item("NombreEmpleado") = dRows("Nombre")
             objVenta.dtServicio.AcceptChanges()
