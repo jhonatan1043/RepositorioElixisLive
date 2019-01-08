@@ -123,6 +123,7 @@ Public Class FormVenta
         Generales.deshabilitarControles(gbRelevante)
         Generales.deshabilitarBotones(ToolStrip1)
         Generales.limpiarControles(Me)
+        valoresPorDefauld()
         desactivadoPermante()
         validarEdicionGrilla(Constantes.EDITABLE)
         dtFecha.Text = Format(DateTime.Now, Constantes.FORMATO_FECHA2)
@@ -211,6 +212,7 @@ Public Class FormVenta
         If EstiloMensajes.mostrarMensajePregunta(MensajeSistema.CANCELAR) = Constantes.SI Then
             Generales.deshabilitarBotones(ToolStrip1)
             Generales.deshabilitarControles(Me)
+            lbInformativo.Text = "...:"
             If IsNothing(objVenta.codigo) Then
                 Generales.limpiarControles(Me)
             End If
@@ -345,13 +347,6 @@ Public Class FormVenta
         btRegistrar.Enabled = False
         btCancelar.Enabled = False
     End Sub
-    Private Sub desactivadoPermante()
-        TextTotal.ReadOnly = True
-        TextTotalArticulos.ReadOnly = True
-        TextTotalServicio.ReadOnly = True
-        txtTotalGastos.ReadOnly = True
-        txtDescuento.ReadOnly = True
-    End Sub
     Private Sub buscarServicio()
         Dim params As New List(Of String)
         params.Add(String.Empty)
@@ -474,6 +469,10 @@ Public Class FormVenta
             objVenta.codigoPersonaCliente = dRows("codigo")
             TextNombre.Text = dRows("Nombre")
             TextTelefono.Text = dRows("Telefono")
+            txtDescuento.Text = Replace(Format(dRows("Descuento"), "P2"), ",00", "")
+            If Replace(dRows("Descuento"), ",00", "") <> Constantes.SIN_VALOR_NUMERICO Then
+                lbInformativo.Text = "Este Cliente presenta un descuento del " & CStr(txtDescuento.Text)
+            End If
         Else
             objVenta.codigoPersonaCliente = Nothing
             TextNombre.Clear()
@@ -512,34 +511,11 @@ Public Class FormVenta
             formExistencia.ShowDialog()
         End If
     End Sub
-    Private Sub dgvProducto_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvProducto.CellClick, DataGridView9.CellClick, DataGridView6.CellClick, DataGridView3.CellClick, DataGridView12.CellClick
-        cargarTxtEmpleadoVenta(objVenta.dtProductos, If(IsDBNull(objVenta.dtProductos.Rows(dgvProducto.CurrentCell.RowIndex).Item("EmpleadoP")), Nothing,
-                                                                  objVenta.dtProductos.Rows(dgvProducto.CurrentCell.RowIndex).Item("EmpleadoP")),
-                           If(IsDBNull(objVenta.dtProductos.Rows(dgvProducto.CurrentCell.RowIndex).Item("EmpleadoN")), Nothing,
-                                                                  objVenta.dtProductos.Rows(dgvProducto.CurrentCell.RowIndex).Item("EmpleadoN")))
-    End Sub
     Private Sub dgvServicio_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvServicio.CellClick, DataGridView8.CellClick, DataGridView5.CellClick, DataGridView2.CellClick, DataGridView11.CellClick
         If e.ColumnIndex = 0 Then
             If objVenta.dtServicio.Rows.Count > 0 Then
                 cargarCostosServicio(If(IsDBNull(objVenta.dtServicio.Rows(dgvServicio.CurrentCell.RowIndex).Item("codigo")), Nothing,
                                      objVenta.dtServicio.Rows(dgvServicio.CurrentCell.RowIndex).Item("codigo")))
-            End If
-        Else
-            cargarTxtEmpleadoVenta(objVenta.dtServicio, If(IsDBNull(objVenta.dtServicio.Rows(dgvServicio.CurrentCell.RowIndex).Item("codigo_Empleado")), Nothing,
-                                                                   objVenta.dtServicio.Rows(dgvServicio.CurrentCell.RowIndex).Item("codigo_Empleado")),
-                            If(IsDBNull(objVenta.dtServicio.Rows(dgvServicio.CurrentCell.RowIndex).Item("NombreEmpleado")), Nothing,
-                                                                   objVenta.dtServicio.Rows(dgvServicio.CurrentCell.RowIndex).Item("NombreEmpleado")))
-        End If
-    End Sub
-
-    Private Sub cargarTxtEmpleadoVenta(dt As DataTable,
-                                       codigo As String,
-                                       Nombre As String)
-        If dt.Rows.Count > 0 Then
-            If Not IsNothing(codigo) Then
-                'txtEmpleadoVenta.Text = Nombre
-            Else
-                'txtEmpleadoVenta.Clear()
             End If
         End If
     End Sub
@@ -603,5 +579,20 @@ Public Class FormVenta
             objVenta.dtServicio.Rows(dgvServicio.CurrentCell.RowIndex).Item("NombreEmpleado") = dRows("Nombre")
             objVenta.dtServicio.AcceptChanges()
         End If
+    End Sub
+    Private Sub desactivadoPermante()
+        TextTotal.ReadOnly = True
+        TextTotalArticulos.ReadOnly = True
+        TextTotalServicio.ReadOnly = True
+        txtTotalGastos.ReadOnly = True
+        txtDescuento.ReadOnly = True
+    End Sub
+    Private Sub valoresPorDefauld()
+        TextTotal.Text = Format(0, Constantes.FORMATO_MONEDA)
+        TextTotalArticulos.Text = Format(0, Constantes.FORMATO_MONEDA)
+        TextTotalServicio.Text = Format(0, Constantes.FORMATO_MONEDA)
+        txtTotalGastos.Text = Format(0, Constantes.FORMATO_MONEDA)
+        txtDescuento.Text = Replace(Format(0, "p2"), ",00", "")
+        lbInformativo.Text = "...:"
     End Sub
 End Class
