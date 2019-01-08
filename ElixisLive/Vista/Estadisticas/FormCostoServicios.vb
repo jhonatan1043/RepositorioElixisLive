@@ -10,7 +10,9 @@
         dgvServicio.Columns(1).AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
     End Sub
     Private Sub dgvServicio_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvServicio.CellContentClick
-        cargarProductos(dgvServicio.CurrentRow.Cells(0).Value)
+        If dgvServicio.RowCount > 0 Then
+            cargarProductos(dgvServicio.CurrentRow.Cells(0).Value)
+        End If
     End Sub
     Private Sub dgvProducto_CellFormatting(sender As Object, e As DataGridViewCellFormattingEventArgs) Handles dgvProducto.CellFormatting
         If e.ColumnIndex = 6 Then
