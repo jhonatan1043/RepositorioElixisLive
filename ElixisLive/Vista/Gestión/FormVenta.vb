@@ -51,7 +51,7 @@ Public Class FormVenta
     Private Sub dgvProducto_CellFormatting(sender As System.Object, e As System.Windows.Forms.DataGridViewCellFormattingEventArgs) Handles dgvProducto.CellFormatting, DataGridView9.CellFormatting, DataGridView6.CellFormatting, DataGridView3.CellFormatting, DataGridView12.CellFormatting
 
         If e.ColumnIndex = 5 _
-            OrElse e.ColumnIndex = 7 Then
+            OrElse e.ColumnIndex = 8 Then
             If IsDBNull(e.Value) Then
                 e.Value = Format(Val(0), Constantes.FORMATO_MONEDA)
             Else
@@ -62,7 +62,7 @@ Public Class FormVenta
         End If
     End Sub
     Private Sub dgvServicio_CellFormatting(sender As System.Object, e As System.Windows.Forms.DataGridViewCellFormattingEventArgs) Handles dgvServicio.CellFormatting, DataGridView8.CellFormatting, DataGridView5.CellFormatting, DataGridView2.CellFormatting, DataGridView11.CellFormatting
-        If e.ColumnIndex = 5 Then
+        If e.ColumnIndex = 6 Then
             If IsDBNull(e.Value) Then
                 e.Value = Format(Val(0), Constantes.FORMATO_MONEDA)
             Else
@@ -85,29 +85,6 @@ Public Class FormVenta
             End Try
         End If
     End Sub
-
-    'Private Sub dgvServicio_CellEndEdit(sender As Object, e As EventArgs) Handles dgvServicio.CellEndEdit
-    '    Dim dFila As DataRow = Nothing
-    '    If dgvServicio.RowCount >= 1 Then
-    '        Try
-    '            If Not IsDBNull(dgvServicio.Rows(dgvServicio.CurrentCell.RowIndex).Cells("dgIdEmpleado").Value) Then
-    '                dFila = consultarEmpleado(dgvServicio.Rows(dgvServicio.CurrentCell.RowIndex).Cells("dgIdEmpleado").Value)
-    '                If Not IsNothing(dFila) Then
-    '                    dgvServicio.Rows(dgvServicio.CurrentCell.RowIndex).Cells("dgNombreEmpleado").Value = dFila("Nombre")
-    '                Else
-    '                    dgvServicio.Rows(dgvServicio.CurrentCell.RowIndex).Cells("dgIdEmpleado").Value = Nothing
-    '                    dgvServicio.Rows(dgvServicio.CurrentCell.RowIndex).Cells("dgNombreEmpleado").Value = Nothing
-    '                    EstiloMensajes.mostrarMensajeError("¡ Empleado no valido !")
-    '                End If
-    '            Else
-    '                dgvServicio.Rows(dgvServicio.CurrentCell.RowIndex).Cells("dgIdEmpleado").Value = Nothing
-    '                dgvServicio.Rows(dgvServicio.CurrentCell.RowIndex).Cells("dgNombreEmpleado").Value = Nothing
-    '            End If
-    '        Catch ex As Exception
-    '            EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
-    '        End Try
-    '    End If
-    'End Sub
     Private Sub dgvProducto_EditingControlShowing(sender As Object, e As DataGridViewEditingControlShowingEventArgs) Handles dgvProducto.EditingControlShowing, DataGridView9.EditingControlShowing, DataGridView6.EditingControlShowing, DataGridView3.EditingControlShowing, DataGridView12.EditingControlShowing
         If objVenta.dtProductos.Rows.Count > 0 Then
             AddHandler e.Control.KeyPress, AddressOf ValidacionDigitacion.validarValoresNumericos
@@ -292,6 +269,7 @@ Public Class FormVenta
                    Not IsDBNull(dgvProducto.Rows(indice).Cells("dgCantidad").Value) Then
                     valor = dgvProducto.Rows(indice).Cells("dgCantidad").Value * dgvProducto.Rows(indice).Cells("dgValor").Value
                     descuento = (valor * dgvProducto.Rows(indice).Cells("dgDescuento").Value)
+                    dgvProducto.Rows(indice).Cells("dgValorDescuento").Value = descuento
                     dgvProducto.Rows(indice).Cells("dgTotal").Value = (valor - descuento)
                 End If
             Next
@@ -300,6 +278,11 @@ Public Class FormVenta
         End If
     End Sub
     Private Sub calcularTotales()
+        Dim descuento As Double
+        Dim valorTotal As Integer
+        Dim descuentoTotalServicio As Integer
+        Dim descuentoTotalProducto As Integer
+
         dgvProducto.EndEdit()
         dgvServicio.EndEdit()
         Try
@@ -307,17 +290,24 @@ Public Class FormVenta
                 cantidadServicio As Double
             If dgvProducto.Rows.Count >= 1 Then
                 cantidadArticulos = objVenta.dtProductos.Compute("SUM(Total)", "")
+                descuentoTotalProducto = objVenta.dtProductos.Compute("SUM(valorDescuento)", "")
             Else
                 cantidadArticulos = Constantes.SIN_VALOR_NUMERICO
             End If
             If dgvServicio.Rows.Count >= 1 Then
                 cantidadServicio = objVenta.dtServicio.Compute("SUM(ValorServicio)", "")
+                descuentoTotalServicio = objVenta.dtServicio.Compute("SUM(valorDescuento)", "")
             Else
                 cantidadServicio = Constantes.SIN_VALOR_NUMERICO
             End If
             TextTotalArticulos.Text = CDbl(cantidadArticulos).ToString(Constantes.FORMATO_MONEDA)
             TextTotalServicio.Text = CDbl(cantidadServicio).ToString(Constantes.FORMATO_MONEDA)
-            TextTotal.Text = CDbl((cantidadArticulos + cantidadServicio)).ToString(Constantes.FORMATO_MONEDA)
+
+            valorTotal = (cantidadArticulos + cantidadServicio)
+            descuento = (valorTotal * objVenta.descuentoCliente)
+            TextTotal.Text = CDbl(valorTotal - descuento).ToString(Constantes.FORMATO_MONEDA)
+            txtDescuento.Text = CDbl(descuentoTotalProducto + descuentoTotalServicio + descuento).ToString(Constantes.FORMATO_MONEDA)
+
         Catch ex As Exception
             EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
         End Try
@@ -334,6 +324,11 @@ Public Class FormVenta
         TextNombre.Text = dRows("Nombre")
         TextTelefono.Text = dRows("Telefono")
         dtFecha.Text = Format(dRows("Fecha_Venta"), Constantes.FORMATO_FECHA2)
+        objVenta.descuentoCliente = dRows("Descuento")
+
+        If Replace(dRows("Descuento"), ",00", "") <> Constantes.SIN_VALOR_NUMERICO Then
+            lbInformativo.Text = "Este Cliente presento un descuento del " & CStr(Replace(Format(objVenta.descuentoCliente, "p2"), ",00", ""))
+        End If
 
         Generales.llenarTabla(Sentencias.VENTA_CARGAR_PRODUCTO, params, objVenta.dtProductos)
         Generales.llenarTabla(Sentencias.VENTA_CARGAR_SERVICIO, params, objVenta.dtServicio)
@@ -356,7 +351,7 @@ Public Class FormVenta
                                    dgvServicio,
                                    objVenta.dtServicio,
                                    0,
-                                   3,
+                                   4,
                                    0,
                                    0,
                                    True)
@@ -386,6 +381,7 @@ Public Class FormVenta
             .Columns("dgCantidad").DataPropertyName = "Cantidad"
             .Columns("dgValor").DataPropertyName = "Valor"
             .Columns("dgDescuento").DataPropertyName = "descuento"
+            .Columns("dgValorDescuento").DataPropertyName = "valorDescuento"
             .Columns("dgTotal").DataPropertyName = "Total"
             .Columns("dgEmpleadoP").DataPropertyName = "EmpleadoP"
             .Columns("dgEmpleadoN").DataPropertyName = "EmpleadoN"
@@ -408,6 +404,7 @@ Public Class FormVenta
             .Columns("dgCodigoServ").DataPropertyName = "codigo"
             .Columns("dgDescripcionServ").DataPropertyName = "Descripcion"
             .Columns("dgDescuentoS").DataPropertyName = "Descuento"
+            .Columns("dgValorDescuentoS").DataPropertyName = "valorDescuento"
             .Columns("dgValorServ").DataPropertyName = "ValorServicio"
             .Columns("dgIdEmpleado").DataPropertyName = "codigo_Empleado"
             .Columns("dgNombreEmpleado").DataPropertyName = "NombreEmpleado"
@@ -469,9 +466,10 @@ Public Class FormVenta
             objVenta.codigoPersonaCliente = dRows("codigo")
             TextNombre.Text = dRows("Nombre")
             TextTelefono.Text = dRows("Telefono")
-            txtDescuento.Text = Replace(Format(dRows("Descuento"), "P2"), ",00", "")
+            objVenta.descuentoCliente = dRows("Descuento")
             If Replace(dRows("Descuento"), ",00", "") <> Constantes.SIN_VALOR_NUMERICO Then
-                lbInformativo.Text = "Este Cliente presenta un descuento del " & CStr(txtDescuento.Text)
+                lbInformativo.Text = "Este Cliente presenta un descuento del " & CStr(Replace(Format(objVenta.descuentoCliente, "p2"), ",00", ""))
+                calcularTotales()
             End If
         Else
             objVenta.codigoPersonaCliente = Nothing
@@ -592,7 +590,7 @@ Public Class FormVenta
         TextTotalArticulos.Text = Format(0, Constantes.FORMATO_MONEDA)
         TextTotalServicio.Text = Format(0, Constantes.FORMATO_MONEDA)
         txtTotalGastos.Text = Format(0, Constantes.FORMATO_MONEDA)
-        txtDescuento.Text = Replace(Format(0, "p2"), ",00", "")
+        txtDescuento.Text = Format(0, Constantes.FORMATO_MONEDA)
         lbInformativo.Text = "...:"
     End Sub
 End Class

@@ -9,6 +9,7 @@
     Property dtServicio As DataTable
     Property estadoAnulado As Boolean
     Property estadoFilaNueva As Boolean
+    Property descuentoCliente As Decimal
     Property indice As Integer
     Public Sub New()
         dtProductos = New DataTable
@@ -20,6 +21,7 @@
         dtProductos.Columns.Add("Cantidad", Type.GetType("System.Int32")).DefaultValue = 0
         dtProductos.Columns.Add("Valor", Type.GetType("System.Decimal")).DefaultValue = 0
         dtProductos.Columns.Add("descuento", Type.GetType("System.Decimal")).DefaultValue = 0
+        dtProductos.Columns.Add("Valordescuento", Type.GetType("System.Decimal")).DefaultValue = 0
         dtProductos.Columns.Add("Total", Type.GetType("System.Decimal")).DefaultValue = 0
         dtProductos.Columns.Add("EmpleadoP", Type.GetType("System.String"))
         dtProductos.Columns.Add("EmpleadoN", Type.GetType("System.String"))
@@ -27,10 +29,10 @@
         dtServicio.Columns.Add("codigo", Type.GetType("System.Int32"))
         dtServicio.Columns.Add("Descripcion", Type.GetType("System.String"))
         dtServicio.Columns.Add("descuento", Type.GetType("System.Decimal")).DefaultValue = 0
+        dtServicio.Columns.Add("Valordescuento", Type.GetType("System.Decimal")).DefaultValue = 0
         dtServicio.Columns.Add("ValorServicio", Type.GetType("System.Decimal")).DefaultValue = 0
         dtServicio.Columns.Add("codigo_Empleado", Type.GetType("System.String"))
         dtServicio.Columns.Add("NombreEmpleado", Type.GetType("System.String"))
-
 
         sqlAnular = "[SP_INVEN_VENTA_ANULAR]"
         sqlCargar = Sentencias.INVEN_VENTA_CARGAR

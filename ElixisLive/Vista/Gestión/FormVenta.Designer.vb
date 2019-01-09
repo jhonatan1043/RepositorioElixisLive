@@ -131,6 +131,7 @@ Partial Class FormVenta
         Me.dgCodigoServ = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.dgDescripcionServ = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.dgDescuentoS = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dgValorDescuentoS = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.dgValorServ = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.dgidEmpleado = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.dgNombreEmpleado = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -143,6 +144,7 @@ Partial Class FormVenta
         Me.dgCantidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.dgValor = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.dgDescuento = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dgValorDescuento = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.dgTotal = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.dgEmpleadoP = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.dgEmpleadoN = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -581,7 +583,7 @@ Partial Class FormVenta
         Me.GroupBox8.Controls.Add(Me.PanelGastos)
         Me.GroupBox8.Controls.Add(Me.dgvServicio)
         Me.GroupBox8.ForeColor = System.Drawing.Color.DarkBlue
-        Me.GroupBox8.Location = New System.Drawing.Point(6, 205)
+        Me.GroupBox8.Location = New System.Drawing.Point(5, 52)
         Me.GroupBox8.Name = "GroupBox8"
         Me.GroupBox8.Size = New System.Drawing.Size(868, 155)
         Me.GroupBox8.TabIndex = 60036
@@ -666,7 +668,7 @@ Partial Class FormVenta
         DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.dgvServicio.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle4
         Me.dgvServicio.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvServicio.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.dgCodigoServ, Me.dgDescripcionServ, Me.dgDescuentoS, Me.dgValorServ, Me.dgidEmpleado, Me.dgNombreEmpleado, Me.dgDetalle, Me.dgQuitarServ})
+        Me.dgvServicio.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.dgCodigoServ, Me.dgDescripcionServ, Me.dgDescuentoS, Me.dgValorDescuentoS, Me.dgValorServ, Me.dgidEmpleado, Me.dgNombreEmpleado, Me.dgDetalle, Me.dgQuitarServ})
         Me.dgvServicio.Location = New System.Drawing.Point(4, 18)
         Me.dgvServicio.MultiSelect = False
         Me.dgvServicio.Name = "dgvServicio"
@@ -695,6 +697,13 @@ Partial Class FormVenta
         Me.dgDescuentoS.Name = "dgDescuentoS"
         Me.dgDescuentoS.ReadOnly = True
         Me.dgDescuentoS.Width = 82
+        '
+        'dgValorDescuentoS
+        '
+        Me.dgValorDescuentoS.HeaderText = "Valor Descuento"
+        Me.dgValorDescuentoS.Name = "dgValorDescuentoS"
+        Me.dgValorDescuentoS.ReadOnly = True
+        Me.dgValorDescuentoS.Visible = False
         '
         'dgValorServ
         '
@@ -761,8 +770,8 @@ Partial Class FormVenta
         DataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.dgvProducto.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle9
         Me.dgvProducto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvProducto.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.dgCodigo, Me.dgDescripcion, Me.dgStock, Me.dgCantidad, Me.dgValor, Me.dgDescuento, Me.dgTotal, Me.dgEmpleadoP, Me.dgEmpleadoN, Me.dgQuitar})
-        Me.dgvProducto.Location = New System.Drawing.Point(9, 71)
+        Me.dgvProducto.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.dgCodigo, Me.dgDescripcion, Me.dgStock, Me.dgCantidad, Me.dgValor, Me.dgDescuento, Me.dgValorDescuento, Me.dgTotal, Me.dgEmpleadoP, Me.dgEmpleadoN, Me.dgQuitar})
+        Me.dgvProducto.Location = New System.Drawing.Point(9, 224)
         Me.dgvProducto.MultiSelect = False
         Me.dgvProducto.Name = "dgvProducto"
         Me.dgvProducto.ReadOnly = True
@@ -817,6 +826,13 @@ Partial Class FormVenta
         Me.dgDescuento.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
         Me.dgDescuento.Width = 63
         '
+        'dgValorDescuento
+        '
+        Me.dgValorDescuento.HeaderText = "valor Descuento"
+        Me.dgValorDescuento.Name = "dgValorDescuento"
+        Me.dgValorDescuento.ReadOnly = True
+        Me.dgValorDescuento.Visible = False
+        '
         'dgTotal
         '
         DataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
@@ -855,7 +871,7 @@ Partial Class FormVenta
         'GroupBox5
         '
         Me.GroupBox5.ForeColor = System.Drawing.Color.DarkBlue
-        Me.GroupBox5.Location = New System.Drawing.Point(6, 52)
+        Me.GroupBox5.Location = New System.Drawing.Point(6, 209)
         Me.GroupBox5.Name = "GroupBox5"
         Me.GroupBox5.Size = New System.Drawing.Size(868, 154)
         Me.GroupBox5.TabIndex = 60035
@@ -870,7 +886,7 @@ Partial Class FormVenta
         Me.gbRelevante.Controls.Add(Me.lbInformativo)
         Me.gbRelevante.Controls.Add(Me.Label3)
         Me.gbRelevante.Controls.Add(Me.txtCodigo)
-        Me.gbRelevante.Location = New System.Drawing.Point(6, 13)
+        Me.gbRelevante.Location = New System.Drawing.Point(6, 11)
         Me.gbRelevante.Name = "gbRelevante"
         Me.gbRelevante.Size = New System.Drawing.Size(868, 40)
         Me.gbRelevante.TabIndex = 60034
@@ -956,7 +972,7 @@ Partial Class FormVenta
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(155, 31)
         Me.Label10.TabIndex = 60037
-        Me.Label10.Text = "% Descuento"
+        Me.Label10.Text = "Descuento"
         Me.Label10.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
         'TextTotal
@@ -4040,22 +4056,24 @@ Partial Class FormVenta
     Public WithEvents Label44 As Label
     Public WithEvents Label21 As Label
     Public WithEvents Label22 As Label
+    Friend WithEvents dgCodigoServ As DataGridViewTextBoxColumn
+    Friend WithEvents dgDescripcionServ As DataGridViewTextBoxColumn
+    Friend WithEvents dgDescuentoS As DataGridViewTextBoxColumn
+    Friend WithEvents dgValorDescuentoS As DataGridViewTextBoxColumn
+    Friend WithEvents dgValorServ As DataGridViewTextBoxColumn
+    Friend WithEvents dgidEmpleado As DataGridViewTextBoxColumn
+    Friend WithEvents dgNombreEmpleado As DataGridViewTextBoxColumn
+    Friend WithEvents dgDetalle As DataGridViewButtonColumn
+    Friend WithEvents dgQuitarServ As DataGridViewImageColumn
     Friend WithEvents dgCodigo As DataGridViewTextBoxColumn
     Friend WithEvents dgDescripcion As DataGridViewTextBoxColumn
     Friend WithEvents dgStock As DataGridViewTextBoxColumn
     Friend WithEvents dgCantidad As DataGridViewTextBoxColumn
     Friend WithEvents dgValor As DataGridViewTextBoxColumn
     Friend WithEvents dgDescuento As DataGridViewTextBoxColumn
+    Friend WithEvents dgValorDescuento As DataGridViewTextBoxColumn
     Friend WithEvents dgTotal As DataGridViewTextBoxColumn
     Friend WithEvents dgEmpleadoP As DataGridViewTextBoxColumn
     Friend WithEvents dgEmpleadoN As DataGridViewTextBoxColumn
     Friend WithEvents dgQuitar As DataGridViewImageColumn
-    Friend WithEvents dgCodigoServ As DataGridViewTextBoxColumn
-    Friend WithEvents dgDescripcionServ As DataGridViewTextBoxColumn
-    Friend WithEvents dgDescuentoS As DataGridViewTextBoxColumn
-    Friend WithEvents dgValorServ As DataGridViewTextBoxColumn
-    Friend WithEvents dgidEmpleado As DataGridViewTextBoxColumn
-    Friend WithEvents dgNombreEmpleado As DataGridViewTextBoxColumn
-    Friend WithEvents dgDetalle As DataGridViewButtonColumn
-    Friend WithEvents dgQuitarServ As DataGridViewImageColumn
 End Class

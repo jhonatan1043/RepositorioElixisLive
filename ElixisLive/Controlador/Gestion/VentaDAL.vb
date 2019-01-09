@@ -17,6 +17,7 @@ Public Class VentaDAL
                     comando.Parameters.Add(New SqlParameter("@Nit", SqlDbType.NVarChar)).Value = objVenta.identificacion
                     comando.Parameters.Add(New SqlParameter("@Nombre", SqlDbType.NVarChar)).Value = objVenta.nombre
                     comando.Parameters.Add(New SqlParameter("@telefono", SqlDbType.NVarChar)).Value = objVenta.telefono
+                    comando.Parameters.Add(New SqlParameter("@Descuento", SqlDbType.Decimal)).Value = objVenta.descuentoCliente
                     comando.Parameters.Add(New SqlParameter("@tablaProducto", SqlDbType.Structured)).Value = objVenta.dtProductos
                     comando.Parameters.Add(New SqlParameter("@tablaServicio", SqlDbType.Structured)).Value = objVenta.dtServicio
                     objVenta.codigo = CType(comando.ExecuteScalar, String)
