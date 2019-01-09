@@ -10,6 +10,7 @@ Public Class FormPrincipal
             Try
                 ctlMDI = CType(ctl, MdiClient)
                 ctlMDI.BackgroundImage = My.Resources.Quality_logo
+                'pitImagen.Image = My.Resources.Anclar
                 ctlMDI.BackColor = Me.BackColor
             Catch exc As InvalidCastException
             End Try
@@ -32,7 +33,7 @@ Public Class FormPrincipal
         elemento.nombre = e.Node.Tag
         Return elemento
     End Function
-    'Private Sub pitImagen_Click(sender As Object, e As EventArgs) Handles pitImagen.Click
+    'Private Sub pitImagen_Click(sender As Object, e As EventArgs)
     '    If banderaAncla = False Then
     '        desAnclar()
     '    Else
@@ -46,6 +47,7 @@ Public Class FormPrincipal
     '    ctlMDI.BackgroundImage = My.Resources.Quality_logo
     '    pitImagen.Visible = True
     '    banderaAncla = False
+    '    Generales.formularioAbierto()
     'End Sub
     'Private Sub desAnclar()
     '    'pitImagen.Location = New Point(10, 3)
@@ -54,24 +56,30 @@ Public Class FormPrincipal
     '    ctlMDI.BackgroundImage = My.Resources.Quality_logo
     '    pitImagen.Visible = False
     '    banderaAncla = True
+    '    Generales.formularioAbierto()
     '    arbolMenu.Update()
-    'End Sub
-    'Private Sub arbolMenu_MouseMove(sender As Object, e As MouseEventArgs) Handles arbolMenu.MouseMove
-    '    If banderaAncla = True Then
-    '        arbolMenu.Size = New Point(239, 733)
-    '        ctlMDI.BackgroundImage = Nothing
-    '        ctlMDI.BackgroundImage = My.Resources.Quality_logo
-    '        pitImagen.Visible = True
-    '        arbolMenu.Update()
-    '        pitImagen.Update()
-    '    End If
     'End Sub
     'Private Sub arbolMenu_MouseLeave(sender As Object, e As EventArgs) Handles arbolMenu.MouseLeave
     '    If banderaAncla = True Then
     '        arbolMenu.Size = New Point(5, 733)
     '        ctlMDI.BackgroundImage = My.Resources.Quality_logo
     '        pitImagen.Visible = False
+    '        Generales.formularioAbierto()
     '        arbolMenu.Update()
     '    End If
     'End Sub
+
+    'Private Sub arbolMenu_MouseHover(sender As Object, e As EventArgs) Handles arbolMenu.MouseHover
+    '    If banderaAncla = True Then
+    '        arbolMenu.Size = New Point(239, 733)
+    '        ctlMDI.BackgroundImage = Nothing
+    '        ctlMDI.BackgroundImage = My.Resources.Quality_logo
+    '        pitImagen.Visible = True
+    '        Generales.formularioAbierto()
+    '        arbolMenu.Update()
+    '        pitImagen.Update()
+    '    End If
+    'End Sub
+
+
 End Class

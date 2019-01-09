@@ -59,6 +59,7 @@
         paramas.Add(pCodigo)
 
         dRows = Generales.cargarItem("SP_SERVICIO_CARGAR", paramas)
+        txtcodigo.Text = pCodigo
         objCostoServicio.codigoServicio = pCodigo
         txtnombre.Text = dRows("Descripcion")
 
@@ -73,6 +74,8 @@
     Private Sub btRegistrar_Click(sender As Object, e As EventArgs) Handles btRegistrar.Click
         Try
             dgvRegistro.EndEdit()
+            objCostoServicio.dtRegistro.AcceptChanges()
+
             If validarCampos() = True Then
                 CostoServicioBLL.guardarCostoServicio(objCostoServicio)
                 Generales.habilitarBotones(ToolStrip1)
@@ -240,6 +243,8 @@
             EstiloMensajes.mostrarMensajeAdvertencia("Favor seleccionar un servicio")
         ElseIf objCostoServicio.dtRegistro.Rows.Count <= 1
             EstiloMensajes.mostrarMensajeAdvertencia("Favor agregar algun movimiento")
+        ElseIf objCostoServicio.dtRegistro.Select(" [Codigo] <> NULL And [Recomendacion] = 0 And [Valor] = 0").Count > 0
+            EstiloMensajes.mostrarMensajeAdvertencia("Favor Asignar los valores requeridos")
         Else
             Return True
         End If

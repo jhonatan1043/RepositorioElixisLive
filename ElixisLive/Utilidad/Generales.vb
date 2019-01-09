@@ -790,5 +790,13 @@ Or TypeOf ctl Is System.Windows.Forms.CheckBox Or TypeOf ctl Is System.Windows.F
             KeyCode = 0
         End If
     End Sub
-
+    Public Shared Sub formularioAbierto()
+        Dim objForm As System.Windows.Forms.Form
+        Dim nombre As String
+        For Each objForm In My.Application.OpenForms
+            nombre = objForm.Name
+            objForm.Update()
+            objForm.StartPosition = FormStartPosition.CenterScreen
+        Next
+    End Sub
 End Class

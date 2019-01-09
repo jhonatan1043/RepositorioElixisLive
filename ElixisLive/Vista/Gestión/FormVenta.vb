@@ -105,6 +105,7 @@ Public Class FormVenta
         validarEdicionGrilla(Constantes.EDITABLE)
         dtFecha.Text = Format(DateTime.Now, Constantes.FORMATO_FECHA2)
         objVenta.codigo = Nothing
+        objVenta.descuentoCliente = Constantes.SIN_VALOR_NUMERICO
         objVenta.dtProductos.Rows.Add()
         objVenta.dtServicio.Rows.Add()
         btRegistrar.Enabled = True
@@ -190,6 +191,7 @@ Public Class FormVenta
             Generales.deshabilitarBotones(ToolStrip1)
             Generales.deshabilitarControles(Me)
             lbInformativo.Text = "...:"
+            objVenta.descuentoCliente = Constantes.SIN_VALOR_NUMERICO
             If IsNothing(objVenta.codigo) Then
                 Generales.limpiarControles(Me)
             End If
