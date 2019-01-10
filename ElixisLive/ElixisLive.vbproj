@@ -157,8 +157,10 @@
     <Compile Include="Entidad\Gestion\Compra.vb" />
     <Compile Include="Entidad\Gestion\Venta.vb" />
     <Compile Include="Entidad\Administracion\Cliente.vb" />
+    <Compile Include="Entidad\Inventario\UbicacionProducto.vb" />
     <Compile Include="Entidad\Inventario\EntradaInventario.vb" />
     <Compile Include="Entidad\Inventario\ListaPrecio.vb" />
+    <Compile Include="Entidad\Inventario\Lote.vb" />
     <Compile Include="Entidad\Inventario\Proveedor.vb" />
     <Compile Include="Entidad\Inventario\producto.vb" />
     <Compile Include="Entidad\Nomina\Nomina.vb" />
@@ -350,6 +352,18 @@
     <Compile Include="Vista\Gestión\FormVenta.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Vista\Inventario\FormLote.Designer.vb">
+      <DependentUpon>FormLote.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Inventario\FormLote.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Inventario\FormProductoUbicacion.Designer.vb">
+      <DependentUpon>FormProductoUbicacion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Inventario\FormProductoUbicacion.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Vista\Inventario\FormEntradaInventario.Designer.vb">
       <DependentUpon>FormEntradaInventario.vb</DependentUpon>
     </Compile>
@@ -505,6 +519,12 @@
     <EmbeddedResource Include="Vista\Gestión\FormVenta.resx">
       <DependentUpon>FormVenta.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Inventario\FormLote.resx">
+      <DependentUpon>FormLote.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Inventario\FormProductoUbicacion.resx">
+      <DependentUpon>FormProductoUbicacion.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vista\Inventario\FormEntradaInventario.resx">
       <DependentUpon>FormEntradaInventario.vb</DependentUpon>
     </EmbeddedResource>
@@ -567,6 +587,7 @@
     <Content Include="ReferenciaDLL\CnxElixisLiveBD.dll" />
     <Content Include="ReferenciaDLL\MySql.Data.DLL" />
     <Content Include="ReferenciaDLL\NotifySenderControl.dll" />
+    <None Include="Resources\plus-icon.png" />
     <None Include="Resources\Actions-button-cancel-icon.png" />
     <None Include="Resources\Apps-session-halt-icon.png" />
     <None Include="Resources\Apps-session-quit-icon.png" />
