@@ -108,9 +108,9 @@ Public Class FormPerfil
                 objPerfil.guardarPerfil()
                 txtcodigo.Text = objPerfil.codigoPerfil
                 guardarPermisos()
-
                 Generales.deshabilitarControles(Me)
                 Generales.habilitarBotones(Me.ToolStrip1)
+                principalBLL.cargarMenu(arbolmenu)
                 btRegistrar.Enabled = False
                 btCancelar.Enabled = False
                 arbolmenu.Enabled = False
