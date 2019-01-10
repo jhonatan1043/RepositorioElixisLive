@@ -22,6 +22,10 @@
     Property codigoPerfil As Integer
     Property asignar As Boolean
     Property dtSucursal As DataTable
+    Property chEmpleado As Boolean
+    Property chCliente As Boolean
+    Property chProveedor As Boolean
+
     Public Sub New()
         dtSucursal = New DataTable
         dtRegistro = New DataTable

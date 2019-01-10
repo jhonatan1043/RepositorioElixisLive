@@ -15,6 +15,9 @@ Public Class FormPersona
         objPersona.codigoTipoIdentificacion = CombotipoIdentificacion.SelectedValue
         objPersona.asignar = chUsuario.Checked
         objPersona.usuario = txtUsuario.Text
+        objPersona.chEmpleado = rbEmpleado.Checked
+        objPersona.chCliente = rbCliente.Checked
+        objPersona.chProveedor = rbProveedor.Checked
     End Sub
     Private Function validarCampos() As Boolean
         If String.IsNullOrEmpty(TextIdentificacion.Text) Or
@@ -103,6 +106,7 @@ Public Class FormPersona
         If EstiloMensajes.mostrarMensajePregunta(MensajeSistema.EDITAR) = Constantes.SI Then
             Generales.deshabilitarBotones(ToolStrip1)
             Generales.habilitarControles(Me)
+            desHabilitarCheck()
             btCancelar.Enabled = True
             btRegistrar.Enabled = True
             listaSucursalesCargar(objPersona.codigo, Constantes.EDITABLE)
@@ -163,6 +167,9 @@ Public Class FormPersona
                 chUsuario.Checked = If(IsDBNull(dfila("Codigo_Perfil")), False, True)
                 txtUsuario.Text = dfila("Usuario")
                 txtPerfil.Text = dfila("Perfil")
+                rbEmpleado.Checked = dfila("Empleado")
+                rbCliente.Checked = dfila("Cliente")
+                rbProveedor.Checked = dfila("Proveedor")
                 listaSucursalesCargar(pcodigo, Constantes.NO_EDITABLE)
             End If
             Generales.habilitarBotones(ToolStrip1)
@@ -369,4 +376,10 @@ Public Class FormPersona
             e.Cancel = True
         End If
     End Sub
+    Private Sub desHabilitarCheck()
+        rbEmpleado.Enabled = False
+        rbCliente.Enabled = False
+        rbProveedor.Enabled = False
+    End Sub
+
 End Class

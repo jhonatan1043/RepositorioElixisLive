@@ -24,6 +24,9 @@ Public Class PersonaDAL
                     comando.Parameters.Add(New SqlParameter("@CodigoPerfil", SqlDbType.Int)).Value = objPersona.codigoPerfil
                     comando.Parameters.Add(New SqlParameter("@Usuario", SqlDbType.NVarChar)).Value = objPersona.usuario
                     comando.Parameters.Add(New SqlParameter("@Asignar", SqlDbType.Bit)).Value = objPersona.asignar
+                    comando.Parameters.Add(New SqlParameter("@Empleado", SqlDbType.Bit)).Value = objPersona.chEmpleado
+                    comando.Parameters.Add(New SqlParameter("@Cliente", SqlDbType.Bit)).Value = objPersona.chCliente
+                    comando.Parameters.Add(New SqlParameter("@Proveedor", SqlDbType.Bit)).Value = objPersona.chProveedor
                     comando.Parameters.Add(New SqlParameter("@TablaSucursal", SqlDbType.Structured)).Value = extrarColumna(objPersona)
                     objPersona.codigo = CType(comando.ExecuteScalar, String)
                     trnsccion.Commit()
