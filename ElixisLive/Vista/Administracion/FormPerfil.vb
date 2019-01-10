@@ -110,7 +110,7 @@ Public Class FormPerfil
                 guardarPermisos()
                 Generales.deshabilitarControles(Me)
                 Generales.habilitarBotones(Me.ToolStrip1)
-                principalBLL.cargarMenu(arbolmenu)
+                principalBLL.cargarMenu(FormPrincipal.arbolMenu)
                 btRegistrar.Enabled = False
                 btCancelar.Enabled = False
                 arbolmenu.Enabled = False

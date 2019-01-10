@@ -10,6 +10,9 @@ Public Class principalBLL
             CreaOpciones(dsDatos)
             cargarMenu(dsDatos)
             drCuentaPadre = dsDatos.Tables("padre").Select()
+
+            arbolMenu.Nodes.Clear()
+
             For Each drFila As DataRow In drCuentaPadre
                 nodo = New TreeNode
                 nodo.Name = drFila("Codigo").ToString()
