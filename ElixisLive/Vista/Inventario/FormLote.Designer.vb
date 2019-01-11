@@ -22,29 +22,36 @@ Partial Class FormLote
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.dgvLote = New System.Windows.Forms.DataGridView()
-        Me.dgCodigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.dgNombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.dgCantidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.dgFechaLote = New Quality.DataGridViewDateTimePickerColumn()
-        Me.dgFechaVencimiento = New Quality.DataGridViewDateTimePickerColumn()
-        Me.dgQuitar = New System.Windows.Forms.DataGridViewImageColumn()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.lbNombre = New System.Windows.Forms.Label()
         Me.dgAgregar = New System.Windows.Forms.Button()
         Me.DataGridViewImageColumn1 = New System.Windows.Forms.DataGridViewImageColumn()
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
         Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.btRegistrar = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripSeparator4 = New System.Windows.Forms.ToolStripSeparator()
+        Me.btCancelar = New System.Windows.Forms.ToolStripButton()
+        Me.ToolStripSeparator5 = New System.Windows.Forms.ToolStripSeparator()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Pimagen = New System.Windows.Forms.PictureBox()
         Me.LTitulo = New System.Windows.Forms.Label()
-        Me.btCancelar = New System.Windows.Forms.ToolStripButton()
-        Me.ToolStripSeparator5 = New System.Windows.Forms.ToolStripSeparator()
+        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewDateTimePickerColumn1 = New Quality.DataGridViewDateTimePickerColumn()
+        Me.DataGridViewDateTimePickerColumn2 = New Quality.DataGridViewDateTimePickerColumn()
+        Me.dgCodigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dgNombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dgCantidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dgFechaLote = New Quality.DataGridViewDateTimePickerColumn()
+        Me.dgFechaVencimiento = New Quality.DataGridViewDateTimePickerColumn()
+        Me.dgQuitar = New System.Windows.Forms.DataGridViewImageColumn()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         CType(Me.dgvLote, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -80,9 +87,9 @@ Partial Class FormLote
         Me.dgvLote.AllowUserToDeleteRows = False
         Me.dgvLote.AllowUserToResizeColumns = False
         Me.dgvLote.AllowUserToResizeRows = False
-        DataGridViewCellStyle5.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black
-        Me.dgvLote.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black
+        Me.dgvLote.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.dgvLote.BackgroundColor = System.Drawing.Color.White
         Me.dgvLote.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvLote.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.dgCodigo, Me.dgNombre, Me.dgCantidad, Me.dgFechaLote, Me.dgFechaVencimiento, Me.dgQuitar})
@@ -94,54 +101,9 @@ Partial Class FormLote
         Me.dgvLote.Size = New System.Drawing.Size(572, 170)
         Me.dgvLote.TabIndex = 1
         '
-        'dgCodigo
-        '
-        Me.dgCodigo.HeaderText = "Codigo"
-        Me.dgCodigo.Name = "dgCodigo"
-        Me.dgCodigo.ReadOnly = True
-        Me.dgCodigo.Visible = False
-        '
-        'dgNombre
-        '
-        Me.dgNombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.dgNombre.HeaderText = "Registro Lote"
-        Me.dgNombre.Name = "dgNombre"
-        Me.dgNombre.ReadOnly = True
-        Me.dgNombre.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
-        Me.dgNombre.Width = 86
-        '
-        'dgCantidad
-        '
-        Me.dgCantidad.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.dgCantidad.DefaultCellStyle = DataGridViewCellStyle6
-        Me.dgCantidad.HeaderText = "Cantidad"
-        Me.dgCantidad.Name = "dgCantidad"
-        Me.dgCantidad.ReadOnly = True
-        Me.dgCantidad.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
-        Me.dgCantidad.Width = 65
-        '
-        'dgFechaLote
-        '
-        Me.dgFechaLote.HeaderText = "Fecha Lote"
-        Me.dgFechaLote.Name = "dgFechaLote"
-        Me.dgFechaLote.ReadOnly = True
-        '
-        'dgFechaVencimiento
-        '
-        Me.dgFechaVencimiento.HeaderText = "F. Vencimiento"
-        Me.dgFechaVencimiento.Name = "dgFechaVencimiento"
-        Me.dgFechaVencimiento.ReadOnly = True
-        '
-        'dgQuitar
-        '
-        Me.dgQuitar.HeaderText = "quitar"
-        Me.dgQuitar.Image = Global.Quality.My.Resources.Resources.papelera
-        Me.dgQuitar.Name = "dgQuitar"
-        Me.dgQuitar.ReadOnly = True
-        '
         'GroupBox2
         '
+        Me.GroupBox2.Controls.Add(Me.lbNombre)
         Me.GroupBox2.Controls.Add(Me.dgAgregar)
         Me.GroupBox2.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Italic)
         Me.GroupBox2.Location = New System.Drawing.Point(7, 11)
@@ -149,6 +111,18 @@ Partial Class FormLote
         Me.GroupBox2.Size = New System.Drawing.Size(578, 58)
         Me.GroupBox2.TabIndex = 3
         Me.GroupBox2.TabStop = False
+        '
+        'lbNombre
+        '
+        Me.lbNombre.AutoSize = True
+        Me.lbNombre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.lbNombre.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.lbNombre.Font = New System.Drawing.Font("Times New Roman", 14.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbNombre.Location = New System.Drawing.Point(177, 22)
+        Me.lbNombre.Name = "lbNombre"
+        Me.lbNombre.Size = New System.Drawing.Size(66, 23)
+        Me.lbNombre.TabIndex = 1
+        Me.lbNombre.Text = "Label1"
         '
         'dgAgregar
         '
@@ -202,6 +176,22 @@ Partial Class FormLote
         Me.ToolStripSeparator4.Name = "ToolStripSeparator4"
         Me.ToolStripSeparator4.Size = New System.Drawing.Size(6, 37)
         '
+        'btCancelar
+        '
+        Me.btCancelar.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btCancelar.ForeColor = System.Drawing.Color.White
+        Me.btCancelar.Image = Global.Quality.My.Resources.Resources.Actions_blue_arrow_undo_icon
+        Me.btCancelar.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.btCancelar.Name = "btCancelar"
+        Me.btCancelar.Size = New System.Drawing.Size(104, 34)
+        Me.btCancelar.Text = "Cancelar"
+        Me.btCancelar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        '
+        'ToolStripSeparator5
+        '
+        Me.ToolStripSeparator5.Name = "ToolStripSeparator5"
+        Me.ToolStripSeparator5.Size = New System.Drawing.Size(6, 37)
+        '
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.White
@@ -237,21 +227,85 @@ Partial Class FormLote
         Me.LTitulo.Text = "Lote"
         Me.LTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'btCancelar
+        'DataGridViewTextBoxColumn1
         '
-        Me.btCancelar.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btCancelar.ForeColor = System.Drawing.Color.White
-        Me.btCancelar.Image = Global.Quality.My.Resources.Resources.Actions_blue_arrow_undo_icon
-        Me.btCancelar.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.btCancelar.Name = "btCancelar"
-        Me.btCancelar.Size = New System.Drawing.Size(104, 34)
-        Me.btCancelar.Text = "Cancelar"
-        Me.btCancelar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.DataGridViewTextBoxColumn1.HeaderText = "Codigo"
+        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
+        Me.DataGridViewTextBoxColumn1.Visible = False
         '
-        'ToolStripSeparator5
+        'DataGridViewTextBoxColumn2
         '
-        Me.ToolStripSeparator5.Name = "ToolStripSeparator5"
-        Me.ToolStripSeparator5.Size = New System.Drawing.Size(6, 37)
+        Me.DataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.DataGridViewTextBoxColumn2.HeaderText = "Registro Lote"
+        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
+        Me.DataGridViewTextBoxColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
+        '
+        'DataGridViewTextBoxColumn3
+        '
+        Me.DataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.DataGridViewTextBoxColumn3.DefaultCellStyle = DataGridViewCellStyle3
+        Me.DataGridViewTextBoxColumn3.HeaderText = "Cantidad"
+        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
+        Me.DataGridViewTextBoxColumn3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
+        '
+        'DataGridViewDateTimePickerColumn1
+        '
+        Me.DataGridViewDateTimePickerColumn1.HeaderText = "Fecha Lote"
+        Me.DataGridViewDateTimePickerColumn1.Name = "DataGridViewDateTimePickerColumn1"
+        '
+        'DataGridViewDateTimePickerColumn2
+        '
+        Me.DataGridViewDateTimePickerColumn2.HeaderText = "F. Vencimiento"
+        Me.DataGridViewDateTimePickerColumn2.Name = "DataGridViewDateTimePickerColumn2"
+        '
+        'dgCodigo
+        '
+        Me.dgCodigo.HeaderText = "Codigo"
+        Me.dgCodigo.Name = "dgCodigo"
+        Me.dgCodigo.ReadOnly = True
+        Me.dgCodigo.Visible = False
+        '
+        'dgNombre
+        '
+        Me.dgNombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.dgNombre.HeaderText = "Registro Lote"
+        Me.dgNombre.Name = "dgNombre"
+        Me.dgNombre.ReadOnly = True
+        Me.dgNombre.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
+        Me.dgNombre.Width = 86
+        '
+        'dgCantidad
+        '
+        Me.dgCantidad.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.dgCantidad.DefaultCellStyle = DataGridViewCellStyle2
+        Me.dgCantidad.HeaderText = "Cantidad"
+        Me.dgCantidad.Name = "dgCantidad"
+        Me.dgCantidad.ReadOnly = True
+        Me.dgCantidad.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
+        Me.dgCantidad.Width = 65
+        '
+        'dgFechaLote
+        '
+        Me.dgFechaLote.HeaderText = "Fecha Lote"
+        Me.dgFechaLote.Name = "dgFechaLote"
+        Me.dgFechaLote.ReadOnly = True
+        '
+        'dgFechaVencimiento
+        '
+        Me.dgFechaVencimiento.HeaderText = "F. Vencimiento"
+        Me.dgFechaVencimiento.Name = "dgFechaVencimiento"
+        Me.dgFechaVencimiento.ReadOnly = True
+        '
+        'dgQuitar
+        '
+        Me.dgQuitar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.dgQuitar.HeaderText = "quitar"
+        Me.dgQuitar.Image = Global.Quality.My.Resources.Resources.papelera
+        Me.dgQuitar.Name = "dgQuitar"
+        Me.dgQuitar.ReadOnly = True
+        Me.dgQuitar.Width = 47
         '
         'FormLote
         '
@@ -272,6 +326,7 @@ Partial Class FormLote
         Me.GroupBox3.ResumeLayout(False)
         CType(Me.dgvLote, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox2.ResumeLayout(False)
+        Me.GroupBox2.PerformLayout()
         Me.ToolStrip1.ResumeLayout(False)
         Me.ToolStrip1.PerformLayout()
         Me.Panel1.ResumeLayout(False)
@@ -292,14 +347,20 @@ Partial Class FormLote
     Friend WithEvents GroupBox3 As GroupBox
     Friend WithEvents GroupBox2 As GroupBox
     Public WithEvents dgvLote As DataGridView
+    Friend WithEvents dgAgregar As Button
+    Friend WithEvents DataGridViewImageColumn1 As DataGridViewImageColumn
+    Public WithEvents btCancelar As ToolStripButton
+    Friend WithEvents ToolStripSeparator5 As ToolStripSeparator
+    Friend WithEvents lbNombre As Label
+    Friend WithEvents DataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewDateTimePickerColumn1 As DataGridViewDateTimePickerColumn
+    Friend WithEvents DataGridViewDateTimePickerColumn2 As DataGridViewDateTimePickerColumn
     Friend WithEvents dgCodigo As DataGridViewTextBoxColumn
     Friend WithEvents dgNombre As DataGridViewTextBoxColumn
     Friend WithEvents dgCantidad As DataGridViewTextBoxColumn
     Friend WithEvents dgFechaLote As DataGridViewDateTimePickerColumn
     Friend WithEvents dgFechaVencimiento As DataGridViewDateTimePickerColumn
     Friend WithEvents dgQuitar As DataGridViewImageColumn
-    Friend WithEvents dgAgregar As Button
-    Friend WithEvents DataGridViewImageColumn1 As DataGridViewImageColumn
-    Public WithEvents btCancelar As ToolStripButton
-    Friend WithEvents ToolStripSeparator5 As ToolStripSeparator
 End Class

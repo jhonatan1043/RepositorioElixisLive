@@ -1,38 +1,34 @@
 ﻿Public Class FormProductoUbicacion
-    Dim objCliente As Cliente
+    Dim objUbicacionProducto As UbicacionProducto
     Dim bdNavegador As New BindingSource
     Private Sub FormCliente_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        objCliente = New Cliente
+        objUbicacionProducto = New UbicacionProducto
         Generales.deshabilitarBotones(ToolStrip1)
         Generales.deshabilitarControles(Me)
         validarGrilla()
         btEditar.Enabled = True
     End Sub
     Private Sub validarGrilla()
-        With dgvCliente
+        With dgvProducto
             .Columns("dgCodigo").DataPropertyName = "Codigo"
             .Columns("dgNombre").DataPropertyName = "Nombre"
-            .Columns("dgDescuento").DataPropertyName = "Descuento"
-            .Columns("dgFechaD").DataPropertyName = "Fecha_Inicio"
-            .Columns("dgFechaDF").DataPropertyName = "Fecha_Fin"
+            .Columns("dgCantidad").DataPropertyName = "Cantidad"
+            .Columns("dgUbicacion").DataPropertyName = "Ubicacion"
             .AutoGenerateColumns = False
-            .DataSource = objCliente.dtCliente
+            .DataSource = objUbicacionProducto.dtProducto
         End With
     End Sub
     Private Sub validarEdicionGrilla(Estado As Boolean)
-        With dgvCliente
+        With dgvProducto
             .ReadOnly = False
             .Columns("dgCodigo").ReadOnly = True
             .Columns("dgNombre").ReadOnly = True
-            .Columns("dgDescuento").ReadOnly = True
-            .Columns("dgFechaD").ReadOnly = True
-            .Columns("dgFechaDF").ReadOnly = True
+            .Columns("dgCantidad").ReadOnly = True
+            .Columns("dgUbicacion").ReadOnly = True
         End With
         If Estado = True Then
-            With dgvCliente
-                .Columns("dgDescuento").ReadOnly = False
-                .Columns("dgFechaD").ReadOnly = False
-                .Columns("dgFechaDF").ReadOnly = False
+            With dgvProducto
+                .Columns("dgUbicacion").ReadOnly = False
             End With
         End If
     End Sub
@@ -41,7 +37,7 @@
             Generales.deshabilitarBotones(ToolStrip1)
             Generales.habilitarControles(Me)
             validarEdicionGrilla(Constantes.EDITABLE)
-            cargarClientes()
+            cargarProductos()
             btRegistrar.Enabled = True
             btCancelar.Enabled = True
         End If
@@ -51,13 +47,14 @@
             Generales.deshabilitarControles(Me)
             Generales.deshabilitarBotones(ToolStrip1)
             Generales.limpiarControles(Me)
+            objUbicacionProducto.dtSetLote.Clear()
             btEditar.Enabled = True
         End If
     End Sub
     Private Sub btRegistrar_Click(sender As Object, e As EventArgs) Handles btRegistrar.Click
         Try
-            dgvCliente.EndEdit()
-            ClienteBLL.guardar(objCliente)
+            dgvProducto.EndEdit()
+            ProductoUbicacionBLL.guardar(objUbicacionProducto)
             Generales.deshabilitarBotones(ToolStrip1)
             Generales.deshabilitarControles(Me)
             btEditar.Enabled = True
@@ -71,12 +68,24 @@
             bdNavegador.Filter = "Nombre Like '%" & txtBuscar.Text & "%'"
         End If
     End Sub
-    Private Sub cargarClientes()
+    Private Sub cargarProductos()
         Try
-            Generales.llenarTabla(objCliente.sqlConsulta, Nothing, objCliente.dtCliente)
-            dgvCliente.DataSource = objCliente.dtCliente
+            Generales.llenarTabla(objUbicacionProducto.sqlConsulta, Nothing, objUbicacionProducto.dtProducto)
+            bdNavegador.DataSource = objUbicacionProducto.dtProducto
+            dgvProducto.DataSource = bdNavegador.DataSource
         Catch ex As Exception
             EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
+    End Sub
+    Private Sub dgvProducto_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvProducto.CellClick
+        If e.ColumnIndex = 4 Then
+            Dim formLote As New FormLote
+            formLote.codigoProducto = objUbicacionProducto.dtProducto.Rows(dgvProducto.CurrentCell.RowIndex).Item("Codigo")
+            formLote.cantidadExistente = objUbicacionProducto.dtProducto.Rows(dgvProducto.CurrentCell.RowIndex).Item("Cantidad")
+            formLote.nombreProducto = objUbicacionProducto.dtProducto.Rows(dgvProducto.CurrentCell.RowIndex).Item("Nombre")
+            formLote.objproducto = objUbicacionProducto
+            formLote.ShowDialog()
+            ProductoUbicacionBLL.varificargrillaProducto(objUbicacionProducto, dgvProducto)
+        End If
     End Sub
 End Class

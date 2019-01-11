@@ -123,6 +123,7 @@
     <Compile Include="Controlador\Administracion\ClienteDAL.vb" />
     <Compile Include="Controlador\Inventario\EntradaInventarioDAL.vb" />
     <Compile Include="Controlador\Inventario\ListaPrecioDAL.vb" />
+    <Compile Include="Controlador\Inventario\ProductoUbicacionDAL.vb" />
     <Compile Include="Controlador\Inventario\ProveedorDAL.vb" />
     <Compile Include="Controlador\Inventario\ProductoDAL.vb" />
     <Compile Include="Controlador\Nomina\NominaDAL.vb" />
@@ -195,6 +196,8 @@
     <Compile Include="Modelo\Gestion\VentaBLL.vb" />
     <Compile Include="Modelo\Inventario\EntradaInventarioBLL.vb" />
     <Compile Include="Modelo\Inventario\ListaPrecioBLL.vb" />
+    <Compile Include="Modelo\Inventario\LoteBLL.vb" />
+    <Compile Include="Modelo\Inventario\ProductoUbicacionBLL.vb" />
     <Compile Include="Modelo\Inventario\ProveedorBLL.vb" />
     <Compile Include="Modelo\Administracion\ClienteBLL.vb" />
     <Compile Include="Modelo\Inventario\ProductoBLL.vb" />

@@ -25,6 +25,9 @@ Partial Class FormProductoUbicacion
         Me.components = New System.ComponentModel.Container()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Pimagen = New System.Windows.Forms.PictureBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.LTitulo = New System.Windows.Forms.Label()
@@ -32,7 +35,7 @@ Partial Class FormProductoUbicacion
         Me.txtBuscar = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.gbInformD = New System.Windows.Forms.GroupBox()
-        Me.dgvCliente = New System.Windows.Forms.DataGridView()
+        Me.dgvProducto = New System.Windows.Forms.DataGridView()
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
         Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.btRegistrar = New System.Windows.Forms.ToolStripButton()
@@ -42,15 +45,20 @@ Partial Class FormProductoUbicacion
         Me.btCancelar = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripSeparator3 = New System.Windows.Forms.ToolStripSeparator()
         Me.ErrorIcono = New System.Windows.Forms.ErrorProvider(Me.components)
+        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.dgCodigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.dgNombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.dgDescuento = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.dgFechaD = New System.Windows.Forms.DataGridViewButtonColumn()
+        Me.dgCantidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dgUbicacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dgLote = New System.Windows.Forms.DataGridViewButtonColumn()
         CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.gbInformD.SuspendLayout()
-        CType(Me.dgvCliente, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgvProducto, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ToolStrip1.SuspendLayout()
         CType(Me.ErrorIcono, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -124,7 +132,7 @@ Partial Class FormProductoUbicacion
         '
         'gbInformD
         '
-        Me.gbInformD.Controls.Add(Me.dgvCliente)
+        Me.gbInformD.Controls.Add(Me.dgvProducto)
         Me.gbInformD.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.gbInformD.ForeColor = System.Drawing.Color.DarkBlue
         Me.gbInformD.Location = New System.Drawing.Point(6, 49)
@@ -134,25 +142,33 @@ Partial Class FormProductoUbicacion
         Me.gbInformD.TabStop = False
         Me.gbInformD.Text = "Información "
         '
-        'dgvCliente
+        'dgvProducto
         '
-        Me.dgvCliente.AllowUserToAddRows = False
-        Me.dgvCliente.AllowUserToDeleteRows = False
-        Me.dgvCliente.AllowUserToResizeColumns = False
-        Me.dgvCliente.AllowUserToResizeRows = False
+        Me.dgvProducto.AllowUserToAddRows = False
+        Me.dgvProducto.AllowUserToDeleteRows = False
+        Me.dgvProducto.AllowUserToResizeColumns = False
+        Me.dgvProducto.AllowUserToResizeRows = False
         DataGridViewCellStyle1.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black
-        Me.dgvCliente.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
-        Me.dgvCliente.BackgroundColor = System.Drawing.Color.White
-        Me.dgvCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvCliente.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.dgCodigo, Me.dgNombre, Me.dgDescuento, Me.dgFechaD})
-        Me.dgvCliente.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.dgvCliente.Location = New System.Drawing.Point(3, 17)
-        Me.dgvCliente.MultiSelect = False
-        Me.dgvCliente.Name = "dgvCliente"
-        Me.dgvCliente.ReadOnly = True
-        Me.dgvCliente.Size = New System.Drawing.Size(777, 351)
-        Me.dgvCliente.TabIndex = 0
+        Me.dgvProducto.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        Me.dgvProducto.BackgroundColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvProducto.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+        Me.dgvProducto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvProducto.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.dgCodigo, Me.dgNombre, Me.dgCantidad, Me.dgUbicacion, Me.dgLote})
+        Me.dgvProducto.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.dgvProducto.Location = New System.Drawing.Point(3, 17)
+        Me.dgvProducto.MultiSelect = False
+        Me.dgvProducto.Name = "dgvProducto"
+        Me.dgvProducto.ReadOnly = True
+        Me.dgvProducto.Size = New System.Drawing.Size(777, 351)
+        Me.dgvProducto.TabIndex = 0
         '
         'ToolStrip1
         '
@@ -226,6 +242,33 @@ Partial Class FormProductoUbicacion
         Me.ErrorIcono.ContainerControl = Me
         Me.ErrorIcono.RightToLeft = True
         '
+        'DataGridViewTextBoxColumn1
+        '
+        Me.DataGridViewTextBoxColumn1.HeaderText = "Codigo"
+        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
+        Me.DataGridViewTextBoxColumn1.Visible = False
+        '
+        'DataGridViewTextBoxColumn2
+        '
+        Me.DataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.DataGridViewTextBoxColumn2.HeaderText = "Descripción"
+        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
+        Me.DataGridViewTextBoxColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
+        '
+        'DataGridViewTextBoxColumn3
+        '
+        Me.DataGridViewTextBoxColumn3.HeaderText = "Cantidad"
+        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
+        '
+        'DataGridViewTextBoxColumn4
+        '
+        Me.DataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.DataGridViewTextBoxColumn4.DefaultCellStyle = DataGridViewCellStyle5
+        Me.DataGridViewTextBoxColumn4.HeaderText = "Ubicación"
+        Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
+        Me.DataGridViewTextBoxColumn4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
+        '
         'dgCodigo
         '
         Me.dgCodigo.HeaderText = "Codigo"
@@ -241,24 +284,32 @@ Partial Class FormProductoUbicacion
         Me.dgNombre.ReadOnly = True
         Me.dgNombre.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
         '
-        'dgDescuento
+        'dgCantidad
         '
-        Me.dgDescuento.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.dgDescuento.DefaultCellStyle = DataGridViewCellStyle2
-        Me.dgDescuento.HeaderText = "Ubicación"
-        Me.dgDescuento.Name = "dgDescuento"
-        Me.dgDescuento.ReadOnly = True
-        Me.dgDescuento.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.dgCantidad.DefaultCellStyle = DataGridViewCellStyle3
+        Me.dgCantidad.HeaderText = "Cantidad"
+        Me.dgCantidad.Name = "dgCantidad"
+        Me.dgCantidad.ReadOnly = True
         '
-        'dgFechaD
+        'dgUbicacion
         '
-        Me.dgFechaD.HeaderText = "Lote"
-        Me.dgFechaD.Name = "dgFechaD"
-        Me.dgFechaD.ReadOnly = True
-        Me.dgFechaD.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgFechaD.Text = "Lote"
-        Me.dgFechaD.UseColumnTextForButtonValue = True
+        Me.dgUbicacion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        Me.dgUbicacion.DefaultCellStyle = DataGridViewCellStyle4
+        Me.dgUbicacion.HeaderText = "Ubicación"
+        Me.dgUbicacion.Name = "dgUbicacion"
+        Me.dgUbicacion.ReadOnly = True
+        Me.dgUbicacion.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
+        '
+        'dgLote
+        '
+        Me.dgLote.HeaderText = "Lote"
+        Me.dgLote.Name = "dgLote"
+        Me.dgLote.ReadOnly = True
+        Me.dgLote.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgLote.Text = "Lote"
+        Me.dgLote.UseColumnTextForButtonValue = True
         '
         'FormProductoUbicacion
         '
@@ -279,7 +330,7 @@ Partial Class FormProductoUbicacion
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.gbInformD.ResumeLayout(False)
-        CType(Me.dgvCliente, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvProducto, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ToolStrip1.ResumeLayout(False)
         Me.ToolStrip1.PerformLayout()
         CType(Me.ErrorIcono, System.ComponentModel.ISupportInitialize).EndInit()
@@ -293,7 +344,7 @@ Partial Class FormProductoUbicacion
     Public WithEvents LTitulo As Label
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents gbInformD As GroupBox
-    Public WithEvents dgvCliente As DataGridView
+    Public WithEvents dgvProducto As DataGridView
     Public WithEvents ToolStrip1 As ToolStrip
     Friend WithEvents ToolStripSeparator1 As ToolStripSeparator
     Public WithEvents btRegistrar As ToolStripButton
@@ -307,6 +358,11 @@ Partial Class FormProductoUbicacion
     Public WithEvents Label3 As Label
     Friend WithEvents dgCodigo As DataGridViewTextBoxColumn
     Friend WithEvents dgNombre As DataGridViewTextBoxColumn
-    Friend WithEvents dgDescuento As DataGridViewTextBoxColumn
-    Friend WithEvents dgFechaD As DataGridViewButtonColumn
+    Friend WithEvents dgCantidad As DataGridViewTextBoxColumn
+    Friend WithEvents dgUbicacion As DataGridViewTextBoxColumn
+    Friend WithEvents dgLote As DataGridViewButtonColumn
+    Friend WithEvents DataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn4 As DataGridViewTextBoxColumn
 End Class

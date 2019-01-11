@@ -1,19 +1,20 @@
 ﻿Public Class UbicacionProducto
     Inherits generalConsulta
     Property dtProducto As DataTable
+    Property dtLote As DataTable
     Property dtSetLote As DataSet
     Public Sub New()
         dtProducto = New DataTable
         dtSetLote = New DataSet
+        dtLote = New DataTable
 
         dtProducto.Columns.Add("codigo", Type.GetType("System.Int32"))
-        dtProducto.Columns.Add("RegistroLote", Type.GetType("System.String"))
+        dtProducto.Columns.Add("Nombre", Type.GetType("System.String"))
         dtProducto.Columns.Add("Cantidad", Type.GetType("System.Int32"))
-        dtProducto.Columns.Add("Fecha_Lote", Type.GetType("System.DateTime"))
-        dtProducto.Columns.Add("Fecha_Vencimiento", Type.GetType("System.DateTime"))
+        dtProducto.Columns.Add("Ubicacion", Type.GetType("System.String"))
 
-        sqlGuardar = "[SP_ADMIN_CLIENTE_CREAR]"
-        sqlConsulta = "[SP_ADMIN_CLIENTE_CARGAR]"
+        sqlGuardar = "[SP_INVEN_PRODUCTO_UBICACION_CREAR]"
+        sqlConsulta = "[SP_INVEN_PRODUCTO_UBICACION_CARGAR]"
 
     End Sub
 End Class
