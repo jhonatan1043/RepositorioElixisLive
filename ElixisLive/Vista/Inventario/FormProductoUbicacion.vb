@@ -58,6 +58,7 @@
             Generales.deshabilitarBotones(ToolStrip1)
             Generales.deshabilitarControles(Me)
             btEditar.Enabled = True
+            objUbicacionProducto.dtSetLote.Clear()
             EstiloMensajes.mostrarMensajeExitoso(MensajeSistema.REGISTRO_GUARDADO)
         Catch ex As Exception
             EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
@@ -66,6 +67,7 @@
     Private Sub txtBuscar_KeyDown(sender As Object, e As KeyEventArgs) Handles txtBuscar.KeyDown
         If e.KeyCode = Keys.Enter Then
             bdNavegador.Filter = "Nombre Like '%" & txtBuscar.Text & "%'"
+            ProductoUbicacionBLL.varificargrillaProducto(objUbicacionProducto, dgvProducto)
         End If
     End Sub
     Private Sub cargarProductos()
@@ -73,6 +75,8 @@
             Generales.llenarTabla(objUbicacionProducto.sqlConsulta, Nothing, objUbicacionProducto.dtProducto)
             bdNavegador.DataSource = objUbicacionProducto.dtProducto
             dgvProducto.DataSource = bdNavegador.DataSource
+            creacionLote()
+            ProductoUbicacionBLL.varificargrillaProducto(objUbicacionProducto, dgvProducto)
         Catch ex As Exception
             EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
@@ -87,5 +91,19 @@
             formLote.ShowDialog()
             ProductoUbicacionBLL.varificargrillaProducto(objUbicacionProducto, dgvProducto)
         End If
+    End Sub
+    Private Sub creacionLote()
+        Dim params As New List(Of String)
+        Dim dt As DataTable
+        For posicion = 0 To objUbicacionProducto.dtProducto.Rows.Count - 1
+            dt = New DataTable
+            params.Clear()
+            params.Add(objUbicacionProducto.dtProducto.Rows(posicion).Item("Codigo"))
+            Generales.llenarTabla("[SP_INVEN_LOTE_CARGAR]", params, dt)
+            If dt.Rows.Count > 0 Then
+                dt.TableName = CStr(objUbicacionProducto.dtProducto.Rows(posicion).Item("Codigo"))
+                objUbicacionProducto.dtSetLote.Tables.Add(dt)
+            End If
+        Next
     End Sub
 End Class

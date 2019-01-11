@@ -79,6 +79,8 @@
     Private Sub dgvLote_EditingControlShowing(sender As Object, e As DataGridViewEditingControlShowingEventArgs) Handles dgvLote.EditingControlShowing
         If dgvLote.Rows(dgvLote.CurrentCell.RowIndex).Cells("dgNombre").Selected = False Then
             AddHandler e.Control.KeyPress, AddressOf ValidacionDigitacion.validarValoresNumericos
+        Else
+            AddHandler e.Control.KeyPress, AddressOf ValidacionDigitacion.validarAlfanumerico
         End If
     End Sub
 End Class

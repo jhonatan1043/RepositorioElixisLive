@@ -6,7 +6,7 @@
     Public Shared Sub varificargrillaProducto(objUbicacionProducto As UbicacionProducto, dgvProducto As DataGridView)
         If objUbicacionProducto.dtSetLote.Tables.Count > 0 Then
             For posicion = 0 To objUbicacionProducto.dtSetLote.Tables.Count - 1
-                If objUbicacionProducto.dtSetLote.Tables(posicion).TableName = objUbicacionProducto.dtProducto.Rows(posicion).Item("Codigo") Then
+                If objUbicacionProducto.dtSetLote.Tables(posicion).TableName = CStr(objUbicacionProducto.dtProducto.Rows(posicion).Item("Codigo")) Then
                     dgvProducto.Rows(posicion).Cells("dgLote").Style.BackColor = Color.LightGreen
                 End If
             Next
