@@ -3707,6 +3707,7 @@ Partial Class FormVenta
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.ToolStrip1)
         Me.Controls.Add(Me.GroupBox1)
+        Me.KeyPreview = True
         Me.MaximizeBox = False
         Me.MaximumSize = New System.Drawing.Size(916, 594)
         Me.MinimumSize = New System.Drawing.Size(916, 594)

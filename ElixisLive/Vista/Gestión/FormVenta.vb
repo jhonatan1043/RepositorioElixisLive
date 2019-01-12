@@ -85,12 +85,12 @@ Public Class FormVenta
             End Try
         End If
     End Sub
-    Private Sub dgvProducto_EditingControlShowing(sender As Object, e As DataGridViewEditingControlShowingEventArgs) Handles dgvProducto.EditingControlShowing, DataGridView9.EditingControlShowing, DataGridView6.EditingControlShowing, DataGridView3.EditingControlShowing, DataGridView12.EditingControlShowing
+    Private Sub dgvProducto_EditingControlShowing(sender As Object, e As DataGridViewEditingControlShowingEventArgs) Handles dgvProducto.EditingControlShowing
         If objVenta.dtProductos.Rows.Count > 0 Then
             AddHandler e.Control.KeyPress, AddressOf ValidacionDigitacion.validarValoresNumericos
         End If
     End Sub
-    Private Sub dgvServicio_EditingControlShowing(sender As Object, e As DataGridViewEditingControlShowingEventArgs) Handles dgvServicio.EditingControlShowing, DataGridView8.EditingControlShowing, DataGridView5.EditingControlShowing, DataGridView2.EditingControlShowing, DataGridView11.EditingControlShowing
+    Private Sub dgvServicio_EditingControlShowing(sender As Object, e As DataGridViewEditingControlShowingEventArgs) Handles dgvServicio.EditingControlShowing
         If objVenta.dtServicio.Rows.Count > 0 Then
             AddHandler e.Control.KeyPress, AddressOf ValidacionDigitacion.validarValoresNumericos
         End If
@@ -169,22 +169,7 @@ Public Class FormVenta
         Return False
     End Function
     Private Sub btRegistrar_Click(sender As Object, e As EventArgs) Handles btRegistrar.Click
-        dgvProducto.EndEdit()
-        dgvServicio.EndEdit()
-        Try
-            If validarCampos() = True Then
-                cargarObjeto()
-                VentaBLL.guardarVenta(objVenta)
-                Generales.habilitarBotones(ToolStrip1)
-                Generales.deshabilitarControles(Me)
-                txtCodigo.Text = objVenta.codigo
-                btCancelar.Enabled = False
-                btRegistrar.Enabled = False
-                EstiloMensajes.mostrarMensajeExitoso(MensajeSistema.REGISTRO_GUARDADO)
-            End If
-        Catch ex As Exception
-            EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
-        End Try
+        guardarVenta()
     End Sub
     Private Sub btCancelar_Click(sender As Object, e As EventArgs) Handles btCancelar.Click
         If EstiloMensajes.mostrarMensajePregunta(MensajeSistema.CANCELAR) = Constantes.SI Then
@@ -505,12 +490,6 @@ Public Class FormVenta
             Cursor = Cursors.Default
         End Try
     End Sub
-    Private Sub FormVenta_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
-        If e.KeyCode = Keys.F3 Then
-            formExistencia = New FormExistencia
-            formExistencia.ShowDialog()
-        End If
-    End Sub
     Private Sub dgvServicio_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvServicio.CellClick, DataGridView8.CellClick, DataGridView5.CellClick, DataGridView2.CellClick, DataGridView11.CellClick
         If e.ColumnIndex = 0 Then
             If objVenta.dtServicio.Rows.Count > 0 Then
@@ -594,5 +573,38 @@ Public Class FormVenta
         txtTotalGastos.Text = Format(0, Constantes.FORMATO_MONEDA)
         txtDescuento.Text = Format(0, Constantes.FORMATO_MONEDA)
         lbInformativo.Text = "...:"
+    End Sub
+    Private Sub FormVenta_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
+        funcionesFormulario(e)
+    End Sub
+    Private Sub guardarVenta()
+        dgvProducto.EndEdit()
+        dgvServicio.EndEdit()
+        Try
+            If validarCampos() = True Then
+                cargarObjeto()
+                VentaBLL.guardarVenta(objVenta)
+                Generales.habilitarBotones(ToolStrip1)
+                Generales.deshabilitarControles(Me)
+                txtCodigo.Text = objVenta.codigo
+                btCancelar.Enabled = False
+                btRegistrar.Enabled = False
+                EstiloMensajes.mostrarMensajeExitoso(MensajeSistema.REGISTRO_GUARDADO)
+            End If
+        Catch ex As Exception
+            EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
+        End Try
+    End Sub
+    Private Sub funcionesFormulario(e As KeyEventArgs)
+        If e.KeyCode = Keys.Escape Then
+            Close()
+        ElseIf e.KeyCode = Keys.F10
+            If btRegistrar.Enabled = False Then Exit Sub
+            guardarVenta()
+        ElseIf e.KeyCode = Keys.F2
+            If btRegistrar.Enabled = False Then Exit Sub
+            formExistencia = New FormExistencia
+            formExistencia.ShowDialog()
+        End If
     End Sub
 End Class
