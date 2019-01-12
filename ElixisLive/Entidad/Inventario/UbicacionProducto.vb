@@ -1,8 +1,9 @@
 ﻿Public Class UbicacionProducto
-    Inherits generalConsulta
+    Inherits Lote
     Property dtProducto As DataTable
-    Property dtLote As DataTable
     Property dtSetLote As DataSet
+    Property sqlGuardar As String
+    Property sqlConsulta As String
     Public Sub New()
         dtProducto = New DataTable
         dtSetLote = New DataSet

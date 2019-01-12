@@ -23,11 +23,17 @@ Partial Class FormLote
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.dgvLote = New System.Windows.Forms.DataGridView()
+        Me.dgCodigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dgNombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dgCantidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dgFechaLote = New Quality.DataGridViewDateTimePickerColumn()
+        Me.dgFechaVencimiento = New Quality.DataGridViewDateTimePickerColumn()
+        Me.dgQuitar = New System.Windows.Forms.DataGridViewImageColumn()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.lbNombre = New System.Windows.Forms.Label()
         Me.dgAgregar = New System.Windows.Forms.Button()
@@ -46,12 +52,6 @@ Partial Class FormLote
         Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewDateTimePickerColumn1 = New Quality.DataGridViewDateTimePickerColumn()
         Me.DataGridViewDateTimePickerColumn2 = New Quality.DataGridViewDateTimePickerColumn()
-        Me.dgCodigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.dgNombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.dgCantidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.dgFechaLote = New Quality.DataGridViewDateTimePickerColumn()
-        Me.dgFechaVencimiento = New Quality.DataGridViewDateTimePickerColumn()
-        Me.dgQuitar = New System.Windows.Forms.DataGridViewImageColumn()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         CType(Me.dgvLote, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -100,6 +100,54 @@ Partial Class FormLote
         Me.dgvLote.ReadOnly = True
         Me.dgvLote.Size = New System.Drawing.Size(572, 170)
         Me.dgvLote.TabIndex = 1
+        '
+        'dgCodigo
+        '
+        Me.dgCodigo.HeaderText = "Codigo"
+        Me.dgCodigo.Name = "dgCodigo"
+        Me.dgCodigo.ReadOnly = True
+        Me.dgCodigo.Visible = False
+        '
+        'dgNombre
+        '
+        Me.dgNombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.dgNombre.HeaderText = "Registro Lote"
+        Me.dgNombre.Name = "dgNombre"
+        Me.dgNombre.ReadOnly = True
+        Me.dgNombre.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
+        Me.dgNombre.Width = 86
+        '
+        'dgCantidad
+        '
+        Me.dgCantidad.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.dgCantidad.DefaultCellStyle = DataGridViewCellStyle2
+        Me.dgCantidad.HeaderText = "Cantidad"
+        Me.dgCantidad.Name = "dgCantidad"
+        Me.dgCantidad.ReadOnly = True
+        Me.dgCantidad.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
+        Me.dgCantidad.Width = 65
+        '
+        'dgFechaLote
+        '
+        Me.dgFechaLote.HeaderText = "Fecha Lote"
+        Me.dgFechaLote.Name = "dgFechaLote"
+        Me.dgFechaLote.ReadOnly = True
+        '
+        'dgFechaVencimiento
+        '
+        Me.dgFechaVencimiento.HeaderText = "F. Vencimiento"
+        Me.dgFechaVencimiento.Name = "dgFechaVencimiento"
+        Me.dgFechaVencimiento.ReadOnly = True
+        '
+        'dgQuitar
+        '
+        Me.dgQuitar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.dgQuitar.HeaderText = "quitar"
+        Me.dgQuitar.Image = Global.Quality.My.Resources.Resources.papelera
+        Me.dgQuitar.Name = "dgQuitar"
+        Me.dgQuitar.ReadOnly = True
+        Me.dgQuitar.Width = 47
         '
         'GroupBox2
         '
@@ -258,54 +306,6 @@ Partial Class FormLote
         '
         Me.DataGridViewDateTimePickerColumn2.HeaderText = "F. Vencimiento"
         Me.DataGridViewDateTimePickerColumn2.Name = "DataGridViewDateTimePickerColumn2"
-        '
-        'dgCodigo
-        '
-        Me.dgCodigo.HeaderText = "Codigo"
-        Me.dgCodigo.Name = "dgCodigo"
-        Me.dgCodigo.ReadOnly = True
-        Me.dgCodigo.Visible = False
-        '
-        'dgNombre
-        '
-        Me.dgNombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.dgNombre.HeaderText = "Registro Lote"
-        Me.dgNombre.Name = "dgNombre"
-        Me.dgNombre.ReadOnly = True
-        Me.dgNombre.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
-        Me.dgNombre.Width = 86
-        '
-        'dgCantidad
-        '
-        Me.dgCantidad.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.dgCantidad.DefaultCellStyle = DataGridViewCellStyle2
-        Me.dgCantidad.HeaderText = "Cantidad"
-        Me.dgCantidad.Name = "dgCantidad"
-        Me.dgCantidad.ReadOnly = True
-        Me.dgCantidad.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
-        Me.dgCantidad.Width = 65
-        '
-        'dgFechaLote
-        '
-        Me.dgFechaLote.HeaderText = "Fecha Lote"
-        Me.dgFechaLote.Name = "dgFechaLote"
-        Me.dgFechaLote.ReadOnly = True
-        '
-        'dgFechaVencimiento
-        '
-        Me.dgFechaVencimiento.HeaderText = "F. Vencimiento"
-        Me.dgFechaVencimiento.Name = "dgFechaVencimiento"
-        Me.dgFechaVencimiento.ReadOnly = True
-        '
-        'dgQuitar
-        '
-        Me.dgQuitar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.dgQuitar.HeaderText = "quitar"
-        Me.dgQuitar.Image = Global.Quality.My.Resources.Resources.papelera
-        Me.dgQuitar.Name = "dgQuitar"
-        Me.dgQuitar.ReadOnly = True
-        Me.dgQuitar.Width = 47
         '
         'FormLote
         '

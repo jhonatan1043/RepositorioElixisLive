@@ -94,15 +94,15 @@
     End Sub
     Private Sub creacionLote()
         Dim params As New List(Of String)
-        Dim dt As DataTable
+        Dim lote As Lote
         For posicion = 0 To objUbicacionProducto.dtProducto.Rows.Count - 1
-            dt = New DataTable
+            lote = New Lote
             params.Clear()
             params.Add(objUbicacionProducto.dtProducto.Rows(posicion).Item("Codigo"))
-            Generales.llenarTabla("[SP_INVEN_LOTE_CARGAR]", params, dt)
-            If dt.Rows.Count > 0 Then
-                dt.TableName = CStr(objUbicacionProducto.dtProducto.Rows(posicion).Item("Codigo"))
-                objUbicacionProducto.dtSetLote.Tables.Add(dt)
+            Generales.llenarTabla("[SP_INVEN_LOTE_CARGAR]", params, lote.dtLote)
+            If lote.dtLote.Rows.Count > 0 Then
+                lote.dtLote.TableName = CStr(objUbicacionProducto.dtProducto.Rows(posicion).Item("Codigo"))
+                objUbicacionProducto.dtSetLote.Tables.Add(lote.dtLote)
             End If
         Next
     End Sub
