@@ -600,7 +600,9 @@ Public Class FormVenta
             Close()
         ElseIf e.KeyCode = Keys.F10
             If btRegistrar.Enabled = False Then Exit Sub
-            guardarVenta()
+            If EstiloMensajes.mostrarMensajePregunta("¡ Desea Registro la Compra !", "Registrar") = Constantes.SI Then
+                guardarVenta()
+            End If
         ElseIf e.KeyCode = Keys.F2
             If btRegistrar.Enabled = False Then Exit Sub
             formExistencia = New FormExistencia

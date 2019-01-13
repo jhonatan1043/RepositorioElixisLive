@@ -236,12 +236,12 @@
     Private Sub dgvFactura_CellEndEdit(sender As Object, e As EventArgs) Handles dgvFactura.CellEndEdit
         If dgvFactura.RowCount >= 1 Then
             Try
-                calcularTotales()
                 For indice = 0 To dgvFactura.RowCount - 1
                     If Not IsDBNull(dgvFactura.Rows(indice).Cells("dgValor").Value) AndAlso Not IsDBNull(dgvFactura.Rows(indice).Cells("dgCantidad").Value) Then
                         dgvFactura.Rows(indice).Cells("dgTotal").Value = dgvFactura.Rows(indice).Cells("dgValor").Value * dgvFactura.Rows(indice).Cells("dgCantidad").Value
                     End If
                 Next
+                calcularTotales()
             Catch ex As Exception
                 EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
             End Try
