@@ -47,18 +47,20 @@
             Generales.deshabilitarControles(Me)
             Generales.deshabilitarBotones(ToolStrip1)
             Generales.limpiarControles(Me)
-            objUbicacionProducto.dtSetLote.Clear()
+            objUbicacionProducto.dtSetLote.Reset()
             btEditar.Enabled = True
         End If
     End Sub
     Private Sub btRegistrar_Click(sender As Object, e As EventArgs) Handles btRegistrar.Click
         Try
             dgvProducto.EndEdit()
+            objUbicacionProducto.dtProducto.AcceptChanges()
             ProductoUbicacionBLL.guardar(objUbicacionProducto)
             Generales.deshabilitarBotones(ToolStrip1)
             Generales.deshabilitarControles(Me)
             btEditar.Enabled = True
             objUbicacionProducto.dtSetLote.Clear()
+            ProductoUbicacionBLL.varificargrillaProducto(objUbicacionProducto, dgvProducto)
             EstiloMensajes.mostrarMensajeExitoso(MensajeSistema.REGISTRO_GUARDADO)
         Catch ex As Exception
             EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
