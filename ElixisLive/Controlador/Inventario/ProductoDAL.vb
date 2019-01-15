@@ -13,6 +13,7 @@ Public Class ProductoDAL
                     comando.CommandText = objProducto.sqlGuardar
                     comando.Parameters.Add(New SqlParameter("@Codigo", SqlDbType.NVarChar)).Value = objProducto.codigo
                     comando.Parameters.Add(New SqlParameter("@Codigo_Marca", SqlDbType.Int)).Value = objProducto.codigoMarca
+                    comando.Parameters.Add(New SqlParameter("@codigo_Categoria", SqlDbType.Int)).Value = objProducto.codigoCategoria
                     comando.Parameters.Add(New SqlParameter("@Nombre", SqlDbType.NVarChar)).Value = objProducto.nombre
                     comando.Parameters.Add(New SqlParameter("@Tabla", SqlDbType.Structured)).Value = objProducto.dtParametro
                     objProducto.codigo = CType(comando.ExecuteScalar, String)

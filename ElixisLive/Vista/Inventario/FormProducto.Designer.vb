@@ -23,6 +23,11 @@ Partial Class FormProducto
         Me.Label1 = New System.Windows.Forms.Label()
         Me.cbMarca = New System.Windows.Forms.ComboBox()
         Me.ErrorIcono = New System.Windows.Forms.ErrorProvider(Me.components)
+        Me.txtCodigoBarra = New System.Windows.Forms.TextBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.cbCategoria = New System.Windows.Forms.ComboBox()
+        Me.btGenerar = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
@@ -45,6 +50,11 @@ Partial Class FormProducto
         '
         'Gbdatos
         '
+        Me.Gbdatos.Controls.Add(Me.btGenerar)
+        Me.Gbdatos.Controls.Add(Me.cbCategoria)
+        Me.Gbdatos.Controls.Add(Me.Label4)
+        Me.Gbdatos.Controls.Add(Me.Label2)
+        Me.Gbdatos.Controls.Add(Me.txtCodigoBarra)
         Me.Gbdatos.Controls.Add(Me.cbMarca)
         Me.Gbdatos.Controls.Add(Me.Label1)
         Me.Gbdatos.Controls.SetChildIndex(Me.Label5, 0)
@@ -53,6 +63,11 @@ Partial Class FormProducto
         Me.Gbdatos.Controls.SetChildIndex(Me.txtnombre, 0)
         Me.Gbdatos.Controls.SetChildIndex(Me.Label1, 0)
         Me.Gbdatos.Controls.SetChildIndex(Me.cbMarca, 0)
+        Me.Gbdatos.Controls.SetChildIndex(Me.txtCodigoBarra, 0)
+        Me.Gbdatos.Controls.SetChildIndex(Me.Label2, 0)
+        Me.Gbdatos.Controls.SetChildIndex(Me.Label4, 0)
+        Me.Gbdatos.Controls.SetChildIndex(Me.cbCategoria, 0)
+        Me.Gbdatos.Controls.SetChildIndex(Me.btGenerar, 0)
         '
         'txtnombre
         '
@@ -73,7 +88,7 @@ Partial Class FormProducto
         '
         'Label5
         '
-        Me.Label5.Location = New System.Drawing.Point(279, 67)
+        Me.Label5.Location = New System.Drawing.Point(457, 18)
         Me.Label5.Size = New System.Drawing.Size(59, 19)
         Me.Label5.Text = "Em@il:"
         '
@@ -93,15 +108,70 @@ Partial Class FormProducto
         Me.cbMarca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbMarca.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic)
         Me.cbMarca.FormattingEnabled = True
-        Me.cbMarca.Location = New System.Drawing.Point(373, 16)
+        Me.cbMarca.Location = New System.Drawing.Point(397, 16)
         Me.cbMarca.Name = "cbMarca"
-        Me.cbMarca.Size = New System.Drawing.Size(201, 25)
+        Me.cbMarca.Size = New System.Drawing.Size(177, 25)
         Me.cbMarca.TabIndex = 20
         '
         'ErrorIcono
         '
         Me.ErrorIcono.ContainerControl = Me
         Me.ErrorIcono.RightToLeft = True
+        '
+        'txtCodigoBarra
+        '
+        Me.txtCodigoBarra.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic)
+        Me.txtCodigoBarra.Location = New System.Drawing.Point(87, 45)
+        Me.txtCodigoBarra.Name = "txtCodigoBarra"
+        Me.txtCodigoBarra.Size = New System.Drawing.Size(119, 25)
+        Me.txtCodigoBarra.TabIndex = 21
+        Me.txtCodigoBarra.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Italic)
+        Me.Label2.ForeColor = System.Drawing.Color.Black
+        Me.Label2.Location = New System.Drawing.Point(7, 48)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(66, 19)
+        Me.Label2.TabIndex = 22
+        Me.Label2.Text = "C.Barra:"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Italic)
+        Me.Label4.ForeColor = System.Drawing.Color.Black
+        Me.Label4.Location = New System.Drawing.Point(312, 48)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(79, 19)
+        Me.Label4.TabIndex = 23
+        Me.Label4.Text = "Categoria:"
+        '
+        'cbCategoria
+        '
+        Me.cbCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbCategoria.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic)
+        Me.cbCategoria.FormattingEnabled = True
+        Me.cbCategoria.Location = New System.Drawing.Point(397, 45)
+        Me.cbCategoria.Name = "cbCategoria"
+        Me.cbCategoria.Size = New System.Drawing.Size(178, 25)
+        Me.cbCategoria.TabIndex = 24
+        '
+        'btGenerar
+        '
+        Me.btGenerar.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic)
+        Me.btGenerar.ForeColor = System.Drawing.Color.Black
+        Me.btGenerar.Image = Global.Quality.My.Resources.Resources.barra
+        Me.btGenerar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btGenerar.Location = New System.Drawing.Point(212, 43)
+        Me.btGenerar.Name = "btGenerar"
+        Me.btGenerar.Size = New System.Drawing.Size(91, 28)
+        Me.btGenerar.TabIndex = 25
+        Me.btGenerar.Text = "Generar"
+        Me.btGenerar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btGenerar.UseVisualStyleBackColor = True
         '
         'FormProducto
         '
@@ -123,4 +193,9 @@ Partial Class FormProducto
     Friend WithEvents Label1 As Label
     Friend WithEvents cbMarca As ComboBox
     Friend WithEvents ErrorIcono As ErrorProvider
+    Friend WithEvents cbCategoria As ComboBox
+    Friend WithEvents Label4 As Label
+    Friend WithEvents Label2 As Label
+    Friend WithEvents txtCodigoBarra As TextBox
+    Friend WithEvents btGenerar As Button
 End Class

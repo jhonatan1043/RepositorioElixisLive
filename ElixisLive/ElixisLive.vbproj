@@ -74,6 +74,10 @@
     <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="itextsharp, Version=5.5.6.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>ReferenciaDLL\itextsharp.dll</HintPath>
+    </Reference>
     <Reference Include="MySql.Data, Version=6.1.0.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\MySql.Data.DLL</HintPath>
@@ -212,6 +216,7 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Utilidad\Busqueda.vb" />
+    <Compile Include="Utilidad\CodigosBarra.vb" />
     <Compile Include="Utilidad\ConexionBD.vb" />
     <Compile Include="Utilidad\Constantes.vb" />
     <Compile Include="Utilidad\ConvertirNumeros.vb" />
@@ -281,6 +286,12 @@
       <DependentUpon>FormAreaTrabajo.vb</DependentUpon>
     </Compile>
     <Compile Include="Vista\Configuracion\FormAreaTrabajo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Configuracion\FormCategoria.Designer.vb">
+      <DependentUpon>FormCategoria.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Configuracion\FormCategoria.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Vista\Configuracion\FormConfigVenta.Designer.vb">
@@ -486,6 +497,9 @@
     <EmbeddedResource Include="Vista\Configuracion\FormAreaTrabajo.resx">
       <DependentUpon>FormAreaTrabajo.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Configuracion\FormCategoria.resx">
+      <DependentUpon>FormCategoria.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vista\Configuracion\FormConfigVenta.resx">
       <DependentUpon>FormConfigVenta.vb</DependentUpon>
     </EmbeddedResource>
@@ -588,6 +602,7 @@
     <Content Include="Quality_logo.ico" />
     <Content Include="ReferenciaDLL\ClaseExcel.dll" />
     <Content Include="ReferenciaDLL\CnxElixisLiveBD.dll" />
+    <Content Include="ReferenciaDLL\itextsharp.dll" />
     <Content Include="ReferenciaDLL\MySql.Data.DLL" />
     <Content Include="ReferenciaDLL\NotifySenderControl.dll" />
     <None Include="Resources\plus-icon.png" />
@@ -596,6 +611,7 @@
     <None Include="Resources\Apps-session-quit-icon.png" />
     <None Include="Resources\Apps-session-reboot-icon.png" />
     <None Include="Resources\Actions-edit-redo-icon.png" />
+    <None Include="Resources\barra.png" />
     <Content Include="Resources\calculator-icon1.png" />
     <None Include="Resources\calculator-icon2.png" />
     <None Include="Resources\DesAnclar.png" />

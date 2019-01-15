@@ -76,9 +76,9 @@ Partial Class FormBase
         Me.GroupBox5.Controls.Add(Me.dgRegistro)
         Me.GroupBox5.Font = New System.Drawing.Font("Times New Roman", 8.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox5.ForeColor = System.Drawing.Color.DarkBlue
-        Me.GroupBox5.Location = New System.Drawing.Point(4, 61)
+        Me.GroupBox5.Location = New System.Drawing.Point(4, 93)
         Me.GroupBox5.Name = "GroupBox5"
-        Me.GroupBox5.Size = New System.Drawing.Size(580, 222)
+        Me.GroupBox5.Size = New System.Drawing.Size(580, 188)
         Me.GroupBox5.TabIndex = 61
         Me.GroupBox5.TabStop = False
         Me.GroupBox5.Text = "Información"
@@ -99,7 +99,7 @@ Partial Class FormBase
         Me.dgRegistro.MultiSelect = False
         Me.dgRegistro.Name = "dgRegistro"
         Me.dgRegistro.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgRegistro.Size = New System.Drawing.Size(574, 203)
+        Me.dgRegistro.Size = New System.Drawing.Size(574, 169)
         Me.dgRegistro.TabIndex = 0
         '
         'Gbdatos
@@ -112,7 +112,7 @@ Partial Class FormBase
         Me.Gbdatos.ForeColor = System.Drawing.Color.DarkBlue
         Me.Gbdatos.Location = New System.Drawing.Point(6, 9)
         Me.Gbdatos.Name = "Gbdatos"
-        Me.Gbdatos.Size = New System.Drawing.Size(578, 48)
+        Me.Gbdatos.Size = New System.Drawing.Size(578, 80)
         Me.Gbdatos.TabIndex = 0
         Me.Gbdatos.TabStop = False
         Me.Gbdatos.Text = "Información "

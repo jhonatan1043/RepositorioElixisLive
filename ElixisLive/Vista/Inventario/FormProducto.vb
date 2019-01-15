@@ -1,30 +1,4 @@
 ﻿Public Class FormProducto
-    Private Sub txtnombre_LostFocus(sender As Object, e As EventArgs) Handles txtnombre.LostFocus
-        If txtnombre.TextLength = 0 And btRegistrar.Enabled = True Then
-            ErrorIcono.SetError(txtnombre, "Debe digitar un nombre")
-        Else
-            ErrorIcono.SetError(txtnombre, "")
-        End If
-    End Sub
-    Private Sub cbMarca_LostFocus(sender As Object, e As EventArgs) Handles cbMarca.LostFocus
-        If cbMarca.SelectedIndex = 0 And btRegistrar.Enabled = True Then
-            ErrorIcono.SetError(cbMarca, "Debe escoger una marca")
-        Else
-            ErrorIcono.SetError(cbMarca, "")
-        End If
-    End Sub
-    Private Sub mostrarIconoError()
-        If cbMarca.SelectedIndex = 0 And btRegistrar.Enabled = True Then
-            ErrorIcono.SetError(cbMarca, "Debe escoger una marca")
-        Else
-            ErrorIcono.SetError(cbMarca, "")
-        End If
-        If txtnombre.TextLength = 0 And btRegistrar.Enabled = True Then
-            ErrorIcono.SetError(txtnombre, "Debe digitar un nombre")
-        Else
-            ErrorIcono.SetError(txtnombre, "")
-        End If
-    End Sub
     Dim objProducto As producto
     Private Sub FormBaseProductivo_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim params As New List(Of String)
@@ -39,6 +13,7 @@
             Generales.diseñoDGV(dgRegistro)
             Generales.diseñoGrillaParametros(dgRegistro)
             Generales.cargarCombo(Sentencias.MARCA_CONSULTAR, Nothing, "Nombre", "Codigo_Marca", cbMarca)
+            Generales.cargarCombo("[SP_CONSULTAR_CATEGORIA]", Nothing, "Nombre", "Codigo_Categoria", cbCategoria)
         Catch ex As Exception
             EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
         End Try
@@ -68,17 +43,33 @@
         Try
             If Not IsNothing(dfila) Then
                 cbMarca.SelectedValue = dfila("Codigo_Marca")
+                cbCategoria.SelectedValue = dfila("Codigo_Categoria")
                 txtnombre.Text = dfila("Nombre")
+                txtCodigoBarra.Text = Generales.Ceros(objProducto.codigo, 5)
                 params.Add(ElementoMenu.codigo)
                 Generales.llenardgv(objProducto.sqlCargarDetalle, dgRegistro, params)
                 Generales.diseñoDGV(dgRegistro)
                 controlVerificarControl()
             End If
             Generales.habilitarBotones(ToolStrip1)
+            btGenerar.Enabled = True
             btCancelar.Enabled = False
             btRegistrar.Enabled = False
         Catch ex As Exception
             EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
+        End Try
+    End Sub
+    Private Sub btGenerar_Click(sender As Object, e As EventArgs) Handles btGenerar.Click
+        Dim ruta As String
+        Dim ptImagen As New PictureBox
+        Try
+            ruta = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) & "\" & txtCodigoBarra.Text & ".jpg"
+            ptImagen.Image = CodigosBarra.codigo128("A" & txtCodigoBarra.Text & "B", True, Constantes.ALTO_BARRA)
+            ptImagen.SizeMode = PictureBoxSizeMode.AutoSize
+            ptImagen.Image.Save(ruta, Imaging.ImageFormat.Jpeg)
+            Process.Start(ruta)
+        Catch ex As Exception
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
     End Sub
     Private Sub btBuscar_Click(sender As Object, e As EventArgs) Handles btBuscar.Click
@@ -96,6 +87,8 @@
         Generales.limpiarControles(Gbdatos)
         Generales.limpiarGrillaParametro(dgRegistro)
         objProducto.codigo = Nothing
+        txtCodigoBarra.ReadOnly = True
+        btGenerar.Enabled = False
         dgRegistro.ReadOnly = False
         btCancelar.Enabled = True
         btRegistrar.Enabled = True
@@ -103,6 +96,7 @@
     Private Function validarCampos() As Boolean
         If String.IsNullOrEmpty(txtnombre.Text) Then
         ElseIf cbMarca.SelectedIndex = 0 Then
+        ElseIf cbCategoria.SelectedIndex = 0 Then
         Else
             Return True
         End If
@@ -110,6 +104,7 @@
     End Function
     Private Sub cargarObjeto()
         objProducto.codigoMarca = cbMarca.SelectedValue.ToString
+        objProducto.codigoCategoria = cbCategoria.SelectedValue.ToString
         objProducto.nombre = txtnombre.Text
         objProducto.dtParametro = dgRegistro.DataSource
     End Sub
@@ -125,6 +120,7 @@
                 txtcodigo.Text = objProducto.codigo
                 btRegistrar.Enabled = False
                 btCancelar.Enabled = False
+                btGenerar.Enabled = True
                 EstiloMensajes.mostrarMensajeExitoso(MensajeSistema.REGISTRO_GUARDADO)
             Catch ex As Exception
                 EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
@@ -137,6 +133,7 @@
     Private Sub quitarIconoError()
         ErrorIcono.SetError(txtnombre, "")
         ErrorIcono.SetError(cbMarca, "")
+        ErrorIcono.SetError(cbCategoria, "")
     End Sub
     Private Sub btCancelar_Click(sender As Object, e As EventArgs) Handles btCancelar.Click
         If EstiloMensajes.mostrarMensajePregunta(MensajeSistema.CANCELAR) = Constantes.SI Then
@@ -153,7 +150,9 @@
         If EstiloMensajes.mostrarMensajePregunta(MensajeSistema.EDITAR) = Constantes.SI Then
             Generales.deshabilitarBotones(ToolStrip1)
             Generales.habilitarControles(Me)
+            txtCodigoBarra.ReadOnly = True
             dgRegistro.ReadOnly = False
+            btGenerar.Enabled = False
             btCancelar.Enabled = True
             btRegistrar.Enabled = True
         End If
@@ -177,5 +176,43 @@
         For posicion = 0 To dgRegistro.Rows.Count - 1
             Generales.consultarTipoControl(dgRegistro, posicion)
         Next
+    End Sub
+    Private Sub txtnombre_LostFocus(sender As Object, e As EventArgs) Handles txtnombre.LostFocus
+        If txtnombre.TextLength = 0 And btRegistrar.Enabled = True Then
+            ErrorIcono.SetError(txtnombre, "Debe digitar un nombre")
+        Else
+            ErrorIcono.SetError(txtnombre, "")
+        End If
+    End Sub
+    Private Sub cbMarca_LostFocus(sender As Object, e As EventArgs) Handles cbMarca.LostFocus
+        If cbMarca.SelectedIndex = 0 And btRegistrar.Enabled = True Then
+            ErrorIcono.SetError(cbMarca, "Debe escoger una marca")
+        Else
+            ErrorIcono.SetError(cbMarca, "")
+        End If
+    End Sub
+    Private Sub cbCategoria_LostFocus(sender As Object, e As EventArgs) Handles cbCategoria.LostFocus
+        If cbMarca.SelectedIndex = 0 And btRegistrar.Enabled = True Then
+            ErrorIcono.SetError(cbCategoria, "Debe escoger una categoria")
+        Else
+            ErrorIcono.SetError(cbCategoria, "")
+        End If
+    End Sub
+    Private Sub mostrarIconoError()
+        If cbMarca.SelectedIndex = 0 And btRegistrar.Enabled = True Then
+            ErrorIcono.SetError(cbMarca, "Debe escoger una marca")
+        Else
+            ErrorIcono.SetError(cbMarca, "")
+        End If
+        If txtnombre.TextLength = 0 And btRegistrar.Enabled = True Then
+            ErrorIcono.SetError(txtnombre, "Debe digitar un nombre")
+        Else
+            ErrorIcono.SetError(txtnombre, "")
+        End If
+        If cbCategoria.SelectedIndex = 0 And btRegistrar.Enabled = True Then
+            ErrorIcono.SetError(cbCategoria, "Debe escoger una categoria")
+        Else
+            ErrorIcono.SetError(cbCategoria, "")
+        End If
     End Sub
 End Class

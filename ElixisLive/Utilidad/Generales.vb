@@ -799,4 +799,13 @@ Or TypeOf ctl Is System.Windows.Forms.CheckBox Or TypeOf ctl Is System.Windows.F
             objForm.StartPosition = FormStartPosition.CenterScreen
         Next
     End Sub
+    Public Shared Function Ceros(Nro As String, Cantidad As Integer) As String
+        Dim numero As String, cuantos As String, i As Integer
+        numero = Trim(Nro) 'Trim quita los espacion en blanco
+        cuantos = "0"
+        For i = 1 To Cantidad
+            cuantos = cuantos & "0"
+        Next i
+        Ceros = Mid(cuantos, 1, Cantidad - Len(numero)) & numero
+    End Function
 End Class

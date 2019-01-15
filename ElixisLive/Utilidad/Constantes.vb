@@ -37,6 +37,8 @@
     Public Const DIA_SEMANA = 7
     Public Const TIPO_LETRA_ELEMENTO = "[FontFamily: Name=Microsoft Sans Serif]"
     Public Const PENDIENTE = 0
+
+    Public Const ALTO_BARRA = 50
     'Citas
     Public Const ALTURA_HORA_DISPONIBLE = 30
     Public Const ANCHURA_HORA_DISPONIBLE = 100
