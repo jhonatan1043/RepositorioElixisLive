@@ -57,17 +57,11 @@ Partial Class FormEmpresa
         Me.Label2 = New System.Windows.Forms.Label()
         Me.ErrorIcono = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
-        Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.btNuevo = New System.Windows.Forms.ToolStripButton()
-        Me.ToolStripSeparator7 = New System.Windows.Forms.ToolStripSeparator()
         Me.btBuscar = New System.Windows.Forms.ToolStripButton()
-        Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
         Me.btRegistrar = New System.Windows.Forms.ToolStripButton()
-        Me.ToolStripSeparator4 = New System.Windows.Forms.ToolStripSeparator()
         Me.btEditar = New System.Windows.Forms.ToolStripButton()
-        Me.ToolStripSeparator5 = New System.Windows.Forms.ToolStripSeparator()
         Me.btCancelar = New System.Windows.Forms.ToolStripButton()
-        Me.ToolStripSeparator3 = New System.Windows.Forms.ToolStripSeparator()
         Me.btAnular = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripSeparator6 = New System.Windows.Forms.ToolStripSeparator()
         Me.Panel1 = New System.Windows.Forms.Panel()
@@ -459,18 +453,12 @@ Partial Class FormEmpresa
         Me.ToolStrip1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ToolStrip1.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.ToolStrip1.ImageScalingSize = New System.Drawing.Size(30, 30)
-        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripSeparator1, Me.btNuevo, Me.ToolStripSeparator7, Me.btBuscar, Me.ToolStripSeparator2, Me.btRegistrar, Me.ToolStripSeparator4, Me.btEditar, Me.ToolStripSeparator5, Me.btCancelar, Me.ToolStripSeparator3, Me.btAnular, Me.ToolStripSeparator6})
+        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.btNuevo, Me.btBuscar, Me.btRegistrar, Me.btEditar, Me.btCancelar, Me.btAnular, Me.ToolStripSeparator6})
         Me.ToolStrip1.Location = New System.Drawing.Point(0, 486)
         Me.ToolStrip1.Name = "ToolStrip1"
         Me.ToolStrip1.Size = New System.Drawing.Size(905, 37)
         Me.ToolStrip1.TabIndex = 14
         Me.ToolStrip1.Text = "ToolStrip1"
-        '
-        'ToolStripSeparator1
-        '
-        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
-        Me.ToolStripSeparator1.Size = New System.Drawing.Size(6, 37)
-        Me.ToolStripSeparator1.Visible = False
         '
         'btNuevo
         '
@@ -484,11 +472,6 @@ Partial Class FormEmpresa
         Me.btNuevo.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btNuevo.Visible = False
         '
-        'ToolStripSeparator7
-        '
-        Me.ToolStripSeparator7.Name = "ToolStripSeparator7"
-        Me.ToolStripSeparator7.Size = New System.Drawing.Size(6, 37)
-        '
         'btBuscar
         '
         Me.btBuscar.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -501,12 +484,6 @@ Partial Class FormEmpresa
         Me.btBuscar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btBuscar.Visible = False
         '
-        'ToolStripSeparator2
-        '
-        Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
-        Me.ToolStripSeparator2.Size = New System.Drawing.Size(6, 37)
-        Me.ToolStripSeparator2.Visible = False
-        '
         'btRegistrar
         '
         Me.btRegistrar.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -517,11 +494,6 @@ Partial Class FormEmpresa
         Me.btRegistrar.Size = New System.Drawing.Size(105, 34)
         Me.btRegistrar.Text = "Registrar"
         Me.btRegistrar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        '
-        'ToolStripSeparator4
-        '
-        Me.ToolStripSeparator4.Name = "ToolStripSeparator4"
-        Me.ToolStripSeparator4.Size = New System.Drawing.Size(6, 37)
         '
         'btEditar
         '
@@ -534,11 +506,6 @@ Partial Class FormEmpresa
         Me.btEditar.Text = "Editar"
         Me.btEditar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         '
-        'ToolStripSeparator5
-        '
-        Me.ToolStripSeparator5.Name = "ToolStripSeparator5"
-        Me.ToolStripSeparator5.Size = New System.Drawing.Size(6, 37)
-        '
         'btCancelar
         '
         Me.btCancelar.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -549,11 +516,6 @@ Partial Class FormEmpresa
         Me.btCancelar.Size = New System.Drawing.Size(104, 34)
         Me.btCancelar.Text = "Cancelar"
         Me.btCancelar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        '
-        'ToolStripSeparator3
-        '
-        Me.ToolStripSeparator3.Name = "ToolStripSeparator3"
-        Me.ToolStripSeparator3.Size = New System.Drawing.Size(6, 37)
         '
         'btAnular
         '
@@ -652,15 +614,10 @@ Partial Class FormEmpresa
     Public WithEvents LTitulo As Label
     Public WithEvents Pimagen As PictureBox
     Public WithEvents ToolStrip1 As ToolStrip
-    Friend WithEvents ToolStripSeparator1 As ToolStripSeparator
     Public WithEvents btNuevo As ToolStripButton
-    Friend WithEvents ToolStripSeparator2 As ToolStripSeparator
     Public WithEvents btRegistrar As ToolStripButton
-    Friend WithEvents ToolStripSeparator3 As ToolStripSeparator
     Public WithEvents btCancelar As ToolStripButton
-    Friend WithEvents ToolStripSeparator4 As ToolStripSeparator
     Public WithEvents btEditar As ToolStripButton
-    Friend WithEvents ToolStripSeparator5 As ToolStripSeparator
     Public WithEvents btAnular As ToolStripButton
     Friend WithEvents ToolStripSeparator6 As ToolStripSeparator
     Friend WithEvents GbInform As GroupBox
@@ -670,7 +627,6 @@ Partial Class FormEmpresa
     Public WithEvents TxtDescripcion As TextBox
     Friend WithEvents GbInform_D As GroupBox
     Public WithEvents dgvParametro As DataGridView
-    Friend WithEvents ToolStripSeparator7 As ToolStripSeparator
     Public WithEvents btBuscar As ToolStripButton
     Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents GroupBox5 As GroupBox

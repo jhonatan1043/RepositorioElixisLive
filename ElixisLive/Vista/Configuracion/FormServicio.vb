@@ -20,7 +20,6 @@
     End Sub
     Private Sub visibleConfig()
         btBuscar.Visible = False
-        ralla1.Visible = False
     End Sub
     Private Sub cargarRegistro()
         Dim params As New List(Of String)

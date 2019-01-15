@@ -808,4 +808,80 @@ Or TypeOf ctl Is System.Windows.Forms.CheckBox Or TypeOf ctl Is System.Windows.F
         Next i
         Ceros = Mid(cuantos, 1, Cantidad - Len(numero)) & numero
     End Function
+    Public Shared Sub mostrarLectura(ByRef pToolStrip As ToolStrip)
+        For Each oToolStripButton In pToolStrip.Items
+            If TypeOf oToolStripButton Is ToolStripButton Then
+                If oToolStripButton.Name = "btBuscar" Or oToolStripButton.Name = "btImprimir" Then
+                    oToolStripButton.Visible = True
+                Else
+                    oToolStripButton.Visible = False
+                End If
+            ElseIf TypeOf oToolStripButton Is ToolStripDropDown Then
+                If oToolStripButton.Name = "btBuscar" Or oToolStripButton.Name = "btImprimir" Then
+                    oToolStripButton.Visible = True
+                Else
+                    oToolStripButton.Visible = False
+                End If
+            End If
+        Next
+
+    End Sub
+    Public Shared Sub mostrarEscritura(ByRef pToolStrip As ToolStrip)
+        'Recorre y oculta cada elemento
+        For Each oToolStripButton In pToolStrip.Items
+            If TypeOf oToolStripButton Is ToolStripButton Then
+                If oToolStripButton.Name = "btBuscar" Then
+                    oToolStripButton.Visible = False
+                Else
+                    oToolStripButton.Visible = True
+                End If
+            ElseIf TypeOf oToolStripButton Is ToolStripDropDown Then
+                If oToolStripButton.Name = "btBuscar" Then
+                    oToolStripButton.Visible = False
+                Else
+                    oToolStripButton.Visible = True
+                End If
+            End If
+        Next
+    End Sub
+    Public Shared Sub mostrarLecturaEscritura(ByRef pToolStrip As ToolStrip)
+        'Recorre y oculta cada elemento
+        For Each oToolStripButton In pToolStrip.Items
+            If TypeOf oToolStripButton Is ToolStripButton Then
+                oToolStripButton.Visible = True
+            ElseIf TypeOf oToolStripButton Is ToolStripDropDown Then
+                oToolStripButton.Visible = True
+            End If
+        Next
+    End Sub
+    Public Shared Function consultarPermiso(ByVal nombreFormulario As String) As String
+        Dim codigo As String = String.Empty
+        Dim consulta As String
+        Dim respuesta As Integer
+        objConexion.conectar()
+        consulta = "SELECT Codigo_Menu FROM  ADMIN_MENU WHERE Formulario ='" & nombreFormulario & "'"
+        Using consultor As New SqlCommand(consulta, objConexion.cnxbd)
+            Using lector = consultor.ExecuteReader
+                If lector.HasRows = True Then
+                    lector.Read()
+                    codigo = lector.Item("Codigo_Menu")
+                End If
+            End Using
+        End Using
+        Dim lectura, escritura As String
+        lectura = codigo & "p" & "01"
+        escritura = codigo & "p" & "02"
+        If SesionActual.tienePermiso(lectura) And SesionActual.tienePermiso(escritura) Then
+            respuesta = Constantes.LECTURA_ESCRITURA
+        ElseIf SesionActual.tienePermiso(lectura) Then
+            respuesta = Constantes.SOLO_LECTURA
+        ElseIf SesionActual.tienePermiso(escritura) Then
+            respuesta = Constantes.SOLO_ESCRITURA
+        End If
+
+        Return respuesta
+        objConexion.desconectar()
+    End Function
+
+
 End Class

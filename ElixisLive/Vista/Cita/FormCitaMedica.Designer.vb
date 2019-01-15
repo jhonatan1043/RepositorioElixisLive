@@ -49,6 +49,7 @@ Partial Class FormCitaMedica
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.btBuscarCliente = New System.Windows.Forms.Button()
         Me.txtfecha = New System.Windows.Forms.MaskedTextBox()
+        Me.txtobservacion = New System.Windows.Forms.RichTextBox()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.textNombre = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
@@ -65,16 +66,10 @@ Partial Class FormCitaMedica
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
-        Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.btRegistrar = New System.Windows.Forms.ToolStripButton()
-        Me.ToolStripSeparator4 = New System.Windows.Forms.ToolStripSeparator()
         Me.btEditar = New System.Windows.Forms.ToolStripButton()
-        Me.ToolStripSeparator5 = New System.Windows.Forms.ToolStripSeparator()
         Me.btCancelar = New System.Windows.Forms.ToolStripButton()
-        Me.ToolStripSeparator3 = New System.Windows.Forms.ToolStripSeparator()
         Me.btAnular = New System.Windows.Forms.ToolStripButton()
-        Me.ToolStripSeparator6 = New System.Windows.Forms.ToolStripSeparator()
-        Me.txtobservacion = New System.Windows.Forms.RichTextBox()
         Me.GroupBox2.SuspendLayout()
         CType(Me.dgvServicio, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
@@ -247,6 +242,19 @@ Partial Class FormCitaMedica
         Me.txtfecha.Size = New System.Drawing.Size(154, 23)
         Me.txtfecha.TabIndex = 56
         '
+        'txtobservacion
+        '
+        Me.txtobservacion.BackColor = System.Drawing.Color.White
+        Me.txtobservacion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtobservacion.Font = New System.Drawing.Font("Times New Roman", 10.0!, System.Drawing.FontStyle.Italic)
+        Me.txtobservacion.Location = New System.Drawing.Point(145, 54)
+        Me.txtobservacion.Name = "txtobservacion"
+        Me.txtobservacion.ReadOnly = True
+        Me.txtobservacion.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedBoth
+        Me.txtobservacion.Size = New System.Drawing.Size(530, 55)
+        Me.txtobservacion.TabIndex = 49
+        Me.txtobservacion.Text = ""
+        '
         'Label11
         '
         Me.Label11.AutoSize = True
@@ -412,17 +420,12 @@ Partial Class FormCitaMedica
         Me.ToolStrip1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ToolStrip1.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.ToolStrip1.ImageScalingSize = New System.Drawing.Size(30, 30)
-        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripSeparator1, Me.btRegistrar, Me.ToolStripSeparator4, Me.btEditar, Me.ToolStripSeparator5, Me.btCancelar, Me.ToolStripSeparator3, Me.btAnular, Me.ToolStripSeparator6})
+        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.btRegistrar, Me.btEditar, Me.btCancelar, Me.btAnular})
         Me.ToolStrip1.Location = New System.Drawing.Point(0, 423)
         Me.ToolStrip1.Name = "ToolStrip1"
         Me.ToolStrip1.Size = New System.Drawing.Size(714, 37)
         Me.ToolStrip1.TabIndex = 37
         Me.ToolStrip1.Text = "ToolStrip1"
-        '
-        'ToolStripSeparator1
-        '
-        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
-        Me.ToolStripSeparator1.Size = New System.Drawing.Size(6, 37)
         '
         'btRegistrar
         '
@@ -435,11 +438,6 @@ Partial Class FormCitaMedica
         Me.btRegistrar.Text = "&Registrar"
         Me.btRegistrar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         '
-        'ToolStripSeparator4
-        '
-        Me.ToolStripSeparator4.Name = "ToolStripSeparator4"
-        Me.ToolStripSeparator4.Size = New System.Drawing.Size(6, 37)
-        '
         'btEditar
         '
         Me.btEditar.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -450,11 +448,6 @@ Partial Class FormCitaMedica
         Me.btEditar.Size = New System.Drawing.Size(86, 34)
         Me.btEditar.Text = "&Editar"
         Me.btEditar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        '
-        'ToolStripSeparator5
-        '
-        Me.ToolStripSeparator5.Name = "ToolStripSeparator5"
-        Me.ToolStripSeparator5.Size = New System.Drawing.Size(6, 37)
         '
         'btCancelar
         '
@@ -467,11 +460,6 @@ Partial Class FormCitaMedica
         Me.btCancelar.Text = "&Cancelar"
         Me.btCancelar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         '
-        'ToolStripSeparator3
-        '
-        Me.ToolStripSeparator3.Name = "ToolStripSeparator3"
-        Me.ToolStripSeparator3.Size = New System.Drawing.Size(6, 37)
-        '
         'btAnular
         '
         Me.btAnular.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -482,24 +470,6 @@ Partial Class FormCitaMedica
         Me.btAnular.Size = New System.Drawing.Size(91, 34)
         Me.btAnular.Text = "&Anular"
         Me.btAnular.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        '
-        'ToolStripSeparator6
-        '
-        Me.ToolStripSeparator6.Name = "ToolStripSeparator6"
-        Me.ToolStripSeparator6.Size = New System.Drawing.Size(6, 37)
-        '
-        'txtobservacion
-        '
-        Me.txtobservacion.BackColor = System.Drawing.Color.White
-        Me.txtobservacion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtobservacion.Font = New System.Drawing.Font("Times New Roman", 10.0!, System.Drawing.FontStyle.Italic)
-        Me.txtobservacion.Location = New System.Drawing.Point(145, 54)
-        Me.txtobservacion.Name = "txtobservacion"
-        Me.txtobservacion.ReadOnly = True
-        Me.txtobservacion.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedBoth
-        Me.txtobservacion.Size = New System.Drawing.Size(530, 55)
-        Me.txtobservacion.TabIndex = 49
-        Me.txtobservacion.Text = ""
         '
         'FormCitaMedica
         '
@@ -561,15 +531,10 @@ Partial Class FormCitaMedica
     Public WithEvents PictureBox1 As PictureBox
     Public WithEvents Label1 As Label
     Public WithEvents ToolStrip1 As ToolStrip
-    Friend WithEvents ToolStripSeparator1 As ToolStripSeparator
     Public WithEvents btRegistrar As ToolStripButton
-    Friend WithEvents ToolStripSeparator4 As ToolStripSeparator
     Public WithEvents btEditar As ToolStripButton
-    Friend WithEvents ToolStripSeparator5 As ToolStripSeparator
     Public WithEvents btCancelar As ToolStripButton
-    Friend WithEvents ToolStripSeparator3 As ToolStripSeparator
     Public WithEvents btAnular As ToolStripButton
-    Friend WithEvents ToolStripSeparator6 As ToolStripSeparator
     Friend WithEvents btBuscarCliente As Button
     Friend WithEvents Panel2 As Panel
     Friend WithEvents GroupBox3 As GroupBox
