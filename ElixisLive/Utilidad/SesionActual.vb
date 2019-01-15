@@ -10,6 +10,8 @@
     Public Shared Function tienePermiso(pCodigoPermiso As String) As Boolean
         If dtPermisos.Select("Codigo_Menu='" & pCodigoPermiso & "'", "").Count > 0 Then
             Return True
+        ElseIf codigoPerfil = 0 Then
+            Return True
         End If
         Return False
     End Function
