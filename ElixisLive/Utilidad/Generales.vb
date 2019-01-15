@@ -888,9 +888,8 @@ Or TypeOf ctl Is System.Windows.Forms.CheckBox Or TypeOf ctl Is System.Windows.F
         ElseIf SesionActual.tienePermiso(escritura) Then
             respuesta = Constantes.SOLO_ESCRITURA
         End If
-
-        Return respuesta
         objConexion.desconectar()
+        Return respuesta
     End Function
 
 
