@@ -854,6 +854,16 @@ Or TypeOf ctl Is System.Windows.Forms.CheckBox Or TypeOf ctl Is System.Windows.F
             End If
         Next
     End Sub
+    Public Shared Sub ocultarBotones(ByRef pToolStrip As ToolStrip)
+        'Recorre y oculta cada elemento
+        For Each oToolStripButton In pToolStrip.Items
+            If TypeOf oToolStripButton Is ToolStripButton Then
+                oToolStripButton.Visible = False
+            ElseIf TypeOf oToolStripButton Is ToolStripDropDown Then
+                oToolStripButton.Visible = False
+            End If
+        Next
+    End Sub
     Public Shared Function consultarPermiso(ByVal nombreFormulario As String) As String
         Dim codigo As String = String.Empty
         Dim consulta As String

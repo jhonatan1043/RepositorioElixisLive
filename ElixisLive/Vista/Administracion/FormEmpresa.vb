@@ -40,6 +40,16 @@
         End If
     End Sub
     Private Sub FormBase_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Dim respuesta As Integer = Generales.consultarPermiso(Name)
+        If respuesta = Constantes.LECTURA_ESCRITURA Then
+            Generales.mostrarLecturaEscritura(ToolStrip1)
+        ElseIf respuesta = Constantes.SOLO_LECTURA Then
+            Generales.mostrarLectura(ToolStrip1)
+        ElseIf respuesta = Constantes.SOLO_ESCRITURA Then
+            Generales.mostrarEscritura(ToolStrip1)
+        Else
+            Generales.ocultarBotones(ToolStrip1)
+        End If
         Dim params As New List(Of String)
         objEmpresa = New Empresa
         Try

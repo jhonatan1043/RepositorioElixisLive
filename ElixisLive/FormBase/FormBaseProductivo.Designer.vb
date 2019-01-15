@@ -26,6 +26,12 @@ Partial Class FormBaseProductivo
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.gbInform = New System.Windows.Forms.GroupBox()
+        Me.txtIdentificacion = New System.Windows.Forms.Label()
+        Me.txtTelefono = New System.Windows.Forms.Label()
+        Me.txtCelular = New System.Windows.Forms.Label()
+        Me.txtEmail = New System.Windows.Forms.Label()
+        Me.txtDireccion = New System.Windows.Forms.Label()
+        Me.txtNombre = New System.Windows.Forms.Label()
         Me.btBuscarPersona = New System.Windows.Forms.Button()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -50,29 +56,16 @@ Partial Class FormBaseProductivo
         Me.gbInformD = New System.Windows.Forms.GroupBox()
         Me.dgvParametro = New System.Windows.Forms.DataGridView()
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
-        Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.btNuevo = New System.Windows.Forms.ToolStripButton()
-        Me.ToolStripSeparator7 = New System.Windows.Forms.ToolStripSeparator()
         Me.btBuscar = New System.Windows.Forms.ToolStripButton()
-        Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
         Me.btRegistrar = New System.Windows.Forms.ToolStripButton()
-        Me.ToolStripSeparator4 = New System.Windows.Forms.ToolStripSeparator()
         Me.btEditar = New System.Windows.Forms.ToolStripButton()
-        Me.ToolStripSeparator5 = New System.Windows.Forms.ToolStripSeparator()
         Me.btCancelar = New System.Windows.Forms.ToolStripButton()
-        Me.ToolStripSeparator3 = New System.Windows.Forms.ToolStripSeparator()
         Me.btAnular = New System.Windows.Forms.ToolStripButton()
-        Me.ToolStripSeparator6 = New System.Windows.Forms.ToolStripSeparator()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Pimagen = New System.Windows.Forms.PictureBox()
         Me.LTitulo = New System.Windows.Forms.Label()
         Me.errorIcono = New System.Windows.Forms.ErrorProvider(Me.components)
-        Me.txtNombre = New System.Windows.Forms.Label()
-        Me.txtIdentificacion = New System.Windows.Forms.Label()
-        Me.txtTelefono = New System.Windows.Forms.Label()
-        Me.txtCelular = New System.Windows.Forms.Label()
-        Me.txtEmail = New System.Windows.Forms.Label()
-        Me.txtDireccion = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         Me.gbInform.SuspendLayout()
         Me.gpPago.SuspendLayout()
@@ -119,6 +112,66 @@ Partial Class FormBaseProductivo
         Me.gbInform.Size = New System.Drawing.Size(783, 108)
         Me.gbInform.TabIndex = 14
         Me.gbInform.TabStop = False
+        '
+        'txtIdentificacion
+        '
+        Me.txtIdentificacion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtIdentificacion.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtIdentificacion.Location = New System.Drawing.Point(125, 13)
+        Me.txtIdentificacion.Name = "txtIdentificacion"
+        Me.txtIdentificacion.Size = New System.Drawing.Size(119, 25)
+        Me.txtIdentificacion.TabIndex = 71
+        Me.txtIdentificacion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'txtTelefono
+        '
+        Me.txtTelefono.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtTelefono.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtTelefono.Location = New System.Drawing.Point(125, 42)
+        Me.txtTelefono.Name = "txtTelefono"
+        Me.txtTelefono.Size = New System.Drawing.Size(119, 25)
+        Me.txtTelefono.TabIndex = 72
+        Me.txtTelefono.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'txtCelular
+        '
+        Me.txtCelular.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtCelular.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtCelular.Location = New System.Drawing.Point(125, 71)
+        Me.txtCelular.Name = "txtCelular"
+        Me.txtCelular.Size = New System.Drawing.Size(119, 25)
+        Me.txtCelular.TabIndex = 73
+        Me.txtCelular.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'txtEmail
+        '
+        Me.txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtEmail.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtEmail.Location = New System.Drawing.Point(324, 71)
+        Me.txtEmail.Name = "txtEmail"
+        Me.txtEmail.Size = New System.Drawing.Size(416, 25)
+        Me.txtEmail.TabIndex = 74
+        Me.txtEmail.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'txtDireccion
+        '
+        Me.txtDireccion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtDireccion.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtDireccion.Location = New System.Drawing.Point(324, 42)
+        Me.txtDireccion.Name = "txtDireccion"
+        Me.txtDireccion.Size = New System.Drawing.Size(416, 25)
+        Me.txtDireccion.TabIndex = 75
+        Me.txtDireccion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'txtNombre
+        '
+        Me.txtNombre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtNombre.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtNombre.Location = New System.Drawing.Point(324, 13)
+        Me.txtNombre.Name = "txtNombre"
+        Me.txtNombre.Size = New System.Drawing.Size(416, 25)
+        Me.txtNombre.TabIndex = 69
+        Me.txtNombre.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'btBuscarPersona
         '
@@ -396,17 +449,12 @@ Partial Class FormBaseProductivo
         Me.ToolStrip1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ToolStrip1.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.ToolStrip1.ImageScalingSize = New System.Drawing.Size(26, 26)
-        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripSeparator1, Me.btNuevo, Me.ToolStripSeparator7, Me.btBuscar, Me.ToolStripSeparator2, Me.btRegistrar, Me.ToolStripSeparator4, Me.btEditar, Me.ToolStripSeparator5, Me.btCancelar, Me.ToolStripSeparator3, Me.btAnular, Me.ToolStripSeparator6})
+        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.btNuevo, Me.btBuscar, Me.btRegistrar, Me.btEditar, Me.btCancelar, Me.btAnular})
         Me.ToolStrip1.Location = New System.Drawing.Point(0, 472)
         Me.ToolStrip1.Name = "ToolStrip1"
         Me.ToolStrip1.Size = New System.Drawing.Size(804, 33)
         Me.ToolStrip1.TabIndex = 20
         Me.ToolStrip1.Text = "ToolStrip1"
-        '
-        'ToolStripSeparator1
-        '
-        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
-        Me.ToolStripSeparator1.Size = New System.Drawing.Size(6, 33)
         '
         'btNuevo
         '
@@ -419,11 +467,6 @@ Partial Class FormBaseProductivo
         Me.btNuevo.Text = "Nuevo"
         Me.btNuevo.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         '
-        'ToolStripSeparator7
-        '
-        Me.ToolStripSeparator7.Name = "ToolStripSeparator7"
-        Me.ToolStripSeparator7.Size = New System.Drawing.Size(6, 33)
-        '
         'btBuscar
         '
         Me.btBuscar.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -434,11 +477,6 @@ Partial Class FormBaseProductivo
         Me.btBuscar.Size = New System.Drawing.Size(86, 30)
         Me.btBuscar.Text = "Buscar"
         Me.btBuscar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        '
-        'ToolStripSeparator2
-        '
-        Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
-        Me.ToolStripSeparator2.Size = New System.Drawing.Size(6, 33)
         '
         'btRegistrar
         '
@@ -451,11 +489,6 @@ Partial Class FormBaseProductivo
         Me.btRegistrar.Text = "Registrar"
         Me.btRegistrar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         '
-        'ToolStripSeparator4
-        '
-        Me.ToolStripSeparator4.Name = "ToolStripSeparator4"
-        Me.ToolStripSeparator4.Size = New System.Drawing.Size(6, 33)
-        '
         'btEditar
         '
         Me.btEditar.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -466,11 +499,6 @@ Partial Class FormBaseProductivo
         Me.btEditar.Size = New System.Drawing.Size(82, 30)
         Me.btEditar.Text = "Editar"
         Me.btEditar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        '
-        'ToolStripSeparator5
-        '
-        Me.ToolStripSeparator5.Name = "ToolStripSeparator5"
-        Me.ToolStripSeparator5.Size = New System.Drawing.Size(6, 33)
         '
         'btCancelar
         '
@@ -483,11 +511,6 @@ Partial Class FormBaseProductivo
         Me.btCancelar.Text = "Cancelar"
         Me.btCancelar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         '
-        'ToolStripSeparator3
-        '
-        Me.ToolStripSeparator3.Name = "ToolStripSeparator3"
-        Me.ToolStripSeparator3.Size = New System.Drawing.Size(6, 33)
-        '
         'btAnular
         '
         Me.btAnular.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -498,11 +521,6 @@ Partial Class FormBaseProductivo
         Me.btAnular.Size = New System.Drawing.Size(87, 30)
         Me.btAnular.Text = "Anular"
         Me.btAnular.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        '
-        'ToolStripSeparator6
-        '
-        Me.ToolStripSeparator6.Name = "ToolStripSeparator6"
-        Me.ToolStripSeparator6.Size = New System.Drawing.Size(6, 33)
         '
         'Panel1
         '
@@ -540,66 +558,6 @@ Partial Class FormBaseProductivo
         '
         Me.errorIcono.ContainerControl = Me
         Me.errorIcono.RightToLeft = True
-        '
-        'txtNombre
-        '
-        Me.txtNombre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtNombre.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtNombre.Location = New System.Drawing.Point(324, 13)
-        Me.txtNombre.Name = "txtNombre"
-        Me.txtNombre.Size = New System.Drawing.Size(416, 25)
-        Me.txtNombre.TabIndex = 69
-        Me.txtNombre.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'txtIdentificacion
-        '
-        Me.txtIdentificacion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtIdentificacion.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtIdentificacion.Location = New System.Drawing.Point(125, 13)
-        Me.txtIdentificacion.Name = "txtIdentificacion"
-        Me.txtIdentificacion.Size = New System.Drawing.Size(119, 25)
-        Me.txtIdentificacion.TabIndex = 71
-        Me.txtIdentificacion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'txtTelefono
-        '
-        Me.txtTelefono.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtTelefono.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtTelefono.Location = New System.Drawing.Point(125, 42)
-        Me.txtTelefono.Name = "txtTelefono"
-        Me.txtTelefono.Size = New System.Drawing.Size(119, 25)
-        Me.txtTelefono.TabIndex = 72
-        Me.txtTelefono.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'txtCelular
-        '
-        Me.txtCelular.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtCelular.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtCelular.Location = New System.Drawing.Point(125, 71)
-        Me.txtCelular.Name = "txtCelular"
-        Me.txtCelular.Size = New System.Drawing.Size(119, 25)
-        Me.txtCelular.TabIndex = 73
-        Me.txtCelular.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'txtEmail
-        '
-        Me.txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtEmail.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtEmail.Location = New System.Drawing.Point(324, 71)
-        Me.txtEmail.Name = "txtEmail"
-        Me.txtEmail.Size = New System.Drawing.Size(416, 25)
-        Me.txtEmail.TabIndex = 74
-        Me.txtEmail.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'txtDireccion
-        '
-        Me.txtDireccion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtDireccion.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtDireccion.Location = New System.Drawing.Point(324, 42)
-        Me.txtDireccion.Name = "txtDireccion"
-        Me.txtDireccion.Size = New System.Drawing.Size(416, 25)
-        Me.txtDireccion.TabIndex = 75
-        Me.txtDireccion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'FormBaseProductivo
         '
@@ -642,18 +600,11 @@ Partial Class FormBaseProductivo
     Friend WithEvents gbInformD As GroupBox
     Public WithEvents dgvParametro As DataGridView
     Public WithEvents ToolStrip1 As ToolStrip
-    Friend WithEvents ToolStripSeparator1 As ToolStripSeparator
     Public WithEvents btNuevo As ToolStripButton
-    Friend WithEvents ToolStripSeparator2 As ToolStripSeparator
     Public WithEvents btRegistrar As ToolStripButton
-    Friend WithEvents ToolStripSeparator4 As ToolStripSeparator
     Public WithEvents btEditar As ToolStripButton
-    Friend WithEvents ToolStripSeparator5 As ToolStripSeparator
     Public WithEvents btCancelar As ToolStripButton
-    Friend WithEvents ToolStripSeparator3 As ToolStripSeparator
     Public WithEvents btAnular As ToolStripButton
-    Friend WithEvents ToolStripSeparator6 As ToolStripSeparator
-    Friend WithEvents ToolStripSeparator7 As ToolStripSeparator
     Public WithEvents btBuscar As ToolStripButton
     Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents cbRegimen As ComboBox
