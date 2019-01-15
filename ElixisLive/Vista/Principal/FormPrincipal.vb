@@ -1,8 +1,9 @@
-﻿
+﻿Imports System.Data.SqlClient
 Public Class FormPrincipal
     Dim formulario As New vForm
     Dim banderaAncla As Boolean
     Dim ctlMDI As MdiClient
+    Dim dtPermisos As New DataTable
     Private Sub formPrincipal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         principalBLL.cargarMenu(arbolMenu)
         Dim ctl As Control
@@ -18,8 +19,27 @@ Public Class FormPrincipal
         'formulario.ventana = Me '' se indica el formulario que usara el efecto
         'formulario.redondear() '' se redondean los bordes del formulario
         lbUsuario.Text = SesionActual.nombreUsuario
+        SesionActual.dtPermisos = cargarOpciones(SesionActual.codigoPerfil)
     End Sub
+    Public Function cargarOpciones(codigoPerfil As Integer) As DataTable
+        Dim cadena As String
+        Dim objConexio As New ConexionBD
+        objConexio.conectar()
+        Try
+            cadena = Sentencias.ADMIN_PERFIL_DETALLE & codigoPerfil & ""
+            dtPermisos.Clear()
 
+            Using da = New SqlDataAdapter(cadena, objConexio.cnxbd)
+                da.Fill(dtPermisos)
+            End Using
+
+        Catch ex As Exception
+            Throw ex
+        End Try
+        Return dtPermisos
+        dtPermisos.Dispose()
+        objConexio.desconectar()
+    End Function
     Private Sub arbolMenu_NodeMouseClick(sender As Object, e As TreeNodeMouseClickEventArgs) Handles arbolMenu.NodeMouseClick
         Dim ramaActiva As String
         ramaActiva = e.Node.Tag

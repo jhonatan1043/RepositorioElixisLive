@@ -37,7 +37,7 @@ Public Class PerfilDAL
         Catch ex As Exception
             Throw ex
         End Try
-        objConexio.desConectar()
+        objConexio.desconectar()
     End Sub
 
     Public Shared Sub actualizarPerfil(pPerfil As Perfil)
@@ -52,7 +52,7 @@ Public Class PerfilDAL
         Catch ex As Exception
             Throw ex
         End Try
-        objConexio.desConectar()
+        objConexio.desconectar()
     End Sub
     Friend Shared Sub anularPerfil(perfil As Perfil)
         Dim objConexio As New ConexionBD
@@ -66,7 +66,7 @@ Public Class PerfilDAL
         Catch ex As Exception
             Throw ex
         End Try
-        objConexio.desConectar()
+        objConexio.desconectar()
     End Sub
 
     Public Sub cargarMenuPadre(ByVal pCodigo As String,
@@ -82,7 +82,7 @@ Public Class PerfilDAL
         Catch ex As Exception
             Throw ex
         Finally
-            objConexio.desConectar()
+            objConexio.desconectar()
         End Try
     End Sub
 
@@ -99,7 +99,7 @@ Public Class PerfilDAL
         Catch ex As Exception
             Throw ex
         Finally
-            objConexio.desConectar()
+            objConexio.desconectar()
         End Try
 
     End Sub

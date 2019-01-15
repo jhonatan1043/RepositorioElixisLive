@@ -35,7 +35,7 @@ Public Class PersonaDAL
         Catch ex As Exception
             Throw ex
         Finally
-            objConexio.desConectar()
+            objConexio.desconectar()
         End Try
         Return objPersona
     End Function

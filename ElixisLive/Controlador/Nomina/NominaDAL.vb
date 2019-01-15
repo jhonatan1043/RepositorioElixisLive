@@ -22,7 +22,7 @@ Public Class NominaDAL
         Catch ex As Exception
             Throw ex
         Finally
-            objConexio.desConectar()
+            objConexio.desconectar()
         End Try
         Return nomina.codigoNomina
     End Function

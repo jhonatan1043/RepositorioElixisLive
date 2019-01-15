@@ -29,7 +29,7 @@ Public Class FormPerfil
         Dim params As New List(Of String)
         objPerfil.codigoPerfil = pCodigo
         params.Add(pCodigo)
-        Generales.llenarTabla("[SP_ADMIN_PERFIL_DETALLE]", params, objPerfil.dtRegistro)
+        Generales.llenarTabla(Sentencias.ADMIN_PERFIL_DETALLE, params, objPerfil.dtRegistro)
         cargarArbol()
         Generales.habilitarBotones(ToolStrip1)
         Generales.deshabilitarControles(Me)
@@ -189,7 +189,7 @@ Public Class FormPerfil
         Catch ex As Exception
             EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
         End Try
-        objConexio.desConectar()
+        objConexio.desconectar()
     End Sub
     Private Sub CreaOpciones(ByRef dsDatos As DataSet)
         Dim objConexio As New ConexionBD
@@ -207,7 +207,7 @@ Public Class FormPerfil
         Catch ex As Exception
             EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
         Finally
-            objConexio.desConectar()
+            objConexio.desconectar()
         End Try
 
     End Sub

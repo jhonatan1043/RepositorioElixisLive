@@ -11,7 +11,7 @@
         dtRegistro = New DataTable
         dtPerfil.Columns.Add("Codigo_Menu", Type.GetType("System.String"))
         sqlGuardar = "[SP_ADMIN_PERFIL_CREAR]"
-        sqlCargar = "[SP_ADMIN_PERFIL_LISTA]"
+        sqlCargar = Sentencias.PERFIL_LISTA
         sqlAnular = ""
     End Sub
     Sub New(persona As persona)

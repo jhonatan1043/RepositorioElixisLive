@@ -18,10 +18,10 @@ Public Class Busqueda
                 End Using
             End Using
         Catch ex As Exception
-            objConexion.desConectar()
+            objConexion.desconectar()
             MsgBox(ex.Message)
         End Try
-        objConexion.desConectar()
+        objConexion.desconectar()
         Return dt
     End Function
 End Class

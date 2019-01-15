@@ -15,7 +15,7 @@ Public Class ClienteDAL
         Catch ex As Exception
             Throw ex
         Finally
-            objConexio.desConectar()
+            objConexio.desconectar()
         End Try
         Return objCliente
     End Function

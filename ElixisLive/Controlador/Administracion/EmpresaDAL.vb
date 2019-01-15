@@ -31,7 +31,7 @@ Public Class EmpresaDAL
         Catch ex As Exception
             Throw ex
         Finally
-            objConexio.desConectar()
+            objConexio.desconectar()
         End Try
         Return objEmpresa
     End Function

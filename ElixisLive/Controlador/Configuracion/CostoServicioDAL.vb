@@ -16,7 +16,7 @@ Public Class CostoServicioDAL
         Catch ex As Exception
             Throw ex
         Finally
-            objConexio.desConectar()
+            objConexio.desconectar()
         End Try
         Return objCostoServicio
     End Function

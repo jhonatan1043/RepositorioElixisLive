@@ -16,7 +16,7 @@ Public Class ProductoUbicacionDAL
         Catch ex As Exception
             Throw ex
         Finally
-            objConexio.desConectar()
+            objConexio.desconectar()
         End Try
     End Sub
 End Class

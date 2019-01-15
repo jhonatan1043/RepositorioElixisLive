@@ -20,6 +20,7 @@
             SesionActual.codigoSucursal = codigoSucursal
             SesionActual.usuario = usuario
             SesionActual.nombreUsuario = Dresultado.Item(1)
+            SesionActual.codigoPerfil = Dresultado.Item(2)
             FormPrincipal.Show()
             banderaForm = True
         Else

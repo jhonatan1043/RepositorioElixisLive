@@ -27,7 +27,7 @@ Public Class ProveedorDAL
         Catch ex As Exception
             Throw ex
         Finally
-            objConexio.desConectar()
+            objConexio.desconectar()
         End Try
         Return objProveedor
     End Function

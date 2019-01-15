@@ -16,7 +16,7 @@ Public Class ConfigVentaDAL
                 comando.Parameters.Add(New SqlParameter("@Tabla", SqlDbType.Structured)).Value = objConfig.dtEvento
                 comando.ExecuteNonQuery()
             End Using
-            objConexio.desConectar()
+            objConexio.desconectar()
         Catch ex As Exception
             Throw ex
         End Try

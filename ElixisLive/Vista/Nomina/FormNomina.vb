@@ -1,5 +1,6 @@
 ﻿Public Class FormNomina
     Dim dtNomina As New DataTable
+    Dim nomina As New Nomina
     Private Sub cargarListaEmpleados()
         Dim params As New List(Of String)
         params.Add(dtFechaInicio.Value.Date)
@@ -47,10 +48,19 @@
         End If
     End Sub
     Private Sub FormNomina_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Dim respuesta As Integer = Generales.consultarPermiso(Name)
+        If respuesta = Constantes.LECTURA_ESCRITURA Then
+            Generales.mostrarEscritura(ToolStrip1)
+        ElseIf respuesta = Constantes.SOLO_LECTURA Then
+            Generales.mostrarLectura(ToolStrip1)
+        ElseIf respuesta = Constantes.SOLO_ESCRITURA Then
+            Generales.mostrarEscritura(ToolStrip1)
+        End If
         Generales.deshabilitarBotones(ToolStrip1)
         Generales.deshabilitarControles(Me)
         btNuevo.Enabled = True
         btBuscar.Enabled = True
+
     End Sub
     Private Sub dtFechaInicio_ValueChanged(sender As Object, e As EventArgs) Handles dtFechaInicio.ValueChanged
         dtFechaFinal.Value = dtFechaInicio.Value.AddDays(14)
@@ -180,5 +190,25 @@
         Else
             e.Cancel = True
         End If
+    End Sub
+
+    Private Sub btExport_Click(sender As Object, e As EventArgs) Handles btExport.Click
+        Try
+            Dim nombreRpt As String = "Archivo de Transacciones"
+            Dim dtReporte As New DataTable
+            Dim params As New List(Of String)
+
+            Cursor = Cursors.WaitCursor
+            params.Add(nomina.codigoNomina)
+            Generales.llenarTabla(Sentencias.NOMINA_REPORTE_TRANSACCIONES, params, dtReporte)
+            Dim ruta As String = FuncionesExcel.exportarDataTable(dtReporte, nombreRpt)
+
+            Process.Start(ruta)
+        Catch ex As Exception
+            EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
+        Finally
+            Cursor = Cursors.Default
+        End Try
+
     End Sub
 End Class

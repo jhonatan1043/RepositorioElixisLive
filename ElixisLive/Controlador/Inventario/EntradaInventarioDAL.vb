@@ -22,7 +22,7 @@ Public Class EntradaInventarioDAL
         Catch ex As Exception
             Throw ex
         Finally
-            objConexio.desConectar()
+            objConexio.desconectar()
         End Try
         Return objEntrada
     End Function

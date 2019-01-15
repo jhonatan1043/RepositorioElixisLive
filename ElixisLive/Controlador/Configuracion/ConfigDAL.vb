@@ -17,7 +17,7 @@ Public Class ConfigDAL
                     trnsccion.Commit()
                 End Using
             End Using
-            objConexio.desConectar()
+            objConexio.desconectar()
         Catch ex As Exception
             Throw ex
         End Try

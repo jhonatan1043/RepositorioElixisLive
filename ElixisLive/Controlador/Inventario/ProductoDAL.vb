@@ -23,7 +23,7 @@ Public Class ProductoDAL
         Catch ex As Exception
             Throw ex
         Finally
-            objConexio.desConectar()
+            objConexio.desconectar()
         End Try
         Return objProducto
     End Function

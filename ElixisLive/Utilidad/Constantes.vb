@@ -13,6 +13,11 @@
     Public Const CSERVICIO = 2
     Public Const CPRODUCTO = 1
 
+    Public Const SOLO_LECTURA = 1
+    Public Const SOLO_ESCRITURA = 2
+    Public Const LECTURA_ESCRITURA = 3
+
+
     Public Enum TIPO_CONTROL
         COMBO = 0
         SELECTOR = 1
