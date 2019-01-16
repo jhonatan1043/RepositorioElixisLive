@@ -881,11 +881,11 @@ Or TypeOf ctl Is System.Windows.Forms.CheckBox Or TypeOf ctl Is System.Windows.F
         Dim lectura, escritura As String
         lectura = codigo & "p" & "01"
         escritura = codigo & "p" & "02"
-        If SesionActual.tienePermiso(lectura) And SesionActual.tienePermiso(escritura) Then
+        If SesionActual.verificarPermiso(lectura) And SesionActual.verificarPermiso(escritura) Then
             respuesta = Constantes.LECTURA_ESCRITURA
-        ElseIf SesionActual.tienePermiso(lectura) Then
+        ElseIf SesionActual.verificarPermiso(lectura) Then
             respuesta = Constantes.SOLO_LECTURA
-        ElseIf SesionActual.tienePermiso(escritura) Then
+        ElseIf SesionActual.verificarPermiso(escritura) Then
             respuesta = Constantes.SOLO_ESCRITURA
         End If
         objConexion.desconectar()

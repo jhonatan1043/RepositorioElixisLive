@@ -45,21 +45,21 @@ Public Class FormInicioSesion
         objInicioSesionBLL.contrasena = txtContraseña.Text
         objInicioSesionBLL.codigoSucursal = CbEmpresa.SelectedValue
     End Sub
-    Private Sub TxtUsuario_Validating(sender As Object, e As CancelEventArgs) Handles txtUsuario.Validating
+    Private Sub TxtUsuario_Validating(sender As Object, e As EventArgs) Handles txtUsuario.LostFocus
         If DirectCast(sender, TextBox).Text.Length = 0 Then
             Me.ErrorIcono.SetError(txtUsuario, "Debe Ingresar el usuario")
         Else
             Me.ErrorIcono.SetError(txtUsuario, Constantes.CADENA_VACIA)
         End If
     End Sub
-    Private Sub TxtContraseña_Validating(sender As Object, e As CancelEventArgs) Handles txtContraseña.Validating
+    Private Sub TxtContraseña_Validating(sender As Object, e As EventArgs) Handles txtContraseña.LostFocus
         If DirectCast(sender, TextBox).Text.Length = 0 Then
             Me.ErrorIcono.SetError(sender, "Debe ingresar la contraseña")
         Else
             Me.ErrorIcono.SetError(sender, Constantes.CADENA_VACIA)
         End If
     End Sub
-    Private Sub CbEmpresa_Validating(sender As Object, e As CancelEventArgs) Handles CbEmpresa.Validating
+    Private Sub CbEmpresa_Validating(sender As Object, e As EventArgs) Handles CbEmpresa.LostFocus
         If DirectCast(sender, ComboBox).SelectedIndex = 0 Then
             Me.ErrorIcono.SetError(sender, "Debe Escoger la empresa")
         Else

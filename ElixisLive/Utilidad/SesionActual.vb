@@ -7,7 +7,7 @@
     Public Shared Property codigoPerfil As Integer
     Public Shared Property dtPermisos As New DataTable
 
-    Public Shared Function tienePermiso(pCodigoPermiso As String) As Boolean
+    Public Shared Function verificarPermiso(pCodigoPermiso As String) As Boolean
         If dtPermisos.Select("Codigo_Menu='" & pCodigoPermiso & "'", "").Count > 0 Then
             Return True
         ElseIf codigoPerfil = 0 Then
