@@ -71,9 +71,15 @@
     End Sub
     Private Sub btGenerar_Click(sender As Object, e As EventArgs) Handles btGenerar.Click
         Dim ruta As String
+        Dim nombre As String
         Dim ptImagen As New PictureBox
         Try
-            ruta = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) & "\" & txtCodigoBarra.Text & ".jpg"
+            nombre = "\" & txtCodigoBarra.Text & "_" & txtnombre.Text & ".jpg"
+            ruta = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) & "\CodigoBarra"
+            If IO.Directory.Exists(ruta) = False Then
+                IO.Directory.CreateDirectory(ruta)
+            End If
+            ruta = ruta & nombre
             ptImagen.Image = CodigosBarra.codigo128("A" & txtCodigoBarra.Text & "B", True, Constantes.ALTO_BARRA)
             ptImagen.SizeMode = PictureBoxSizeMode.AutoSize
             ptImagen.Image.Save(ruta, Imaging.ImageFormat.Jpeg)
