@@ -63,7 +63,6 @@ Partial Class FormEntradaInventario
         Me.dgValor = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.dgTotal = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.dgBodega = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.dgCodigoBarra = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.dgQuitar = New System.Windows.Forms.DataGridViewImageColumn()
         Me.GbInform_D.SuspendLayout()
         CType(Me.dgvEntrada, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -106,7 +105,7 @@ Partial Class FormEntradaInventario
         DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.dgvEntrada.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.dgvEntrada.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvEntrada.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.dgCodigoProducto, Me.dgDescripcion, Me.dgCantidad, Me.dgValor, Me.dgTotal, Me.dgBodega, Me.dgCodigoBarra, Me.dgQuitar})
+        Me.dgvEntrada.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.dgCodigoProducto, Me.dgDescripcion, Me.dgCantidad, Me.dgValor, Me.dgTotal, Me.dgBodega, Me.dgQuitar})
         Me.dgvEntrada.Location = New System.Drawing.Point(3, 18)
         Me.dgvEntrada.MultiSelect = False
         Me.dgvEntrada.Name = "dgvEntrada"
@@ -425,9 +424,9 @@ Partial Class FormEntradaInventario
         'dgValor
         '
         Me.dgValor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.dgValor.HeaderText = "Vr. Unitario"
+        Me.dgValor.HeaderText = "Vr. Compra"
         Me.dgValor.Name = "dgValor"
-        Me.dgValor.Width = 85
+        Me.dgValor.Width = 84
         '
         'dgTotal
         '
@@ -442,11 +441,6 @@ Partial Class FormEntradaInventario
         Me.dgBodega.Name = "dgBodega"
         Me.dgBodega.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
         Me.dgBodega.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
-        '
-        'dgCodigoBarra
-        '
-        Me.dgCodigoBarra.HeaderText = "C. de Barra"
-        Me.dgCodigoBarra.Name = "dgCodigoBarra"
         '
         'dgQuitar
         '
@@ -526,6 +520,5 @@ Partial Class FormEntradaInventario
     Friend WithEvents dgValor As DataGridViewTextBoxColumn
     Friend WithEvents dgTotal As DataGridViewTextBoxColumn
     Friend WithEvents dgBodega As DataGridViewTextBoxColumn
-    Friend WithEvents dgCodigoBarra As DataGridViewTextBoxColumn
     Friend WithEvents dgQuitar As DataGridViewImageColumn
 End Class

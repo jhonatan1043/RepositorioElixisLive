@@ -213,7 +213,6 @@
             .Columns("dgCantidad").ReadOnly = True
             .Columns("dgTotal").ReadOnly = True
             .Columns("dgBodega").ReadOnly = True
-            .Columns("dgCodigoBarra").ReadOnly = True
         End With
         If Estado = True Then
             With dgvEntrada
@@ -233,17 +232,15 @@
             .Columns("dgCantidad").DataPropertyName = "Cantidad"
             .Columns("dgTotal").DataPropertyName = "Total"
             .Columns("dgBodega").DataPropertyName = "Bodega"
-            .Columns("dgCodigoBarra").DataPropertyName = "CodigoBarra"
             '------------------------------------------------------
             .Columns("dgDescripcion").AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
             .Columns("dgValor").AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
             .Columns("dgCantidad").AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
             .Columns("dgTotal").AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
             .Columns("dgBodega").AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
-            .Columns("dgCodigoBarra").AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
             .DataSource = objEntrada.dtEntrada
             .AutoGenerateColumns = False
-            .Columns("dgQuitar").DisplayIndex = 7
+            .Columns("dgQuitar").DisplayIndex = 6
         End With
     End Sub
     Private Sub cargarCompra(pCodigo As Integer)

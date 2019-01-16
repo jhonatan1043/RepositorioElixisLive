@@ -12,7 +12,6 @@
         dtEntrada.Columns.Add("valor", Type.GetType("System.Int32")).DefaultValue = 0
         dtEntrada.Columns.Add("Total", Type.GetType("System.Int32")).DefaultValue = 0
         dtEntrada.Columns.Add("Bodega", Type.GetType("System.String"))
-        dtEntrada.Columns.Add("CodigoBarra", Type.GetType("System.String"))
         sqlAnular = ""
         sqlCargar = "[SP_INVEN_INVENTARIO_CARGAR]"
         sqlGuardar = "SP_INVEN_INVENTARIO_CREAR"
