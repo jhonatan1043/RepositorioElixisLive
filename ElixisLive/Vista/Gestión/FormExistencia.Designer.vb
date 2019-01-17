@@ -23,19 +23,19 @@ Partial Class FormExistencia
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.txtBuscar = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.Estado = New System.Windows.Forms.ToolStrip()
+        Me.ToolStripLabel1 = New System.Windows.Forms.ToolStripLabel()
+        Me.lbPorAcabar = New System.Windows.Forms.ToolStripTextBox()
+        Me.ToolStripLabel2 = New System.Windows.Forms.ToolStripLabel()
+        Me.lbAcabado = New System.Windows.Forms.ToolStripTextBox()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
         Me.dgvLista = New System.Windows.Forms.DataGridView()
         Me.errorIcono = New System.Windows.Forms.ErrorProvider(Me.components)
-        Me.Estado = New System.Windows.Forms.ToolStrip()
-        Me.lbPorAcabar = New System.Windows.Forms.ToolStripTextBox()
-        Me.ToolStripLabel1 = New System.Windows.Forms.ToolStripLabel()
-        Me.ToolStripLabel2 = New System.Windows.Forms.ToolStripLabel()
-        Me.lbAcabado = New System.Windows.Forms.ToolStripTextBox()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Pimagen = New System.Windows.Forms.PictureBox()
@@ -43,10 +43,10 @@ Partial Class FormExistencia
         Me.btActualizar = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
+        Me.Estado.SuspendLayout()
         Me.GroupBox5.SuspendLayout()
         CType(Me.dgvLista, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.errorIcono, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Estado.SuspendLayout()
         Me.Panel1.SuspendLayout()
         CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -97,6 +97,44 @@ Partial Class FormExistencia
         Me.GroupBox2.TabIndex = 62
         Me.GroupBox2.TabStop = False
         '
+        'Estado
+        '
+        Me.Estado.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Estado.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Italic)
+        Me.Estado.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripLabel1, Me.lbPorAcabar, Me.ToolStripLabel2, Me.lbAcabado})
+        Me.Estado.Location = New System.Drawing.Point(3, 16)
+        Me.Estado.Name = "Estado"
+        Me.Estado.Size = New System.Drawing.Size(707, 29)
+        Me.Estado.TabIndex = 0
+        '
+        'ToolStripLabel1
+        '
+        Me.ToolStripLabel1.Name = "ToolStripLabel1"
+        Me.ToolStripLabel1.Size = New System.Drawing.Size(151, 26)
+        Me.ToolStripLabel1.Text = "Productos por Acabar"
+        '
+        'lbPorAcabar
+        '
+        Me.lbPorAcabar.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.lbPorAcabar.CausesValidation = False
+        Me.lbPorAcabar.Name = "lbPorAcabar"
+        Me.lbPorAcabar.Size = New System.Drawing.Size(100, 29)
+        Me.lbPorAcabar.TextBoxTextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'ToolStripLabel2
+        '
+        Me.ToolStripLabel2.Name = "ToolStripLabel2"
+        Me.ToolStripLabel2.Size = New System.Drawing.Size(141, 26)
+        Me.ToolStripLabel2.Text = "Productos Acabados"
+        '
+        'lbAcabado
+        '
+        Me.lbAcabado.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.lbAcabado.CausesValidation = False
+        Me.lbAcabado.Name = "lbAcabado"
+        Me.lbAcabado.Size = New System.Drawing.Size(100, 29)
+        Me.lbAcabado.TextBoxTextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
         'GroupBox5
         '
         Me.GroupBox5.Controls.Add(Me.dgvLista)
@@ -114,8 +152,8 @@ Partial Class FormExistencia
         Me.dgvLista.AllowUserToDeleteRows = False
         Me.dgvLista.AllowUserToResizeColumns = False
         Me.dgvLista.AllowUserToResizeRows = False
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
-        Me.dgvLista.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black
+        Me.dgvLista.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.dgvLista.BackgroundColor = System.Drawing.SystemColors.Control
         Me.dgvLista.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvLista.Dock = System.Windows.Forms.DockStyle.Fill
@@ -131,44 +169,6 @@ Partial Class FormExistencia
         Me.errorIcono.ContainerControl = Me
         Me.errorIcono.RightToLeft = True
         '
-        'Estado
-        '
-        Me.Estado.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Estado.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Italic)
-        Me.Estado.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripLabel1, Me.lbPorAcabar, Me.ToolStripLabel2, Me.lbAcabado})
-        Me.Estado.Location = New System.Drawing.Point(3, 16)
-        Me.Estado.Name = "Estado"
-        Me.Estado.Size = New System.Drawing.Size(707, 29)
-        Me.Estado.TabIndex = 0
-        '
-        'lbPorAcabar
-        '
-        Me.lbPorAcabar.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.lbPorAcabar.CausesValidation = False
-        Me.lbPorAcabar.Name = "lbPorAcabar"
-        Me.lbPorAcabar.Size = New System.Drawing.Size(100, 29)
-        Me.lbPorAcabar.TextBoxTextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'ToolStripLabel1
-        '
-        Me.ToolStripLabel1.Name = "ToolStripLabel1"
-        Me.ToolStripLabel1.Size = New System.Drawing.Size(151, 26)
-        Me.ToolStripLabel1.Text = "Productos por Acabar"
-        '
-        'ToolStripLabel2
-        '
-        Me.ToolStripLabel2.Name = "ToolStripLabel2"
-        Me.ToolStripLabel2.Size = New System.Drawing.Size(141, 26)
-        Me.ToolStripLabel2.Text = "Productos Acabados"
-        '
-        'lbAcabado
-        '
-        Me.lbAcabado.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.lbAcabado.CausesValidation = False
-        Me.lbAcabado.Name = "lbAcabado"
-        Me.lbAcabado.Size = New System.Drawing.Size(100, 29)
-        Me.lbAcabado.TextBoxTextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.White
@@ -183,11 +183,11 @@ Partial Class FormExistencia
         '
         'Pimagen
         '
-        Me.Pimagen.BackColor = System.Drawing.Color.White
-        Me.Pimagen.Image = Global.Quality.My.Resources.Resources.glossy_3d_blue_orbs2_096_icon
-        Me.Pimagen.Location = New System.Drawing.Point(8, 0)
+        Me.Pimagen.BackColor = System.Drawing.Color.Transparent
+        Me.Pimagen.Image = Global.Quality.My.Resources.Resources.Preview_icon__1_
+        Me.Pimagen.Location = New System.Drawing.Point(9, 0)
         Me.Pimagen.Name = "Pimagen"
-        Me.Pimagen.Size = New System.Drawing.Size(69, 42)
+        Me.Pimagen.Size = New System.Drawing.Size(52, 42)
         Me.Pimagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.Pimagen.TabIndex = 1
         Me.Pimagen.TabStop = False
@@ -201,7 +201,7 @@ Partial Class FormExistencia
         Me.LTitulo.Name = "LTitulo"
         Me.LTitulo.Size = New System.Drawing.Size(742, 42)
         Me.LTitulo.TabIndex = 1
-        Me.LTitulo.Text = "Existencia"
+        Me.LTitulo.Text = "Productos en Existencia"
         Me.LTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'btActualizar
@@ -238,11 +238,11 @@ Partial Class FormExistencia
         Me.GroupBox1.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
+        Me.Estado.ResumeLayout(False)
+        Me.Estado.PerformLayout()
         Me.GroupBox5.ResumeLayout(False)
         CType(Me.dgvLista, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.errorIcono, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Estado.ResumeLayout(False)
-        Me.Estado.PerformLayout()
         Me.Panel1.ResumeLayout(False)
         CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)

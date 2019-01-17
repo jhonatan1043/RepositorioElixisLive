@@ -27,39 +27,33 @@ Partial Class FormCostoServicio
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
         Me.dgvRegistro = New System.Windows.Forms.DataGridView()
-        Me.dgQuitar = New System.Windows.Forms.DataGridViewImageColumn()
         Me.Gbdatos = New System.Windows.Forms.GroupBox()
-        Me.btBuscarServicio = New System.Windows.Forms.Button()
         Me.txtnombre = New System.Windows.Forms.TextBox()
         Me.txtcodigo = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
+        Me.errorIcono = New System.Windows.Forms.ErrorProvider(Me.components)
+        Me.DataGridViewImageColumn1 = New System.Windows.Forms.DataGridViewImageColumn()
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
-        Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.btNuevo = New System.Windows.Forms.ToolStripButton()
-        Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
         Me.btBuscar = New System.Windows.Forms.ToolStripButton()
-        Me.ralla1 = New System.Windows.Forms.ToolStripSeparator()
         Me.btRegistrar = New System.Windows.Forms.ToolStripButton()
-        Me.ToolStripSeparator4 = New System.Windows.Forms.ToolStripSeparator()
         Me.btEditar = New System.Windows.Forms.ToolStripButton()
-        Me.ToolStripSeparator5 = New System.Windows.Forms.ToolStripSeparator()
         Me.btCancelar = New System.Windows.Forms.ToolStripButton()
-        Me.ToolStripSeparator3 = New System.Windows.Forms.ToolStripSeparator()
         Me.btAnular = New System.Windows.Forms.ToolStripButton()
-        Me.ToolStripSeparator6 = New System.Windows.Forms.ToolStripSeparator()
+        Me.dgQuitar = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.btBuscarServicio = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Pimagen = New System.Windows.Forms.PictureBox()
         Me.LTitulo = New System.Windows.Forms.Label()
-        Me.errorIcono = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox5.SuspendLayout()
         CType(Me.dgvRegistro, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Gbdatos.SuspendLayout()
+        CType(Me.errorIcono, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ToolStrip1.SuspendLayout()
         Me.Panel1.SuspendLayout()
         CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.errorIcono, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GroupBox1
@@ -105,12 +99,6 @@ Partial Class FormCostoServicio
         Me.dgvRegistro.Size = New System.Drawing.Size(574, 203)
         Me.dgvRegistro.TabIndex = 0
         '
-        'dgQuitar
-        '
-        Me.dgQuitar.HeaderText = "Quitar"
-        Me.dgQuitar.Image = Global.Quality.My.Resources.Resources.papelera
-        Me.dgQuitar.Name = "dgQuitar"
-        '
         'Gbdatos
         '
         Me.Gbdatos.Controls.Add(Me.btBuscarServicio)
@@ -126,17 +114,6 @@ Partial Class FormCostoServicio
         Me.Gbdatos.TabIndex = 0
         Me.Gbdatos.TabStop = False
         Me.Gbdatos.Text = "Información "
-        '
-        'btBuscarServicio
-        '
-        Me.btBuscarServicio.BackgroundImage = Global.Quality.My.Resources.Resources.fondo_azul
-        Me.btBuscarServicio.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btBuscarServicio.Image = Global.Quality.My.Resources.Resources.Zoom_icon1
-        Me.btBuscarServicio.Location = New System.Drawing.Point(544, 12)
-        Me.btBuscarServicio.Name = "btBuscarServicio"
-        Me.btBuscarServicio.Size = New System.Drawing.Size(31, 30)
-        Me.btBuscarServicio.TabIndex = 68
-        Me.btBuscarServicio.UseVisualStyleBackColor = True
         '
         'txtnombre
         '
@@ -178,6 +155,17 @@ Partial Class FormCostoServicio
         Me.Label5.TabIndex = 17
         Me.Label5.Text = "Código:"
         '
+        'errorIcono
+        '
+        Me.errorIcono.ContainerControl = Me
+        Me.errorIcono.RightToLeft = True
+        '
+        'DataGridViewImageColumn1
+        '
+        Me.DataGridViewImageColumn1.HeaderText = "Quitar"
+        Me.DataGridViewImageColumn1.Image = Global.Quality.My.Resources.Resources.papelera
+        Me.DataGridViewImageColumn1.Name = "DataGridViewImageColumn1"
+        '
         'ToolStrip1
         '
         Me.ToolStrip1.BackColor = System.Drawing.Color.White
@@ -185,17 +173,12 @@ Partial Class FormCostoServicio
         Me.ToolStrip1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ToolStrip1.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.ToolStrip1.ImageScalingSize = New System.Drawing.Size(30, 30)
-        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripSeparator1, Me.btNuevo, Me.ToolStripSeparator2, Me.btBuscar, Me.ralla1, Me.btRegistrar, Me.ToolStripSeparator4, Me.btEditar, Me.ToolStripSeparator5, Me.btCancelar, Me.ToolStripSeparator3, Me.btAnular, Me.ToolStripSeparator6})
+        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.btNuevo, Me.btBuscar, Me.btRegistrar, Me.btEditar, Me.btCancelar, Me.btAnular})
         Me.ToolStrip1.Location = New System.Drawing.Point(0, 332)
         Me.ToolStrip1.Name = "ToolStrip1"
         Me.ToolStrip1.Size = New System.Drawing.Size(603, 37)
         Me.ToolStrip1.TabIndex = 19
         Me.ToolStrip1.Text = "ToolStrip1"
-        '
-        'ToolStripSeparator1
-        '
-        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
-        Me.ToolStripSeparator1.Size = New System.Drawing.Size(6, 37)
         '
         'btNuevo
         '
@@ -208,11 +191,6 @@ Partial Class FormCostoServicio
         Me.btNuevo.Text = "Nuevo"
         Me.btNuevo.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         '
-        'ToolStripSeparator2
-        '
-        Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
-        Me.ToolStripSeparator2.Size = New System.Drawing.Size(6, 37)
-        '
         'btBuscar
         '
         Me.btBuscar.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -223,11 +201,6 @@ Partial Class FormCostoServicio
         Me.btBuscar.Size = New System.Drawing.Size(90, 34)
         Me.btBuscar.Text = "Buscar"
         Me.btBuscar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        '
-        'ralla1
-        '
-        Me.ralla1.Name = "ralla1"
-        Me.ralla1.Size = New System.Drawing.Size(6, 37)
         '
         'btRegistrar
         '
@@ -240,11 +213,6 @@ Partial Class FormCostoServicio
         Me.btRegistrar.Text = "Registrar"
         Me.btRegistrar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         '
-        'ToolStripSeparator4
-        '
-        Me.ToolStripSeparator4.Name = "ToolStripSeparator4"
-        Me.ToolStripSeparator4.Size = New System.Drawing.Size(6, 37)
-        '
         'btEditar
         '
         Me.btEditar.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -255,11 +223,6 @@ Partial Class FormCostoServicio
         Me.btEditar.Size = New System.Drawing.Size(86, 34)
         Me.btEditar.Text = "Editar"
         Me.btEditar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        '
-        'ToolStripSeparator5
-        '
-        Me.ToolStripSeparator5.Name = "ToolStripSeparator5"
-        Me.ToolStripSeparator5.Size = New System.Drawing.Size(6, 37)
         '
         'btCancelar
         '
@@ -272,11 +235,6 @@ Partial Class FormCostoServicio
         Me.btCancelar.Text = "Cancelar"
         Me.btCancelar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         '
-        'ToolStripSeparator3
-        '
-        Me.ToolStripSeparator3.Name = "ToolStripSeparator3"
-        Me.ToolStripSeparator3.Size = New System.Drawing.Size(6, 37)
-        '
         'btAnular
         '
         Me.btAnular.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -288,10 +246,22 @@ Partial Class FormCostoServicio
         Me.btAnular.Text = "&Anular"
         Me.btAnular.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         '
-        'ToolStripSeparator6
+        'dgQuitar
         '
-        Me.ToolStripSeparator6.Name = "ToolStripSeparator6"
-        Me.ToolStripSeparator6.Size = New System.Drawing.Size(6, 37)
+        Me.dgQuitar.HeaderText = "Quitar"
+        Me.dgQuitar.Image = Global.Quality.My.Resources.Resources.papelera
+        Me.dgQuitar.Name = "dgQuitar"
+        '
+        'btBuscarServicio
+        '
+        Me.btBuscarServicio.BackgroundImage = Global.Quality.My.Resources.Resources.fondo_azul
+        Me.btBuscarServicio.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btBuscarServicio.Image = Global.Quality.My.Resources.Resources.Zoom_icon1
+        Me.btBuscarServicio.Location = New System.Drawing.Point(544, 12)
+        Me.btBuscarServicio.Name = "btBuscarServicio"
+        Me.btBuscarServicio.Size = New System.Drawing.Size(31, 30)
+        Me.btBuscarServicio.TabIndex = 68
+        Me.btBuscarServicio.UseVisualStyleBackColor = True
         '
         'Panel1
         '
@@ -307,10 +277,12 @@ Partial Class FormCostoServicio
         '
         'Pimagen
         '
-        Me.Pimagen.BackColor = System.Drawing.Color.White
-        Me.Pimagen.Location = New System.Drawing.Point(4, -7)
+        Me.Pimagen.BackColor = System.Drawing.Color.Transparent
+        Me.Pimagen.Image = Global.Quality.My.Resources.Resources.credit_card_icon
+        Me.Pimagen.Location = New System.Drawing.Point(4, -8)
         Me.Pimagen.Name = "Pimagen"
-        Me.Pimagen.Size = New System.Drawing.Size(69, 53)
+        Me.Pimagen.Size = New System.Drawing.Size(51, 48)
+        Me.Pimagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.Pimagen.TabIndex = 1
         Me.Pimagen.TabStop = False
         '
@@ -325,11 +297,6 @@ Partial Class FormCostoServicio
         Me.LTitulo.TabIndex = 1
         Me.LTitulo.Text = "Costo Servicio"
         Me.LTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'errorIcono
-        '
-        Me.errorIcono.ContainerControl = Me
-        Me.errorIcono.RightToLeft = True
         '
         'FormCostoServicio
         '
@@ -353,11 +320,11 @@ Partial Class FormCostoServicio
         CType(Me.dgvRegistro, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Gbdatos.ResumeLayout(False)
         Me.Gbdatos.PerformLayout()
+        CType(Me.errorIcono, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ToolStrip1.ResumeLayout(False)
         Me.ToolStrip1.PerformLayout()
         Me.Panel1.ResumeLayout(False)
         CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.errorIcono, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -374,20 +341,14 @@ Partial Class FormCostoServicio
     Friend WithEvents GroupBox5 As GroupBox
     Public WithEvents dgvRegistro As DataGridView
     Public WithEvents ToolStrip1 As ToolStrip
-    Friend WithEvents ToolStripSeparator1 As ToolStripSeparator
     Public WithEvents btNuevo As ToolStripButton
-    Friend WithEvents ToolStripSeparator2 As ToolStripSeparator
     Public WithEvents btRegistrar As ToolStripButton
-    Friend WithEvents ToolStripSeparator4 As ToolStripSeparator
     Public WithEvents btEditar As ToolStripButton
-    Friend WithEvents ToolStripSeparator5 As ToolStripSeparator
     Public WithEvents btCancelar As ToolStripButton
-    Friend WithEvents ToolStripSeparator3 As ToolStripSeparator
     Public WithEvents btAnular As ToolStripButton
-    Friend WithEvents ToolStripSeparator6 As ToolStripSeparator
     Public WithEvents btBuscar As ToolStripButton
-    Friend WithEvents ralla1 As ToolStripSeparator
     Friend WithEvents errorIcono As ErrorProvider
     Friend WithEvents btBuscarServicio As Button
     Friend WithEvents dgQuitar As DataGridViewImageColumn
+    Friend WithEvents DataGridViewImageColumn1 As DataGridViewImageColumn
 End Class

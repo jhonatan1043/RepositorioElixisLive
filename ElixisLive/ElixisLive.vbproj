@@ -634,6 +634,11 @@
     <Content Include="ReferenciaDLL\itextsharp.dll" />
     <Content Include="ReferenciaDLL\MySql.Data.DLL" />
     <Content Include="ReferenciaDLL\NotifySenderControl.dll" />
+    <None Include="Resources\Preview-icon %281%291.png" />
+    <None Include="Resources\shipping-icon.png" />
+    <None Include="Resources\credit-card-icon.png" />
+    <None Include="Resources\System-Preferences-icon.png" />
+    <None Include="Resources\Card-file-icon1.png" />
     <None Include="Resources\plus-icon.png" />
     <None Include="Resources\Actions-button-cancel-icon.png" />
     <None Include="Resources\Apps-session-halt-icon.png" />

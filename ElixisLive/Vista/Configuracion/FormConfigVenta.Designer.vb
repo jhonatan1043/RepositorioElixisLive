@@ -42,6 +42,7 @@ Partial Class FormConfigVenta
         Me.cbListaProducto = New System.Windows.Forms.ComboBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
+        Me.errorIcono = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
         Me.btRegistrar = New System.Windows.Forms.ToolStripButton()
         Me.btCancelar = New System.Windows.Forms.ToolStripButton()
@@ -49,16 +50,15 @@ Partial Class FormConfigVenta
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Pimagen = New System.Windows.Forms.PictureBox()
         Me.LTitulo = New System.Windows.Forms.Label()
-        Me.errorIcono = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox5.SuspendLayout()
         CType(Me.dgRegistro, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Gbdatos.SuspendLayout()
+        CType(Me.errorIcono, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ToolStrip1.SuspendLayout()
         Me.Panel1.SuspendLayout()
         CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.errorIcono, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GroupBox1
@@ -255,6 +255,11 @@ Partial Class FormConfigVenta
         Me.Label5.TabIndex = 17
         Me.Label5.Text = "Lista Productos:"
         '
+        'errorIcono
+        '
+        Me.errorIcono.ContainerControl = Me
+        Me.errorIcono.RightToLeft = True
+        '
         'ToolStrip1
         '
         Me.ToolStrip1.BackColor = System.Drawing.Color.White
@@ -316,10 +321,12 @@ Partial Class FormConfigVenta
         '
         'Pimagen
         '
-        Me.Pimagen.BackColor = System.Drawing.Color.White
-        Me.Pimagen.Location = New System.Drawing.Point(4, -7)
+        Me.Pimagen.BackColor = System.Drawing.Color.Transparent
+        Me.Pimagen.Image = Global.Quality.My.Resources.Resources.System_Preferences_icon
+        Me.Pimagen.Location = New System.Drawing.Point(4, -4)
         Me.Pimagen.Name = "Pimagen"
-        Me.Pimagen.Size = New System.Drawing.Size(69, 53)
+        Me.Pimagen.Size = New System.Drawing.Size(61, 46)
+        Me.Pimagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.Pimagen.TabIndex = 1
         Me.Pimagen.TabStop = False
         '
@@ -332,13 +339,8 @@ Partial Class FormConfigVenta
         Me.LTitulo.Name = "LTitulo"
         Me.LTitulo.Size = New System.Drawing.Size(659, 41)
         Me.LTitulo.TabIndex = 1
-        Me.LTitulo.Text = "Venta"
+        Me.LTitulo.Text = "Configuración Venta"
         Me.LTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'errorIcono
-        '
-        Me.errorIcono.ContainerControl = Me
-        Me.errorIcono.RightToLeft = True
         '
         'FormConfigVenta
         '
@@ -364,11 +366,11 @@ Partial Class FormConfigVenta
         CType(Me.dgRegistro, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Gbdatos.ResumeLayout(False)
         Me.Gbdatos.PerformLayout()
+        CType(Me.errorIcono, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ToolStrip1.ResumeLayout(False)
         Me.ToolStrip1.PerformLayout()
         Me.Panel1.ResumeLayout(False)
         CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.errorIcono, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
