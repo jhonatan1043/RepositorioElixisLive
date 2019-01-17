@@ -628,6 +628,8 @@
     <Content Include="ReferenciaDLL\itextsharp.dll" />
     <Content Include="ReferenciaDLL\MySql.Data.DLL" />
     <Content Include="ReferenciaDLL\NotifySenderControl.dll" />
+    <None Include="Resources\Microsoft-Excel-2013-icon.png" />
+    <None Include="Resources\Preview-icon2.png" />
     <None Include="Resources\Preview-icon %281%291.png" />
     <None Include="Resources\shipping-icon.png" />
     <None Include="Resources\credit-card-icon.png" />

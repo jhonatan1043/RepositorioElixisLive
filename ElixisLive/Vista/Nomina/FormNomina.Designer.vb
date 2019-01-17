@@ -374,7 +374,7 @@ Partial Class FormNomina
         '
         Me.btExport.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btExport.ForeColor = System.Drawing.Color.White
-        'Me.btExport.Image = Global.Quality.My.Resources.Resources.document_excel_icon
+        Me.btExport.Image = Global.Quality.My.Resources.Resources.Microsoft_Excel_2013_icon
         Me.btExport.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.btExport.Name = "btExport"
         Me.btExport.Size = New System.Drawing.Size(145, 34)
