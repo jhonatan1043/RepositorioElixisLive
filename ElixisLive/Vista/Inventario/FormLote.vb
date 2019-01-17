@@ -53,6 +53,12 @@
                 If bandera = True Then
                     objproducto.dtSetLote.Tables.Remove(CStr(codigoProducto))
                 End If
+
+                For posicion = 0 To objLote.dtLote.Rows.Count - 1
+                    objLote.dtLote.Rows(posicion).Item("Cantidad_Actual") = objLote.dtLote.Rows(posicion).Item("Cantidad")
+                Next
+
+                objLote.dtLote.AcceptChanges()
                 objproducto.dtSetLote.Tables.Add(objLote.dtLote)
                 Close()
             End If
@@ -83,22 +89,25 @@
             Close()
         End If
     End Sub
-
     Private Sub validarGrilla()
         With dgvLote
             .ReadOnly = False
             .Columns("dgCodigo").DataPropertyName = "Codigo"
             .Columns("dgNombre").DataPropertyName = "Registro"
             .Columns("dgCantidad").DataPropertyName = "Cantidad"
+            .Columns("dgCantidadAct").DataPropertyName = "Cantidad_Actual"
             .Columns("dgFechaLote").DataPropertyName = "FechaLote"
             .Columns("dgFechaVencimiento").DataPropertyName = "FechaVencimiento"
+            .Columns("dgUbicacion").DataPropertyName = "Ubicacion_Lote"
+            .Columns("dgCantidadAct").ReadOnly = True
         End With
     End Sub
     Private Sub dgvLote_EditingControlShowing(sender As Object, e As DataGridViewEditingControlShowingEventArgs) Handles dgvLote.EditingControlShowing
-        If dgvLote.Rows(dgvLote.CurrentCell.RowIndex).Cells("dgNombre").Selected = False Then
-            AddHandler e.Control.KeyPress, AddressOf ValidacionDigitacion.validarValoresNumericos
-        Else
+        If dgvLote.Rows(dgvLote.CurrentCell.RowIndex).Cells("dgNombre").Selected = True OrElse
+            dgvLote.Rows(dgvLote.CurrentCell.RowIndex).Cells("dgUbicacion").Selected = True Then
             AddHandler e.Control.KeyPress, AddressOf ValidacionDigitacion.validarAlfanumerico
+        Else
+        AddHandler e.Control.KeyPress, AddressOf ValidacionDigitacion.validarValoresNumericos
         End If
     End Sub
 End Class

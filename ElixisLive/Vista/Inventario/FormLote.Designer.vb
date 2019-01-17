@@ -31,8 +31,10 @@ Partial Class FormLote
         Me.dgCodigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.dgNombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.dgCantidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dgCantidadAct = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.dgFechaLote = New Quality.DataGridViewDateTimePickerColumn()
         Me.dgFechaVencimiento = New Quality.DataGridViewDateTimePickerColumn()
+        Me.dgUbicacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.dgQuitar = New System.Windows.Forms.DataGridViewImageColumn()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.lbNombre = New System.Windows.Forms.Label()
@@ -89,12 +91,13 @@ Partial Class FormLote
         Me.dgvLote.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.dgvLote.BackgroundColor = System.Drawing.Color.White
         Me.dgvLote.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvLote.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.dgCodigo, Me.dgNombre, Me.dgCantidad, Me.dgFechaLote, Me.dgFechaVencimiento, Me.dgQuitar})
+        Me.dgvLote.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.dgCodigo, Me.dgNombre, Me.dgCantidad, Me.dgCantidadAct, Me.dgFechaLote, Me.dgFechaVencimiento, Me.dgUbicacion, Me.dgQuitar})
         Me.dgvLote.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dgvLote.Location = New System.Drawing.Point(3, 18)
         Me.dgvLote.MultiSelect = False
         Me.dgvLote.Name = "dgvLote"
         Me.dgvLote.ReadOnly = True
+        Me.dgvLote.RowHeadersVisible = False
         Me.dgvLote.Size = New System.Drawing.Size(572, 170)
         Me.dgvLote.TabIndex = 1
         '
@@ -119,23 +122,46 @@ Partial Class FormLote
         Me.dgCantidad.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
         DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
         Me.dgCantidad.DefaultCellStyle = DataGridViewCellStyle2
-        Me.dgCantidad.HeaderText = "Cantidad"
+        Me.dgCantidad.HeaderText = "Cant. Inicial"
         Me.dgCantidad.Name = "dgCantidad"
         Me.dgCantidad.ReadOnly = True
         Me.dgCantidad.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
-        Me.dgCantidad.Width = 65
+        Me.dgCantidad.Width = 82
+        '
+        'dgCantidadAct
+        '
+        Me.dgCantidadAct.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.dgCantidadAct.HeaderText = "Cant. Actual"
+        Me.dgCantidadAct.Name = "dgCantidadAct"
+        Me.dgCantidadAct.ReadOnly = True
+        Me.dgCantidadAct.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
+        Me.dgCantidadAct.Width = 82
         '
         'dgFechaLote
         '
-        Me.dgFechaLote.HeaderText = "Fecha Lote"
+        Me.dgFechaLote.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.dgFechaLote.HeaderText = "F. Lote"
         Me.dgFechaLote.Name = "dgFechaLote"
         Me.dgFechaLote.ReadOnly = True
+        Me.dgFechaLote.Width = 49
         '
         'dgFechaVencimiento
         '
+        Me.dgFechaVencimiento.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
         Me.dgFechaVencimiento.HeaderText = "F. Vencimiento"
         Me.dgFechaVencimiento.Name = "dgFechaVencimiento"
         Me.dgFechaVencimiento.ReadOnly = True
+        Me.dgFechaVencimiento.Width = 92
+        '
+        'dgUbicacion
+        '
+        Me.dgUbicacion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.dgUbicacion.HeaderText = "Ubicacion"
+        Me.dgUbicacion.MaxInputLength = 100
+        Me.dgUbicacion.Name = "dgUbicacion"
+        Me.dgUbicacion.ReadOnly = True
+        Me.dgUbicacion.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
+        Me.dgUbicacion.Width = 70
         '
         'dgQuitar
         '
@@ -163,7 +189,7 @@ Partial Class FormLote
         Me.lbNombre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.lbNombre.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.lbNombre.Font = New System.Drawing.Font("Times New Roman", 14.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbNombre.Location = New System.Drawing.Point(177, 22)
+        Me.lbNombre.Location = New System.Drawing.Point(127, 23)
         Me.lbNombre.Name = "lbNombre"
         Me.lbNombre.Size = New System.Drawing.Size(66, 23)
         Me.lbNombre.TabIndex = 1
@@ -339,7 +365,9 @@ Partial Class FormLote
     Friend WithEvents dgCodigo As DataGridViewTextBoxColumn
     Friend WithEvents dgNombre As DataGridViewTextBoxColumn
     Friend WithEvents dgCantidad As DataGridViewTextBoxColumn
+    Friend WithEvents dgCantidadAct As DataGridViewTextBoxColumn
     Friend WithEvents dgFechaLote As DataGridViewDateTimePickerColumn
     Friend WithEvents dgFechaVencimiento As DataGridViewDateTimePickerColumn
+    Friend WithEvents dgUbicacion As DataGridViewTextBoxColumn
     Friend WithEvents dgQuitar As DataGridViewImageColumn
 End Class
