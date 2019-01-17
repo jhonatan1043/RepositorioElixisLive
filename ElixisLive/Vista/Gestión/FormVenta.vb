@@ -597,6 +597,7 @@ Public Class FormVenta
                 Generales.habilitarBotones(ToolStrip1)
                 Generales.deshabilitarControles(Me)
                 txtCodigo.Text = objVenta.codigo
+                cargarInfomacion(txtCodigo.Text)
                 btCancelar.Enabled = False
                 btRegistrar.Enabled = False
                 EstiloMensajes.mostrarMensajeExitoso(MensajeSistema.REGISTRO_GUARDADO)
