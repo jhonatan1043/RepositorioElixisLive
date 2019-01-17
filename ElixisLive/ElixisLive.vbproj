@@ -343,6 +343,144 @@
     <Compile Include="Vista\Configuracion\FormCostoServicio.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Vista\Contabilidad\Cierre contable\FormCierreDocumentos.Designer.vb">
+      <DependentUpon>FormCierreDocumentos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Contabilidad\Cierre contable\FormCierreDocumentos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Contabilidad\Cierre contable\FormCierrePeriodos.Designer.vb">
+      <DependentUpon>FormCierrePeriodos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Contabilidad\Cierre contable\FormCierrePeriodos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Contabilidad\Cuentas por cobrar\FormFacturaCliente.Designer.vb">
+      <DependentUpon>FormFacturaCliente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Contabilidad\Cuentas por cobrar\FormFacturaCliente.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Contabilidad\Cuentas por cobrar\FormNotaCliente.Designer.vb">
+      <DependentUpon>FormNotaCliente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Contabilidad\Cuentas por cobrar\FormNotaCliente.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Contabilidad\Cuentas por pagar\FormEstadoCuentas.Designer.vb">
+      <DependentUpon>FormEstadoCuentas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Contabilidad\Cuentas por pagar\FormEstadoCuentas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Contabilidad\Cuentas por pagar\FormFacturaProveedor.Designer.vb">
+      <DependentUpon>FormFacturaProveedor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Contabilidad\Cuentas por pagar\FormFacturaProveedor.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Contabilidad\Cuentas por pagar\FormNotaProveedor.Designer.vb">
+      <DependentUpon>FormNotaProveedor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Contabilidad\Cuentas por pagar\FormNotaProveedor.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Contabilidad\Libros\FormBalanceComprobacion.Designer.vb">
+      <DependentUpon>FormBalanceComprobacion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Contabilidad\Libros\FormBalanceComprobacion.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Contabilidad\Libros\FormCertificadoRetencion.Designer.vb">
+      <DependentUpon>FormCertificadoRetencion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Contabilidad\Libros\FormCertificadoRetencion.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Contabilidad\Libros\FormInventarioBalance.Designer.vb">
+      <DependentUpon>FormInventarioBalance.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Contabilidad\Libros\FormInventarioBalance.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Contabilidad\Libros\FormLibroAuxiliar.Designer.vb">
+      <DependentUpon>FormLibroAuxiliar.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Contabilidad\Libros\FormLibroAuxiliar.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Contabilidad\Libros\FormLibroDiario.Designer.vb">
+      <DependentUpon>FormLibroDiario.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Contabilidad\Libros\FormLibroDiario.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Contabilidad\Libros\FormLibroMayor.Designer.vb">
+      <DependentUpon>FormLibroMayor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Contabilidad\Libros\FormLibroMayor.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Contabilidad\Mantenimiento\FormRetiroDocumento.Designer.vb">
+      <DependentUpon>FormRetiroDocumento.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Contabilidad\Mantenimiento\FormRetiroDocumento.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Contabilidad\Puc\FormPUC.Designer.vb">
+      <DependentUpon>FormPUC.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Contabilidad\Puc\FormPUC.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Contabilidad\Puc\FormTipoDocumento.Designer.vb">
+      <DependentUpon>FormTipoDocumento.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Contabilidad\Puc\FormTipoDocumento.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Contabilidad\Saldos iniciales\FormCajaBanco.Designer.vb">
+      <DependentUpon>FormCajaBanco.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Contabilidad\Saldos iniciales\FormCajaBanco.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Contabilidad\Saldos iniciales\FormCarteraCXC.Designer.vb">
+      <DependentUpon>FormCarteraCXC.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Contabilidad\Saldos iniciales\FormCarteraCXC.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Contabilidad\Saldos iniciales\FormCarteraCXP.Designer.vb">
+      <DependentUpon>FormCarteraCXP.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Contabilidad\Saldos iniciales\FormCarteraCXP.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Contabilidad\Saldos iniciales\FormContabilidadGeneral.Designer.vb">
+      <DependentUpon>FormContabilidadGeneral.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Contabilidad\Saldos iniciales\FormContabilidadGeneral.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Contabilidad\Tesoreria\FormComprobanteEgreso.Designer.vb">
+      <DependentUpon>FormComprobanteEgreso.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Contabilidad\Tesoreria\FormComprobanteEgreso.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Contabilidad\Tesoreria\FormNotaInterna.Designer.vb">
+      <DependentUpon>FormNotaInterna.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Contabilidad\Tesoreria\FormNotaInterna.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Contabilidad\Tesoreria\FormReciboCaja.Designer.vb">
+      <DependentUpon>FormReciboCaja.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Contabilidad\Tesoreria\FormReciboCaja.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Vista\Estadisticas\FormCostoServicios.Designer.vb">
       <DependentUpon>FormCostoServicios.vb</DependentUpon>
     </Compile>
