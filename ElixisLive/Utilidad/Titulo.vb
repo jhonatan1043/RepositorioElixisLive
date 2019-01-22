@@ -11,4 +11,5 @@
     Public Const BUSQUEDA_LISTA_PRECIO = "Busqueda de lista precio"
     Public Const BUSQUEDA_FACTURA = "Busqueda de Facturas"
     Public Const BUSQUEDA_EXISTENCIA = "Existencia de producto"
+    Public Const BUSQUEDA_GASTO_SERVICIO = "Busqueda de gastos"
 End Class

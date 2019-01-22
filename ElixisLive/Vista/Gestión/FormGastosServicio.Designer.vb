@@ -23,10 +23,15 @@ Partial Class FormGastosServicio
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.GpDatos = New System.Windows.Forms.GroupBox()
+        Me.dgvGastos = New System.Windows.Forms.DataGridView()
+        Me.dgDescripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dgValor = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dgQuitar = New System.Windows.Forms.DataGridViewImageColumn()
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
         Me.btNuevo = New System.Windows.Forms.ToolStripButton()
         Me.btBuscar = New System.Windows.Forms.ToolStripButton()
@@ -34,24 +39,16 @@ Partial Class FormGastosServicio
         Me.btEditar = New System.Windows.Forms.ToolStripButton()
         Me.btCancelar = New System.Windows.Forms.ToolStripButton()
         Me.btAnular = New System.Windows.Forms.ToolStripButton()
-        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.dgvParametro = New System.Windows.Forms.DataGridView()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.GroupBox4 = New System.Windows.Forms.GroupBox()
+        Me.btAgregar = New System.Windows.Forms.Button()
+        Me.dtFecha = New System.Windows.Forms.DateTimePicker()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
-        Me.dgCodigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.dgDescripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.dgValor = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.dgQuitar = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GpDatos.SuspendLayout()
+        CType(Me.dgvGastos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ToolStrip1.SuspendLayout()
-        Me.GroupBox2.SuspendLayout()
-        CType(Me.dgvParametro, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -92,14 +89,61 @@ Partial Class FormGastosServicio
         'GpDatos
         '
         Me.GpDatos.BackColor = System.Drawing.Color.Transparent
-        Me.GpDatos.Controls.Add(Me.dgvParametro)
+        Me.GpDatos.Controls.Add(Me.dgvGastos)
         Me.GpDatos.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GpDatos.ForeColor = System.Drawing.Color.DarkBlue
         Me.GpDatos.Location = New System.Drawing.Point(3, 91)
         Me.GpDatos.Name = "GpDatos"
-        Me.GpDatos.Size = New System.Drawing.Size(693, 190)
+        Me.GpDatos.Size = New System.Drawing.Size(693, 290)
         Me.GpDatos.TabIndex = 38
         Me.GpDatos.TabStop = False
+        '
+        'dgvGastos
+        '
+        Me.dgvGastos.AllowUserToAddRows = False
+        Me.dgvGastos.AllowUserToDeleteRows = False
+        Me.dgvGastos.AllowUserToResizeColumns = False
+        Me.dgvGastos.AllowUserToResizeRows = False
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black
+        Me.dgvGastos.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        Me.dgvGastos.BackgroundColor = System.Drawing.SystemColors.Control
+        Me.dgvGastos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvGastos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.dgDescripcion, Me.dgValor, Me.dgQuitar})
+        Me.dgvGastos.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.dgvGastos.Location = New System.Drawing.Point(3, 17)
+        Me.dgvGastos.MultiSelect = False
+        Me.dgvGastos.Name = "dgvGastos"
+        Me.dgvGastos.Size = New System.Drawing.Size(687, 270)
+        Me.dgvGastos.TabIndex = 1
+        '
+        'dgDescripcion
+        '
+        Me.dgDescripcion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.dgDescripcion.HeaderText = "Justificación"
+        Me.dgDescripcion.MaxInputLength = 100
+        Me.dgDescripcion.Name = "dgDescripcion"
+        Me.dgDescripcion.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
+        '
+        'dgValor
+        '
+        Me.dgValor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.dgValor.HeaderText = "Valor"
+        Me.dgValor.Name = "dgValor"
+        Me.dgValor.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
+        Me.dgValor.Width = 39
+        '
+        'dgQuitar
+        '
+        Me.dgQuitar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle2.NullValue = "Nothing"
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgQuitar.DefaultCellStyle = DataGridViewCellStyle2
+        Me.dgQuitar.HeaderText = "Quitar"
+        Me.dgQuitar.Image = Global.Quality.My.Resources.Resources.papelera
+        Me.dgQuitar.Name = "dgQuitar"
+        Me.dgQuitar.Width = 45
         '
         'ToolStrip1
         '
@@ -181,63 +225,11 @@ Partial Class FormGastosServicio
         Me.btAnular.Text = "Anular"
         Me.btAnular.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         '
-        'GroupBox2
-        '
-        Me.GroupBox2.BackColor = System.Drawing.Color.Transparent
-        Me.GroupBox2.Controls.Add(Me.TextBox1)
-        Me.GroupBox2.Controls.Add(Me.GroupBox3)
-        Me.GroupBox2.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox2.ForeColor = System.Drawing.Color.DarkBlue
-        Me.GroupBox2.Location = New System.Drawing.Point(3, 284)
-        Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(693, 93)
-        Me.GroupBox2.TabIndex = 40
-        Me.GroupBox2.TabStop = False
-        Me.GroupBox2.Text = "Observación"
-        '
-        'GroupBox3
-        '
-        Me.GroupBox3.BackColor = System.Drawing.Color.Transparent
-        Me.GroupBox3.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox3.ForeColor = System.Drawing.Color.DarkBlue
-        Me.GroupBox3.Location = New System.Drawing.Point(8, 137)
-        Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(693, 93)
-        Me.GroupBox3.TabIndex = 39
-        Me.GroupBox3.TabStop = False
-        '
-        'TextBox1
-        '
-        Me.TextBox1.Location = New System.Drawing.Point(7, 18)
-        Me.TextBox1.Multiline = True
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.ScrollBars = System.Windows.Forms.ScrollBars.Both
-        Me.TextBox1.Size = New System.Drawing.Size(681, 69)
-        Me.TextBox1.TabIndex = 40
-        '
-        'dgvParametro
-        '
-        Me.dgvParametro.AllowUserToAddRows = False
-        Me.dgvParametro.AllowUserToDeleteRows = False
-        Me.dgvParametro.AllowUserToResizeColumns = False
-        Me.dgvParametro.AllowUserToResizeRows = False
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black
-        Me.dgvParametro.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
-        Me.dgvParametro.BackgroundColor = System.Drawing.SystemColors.Control
-        Me.dgvParametro.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvParametro.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.dgCodigo, Me.dgDescripcion, Me.dgValor, Me.dgQuitar})
-        Me.dgvParametro.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.dgvParametro.Location = New System.Drawing.Point(3, 17)
-        Me.dgvParametro.MultiSelect = False
-        Me.dgvParametro.Name = "dgvParametro"
-        Me.dgvParametro.Size = New System.Drawing.Size(687, 170)
-        Me.dgvParametro.TabIndex = 1
-        '
         'GroupBox1
         '
         Me.GroupBox1.BackColor = System.Drawing.Color.Transparent
-        Me.GroupBox1.Controls.Add(Me.DateTimePicker1)
+        Me.GroupBox1.Controls.Add(Me.btAgregar)
+        Me.GroupBox1.Controls.Add(Me.dtFecha)
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Controls.Add(Me.GroupBox4)
         Me.GroupBox1.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -248,16 +240,27 @@ Partial Class FormGastosServicio
         Me.GroupBox1.TabIndex = 41
         Me.GroupBox1.TabStop = False
         '
-        'GroupBox4
+        'btAgregar
         '
-        Me.GroupBox4.BackColor = System.Drawing.Color.Transparent
-        Me.GroupBox4.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox4.ForeColor = System.Drawing.Color.DarkBlue
-        Me.GroupBox4.Location = New System.Drawing.Point(8, 137)
-        Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Size = New System.Drawing.Size(693, 93)
-        Me.GroupBox4.TabIndex = 39
-        Me.GroupBox4.TabStop = False
+        Me.btAgregar.ForeColor = System.Drawing.Color.Black
+        Me.btAgregar.Image = Global.Quality.My.Resources.Resources.plus_icon
+        Me.btAgregar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btAgregar.Location = New System.Drawing.Point(575, 10)
+        Me.btAgregar.Name = "btAgregar"
+        Me.btAgregar.Size = New System.Drawing.Size(115, 37)
+        Me.btAgregar.TabIndex = 2
+        Me.btAgregar.Text = "Agregar"
+        Me.btAgregar.UseVisualStyleBackColor = True
+        '
+        'dtFecha
+        '
+        Me.dtFecha.CustomFormat = "MMMM/yyyy"
+        Me.dtFecha.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.dtFecha.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.dtFecha.Location = New System.Drawing.Point(59, 18)
+        Me.dtFecha.Name = "dtFecha"
+        Me.dtFecha.Size = New System.Drawing.Size(151, 22)
+        Me.dtFecha.TabIndex = 41
         '
         'Label1
         '
@@ -270,44 +273,16 @@ Partial Class FormGastosServicio
         Me.Label1.TabIndex = 40
         Me.Label1.Text = "Fecha:"
         '
-        'DateTimePicker1
+        'GroupBox4
         '
-        Me.DateTimePicker1.CustomFormat = "MMMM/yyyy"
-        Me.DateTimePicker1.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.DateTimePicker1.Location = New System.Drawing.Point(59, 18)
-        Me.DateTimePicker1.Name = "DateTimePicker1"
-        Me.DateTimePicker1.Size = New System.Drawing.Size(151, 22)
-        Me.DateTimePicker1.TabIndex = 41
-        '
-        'dgCodigo
-        '
-        Me.dgCodigo.HeaderText = "Codigo"
-        Me.dgCodigo.Name = "dgCodigo"
-        Me.dgCodigo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
-        '
-        'dgDescripcion
-        '
-        Me.dgDescripcion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.dgDescripcion.HeaderText = "Descripción"
-        Me.dgDescripcion.Name = "dgDescripcion"
-        Me.dgDescripcion.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
-        '
-        'dgValor
-        '
-        Me.dgValor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.dgValor.HeaderText = "Valor"
-        Me.dgValor.Name = "dgValor"
-        Me.dgValor.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
-        Me.dgValor.Width = 39
-        '
-        'dgQuitar
-        '
-        Me.dgQuitar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.dgQuitar.HeaderText = "Quitar"
-        Me.dgQuitar.Image = Global.Quality.My.Resources.Resources.papelera
-        Me.dgQuitar.Name = "dgQuitar"
-        Me.dgQuitar.Width = 45
+        Me.GroupBox4.BackColor = System.Drawing.Color.Transparent
+        Me.GroupBox4.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox4.ForeColor = System.Drawing.Color.DarkBlue
+        Me.GroupBox4.Location = New System.Drawing.Point(8, 137)
+        Me.GroupBox4.Name = "GroupBox4"
+        Me.GroupBox4.Size = New System.Drawing.Size(693, 93)
+        Me.GroupBox4.TabIndex = 39
+        Me.GroupBox4.TabStop = False
         '
         'FormGastosServicio
         '
@@ -316,7 +291,6 @@ Partial Class FormGastosServicio
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(698, 421)
         Me.Controls.Add(Me.GroupBox1)
-        Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.ToolStrip1)
         Me.Controls.Add(Me.GpDatos)
         Me.Controls.Add(Me.Panel1)
@@ -328,11 +302,9 @@ Partial Class FormGastosServicio
         Me.Panel1.ResumeLayout(False)
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GpDatos.ResumeLayout(False)
+        CType(Me.dgvGastos, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ToolStrip1.ResumeLayout(False)
         Me.ToolStrip1.PerformLayout()
-        Me.GroupBox2.ResumeLayout(False)
-        Me.GroupBox2.PerformLayout()
-        CType(Me.dgvParametro, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.ResumeLayout(False)
@@ -351,16 +323,13 @@ Partial Class FormGastosServicio
     Public WithEvents btEditar As ToolStripButton
     Public WithEvents btCancelar As ToolStripButton
     Public WithEvents btAnular As ToolStripButton
-    Friend WithEvents GroupBox2 As GroupBox
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents GroupBox3 As GroupBox
-    Public WithEvents dgvParametro As DataGridView
+    Public WithEvents dgvGastos As DataGridView
     Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents DateTimePicker1 As DateTimePicker
+    Friend WithEvents dtFecha As DateTimePicker
     Friend WithEvents Label1 As Label
     Friend WithEvents GroupBox4 As GroupBox
-    Friend WithEvents dgCodigo As DataGridViewTextBoxColumn
     Friend WithEvents dgDescripcion As DataGridViewTextBoxColumn
     Friend WithEvents dgValor As DataGridViewTextBoxColumn
     Friend WithEvents dgQuitar As DataGridViewImageColumn
+    Friend WithEvents btAgregar As Button
 End Class

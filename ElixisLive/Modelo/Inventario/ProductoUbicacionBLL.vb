@@ -21,6 +21,9 @@
                     dt.ImportRow(dtset.Tables(posicion).Rows(posicionD))
                 Next
             Next
+        Else
+            Dim lote As New Lote
+            dt = lote.dtLote.Clone
         End If
         Return dt
     End Function

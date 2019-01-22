@@ -123,6 +123,7 @@
     <Compile Include="Controlador\Configuracion\ConfigVentaDAL.vb" />
     <Compile Include="Controlador\Configuracion\CostoServicioDAL.vb" />
     <Compile Include="Controlador\Gestion\CompraDAL.vb" />
+    <Compile Include="Controlador\Gestion\GastoServicioDAL.vb" />
     <Compile Include="Controlador\Gestion\VentaDAL.vb" />
     <Compile Include="Controlador\Administracion\ClienteDAL.vb" />
     <Compile Include="Controlador\Inventario\EntradaInventarioDAL.vb" />
@@ -160,6 +161,7 @@
     <Compile Include="Entidad\generalConsulta.vb" />
     <Compile Include="Entidad\Configuracion\Configuracion.vb" />
     <Compile Include="Entidad\Gestion\Compra.vb" />
+    <Compile Include="Entidad\Gestion\GastoServicio.vb" />
     <Compile Include="Entidad\Gestion\Venta.vb" />
     <Compile Include="Entidad\Administracion\Cliente.vb" />
     <Compile Include="Entidad\Inventario\UbicacionProducto.vb" />
@@ -197,6 +199,7 @@
     <Compile Include="Modelo\Configuracion\ConfigVentaBLL.vb" />
     <Compile Include="Modelo\Configuracion\CostoServicioBLL.vb" />
     <Compile Include="Modelo\Gestion\CompraBLL.vb" />
+    <Compile Include="Modelo\Gestion\GastoServicioBLL.vb" />
     <Compile Include="Modelo\Gestion\VentaBLL.vb" />
     <Compile Include="Modelo\Inventario\EntradaInventarioBLL.vb" />
     <Compile Include="Modelo\Inventario\ListaPrecioBLL.vb" />
@@ -511,6 +514,12 @@
     <Compile Include="Vista\Gestión\FormVenta.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Vista\Informe\FormInformeVenta.Designer.vb">
+      <DependentUpon>FormInformeVenta.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Informe\FormInformeVenta.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Vista\Inventario\FormLote.Designer.vb">
       <DependentUpon>FormLote.vb</DependentUpon>
     </Compile>
@@ -686,6 +695,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\Gestión\FormVenta.resx">
       <DependentUpon>FormVenta.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Informe\FormInformeVenta.resx">
+      <DependentUpon>FormInformeVenta.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\Inventario\FormLote.resx">
       <DependentUpon>FormLote.vb</DependentUpon>
@@ -959,6 +971,7 @@
   <ItemGroup>
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

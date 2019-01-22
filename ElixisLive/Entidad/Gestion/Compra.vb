@@ -14,7 +14,7 @@
         dtCompra.Columns.Add("Total", Type.GetType("System.Int32")).DefaultValue = 0
 
         sqlAnular = ""
-        sqlConsulta = Sentencias.COMPRA_CONSULTAR
+        sqlConsulta = "[SP_INVEN_COMPRA_CONSULTAR_G]"
         sqlCargar = Sentencias.COMPRA_CARGAR
         sqlCargarDetalle = Sentencias.COMPRA_CARGAR_DETALLE
         sqlGuardar = "[SP_INVEN_COMPRA_CREAR]"
