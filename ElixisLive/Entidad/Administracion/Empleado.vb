@@ -21,6 +21,6 @@
         sqlConsulta = "[SP_ADMIN_EMPLEADO_CONSULTAR]"
         sqlCargar = "[SP_ADMIN_EMPLEADO_CARGAR]"
         sqlCargarDetalle = "[SP_ADMIN_EMPLEADO_CARGAR_D]"
-        sqlAnular = ""
+        sqlAnular = "[SP_ADMIN_EMPLEADO_ANULAR] "
     End Sub
 End Class
