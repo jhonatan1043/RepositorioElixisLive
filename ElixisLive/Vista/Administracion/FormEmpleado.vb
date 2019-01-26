@@ -158,6 +158,7 @@ Public Class FormEmpleado
         Generales.deshabilitarControles(gpUsuario)
         Generales.deshabilitarControles(gpPagare)
         Generales.limpiarControles(Me)
+        limpiarLabel()
         cargarParametros()
         formatMoneda()
         cbTipoSalario.Enabled = True
@@ -221,6 +222,7 @@ Public Class FormEmpleado
             Generales.deshabilitarBotones(ToolStrip1)
             Generales.deshabilitarControles(Me)
             Generales.limpiarControles(Me)
+            limpiarLabel()
             objEmpleado.codigo = Nothing
             formatMoneda()
             btNuevo.Enabled = True
@@ -247,6 +249,7 @@ Public Class FormEmpleado
                 If Generales.ejecutarSQL(objEmpleado.sqlAnular & objEmpleado.codigo) = True Then
                     Generales.limpiarControles(Me)
                     Generales.deshabilitarBotones(ToolStrip1)
+                    limpiarLabel()
                     btNuevo.Enabled = True
                     btBuscar.Enabled = True
                     EstiloMensajes.mostrarMensajeAnulado(MensajeSistema.REGISTRO_ANULADO)
@@ -260,13 +263,6 @@ Public Class FormEmpleado
         If btRegistrar.Enabled = False Then Exit Sub
         Dim open As New OpenFileDialog
         objEmpleado.banderaImagen = Generales.subirimagen(pictImagen, open)
-    End Sub
-
-    Private Sub dgvParametro_Validating(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles dgvParametro.Validating
-        'Dim dt As DataTable = DirectCast(ErrorIcono.DataSource, DataTable)
-        'If CBool(dgvParametro.Rows(dgvParametro.CurrentCell.RowIndex).Cells(1).Value) = True Then
-        '    dt.Rows(dgvParametro.CurrentCell.RowIndex).SetColumnError(1, "Este campo es obligatorio")
-        'End If
     End Sub
     Private Sub cbFormaPago_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbFormaPago.SelectedIndexChanged
         validarFormaPago()
@@ -300,6 +296,11 @@ Public Class FormEmpleado
             Me.ErrorIcono.SetError(txtNombre, "Debe escoger una persona")
         Else
             Me.ErrorIcono.SetError(txtNombre, Constantes.CADENA_VACIA)
+        End If
+        If cbTipoSalario.SelectedIndex = 0 Then
+            Me.ErrorIcono.SetError(cbTipoSalario, "Debe escoger un tipo de salario")
+        Else
+            Me.ErrorIcono.SetError(cbTipoSalario, Constantes.CADENA_VACIA)
         End If
     End Sub
     Private Sub quitarIcono()
@@ -366,6 +367,14 @@ Public Class FormEmpleado
     End Sub
     Private Sub formatMoneda()
         txtSalario.Text = Format(0, Constantes.FORMATO_MONEDA)
+    End Sub
+    Private Sub limpiarLabel()
+        txtIdentificacion.Text = Nothing
+        txtTelefono.Text = Nothing
+        txtCelular.Text = Nothing
+        txtNombre.Text = Nothing
+        txtDireccion.Text = Nothing
+        txtEmail.Text = Nothing
     End Sub
 End Class
 

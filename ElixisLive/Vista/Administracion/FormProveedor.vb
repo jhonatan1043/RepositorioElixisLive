@@ -140,6 +140,7 @@ Public Class FormProveedor
         Generales.habilitarControles(Me)
         Generales.deshabilitarControles(gbInform)
         Generales.limpiarControles(Me)
+        limpiarLabel()
         cargarParametros()
         objProveedor.codigo = Nothing
         btBuscarPersona.Enabled = True
@@ -188,6 +189,8 @@ Public Class FormProveedor
         If EstiloMensajes.mostrarMensajePregunta(MensajeSistema.CANCELAR) = Constantes.SI Then
             Generales.deshabilitarBotones(ToolStrip1)
             Generales.deshabilitarControles(Me)
+            Generales.limpiarControles(Me)
+            limpiarLabel()
             btNuevo.Enabled = True
             btBuscar.Enabled = True
         End If
@@ -208,6 +211,7 @@ Public Class FormProveedor
                 If Generales.ejecutarSQL(objProveedor.sqlAnular & objProveedor.codigo) = True Then
                     Generales.limpiarControles(Me)
                     Generales.deshabilitarBotones(ToolStrip1)
+                    limpiarLabel()
                     btNuevo.Enabled = True
                     btBuscar.Enabled = True
                     EstiloMensajes.mostrarMensajeAnulado(MensajeSistema.REGISTRO_ANULADO)
@@ -284,5 +288,12 @@ Public Class FormProveedor
         Me.ErrorIcono.SetError(cbTipoPago, Constantes.CADENA_VACIA)
         Me.ErrorIcono.SetError(cbRegimen, Constantes.CADENA_VACIA)
     End Sub
-
+    Private Sub limpiarLabel()
+        txtIdentificacion.Text = Nothing
+        txtTelefono.Text = Nothing
+        txtCelular.Text = Nothing
+        txtNombre.Text = Nothing
+        txtDireccion.Text = Nothing
+        txtEmail.Text = Nothing
+    End Sub
 End Class

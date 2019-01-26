@@ -75,6 +75,8 @@
     End Sub
     Private Sub btRegistrar_Click(sender As Object, e As EventArgs) Handles btRegistrar.Click
         dgvEntrada.EndEdit()
+        objEntrada.dtEntrada.AcceptChanges()
+
         Dim bodega As Integer = objEntrada.dtEntrada.Select("[Codigo] IS NOT NULL AND [Bodega] IS NULL").Count
         If String.IsNullOrEmpty(txtCodigo.Text) And rbCompra.Checked = True Then
             EstiloMensajes.mostrarMensajeAdvertencia("¡ Favor seleccionar la compra !")
@@ -96,6 +98,7 @@
                 btNuevo.Enabled = True
                 btBuscar.Enabled = True
                 btAnular.Enabled = True
+                cargarInventario(objEntrada.codigo)
                 EstiloMensajes.mostrarMensajeExitoso(MensajeSistema.REGISTRO_GUARDADO)
             Catch ex As Exception
                 EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))

@@ -137,6 +137,7 @@
                 btRegistrar.Enabled = False
                 btCancelar.Enabled = False
                 btGenerar.Enabled = True
+                cargarInfomacion(objProducto.codigo)
                 EstiloMensajes.mostrarMensajeExitoso(MensajeSistema.REGISTRO_GUARDADO)
             Catch ex As Exception
                 EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
