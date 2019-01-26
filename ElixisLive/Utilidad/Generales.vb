@@ -678,8 +678,8 @@ Public Class Generales
                 consulta.ExecuteNonQuery()
             End Using
         Catch ex As Exception
+            objConexion.desconectar()
             Throw ex
-            objConexion.desConectar()
             Return False
         End Try
         objConexion.desConectar()
