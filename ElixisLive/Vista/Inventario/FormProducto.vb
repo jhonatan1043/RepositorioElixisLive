@@ -55,6 +55,7 @@
                 cbMarca.SelectedValue = dfila("Codigo_Marca")
                 cbCategoria.SelectedValue = dfila("Codigo_Categoria")
                 txtnombre.Text = dfila("Nombre")
+                objProducto.nombreCompleto = dfila("Nombre_Completo")
                 txtCodigoBarra.Text = Generales.Ceros(objProducto.codigo, 5)
                 params.Add(ElementoMenu.codigo)
                 Generales.llenardgv(objProducto.sqlCargarDetalle, dgRegistro, params)
@@ -74,7 +75,7 @@
         Dim nombre As String
         Dim ptImagen As New PictureBox
         Try
-            nombre = "\" & txtCodigoBarra.Text & "_" & txtnombre.Text & ".jpg"
+            nombre = "\" & txtCodigoBarra.Text & "_" & objProducto.nombreCompleto & ".jpg"
             ruta = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) & "\CodigoBarra"
             If IO.Directory.Exists(ruta) = False Then
                 IO.Directory.CreateDirectory(ruta)

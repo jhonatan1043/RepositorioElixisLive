@@ -491,6 +491,7 @@ Public Class FormVenta
             params.Add(TextTotalArticulos.Text)
             params.Add(TextTotalServicio.Text)
             params.Add(TextTotal.Text)
+            params.Add(txtDescuento.Text)
 
             reporte.crearReportePDF(New factura, objVenta.codigo, formula, nombreReporte, IO.Path.GetTempPath(),,, params)
 
