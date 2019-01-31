@@ -33,7 +33,6 @@ Partial Class FormPersona
         Me.Label2 = New System.Windows.Forms.Label()
         Me.chUsuario = New System.Windows.Forms.CheckBox()
         Me.btBuscarPerfil = New System.Windows.Forms.Button()
-        Me.txtPerfil = New System.Windows.Forms.TextBox()
         Me.txtUsuario = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
@@ -69,6 +68,7 @@ Partial Class FormPersona
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Pimagen = New System.Windows.Forms.PictureBox()
         Me.LTitulo = New System.Windows.Forms.Label()
+        Me.txtPerfil = New System.Windows.Forms.Label()
         Me.GroupBox4.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -155,10 +155,10 @@ Partial Class FormPersona
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.txtPerfil)
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Controls.Add(Me.chUsuario)
         Me.GroupBox1.Controls.Add(Me.btBuscarPerfil)
-        Me.GroupBox1.Controls.Add(Me.txtPerfil)
         Me.GroupBox1.Controls.Add(Me.txtUsuario)
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Font = New System.Drawing.Font("Times New Roman", 8.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -203,16 +203,6 @@ Partial Class FormPersona
         Me.btBuscarPerfil.Size = New System.Drawing.Size(26, 25)
         Me.btBuscarPerfil.TabIndex = 15
         Me.btBuscarPerfil.UseVisualStyleBackColor = True
-        '
-        'txtPerfil
-        '
-        Me.txtPerfil.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtPerfil.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtPerfil.Location = New System.Drawing.Point(138, 67)
-        Me.txtPerfil.MaxLength = 50
-        Me.txtPerfil.Name = "txtPerfil"
-        Me.txtPerfil.Size = New System.Drawing.Size(226, 25)
-        Me.txtPerfil.TabIndex = 99
         '
         'txtUsuario
         '
@@ -616,6 +606,17 @@ Partial Class FormPersona
         Me.LTitulo.Text = "Persona"
         Me.LTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
+        'txtPerfil
+        '
+        Me.txtPerfil.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtPerfil.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtPerfil.ForeColor = System.Drawing.Color.Black
+        Me.txtPerfil.Location = New System.Drawing.Point(138, 67)
+        Me.txtPerfil.Name = "txtPerfil"
+        Me.txtPerfil.Size = New System.Drawing.Size(226, 25)
+        Me.txtPerfil.TabIndex = 100
+        Me.txtPerfil.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
         'FormPersona
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -685,7 +686,6 @@ Partial Class FormPersona
     Public WithEvents Label1 As Label
     Friend WithEvents chUsuario As CheckBox
     Friend WithEvents btBuscarPerfil As Button
-    Public WithEvents txtPerfil As TextBox
     Public WithEvents Label2 As Label
     Friend WithEvents cbDepartamento As ComboBox
     Public WithEvents Label3 As Label
@@ -698,4 +698,5 @@ Partial Class FormPersona
     Friend WithEvents rbProveedor As CheckBox
     Friend WithEvents rbCliente As CheckBox
     Friend WithEvents rbEmpleado As CheckBox
+    Friend WithEvents txtPerfil As Label
 End Class

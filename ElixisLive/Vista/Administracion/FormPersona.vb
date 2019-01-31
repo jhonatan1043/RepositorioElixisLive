@@ -198,7 +198,7 @@ Public Class FormPersona
             btBuscarPerfil.Enabled = True
         Else
             btBuscarPerfil.Enabled = False
-            txtPerfil.Clear()
+            txtPerfil.Text = ""
             txtUsuario.Clear()
         End If
     End Sub
