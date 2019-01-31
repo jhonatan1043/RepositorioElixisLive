@@ -48,10 +48,14 @@
         Dim params As New List(Of String)
         Dim dRows As DataRow
         params.Add(pCodigo)
-        dRows = Generales.cargarItem("[SP_SERVICIO_CARGAR]", params)
-        objCostoServicio.codigoServicio = pCodigo
-        txtcodigo.Text = pCodigo
-        txtnombre.Text = dRows("Descripcion")
+        Try
+            dRows = Generales.cargarItem("[SP_SERVICIO_CARGAR]", params)
+            objCostoServicio.codigoServicio = pCodigo
+            txtcodigo.Text = pCodigo
+            txtnombre.Text = dRows("Descripcion")
+        Catch ex As Exception
+            EstiloMensajes.mostrarMensajeError(ex.Message)
+        End Try
     End Sub
     Private Sub btNuevo_Click(sender As Object, e As EventArgs) Handles btNuevo.Click
         Generales.deshabilitarBotones(ToolStrip1)
@@ -79,8 +83,9 @@
         Dim paramas As New List(Of String)
         Dim dRows As DataRow
         paramas.Add(pCodigo)
+        Try
 
-        dRows = Generales.cargarItem("SP_SERVICIO_CARGAR", paramas)
+            dRows = Generales.cargarItem("SP_SERVICIO_CARGAR", paramas)
         txtcodigo.Text = pCodigo
         objCostoServicio.codigoServicio = pCodigo
         txtnombre.Text = dRows("Descripcion")
@@ -91,7 +96,11 @@
         Generales.habilitarBotones(ToolStrip1)
         Generales.deshabilitarControles(Me)
         btRegistrar.Enabled = False
-        btCancelar.Enabled = False
+            btCancelar.Enabled = False
+
+        Catch ex As Exception
+            EstiloMensajes.mostrarMensajeError(ex.Message)
+        End Try
     End Sub
     Private Sub btRegistrar_Click(sender As Object, e As EventArgs) Handles btRegistrar.Click
         Try
@@ -104,6 +113,7 @@
                 Generales.deshabilitarControles(Me)
                 btCancelar.Enabled = False
                 btRegistrar.Enabled = False
+                cargarCostoServicio(objCostoServicio.codigoServicio)
                 EstiloMensajes.mostrarMensajeExitoso(MensajeSistema.REGISTRO_GUARDADO)
             End If
         Catch ex As Exception
@@ -251,12 +261,18 @@
                     dgvRegistro.EndEdit()
                     objCostoServicio.dtRegistro.AcceptChanges()
 
+                    If objCostoServicio.dtRegistro.Select("Codigo Is Not Null and [concentracion] < [Recomendacion]").Count > 0 Then
+                        EstiloMensajes.mostrarMensajeAdvertencia("el valor recomendado no puede ser mayor a la concentración del producto")
+                        dgvRegistro.Rows(dgvRegistro.CurrentCell.RowIndex).Cells("Recomendacion").Value = 0
+                        Exit Sub
+                    End If
+
                     If objCostoServicio.dtRegistro.Select("Codigo Is Not Null and Valor <> 0 and Servicios <> 0").Count > 0 Then
                         costo = (dgvRegistro.Rows(dgvRegistro.CurrentCell.RowIndex).Cells("Valor").Value / dgvRegistro.Rows(dgvRegistro.CurrentCell.RowIndex).Cells("Servicios").Value)
                         dgvRegistro.Rows(dgvRegistro.CurrentCell.RowIndex).Cells("Costo").Value = costo
                     End If
-
                 End If
+
             End If
         End If
     End Sub
@@ -265,7 +281,7 @@
             EstiloMensajes.mostrarMensajeAdvertencia("Favor seleccionar un servicio")
         ElseIf objCostoServicio.dtRegistro.Rows.Count <= 1
             EstiloMensajes.mostrarMensajeAdvertencia("Favor agregar algun movimiento")
-        ElseIf objCostoServicio.dtRegistro.Select(" [Codigo] <> NULL And [Recomendacion] = 0 And [Valor] = 0").Count > 0
+        ElseIf objCostoServicio.dtRegistro.Select(" [Codigo] is Not Null And [Recomendacion] = 0 And [Valor] = 0").Count > 0
             EstiloMensajes.mostrarMensajeAdvertencia("Favor Asignar los valores requeridos")
         Else
             Return True
