@@ -46,12 +46,16 @@ Public Class FormEmpleado
     End Sub
     Private Sub cargarParametros()
         Dim params As New List(Of String)
-        If dgvParametro.ColumnCount = 0 Then
-            params.Add(ElementoMenu.codigo)
-            Generales.llenardgv(Sentencias.PARAMETROS_CONSULTAR, dgvParametro, params)
-            Generales.diseñoDGV(dgvParametro)
-            Generales.diseñoGrillaParametros(dgvParametro)
-        End If
+        Try
+            If dgvParametro.ColumnCount = 0 Then
+                params.Add(ElementoMenu.codigo)
+                Generales.llenardgv(Sentencias.PARAMETROS_CONSULTAR, dgvParametro, params)
+                Generales.diseñoDGV(dgvParametro)
+                Generales.diseñoGrillaParametros(dgvParametro)
+            End If
+        Catch ex As Exception
+            EstiloMensajes.mostrarMensajeError(ex.Message)
+        End Try
     End Sub
     Private Sub combosIniciales()
         EmpleadoBLL.cargarComboFormaPago(cbFormaPago)
@@ -100,6 +104,8 @@ Public Class FormEmpleado
         If bytes IsNot Nothing Then
             pictImagen.Image = Image.FromStream(New IO.MemoryStream(bytes))
             objEmpleado.banderaImagen = False
+        Else
+            pictImagen.Image = My.Resources.usuario
         End If
     End Sub
     Private Sub cargarCampos(dfila As DataRow)
@@ -170,6 +176,7 @@ Public Class FormEmpleado
         Generales.deshabilitarControles(gpUsuario)
         Generales.deshabilitarControles(gpPagare)
         Generales.limpiarControles(Me)
+        pictImagen.Image = My.Resources.usuario
         limpiarLabel()
         cargarParametros()
         formatMoneda()
@@ -184,7 +191,8 @@ Public Class FormEmpleado
          cbFormaPago.SelectedIndex = 0 Or
          cbCargo.SelectedIndex = 0 Or
          cbDepartamento.SelectedIndex = 0 Or
-         cbTipoSalario.SelectedIndex = 0 Then
+         cbTipoSalario.SelectedIndex = 0 Or cbTipoSalario.SelectedIndex = 1 And txtSalario.Text = 0 _
+          Or cbTipoSalario.SelectedIndex = 2 And NumComision.Value = 0 Then
         Else
             Return True
         End If
@@ -234,6 +242,7 @@ Public Class FormEmpleado
             Generales.deshabilitarBotones(ToolStrip1)
             Generales.deshabilitarControles(Me)
             Generales.limpiarControles(Me)
+            pictImagen.Image = My.Resources.usuario
             limpiarLabel()
             objEmpleado.codigo = Nothing
             formatMoneda()
@@ -249,6 +258,12 @@ Public Class FormEmpleado
             Generales.deshabilitarControles(gbInform)
             Generales.deshabilitarControles(gpUsuario)
             Generales.deshabilitarControles(gpPagare)
+            If cbTipoSalario.SelectedValue = 1 Then
+                txtSalario.ReadOnly = False
+            ElseIf cbTipoSalario.SelectedValue = 2
+                NumComision.Enabled = True
+                NumComision.ReadOnly = False
+            End If
             cbTipoSalario.Enabled = True
             btBuscarPersona.Enabled = False
             btCancelar.Enabled = True
@@ -314,6 +329,16 @@ Public Class FormEmpleado
         Else
             Me.ErrorIcono.SetError(cbTipoSalario, Constantes.CADENA_VACIA)
         End If
+        If cbTipoSalario.SelectedIndex = 1 And (txtSalario.Text = 0 Or txtSalario.Text = String.Empty) Then
+            Me.ErrorIcono.SetError(txtSalario, "Debe digitar el salario")
+        Else
+            Me.ErrorIcono.SetError(txtSalario, Constantes.CADENA_VACIA)
+        End If
+        If cbTipoSalario.SelectedIndex = 2 And NumComision.Value = 0 Then
+            Me.ErrorIcono.SetError(NumComision, "Debe digitar la comision")
+        Else
+            Me.ErrorIcono.SetError(NumComision, Constantes.CADENA_VACIA)
+        End If
     End Sub
     Private Sub quitarIcono()
         Me.ErrorIcono.SetError(txtNombre, Constantes.CADENA_VACIA)
@@ -321,6 +346,8 @@ Public Class FormEmpleado
         Me.ErrorIcono.SetError(cbCargo, Constantes.CADENA_VACIA)
         Me.ErrorIcono.SetError(cbDepartamento, Constantes.CADENA_VACIA)
         Me.ErrorIcono.SetError(cbTipoSalario, Constantes.CADENA_VACIA)
+        Me.ErrorIcono.SetError(txtSalario, Constantes.CADENA_VACIA)
+        Me.ErrorIcono.SetError(NumComision, Constantes.CADENA_VACIA)
     End Sub
     Private Sub cbFormaPago_Validating(sender As Object, e As EventArgs) Handles cbFormaPago.LostFocus
         If cbCargo.SelectedIndex = 0 And btRegistrar.Enabled = True Then
@@ -355,6 +382,27 @@ Public Class FormEmpleado
             Me.ErrorIcono.SetError(txtNombre, "Debe escoger una persona")
         Else
             Me.ErrorIcono.SetError(txtNombre, Constantes.CADENA_VACIA)
+        End If
+    End Sub
+    Private Sub txtSalario_Validating(sender As Object, e As EventArgs) Handles txtSalario.LostFocus
+        Try
+            If cbTipoSalario.SelectedIndex = 1 And txtSalario.Text = String.Empty Then
+                txtSalario.Text = 0
+            End If
+            If cbTipoSalario.SelectedIndex = 1 And txtSalario.Text = 0 And btRegistrar.Enabled = True Then
+                Me.ErrorIcono.SetError(txtSalario, "Debe digitar el salario")
+            Else
+                Me.ErrorIcono.SetError(txtSalario, Constantes.CADENA_VACIA)
+            End If
+        Catch ex As Exception
+            EstiloMensajes.mostrarMensajeError(ex.Message)
+        End Try
+    End Sub
+    Private Sub NumComision_Validating(sender As Object, e As EventArgs) Handles NumComision.LostFocus
+        If cbTipoSalario.SelectedIndex = 2 And NumComision.Value = 0 And btRegistrar.Enabled = True Then
+            Me.ErrorIcono.SetError(NumComision, "Debe digitar la comision")
+        Else
+            Me.ErrorIcono.SetError(NumComision, Constantes.CADENA_VACIA)
         End If
     End Sub
     Private Sub cbTipoSalario_TextChanged(sender As Object, e As EventArgs) Handles cbTipoSalario.TextChanged
