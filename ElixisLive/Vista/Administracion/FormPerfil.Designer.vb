@@ -119,7 +119,7 @@ Partial Class FormPerfil
         Me.dgvParametro.MultiSelect = False
         Me.dgvParametro.Name = "dgvParametro"
         Me.dgvParametro.ReadOnly = True
-        Me.dgvParametro.Size = New System.Drawing.Size(501, 272)
+        Me.dgvParametro.Size = New System.Drawing.Size(511, 272)
         Me.dgvParametro.TabIndex = 4
         '
         'txtcodigo
