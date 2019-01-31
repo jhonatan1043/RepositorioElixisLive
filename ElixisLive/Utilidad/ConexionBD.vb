@@ -12,7 +12,7 @@ Public Class ConexionBD
     'End Sub
     Public Sub conectar()
         Try
-            cnxbd.ConnectionString = "Server=Sistema-pc;User=AdminSoftLive;Password=AdminSoftLive;Database=softbd"
+            cnxbd.ConnectionString = "Server=SISTEMAS\NADA;Initial Catalog=softbd;integrated security=true"
             cnxbd.Open()
         Catch ex As SqlException
             MsgBox(ex.Message)

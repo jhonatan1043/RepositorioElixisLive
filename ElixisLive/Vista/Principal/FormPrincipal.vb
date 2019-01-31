@@ -53,6 +53,8 @@ Public Class FormPrincipal
         elemento.nombre = e.Node.Tag
         Return elemento
     End Function
+
+
     'Private Sub pitImagen_Click(sender As Object, e As EventArgs)
     '    If banderaAncla = False Then
     '        desAnclar()

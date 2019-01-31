@@ -50,6 +50,18 @@
         End Try
         Generales.tabularConEnter(Me)
     End Sub
+    Private Sub FormPersona_Paint(sender As Object, e As PaintEventArgs) Handles MyBase.Paint
+        Dim respuesta As Integer = Generales.consultarPermiso(Name)
+        If respuesta = Constantes.LECTURA_ESCRITURA Then
+            Generales.mostrarLecturaEscritura(ToolStrip1)
+        ElseIf respuesta = Constantes.SOLO_LECTURA Then
+            Generales.mostrarLectura(ToolStrip1)
+        ElseIf respuesta = Constantes.SOLO_ESCRITURA Then
+            Generales.mostrarEscritura(ToolStrip1)
+        Else
+            Generales.ocultarBotones(ToolStrip1)
+        End If
+    End Sub
     Private Sub cargarComboDepartamento()
         Generales.cargarCombo(Sentencias.DEPARTAMENTO_CONSULTAR, Nothing, "descripcion", "Codigo_Departamento", cbDepartamento)
     End Sub
