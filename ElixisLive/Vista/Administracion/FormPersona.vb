@@ -117,6 +117,10 @@ Public Class FormPersona
             Generales.deshabilitarBotones(ToolStrip1)
             Generales.habilitarControles(Me)
             desHabilitarCheck()
+            If txtUsuario.Text = String.Empty Then
+                Generales.deshabilitarControles(GroupBox1)
+                chUsuario.Enabled = True
+            End If
             btCancelar.Enabled = True
             btRegistrar.Enabled = True
             listaSucursalesCargar(objPersona.codigo, Constantes.EDITABLE)
@@ -197,6 +201,7 @@ Public Class FormPersona
             txtUsuario.ReadOnly = False
             btBuscarPerfil.Enabled = True
         Else
+            txtUsuario.ReadOnly = True
             btBuscarPerfil.Enabled = False
             txtPerfil.Text = ""
             txtUsuario.Clear()
@@ -403,5 +408,9 @@ Public Class FormPersona
         Else
             Generales.ocultarBotones(ToolStrip1)
         End If
+    End Sub
+
+    Private Sub chUsuario_CheckedChanged(sender As Object, e As EventArgs) Handles chUsuario.CheckedChanged
+
     End Sub
 End Class
