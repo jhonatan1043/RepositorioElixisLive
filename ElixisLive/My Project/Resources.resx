@@ -334,6 +334,9 @@
   <data name="pregunta" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pregunta.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Microsoft-Excel-2013-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Microsoft-Excel-2013-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="app-upload-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\app-upload-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -463,6 +466,9 @@
   <data name="fondo azul" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\fondo azul.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="document-archive-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\document-archive-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="glossy-3d-blue-power-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\glossy-3d-blue-power-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -547,6 +553,9 @@
   <data name="Money-Bag-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Money-Bag-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Preview-icon1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Preview-icon2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="logo elixis" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\logo elixis.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -586,10 +595,7 @@
   <data name="user-group-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\user-group-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Preview-icon1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Preview-icon2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Microsoft-Excel-2013-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Microsoft-Excel-2013-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Admin-icon1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Admin-icon1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

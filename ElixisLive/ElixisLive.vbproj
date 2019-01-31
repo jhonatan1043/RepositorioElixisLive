@@ -790,6 +790,7 @@
     <Content Include="ReferenciaDLL\itextsharp.dll" />
     <Content Include="ReferenciaDLL\MySql.Data.DLL" />
     <Content Include="ReferenciaDLL\NotifySenderControl.dll" />
+    <None Include="Resources\document-archive-icon.png" />
     <None Include="Resources\Microsoft-Excel-2013-icon.png" />
     <None Include="Resources\Preview-icon2.png" />
     <None Include="Resources\Preview-icon %281%291.png" />
@@ -804,6 +805,7 @@
     <None Include="Resources\Apps-session-reboot-icon.png" />
     <None Include="Resources\Actions-edit-redo-icon.png" />
     <None Include="Resources\barra.png" />
+    <None Include="Resources\Admin-icon1.png" />
     <Content Include="Resources\calculator-icon1.png" />
     <None Include="Resources\calculator-icon2.png" />
     <None Include="Resources\DesAnclar.png" />

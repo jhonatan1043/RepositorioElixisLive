@@ -67,6 +67,7 @@ Partial Class FormGastosServicio
         'PictureBox1
         '
         Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
+        Me.PictureBox1.Image = Global.Quality.My.Resources.Resources.Cash_icon
         Me.PictureBox1.Location = New System.Drawing.Point(4, 3)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(44, 39)

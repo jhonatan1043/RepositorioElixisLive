@@ -33,19 +33,20 @@ Partial Class FormServicio
         'Pimagen
         '
         Me.Pimagen.BackColor = System.Drawing.Color.Transparent
-        Me.Pimagen.Image = Global.Quality.My.Resources.Resources.glossy_3d_blue_orbs2_115_icon
+        Me.Pimagen.Image = Global.Quality.My.Resources.Resources.document_archive_icon
+        Me.Pimagen.Location = New System.Drawing.Point(4, 3)
+        Me.Pimagen.Size = New System.Drawing.Size(42, 36)
         Me.Pimagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         '
         'FormServicio
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
-        Me.ClientSize = New System.Drawing.Size(571, 345)
+        Me.ClientSize = New System.Drawing.Size(603, 369)
         Me.Location = New System.Drawing.Point(0, 0)
         Me.Name = "FormServicio"
         Me.Panel1.ResumeLayout(False)
         CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
-        Me.GroupBox1.PerformLayout()
         Me.Gbdatos.ResumeLayout(False)
         Me.Gbdatos.PerformLayout()
         Me.ResumeLayout(False)

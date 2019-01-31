@@ -153,6 +153,16 @@ Namespace My.Resources
         '''<summary>
         '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         '''</summary>
+        Friend ReadOnly Property Admin_icon1() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("Admin-icon1", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        '''</summary>
         Friend ReadOnly Property administrator_icon() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("administrator-icon", resourceCulture)
@@ -556,6 +566,16 @@ Namespace My.Resources
         Friend ReadOnly Property dinero() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("dinero", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property document_archive_icon() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("document-archive-icon", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
