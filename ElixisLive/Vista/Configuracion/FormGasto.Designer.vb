@@ -33,20 +33,21 @@ Partial Class FormGasto
         'Pimagen
         '
         Me.Pimagen.BackColor = System.Drawing.Color.Transparent
-        Me.Pimagen.Image = Global.Quality.My.Resources.Resources.dinero
+        Me.Pimagen.Image = Global.Quality.My.Resources.Resources.Cash_icon
+        Me.Pimagen.Location = New System.Drawing.Point(13, -4)
+        Me.Pimagen.Size = New System.Drawing.Size(55, 45)
         Me.Pimagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         '
         'FormGasto
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(571, 345)
+        Me.ClientSize = New System.Drawing.Size(603, 369)
         Me.Location = New System.Drawing.Point(0, 0)
         Me.Name = "FormGasto"
         Me.Panel1.ResumeLayout(False)
         CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
-        Me.GroupBox1.PerformLayout()
         Me.Gbdatos.ResumeLayout(False)
         Me.Gbdatos.PerformLayout()
         Me.ResumeLayout(False)
