@@ -1,16 +1,7 @@
 ﻿Public Class FormCategoria
     Private objConfig As Configuracion
     Private Sub FormBase_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Dim respuesta As Integer = Generales.consultarPermiso(Name)
-        If respuesta = Constantes.LECTURA_ESCRITURA Then
-            Generales.mostrarLecturaEscritura(ToolStrip1)
-        ElseIf respuesta = Constantes.SOLO_LECTURA Then
-            Generales.mostrarLectura(ToolStrip1)
-        ElseIf respuesta = Constantes.SOLO_ESCRITURA Then
-            Generales.mostrarEscritura(ToolStrip1)
-        Else
-            Generales.ocultarBotones(ToolStrip1)
-        End If
+        Generales.cargarPermiso(Me)
         objConfig = New Configuracion
         cargarConsultas()
         cargarRegistro()
@@ -20,18 +11,6 @@
         btBuscar.Enabled = True
         visibleConfig()
         Generales.tabularConEnter(Me)
-    End Sub
-    Private Sub FormPersona_Paint(sender As Object, e As PaintEventArgs) Handles MyBase.Paint
-        Dim respuesta As Integer = Generales.consultarPermiso(Name)
-        If respuesta = Constantes.LECTURA_ESCRITURA Then
-            Generales.mostrarLecturaEscritura(ToolStrip1)
-        ElseIf respuesta = Constantes.SOLO_LECTURA Then
-            Generales.mostrarLectura(ToolStrip1)
-        ElseIf respuesta = Constantes.SOLO_ESCRITURA Then
-            Generales.mostrarEscritura(ToolStrip1)
-        Else
-            Generales.ocultarBotones(ToolStrip1)
-        End If
     End Sub
     Private Sub visibleConfig()
         btBuscar.Visible = False

@@ -47,16 +47,7 @@ Public Class FormPersona
     End Sub
 
     Private Sub FormBase_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Dim respuesta As Integer = Generales.consultarPermiso(Name)
-        If respuesta = Constantes.LECTURA_ESCRITURA Then
-            Generales.mostrarLecturaEscritura(ToolStrip1)
-        ElseIf respuesta = Constantes.SOLO_LECTURA Then
-            Generales.mostrarLectura(ToolStrip1)
-        ElseIf respuesta = Constantes.SOLO_ESCRITURA Then
-            Generales.mostrarEscritura(ToolStrip1)
-        Else
-            Generales.ocultarBotones(ToolStrip1)
-        End If
+        Generales.cargarPermiso(Me)
         objPersona = New persona
         Try
             cargarComboDepartamento()
@@ -395,22 +386,5 @@ Public Class FormPersona
         rbEmpleado.Enabled = False
         rbCliente.Enabled = False
         rbProveedor.Enabled = False
-    End Sub
-
-    Private Sub FormPersona_Paint(sender As Object, e As PaintEventArgs) Handles MyBase.Paint
-        Dim respuesta As Integer = Generales.consultarPermiso(Name)
-        If respuesta = Constantes.LECTURA_ESCRITURA Then
-            Generales.mostrarLecturaEscritura(ToolStrip1)
-        ElseIf respuesta = Constantes.SOLO_LECTURA Then
-            Generales.mostrarLectura(ToolStrip1)
-        ElseIf respuesta = Constantes.SOLO_ESCRITURA Then
-            Generales.mostrarEscritura(ToolStrip1)
-        Else
-            Generales.ocultarBotones(ToolStrip1)
-        End If
-    End Sub
-
-    Private Sub chUsuario_CheckedChanged(sender As Object, e As EventArgs) Handles chUsuario.CheckedChanged
-
     End Sub
 End Class

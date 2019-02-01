@@ -10,28 +10,7 @@
         Generales.cargarCombo("[SP_INVEN_SERVICIO_LISTA]", Nothing, "Nombre", "codigo", cbListaServicio)
         cargarConfVenta()
         btEditar.Enabled = True
-        Dim respuesta As Integer = Generales.consultarPermiso(Name)
-        If respuesta = Constantes.LECTURA_ESCRITURA Then
-            Generales.mostrarLecturaEscritura(ToolStrip1)
-        ElseIf respuesta = Constantes.SOLO_LECTURA Then
-            Generales.mostrarLectura(ToolStrip1)
-        ElseIf respuesta = Constantes.SOLO_ESCRITURA Then
-            Generales.mostrarEscritura(ToolStrip1)
-        Else
-            Generales.ocultarBotones(ToolStrip1)
-        End If
-    End Sub
-    Private Sub FormPersona_Paint(sender As Object, e As PaintEventArgs) Handles MyBase.Paint
-        Dim respuesta As Integer = Generales.consultarPermiso(Name)
-        If respuesta = Constantes.LECTURA_ESCRITURA Then
-            Generales.mostrarLecturaEscritura(ToolStrip1)
-        ElseIf respuesta = Constantes.SOLO_LECTURA Then
-            Generales.mostrarLectura(ToolStrip1)
-        ElseIf respuesta = Constantes.SOLO_ESCRITURA Then
-            Generales.mostrarEscritura(ToolStrip1)
-        Else
-            Generales.ocultarBotones(ToolStrip1)
-        End If
+        Generales.cargarPermiso(Me)
     End Sub
     Private Sub cargarConfVenta()
         Dim dFila As DataRow

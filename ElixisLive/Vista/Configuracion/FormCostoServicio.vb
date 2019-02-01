@@ -10,28 +10,7 @@
         btNuevo.Enabled = True
         btBuscar.Enabled = True
         Generales.tabularConEnter(Me)
-        Dim respuesta As Integer = Generales.consultarPermiso(Name)
-        If respuesta = Constantes.LECTURA_ESCRITURA Then
-            Generales.mostrarLecturaEscritura(ToolStrip1)
-        ElseIf respuesta = Constantes.SOLO_LECTURA Then
-            Generales.mostrarLectura(ToolStrip1)
-        ElseIf respuesta = Constantes.SOLO_ESCRITURA Then
-            Generales.mostrarEscritura(ToolStrip1)
-        Else
-            Generales.ocultarBotones(ToolStrip1)
-        End If
-    End Sub
-    Private Sub FormPersona_Paint(sender As Object, e As PaintEventArgs) Handles MyBase.Paint
-        Dim respuesta As Integer = Generales.consultarPermiso(Name)
-        If respuesta = Constantes.LECTURA_ESCRITURA Then
-            Generales.mostrarLecturaEscritura(ToolStrip1)
-        ElseIf respuesta = Constantes.SOLO_LECTURA Then
-            Generales.mostrarLectura(ToolStrip1)
-        ElseIf respuesta = Constantes.SOLO_ESCRITURA Then
-            Generales.mostrarEscritura(ToolStrip1)
-        Else
-            Generales.ocultarBotones(ToolStrip1)
-        End If
+        Generales.cargarPermiso(Me)
     End Sub
     Private Sub btBuscarServicio_Click(sender As Object, e As EventArgs) Handles btBuscarServicio.Click
         Dim params As New List(Of String)
