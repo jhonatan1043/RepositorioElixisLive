@@ -73,5 +73,7 @@
     Public Const NOMBRE_PDF_SEPARADOR = "-"
 
     Public Const EXTENSION_ARCHIVO_PDF = ".pdf"
-
+    '----------------------------------------------
+    Public Const INVENTARIO = "I"
+    Public Const FACTURA = "F"
 End Class

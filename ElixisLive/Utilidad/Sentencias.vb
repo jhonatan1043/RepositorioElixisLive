@@ -39,6 +39,8 @@
     Public Const PERFIL_LISTA = "SP_ADMIN_PERFIL_LISTA"
     Public Const PERFIL_CONSULTAR = "[SP_CONSULTAR_PERFIL]"
     Public Const ADMIN_PERFIL_DETALLE = "SP_ADMIN_PERFIL_DETALLE "
+    ' ------------------------------------------------
+    Public Const INFORME_CONSULTAR = "[SP_INFOR_CONSULTAR_INFORME]"
     '-----------------
     Public Const ADMIN_INICIO_SESION = "[SP_ADMIN_INICIO_SESION]"
     Public Const LOTE_CONSULTAR = "[SP_CONSULTAR_LOTE]"

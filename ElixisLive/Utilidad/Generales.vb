@@ -505,7 +505,43 @@ Public Class Generales
         '    .Columns("Informacion").ReadOnly = True
         'End With
     End Sub
-
+    Public Shared Function cargarComboTabla(ByVal consulta As String,
+                                  ByVal params As List(Of String),
+                                  ByVal vlrDisplayMember As String,
+                                  ByVal vlrValueMember As String,
+                                  ByVal cbCombo As ComboBox) As DataTable
+        Dim dtTabla As New DataTable
+        Dim resultado As Boolean
+        Try
+            Dim drFila As DataRow = dtTabla.NewRow()
+            dtTabla.Columns.Add(vlrValueMember)
+            dtTabla.Columns.Add(vlrDisplayMember)
+            drFila.Item(0) = "-1"
+            drFila.Item(1) = " - - - Seleccione - - - "
+            dtTabla.Rows.Add(drFila)
+            objConexion.conectar()
+            Using da = New SqlDataAdapter(consulta & Funciones.getParametros(params), objConexion.cnxbd)
+                da.Fill(dtTabla)
+            End Using
+            objConexion.desconectar()
+            If dtTabla.Rows.Count > 1 Then
+                resultado = True
+            End If
+            cbCombo.DataSource = dtTabla
+            cbCombo.DisplayMember = vlrDisplayMember
+            cbCombo.ValueMember = vlrValueMember
+            If cbCombo IsNot Nothing Then
+                cbCombo.AutoCompleteMode = AutoCompleteMode.None
+                cbCombo.AutoCompleteSource = AutoCompleteSource.None
+                cbCombo.DropDownStyle = ComboBoxStyle.DropDownList
+            End If
+        Catch ex As Exception
+            Throw ex
+        Finally
+            objConexion.desconectar()
+        End Try
+        Return dtTabla
+    End Function
     Public Shared Function cargarCombo(ByVal consulta As String,
                                   ByVal params As List(Of String),
                                   ByVal vlrDisplayMember As String,
