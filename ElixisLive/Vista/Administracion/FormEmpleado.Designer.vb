@@ -23,7 +23,7 @@ Partial Class FormEmpleado
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.gbInform = New System.Windows.Forms.GroupBox()
         Me.txtEmail = New System.Windows.Forms.Label()
         Me.txtDireccion = New System.Windows.Forms.Label()
@@ -304,9 +304,9 @@ Partial Class FormEmpleado
         Me.dgvParametro.AllowUserToDeleteRows = False
         Me.dgvParametro.AllowUserToResizeColumns = False
         Me.dgvParametro.AllowUserToResizeRows = False
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black
-        Me.dgvParametro.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
+        Me.dgvParametro.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle2
         Me.dgvParametro.BackgroundColor = System.Drawing.SystemColors.Control
         Me.dgvParametro.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvParametro.Location = New System.Drawing.Point(3, 18)
@@ -327,7 +327,7 @@ Partial Class FormEmpleado
         Me.GroupBox1.Controls.Add(Me.gbInform)
         Me.GroupBox1.Location = New System.Drawing.Point(4, 43)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(898, 443)
+        Me.GroupBox1.Size = New System.Drawing.Size(898, 440)
         Me.GroupBox1.TabIndex = 11
         Me.GroupBox1.TabStop = False
         '
@@ -751,7 +751,7 @@ Partial Class FormEmpleado
         Me.LTitulo.ForeColor = System.Drawing.Color.White
         Me.LTitulo.Location = New System.Drawing.Point(-1, 0)
         Me.LTitulo.Name = "LTitulo"
-        Me.LTitulo.Size = New System.Drawing.Size(905, 40)
+        Me.LTitulo.Size = New System.Drawing.Size(890, 40)
         Me.LTitulo.TabIndex = 1
         Me.LTitulo.Text = "Empleado"
         Me.LTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter

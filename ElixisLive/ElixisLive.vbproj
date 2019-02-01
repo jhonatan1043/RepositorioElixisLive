@@ -688,6 +688,15 @@
     <EmbeddedResource Include="Vista\Configuracion\FormCostoServicio.resx">
       <DependentUpon>FormCostoServicio.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Contabilidad\Cierre contable\FormCierreDocumentos.resx">
+      <DependentUpon>FormCierreDocumentos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Contabilidad\Cierre contable\FormCierrePeriodos.resx">
+      <DependentUpon>FormCierrePeriodos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Contabilidad\Cuentas por cobrar\FormFacturaCliente.resx">
+      <DependentUpon>FormFacturaCliente.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vista\Contabilidad\Tesoreria\FormComprobanteEgreso.resx">
       <DependentUpon>FormComprobanteEgreso.vb</DependentUpon>
     </EmbeddedResource>
@@ -809,6 +818,13 @@
     <Content Include="ReferenciaDLL\itextsharp.dll" />
     <Content Include="ReferenciaDLL\MySql.Data.DLL" />
     <Content Include="ReferenciaDLL\NotifySenderControl.dll" />
+    <None Include="Resources\invoice-icon %281%29.png" />
+    <None Include="Resources\invoice-icon.png" />
+    <None Include="Resources\calendar-icon1.png" />
+    <None Include="Resources\Utilities-calendar-green-icon.png" />
+    <None Include="Resources\Google-Calendar-icon.png" />
+    <None Include="Resources\event-icon %281%29.png" />
+    <None Include="Resources\Events-icon.png" />
     <None Include="Resources\document-archive-icon.png" />
     <None Include="Resources\Microsoft-Excel-2013-icon.png" />
     <None Include="Resources\Preview-icon2.png" />
@@ -828,6 +844,8 @@
     <None Include="Resources\Actions-document-revert-icon.png" />
     <None Include="Resources\Apps-menu-editor-icon.png" />
     <None Include="Resources\Actions-document-new-icon.png" />
+    <None Include="Resources\Balance-icon.png" />
+    <None Include="Resources\atencion.gif" />
     <Content Include="Resources\calculator-icon1.png" />
     <None Include="Resources\calculator-icon2.png" />
     <None Include="Resources\DesAnclar.png" />
