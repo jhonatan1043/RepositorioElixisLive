@@ -50,19 +50,19 @@ Partial Class FormEstadoCuentas
         Me.dgDias = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.text180dias = New System.Windows.Forms.TextBox()
-        Me.Label7 = New System.Windows.Forms.Label()
         Me.text360dias = New System.Windows.Forms.TextBox()
-        Me.Label6 = New System.Windows.Forms.Label()
         Me.text30dias = New System.Windows.Forms.TextBox()
-        Me.Label5 = New System.Windows.Forms.Label()
         Me.text60dias = New System.Windows.Forms.TextBox()
-        Me.Label8 = New System.Windows.Forms.Label()
         Me.text90dias = New System.Windows.Forms.TextBox()
-        Me.Label18 = New System.Windows.Forms.Label()
         Me.textvalortotal = New System.Windows.Forms.TextBox()
+        Me.textmas360dias = New System.Windows.Forms.TextBox()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.Label18 = New System.Windows.Forms.Label()
         Me.Label17 = New System.Windows.Forms.Label()
         Me.Label16 = New System.Windows.Forms.Label()
-        Me.textmas360dias = New System.Windows.Forms.TextBox()
         Me.textnombreproveedor = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -293,18 +293,6 @@ Partial Class FormEstadoCuentas
         Me.text180dias.TabIndex = 9
         Me.text180dias.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
-        'Label7
-        '
-        Me.Label7.BackColor = System.Drawing.Color.SteelBlue
-        Me.Label7.Font = New System.Drawing.Font("Times New Roman", 11.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.ForeColor = System.Drawing.Color.White
-        Me.Label7.Location = New System.Drawing.Point(733, 23)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(131, 48)
-        Me.Label7.TabIndex = 10
-        Me.Label7.Text = " De 181 a 360 Días"
-        Me.Label7.TextAlign = System.Drawing.ContentAlignment.TopCenter
-        '
         'text360dias
         '
         Me.text360dias.BackColor = System.Drawing.Color.White
@@ -315,6 +303,61 @@ Partial Class FormEstadoCuentas
         Me.text360dias.Size = New System.Drawing.Size(131, 25)
         Me.text360dias.TabIndex = 11
         Me.text360dias.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'text30dias
+        '
+        Me.text30dias.BackColor = System.Drawing.Color.White
+        Me.text30dias.Font = New System.Drawing.Font("Times New Roman", 11.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.text30dias.Location = New System.Drawing.Point(122, 47)
+        Me.text30dias.Name = "text30dias"
+        Me.text30dias.ReadOnly = True
+        Me.text30dias.Size = New System.Drawing.Size(115, 25)
+        Me.text30dias.TabIndex = 1
+        Me.text30dias.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'text60dias
+        '
+        Me.text60dias.BackColor = System.Drawing.Color.White
+        Me.text60dias.Font = New System.Drawing.Font("Times New Roman", 11.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.text60dias.Location = New System.Drawing.Point(269, 47)
+        Me.text60dias.Name = "text60dias"
+        Me.text60dias.ReadOnly = True
+        Me.text60dias.Size = New System.Drawing.Size(123, 25)
+        Me.text60dias.TabIndex = 3
+        Me.text60dias.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'text90dias
+        '
+        Me.text90dias.BackColor = System.Drawing.Color.White
+        Me.text90dias.Font = New System.Drawing.Font("Times New Roman", 11.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.text90dias.Location = New System.Drawing.Point(427, 47)
+        Me.text90dias.Name = "text90dias"
+        Me.text90dias.ReadOnly = True
+        Me.text90dias.Size = New System.Drawing.Size(115, 25)
+        Me.text90dias.TabIndex = 5
+        Me.text90dias.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'textvalortotal
+        '
+        Me.textvalortotal.BackColor = System.Drawing.Color.White
+        Me.textvalortotal.Font = New System.Drawing.Font("Times New Roman", 11.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.textvalortotal.Location = New System.Drawing.Point(1047, 47)
+        Me.textvalortotal.Name = "textvalortotal"
+        Me.textvalortotal.ReadOnly = True
+        Me.textvalortotal.Size = New System.Drawing.Size(115, 25)
+        Me.textvalortotal.TabIndex = 15
+        Me.textvalortotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'textmas360dias
+        '
+        Me.textmas360dias.BackColor = System.Drawing.Color.White
+        Me.textmas360dias.Font = New System.Drawing.Font("Times New Roman", 11.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.textmas360dias.Location = New System.Drawing.Point(898, 47)
+        Me.textmas360dias.Name = "textmas360dias"
+        Me.textmas360dias.ReadOnly = True
+        Me.textmas360dias.Size = New System.Drawing.Size(115, 25)
+        Me.textmas360dias.TabIndex = 13
+        Me.textmas360dias.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'Label6
         '
@@ -328,17 +371,6 @@ Partial Class FormEstadoCuentas
         Me.Label6.Text = " De 1 a 30 Días"
         Me.Label6.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
-        'text30dias
-        '
-        Me.text30dias.BackColor = System.Drawing.Color.White
-        Me.text30dias.Font = New System.Drawing.Font("Times New Roman", 11.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.text30dias.Location = New System.Drawing.Point(122, 47)
-        Me.text30dias.Name = "text30dias"
-        Me.text30dias.ReadOnly = True
-        Me.text30dias.Size = New System.Drawing.Size(115, 25)
-        Me.text30dias.TabIndex = 1
-        Me.text30dias.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-        '
         'Label5
         '
         Me.Label5.BackColor = System.Drawing.Color.SteelBlue
@@ -351,16 +383,17 @@ Partial Class FormEstadoCuentas
         Me.Label5.Text = "De 31 a 60 Días"
         Me.Label5.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
-        'text60dias
+        'Label7
         '
-        Me.text60dias.BackColor = System.Drawing.Color.White
-        Me.text60dias.Font = New System.Drawing.Font("Times New Roman", 11.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.text60dias.Location = New System.Drawing.Point(269, 47)
-        Me.text60dias.Name = "text60dias"
-        Me.text60dias.ReadOnly = True
-        Me.text60dias.Size = New System.Drawing.Size(123, 25)
-        Me.text60dias.TabIndex = 3
-        Me.text60dias.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        Me.Label7.BackColor = System.Drawing.Color.SteelBlue
+        Me.Label7.Font = New System.Drawing.Font("Times New Roman", 11.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.ForeColor = System.Drawing.Color.White
+        Me.Label7.Location = New System.Drawing.Point(733, 23)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(131, 48)
+        Me.Label7.TabIndex = 10
+        Me.Label7.Text = " De 181 a 360 Días"
+        Me.Label7.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
         'Label8
         '
@@ -374,17 +407,6 @@ Partial Class FormEstadoCuentas
         Me.Label8.Text = "De 61 a 90 Días"
         Me.Label8.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
-        'text90dias
-        '
-        Me.text90dias.BackColor = System.Drawing.Color.White
-        Me.text90dias.Font = New System.Drawing.Font("Times New Roman", 11.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.text90dias.Location = New System.Drawing.Point(427, 47)
-        Me.text90dias.Name = "text90dias"
-        Me.text90dias.ReadOnly = True
-        Me.text90dias.Size = New System.Drawing.Size(115, 25)
-        Me.text90dias.TabIndex = 5
-        Me.text90dias.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-        '
         'Label18
         '
         Me.Label18.BackColor = System.Drawing.Color.SteelBlue
@@ -396,17 +418,6 @@ Partial Class FormEstadoCuentas
         Me.Label18.TabIndex = 14
         Me.Label18.Text = "Valor Total"
         Me.Label18.TextAlign = System.Drawing.ContentAlignment.TopCenter
-        '
-        'textvalortotal
-        '
-        Me.textvalortotal.BackColor = System.Drawing.Color.White
-        Me.textvalortotal.Font = New System.Drawing.Font("Times New Roman", 11.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.textvalortotal.Location = New System.Drawing.Point(1047, 47)
-        Me.textvalortotal.Name = "textvalortotal"
-        Me.textvalortotal.ReadOnly = True
-        Me.textvalortotal.Size = New System.Drawing.Size(115, 25)
-        Me.textvalortotal.TabIndex = 15
-        Me.textvalortotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'Label17
         '
@@ -431,17 +442,6 @@ Partial Class FormEstadoCuentas
         Me.Label16.TabIndex = 12
         Me.Label16.Text = "A Mas 360 Días"
         Me.Label16.TextAlign = System.Drawing.ContentAlignment.TopCenter
-        '
-        'textmas360dias
-        '
-        Me.textmas360dias.BackColor = System.Drawing.Color.White
-        Me.textmas360dias.Font = New System.Drawing.Font("Times New Roman", 11.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.textmas360dias.Location = New System.Drawing.Point(898, 47)
-        Me.textmas360dias.Name = "textmas360dias"
-        Me.textmas360dias.ReadOnly = True
-        Me.textmas360dias.Size = New System.Drawing.Size(115, 25)
-        Me.textmas360dias.TabIndex = 13
-        Me.textmas360dias.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'textnombreproveedor
         '
@@ -532,7 +532,7 @@ Partial Class FormEstadoCuentas
         'Pimagen
         '
         Me.Pimagen.BackColor = System.Drawing.Color.Transparent
-        Me.Pimagen.Image = Global.Quality.My.Resources.Resources.Balance_icon
+        Me.Pimagen.Image = Global.Quality.My.Resources.Resources.Safe_icon
         Me.Pimagen.Location = New System.Drawing.Point(3, 0)
         Me.Pimagen.Name = "Pimagen"
         Me.Pimagen.Size = New System.Drawing.Size(53, 46)

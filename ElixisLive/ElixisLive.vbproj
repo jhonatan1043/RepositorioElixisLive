@@ -824,6 +824,7 @@
     <Content Include="ReferenciaDLL\itextsharp.dll" />
     <Content Include="ReferenciaDLL\MySql.Data.DLL" />
     <Content Include="ReferenciaDLL\NotifySenderControl.dll" />
+    <None Include="Resources\Safe-icon.png" />
     <None Include="Resources\Microsoft-Excel-2013-icon1.png" />
     <None Include="Resources\Printer-icon %281%291.png" />
     <None Include="Resources\Mimetypes-text-x-vcard-icon.png" />
