@@ -11,7 +11,7 @@
         Generales.deshabilitarBotones(ToolStrip1)
         Generales.deshabilitarControles(Me)
         validarGrilla()
-        establecerPosicion()
+        'establecerPosicion()
         If estadoRegistro = True Then
             cargarCita(codigoCita)
             btEditar.Enabled = True
@@ -85,13 +85,13 @@
             End Try
         End If
     End Sub
-    Private Sub establecerPosicion()
-        Dim x As Integer
-        Dim y As Integer
-        x = Screen.PrimaryScreen.WorkingArea.Width - 920
-        y = Screen.PrimaryScreen.WorkingArea.Height - 570
-        Me.Location = New Point(x, y)
-    End Sub
+    'Private Sub establecerPosicion()
+    '    Dim x As Integer
+    '    Dim y As Integer
+    '    x = Screen.PrimaryScreen.WorkingArea.Width - 920
+    '    y = Screen.PrimaryScreen.WorkingArea.Height - 570
+    '    Me.Location = New Point(x, y)
+    'End Sub
     Private Sub formBusqueda_KeyPress(sender As System.Object, e As System.Windows.Forms.KeyPressEventArgs) Handles MyBase.KeyPress
         If e.KeyChar = ChrW(Keys.Escape) Then
             Close()

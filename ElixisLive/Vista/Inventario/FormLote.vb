@@ -10,15 +10,15 @@
         lbNombre.Text = nombreProducto
         validarGrilla()
         valoresIniciales()
-        establecerPosicion()
+        'establecerPosicion()
     End Sub
-    Private Sub establecerPosicion()
-        Dim x As Integer
-        Dim y As Integer
-        x = Screen.PrimaryScreen.WorkingArea.Width - 880
-        y = Screen.PrimaryScreen.WorkingArea.Height - 590
-        Me.Location = New Point(x, y)
-    End Sub
+    'Private Sub establecerPosicion()
+    '    Dim x As Integer
+    '    Dim y As Integer
+    '    x = Screen.PrimaryScreen.WorkingArea.Width - 880
+    '    y = Screen.PrimaryScreen.WorkingArea.Height - 590
+    '    Me.Location = New Point(x, y)
+    'End Sub
     Private Sub dgAgregar_Click(sender As Object, e As EventArgs) Handles dgAgregar.Click
         objLote.dtLote.Rows.Add()
         objLote.dtLote.Rows(objLote.dtLote.Rows.Count - 1).Item("Codigo") = codigoProducto

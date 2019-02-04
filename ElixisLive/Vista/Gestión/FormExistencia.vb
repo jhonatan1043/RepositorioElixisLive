@@ -5,15 +5,15 @@
         cargarExistencia()
         Generales.diseñoDGV(dgvLista)
         Generales.tabularConEnter(Me)
-        establecerPosicion()
+        'establecerPosicion()
     End Sub
-    Private Sub establecerPosicion()
-        Dim x As Integer
-        Dim y As Integer
-        x = Screen.PrimaryScreen.WorkingArea.Width - 880
-        y = Screen.PrimaryScreen.WorkingArea.Height - 590
-        Me.Location = New Point(x, y)
-    End Sub
+    'Private Sub establecerPosicion()
+    '    Dim x As Integer
+    '    Dim y As Integer
+    '    x = Screen.PrimaryScreen.WorkingArea.Width - 880
+    '    y = Screen.PrimaryScreen.WorkingArea.Height - 590
+    '    Me.Location = New Point(x, y)
+    'End Sub
     Private Sub cargarExistencia()
         Dim params As New List(Of String)
         Try

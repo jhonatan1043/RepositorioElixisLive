@@ -28,10 +28,10 @@ Partial Class FormCuentasPuc
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(284, 261)
         Me.Name = "FormCuentasPuc"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "FormCuentasPuc"
         Me.ResumeLayout(False)
 
     End Sub

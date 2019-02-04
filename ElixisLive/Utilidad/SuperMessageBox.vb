@@ -118,7 +118,7 @@
         Me.MinimizeBox = False
         Me.Name = "SuperMessageBox"
         Me.ShowInTaskbar = False
-        Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "SuperMessageBox"
         Me.TopMost = True
         Me.panel1.ResumeLayout(False)
@@ -241,11 +241,11 @@
             'seteamos al formulario como padre del control.
             panel2.Controls.Add(cmdBoton)
         Next
-        Dim x As Integer
-        Dim y As Integer
-        x = Screen.PrimaryScreen.WorkingArea.Width - 750
-        y = Screen.PrimaryScreen.WorkingArea.Height - 450
-        Me.Location = New Point(x, y)
+        'Dim x As Integer
+        'Dim y As Integer
+        'x = Screen.PrimaryScreen.WorkingArea.Width - 750
+        'y = Screen.PrimaryScreen.WorkingArea.Height - 450
+        'Me.Location = New Point(x, y)
         'centramos en la pantalla el formulario
         'Me.CenterToScreen()
         'lo mostramos y esperamos hasta que se haya presionado un boton 
