@@ -36,7 +36,7 @@ Partial Class FormProgramacionCita
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.Label1 = New System.Windows.Forms.Label()
+        Me.LTitulo = New System.Windows.Forms.Label()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.ToolStrip1.SuspendLayout()
         Me.Panel1.SuspendLayout()
@@ -95,9 +95,9 @@ Partial Class FormProgramacionCita
         Me.RadioButton2.Checked = True
         Me.RadioButton2.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.RadioButton2.ForeColor = System.Drawing.Color.Black
-        Me.RadioButton2.Location = New System.Drawing.Point(832, 300)
+        Me.RadioButton2.Location = New System.Drawing.Point(727, 326)
         Me.RadioButton2.Name = "RadioButton2"
-        Me.RadioButton2.Size = New System.Drawing.Size(72, 24)
+        Me.RadioButton2.Size = New System.Drawing.Size(111, 24)
         Me.RadioButton2.TabIndex = 10070
         Me.RadioButton2.TabStop = True
         Me.RadioButton2.Text = "Realizados"
@@ -115,7 +115,7 @@ Partial Class FormProgramacionCita
         Me.rbAgendados.ForeColor = System.Drawing.Color.Black
         Me.rbAgendados.Location = New System.Drawing.Point(728, 300)
         Me.rbAgendados.Name = "rbAgendados"
-        Me.rbAgendados.Size = New System.Drawing.Size(72, 24)
+        Me.rbAgendados.Size = New System.Drawing.Size(110, 24)
         Me.rbAgendados.TabIndex = 10072
         Me.rbAgendados.TabStop = True
         Me.rbAgendados.Text = "Agendados"
@@ -125,7 +125,7 @@ Partial Class FormProgramacionCita
         '
         Me.txtPendiente.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.txtPendiente.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.txtPendiente.Location = New System.Drawing.Point(800, 301)
+        Me.txtPendiente.Location = New System.Drawing.Point(840, 301)
         Me.txtPendiente.Name = "txtPendiente"
         Me.txtPendiente.Size = New System.Drawing.Size(32, 22)
         Me.txtPendiente.TabIndex = 10074
@@ -135,7 +135,7 @@ Partial Class FormProgramacionCita
         '
         Me.txtRealizado.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.txtRealizado.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.txtRealizado.Location = New System.Drawing.Point(904, 301)
+        Me.txtRealizado.Location = New System.Drawing.Point(840, 326)
         Me.txtRealizado.Name = "txtRealizado"
         Me.txtRealizado.Size = New System.Drawing.Size(32, 22)
         Me.txtRealizado.TabIndex = 10076
@@ -182,7 +182,7 @@ Partial Class FormProgramacionCita
         Me.Panel1.BackgroundImage = Global.Quality.My.Resources.Resources.fondo_azul
         Me.Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Panel1.Controls.Add(Me.PictureBox1)
-        Me.Panel1.Controls.Add(Me.Label1)
+        Me.Panel1.Controls.Add(Me.LTitulo)
         Me.Panel1.Location = New System.Drawing.Point(1, 0)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(944, 42)
@@ -199,17 +199,17 @@ Partial Class FormProgramacionCita
         Me.PictureBox1.TabIndex = 1
         Me.PictureBox1.TabStop = False
         '
-        'Label1
+        'LTitulo
         '
-        Me.Label1.BackColor = System.Drawing.Color.Transparent
-        Me.Label1.Font = New System.Drawing.Font("Times New Roman", 20.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(0, 1)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(911, 41)
-        Me.Label1.TabIndex = 1
-        Me.Label1.Text = "Agenda de Citas"
-        Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.LTitulo.BackColor = System.Drawing.Color.Transparent
+        Me.LTitulo.Font = New System.Drawing.Font("Times New Roman", 20.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LTitulo.ForeColor = System.Drawing.Color.White
+        Me.LTitulo.Location = New System.Drawing.Point(0, 1)
+        Me.LTitulo.Name = "LTitulo"
+        Me.LTitulo.Size = New System.Drawing.Size(941, 41)
+        Me.LTitulo.TabIndex = 1
+        Me.LTitulo.Text = "Agenda de Citas"
+        Me.LTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'ToolTip1
         '
@@ -234,6 +234,7 @@ Partial Class FormProgramacionCita
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.dFecha)
         Me.Location = New System.Drawing.Point(921, 562)
+        Me.MaximizeBox = False
         Me.MaximumSize = New System.Drawing.Size(961, 562)
         Me.MinimumSize = New System.Drawing.Size(961, 562)
         Me.Name = "FormProgramacionCita"
@@ -250,7 +251,7 @@ Partial Class FormProgramacionCita
     Friend WithEvents PanelDia As Panel
     Public WithEvents Panel1 As Panel
     Public WithEvents PictureBox1 As PictureBox
-    Public WithEvents Label1 As Label
+    Public WithEvents LTitulo As Label
     Friend WithEvents MonthCalendar1 As MonthCalendar
     Public WithEvents txtBusqueda As TextBox
     Public WithEvents Label5 As Label

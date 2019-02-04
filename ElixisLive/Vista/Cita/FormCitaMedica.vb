@@ -11,6 +11,8 @@
         Generales.deshabilitarBotones(ToolStrip1)
         Generales.deshabilitarControles(Me)
         validarGrilla()
+        Generales.diseñoDGV(dgvServicio)
+
         If estadoRegistro = True Then
             cargarCita(codigoCita)
             btEditar.Enabled = True
