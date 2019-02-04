@@ -437,10 +437,22 @@
     <Compile Include="Vista\Contabilidad\Mantenimiento\FormRetiroDocumento.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Vista\Contabilidad\Puc\FormCuentasPuc.Designer.vb">
+      <DependentUpon>FormCuentasPuc.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Contabilidad\Puc\FormCuentasPuc.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Vista\Contabilidad\Puc\FormPUC.Designer.vb">
       <DependentUpon>FormPUC.vb</DependentUpon>
     </Compile>
     <Compile Include="Vista\Contabilidad\Puc\FormPUC.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Contabilidad\Puc\FormRetencionIva.Designer.vb">
+      <DependentUpon>FormRetencionIva.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Contabilidad\Puc\FormRetencionIva.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Vista\Contabilidad\Puc\FormTipoDocumento.Designer.vb">
@@ -715,6 +727,24 @@
     <EmbeddedResource Include="Vista\Contabilidad\Libros\FormBalanceComprobacion.resx">
       <DependentUpon>FormBalanceComprobacion.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Contabilidad\Libros\FormCertificadoRetencion.resx">
+      <DependentUpon>FormCertificadoRetencion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Contabilidad\Libros\FormInventarioBalance.resx">
+      <DependentUpon>FormInventarioBalance.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Contabilidad\Libros\FormLibroAuxiliar.resx">
+      <DependentUpon>FormLibroAuxiliar.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Contabilidad\Libros\FormLibroDiario.resx">
+      <DependentUpon>FormLibroDiario.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Contabilidad\Libros\FormLibroMayor.resx">
+      <DependentUpon>FormLibroMayor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Contabilidad\Mantenimiento\FormRetiroDocumento.resx">
+      <DependentUpon>FormRetiroDocumento.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vista\Contabilidad\Tesoreria\FormComprobanteEgreso.resx">
       <DependentUpon>FormComprobanteEgreso.vb</DependentUpon>
     </EmbeddedResource>
@@ -827,6 +857,8 @@
     <Content Include="ReferenciaDLL\itextsharp.dll" />
     <Content Include="ReferenciaDLL\MySql.Data.DLL" />
     <Content Include="ReferenciaDLL\NotifySenderControl.dll" />
+    <None Include="Resources\project-plan-icon.png" />
+    <None Include="Resources\desktop-icon.png" />
     <None Include="Resources\SEO-icon.png" />
     <None Include="Resources\Safe-icon.png" />
     <None Include="Resources\Microsoft-Excel-2013-icon1.png" />
@@ -861,6 +893,7 @@
     <None Include="Resources\Balance-icon.png" />
     <None Include="Resources\atencion.gif" />
     <None Include="Resources\bar-chart-icon.png" />
+    <None Include="Resources\Actions-project-development-close-icon.png" />
     <Content Include="Resources\calculator-icon1.png" />
     <None Include="Resources\calculator-icon2.png" />
     <None Include="Resources\DesAnclar.png" />

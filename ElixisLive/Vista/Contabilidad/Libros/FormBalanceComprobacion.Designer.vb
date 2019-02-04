@@ -34,19 +34,19 @@ Partial Class FormBalanceComprobacion
         Me.rbBalance = New System.Windows.Forms.RadioButton()
         Me.gbTipoCuenta = New System.Windows.Forms.GroupBox()
         Me.gbDatosGrupo = New System.Windows.Forms.GroupBox()
+        Me.txtNit = New System.Windows.Forms.Label()
+        Me.txtRazonSocial = New System.Windows.Forms.Label()
+        Me.dtpFechaFin = New System.Windows.Forms.DateTimePicker()
+        Me.dtpFechaInicio = New System.Windows.Forms.DateTimePicker()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Pimagen = New System.Windows.Forms.PictureBox()
         Me.LTitulo = New System.Windows.Forms.Label()
-        Me.btCalcular = New System.Windows.Forms.Button()
-        Me.dtpFechaInicio = New System.Windows.Forms.DateTimePicker()
-        Me.dtpFechaFin = New System.Windows.Forms.DateTimePicker()
         Me.btExportaExcel = New System.Windows.Forms.Button()
         Me.btVisualizaPDF = New System.Windows.Forms.Button()
-        Me.txtNit = New System.Windows.Forms.Label()
-        Me.txtRazonSocial = New System.Windows.Forms.Label()
+        Me.btCalcular = New System.Windows.Forms.Button()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox5.SuspendLayout()
         CType(Me.dgBalance, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -219,12 +219,56 @@ Partial Class FormBalanceComprobacion
         Me.gbDatosGrupo.TabStop = False
         Me.gbDatosGrupo.Text = "Empresa"
         '
+        'txtNit
+        '
+        Me.txtNit.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtNit.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtNit.ForeColor = System.Drawing.Color.Black
+        Me.txtNit.Location = New System.Drawing.Point(34, 26)
+        Me.txtNit.Name = "txtNit"
+        Me.txtNit.Size = New System.Drawing.Size(86, 25)
+        Me.txtNit.TabIndex = 60036
+        Me.txtNit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'txtRazonSocial
+        '
+        Me.txtRazonSocial.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtRazonSocial.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtRazonSocial.ForeColor = System.Drawing.Color.Black
+        Me.txtRazonSocial.Location = New System.Drawing.Point(124, 26)
+        Me.txtRazonSocial.Name = "txtRazonSocial"
+        Me.txtRazonSocial.Size = New System.Drawing.Size(350, 25)
+        Me.txtRazonSocial.TabIndex = 60035
+        Me.txtRazonSocial.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'dtpFechaFin
+        '
+        Me.dtpFechaFin.CustomFormat = "dd |  MMMM |  yyyy"
+        Me.dtpFechaFin.Enabled = False
+        Me.dtpFechaFin.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.dtpFechaFin.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.dtpFechaFin.Location = New System.Drawing.Point(100, 86)
+        Me.dtpFechaFin.Name = "dtpFechaFin"
+        Me.dtpFechaFin.Size = New System.Drawing.Size(189, 25)
+        Me.dtpFechaFin.TabIndex = 60034
+        '
+        'dtpFechaInicio
+        '
+        Me.dtpFechaInicio.CustomFormat = "dd |  MMMM |  yyyy"
+        Me.dtpFechaInicio.Enabled = False
+        Me.dtpFechaInicio.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.dtpFechaInicio.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.dtpFechaInicio.Location = New System.Drawing.Point(99, 57)
+        Me.dtpFechaInicio.Name = "dtpFechaInicio"
+        Me.dtpFechaInicio.Size = New System.Drawing.Size(189, 25)
+        Me.dtpFechaInicio.TabIndex = 60033
+        '
         'Label4
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.Black
-        Me.Label4.Location = New System.Drawing.Point(7, 62)
+        Me.Label4.Location = New System.Drawing.Point(4, 62)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(92, 17)
         Me.Label4.TabIndex = 60029
@@ -235,7 +279,7 @@ Partial Class FormBalanceComprobacion
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.Color.Black
-        Me.Label5.Location = New System.Drawing.Point(7, 92)
+        Me.Label5.Location = New System.Drawing.Point(4, 92)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(73, 17)
         Me.Label5.TabIndex = 60030
@@ -246,7 +290,7 @@ Partial Class FormBalanceComprobacion
         Me.Label11.AutoSize = True
         Me.Label11.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label11.ForeColor = System.Drawing.Color.Black
-        Me.Label11.Location = New System.Drawing.Point(7, 32)
+        Me.Label11.Location = New System.Drawing.Point(4, 32)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(31, 17)
         Me.Label11.TabIndex = 4
@@ -287,43 +331,6 @@ Partial Class FormBalanceComprobacion
         Me.LTitulo.Text = "Balance comprobación de saldos"
         Me.LTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'btCalcular
-        '
-        Me.btCalcular.BackgroundImage = Global.Quality.My.Resources.Resources.fondo_azul
-        Me.btCalcular.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btCalcular.Font = New System.Drawing.Font("Times New Roman", 11.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btCalcular.ForeColor = System.Drawing.Color.White
-        Me.btCalcular.Image = Global.Quality.My.Resources.Resources.SEO_icon
-        Me.btCalcular.Location = New System.Drawing.Point(320, 67)
-        Me.btCalcular.Name = "btCalcular"
-        Me.btCalcular.Size = New System.Drawing.Size(130, 34)
-        Me.btCalcular.TabIndex = 60032
-        Me.btCalcular.Text = "Previsualizar"
-        Me.btCalcular.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btCalcular.UseVisualStyleBackColor = True
-        '
-        'dtpFechaInicio
-        '
-        Me.dtpFechaInicio.CustomFormat = "dd |  MMMM |  yyyy"
-        Me.dtpFechaInicio.Enabled = False
-        Me.dtpFechaInicio.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.dtpFechaInicio.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.dtpFechaInicio.Location = New System.Drawing.Point(99, 57)
-        Me.dtpFechaInicio.Name = "dtpFechaInicio"
-        Me.dtpFechaInicio.Size = New System.Drawing.Size(189, 25)
-        Me.dtpFechaInicio.TabIndex = 60033
-        '
-        'dtpFechaFin
-        '
-        Me.dtpFechaFin.CustomFormat = "dd |  MMMM |  yyyy"
-        Me.dtpFechaFin.Enabled = False
-        Me.dtpFechaFin.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.dtpFechaFin.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.dtpFechaFin.Location = New System.Drawing.Point(100, 86)
-        Me.dtpFechaFin.Name = "dtpFechaFin"
-        Me.dtpFechaFin.Size = New System.Drawing.Size(189, 25)
-        Me.dtpFechaFin.TabIndex = 60034
-        '
         'btExportaExcel
         '
         Me.btExportaExcel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
@@ -346,27 +353,20 @@ Partial Class FormBalanceComprobacion
         Me.btVisualizaPDF.TabIndex = 60036
         Me.btVisualizaPDF.UseVisualStyleBackColor = True
         '
-        'txtNit
+        'btCalcular
         '
-        Me.txtNit.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtNit.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtNit.ForeColor = System.Drawing.Color.Black
-        Me.txtNit.Location = New System.Drawing.Point(34, 26)
-        Me.txtNit.Name = "txtNit"
-        Me.txtNit.Size = New System.Drawing.Size(86, 25)
-        Me.txtNit.TabIndex = 60036
-        Me.txtNit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'txtRazonSocial
-        '
-        Me.txtRazonSocial.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtRazonSocial.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtRazonSocial.ForeColor = System.Drawing.Color.Black
-        Me.txtRazonSocial.Location = New System.Drawing.Point(124, 26)
-        Me.txtRazonSocial.Name = "txtRazonSocial"
-        Me.txtRazonSocial.Size = New System.Drawing.Size(350, 25)
-        Me.txtRazonSocial.TabIndex = 60035
-        Me.txtRazonSocial.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.btCalcular.BackgroundImage = Global.Quality.My.Resources.Resources.fondo_azul
+        Me.btCalcular.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btCalcular.Font = New System.Drawing.Font("Times New Roman", 11.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btCalcular.ForeColor = System.Drawing.Color.White
+        Me.btCalcular.Image = Global.Quality.My.Resources.Resources.SEO_icon
+        Me.btCalcular.Location = New System.Drawing.Point(320, 67)
+        Me.btCalcular.Name = "btCalcular"
+        Me.btCalcular.Size = New System.Drawing.Size(130, 34)
+        Me.btCalcular.TabIndex = 60032
+        Me.btCalcular.Text = "Previsualizar"
+        Me.btCalcular.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btCalcular.UseVisualStyleBackColor = True
         '
         'FormBalanceComprobacion
         '
