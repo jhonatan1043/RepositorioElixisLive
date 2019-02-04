@@ -3,6 +3,7 @@
     Property codigoCita As Integer
     Dim panelAux As Panel
     Private Sub FormProgramacionCita_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Generales.habilitarControles(Me)
         fecha = Format(dFecha.Value, Constantes.FORMATO_FECHA_HORA)
         UtlidadCitaBLL.objFormCita = Me
         validarControles()

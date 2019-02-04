@@ -27,7 +27,7 @@ Partial Class FormAreaTrabajo
         '
         'LTitulo
         '
-        Me.LTitulo.Text = "Area de Trabajo"
+        Me.LTitulo.Text = "Area de trabajo"
         '
         'Pimagen
         '

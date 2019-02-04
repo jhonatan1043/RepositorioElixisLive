@@ -151,6 +151,9 @@
             .Columns("Costo").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
             .Columns("Recomendacion").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
 
+            .Columns("Servicios").Visible = False
+            .Columns("Costo").Visible = False
+
             .Columns("dgQuitar").DisplayIndex = 8
 
             .AutoGenerateColumns = False
@@ -267,4 +270,11 @@
         End If
         Return False
     End Function
+    Private Sub FormProductoUbicacion_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        If EstiloMensajes.mostrarMensajePregunta(MensajeSistema.SALIR) = Constantes.SI Then
+            Me.Dispose()
+        Else
+            e.Cancel = True
+        End If
+    End Sub
 End Class

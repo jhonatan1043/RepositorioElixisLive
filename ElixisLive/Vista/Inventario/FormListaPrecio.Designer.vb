@@ -25,7 +25,7 @@ Partial Class FormListaPrecio
         '
         'LTitulo
         '
-        Me.LTitulo.Text = "Lista de Precio "
+        Me.LTitulo.Text = "Lista de precio "
         '
         'Pimagen
         '

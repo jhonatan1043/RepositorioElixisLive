@@ -27,7 +27,9 @@ Partial Class FormCostoServicio
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
         Me.dgvRegistro = New System.Windows.Forms.DataGridView()
+        Me.dgQuitar = New System.Windows.Forms.DataGridViewImageColumn()
         Me.Gbdatos = New System.Windows.Forms.GroupBox()
+        Me.btBuscarServicio = New System.Windows.Forms.Button()
         Me.txtnombre = New System.Windows.Forms.TextBox()
         Me.txtcodigo = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -41,8 +43,6 @@ Partial Class FormCostoServicio
         Me.btEditar = New System.Windows.Forms.ToolStripButton()
         Me.btCancelar = New System.Windows.Forms.ToolStripButton()
         Me.btAnular = New System.Windows.Forms.ToolStripButton()
-        Me.dgQuitar = New System.Windows.Forms.DataGridViewImageColumn()
-        Me.btBuscarServicio = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Pimagen = New System.Windows.Forms.PictureBox()
         Me.LTitulo = New System.Windows.Forms.Label()
@@ -99,6 +99,12 @@ Partial Class FormCostoServicio
         Me.dgvRegistro.Size = New System.Drawing.Size(574, 203)
         Me.dgvRegistro.TabIndex = 0
         '
+        'dgQuitar
+        '
+        Me.dgQuitar.HeaderText = "Quitar"
+        Me.dgQuitar.Image = Global.Quality.My.Resources.Resources.papelera
+        Me.dgQuitar.Name = "dgQuitar"
+        '
         'Gbdatos
         '
         Me.Gbdatos.Controls.Add(Me.btBuscarServicio)
@@ -114,6 +120,17 @@ Partial Class FormCostoServicio
         Me.Gbdatos.TabIndex = 0
         Me.Gbdatos.TabStop = False
         Me.Gbdatos.Text = "Información "
+        '
+        'btBuscarServicio
+        '
+        Me.btBuscarServicio.BackgroundImage = Global.Quality.My.Resources.Resources.fondo_azul
+        Me.btBuscarServicio.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btBuscarServicio.Image = Global.Quality.My.Resources.Resources.Zoom_icon1
+        Me.btBuscarServicio.Location = New System.Drawing.Point(544, 15)
+        Me.btBuscarServicio.Name = "btBuscarServicio"
+        Me.btBuscarServicio.Size = New System.Drawing.Size(26, 25)
+        Me.btBuscarServicio.TabIndex = 68
+        Me.btBuscarServicio.UseVisualStyleBackColor = True
         '
         'txtnombre
         '
@@ -246,23 +263,6 @@ Partial Class FormCostoServicio
         Me.btAnular.Text = "&Anular"
         Me.btAnular.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         '
-        'dgQuitar
-        '
-        Me.dgQuitar.HeaderText = "Quitar"
-        Me.dgQuitar.Image = Global.Quality.My.Resources.Resources.papelera
-        Me.dgQuitar.Name = "dgQuitar"
-        '
-        'btBuscarServicio
-        '
-        Me.btBuscarServicio.BackgroundImage = Global.Quality.My.Resources.Resources.fondo_azul
-        Me.btBuscarServicio.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btBuscarServicio.Image = Global.Quality.My.Resources.Resources.Zoom_icon1
-        Me.btBuscarServicio.Location = New System.Drawing.Point(544, 12)
-        Me.btBuscarServicio.Name = "btBuscarServicio"
-        Me.btBuscarServicio.Size = New System.Drawing.Size(31, 30)
-        Me.btBuscarServicio.TabIndex = 68
-        Me.btBuscarServicio.UseVisualStyleBackColor = True
-        '
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.White
@@ -295,7 +295,7 @@ Partial Class FormCostoServicio
         Me.LTitulo.Name = "LTitulo"
         Me.LTitulo.Size = New System.Drawing.Size(603, 41)
         Me.LTitulo.TabIndex = 1
-        Me.LTitulo.Text = "Costo Servicio"
+        Me.LTitulo.Text = "Costo de servicio"
         Me.LTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'FormCostoServicio

@@ -255,7 +255,7 @@
     End Sub
     Private Sub limpiarControl()
         objEntrada.dtEntrada.Clear()
-        txtCodigo.Clear()
+        txtCodigo.Text = Nothing
         txtSubTotal.Clear()
         txtTotal.Clear()
     End Sub
@@ -281,7 +281,7 @@
             cbMovimiento.Enabled = False
         Else
             objEntrada.dtEntrada.Clear()
-            txtCodigo.Clear()
+            txtCodigo.Text = Nothing
             btBuscarCompra.Enabled = False
             objEntrada.dtEntrada.Rows.Add()
             dgvEntrada.Columns("dgQuitar").Visible = True

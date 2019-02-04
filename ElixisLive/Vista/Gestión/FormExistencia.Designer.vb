@@ -27,6 +27,7 @@ Partial Class FormExistencia
         Me.txtBuscar = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.btActualizar = New System.Windows.Forms.Button()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.Estado = New System.Windows.Forms.ToolStrip()
         Me.ToolStripLabel1 = New System.Windows.Forms.ToolStripLabel()
@@ -40,7 +41,6 @@ Partial Class FormExistencia
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Pimagen = New System.Windows.Forms.PictureBox()
         Me.LTitulo = New System.Windows.Forms.Label()
-        Me.btActualizar = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.Estado.SuspendLayout()
@@ -85,6 +85,20 @@ Partial Class FormExistencia
         Me.GroupBox1.Size = New System.Drawing.Size(726, 376)
         Me.GroupBox1.TabIndex = 8
         Me.GroupBox1.TabStop = False
+        '
+        'btActualizar
+        '
+        Me.btActualizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btActualizar.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Italic)
+        Me.btActualizar.Image = Global.Quality.My.Resources.Resources.Actions_edit_redo_icon
+        Me.btActualizar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btActualizar.Location = New System.Drawing.Point(625, 10)
+        Me.btActualizar.Name = "btActualizar"
+        Me.btActualizar.Size = New System.Drawing.Size(94, 28)
+        Me.btActualizar.TabIndex = 59
+        Me.btActualizar.Text = "Recargar"
+        Me.btActualizar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btActualizar.UseVisualStyleBackColor = True
         '
         'GroupBox2
         '
@@ -201,22 +215,8 @@ Partial Class FormExistencia
         Me.LTitulo.Name = "LTitulo"
         Me.LTitulo.Size = New System.Drawing.Size(742, 42)
         Me.LTitulo.TabIndex = 1
-        Me.LTitulo.Text = "Productos en Existencia"
+        Me.LTitulo.Text = "Productos en existencia"
         Me.LTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'btActualizar
-        '
-        Me.btActualizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btActualizar.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Italic)
-        Me.btActualizar.Image = Global.Quality.My.Resources.Resources.Actions_edit_redo_icon
-        Me.btActualizar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btActualizar.Location = New System.Drawing.Point(625, 10)
-        Me.btActualizar.Name = "btActualizar"
-        Me.btActualizar.Size = New System.Drawing.Size(94, 28)
-        Me.btActualizar.TabIndex = 59
-        Me.btActualizar.Text = "Recargar"
-        Me.btActualizar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btActualizar.UseVisualStyleBackColor = True
         '
         'FormExistencia
         '

@@ -339,7 +339,7 @@ Partial Class FormConfigVenta
         Me.LTitulo.Name = "LTitulo"
         Me.LTitulo.Size = New System.Drawing.Size(659, 41)
         Me.LTitulo.TabIndex = 1
-        Me.LTitulo.Text = "Configuración Venta"
+        Me.LTitulo.Text = "Protocolos de venta"
         Me.LTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'FormConfigVenta

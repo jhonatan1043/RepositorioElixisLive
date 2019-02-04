@@ -89,7 +89,7 @@ Partial Class FormSucursal
         Me.LTitulo.Name = "LTitulo"
         Me.LTitulo.Size = New System.Drawing.Size(603, 44)
         Me.LTitulo.TabIndex = 1
-        Me.LTitulo.Text = "Sedes"
+        Me.LTitulo.Text = "Sucursales"
         Me.LTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'ToolStrip1

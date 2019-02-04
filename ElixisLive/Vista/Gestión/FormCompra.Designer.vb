@@ -67,7 +67,7 @@ Partial Class FormCompra
         Me.ToolStripButton1 = New System.Windows.Forms.ToolStripButton()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Pimagen = New System.Windows.Forms.PictureBox()
-        Me.Label1 = New System.Windows.Forms.Label()
+        Me.LTitulo = New System.Windows.Forms.Label()
         Me.ErrorIcono = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -210,7 +210,7 @@ Partial Class FormCompra
         Me.Label5.Image = Global.Quality.My.Resources.Resources.fondo_azul
         Me.Label5.Location = New System.Drawing.Point(705, 270)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(155, 46)
+        Me.Label5.Size = New System.Drawing.Size(155, 36)
         Me.Label5.TabIndex = 24
         Me.Label5.Text = "Artículos"
         Me.Label5.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -275,7 +275,7 @@ Partial Class FormCompra
         Me.Label6.Image = Global.Quality.My.Resources.Resources.fondo_azul
         Me.Label6.Location = New System.Drawing.Point(705, 324)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(155, 46)
+        Me.Label6.Size = New System.Drawing.Size(155, 36)
         Me.Label6.TabIndex = 18
         Me.Label6.Text = "Total"
         Me.Label6.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -315,9 +315,9 @@ Partial Class FormCompra
         Me.btBuscarProveedor.BackgroundImage = Global.Quality.My.Resources.Resources.fondo_azul
         Me.btBuscarProveedor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btBuscarProveedor.Image = Global.Quality.My.Resources.Resources.Zoom_icon1
-        Me.btBuscarProveedor.Location = New System.Drawing.Point(271, 15)
+        Me.btBuscarProveedor.Location = New System.Drawing.Point(271, 17)
         Me.btBuscarProveedor.Name = "btBuscarProveedor"
-        Me.btBuscarProveedor.Size = New System.Drawing.Size(31, 30)
+        Me.btBuscarProveedor.Size = New System.Drawing.Size(26, 25)
         Me.btBuscarProveedor.TabIndex = 67
         Me.btBuscarProveedor.UseVisualStyleBackColor = True
         '
@@ -504,7 +504,7 @@ Partial Class FormCompra
         Me.Panel1.BackgroundImage = Global.Quality.My.Resources.Resources.fondo_azul
         Me.Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Panel1.Controls.Add(Me.Pimagen)
-        Me.Panel1.Controls.Add(Me.Label1)
+        Me.Panel1.Controls.Add(Me.LTitulo)
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(901, 42)
@@ -521,17 +521,17 @@ Partial Class FormCompra
         Me.Pimagen.TabIndex = 1
         Me.Pimagen.TabStop = False
         '
-        'Label1
+        'LTitulo
         '
-        Me.Label1.BackColor = System.Drawing.Color.Transparent
-        Me.Label1.Font = New System.Drawing.Font("Times New Roman", 20.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(3, 0)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(891, 44)
-        Me.Label1.TabIndex = 1
-        Me.Label1.Text = "Compras"
-        Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.LTitulo.BackColor = System.Drawing.Color.Transparent
+        Me.LTitulo.Font = New System.Drawing.Font("Times New Roman", 20.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LTitulo.ForeColor = System.Drawing.Color.White
+        Me.LTitulo.Location = New System.Drawing.Point(3, 0)
+        Me.LTitulo.Name = "LTitulo"
+        Me.LTitulo.Size = New System.Drawing.Size(891, 44)
+        Me.LTitulo.TabIndex = 1
+        Me.LTitulo.Text = "Compras"
+        Me.LTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'ErrorIcono
         '
@@ -571,7 +571,7 @@ Partial Class FormCompra
 
     Public WithEvents Panel1 As Panel
     Public WithEvents Pimagen As PictureBox
-    Public WithEvents Label1 As Label
+    Public WithEvents LTitulo As Label
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents PictureBox1 As PictureBox

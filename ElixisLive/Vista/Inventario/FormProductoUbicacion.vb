@@ -109,4 +109,11 @@
             End If
         Next
     End Sub
+    Private Sub FormProductoUbicacion_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        If EstiloMensajes.mostrarMensajePregunta(MensajeSistema.SALIR) = Constantes.SI Then
+            Me.Dispose()
+        Else
+            e.Cancel = True
+        End If
+    End Sub
 End Class

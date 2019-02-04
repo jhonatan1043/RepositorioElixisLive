@@ -30,6 +30,7 @@ Partial Class FormPersona
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.ListSucursal = New System.Windows.Forms.CheckedListBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.txtPerfil = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.chUsuario = New System.Windows.Forms.CheckBox()
         Me.btBuscarPerfil = New System.Windows.Forms.Button()
@@ -68,7 +69,6 @@ Partial Class FormPersona
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Pimagen = New System.Windows.Forms.PictureBox()
         Me.LTitulo = New System.Windows.Forms.Label()
-        Me.txtPerfil = New System.Windows.Forms.Label()
         Me.GroupBox4.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -169,6 +169,17 @@ Partial Class FormPersona
         Me.GroupBox1.TabIndex = 12
         Me.GroupBox1.TabStop = False
         '
+        'txtPerfil
+        '
+        Me.txtPerfil.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtPerfil.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtPerfil.ForeColor = System.Drawing.Color.Black
+        Me.txtPerfil.Location = New System.Drawing.Point(138, 67)
+        Me.txtPerfil.Name = "txtPerfil"
+        Me.txtPerfil.Size = New System.Drawing.Size(226, 25)
+        Me.txtPerfil.TabIndex = 100
+        Me.txtPerfil.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
         'Label2
         '
         Me.Label2.AutoSize = True
@@ -198,7 +209,7 @@ Partial Class FormPersona
         Me.btBuscarPerfil.BackgroundImage = Global.Quality.My.Resources.Resources.fondo_azul
         Me.btBuscarPerfil.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btBuscarPerfil.Image = Global.Quality.My.Resources.Resources.Zoom_icon1
-        Me.btBuscarPerfil.Location = New System.Drawing.Point(368, 67)
+        Me.btBuscarPerfil.Location = New System.Drawing.Point(367, 69)
         Me.btBuscarPerfil.Name = "btBuscarPerfil"
         Me.btBuscarPerfil.Size = New System.Drawing.Size(26, 25)
         Me.btBuscarPerfil.TabIndex = 15
@@ -605,17 +616,6 @@ Partial Class FormPersona
         Me.LTitulo.TabIndex = 1
         Me.LTitulo.Text = "Persona"
         Me.LTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'txtPerfil
-        '
-        Me.txtPerfil.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtPerfil.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtPerfil.ForeColor = System.Drawing.Color.Black
-        Me.txtPerfil.Location = New System.Drawing.Point(138, 67)
-        Me.txtPerfil.Name = "txtPerfil"
-        Me.txtPerfil.Size = New System.Drawing.Size(226, 25)
-        Me.txtPerfil.TabIndex = 100
-        Me.txtPerfil.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'FormPersona
         '

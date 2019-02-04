@@ -51,7 +51,6 @@ Partial Class FormCitaMedica
         Me.txtfecha = New System.Windows.Forms.MaskedTextBox()
         Me.txtobservacion = New System.Windows.Forms.RichTextBox()
         Me.Label11 = New System.Windows.Forms.Label()
-        Me.textNombre = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.dgvServicio = New System.Windows.Forms.DataGridView()
@@ -64,12 +63,13 @@ Partial Class FormCitaMedica
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.Label1 = New System.Windows.Forms.Label()
+        Me.LTitulo = New System.Windows.Forms.Label()
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
         Me.btRegistrar = New System.Windows.Forms.ToolStripButton()
         Me.btEditar = New System.Windows.Forms.ToolStripButton()
         Me.btCancelar = New System.Windows.Forms.ToolStripButton()
         Me.btAnular = New System.Windows.Forms.ToolStripButton()
+        Me.textNombre = New System.Windows.Forms.Label()
         Me.GroupBox2.SuspendLayout()
         CType(Me.dgvServicio, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
@@ -195,12 +195,12 @@ Partial Class FormCitaMedica
         '
         'GroupBox2
         '
+        Me.GroupBox2.Controls.Add(Me.textNombre)
         Me.GroupBox2.Controls.Add(Me.Panel3)
         Me.GroupBox2.Controls.Add(Me.btBuscarCliente)
         Me.GroupBox2.Controls.Add(Me.txtfecha)
         Me.GroupBox2.Controls.Add(Me.txtobservacion)
         Me.GroupBox2.Controls.Add(Me.Label11)
-        Me.GroupBox2.Controls.Add(Me.textNombre)
         Me.GroupBox2.Controls.Add(Me.Label7)
         Me.GroupBox2.Controls.Add(Me.Label4)
         Me.GroupBox2.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -227,7 +227,7 @@ Partial Class FormCitaMedica
         Me.btBuscarCliente.BackgroundImage = Global.Quality.My.Resources.Resources.fondo_azul
         Me.btBuscarCliente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btBuscarCliente.Image = Global.Quality.My.Resources.Resources.Zoom_icon1
-        Me.btBuscarCliente.Location = New System.Drawing.Point(399, 20)
+        Me.btBuscarCliente.Location = New System.Drawing.Point(398, 20)
         Me.btBuscarCliente.Name = "btBuscarCliente"
         Me.btBuscarCliente.Size = New System.Drawing.Size(26, 25)
         Me.btBuscarCliente.TabIndex = 58
@@ -265,14 +265,6 @@ Partial Class FormCitaMedica
         Me.Label11.Size = New System.Drawing.Size(128, 19)
         Me.Label11.TabIndex = 48
         Me.Label11.Text = "Recomendaciones:"
-        '
-        'textNombre
-        '
-        Me.textNombre.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.textNombre.Location = New System.Drawing.Point(73, 21)
-        Me.textNombre.Name = "textNombre"
-        Me.textNombre.Size = New System.Drawing.Size(323, 25)
-        Me.textNombre.TabIndex = 40
         '
         'Label7
         '
@@ -374,7 +366,7 @@ Partial Class FormCitaMedica
         Me.Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Panel1.Controls.Add(Me.Panel2)
         Me.Panel1.Controls.Add(Me.PictureBox1)
-        Me.Panel1.Controls.Add(Me.Label1)
+        Me.Panel1.Controls.Add(Me.LTitulo)
         Me.Panel1.Location = New System.Drawing.Point(-1, 3)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(713, 42)
@@ -401,17 +393,17 @@ Partial Class FormCitaMedica
         Me.PictureBox1.TabIndex = 1
         Me.PictureBox1.TabStop = False
         '
-        'Label1
+        'LTitulo
         '
-        Me.Label1.BackColor = System.Drawing.Color.Transparent
-        Me.Label1.Font = New System.Drawing.Font("Times New Roman", 20.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(0, 1)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(715, 41)
-        Me.Label1.TabIndex = 1
-        Me.Label1.Text = "Asignación de Citas"
-        Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.LTitulo.BackColor = System.Drawing.Color.Transparent
+        Me.LTitulo.Font = New System.Drawing.Font("Times New Roman", 20.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LTitulo.ForeColor = System.Drawing.Color.White
+        Me.LTitulo.Location = New System.Drawing.Point(0, 1)
+        Me.LTitulo.Name = "LTitulo"
+        Me.LTitulo.Size = New System.Drawing.Size(715, 41)
+        Me.LTitulo.TabIndex = 1
+        Me.LTitulo.Text = "Asignación de Citas"
+        Me.LTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'ToolStrip1
         '
@@ -471,6 +463,16 @@ Partial Class FormCitaMedica
         Me.btAnular.Text = "&Anular"
         Me.btAnular.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         '
+        'textNombre
+        '
+        Me.textNombre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.textNombre.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.textNombre.Location = New System.Drawing.Point(67, 20)
+        Me.textNombre.Name = "textNombre"
+        Me.textNombre.Size = New System.Drawing.Size(326, 25)
+        Me.textNombre.TabIndex = 60029
+        Me.textNombre.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
         'FormCitaMedica
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -522,14 +524,13 @@ Partial Class FormCitaMedica
     Public WithEvents GroupBox2 As GroupBox
     Friend WithEvents txtfecha As MaskedTextBox
     Friend WithEvents Label11 As Label
-    Friend WithEvents textNombre As TextBox
     Friend WithEvents Label7 As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents dgvServicio As DataGridView
     Public WithEvents GroupBox1 As GroupBox
     Public WithEvents Panel1 As Panel
     Public WithEvents PictureBox1 As PictureBox
-    Public WithEvents Label1 As Label
+    Public WithEvents LTitulo As Label
     Public WithEvents ToolStrip1 As ToolStrip
     Public WithEvents btRegistrar As ToolStripButton
     Public WithEvents btEditar As ToolStripButton
@@ -544,4 +545,5 @@ Partial Class FormCitaMedica
     Friend WithEvents dgCantidad As DataGridViewTextBoxColumn
     Friend WithEvents dgQuitar As DataGridViewImageColumn
     Friend WithEvents txtobservacion As RichTextBox
+    Friend WithEvents textNombre As Label
 End Class

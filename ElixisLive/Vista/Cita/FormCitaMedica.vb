@@ -11,7 +11,6 @@
         Generales.deshabilitarBotones(ToolStrip1)
         Generales.deshabilitarControles(Me)
         validarGrilla()
-        'establecerPosicion()
         If estadoRegistro = True Then
             cargarCita(codigoCita)
             btEditar.Enabled = True

@@ -93,9 +93,9 @@ Partial Class FormBaseLista
         '
         Me.txtBuscar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtBuscar.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtBuscar.Location = New System.Drawing.Point(68, 56)
+        Me.txtBuscar.Location = New System.Drawing.Point(80, 56)
         Me.txtBuscar.Name = "txtBuscar"
-        Me.txtBuscar.Size = New System.Drawing.Size(580, 22)
+        Me.txtBuscar.Size = New System.Drawing.Size(568, 22)
         Me.txtBuscar.TabIndex = 7
         '
         'Label3
@@ -140,7 +140,7 @@ Partial Class FormBaseLista
         '
         Me.cbTipoLista.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Italic)
         Me.cbTipoLista.FormattingEnabled = True
-        Me.cbTipoLista.Location = New System.Drawing.Point(387, 12)
+        Me.cbTipoLista.Location = New System.Drawing.Point(387, 11)
         Me.cbTipoLista.Name = "cbTipoLista"
         Me.cbTipoLista.Size = New System.Drawing.Size(167, 23)
         Me.cbTipoLista.TabIndex = 11
@@ -159,7 +159,10 @@ Partial Class FormBaseLista
         '
         'btDuplicar
         '
-        Me.btDuplicar.Location = New System.Drawing.Point(560, 12)
+        Me.btDuplicar.BackgroundImage = Global.Quality.My.Resources.Resources.fondo_azul
+        Me.btDuplicar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btDuplicar.ForeColor = System.Drawing.Color.White
+        Me.btDuplicar.Location = New System.Drawing.Point(560, 11)
         Me.btDuplicar.Name = "btDuplicar"
         Me.btDuplicar.Size = New System.Drawing.Size(76, 23)
         Me.btDuplicar.TabIndex = 9

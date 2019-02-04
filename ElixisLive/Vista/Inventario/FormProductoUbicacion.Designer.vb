@@ -92,7 +92,7 @@ Partial Class FormProductoUbicacion
         Me.LTitulo.Name = "LTitulo"
         Me.LTitulo.Size = New System.Drawing.Size(805, 44)
         Me.LTitulo.TabIndex = 1
-        Me.LTitulo.Text = "Productos Ubicación"
+        Me.LTitulo.Text = "Ubicación de productos"
         Me.LTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'GroupBox1
@@ -122,7 +122,7 @@ Partial Class FormProductoUbicacion
         Me.Label3.BackColor = System.Drawing.Color.Transparent
         Me.Label3.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.Black
-        Me.Label3.Location = New System.Drawing.Point(6, 19)
+        Me.Label3.Location = New System.Drawing.Point(15, 19)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(57, 19)
         Me.Label3.TabIndex = 63
