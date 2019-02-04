@@ -455,7 +455,7 @@ Partial Class FormVenta
         Me.GroupBox7.Controls.Add(Me.Label2)
         Me.GroupBox7.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox7.ForeColor = System.Drawing.Color.DarkBlue
-        Me.GroupBox7.Location = New System.Drawing.Point(6, 9)
+        Me.GroupBox7.Location = New System.Drawing.Point(6, 8)
         Me.GroupBox7.Name = "GroupBox7"
         Me.GroupBox7.Size = New System.Drawing.Size(879, 46)
         Me.GroupBox7.TabIndex = 999
@@ -551,7 +551,7 @@ Partial Class FormVenta
         Me.txtDescuento.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtDescuento.Font = New System.Drawing.Font("Times New Roman", 14.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtDescuento.ForeColor = System.Drawing.Color.Black
-        Me.txtDescuento.Location = New System.Drawing.Point(327, 442)
+        Me.txtDescuento.Location = New System.Drawing.Point(327, 445)
         Me.txtDescuento.Name = "txtDescuento"
         Me.txtDescuento.Size = New System.Drawing.Size(155, 29)
         Me.txtDescuento.TabIndex = 60038
@@ -565,7 +565,7 @@ Partial Class FormVenta
         Me.GroupBox2.Controls.Add(Me.gbRelevante)
         Me.GroupBox2.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox2.ForeColor = System.Drawing.Color.DarkBlue
-        Me.GroupBox2.Location = New System.Drawing.Point(6, 54)
+        Me.GroupBox2.Location = New System.Drawing.Point(6, 56)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(879, 367)
         Me.GroupBox2.TabIndex = 4
@@ -577,7 +577,7 @@ Partial Class FormVenta
         Me.GroupBox8.Controls.Add(Me.PanelGastos)
         Me.GroupBox8.Controls.Add(Me.dgvServicio)
         Me.GroupBox8.ForeColor = System.Drawing.Color.DarkBlue
-        Me.GroupBox8.Location = New System.Drawing.Point(5, 52)
+        Me.GroupBox8.Location = New System.Drawing.Point(5, 54)
         Me.GroupBox8.Name = "GroupBox8"
         Me.GroupBox8.Size = New System.Drawing.Size(868, 155)
         Me.GroupBox8.TabIndex = 60036
@@ -765,7 +765,7 @@ Partial Class FormVenta
         Me.dgvProducto.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle9
         Me.dgvProducto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvProducto.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.dgCodigo, Me.dgDescripcion, Me.dgStock, Me.dgCantidad, Me.dgValor, Me.dgDescuento, Me.dgValorDescuento, Me.dgTotal, Me.dgEmpleadoP, Me.dgEmpleadoN, Me.dgQuitar})
-        Me.dgvProducto.Location = New System.Drawing.Point(9, 224)
+        Me.dgvProducto.Location = New System.Drawing.Point(9, 225)
         Me.dgvProducto.MultiSelect = False
         Me.dgvProducto.Name = "dgvProducto"
         Me.dgvProducto.ReadOnly = True
@@ -880,7 +880,7 @@ Partial Class FormVenta
         Me.gbRelevante.Controls.Add(Me.lbInformativo)
         Me.gbRelevante.Controls.Add(Me.Label3)
         Me.gbRelevante.Controls.Add(Me.txtCodigo)
-        Me.gbRelevante.Location = New System.Drawing.Point(6, 11)
+        Me.gbRelevante.Location = New System.Drawing.Point(6, 13)
         Me.gbRelevante.Name = "gbRelevante"
         Me.gbRelevante.Size = New System.Drawing.Size(868, 40)
         Me.gbRelevante.TabIndex = 60034
@@ -962,7 +962,7 @@ Partial Class FormVenta
         Me.Label10.Font = New System.Drawing.Font("Times New Roman", 14.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label10.ForeColor = System.Drawing.Color.White
         Me.Label10.Image = Global.Quality.My.Resources.Resources.fondo_azul
-        Me.Label10.Location = New System.Drawing.Point(327, 425)
+        Me.Label10.Location = New System.Drawing.Point(327, 428)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(155, 31)
         Me.Label10.TabIndex = 60037
@@ -974,7 +974,7 @@ Partial Class FormVenta
         Me.TextTotal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TextTotal.Font = New System.Drawing.Font("Times New Roman", 14.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextTotal.ForeColor = System.Drawing.Color.Black
-        Me.TextTotal.Location = New System.Drawing.Point(488, 442)
+        Me.TextTotal.Location = New System.Drawing.Point(488, 445)
         Me.TextTotal.Name = "TextTotal"
         Me.TextTotal.Size = New System.Drawing.Size(155, 29)
         Me.TextTotal.TabIndex = 9999
@@ -985,7 +985,7 @@ Partial Class FormVenta
         Me.TextTotalServicio.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TextTotalServicio.Font = New System.Drawing.Font("Times New Roman", 14.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextTotalServicio.ForeColor = System.Drawing.Color.Black
-        Me.TextTotalServicio.Location = New System.Drawing.Point(166, 442)
+        Me.TextTotalServicio.Location = New System.Drawing.Point(166, 445)
         Me.TextTotalServicio.Name = "TextTotalServicio"
         Me.TextTotalServicio.Size = New System.Drawing.Size(155, 29)
         Me.TextTotalServicio.TabIndex = 9999
@@ -998,7 +998,7 @@ Partial Class FormVenta
         Me.Label6.Font = New System.Drawing.Font("Times New Roman", 14.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.ForeColor = System.Drawing.Color.White
         Me.Label6.Image = Global.Quality.My.Resources.Resources.fondo_azul
-        Me.Label6.Location = New System.Drawing.Point(488, 424)
+        Me.Label6.Location = New System.Drawing.Point(488, 427)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(155, 32)
         Me.Label6.TabIndex = 18
@@ -1012,7 +1012,7 @@ Partial Class FormVenta
         Me.Label4.Font = New System.Drawing.Font("Times New Roman", 14.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.White
         Me.Label4.Image = Global.Quality.My.Resources.Resources.fondo_azul
-        Me.Label4.Location = New System.Drawing.Point(166, 425)
+        Me.Label4.Location = New System.Drawing.Point(166, 428)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(155, 31)
         Me.Label4.TabIndex = 22
@@ -1024,7 +1024,7 @@ Partial Class FormVenta
         Me.TextTotalArticulos.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TextTotalArticulos.Font = New System.Drawing.Font("Times New Roman", 14.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextTotalArticulos.ForeColor = System.Drawing.Color.Black
-        Me.TextTotalArticulos.Location = New System.Drawing.Point(11, 481)
+        Me.TextTotalArticulos.Location = New System.Drawing.Point(11, 484)
         Me.TextTotalArticulos.Name = "TextTotalArticulos"
         Me.TextTotalArticulos.Size = New System.Drawing.Size(155, 29)
         Me.TextTotalArticulos.TabIndex = 999
@@ -1037,7 +1037,7 @@ Partial Class FormVenta
         Me.Label5.Font = New System.Drawing.Font("Times New Roman", 14.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.Color.White
         Me.Label5.Image = Global.Quality.My.Resources.Resources.fondo_azul
-        Me.Label5.Location = New System.Drawing.Point(11, 463)
+        Me.Label5.Location = New System.Drawing.Point(11, 466)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(155, 31)
         Me.Label5.TabIndex = 24
