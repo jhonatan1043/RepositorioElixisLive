@@ -70,7 +70,7 @@ Partial Class FormLibroMayor
         Me.LTitulo.ForeColor = System.Drawing.Color.White
         Me.LTitulo.Location = New System.Drawing.Point(2, 0)
         Me.LTitulo.Name = "LTitulo"
-        Me.LTitulo.Size = New System.Drawing.Size(581, 41)
+        Me.LTitulo.Size = New System.Drawing.Size(601, 41)
         Me.LTitulo.TabIndex = 1
         Me.LTitulo.Text = "Libro mayor"
         Me.LTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter

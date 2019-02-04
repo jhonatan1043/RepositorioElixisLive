@@ -27,6 +27,10 @@ Partial Class FormLibroAuxiliar
         Me.Pimagen = New System.Windows.Forms.PictureBox()
         Me.LTitulo = New System.Windows.Forms.Label()
         Me.gbDatosGrupo = New System.Windows.Forms.GroupBox()
+        Me.btTercero = New System.Windows.Forms.Button()
+        Me.txtTercero = New System.Windows.Forms.Label()
+        Me.txtRazonSocial = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.btCuenta = New System.Windows.Forms.Button()
         Me.txtCodigoCuenta = New System.Windows.Forms.Label()
         Me.txtDescripcionCuenta = New System.Windows.Forms.Label()
@@ -36,10 +40,6 @@ Partial Class FormLibroAuxiliar
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
-        Me.btTercero = New System.Windows.Forms.Button()
-        Me.txtTercero = New System.Windows.Forms.Label()
-        Me.txtRazonSocial = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbDatosGrupo.SuspendLayout()
@@ -75,7 +75,7 @@ Partial Class FormLibroAuxiliar
         Me.LTitulo.ForeColor = System.Drawing.Color.White
         Me.LTitulo.Location = New System.Drawing.Point(2, 0)
         Me.LTitulo.Name = "LTitulo"
-        Me.LTitulo.Size = New System.Drawing.Size(581, 41)
+        Me.LTitulo.Size = New System.Drawing.Size(601, 41)
         Me.LTitulo.TabIndex = 1
         Me.LTitulo.Text = "Libro auxiliar"
         Me.LTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -103,12 +103,56 @@ Partial Class FormLibroAuxiliar
         Me.gbDatosGrupo.TabIndex = 17
         Me.gbDatosGrupo.TabStop = False
         '
+        'btTercero
+        '
+        Me.btTercero.BackgroundImage = CType(resources.GetObject("btTercero.BackgroundImage"), System.Drawing.Image)
+        Me.btTercero.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btTercero.Image = CType(resources.GetObject("btTercero.Image"), System.Drawing.Image)
+        Me.btTercero.Location = New System.Drawing.Point(548, 54)
+        Me.btTercero.Name = "btTercero"
+        Me.btTercero.Size = New System.Drawing.Size(26, 25)
+        Me.btTercero.TabIndex = 60046
+        Me.btTercero.UseVisualStyleBackColor = True
+        '
+        'txtTercero
+        '
+        Me.txtTercero.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtTercero.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtTercero.ForeColor = System.Drawing.Color.Black
+        Me.txtTercero.Location = New System.Drawing.Point(67, 53)
+        Me.txtTercero.Name = "txtTercero"
+        Me.txtTercero.Size = New System.Drawing.Size(86, 25)
+        Me.txtTercero.TabIndex = 60045
+        Me.txtTercero.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'txtRazonSocial
+        '
+        Me.txtRazonSocial.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtRazonSocial.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtRazonSocial.ForeColor = System.Drawing.Color.Black
+        Me.txtRazonSocial.Location = New System.Drawing.Point(157, 53)
+        Me.txtRazonSocial.Name = "txtRazonSocial"
+        Me.txtRazonSocial.Size = New System.Drawing.Size(387, 25)
+        Me.txtRazonSocial.TabIndex = 60044
+        Me.txtRazonSocial.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.Black
+        Me.Label3.Location = New System.Drawing.Point(7, 58)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(59, 17)
+        Me.Label3.TabIndex = 60043
+        Me.Label3.Text = "Tercero:"
+        '
         'btCuenta
         '
         Me.btCuenta.BackgroundImage = CType(resources.GetObject("btCuenta.BackgroundImage"), System.Drawing.Image)
         Me.btCuenta.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btCuenta.Image = CType(resources.GetObject("btCuenta.Image"), System.Drawing.Image)
-        Me.btCuenta.Location = New System.Drawing.Point(548, 23)
+        Me.btCuenta.Location = New System.Drawing.Point(548, 22)
         Me.btCuenta.Name = "btCuenta"
         Me.btCuenta.Size = New System.Drawing.Size(26, 25)
         Me.btCuenta.TabIndex = 60042
@@ -201,50 +245,6 @@ Partial Class FormLibroAuxiliar
         Me.Label11.Size = New System.Drawing.Size(58, 17)
         Me.Label11.TabIndex = 4
         Me.Label11.Text = "Cuenta:"
-        '
-        'btTercero
-        '
-        Me.btTercero.BackgroundImage = CType(resources.GetObject("btTercero.BackgroundImage"), System.Drawing.Image)
-        Me.btTercero.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btTercero.Image = CType(resources.GetObject("btTercero.Image"), System.Drawing.Image)
-        Me.btTercero.Location = New System.Drawing.Point(548, 56)
-        Me.btTercero.Name = "btTercero"
-        Me.btTercero.Size = New System.Drawing.Size(26, 25)
-        Me.btTercero.TabIndex = 60046
-        Me.btTercero.UseVisualStyleBackColor = True
-        '
-        'txtTercero
-        '
-        Me.txtTercero.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtTercero.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtTercero.ForeColor = System.Drawing.Color.Black
-        Me.txtTercero.Location = New System.Drawing.Point(67, 53)
-        Me.txtTercero.Name = "txtTercero"
-        Me.txtTercero.Size = New System.Drawing.Size(86, 25)
-        Me.txtTercero.TabIndex = 60045
-        Me.txtTercero.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'txtRazonSocial
-        '
-        Me.txtRazonSocial.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtRazonSocial.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtRazonSocial.ForeColor = System.Drawing.Color.Black
-        Me.txtRazonSocial.Location = New System.Drawing.Point(157, 53)
-        Me.txtRazonSocial.Name = "txtRazonSocial"
-        Me.txtRazonSocial.Size = New System.Drawing.Size(387, 25)
-        Me.txtRazonSocial.TabIndex = 60044
-        Me.txtRazonSocial.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.ForeColor = System.Drawing.Color.Black
-        Me.Label3.Location = New System.Drawing.Point(7, 58)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(59, 17)
-        Me.Label3.TabIndex = 60043
-        Me.Label3.Text = "Tercero:"
         '
         'FormLibroAuxiliar
         '
