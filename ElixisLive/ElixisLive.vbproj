@@ -80,6 +80,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>ReferenciaDLL\itextsharp.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
     <Reference Include="MySql.Data, Version=6.1.0.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\MySql.Data.DLL</HintPath>
@@ -703,6 +706,15 @@
     <EmbeddedResource Include="Vista\Contabilidad\Cuentas por pagar\FormEstadoCuentas.resx">
       <DependentUpon>FormEstadoCuentas.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Contabilidad\Cuentas por pagar\FormFacturaProveedor.resx">
+      <DependentUpon>FormFacturaProveedor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Contabilidad\Cuentas por pagar\FormNotaProveedor.resx">
+      <DependentUpon>FormNotaProveedor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Contabilidad\Libros\FormBalanceComprobacion.resx">
+      <DependentUpon>FormBalanceComprobacion.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vista\Contabilidad\Tesoreria\FormComprobanteEgreso.resx">
       <DependentUpon>FormComprobanteEgreso.vb</DependentUpon>
     </EmbeddedResource>
@@ -793,15 +805,6 @@
       <Isolated>False</Isolated>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
-    <COMReference Include="Microsoft.Office.Interop.Excel">
-      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
-      <VersionMajor>1</VersionMajor>
-      <VersionMinor>9</VersionMinor>
-      <Lcid>0</Lcid>
-      <WrapperTool>primary</WrapperTool>
-      <Isolated>False</Isolated>
-      <EmbedInteropTypes>True</EmbedInteropTypes>
-    </COMReference>
     <COMReference Include="VBIDE">
       <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
       <VersionMajor>5</VersionMajor>
@@ -824,6 +827,7 @@
     <Content Include="ReferenciaDLL\itextsharp.dll" />
     <Content Include="ReferenciaDLL\MySql.Data.DLL" />
     <Content Include="ReferenciaDLL\NotifySenderControl.dll" />
+    <None Include="Resources\SEO-icon.png" />
     <None Include="Resources\Safe-icon.png" />
     <None Include="Resources\Microsoft-Excel-2013-icon1.png" />
     <None Include="Resources\Printer-icon %281%291.png" />
@@ -856,6 +860,7 @@
     <None Include="Resources\Actions-document-new-icon.png" />
     <None Include="Resources\Balance-icon.png" />
     <None Include="Resources\atencion.gif" />
+    <None Include="Resources\bar-chart-icon.png" />
     <Content Include="Resources\calculator-icon1.png" />
     <None Include="Resources\calculator-icon2.png" />
     <None Include="Resources\DesAnclar.png" />
