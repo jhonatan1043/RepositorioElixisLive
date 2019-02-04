@@ -907,6 +907,7 @@
     <None Include="Resources\atencion.gif" />
     <None Include="Resources\bar-chart-icon.png" />
     <None Include="Resources\Actions-project-development-close-icon.png" />
+    <None Include="Resources\Accounting-icon.png" />
     <Content Include="Resources\calculator-icon1.png" />
     <None Include="Resources\calculator-icon2.png" />
     <None Include="Resources\DesAnclar.png" />

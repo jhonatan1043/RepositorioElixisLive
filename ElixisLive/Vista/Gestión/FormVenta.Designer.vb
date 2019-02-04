@@ -173,7 +173,7 @@ Partial Class FormVenta
         Me.Pimagen = New System.Windows.Forms.PictureBox()
         Me.Label34 = New System.Windows.Forms.Label()
         Me.Label23 = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
+        Me.LTitulo = New System.Windows.Forms.Label()
         Me.GroupBox12 = New System.Windows.Forms.GroupBox()
         Me.TextBox36 = New System.Windows.Forms.TextBox()
         Me.TextBox10 = New System.Windows.Forms.TextBox()
@@ -1082,7 +1082,7 @@ Partial Class FormVenta
         Me.Panel1.Controls.Add(Me.Pimagen)
         Me.Panel1.Controls.Add(Me.Label34)
         Me.Panel1.Controls.Add(Me.Label23)
-        Me.Panel1.Controls.Add(Me.Label1)
+        Me.Panel1.Controls.Add(Me.LTitulo)
         Me.Panel1.Controls.Add(Me.GroupBox12)
         Me.Panel1.Controls.Add(Me.GroupBox3)
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
@@ -1115,7 +1115,7 @@ Partial Class FormVenta
         'Pimagen
         '
         Me.Pimagen.BackColor = System.Drawing.Color.Transparent
-        Me.Pimagen.Image = Global.Quality.My.Resources.Resources.cash_register_icon__3_
+        Me.Pimagen.Image = Global.Quality.My.Resources.Resources.Accounting_icon
         Me.Pimagen.Location = New System.Drawing.Point(4, 0)
         Me.Pimagen.Name = "Pimagen"
         Me.Pimagen.Size = New System.Drawing.Size(49, 40)
@@ -1151,17 +1151,17 @@ Partial Class FormVenta
         Me.Label23.Text = "Artículos"
         Me.Label23.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
-        'Label1
+        'LTitulo
         '
-        Me.Label1.BackColor = System.Drawing.Color.Transparent
-        Me.Label1.Font = New System.Drawing.Font("Times New Roman", 20.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(0, 1)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(927, 44)
-        Me.Label1.TabIndex = 1
-        Me.Label1.Text = "Venta de Artículos y Servicios"
-        Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.LTitulo.BackColor = System.Drawing.Color.Transparent
+        Me.LTitulo.Font = New System.Drawing.Font("Times New Roman", 20.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LTitulo.ForeColor = System.Drawing.Color.White
+        Me.LTitulo.Location = New System.Drawing.Point(0, 1)
+        Me.LTitulo.Name = "LTitulo"
+        Me.LTitulo.Size = New System.Drawing.Size(900, 44)
+        Me.LTitulo.TabIndex = 1
+        Me.LTitulo.Text = "Venta de artículos y servicios"
+        Me.LTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'GroupBox12
         '
@@ -3767,7 +3767,7 @@ Partial Class FormVenta
     Public WithEvents btAnular As ToolStripButton
     Public WithEvents Panel1 As Panel
     Public WithEvents Pimagen As PictureBox
-    Public WithEvents Label1 As Label
+    Public WithEvents LTitulo As Label
     Friend WithEvents GroupBox2 As GroupBox
     Public WithEvents TextTelefono As TextBox
     Public WithEvents Label2 As Label
