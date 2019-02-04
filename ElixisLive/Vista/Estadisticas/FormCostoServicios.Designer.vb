@@ -79,7 +79,7 @@ Partial Class FormCostoServicios
         '
         Me.Label1.BackColor = System.Drawing.Color.SteelBlue
         Me.Label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Label1.Font = New System.Drawing.Font("Times New Roman", 14.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Font = New System.Drawing.Font("Times New Roman", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.White
         Me.Label1.Location = New System.Drawing.Point(240, 12)
         Me.Label1.Name = "Label1"
@@ -92,7 +92,7 @@ Partial Class FormCostoServicios
         '
         Me.Label5.BackColor = System.Drawing.Color.SteelBlue
         Me.Label5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Label5.Font = New System.Drawing.Font("Times New Roman", 14.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Font = New System.Drawing.Font("Times New Roman", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.Color.White
         Me.Label5.Location = New System.Drawing.Point(6, 12)
         Me.Label5.Name = "Label5"
@@ -143,13 +143,13 @@ Partial Class FormCostoServicios
         'LTitulo
         '
         Me.LTitulo.BackColor = System.Drawing.Color.Transparent
-        Me.LTitulo.Font = New System.Drawing.Font("Times New Roman", 20.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LTitulo.Font = New System.Drawing.Font("Times New Roman", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LTitulo.ForeColor = System.Drawing.Color.White
         Me.LTitulo.Location = New System.Drawing.Point(5, 0)
         Me.LTitulo.Name = "LTitulo"
         Me.LTitulo.Size = New System.Drawing.Size(901, 40)
         Me.LTitulo.TabIndex = 1
-        Me.LTitulo.Text = "Costo de Servicios"
+        Me.LTitulo.Text = "Costo de servicios"
         Me.LTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'FormCostoServicios

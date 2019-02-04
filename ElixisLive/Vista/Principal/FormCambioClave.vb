@@ -8,6 +8,7 @@
         '    btRegistrar.Enabled = False
         '    Exit Sub
         'End If
+        Generales.habilitarControles(Me)
         txtUsuario.Text = SesionActual.usuario
         Generales.tabularConEnter(Me)
     End Sub

@@ -52,7 +52,7 @@ Partial Class FormPrincipal
         '
         Me.lbUsuario.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.lbUsuario.BackColor = System.Drawing.Color.White
-        Me.lbUsuario.Font = New System.Drawing.Font("Times New Roman", 14.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbUsuario.Font = New System.Drawing.Font("Times New Roman", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbUsuario.ForeColor = System.Drawing.Color.SteelBlue
         Me.lbUsuario.Location = New System.Drawing.Point(612, 712)
         Me.lbUsuario.Name = "lbUsuario"
@@ -69,6 +69,7 @@ Partial Class FormPrincipal
         Me.BackgroundImage = Global.Quality.My.Resources.Resources.Quality_logo
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.ClientSize = New System.Drawing.Size(1016, 733)
+        Me.ControlBox = False
         Me.Controls.Add(Me.lbUsuario)
         Me.Controls.Add(Me.StatusStrip1)
         Me.DoubleBuffered = True

@@ -64,4 +64,8 @@ Public Class FormCerrarSesion
     Private Sub PicCerrarSesion_MouseMove(sender As Object, e As MouseEventArgs) Handles PicCerrarSesion.MouseMove
 
     End Sub
+
+    Private Sub GroupBox1_Enter(sender As Object, e As EventArgs) Handles GroupBox1.Enter
+
+    End Sub
 End Class

@@ -53,7 +53,7 @@ Partial Class FormInicioSesion
         'UsernameLabel
         '
         Me.UsernameLabel.BackColor = System.Drawing.Color.White
-        Me.UsernameLabel.Font = New System.Drawing.Font("Times New Roman", 11.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.UsernameLabel.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.UsernameLabel.ForeColor = System.Drawing.Color.SteelBlue
         Me.UsernameLabel.Location = New System.Drawing.Point(149, 28)
         Me.UsernameLabel.Name = "UsernameLabel"
@@ -65,7 +65,7 @@ Partial Class FormInicioSesion
         'PasswordLabel
         '
         Me.PasswordLabel.BackColor = System.Drawing.Color.White
-        Me.PasswordLabel.Font = New System.Drawing.Font("Times New Roman", 11.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.PasswordLabel.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.PasswordLabel.ForeColor = System.Drawing.Color.SteelBlue
         Me.PasswordLabel.Location = New System.Drawing.Point(149, 71)
         Me.PasswordLabel.Name = "PasswordLabel"
@@ -77,7 +77,7 @@ Partial Class FormInicioSesion
         'txtUsuario
         '
         Me.txtUsuario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtUsuario.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtUsuario.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtUsuario.Location = New System.Drawing.Point(229, 31)
         Me.txtUsuario.MaxLength = 15
         Me.txtUsuario.Name = "txtUsuario"
@@ -87,7 +87,7 @@ Partial Class FormInicioSesion
         'txtContraseña
         '
         Me.txtContraseña.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtContraseña.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtContraseña.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtContraseña.Location = New System.Drawing.Point(229, 73)
         Me.txtContraseña.MaxLength = 20
         Me.txtContraseña.Name = "txtContraseña"
@@ -98,7 +98,7 @@ Partial Class FormInicioSesion
         'Label1
         '
         Me.Label1.BackColor = System.Drawing.Color.White
-        Me.Label1.Font = New System.Drawing.Font("Times New Roman", 11.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.SteelBlue
         Me.Label1.Location = New System.Drawing.Point(149, 111)
         Me.Label1.Name = "Label1"
@@ -110,7 +110,7 @@ Partial Class FormInicioSesion
         'CbEmpresa
         '
         Me.CbEmpresa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.CbEmpresa.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CbEmpresa.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CbEmpresa.FormattingEnabled = True
         Me.CbEmpresa.Location = New System.Drawing.Point(229, 112)
         Me.CbEmpresa.Name = "CbEmpresa"
