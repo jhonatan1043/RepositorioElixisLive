@@ -1,7 +1,7 @@
 ﻿Public Class ElementoMenu
-    Public Shared Property codigo As String
-    Public Shared Property nombre As String
-    Public Shared Property modulo As String
+    Public Property codigo As String
+    Public Property nombre As String
+    Public Property modulo As String
     Public Property nombrePadre As String
     Public Sub New()
 

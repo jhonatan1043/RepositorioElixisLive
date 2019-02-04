@@ -12,6 +12,7 @@ Public Class FormEmpleado
         Generales.cargarPermiso(Me)
         objEmpleado = New Empleado
         Try
+            objEmpleado.codigoFormulario = Tag.codigo
             formatMoneda()
             Generales.deshabilitarBotones(ToolStrip1)
             Generales.deshabilitarControles(Me)
@@ -27,7 +28,7 @@ Public Class FormEmpleado
         Dim params As New List(Of String)
         Try
             If dgvParametro.ColumnCount = 0 Then
-                params.Add(ElementoMenu.codigo)
+                '  params.Add(ElementoMenu.codigo)
                 Generales.llenardgv(Sentencias.PARAMETROS_CONSULTAR, dgvParametro, params)
                 Generales.diseñoDGV(dgvParametro)
                 Generales.diseñoGrillaParametros(dgvParametro)
@@ -64,7 +65,7 @@ Public Class FormEmpleado
                 NumComision.Value = dfila("Porcentaje")
                 txtSalario.Text = Format(dfila("salario"), Constantes.FORMATO_MONEDA)
                 crearImagen(dfila)
-                params.Add(ElementoMenu.codigo)
+                params.Add(objEmpleado.codigoFormulario)
                 Generales.llenardgv(objEmpleado.sqlCargarDetalle, dgvParametro, params)
                 Generales.diseñoDGV(dgvParametro)
                 Generales.diseñoGrillaParametros(dgvParametro)

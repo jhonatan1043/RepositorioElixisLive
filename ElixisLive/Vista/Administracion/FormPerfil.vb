@@ -5,8 +5,10 @@ Public Class FormPerfil
     Private dsDatos As DataSet
     Private objPerfilBll As New PerfilBLL
     Dim fprincipal As New FormPrincipal
+    Dim principalBLL As New principalBLL
     Private Sub FormPerfil_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Generales.cargarPermiso(Me)
+        principalBLL.formulario = FormPrincipal
         objPerfil = New Perfil
         listarPerfiles()
         validarCampoGrilla()
@@ -112,7 +114,7 @@ Public Class FormPerfil
                 SesionActual.dtPermisos = fprincipal.cargarOpciones(SesionActual.codigoPerfil)
                 Generales.deshabilitarControles(Me)
                 Generales.habilitarBotones(Me.ToolStrip1)
-                ' principalBLL.cargarMenu(FormPrincipal.arbolMenu)
+                principalBLL.cargarMenu()
                 btRegistrar.Enabled = False
                 btCancelar.Enabled = False
                 arbolmenu.Enabled = False

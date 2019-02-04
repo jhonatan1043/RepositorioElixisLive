@@ -4,8 +4,9 @@
         Generales.cargarPermiso(Me)
         Dim params As New List(Of String)
         objProducto = New producto
+        objProducto.codigoFormulario = Tag.codigo
         Try
-            params.Add(ElementoMenu.codigo)
+            params.Add(objProducto.codigoFormulario)
             Generales.deshabilitarBotones(ToolStrip1)
             Generales.deshabilitarControles(Me)
             btNuevo.Enabled = True
@@ -48,7 +49,7 @@
                 txtnombre.Text = dfila("Nombre")
                 objProducto.nombreCompleto = dfila("Nombre_Completo")
                 txtCodigoBarra.Text = Generales.Ceros(objProducto.codigo, 5)
-                params.Add(ElementoMenu.codigo)
+                params.Add(objProducto.codigoFormulario)
                 Generales.llenardgv(objProducto.sqlCargarDetalle, dgRegistro, params)
                 Generales.diseñoDGV(dgRegistro)
                 controlVerificarControl()

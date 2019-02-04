@@ -33,7 +33,7 @@ Public Class principalBLL
             FormPrincipal.menuOpciones.ForeColor = Color.White
 
             FormPrincipal.menuOpciones.GripStyle = ToolStripGripStyle.Visible
-            FormPrincipal.menuOpciones.Font = New Font(Constantes.TIPO_LETRA_ELEMENTO2, 10)
+            FormPrincipal.menuOpciones.Font = New Font(Constantes.TIPO_LETRA_ELEMENTO2, 10, FontStyle.Italic.Bold)
             formulario.menuOpciones.Renderer = New MyRenderer()
 
         Catch ex As Exception
@@ -55,6 +55,7 @@ Public Class principalBLL
             mnuOpcion.DropDownItems.Add(mnuSubOpcion)
             CrearSubopciones(mnuSubOpcion, dtFilas)
         Next
+
     End Sub
     Private Shared Sub CreaOpciones(ByRef dsDatos As DataSet)
         Dim dtmenu As New DataTable("menu")
@@ -70,19 +71,18 @@ Public Class principalBLL
     End Sub
     Public Sub cargarFormulario(sender As Object, e As EventArgs)
         Try
-
             Dim menuItem = DirectCast(sender, ToolStripMenuItem)
+            Dim elemMenu As ElementoMenu = menuItem.Tag
 
-            If estaAbierto(menuItem.Tag) = True Then
-                traerAlFrente(menuItem.Tag)
+            If estaAbierto(elemMenu) = True Then
+                traerAlFrente(elemMenu)
             Else
-
-                Dim nombreTipo = "Quality." & menuItem.Tag.nombre
+                Dim nombreTipo = "Quality." & elemMenu.nombre
                 Dim vTipo As Type = Assembly.GetExecutingAssembly.GetType(nombreTipo)
 
                 If vTipo IsNot Nothing Then
                     Dim vFormulario = Activator.CreateInstance(vTipo)
-                    vFormulario.tag = menuItem.Tag
+                    vFormulario.tag = elemMenu
                     Generales.cargarForm(vFormulario)
                 End If
             End If

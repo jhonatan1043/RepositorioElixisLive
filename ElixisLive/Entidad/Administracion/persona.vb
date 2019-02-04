@@ -25,6 +25,7 @@
     Property chEmpleado As Boolean
     Property chCliente As Boolean
     Property chProveedor As Boolean
+    Property codigoFormulario As String
 
     Public Sub New()
         dtSucursal = New DataTable

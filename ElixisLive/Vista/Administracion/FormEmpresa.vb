@@ -44,7 +44,8 @@
         objEmpresa = New Empresa
         Try
             CheckForIllegalCrossThreadCalls = False
-            params.Add(ElementoMenu.codigo)
+            objEmpresa.codigoFormulario = Tag.codigo
+            params.Add(objEmpresa.codigoFormulario)
             Generales.llenardgv(Sentencias.PARAMETROS_CONSULTAR, dgvParametro, params)
             Generales.diseñoDGV(dgvParametro)
             Generales.diseñoGrillaParametros(dgvParametro)
@@ -122,7 +123,7 @@
                 txtEncabezado.Text = If(IsDBNull(dfila("Encabezado")), Nothing, dfila("Encabezado"))
                 txtPie.Text = If(IsDBNull(dfila("Pie_Factura")), Nothing, dfila("Pie_Factura"))
                 crearImagen(dfila)
-                params.Add(ElementoMenu.codigo)
+                params.Add(objEmpresa.codigoFormulario)
                 Generales.llenardgv(objEmpresa.sqlCargarDetalle, dgvParametro, params)
                 Generales.diseñoDGV(dgvParametro)
                 Generales.diseñoGrillaParametros(dgvParametro)

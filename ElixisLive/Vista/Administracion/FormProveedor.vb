@@ -26,7 +26,7 @@ Public Class FormProveedor
     Private Sub cargarParametros()
         Dim params As New List(Of String)
         If dgvParametro.ColumnCount <> 0 Then
-            params.Add(ElementoMenu.codigo)
+            ' params.Add(ElementoMenu.codigo)
             Generales.llenardgv(Sentencias.PARAMETROS_CONSULTAR, dgvParametro, params)
             Generales.diseñoDGV(dgvParametro)
             Generales.diseñoGrillaParametros(dgvParametro)
@@ -43,6 +43,7 @@ Public Class FormProveedor
         Dim params As New List(Of String)
         Dim dfila As DataRow
         objProveedor.codigo = pcodigo
+        objProveedor.codigoFormulario = Tag.Codigo
         params.Add(objProveedor.codigo)
         dfila = Generales.cargarItem(objProveedor.sqlCargar, params)
         Try
@@ -54,7 +55,7 @@ Public Class FormProveedor
                 cbBanco.SelectedValue = If(IsDBNull(dfila("codigo_Banco")), -1, dfila("codigo_Banco"))
                 cbTipoCuenta.SelectedValue = If(IsDBNull(dfila("Tipo_Cuenta_Banco")), -1, dfila("Tipo_Cuenta_Banco"))
                 txtCuenta.Text = If(cbFormaPago.SelectedValue = 1, String.Empty, dfila("Numero_Cuenta"))
-                params.Add(ElementoMenu.codigo)
+                params.Add(objProveedor.codigoFormulario)
                 Generales.llenardgv(objProveedor.sqlCargarDetalle, dgvParametro, params)
                 Generales.diseñoDGV(dgvParametro)
                 Generales.diseñoGrillaParametros(dgvParametro)
