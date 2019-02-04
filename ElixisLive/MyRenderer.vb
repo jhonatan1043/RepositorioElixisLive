@@ -2,7 +2,7 @@
     Inherits ToolStripProfessionalRenderer
     Protected Overloads Overrides Sub OnRenderMenuItemBackground(ByVal e As ToolStripItemRenderEventArgs)
         Dim rc As New Rectangle(Point.Empty, e.Item.Size)
-        Dim c As Color = IIf(e.Item.Selected, Color.LightSkyBlue, Color.Transparent)
+        Dim c As Color = IIf(e.Item.Selected, Color.LimeGreen, Color.SteelBlue)
         Using brush As New SolidBrush(c)
             e.Graphics.FillRectangle(brush, rc)
         End Using

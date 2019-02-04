@@ -28,18 +28,35 @@ Public Class principalBLL
             formulario.Controls.Add(formulario.menuOpciones)
             FormPrincipal.menuOpciones.LayoutStyle = ToolStripLayoutStyle.Flow
             FormPrincipal.menuOpciones.AutoSize = True
+            FormPrincipal.menuOpciones.BackColor = Color.SteelBlue
 
-            'FormPrincipal.menuOpciones.BackColor = Color.White
-            FormPrincipal.menuOpciones.BackgroundImage = My.Resources.fondo_azul
-            FormPrincipal.menuOpciones.BackgroundImageLayout = ImageLayout.Stretch
 
             FormPrincipal.menuOpciones.GripStyle = ToolStripGripStyle.Visible
-            FormPrincipal.menuOpciones.Font = New Font(Constantes.TIPO_LETRA_ELEMENTO, 10, FontStyle.Italic)
+            FormPrincipal.menuOpciones.Font = New Font(Constantes.TIPO_LETRA_ELEMENTO, 10, FontStyle.Bold)
             formulario.menuOpciones.Renderer = New MyRenderer()
 
         Catch ex As Exception
             EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
         End Try
+    End Sub
+    Public Sub eliminarMenu()
+        For t = 0 To formulario.menuOpciones.Items.Count - 1
+            formulario.menuOpciones.Items.RemoveAt(0)
+        Next
+        Dim con As Control
+        For controlIndex As Integer = FormPrincipal.Controls.Count - 1 To 0 Step -1
+            con = FormPrincipal.Controls(controlIndex)
+            If con.Name = "menuOpciones" Then
+                FormPrincipal.Controls.Remove(con)
+            End If
+        Next
+        Dim con1 As Control
+        For controlIndex As Integer = FormPrincipal.Controls.Count - 1 To 0 Step -1
+            con1 = FormPrincipal.Controls(controlIndex)
+            If con1.Name = "mnuOpcion" Then
+                FormPrincipal.Controls.Remove(con1)
+            End If
+        Next
     End Sub
     Private Sub CrearSubopciones(ByVal mnuOpcion As ToolStripMenuItem, dtFilas As DataTable)
         Dim mnuSubOpcion As ToolStripMenuItem
@@ -53,7 +70,6 @@ Public Class principalBLL
                                                 (mnuOpcion.Tag.nombrePadre.ToString))
 
             mnuSubOpcion.ForeColor = Color.White
-            mnuSubOpcion.BackColor = Color.SteelBlue
 
             agregarMenuItem(drFila("Formulario").ToString, mnuSubOpcion)
             mnuOpcion.DropDownItems.Add(mnuSubOpcion)
