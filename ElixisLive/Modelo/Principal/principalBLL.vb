@@ -18,7 +18,7 @@ Public Class principalBLL
                                                  Nothing,
                                                  drFila("Descripcion").ToString)
                 ' añadir este menú desplegable a la barra de menú
-                mnuOpcion.ForeColor = Color.White
+                mnuOpcion.ForeColor = Color.SteelBlue
                 formulario.menuOpciones.Items.Add(mnuOpcion)
                 ' recorrer si hubiera las opciones dependientes de este menú
                 dtFilas = dsDatos.Tables(0)
@@ -29,11 +29,11 @@ Public Class principalBLL
             FormPrincipal.menuOpciones.LayoutStyle = ToolStripLayoutStyle.Flow
             FormPrincipal.menuOpciones.AutoSize = True
 
-            FormPrincipal.menuOpciones.BackColor = Color.SteelBlue
-            FormPrincipal.menuOpciones.ForeColor = Color.White
+            FormPrincipal.menuOpciones.BackColor = Color.White
+            FormPrincipal.menuOpciones.ForeColor = Color.SteelBlue
 
             FormPrincipal.menuOpciones.GripStyle = ToolStripGripStyle.Visible
-            FormPrincipal.menuOpciones.Font = New Font(Constantes.TIPO_LETRA_ELEMENTO2, 10, FontStyle.Italic.Bold)
+            FormPrincipal.menuOpciones.Font = New Font(Constantes.TIPO_LETRA_ELEMENTO, 10, FontStyle.Italic)
             formulario.menuOpciones.Renderer = New MyRenderer()
 
         Catch ex As Exception
@@ -50,7 +50,7 @@ Public Class principalBLL
                                                 drFila("Formulario").ToString,
                                                 (mnuOpcion.Tag.codigo.ToString.Substring(0, 2)),
                                                 (mnuOpcion.Tag.nombrePadre.ToString))
-            mnuSubOpcion.ForeColor = Color.White
+            mnuSubOpcion.ForeColor = Color.SteelBlue
             agregarMenuItem(drFila("Formulario").ToString, mnuSubOpcion)
             mnuOpcion.DropDownItems.Add(mnuSubOpcion)
             CrearSubopciones(mnuSubOpcion, dtFilas)
