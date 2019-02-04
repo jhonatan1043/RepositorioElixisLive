@@ -63,7 +63,7 @@
         'label2
         '
         Me.label2.BackColor = System.Drawing.Color.Transparent
-        Me.label2.Font = New System.Drawing.Font("Times New Roman", 14.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.label2.Font = New System.Drawing.Font("Times New Roman", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.label2.ForeColor = System.Drawing.Color.White
         Me.label2.Location = New System.Drawing.Point(-1, -1)
         Me.label2.Name = "label2"
@@ -88,7 +88,7 @@
         'lblMensaje
         '
         Me.lblMensaje.BackColor = System.Drawing.Color.Transparent
-        Me.lblMensaje.Font = New System.Drawing.Font("Times New Roman", 14.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblMensaje.Font = New System.Drawing.Font("Times New Roman", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblMensaje.ForeColor = System.Drawing.Color.White
         Me.lblMensaje.Location = New System.Drawing.Point(88, 41)
         Me.lblMensaje.Name = "lblMensaje"

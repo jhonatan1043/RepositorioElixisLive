@@ -42,7 +42,5 @@ Public Class FormPrincipal
         dtPermisos.Dispose()
         objConexio.desconectar()
     End Function
-    Private Sub FormPrincipal_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
-        FormInicioSesion.Close()
-    End Sub
+
 End Class
