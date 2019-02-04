@@ -329,7 +329,7 @@ Public Class Generales
         dgv.DefaultCellStyle.ForeColor = Color.Black
         dgv.DefaultCellStyle.SelectionBackColor = Color.DodgerBlue
         dgv.DefaultCellStyle.SelectionForeColor = Color.White
-        dgv.DefaultCellStyle.Font = New Font("Times New Roman", 11, FontStyle.Italic)
+        dgv.DefaultCellStyle.Font = New Font("Times New Roman", 10)
         dgv.EnableHeadersVisualStyles = False
         dgv.ColumnHeadersDefaultCellStyle.BackColor = Color.SteelBlue
         dgv.ColumnHeadersDefaultCellStyle.ForeColor = Color.White
@@ -337,8 +337,8 @@ Public Class Generales
         dgv.AlternatingRowsDefaultCellStyle.ForeColor = Nothing
         dgv.AlternatingRowsDefaultCellStyle.SelectionBackColor = Nothing
         dgv.AlternatingRowsDefaultCellStyle.SelectionForeColor = Nothing
-        dgv.AlternatingRowsDefaultCellStyle.Font = New Font("Times New Roman", 11, FontStyle.Italic)
-        dgv.ColumnHeadersDefaultCellStyle.Font = New Font("Times New Roman", 12, FontStyle.Italic)
+        dgv.AlternatingRowsDefaultCellStyle.Font = New Font("Times New Roman", 10)
+        dgv.ColumnHeadersDefaultCellStyle.Font = New Font("Times New Roman", 10, FontStyle.Bold)
         For indiceColumna = 0 To dgv.Columns.Count - 1
             dgv.Columns(indiceColumna).AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
         Next
@@ -446,16 +446,25 @@ Public Class Generales
     End Function
     Public Shared Sub deshabilitarControles(ByRef pElemento As Object)
         Dim vItem As Object
+
         For Each vItem In pElemento.Controls
+            If vItem.name = "LTitulo" Then
+                vItem.Font = New Font(Constantes.TIPO_LETRA_ELEMENTO, 20)
+            Else
+                vItem.Font = New Font(Constantes.TIPO_LETRA_ELEMENTO, 10)
+            End If
+
             If (TypeOf vItem Is TextBox) Or (TypeOf vItem Is RichTextBox) Or (TypeOf vItem Is MaskedTextBox) Or (TypeOf vItem Is DataGridView) Then
                 vItem.readonly = True
             ElseIf (TypeOf vItem Is CheckBox) Or (TypeOf vItem Is RadioButton) Or (TypeOf vItem Is ComboBox) Or
                    ((TypeOf vItem Is Button) Or (TypeOf vItem Is TreeView) Or (TypeOf vItem Is DateTimePicker) Or (TypeOf vItem Is NumericUpDown)) Or
                    (TypeOf vItem Is CheckedListBox) Then
                 vItem.enabled = False
+                vItem.Font = New Font(Constantes.TIPO_LETRA_ELEMENTO, 10, FontStyle.Bold)
             ElseIf (TypeOf vItem Is GroupBox) Or (vItem.hasChildren) Then
                 deshabilitarControles(vItem)
             End If
+
         Next
     End Sub
     Public Shared Sub habilitarBotones(ByRef pToolStrip As ToolStrip)
@@ -467,6 +476,7 @@ Public Class Generales
             ElseIf TypeOf oToolStripButton Is ToolStripDropDown Then
                 oToolStripButton.enabled = True
             End If
+            oToolStripButton.Font = New Font(Constantes.TIPO_LETRA_ELEMENTO, 10, FontStyle.Bold)
         Next
     End Sub
     Public Shared Sub deshabilitarBotones(ByRef pToolStrip As ToolStrip)
@@ -477,10 +487,16 @@ Public Class Generales
             ElseIf TypeOf oToolStripButton Is ToolStripDropDownButton Then
                 oToolStripButton.enabled = False
             End If
+            oToolStripButton.Font = New Font(Constantes.TIPO_LETRA_ELEMENTO, 10, FontStyle.Bold)
         Next
     End Sub
     Public Shared Sub habilitarControles(ByRef pElemento As Object)
         For Each vItem In pElemento.Controls
+            If vItem.name = "LTitulo" Then
+                vItem.Font = New Font(Constantes.TIPO_LETRA_ELEMENTO, 20)
+            Else
+                vItem.Font = New Font(Constantes.TIPO_LETRA_ELEMENTO, 10)
+            End If
             If ((TypeOf vItem Is TextBox) Or (TypeOf vItem Is RichTextBox) Or (TypeOf vItem Is MaskedTextBox) Or (TypeOf vItem Is DataGridView)) And
                    Not (vItem.name.ToString.ToLower.Contains("txtcodigo")) Then
                 If vItem.name = "dgvParametro" AndAlso vItem.ColumnCount > 0 Then
@@ -494,9 +510,11 @@ Public Class Generales
                 (TypeOf vItem Is Button) Or (TypeOf vItem Is TreeView) Or (TypeOf vItem Is DateTimePicker) Or (TypeOf vItem Is NumericUpDown) Or
                    (TypeOf vItem Is CheckedListBox) Then
                 vItem.enabled = True
+                vItem.Font = New Font(Constantes.TIPO_LETRA_ELEMENTO, 10, FontStyle.Bold)
             ElseIf (TypeOf vItem Is GroupBox) Or (vItem.hasChildren) Then
                 habilitarControles(vItem)
             End If
+
         Next
     End Sub
     Private Shared Sub habilitarColumnaParametro(dgv As DataGridView)
