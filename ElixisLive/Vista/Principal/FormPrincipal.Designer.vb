@@ -77,7 +77,6 @@ Partial Class FormPrincipal
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.IsMdiContainer = True
         Me.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
-        Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "FormPrincipal"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
