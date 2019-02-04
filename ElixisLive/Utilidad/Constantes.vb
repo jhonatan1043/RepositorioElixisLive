@@ -41,6 +41,7 @@
 
     Public Const DIA_SEMANA = 7
     Public Const TIPO_LETRA_ELEMENTO = "[FontFamily: Name=Microsoft Sans Serif]"
+    Public Const TIPO_LETRA_ELEMENTO2 = "[FontFamily: Name=Times New Roman]"
     Public Const PENDIENTE = 0
 
     Public Const ALTO_BARRA = 50

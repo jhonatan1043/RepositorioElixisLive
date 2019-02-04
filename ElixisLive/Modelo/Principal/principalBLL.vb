@@ -2,103 +2,87 @@
 Imports System.Reflection
 Public Class principalBLL
     Public Shared dsDatos As DataSet
-    Public Shared Sub cargarMenu(arbolMenu As TreeView)
-        Dim nodo As TreeNode
+    Public formulario As FormPrincipal
+    Public Sub cargarMenu()
+        Dim mnuOpcion As ToolStripMenuItem
         Dim drCuentaPadre As DataRow()
+        Dim dtFilas As New DataTable
         Try
             dsDatos = New DataSet
             CreaOpciones(dsDatos)
-            cargarMenu(dsDatos)
-            drCuentaPadre = dsDatos.Tables("padre").Select()
-
-            arbolMenu.Nodes.Clear()
-
+            drCuentaPadre = dsDatos.Tables(0).Select("Codigo_Padre is null", "Codigo")
             For Each drFila As DataRow In drCuentaPadre
-                nodo = New TreeNode
-                nodo.Name = drFila("Codigo").ToString()
-                nodo.Text = drFila("Descripcion").ToString()
-                nodo.Tag = drFila("codigo_Padre").ToString()
-                arbolMenu.Nodes.Add(nodo)
-                crearSubcuentas(nodo)
+                mnuOpcion = New ToolStripMenuItem(drFila("Descripcion").ToString())
+                mnuOpcion.Tag = New ElementoMenu(drFila("Codigo").ToString(),
+                                                 drFila("Formulario").ToString,
+                                                 Nothing,
+                                                 drFila("Descripcion").ToString)
+                ' añadir este menú desplegable a la barra de menú
+                mnuOpcion.ForeColor = Color.White
+                formulario.menuOpciones.Items.Add(mnuOpcion)
+                ' recorrer si hubiera las opciones dependientes de este menú
+                dtFilas = dsDatos.Tables(0)
+                CrearSubopciones(mnuOpcion, dtFilas)
             Next
+
+            formulario.Controls.Add(formulario.menuOpciones)
+            FormPrincipal.menuOpciones.LayoutStyle = ToolStripLayoutStyle.Flow
+            FormPrincipal.menuOpciones.AutoSize = True
+
+            FormPrincipal.menuOpciones.BackColor = Color.SteelBlue
+            FormPrincipal.menuOpciones.ForeColor = Color.White
+
+            FormPrincipal.menuOpciones.GripStyle = ToolStripGripStyle.Visible
+            FormPrincipal.menuOpciones.Font = New Font(Constantes.TIPO_LETRA_ELEMENTO2, 10)
+            formulario.menuOpciones.Renderer = New MyRenderer()
+
         Catch ex As Exception
             EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
         End Try
     End Sub
-    Private Shared Sub crearSubcuentas(ByRef nodoPade As TreeNode)
-        Dim expr As String = "[Codigo_Padre] ='" & nodoPade.Name & "'"
-        Dim subnodo As TreeNode
+    Private Sub CrearSubopciones(ByVal mnuOpcion As ToolStripMenuItem, dtFilas As DataTable)
+        Dim mnuSubOpcion As ToolStripMenuItem
+        Dim drFilas = dtFilas.Select("Codigo_Padre =" & "'" & mnuOpcion.Tag.codigo & "'", "Codigo")
 
-        Try
-            Dim aDrFilas As DataRow()
-            aDrFilas = dsDatos.Tables("Hijo").Select(expr, "Codigo")
-
-            For Each drFila As DataRow In aDrFilas
-                subnodo = New TreeNode
-                subnodo.Name = drFila("Codigo").ToString()
-                subnodo.Text = drFila("Descripcion").ToString()
-                subnodo.Tag = drFila("Formulario").ToString()
-                nodoPade.Nodes.Add(subnodo)
-                crearSubcuentas(subnodo)
-            Next
-        Catch ex As Exception
-            EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
-        End Try
-
+        For Each drFila As DataRow In drFilas
+            mnuSubOpcion = New ToolStripMenuItem(drFila("Descripcion").ToString)
+            mnuSubOpcion.Tag = New ElementoMenu(drFila("Codigo").ToString(),
+                                                drFila("Formulario").ToString,
+                                                (mnuOpcion.Tag.codigo.ToString.Substring(0, 2)),
+                                                (mnuOpcion.Tag.nombrePadre.ToString))
+            mnuSubOpcion.ForeColor = Color.White
+            agregarMenuItem(drFila("Formulario").ToString, mnuSubOpcion)
+            mnuOpcion.DropDownItems.Add(mnuSubOpcion)
+            CrearSubopciones(mnuSubOpcion, dtFilas)
+        Next
     End Sub
     Private Shared Sub CreaOpciones(ByRef dsDatos As DataSet)
         Dim dtmenu As New DataTable("menu")
         Dim params As New List(Of String)
         Try
+            params.Add(SesionActual.codigoSucursal)
             params.Add(SesionActual.idUsuario)
-            Generales.llenarTabla("SP_ADMIN_MENU", params, dtmenu)
+            Generales.llenarTabla("[SP_ADMIN_MENU_SUCURSAL]", params, dtmenu)
             dsDatos.Tables.Add(dtmenu)
         Catch ex As Exception
             EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
         End Try
     End Sub
-    Private Shared Sub cargarMenuPadre(ByRef dsDatos As DataSet)
-        Dim dtmenu As New DataTable("padre")
-        Dim params As New List(Of String)
+    Public Sub cargarFormulario(sender As Object, e As EventArgs)
         Try
-            params.Add(SesionActual.idUsuario)
-            Generales.llenarTabla("SP_ADMIN_MENU_PADRE", params, dtmenu)
-            dsDatos.Tables.Add(dtmenu)
-        Catch ex As Exception
-            EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
-        End Try
-    End Sub
-    Private Shared Sub cargarMenuHijas(ByRef dsDatos As DataSet)
-        Dim dtmenu As New DataTable("hijo")
-        Dim params As New List(Of String)
-        Try
-            params.Add(SesionActual.idUsuario)
-            Generales.llenarTabla("SP_ADMIN_MENU_HIJOS", params, dtmenu)
-            dsDatos.Tables.Add(dtmenu)
-        Catch ex As Exception
-            EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
-        End Try
-    End Sub
 
-    Public Shared Sub cargarMenu(ByRef dsCuentas As DataSet)
-        cargarMenuPadre(dsCuentas)
-        cargarMenuHijas(dsCuentas)
-    End Sub
+            Dim menuItem = DirectCast(sender, ToolStripMenuItem)
 
-    Public Shared Sub cargarFormulario(elemento As ElementoMenu)
-        Try
-            Dim elemMenu As ElementoMenu = elemento
-
-            If estaAbierto(elemMenu) = True Then
-                traerAlFrente(elemMenu)
+            If estaAbierto(menuItem.Tag) = True Then
+                traerAlFrente(menuItem.Tag)
             Else
 
-                Dim nombreTipo = "Quality." & elemMenu.nombre
-
+                Dim nombreTipo = "Quality." & menuItem.Tag.nombre
                 Dim vTipo As Type = Assembly.GetExecutingAssembly.GetType(nombreTipo)
+
                 If vTipo IsNot Nothing Then
                     Dim vFormulario = Activator.CreateInstance(vTipo)
-                    vFormulario.tag = elemMenu
+                    vFormulario.tag = menuItem.Tag
                     Generales.cargarForm(vFormulario)
                 End If
             End If
@@ -130,4 +114,18 @@ Public Class principalBLL
         Next
         Return False
     End Function
+    Public Sub agregarMenuItem(ByVal form As String, ByVal mnuSubOpcion As ToolStripMenuItem)
+
+        AddHandler mnuSubOpcion.Click, AddressOf cargarFormulario
+
+        If form.Trim <> String.Empty Then
+            AddHandler mnuSubOpcion.Click, AddressOf click_Global
+        End If
+
+    End Sub
+    Sub click_Global(ByVal sender As System.Object, ByVal e As System.EventArgs)
+        If Not IsNothing(formulario.ActiveMdiChild) AndAlso formulario.ActiveMdiChild.WindowState = FormWindowState.Maximized Then
+            formulario.ActiveMdiChild.WindowState = FormWindowState.Normal
+        End If
+    End Sub
 End Class

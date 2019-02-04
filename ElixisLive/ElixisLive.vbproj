@@ -218,6 +218,7 @@
     <Compile Include="Modelo\Nomina\NominaBLL.vb" />
     <Compile Include="Modelo\Principal\InicioSesionBLL.vb" />
     <Compile Include="Modelo\Principal\principalBLL.vb" />
+    <Compile Include="MyRenderer.vb" />
     <Compile Include="ReferenciaDLL\DataGridViewDateTimePickerColumn.vb" />
     <Compile Include="Reportes\factura.vb">
       <AutoGen>True</AutoGen>

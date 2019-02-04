@@ -112,7 +112,7 @@ Public Class FormPerfil
                 SesionActual.dtPermisos = fprincipal.cargarOpciones(SesionActual.codigoPerfil)
                 Generales.deshabilitarControles(Me)
                 Generales.habilitarBotones(Me.ToolStrip1)
-                principalBLL.cargarMenu(FormPrincipal.arbolMenu)
+                ' principalBLL.cargarMenu(FormPrincipal.arbolMenu)
                 btRegistrar.Enabled = False
                 btCancelar.Enabled = False
                 arbolmenu.Enabled = False
