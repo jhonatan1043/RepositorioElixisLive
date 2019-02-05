@@ -749,6 +749,9 @@
     <EmbeddedResource Include="Vista\Contabilidad\Puc\FormCuentasPuc.resx">
       <DependentUpon>FormCuentasPuc.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Contabilidad\Puc\FormPUC.resx">
+      <DependentUpon>FormPUC.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vista\Contabilidad\Puc\FormRetencionIva.resx">
       <DependentUpon>FormRetencionIva.vb</DependentUpon>
     </EmbeddedResource>

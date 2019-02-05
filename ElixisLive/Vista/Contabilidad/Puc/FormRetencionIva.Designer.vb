@@ -37,6 +37,9 @@ Partial Class FormRetencionIva
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.txtObservacion = New System.Windows.Forms.TextBox()
         Me.gbInformacionCuenta = New System.Windows.Forms.GroupBox()
+        Me.txtCodigoCuenta = New System.Windows.Forms.Label()
+        Me.txtDescripcionCuenta = New System.Windows.Forms.Label()
+        Me.btBusquedaCuenta = New System.Windows.Forms.Button()
         Me.txtTasa = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
@@ -47,9 +50,6 @@ Partial Class FormRetencionIva
         Me.txtCodigoPUC = New System.Windows.Forms.TextBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.txtDescripcionPUC = New System.Windows.Forms.TextBox()
-        Me.btBusquedaCuenta = New System.Windows.Forms.Button()
-        Me.txtCodigoCuenta = New System.Windows.Forms.Label()
-        Me.txtDescripcionCuenta = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ToolStrip1.SuspendLayout()
@@ -230,6 +230,39 @@ Partial Class FormRetencionIva
         Me.gbInformacionCuenta.TabStop = False
         Me.gbInformacionCuenta.Text = "Información de la Cuenta"
         '
+        'txtCodigoCuenta
+        '
+        Me.txtCodigoCuenta.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtCodigoCuenta.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtCodigoCuenta.ForeColor = System.Drawing.Color.Black
+        Me.txtCodigoCuenta.Location = New System.Drawing.Point(84, 46)
+        Me.txtCodigoCuenta.Name = "txtCodigoCuenta"
+        Me.txtCodigoCuenta.Size = New System.Drawing.Size(96, 25)
+        Me.txtCodigoCuenta.TabIndex = 60049
+        Me.txtCodigoCuenta.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'txtDescripcionCuenta
+        '
+        Me.txtDescripcionCuenta.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtDescripcionCuenta.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtDescripcionCuenta.ForeColor = System.Drawing.Color.Black
+        Me.txtDescripcionCuenta.Location = New System.Drawing.Point(329, 46)
+        Me.txtDescripcionCuenta.Name = "txtDescripcionCuenta"
+        Me.txtDescripcionCuenta.Size = New System.Drawing.Size(232, 25)
+        Me.txtDescripcionCuenta.TabIndex = 60048
+        Me.txtDescripcionCuenta.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'btBusquedaCuenta
+        '
+        Me.btBusquedaCuenta.BackgroundImage = CType(resources.GetObject("btBusquedaCuenta.BackgroundImage"), System.Drawing.Image)
+        Me.btBusquedaCuenta.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btBusquedaCuenta.Image = CType(resources.GetObject("btBusquedaCuenta.Image"), System.Drawing.Image)
+        Me.btBusquedaCuenta.Location = New System.Drawing.Point(187, 46)
+        Me.btBusquedaCuenta.Name = "btBusquedaCuenta"
+        Me.btBusquedaCuenta.Size = New System.Drawing.Size(26, 25)
+        Me.btBusquedaCuenta.TabIndex = 60047
+        Me.btBusquedaCuenta.UseVisualStyleBackColor = True
+        '
         'txtTasa
         '
         Me.txtTasa.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -329,39 +362,6 @@ Partial Class FormRetencionIva
         Me.txtDescripcionPUC.ReadOnly = True
         Me.txtDescripcionPUC.Size = New System.Drawing.Size(232, 24)
         Me.txtDescripcionPUC.TabIndex = 1
-        '
-        'btBusquedaCuenta
-        '
-        Me.btBusquedaCuenta.BackgroundImage = CType(resources.GetObject("btBusquedaCuenta.BackgroundImage"), System.Drawing.Image)
-        Me.btBusquedaCuenta.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btBusquedaCuenta.Image = CType(resources.GetObject("btBusquedaCuenta.Image"), System.Drawing.Image)
-        Me.btBusquedaCuenta.Location = New System.Drawing.Point(187, 46)
-        Me.btBusquedaCuenta.Name = "btBusquedaCuenta"
-        Me.btBusquedaCuenta.Size = New System.Drawing.Size(26, 25)
-        Me.btBusquedaCuenta.TabIndex = 60047
-        Me.btBusquedaCuenta.UseVisualStyleBackColor = True
-        '
-        'txtCodigoCuenta
-        '
-        Me.txtCodigoCuenta.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtCodigoCuenta.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtCodigoCuenta.ForeColor = System.Drawing.Color.Black
-        Me.txtCodigoCuenta.Location = New System.Drawing.Point(84, 46)
-        Me.txtCodigoCuenta.Name = "txtCodigoCuenta"
-        Me.txtCodigoCuenta.Size = New System.Drawing.Size(96, 25)
-        Me.txtCodigoCuenta.TabIndex = 60049
-        Me.txtCodigoCuenta.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'txtDescripcionCuenta
-        '
-        Me.txtDescripcionCuenta.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtDescripcionCuenta.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtDescripcionCuenta.ForeColor = System.Drawing.Color.Black
-        Me.txtDescripcionCuenta.Location = New System.Drawing.Point(329, 46)
-        Me.txtDescripcionCuenta.Name = "txtDescripcionCuenta"
-        Me.txtDescripcionCuenta.Size = New System.Drawing.Size(232, 25)
-        Me.txtDescripcionCuenta.TabIndex = 60048
-        Me.txtDescripcionCuenta.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'FormRetencionIva
         '

@@ -23,15 +23,15 @@ Partial Class FormLibroDiario
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.gbDatosGrupo = New System.Windows.Forms.GroupBox()
+        Me.btExportaExcel = New System.Windows.Forms.Button()
         Me.txtTercero = New System.Windows.Forms.Label()
         Me.txtRazonSocial = New System.Windows.Forms.Label()
         Me.dtpFechaFin = New System.Windows.Forms.DateTimePicker()
         Me.dtpFechaInicio = New System.Windows.Forms.DateTimePicker()
+        Me.btVisualizaPDF = New System.Windows.Forms.Button()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
-        Me.btExportaExcel = New System.Windows.Forms.Button()
-        Me.btVisualizaPDF = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Pimagen = New System.Windows.Forms.PictureBox()
         Me.LTitulo = New System.Windows.Forms.Label()
@@ -58,6 +58,17 @@ Partial Class FormLibroDiario
         Me.gbDatosGrupo.Size = New System.Drawing.Size(584, 313)
         Me.gbDatosGrupo.TabIndex = 17
         Me.gbDatosGrupo.TabStop = False
+        '
+        'btExportaExcel
+        '
+        Me.btExportaExcel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btExportaExcel.Enabled = False
+        Me.btExportaExcel.Image = Global.Quality.My.Resources.Resources.Microsoft_Excel_2013_icon1
+        Me.btExportaExcel.Location = New System.Drawing.Point(445, 95)
+        Me.btExportaExcel.Name = "btExportaExcel"
+        Me.btExportaExcel.Size = New System.Drawing.Size(42, 38)
+        Me.btExportaExcel.TabIndex = 60042
+        Me.btExportaExcel.UseVisualStyleBackColor = True
         '
         'txtTercero
         '
@@ -103,6 +114,17 @@ Partial Class FormLibroDiario
         Me.dtpFechaInicio.Size = New System.Drawing.Size(189, 25)
         Me.dtpFechaInicio.TabIndex = 60038
         '
+        'btVisualizaPDF
+        '
+        Me.btVisualizaPDF.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btVisualizaPDF.Enabled = False
+        Me.btVisualizaPDF.Image = Global.Quality.My.Resources.Resources.Printer_icon__1_1
+        Me.btVisualizaPDF.Location = New System.Drawing.Point(387, 95)
+        Me.btVisualizaPDF.Name = "btVisualizaPDF"
+        Me.btVisualizaPDF.Size = New System.Drawing.Size(42, 38)
+        Me.btVisualizaPDF.TabIndex = 60037
+        Me.btVisualizaPDF.UseVisualStyleBackColor = True
+        '
         'Label4
         '
         Me.Label4.AutoSize = True
@@ -135,28 +157,6 @@ Partial Class FormLibroDiario
         Me.Label11.Size = New System.Drawing.Size(31, 17)
         Me.Label11.TabIndex = 4
         Me.Label11.Text = "Nit:"
-        '
-        'btExportaExcel
-        '
-        Me.btExportaExcel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btExportaExcel.Enabled = False
-        Me.btExportaExcel.Image = Global.Quality.My.Resources.Resources.Microsoft_Excel_2013_icon1
-        Me.btExportaExcel.Location = New System.Drawing.Point(445, 95)
-        Me.btExportaExcel.Name = "btExportaExcel"
-        Me.btExportaExcel.Size = New System.Drawing.Size(42, 38)
-        Me.btExportaExcel.TabIndex = 60042
-        Me.btExportaExcel.UseVisualStyleBackColor = True
-        '
-        'btVisualizaPDF
-        '
-        Me.btVisualizaPDF.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btVisualizaPDF.Enabled = False
-        Me.btVisualizaPDF.Image = Global.Quality.My.Resources.Resources.Printer_icon__1_1
-        Me.btVisualizaPDF.Location = New System.Drawing.Point(387, 95)
-        Me.btVisualizaPDF.Name = "btVisualizaPDF"
-        Me.btVisualizaPDF.Size = New System.Drawing.Size(42, 38)
-        Me.btVisualizaPDF.TabIndex = 60037
-        Me.btVisualizaPDF.UseVisualStyleBackColor = True
         '
         'Panel1
         '

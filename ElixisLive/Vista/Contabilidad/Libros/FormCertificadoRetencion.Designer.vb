@@ -25,15 +25,15 @@ Partial Class FormCertificadoRetencion
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormCertificadoRetencion))
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.gbDatosGrupo = New System.Windows.Forms.GroupBox()
+        Me.btTercero = New System.Windows.Forms.Button()
         Me.txtTercero = New System.Windows.Forms.Label()
         Me.txtRazonSocial = New System.Windows.Forms.Label()
         Me.dtpFechaFin = New System.Windows.Forms.DateTimePicker()
         Me.dtpFechaInicio = New System.Windows.Forms.DateTimePicker()
+        Me.btVisualizaPDF = New System.Windows.Forms.Button()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
-        Me.btTercero = New System.Windows.Forms.Button()
-        Me.btVisualizaPDF = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Pimagen = New System.Windows.Forms.PictureBox()
         Me.LTitulo = New System.Windows.Forms.Label()
@@ -71,6 +71,17 @@ Partial Class FormCertificadoRetencion
         Me.gbDatosGrupo.TabIndex = 16
         Me.gbDatosGrupo.TabStop = False
         Me.gbDatosGrupo.Text = "Tercero"
+        '
+        'btTercero
+        '
+        Me.btTercero.BackgroundImage = CType(resources.GetObject("btTercero.BackgroundImage"), System.Drawing.Image)
+        Me.btTercero.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btTercero.Image = CType(resources.GetObject("btTercero.Image"), System.Drawing.Image)
+        Me.btTercero.Location = New System.Drawing.Point(548, 30)
+        Me.btTercero.Name = "btTercero"
+        Me.btTercero.Size = New System.Drawing.Size(26, 25)
+        Me.btTercero.TabIndex = 60042
+        Me.btTercero.UseVisualStyleBackColor = True
         '
         'txtTercero
         '
@@ -116,6 +127,17 @@ Partial Class FormCertificadoRetencion
         Me.dtpFechaInicio.Size = New System.Drawing.Size(189, 25)
         Me.dtpFechaInicio.TabIndex = 60038
         '
+        'btVisualizaPDF
+        '
+        Me.btVisualizaPDF.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btVisualizaPDF.Enabled = False
+        Me.btVisualizaPDF.Image = Global.Quality.My.Resources.Resources.Printer_icon__1_1
+        Me.btVisualizaPDF.Location = New System.Drawing.Point(354, 94)
+        Me.btVisualizaPDF.Name = "btVisualizaPDF"
+        Me.btVisualizaPDF.Size = New System.Drawing.Size(42, 38)
+        Me.btVisualizaPDF.TabIndex = 60037
+        Me.btVisualizaPDF.UseVisualStyleBackColor = True
+        '
         'Label4
         '
         Me.Label4.AutoSize = True
@@ -148,28 +170,6 @@ Partial Class FormCertificadoRetencion
         Me.Label11.Size = New System.Drawing.Size(59, 17)
         Me.Label11.TabIndex = 4
         Me.Label11.Text = "Tercero:"
-        '
-        'btTercero
-        '
-        Me.btTercero.BackgroundImage = CType(resources.GetObject("btTercero.BackgroundImage"), System.Drawing.Image)
-        Me.btTercero.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btTercero.Image = CType(resources.GetObject("btTercero.Image"), System.Drawing.Image)
-        Me.btTercero.Location = New System.Drawing.Point(548, 30)
-        Me.btTercero.Name = "btTercero"
-        Me.btTercero.Size = New System.Drawing.Size(26, 25)
-        Me.btTercero.TabIndex = 60042
-        Me.btTercero.UseVisualStyleBackColor = True
-        '
-        'btVisualizaPDF
-        '
-        Me.btVisualizaPDF.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btVisualizaPDF.Enabled = False
-        Me.btVisualizaPDF.Image = Global.Quality.My.Resources.Resources.Printer_icon__1_1
-        Me.btVisualizaPDF.Location = New System.Drawing.Point(354, 94)
-        Me.btVisualizaPDF.Name = "btVisualizaPDF"
-        Me.btVisualizaPDF.Size = New System.Drawing.Size(42, 38)
-        Me.btVisualizaPDF.TabIndex = 60037
-        Me.btVisualizaPDF.UseVisualStyleBackColor = True
         '
         'Panel1
         '
