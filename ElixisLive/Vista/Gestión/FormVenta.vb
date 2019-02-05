@@ -3,7 +3,7 @@ Public Class FormVenta
     Dim objVenta As Venta
     Dim formExistencia As FormExistencia
     Private Sub FormVenta_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Generales.cargarPermiso(Me)
+        Generales.asignarPermiso(Me)
         objVenta = New Venta
         Generales.diseñoDGV(dgvProducto)
         Generales.deshabilitarBotones(ToolStrip1)

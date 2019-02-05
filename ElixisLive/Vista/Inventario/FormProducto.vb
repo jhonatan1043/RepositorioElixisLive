@@ -1,7 +1,7 @@
 ﻿Public Class FormProducto
     Dim objProducto As producto
     Private Sub FormBaseProductivo_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Generales.cargarPermiso(Me)
+        Generales.asignarPermiso(Me)
         Dim params As New List(Of String)
         objProducto = New producto
         objProducto.codigoFormulario = Tag.codigo

@@ -2,7 +2,7 @@
     Dim objCliente As Cliente
     Dim bdNavegador As New BindingSource
     Private Sub FormCliente_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Generales.cargarPermiso(Me)
+        Generales.asignarPermiso(Me)
         objCliente = New Cliente
         Generales.deshabilitarBotones(ToolStrip1)
         Generales.deshabilitarControles(Me)

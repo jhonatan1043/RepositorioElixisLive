@@ -34,7 +34,9 @@ Partial Class FormRetiroDocumento
         Me.txtjustificacion = New System.Windows.Forms.TextBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
+        Me.btguardar = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripSeparator3 = New System.Windows.Forms.ToolStripSeparator()
+        Me.btcancelar = New System.Windows.Forms.ToolStripButton()
         Me.GroupBox7 = New System.Windows.Forms.GroupBox()
         Me.txtobservacion = New System.Windows.Forms.TextBox()
         Me.Ltitulo = New System.Windows.Forms.Label()
@@ -48,19 +50,17 @@ Partial Class FormRetiroDocumento
         Me.debito = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.credito = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.dtpFechaFin = New System.Windows.Forms.DateTimePicker()
+        Me.dtpFechaInicio = New System.Windows.Forms.DateTimePicker()
         Me.RadioButton2 = New System.Windows.Forms.RadioButton()
         Me.rAnulado = New System.Windows.Forms.RadioButton()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
-        Me.dtpFechaFin = New System.Windows.Forms.DateTimePicker()
-        Me.dtpFechaInicio = New System.Windows.Forms.DateTimePicker()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Pimagen = New System.Windows.Forms.PictureBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.btguardar = New System.Windows.Forms.ToolStripButton()
-        Me.btcancelar = New System.Windows.Forms.ToolStripButton()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         Me.Panel1.SuspendLayout()
@@ -81,7 +81,7 @@ Partial Class FormRetiroDocumento
         Me.GroupBox1.Controls.Add(Me.GroupBox2)
         Me.GroupBox1.Location = New System.Drawing.Point(4, 52)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(1034, 527)
+        Me.GroupBox1.Size = New System.Drawing.Size(1034, 504)
         Me.GroupBox1.TabIndex = 19
         Me.GroupBox1.TabStop = False
         '
@@ -93,7 +93,7 @@ Partial Class FormRetiroDocumento
         Me.nRegistro.BackColor = System.Drawing.Color.White
         Me.nRegistro.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.nRegistro.ForeColor = System.Drawing.Color.Black
-        Me.nRegistro.Location = New System.Drawing.Point(1006, 505)
+        Me.nRegistro.Location = New System.Drawing.Point(1006, 481)
         Me.nRegistro.Name = "nRegistro"
         Me.nRegistro.Size = New System.Drawing.Size(16, 17)
         Me.nRegistro.TabIndex = 10060
@@ -108,7 +108,7 @@ Partial Class FormRetiroDocumento
         Me.Label3.BackColor = System.Drawing.Color.White
         Me.Label3.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.Black
-        Me.Label3.Location = New System.Drawing.Point(838, 505)
+        Me.Label3.Location = New System.Drawing.Point(838, 481)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(151, 17)
         Me.Label3.TabIndex = 10059
@@ -121,7 +121,7 @@ Partial Class FormRetiroDocumento
         Me.GroupBox3.Controls.Add(Me.dgvDocumento)
         Me.GroupBox3.Location = New System.Drawing.Point(7, 82)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(1019, 420)
+        Me.GroupBox3.Size = New System.Drawing.Size(1019, 391)
         Me.GroupBox3.TabIndex = 1
         Me.GroupBox3.TabStop = False
         '
@@ -170,10 +170,30 @@ Partial Class FormRetiroDocumento
         Me.ToolStrip1.TabIndex = 60017
         Me.ToolStrip1.Text = "ToolStrip1"
         '
+        'btguardar
+        '
+        Me.btguardar.Font = New System.Drawing.Font("Times New Roman", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btguardar.ForeColor = System.Drawing.Color.White
+        Me.btguardar.Image = Global.Quality.My.Resources.Resources.Save_icon__1_
+        Me.btguardar.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.btguardar.Name = "btguardar"
+        Me.btguardar.Size = New System.Drawing.Size(71, 22)
+        Me.btguardar.Text = "&Registrar"
+        '
         'ToolStripSeparator3
         '
         Me.ToolStripSeparator3.Name = "ToolStripSeparator3"
         Me.ToolStripSeparator3.Size = New System.Drawing.Size(6, 25)
+        '
+        'btcancelar
+        '
+        Me.btcancelar.Font = New System.Drawing.Font("Times New Roman", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btcancelar.ForeColor = System.Drawing.Color.White
+        Me.btcancelar.Image = Global.Quality.My.Resources.Resources.Actions_blue_arrow_undo_icon
+        Me.btcancelar.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.btcancelar.Name = "btcancelar"
+        Me.btcancelar.Size = New System.Drawing.Size(72, 22)
+        Me.btcancelar.Text = "&Cancelar"
         '
         'GroupBox7
         '
@@ -197,7 +217,7 @@ Partial Class FormRetiroDocumento
         'Ltitulo
         '
         Me.Ltitulo.BackColor = System.Drawing.Color.SteelBlue
-        Me.Ltitulo.Font = New System.Drawing.Font("Times New Roman", 11.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Ltitulo.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Ltitulo.ForeColor = System.Drawing.Color.White
         Me.Ltitulo.Location = New System.Drawing.Point(2, 1)
         Me.Ltitulo.Name = "Ltitulo"
@@ -242,7 +262,7 @@ Partial Class FormRetiroDocumento
         Me.dgvDocumento.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
         DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!)
         Me.dgvDocumento.RowsDefaultCellStyle = DataGridViewCellStyle4
-        Me.dgvDocumento.Size = New System.Drawing.Size(1013, 401)
+        Me.dgvDocumento.Size = New System.Drawing.Size(1013, 372)
         Me.dgvDocumento.TabIndex = 10
         '
         'anulado
@@ -329,6 +349,28 @@ Partial Class FormRetiroDocumento
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Datos"
         '
+        'dtpFechaFin
+        '
+        Me.dtpFechaFin.CustomFormat = "dd |  MMMM |  yyyy"
+        Me.dtpFechaFin.Enabled = False
+        Me.dtpFechaFin.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.dtpFechaFin.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.dtpFechaFin.Location = New System.Drawing.Point(548, 30)
+        Me.dtpFechaFin.Name = "dtpFechaFin"
+        Me.dtpFechaFin.Size = New System.Drawing.Size(189, 25)
+        Me.dtpFechaFin.TabIndex = 60036
+        '
+        'dtpFechaInicio
+        '
+        Me.dtpFechaInicio.CustomFormat = "dd |  MMMM |  yyyy"
+        Me.dtpFechaInicio.Enabled = False
+        Me.dtpFechaInicio.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.dtpFechaInicio.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.dtpFechaInicio.Location = New System.Drawing.Point(814, 30)
+        Me.dtpFechaInicio.Name = "dtpFechaInicio"
+        Me.dtpFechaInicio.Size = New System.Drawing.Size(189, 25)
+        Me.dtpFechaInicio.TabIndex = 60035
+        '
         'RadioButton2
         '
         Me.RadioButton2.AutoSize = True
@@ -396,28 +438,6 @@ Partial Class FormRetiroDocumento
         Me.Label6.TabIndex = 10070
         Me.Label6.Text = "Inicio:"
         '
-        'dtpFechaFin
-        '
-        Me.dtpFechaFin.CustomFormat = "dd |  MMMM |  yyyy"
-        Me.dtpFechaFin.Enabled = False
-        Me.dtpFechaFin.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.dtpFechaFin.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.dtpFechaFin.Location = New System.Drawing.Point(548, 30)
-        Me.dtpFechaFin.Name = "dtpFechaFin"
-        Me.dtpFechaFin.Size = New System.Drawing.Size(189, 25)
-        Me.dtpFechaFin.TabIndex = 60036
-        '
-        'dtpFechaInicio
-        '
-        Me.dtpFechaInicio.CustomFormat = "dd |  MMMM |  yyyy"
-        Me.dtpFechaInicio.Enabled = False
-        Me.dtpFechaInicio.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.dtpFechaInicio.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.dtpFechaInicio.Location = New System.Drawing.Point(814, 30)
-        Me.dtpFechaInicio.Name = "dtpFechaInicio"
-        Me.dtpFechaInicio.Size = New System.Drawing.Size(189, 25)
-        Me.dtpFechaInicio.TabIndex = 60035
-        '
         'Panel3
         '
         Me.Panel3.BackColor = System.Drawing.Color.White
@@ -444,7 +464,7 @@ Partial Class FormRetiroDocumento
         'Label1
         '
         Me.Label1.BackColor = System.Drawing.Color.Transparent
-        Me.Label1.Font = New System.Drawing.Font("Times New Roman", 20.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Font = New System.Drawing.Font("Times New Roman", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.White
         Me.Label1.Location = New System.Drawing.Point(1, -1)
         Me.Label1.Name = "Label1"
@@ -453,37 +473,17 @@ Partial Class FormRetiroDocumento
         Me.Label1.Text = "Comprobantes anulados"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'btguardar
-        '
-        Me.btguardar.Font = New System.Drawing.Font("Times New Roman", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btguardar.ForeColor = System.Drawing.Color.White
-        Me.btguardar.Image = Global.Quality.My.Resources.Resources.Save_icon__1_
-        Me.btguardar.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.btguardar.Name = "btguardar"
-        Me.btguardar.Size = New System.Drawing.Size(71, 22)
-        Me.btguardar.Text = "&Registrar"
-        '
-        'btcancelar
-        '
-        Me.btcancelar.Font = New System.Drawing.Font("Times New Roman", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btcancelar.ForeColor = System.Drawing.Color.White
-        Me.btcancelar.Image = Global.Quality.My.Resources.Resources.Actions_blue_arrow_undo_icon
-        Me.btcancelar.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.btcancelar.Name = "btcancelar"
-        Me.btcancelar.Size = New System.Drawing.Size(72, 22)
-        Me.btcancelar.Text = "&Cancelar"
-        '
         'FormRetiroDocumento
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(1043, 581)
+        Me.ClientSize = New System.Drawing.Size(1043, 567)
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.GroupBox1)
         Me.MaximizeBox = False
-        Me.MaximumSize = New System.Drawing.Size(1059, 620)
-        Me.MinimumSize = New System.Drawing.Size(1059, 620)
+        Me.MaximumSize = New System.Drawing.Size(1059, 606)
+        Me.MinimumSize = New System.Drawing.Size(1059, 606)
         Me.Name = "FormRetiroDocumento"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.GroupBox1.ResumeLayout(False)

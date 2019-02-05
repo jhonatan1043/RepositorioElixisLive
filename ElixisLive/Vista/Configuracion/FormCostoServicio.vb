@@ -10,7 +10,7 @@
         btNuevo.Enabled = True
         btBuscar.Enabled = True
         Generales.tabularConEnter(Me)
-        Generales.cargarPermiso(Me)
+        Generales.asignarPermiso(Me)
     End Sub
     Private Sub btBuscarServicio_Click(sender As Object, e As EventArgs) Handles btBuscarServicio.Click
         Dim params As New List(Of String)

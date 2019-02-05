@@ -47,7 +47,7 @@ Public Class FormPersona
     End Sub
 
     Private Sub FormBase_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Generales.cargarPermiso(Me)
+        Generales.asignarPermiso(Me)
         objPersona = New persona
         Try
             cargarComboDepartamento()

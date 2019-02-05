@@ -1,7 +1,7 @@
 ﻿Public Class FormGasto
     Private objConfig As Configuracion
     Private Sub FormBase_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Generales.cargarPermiso(Me)
+        Generales.asignarPermiso(Me)
         objConfig = New Configuracion
         cargarConsultas()
         cargarRegistro()

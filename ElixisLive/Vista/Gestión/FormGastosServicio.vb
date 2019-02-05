@@ -1,7 +1,7 @@
 ﻿Public Class FormGastosServicio
     Dim objGstoServicio As GastoServicio
     Private Sub FormGastosServicio_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Generales.cargarPermiso(Me)
+        Generales.asignarPermiso(Me)
         objGstoServicio = New GastoServicio
         Generales.deshabilitarBotones(ToolStrip1)
         Generales.deshabilitarControles(Me)

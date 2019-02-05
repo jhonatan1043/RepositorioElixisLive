@@ -5,7 +5,7 @@
     Public Property cantidadExistente As Integer
     Public Property nombreProducto As String
     Private Sub FormLote_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Generales.cargarPermiso(Me)
+        Generales.asignarPermiso(Me)
         objLote = New Lote
         lbNombre.Text = nombreProducto
         validarGrilla()

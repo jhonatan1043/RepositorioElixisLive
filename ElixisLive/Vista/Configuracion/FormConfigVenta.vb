@@ -10,7 +10,7 @@
         Generales.cargarCombo("[SP_INVEN_SERVICIO_LISTA]", Nothing, "Nombre", "codigo", cbListaServicio)
         cargarConfVenta()
         btEditar.Enabled = True
-        Generales.cargarPermiso(Me)
+        Generales.asignarPermiso(Me)
     End Sub
     Private Sub cargarConfVenta()
         Dim dFila As DataRow

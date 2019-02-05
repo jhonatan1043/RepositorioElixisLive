@@ -5,7 +5,7 @@
     Property codigoProducto As Integer
     Property registroGuardado As Boolean
     Private Sub FormEntradaInventario_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Generales.cargarPermiso(Me)
+        Generales.asignarPermiso(Me)
         objEntrada = New EntradaInventario
         dtContenedorLote = New DataTable
         Generales.deshabilitarBotones(ToolStrip1)

@@ -6,7 +6,7 @@
     Property codigoCita As Integer
     Dim formulario As New vForm
     Private Sub FormCitaMedica_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Generales.cargarPermiso(Me)
+        Generales.asignarPermiso(Me)
         objCita = New AgendarCita
         Generales.deshabilitarBotones(ToolStrip1)
         Generales.deshabilitarControles(Me)

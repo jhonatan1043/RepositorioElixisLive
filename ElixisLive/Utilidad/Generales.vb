@@ -945,7 +945,7 @@ Or TypeOf ctl Is System.Windows.Forms.CheckBox Or TypeOf ctl Is System.Windows.F
         objConexion.desconectar()
         Return respuesta
     End Function
-    Public Shared Sub cargarPermiso(form As Object)
+    Public Shared Sub asignarPermiso(form As Object)
         Dim respuesta As Integer = Generales.consultarPermiso(form.Name)
         If respuesta = Constantes.LECTURA_ESCRITURA Then
             Generales.mostrarLecturaEscritura(form.ToolStrip1)

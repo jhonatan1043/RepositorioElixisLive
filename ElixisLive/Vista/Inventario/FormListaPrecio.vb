@@ -8,7 +8,7 @@
         End If
     End Sub
     Private Sub FormListaPrecio_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Generales.cargarPermiso(Me)
+        Generales.asignarPermiso(Me)
         objListaPrecio = New ListaPrecio
         Generales.deshabilitarBotones(ToolStrip1)
         Generales.deshabilitarControles(Me)

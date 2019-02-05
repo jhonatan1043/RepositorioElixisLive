@@ -7,7 +7,7 @@ Public Class FormPerfil
     Dim fprincipal As New FormPrincipal
     Dim principalBLL As New principalBLL
     Private Sub FormPerfil_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Generales.cargarPermiso(Me)
+        Generales.asignarPermiso(Me)
         principalBLL.formulario = FormPrincipal
         objPerfil = New Perfil
         listarPerfiles()

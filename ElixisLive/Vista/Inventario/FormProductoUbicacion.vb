@@ -7,7 +7,7 @@
         Generales.deshabilitarControles(Me)
         validarGrilla()
         btEditar.Enabled = True
-        Generales.cargarPermiso(Me)
+        Generales.asignarPermiso(Me)
     End Sub
     Private Sub validarGrilla()
         With dgvProducto

@@ -9,7 +9,7 @@ Public Class FormEmpleado
         End If
     End Sub
     Private Sub FormBaseProductivo_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Generales.cargarPermiso(Me)
+        Generales.asignarPermiso(Me)
         objEmpleado = New Empleado
         Try
             objEmpleado.codigoFormulario = Tag.codigo

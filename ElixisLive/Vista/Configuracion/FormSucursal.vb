@@ -27,7 +27,7 @@
         End If
     End Sub
     Private Sub FormBase_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Generales.cargarPermiso(Me)
+        Generales.asignarPermiso(Me)
         objSucursal = New Sucursal
         Try
             cargarComboDepartamento()
