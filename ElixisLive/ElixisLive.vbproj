@@ -758,8 +758,26 @@
     <EmbeddedResource Include="Vista\Contabilidad\Puc\FormTipoDocumento.resx">
       <DependentUpon>FormTipoDocumento.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Contabilidad\Saldos iniciales\FormCajaBanco.resx">
+      <DependentUpon>FormCajaBanco.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Contabilidad\Saldos iniciales\FormCarteraCXC.resx">
+      <DependentUpon>FormCarteraCXC.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Contabilidad\Saldos iniciales\FormCarteraCXP.resx">
+      <DependentUpon>FormCarteraCXP.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Contabilidad\Saldos iniciales\FormContabilidadGeneral.resx">
+      <DependentUpon>FormContabilidadGeneral.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vista\Contabilidad\Tesoreria\FormComprobanteEgreso.resx">
       <DependentUpon>FormComprobanteEgreso.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Contabilidad\Tesoreria\FormNotaInterna.resx">
+      <DependentUpon>FormNotaInterna.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Contabilidad\Tesoreria\FormReciboCaja.resx">
+      <DependentUpon>FormReciboCaja.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\Estadisticas\FormCostoServicios.resx">
       <DependentUpon>FormCostoServicios.vb</DependentUpon>
@@ -870,6 +888,8 @@
     <Content Include="ReferenciaDLL\itextsharp.dll" />
     <Content Include="ReferenciaDLL\MySql.Data.DLL" />
     <Content Include="ReferenciaDLL\NotifySenderControl.dll" />
+    <None Include="Resources\Safe-icon1.png" />
+    <None Include="Resources\Statistics-icon.png" />
     <None Include="Resources\InvoiceSearch-icon.png" />
     <None Include="Resources\ManageUsers-icon.png" />
     <None Include="Resources\project-plan-icon.png" />
@@ -900,6 +920,7 @@
     <None Include="Resources\bar-chart-icon.png" />
     <None Include="Resources\Actions-project-development-close-icon.png" />
     <None Include="Resources\Accounting-icon.png" />
+    <None Include="Resources\bank-icon.png" />
     <Content Include="Resources\calculator-icon1.png" />
     <None Include="Resources\folder-invoices-icon.png" />
     <None Include="Resources\Money-Bag-icon.png" />

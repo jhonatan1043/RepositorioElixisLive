@@ -22,14 +22,13 @@ Partial Class FormNotaCliente
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormNotaCliente))
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.Pimagen = New System.Windows.Forms.PictureBox()
-        Me.LTitulo = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.GroupBox4 = New System.Windows.Forms.GroupBox()
+        Me.textObservacion = New System.Windows.Forms.TextBox()
         Me.textdiferencia = New System.Windows.Forms.Label()
         Me.textvalorcredito = New System.Windows.Forms.Label()
         Me.textvalordebito = New System.Windows.Forms.Label()
@@ -38,8 +37,10 @@ Partial Class FormNotaCliente
         Me.Label10 = New System.Windows.Forms.Label()
         Me.PnlInfo = New System.Windows.Forms.Panel()
         Me.lbinfo = New System.Windows.Forms.Label()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.txtTotal = New System.Windows.Forms.Label()
+        Me.txtNaturaleza = New System.Windows.Forms.Label()
+        Me.txtPorcentaje = New System.Windows.Forms.Label()
         Me.Label33 = New System.Windows.Forms.Label()
         Me.Label29 = New System.Windows.Forms.Label()
         Me.Label28 = New System.Windows.Forms.Label()
@@ -49,19 +50,20 @@ Partial Class FormNotaCliente
         Me.lblivarete = New System.Windows.Forms.Label()
         Me.Label32 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.txtcodigo = New System.Windows.Forms.Label()
+        Me.Label15 = New System.Windows.Forms.Label()
         Me.textnombreproveedor = New System.Windows.Forms.Label()
         Me.textCodigoCliente = New System.Windows.Forms.Label()
         Me.Textsigla = New System.Windows.Forms.Label()
         Me.Textnombredocumento = New System.Windows.Forms.Label()
         Me.fechadoc = New System.Windows.Forms.DateTimePicker()
-        Me.bttercero = New System.Windows.Forms.Button()
         Me.Label21 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.btBusquedaDocumento = New System.Windows.Forms.Button()
         Me.dgvCuentas = New System.Windows.Forms.DataGridView()
-        Me.anular = New System.Windows.Forms.DataGridViewImageColumn()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.DataGridViewImageColumn1 = New System.Windows.Forms.DataGridViewImageColumn()
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
         Me.btNuevo = New System.Windows.Forms.ToolStripButton()
         Me.btBuscar = New System.Windows.Forms.ToolStripButton()
@@ -69,59 +71,23 @@ Partial Class FormNotaCliente
         Me.btEditar = New System.Windows.Forms.ToolStripButton()
         Me.btCancelar = New System.Windows.Forms.ToolStripButton()
         Me.btAnular = New System.Windows.Forms.ToolStripButton()
-        Me.txtPorcentaje = New System.Windows.Forms.Label()
-        Me.txtNaturaleza = New System.Windows.Forms.Label()
-        Me.txtTotal = New System.Windows.Forms.Label()
-        Me.txtcodigo = New System.Windows.Forms.Label()
-        Me.Label15 = New System.Windows.Forms.Label()
-        Me.GroupBox4 = New System.Windows.Forms.GroupBox()
-        Me.textObservacion = New System.Windows.Forms.TextBox()
-        Me.Panel2.SuspendLayout()
-        CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.bttercero = New System.Windows.Forms.Button()
+        Me.anular = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Pimagen = New System.Windows.Forms.PictureBox()
+        Me.LTitulo = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
+        Me.GroupBox4.SuspendLayout()
         Me.PnlInfo.SuspendLayout()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel3.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         CType(Me.dgvCuentas, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ToolStrip1.SuspendLayout()
-        Me.GroupBox4.SuspendLayout()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel2.SuspendLayout()
+        CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'Panel2
-        '
-        Me.Panel2.BackColor = System.Drawing.Color.White
-        Me.Panel2.BackgroundImage = Global.Quality.My.Resources.Resources.fondo_azul
-        Me.Panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Panel2.Controls.Add(Me.Pimagen)
-        Me.Panel2.Controls.Add(Me.LTitulo)
-        Me.Panel2.Location = New System.Drawing.Point(0, 0)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(905, 44)
-        Me.Panel2.TabIndex = 3
-        '
-        'Pimagen
-        '
-        Me.Pimagen.BackColor = System.Drawing.Color.Transparent
-        Me.Pimagen.Image = Global.Quality.My.Resources.Resources.Mimetypes_text_x_vcard_icon
-        Me.Pimagen.Location = New System.Drawing.Point(3, 0)
-        Me.Pimagen.Name = "Pimagen"
-        Me.Pimagen.Size = New System.Drawing.Size(53, 46)
-        Me.Pimagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.Pimagen.TabIndex = 1
-        Me.Pimagen.TabStop = False
-        '
-        'LTitulo
-        '
-        Me.LTitulo.BackColor = System.Drawing.Color.Transparent
-        Me.LTitulo.Font = New System.Drawing.Font("Times New Roman", 20.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LTitulo.ForeColor = System.Drawing.Color.White
-        Me.LTitulo.Location = New System.Drawing.Point(4, 2)
-        Me.LTitulo.Name = "LTitulo"
-        Me.LTitulo.Size = New System.Drawing.Size(901, 40)
-        Me.LTitulo.TabIndex = 1
-        Me.LTitulo.Text = "Nota Cliente"
-        Me.LTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'GroupBox1
         '
@@ -142,6 +108,28 @@ Partial Class FormNotaCliente
         Me.GroupBox1.Size = New System.Drawing.Size(896, 441)
         Me.GroupBox1.TabIndex = 75
         Me.GroupBox1.TabStop = False
+        '
+        'GroupBox4
+        '
+        Me.GroupBox4.Controls.Add(Me.textObservacion)
+        Me.GroupBox4.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.GroupBox4.Location = New System.Drawing.Point(6, 105)
+        Me.GroupBox4.Name = "GroupBox4"
+        Me.GroupBox4.Size = New System.Drawing.Size(884, 61)
+        Me.GroupBox4.TabIndex = 60044
+        Me.GroupBox4.TabStop = False
+        Me.GroupBox4.Text = "Detalle del movimiento"
+        '
+        'textObservacion
+        '
+        Me.textObservacion.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.textObservacion.Location = New System.Drawing.Point(5, 17)
+        Me.textObservacion.Multiline = True
+        Me.textObservacion.Name = "textObservacion"
+        Me.textObservacion.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
+        Me.textObservacion.Size = New System.Drawing.Size(873, 37)
+        Me.textObservacion.TabIndex = 0
         '
         'textdiferencia
         '
@@ -231,16 +219,6 @@ Partial Class FormNotaCliente
         Me.lbinfo.TabIndex = 10063
         Me.lbinfo.Text = "CONTENIDO"
         '
-        'PictureBox2
-        '
-        Me.PictureBox2.Image = Global.Quality.My.Resources.Resources.atencion
-        Me.PictureBox2.Location = New System.Drawing.Point(2, 2)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(30, 26)
-        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox2.TabIndex = 10063
-        Me.PictureBox2.TabStop = False
-        '
         'Panel3
         '
         Me.Panel3.BackColor = System.Drawing.Color.SteelBlue
@@ -261,6 +239,39 @@ Partial Class FormNotaCliente
         Me.Panel3.Size = New System.Drawing.Size(296, 114)
         Me.Panel3.TabIndex = 60028
         Me.Panel3.Visible = False
+        '
+        'txtTotal
+        '
+        Me.txtTotal.BackColor = System.Drawing.Color.White
+        Me.txtTotal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtTotal.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtTotal.Location = New System.Drawing.Point(159, 63)
+        Me.txtTotal.Name = "txtTotal"
+        Me.txtTotal.Size = New System.Drawing.Size(123, 25)
+        Me.txtTotal.TabIndex = 60046
+        Me.txtTotal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'txtNaturaleza
+        '
+        Me.txtNaturaleza.BackColor = System.Drawing.Color.White
+        Me.txtNaturaleza.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtNaturaleza.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtNaturaleza.Location = New System.Drawing.Point(245, 30)
+        Me.txtNaturaleza.Name = "txtNaturaleza"
+        Me.txtNaturaleza.Size = New System.Drawing.Size(37, 25)
+        Me.txtNaturaleza.TabIndex = 60045
+        Me.txtNaturaleza.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'txtPorcentaje
+        '
+        Me.txtPorcentaje.BackColor = System.Drawing.Color.White
+        Me.txtPorcentaje.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtPorcentaje.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtPorcentaje.Location = New System.Drawing.Point(74, 30)
+        Me.txtPorcentaje.Name = "txtPorcentaje"
+        Me.txtPorcentaje.Size = New System.Drawing.Size(37, 25)
+        Me.txtPorcentaje.TabIndex = 60044
+        Me.txtPorcentaje.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Label33
         '
@@ -368,11 +379,32 @@ Partial Class FormNotaCliente
         Me.GroupBox2.TabIndex = 56
         Me.GroupBox2.TabStop = False
         '
+        'txtcodigo
+        '
+        Me.txtcodigo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtcodigo.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtcodigo.Location = New System.Drawing.Point(133, 11)
+        Me.txtcodigo.Name = "txtcodigo"
+        Me.txtcodigo.Size = New System.Drawing.Size(170, 25)
+        Me.txtcodigo.TabIndex = 60033
+        Me.txtcodigo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label15
+        '
+        Me.Label15.AutoSize = True
+        Me.Label15.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label15.ForeColor = System.Drawing.Color.Black
+        Me.Label15.Location = New System.Drawing.Point(3, 15)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(97, 17)
+        Me.Label15.TabIndex = 60032
+        Me.Label15.Text = "Comprobante:"
+        '
         'textnombreproveedor
         '
         Me.textnombreproveedor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.textnombreproveedor.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.textnombreproveedor.Location = New System.Drawing.Point(241, 66)
+        Me.textnombreproveedor.Location = New System.Drawing.Point(214, 66)
         Me.textnombreproveedor.Name = "textnombreproveedor"
         Me.textnombreproveedor.Size = New System.Drawing.Size(637, 25)
         Me.textnombreproveedor.TabIndex = 60029
@@ -419,17 +451,6 @@ Partial Class FormNotaCliente
         Me.fechadoc.Size = New System.Drawing.Size(189, 25)
         Me.fechadoc.TabIndex = 60027
         '
-        'bttercero
-        '
-        Me.bttercero.BackgroundImage = CType(resources.GetObject("bttercero.BackgroundImage"), System.Drawing.Image)
-        Me.bttercero.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.bttercero.Image = CType(resources.GetObject("bttercero.Image"), System.Drawing.Image)
-        Me.bttercero.Location = New System.Drawing.Point(213, 67)
-        Me.bttercero.Name = "bttercero"
-        Me.bttercero.Size = New System.Drawing.Size(26, 25)
-        Me.bttercero.TabIndex = 60016
-        Me.bttercero.UseVisualStyleBackColor = True
-        '
         'Label21
         '
         Me.Label21.AutoSize = True
@@ -475,29 +496,29 @@ Partial Class FormNotaCliente
         Me.dgvCuentas.AllowUserToDeleteRows = False
         Me.dgvCuentas.AllowUserToResizeColumns = False
         Me.dgvCuentas.AllowUserToResizeRows = False
-        DataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.dgvCuentas.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.dgvCuentas.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.dgvCuentas.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.dgvCuentas.BackgroundColor = System.Drawing.Color.White
         Me.dgvCuentas.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle5.Font = New System.Drawing.Font("Arial Narrow", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvCuentas.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Arial Narrow", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvCuentas.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.dgvCuentas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         Me.dgvCuentas.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.anular})
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption
-        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.Desktop
-        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgvCuentas.DefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.Desktop
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgvCuentas.DefaultCellStyle = DataGridViewCellStyle3
         Me.dgvCuentas.Location = New System.Drawing.Point(14, 178)
         Me.dgvCuentas.Name = "dgvCuentas"
         Me.dgvCuentas.ReadOnly = True
@@ -511,14 +532,6 @@ Partial Class FormNotaCliente
         Me.dgvCuentas.Size = New System.Drawing.Size(870, 220)
         Me.dgvCuentas.TabIndex = 60027
         '
-        'anular
-        '
-        Me.anular.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.anular.HeaderText = "Quitar"
-        Me.anular.Name = "anular"
-        Me.anular.ReadOnly = True
-        Me.anular.Width = 43
-        '
         'GroupBox3
         '
         Me.GroupBox3.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -528,6 +541,16 @@ Partial Class FormNotaCliente
         Me.GroupBox3.Size = New System.Drawing.Size(884, 240)
         Me.GroupBox3.TabIndex = 60026
         Me.GroupBox3.TabStop = False
+        '
+        'DataGridViewImageColumn1
+        '
+        Me.DataGridViewImageColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.DataGridViewImageColumn1.HeaderText = "Quitar"
+        Me.DataGridViewImageColumn1.Image = Global.Quality.My.Resources.Resources.papelera
+        Me.DataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch
+        Me.DataGridViewImageColumn1.Name = "DataGridViewImageColumn1"
+        Me.DataGridViewImageColumn1.ReadOnly = True
+        Me.DataGridViewImageColumn1.Width = 43
         '
         'ToolStrip1
         '
@@ -609,81 +632,71 @@ Partial Class FormNotaCliente
         Me.btAnular.Text = "Anular"
         Me.btAnular.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         '
-        'txtPorcentaje
+        'PictureBox2
         '
-        Me.txtPorcentaje.BackColor = System.Drawing.Color.White
-        Me.txtPorcentaje.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtPorcentaje.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtPorcentaje.Location = New System.Drawing.Point(74, 30)
-        Me.txtPorcentaje.Name = "txtPorcentaje"
-        Me.txtPorcentaje.Size = New System.Drawing.Size(37, 25)
-        Me.txtPorcentaje.TabIndex = 60044
-        Me.txtPorcentaje.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.PictureBox2.Image = Global.Quality.My.Resources.Resources.atencion
+        Me.PictureBox2.Location = New System.Drawing.Point(2, 2)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(30, 26)
+        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox2.TabIndex = 10063
+        Me.PictureBox2.TabStop = False
         '
-        'txtNaturaleza
+        'bttercero
         '
-        Me.txtNaturaleza.BackColor = System.Drawing.Color.White
-        Me.txtNaturaleza.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtNaturaleza.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtNaturaleza.Location = New System.Drawing.Point(245, 30)
-        Me.txtNaturaleza.Name = "txtNaturaleza"
-        Me.txtNaturaleza.Size = New System.Drawing.Size(37, 25)
-        Me.txtNaturaleza.TabIndex = 60045
-        Me.txtNaturaleza.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.bttercero.BackgroundImage = CType(resources.GetObject("bttercero.BackgroundImage"), System.Drawing.Image)
+        Me.bttercero.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.bttercero.Image = CType(resources.GetObject("bttercero.Image"), System.Drawing.Image)
+        Me.bttercero.Location = New System.Drawing.Point(853, 67)
+        Me.bttercero.Name = "bttercero"
+        Me.bttercero.Size = New System.Drawing.Size(26, 25)
+        Me.bttercero.TabIndex = 60016
+        Me.bttercero.UseVisualStyleBackColor = True
         '
-        'txtTotal
+        'anular
         '
-        Me.txtTotal.BackColor = System.Drawing.Color.White
-        Me.txtTotal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtTotal.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtTotal.Location = New System.Drawing.Point(159, 63)
-        Me.txtTotal.Name = "txtTotal"
-        Me.txtTotal.Size = New System.Drawing.Size(123, 25)
-        Me.txtTotal.TabIndex = 60046
-        Me.txtTotal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.anular.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.anular.HeaderText = "Quitar"
+        Me.anular.Image = Global.Quality.My.Resources.Resources.papelera
+        Me.anular.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch
+        Me.anular.Name = "anular"
+        Me.anular.ReadOnly = True
+        Me.anular.Width = 43
         '
-        'txtcodigo
+        'Panel2
         '
-        Me.txtcodigo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtcodigo.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtcodigo.Location = New System.Drawing.Point(133, 11)
-        Me.txtcodigo.Name = "txtcodigo"
-        Me.txtcodigo.Size = New System.Drawing.Size(170, 25)
-        Me.txtcodigo.TabIndex = 60033
-        Me.txtcodigo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.Panel2.BackColor = System.Drawing.Color.White
+        Me.Panel2.BackgroundImage = Global.Quality.My.Resources.Resources.fondo_azul
+        Me.Panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Panel2.Controls.Add(Me.Pimagen)
+        Me.Panel2.Controls.Add(Me.LTitulo)
+        Me.Panel2.Location = New System.Drawing.Point(0, 0)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(905, 44)
+        Me.Panel2.TabIndex = 3
         '
-        'Label15
+        'Pimagen
         '
-        Me.Label15.AutoSize = True
-        Me.Label15.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label15.ForeColor = System.Drawing.Color.Black
-        Me.Label15.Location = New System.Drawing.Point(3, 15)
-        Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(97, 17)
-        Me.Label15.TabIndex = 60032
-        Me.Label15.Text = "Comprobante:"
+        Me.Pimagen.BackColor = System.Drawing.Color.Transparent
+        Me.Pimagen.Image = Global.Quality.My.Resources.Resources.Mimetypes_text_x_vcard_icon
+        Me.Pimagen.Location = New System.Drawing.Point(3, 0)
+        Me.Pimagen.Name = "Pimagen"
+        Me.Pimagen.Size = New System.Drawing.Size(53, 46)
+        Me.Pimagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.Pimagen.TabIndex = 1
+        Me.Pimagen.TabStop = False
         '
-        'GroupBox4
+        'LTitulo
         '
-        Me.GroupBox4.Controls.Add(Me.textObservacion)
-        Me.GroupBox4.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.GroupBox4.Location = New System.Drawing.Point(6, 105)
-        Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Size = New System.Drawing.Size(897, 61)
-        Me.GroupBox4.TabIndex = 60044
-        Me.GroupBox4.TabStop = False
-        Me.GroupBox4.Text = "Detalle del movimiento"
-        '
-        'textObservacion
-        '
-        Me.textObservacion.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.textObservacion.Location = New System.Drawing.Point(5, 17)
-        Me.textObservacion.Multiline = True
-        Me.textObservacion.Name = "textObservacion"
-        Me.textObservacion.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.textObservacion.Size = New System.Drawing.Size(886, 37)
-        Me.textObservacion.TabIndex = 0
+        Me.LTitulo.BackColor = System.Drawing.Color.Transparent
+        Me.LTitulo.Font = New System.Drawing.Font("Times New Roman", 20.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LTitulo.ForeColor = System.Drawing.Color.White
+        Me.LTitulo.Location = New System.Drawing.Point(4, 2)
+        Me.LTitulo.Name = "LTitulo"
+        Me.LTitulo.Size = New System.Drawing.Size(901, 40)
+        Me.LTitulo.TabIndex = 1
+        Me.LTitulo.Text = "Nota Cliente"
+        Me.LTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'FormNotaCliente
         '
@@ -699,12 +712,11 @@ Partial Class FormNotaCliente
         Me.MinimumSize = New System.Drawing.Size(921, 562)
         Me.Name = "FormNotaCliente"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Panel2.ResumeLayout(False)
-        CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox4.ResumeLayout(False)
+        Me.GroupBox4.PerformLayout()
         Me.PnlInfo.ResumeLayout(False)
         Me.PnlInfo.PerformLayout()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
@@ -712,8 +724,9 @@ Partial Class FormNotaCliente
         CType(Me.dgvCuentas, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ToolStrip1.ResumeLayout(False)
         Me.ToolStrip1.PerformLayout()
-        Me.GroupBox4.ResumeLayout(False)
-        Me.GroupBox4.PerformLayout()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel2.ResumeLayout(False)
+        CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -753,7 +766,6 @@ Partial Class FormNotaCliente
     Friend WithEvents Label4 As Label
     Public WithEvents btBusquedaDocumento As Button
     Friend WithEvents dgvCuentas As DataGridView
-    Friend WithEvents anular As DataGridViewImageColumn
     Friend WithEvents GroupBox3 As GroupBox
     Friend WithEvents txtNaturaleza As Label
     Friend WithEvents txtPorcentaje As Label
@@ -769,4 +781,6 @@ Partial Class FormNotaCliente
     Friend WithEvents Label15 As Label
     Friend WithEvents GroupBox4 As GroupBox
     Public WithEvents textObservacion As TextBox
+    Friend WithEvents anular As DataGridViewImageColumn
+    Friend WithEvents DataGridViewImageColumn1 As DataGridViewImageColumn
 End Class

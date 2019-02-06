@@ -111,9 +111,10 @@ Public Class FormPerfil
                 objPerfil.guardarPerfil()
                 txtcodigo.Text = objPerfil.codigoPerfil
                 guardarPermisos()
-
+                listarPerfiles()
                 SesionActual.dtPermisos = fprincipal.cargarOpciones(SesionActual.codigoPerfil)
                 Generales.deshabilitarControles(Me)
+                txtBuscar.ReadOnly = False
                 Generales.habilitarBotones(Me.ToolStrip1)
                 principalBLL.eliminarMenu()
                 principalBLL.cargarMenu()

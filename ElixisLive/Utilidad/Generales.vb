@@ -333,7 +333,7 @@ Public Class Generales
         dgv.EnableHeadersVisualStyles = False
         dgv.ColumnHeadersDefaultCellStyle.BackColor = Color.SteelBlue
         dgv.ColumnHeadersDefaultCellStyle.ForeColor = Color.White
-        dgv.AlternatingRowsDefaultCellStyle.BackColor = Color.LightGray
+        dgv.AlternatingRowsDefaultCellStyle.BackColor = Color.LightSteelBlue
         dgv.AlternatingRowsDefaultCellStyle.ForeColor = Nothing
         dgv.AlternatingRowsDefaultCellStyle.SelectionBackColor = Nothing
         dgv.AlternatingRowsDefaultCellStyle.SelectionForeColor = Nothing
