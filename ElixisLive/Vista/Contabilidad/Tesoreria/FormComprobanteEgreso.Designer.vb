@@ -38,7 +38,7 @@ Partial Class FormComprobanteEgreso
         Me.Panel1.Controls.Add(Me.Label2)
         Me.Panel1.Location = New System.Drawing.Point(-1, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(699, 42)
+        Me.Panel1.Size = New System.Drawing.Size(908, 42)
         Me.Panel1.TabIndex = 37
         '
         'PictureBox1
@@ -58,7 +58,7 @@ Partial Class FormComprobanteEgreso
         Me.Label2.ForeColor = System.Drawing.Color.White
         Me.Label2.Location = New System.Drawing.Point(0, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(696, 41)
+        Me.Label2.Size = New System.Drawing.Size(905, 41)
         Me.Label2.TabIndex = 1
         Me.Label2.Text = "Comprobante de Egreso"
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -68,11 +68,11 @@ Partial Class FormComprobanteEgreso
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(698, 421)
+        Me.ClientSize = New System.Drawing.Size(905, 523)
         Me.Controls.Add(Me.Panel1)
         Me.MaximizeBox = False
-        Me.MaximumSize = New System.Drawing.Size(714, 460)
-        Me.MinimumSize = New System.Drawing.Size(714, 460)
+        Me.MaximumSize = New System.Drawing.Size(921, 562)
+        Me.MinimumSize = New System.Drawing.Size(921, 562)
         Me.Name = "FormComprobanteEgreso"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Panel1.ResumeLayout(False)

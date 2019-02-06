@@ -54,7 +54,7 @@ Partial Class FormBusqueda
         'Pimagen
         '
         Me.Pimagen.BackColor = System.Drawing.Color.Transparent
-        Me.Pimagen.Image = Global.Quality.My.Resources.Resources.Preview_icon
+        Me.Pimagen.Image = Global.Quality.My.Resources.Resources.InvoiceSearch_icon
         Me.Pimagen.Location = New System.Drawing.Point(4, 1)
         Me.Pimagen.Name = "Pimagen"
         Me.Pimagen.Size = New System.Drawing.Size(47, 39)
@@ -65,7 +65,7 @@ Partial Class FormBusqueda
         'LTitulo
         '
         Me.LTitulo.BackColor = System.Drawing.Color.Transparent
-        Me.LTitulo.Font = New System.Drawing.Font("Times New Roman", 18.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LTitulo.Font = New System.Drawing.Font("Times New Roman", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LTitulo.ForeColor = System.Drawing.Color.White
         Me.LTitulo.Location = New System.Drawing.Point(0, 0)
         Me.LTitulo.Name = "LTitulo"
@@ -88,7 +88,7 @@ Partial Class FormBusqueda
         'GroupBox5
         '
         Me.GroupBox5.Controls.Add(Me.dgvBusqueda)
-        Me.GroupBox5.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox5.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox5.ForeColor = System.Drawing.Color.DarkBlue
         Me.GroupBox5.Location = New System.Drawing.Point(4, 51)
         Me.GroupBox5.Name = "GroupBox5"
@@ -132,7 +132,7 @@ Partial Class FormBusqueda
         '
         'Textbusqueda
         '
-        Me.Textbusqueda.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Textbusqueda.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Textbusqueda.Location = New System.Drawing.Point(6, 14)
         Me.Textbusqueda.MaxLength = 100
         Me.Textbusqueda.Name = "Textbusqueda"

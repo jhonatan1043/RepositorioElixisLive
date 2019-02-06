@@ -383,8 +383,20 @@ Public Class FormPersona
         End If
     End Sub
     Private Sub desHabilitarCheck()
-        rbEmpleado.Enabled = False
-        rbCliente.Enabled = False
-        rbProveedor.Enabled = False
+        If rbEmpleado.Checked = True Then
+            rbEmpleado.Enabled = False
+        Else
+            rbEmpleado.Enabled = True
+        End If
+        If rbCliente.Checked = True Then
+            rbCliente.Enabled = False
+        Else
+            rbCliente.Enabled = True
+        End If
+        If rbProveedor.Checked = True Then
+            rbProveedor.Enabled = False
+        Else
+            rbProveedor.Enabled = True
+        End If
     End Sub
 End Class

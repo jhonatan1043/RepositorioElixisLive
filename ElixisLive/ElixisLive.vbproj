@@ -870,6 +870,7 @@
     <Content Include="ReferenciaDLL\itextsharp.dll" />
     <Content Include="ReferenciaDLL\MySql.Data.DLL" />
     <Content Include="ReferenciaDLL\NotifySenderControl.dll" />
+    <None Include="Resources\InvoiceSearch-icon.png" />
     <None Include="Resources\ManageUsers-icon.png" />
     <None Include="Resources\project-plan-icon.png" />
     <None Include="Resources\desktop-icon.png" />

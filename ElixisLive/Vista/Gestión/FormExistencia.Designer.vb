@@ -54,21 +54,21 @@ Partial Class FormExistencia
         'txtBuscar
         '
         Me.txtBuscar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtBuscar.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtBuscar.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtBuscar.Location = New System.Drawing.Point(70, 14)
         Me.txtBuscar.Name = "txtBuscar"
-        Me.txtBuscar.Size = New System.Drawing.Size(549, 22)
+        Me.txtBuscar.Size = New System.Drawing.Size(549, 25)
         Me.txtBuscar.TabIndex = 7
         '
         'Label3
         '
         Me.Label3.AutoSize = True
         Me.Label3.BackColor = System.Drawing.Color.Transparent
-        Me.Label3.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.Black
         Me.Label3.Location = New System.Drawing.Point(7, 16)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(57, 19)
+        Me.Label3.Size = New System.Drawing.Size(46, 17)
         Me.Label3.TabIndex = 6
         Me.Label3.Text = "Filtrar:"
         '
@@ -89,10 +89,10 @@ Partial Class FormExistencia
         'btActualizar
         '
         Me.btActualizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btActualizar.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Italic)
+        Me.btActualizar.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btActualizar.Image = Global.Quality.My.Resources.Resources.Actions_edit_redo_icon
         Me.btActualizar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btActualizar.Location = New System.Drawing.Point(625, 10)
+        Me.btActualizar.Location = New System.Drawing.Point(625, 12)
         Me.btActualizar.Name = "btActualizar"
         Me.btActualizar.Size = New System.Drawing.Size(94, 28)
         Me.btActualizar.TabIndex = 59
@@ -123,8 +123,9 @@ Partial Class FormExistencia
         '
         'ToolStripLabel1
         '
+        Me.ToolStripLabel1.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ToolStripLabel1.Name = "ToolStripLabel1"
-        Me.ToolStripLabel1.Size = New System.Drawing.Size(151, 26)
+        Me.ToolStripLabel1.Size = New System.Drawing.Size(149, 26)
         Me.ToolStripLabel1.Text = "Productos por Acabar"
         '
         'lbPorAcabar
@@ -137,8 +138,9 @@ Partial Class FormExistencia
         '
         'ToolStripLabel2
         '
+        Me.ToolStripLabel2.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ToolStripLabel2.Name = "ToolStripLabel2"
-        Me.ToolStripLabel2.Size = New System.Drawing.Size(141, 26)
+        Me.ToolStripLabel2.Size = New System.Drawing.Size(140, 26)
         Me.ToolStripLabel2.Text = "Productos Acabados"
         '
         'lbAcabado
@@ -198,7 +200,7 @@ Partial Class FormExistencia
         'Pimagen
         '
         Me.Pimagen.BackColor = System.Drawing.Color.Transparent
-        Me.Pimagen.Image = Global.Quality.My.Resources.Resources.Preview_icon__1_
+        Me.Pimagen.Image = Global.Quality.My.Resources.Resources.InvoiceSearch_icon
         Me.Pimagen.Location = New System.Drawing.Point(9, 0)
         Me.Pimagen.Name = "Pimagen"
         Me.Pimagen.Size = New System.Drawing.Size(52, 42)
@@ -209,7 +211,7 @@ Partial Class FormExistencia
         'LTitulo
         '
         Me.LTitulo.BackColor = System.Drawing.Color.Transparent
-        Me.LTitulo.Font = New System.Drawing.Font("Times New Roman", 20.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LTitulo.Font = New System.Drawing.Font("Times New Roman", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LTitulo.ForeColor = System.Drawing.Color.White
         Me.LTitulo.Location = New System.Drawing.Point(4, 0)
         Me.LTitulo.Name = "LTitulo"
