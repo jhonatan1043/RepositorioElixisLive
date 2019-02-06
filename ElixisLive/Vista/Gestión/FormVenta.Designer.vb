@@ -455,7 +455,7 @@ Partial Class FormVenta
         Me.GroupBox7.Controls.Add(Me.Label2)
         Me.GroupBox7.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox7.ForeColor = System.Drawing.Color.DarkBlue
-        Me.GroupBox7.Location = New System.Drawing.Point(6, 8)
+        Me.GroupBox7.Location = New System.Drawing.Point(6, 7)
         Me.GroupBox7.Name = "GroupBox7"
         Me.GroupBox7.Size = New System.Drawing.Size(879, 46)
         Me.GroupBox7.TabIndex = 999
@@ -532,28 +532,28 @@ Partial Class FormVenta
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.TextTotal)
         Me.GroupBox1.Controls.Add(Me.txtDescuento)
         Me.GroupBox1.Controls.Add(Me.GroupBox2)
         Me.GroupBox1.Controls.Add(Me.Label10)
         Me.GroupBox1.Controls.Add(Me.GroupBox7)
-        Me.GroupBox1.Controls.Add(Me.TextTotal)
         Me.GroupBox1.Controls.Add(Me.TextTotalServicio)
         Me.GroupBox1.Controls.Add(Me.Label6)
         Me.GroupBox1.Controls.Add(Me.Label4)
         Me.GroupBox1.Location = New System.Drawing.Point(4, 38)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(891, 479)
+        Me.GroupBox1.Size = New System.Drawing.Size(891, 446)
         Me.GroupBox1.TabIndex = 11
         Me.GroupBox1.TabStop = False
         '
         'txtDescuento
         '
         Me.txtDescuento.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtDescuento.Font = New System.Drawing.Font("Times New Roman", 14.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtDescuento.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtDescuento.ForeColor = System.Drawing.Color.Black
-        Me.txtDescuento.Location = New System.Drawing.Point(327, 445)
+        Me.txtDescuento.Location = New System.Drawing.Point(528, 424)
         Me.txtDescuento.Name = "txtDescuento"
-        Me.txtDescuento.Size = New System.Drawing.Size(155, 29)
+        Me.txtDescuento.Size = New System.Drawing.Size(155, 22)
         Me.txtDescuento.TabIndex = 60038
         Me.txtDescuento.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -565,7 +565,7 @@ Partial Class FormVenta
         Me.GroupBox2.Controls.Add(Me.gbRelevante)
         Me.GroupBox2.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox2.ForeColor = System.Drawing.Color.DarkBlue
-        Me.GroupBox2.Location = New System.Drawing.Point(6, 56)
+        Me.GroupBox2.Location = New System.Drawing.Point(6, 53)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(879, 367)
         Me.GroupBox2.TabIndex = 4
@@ -911,14 +911,16 @@ Partial Class FormVenta
         '
         'btExistencia
         '
-        Me.btExistencia.BackColor = System.Drawing.Color.SteelBlue
+        Me.btExistencia.BackColor = System.Drawing.Color.Transparent
+        Me.btExistencia.BackgroundImage = Global.Quality.My.Resources.Resources.fondo_azul
+        Me.btExistencia.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btExistencia.Font = New System.Drawing.Font("Times New Roman", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btExistencia.ForeColor = System.Drawing.Color.White
         Me.btExistencia.Location = New System.Drawing.Point(439, 9)
         Me.btExistencia.Name = "btExistencia"
-        Me.btExistencia.Size = New System.Drawing.Size(103, 29)
+        Me.btExistencia.Size = New System.Drawing.Size(119, 29)
         Me.btExistencia.TabIndex = 10000
-        Me.btExistencia.Text = "Ver Existencia"
+        Me.btExistencia.Text = "Ver existencias"
         Me.btExistencia.UseVisualStyleBackColor = False
         '
         'lbInformativo
@@ -926,12 +928,13 @@ Partial Class FormVenta
         Me.lbInformativo.AutoSize = True
         Me.lbInformativo.BackColor = System.Drawing.Color.Transparent
         Me.lbInformativo.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbInformativo.ForeColor = System.Drawing.Color.Black
+        Me.lbInformativo.ForeColor = System.Drawing.Color.Red
         Me.lbInformativo.Location = New System.Drawing.Point(566, 15)
         Me.lbInformativo.Name = "lbInformativo"
         Me.lbInformativo.Size = New System.Drawing.Size(26, 19)
         Me.lbInformativo.TabIndex = 10002
         Me.lbInformativo.Text = "...:"
+        Me.lbInformativo.Visible = False
         '
         'Label3
         '
@@ -959,35 +962,35 @@ Partial Class FormVenta
         '
         Me.Label10.BackColor = System.Drawing.Color.Transparent
         Me.Label10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Label10.Font = New System.Drawing.Font("Times New Roman", 14.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label10.ForeColor = System.Drawing.Color.White
         Me.Label10.Image = Global.Quality.My.Resources.Resources.fondo_azul
-        Me.Label10.Location = New System.Drawing.Point(327, 428)
+        Me.Label10.Location = New System.Drawing.Point(460, 424)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(155, 31)
+        Me.Label10.Size = New System.Drawing.Size(155, 22)
         Me.Label10.TabIndex = 60037
-        Me.Label10.Text = "Descuento"
-        Me.Label10.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.Label10.Text = "Descuento:"
+        Me.Label10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'TextTotal
         '
         Me.TextTotal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextTotal.Font = New System.Drawing.Font("Times New Roman", 14.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextTotal.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextTotal.ForeColor = System.Drawing.Color.Black
-        Me.TextTotal.Location = New System.Drawing.Point(488, 445)
+        Me.TextTotal.Location = New System.Drawing.Point(732, 424)
         Me.TextTotal.Name = "TextTotal"
-        Me.TextTotal.Size = New System.Drawing.Size(155, 29)
+        Me.TextTotal.Size = New System.Drawing.Size(155, 22)
         Me.TextTotal.TabIndex = 9999
         Me.TextTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'TextTotalServicio
         '
         Me.TextTotalServicio.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextTotalServicio.Font = New System.Drawing.Font("Times New Roman", 14.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextTotalServicio.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextTotalServicio.ForeColor = System.Drawing.Color.Black
-        Me.TextTotalServicio.Location = New System.Drawing.Point(166, 445)
+        Me.TextTotalServicio.Location = New System.Drawing.Point(291, 424)
         Me.TextTotalServicio.Name = "TextTotalServicio"
-        Me.TextTotalServicio.Size = New System.Drawing.Size(155, 29)
+        Me.TextTotalServicio.Size = New System.Drawing.Size(155, 22)
         Me.TextTotalServicio.TabIndex = 9999
         Me.TextTotalServicio.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
@@ -995,38 +998,38 @@ Partial Class FormVenta
         '
         Me.Label6.BackColor = System.Drawing.Color.Transparent
         Me.Label6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Label6.Font = New System.Drawing.Font("Times New Roman", 14.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.ForeColor = System.Drawing.Color.White
         Me.Label6.Image = Global.Quality.My.Resources.Resources.fondo_azul
-        Me.Label6.Location = New System.Drawing.Point(488, 427)
+        Me.Label6.Location = New System.Drawing.Point(694, 424)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(155, 32)
+        Me.Label6.Size = New System.Drawing.Size(73, 22)
         Me.Label6.TabIndex = 18
-        Me.Label6.Text = "Total"
-        Me.Label6.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.Label6.Text = "Total:"
+        Me.Label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'Label4
         '
         Me.Label4.BackColor = System.Drawing.Color.Transparent
         Me.Label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Label4.Font = New System.Drawing.Font("Times New Roman", 14.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.White
         Me.Label4.Image = Global.Quality.My.Resources.Resources.fondo_azul
-        Me.Label4.Location = New System.Drawing.Point(166, 428)
+        Me.Label4.Location = New System.Drawing.Point(231, 424)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(155, 31)
+        Me.Label4.Size = New System.Drawing.Size(136, 22)
         Me.Label4.TabIndex = 22
-        Me.Label4.Text = "Servicios"
-        Me.Label4.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.Label4.Text = "Servicios:"
+        Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'TextTotalArticulos
         '
         Me.TextTotalArticulos.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextTotalArticulos.Font = New System.Drawing.Font("Times New Roman", 14.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextTotalArticulos.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextTotalArticulos.ForeColor = System.Drawing.Color.Black
-        Me.TextTotalArticulos.Location = New System.Drawing.Point(11, 484)
+        Me.TextTotalArticulos.Location = New System.Drawing.Point(70, 462)
         Me.TextTotalArticulos.Name = "TextTotalArticulos"
-        Me.TextTotalArticulos.Size = New System.Drawing.Size(155, 29)
+        Me.TextTotalArticulos.Size = New System.Drawing.Size(155, 22)
         Me.TextTotalArticulos.TabIndex = 999
         Me.TextTotalArticulos.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
@@ -1034,15 +1037,15 @@ Partial Class FormVenta
         '
         Me.Label5.BackColor = System.Drawing.Color.Transparent
         Me.Label5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Label5.Font = New System.Drawing.Font("Times New Roman", 14.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.Color.White
         Me.Label5.Image = Global.Quality.My.Resources.Resources.fondo_azul
-        Me.Label5.Location = New System.Drawing.Point(11, 466)
+        Me.Label5.Location = New System.Drawing.Point(8, 462)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(155, 31)
+        Me.Label5.Size = New System.Drawing.Size(141, 21)
         Me.Label5.TabIndex = 24
-        Me.Label5.Text = "Artículos"
-        Me.Label5.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.Label5.Text = "Artículos:"
+        Me.Label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'ErrorIcono
         '
@@ -1156,9 +1159,9 @@ Partial Class FormVenta
         Me.LTitulo.BackColor = System.Drawing.Color.Transparent
         Me.LTitulo.Font = New System.Drawing.Font("Times New Roman", 20.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LTitulo.ForeColor = System.Drawing.Color.White
-        Me.LTitulo.Location = New System.Drawing.Point(0, 1)
+        Me.LTitulo.Location = New System.Drawing.Point(0, 2)
         Me.LTitulo.Name = "LTitulo"
-        Me.LTitulo.Size = New System.Drawing.Size(900, 44)
+        Me.LTitulo.Size = New System.Drawing.Size(900, 39)
         Me.LTitulo.TabIndex = 1
         Me.LTitulo.Text = "Venta de artículos y servicios"
         Me.LTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -3463,7 +3466,7 @@ Partial Class FormVenta
         Me.ToolStrip1.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.ToolStrip1.ImageScalingSize = New System.Drawing.Size(30, 30)
         Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripSeparator1, Me.btNuevo, Me.btBuscar, Me.btRegistrar, Me.btCancelar, Me.btAnular, Me.btImprimir})
-        Me.ToolStrip1.Location = New System.Drawing.Point(0, 518)
+        Me.ToolStrip1.Location = New System.Drawing.Point(0, 486)
         Me.ToolStrip1.Name = "ToolStrip1"
         Me.ToolStrip1.Size = New System.Drawing.Size(900, 37)
         Me.ToolStrip1.TabIndex = 4
@@ -3665,7 +3668,7 @@ Partial Class FormVenta
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(900, 555)
+        Me.ClientSize = New System.Drawing.Size(900, 523)
         Me.Controls.Add(Me.TextTotalArticulos)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Panel1)
@@ -3673,8 +3676,7 @@ Partial Class FormVenta
         Me.Controls.Add(Me.GroupBox1)
         Me.KeyPreview = True
         Me.MaximizeBox = False
-        Me.MaximumSize = New System.Drawing.Size(916, 594)
-        Me.MinimumSize = New System.Drawing.Size(916, 594)
+        Me.MaximumSize = New System.Drawing.Size(921, 562)
         Me.Name = "FormVenta"
         Me.ShowIcon = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen

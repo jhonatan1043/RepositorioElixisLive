@@ -176,7 +176,7 @@ Public Class FormVenta
         If EstiloMensajes.mostrarMensajePregunta(MensajeSistema.CANCELAR) = Constantes.SI Then
             Generales.deshabilitarBotones(ToolStrip1)
             Generales.deshabilitarControles(Me)
-            lbInformativo.Text = "...:"
+            lbInformativo.Visible = False
             objVenta.descuentoCliente = Constantes.SIN_VALOR_NUMERICO
             If IsNothing(objVenta.codigo) Then
                 Generales.limpiarControles(Me)
@@ -315,7 +315,8 @@ Public Class FormVenta
         objVenta.descuentoCliente = dRows("Descuento")
 
         If Replace(dRows("Descuento"), ",00", "") <> Constantes.SIN_VALOR_NUMERICO Then
-            lbInformativo.Text = "Este Cliente presento un descuento del " & CStr(Replace(Format(objVenta.descuentoCliente, "p2"), ",00", ""))
+            lbInformativo.Visible = True
+            lbInformativo.Text = "Este cliente presentó un descuento del " & CStr(Replace(Format(objVenta.descuentoCliente, "p2"), ",00", ""))
         End If
 
         Generales.llenarTabla(Sentencias.VENTA_CARGAR_PRODUCTO, params, objVenta.dtProductos)
@@ -456,7 +457,8 @@ Public Class FormVenta
             TextTelefono.Text = dRows("Telefono")
             objVenta.descuentoCliente = dRows("Descuento")
             If Replace(dRows("Descuento"), ",00", "") <> Constantes.SIN_VALOR_NUMERICO Then
-                lbInformativo.Text = "Este Cliente presenta un descuento del " & CStr(Replace(Format(objVenta.descuentoCliente, "p2"), ",00", ""))
+                lbInformativo.Visible = True
+                lbInformativo.Text = "Este cliente presenta un descuento del " & CStr(Replace(Format(objVenta.descuentoCliente, "p2"), ",00", ""))
                 calcularTotales()
             End If
         Else
@@ -574,7 +576,7 @@ Public Class FormVenta
         TextTotalServicio.Text = Format(0, Constantes.FORMATO_MONEDA)
         txtTotalGastos.Text = Format(0, Constantes.FORMATO_MONEDA)
         txtDescuento.Text = Format(0, Constantes.FORMATO_MONEDA)
-        lbInformativo.Text = "...:"
+        lbInformativo.Visible = False
     End Sub
     Private Sub FormVenta_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
         funcionesFormulario(e)

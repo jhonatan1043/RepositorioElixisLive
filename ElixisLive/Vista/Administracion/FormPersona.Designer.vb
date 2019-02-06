@@ -33,7 +33,6 @@ Partial Class FormPersona
         Me.txtPerfil = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.chUsuario = New System.Windows.Forms.CheckBox()
-        Me.btBuscarPerfil = New System.Windows.Forms.Button()
         Me.txtUsuario = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
@@ -66,6 +65,7 @@ Partial Class FormPersona
         Me.btEditar = New System.Windows.Forms.ToolStripButton()
         Me.btCancelar = New System.Windows.Forms.ToolStripButton()
         Me.btAnular = New System.Windows.Forms.ToolStripButton()
+        Me.btBuscarPerfil = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Pimagen = New System.Windows.Forms.PictureBox()
         Me.LTitulo = New System.Windows.Forms.Label()
@@ -203,17 +203,6 @@ Partial Class FormPersona
         Me.chUsuario.TabIndex = 13
         Me.chUsuario.Text = "Asignar usuario"
         Me.chUsuario.UseVisualStyleBackColor = True
-        '
-        'btBuscarPerfil
-        '
-        Me.btBuscarPerfil.BackgroundImage = Global.Quality.My.Resources.Resources.fondo_azul
-        Me.btBuscarPerfil.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btBuscarPerfil.Image = Global.Quality.My.Resources.Resources.Zoom_icon1
-        Me.btBuscarPerfil.Location = New System.Drawing.Point(367, 69)
-        Me.btBuscarPerfil.Name = "btBuscarPerfil"
-        Me.btBuscarPerfil.Size = New System.Drawing.Size(26, 25)
-        Me.btBuscarPerfil.TabIndex = 15
-        Me.btBuscarPerfil.UseVisualStyleBackColor = True
         '
         'txtUsuario
         '
@@ -426,7 +415,7 @@ Partial Class FormPersona
         Me.TextDV.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TextDV.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextDV.ForeColor = System.Drawing.Color.Black
-        Me.TextDV.Location = New System.Drawing.Point(660, 15)
+        Me.TextDV.Location = New System.Drawing.Point(660, 14)
         Me.TextDV.Name = "TextDV"
         Me.TextDV.Size = New System.Drawing.Size(26, 22)
         Me.TextDV.TabIndex = 1002
@@ -438,7 +427,7 @@ Partial Class FormPersona
         Me.CombotipoIdentificacion.FormattingEnabled = True
         Me.CombotipoIdentificacion.Location = New System.Drawing.Point(138, 15)
         Me.CombotipoIdentificacion.Name = "CombotipoIdentificacion"
-        Me.CombotipoIdentificacion.Size = New System.Drawing.Size(154, 25)
+        Me.CombotipoIdentificacion.Size = New System.Drawing.Size(208, 25)
         Me.CombotipoIdentificacion.TabIndex = 1
         '
         'TextNombre
@@ -582,6 +571,17 @@ Partial Class FormPersona
         Me.btAnular.Text = "&Anular"
         Me.btAnular.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         '
+        'btBuscarPerfil
+        '
+        Me.btBuscarPerfil.BackgroundImage = Global.Quality.My.Resources.Resources.fondo_azul
+        Me.btBuscarPerfil.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btBuscarPerfil.Image = Global.Quality.My.Resources.Resources.Zoom_icon1
+        Me.btBuscarPerfil.Location = New System.Drawing.Point(367, 69)
+        Me.btBuscarPerfil.Name = "btBuscarPerfil"
+        Me.btBuscarPerfil.Size = New System.Drawing.Size(26, 25)
+        Me.btBuscarPerfil.TabIndex = 15
+        Me.btBuscarPerfil.UseVisualStyleBackColor = True
+        '
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.White
@@ -597,10 +597,10 @@ Partial Class FormPersona
         'Pimagen
         '
         Me.Pimagen.BackColor = System.Drawing.Color.Transparent
-        Me.Pimagen.Image = Global.Quality.My.Resources.Resources.App_user_icon
-        Me.Pimagen.Location = New System.Drawing.Point(4, 3)
+        Me.Pimagen.Image = Global.Quality.My.Resources.Resources.ManageUsers_icon
+        Me.Pimagen.Location = New System.Drawing.Point(4, 0)
         Me.Pimagen.Name = "Pimagen"
-        Me.Pimagen.Size = New System.Drawing.Size(39, 36)
+        Me.Pimagen.Size = New System.Drawing.Size(50, 39)
         Me.Pimagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.Pimagen.TabIndex = 1
         Me.Pimagen.TabStop = False
