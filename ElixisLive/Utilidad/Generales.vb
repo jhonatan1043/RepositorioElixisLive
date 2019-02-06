@@ -329,7 +329,7 @@ Public Class Generales
         dgv.DefaultCellStyle.ForeColor = Color.Black
         dgv.DefaultCellStyle.SelectionBackColor = Color.DodgerBlue
         dgv.DefaultCellStyle.SelectionForeColor = Color.White
-        dgv.DefaultCellStyle.Font = New Font("Times New Roman", 10)
+        dgv.DefaultCellStyle.Font = New Font(Constantes.TIPO_LETRA_ELEMENTO, 10)
         dgv.EnableHeadersVisualStyles = False
         dgv.ColumnHeadersDefaultCellStyle.BackColor = Color.SteelBlue
         dgv.ColumnHeadersDefaultCellStyle.ForeColor = Color.White
@@ -337,8 +337,8 @@ Public Class Generales
         dgv.AlternatingRowsDefaultCellStyle.ForeColor = Nothing
         dgv.AlternatingRowsDefaultCellStyle.SelectionBackColor = Nothing
         dgv.AlternatingRowsDefaultCellStyle.SelectionForeColor = Nothing
-        dgv.AlternatingRowsDefaultCellStyle.Font = New Font("Times New Roman", 10)
-        dgv.ColumnHeadersDefaultCellStyle.Font = New Font("Times New Roman", 10, FontStyle.Bold)
+        dgv.AlternatingRowsDefaultCellStyle.Font = New Font(Constantes.TIPO_LETRA_ELEMENTO, 10)
+        dgv.ColumnHeadersDefaultCellStyle.Font = New Font(Constantes.TIPO_LETRA_ELEMENTO, 10, FontStyle.Bold)
         For indiceColumna = 0 To dgv.Columns.Count - 1
             dgv.Columns(indiceColumna).AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
         Next
