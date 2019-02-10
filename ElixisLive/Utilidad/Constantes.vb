@@ -40,8 +40,9 @@
     Public Const CADENA_VACIA = ""
 
     Public Const DIA_SEMANA = 7
-    Public Const TIPO_LETRA_ELEMENTO = "[FontFamily: Name=Times New Roman]"
+    Public Const TIPO_LETRA_ELEMENTO = "Segoe UI Semibold"
     Public Const PENDIENTE = 0
+    
 
     Public Const ALTO_BARRA = 50
     'Citas

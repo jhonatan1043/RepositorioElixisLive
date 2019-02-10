@@ -67,7 +67,7 @@ Partial Class FormCambioClave
         '
         Me.txtUsuario.BackColor = System.Drawing.Color.White
         Me.txtUsuario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtUsuario.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtUsuario.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtUsuario.ForeColor = System.Drawing.Color.Black
         Me.txtUsuario.Location = New System.Drawing.Point(161, 14)
         Me.txtUsuario.Name = "txtUsuario"
@@ -78,18 +78,18 @@ Partial Class FormCambioClave
         'txtConfirmarClave
         '
         Me.txtConfirmarClave.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtConfirmarClave.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtConfirmarClave.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtConfirmarClave.Location = New System.Drawing.Point(161, 101)
         Me.txtConfirmarClave.MaxLength = 20
         Me.txtConfirmarClave.Name = "txtConfirmarClave"
         Me.txtConfirmarClave.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.txtConfirmarClave.Size = New System.Drawing.Size(191, 25)
+        Me.txtConfirmarClave.Size = New System.Drawing.Size(191, 27)
         Me.txtConfirmarClave.TabIndex = 11
         '
         'Label2
         '
         Me.Label2.BackColor = System.Drawing.Color.White
-        Me.Label2.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Font = New System.Drawing.Font("Segoe UI Semibold", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.SteelBlue
         Me.Label2.Location = New System.Drawing.Point(13, 101)
         Me.Label2.Name = "Label2"
@@ -101,18 +101,18 @@ Partial Class FormCambioClave
         'txtClaveNueva
         '
         Me.txtClaveNueva.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtClaveNueva.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtClaveNueva.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtClaveNueva.Location = New System.Drawing.Point(161, 72)
         Me.txtClaveNueva.MaxLength = 20
         Me.txtClaveNueva.Name = "txtClaveNueva"
         Me.txtClaveNueva.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.txtClaveNueva.Size = New System.Drawing.Size(191, 25)
+        Me.txtClaveNueva.Size = New System.Drawing.Size(191, 27)
         Me.txtClaveNueva.TabIndex = 9
         '
         'Label1
         '
         Me.Label1.BackColor = System.Drawing.Color.White
-        Me.Label1.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Font = New System.Drawing.Font("Segoe UI Semibold", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.SteelBlue
         Me.Label1.Location = New System.Drawing.Point(13, 70)
         Me.Label1.Name = "Label1"
@@ -124,18 +124,18 @@ Partial Class FormCambioClave
         'txtContraseña
         '
         Me.txtContraseña.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtContraseña.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtContraseña.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtContraseña.Location = New System.Drawing.Point(161, 43)
         Me.txtContraseña.MaxLength = 20
         Me.txtContraseña.Name = "txtContraseña"
         Me.txtContraseña.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.txtContraseña.Size = New System.Drawing.Size(191, 25)
+        Me.txtContraseña.Size = New System.Drawing.Size(191, 27)
         Me.txtContraseña.TabIndex = 7
         '
         'PasswordLabel
         '
         Me.PasswordLabel.BackColor = System.Drawing.Color.White
-        Me.PasswordLabel.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.PasswordLabel.Font = New System.Drawing.Font("Segoe UI Semibold", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.PasswordLabel.ForeColor = System.Drawing.Color.SteelBlue
         Me.PasswordLabel.Location = New System.Drawing.Point(13, 41)
         Me.PasswordLabel.Name = "PasswordLabel"
@@ -147,7 +147,7 @@ Partial Class FormCambioClave
         'UsernameLabel
         '
         Me.UsernameLabel.BackColor = System.Drawing.Color.White
-        Me.UsernameLabel.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.UsernameLabel.Font = New System.Drawing.Font("Segoe UI Semibold", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.UsernameLabel.ForeColor = System.Drawing.Color.SteelBlue
         Me.UsernameLabel.Location = New System.Drawing.Point(13, 11)
         Me.UsernameLabel.Name = "UsernameLabel"
@@ -182,7 +182,7 @@ Partial Class FormCambioClave
         'LTitulo
         '
         Me.LTitulo.BackColor = System.Drawing.Color.Transparent
-        Me.LTitulo.Font = New System.Drawing.Font("Times New Roman", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LTitulo.Font = New System.Drawing.Font("Segoe UI Semibold", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LTitulo.ForeColor = System.Drawing.Color.White
         Me.LTitulo.Location = New System.Drawing.Point(0, 1)
         Me.LTitulo.Name = "LTitulo"
@@ -207,7 +207,7 @@ Partial Class FormCambioClave
         '
         'btRegistrar
         '
-        Me.btRegistrar.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btRegistrar.Font = New System.Drawing.Font("Segoe UI Semibold", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btRegistrar.ForeColor = System.Drawing.Color.White
         Me.btRegistrar.Image = Global.Quality.My.Resources.Resources.Save_icon__1_
         Me.btRegistrar.ImageTransparentColor = System.Drawing.Color.Magenta

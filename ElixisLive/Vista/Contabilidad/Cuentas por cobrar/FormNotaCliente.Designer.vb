@@ -22,10 +22,10 @@ Partial Class FormNotaCliente
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormNotaCliente))
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.textObservacion = New System.Windows.Forms.TextBox()
@@ -37,6 +37,7 @@ Partial Class FormNotaCliente
         Me.Label10 = New System.Windows.Forms.Label()
         Me.PnlInfo = New System.Windows.Forms.Panel()
         Me.lbinfo = New System.Windows.Forms.Label()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.txtTotal = New System.Windows.Forms.Label()
         Me.txtNaturaleza = New System.Windows.Forms.Label()
@@ -57,11 +58,13 @@ Partial Class FormNotaCliente
         Me.Textsigla = New System.Windows.Forms.Label()
         Me.Textnombredocumento = New System.Windows.Forms.Label()
         Me.fechadoc = New System.Windows.Forms.DateTimePicker()
+        Me.bttercero = New System.Windows.Forms.Button()
         Me.Label21 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.btBusquedaDocumento = New System.Windows.Forms.Button()
         Me.dgvCuentas = New System.Windows.Forms.DataGridView()
+        Me.anular = New System.Windows.Forms.DataGridViewImageColumn()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.DataGridViewImageColumn1 = New System.Windows.Forms.DataGridViewImageColumn()
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
@@ -71,20 +74,17 @@ Partial Class FormNotaCliente
         Me.btEditar = New System.Windows.Forms.ToolStripButton()
         Me.btCancelar = New System.Windows.Forms.ToolStripButton()
         Me.btAnular = New System.Windows.Forms.ToolStripButton()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        Me.bttercero = New System.Windows.Forms.Button()
-        Me.anular = New System.Windows.Forms.DataGridViewImageColumn()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Pimagen = New System.Windows.Forms.PictureBox()
         Me.LTitulo = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
         Me.PnlInfo.SuspendLayout()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel3.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         CType(Me.dgvCuentas, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ToolStrip1.SuspendLayout()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
         CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -128,7 +128,7 @@ Partial Class FormNotaCliente
         Me.textObservacion.Multiline = True
         Me.textObservacion.Name = "textObservacion"
         Me.textObservacion.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.textObservacion.Size = New System.Drawing.Size(873, 37)
+        Me.textObservacion.Size = New System.Drawing.Size(873, 36)
         Me.textObservacion.TabIndex = 0
         '
         'textdiferencia
@@ -203,9 +203,9 @@ Partial Class FormNotaCliente
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.PnlInfo.Controls.Add(Me.lbinfo)
         Me.PnlInfo.Controls.Add(Me.PictureBox2)
-        Me.PnlInfo.Location = New System.Drawing.Point(1, 378)
+        Me.PnlInfo.Location = New System.Drawing.Point(14, 378)
         Me.PnlInfo.Name = "PnlInfo"
-        Me.PnlInfo.Size = New System.Drawing.Size(895, 29)
+        Me.PnlInfo.Size = New System.Drawing.Size(870, 29)
         Me.PnlInfo.TabIndex = 60037
         Me.PnlInfo.Visible = False
         '
@@ -218,6 +218,16 @@ Partial Class FormNotaCliente
         Me.lbinfo.Size = New System.Drawing.Size(68, 16)
         Me.lbinfo.TabIndex = 10063
         Me.lbinfo.Text = "CONTENIDO"
+        '
+        'PictureBox2
+        '
+        Me.PictureBox2.Image = Global.Quality.My.Resources.Resources.atencion
+        Me.PictureBox2.Location = New System.Drawing.Point(2, 2)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(30, 26)
+        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox2.TabIndex = 10063
+        Me.PictureBox2.TabStop = False
         '
         'Panel3
         '
@@ -451,6 +461,17 @@ Partial Class FormNotaCliente
         Me.fechadoc.Size = New System.Drawing.Size(189, 25)
         Me.fechadoc.TabIndex = 60027
         '
+        'bttercero
+        '
+        Me.bttercero.BackgroundImage = CType(resources.GetObject("bttercero.BackgroundImage"), System.Drawing.Image)
+        Me.bttercero.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.bttercero.Image = CType(resources.GetObject("bttercero.Image"), System.Drawing.Image)
+        Me.bttercero.Location = New System.Drawing.Point(853, 67)
+        Me.bttercero.Name = "bttercero"
+        Me.bttercero.Size = New System.Drawing.Size(26, 25)
+        Me.bttercero.TabIndex = 60016
+        Me.bttercero.UseVisualStyleBackColor = True
+        '
         'Label21
         '
         Me.Label21.AutoSize = True
@@ -496,29 +517,29 @@ Partial Class FormNotaCliente
         Me.dgvCuentas.AllowUserToDeleteRows = False
         Me.dgvCuentas.AllowUserToResizeColumns = False
         Me.dgvCuentas.AllowUserToResizeRows = False
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.dgvCuentas.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.dgvCuentas.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle4
         Me.dgvCuentas.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.dgvCuentas.BackgroundColor = System.Drawing.Color.White
         Me.dgvCuentas.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Arial Narrow", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvCuentas.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Arial Narrow", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvCuentas.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle5
         Me.dgvCuentas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         Me.dgvCuentas.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.anular})
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.Desktop
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgvCuentas.DefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption
+        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.Desktop
+        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgvCuentas.DefaultCellStyle = DataGridViewCellStyle6
         Me.dgvCuentas.Location = New System.Drawing.Point(14, 178)
         Me.dgvCuentas.Name = "dgvCuentas"
         Me.dgvCuentas.ReadOnly = True
@@ -531,6 +552,16 @@ Partial Class FormNotaCliente
         Me.dgvCuentas.ShowRowErrors = False
         Me.dgvCuentas.Size = New System.Drawing.Size(870, 220)
         Me.dgvCuentas.TabIndex = 60027
+        '
+        'anular
+        '
+        Me.anular.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.anular.HeaderText = "Quitar"
+        Me.anular.Image = Global.Quality.My.Resources.Resources.papelera
+        Me.anular.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch
+        Me.anular.Name = "anular"
+        Me.anular.ReadOnly = True
+        Me.anular.Width = 43
         '
         'GroupBox3
         '
@@ -550,7 +581,6 @@ Partial Class FormNotaCliente
         Me.DataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch
         Me.DataGridViewImageColumn1.Name = "DataGridViewImageColumn1"
         Me.DataGridViewImageColumn1.ReadOnly = True
-        Me.DataGridViewImageColumn1.Width = 43
         '
         'ToolStrip1
         '
@@ -632,37 +662,6 @@ Partial Class FormNotaCliente
         Me.btAnular.Text = "Anular"
         Me.btAnular.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         '
-        'PictureBox2
-        '
-        Me.PictureBox2.Image = Global.Quality.My.Resources.Resources.atencion
-        Me.PictureBox2.Location = New System.Drawing.Point(2, 2)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(30, 26)
-        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox2.TabIndex = 10063
-        Me.PictureBox2.TabStop = False
-        '
-        'bttercero
-        '
-        Me.bttercero.BackgroundImage = CType(resources.GetObject("bttercero.BackgroundImage"), System.Drawing.Image)
-        Me.bttercero.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.bttercero.Image = CType(resources.GetObject("bttercero.Image"), System.Drawing.Image)
-        Me.bttercero.Location = New System.Drawing.Point(853, 67)
-        Me.bttercero.Name = "bttercero"
-        Me.bttercero.Size = New System.Drawing.Size(26, 25)
-        Me.bttercero.TabIndex = 60016
-        Me.bttercero.UseVisualStyleBackColor = True
-        '
-        'anular
-        '
-        Me.anular.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.anular.HeaderText = "Quitar"
-        Me.anular.Image = Global.Quality.My.Resources.Resources.papelera
-        Me.anular.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch
-        Me.anular.Name = "anular"
-        Me.anular.ReadOnly = True
-        Me.anular.Width = 43
-        '
         'Panel2
         '
         Me.Panel2.BackColor = System.Drawing.Color.White
@@ -717,6 +716,7 @@ Partial Class FormNotaCliente
         Me.GroupBox4.PerformLayout()
         Me.PnlInfo.ResumeLayout(False)
         Me.PnlInfo.PerformLayout()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
@@ -724,7 +724,6 @@ Partial Class FormNotaCliente
         CType(Me.dgvCuentas, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ToolStrip1.ResumeLayout(False)
         Me.ToolStrip1.PerformLayout()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
         CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)

@@ -53,7 +53,7 @@ Partial Class FormInicioSesion
         'UsernameLabel
         '
         Me.UsernameLabel.BackColor = System.Drawing.Color.White
-        Me.UsernameLabel.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.UsernameLabel.Font = New System.Drawing.Font("Segoe UI Semibold", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.UsernameLabel.ForeColor = System.Drawing.Color.SteelBlue
         Me.UsernameLabel.Location = New System.Drawing.Point(149, 28)
         Me.UsernameLabel.Name = "UsernameLabel"
@@ -65,7 +65,7 @@ Partial Class FormInicioSesion
         'PasswordLabel
         '
         Me.PasswordLabel.BackColor = System.Drawing.Color.White
-        Me.PasswordLabel.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.PasswordLabel.Font = New System.Drawing.Font("Segoe UI Semibold", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.PasswordLabel.ForeColor = System.Drawing.Color.SteelBlue
         Me.PasswordLabel.Location = New System.Drawing.Point(149, 71)
         Me.PasswordLabel.Name = "PasswordLabel"
@@ -77,44 +77,44 @@ Partial Class FormInicioSesion
         'txtUsuario
         '
         Me.txtUsuario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtUsuario.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtUsuario.Location = New System.Drawing.Point(229, 31)
+        Me.txtUsuario.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtUsuario.Location = New System.Drawing.Point(229, 27)
         Me.txtUsuario.MaxLength = 15
         Me.txtUsuario.Name = "txtUsuario"
-        Me.txtUsuario.Size = New System.Drawing.Size(163, 25)
+        Me.txtUsuario.Size = New System.Drawing.Size(163, 27)
         Me.txtUsuario.TabIndex = 1
         '
         'txtContraseña
         '
         Me.txtContraseña.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtContraseña.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtContraseña.Location = New System.Drawing.Point(229, 73)
+        Me.txtContraseña.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtContraseña.Location = New System.Drawing.Point(229, 69)
         Me.txtContraseña.MaxLength = 20
         Me.txtContraseña.Name = "txtContraseña"
         Me.txtContraseña.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.txtContraseña.Size = New System.Drawing.Size(163, 25)
+        Me.txtContraseña.Size = New System.Drawing.Size(163, 27)
         Me.txtContraseña.TabIndex = 3
         '
         'Label1
         '
         Me.Label1.BackColor = System.Drawing.Color.White
-        Me.Label1.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Font = New System.Drawing.Font("Segoe UI Semibold", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.SteelBlue
         Me.Label1.Location = New System.Drawing.Point(149, 111)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(75, 23)
         Me.Label1.TabIndex = 6
-        Me.Label1.Text = "Sede:"
+        Me.Label1.Text = "&Sede:"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'CbEmpresa
         '
         Me.CbEmpresa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.CbEmpresa.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CbEmpresa.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CbEmpresa.FormattingEnabled = True
-        Me.CbEmpresa.Location = New System.Drawing.Point(229, 112)
+        Me.CbEmpresa.Location = New System.Drawing.Point(229, 108)
         Me.CbEmpresa.Name = "CbEmpresa"
-        Me.CbEmpresa.Size = New System.Drawing.Size(163, 25)
+        Me.CbEmpresa.Size = New System.Drawing.Size(163, 28)
         Me.CbEmpresa.TabIndex = 7
         '
         'GroupBox1
@@ -158,7 +158,7 @@ Partial Class FormInicioSesion
         Me.OK.BackColor = System.Drawing.Color.Transparent
         Me.OK.BackgroundImage = CType(resources.GetObject("OK.BackgroundImage"), System.Drawing.Image)
         Me.OK.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.OK.Font = New System.Drawing.Font("Times New Roman", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.OK.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.OK.ForeColor = System.Drawing.Color.White
         Me.OK.Location = New System.Drawing.Point(221, 138)
         Me.OK.Name = "OK"
@@ -173,7 +173,7 @@ Partial Class FormInicioSesion
         Me.Cancel.BackgroundImage = CType(resources.GetObject("Cancel.BackgroundImage"), System.Drawing.Image)
         Me.Cancel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Cancel.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.Cancel.Font = New System.Drawing.Font("Times New Roman", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Cancel.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Cancel.ForeColor = System.Drawing.Color.White
         Me.Cancel.Location = New System.Drawing.Point(311, 138)
         Me.Cancel.Name = "Cancel"

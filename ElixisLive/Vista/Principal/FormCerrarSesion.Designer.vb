@@ -39,11 +39,11 @@ Partial Class FormCerrarSesion
         'Label3
         '
         Me.Label3.BackColor = System.Drawing.Color.White
-        Me.Label3.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.SteelBlue
-        Me.Label3.Location = New System.Drawing.Point(265, 93)
+        Me.Label3.Location = New System.Drawing.Point(261, 95)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(59, 23)
+        Me.Label3.Size = New System.Drawing.Size(63, 23)
         Me.Label3.TabIndex = 29
         Me.Label3.Text = "Regresar"
         Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -51,9 +51,9 @@ Partial Class FormCerrarSesion
         'Label2
         '
         Me.Label2.BackColor = System.Drawing.Color.White
-        Me.Label2.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.SteelBlue
-        Me.Label2.Location = New System.Drawing.Point(199, 94)
+        Me.Label2.Location = New System.Drawing.Point(199, 95)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(35, 23)
         Me.Label2.TabIndex = 28
@@ -63,11 +63,11 @@ Partial Class FormCerrarSesion
         'Label1
         '
         Me.Label1.BackColor = System.Drawing.Color.White
-        Me.Label1.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.SteelBlue
-        Me.Label1.Location = New System.Drawing.Point(101, 93)
+        Me.Label1.Location = New System.Drawing.Point(104, 95)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(85, 23)
+        Me.Label1.Size = New System.Drawing.Size(61, 23)
         Me.Label1.TabIndex = 27
         Me.Label1.Text = "Cerrar Sesión"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
