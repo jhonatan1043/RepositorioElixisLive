@@ -449,7 +449,8 @@ Public Class Generales
 
         For Each vItem In pElemento.Controls
             If vItem.name = "LTitulo" Then
-                vItem.Font = New Font(Constantes.TIPO_LETRA_ELEMENTO, 20)
+                vItem.Font = New Font(Constantes.TIPO_LETRA_ELEMENTO, 15)
+                vItem.text = vItem.text.ToString.ToUpper
             Else
                 vItem.Font = New Font(Constantes.TIPO_LETRA_ELEMENTO, 10)
             End If
@@ -493,7 +494,7 @@ Public Class Generales
     Public Shared Sub habilitarControles(ByRef pElemento As Object)
         For Each vItem In pElemento.Controls
             If vItem.name = "LTitulo" Then
-                vItem.Font = New Font(Constantes.TIPO_LETRA_ELEMENTO, 20)
+                vItem.Font = New Font(Constantes.TIPO_LETRA_ELEMENTO, 15)
             Else
                 vItem.Font = New Font(Constantes.TIPO_LETRA_ELEMENTO, 10)
             End If
