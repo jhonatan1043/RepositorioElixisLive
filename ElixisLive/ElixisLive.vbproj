@@ -83,6 +83,9 @@
     <Reference Include="Microsoft.Office.Interop.Excel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
+    <Reference Include="Microsoft.Vbe.Interop.Forms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
     <Reference Include="MySql.Data, Version=6.1.0.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\MySql.Data.DLL</HintPath>
@@ -129,6 +132,35 @@
     <Compile Include="Controlador\Configuracion\ConfigDAL.vb" />
     <Compile Include="Controlador\Configuracion\ConfigVentaDAL.vb" />
     <Compile Include="Controlador\Configuracion\CostoServicioDAL.vb" />
+    <Compile Include="Controlador\Contabilidad\BalanceComprobacionDAL.vb" />
+    <Compile Include="Controlador\Contabilidad\CajaBancoDAL.vb" />
+    <Compile Include="Controlador\Contabilidad\CarteraCuentaPorCobrarDAL.vb" />
+    <Compile Include="Controlador\Contabilidad\CarteraCuentaPorPagarDAL.vb" />
+    <Compile Include="Controlador\Contabilidad\CertificadoRetencionDAL.vb" />
+    <Compile Include="Controlador\Contabilidad\CierreDocumentosDAL.vb" />
+    <Compile Include="Controlador\Contabilidad\CierrePeriodosDAL.vb" />
+    <Compile Include="Controlador\Contabilidad\ComprobanteEgresoDAL.vb" />
+    <Compile Include="Controlador\Contabilidad\ConfiguracionCentroDeCostosDAL.vb" />
+    <Compile Include="Controlador\Contabilidad\ConfiguracionConceptosDianDAL.vb" />
+    <Compile Include="Controlador\Contabilidad\ConfiguracionTipoCuentaDAL.vb" />
+    <Compile Include="Controlador\Contabilidad\ContabilidadGeneralDAL.vb" />
+    <Compile Include="Controlador\Contabilidad\CuentaClasificacionDAL.vb" />
+    <Compile Include="Controlador\Contabilidad\CuentaPorPagarDAL.vb" />
+    <Compile Include="Controlador\Contabilidad\CuentaPucDAL.vb" />
+    <Compile Include="Controlador\Contabilidad\CuentasPorCobrarDAL.vb" />
+    <Compile Include="Controlador\Contabilidad\DocumentoContableDAL.vb" />
+    <Compile Include="Controlador\Contabilidad\EstadoCuentasDAL.vb" />
+    <Compile Include="Controlador\Contabilidad\LibroAuxiliarDAL.vb" />
+    <Compile Include="Controlador\Contabilidad\LibroDiarioDAL.vb" />
+    <Compile Include="Controlador\Contabilidad\LibroMayorDAL.vb" />
+    <Compile Include="Controlador\Contabilidad\NotaClienteDAL.vb" />
+    <Compile Include="Controlador\Contabilidad\NotaInternaDAL.vb" />
+    <Compile Include="Controlador\Contabilidad\NotaProveedorDAL.vb" />
+    <Compile Include="Controlador\Contabilidad\ProgramacionPagoNominaDAL.vb" />
+    <Compile Include="Controlador\Contabilidad\ProgramacionPagoProveedorDAL.vb" />
+    <Compile Include="Controlador\Contabilidad\PucDAL.vb" />
+    <Compile Include="Controlador\Contabilidad\RecaudoDAL.vb" />
+    <Compile Include="Controlador\Contabilidad\RetencionIvaDAL.vb" />
     <Compile Include="Controlador\Gestion\CompraDAL.vb" />
     <Compile Include="Controlador\Gestion\GastoServicioDAL.vb" />
     <Compile Include="Controlador\Gestion\VentaDAL.vb" />
@@ -236,6 +268,32 @@
     <Compile Include="Modelo\Configuracion\ConfigBLL.vb" />
     <Compile Include="Modelo\Configuracion\ConfigVentaBLL.vb" />
     <Compile Include="Modelo\Configuracion\CostoServicioBLL.vb" />
+    <Compile Include="Modelo\Contabilidad\BalanceComprobacionBLL.vb" />
+    <Compile Include="Modelo\Contabilidad\CajaBancoBLL.vb" />
+    <Compile Include="Modelo\Contabilidad\CarteraCuentaPorCobrarBLL.vb" />
+    <Compile Include="Modelo\Contabilidad\CarteraCuentaPorPagarBLL.vb" />
+    <Compile Include="Modelo\Contabilidad\CertificadoRetencionBLL.vb" />
+    <Compile Include="Modelo\Contabilidad\CierreDocumentosBLL.vb" />
+    <Compile Include="Modelo\Contabilidad\CierrePeriosdosBLL.vb" />
+    <Compile Include="Modelo\Contabilidad\ConfiguracionConceptosDianBLL.vb" />
+    <Compile Include="Modelo\Contabilidad\ContabilidadGeneralBLL.vb" />
+    <Compile Include="Modelo\Contabilidad\CuentaClasificacionBLL.vb" />
+    <Compile Include="Modelo\Contabilidad\CuentaPorPagarBLL.vb" />
+    <Compile Include="Modelo\Contabilidad\CuentaPucBLL.vb" />
+    <Compile Include="Modelo\Contabilidad\CuentasPorCobrarBLL.vb" />
+    <Compile Include="Modelo\Contabilidad\DocumentoContableBLL.vb" />
+    <Compile Include="Modelo\Contabilidad\EstadoCuentasBLL.vb" />
+    <Compile Include="Modelo\Contabilidad\IVARetencionBLL.vb" />
+    <Compile Include="Modelo\Contabilidad\LibroAuxiliarBLL.vb" />
+    <Compile Include="Modelo\Contabilidad\LibroDiarioBLL.vb" />
+    <Compile Include="Modelo\Contabilidad\LibroMayorBLL.vb" />
+    <Compile Include="Modelo\Contabilidad\NotaClienteBLL.vb" />
+    <Compile Include="Modelo\Contabilidad\NotaInternaBLL.vb" />
+    <Compile Include="Modelo\Contabilidad\NotaProveedorBLL.vb" />
+    <Compile Include="Modelo\Contabilidad\ProgramacionPagoNominaBLL.vb" />
+    <Compile Include="Modelo\Contabilidad\ProgramacionPagoProveedorBLL.vb" />
+    <Compile Include="Modelo\Contabilidad\PucBLL.vb" />
+    <Compile Include="Modelo\Contabilidad\RecaudoBLL.vb" />
     <Compile Include="Modelo\Gestion\CompraBLL.vb" />
     <Compile Include="Modelo\Gestion\GastoServicioBLL.vb" />
     <Compile Include="Modelo\Gestion\VentaBLL.vb" />
@@ -261,11 +319,13 @@
     <Compile Include="Utilidad\CodigosBarra.vb" />
     <Compile Include="Utilidad\ConexionBD.vb" />
     <Compile Include="Utilidad\Constantes.vb" />
+    <Compile Include="Utilidad\Consultas.vb" />
     <Compile Include="Utilidad\ConvertirNumeros.vb" />
     <Compile Include="Utilidad\CrearInforme.vb" />
     <Compile Include="Utilidad\DigitoVerificacion.vb" />
     <Compile Include="Utilidad\EstiloMensajes.vb" />
     <Compile Include="Utilidad\Funciones.vb" />
+    <Compile Include="Utilidad\FuncionesContables.vb" />
     <Compile Include="Utilidad\FuncionesExcel.vb" />
     <Compile Include="Utilidad\Generales.vb" />
     <Compile Include="Utilidad\MensajeSistema.vb" />
@@ -275,6 +335,7 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Utilidad\Titulo.vb" />
+    <Compile Include="Utilidad\TitulosForm.vb" />
     <Compile Include="Utilidad\ValidarDigitacion.vb" />
     <Compile Include="Utilidad\vForm.vb" />
     <Compile Include="Vista\Administracion\FormCliente.Designer.vb">

@@ -5,6 +5,8 @@ Imports System.Threading
 Imports CrystalDecisions.CrystalReports.Engine
 Imports CrystalDecisions.Shared
 
+Imports System.Reflection
+
 Public Class Generales
     Public Delegate Sub cargaInfoForm(ByVal codigo As String)
     Public Delegate Sub cargaInfoFormObj(ByVal fila As DataRow)
@@ -25,6 +27,31 @@ Public Class Generales
             boTableLogOnInfo.ConnectionInfo = connReporte
             tbla.ApplyLogOnInfo(boTableLogOnInfo)
         Next
+    End Sub
+
+    Public Shared Sub llenarTablaYdgv(ByVal cadena As String, ByVal nmbreDT As Object)
+        Try
+            objConexion.conectar()
+            If TypeOf nmbreDT Is DataTable Then
+                nmbreDT.Clear()
+                Using da = New SqlDataAdapter(cadena, objConexion.cnxbd)
+                    da.Fill(nmbreDT)
+                End Using
+            Else
+                Dim dt As New DataTable
+                dt.Clear()
+                Using da = New SqlDataAdapter(cadena, objConexion.cnxbd)
+                    da.Fill(dt)
+                End Using
+                nmbreDT.DataSource = dt
+                nmbreDT.DefaultCellStyle.Font = New Font(Constantes.TIPO_LETRA_ELEMENTO, 9)
+            End If
+
+        Catch ex As Exception
+            Throw
+        Finally
+            objConexion.desconectar()
+        End Try
     End Sub
     Public Shared Sub llenarTabla(ByVal consulta As String,
                                   ByVal params As List(Of String),

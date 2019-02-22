@@ -18,4 +18,6 @@
     Public Const VALIDAR_CAMPOS = "Los campos marcados son obligatorios"
     Public Const MODULO_ASIGNADO = "¡Se han asignado los modulos correctamente!"
     Public Const INGRESAR_VALOR_VALIDO = "¡Debe ingresar un valor válido!"
+    Public Const PERIODO_CONTABLE_CERRADO = "¡Periodo de fecha cerrado!"
+    Public Const COMPROBANTE_ANULADO = "¡Comprobante Anulado!"
 End Class

@@ -43,6 +43,7 @@ Partial Class FormCierreDocumentos
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.PnlInfo = New System.Windows.Forms.Panel()
         Me.lbinfo = New System.Windows.Forms.Label()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.dgvTraslado = New System.Windows.Forms.DataGridView()
@@ -50,6 +51,7 @@ Partial Class FormCierreDocumentos
         Me.DescripcionT = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DebitoT = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.CreditoT = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Btcerrar = New System.Windows.Forms.Button()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.textdiferencia = New System.Windows.Forms.Label()
         Me.textvalorcredito = New System.Windows.Forms.Label()
@@ -69,8 +71,8 @@ Partial Class FormCierreDocumentos
         Me.Label15 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
-        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
-        Me.dtFecha = New System.Windows.Forms.DateTimePicker()
+        Me.DtInicio = New System.Windows.Forms.DateTimePicker()
+        Me.DtFin = New System.Windows.Forms.DateTimePicker()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -91,10 +93,9 @@ Partial Class FormCierreDocumentos
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Pimagen = New System.Windows.Forms.PictureBox()
         Me.LTitulo = New System.Windows.Forms.Label()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        Me.Btcerrar = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.PnlInfo.SuspendLayout()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         CType(Me.dgvTraslado, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox3.SuspendLayout()
@@ -104,7 +105,6 @@ Partial Class FormCierreDocumentos
         Me.ToolStrip1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GroupBox1
@@ -142,6 +142,16 @@ Partial Class FormCierreDocumentos
         Me.lbinfo.Size = New System.Drawing.Size(68, 16)
         Me.lbinfo.TabIndex = 10063
         Me.lbinfo.Text = "CONTENIDO"
+        '
+        'PictureBox2
+        '
+        Me.PictureBox2.Image = Global.Quality.My.Resources.Resources.atencion
+        Me.PictureBox2.Location = New System.Drawing.Point(2, 2)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(30, 26)
+        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox2.TabIndex = 10063
+        Me.PictureBox2.TabStop = False
         '
         'Panel1
         '
@@ -253,6 +263,20 @@ Partial Class FormCierreDocumentos
         Me.CreditoT.Name = "CreditoT"
         Me.CreditoT.ReadOnly = True
         Me.CreditoT.Width = 67
+        '
+        'Btcerrar
+        '
+        Me.Btcerrar.BackgroundImage = Global.Quality.My.Resources.Resources.fondo_azul
+        Me.Btcerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Btcerrar.Font = New System.Drawing.Font("Times New Roman", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Btcerrar.ForeColor = System.Drawing.Color.White
+        Me.Btcerrar.Location = New System.Drawing.Point(736, 113)
+        Me.Btcerrar.Name = "Btcerrar"
+        Me.Btcerrar.Size = New System.Drawing.Size(102, 25)
+        Me.Btcerrar.TabIndex = 50
+        Me.Btcerrar.Text = "Cerrar Cuentas"
+        Me.Btcerrar.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.Btcerrar.UseVisualStyleBackColor = True
         '
         'GroupBox3
         '
@@ -489,8 +513,8 @@ Partial Class FormCierreDocumentos
         '
         'GroupBox4
         '
-        Me.GroupBox4.Controls.Add(Me.DateTimePicker1)
-        Me.GroupBox4.Controls.Add(Me.dtFecha)
+        Me.GroupBox4.Controls.Add(Me.DtInicio)
+        Me.GroupBox4.Controls.Add(Me.DtFin)
         Me.GroupBox4.Controls.Add(Me.Label3)
         Me.GroupBox4.Controls.Add(Me.Label4)
         Me.GroupBox4.Font = New System.Drawing.Font("Arial Narrow", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -502,27 +526,27 @@ Partial Class FormCierreDocumentos
         Me.GroupBox4.TabStop = False
         Me.GroupBox4.Text = "Fechas de cierre"
         '
-        'DateTimePicker1
+        'DtInicio
         '
-        Me.DateTimePicker1.CustomFormat = "dd |  MMMM |  yyyy"
-        Me.DateTimePicker1.Enabled = False
-        Me.DateTimePicker1.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.DateTimePicker1.Location = New System.Drawing.Point(100, 17)
-        Me.DateTimePicker1.Name = "DateTimePicker1"
-        Me.DateTimePicker1.Size = New System.Drawing.Size(189, 25)
-        Me.DateTimePicker1.TabIndex = 10042
+        Me.DtInicio.CustomFormat = "dd |  MMMM |  yyyy"
+        Me.DtInicio.Enabled = False
+        Me.DtInicio.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DtInicio.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.DtInicio.Location = New System.Drawing.Point(100, 17)
+        Me.DtInicio.Name = "DtInicio"
+        Me.DtInicio.Size = New System.Drawing.Size(189, 25)
+        Me.DtInicio.TabIndex = 10042
         '
-        'dtFecha
+        'DtFin
         '
-        Me.dtFecha.CustomFormat = "dd |  MMMM |  yyyy"
-        Me.dtFecha.Enabled = False
-        Me.dtFecha.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.dtFecha.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.dtFecha.Location = New System.Drawing.Point(385, 16)
-        Me.dtFecha.Name = "dtFecha"
-        Me.dtFecha.Size = New System.Drawing.Size(189, 25)
-        Me.dtFecha.TabIndex = 10041
+        Me.DtFin.CustomFormat = "dd |  MMMM |  yyyy"
+        Me.DtFin.Enabled = False
+        Me.DtFin.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DtFin.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.DtFin.Location = New System.Drawing.Point(385, 16)
+        Me.DtFin.Name = "DtFin"
+        Me.DtFin.Size = New System.Drawing.Size(189, 25)
+        Me.DtFin.TabIndex = 10041
         '
         'Label3
         '
@@ -739,30 +763,6 @@ Partial Class FormCierreDocumentos
         Me.LTitulo.Text = "Cierre Contable"
         Me.LTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'PictureBox2
-        '
-        Me.PictureBox2.Image = Global.Quality.My.Resources.Resources.atencion
-        Me.PictureBox2.Location = New System.Drawing.Point(2, 2)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(30, 26)
-        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox2.TabIndex = 10063
-        Me.PictureBox2.TabStop = False
-        '
-        'Btcerrar
-        '
-        Me.Btcerrar.BackgroundImage = Global.Quality.My.Resources.Resources.fondo_azul
-        Me.Btcerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Btcerrar.Font = New System.Drawing.Font("Times New Roman", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Btcerrar.ForeColor = System.Drawing.Color.White
-        Me.Btcerrar.Location = New System.Drawing.Point(736, 113)
-        Me.Btcerrar.Name = "Btcerrar"
-        Me.Btcerrar.Size = New System.Drawing.Size(102, 25)
-        Me.Btcerrar.TabIndex = 50
-        Me.Btcerrar.Text = "Cerrar Cuentas"
-        Me.Btcerrar.TextAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.Btcerrar.UseVisualStyleBackColor = True
-        '
         'FormCierreDocumentos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -780,6 +780,7 @@ Partial Class FormCierreDocumentos
         Me.GroupBox1.ResumeLayout(False)
         Me.PnlInfo.ResumeLayout(False)
         Me.PnlInfo.PerformLayout()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         CType(Me.dgvTraslado, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox3.ResumeLayout(False)
@@ -791,7 +792,6 @@ Partial Class FormCierreDocumentos
         Me.ToolStrip1.PerformLayout()
         Me.Panel2.ResumeLayout(False)
         CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -827,8 +827,8 @@ Partial Class FormCierreDocumentos
     Public WithEvents Panel2 As Panel
     Public WithEvents Pimagen As PictureBox
     Public WithEvents LTitulo As Label
-    Public WithEvents DateTimePicker1 As DateTimePicker
-    Public WithEvents dtFecha As DateTimePicker
+    Public WithEvents DtInicio As DateTimePicker
+    Public WithEvents DtFin As DateTimePicker
     Public WithEvents ToolStrip1 As ToolStrip
     Public WithEvents btNuevo As ToolStripButton
     Public WithEvents btBuscar As ToolStripButton
