@@ -105,6 +105,19 @@
     Public Const ENTREGA_REINTEGRO_MCIA_EN_CONSIGNACION = 70
     Public Const TRANSFERENCIA_DE_INVENTARIOS = 71
     Public Const COMPROBANTE_DE_CAUSACION = 72
+    Public Const PUC_TIPO_DETALLE = "D"
+    Public Const PUC_TIPO_TITULO = "T"
+    Public Const PUC_CLASIFICACION_BALANCE = "B"
+    Public Const PUC_CLASIFICACION_ORDEN = "O"
+    Public Const PUC_NATURALEZA_DEBITO = "D"
+    Public Const PUC_NATURALEZA_CREDITO = "C"
+    Public Const PUC_CLASIFICACION_RESULTADO = "R"
+    Public Const CUENTAS_UCI_MOVIMIENTO_COBRAR = "C"
+    Public Const CUENTAS_UCI_MOVIMIENTO_PAGAR = "P"
+    Public Const CUENTAS_UCI_MOVIMIENTO_COBRAR_DESC = "Por Cobrar"
+    Public Const CUENTAS_UCI_MOVIMIENTO_PAGAR_DESC = "Por Pagar"
+    Public Const COLUMNA_DEBITO = "Debito"
+    Public Const COLUMNA_CREDITO = "Credito"
     Public Enum TIPO_CONTROL
         COMBO = 0
         SELECTOR = 1

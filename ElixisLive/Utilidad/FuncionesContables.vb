@@ -11,7 +11,7 @@ Public Class FuncionesContables
         Dim params As New List(Of String)
         params.Add(codigo)
 
-        drDocumento = Generales.cargarItem(Sentencias.SIGLA_CONTABLE_CARGAR, params)
+        drDocumento = Generales.cargarItem(Consultas.SIGLA_CONTABLE_CARGAR, params)
 
         Dim objDocumentoContable As New DocumentoContable
 
@@ -25,7 +25,7 @@ Public Class FuncionesContables
     End Function
     Public Shared Function llenarRetencion(params As List(Of String)) As DataRow
         Dim drCuenta As DataRow
-        drCuenta = Generales.cargarItem(Sentencias.RETENCION_IVA_CARGAR, params)
+        drCuenta = Generales.cargarItem(Consultas.RETENCION_IVA_CARGAR, params)
         If Not IsNothing(drCuenta) Then
             Return drCuenta
         End If
@@ -36,7 +36,7 @@ Public Class FuncionesContables
         Dim num_entero, num_decimal As Single
         Dim NumeroConvertido As String
 
-        sValor = Val(Replace(Format(numero, "General Number"), ",", ".").ToString)
+        sValor = Val(Replace(Format(numero, "Generales Number"), ",", ".").ToString)
         num_entero = Int(Val(sValor))
         num_decimal = CInt((sValor - num_entero) * 100)
         ' A ESPERAS DE DOLARIZACIOn
@@ -128,7 +128,7 @@ Public Class FuncionesContables
             Using dbCommand As New SqlCommand
                 dbCommand.Connection = FormPrincipal.cnxion
                 dbCommand.CommandType = CommandType.StoredProcedure
-                dbCommand.CommandText = Sentencias.SUMA_RETENCION
+                dbCommand.CommandText = Consultas.SUMA_RETENCION
                 dbCommand.Parameters.Add(New SqlParameter("@detalle", SqlDbType.Structured)).Value = dtnuevasFilas
                 dbCommand.Parameters.Add(New SqlParameter("@CODIGOPUC", SqlDbType.Int)).Value = codigoPuc
                 Return dbCommand.ExecuteScalar()
@@ -139,7 +139,7 @@ Public Class FuncionesContables
     End Function
     Public Shared Function verificarConsecutivo(pCodigo As String) As String
         Dim dt As New DataTable
-        Generales.llenarTablaYdgv(Sentencias.CONSECUTIVO_CONTABLE & "('" & pCodigo & "')", dt)
+        Generales.llenarTablaYdgv(Consultas.CONSECUTIVO_CONTABLE & "('" & pCodigo & "')", dt)
 
         If dt.Rows.Count > 0 Then
             Return dt.Rows(0).Item(0).ToString()
@@ -165,7 +165,7 @@ Public Class FuncionesContables
     Public Shared Function obtenerPucActivo() As Integer
         Dim drPuc As DataRow
         Dim params As New List(Of String)
-        drPuc = Generales.cargarItem(Sentencias.PUC_ACTIVO, params)
+        drPuc = Generales.cargarItem(Consultas.PUC_ACTIVO, params)
         If drPuc.Item(0) IsNot DBNull.Value Then
             Return drPuc.Item(0).ToString()
         End If
@@ -188,7 +188,7 @@ Public Class FuncionesContables
                 dtComprobante.Rows(indiceFila).Item(nombreColumns) = descripcion
             Else
                 If MsgBox("Esta cuenta no existe ¿Desea crearla?", MsgBoxStyle.YesNo + MsgBoxStyle.Question, "Crear") = MsgBoxResult.Yes Then
-                    Dim formCuenta As New FormCuentasPUC
+                    Dim formCuenta As New FormCuentasPuc
                     formCuenta.ShowDialog()
                 Else
                     dtComprobante.Rows(dtComprobante.Rows.Count - 1).Item(nombreColumnsCodigo) = ""
@@ -209,7 +209,7 @@ Public Class FuncionesContables
         Dim dtComprobante As New DataTable
         Dim params As New List(Of String)
         params.Add(comprobante)
-        General.llenarTabla(consulta, params, dtComprobante)
+        Generales.llenarTabla(consulta, params, dtComprobante)
         If dtComprobante.Rows.Count > 0 Then
             Return False
         End If
@@ -217,7 +217,7 @@ Public Class FuncionesContables
     End Function
     Public Shared Function digitarCuenta(params As List(Of String)) As DataRow
         Dim drCuenta As DataRow
-        drCuenta = General.cargarItem(Sentencias.CUENTAS_DETALLE_CARGAR, params)
+        drCuenta = Generales.cargarItem(Consultas.CUENTAS_DETALLE_CARGAR, params)
         If Not IsNothing(drCuenta) Then
             Return drCuenta
         Else
@@ -238,9 +238,9 @@ Public Class FuncionesContables
     End Function
 
     Public Shared Function validarFechaFutura(fecha As DateTimePicker) As Boolean
-        If fecha.Value.Date > General.fechaActualServidor Then
+        If fecha.Value.Date > Generales.fechaActualServidor Then
             MsgBox("La fecha no puede ser mayor a la actual", MsgBoxStyle.Exclamation)
-            fecha.Value = General.fechaActualServidor
+            fecha.Value = Generales.fechaActualServidor
             Return False
         End If
         Return True
@@ -260,18 +260,17 @@ Public Class FuncionesContables
         Dim dtfecha As New DataTable
         Dim params As New List(Of String)
         params.Add(Format(fecha, Constantes.FORMATO_FECHA_GEN))
-        General.llenarTabla(Sentencias.FECHA_CERRADA, params, dtfecha)
+        Generales.llenarTabla(Consultas.FECHA_CERRADA, params, dtfecha)
         If dtfecha.Rows.Count > 0 Then
             Return True
         End If
         Return False
     End Function
-    Public Shared Function VerificarCuentaTercero(idEmpresa As Integer, idTercero As Integer, consulta As String, dgv As DataGridView) As Boolean
+    Public Shared Function VerificarCuentaTercero(idTercero As Integer, consulta As String, dgv As DataGridView) As Boolean
         Dim dtCuenta As New DataTable
         Dim params As New List(Of String)
         params.Add(idTercero)
-        params.Add(idEmpresa)
-        General.llenarTabla(consulta, params, dtCuenta)
+        Generales.llenarTabla(consulta, params, dtCuenta)
         If dtCuenta.Rows.Count > 0 Then
             For indicedtCuentas = 0 To dgv.Rows.Count - 1
                 If dgv.Rows(indicedtCuentas).Cells(1).Value.ToString = dtCuenta.Rows(0).Item("Cuenta").ToString Then
@@ -285,7 +284,7 @@ Public Class FuncionesContables
         Dim dtComprobante As New DataTable
         Dim params As New List(Of String)
         params.Add(comprobante)
-        General.llenarTabla(Sentencias.COMPROBANTE_ANULADO_VERIFICAR, params, dtComprobante)
+        Generales.llenarTabla(Consultas.COMPROBANTE_ANULADO_VERIFICAR, params, dtComprobante)
         If dtComprobante.Rows.Count > 0 Then
             Return True
         End If
@@ -337,8 +336,8 @@ Public Class FuncionesContables
         Dim drPuc As DataRow
         Dim params As New List(Of String)
 
-        Dim consultaPuc As String = Sentencias.VALIDAR_CUENTA_PUC & "(" & codigoPuc & ", '" & codigoCuenta & "')"
-        drPuc = General.cargarItem(consultaPuc, Nothing)
+        Dim consultaPuc As String = Consultas.VALIDAR_CUENTA_PUC & "(" & codigoPuc & ", '" & codigoCuenta & "')"
+        drPuc = Generales.cargarItem(consultaPuc, Nothing)
 
         If drPuc.Item(0) IsNot DBNull.Value Then
             Return drPuc.Item(0)
