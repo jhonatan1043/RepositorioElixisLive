@@ -22,6 +22,7 @@ Partial Class FormCierreDocumentos
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
@@ -93,6 +94,7 @@ Partial Class FormCierreDocumentos
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Pimagen = New System.Windows.Forms.PictureBox()
         Me.LTitulo = New System.Windows.Forms.Label()
+        Me.ErrorIcono = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.GroupBox1.SuspendLayout()
         Me.PnlInfo.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -105,6 +107,7 @@ Partial Class FormCierreDocumentos
         Me.ToolStrip1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ErrorIcono, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GroupBox1
@@ -763,6 +766,11 @@ Partial Class FormCierreDocumentos
         Me.LTitulo.Text = "Cierre Contable"
         Me.LTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
+        'ErrorIcono
+        '
+        Me.ErrorIcono.ContainerControl = Me
+        Me.ErrorIcono.RightToLeft = True
+        '
         'FormCierreDocumentos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -792,6 +800,7 @@ Partial Class FormCierreDocumentos
         Me.ToolStrip1.PerformLayout()
         Me.Panel2.ResumeLayout(False)
         CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ErrorIcono, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -850,4 +859,5 @@ Partial Class FormCierreDocumentos
     Friend WithEvents DataGridViewTextBoxColumn6 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn7 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn8 As DataGridViewTextBoxColumn
+    Friend WithEvents ErrorIcono As ErrorProvider
 End Class

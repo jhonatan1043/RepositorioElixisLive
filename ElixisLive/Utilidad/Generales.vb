@@ -28,7 +28,20 @@ Public Class Generales
             tbla.ApplyLogOnInfo(boTableLogOnInfo)
         Next
     End Sub
-
+    Public Shared Function anularRegistro(ByVal sentencia As String) As Boolean
+        Try
+            objConexion.conectar()
+            Using dbCommand = New SqlCommand(sentencia, objConexion.cnxbd)
+                dbCommand.ExecuteNonQuery()
+                Return True
+            End Using
+        Catch ex As Exception
+            Throw
+            Return False
+        Finally
+            objConexion.desconectar()
+        End Try
+    End Function
     Public Shared Sub llenarTablaYdgv(ByVal cadena As String, ByVal nmbreDT As Object)
         Try
             objConexion.conectar()

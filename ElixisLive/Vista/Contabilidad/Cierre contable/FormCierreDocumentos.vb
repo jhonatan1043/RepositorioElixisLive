@@ -244,10 +244,8 @@
     Private Sub btRegistrar_Click(sender As Object, e As EventArgs) Handles btRegistrar.Click
         dgvCierre.EndEdit()
         If Format(CDate(DtInicio.Value), Constantes.FORMATO_FECHA_GEN) >= Format(CDate(DtFin.Value), Constantes.FORMATO_FECHA_GEN) Then
-            MsgBox("La fecha de fin no puede ser menor o igual a la fecha de inicio!", MsgBoxStyle.Information)
+            EstiloMensajes.mostrarMensajeAdvertencia("La fecha de fin no puede ser menor o igual a la fecha de inicio!")
             DtFin.Focus()
-        ElseIf Textnombredocumento.Text = "" Then
-            EstiloMensajes.mostrarMensajeAdvertencia(MensajeSistema.VALIDAR_CAMPOS)
         ElseIf dtCierre.Rows.Count = 0 Then
             EstiloMensajes.mostrarMensajeAdvertencia("El lapso de tiempo no ha generado ningun registro!!")
         ElseIf dtTraslado.Select("Cuenta='590505'").Count = 0 Then
@@ -271,7 +269,7 @@
         End If
     End Sub
     Private Sub Form_antici_decucci_FormClosing(sender As Object, e As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
-        If MsgBox(MensajeSistema.SALIR, MsgBoxStyle.Question + MsgBoxStyle.YesNo, TitulosForm.SALIR) = MsgBoxResult.Yes Then
+        If EstiloMensajes.mostrarMensajePregunta(MensajeSistema.SALIR) = Constantes.SI Then
             Me.Dispose()
         Else
             e.Cancel = True
