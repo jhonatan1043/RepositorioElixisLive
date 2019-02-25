@@ -93,7 +93,7 @@ Public Class Generales
             End Using
             objConexion.desConectar()
         Catch ex As Exception
-            Throw
+            Throw ex
         Finally
             objConexion.desConectar()
         End Try

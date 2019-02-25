@@ -3,12 +3,13 @@
 Public Class CuentaClasificacionDAL
 
     Public Shared Sub actualizarClasificacionCuentas(objClasificacionCuentaHC As ClasificacionCuentaHC)
+        Dim conexion As New ConexionBD
         Try
+            conexion.conectar()
             Using dbCommand As New SqlCommand
-                dbCommand.Connection =conexion.cnxbd
+                dbCommand.Connection = conexion.cnxbd
                 dbCommand.CommandType = CommandType.StoredProcedure
                 dbCommand.CommandText = "SP_CUENTAS_UCI_ACTUALIZAR"
-
                 'Parametros
                 dbCommand.Parameters.Add(New SqlParameter("@codigo_puc", SqlDbType.Int))
                 dbCommand.Parameters.Add(New SqlParameter("@codigo_cuenta", SqlDbType.Int))
@@ -16,7 +17,6 @@ Public Class CuentaClasificacionDAL
                 dbCommand.Parameters.Add(New SqlParameter("@Tipo_Movimiento", SqlDbType.NVarChar))
                 dbCommand.Parameters.Add(New SqlParameter("@Codigo_area_servicio", SqlDbType.Int))
                 dbCommand.Parameters.Add(New SqlParameter("@Usuario", SqlDbType.Int))
-
                 'Valores
                 dbCommand.Parameters("@codigo_puc").Value = objClasificacionCuentaHC.codigoPuc
                 dbCommand.Parameters("@codigo_cuenta").Value = objClasificacionCuentaHC.codigoCuenta
@@ -24,12 +24,12 @@ Public Class CuentaClasificacionDAL
                 dbCommand.Parameters("@Tipo_Movimiento").Value = objClasificacionCuentaHC.tipoMovimiento
                 dbCommand.Parameters("@Codigo_area_servicio").Value = objClasificacionCuentaHC.codigoAreaServicio
                 dbCommand.Parameters("@usuario").Value = SesionActual.idUsuario
-
                 dbCommand.ExecuteNonQuery()
-
             End Using
         Catch ex As Exception
             Throw ex
+        Finally
+            conexion.desconectar()
         End Try
     End Sub
 

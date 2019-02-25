@@ -2,9 +2,11 @@
 Public Class ComprobanteEgresoDAL
 
     Public Shared Sub guardarComprobante(objComprobante As PagosDirecto)
+        Dim conexion As New ConexionBD
         Try
+            conexion.conectar()
             Using comando = New SqlCommand
-                comando.Connection =conexion.cnxbd
+                comando.Connection = conexion.cnxbd
                 comando.CommandType = CommandType.StoredProcedure
                 comando.CommandText = "SP_COMPROBANTE_EGRESO_CREAR"
                 comando.Parameters.Add(New SqlParameter("@comprobante", SqlDbType.NVarChar)).Value = objComprobante.comprobante
@@ -21,6 +23,8 @@ Public Class ComprobanteEgresoDAL
             End Using
         Catch ex As Exception
             Throw ex
+        Finally
+            conexion.desconectar()
         End Try
     End Sub
 End Class

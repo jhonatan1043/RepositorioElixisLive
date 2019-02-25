@@ -1,5 +1,17 @@
 ﻿Imports System.Data.SqlClient
 Public Class PersonaDAL
+    Public Shared Function getIdTercero(ByVal nit As String) As Integer
+        Dim objConexio As New ConexionBD
+        Dim idTercero As Integer
+        objConexio.conectar()
+        Using dbCommand As New SqlCommand("SELECT dbo.FN_GET_ID_TERCERO_BY_NIT(@nit)")
+            dbCommand.Connection = objConexio.cnxbd
+            dbCommand.Parameters.Add(New SqlParameter("@nit", SqlDbType.NVarChar)).Value = nit
+            idTercero = IIf(dbCommand.ExecuteScalar() IsNot DBNull.Value, dbCommand.ExecuteScalar(), Nothing)
+        End Using
+        Return idTercero
+        objConexio.desconectar()
+    End Function
     Public Shared Function guardar(objPersona As persona) As persona
         Dim objConexio As New ConexionBD
         Try

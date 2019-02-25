@@ -3,9 +3,11 @@
 Public Class RetencionIvaDAL
 
     Public Shared Sub crearRetencionIVA(ByVal objRetencionIVA As RetencionIVA, pUSuario As Integer)
+        Dim conexion As New ConexionBD
         Try
+            conexion.conectar()
             Using dbCommand As New SqlCommand
-                dbCommand.Connection =conexion.cnxbd
+                dbCommand.Connection = conexion.cnxbd
                 dbCommand.CommandType = CommandType.StoredProcedure
                 dbCommand.CommandText = "SP_RETENCION_IVA_CREAR"
 
@@ -21,6 +23,8 @@ Public Class RetencionIvaDAL
             End Using
         Catch ex As Exception
             Throw ex
+        Finally
+            conexion.desconectar()
         End Try
 
     End Sub

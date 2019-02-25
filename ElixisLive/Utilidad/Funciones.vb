@@ -1,6 +1,48 @@
 ﻿Imports System.Data.SqlClient
 Imports System.Data.SqlTypes
+Imports System.Net.Mail
+Imports System.Text.RegularExpressions
+Imports CrystalDecisions.Shared
+
 Public Class Funciones
+    Public Shared Function getReporteNoFTP(pReporte As Object, pFormula As String, pArea As String, Optional ext As String = ".pdf", Optional tbl As Hashtable = Nothing, Optional rutaAlterna As String = Nothing, Optional ejecutarReporte As Boolean = True) As Boolean
+        Try
+            FormPrincipal.Cursor = Cursors.WaitCursor
+            Generales.getConnReporte(pReporte.Database.Tables)
+            If Not IsNothing(tbl) Then
+                For Each item As DictionaryEntry In tbl
+                    pReporte.SetParameterValue(item.Key, item.Value)
+                Next
+            End If
+            If pFormula IsNot Nothing Then pReporte.RecordSelectionFormula = pFormula
+            Dim ruta As String
+            If Not IsNothing(rutaAlterna) Then
+                ruta = rutaAlterna
+            Else
+                ruta = IO.Path.GetTempPath & pArea & "_" & Now.Ticks & ext
+            End If
+
+            Dim crformat As ExportFormatType
+            Select Case ext
+                Case ".pdf" : crformat = ExportFormatType.PortableDocFormat
+                Case ".doc" : crformat = ExportFormatType.WordForWindows
+                Case ".xls" : crformat = ExportFormatType.Excel
+            End Select
+            pReporte.ExportToDisk(crformat, ruta)
+            pReporte.close()
+            If ejecutarReporte Then
+                Process.Start(ruta)
+            End If
+
+        Catch ex As Exception
+            Throw
+            Return False
+        Finally
+            FormPrincipal.Cursor = Cursors.Default
+        End Try
+        Return True
+    End Function
+
     Public Shared Function getParametros(lista As List(Of String)) As String
 
         If lista Is Nothing OrElse lista.Count = 0 Then 'OrElse lista.First Is Nothing Then
