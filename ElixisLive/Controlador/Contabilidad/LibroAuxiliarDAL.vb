@@ -3,9 +3,11 @@
 Public Class LibroAuxiliarDAL
 
     Public Shared Sub calcularLibroAuxiliar(params As LibroAuxiliarParams)
+        Dim conexion As New ConexionBD
         Try
+            conexion.conectar()
             Using dbCommand As New SqlCommand
-                dbCommand.Connection = FormPrincipal.cnxion
+                dbCommand.Connection = conexion.cnxbd
                 dbCommand.CommandType = CommandType.StoredProcedure
                 dbCommand.CommandText = "[SP_LIBRO_AUX_CALCULAR]"
 
@@ -27,6 +29,8 @@ Public Class LibroAuxiliarDAL
             End Using
         Catch ex As Exception
             Throw ex
+        Finally
+            conexion.desconectar()
         End Try
     End Sub
 

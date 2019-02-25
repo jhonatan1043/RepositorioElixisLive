@@ -6,7 +6,7 @@
     End Sub
 
     Public Shared Function obtenerTerceroByNit(ByVal nit As String) As Integer
-        Return TerceroDAL.getIdTercero(nit)
+        Return personaDAL.getIdTercero(nit)
     End Function
 
 

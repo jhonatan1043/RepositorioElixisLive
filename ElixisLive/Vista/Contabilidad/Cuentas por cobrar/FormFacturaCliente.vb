@@ -110,9 +110,6 @@
             codigoDocumento = objDocumentoContable.codigo
             Textsigla.Text = codigo
             Textnombredocumento.Text = objDocumentoContable.descripcion
-        Else
-            MsgBox("No se encontró ningún documento", MsgBoxStyle.Information)
-            btBusquedaDocumento.PerformClick()
         End If
     End Sub
 
@@ -234,7 +231,7 @@
         Generales.deshabilitarBotones(ToolStrip1)
         Generales.habilitarControles(Me)
         Textsigla.Text = Constantes.SIGLA_FACTURA_VENTAS
-        Textsigla_Leave(sender, e)
+        cargarDocumento(codigoDocumento)
         fecharecibo.Enabled = False
         btRegistrar.Enabled = True
         btCancelar.Enabled = True
@@ -336,7 +333,7 @@
                 cargarFactura(Textcodfactura.Text)
             Else
                 If dtCuentas.Rows.Count = 0 Then
-                    If MsgBox("¿Factura no existe, desea ingresarla ?", MsgBoxStyle.YesNo + MsgBoxStyle.Question, "Ingresar") = MsgBoxResult.Yes Then
+                    If EstiloMensajes.mostrarMensajePregunta("Factura no existe, desea ingresarla") = Constantes.SI Then
                         fecharecibo.Enabled = True
                         fechavence.Enabled = True
                         fecharecibo.Value = Date.Now
@@ -344,7 +341,7 @@
                         dtCuentas.Rows.Add()
                     End If
                 End If
-            End If
+                End If
         End If
     End Sub
     Private Sub cargarFactura(pFactura As String)
@@ -449,9 +446,8 @@
                                   TitulosForm.BUSQUEDA_FACTURAS,
                                    True, True)
         Else
-            MsgBox("Debe escoger un tercero", MsgBoxStyle.Exclamation)
+            EstiloMensajes.mostrarMensajeAdvertencia("Debe escoger un tercero")
         End If
-
     End Sub
 
     Private Sub btbuscar_Click(sender As Object, e As EventArgs) Handles btBuscar.Click
@@ -514,7 +510,7 @@
 
                     For indicedtCuentas = 0 To dgvCuentas.Rows.Count - 1
                         If dgvCuentas.Rows(indicedtCuentas).Cells(1).Value.ToString = dtCliente.Rows(0).Item("Cuenta").ToString Then
-                            MsgBox("Ya existe una cuenta cliente en el movimiento")
+                            EstiloMensajes.mostrarMensajeAdvertencia("Ya existe una cuenta cliente en el movimiento")
                             Exit Sub
                         End If
                     Next
@@ -533,13 +529,12 @@
                     End If
                     calcularTotales()
                 Else
-                    MsgBox("No hay una cuenta asignada a este cliente", 48, "Atención")
+                    EstiloMensajes.mostrarMensajeAdvertencia("No hay una cuenta asignada a este cliente")
                 End If
             End If
         Else
-            MsgBox("Por favor elija el cliente", 48, "Atención")
+            EstiloMensajes.mostrarMensajeAdvertencia("Por favor elija el cliente")
         End If
-
     End Sub
     Private Sub btCXC_Click(sender As Object, e As EventArgs) Handles btcxc.Click
         crearCuentaPorCobrar(idTercero)

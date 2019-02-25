@@ -27,7 +27,7 @@
     Public Sub cargarComprobante()
         Dim params As New List(Of String)
         params.Add(comprobante)
-        General.llenarTabla(Sentencias.COMPROBANTE_EGRESO_DETALLE_CARGAR, params, dtComprobante)
+        Generales.llenarTabla(Consultas.COMPROBANTE_EGRESO_DETALLE_CARGAR, params, dtComprobante)
     End Sub
 
 
@@ -48,7 +48,7 @@
                 dtComprobante.Rows(indiceFila).Item("Descripcion") = descripcion
             Else
                 If MsgBox("Esta cuenta no existe ¿Desea crearla?", MsgBoxStyle.YesNo + MsgBoxStyle.Question, "Crear") = MsgBoxResult.Yes Then
-                    Dim formCuenta As New Form_CuentasPUC
+                    Dim formCuenta As New FormCuentasPuc
                     formCuenta.ShowDialog()
                 Else
                     dtComprobante.Rows(dtComprobante.Rows.Count - 1).Item("Codigo") = ""
@@ -68,9 +68,9 @@
         Dim params As New List(Of String)
         params.Add(comprobante)
 
-        General.llenarTabla(Sentencias.COMPROBANTE_ANULADO_VERIFICAR, params, dt)
+        Generales.llenarTabla(Consultas.COMPROBANTE_ANULADO_VERIFICAR, params, dt)
         If dt.Rows.Count > 0 Then
-            mensaje = Mensajes.COMPROBANTE_ANULADO
+            mensaje = MensajeSistema.COMPROBANTE_ANULADO
         End If
     End Sub
 
@@ -85,10 +85,10 @@
         Dim params As New List(Of String)
         params.Add(fecha)
 
-        General.llenarTabla(Sentencias.COMPROBANTE_FECHA_VERIFICAR, params, dt2)
+        Generales.llenarTabla(Consultas.COMPROBANTE_FECHA_VERIFICAR, params, dt2)
         If dt2.Rows.Count > 0 Then
             periodoCerrado = True
-            mensaje = Mensajes.PERIODO_CONTABLE_CERRADO
+            mensaje = MensajeSistema.PERIODO_CONTABLE_CERRADO
         Else
             periodoCerrado = False
         End If

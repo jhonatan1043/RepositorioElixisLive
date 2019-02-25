@@ -1,8 +1,12 @@
-﻿Public Class CuentasPorCobrarDAL
+﻿Imports System.Data.SqlClient
+
+Public Class CuentasPorCobrarDAL
+    Dim conexion As New ConexionBD
     Public Sub CuentaPorCobrar(ByVal objcuentasCXP As CuentasPorCobrar, pUSuario As Integer)
         Try
+            conexion.conectar()
             Using dbCommand As New SqlCommand
-                dbCommand.Connection = FormPrincipal.cnxion
+                dbCommand.Connection = conexion.cnxbd
                 dbCommand.CommandType = CommandType.StoredProcedure
                 dbCommand.CommandText = "SP_CUENTAS_POR_COBRAR_CREAR"
                 dbCommand.Parameters.Add(New SqlParameter("@Codigo_factura", SqlDbType.NVarChar)).Value = objcuentasCXP.factura
@@ -20,14 +24,17 @@
             End Using
         Catch ex As Exception
             Throw ex
+        Finally
+            conexion.desconectar()
         End Try
 
     End Sub
 
     Public Sub actualizarcuentasCXP(ByVal objcuentasCXP As CuentasPorCobrar, pUSuario As Integer)
         Try
+            conexion.conectar()
             Using dbCommand As New SqlCommand
-                dbCommand.Connection = FormPrincipal.cnxion
+                dbCommand.Connection = conexion.cnxbd
                 dbCommand.CommandType = CommandType.StoredProcedure
                 dbCommand.CommandText = "SP_CUENTAS_POR_COBRAR_ACTUALIZAR"
                 dbCommand.Parameters.Add(New SqlParameter("@Codigo_factura", SqlDbType.NVarChar)).Value = objcuentasCXP.identificador
@@ -43,38 +50,9 @@
             End Using
         Catch ex As Exception
             Throw ex
+        Finally
+            conexion.desconectar()
         End Try
     End Sub
-    Public Sub guardarNuevaFechaRadicacion(ByVal objcuentasCXP As CuentasPorCobrar)
-        Try
-            Using dbCommand As New SqlCommand
-                dbCommand.Connection = FormPrincipal.cnxion
-                dbCommand.CommandType = CommandType.StoredProcedure
-                dbCommand.CommandText = "SP_CUENTAS_POR_COBRAR_NRAD_CREAR"
-                dbCommand.Parameters.Add(New SqlParameter("@Codigo_factura", SqlDbType.NVarChar)).Value = objcuentasCXP.identificador
-                dbCommand.Parameters.Add(New SqlParameter("id_Empresa", SqlDbType.Int)).Value = SesionActual.idEmpresa
-                dbCommand.Parameters.Add(New SqlParameter("@Cod_Parametro", SqlDbType.NVarChar)).Value = Constantes.NEW_RADICACION
-                dbCommand.Parameters.Add(New SqlParameter("@Fecha_NRad", SqlDbType.Date)).Value = objcuentasCXP.fechaNRad
-                dbCommand.ExecuteNonQuery()
-            End Using
-        Catch ex As Exception
-            Throw ex
-        End Try
-    End Sub
-    Public Sub guardarFactExonerada(ByVal objcuentasCXP As CuentasPorCobrar)
-        Try
-            Using dbCommand As New SqlCommand
-                dbCommand.Connection = FormPrincipal.cnxion
-                dbCommand.CommandType = CommandType.StoredProcedure
-                dbCommand.CommandText = "SP_CUENTAS_POR_COBRAR_NRAD_CREAR"
-                dbCommand.Parameters.Add(New SqlParameter("@Codigo_factura", SqlDbType.NVarChar)).Value = objcuentasCXP.factura
-                dbCommand.Parameters.Add(New SqlParameter("id_Empresa", SqlDbType.Int)).Value = SesionActual.idEmpresa
-                dbCommand.Parameters.Add(New SqlParameter("@Cod_Parametro", SqlDbType.NVarChar)).Value = Constantes.FACT_EXONERADA
-                dbCommand.Parameters.Add(New SqlParameter("@Fecha_NRad", SqlDbType.NVarChar)).Value = objcuentasCXP.observacion
-                dbCommand.ExecuteNonQuery()
-            End Using
-        Catch ex As Exception
-            Throw ex
-        End Try
-    End Sub
+
 End Class

@@ -3,7 +3,7 @@ Public Class CarteraCuentaPorPagarDAL
     Public Sub crearCarteraCXP(ByVal objcarteraCXP As CarteraCXP)
         Try
             Using dbCommand As New SqlCommand
-                dbCommand.Connection = FormPrincipal.cnxion
+                dbCommand.Connection =conexion.cnxbd
                 dbCommand.CommandType = CommandType.StoredProcedure
                 dbCommand.CommandText = "SP_CARTERA_CXP_CREAR"
                 dbCommand.Parameters.Add(New SqlParameter("@carteracxp", SqlDbType.Structured)).Value = objcarteraCXP.dtCarteraP
@@ -19,7 +19,7 @@ Public Class CarteraCuentaPorPagarDAL
     Public Sub actualizarCarteraCXP(ByVal objcarteraCXP As CarteraCXP)
         Try
             Using dbCommand As New SqlCommand
-                dbCommand.Connection = FormPrincipal.cnxion
+                dbCommand.Connection =conexion.cnxbd
                 dbCommand.CommandType = CommandType.StoredProcedure
                 dbCommand.CommandText = "SP_CARTERA_CXP_ACTUALIZAR"
                 dbCommand.Parameters.Add(New SqlParameter("@comprobante", SqlDbType.NVarChar)).Value = objcarteraCXP.identificador

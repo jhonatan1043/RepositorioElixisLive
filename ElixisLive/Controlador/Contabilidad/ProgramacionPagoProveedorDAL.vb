@@ -1,9 +1,12 @@
-﻿Public Class ProgramacionPagoProveedorDAL
+﻿Imports System.Data.SqlClient
+Public Class ProgramacionPagoProveedorDAL
 
     Public Shared Sub guardarProgramacion(programacion As ProgramacionPagoProveedor, fechaCorte As Date, fechaDoc As Date)
+        Dim conexion As New ConexionBD
         Try
+            conexion.conectar()
             Using dbCommand As New SqlCommand
-                dbCommand.Connection = FormPrincipal.cnxion
+                dbCommand.Connection = conexion.cnxbd
                 dbCommand.CommandType = CommandType.StoredProcedure
                 dbCommand.CommandText = "SP_PROGRAMACION_PROVEEDOR_GUARDAR"
 
@@ -18,7 +21,6 @@
                 dbCommand.Parameters.Add(New SqlParameter("@pUsuario", SqlDbType.Int))
 
                 'Valores
-                dbCommand.Parameters("@idEmpresa").Value = SesionActual.idEmpresa
                 dbCommand.Parameters("@fechaCorte").Value = fechaCorte
                 dbCommand.Parameters("@fechaDoc").Value = fechaDoc
                 dbCommand.Parameters("@codigoProgramacion").Direction = ParameterDirection.Output
@@ -34,6 +36,8 @@
             End Using
         Catch ex As Exception
             Throw ex
+        Finally
+            conexion.desconectar()
         End Try
     End Sub
 

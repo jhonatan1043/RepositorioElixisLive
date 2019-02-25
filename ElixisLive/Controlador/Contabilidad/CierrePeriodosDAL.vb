@@ -1,8 +1,9 @@
-﻿Public Class CierrePeriodosDAL
+﻿Imports System.Data.SqlClient
+Public Class CierrePeriodosDAL
     Public Sub cerrarMes(ByVal objcierre As CierrePeriodos)
         Try
             Using dbCommand As New SqlCommand
-                dbCommand.Connection = FormPrincipal.cnxion
+                dbCommand.Connection =conexion.cnxbd
                 dbCommand.CommandType = CommandType.StoredProcedure
                 dbCommand.CommandText = "SP_CIERRE_MES_CERRAR"
                 dbCommand.Parameters.Add(New SqlParameter("@cierreMes", SqlDbType.Structured)).Value = objcierre.dtCierre

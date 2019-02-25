@@ -1,8 +1,13 @@
-﻿Public Class NotaProveedorDAL
+﻿
+Imports System.Data.SqlClient
+
+Public Class NotaProveedorDAL
+    Dim conexion As New ConexionBD
     Public Sub crearNotaProveedor(ByVal objNotaProveedor As NotaProveedor, pUSuario As Integer)
         Try
+            conexion.conectar()
             Using dbCommand As New SqlCommand
-                dbCommand.Connection = FormPrincipal.cnxion
+                dbCommand.Connection = conexion.cnxbd
                 dbCommand.CommandType = CommandType.StoredProcedure
                 dbCommand.CommandText = "SP_NOTA_PROVEEDOR_CREAR"
                 dbCommand.Parameters.Add(New SqlParameter("@Comprobante", SqlDbType.NVarChar)).Value = objNotaProveedor.comprobante
@@ -16,18 +21,21 @@
                 dbCommand.Parameters.Add(New SqlParameter("@detalleNotaProveedor", SqlDbType.Structured)).Value = objNotaProveedor.dtCuentas
                 dbCommand.Parameters.Add(New SqlParameter("@Usuario_Creacion", SqlDbType.Int)).Value = pUSuario
                 dbCommand.ExecuteNonQuery()
-                FuncionesContables.aumentarConsecutivo(objNotaProveedor.idEmpresa, objNotaProveedor.codigoDocumento)
+                FuncionesContables.aumentarConsecutivo(objNotaProveedor.codigoDocumento)
             End Using
         Catch ex As Exception
             Throw ex
+        Finally
+            conexion.desconectar()
         End Try
 
     End Sub
 
     Public Sub actualizarNotaProveedor(ByVal objNotaProveedor As NotaProveedor, pUSuario As Integer)
         Try
+            conexion.conectar()
             Using dbCommand As New SqlCommand
-                dbCommand.Connection = FormPrincipal.cnxion
+                dbCommand.Connection = conexion.cnxbd
                 dbCommand.CommandType = CommandType.StoredProcedure
                 dbCommand.CommandText = "SP_NOTA_PROVEEDOR_ACTUALIZAR"
                 dbCommand.Parameters.Add(New SqlParameter("@comprobante", SqlDbType.NVarChar)).Value = objNotaProveedor.identificador
@@ -41,6 +49,8 @@
             End Using
         Catch ex As Exception
             Throw ex
+        Finally
+            conexion.desconectar()
         End Try
     End Sub
 End Class

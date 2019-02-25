@@ -4,7 +4,7 @@ Public Class ComprobanteEgresoDAL
     Public Shared Sub guardarComprobante(objComprobante As PagosDirecto)
         Try
             Using comando = New SqlCommand
-                comando.Connection = FormPrincipal.cnxion
+                comando.Connection =conexion.cnxbd
                 comando.CommandType = CommandType.StoredProcedure
                 comando.CommandText = "SP_COMPROBANTE_EGRESO_CREAR"
                 comando.Parameters.Add(New SqlParameter("@comprobante", SqlDbType.NVarChar)).Value = objComprobante.comprobante

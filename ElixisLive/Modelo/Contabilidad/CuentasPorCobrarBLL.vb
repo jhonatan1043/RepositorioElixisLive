@@ -8,10 +8,4 @@
             objCuentasPorCobrarDal.actualizarcuentasCXP(objCuentaPorCobrar, pUsuario)
         End If
     End Sub
-    Public Sub guardarNuevaRadicacion(ByVal objCuentaPorCobrar As CuentasPorCobrar)
-        objCuentasPorCobrarDal.guardarNuevaFechaRadicacion(objCuentaPorCobrar)
-    End Sub
-    Public Sub guardarExoneracion(ByVal objCuentaPorCobrar As CuentasPorCobrar)
-        objCuentasPorCobrarDal.guardarFactExonerada(objCuentaPorCobrar)
-    End Sub
 End Class

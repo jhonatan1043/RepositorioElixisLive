@@ -1,9 +1,10 @@
-﻿Public Class ProgramacionPagoNominaDAL
+﻿Imports System.Data.SqlClient
+Public Class ProgramacionPagoNominaDAL
     Public Sub crearProgramacionPagoNomina(ByVal objProgramacionPagoNomina As ProgramacionPagoNomina)
         Try
             Using dbCommand As New SqlCommand
 
-                dbCommand.Connection = FormPrincipal.cnxion
+                dbCommand.Connection =conexion.cnxbd
                 dbCommand.CommandType = CommandType.StoredProcedure
                 dbCommand.CommandText = "SP_PROGRAMACION_NOMINA_CREAR"
                 dbCommand.Parameters.Add(New SqlParameter("@programacionNomina", SqlDbType.Structured)).Value = objProgramacionPagoNomina.dtNomina

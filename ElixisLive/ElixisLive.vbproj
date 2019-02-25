@@ -161,6 +161,7 @@
     <Compile Include="Controlador\Contabilidad\PucDAL.vb" />
     <Compile Include="Controlador\Contabilidad\RecaudoDAL.vb" />
     <Compile Include="Controlador\Contabilidad\RetencionIvaDAL.vb" />
+    <Compile Include="Controlador\Contabilidad\RetiroDocumentoContaDAL.vb" />
     <Compile Include="Controlador\Gestion\CompraDAL.vb" />
     <Compile Include="Controlador\Gestion\GastoServicioDAL.vb" />
     <Compile Include="Controlador\Gestion\VentaDAL.vb" />

@@ -50,13 +50,13 @@ Public Class FuncionesContables
     End Function
     Public Shared Function validarDatosDgv(dgvcuentas As DataGridView, columna As Integer)
         If (dgvcuentas.RowCount = 1) Then
-            MsgBox("No se puede guardar registros en blanco", MsgBoxStyle.OkOnly + MsgBoxStyle.Exclamation, "Atención")
+            EstiloMensajes.mostrarMensajeAdvertencia("No se puede guardar registros en blanco")
             dgvcuentas.Focus()
             Return False
         Else
             For i = 0 To dgvcuentas.Rows.Count - 2
                 If dgvcuentas.Rows(i).Cells(columna).Value.ToString = "" Then
-                    MsgBox("Debe ingresar una cuenta en la fila " & i + 1 & " ", 48, "Atención")
+                    EstiloMensajes.mostrarMensajeAdvertencia("Debe ingresar una cuenta en la fila " & i + 1)
                     Return False
                 End If
             Next
@@ -116,7 +116,9 @@ Public Class FuncionesContables
     End Function
 
     Public Shared Function sumaRetencion(ByVal codigoPuc As Integer, ByVal dtContable As DataGridView)
+        Dim objConexion As New ConexionBD
         Try
+            objConexion.conectar()
             Dim dtNuevo, dtnuevasFilas As New DataTable
             dtNuevo = dtContable.DataSource.copy
             dtnuevasFilas = dtNuevo.Clone
@@ -126,7 +128,7 @@ Public Class FuncionesContables
             Next
 
             Using dbCommand As New SqlCommand
-                dbCommand.Connection = FormPrincipal.cnxion
+                dbCommand.Connection = objConexion.cnxbd
                 dbCommand.CommandType = CommandType.StoredProcedure
                 dbCommand.CommandText = Consultas.SUMA_RETENCION
                 dbCommand.Parameters.Add(New SqlParameter("@detalle", SqlDbType.Structured)).Value = dtnuevasFilas
@@ -147,16 +149,20 @@ Public Class FuncionesContables
         Return Nothing
     End Function
     Public Shared Sub aumentarConsecutivo(pCodigo As Integer)
+        Dim objConexion As New ConexionBD
         Try
+            objConexion.conectar()
             Using dbCommand As New SqlCommand
-                dbCommand.Connection = FormPrincipal.cnxion
+                dbCommand.Connection = objConexion.cnxbd
                 dbCommand.CommandType = CommandType.StoredProcedure
-                dbCommand.CommandText = Sentencias.AUMENTAR_CONSECUTIVO
+                dbCommand.CommandText = Consultas.AUMENTAR_CONSECUTIVO
                 dbCommand.Parameters.Add(New SqlParameter("@CODIGODOCUMENTO", SqlDbType.Int)).Value = pCodigo
                 dbCommand.ExecuteNonQuery()
             End Using
         Catch ex As Exception
             Throw ex
+        Finally
+            objConexion.desconectar()
         End Try
     End Sub
     Public Shared Sub removerUltimafila(dt As DataTable, datagrid As DataGridView)
@@ -172,7 +178,8 @@ Public Class FuncionesContables
         Return Nothing
     End Function
 
-    Public Shared Sub verificarCuenta(indiceFila As Integer, codigoPuc As Integer, codigoCuenta As Integer, nombreColumnsCodigo As String, nombreColumns As String, dtComprobante As DataTable)
+    Public Shared Sub verificarCuenta(indiceFila As Integer, codigoPuc As Integer, codigoCuenta As Integer,
+                                      nombreColumnsCodigo As String, nombreColumns As String, dtComprobante As DataTable)
         Dim dtrows As DataRow
         Dim descripcion As String
         Dim params As New List(Of String)
@@ -187,7 +194,7 @@ Public Class FuncionesContables
             ElseIf Not String.IsNullOrEmpty(descripcion) AndAlso Not String.IsNullOrEmpty(dtComprobante.Rows(indiceFila).Item(nombreColumns).ToString) Then
                 dtComprobante.Rows(indiceFila).Item(nombreColumns) = descripcion
             Else
-                If MsgBox("Esta cuenta no existe ¿Desea crearla?", MsgBoxStyle.YesNo + MsgBoxStyle.Question, "Crear") = MsgBoxResult.Yes Then
+                If EstiloMensajes.mostrarMensajePregunta("Esta cuenta no existe ¿Desea crearla") = Constantes.SI Then
                     Dim formCuenta As New FormCuentasPuc
                     formCuenta.ShowDialog()
                 Else
@@ -221,16 +228,16 @@ Public Class FuncionesContables
         If Not IsNothing(drCuenta) Then
             Return drCuenta
         Else
-            MsgBox("Esta cuenta no existe", MsgBoxStyle.Exclamation)
+            EstiloMensajes.mostrarMensajeAdvertencia("Esta cuenta no existe")
         End If
         Return Nothing
     End Function
     Public Shared Function validardgv(dt As DataTable) As Boolean
         If dt.Select("debito =0 and credito=0").Count > 1 Then
-            MsgBox("Hay cuentas con valores en cero!!", MsgBoxStyle.Exclamation)
+            EstiloMensajes.mostrarMensajeAdvertencia("Hay cuentas con valores en cero!!")
             Return False
             If dt.Rows.Count = 1 Then
-                MsgBox("Por favor corrija el movimiento, podria faltar datos!!", MsgBoxStyle.Exclamation)
+                EstiloMensajes.mostrarMensajeAdvertencia("Por favor corrija el movimiento, podria faltar datos!!")
                 Return False
             End If
         End If
@@ -239,7 +246,7 @@ Public Class FuncionesContables
 
     Public Shared Function validarFechaFutura(fecha As DateTimePicker) As Boolean
         If fecha.Value.Date > Generales.fechaActualServidor Then
-            MsgBox("La fecha no puede ser mayor a la actual", MsgBoxStyle.Exclamation)
+            EstiloMensajes.mostrarMensajeAdvertencia("La fecha no puede ser mayor a la actual")
             fecha.Value = Generales.fechaActualServidor
             Return False
         End If

@@ -5,7 +5,7 @@ Public Class CuentaClasificacionDAL
     Public Shared Sub actualizarClasificacionCuentas(objClasificacionCuentaHC As ClasificacionCuentaHC)
         Try
             Using dbCommand As New SqlCommand
-                dbCommand.Connection = FormPrincipal.cnxion
+                dbCommand.Connection =conexion.cnxbd
                 dbCommand.CommandType = CommandType.StoredProcedure
                 dbCommand.CommandText = "SP_CUENTAS_UCI_ACTUALIZAR"
 

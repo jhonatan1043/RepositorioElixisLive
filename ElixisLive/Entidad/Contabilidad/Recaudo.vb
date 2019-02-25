@@ -25,10 +25,10 @@
         dtDetalle.Columns.Add("Descripcion", Type.GetType("System.String"))
         dtDetalle.Columns.Add("Debito", Type.GetType("System.Double")).DefaultValue = 0
         dtDetalle.Columns.Add("Credito", Type.GetType("System.Double")).DefaultValue = 0
-        sqlBuscarRecaudo = Sentencias.RECAUDO_BUSCAR
-        sqlGuardarRecaudo = Sentencias.RECAUDO_GUARDAR
-        sqlCargarRecaudo = Sentencias.RECAUDO_CARGAR
-        sqlCargarDetalleRecaudo = Sentencias.RECAUDO_CARGAR_D
+        sqlBuscarRecaudo = Consultas.RECAUDO_BUSCAR
+        sqlGuardarRecaudo = Consultas.RECAUDO_GUARDAR
+        sqlCargarRecaudo = Consultas.RECAUDO_CARGAR
+        sqlCargarDetalleRecaudo = Consultas.RECAUDO_CARGAR_D
     End Sub
 
 End Class

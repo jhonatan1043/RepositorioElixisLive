@@ -1,9 +1,13 @@
-﻿Public Class NotaClienteDAL
+﻿Imports System.Data.SqlClient
+
+Public Class NotaClienteDAL
+    Dim conexion As New ConexionBD
     Public Sub crearNotaCliente(ByVal objNotaCliente As NotaCliente, pUSuario As Integer)
         Try
+            conexion.conectar()
             Using dbCommand As New SqlCommand
-                objNotaCliente.comprobante = FuncionesContables.verificarConsecutivo(SesionActual.idEmpresa, objNotaCliente.codigoDocumento)
-                dbCommand.Connection = FormPrincipal.cnxion
+                objNotaCliente.comprobante = FuncionesContables.verificarConsecutivo(objNotaCliente.codigoDocumento)
+                dbCommand.Connection = conexion.cnxbd
                 dbCommand.CommandType = CommandType.StoredProcedure
                 dbCommand.CommandText = "SP_NOTA_CLIENTE_CREAR"
                 dbCommand.Parameters.Add(New SqlParameter("@Comprobante", SqlDbType.NVarChar)).Value = objNotaCliente.comprobante
@@ -18,18 +22,21 @@
                 dbCommand.Parameters.Add(New SqlParameter("@detalleNota", SqlDbType.Structured)).Value = objNotaCliente.dtCuentas
                 dbCommand.Parameters.Add(New SqlParameter("@Usuario_Creacion", SqlDbType.Int)).Value = pUSuario
                 dbCommand.ExecuteNonQuery()
-                FuncionesContables.aumentarConsecutivo(objNotaCliente.idEmpresa, objNotaCliente.codigoDocumento)
+                FuncionesContables.aumentarConsecutivo(objNotaCliente.codigoDocumento)
             End Using
         Catch ex As Exception
             Throw ex
+        Finally
+            conexion.desconectar()
         End Try
 
     End Sub
 
     Public Sub actualizarNotaCliente(ByVal objNotaCliente As NotaCliente, pUSuario As Integer)
         Try
+            conexion.conectar()
             Using dbCommand As New SqlCommand
-                dbCommand.Connection = FormPrincipal.cnxion
+                dbCommand.Connection = conexion.cnxbd
                 dbCommand.CommandType = CommandType.StoredProcedure
                 dbCommand.CommandText = "SP_NOTA_CLIENTE_ACTUALIZAR"
                 dbCommand.Parameters.Add(New SqlParameter("@comprobante", SqlDbType.NVarChar)).Value = objNotaCliente.identificador
@@ -44,6 +51,8 @@
             End Using
         Catch ex As Exception
             Throw ex
+        Finally
+            conexion.desconectar()
         End Try
     End Sub
 End Class

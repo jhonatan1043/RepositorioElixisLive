@@ -1,9 +1,13 @@
-﻿Public Class CuentaPorPagarDAL
+﻿Imports System.Data.SqlClient
+
+Public Class CuentaPorPagarDAL
+    Dim conexion As New ConexionBD
     Public Sub CuentaPorPagar(ByVal objcuentasCXP As CuentasPorPagar, pUSuario As Integer)
         Try
+            conexion.conectar()
             Using dbCommand As New SqlCommand
-                objcuentasCXP.comprobante = FuncionesContables.verificarConsecutivo(SesionActual.idEmpresa, objcuentasCXP.codigoDocumento)
-                dbCommand.Connection = FormPrincipal.cnxion
+                objcuentasCXP.comprobante = FuncionesContables.verificarConsecutivo(objcuentasCXP.codigoDocumento)
+                dbCommand.Connection = conexion.cnxbd
                 dbCommand.CommandType = CommandType.StoredProcedure
                 dbCommand.CommandText = "SP_CUENTAS_POR_PAGAR_CREAR"
                 dbCommand.Parameters.Add(New SqlParameter("@Comprobante", SqlDbType.NVarChar)).Value = objcuentasCXP.comprobante
@@ -22,18 +26,21 @@
                 dbCommand.Parameters.Add(New SqlParameter("@detalle_carteracxp", SqlDbType.Structured)).Value = objcuentasCXP.dtCuentas
                 dbCommand.Parameters.Add(New SqlParameter("@Usuario_Creacion", SqlDbType.Int)).Value = pUSuario
                 dbCommand.ExecuteNonQuery()
-                FuncionesContables.aumentarConsecutivo(objcuentasCXP.idEmpresa, objcuentasCXP.codigoDocumento)
+                FuncionesContables.aumentarConsecutivo(objcuentasCXP.codigoDocumento)
             End Using
         Catch ex As Exception
             Throw ex
+        Finally
+            conexion.desconectar()
         End Try
 
     End Sub
 
     Public Sub actualizarcuentasCXP(ByVal objcuentasCXP As CuentasPorPagar, pUSuario As Integer)
         Try
+            conexion.conectar()
             Using dbCommand As New SqlCommand
-                dbCommand.Connection = FormPrincipal.cnxion
+                dbCommand.Connection = conexion.cnxbd
                 dbCommand.CommandType = CommandType.StoredProcedure
                 dbCommand.CommandText = "SP_FACTURA_PROVEEDOR_ACTUALIZAR"
                 dbCommand.Parameters.Add(New SqlParameter("@comprobante", SqlDbType.NVarChar)).Value = objcuentasCXP.identificador
@@ -48,6 +55,8 @@
             End Using
         Catch ex As Exception
             Throw ex
+        Finally
+            conexion.desconectar()
         End Try
     End Sub
 End Class

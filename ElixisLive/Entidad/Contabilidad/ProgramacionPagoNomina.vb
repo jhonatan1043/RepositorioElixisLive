@@ -1,4 +1,7 @@
-﻿Public Class ProgramacionPagoNomina
+﻿
+Imports System.Data.SqlClient
+
+Public Class ProgramacionPagoNomina
     Public Property codigoProgramacionPago As Integer
     Public Property dtEgresoDetalle As DataTable
     Public Property dtEgreso As DataTable
@@ -6,7 +9,6 @@
     Public Property dtNomina As DataTable
     Public Property comprobante As String
     Public Property codigoPuc As Integer
-    Public Property idEmpresa As Integer
     Public Property fecha As Date
     Public Property codigoDocumento As Integer
     Public Property nomina As Integer
@@ -37,7 +39,6 @@
         dtEgresoDetalle.Columns.Add("Orden", Type.GetType("System.Int32"))
 
         dtEgreso.Columns.Add("comprobante", Type.GetType("System.String"))
-        dtEgreso.Columns.Add("idEmpresa", Type.GetType("System.Int32"))
         dtEgreso.Columns.Add("idProveedor", Type.GetType("System.Int32"))
         dtEgreso.Columns.Add("codigoFactura", Type.GetType("System.String"))
         dtEgreso.Columns.Add("codigoDocumento", Type.GetType("System.Int32"))
@@ -86,15 +87,15 @@
         dtNomina.Rows(dtNomina.Rows.Count - 1).Item("Usuario") = SesionActual.idUsuario
     End Sub
     Public Sub llenarCuentas()
+        Dim conexion As New ConexionBD
         dtProgramacion.AcceptChanges()
         For indice = 0 To dtProgramacion.Rows.Count - 1
-            comprobante = FuncionesContables.verificarConsecutivo(SesionActual.idEmpresa, Constantes.COMPROBANTE_DE_EGRESO)
+            comprobante = FuncionesContables.verificarConsecutivo(Constantes.COMPROBANTE_DE_EGRESO)
             codigoPuc = FuncionesContables.obtenerPucActivo
             dtEgreso.Clear()
             dtEgresoDetalle.Clear()
             dtEgreso.Rows.Add()
             dtEgreso.Rows(0).Item("Comprobante") = comprobante
-            dtEgreso.Rows(0).Item("idEmpresa") = idEmpresa
             dtEgreso.Rows(0).Item("codigoDocumento") = codigoDocumento
             dtEgreso.Rows(0).Item("codigoFactura") = comprobante
             dtEgreso.Rows(0).Item("idProveedor") = dtProgramacion.Rows(indice).Item("Id_Empleado")
@@ -112,13 +113,13 @@
 
             Try
                 Using dbCommand As New SqlCommand
-                    dbCommand.Connection = FormPrincipal.cnxion
+                    dbCommand.Connection = conexion.cnxbd
                     dbCommand.CommandType = CommandType.StoredProcedure
                     dbCommand.CommandText = "SP_COMPROBANTE_EGRESO_NOMINA_CREAR"
                     dbCommand.Parameters.Add(New SqlParameter("@ComprobanteEgreso", SqlDbType.Structured)).Value = dtEgreso
                     dbCommand.Parameters.Add(New SqlParameter("@EgresoDetalle", SqlDbType.Structured)).Value = dtEgresoDetalle
                     dbCommand.ExecuteNonQuery()
-                    FuncionesContables.aumentarConsecutivo(SesionActual.idEmpresa, Constantes.COMPROBANTE_DE_EGRESO)
+                    FuncionesContables.aumentarConsecutivo(Constantes.COMPROBANTE_DE_EGRESO)
                 End Using
             Catch ex As Exception
                 Throw ex

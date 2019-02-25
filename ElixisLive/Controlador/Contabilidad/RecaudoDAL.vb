@@ -1,9 +1,14 @@
-﻿Public Class RecaudoDAL
+﻿Imports System.Data.SqlClient
+Public Class RecaudoDAL
+
     Public Shared Function guardarRecaudo(objRecaudo As Recaudo)
+        Dim conexion As New ConexionBD
         Try
+            conexion.conectar()
+
             Using comando = New SqlCommand()
-                Using trnsccion = FormPrincipal.cnxion.BeginTransaction()
-                    comando.Connection = FormPrincipal.cnxion
+                Using trnsccion = conexion.cnxbd.BeginTransaction()
+                    comando.Connection = conexion.cnxbd
                     comando.Transaction = trnsccion
                     comando.CommandType = CommandType.StoredProcedure
                     comando.Parameters.Clear()

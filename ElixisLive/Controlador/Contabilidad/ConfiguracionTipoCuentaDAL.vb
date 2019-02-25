@@ -1,9 +1,12 @@
-﻿Public Class ConfiguracionTipoCuentaDAL
+﻿Imports System.Data.SqlClient
+Public Class ConfiguracionTipoCuentaDAL
     Public Sub crearConfiguracion(ByVal objConfiguracionTipoCuenta As ConfiguracionTipoCuenta)
+        Dim conexion As New ConexionBD
         Try
+            conexion.conectar()
             Using dbCommand As New SqlCommand
 
-                dbCommand.Connection = FormPrincipal.cnxion
+                dbCommand.Connection = conexion.cnxbd
                 dbCommand.CommandType = CommandType.StoredProcedure
                 dbCommand.CommandText = "SP_TIPO_CUENTA_CREAR"
                 dbCommand.Parameters.Add(New SqlParameter("@TipoCuenta", SqlDbType.Structured)).Value = objConfiguracionTipoCuenta.dtCuentas
@@ -11,6 +14,8 @@
             End Using
         Catch ex As Exception
             Throw ex
+        Finally
+            conexion.desconectar()
         End Try
     End Sub
 End Class

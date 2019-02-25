@@ -22,6 +22,22 @@ Public Class Funciones
         Return listaParams
 
     End Function
+    Public Shared Function verificaExistenciaRecaudo(comprobante As String) As String
+        Dim params As New List(Of String)
+        Dim codigo As String = Nothing
+        Dim dFila As DataRow
+        params.Add(comprobante)
+        Try
+            dFila = Generales.cargarItem(Consultas.CONSULTAR_EXISTENCIA_RECAUDO, params)
+            If Not IsNothing(dFila) Then
+                codigo = dFila.Item(0)
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+
+        Return codigo
+    End Function
     Public Shared Function consultarInicioSesion(params As List(Of String)) As DataRow
         Dim dFila As DataRow = Nothing
         Try

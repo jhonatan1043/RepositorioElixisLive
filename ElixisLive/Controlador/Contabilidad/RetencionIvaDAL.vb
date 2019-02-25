@@ -5,7 +5,7 @@ Public Class RetencionIvaDAL
     Public Shared Sub crearRetencionIVA(ByVal objRetencionIVA As RetencionIVA, pUSuario As Integer)
         Try
             Using dbCommand As New SqlCommand
-                dbCommand.Connection = FormPrincipal.cnxion
+                dbCommand.Connection =conexion.cnxbd
                 dbCommand.CommandType = CommandType.StoredProcedure
                 dbCommand.CommandText = "SP_RETENCION_IVA_CREAR"
 

@@ -1,9 +1,12 @@
-﻿Public Class CertificadoRetencionDAL
+﻿Imports System.Data.SqlClient
+Public Class CertificadoRetencionDAL
 
     Public Shared Sub obtenerValorRetencion(params As CertificadoRetencionParams)
+        Dim conexion As New ConexionBD
         Try
+            conexion.conectar()
             Using dbCommand As New SqlCommand
-                dbCommand.Connection = FormPrincipal.cnxion
+                dbCommand.Connection = conexion.cnxbd
                 dbCommand.CommandType = CommandType.StoredProcedure
                 dbCommand.CommandText = "SP_E_CERTIFICADO_RETENCION_CARGAR"
 
@@ -21,6 +24,8 @@
 
         Catch ex As Exception
             Throw
+        Finally
+            conexion.desconectar()
         End Try
     End Sub
 

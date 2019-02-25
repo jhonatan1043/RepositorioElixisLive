@@ -12,6 +12,17 @@ Public Class Generales
     Public Delegate Sub cargaInfoFormObj(ByVal fila As DataRow)
     Public Delegate Sub subRutina()
     Private Shared objConexion As New ConexionBD
+    Public Shared Function fechaActualServidor() As DateTime
+        Try
+            Dim fechaServidor As DateTime
+            Dim dr As DataRow
+            dr = cargarItem(Consultas.CONSULTAR_FECHA_SERVIDOR, Nothing)
+            fechaServidor = dr(0)
+            Return fechaServidor
+        Catch ex As Exception
+            MsgBox(ex.Message, MsgBoxStyle.Critical)
+        End Try
+    End Function
     Public Shared Sub getConnReporte(Itblas As Tables)
         Dim connReporte As New ConnectionInfo
 

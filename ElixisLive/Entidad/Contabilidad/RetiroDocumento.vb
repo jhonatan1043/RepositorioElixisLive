@@ -11,10 +11,9 @@
         Dim params As New List(Of String)
         params.Add(fecha)
         params.Add(fecha2)
-        params.Add(SesionActual.idEmpresa)
         params.Add(anulado)
         params.Add(busqueda)
-        General.llenarTabla(Sentencias.RETIRO_DOCUMENTO, params, dtDocumento)
+        Generales.llenarTabla(Consultas.RETIRO_DOCUMENTO, params, dtDocumento)
     End Sub
 
 

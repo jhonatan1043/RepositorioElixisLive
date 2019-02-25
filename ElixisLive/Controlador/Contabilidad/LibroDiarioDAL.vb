@@ -1,10 +1,14 @@
-﻿Public Class LibroDiarioDAL
+﻿Imports System.Data.SqlClient
+
+Public Class LibroDiarioDAL
 
 
     Public Sub calcularLibroDiario(params As LibroDiarioParams)
+        Dim conexion As New ConexionBD
         Try
+            conexion.conectar()
             Using dbCommand As New SqlCommand
-                dbCommand.Connection = FormPrincipal.cnxion
+                dbCommand.Connection = conexion.cnxbd
                 dbCommand.CommandType = CommandType.StoredProcedure
                 dbCommand.CommandText = "SP_E_LIBRO_DIARIO_CARGAR"
 
@@ -20,6 +24,8 @@
 
         Catch ex As Exception
             Throw
+        Finally
+            conexion.desconectar()
         End Try
     End Sub
 End Class

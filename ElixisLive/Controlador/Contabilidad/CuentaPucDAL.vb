@@ -4,10 +4,11 @@ Public Class CuentaPucDAL
 
     Public Shared Sub crearCuentaPUC(objCuentaPUC As CuentaPUC,
                                    pUsuario As Integer)
-
+        Dim conexion As New ConexionBD
         Try
+            conexion.conectar()
             Using dbCommand As New SqlCommand
-                dbCommand.Connection = FormPrincipal.cnxion
+                dbCommand.Connection = conexion.cnxbd
                 dbCommand.CommandType = CommandType.StoredProcedure
                 dbCommand.CommandText = "SP_PUC_DETALLE_GUARDAR"
 
@@ -39,34 +40,43 @@ Public Class CuentaPucDAL
             End Using
         Catch ex As Exception
             Throw ex
+        Finally
+            conexion.desconectar()
         End Try
     End Sub
 
     Public Shared Sub cargarCuentasPadre(ByVal pCodigo As String,
                                          ByRef dsCuentas As DataSet)
-
+        Dim conexion As New ConexionBD
         Try
-            Using dbCommand As New SqlCommand("SP_PUC_DETALLE_CUENTAS_CARGAR " & pCodigo, FormPrincipal.cnxion)
+            conexion.conectar()
+            Using dbCommand As New SqlCommand("SP_PUC_DETALLE_CUENTAS_CARGAR " & pCodigo, conexion.cnxbd)
                 Using daCuentaPadre As New SqlDataAdapter(dbCommand)
                     daCuentaPadre.Fill(dsCuentas, "Padre")
                 End Using
             End Using
         Catch ex As Exception
             Throw ex
+        Finally
+            conexion.desconectar()
         End Try
     End Sub
 
     Public Shared Sub cargarCuentasHijas(ByVal pCodigo As String,
                                   ByRef dsCuentas As DataSet)
+        Dim conexion As New ConexionBD
 
         Try
-            Using dbCommand As New SqlCommand("SP_PUC_DETALLE_SUBCUENTAS_CARGAR " & pCodigo, FormPrincipal.cnxion)
+            conexion.conectar()
+            Using dbCommand As New SqlCommand("SP_PUC_DETALLE_SUBCUENTAS_CARGAR " & pCodigo, conexion.cnxbd)
                 Using daCuentaHija As New SqlDataAdapter(dbCommand)
                     daCuentaHija.Fill(dsCuentas, "Hijas")
                 End Using
             End Using
         Catch ex As Exception
             Throw ex
+        Finally
+            conexion.desconectar()
         End Try
 
     End Sub

@@ -1,8 +1,9 @@
-﻿Public Class ConfiguracionConceptosDianDAL
+﻿Imports System.Data.SqlClient
+Public Class ConfiguracionConceptosDianDAL
     Public Sub crearConfiguracion(ByVal objConceptoDian As ConfiguracionConceptosDian)
         Try
             Using dbCommand As New SqlCommand
-                dbCommand.Connection = FormPrincipal.cnxion
+                dbCommand.Connection =conexion.cnxbd
                 dbCommand.CommandType = CommandType.StoredProcedure
                 dbCommand.CommandText = "SP_CONFIGURACION_CONCEPTOS_CREAR"
                 dbCommand.Parameters.Add(New SqlParameter("@codigoConcepto", SqlDbType.NVarChar)).Value = objConceptoDian.codigoConcepto
