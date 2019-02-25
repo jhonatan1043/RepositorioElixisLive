@@ -140,11 +140,10 @@
         Try
             respuesta = Generales.anularRegistro(Consultas.CIERRE_DIA & "'" & dgvCuentas.Rows(dgvCuentas.CurrentRow.Index).Cells(0).Value & "'")
             If respuesta = True Then
-                MsgBox("la fecha ha sido abierta", MsgBoxStyle.Information)
+                EstiloMensajes.mostrarMensajeExitoso("la fecha ha sido abierta")
             End If
-
         Catch ex As Exception
-            Throw
+            Throw ex
         End Try
     End Sub
 
@@ -178,7 +177,7 @@
     Private Sub dgvCuentas_CellClick(sender As System.Object, e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dgvCuentas.CellClick
         If e.ColumnIndex = 2 Then
             If dgvCuentas.Rows(dgvCuentas.CurrentRow.Index).Cells(2).Value = False Then
-                If MsgBox("¿Desea cerrar esta fecha (" & dgvCuentas.Rows(dgvCuentas.CurrentRow.Index).Cells(0).Value & ")?", MsgBoxStyle.YesNo + MsgBoxStyle.Question, "Cerrar") = MsgBoxResult.Yes Then
+                If EstiloMensajes.mostrarMensajePregunta("Desea cerrar esta fecha (" & dgvCuentas.Rows(dgvCuentas.CurrentRow.Index).Cells(0).Value & ")") = Constantes.SI Then
                     dgvCuentas.Rows(dgvCuentas.CurrentRow.Index).Cells(2).Value = True
                     dtPeriodos.AcceptChanges()
                     dgvCuentas.EndEdit()
@@ -189,7 +188,7 @@
                     dgvCuentas.EndEdit()
                 End If
             Else
-                If MsgBox("¿Desea abrir esta fecha (" & dgvCuentas.Rows(dgvCuentas.CurrentRow.Index).Cells(0).Value & ")?", MsgBoxStyle.YesNo + MsgBoxStyle.Question, "Abrir") = MsgBoxResult.Yes Then
+                If EstiloMensajes.mostrarMensajePregunta("Desea abrir esta fecha (" & dgvCuentas.Rows(dgvCuentas.CurrentRow.Index).Cells(0).Value & ")") = Constantes.SI Then
                     dgvCuentas.Rows(dgvCuentas.CurrentRow.Index).Cells(2).Value = False
                     abrirDia()
                     dtPeriodos.AcceptChanges()
