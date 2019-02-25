@@ -358,7 +358,7 @@
       <DependentUpon>rptLibroMayor.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Reportes\factura.vb">
+    <Compile Include="Reportes\Factura\factura.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>factura.rpt</DependentUpon>
@@ -818,7 +818,7 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptLibroMayor1.vb</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\factura.rpt">
+    <EmbeddedResource Include="Reportes\Factura\factura.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>factura.vb</LastGenOutput>
     </EmbeddedResource>
