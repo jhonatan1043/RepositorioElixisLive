@@ -12,7 +12,8 @@
     Public Const NO_EDITABLE = 0
     Public Const CSERVICIO = 2
     Public Const CPRODUCTO = 1
-
+    Public Const CXC = "f10303"
+    Public Const CXP = "f10203"
     Public Const SOLO_LECTURA = 1
     Public Const SOLO_ESCRITURA = 2
     Public Const LECTURA_ESCRITURA = 3

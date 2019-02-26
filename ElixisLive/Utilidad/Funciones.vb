@@ -42,7 +42,42 @@ Public Class Funciones
         End Try
         Return True
     End Function
-
+    Public Shared Function solicita(ByVal cdna As String, ByVal itm As String) As String
+        Dim conexion As New ConexionBD
+        Dim vlor As String = ""
+        Try
+            conexion.conectar()
+            Using cnslta = New SqlCommand(cdna, conexion.cnxbd)
+                Using rsltdo = cnslta.ExecuteReader()
+                    If rsltdo.HasRows Then
+                        rsltdo.Read()
+                        vlor = rsltdo.Item(itm).ToString
+                    End If
+                End Using
+            End Using
+        Catch ex As Exception
+            Throw ex
+        Finally
+            conexion.desconectar()
+        End Try
+        Return vlor
+    End Function
+    Friend Shared Function Fecha(ByVal frmto As Integer) As String
+        Dim fcha As String
+        If Validar(frmto) Then
+            fcha = solicita("SELECT CONVERT(varchar,GETDATE()," & frmto.ToString & ") AS Fecha", "Fecha")
+            Return fcha
+        Else
+            Return "0"
+        End If
+    End Function
+    Private Shared Function Validar(ByVal frmto As Integer) As Boolean
+        If (0 <= frmto < 15) Or (99 < frmto < 115) Then
+            Return True
+        Else
+            Return False
+        End If
+    End Function
     Public Shared Function getParametros(lista As List(Of String)) As String
 
         If lista Is Nothing OrElse lista.Count = 0 Then 'OrElse lista.First Is Nothing Then
