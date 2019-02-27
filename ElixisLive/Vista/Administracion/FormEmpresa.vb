@@ -47,7 +47,7 @@
             objEmpresa.codigoFormulario = Tag.codigo
             params.Add(objEmpresa.codigoFormulario)
             Generales.llenardgv(Sentencias.PARAMETROS_CONSULTAR, dgvParametro, params)
-            Generales.diseñoDGV(dgvParametro)
+            Generales.personalizarDatagrid(dgvParametro)
             Generales.diseñoGrillaParametros(dgvParametro)
             cargarComboDepartamento()
             cargarComboCiudad()
@@ -125,7 +125,7 @@
                 crearImagen(dfila)
                 params.Add(objEmpresa.codigoFormulario)
                 Generales.llenardgv(objEmpresa.sqlCargarDetalle, dgvParametro, params)
-                Generales.diseñoDGV(dgvParametro)
+                Generales.personalizarDatagrid(dgvParametro)
                 Generales.diseñoGrillaParametros(dgvParametro)
                 Generales.habilitarBotones(ToolStrip1)
                 Generales.deshabilitarControles(Me)

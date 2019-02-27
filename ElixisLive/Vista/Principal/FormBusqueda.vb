@@ -50,7 +50,7 @@
             dgvBusqueda.Columns(I).SortMode = DataGridViewColumnSortMode.Automatic
         Next
         'establecerPosicionBusqueda()
-        Generales.diseñoDGV(dgvBusqueda)
+        Generales.personalizarDatagrid(dgvBusqueda)
         If isOcultaCol Then
             dgvBusqueda.Columns(0).Visible = False
         End If

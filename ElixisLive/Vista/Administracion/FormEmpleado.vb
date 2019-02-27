@@ -30,7 +30,7 @@ Public Class FormEmpleado
             If dgvParametro.ColumnCount = 0 Then
                 '  params.Add(ElementoMenu.codigo)
                 Generales.llenardgv(Sentencias.PARAMETROS_CONSULTAR, dgvParametro, params)
-                Generales.diseñoDGV(dgvParametro)
+                Generales.personalizarDatagrid(dgvParametro)
                 Generales.diseñoGrillaParametros(dgvParametro)
             End If
         Catch ex As Exception
@@ -67,7 +67,7 @@ Public Class FormEmpleado
                 crearImagen(dfila)
                 params.Add(objEmpleado.codigoFormulario)
                 Generales.llenardgv(objEmpleado.sqlCargarDetalle, dgvParametro, params)
-                Generales.diseñoDGV(dgvParametro)
+                Generales.personalizarDatagrid(dgvParametro)
                 Generales.diseñoGrillaParametros(dgvParametro)
                 controlVerificar()
             End If

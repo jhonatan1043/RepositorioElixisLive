@@ -12,7 +12,7 @@
             btNuevo.Enabled = True
             btBuscar.Enabled = True
             Generales.llenardgv(Sentencias.PARAMETROS_CONSULTAR, dgRegistro, params)
-            Generales.diseñoDGV(dgRegistro)
+            Generales.personalizarDatagrid(dgRegistro)
             Generales.diseñoGrillaParametros(dgRegistro)
             Generales.cargarCombo(Sentencias.MARCA_CONSULTAR, Nothing, "Nombre", "Codigo_Marca", cbMarca)
             Generales.cargarCombo("[SP_CONSULTAR_CATEGORIA]", Nothing, "Nombre", "Codigo_Categoria", cbCategoria)
@@ -51,7 +51,7 @@
                 txtCodigoBarra.Text = Generales.Ceros(objProducto.codigo, 5)
                 params.Add(objProducto.codigoFormulario)
                 Generales.llenardgv(objProducto.sqlCargarDetalle, dgRegistro, params)
-                Generales.diseñoDGV(dgRegistro)
+                Generales.personalizarDatagrid(dgRegistro)
                 controlVerificarControl()
             End If
             Generales.habilitarBotones(ToolStrip1)

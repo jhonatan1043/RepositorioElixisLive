@@ -258,7 +258,7 @@ Public Class Generales
                             vControl.Datasource.Clear()
                         End If
                     End If
-                    diseñoDGV(vControl)
+                    personalizarDatagrid(vControl)
                 Else
                     limpiarGrillaParametro(vControl)
                 End If
@@ -374,7 +374,7 @@ Public Class Generales
         End If
         Return Nothing
     End Function
-    Public Shared Sub diseñoDGV(ByRef dgv As DataGridView)
+    Public Shared Sub personalizarDatagrid(ByRef dgv As DataGridView)
         dgv.BackgroundColor = Color.White
         dgv.DefaultCellStyle.BackColor = Color.White
         dgv.DefaultCellStyle.ForeColor = Color.Black
@@ -382,27 +382,26 @@ Public Class Generales
         dgv.DefaultCellStyle.SelectionForeColor = Color.Black
         dgv.DefaultCellStyle.Font = New Font(Constantes.TIPO_LETRA_ELEMENTO, 9)
         dgv.EnableHeadersVisualStyles = False
-        dgv.ColumnHeadersDefaultCellStyle.BackColor = Color.LightSteelBlue
-        dgv.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black
+        dgv.ColumnHeadersDefaultCellStyle.BackColor = Color.SteelBlue
+        dgv.ColumnHeadersDefaultCellStyle.ForeColor = Color.White
         dgv.AlternatingRowsDefaultCellStyle.Font = New Font(Constantes.TIPO_LETRA_ELEMENTO, 9)
         dgv.ColumnHeadersDefaultCellStyle.Font = New Font(Constantes.TIPO_LETRA_ELEMENTO, 9)
+        dgv.RowHeadersDefaultCellStyle.SelectionBackColor = Color.LightSteelBlue
         For indiceColumna = 0 To dgv.Columns.Count - 1
             dgv.Columns(indiceColumna).AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
         Next
-        AddHandler dgv.CellMouseEnter, AddressOf marcarFila
-        AddHandler dgv.CellMouseLeave, AddressOf desmarcarFila
+        AddHandler dgv.CellMouseEnter, AddressOf resaltarFila
+        AddHandler dgv.CellMouseLeave, AddressOf quitarResaltadoFila
     End Sub
-    Public Shared Sub marcarFila(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs)
+    Public Shared Sub resaltarFila(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs)
         If e.RowIndex >= 0 Then
             sender.Rows(e.RowIndex).DefaultCellStyle.BackColor = Color.FromArgb(226, 234, 243)
         End If
-
     End Sub
-    Public Shared Sub desmarcarFila(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs)
+    Public Shared Sub quitarResaltadoFila(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs)
         If e.RowIndex >= 0 Then
             sender.Rows(e.RowIndex).DefaultCellStyle.BackColor = Color.White
         End If
-
     End Sub
     Public Shared Sub cargarForm(ByVal form As System.Windows.Forms.Form)
         FormPrincipal.Cursor = Cursors.WaitCursor
@@ -433,7 +432,7 @@ Public Class Generales
         End Try
         objConexion.desconectar()
         dgdgv.DataSource = dtTabla
-        diseñoDGV(dgdgv)
+        personalizarDatagrid(dgdgv)
     End Sub
     Public Shared Function cargarItem(ByVal consulta As String) As DataRow
         Dim dtTabla As New DataTable
@@ -513,17 +512,21 @@ Public Class Generales
                 vItem.text = vItem.text.ToString.ToUpper
             Else
                 vItem.Font = New Font(Constantes.TIPO_LETRA_ELEMENTO, 9)
+                vItem.foreColor = Color.Black
             End If
 
             If (TypeOf vItem Is TextBox) Or (TypeOf vItem Is RichTextBox) Or (TypeOf vItem Is MaskedTextBox) Or (TypeOf vItem Is DataGridView) Then
                 vItem.readonly = True
+                vItem.foreColor = Color.Black
             ElseIf (TypeOf vItem Is CheckBox) Or (TypeOf vItem Is RadioButton) Or (TypeOf vItem Is ComboBox) Or
                    ((TypeOf vItem Is Button) Or (TypeOf vItem Is TreeView) Or (TypeOf vItem Is DateTimePicker) Or (TypeOf vItem Is NumericUpDown)) Or
                    (TypeOf vItem Is CheckedListBox) Then
                 vItem.enabled = False
                 vItem.Font = New Font(Constantes.TIPO_LETRA_ELEMENTO, 9)
+                vItem.foreColor = Color.Black
             ElseIf (TypeOf vItem Is GroupBox) Or (vItem.hasChildren) Then
                 deshabilitarControles(vItem)
+                vItem.foreColor = Color.DimGray
             End If
 
         Next
@@ -557,6 +560,7 @@ Public Class Generales
                 vItem.Font = New Font(Constantes.TIPO_LETRA_ELEMENTO, 13)
             Else
                 vItem.Font = New Font(Constantes.TIPO_LETRA_ELEMENTO, 9)
+                vItem.foreColor = Color.Black
             End If
             If ((TypeOf vItem Is TextBox) Or (TypeOf vItem Is RichTextBox) Or (TypeOf vItem Is MaskedTextBox) Or (TypeOf vItem Is DataGridView)) And
                    Not (vItem.name.ToString.ToLower.Contains("txtcodigo")) Then
@@ -572,8 +576,10 @@ Public Class Generales
                    (TypeOf vItem Is CheckedListBox) Then
                 vItem.enabled = True
                 vItem.Font = New Font(Constantes.TIPO_LETRA_ELEMENTO, 9)
+                vItem.foreColor = Color.Black
             ElseIf (TypeOf vItem Is GroupBox) Or (vItem.hasChildren) Then
                 habilitarControles(vItem)
+                vItem.foreColor = Color.DimGray
             End If
 
         Next
@@ -778,7 +784,7 @@ Public Class Generales
         Catch ex As Exception
             Throw ex
         End Try
-        objConexion.desConectar()
+        objConexion.desconectar()
         Return contedor
     End Function
     Public Shared Sub mostrarMensaje(ByVal mensaje As String, icono As Image)
@@ -797,7 +803,7 @@ Public Class Generales
             Throw ex
             Return False
         End Try
-        objConexion.desConectar()
+        objConexion.desconectar()
         Return True
     End Function
     Public Shared Function getEstadoVF(pConsultaSQL As String,
@@ -812,14 +818,14 @@ Public Class Generales
                 consulta.Connection = objConexion.cnxbd
                 respuesta = consulta.ExecuteScalar()
             End Using
-            objConexion.desConectar()
+            objConexion.desconectar()
             Return respuesta
         Catch ex As Exception
             EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
-            objConexion.desConectar()
+            objConexion.desconectar()
             Return False
         End Try
-        objConexion.desConectar()
+        objConexion.desconectar()
     End Function
     Public Shared Sub subirArchivoFTP(objeto As Object)
         Dim segundoPlano As System.Threading.Thread

@@ -11,7 +11,7 @@
         Generales.deshabilitarBotones(ToolStrip1)
         Generales.deshabilitarControles(Me)
         validarGrilla()
-        Generales.diseñoDGV(dgvServicio)
+        Generales.personalizarDatagrid(dgvServicio)
 
         If estadoRegistro = True Then
             cargarCita(codigoCita)

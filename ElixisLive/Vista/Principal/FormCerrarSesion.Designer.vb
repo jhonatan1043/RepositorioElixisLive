@@ -40,7 +40,7 @@ Partial Class FormCerrarSesion
         '
         Me.Label3.BackColor = System.Drawing.Color.White
         Me.Label3.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.ForeColor = System.Drawing.Color.SteelBlue
+        Me.Label3.ForeColor = System.Drawing.Color.Black
         Me.Label3.Location = New System.Drawing.Point(261, 95)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(63, 23)
@@ -52,8 +52,8 @@ Partial Class FormCerrarSesion
         '
         Me.Label2.BackColor = System.Drawing.Color.White
         Me.Label2.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.SteelBlue
-        Me.Label2.Location = New System.Drawing.Point(199, 95)
+        Me.Label2.ForeColor = System.Drawing.Color.Black
+        Me.Label2.Location = New System.Drawing.Point(195, 94)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(35, 23)
         Me.Label2.TabIndex = 28
@@ -64,8 +64,8 @@ Partial Class FormCerrarSesion
         '
         Me.Label1.BackColor = System.Drawing.Color.White
         Me.Label1.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.SteelBlue
-        Me.Label1.Location = New System.Drawing.Point(104, 95)
+        Me.Label1.ForeColor = System.Drawing.Color.Black
+        Me.Label1.Location = New System.Drawing.Point(111, 95)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(61, 23)
         Me.Label1.TabIndex = 27

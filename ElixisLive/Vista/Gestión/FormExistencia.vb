@@ -3,7 +3,7 @@
     Dim bdNavegador As New BindingSource
     Private Sub FormExistencia_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         cargarExistencia()
-        Generales.diseñoDGV(dgvLista)
+        Generales.personalizarDatagrid(dgvLista)
         Generales.tabularConEnter(Me)
         'establecerPosicion()
     End Sub

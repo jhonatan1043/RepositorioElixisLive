@@ -28,7 +28,7 @@ Public Class FormProveedor
         If dgvParametro.ColumnCount <> 0 Then
             ' params.Add(ElementoMenu.codigo)
             Generales.llenardgv(Sentencias.PARAMETROS_CONSULTAR, dgvParametro, params)
-            Generales.diseñoDGV(dgvParametro)
+            Generales.personalizarDatagrid(dgvParametro)
             Generales.diseñoGrillaParametros(dgvParametro)
         End If
     End Sub
@@ -57,7 +57,7 @@ Public Class FormProveedor
                 txtCuenta.Text = If(cbFormaPago.SelectedValue = 1, String.Empty, dfila("Numero_Cuenta"))
                 params.Add(objProveedor.codigoFormulario)
                 Generales.llenardgv(objProveedor.sqlCargarDetalle, dgvParametro, params)
-                Generales.diseñoDGV(dgvParametro)
+                Generales.personalizarDatagrid(dgvParametro)
                 Generales.diseñoGrillaParametros(dgvParametro)
                 controlVerificar()
             End If

@@ -20,7 +20,7 @@
         params.Add(String.Empty)
         Try
             Generales.llenardgv(objConfig.sqlConsulta, dgRegistro, params)
-            Generales.diseñoDGV(dgRegistro)
+            Generales.personalizarDatagrid(dgRegistro)
         Catch ex As Exception
             EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
         End Try

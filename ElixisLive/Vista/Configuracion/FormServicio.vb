@@ -26,7 +26,7 @@
         Dim params As New List(Of String)
         params.Add(String.Empty)
         Generales.llenardgv(objConfig.sqlConsulta, dgRegistro, params)
-        Generales.diseñoDGV(dgRegistro)
+        Generales.personalizarDatagrid(dgRegistro)
     End Sub
     Private Sub Form_FormClosing(sender As Object, e As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
         If EstiloMensajes.mostrarMensajePregunta(MensajeSistema.SALIR) = Constantes.SI Then

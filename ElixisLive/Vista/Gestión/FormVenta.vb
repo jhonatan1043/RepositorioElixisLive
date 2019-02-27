@@ -5,7 +5,7 @@ Public Class FormVenta
     Private Sub FormVenta_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Generales.asignarPermiso(Me)
         objVenta = New Venta
-        Generales.diseñoDGV(dgvProducto)
+        Generales.personalizarDatagrid(dgvProducto)
         Generales.deshabilitarBotones(ToolStrip1)
         Generales.deshabilitarControles(Me)
         validarGrilla()
