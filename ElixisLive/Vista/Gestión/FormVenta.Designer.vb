@@ -978,7 +978,7 @@ Partial Class FormVenta
         Me.Label10.Image = Global.Quality.My.Resources.Resources.fondo_azul
         Me.Label10.Location = New System.Drawing.Point(460, 424)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(155, 19)
+        Me.Label10.Size = New System.Drawing.Size(155, 22)
         Me.Label10.TabIndex = 60037
         Me.Label10.Text = "Descuento:"
         Me.Label10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -1003,7 +1003,7 @@ Partial Class FormVenta
         Me.Label6.Image = Global.Quality.My.Resources.Resources.fondo_azul
         Me.Label6.Location = New System.Drawing.Point(694, 424)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(73, 19)
+        Me.Label6.Size = New System.Drawing.Size(73, 22)
         Me.Label6.TabIndex = 18
         Me.Label6.Text = "Total:"
         Me.Label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -1017,7 +1017,7 @@ Partial Class FormVenta
         Me.Label4.Image = Global.Quality.My.Resources.Resources.fondo_azul
         Me.Label4.Location = New System.Drawing.Point(231, 424)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(136, 19)
+        Me.Label4.Size = New System.Drawing.Size(136, 22)
         Me.Label4.TabIndex = 22
         Me.Label4.Text = "Servicios:"
         Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -1042,7 +1042,7 @@ Partial Class FormVenta
         Me.Label5.Image = Global.Quality.My.Resources.Resources.fondo_azul
         Me.Label5.Location = New System.Drawing.Point(8, 462)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(141, 19)
+        Me.Label5.Size = New System.Drawing.Size(141, 22)
         Me.Label5.TabIndex = 24
         Me.Label5.Text = "Artículos:"
         Me.Label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft

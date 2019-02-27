@@ -144,17 +144,16 @@
     End Sub
     Private Sub FormEstadoCuentas_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Generales.deshabilitarControles(Me)
-        Generales.asignarPermiso(Me)
         btBusquedaCuenta.Enabled = True
-        fechaini.Value = "01/01/2010"
+        fechaIni.Value = "01/01/2010"
         If formulario = Nothing Then
             formulario = Tag.codigo
         End If
         Select Case formulario
             Case Constantes.CXC
-                Label1.Text = Constantes.NOMBRE_ESTADO_DE_CUENTAS_CXC
+                LTitulo.Text = Constantes.NOMBRE_ESTADO_DE_CUENTAS_CXC
             Case Constantes.CXP
-                Label1.Text = Constantes.NOMBRE_ESTADO_DE_CUENTAS_CXP
+                LTitulo.Text = Constantes.NOMBRE_ESTADO_DE_CUENTAS_CXP
         End Select
         enlazarTabla()
     End Sub

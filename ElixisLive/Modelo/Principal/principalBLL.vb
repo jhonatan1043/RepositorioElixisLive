@@ -32,7 +32,7 @@ Public Class principalBLL
 
 
             FormPrincipal.menuOpciones.GripStyle = ToolStripGripStyle.Visible
-            FormPrincipal.menuOpciones.Font = New Font(Constantes.TIPO_LETRA_ELEMENTO, 10, FontStyle.Bold)
+            FormPrincipal.menuOpciones.Font = New Font(Constantes.TIPO_LETRA_ELEMENTO, 10)
             formulario.menuOpciones.Renderer = New MyRenderer()
 
         Catch ex As Exception

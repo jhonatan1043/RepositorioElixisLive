@@ -378,21 +378,30 @@ Public Class Generales
         dgv.BackgroundColor = Color.White
         dgv.DefaultCellStyle.BackColor = Color.White
         dgv.DefaultCellStyle.ForeColor = Color.Black
-        dgv.DefaultCellStyle.SelectionBackColor = Color.DodgerBlue
-        dgv.DefaultCellStyle.SelectionForeColor = Color.White
-        dgv.DefaultCellStyle.Font = New Font(Constantes.TIPO_LETRA_ELEMENTO, 10)
+        dgv.DefaultCellStyle.SelectionBackColor = Color.LightSteelBlue
+        dgv.DefaultCellStyle.SelectionForeColor = Color.Black
+        dgv.DefaultCellStyle.Font = New Font(Constantes.TIPO_LETRA_ELEMENTO, 9)
         dgv.EnableHeadersVisualStyles = False
-        dgv.ColumnHeadersDefaultCellStyle.BackColor = Color.SteelBlue
-        dgv.ColumnHeadersDefaultCellStyle.ForeColor = Color.White
-        dgv.AlternatingRowsDefaultCellStyle.BackColor = Color.LightSteelBlue
-        dgv.AlternatingRowsDefaultCellStyle.ForeColor = Nothing
-        dgv.AlternatingRowsDefaultCellStyle.SelectionBackColor = Nothing
-        dgv.AlternatingRowsDefaultCellStyle.SelectionForeColor = Nothing
-        dgv.AlternatingRowsDefaultCellStyle.Font = New Font("Segoe UI Semibold", 10)
-        dgv.ColumnHeadersDefaultCellStyle.Font = New Font(Constantes.TIPO_LETRA_ELEMENTO, 10, FontStyle.Bold)
+        dgv.ColumnHeadersDefaultCellStyle.BackColor = Color.LightSteelBlue
+        dgv.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black
+        dgv.AlternatingRowsDefaultCellStyle.Font = New Font(Constantes.TIPO_LETRA_ELEMENTO, 9)
+        dgv.ColumnHeadersDefaultCellStyle.Font = New Font(Constantes.TIPO_LETRA_ELEMENTO, 9)
         For indiceColumna = 0 To dgv.Columns.Count - 1
             dgv.Columns(indiceColumna).AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
         Next
+        AddHandler dgv.CellMouseEnter, AddressOf marcarFila
+        AddHandler dgv.CellMouseLeave, AddressOf desmarcarFila
+    End Sub
+    Public Shared Sub marcarFila(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs)
+        If e.RowIndex >= 0 Then
+            sender.Rows(e.RowIndex).DefaultCellStyle.BackColor = Color.FromArgb(226, 234, 243)
+        End If
+
+    End Sub
+    Public Shared Sub desmarcarFila(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs)
+        If e.RowIndex >= 0 Then
+            sender.Rows(e.RowIndex).DefaultCellStyle.BackColor = Color.White
+        End If
 
     End Sub
     Public Shared Sub cargarForm(ByVal form As System.Windows.Forms.Form)
@@ -419,10 +428,10 @@ Public Class Generales
                 daAdapter.Fill(dtTabla)
             End Using
         Catch ex As Exception
-            objConexion.desConectar()
+            objConexion.desconectar()
             EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
         End Try
-        objConexion.desConectar()
+        objConexion.desconectar()
         dgdgv.DataSource = dtTabla
         diseñoDGV(dgdgv)
     End Sub
@@ -437,10 +446,10 @@ Public Class Generales
             Throw ex
         End Try
         If dtTabla.Rows.Count > 0 Then
-            objConexion.desConectar()
+            objConexion.desconectar()
             Return dtTabla.Rows(0)
         Else
-            objConexion.desConectar()
+            objConexion.desconectar()
             Return Nothing
         End If
 
@@ -461,10 +470,10 @@ Public Class Generales
         End Try
 
         If dtTabla.Rows.Count > 0 Then
-            objConexion.desConectar()
+            objConexion.desconectar()
             Return dtTabla.Rows(0)
         Else
-            objConexion.desConectar()
+            objConexion.desconectar()
             Return Nothing
         End If
 
@@ -492,7 +501,7 @@ Public Class Generales
         Catch ex As Exception
             Throw
         End Try
-        objConexion.desConectar()
+        objConexion.desconectar()
         Return dtTabla
     End Function
     Public Shared Sub deshabilitarControles(ByRef pElemento As Object)
@@ -500,10 +509,10 @@ Public Class Generales
 
         For Each vItem In pElemento.Controls
             If vItem.name = "LTitulo" Then
-                vItem.Font = New Font(Constantes.TIPO_LETRA_ELEMENTO, 15)
+                vItem.Font = New Font(Constantes.TIPO_LETRA_ELEMENTO, 13)
                 vItem.text = vItem.text.ToString.ToUpper
             Else
-                vItem.Font = New Font(Constantes.TIPO_LETRA_ELEMENTO, 10)
+                vItem.Font = New Font(Constantes.TIPO_LETRA_ELEMENTO, 9)
             End If
 
             If (TypeOf vItem Is TextBox) Or (TypeOf vItem Is RichTextBox) Or (TypeOf vItem Is MaskedTextBox) Or (TypeOf vItem Is DataGridView) Then
@@ -512,7 +521,7 @@ Public Class Generales
                    ((TypeOf vItem Is Button) Or (TypeOf vItem Is TreeView) Or (TypeOf vItem Is DateTimePicker) Or (TypeOf vItem Is NumericUpDown)) Or
                    (TypeOf vItem Is CheckedListBox) Then
                 vItem.enabled = False
-                vItem.Font = New Font(Constantes.TIPO_LETRA_ELEMENTO, 10, FontStyle.Bold)
+                vItem.Font = New Font(Constantes.TIPO_LETRA_ELEMENTO, 9)
             ElseIf (TypeOf vItem Is GroupBox) Or (vItem.hasChildren) Then
                 deshabilitarControles(vItem)
             End If
@@ -528,7 +537,7 @@ Public Class Generales
             ElseIf TypeOf oToolStripButton Is ToolStripDropDown Then
                 oToolStripButton.enabled = True
             End If
-            oToolStripButton.Font = New Font(Constantes.TIPO_LETRA_ELEMENTO, 10, FontStyle.Bold)
+            oToolStripButton.Font = New Font(Constantes.TIPO_LETRA_ELEMENTO, 9)
         Next
     End Sub
     Public Shared Sub deshabilitarBotones(ByRef pToolStrip As ToolStrip)
@@ -539,15 +548,15 @@ Public Class Generales
             ElseIf TypeOf oToolStripButton Is ToolStripDropDownButton Then
                 oToolStripButton.enabled = False
             End If
-            oToolStripButton.Font = New Font(Constantes.TIPO_LETRA_ELEMENTO, 10, FontStyle.Bold)
+            oToolStripButton.Font = New Font(Constantes.TIPO_LETRA_ELEMENTO, 9)
         Next
     End Sub
     Public Shared Sub habilitarControles(ByRef pElemento As Object)
         For Each vItem In pElemento.Controls
             If vItem.name = "LTitulo" Then
-                vItem.Font = New Font(Constantes.TIPO_LETRA_ELEMENTO, 15)
+                vItem.Font = New Font(Constantes.TIPO_LETRA_ELEMENTO, 13)
             Else
-                vItem.Font = New Font(Constantes.TIPO_LETRA_ELEMENTO, 10)
+                vItem.Font = New Font(Constantes.TIPO_LETRA_ELEMENTO, 9)
             End If
             If ((TypeOf vItem Is TextBox) Or (TypeOf vItem Is RichTextBox) Or (TypeOf vItem Is MaskedTextBox) Or (TypeOf vItem Is DataGridView)) And
                    Not (vItem.name.ToString.ToLower.Contains("txtcodigo")) Then
@@ -562,7 +571,7 @@ Public Class Generales
                 (TypeOf vItem Is Button) Or (TypeOf vItem Is TreeView) Or (TypeOf vItem Is DateTimePicker) Or (TypeOf vItem Is NumericUpDown) Or
                    (TypeOf vItem Is CheckedListBox) Then
                 vItem.enabled = True
-                vItem.Font = New Font(Constantes.TIPO_LETRA_ELEMENTO, 10, FontStyle.Bold)
+                vItem.Font = New Font(Constantes.TIPO_LETRA_ELEMENTO, 9)
             ElseIf (TypeOf vItem Is GroupBox) Or (vItem.hasChildren) Then
                 habilitarControles(vItem)
             End If
@@ -630,7 +639,7 @@ Public Class Generales
             Using da = New SqlDataAdapter(consulta & Funciones.getParametros(params), objConexion.cnxbd)
                 da.Fill(dtTabla)
             End Using
-            objConexion.desConectar()
+            objConexion.desconectar()
             If dtTabla.Rows.Count > 1 Then
                 resultado = True
             End If
@@ -645,7 +654,7 @@ Public Class Generales
         Catch ex As Exception
             Throw ex
         Finally
-            objConexion.desConectar()
+            objConexion.desconectar()
         End Try
         Return resultado
     End Function

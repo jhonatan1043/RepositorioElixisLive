@@ -654,9 +654,9 @@ Partial Class FormFacturaCliente
         '
         Me.Pimagen.BackColor = System.Drawing.Color.Transparent
         Me.Pimagen.Image = Global.Quality.My.Resources.Resources.invoice_icon
-        Me.Pimagen.Location = New System.Drawing.Point(3, 1)
+        Me.Pimagen.Location = New System.Drawing.Point(3, 2)
         Me.Pimagen.Name = "Pimagen"
-        Me.Pimagen.Size = New System.Drawing.Size(45, 41)
+        Me.Pimagen.Size = New System.Drawing.Size(34, 38)
         Me.Pimagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.Pimagen.TabIndex = 1
         Me.Pimagen.TabStop = False
