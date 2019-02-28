@@ -165,6 +165,9 @@
     Private Sub FormFacturaCliente_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Generales.asignarPermiso(Me)
         Generales.deshabilitarControles(Me)
+        Generales.deshabilitarBotones(ToolStrip1)
+        btNuevo.Enabled = True
+        btBuscar.Enabled = True
         Dim cuenta, descripcion, naturaleza, debito, credito As New DataColumn
 
         cuenta.ColumnName = "Cuenta"
@@ -231,7 +234,7 @@
         Generales.deshabilitarBotones(ToolStrip1)
         Generales.habilitarControles(Me)
         Textsigla.Text = Constantes.SIGLA_FACTURA_VENTAS
-        cargarDocumento(codigoDocumento)
+        cargarDocumento(Textsigla.Text)
         fecharecibo.Enabled = False
         btRegistrar.Enabled = True
         btCancelar.Enabled = True

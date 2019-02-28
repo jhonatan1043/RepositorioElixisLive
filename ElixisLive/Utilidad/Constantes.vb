@@ -141,7 +141,8 @@
     Public Const CADENA_VACIA = ""
 
     Public Const DIA_SEMANA = 7
-    Public Const TIPO_LETRA_ELEMENTO = "Segoe UI Semibold"
+    Public Const TIPO_LETRA_ELEMENTO = "Segoe UI Normal"
+    Public Const TIPO_LETRA_TITULO = "Segoe UI Semibold"
     Public Const PENDIENTE = 0
     
 

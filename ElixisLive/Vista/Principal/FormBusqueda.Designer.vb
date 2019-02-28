@@ -89,7 +89,7 @@ Partial Class FormBusqueda
         '
         Me.GroupBox5.Controls.Add(Me.dgvBusqueda)
         Me.GroupBox5.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox5.ForeColor = System.Drawing.Color.DarkBlue
+        Me.GroupBox5.ForeColor = System.Drawing.Color.Black
         Me.GroupBox5.Location = New System.Drawing.Point(4, 51)
         Me.GroupBox5.Name = "GroupBox5"
         Me.GroupBox5.Size = New System.Drawing.Size(578, 314)
@@ -122,7 +122,7 @@ Partial Class FormBusqueda
         '
         Me.GroupBox2.Controls.Add(Me.Textbusqueda)
         Me.GroupBox2.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox2.ForeColor = System.Drawing.Color.DarkBlue
+        Me.GroupBox2.ForeColor = System.Drawing.Color.Black
         Me.GroupBox2.Location = New System.Drawing.Point(4, 8)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(578, 42)
@@ -132,11 +132,11 @@ Partial Class FormBusqueda
         '
         'Textbusqueda
         '
-        Me.Textbusqueda.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Textbusqueda.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Textbusqueda.Location = New System.Drawing.Point(6, 14)
         Me.Textbusqueda.MaxLength = 100
         Me.Textbusqueda.Name = "Textbusqueda"
-        Me.Textbusqueda.Size = New System.Drawing.Size(567, 27)
+        Me.Textbusqueda.Size = New System.Drawing.Size(567, 23)
         Me.Textbusqueda.TabIndex = 2
         '
         'FormBusqueda

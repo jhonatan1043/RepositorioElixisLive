@@ -72,7 +72,7 @@ Public Class Generales
             End If
 
         Catch ex As Exception
-            Throw
+            Throw ex
         Finally
             objConexion.desconectar()
         End Try
@@ -508,7 +508,7 @@ Public Class Generales
 
         For Each vItem In pElemento.Controls
             If vItem.name = "LTitulo" Then
-                vItem.Font = New Font(Constantes.TIPO_LETRA_ELEMENTO, 13)
+                vItem.Font = New Font(Constantes.TIPO_LETRA_TITULO, 13)
                 vItem.text = vItem.text.ToString.ToUpper
             Else
                 vItem.Font = New Font(Constantes.TIPO_LETRA_ELEMENTO, 9)
@@ -523,10 +523,10 @@ Public Class Generales
                    (TypeOf vItem Is CheckedListBox) Then
                 vItem.enabled = False
                 vItem.Font = New Font(Constantes.TIPO_LETRA_ELEMENTO, 9)
-                vItem.foreColor = Color.Black
             ElseIf (TypeOf vItem Is GroupBox) Or (vItem.hasChildren) Then
                 deshabilitarControles(vItem)
-                vItem.foreColor = Color.DimGray
+                vItem.foreColor = Color.Black
+                vItem.Font = New Font(Constantes.TIPO_LETRA_TITULO, 9)
             End If
 
         Next
@@ -540,7 +540,7 @@ Public Class Generales
             ElseIf TypeOf oToolStripButton Is ToolStripDropDown Then
                 oToolStripButton.enabled = True
             End If
-            oToolStripButton.Font = New Font(Constantes.TIPO_LETRA_ELEMENTO, 9)
+            oToolStripButton.Font = New Font(Constantes.TIPO_LETRA_TITULO, 10)
         Next
     End Sub
     Public Shared Sub deshabilitarBotones(ByRef pToolStrip As ToolStrip)
@@ -551,7 +551,7 @@ Public Class Generales
             ElseIf TypeOf oToolStripButton Is ToolStripDropDownButton Then
                 oToolStripButton.enabled = False
             End If
-            oToolStripButton.Font = New Font(Constantes.TIPO_LETRA_ELEMENTO, 9)
+            oToolStripButton.Font = New Font(Constantes.TIPO_LETRA_TITULO, 10)
         Next
     End Sub
     Public Shared Sub habilitarControles(ByRef pElemento As Object)
@@ -576,10 +576,9 @@ Public Class Generales
                    (TypeOf vItem Is CheckedListBox) Then
                 vItem.enabled = True
                 vItem.Font = New Font(Constantes.TIPO_LETRA_ELEMENTO, 9)
-                vItem.foreColor = Color.Black
             ElseIf (TypeOf vItem Is GroupBox) Or (vItem.hasChildren) Then
                 habilitarControles(vItem)
-                vItem.foreColor = Color.DimGray
+                vItem.foreColor = Color.Black
             End If
 
         Next

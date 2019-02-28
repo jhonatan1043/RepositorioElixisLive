@@ -57,13 +57,6 @@
         formulario.ventana = Me '' se indica el formulario que usara el efecto
         formulario.redondear() '' se redondean los bordes del formulario
     End Sub
-    'Private Sub establecerPosicionBusqueda()
-    '    Dim x As Integer
-    '    Dim y As Integer
-    '    x = Screen.PrimaryScreen.WorkingArea.Width - 880
-    '    y = Screen.PrimaryScreen.WorkingArea.Height - 590
-    '    Me.Location = New Point(x, y)
-    'End Sub
     Private Sub Textbusqueda_TextChanged(sender As Object, e As EventArgs) Handles Textbusqueda.TextChanged
         If buscarAlDarEnter = False Then
             Textbusqueda.Text = Generales.validarComillaSimple(Textbusqueda.Text)

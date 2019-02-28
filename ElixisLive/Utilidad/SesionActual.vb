@@ -1,9 +1,12 @@
 ﻿Imports System.Data.SqlClient
 Public Class SesionActual
     Public Shared Property idUsuario As Integer
+    Public Shared Property identificacionUsuario As String
     Public Shared Property codigoSucursal As Integer
     Public Shared Property codigoEmpresa As Integer
     Public Shared Property usuario As String
+    Public Shared Property nombreEmpresa As String
+    Public Shared Property nitEmpresa As String
     Public Shared Property nombreUsuario As String
     Public Shared Property codigoPerfil As Integer
     Public Shared Property dtPermisos As New DataTable

@@ -10,7 +10,6 @@ Public Class CajaBancoDAL
                 dbCommand.CommandType = CommandType.StoredProcedure
                 dbCommand.CommandText = "SP_CAJA_BANCO_CREAR"
                 dbCommand.Parameters.Add(New SqlParameter("@Comprobante", SqlDbType.NVarChar)).Value = objcajaBanco.comprobante
-                dbCommand.Parameters.Add(New SqlParameter("@id_empresa", SqlDbType.Int)).Value = objcajaBanco.idEmpresa
                 dbCommand.Parameters.Add(New SqlParameter("@id_tercero", SqlDbType.Int)).Value = objcajaBanco.idTercero
                 dbCommand.Parameters.Add(New SqlParameter("@Fecha_Recibo", SqlDbType.Date)).Value = objcajaBanco.fechaRecibo
                 dbCommand.Parameters.Add(New SqlParameter("@detalle_mov", SqlDbType.NVarChar)).Value = objcajaBanco.detalleMov

@@ -21,6 +21,9 @@
             SesionActual.usuario = usuario
             SesionActual.nombreUsuario = Dresultado.Item(1)
             SesionActual.codigoPerfil = Dresultado.Item(2)
+            SesionActual.identificacionUsuario = Dresultado.Item(3)
+            SesionActual.nitEmpresa = Dresultado.Item(4)
+            SesionActual.nombreEmpresa = Dresultado.Item(5)
             FormPrincipal.Show()
             banderaForm = True
         Else

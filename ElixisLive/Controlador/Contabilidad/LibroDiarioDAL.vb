@@ -11,8 +11,6 @@ Public Class LibroDiarioDAL
                 dbCommand.Connection = conexion.cnxbd
                 dbCommand.CommandType = CommandType.StoredProcedure
                 dbCommand.CommandText = "SP_E_LIBRO_DIARIO_CARGAR"
-
-                dbCommand.Parameters.Add(New SqlParameter("@id_empresa", SqlDbType.Int)).Value = params.idEmpresa
                 dbCommand.Parameters.Add(New SqlParameter("@fecha_inicio", SqlDbType.DateTime)).Value = params.fechaInicio
                 dbCommand.Parameters.Add(New SqlParameter("@fecha_fin", SqlDbType.Date)).Value = params.fechaFin
                 dbCommand.Parameters.Add(New SqlParameter("@resultado", SqlDbType.Bit))

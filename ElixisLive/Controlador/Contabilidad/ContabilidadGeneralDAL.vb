@@ -10,7 +10,6 @@ Public Class ContabilidadGeneralDAL
                 dbCommand.CommandType = CommandType.StoredProcedure
                 dbCommand.CommandText = "SP_CONTABILIDAD_GENERAL_CREAR"
                 dbCommand.Parameters.Add(New SqlParameter("@Comprobante", SqlDbType.NVarChar)).Value = objContaGeneral.comprobante
-                dbCommand.Parameters.Add(New SqlParameter("@id_empresa", SqlDbType.Int)).Value = objContaGeneral.idEmpresa
                 dbCommand.Parameters.Add(New SqlParameter("@id_tercero", SqlDbType.Int)).Value = objContaGeneral.idTercero
                 dbCommand.Parameters.Add(New SqlParameter("@Fecha_Recibo", SqlDbType.Date)).Value = objContaGeneral.fechaRecibo
                 dbCommand.Parameters.Add(New SqlParameter("@detalle_contageneral", SqlDbType.Structured)).Value = objContaGeneral.dtCuentas

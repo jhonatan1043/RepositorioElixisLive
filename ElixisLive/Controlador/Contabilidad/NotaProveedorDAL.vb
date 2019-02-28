@@ -11,7 +11,6 @@ Public Class NotaProveedorDAL
                 dbCommand.CommandType = CommandType.StoredProcedure
                 dbCommand.CommandText = "SP_NOTA_PROVEEDOR_CREAR"
                 dbCommand.Parameters.Add(New SqlParameter("@Comprobante", SqlDbType.NVarChar)).Value = objNotaProveedor.comprobante
-                dbCommand.Parameters.Add(New SqlParameter("@id_empresa", SqlDbType.Int)).Value = objNotaProveedor.idEmpresa
                 dbCommand.Parameters.Add(New SqlParameter("@id_tercero", SqlDbType.Int)).Value = objNotaProveedor.idProveedor
                 dbCommand.Parameters.Add(New SqlParameter("@Fecha_Recibo", SqlDbType.Date)).Value = objNotaProveedor.fechaRecibo
                 dbCommand.Parameters.Add(New SqlParameter("@Observacion", SqlDbType.NVarChar)).Value = objNotaProveedor.detalleMov

@@ -11,7 +11,6 @@ Public Class NotaClienteDAL
                 dbCommand.CommandType = CommandType.StoredProcedure
                 dbCommand.CommandText = "SP_NOTA_CLIENTE_CREAR"
                 dbCommand.Parameters.Add(New SqlParameter("@Comprobante", SqlDbType.NVarChar)).Value = objNotaCliente.comprobante
-                dbCommand.Parameters.Add(New SqlParameter("@id_empresa", SqlDbType.Int)).Value = objNotaCliente.idEmpresa
                 dbCommand.Parameters.Add(New SqlParameter("@id_tercero", SqlDbType.Int)).Value = objNotaCliente.idCliente
                 dbCommand.Parameters.Add(New SqlParameter("@CodigoDoc", SqlDbType.Int)).Value = objNotaCliente.codigoDoc
                 dbCommand.Parameters.Add(New SqlParameter("@Fecha_Recibo", SqlDbType.Date)).Value = objNotaCliente.fechaRecibo

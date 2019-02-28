@@ -20,4 +20,7 @@
     Public Const INGRESAR_VALOR_VALIDO = "¡Debe ingresar un valor válido!"
     Public Const PERIODO_CONTABLE_CERRADO = "¡Periodo de fecha cerrado!"
     Public Const COMPROBANTE_ANULADO = "¡Comprobante Anulado!"
+    Public Const CONTA_RESULTADO_VACIO = "¡No se encontraron resultados para el tercero y periodo seleccionado!"
+    Public Const CONTA_TERCERO_INEXISTENTE = "¡No se encontró tercero especificado!"
+    Public Const CONTA_CUENTA_PUC_INEXISTENTE = "¡No se encontró la cuenta especificada!"
 End Class

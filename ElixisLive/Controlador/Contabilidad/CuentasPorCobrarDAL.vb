@@ -10,7 +10,6 @@ Public Class CuentasPorCobrarDAL
                 dbCommand.CommandType = CommandType.StoredProcedure
                 dbCommand.CommandText = "SP_CUENTAS_POR_COBRAR_CREAR"
                 dbCommand.Parameters.Add(New SqlParameter("@Codigo_factura", SqlDbType.NVarChar)).Value = objcuentasCXP.factura
-                dbCommand.Parameters.Add(New SqlParameter("@id_empresa", SqlDbType.Int)).Value = objcuentasCXP.idEmpresa
                 dbCommand.Parameters.Add(New SqlParameter("@Codigo_Documento", SqlDbType.Int)).Value = objcuentasCXP.codigoDocumento
                 dbCommand.Parameters.Add(New SqlParameter("@id_tercero", SqlDbType.Int)).Value = objcuentasCXP.idCliente
                 dbCommand.Parameters.Add(New SqlParameter("@Fecha_Recibo", SqlDbType.Date)).Value = objcuentasCXP.fechaRecibo

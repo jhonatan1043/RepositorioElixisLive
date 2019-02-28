@@ -11,7 +11,6 @@ Public Class LibroAuxiliarDAL
                 dbCommand.CommandType = CommandType.StoredProcedure
                 dbCommand.CommandText = "[SP_LIBRO_AUX_CALCULAR]"
 
-                dbCommand.Parameters.Add(New SqlParameter("@id_empresa", SqlDbType.Int)).Value = params.idEmpresa
                 dbCommand.Parameters.Add(New SqlParameter("@codigo_puc", SqlDbType.Int)).Value = params.codigoPUC
                 dbCommand.Parameters.Add(New SqlParameter("@codigo_cuenta", SqlDbType.NVarChar)).Value = params.codigoCuenta
                 dbCommand.Parameters.Add(New SqlParameter("@id_tercero", SqlDbType.Int)).Value = IIf(params.idTercero = Nothing,

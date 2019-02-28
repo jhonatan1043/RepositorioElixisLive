@@ -11,7 +11,6 @@ Public Class CuentaPorPagarDAL
                 dbCommand.CommandType = CommandType.StoredProcedure
                 dbCommand.CommandText = "SP_CUENTAS_POR_PAGAR_CREAR"
                 dbCommand.Parameters.Add(New SqlParameter("@Comprobante", SqlDbType.NVarChar)).Value = objcuentasCXP.comprobante
-                dbCommand.Parameters.Add(New SqlParameter("@id_empresa", SqlDbType.Int)).Value = objcuentasCXP.idEmpresa
                 dbCommand.Parameters.Add(New SqlParameter("@Codigo_Documento", SqlDbType.Int)).Value = objcuentasCXP.codigoDocumento
                 dbCommand.Parameters.Add(New SqlParameter("@Codigo_Entrada", SqlDbType.NVarChar)).Value = objcuentasCXP.factura
                 dbCommand.Parameters.Add(New SqlParameter("@id_tercero", SqlDbType.Int)).Value = objcuentasCXP.idProveedor

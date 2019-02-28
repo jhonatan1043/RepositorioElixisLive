@@ -41,7 +41,7 @@ Partial Class FormCerrarSesion
         Me.Label3.BackColor = System.Drawing.Color.White
         Me.Label3.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.Black
-        Me.Label3.Location = New System.Drawing.Point(261, 95)
+        Me.Label3.Location = New System.Drawing.Point(263, 98)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(63, 23)
         Me.Label3.TabIndex = 29
@@ -53,7 +53,7 @@ Partial Class FormCerrarSesion
         Me.Label2.BackColor = System.Drawing.Color.White
         Me.Label2.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.Black
-        Me.Label2.Location = New System.Drawing.Point(195, 94)
+        Me.Label2.Location = New System.Drawing.Point(199, 98)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(35, 23)
         Me.Label2.TabIndex = 28
@@ -65,9 +65,9 @@ Partial Class FormCerrarSesion
         Me.Label1.BackColor = System.Drawing.Color.White
         Me.Label1.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.Black
-        Me.Label1.Location = New System.Drawing.Point(111, 95)
+        Me.Label1.Location = New System.Drawing.Point(114, 98)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(61, 23)
+        Me.Label1.Size = New System.Drawing.Size(50, 23)
         Me.Label1.TabIndex = 27
         Me.Label1.Text = "Cerrar Sesión"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -96,7 +96,7 @@ Partial Class FormCerrarSesion
         '
         Me.PicRegresar.BackColor = System.Drawing.Color.White
         Me.PicRegresar.Image = Global.Quality.My.Resources.Resources.glossy_3d_blue_orbs2_092_icon
-        Me.PicRegresar.Location = New System.Drawing.Point(261, 37)
+        Me.PicRegresar.Location = New System.Drawing.Point(261, 35)
         Me.PicRegresar.Name = "PicRegresar"
         Me.PicRegresar.Size = New System.Drawing.Size(55, 55)
         Me.PicRegresar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -107,7 +107,7 @@ Partial Class FormCerrarSesion
         '
         Me.PicSalir.BackColor = System.Drawing.Color.White
         Me.PicSalir.Image = Global.Quality.My.Resources.Resources.glossy_3d_blue_orbs2_132_icon
-        Me.PicSalir.Location = New System.Drawing.Point(184, 37)
+        Me.PicSalir.Location = New System.Drawing.Point(184, 35)
         Me.PicSalir.Name = "PicSalir"
         Me.PicSalir.Size = New System.Drawing.Size(55, 55)
         Me.PicSalir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -118,7 +118,7 @@ Partial Class FormCerrarSesion
         '
         Me.PicCerrarSesion.BackColor = System.Drawing.Color.White
         Me.PicCerrarSesion.Image = Global.Quality.My.Resources.Resources.glossy_3d_blue_orbs2_115_icon
-        Me.PicCerrarSesion.Location = New System.Drawing.Point(107, 37)
+        Me.PicCerrarSesion.Location = New System.Drawing.Point(107, 35)
         Me.PicCerrarSesion.Name = "PicCerrarSesion"
         Me.PicCerrarSesion.Size = New System.Drawing.Size(55, 55)
         Me.PicCerrarSesion.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage

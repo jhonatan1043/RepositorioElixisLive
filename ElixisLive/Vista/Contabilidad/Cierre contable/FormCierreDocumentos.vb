@@ -230,6 +230,7 @@
         If dgvCierre.Rows.Count > 0 Then
             cerrarCuentas(codigoPuc)
             cruzarCuentas(nCuenta)
+            Panel1.Visible = True
         End If
     End Sub
     Private Sub DtInicio_ValueChanged(sender As System.Object, e As System.EventArgs) Handles DtInicio.ValueChanged
@@ -298,7 +299,7 @@
         btRegistrar.Enabled = True
         btCancelar.Enabled = True
         identificador = String.Empty
-
+        Panel1.Visible = False
         textvalorcredito.Text = FormatCurrency(0, 2)
         textvalordebito.Text = FormatCurrency(0, 2)
         textdiferencia.Text = FormatCurrency(0, 2)
@@ -337,6 +338,7 @@
             Generales.deshabilitarBotones(ToolStrip1)
             btNuevo.Enabled = True
             btBuscar.Enabled = True
+            Panel1.Visible = False
         End If
     End Sub
     Private Sub cargarDocumento(codigo As String)
@@ -366,6 +368,7 @@
             Generales.deshabilitarControles(Me)
             btRegistrar.Enabled = False
             btCancelar.Enabled = False
+            Panel1.Visible = True
             If FuncionesContables.verificarComprobante(pCodigo) Then
                 mostrarInfo(String.Format(MensajeSistema.COMPROBANTE_ANULADO), Color.White, Color.Red)
                 Generales.deshabilitarBotones(ToolStrip1)

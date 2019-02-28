@@ -145,7 +145,7 @@
     Private Sub FormEstadoCuentas_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Generales.deshabilitarControles(Me)
         btBusquedaCuenta.Enabled = True
-        fechaIni.Value = "01/01/2010"
+        fechaIni.Value = "01/01/2000"
         If formulario = Nothing Then
             formulario = Tag.codigo
         End If

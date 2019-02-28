@@ -9,8 +9,6 @@
         dtCarteraP = New DataTable
         dtCartera.Columns.Add("comprobante", Type.GetType("System.String"))
         dtCarteraP.Columns.Add("comprobante", Type.GetType("System.String"))
-        dtCarteraP.Columns.Add("idEmpresa", Type.GetType("System.Int32"))
-        dtCartera.Columns.Add("idEmpresa", Type.GetType("System.Int32"))
         dtCarteraP.Columns.Add("codigoDocumento", Type.GetType("System.Int32"))
         dtCarteraP.Columns.Add("codigoFactura", Type.GetType("System.String"))
         dtCartera.Columns.Add("codigo_puc", Type.GetType("System.Int32"))

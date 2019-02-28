@@ -11,7 +11,6 @@ Public Class ProgramacionPagoProveedorDAL
                 dbCommand.CommandText = "SP_PROGRAMACION_PROVEEDOR_GUARDAR"
 
                 'Parametros
-                dbCommand.Parameters.Add(New SqlParameter("@idEmpresa", SqlDbType.Int))
                 dbCommand.Parameters.Add(New SqlParameter("@fechaCorte", SqlDbType.Date))
                 dbCommand.Parameters.Add(New SqlParameter("@fechaDoc", SqlDbType.Date))
                 dbCommand.Parameters.Add(New SqlParameter("@codigoProgramacion", SqlDbType.Int))

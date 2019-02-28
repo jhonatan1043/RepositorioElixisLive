@@ -10,7 +10,6 @@ Public Class ComprobanteEgresoDAL
                 comando.CommandType = CommandType.StoredProcedure
                 comando.CommandText = "SP_COMPROBANTE_EGRESO_CREAR"
                 comando.Parameters.Add(New SqlParameter("@comprobante", SqlDbType.NVarChar)).Value = objComprobante.comprobante
-                comando.Parameters.Add(New SqlParameter("@Id_empresa", SqlDbType.Int)).Value = objComprobante.idempresa
                 comando.Parameters.Add(New SqlParameter("@Id_tercero", SqlDbType.Int)).Value = objComprobante.idtercero
                 comando.Parameters.Add(New SqlParameter("@No_Entrada", SqlDbType.NVarChar)).Value = objComprobante.entrada
                 comando.Parameters.Add(New SqlParameter("@Codigo_Documento", SqlDbType.Int)).Value = objComprobante.documento

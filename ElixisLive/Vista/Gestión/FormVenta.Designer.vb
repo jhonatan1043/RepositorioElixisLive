@@ -971,14 +971,13 @@ Partial Class FormVenta
         '
         'Label10
         '
-        Me.Label10.BackColor = System.Drawing.Color.Transparent
-        Me.Label10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Label10.AutoSize = True
+        Me.Label10.BackColor = System.Drawing.Color.White
         Me.Label10.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.ForeColor = System.Drawing.Color.White
-        Me.Label10.Image = Global.Quality.My.Resources.Resources.fondo_azul
-        Me.Label10.Location = New System.Drawing.Point(460, 424)
+        Me.Label10.ForeColor = System.Drawing.Color.Black
+        Me.Label10.Location = New System.Drawing.Point(454, 426)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(155, 20)
+        Me.Label10.Size = New System.Drawing.Size(68, 15)
         Me.Label10.TabIndex = 60037
         Me.Label10.Text = "Descuento:"
         Me.Label10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -996,28 +995,26 @@ Partial Class FormVenta
         '
         'Label6
         '
-        Me.Label6.BackColor = System.Drawing.Color.Transparent
-        Me.Label6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Label6.AutoSize = True
+        Me.Label6.BackColor = System.Drawing.Color.White
         Me.Label6.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.ForeColor = System.Drawing.Color.White
-        Me.Label6.Image = Global.Quality.My.Resources.Resources.fondo_azul
-        Me.Label6.Location = New System.Drawing.Point(694, 424)
+        Me.Label6.ForeColor = System.Drawing.Color.Black
+        Me.Label6.Location = New System.Drawing.Point(688, 426)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(73, 20)
+        Me.Label6.Size = New System.Drawing.Size(38, 15)
         Me.Label6.TabIndex = 18
         Me.Label6.Text = "Total:"
         Me.Label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'Label4
         '
-        Me.Label4.BackColor = System.Drawing.Color.Transparent
-        Me.Label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Label4.AutoSize = True
+        Me.Label4.BackColor = System.Drawing.Color.White
         Me.Label4.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.ForeColor = System.Drawing.Color.White
-        Me.Label4.Image = Global.Quality.My.Resources.Resources.fondo_azul
-        Me.Label4.Location = New System.Drawing.Point(231, 424)
+        Me.Label4.ForeColor = System.Drawing.Color.Black
+        Me.Label4.Location = New System.Drawing.Point(224, 426)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(136, 20)
+        Me.Label4.Size = New System.Drawing.Size(62, 15)
         Me.Label4.TabIndex = 22
         Me.Label4.Text = "Servicios:"
         Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -1035,14 +1032,13 @@ Partial Class FormVenta
         '
         'Label5
         '
-        Me.Label5.BackColor = System.Drawing.Color.Transparent
-        Me.Label5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Label5.AutoSize = True
+        Me.Label5.BackColor = System.Drawing.Color.White
         Me.Label5.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.ForeColor = System.Drawing.Color.White
-        Me.Label5.Image = Global.Quality.My.Resources.Resources.fondo_azul
-        Me.Label5.Location = New System.Drawing.Point(8, 462)
+        Me.Label5.ForeColor = System.Drawing.Color.Black
+        Me.Label5.Location = New System.Drawing.Point(8, 464)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(141, 20)
+        Me.Label5.Size = New System.Drawing.Size(63, 15)
         Me.Label5.TabIndex = 24
         Me.Label5.Text = "Artículos:"
         Me.Label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft

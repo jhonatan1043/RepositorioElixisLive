@@ -11,7 +11,6 @@ Public Class CualquierNotaDAL
                 dbCommand.CommandType = CommandType.StoredProcedure
                 dbCommand.CommandText = "SP_NOTA_INTERNA_CREAR"
                 dbCommand.Parameters.Add(New SqlParameter("@Comprobante", SqlDbType.NVarChar)).Value = objCualquierNota.comprobante
-                dbCommand.Parameters.Add(New SqlParameter("@id_empresa", SqlDbType.Int)).Value = objCualquierNota.idEmpresa
                 dbCommand.Parameters.Add(New SqlParameter("@id_tercero", SqlDbType.Int)).Value = objCualquierNota.idProveedor
                 dbCommand.Parameters.Add(New SqlParameter("@Fecha_Recibo", SqlDbType.Date)).Value = objCualquierNota.fechaRecibo
                 dbCommand.Parameters.Add(New SqlParameter("@detalleMov", SqlDbType.NVarChar)).Value = objCualquierNota.detalleMov

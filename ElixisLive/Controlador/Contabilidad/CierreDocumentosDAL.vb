@@ -10,7 +10,6 @@ Public Class CierreDocumentosDAL
                 dbCommand.CommandType = CommandType.StoredProcedure
                 dbCommand.CommandText = "SP_CIERRE_DOCUMENTOS_CREAR"
                 dbCommand.Parameters.Add(New SqlParameter("@Comprobante", SqlDbType.NVarChar)).Value = objCierreDocumento.comprobante
-                dbCommand.Parameters.Add(New SqlParameter("@id_empresa", SqlDbType.Int)).Value = objCierreDocumento.idEmpresa
                 dbCommand.Parameters.Add(New SqlParameter("@Fecha_Inicio", SqlDbType.Date)).Value = objCierreDocumento.fechaInicio
                 dbCommand.Parameters.Add(New SqlParameter("@Fecha_Fin", SqlDbType.Date)).Value = objCierreDocumento.fechaFin
                 dbCommand.Parameters.Add(New SqlParameter("@valor_debito", SqlDbType.Decimal)).Value = objCierreDocumento.valorDebito

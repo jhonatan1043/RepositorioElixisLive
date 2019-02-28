@@ -18,7 +18,6 @@
     Sub New()
         dtCuentas = New DataTable
         dtCuentas.Columns.Add("factura", Type.GetType("System.String"))
-        dtCuentas.Columns.Add("idEmpresa", Type.GetType("System.String"))
         dtCuentas.Columns.Add("codigo_puc", Type.GetType("System.Int32"))
         dtCuentas.Columns.Add("codigoCuenta", Type.GetType("System.String"))
         dtCuentas.Columns.Add("debito", Type.GetType("System.Double"))
