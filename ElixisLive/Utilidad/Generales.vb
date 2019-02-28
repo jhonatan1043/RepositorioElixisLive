@@ -12,6 +12,33 @@ Public Class Generales
     Public Delegate Sub cargaInfoFormObj(ByVal fila As DataRow)
     Public Delegate Sub subRutina()
     Private Shared objConexion As New ConexionBD
+    Public Shared Sub agregarItems(ByVal consulta As String,
+                                   ByVal titulo As String,
+                                   ByVal datagrid As DataGridView,
+                                   ByVal datatable As DataTable)
+        Dim seguir As Boolean = False
+        Dim seleccionados As String = ""
+        Do
+            seleccionados = getCadenaSeleccionados(datatable, seleccionados, 0)
+            Dim tbl As DataRow = Nothing
+            Dim params As New List(Of String)
+            params.Add(seleccionados)
+            Dim formBusqueda As FormBusqueda = Generales.buscarElemento(consulta, params, titulo, False)
+            tbl = formBusqueda.rowResultados
+            If tbl IsNot Nothing Then
+                datatable.Rows(datagrid.CurrentCell.RowIndex).Item(0) = tbl(0)
+                datatable.Rows(datagrid.CurrentCell.RowIndex).Item(1) = tbl(1)
+                If datatable.Columns.Count > 2 Then
+                    datatable.Rows(datagrid.CurrentCell.RowIndex).Item(2) = Constantes.ITEM_NUEVO
+                End If
+                datatable.Rows.Add()
+                datagrid.Rows(datagrid.RowCount - 1).Cells(1).Selected = True
+                seguir = True
+            Else
+                seguir = False
+            End If
+        Loop While (seguir = True)
+    End Sub
     Public Shared Sub abrirJustificacion(dgv As DataGridView, dt As DataTable, panel As Panel, txtJustificacion As TextBox, nombreColumna As String, soloLectura As Boolean, Optional teclaPresionada As String = "", Optional ultimaFila As Boolean = False)
         If dgv.RowCount > 0 AndAlso dgv.Rows(dgv.CurrentRow.Index).Cells(nombreColumna).Selected = True AndAlso (String.IsNullOrEmpty(dt.Rows(dgv.CurrentCell.RowIndex).Item(0).ToString) = False OrElse ultimaFila = True) Then
             If String.IsNullOrEmpty(teclaPresionada) = False Then
