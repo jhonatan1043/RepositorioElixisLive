@@ -1,4 +1,6 @@
 ﻿Public Class Constantes
+    Public Const COMBO_VALOR_PREDETERMINADO = "-1"
+    Public Const COMBO_TEXTO_PREDETERMINADO = "--- Seleccione ---"
     Public Const ITEM_NUEVO = "0"
     Public Const ITEM_MODIFICADO = "1"
     Public Const ITEM_CARGADO = "2"

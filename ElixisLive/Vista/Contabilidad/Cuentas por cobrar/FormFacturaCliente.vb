@@ -577,7 +577,13 @@
         FuncionesContables.validarFechaFutura(fechadoc)
     End Sub
     Private Sub btcancelar_Click(sender As Object, e As EventArgs) Handles btCancelar.Click
-
+        If EstiloMensajes.mostrarMensajePregunta(MensajeSistema.CANCELAR) = Constantes.SI Then
+            Generales.deshabilitarBotones(ToolStrip1)
+            Generales.deshabilitarControles(Me)
+            btBuscar.Enabled = True
+            btNuevo.Enabled = True
+            PnlInfo.Visible = False
+        End If
     End Sub
     Private Sub dgvcartera_EditingControlShowing(sender As Object, e As DataGridViewEditingControlShowingEventArgs) Handles dgvCuentas.EditingControlShowing,
             dgvCuentas.EditingControlShowing

@@ -344,13 +344,14 @@
             fechadoc.Enabled = True
             textObservacion.ReadOnly = False
         End If
-
     End Sub
     Private Sub btcancelar_Click(sender As Object, e As EventArgs) Handles btCancelar.Click
-        Generales.deshabilitarControles(Me)
-        Generales.deshabilitarBotones(ToolStrip1)
-        btBuscar.Enabled = True
-        btNuevo.Enabled = True
+        If EstiloMensajes.mostrarMensajePregunta(MensajeSistema.CANCELAR) = Constantes.SI Then
+            Generales.deshabilitarControles(Me)
+            Generales.deshabilitarBotones(ToolStrip1)
+            btBuscar.Enabled = True
+            btNuevo.Enabled = True
+        End If
     End Sub
     Private Sub Textsigla_Leave(sender As Object, e As EventArgs) Handles Textsigla.Leave
         If Textsigla.Text <> "" Then

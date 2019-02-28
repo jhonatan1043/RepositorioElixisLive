@@ -12,6 +12,39 @@ Public Class Generales
     Public Delegate Sub cargaInfoFormObj(ByVal fila As DataRow)
     Public Delegate Sub subRutina()
     Private Shared objConexion As New ConexionBD
+    Public Shared Sub abrirJustificacion(dgv As DataGridView, dt As DataTable, panel As Panel, txtJustificacion As TextBox, nombreColumna As String, soloLectura As Boolean, Optional teclaPresionada As String = "", Optional ultimaFila As Boolean = False)
+        If dgv.RowCount > 0 AndAlso dgv.Rows(dgv.CurrentRow.Index).Cells(nombreColumna).Selected = True AndAlso (String.IsNullOrEmpty(dt.Rows(dgv.CurrentCell.RowIndex).Item(0).ToString) = False OrElse ultimaFila = True) Then
+            If String.IsNullOrEmpty(teclaPresionada) = False Then
+                Dim inte As Integer = Asc(teclaPresionada) ''esto solo es para cuando quiera hacer debug
+            End If
+
+            If (String.IsNullOrEmpty(teclaPresionada) = False) AndAlso Asc(teclaPresionada) = 13 Then Exit Sub
+            panel.Visible = True
+            If (String.IsNullOrEmpty(teclaPresionada) = False) AndAlso ((Asc(teclaPresionada) >= 65 And Asc(teclaPresionada) <= 90) _
+                  Or (Asc(teclaPresionada) >= 97 And Asc(teclaPresionada) <= 122) _
+                  Or (teclaPresionada = "ñ") Or (teclaPresionada = "Ñ")) AndAlso
+                  String.IsNullOrEmpty(dgv.Rows(dgv.CurrentRow.Index).Cells(nombreColumna).Value.ToString) Then
+                If soloLectura Then teclaPresionada = ""
+                txtJustificacion.Text = teclaPresionada
+            Else
+                If (String.IsNullOrEmpty(teclaPresionada) = False) AndAlso ((Asc(teclaPresionada) >= 65 And Asc(teclaPresionada) <= 90) _
+                  Or (Asc(teclaPresionada) >= 97 And Asc(teclaPresionada) <= 122) _
+                  Or (Asc(teclaPresionada) >= 48 And Asc(teclaPresionada) <= 57) _
+                  Or (teclaPresionada = "ñ") Or (teclaPresionada = "Ñ")) Then
+                    txtJustificacion.Text = dgv.Rows(dgv.CurrentRow.Index).Cells(nombreColumna).Value.ToString & teclaPresionada
+                Else
+                    txtJustificacion.Text = dgv.Rows(dgv.CurrentRow.Index).Cells(nombreColumna).Value.ToString
+                End If
+            End If
+
+            If Not IsNothing(dgv.Columns("Estado")) Then
+                dt.Rows(dgv.CurrentCell.RowIndex).Item("Estado") = Constantes.ITEM_NUEVO
+            End If
+            txtJustificacion.ReadOnly = soloLectura
+            txtJustificacion.Focus()
+            txtJustificacion.SelectionStart = txtJustificacion.TextLength
+        End If
+    End Sub
     Public Shared Function fechaActualServidor() As DateTime
         Try
             Dim fechaServidor As DateTime
@@ -805,6 +838,19 @@ Public Class Generales
         objConexion.desconectar()
         Return True
     End Function
+    Public Shared Sub ejecutarSQL(ByVal nombreProc As String, params As List(Of String))
+        Dim listaParams As String = Funciones.getParametros(params)
+        Try
+            objConexion.conectar()
+            Using dbCommand = New SqlCommand(nombreProc & listaParams, objConexion.cnxbd)
+                dbCommand.ExecuteNonQuery()
+            End Using
+        Catch ex As Exception
+            objConexion.desconectar()
+            Throw ex
+        End Try
+        objConexion.desconectar()
+    End Sub
     Public Shared Function getEstadoVF(pConsultaSQL As String,
                                      plistaParam As List(Of String)) As Boolean
         Dim respuesta As Boolean

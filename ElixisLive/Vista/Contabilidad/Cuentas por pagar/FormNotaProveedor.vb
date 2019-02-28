@@ -376,9 +376,13 @@
         End If
     End Sub
     Private Sub btcancelar_Click(sender As Object, e As EventArgs) Handles btCancelar.Click
-        Generales.deshabilitarBotones(ToolStrip1)
-        Generales.deshabilitarControles(Me)
-        PnlInfo.Visible = False
+        If EstiloMensajes.mostrarMensajePregunta(MensajeSistema.CANCELAR) = Constantes.SI Then
+            Generales.deshabilitarBotones(ToolStrip1)
+            Generales.deshabilitarControles(Me)
+            btBuscar.Enabled = True
+            btNuevo.Enabled = True
+            PnlInfo.Visible = False
+        End If
     End Sub
     Private Sub Textsigla_Leave(sender As Object, e As EventArgs) Handles Textsigla.Leave
         If Textsigla.Text <> "" Then

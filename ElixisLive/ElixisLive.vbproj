@@ -597,12 +597,6 @@
     <Compile Include="Vista\Contabilidad\Puc\FormRetencionIva.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vista\Contabilidad\Puc\FormTipoDocumento.Designer.vb">
-      <DependentUpon>FormTipoDocumento.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Vista\Contabilidad\Puc\FormTipoDocumento.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Vista\Contabilidad\Saldos iniciales\FormCajaBanco.Designer.vb">
       <DependentUpon>FormCajaBanco.vb</DependentUpon>
     </Compile>
@@ -928,9 +922,6 @@
     <EmbeddedResource Include="Vista\Contabilidad\Puc\FormRetencionIva.resx">
       <DependentUpon>FormRetencionIva.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vista\Contabilidad\Puc\FormTipoDocumento.resx">
-      <DependentUpon>FormTipoDocumento.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Vista\Contabilidad\Saldos iniciales\FormCajaBanco.resx">
       <DependentUpon>FormCajaBanco.vb</DependentUpon>
     </EmbeddedResource>
@@ -1094,6 +1085,7 @@
     <None Include="Resources\Actions-project-development-close-icon.png" />
     <None Include="Resources\Accounting-icon.png" />
     <None Include="Resources\bank-icon.png" />
+    <None Include="Resources\box-config-icon.png" />
     <Content Include="Resources\calculator-icon1.png" />
     <None Include="Resources\folder-invoices-icon.png" />
     <None Include="Resources\Money-Bag-icon.png" />

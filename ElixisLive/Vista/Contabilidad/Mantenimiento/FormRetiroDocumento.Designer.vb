@@ -50,8 +50,8 @@ Partial Class FormRetiroDocumento
         Me.debito = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.credito = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.dtpFechaFin = New System.Windows.Forms.DateTimePicker()
-        Me.dtpFechaInicio = New System.Windows.Forms.DateTimePicker()
+        Me.inicio = New System.Windows.Forms.DateTimePicker()
+        Me.fin = New System.Windows.Forms.DateTimePicker()
         Me.RadioButton2 = New System.Windows.Forms.RadioButton()
         Me.rAnulado = New System.Windows.Forms.RadioButton()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
@@ -332,8 +332,8 @@ Partial Class FormRetiroDocumento
         '
         'GroupBox2
         '
-        Me.GroupBox2.Controls.Add(Me.dtpFechaFin)
-        Me.GroupBox2.Controls.Add(Me.dtpFechaInicio)
+        Me.GroupBox2.Controls.Add(Me.inicio)
+        Me.GroupBox2.Controls.Add(Me.fin)
         Me.GroupBox2.Controls.Add(Me.RadioButton2)
         Me.GroupBox2.Controls.Add(Me.rAnulado)
         Me.GroupBox2.Controls.Add(Me.TextBox2)
@@ -349,27 +349,27 @@ Partial Class FormRetiroDocumento
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Datos"
         '
-        'dtpFechaFin
+        'inicio
         '
-        Me.dtpFechaFin.CustomFormat = "dd |  MMMM |  yyyy"
-        Me.dtpFechaFin.Enabled = False
-        Me.dtpFechaFin.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.dtpFechaFin.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.dtpFechaFin.Location = New System.Drawing.Point(548, 30)
-        Me.dtpFechaFin.Name = "dtpFechaFin"
-        Me.dtpFechaFin.Size = New System.Drawing.Size(189, 25)
-        Me.dtpFechaFin.TabIndex = 60036
+        Me.inicio.CustomFormat = "dd |  MMMM |  yyyy"
+        Me.inicio.Enabled = False
+        Me.inicio.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.inicio.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.inicio.Location = New System.Drawing.Point(548, 30)
+        Me.inicio.Name = "inicio"
+        Me.inicio.Size = New System.Drawing.Size(189, 25)
+        Me.inicio.TabIndex = 60036
         '
-        'dtpFechaInicio
+        'fin
         '
-        Me.dtpFechaInicio.CustomFormat = "dd |  MMMM |  yyyy"
-        Me.dtpFechaInicio.Enabled = False
-        Me.dtpFechaInicio.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.dtpFechaInicio.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.dtpFechaInicio.Location = New System.Drawing.Point(814, 30)
-        Me.dtpFechaInicio.Name = "dtpFechaInicio"
-        Me.dtpFechaInicio.Size = New System.Drawing.Size(189, 25)
-        Me.dtpFechaInicio.TabIndex = 60035
+        Me.fin.CustomFormat = "dd |  MMMM |  yyyy"
+        Me.fin.Enabled = False
+        Me.fin.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.fin.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.fin.Location = New System.Drawing.Point(814, 30)
+        Me.fin.Name = "fin"
+        Me.fin.Size = New System.Drawing.Size(189, 25)
+        Me.fin.TabIndex = 60035
         '
         'RadioButton2
         '
@@ -539,6 +539,6 @@ Partial Class FormRetiroDocumento
     Public WithEvents Panel3 As Panel
     Public WithEvents Pimagen As PictureBox
     Public WithEvents Label1 As Label
-    Public WithEvents dtpFechaFin As DateTimePicker
-    Public WithEvents dtpFechaInicio As DateTimePicker
+    Public WithEvents inicio As DateTimePicker
+    Public WithEvents fin As DateTimePicker
 End Class

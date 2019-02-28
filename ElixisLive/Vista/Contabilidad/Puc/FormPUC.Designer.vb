@@ -22,6 +22,7 @@ Partial Class FormPUC
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormPUC))
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.chkActivo = New System.Windows.Forms.CheckBox()
@@ -31,9 +32,6 @@ Partial Class FormPUC
         Me.Label11 = New System.Windows.Forms.Label()
         Me.txtDescripcion = New System.Windows.Forms.TextBox()
         Me.Label12 = New System.Windows.Forms.Label()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Pimagen = New System.Windows.Forms.PictureBox()
-        Me.LTitulo = New System.Windows.Forms.Label()
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
         Me.btNuevo = New System.Windows.Forms.ToolStripButton()
         Me.btBuscar = New System.Windows.Forms.ToolStripButton()
@@ -41,12 +39,17 @@ Partial Class FormPUC
         Me.btEditar = New System.Windows.Forms.ToolStripButton()
         Me.btCancelar = New System.Windows.Forms.ToolStripButton()
         Me.btAnular = New System.Windows.Forms.ToolStripButton()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Pimagen = New System.Windows.Forms.PictureBox()
+        Me.LTitulo = New System.Windows.Forms.Label()
+        Me.btRetencionIVA = New System.Windows.Forms.Button()
+        Me.btCuentas = New System.Windows.Forms.Button()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.numAno, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.ToolStrip1.SuspendLayout()
         Me.Panel1.SuspendLayout()
         CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.ToolStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'GroupBox2
@@ -60,7 +63,9 @@ Partial Class FormPUC
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.btRetencionIVA)
         Me.GroupBox1.Controls.Add(Me.chkActivo)
+        Me.GroupBox1.Controls.Add(Me.btCuentas)
         Me.GroupBox1.Controls.Add(Me.Label8)
         Me.GroupBox1.Controls.Add(Me.numAno)
         Me.GroupBox1.Controls.Add(Me.txtCodigo)
@@ -157,41 +162,6 @@ Partial Class FormPUC
         Me.Label12.TabIndex = 6
         Me.Label12.Text = "Descripción:"
         '
-        'Panel1
-        '
-        Me.Panel1.BackColor = System.Drawing.Color.White
-        Me.Panel1.BackgroundImage = Global.Quality.My.Resources.Resources.fondo_azul
-        Me.Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Panel1.Controls.Add(Me.Pimagen)
-        Me.Panel1.Controls.Add(Me.LTitulo)
-        Me.Panel1.Location = New System.Drawing.Point(0, 0)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(603, 42)
-        Me.Panel1.TabIndex = 10007
-        '
-        'Pimagen
-        '
-        Me.Pimagen.BackColor = System.Drawing.Color.Transparent
-        Me.Pimagen.Image = Global.Quality.My.Resources.Resources.Balance_icon1
-        Me.Pimagen.Location = New System.Drawing.Point(4, 0)
-        Me.Pimagen.Name = "Pimagen"
-        Me.Pimagen.Size = New System.Drawing.Size(49, 40)
-        Me.Pimagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.Pimagen.TabIndex = 1
-        Me.Pimagen.TabStop = False
-        '
-        'LTitulo
-        '
-        Me.LTitulo.BackColor = System.Drawing.Color.Transparent
-        Me.LTitulo.Font = New System.Drawing.Font("Times New Roman", 20.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LTitulo.ForeColor = System.Drawing.Color.White
-        Me.LTitulo.Location = New System.Drawing.Point(3, 0)
-        Me.LTitulo.Name = "LTitulo"
-        Me.LTitulo.Size = New System.Drawing.Size(600, 41)
-        Me.LTitulo.TabIndex = 1
-        Me.LTitulo.Text = "Plan único de cuentas"
-        Me.LTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
         'ToolStrip1
         '
         Me.ToolStrip1.BackColor = System.Drawing.Color.White
@@ -272,6 +242,73 @@ Partial Class FormPUC
         Me.btAnular.Text = "&Anular"
         Me.btAnular.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         '
+        'Panel1
+        '
+        Me.Panel1.BackColor = System.Drawing.Color.White
+        Me.Panel1.BackgroundImage = Global.Quality.My.Resources.Resources.fondo_azul
+        Me.Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Panel1.Controls.Add(Me.Pimagen)
+        Me.Panel1.Controls.Add(Me.LTitulo)
+        Me.Panel1.Location = New System.Drawing.Point(0, 0)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(603, 42)
+        Me.Panel1.TabIndex = 10007
+        '
+        'Pimagen
+        '
+        Me.Pimagen.BackColor = System.Drawing.Color.Transparent
+        Me.Pimagen.Image = Global.Quality.My.Resources.Resources.Balance_icon1
+        Me.Pimagen.Location = New System.Drawing.Point(4, 0)
+        Me.Pimagen.Name = "Pimagen"
+        Me.Pimagen.Size = New System.Drawing.Size(49, 40)
+        Me.Pimagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.Pimagen.TabIndex = 1
+        Me.Pimagen.TabStop = False
+        '
+        'LTitulo
+        '
+        Me.LTitulo.BackColor = System.Drawing.Color.Transparent
+        Me.LTitulo.Font = New System.Drawing.Font("Times New Roman", 20.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LTitulo.ForeColor = System.Drawing.Color.White
+        Me.LTitulo.Location = New System.Drawing.Point(3, 0)
+        Me.LTitulo.Name = "LTitulo"
+        Me.LTitulo.Size = New System.Drawing.Size(600, 41)
+        Me.LTitulo.TabIndex = 1
+        Me.LTitulo.Text = "Plan único de cuentas"
+        Me.LTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'btRetencionIVA
+        '
+        Me.btRetencionIVA.BackgroundImage = CType(resources.GetObject("btRetencionIVA.BackgroundImage"), System.Drawing.Image)
+        Me.btRetencionIVA.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btRetencionIVA.Font = New System.Drawing.Font("Arial Narrow", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btRetencionIVA.ForeColor = System.Drawing.Color.White
+        Me.btRetencionIVA.Image = Global.Quality.My.Resources.Resources.SEO_icon
+        Me.btRetencionIVA.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btRetencionIVA.Location = New System.Drawing.Point(297, 197)
+        Me.btRetencionIVA.Name = "btRetencionIVA"
+        Me.btRetencionIVA.Size = New System.Drawing.Size(130, 34)
+        Me.btRetencionIVA.TabIndex = 10010
+        Me.btRetencionIVA.Text = "Retenciones e IVA"
+        Me.btRetencionIVA.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btRetencionIVA.UseVisualStyleBackColor = True
+        '
+        'btCuentas
+        '
+        Me.btCuentas.BackgroundImage = CType(resources.GetObject("btCuentas.BackgroundImage"), System.Drawing.Image)
+        Me.btCuentas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btCuentas.Font = New System.Drawing.Font("Arial Narrow", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btCuentas.ForeColor = System.Drawing.Color.White
+        Me.btCuentas.Image = Global.Quality.My.Resources.Resources.box_config_icon
+        Me.btCuentas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btCuentas.Location = New System.Drawing.Point(431, 197)
+        Me.btCuentas.Name = "btCuentas"
+        Me.btCuentas.Size = New System.Drawing.Size(130, 34)
+        Me.btCuentas.TabIndex = 10009
+        Me.btCuentas.Text = "Configurar cuentas"
+        Me.btCuentas.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btCuentas.UseVisualStyleBackColor = True
+        '
         'FormPUC
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -289,10 +326,10 @@ Partial Class FormPUC
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         CType(Me.numAno, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Panel1.ResumeLayout(False)
-        CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ToolStrip1.ResumeLayout(False)
         Me.ToolStrip1.PerformLayout()
+        Me.Panel1.ResumeLayout(False)
+        CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -317,4 +354,6 @@ Partial Class FormPUC
     Public WithEvents btEditar As ToolStripButton
     Public WithEvents btCancelar As ToolStripButton
     Public WithEvents btAnular As ToolStripButton
+    Public WithEvents btRetencionIVA As Button
+    Public WithEvents btCuentas As Button
 End Class
