@@ -2065,7 +2065,7 @@
         tviE7aY9ew8s0ed/lAn5DkQ/Y4jleNMyAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="btCuenta.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btBusquedaCuenta.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAoUAAAFJCAIAAABiicDRAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         wwAADsMBx2+oZAAA/7JJREFUeF7s/ee3Hdd1rvvyXzpn7+3tuIOzZWVny7KVsyiSYs4EcwABMBMACZIg
@@ -3996,7 +3996,7 @@
         RNJSMHsAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="btCuenta.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btBusquedaCuenta.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAm9JREFUOE+d
         kmtIU1EAx4/7kOYYxHqMXhCkA/chI68jLMnUQLB9SWEEJoUQIj1gUvRiqGOpkxyi6Azd1LWnlq+ZDxa4

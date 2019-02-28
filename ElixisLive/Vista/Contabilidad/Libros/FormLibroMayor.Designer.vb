@@ -27,7 +27,7 @@ Partial Class FormLibroMayor
         Me.LTitulo = New System.Windows.Forms.Label()
         Me.gbDatosGrupo = New System.Windows.Forms.GroupBox()
         Me.btExportaExcel = New System.Windows.Forms.Button()
-        Me.txtTercero = New System.Windows.Forms.Label()
+        Me.txtNit = New System.Windows.Forms.Label()
         Me.txtRazonSocial = New System.Windows.Forms.Label()
         Me.dtpFechaFin = New System.Windows.Forms.DateTimePicker()
         Me.dtpFechaInicio = New System.Windows.Forms.DateTimePicker()
@@ -78,7 +78,7 @@ Partial Class FormLibroMayor
         'gbDatosGrupo
         '
         Me.gbDatosGrupo.Controls.Add(Me.btExportaExcel)
-        Me.gbDatosGrupo.Controls.Add(Me.txtTercero)
+        Me.gbDatosGrupo.Controls.Add(Me.txtNit)
         Me.gbDatosGrupo.Controls.Add(Me.txtRazonSocial)
         Me.gbDatosGrupo.Controls.Add(Me.dtpFechaFin)
         Me.gbDatosGrupo.Controls.Add(Me.dtpFechaInicio)
@@ -105,16 +105,16 @@ Partial Class FormLibroMayor
         Me.btExportaExcel.TabIndex = 60042
         Me.btExportaExcel.UseVisualStyleBackColor = True
         '
-        'txtTercero
+        'txtNit
         '
-        Me.txtTercero.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtTercero.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtTercero.ForeColor = System.Drawing.Color.Black
-        Me.txtTercero.Location = New System.Drawing.Point(67, 29)
-        Me.txtTercero.Name = "txtTercero"
-        Me.txtTercero.Size = New System.Drawing.Size(86, 25)
-        Me.txtTercero.TabIndex = 60041
-        Me.txtTercero.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.txtNit.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtNit.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtNit.ForeColor = System.Drawing.Color.Black
+        Me.txtNit.Location = New System.Drawing.Point(67, 29)
+        Me.txtNit.Name = "txtNit"
+        Me.txtNit.Size = New System.Drawing.Size(86, 25)
+        Me.txtNit.TabIndex = 60041
+        Me.txtNit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'txtRazonSocial
         '
@@ -219,7 +219,7 @@ Partial Class FormLibroMayor
     Public WithEvents LTitulo As Label
     Public WithEvents gbDatosGrupo As GroupBox
     Friend WithEvents btExportaExcel As Button
-    Friend WithEvents txtTercero As Label
+    Friend WithEvents txtNit As Label
     Friend WithEvents txtRazonSocial As Label
     Public WithEvents dtpFechaFin As DateTimePicker
     Public WithEvents dtpFechaInicio As DateTimePicker

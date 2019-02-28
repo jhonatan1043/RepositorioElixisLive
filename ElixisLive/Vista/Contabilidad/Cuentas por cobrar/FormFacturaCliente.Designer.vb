@@ -69,8 +69,6 @@ Partial Class FormFacturaCliente
         Me.dgvCuentas = New System.Windows.Forms.DataGridView()
         Me.anular = New System.Windows.Forms.DataGridViewImageColumn()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.btcxc = New System.Windows.Forms.Button()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Pimagen = New System.Windows.Forms.PictureBox()
         Me.LTitulo = New System.Windows.Forms.Label()
@@ -81,13 +79,13 @@ Partial Class FormFacturaCliente
         Me.btEditar = New System.Windows.Forms.ToolStripButton()
         Me.btCancelar = New System.Windows.Forms.ToolStripButton()
         Me.btAnular = New System.Windows.Forms.ToolStripButton()
+        Me.btcxc = New System.Windows.Forms.ToolStripButton()
         Me.GroupBox1.SuspendLayout()
         Me.PnlInfo.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel3.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         CType(Me.dgvCuentas, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GroupBox3.SuspendLayout()
         Me.Panel2.SuspendLayout()
         CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ToolStrip1.SuspendLayout()
@@ -108,7 +106,7 @@ Partial Class FormFacturaCliente
         Me.GroupBox1.Controls.Add(Me.GroupBox3)
         Me.GroupBox1.Location = New System.Drawing.Point(4, 37)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(896, 449)
+        Me.GroupBox1.Size = New System.Drawing.Size(896, 446)
         Me.GroupBox1.TabIndex = 74
         Me.GroupBox1.TabStop = False
         '
@@ -116,7 +114,7 @@ Partial Class FormFacturaCliente
         '
         Me.textdiferencia.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.textdiferencia.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.textdiferencia.Location = New System.Drawing.Point(687, 420)
+        Me.textdiferencia.Location = New System.Drawing.Point(687, 416)
         Me.textdiferencia.Name = "textdiferencia"
         Me.textdiferencia.Size = New System.Drawing.Size(186, 25)
         Me.textdiferencia.TabIndex = 60043
@@ -126,7 +124,7 @@ Partial Class FormFacturaCliente
         '
         Me.textvalorcredito.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.textvalorcredito.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.textvalorcredito.Location = New System.Drawing.Point(398, 420)
+        Me.textvalorcredito.Location = New System.Drawing.Point(398, 416)
         Me.textvalorcredito.Name = "textvalorcredito"
         Me.textvalorcredito.Size = New System.Drawing.Size(186, 25)
         Me.textvalorcredito.TabIndex = 60042
@@ -136,7 +134,7 @@ Partial Class FormFacturaCliente
         '
         Me.textvalordebito.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.textvalordebito.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.textvalordebito.Location = New System.Drawing.Point(102, 420)
+        Me.textvalordebito.Location = New System.Drawing.Point(102, 416)
         Me.textvalordebito.Name = "textvalordebito"
         Me.textvalordebito.Size = New System.Drawing.Size(186, 25)
         Me.textvalordebito.TabIndex = 60041
@@ -147,7 +145,7 @@ Partial Class FormFacturaCliente
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.Black
-        Me.Label1.Location = New System.Drawing.Point(7, 424)
+        Me.Label1.Location = New System.Drawing.Point(7, 420)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(105, 19)
         Me.Label1.TabIndex = 60038
@@ -159,7 +157,7 @@ Partial Class FormFacturaCliente
         Me.Label11.BackColor = System.Drawing.Color.Transparent
         Me.Label11.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label11.ForeColor = System.Drawing.Color.Black
-        Me.Label11.Location = New System.Drawing.Point(292, 425)
+        Me.Label11.Location = New System.Drawing.Point(292, 421)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(106, 19)
         Me.Label11.TabIndex = 60039
@@ -171,7 +169,7 @@ Partial Class FormFacturaCliente
         Me.Label10.BackColor = System.Drawing.Color.Transparent
         Me.Label10.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label10.ForeColor = System.Drawing.Color.Black
-        Me.Label10.Location = New System.Drawing.Point(597, 425)
+        Me.Label10.Location = New System.Drawing.Point(597, 421)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(89, 19)
         Me.Label10.TabIndex = 60040
@@ -184,9 +182,9 @@ Partial Class FormFacturaCliente
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.PnlInfo.Controls.Add(Me.lbinfo)
         Me.PnlInfo.Controls.Add(Me.PictureBox2)
-        Me.PnlInfo.Location = New System.Drawing.Point(1, 386)
+        Me.PnlInfo.Location = New System.Drawing.Point(14, 374)
         Me.PnlInfo.Name = "PnlInfo"
-        Me.PnlInfo.Size = New System.Drawing.Size(895, 29)
+        Me.PnlInfo.Size = New System.Drawing.Size(870, 29)
         Me.PnlInfo.TabIndex = 60037
         Me.PnlInfo.Visible = False
         '
@@ -225,7 +223,7 @@ Partial Class FormFacturaCliente
         Me.Panel3.Controls.Add(Me.Label31)
         Me.Panel3.Controls.Add(Me.lblivarete)
         Me.Panel3.Controls.Add(Me.Label32)
-        Me.Panel3.Location = New System.Drawing.Point(306, 225)
+        Me.Panel3.Location = New System.Drawing.Point(306, 198)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(296, 114)
         Me.Panel3.TabIndex = 60028
@@ -578,7 +576,7 @@ Partial Class FormFacturaCliente
         DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.Desktop
         DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.dgvCuentas.DefaultCellStyle = DataGridViewCellStyle3
-        Me.dgvCuentas.Location = New System.Drawing.Point(14, 178)
+        Me.dgvCuentas.Location = New System.Drawing.Point(14, 150)
         Me.dgvCuentas.Name = "dgvCuentas"
         Me.dgvCuentas.ReadOnly = True
         Me.dgvCuentas.RowHeadersVisible = False
@@ -588,7 +586,7 @@ Partial Class FormFacturaCliente
         Me.dgvCuentas.ShowCellToolTips = False
         Me.dgvCuentas.ShowEditingIcon = False
         Me.dgvCuentas.ShowRowErrors = False
-        Me.dgvCuentas.Size = New System.Drawing.Size(870, 220)
+        Me.dgvCuentas.Size = New System.Drawing.Size(870, 255)
         Me.dgvCuentas.TabIndex = 60027
         '
         'anular
@@ -601,42 +599,14 @@ Partial Class FormFacturaCliente
         '
         'GroupBox3
         '
-        Me.GroupBox3.Controls.Add(Me.Label2)
-        Me.GroupBox3.Controls.Add(Me.btcxc)
         Me.GroupBox3.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.GroupBox3.Location = New System.Drawing.Point(6, 131)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(884, 274)
+        Me.GroupBox3.Size = New System.Drawing.Size(884, 280)
         Me.GroupBox3.TabIndex = 60026
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Detalle del movimiento"
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.Black
-        Me.Label2.Location = New System.Drawing.Point(605, 19)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(168, 17)
-        Me.Label2.TabIndex = 60032
-        Me.Label2.Text = "Crear cuenta por cobrar:"
-        '
-        'btcxc
-        '
-        Me.btcxc.BackgroundImage = Global.Quality.My.Resources.Resources.fondo_azul
-        Me.btcxc.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btcxc.Font = New System.Drawing.Font("Times New Roman", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btcxc.ForeColor = System.Drawing.Color.White
-        Me.btcxc.Image = Global.Quality.My.Resources.Resources.invoice_icon__1_
-        Me.btcxc.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btcxc.Location = New System.Drawing.Point(779, 10)
-        Me.btcxc.Name = "btcxc"
-        Me.btcxc.Size = New System.Drawing.Size(75, 34)
-        Me.btcxc.TabIndex = 1
-        Me.btcxc.Text = "          CXC"
-        Me.btcxc.UseVisualStyleBackColor = True
         '
         'Panel2
         '
@@ -680,7 +650,7 @@ Partial Class FormFacturaCliente
         Me.ToolStrip1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ToolStrip1.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.ToolStrip1.ImageScalingSize = New System.Drawing.Size(30, 30)
-        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.btNuevo, Me.btBuscar, Me.btRegistrar, Me.btEditar, Me.btCancelar, Me.btAnular})
+        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.btNuevo, Me.btBuscar, Me.btRegistrar, Me.btEditar, Me.btCancelar, Me.btAnular, Me.btcxc})
         Me.ToolStrip1.Location = New System.Drawing.Point(0, 486)
         Me.ToolStrip1.Name = "ToolStrip1"
         Me.ToolStrip1.Size = New System.Drawing.Size(905, 37)
@@ -753,6 +723,17 @@ Partial Class FormFacturaCliente
         Me.btAnular.Text = "Anular"
         Me.btAnular.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         '
+        'btcxc
+        '
+        Me.btcxc.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
+        Me.btcxc.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btcxc.ForeColor = System.Drawing.Color.White
+        Me.btcxc.Image = Global.Quality.My.Resources.Resources.invoice_icon__1_
+        Me.btcxc.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.btcxc.Name = "btcxc"
+        Me.btcxc.Size = New System.Drawing.Size(191, 34)
+        Me.btcxc.Text = "Crear cuenta por cobrar "
+        '
         'FormFacturaCliente
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -776,8 +757,6 @@ Partial Class FormFacturaCliente
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
         CType(Me.dgvCuentas, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.GroupBox3.ResumeLayout(False)
-        Me.GroupBox3.PerformLayout()
         Me.Panel2.ResumeLayout(False)
         CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ToolStrip1.ResumeLayout(False)
@@ -810,7 +789,6 @@ Partial Class FormFacturaCliente
     Friend WithEvents dgvCuentas As DataGridView
     Friend WithEvents anular As DataGridViewImageColumn
     Friend WithEvents GroupBox3 As GroupBox
-    Friend WithEvents btcxc As Button
     Public WithEvents PnlInfo As Panel
     Public WithEvents lbinfo As Label
     Public WithEvents PictureBox2 As PictureBox
@@ -831,7 +809,6 @@ Partial Class FormFacturaCliente
     Friend WithEvents Label1 As Label
     Friend WithEvents Label11 As Label
     Friend WithEvents Label10 As Label
-    Friend WithEvents Label2 As Label
     Public WithEvents ToolStrip1 As ToolStrip
     Public WithEvents btNuevo As ToolStripButton
     Public WithEvents btBuscar As ToolStripButton
@@ -842,4 +819,5 @@ Partial Class FormFacturaCliente
     Friend WithEvents txtTotal As Label
     Friend WithEvents txtNaturaleza As Label
     Friend WithEvents txtPorcentaje As Label
+    Friend WithEvents btcxc As ToolStripButton
 End Class

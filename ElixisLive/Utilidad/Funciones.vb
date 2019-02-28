@@ -2,9 +2,51 @@
 Imports System.Data.SqlTypes
 Imports System.Net.Mail
 Imports System.Text.RegularExpressions
+Imports CrystalDecisions.CrystalReports.Engine
 Imports CrystalDecisions.Shared
 
 Public Class Funciones
+    Public Shared Sub getReporte(pReporte As ReportClass,
+                                 pNombre As String,
+                                 pFormula As String,
+                                 pFormato As ExportFormatType)
+
+        Try
+            FormPrincipal.Cursor = Cursors.WaitCursor
+            Generales.getConnReporte(pReporte.Database.Tables)
+
+            If pFormula IsNot Nothing Then
+                pReporte.RecordSelectionFormula = pFormula
+            End If
+
+            Dim ruta = IO.Path.GetTempPath &
+                       pNombre &
+                       "_" &
+                       Now.Ticks &
+                       getReporteExtension(pFormato)
+
+            pReporte.ExportToDisk(pFormato, ruta)
+            pReporte.Load(ruta)
+            pReporte.Close()
+            Process.Start(ruta)
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            FormPrincipal.Cursor = Cursors.Default
+        End Try
+    End Sub
+    Public Shared Function getReporteExtension(pTipoArchivo As String) As String
+
+        Select Case pTipoArchivo
+            Case ExportFormatType.PortableDocFormat
+                Return ".pdf"
+            Case ExportFormatType.Excel
+                Return ".xls"
+        End Select
+
+        Return ".pdf"
+    End Function
     Public Shared Function getReporteNoFTP(pReporte As Object, pFormula As String, pArea As String, Optional ext As String = ".pdf", Optional tbl As Hashtable = Nothing, Optional rutaAlterna As String = Nothing, Optional ejecutarReporte As Boolean = True) As Boolean
         Try
             FormPrincipal.Cursor = Cursors.WaitCursor

@@ -7,7 +7,9 @@
         Generales.asignarPermiso(Me)
         llenarDtCuentas()
         codigoPuc = FuncionesContables.obtenerPucActivo()
-        Generales.deshabilitarControles(Me)
+        Generales.deshabilitarBotones(ToolStrip1)
+        btNuevo.Enabled = True
+        btBuscar.Enabled = True
         codigoDocumento = Constantes.NOTAS_DE_VENTAS
     End Sub
     Private Sub FormNotaCliente_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
@@ -551,7 +553,7 @@
                     MsgBox("Digite cantidad base", MsgBoxStyle.Exclamation)
                     base.Focus()
                 End If
-            ElseIf txttotal.Focused() = True Then
+            ElseIf txttotal.text <> "" Then
                 Panel3.Visible = False
                 dgvCuentas.Enabled = True
                 bttercero.Enabled = True

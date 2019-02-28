@@ -1,4 +1,7 @@
 ﻿Public Class Constantes
+    Public Const ITEM_NUEVO = "0"
+    Public Const ITEM_MODIFICADO = "1"
+    Public Const ITEM_CARGADO = "2"
     Public Const SI = "Si"
     Public Const NO = "No"
     Public Const SERVIDOR_FTP = "ftp://192.168.2.89//CarpetaFTP/"
@@ -144,7 +147,7 @@
     Public Const TIPO_LETRA_ELEMENTO = "Segoe UI Normal"
     Public Const TIPO_LETRA_TITULO = "Segoe UI Semibold"
     Public Const PENDIENTE = 0
-    
+
 
     Public Const ALTO_BARRA = 50
     'Citas

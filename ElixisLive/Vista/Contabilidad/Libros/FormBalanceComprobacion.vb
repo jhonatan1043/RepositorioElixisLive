@@ -20,7 +20,6 @@ Public Class FormBalanceComprobacion
             EstiloMensajes.mostrarMensajeAdvertencia("La fecha de inicio no puede ser mayor a la fecha final!")
             Return False
         End If
-
         Return True
     End Function
 
@@ -36,10 +35,8 @@ Public Class FormBalanceComprobacion
     Public Sub visualizarReporte(formato As CrystalDecisions.Shared.ExportFormatType)
         Dim objBalanceBLL As New BalanceComprobacionBLL
         Dim params As New BalanceComprobacionParams
-
         params = crearParametros()
         objBalanceBLL.calcularBalanceComprobacion(params)
-
         If params.resultado = False Then
             MsgBox(MensajeSistema.CONTA_RESULTADO_VACIO, MsgBoxStyle.Exclamation)
         Else
@@ -47,7 +44,6 @@ Public Class FormBalanceComprobacion
             Funciones.getReporteNoFTP(generarReporte(), Nothing, "Balance01")
             Cursor = Cursors.Default
         End If
-
     End Sub
 
     Public Function crearParametros() As BalanceComprobacionParams
@@ -67,17 +63,14 @@ Public Class FormBalanceComprobacion
 
     Private Sub calcularBalance()
         Dim dtBalance As New DataTable
-
         Dim params As New List(Of String)
         params.Add(getTipoCuentaSeleccionada)
         params.Add(CDate(dtpFechaInicio.Value).Date)
         params.Add(CDate(dtpFechaFin.Value).Date)
-
         Generales.llenarTabla(Consultas.BALANCE_COMPROBACION_CARGAR_PREV, params, dtBalance)
         dgBalance.DataSource = dtBalance
         dgBalance.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
         dgBalance.DefaultCellStyle.Font = New Font(Constantes.TIPO_LETRA_ELEMENTO, 9)
-
     End Sub
 
     Private Function getTipoCuentaSeleccionada()
@@ -101,15 +94,12 @@ Public Class FormBalanceComprobacion
             Dim nombreRpt As String = "balance01"
             Dim dtBalance As New DataTable
             Dim params As New List(Of String)
-
             Cursor = Cursors.WaitCursor
             params.Add(getTipoCuentaSeleccionada())
             params.Add(CDate(dtpFechaInicio.Value).Date)
             params.Add(CDate(dtpFechaFin.Value).Date)
-
             Generales.llenarTabla(Consultas.BALANCE_COMPROBACION_CARGAR_XLS, params, dtBalance)
             Dim ruta As String = FuncionesExcel.exportarDataTable(dtBalance, nombreRpt)
-
             Process.Start(ruta)
         Catch ex As Exception
             Throw ex
@@ -121,19 +111,15 @@ Public Class FormBalanceComprobacion
 
     Public Function generarReporte() As rptBalanceComprobacion
         Dim rptLibro As New rptBalanceComprobacion
-
         Dim rango As String = dtpFechaInicio.Text & " - " & dtpFechaFin.Text
-
         Cursor = Cursors.WaitCursor
         rptLibro.SetParameterValue("rango", rango)
         Return rptLibro
-
     End Function
     Private Sub FormBalanceComprobacion_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Generales.habilitarControles(Me)
         txtNit.Text = SesionActual.nitEmpresa
         txtRazonSocial.Text = SesionActual.nombreEmpresa
-
         dtpFechaInicio.Value = DateTime.Now
         dtpFechaFin.Value = DateTime.Now
     End Sub

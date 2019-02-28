@@ -28,10 +28,10 @@ Partial Class FormLibroAuxiliar
         Me.LTitulo = New System.Windows.Forms.Label()
         Me.gbDatosGrupo = New System.Windows.Forms.GroupBox()
         Me.btTercero = New System.Windows.Forms.Button()
-        Me.txtTercero = New System.Windows.Forms.Label()
-        Me.txtRazonSocial = New System.Windows.Forms.Label()
+        Me.txtIdentificacionTercero = New System.Windows.Forms.Label()
+        Me.txtDescripcionTercero = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.btCuenta = New System.Windows.Forms.Button()
+        Me.btBusquedaCuenta = New System.Windows.Forms.Button()
         Me.txtCodigoCuenta = New System.Windows.Forms.Label()
         Me.txtDescripcionCuenta = New System.Windows.Forms.Label()
         Me.dtpFechaFin = New System.Windows.Forms.DateTimePicker()
@@ -40,6 +40,7 @@ Partial Class FormLibroAuxiliar
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
+        Me.btExportaExcel = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbDatosGrupo.SuspendLayout()
@@ -82,11 +83,12 @@ Partial Class FormLibroAuxiliar
         '
         'gbDatosGrupo
         '
+        Me.gbDatosGrupo.Controls.Add(Me.btExportaExcel)
         Me.gbDatosGrupo.Controls.Add(Me.btTercero)
-        Me.gbDatosGrupo.Controls.Add(Me.txtTercero)
-        Me.gbDatosGrupo.Controls.Add(Me.txtRazonSocial)
+        Me.gbDatosGrupo.Controls.Add(Me.txtIdentificacionTercero)
+        Me.gbDatosGrupo.Controls.Add(Me.txtDescripcionTercero)
         Me.gbDatosGrupo.Controls.Add(Me.Label3)
-        Me.gbDatosGrupo.Controls.Add(Me.btCuenta)
+        Me.gbDatosGrupo.Controls.Add(Me.btBusquedaCuenta)
         Me.gbDatosGrupo.Controls.Add(Me.txtCodigoCuenta)
         Me.gbDatosGrupo.Controls.Add(Me.txtDescripcionCuenta)
         Me.gbDatosGrupo.Controls.Add(Me.dtpFechaFin)
@@ -114,27 +116,27 @@ Partial Class FormLibroAuxiliar
         Me.btTercero.TabIndex = 60046
         Me.btTercero.UseVisualStyleBackColor = True
         '
-        'txtTercero
+        'txtIdentificacionTercero
         '
-        Me.txtTercero.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtTercero.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtTercero.ForeColor = System.Drawing.Color.Black
-        Me.txtTercero.Location = New System.Drawing.Point(67, 53)
-        Me.txtTercero.Name = "txtTercero"
-        Me.txtTercero.Size = New System.Drawing.Size(86, 25)
-        Me.txtTercero.TabIndex = 60045
-        Me.txtTercero.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.txtIdentificacionTercero.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtIdentificacionTercero.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtIdentificacionTercero.ForeColor = System.Drawing.Color.Black
+        Me.txtIdentificacionTercero.Location = New System.Drawing.Point(67, 53)
+        Me.txtIdentificacionTercero.Name = "txtIdentificacionTercero"
+        Me.txtIdentificacionTercero.Size = New System.Drawing.Size(86, 25)
+        Me.txtIdentificacionTercero.TabIndex = 60045
+        Me.txtIdentificacionTercero.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'txtRazonSocial
+        'txtDescripcionTercero
         '
-        Me.txtRazonSocial.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtRazonSocial.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtRazonSocial.ForeColor = System.Drawing.Color.Black
-        Me.txtRazonSocial.Location = New System.Drawing.Point(157, 53)
-        Me.txtRazonSocial.Name = "txtRazonSocial"
-        Me.txtRazonSocial.Size = New System.Drawing.Size(387, 25)
-        Me.txtRazonSocial.TabIndex = 60044
-        Me.txtRazonSocial.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.txtDescripcionTercero.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtDescripcionTercero.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtDescripcionTercero.ForeColor = System.Drawing.Color.Black
+        Me.txtDescripcionTercero.Location = New System.Drawing.Point(157, 53)
+        Me.txtDescripcionTercero.Name = "txtDescripcionTercero"
+        Me.txtDescripcionTercero.Size = New System.Drawing.Size(387, 25)
+        Me.txtDescripcionTercero.TabIndex = 60044
+        Me.txtDescripcionTercero.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Label3
         '
@@ -147,16 +149,16 @@ Partial Class FormLibroAuxiliar
         Me.Label3.TabIndex = 60043
         Me.Label3.Text = "Tercero:"
         '
-        'btCuenta
+        'btBusquedaCuenta
         '
-        Me.btCuenta.BackgroundImage = CType(resources.GetObject("btCuenta.BackgroundImage"), System.Drawing.Image)
-        Me.btCuenta.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btCuenta.Image = CType(resources.GetObject("btCuenta.Image"), System.Drawing.Image)
-        Me.btCuenta.Location = New System.Drawing.Point(548, 22)
-        Me.btCuenta.Name = "btCuenta"
-        Me.btCuenta.Size = New System.Drawing.Size(26, 25)
-        Me.btCuenta.TabIndex = 60042
-        Me.btCuenta.UseVisualStyleBackColor = True
+        Me.btBusquedaCuenta.BackgroundImage = CType(resources.GetObject("btBusquedaCuenta.BackgroundImage"), System.Drawing.Image)
+        Me.btBusquedaCuenta.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btBusquedaCuenta.Image = CType(resources.GetObject("btBusquedaCuenta.Image"), System.Drawing.Image)
+        Me.btBusquedaCuenta.Location = New System.Drawing.Point(548, 22)
+        Me.btBusquedaCuenta.Name = "btBusquedaCuenta"
+        Me.btBusquedaCuenta.Size = New System.Drawing.Size(26, 25)
+        Me.btBusquedaCuenta.TabIndex = 60042
+        Me.btBusquedaCuenta.UseVisualStyleBackColor = True
         '
         'txtCodigoCuenta
         '
@@ -246,6 +248,17 @@ Partial Class FormLibroAuxiliar
         Me.Label11.TabIndex = 4
         Me.Label11.Text = "Cuenta:"
         '
+        'btExportaExcel
+        '
+        Me.btExportaExcel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btExportaExcel.Enabled = False
+        Me.btExportaExcel.Image = Global.Quality.My.Resources.Resources.Microsoft_Excel_2013_icon1
+        Me.btExportaExcel.Location = New System.Drawing.Point(414, 110)
+        Me.btExportaExcel.Name = "btExportaExcel"
+        Me.btExportaExcel.Size = New System.Drawing.Size(42, 38)
+        Me.btExportaExcel.TabIndex = 60047
+        Me.btExportaExcel.UseVisualStyleBackColor = True
+        '
         'FormLibroAuxiliar
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -271,7 +284,7 @@ Partial Class FormLibroAuxiliar
     Public WithEvents Pimagen As PictureBox
     Public WithEvents LTitulo As Label
     Public WithEvents gbDatosGrupo As GroupBox
-    Public WithEvents btCuenta As Button
+    Public WithEvents btBusquedaCuenta As Button
     Friend WithEvents txtCodigoCuenta As Label
     Friend WithEvents txtDescripcionCuenta As Label
     Public WithEvents dtpFechaFin As DateTimePicker
@@ -281,7 +294,8 @@ Partial Class FormLibroAuxiliar
     Public WithEvents Label5 As Label
     Public WithEvents Label11 As Label
     Public WithEvents btTercero As Button
-    Friend WithEvents txtTercero As Label
-    Friend WithEvents txtRazonSocial As Label
+    Friend WithEvents txtIdentificacionTercero As Label
+    Friend WithEvents txtDescripcionTercero As Label
     Public WithEvents Label3 As Label
+    Friend WithEvents btExportaExcel As Button
 End Class

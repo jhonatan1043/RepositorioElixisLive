@@ -53,27 +53,26 @@
         dgvCuentas.EndEdit()
         dtCuentas.AcceptChanges()
         If textCodigoCliente.Text = "" Then
-            MsgBox("Por Favor Elija el cliente", 48, "Atención")
+            EstiloMensajes.mostrarMensajeAdvertencia("Por Favor Elija el cliente")
             bttercero.Focus()
         ElseIf Textcodfactura.Text = "" Then
-            MsgBox("Por Favor digite el numero de factura", 48, "Atención")
+            EstiloMensajes.mostrarMensajeAdvertencia("Por Favor digite el numero de factura")
             btfactura.Focus()
         ElseIf Format(CDate(fecharecibo.Value), "yyyyMMdd") = Format(CDate(fechavence.Value), "yyyyMMdd") Then
-            MsgBox("La fecha de vencimiento no puede ser igual a la fecha de recibo", 48, "Atención")
+            EstiloMensajes.mostrarMensajeAdvertencia("La fecha de vencimiento no puede ser igual a la fecha de recibo")
             fechavence.Focus()
         ElseIf Format(CDate(fecharecibo.Value), "yyyyMMdd") > Format(CDate(fechavence.Value), "yyyyMMdd") Then
-            MsgBox("La fecha de vencimiento no puede ser menor a la fecha de recibo", 48, "Atención")
+            EstiloMensajes.mostrarMensajeAdvertencia("La fecha de vencimiento no puede ser menor a la fecha de recibo")
             fechavence.Focus()
         ElseIf dgvCuentas.RowCount <= 1 Then
-            MsgBox("Por favor corrija el movimiento la diferencia debe ser cero", 48, "Atención")
+            EstiloMensajes.mostrarMensajeAdvertencia("Por favor corrija el movimiento la diferencia debe ser cero")
         ElseIf CDbl(textdiferencia.Text) <> 0 Then
-            MsgBox("Por favor corrija el movimiento la diferencia debe ser cero", 48, "Atención")
+            EstiloMensajes.mostrarMensajeAdvertencia("Por favor corrija el movimiento la diferencia debe ser cero")
         ElseIf FuncionesContables.validardgv(dtCuentas) = False Then
         ElseIf FuncionesContables.verificarFecha(fechadoc.Value) Then
             mostrarInfo(String.Format(MensajeSistema.PERIODO_CONTABLE_CERRADO), Color.White, Color.Red)
         ElseIf FuncionesContables.VerificarCuentaTercero(idTercero, Consultas.CUENTA_POR_COBRAR_CREAR, dgvCuentas) = False Then
-            MsgBox("Debe crear una cuenta por cobrar", MsgBoxStyle.Information)
-            btcxc.Focus()
+            EstiloMensajes.mostrarMensajeAdvertencia("Debe crear una cuenta por cobrar")
         ElseIf FuncionesContables.validarFechaFutura(fechadoc) = False Then
         Else
             mostrarInfo(Nothing, Nothing, Nothing, True)
@@ -220,7 +219,6 @@
         dgvCuentas.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None
         dgvCuentas.DefaultCellStyle.Font = New Font(Constantes.TIPO_LETRA_ELEMENTO, 9)
         codigoPuc = FuncionesContables.obtenerPucActivo()
-        Generales.deshabilitarControles(Me)
         codigoDocumento = Constantes.FACTURA_DE_VENTA
     End Sub
     Private Sub bloquearColumnas()
@@ -539,7 +537,7 @@
             EstiloMensajes.mostrarMensajeAdvertencia("Por favor elija el cliente")
         End If
     End Sub
-    Private Sub btCXC_Click(sender As Object, e As EventArgs) Handles btcxc.Click
+    Private Sub btCXC_Click(sender As Object, e As EventArgs)
         crearCuentaPorCobrar(idTercero)
     End Sub
     Private Sub dgvCuentas_CellEnter(sender As Object, e As DataGridViewCellEventArgs) Handles dgvCuentas.CellEnter
@@ -642,7 +640,7 @@
                     EstiloMensajes.mostrarMensajeAdvertencia("Digite cantidad base")
                     base.Focus()
                 End If
-            ElseIf txtTotal.Focused() = True Then
+            ElseIf txtTotal.text <> "" Then
                 Panel3.Visible = False
                 dgvCuentas.Enabled = True
                 bttercero.Enabled = True
