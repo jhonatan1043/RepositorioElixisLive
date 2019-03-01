@@ -40,36 +40,17 @@ Partial Class FormComprobanteEgreso
         Me.btEditar = New System.Windows.Forms.ToolStripButton()
         Me.btCancelar = New System.Windows.Forms.ToolStripButton()
         Me.btAnular = New System.Windows.Forms.ToolStripButton()
+        Me.btImprimir = New System.Windows.Forms.ToolStripButton()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.GroupBox6 = New System.Windows.Forms.GroupBox()
-        Me.PnlInfo = New System.Windows.Forms.Panel()
-        Me.lbinfo = New System.Windows.Forms.Label()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        Me.dgvCuentas = New System.Windows.Forms.DataGridView()
-        Me.dgOrden = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.dgNumFactura = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.dgCuenta = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.dgDescripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.dgDebito = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.dgCredito = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.dgQuitar = New System.Windows.Forms.DataGridViewImageColumn()
-        Me.grupoDetalle = New System.Windows.Forms.GroupBox()
-        Me.textobserva = New System.Windows.Forms.TextBox()
-        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.Textsigla = New System.Windows.Forms.Label()
-        Me.Textnombredocumento = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.btBusquedaDocumento = New System.Windows.Forms.Button()
-        Me.txtcodigo = New System.Windows.Forms.Label()
-        Me.fechadoc = New System.Windows.Forms.DateTimePicker()
-        Me.textnombreproveedor = New System.Windows.Forms.Label()
-        Me.textCodigoCliente = New System.Windows.Forms.Label()
-        Me.bttercero = New System.Windows.Forms.Button()
-        Me.Label21 = New System.Windows.Forms.Label()
-        Me.Label15 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
-        Me.Label1 = New System.Windows.Forms.Label()
+        Me.txtretencion = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.textdiferencia = New System.Windows.Forms.Label()
+        Me.textvalorcredito = New System.Windows.Forms.Label()
+        Me.textvalordebito = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.Label10 = New System.Windows.Forms.Label()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.txtTotal = New System.Windows.Forms.Label()
         Me.txtNaturaleza = New System.Windows.Forms.Label()
@@ -82,23 +63,47 @@ Partial Class FormComprobanteEgreso
         Me.Label31 = New System.Windows.Forms.Label()
         Me.lblivarete = New System.Windows.Forms.Label()
         Me.Label32 = New System.Windows.Forms.Label()
-        Me.textdiferencia = New System.Windows.Forms.Label()
-        Me.textvalorcredito = New System.Windows.Forms.Label()
-        Me.textvalordebito = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label11 = New System.Windows.Forms.Label()
-        Me.Label10 = New System.Windows.Forms.Label()
+        Me.PnlInfo = New System.Windows.Forms.Panel()
+        Me.lbinfo = New System.Windows.Forms.Label()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.dgvComprobante = New System.Windows.Forms.DataGridView()
+        Me.dgOrden = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dgNumFactura = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dgCuenta = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dgDescripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dgDebito = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dgCredito = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dgQuitar = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.grupoDetalle = New System.Windows.Forms.GroupBox()
+        Me.textobservacion = New System.Windows.Forms.TextBox()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.txtfactura = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.fechaDoc = New System.Windows.Forms.DateTimePicker()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Textsigla = New System.Windows.Forms.Label()
+        Me.Textnombredocumento = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.btBusquedaDocumento = New System.Windows.Forms.Button()
+        Me.txtcomprobante = New System.Windows.Forms.Label()
+        Me.fechaRecibo = New System.Windows.Forms.DateTimePicker()
+        Me.textnombreproveedor = New System.Windows.Forms.Label()
+        Me.textCodigoCliente = New System.Windows.Forms.Label()
+        Me.bttercero = New System.Windows.Forms.Button()
+        Me.Label21 = New System.Windows.Forms.Label()
+        Me.Label15 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ToolStrip1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox6.SuspendLayout()
+        Me.Panel3.SuspendLayout()
         Me.PnlInfo.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.dgvCuentas, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgvComprobante, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.grupoDetalle.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
-        Me.Panel3.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
@@ -142,7 +147,7 @@ Partial Class FormComprobanteEgreso
         Me.ToolStrip1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ToolStrip1.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.ToolStrip1.ImageScalingSize = New System.Drawing.Size(30, 30)
-        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.btNuevo, Me.btBuscar, Me.btRegistrar, Me.btEditar, Me.btCancelar, Me.btAnular})
+        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.btNuevo, Me.btBuscar, Me.btRegistrar, Me.btEditar, Me.btCancelar, Me.btAnular, Me.btImprimir})
         Me.ToolStrip1.Location = New System.Drawing.Point(0, 486)
         Me.ToolStrip1.Name = "ToolStrip1"
         Me.ToolStrip1.Size = New System.Drawing.Size(905, 37)
@@ -215,6 +220,17 @@ Partial Class FormComprobanteEgreso
         Me.btAnular.Text = "Anular"
         Me.btAnular.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         '
+        'btImprimir
+        '
+        Me.btImprimir.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btImprimir.ForeColor = System.Drawing.Color.White
+        Me.btImprimir.Image = Global.Quality.My.Resources.Resources.Printer_icon__1_
+        Me.btImprimir.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.btImprimir.Name = "btImprimir"
+        Me.btImprimir.Size = New System.Drawing.Size(103, 34)
+        Me.btImprimir.Text = "Imprimir"
+        Me.btImprimir.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        '
         'GroupBox1
         '
         Me.GroupBox1.Controls.Add(Me.GroupBox6)
@@ -228,6 +244,8 @@ Partial Class FormComprobanteEgreso
         '
         'GroupBox6
         '
+        Me.GroupBox6.Controls.Add(Me.txtretencion)
+        Me.GroupBox6.Controls.Add(Me.Label8)
         Me.GroupBox6.Controls.Add(Me.textdiferencia)
         Me.GroupBox6.Controls.Add(Me.textvalorcredito)
         Me.GroupBox6.Controls.Add(Me.textvalordebito)
@@ -236,7 +254,7 @@ Partial Class FormComprobanteEgreso
         Me.GroupBox6.Controls.Add(Me.Label10)
         Me.GroupBox6.Controls.Add(Me.Panel3)
         Me.GroupBox6.Controls.Add(Me.PnlInfo)
-        Me.GroupBox6.Controls.Add(Me.dgvCuentas)
+        Me.GroupBox6.Controls.Add(Me.dgvComprobante)
         Me.GroupBox6.Font = New System.Drawing.Font("Arial Narrow", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.GroupBox6.Location = New System.Drawing.Point(6, 148)
@@ -246,322 +264,99 @@ Partial Class FormComprobanteEgreso
         Me.GroupBox6.TabStop = False
         Me.GroupBox6.Text = "Ajustes Varios"
         '
-        'PnlInfo
+        'txtretencion
         '
-        Me.PnlInfo.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.PnlInfo.Controls.Add(Me.lbinfo)
-        Me.PnlInfo.Controls.Add(Me.PictureBox2)
-        Me.PnlInfo.Location = New System.Drawing.Point(5, 214)
-        Me.PnlInfo.Name = "PnlInfo"
-        Me.PnlInfo.Size = New System.Drawing.Size(870, 31)
-        Me.PnlInfo.TabIndex = 60028
-        Me.PnlInfo.Visible = False
+        Me.txtretencion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtretencion.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtretencion.Location = New System.Drawing.Point(750, 254)
+        Me.txtretencion.Name = "txtretencion"
+        Me.txtretencion.Size = New System.Drawing.Size(132, 25)
+        Me.txtretencion.TabIndex = 60051
+        Me.txtretencion.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
-        'lbinfo
+        'Label8
         '
-        Me.lbinfo.AutoSize = True
-        Me.lbinfo.Font = New System.Drawing.Font("Arial Narrow", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbinfo.ForeColor = System.Drawing.Color.Black
-        Me.lbinfo.Location = New System.Drawing.Point(32, 8)
-        Me.lbinfo.Name = "lbinfo"
-        Me.lbinfo.Size = New System.Drawing.Size(68, 16)
-        Me.lbinfo.TabIndex = 10063
-        Me.lbinfo.Text = "CONTENIDO"
+        Me.Label8.BackColor = System.Drawing.Color.Transparent
+        Me.Label8.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.ForeColor = System.Drawing.Color.Black
+        Me.Label8.Location = New System.Drawing.Point(668, 259)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(89, 19)
+        Me.Label8.TabIndex = 60050
+        Me.Label8.Text = "Diferencia:"
+        Me.Label8.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
-        'PictureBox2
+        'textdiferencia
         '
-        Me.PictureBox2.Image = Global.Quality.My.Resources.Resources.atencion
-        Me.PictureBox2.Location = New System.Drawing.Point(3, 4)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(24, 24)
-        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox2.TabIndex = 10063
-        Me.PictureBox2.TabStop = False
+        Me.textdiferencia.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.textdiferencia.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.textdiferencia.Location = New System.Drawing.Point(558, 256)
+        Me.textdiferencia.Name = "textdiferencia"
+        Me.textdiferencia.Size = New System.Drawing.Size(132, 25)
+        Me.textdiferencia.TabIndex = 60049
+        Me.textdiferencia.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
-        'dgvCuentas
+        'textvalorcredito
         '
-        Me.dgvCuentas.AllowUserToAddRows = False
-        Me.dgvCuentas.AllowUserToDeleteRows = False
-        Me.dgvCuentas.AllowUserToResizeColumns = False
-        Me.dgvCuentas.AllowUserToResizeRows = False
-        DataGridViewCellStyle8.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.dgvCuentas.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle8
-        Me.dgvCuentas.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.dgvCuentas.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
-        Me.dgvCuentas.BackgroundColor = System.Drawing.Color.White
-        Me.dgvCuentas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
-        Me.dgvCuentas.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.dgOrden, Me.dgNumFactura, Me.dgCuenta, Me.dgDescripcion, Me.dgDebito, Me.dgCredito, Me.dgQuitar})
-        DataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle14.Font = New System.Drawing.Font("Arial Narrow", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle14.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
-        DataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption
-        DataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.Desktop
-        DataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgvCuentas.DefaultCellStyle = DataGridViewCellStyle14
-        Me.dgvCuentas.Location = New System.Drawing.Point(5, 20)
-        Me.dgvCuentas.Name = "dgvCuentas"
-        Me.dgvCuentas.RowHeadersVisible = False
-        Me.dgvCuentas.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
-        Me.dgvCuentas.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgvCuentas.ShowCellErrors = False
-        Me.dgvCuentas.ShowCellToolTips = False
-        Me.dgvCuentas.ShowEditingIcon = False
-        Me.dgvCuentas.ShowRowErrors = False
-        Me.dgvCuentas.Size = New System.Drawing.Size(871, 227)
-        Me.dgvCuentas.TabIndex = 60027
+        Me.textvalorcredito.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.textvalorcredito.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.textvalorcredito.Location = New System.Drawing.Point(335, 256)
+        Me.textvalorcredito.Name = "textvalorcredito"
+        Me.textvalorcredito.Size = New System.Drawing.Size(136, 25)
+        Me.textvalorcredito.TabIndex = 60048
+        Me.textvalorcredito.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
-        'dgOrden
+        'textvalordebito
         '
-        Me.dgOrden.HeaderText = "Orden"
-        Me.dgOrden.Name = "dgOrden"
-        Me.dgOrden.Visible = False
+        Me.textvalordebito.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.textvalordebito.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.textvalordebito.Location = New System.Drawing.Point(99, 256)
+        Me.textvalordebito.Name = "textvalordebito"
+        Me.textvalordebito.Size = New System.Drawing.Size(140, 25)
+        Me.textvalordebito.TabIndex = 60047
+        Me.textvalordebito.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
-        'dgNumFactura
+        'Label5
         '
-        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.dgNumFactura.DefaultCellStyle = DataGridViewCellStyle9
-        Me.dgNumFactura.HeaderText = "Nº Factura"
-        Me.dgNumFactura.Name = "dgNumFactura"
-        Me.dgNumFactura.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
+        Me.Label5.BackColor = System.Drawing.Color.Transparent
+        Me.Label5.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.ForeColor = System.Drawing.Color.Black
+        Me.Label5.Location = New System.Drawing.Point(4, 260)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(105, 19)
+        Me.Label5.TabIndex = 60044
+        Me.Label5.Text = "Valor Débito:"
+        Me.Label5.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
-        'dgCuenta
+        'Label11
         '
-        DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.dgCuenta.DefaultCellStyle = DataGridViewCellStyle10
-        Me.dgCuenta.HeaderText = "Cuenta"
-        Me.dgCuenta.Name = "dgCuenta"
-        Me.dgCuenta.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
+        Me.Label11.BackColor = System.Drawing.Color.Transparent
+        Me.Label11.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label11.ForeColor = System.Drawing.Color.Black
+        Me.Label11.Location = New System.Drawing.Point(235, 261)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(106, 19)
+        Me.Label11.TabIndex = 60045
+        Me.Label11.Text = "Valor Crédito:"
+        Me.Label11.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
-        'dgDescripcion
+        'Label10
         '
-        Me.dgDescripcion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.dgDescripcion.DefaultCellStyle = DataGridViewCellStyle11
-        Me.dgDescripcion.HeaderText = "Descripcion"
-        Me.dgDescripcion.Name = "dgDescripcion"
-        Me.dgDescripcion.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
-        Me.dgDescripcion.Width = 69
-        '
-        'dgDebito
-        '
-        DataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle12.Format = "C2"
-        DataGridViewCellStyle12.NullValue = Nothing
-        Me.dgDebito.DefaultCellStyle = DataGridViewCellStyle12
-        Me.dgDebito.HeaderText = "Debito"
-        Me.dgDebito.Name = "dgDebito"
-        Me.dgDebito.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
-        '
-        'dgCredito
-        '
-        DataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle13.Format = "C2"
-        DataGridViewCellStyle13.NullValue = Nothing
-        Me.dgCredito.DefaultCellStyle = DataGridViewCellStyle13
-        Me.dgCredito.HeaderText = "Credito"
-        Me.dgCredito.Name = "dgCredito"
-        Me.dgCredito.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
-        '
-        'dgQuitar
-        '
-        Me.dgQuitar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.dgQuitar.HeaderText = "Quitar"
-        Me.dgQuitar.Name = "dgQuitar"
-        Me.dgQuitar.Width = 43
-        '
-        'grupoDetalle
-        '
-        Me.grupoDetalle.Controls.Add(Me.textobserva)
-        Me.grupoDetalle.Font = New System.Drawing.Font("Arial Narrow", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.grupoDetalle.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.grupoDetalle.Location = New System.Drawing.Point(6, 97)
-        Me.grupoDetalle.Name = "grupoDetalle"
-        Me.grupoDetalle.Size = New System.Drawing.Size(882, 51)
-        Me.grupoDetalle.TabIndex = 60026
-        Me.grupoDetalle.TabStop = False
-        Me.grupoDetalle.Text = "Detalle del Movimiento"
-        '
-        'textobserva
-        '
-        Me.textobserva.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.textobserva.Location = New System.Drawing.Point(5, 14)
-        Me.textobserva.Multiline = True
-        Me.textobserva.Name = "textobserva"
-        Me.textobserva.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.textobserva.Size = New System.Drawing.Size(871, 34)
-        Me.textobserva.TabIndex = 0
-        '
-        'GroupBox2
-        '
-        Me.GroupBox2.Controls.Add(Me.DateTimePicker1)
-        Me.GroupBox2.Controls.Add(Me.Label1)
-        Me.GroupBox2.Controls.Add(Me.Textsigla)
-        Me.GroupBox2.Controls.Add(Me.Textnombredocumento)
-        Me.GroupBox2.Controls.Add(Me.Label4)
-        Me.GroupBox2.Controls.Add(Me.btBusquedaDocumento)
-        Me.GroupBox2.Controls.Add(Me.txtcodigo)
-        Me.GroupBox2.Controls.Add(Me.fechadoc)
-        Me.GroupBox2.Controls.Add(Me.textnombreproveedor)
-        Me.GroupBox2.Controls.Add(Me.textCodigoCliente)
-        Me.GroupBox2.Controls.Add(Me.bttercero)
-        Me.GroupBox2.Controls.Add(Me.Label21)
-        Me.GroupBox2.Controls.Add(Me.Label15)
-        Me.GroupBox2.Controls.Add(Me.Label3)
-        Me.GroupBox2.Location = New System.Drawing.Point(6, 7)
-        Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(882, 90)
-        Me.GroupBox2.TabIndex = 56
-        Me.GroupBox2.TabStop = False
-        '
-        'Textsigla
-        '
-        Me.Textsigla.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Textsigla.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Textsigla.Location = New System.Drawing.Point(120, 36)
-        Me.Textsigla.Name = "Textsigla"
-        Me.Textsigla.Size = New System.Drawing.Size(78, 25)
-        Me.Textsigla.TabIndex = 60039
-        Me.Textsigla.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'Textnombredocumento
-        '
-        Me.Textnombredocumento.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Textnombredocumento.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Textnombredocumento.Location = New System.Drawing.Point(201, 36)
-        Me.Textnombredocumento.Name = "Textnombredocumento"
-        Me.Textnombredocumento.Size = New System.Drawing.Size(610, 25)
-        Me.Textnombredocumento.TabIndex = 60038
-        Me.Textnombredocumento.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(4, 41)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(112, 17)
-        Me.Label4.TabIndex = 60036
-        Me.Label4.Text = "Tipo Documento:"
-        '
-        'btBusquedaDocumento
-        '
-        Me.btBusquedaDocumento.Location = New System.Drawing.Point(216, 37)
-        Me.btBusquedaDocumento.Name = "btBusquedaDocumento"
-        Me.btBusquedaDocumento.Size = New System.Drawing.Size(25, 23)
-        Me.btBusquedaDocumento.TabIndex = 60037
-        Me.btBusquedaDocumento.UseVisualStyleBackColor = True
-        Me.btBusquedaDocumento.Visible = False
-        '
-        'txtcodigo
-        '
-        Me.txtcodigo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtcodigo.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtcodigo.Location = New System.Drawing.Point(120, 10)
-        Me.txtcodigo.Name = "txtcodigo"
-        Me.txtcodigo.Size = New System.Drawing.Size(170, 25)
-        Me.txtcodigo.TabIndex = 60035
-        Me.txtcodigo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'fechadoc
-        '
-        Me.fechadoc.CustomFormat = "dd |  MMMM |  yyyy"
-        Me.fechadoc.Enabled = False
-        Me.fechadoc.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.fechadoc.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.fechadoc.Location = New System.Drawing.Point(405, 10)
-        Me.fechadoc.Name = "fechadoc"
-        Me.fechadoc.Size = New System.Drawing.Size(189, 25)
-        Me.fechadoc.TabIndex = 60034
-        '
-        'textnombreproveedor
-        '
-        Me.textnombreproveedor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.textnombreproveedor.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.textnombreproveedor.Location = New System.Drawing.Point(201, 62)
-        Me.textnombreproveedor.Name = "textnombreproveedor"
-        Me.textnombreproveedor.Size = New System.Drawing.Size(610, 25)
-        Me.textnombreproveedor.TabIndex = 60033
-        Me.textnombreproveedor.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'textCodigoCliente
-        '
-        Me.textCodigoCliente.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.textCodigoCliente.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.textCodigoCliente.Location = New System.Drawing.Point(120, 62)
-        Me.textCodigoCliente.Name = "textCodigoCliente"
-        Me.textCodigoCliente.Size = New System.Drawing.Size(78, 25)
-        Me.textCodigoCliente.TabIndex = 60034
-        Me.textCodigoCliente.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'bttercero
-        '
-        Me.bttercero.BackgroundImage = CType(resources.GetObject("bttercero.BackgroundImage"), System.Drawing.Image)
-        Me.bttercero.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.bttercero.Image = CType(resources.GetObject("bttercero.Image"), System.Drawing.Image)
-        Me.bttercero.Location = New System.Drawing.Point(819, 62)
-        Me.bttercero.Name = "bttercero"
-        Me.bttercero.Size = New System.Drawing.Size(26, 25)
-        Me.bttercero.TabIndex = 60032
-        Me.bttercero.UseVisualStyleBackColor = True
-        '
-        'Label21
-        '
-        Me.Label21.AutoSize = True
-        Me.Label21.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label21.Location = New System.Drawing.Point(320, 14)
-        Me.Label21.Name = "Label21"
-        Me.Label21.Size = New System.Drawing.Size(86, 15)
-        Me.Label21.TabIndex = 27
-        Me.Label21.Text = "Fecha Recibo:"
-        '
-        'Label15
-        '
-        Me.Label15.AutoSize = True
-        Me.Label15.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label15.Location = New System.Drawing.Point(5, 16)
-        Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(95, 17)
-        Me.Label15.TabIndex = 25
-        Me.Label15.Text = "Comprobante:"
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(4, 66)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(55, 17)
-        Me.Label3.TabIndex = 32
-        Me.Label3.Text = "Tercero:"
-        '
-        'DateTimePicker1
-        '
-        Me.DateTimePicker1.CustomFormat = "dd |  MMMM |  yyyy"
-        Me.DateTimePicker1.Enabled = False
-        Me.DateTimePicker1.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.DateTimePicker1.Location = New System.Drawing.Point(674, 10)
-        Me.DateTimePicker1.Name = "DateTimePicker1"
-        Me.DateTimePicker1.Size = New System.Drawing.Size(189, 25)
-        Me.DateTimePicker1.TabIndex = 60041
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(601, 13)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(69, 15)
-        Me.Label1.TabIndex = 60040
-        Me.Label1.Text = "Fecha Doc:"
+        Me.Label10.BackColor = System.Drawing.Color.Transparent
+        Me.Label10.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.ForeColor = System.Drawing.Color.Black
+        Me.Label10.Location = New System.Drawing.Point(476, 261)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(89, 19)
+        Me.Label10.TabIndex = 60046
+        Me.Label10.Text = "Diferencia:"
+        Me.Label10.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
         'Panel3
         '
-        Me.Panel3.BackColor = System.Drawing.Color.SteelBlue
+        Me.Panel3.BackColor = System.Drawing.Color.Transparent
+        Me.Panel3.BackgroundImage = Global.Quality.My.Resources.Resources.fondo_azul
+        Me.Panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel3.Controls.Add(Me.txtTotal)
         Me.Panel3.Controls.Add(Me.txtNaturaleza)
@@ -699,71 +494,340 @@ Partial Class FormComprobanteEgreso
         Me.Label32.TabIndex = 0
         Me.Label32.Text = "Cuenta:"
         '
-        'textdiferencia
+        'PnlInfo
         '
-        Me.textdiferencia.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.textdiferencia.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.textdiferencia.Location = New System.Drawing.Point(686, 256)
-        Me.textdiferencia.Name = "textdiferencia"
-        Me.textdiferencia.Size = New System.Drawing.Size(186, 25)
-        Me.textdiferencia.TabIndex = 60049
-        Me.textdiferencia.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.PnlInfo.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.PnlInfo.Controls.Add(Me.lbinfo)
+        Me.PnlInfo.Controls.Add(Me.PictureBox2)
+        Me.PnlInfo.Location = New System.Drawing.Point(5, 214)
+        Me.PnlInfo.Name = "PnlInfo"
+        Me.PnlInfo.Size = New System.Drawing.Size(870, 31)
+        Me.PnlInfo.TabIndex = 60028
+        Me.PnlInfo.Visible = False
         '
-        'textvalorcredito
+        'lbinfo
         '
-        Me.textvalorcredito.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.textvalorcredito.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.textvalorcredito.Location = New System.Drawing.Point(397, 256)
-        Me.textvalorcredito.Name = "textvalorcredito"
-        Me.textvalorcredito.Size = New System.Drawing.Size(186, 25)
-        Me.textvalorcredito.TabIndex = 60048
-        Me.textvalorcredito.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.lbinfo.AutoSize = True
+        Me.lbinfo.Font = New System.Drawing.Font("Arial Narrow", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbinfo.ForeColor = System.Drawing.Color.Black
+        Me.lbinfo.Location = New System.Drawing.Point(32, 8)
+        Me.lbinfo.Name = "lbinfo"
+        Me.lbinfo.Size = New System.Drawing.Size(68, 16)
+        Me.lbinfo.TabIndex = 10063
+        Me.lbinfo.Text = "CONTENIDO"
         '
-        'textvalordebito
+        'PictureBox2
         '
-        Me.textvalordebito.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.textvalordebito.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.textvalordebito.Location = New System.Drawing.Point(101, 256)
-        Me.textvalordebito.Name = "textvalordebito"
-        Me.textvalordebito.Size = New System.Drawing.Size(186, 25)
-        Me.textvalordebito.TabIndex = 60047
-        Me.textvalordebito.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.PictureBox2.Image = Global.Quality.My.Resources.Resources.atencion
+        Me.PictureBox2.Location = New System.Drawing.Point(3, 4)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(24, 24)
+        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox2.TabIndex = 10063
+        Me.PictureBox2.TabStop = False
         '
-        'Label5
+        'dgvComprobante
         '
-        Me.Label5.BackColor = System.Drawing.Color.Transparent
-        Me.Label5.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.ForeColor = System.Drawing.Color.Black
-        Me.Label5.Location = New System.Drawing.Point(6, 260)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(105, 19)
-        Me.Label5.TabIndex = 60044
-        Me.Label5.Text = "Valor Débito:"
-        Me.Label5.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.dgvComprobante.AllowUserToAddRows = False
+        Me.dgvComprobante.AllowUserToDeleteRows = False
+        Me.dgvComprobante.AllowUserToResizeColumns = False
+        Me.dgvComprobante.AllowUserToResizeRows = False
+        DataGridViewCellStyle8.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.dgvComprobante.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle8
+        Me.dgvComprobante.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.dgvComprobante.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
+        Me.dgvComprobante.BackgroundColor = System.Drawing.Color.White
+        Me.dgvComprobante.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
+        Me.dgvComprobante.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.dgOrden, Me.dgNumFactura, Me.dgCuenta, Me.dgDescripcion, Me.dgDebito, Me.dgCredito, Me.dgQuitar})
+        DataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle14.Font = New System.Drawing.Font("Arial Narrow", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle14.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
+        DataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption
+        DataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.Desktop
+        DataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgvComprobante.DefaultCellStyle = DataGridViewCellStyle14
+        Me.dgvComprobante.Location = New System.Drawing.Point(5, 20)
+        Me.dgvComprobante.Name = "dgvComprobante"
+        Me.dgvComprobante.RowHeadersVisible = False
+        Me.dgvComprobante.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
+        Me.dgvComprobante.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgvComprobante.ShowCellErrors = False
+        Me.dgvComprobante.ShowCellToolTips = False
+        Me.dgvComprobante.ShowEditingIcon = False
+        Me.dgvComprobante.ShowRowErrors = False
+        Me.dgvComprobante.Size = New System.Drawing.Size(871, 227)
+        Me.dgvComprobante.TabIndex = 60027
         '
-        'Label11
+        'dgOrden
         '
-        Me.Label11.BackColor = System.Drawing.Color.Transparent
-        Me.Label11.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.ForeColor = System.Drawing.Color.Black
-        Me.Label11.Location = New System.Drawing.Point(291, 261)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(106, 19)
-        Me.Label11.TabIndex = 60045
-        Me.Label11.Text = "Valor Crédito:"
-        Me.Label11.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.dgOrden.HeaderText = "Orden"
+        Me.dgOrden.Name = "dgOrden"
+        Me.dgOrden.Visible = False
         '
-        'Label10
+        'dgNumFactura
         '
-        Me.Label10.BackColor = System.Drawing.Color.Transparent
-        Me.Label10.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.ForeColor = System.Drawing.Color.Black
-        Me.Label10.Location = New System.Drawing.Point(596, 261)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(89, 19)
-        Me.Label10.TabIndex = 60046
-        Me.Label10.Text = "Diferencia:"
-        Me.Label10.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.dgNumFactura.DefaultCellStyle = DataGridViewCellStyle9
+        Me.dgNumFactura.HeaderText = "Nº Factura"
+        Me.dgNumFactura.Name = "dgNumFactura"
+        Me.dgNumFactura.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
+        '
+        'dgCuenta
+        '
+        DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.dgCuenta.DefaultCellStyle = DataGridViewCellStyle10
+        Me.dgCuenta.HeaderText = "Cuenta"
+        Me.dgCuenta.Name = "dgCuenta"
+        Me.dgCuenta.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
+        '
+        'dgDescripcion
+        '
+        Me.dgDescripcion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.dgDescripcion.DefaultCellStyle = DataGridViewCellStyle11
+        Me.dgDescripcion.HeaderText = "Descripcion"
+        Me.dgDescripcion.Name = "dgDescripcion"
+        Me.dgDescripcion.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
+        Me.dgDescripcion.Width = 69
+        '
+        'dgDebito
+        '
+        DataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle12.Format = "C2"
+        DataGridViewCellStyle12.NullValue = Nothing
+        Me.dgDebito.DefaultCellStyle = DataGridViewCellStyle12
+        Me.dgDebito.HeaderText = "Debito"
+        Me.dgDebito.Name = "dgDebito"
+        Me.dgDebito.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
+        '
+        'dgCredito
+        '
+        DataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle13.Format = "C2"
+        DataGridViewCellStyle13.NullValue = Nothing
+        Me.dgCredito.DefaultCellStyle = DataGridViewCellStyle13
+        Me.dgCredito.HeaderText = "Credito"
+        Me.dgCredito.Name = "dgCredito"
+        Me.dgCredito.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
+        '
+        'dgQuitar
+        '
+        Me.dgQuitar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.dgQuitar.HeaderText = "Quitar"
+        Me.dgQuitar.Name = "dgQuitar"
+        Me.dgQuitar.Width = 43
+        '
+        'grupoDetalle
+        '
+        Me.grupoDetalle.Controls.Add(Me.textobservacion)
+        Me.grupoDetalle.Font = New System.Drawing.Font("Arial Narrow", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.grupoDetalle.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.grupoDetalle.Location = New System.Drawing.Point(6, 97)
+        Me.grupoDetalle.Name = "grupoDetalle"
+        Me.grupoDetalle.Size = New System.Drawing.Size(882, 51)
+        Me.grupoDetalle.TabIndex = 60026
+        Me.grupoDetalle.TabStop = False
+        Me.grupoDetalle.Text = "Detalle del Movimiento"
+        '
+        'textobservacion
+        '
+        Me.textobservacion.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.textobservacion.Location = New System.Drawing.Point(5, 14)
+        Me.textobservacion.Multiline = True
+        Me.textobservacion.Name = "textobservacion"
+        Me.textobservacion.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
+        Me.textobservacion.Size = New System.Drawing.Size(871, 34)
+        Me.textobservacion.TabIndex = 0
+        '
+        'GroupBox2
+        '
+        Me.GroupBox2.Controls.Add(Me.txtfactura)
+        Me.GroupBox2.Controls.Add(Me.Label7)
+        Me.GroupBox2.Controls.Add(Me.fechaDoc)
+        Me.GroupBox2.Controls.Add(Me.Label1)
+        Me.GroupBox2.Controls.Add(Me.Textsigla)
+        Me.GroupBox2.Controls.Add(Me.Textnombredocumento)
+        Me.GroupBox2.Controls.Add(Me.Label4)
+        Me.GroupBox2.Controls.Add(Me.btBusquedaDocumento)
+        Me.GroupBox2.Controls.Add(Me.txtcomprobante)
+        Me.GroupBox2.Controls.Add(Me.fechaRecibo)
+        Me.GroupBox2.Controls.Add(Me.textnombreproveedor)
+        Me.GroupBox2.Controls.Add(Me.textCodigoCliente)
+        Me.GroupBox2.Controls.Add(Me.bttercero)
+        Me.GroupBox2.Controls.Add(Me.Label21)
+        Me.GroupBox2.Controls.Add(Me.Label15)
+        Me.GroupBox2.Controls.Add(Me.Label3)
+        Me.GroupBox2.Location = New System.Drawing.Point(6, 7)
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.Size = New System.Drawing.Size(882, 90)
+        Me.GroupBox2.TabIndex = 56
+        Me.GroupBox2.TabStop = False
+        '
+        'txtfactura
+        '
+        Me.txtfactura.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtfactura.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtfactura.Location = New System.Drawing.Point(785, 36)
+        Me.txtfactura.Name = "txtfactura"
+        Me.txtfactura.Size = New System.Drawing.Size(78, 25)
+        Me.txtfactura.TabIndex = 60043
+        Me.txtfactura.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.Location = New System.Drawing.Point(719, 40)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(56, 17)
+        Me.Label7.TabIndex = 60042
+        Me.Label7.Text = "Factura:"
+        '
+        'fechaDoc
+        '
+        Me.fechaDoc.CustomFormat = "dd |  MMMM |  yyyy"
+        Me.fechaDoc.Enabled = False
+        Me.fechaDoc.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.fechaDoc.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.fechaDoc.Location = New System.Drawing.Point(674, 10)
+        Me.fechaDoc.Name = "fechaDoc"
+        Me.fechaDoc.Size = New System.Drawing.Size(189, 25)
+        Me.fechaDoc.TabIndex = 60041
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(601, 13)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(69, 15)
+        Me.Label1.TabIndex = 60040
+        Me.Label1.Text = "Fecha Doc:"
+        '
+        'Textsigla
+        '
+        Me.Textsigla.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Textsigla.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Textsigla.Location = New System.Drawing.Point(120, 36)
+        Me.Textsigla.Name = "Textsigla"
+        Me.Textsigla.Size = New System.Drawing.Size(78, 25)
+        Me.Textsigla.TabIndex = 60039
+        Me.Textsigla.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Textnombredocumento
+        '
+        Me.Textnombredocumento.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Textnombredocumento.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Textnombredocumento.Location = New System.Drawing.Point(201, 36)
+        Me.Textnombredocumento.Name = "Textnombredocumento"
+        Me.Textnombredocumento.Size = New System.Drawing.Size(458, 25)
+        Me.Textnombredocumento.TabIndex = 60038
+        Me.Textnombredocumento.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(4, 41)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(112, 17)
+        Me.Label4.TabIndex = 60036
+        Me.Label4.Text = "Tipo Documento:"
+        '
+        'btBusquedaDocumento
+        '
+        Me.btBusquedaDocumento.Location = New System.Drawing.Point(216, 37)
+        Me.btBusquedaDocumento.Name = "btBusquedaDocumento"
+        Me.btBusquedaDocumento.Size = New System.Drawing.Size(25, 23)
+        Me.btBusquedaDocumento.TabIndex = 60037
+        Me.btBusquedaDocumento.UseVisualStyleBackColor = True
+        Me.btBusquedaDocumento.Visible = False
+        '
+        'txtcomprobante
+        '
+        Me.txtcomprobante.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtcomprobante.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtcomprobante.Location = New System.Drawing.Point(120, 10)
+        Me.txtcomprobante.Name = "txtcomprobante"
+        Me.txtcomprobante.Size = New System.Drawing.Size(170, 25)
+        Me.txtcomprobante.TabIndex = 60035
+        Me.txtcomprobante.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'fechaRecibo
+        '
+        Me.fechaRecibo.CustomFormat = "dd |  MMMM |  yyyy"
+        Me.fechaRecibo.Enabled = False
+        Me.fechaRecibo.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.fechaRecibo.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.fechaRecibo.Location = New System.Drawing.Point(405, 10)
+        Me.fechaRecibo.Name = "fechaRecibo"
+        Me.fechaRecibo.Size = New System.Drawing.Size(189, 25)
+        Me.fechaRecibo.TabIndex = 60034
+        '
+        'textnombreproveedor
+        '
+        Me.textnombreproveedor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.textnombreproveedor.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.textnombreproveedor.Location = New System.Drawing.Point(201, 62)
+        Me.textnombreproveedor.Name = "textnombreproveedor"
+        Me.textnombreproveedor.Size = New System.Drawing.Size(610, 25)
+        Me.textnombreproveedor.TabIndex = 60033
+        Me.textnombreproveedor.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'textCodigoCliente
+        '
+        Me.textCodigoCliente.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.textCodigoCliente.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.textCodigoCliente.Location = New System.Drawing.Point(120, 62)
+        Me.textCodigoCliente.Name = "textCodigoCliente"
+        Me.textCodigoCliente.Size = New System.Drawing.Size(78, 25)
+        Me.textCodigoCliente.TabIndex = 60034
+        Me.textCodigoCliente.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'bttercero
+        '
+        Me.bttercero.BackgroundImage = CType(resources.GetObject("bttercero.BackgroundImage"), System.Drawing.Image)
+        Me.bttercero.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.bttercero.Image = CType(resources.GetObject("bttercero.Image"), System.Drawing.Image)
+        Me.bttercero.Location = New System.Drawing.Point(819, 62)
+        Me.bttercero.Name = "bttercero"
+        Me.bttercero.Size = New System.Drawing.Size(26, 25)
+        Me.bttercero.TabIndex = 60032
+        Me.bttercero.UseVisualStyleBackColor = True
+        '
+        'Label21
+        '
+        Me.Label21.AutoSize = True
+        Me.Label21.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label21.Location = New System.Drawing.Point(320, 14)
+        Me.Label21.Name = "Label21"
+        Me.Label21.Size = New System.Drawing.Size(86, 15)
+        Me.Label21.TabIndex = 27
+        Me.Label21.Text = "Fecha Recibo:"
+        '
+        'Label15
+        '
+        Me.Label15.AutoSize = True
+        Me.Label15.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label15.Location = New System.Drawing.Point(5, 16)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(95, 17)
+        Me.Label15.TabIndex = 25
+        Me.Label15.Text = "Comprobante:"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(4, 66)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(55, 17)
+        Me.Label3.TabIndex = 32
+        Me.Label3.Text = "Tercero:"
         '
         'FormComprobanteEgreso
         '
@@ -785,16 +849,16 @@ Partial Class FormComprobanteEgreso
         Me.ToolStrip1.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox6.ResumeLayout(False)
+        Me.Panel3.ResumeLayout(False)
+        Me.Panel3.PerformLayout()
         Me.PnlInfo.ResumeLayout(False)
         Me.PnlInfo.PerformLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.dgvCuentas, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvComprobante, System.ComponentModel.ISupportInitialize).EndInit()
         Me.grupoDetalle.ResumeLayout(False)
         Me.grupoDetalle.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
-        Me.Panel3.ResumeLayout(False)
-        Me.Panel3.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -815,7 +879,7 @@ Partial Class FormComprobanteEgreso
     Public WithEvents PnlInfo As Panel
     Public WithEvents lbinfo As Label
     Public WithEvents PictureBox2 As PictureBox
-    Friend WithEvents dgvCuentas As DataGridView
+    Friend WithEvents dgvComprobante As DataGridView
     Friend WithEvents dgOrden As DataGridViewTextBoxColumn
     Friend WithEvents dgNumFactura As DataGridViewTextBoxColumn
     Friend WithEvents dgCuenta As DataGridViewTextBoxColumn
@@ -824,16 +888,16 @@ Partial Class FormComprobanteEgreso
     Friend WithEvents dgCredito As DataGridViewTextBoxColumn
     Friend WithEvents dgQuitar As DataGridViewImageColumn
     Friend WithEvents grupoDetalle As GroupBox
-    Public WithEvents textobserva As TextBox
+    Public WithEvents textobservacion As TextBox
     Friend WithEvents GroupBox2 As GroupBox
-    Public WithEvents DateTimePicker1 As DateTimePicker
+    Public WithEvents fechaDoc As DateTimePicker
     Friend WithEvents Label1 As Label
     Friend WithEvents Textsigla As Label
     Friend WithEvents Textnombredocumento As Label
     Friend WithEvents Label4 As Label
     Public WithEvents btBusquedaDocumento As Button
-    Friend WithEvents txtcodigo As Label
-    Public WithEvents fechadoc As DateTimePicker
+    Friend WithEvents txtcomprobante As Label
+    Public WithEvents fechaRecibo As DateTimePicker
     Friend WithEvents textnombreproveedor As Label
     Friend WithEvents textCodigoCliente As Label
     Public WithEvents bttercero As Button
@@ -858,4 +922,9 @@ Partial Class FormComprobanteEgreso
     Friend WithEvents Label5 As Label
     Friend WithEvents Label11 As Label
     Friend WithEvents Label10 As Label
+    Public WithEvents btImprimir As ToolStripButton
+    Friend WithEvents txtfactura As Label
+    Friend WithEvents Label7 As Label
+    Friend WithEvents txtretencion As Label
+    Friend WithEvents Label8 As Label
 End Class

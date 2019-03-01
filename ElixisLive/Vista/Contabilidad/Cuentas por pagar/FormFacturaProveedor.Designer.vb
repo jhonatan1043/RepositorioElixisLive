@@ -23,14 +23,18 @@ Partial Class FormFacturaProveedor
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormFacturaProveedor))
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.textvalorrete = New System.Windows.Forms.Label()
+        Me.textvaloriva = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
         Me.textdiferencia = New System.Windows.Forms.Label()
         Me.textvalorcredito = New System.Windows.Forms.Label()
         Me.textvalordebito = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label12 = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.PnlInfo = New System.Windows.Forms.Panel()
@@ -78,14 +82,10 @@ Partial Class FormFacturaProveedor
         Me.btEditar = New System.Windows.Forms.ToolStripButton()
         Me.btCancelar = New System.Windows.Forms.ToolStripButton()
         Me.btAnular = New System.Windows.Forms.ToolStripButton()
+        Me.btcxp = New System.Windows.Forms.ToolStripButton()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Pimagen = New System.Windows.Forms.PictureBox()
         Me.LTitulo = New System.Windows.Forms.Label()
-        Me.textvaloriva = New System.Windows.Forms.Label()
-        Me.textvalorrete = New System.Windows.Forms.Label()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.Label12 = New System.Windows.Forms.Label()
-        Me.btcxp = New System.Windows.Forms.ToolStripButton()
         Me.GroupBox1.SuspendLayout()
         Me.PnlInfo.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -119,6 +119,38 @@ Partial Class FormFacturaProveedor
         Me.GroupBox1.Size = New System.Drawing.Size(896, 449)
         Me.GroupBox1.TabIndex = 75
         Me.GroupBox1.TabStop = False
+        '
+        'textvalorrete
+        '
+        Me.textvalorrete.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.textvalorrete.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.textvalorrete.Location = New System.Drawing.Point(543, 418)
+        Me.textvalorrete.Name = "textvalorrete"
+        Me.textvalorrete.Size = New System.Drawing.Size(172, 25)
+        Me.textvalorrete.TabIndex = 60046
+        Me.textvalorrete.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'textvaloriva
+        '
+        Me.textvaloriva.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.textvaloriva.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.textvaloriva.Location = New System.Drawing.Point(720, 418)
+        Me.textvaloriva.Name = "textvaloriva"
+        Me.textvaloriva.Size = New System.Drawing.Size(172, 25)
+        Me.textvaloriva.TabIndex = 60047
+        Me.textvaloriva.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'Label8
+        '
+        Me.Label8.BackColor = System.Drawing.Color.Transparent
+        Me.Label8.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.ForeColor = System.Drawing.Color.Black
+        Me.Label8.Location = New System.Drawing.Point(543, 401)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(172, 19)
+        Me.Label8.TabIndex = 60044
+        Me.Label8.Text = "Valor Retencion"
+        Me.Label8.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
         'textdiferencia
         '
@@ -161,6 +193,18 @@ Partial Class FormFacturaProveedor
         Me.Label1.TabIndex = 60038
         Me.Label1.Text = "Valor Débito"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        '
+        'Label12
+        '
+        Me.Label12.BackColor = System.Drawing.Color.Transparent
+        Me.Label12.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label12.ForeColor = System.Drawing.Color.Black
+        Me.Label12.Location = New System.Drawing.Point(720, 401)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(172, 19)
+        Me.Label12.TabIndex = 60045
+        Me.Label12.Text = "Valor Iva"
+        Me.Label12.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
         'Label11
         '
@@ -220,7 +264,9 @@ Partial Class FormFacturaProveedor
         '
         'Panel3
         '
-        Me.Panel3.BackColor = System.Drawing.Color.SteelBlue
+        Me.Panel3.BackColor = System.Drawing.Color.Transparent
+        Me.Panel3.BackgroundImage = Global.Quality.My.Resources.Resources.fondo_azul
+        Me.Panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel3.Controls.Add(Me.txtTotal)
         Me.Panel3.Controls.Add(Me.txtNaturaleza)
@@ -585,29 +631,29 @@ Partial Class FormFacturaProveedor
         Me.dgvCuentas.AllowUserToDeleteRows = False
         Me.dgvCuentas.AllowUserToResizeColumns = False
         Me.dgvCuentas.AllowUserToResizeRows = False
-        DataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.dgvCuentas.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.dgvCuentas.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.dgvCuentas.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.dgvCuentas.BackgroundColor = System.Drawing.Color.White
         Me.dgvCuentas.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle5.Font = New System.Drawing.Font("Arial Narrow", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvCuentas.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Arial Narrow", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvCuentas.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.dgvCuentas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         Me.dgvCuentas.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.anular})
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption
-        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.Desktop
-        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgvCuentas.DefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.Desktop
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgvCuentas.DefaultCellStyle = DataGridViewCellStyle3
         Me.dgvCuentas.Location = New System.Drawing.Point(14, 150)
         Me.dgvCuentas.Name = "dgvCuentas"
         Me.dgvCuentas.ReadOnly = True
@@ -720,6 +766,17 @@ Partial Class FormFacturaProveedor
         Me.btAnular.Text = "Anular"
         Me.btAnular.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         '
+        'btcxp
+        '
+        Me.btcxp.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
+        Me.btcxp.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btcxp.ForeColor = System.Drawing.Color.White
+        Me.btcxp.Image = Global.Quality.My.Resources.Resources.invoice_icon__1_
+        Me.btcxp.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.btcxp.Name = "btcxp"
+        Me.btcxp.Size = New System.Drawing.Size(187, 34)
+        Me.btcxp.Text = "Crear cuenta por pagar "
+        '
         'Panel2
         '
         Me.Panel2.BackColor = System.Drawing.Color.White
@@ -754,61 +811,6 @@ Partial Class FormFacturaProveedor
         Me.LTitulo.TabIndex = 1
         Me.LTitulo.Text = "Factura proveedor"
         Me.LTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'textvaloriva
-        '
-        Me.textvaloriva.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.textvaloriva.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.textvaloriva.Location = New System.Drawing.Point(720, 418)
-        Me.textvaloriva.Name = "textvaloriva"
-        Me.textvaloriva.Size = New System.Drawing.Size(172, 25)
-        Me.textvaloriva.TabIndex = 60047
-        Me.textvaloriva.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        '
-        'textvalorrete
-        '
-        Me.textvalorrete.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.textvalorrete.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.textvalorrete.Location = New System.Drawing.Point(543, 418)
-        Me.textvalorrete.Name = "textvalorrete"
-        Me.textvalorrete.Size = New System.Drawing.Size(172, 25)
-        Me.textvalorrete.TabIndex = 60046
-        Me.textvalorrete.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        '
-        'Label8
-        '
-        Me.Label8.BackColor = System.Drawing.Color.Transparent
-        Me.Label8.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.ForeColor = System.Drawing.Color.Black
-        Me.Label8.Location = New System.Drawing.Point(543, 401)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(172, 19)
-        Me.Label8.TabIndex = 60044
-        Me.Label8.Text = "Valor Retencion"
-        Me.Label8.TextAlign = System.Drawing.ContentAlignment.TopCenter
-        '
-        'Label12
-        '
-        Me.Label12.BackColor = System.Drawing.Color.Transparent
-        Me.Label12.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.ForeColor = System.Drawing.Color.Black
-        Me.Label12.Location = New System.Drawing.Point(720, 401)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(172, 19)
-        Me.Label12.TabIndex = 60045
-        Me.Label12.Text = "Valor Iva"
-        Me.Label12.TextAlign = System.Drawing.ContentAlignment.TopCenter
-        '
-        'btcxp
-        '
-        Me.btcxp.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
-        Me.btcxp.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btcxp.ForeColor = System.Drawing.Color.White
-        Me.btcxp.Image = Global.Quality.My.Resources.Resources.invoice_icon__1_
-        Me.btcxp.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.btcxp.Name = "btcxp"
-        Me.btcxp.Size = New System.Drawing.Size(187, 34)
-        Me.btcxp.Text = "Crear cuenta por pagar "
         '
         'FormFacturaProveedor
         '

@@ -135,7 +135,7 @@
                                     End If
                                 End If
                             Else
-                                MsgBox("No se encontro la Cuenta", MsgBoxStyle.Exclamation)
+                                EstiloMensajes.mostrarMensajeAdvertencia("No se encontro la cuenta")
                                 dgvCuentas.Rows(e.RowIndex).Cells(e.ColumnIndex).Value = String.Empty
                             End If
                         End If
@@ -245,7 +245,7 @@
                     MsgBox("No se encontro la Factura", MsgBoxStyle.Exclamation)
                 End If
             Else
-                MsgBox("¡ Ya se encuentra seleccionado !", MsgBoxStyle.Exclamation)
+                MsgBox("¡Ya se encuentra seleccionado!", MsgBoxStyle.Exclamation)
             End If
         Catch ex As Exception
             EstiloMensajes.mostrarMensajeError(ex.Message)
@@ -313,7 +313,7 @@
     Private Function validarGuardar() As Boolean
         Dim validar As Boolean = False
         If textCodigoCliente.Text = String.Empty Then
-            EstiloMensajes.mostrarMensajeAdvertencia("¡ Favor Seleccionar un Tercero!")
+            EstiloMensajes.mostrarMensajeAdvertencia("¡Favor seleccionar un tercero!")
             bttercero.Focus()
         ElseIf textdiferencia.Text <> 0 Then
             MsgBox("¡La diferencia debe ser cero(0)!")
@@ -415,7 +415,7 @@
     End Sub
 
     Private Sub dgvCuentas_DataError(sender As Object, e As DataGridViewDataErrorEventArgs) Handles dgvCuentas.DataError
-        MsgBox("Cantidad Invalida..", MsgBoxStyle.Exclamation)
+        EstiloMensajes.mostrarMensajeAdvertencia("Cantidad invalida")
     End Sub
 
     Private Sub fechadoc_ValueChanged(sender As Object, e As EventArgs) Handles fechadoc.ValueChanged
@@ -430,7 +430,7 @@
                     Exit Sub
                 End If
             Else
-                MsgBox("¡ la Fecha no puede ser mayor a la actual !", MsgBoxStyle.Exclamation)
+                EstiloMensajes.mostrarMensajeAdvertencia("¡la Fecha no puede ser mayor a la actual!")
                 fechadoc.Value = Date.Today
             End If
         Catch ex As Exception

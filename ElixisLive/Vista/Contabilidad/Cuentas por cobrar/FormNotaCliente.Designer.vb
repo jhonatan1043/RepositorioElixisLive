@@ -64,6 +64,7 @@ Partial Class FormNotaCliente
         Me.Label4 = New System.Windows.Forms.Label()
         Me.btBusquedaDocumento = New System.Windows.Forms.Button()
         Me.dgvCuentas = New System.Windows.Forms.DataGridView()
+        Me.anular = New System.Windows.Forms.DataGridViewImageColumn()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.DataGridViewImageColumn1 = New System.Windows.Forms.DataGridViewImageColumn()
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
@@ -76,7 +77,6 @@ Partial Class FormNotaCliente
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Pimagen = New System.Windows.Forms.PictureBox()
         Me.LTitulo = New System.Windows.Forms.Label()
-        Me.anular = New System.Windows.Forms.DataGridViewImageColumn()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
         Me.PnlInfo.SuspendLayout()
@@ -231,7 +231,9 @@ Partial Class FormNotaCliente
         '
         'Panel3
         '
-        Me.Panel3.BackColor = System.Drawing.Color.SteelBlue
+        Me.Panel3.BackColor = System.Drawing.Color.Transparent
+        Me.Panel3.BackgroundImage = Global.Quality.My.Resources.Resources.fondo_azul
+        Me.Panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel3.Controls.Add(Me.txtTotal)
         Me.Panel3.Controls.Add(Me.txtNaturaleza)
@@ -553,6 +555,15 @@ Partial Class FormNotaCliente
         Me.dgvCuentas.Size = New System.Drawing.Size(870, 220)
         Me.dgvCuentas.TabIndex = 60027
         '
+        'anular
+        '
+        Me.anular.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.anular.HeaderText = "Quitar"
+        Me.anular.Image = Global.Quality.My.Resources.Resources.papelera
+        Me.anular.Name = "anular"
+        Me.anular.ReadOnly = True
+        Me.anular.Width = 43
+        '
         'GroupBox3
         '
         Me.GroupBox3.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -686,15 +697,6 @@ Partial Class FormNotaCliente
         Me.LTitulo.TabIndex = 1
         Me.LTitulo.Text = "Nota Cliente"
         Me.LTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'anular
-        '
-        Me.anular.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.anular.HeaderText = "Quitar"
-        Me.anular.Image = Global.Quality.My.Resources.Resources.papelera
-        Me.anular.Name = "anular"
-        Me.anular.ReadOnly = True
-        Me.anular.Width = 43
         '
         'FormNotaCliente
         '
