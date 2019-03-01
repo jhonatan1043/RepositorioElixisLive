@@ -28,7 +28,7 @@ Public Class FormLibroMayor
             Dim rutaArchivo As String = FuncionesExcel.exportarDataTable(dtLibroMayor, nombreRpt)
             Process.Start("file:///" & rutaArchivo)
         Catch ex As Exception
-            Throw ex
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         Finally
             Cursor = Cursors.Default
         End Try
@@ -37,7 +37,7 @@ Public Class FormLibroMayor
         Try
             visualizarReporte(ExportFormatType.PortableDocFormat)
         Catch ex As Exception
-            Throw ex
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
     End Sub
     Public Function generarReporte() As rptLibroMayor

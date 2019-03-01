@@ -212,7 +212,7 @@
                     objCostoServicio.dtRegistro.Rows.RemoveAt(dgvRegistro.CurrentCell.RowIndex)
                 End If
             Catch ex As Exception
-                EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
+                EstiloMensajes.mostrarMensajeError(ex.Message)
             End Try
         End If
     End Sub

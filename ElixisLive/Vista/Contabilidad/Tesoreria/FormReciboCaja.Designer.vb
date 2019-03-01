@@ -34,6 +34,12 @@ Partial Class FormReciboCaja
         Me.Pimagen = New System.Windows.Forms.PictureBox()
         Me.LTitulo = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.textdiferencia = New System.Windows.Forms.Label()
+        Me.textvalorcredito = New System.Windows.Forms.Label()
+        Me.textvalordebito = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.Label10 = New System.Windows.Forms.Label()
         Me.GroupBox6 = New System.Windows.Forms.GroupBox()
         Me.PnlInfo = New System.Windows.Forms.Panel()
         Me.lbinfo = New System.Windows.Forms.Label()
@@ -68,12 +74,7 @@ Partial Class FormReciboCaja
         Me.btEditar = New System.Windows.Forms.ToolStripButton()
         Me.btCancelar = New System.Windows.Forms.ToolStripButton()
         Me.btAnular = New System.Windows.Forms.ToolStripButton()
-        Me.textdiferencia = New System.Windows.Forms.Label()
-        Me.textvalorcredito = New System.Windows.Forms.Label()
-        Me.textvalordebito = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label11 = New System.Windows.Forms.Label()
-        Me.Label10 = New System.Windows.Forms.Label()
+        Me.btImprimir = New System.Windows.Forms.ToolStripButton()
         Me.Panel2.SuspendLayout()
         CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
@@ -137,6 +138,72 @@ Partial Class FormReciboCaja
         Me.GroupBox1.Size = New System.Drawing.Size(894, 441)
         Me.GroupBox1.TabIndex = 78
         Me.GroupBox1.TabStop = False
+        '
+        'textdiferencia
+        '
+        Me.textdiferencia.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.textdiferencia.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.textdiferencia.Location = New System.Drawing.Point(691, 411)
+        Me.textdiferencia.Name = "textdiferencia"
+        Me.textdiferencia.Size = New System.Drawing.Size(186, 25)
+        Me.textdiferencia.TabIndex = 60065
+        Me.textdiferencia.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'textvalorcredito
+        '
+        Me.textvalorcredito.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.textvalorcredito.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.textvalorcredito.Location = New System.Drawing.Point(402, 411)
+        Me.textvalorcredito.Name = "textvalorcredito"
+        Me.textvalorcredito.Size = New System.Drawing.Size(186, 25)
+        Me.textvalorcredito.TabIndex = 60064
+        Me.textvalorcredito.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'textvalordebito
+        '
+        Me.textvalordebito.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.textvalordebito.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.textvalordebito.Location = New System.Drawing.Point(106, 411)
+        Me.textvalordebito.Name = "textvalordebito"
+        Me.textvalordebito.Size = New System.Drawing.Size(186, 25)
+        Me.textvalordebito.TabIndex = 60063
+        Me.textvalordebito.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'Label1
+        '
+        Me.Label1.BackColor = System.Drawing.Color.Transparent
+        Me.Label1.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.Black
+        Me.Label1.Location = New System.Drawing.Point(11, 415)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(105, 19)
+        Me.Label1.TabIndex = 60060
+        Me.Label1.Text = "Valor Débito:"
+        Me.Label1.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        '
+        'Label11
+        '
+        Me.Label11.BackColor = System.Drawing.Color.Transparent
+        Me.Label11.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label11.ForeColor = System.Drawing.Color.Black
+        Me.Label11.Location = New System.Drawing.Point(296, 416)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(106, 19)
+        Me.Label11.TabIndex = 60061
+        Me.Label11.Text = "Valor Crédito:"
+        Me.Label11.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        '
+        'Label10
+        '
+        Me.Label10.BackColor = System.Drawing.Color.Transparent
+        Me.Label10.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.ForeColor = System.Drawing.Color.Black
+        Me.Label10.Location = New System.Drawing.Point(601, 416)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(89, 19)
+        Me.Label10.TabIndex = 60062
+        Me.Label10.Text = "Diferencia:"
+        Me.Label10.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
         'GroupBox6
         '
@@ -448,7 +515,7 @@ Partial Class FormReciboCaja
         Me.ToolStrip1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ToolStrip1.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.ToolStrip1.ImageScalingSize = New System.Drawing.Size(30, 30)
-        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.btNuevo, Me.btBuscar, Me.btRegistrar, Me.btEditar, Me.btCancelar, Me.btAnular})
+        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.btNuevo, Me.btBuscar, Me.btRegistrar, Me.btEditar, Me.btCancelar, Me.btAnular, Me.btImprimir})
         Me.ToolStrip1.Location = New System.Drawing.Point(0, 486)
         Me.ToolStrip1.Name = "ToolStrip1"
         Me.ToolStrip1.Size = New System.Drawing.Size(905, 37)
@@ -521,71 +588,16 @@ Partial Class FormReciboCaja
         Me.btAnular.Text = "Anular"
         Me.btAnular.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         '
-        'textdiferencia
+        'btImprimir
         '
-        Me.textdiferencia.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.textdiferencia.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.textdiferencia.Location = New System.Drawing.Point(691, 411)
-        Me.textdiferencia.Name = "textdiferencia"
-        Me.textdiferencia.Size = New System.Drawing.Size(186, 25)
-        Me.textdiferencia.TabIndex = 60065
-        Me.textdiferencia.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        '
-        'textvalorcredito
-        '
-        Me.textvalorcredito.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.textvalorcredito.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.textvalorcredito.Location = New System.Drawing.Point(402, 411)
-        Me.textvalorcredito.Name = "textvalorcredito"
-        Me.textvalorcredito.Size = New System.Drawing.Size(186, 25)
-        Me.textvalorcredito.TabIndex = 60064
-        Me.textvalorcredito.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        '
-        'textvalordebito
-        '
-        Me.textvalordebito.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.textvalordebito.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.textvalordebito.Location = New System.Drawing.Point(106, 411)
-        Me.textvalordebito.Name = "textvalordebito"
-        Me.textvalordebito.Size = New System.Drawing.Size(186, 25)
-        Me.textvalordebito.TabIndex = 60063
-        Me.textvalordebito.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        '
-        'Label1
-        '
-        Me.Label1.BackColor = System.Drawing.Color.Transparent
-        Me.Label1.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.Black
-        Me.Label1.Location = New System.Drawing.Point(11, 415)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(105, 19)
-        Me.Label1.TabIndex = 60060
-        Me.Label1.Text = "Valor Débito:"
-        Me.Label1.TextAlign = System.Drawing.ContentAlignment.TopCenter
-        '
-        'Label11
-        '
-        Me.Label11.BackColor = System.Drawing.Color.Transparent
-        Me.Label11.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.ForeColor = System.Drawing.Color.Black
-        Me.Label11.Location = New System.Drawing.Point(296, 416)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(106, 19)
-        Me.Label11.TabIndex = 60061
-        Me.Label11.Text = "Valor Crédito:"
-        Me.Label11.TextAlign = System.Drawing.ContentAlignment.TopCenter
-        '
-        'Label10
-        '
-        Me.Label10.BackColor = System.Drawing.Color.Transparent
-        Me.Label10.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.ForeColor = System.Drawing.Color.Black
-        Me.Label10.Location = New System.Drawing.Point(601, 416)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(89, 19)
-        Me.Label10.TabIndex = 60062
-        Me.Label10.Text = "Diferencia:"
-        Me.Label10.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.btImprimir.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btImprimir.ForeColor = System.Drawing.Color.White
+        Me.btImprimir.Image = Global.Quality.My.Resources.Resources.Printer_icon__1_
+        Me.btImprimir.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.btImprimir.Name = "btImprimir"
+        Me.btImprimir.Size = New System.Drawing.Size(103, 34)
+        Me.btImprimir.Text = "Imprimir"
+        Me.btImprimir.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         '
         'FormReciboCaja
         '
@@ -664,4 +676,5 @@ Partial Class FormReciboCaja
     Friend WithEvents Label1 As Label
     Friend WithEvents Label11 As Label
     Friend WithEvents Label10 As Label
+    Public WithEvents btImprimir As ToolStripButton
 End Class

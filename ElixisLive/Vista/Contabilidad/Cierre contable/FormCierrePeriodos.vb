@@ -83,7 +83,7 @@
             objcierreBll.cerrarMes(cerrarPeriodoDia())
             EstiloMensajes.mostrarMensajeExitoso("la fecha ha sido cerrada")
         Catch ex As Exception
-            Throw
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
     End Sub
     Private Sub btAbrirMes_Click(sender As Object, e As EventArgs) Handles btAbrirMes.Click
@@ -101,7 +101,7 @@
                 EstiloMensajes.mostrarMensajeExitoso("El mes ha sido cerrado")
                 llenardgvPeriodos(fechaCierre.Value.Year, fechaCierre.Value.Month)
             Catch ex As Exception
-                Throw
+                EstiloMensajes.mostrarMensajeError(ex.Message)
             End Try
         End If
     End Sub
@@ -127,7 +127,7 @@
                     EstiloMensajes.mostrarMensajeExitoso("El año ha sido cerrado")
                     llenardgvPeriodoAnual(fechaCierre.Value.Year)
                 Catch ex As Exception
-                    Throw
+                    EstiloMensajes.mostrarMensajeError(ex.Message)
                 End Try
             End If
         Else
@@ -143,7 +143,7 @@
                 EstiloMensajes.mostrarMensajeExitoso("la fecha ha sido abierta")
             End If
         Catch ex As Exception
-            Throw ex
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
     End Sub
 
@@ -157,7 +157,7 @@
             End If
 
         Catch ex As Exception
-            Throw
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
     End Sub
     Private Sub abrirAño()
@@ -170,7 +170,7 @@
             End If
 
         Catch ex As Exception
-            Throw
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
     End Sub
 

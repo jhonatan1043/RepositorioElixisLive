@@ -31,15 +31,15 @@ Public Class CalendarCell
         Me.Style.Format = "d"
     End Sub
 
-    Public Overrides Sub InitializeEditingControl(ByVal rowIndex As Integer, _
-        ByVal initialFormattedValue As Object, _
+    Public Overrides Sub InitializeEditingControl(ByVal rowIndex As Integer,
+        ByVal initialFormattedValue As Object,
         ByVal dataGridViewCellStyle As DataGridViewCellStyle)
 
         ' Set the value of the editing control to the current cell value.
-        MyBase.InitializeEditingControl(rowIndex, initialFormattedValue, _
+        MyBase.InitializeEditingControl(rowIndex, initialFormattedValue,
             dataGridViewCellStyle)
 
-        Dim ctl As CalendarEditingControl = _
+        Dim ctl As CalendarEditingControl =
             CType(DataGridView.EditingControl, CalendarEditingControl)
 
         ' Use the default row value when Value property is null.
@@ -94,7 +94,7 @@ Class CalendarEditingControl
 
         Set(ByVal value As Object)
             Try
-                ' This will throw an exception of the string is 
+                ' This will EstiloMensajes.mostrarMensajeError(ex.Message) an exception of the string is 
                 ' null, empty, or not in the format of a date.
                 Me.Value = DateTime.Parse(CStr(value))
             Catch

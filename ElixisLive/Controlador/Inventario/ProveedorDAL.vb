@@ -25,7 +25,7 @@ Public Class ProveedorDAL
                 End Using
             End Using
         Catch ex As Exception
-            Throw ex
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         Finally
             objConexio.desconectar()
         End Try

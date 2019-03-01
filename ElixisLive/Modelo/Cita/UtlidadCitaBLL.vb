@@ -19,7 +19,7 @@
             Generales.llenarTabla("", params, dt)
 
         Catch ex As Exception
-            Throw
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
 
         Return dt
@@ -33,7 +33,7 @@
             params.Add(If(String.IsNullOrEmpty(busqueda), Nothing, busqueda))
             Generales.llenarTabla("[SP_ADMIN_PROGRAMACION_CITA]", params, dtable)
         Catch ex As Exception
-            Throw ex
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
         Return dtable
     End Function
@@ -99,7 +99,7 @@
             nombreMes = UCase(Strings.Left(Format(fechaModific, "MMMM"), 4)).ToLower
             dia = primerDiaMesNum
         Catch ex As Exception
-            Throw ex
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
         Return dia & " " & nombreMes
     End Function
@@ -116,7 +116,7 @@
             primerDiaMesNum = Format(fechaModific, "dd")
             dia = primerDiaMesNum
         Catch ex As Exception
-            Throw ex
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
         Return dia
     End Function

@@ -24,7 +24,7 @@ Public Class NotaClienteDAL
                 FuncionesContables.aumentarConsecutivo(objNotaCliente.codigoDocumento)
             End Using
         Catch ex As Exception
-            Throw ex
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         Finally
             conexion.desconectar()
         End Try
@@ -49,7 +49,7 @@ Public Class NotaClienteDAL
                 dbCommand.ExecuteNonQuery()
             End Using
         Catch ex As Exception
-            Throw ex
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         Finally
             conexion.desconectar()
         End Try

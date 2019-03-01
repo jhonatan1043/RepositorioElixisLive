@@ -153,7 +153,7 @@
             btcancelar.Enabled = True
             cargarDocumentos()
         Catch ex As Exception
-            Throw ex
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
     End Sub
 
@@ -182,7 +182,7 @@
                 dgvDocumento.EndEdit()
             End If
         Catch ex As Exception
-            Throw ex
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
     End Sub
 

@@ -328,6 +328,12 @@
       <DependentUpon>rptCertificadoRetefuente.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Reportes\Contabilidad\rptComprobanteEgreso.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptComprobanteEgreso.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Reportes\Contabilidad\rptFacturavsRadicacionn1.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -356,6 +362,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>rptLibroMayor.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\Contabilidad\rptRecaudo.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptRecaudo.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Reportes\Factura\factura.vb">
@@ -792,6 +804,10 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptCertificadoRetefuente1.vb</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Contabilidad\rptComprobanteEgreso.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptComprobanteEgreso.vb</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\Contabilidad\rptFacturavsRadicacionn.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptFacturavsRadicacionn1.vb</LastGenOutput>
@@ -811,6 +827,10 @@
     <EmbeddedResource Include="Reportes\Contabilidad\rptLibroMayor.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptLibroMayor1.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Contabilidad\rptRecaudo.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptRecaudo.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\Factura\factura.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

@@ -86,7 +86,7 @@
             txtClaveNueva.Clear()
             txtConfirmarClave.Clear()
         Catch ex As Exception
-            EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
     End Sub
     Private Sub btRegistrar_Click(sender As Object, e As EventArgs) Handles btRegistrar.Click

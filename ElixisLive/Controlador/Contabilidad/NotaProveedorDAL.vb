@@ -23,7 +23,7 @@ Public Class NotaProveedorDAL
                 FuncionesContables.aumentarConsecutivo(objNotaProveedor.codigoDocumento)
             End Using
         Catch ex As Exception
-            Throw ex
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         Finally
             conexion.desconectar()
         End Try
@@ -47,7 +47,7 @@ Public Class NotaProveedorDAL
                 dbCommand.ExecuteNonQuery()
             End Using
         Catch ex As Exception
-            Throw ex
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         Finally
             conexion.desconectar()
         End Try

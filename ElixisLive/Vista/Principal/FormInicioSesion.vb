@@ -27,7 +27,7 @@ Public Class FormInicioSesion
                 formEmpresa.ShowDialog()
             End If
         Catch ex As Exception
-            EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
     End Sub
     Private Function validarCampos() As Boolean
@@ -84,7 +84,7 @@ Public Class FormInicioSesion
             params.Add(txtUsuario.Text)
             resultado = Generales.cargarCombo(Sentencias.SUCURSALES_CONSULTAR, params, "Nombre", "codigo", CbEmpresa)
         Catch ex As Exception
-            EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
         Return resultado
     End Function

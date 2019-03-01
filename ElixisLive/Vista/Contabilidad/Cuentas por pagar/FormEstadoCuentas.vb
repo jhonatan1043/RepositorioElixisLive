@@ -284,7 +284,7 @@
 
             Process.Start("file:///" & rutaArchivo)
         Catch ex As Exception
-            Throw ex
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         Finally
             Cursor = Cursors.Default
         End Try
@@ -301,7 +301,7 @@
             objEstadoCuentasBLL.guardarEstadoCuentas(crearEstadoCuentas())
 
         Catch ex As Exception
-            Throw ex
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
     End Sub
     Public Function crearEstadoCuentas() As EstadoDeCuentas
@@ -325,8 +325,8 @@
             If drFila.Item("Codigo_Factura").ToString <> "" Then
                 Dim drCuenta As DataRow = objEstadocuentas.dtCuentas.NewRow
 
-                drCuenta.Item("Desde") = fechaini.Value
-                drCuenta.Item("Hasta") = fechafin.Value
+                drCuenta.Item("Desde") = fechaIni.Value
+                drCuenta.Item("Hasta") = fechaFin.Value
                 drCuenta.Item("nit") = nit
                 drCuenta.Item("Factura") = drFila.Item("Codigo_Factura")
                 drCuenta.Item("FechaRecibo") = drFila.Item("Fecha_Doc")
@@ -358,7 +358,7 @@
             Funciones.getReporteNoFTP(rptEstadoCuentasCXC, Nothing, "EstadoCXC", ".pdf", tbl)
             Cursor = Cursors.Default
         Catch ex As Exception
-            Throw ex
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
     End Sub
 
@@ -371,7 +371,7 @@
             btimprimir.Enabled = True
             btexcel.Enabled = True
         Catch ex As Exception
-            Throw ex
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
 
     End Sub

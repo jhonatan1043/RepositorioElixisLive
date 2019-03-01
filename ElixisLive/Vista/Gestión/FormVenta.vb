@@ -28,7 +28,7 @@ Public Class FormVenta
                 consultarEmpleado(1)
             End If
         Catch ex As Exception
-            EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
     End Sub
     Private Sub dgvServicio_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvServicio.CellDoubleClick, DataGridView8.CellDoubleClick, DataGridView5.CellDoubleClick, DataGridView2.CellDoubleClick, DataGridView11.CellDoubleClick
@@ -42,11 +42,11 @@ Public Class FormVenta
                 objVenta.dtServicio.Rows.RemoveAt(e.RowIndex)
                 calcularTotales()
             ElseIf dgvServicio.Rows(dgvServicio.CurrentCell.RowIndex).Cells("dgNombreEmpleado").Selected = True And
-                    Not IsDBNull(dgvServicio.Rows(dgvServicio.CurrentCell.RowIndex).Cells("dgCodigoServ").Value)
+                    Not IsDBNull(dgvServicio.Rows(dgvServicio.CurrentCell.RowIndex).Cells("dgCodigoServ").Value) Then
                 consultarEmpleado(2)
             End If
         Catch ex As Exception
-            EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
     End Sub
     Private Sub dgvProducto_CellFormatting(sender As System.Object, e As System.Windows.Forms.DataGridViewCellFormattingEventArgs) Handles dgvProducto.CellFormatting, DataGridView9.CellFormatting, DataGridView6.CellFormatting, DataGridView3.CellFormatting, DataGridView12.CellFormatting
@@ -58,7 +58,7 @@ Public Class FormVenta
             Else
                 e.Value = Format(Val(e.Value), Constantes.FORMATO_MONEDA)
             End If
-        ElseIf e.ColumnIndex = 6
+        ElseIf e.ColumnIndex = 6 Then
             e.Value = Replace(Format(Val(e.Value), "P"), ",00", "")
         End If
     End Sub
@@ -69,7 +69,7 @@ Public Class FormVenta
             Else
                 e.Value = Format(Val(e.Value), Constantes.FORMATO_MONEDA)
             End If
-        ElseIf e.ColumnIndex = 4
+        ElseIf e.ColumnIndex = 4 Then
             e.Value = Replace(Format(Val(e.Value), "P"), ",00", "")
         End If
     End Sub
@@ -82,7 +82,7 @@ Public Class FormVenta
                 End If
                 calcularTotales()
             Catch ex As Exception
-                EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
+                EstiloMensajes.mostrarMensajeError(ex.Message)
             End Try
         End If
     End Sub
@@ -125,7 +125,7 @@ Public Class FormVenta
                                      True,
                                      True)
         Catch ex As Exception
-            EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
     End Sub
     Private Sub btExistencia_Click(sender As Object, e As EventArgs) Handles btExistencia.Click, Button4.Click, Button3.Click, Button2.Click, Button1.Click
@@ -210,7 +210,7 @@ Public Class FormVenta
             Try
                 cargarCliente(txtIdentificacion.Text)
             Catch ex As Exception
-                EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
+                EstiloMensajes.mostrarMensajeError(ex.Message)
             End Try
         End If
     End Sub
@@ -221,7 +221,7 @@ Public Class FormVenta
                     cargarCliente(txtIdentificacion.Text)
                 End If
             Catch ex As Exception
-                EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
+                EstiloMensajes.mostrarMensajeError(ex.Message)
             End Try
         End If
     End Sub
@@ -237,7 +237,7 @@ Public Class FormVenta
                     EstiloMensajes.mostrarMensajeAnulado(MensajeSistema.REGISTRO_ANULADO)
                 End If
             Catch ex As Exception
-                EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
+                EstiloMensajes.mostrarMensajeError(ex.Message)
             End Try
         End If
     End Sub
@@ -297,7 +297,7 @@ Public Class FormVenta
             txtDescuento.Text = CDbl(descuentoTotalProducto + descuentoTotalServicio + descuento).ToString(Constantes.FORMATO_MONEDA)
 
         Catch ex As Exception
-            EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
     End Sub
     Private Sub cargarInfomacion(pCodigo As Integer)
@@ -489,7 +489,7 @@ Public Class FormVenta
             reporte.crearReportePDF(New factura, objVenta.codigo, formula, nombreReporte, IO.Path.GetTempPath(),,, params)
 
         Catch ex As Exception
-            EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         Finally
             Cursor = Cursors.Default
         End Try
@@ -545,7 +545,7 @@ Public Class FormVenta
                                      True,
                                      True)
         Catch ex As Exception
-            EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
     End Sub
     Private Sub empleadoCargar(pCodigo)
@@ -557,7 +557,7 @@ Public Class FormVenta
             objVenta.dtProductos.Rows(dgvProducto.CurrentCell.RowIndex).Item("EmpleadoP") = pCodigo
             objVenta.dtProductos.Rows(dgvProducto.CurrentCell.RowIndex).Item("EmpleadoN") = dRows("Nombre")
             objVenta.dtProductos.AcceptChanges()
-        ElseIf objVenta.indice = 2
+        ElseIf objVenta.indice = 2 Then
             objVenta.dtServicio.Rows(dgvServicio.CurrentCell.RowIndex).Item("codigo_Empleado") = pCodigo
             objVenta.dtServicio.Rows(dgvServicio.CurrentCell.RowIndex).Item("NombreEmpleado") = dRows("Nombre")
             objVenta.dtServicio.AcceptChanges()
@@ -597,7 +597,7 @@ Public Class FormVenta
                 EstiloMensajes.mostrarMensajeExitoso(MensajeSistema.REGISTRO_GUARDADO)
             End If
         Catch ex As Exception
-            EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
     End Sub
     Private Sub funcionesFormulario(e As KeyEventArgs)

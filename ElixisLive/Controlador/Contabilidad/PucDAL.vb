@@ -21,7 +21,7 @@ Public Class PucDAL
 
             End Using
         Catch ex As Exception
-            Throw ex
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         Finally
             conexion.desconectar()
         End Try
@@ -45,7 +45,7 @@ Public Class PucDAL
                 dbCommand.ExecuteNonQuery()
             End Using
         Catch ex As Exception
-            Throw ex
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         Finally
             conexion.desconectar()
         End Try

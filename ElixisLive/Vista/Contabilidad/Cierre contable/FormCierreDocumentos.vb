@@ -176,7 +176,7 @@
                 textdiferencia.Text = Math.Abs(diferencia).ToString("C2")
             End If
         Catch ex As Exception
-            Throw
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
     End Sub
     Private Sub cerrarCuentas(puc As Integer)
@@ -265,7 +265,7 @@
                 Generales.deshabilitarControles(Me)
                 FuncionesContables.aumentarConsecutivo(codigoDocumento)
             Catch ex As Exception
-                Throw
+                EstiloMensajes.mostrarMensajeError(ex.Message)
             End Try
         End If
     End Sub

@@ -38,7 +38,7 @@
                 cbCombo.DropDownStyle = ComboBoxStyle.DropDownList
             End If
         Catch ex As Exception
-            Throw ex
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
     End Sub
 End Class

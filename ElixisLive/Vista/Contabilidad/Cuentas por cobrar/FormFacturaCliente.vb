@@ -99,7 +99,7 @@
                 textvalorcredito.Text = CDbl(valorCredito).ToString("C2")
             End If
         Catch ex As Exception
-            Throw
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
     End Sub
 
@@ -126,7 +126,7 @@
                 llenarDetalleCuentas(Textcodfactura.Text)
 
             Catch ex As Exception
-                Throw
+                EstiloMensajes.mostrarMensajeError(ex.Message)
             End Try
         End If
     End Sub
@@ -304,7 +304,7 @@
             End If
             diseñoDgv()
         Catch ex As Exception
-            Throw
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
 
     End Sub

@@ -112,7 +112,7 @@
 
             End If
         Catch ex As Exception
-            Throw ex
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
 
 
@@ -130,7 +130,7 @@
 
     Private Sub btbuscar_Click(sender As Object, e As EventArgs) Handles btBuscar.Click
         Dim params As New List(Of String)
-        params.Add(txtCodigoPUC.Text)
+        params.Add(txtCodigoPuc.Text)
         params.Add(Nothing)
 
         Generales.buscarElemento(Consultas.BUSQUEDA_RETENCION_IVA,
@@ -167,7 +167,7 @@
             btRegistrar.Enabled = False
             btCancelar.Enabled = False
         Catch ex As Exception
-            Throw ex
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
 
     End Sub

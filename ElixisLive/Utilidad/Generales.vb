@@ -132,7 +132,7 @@ Public Class Generales
             End If
 
         Catch ex As Exception
-            Throw ex
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         Finally
             objConexion.desconectar()
         End Try
@@ -151,11 +151,11 @@ Public Class Generales
                 daAdapter.SelectCommand.CommandTimeout = 120
                 daAdapter.Fill(dtTabla)
             End Using
-            objConexion.desConectar()
+            objConexion.desconectar()
         Catch ex As Exception
-            Throw ex
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         Finally
-            objConexion.desConectar()
+            objConexion.desconectar()
         End Try
     End Sub
 
@@ -502,7 +502,7 @@ Public Class Generales
                 daAdapter.Fill(dtTabla)
             End Using
         Catch ex As Exception
-            Throw ex
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
         If dtTabla.Rows.Count > 0 Then
             objConexion.desconectar()
@@ -525,7 +525,7 @@ Public Class Generales
                 daAdapter.Fill(dtTabla)
             End Using
         Catch ex As Exception
-            Throw ex
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
 
         If dtTabla.Rows.Count > 0 Then
@@ -680,7 +680,7 @@ Public Class Generales
                 cbCombo.DropDownStyle = ComboBoxStyle.DropDownList
             End If
         Catch ex As Exception
-            Throw ex
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         Finally
             objConexion.desconectar()
         End Try
@@ -717,7 +717,7 @@ Public Class Generales
                 cbCombo.DropDownStyle = ComboBoxStyle.DropDownList
             End If
         Catch ex As Exception
-            Throw ex
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         Finally
             objConexion.desconectar()
         End Try
@@ -791,7 +791,7 @@ Public Class Generales
             Return resultado
 
         Catch ex As Exception
-            Throw ex
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
     End Function
     Public Shared Function crearControl(controlDgv As String,
@@ -841,7 +841,7 @@ Public Class Generales
             contedor.ValueMember = valorInterno
             contedor.Tag = Constantes.TIPO_CONTROL.COMBO
         Catch ex As Exception
-            Throw ex
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
         objConexion.desconectar()
         Return contedor
@@ -859,7 +859,7 @@ Public Class Generales
             End Using
         Catch ex As Exception
             objConexion.desconectar()
-            Throw ex
+            EstiloMensajes.mostrarMensajeError(ex.Message)
             Return False
         End Try
         objConexion.desconectar()
@@ -874,7 +874,7 @@ Public Class Generales
             End Using
         Catch ex As Exception
             objConexion.desconectar()
-            Throw ex
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
         objConexion.desconectar()
     End Sub
@@ -905,7 +905,7 @@ Public Class Generales
             segundoPlano = New Threading.Thread(AddressOf subirArchivo)
             segundoPlano.Start(objeto)
         Catch ex As Exception
-            Throw ex
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
     End Sub
     Private Shared Sub subirArchivo(objeto As Object)
@@ -918,7 +918,7 @@ Public Class Generales
                                                3500,
                                                FileIO.UICancelOption.ThrowException)
             Catch ex As Net.WebException
-                Throw ex
+                EstiloMensajes.mostrarMensajeError(ex.Message)
             End Try
         End If
     End Sub
@@ -928,7 +928,7 @@ Public Class Generales
             segundoPlanoBajar = New Threading.Thread(AddressOf bajarArchivo)
             segundoPlanoBajar.Start(objeto)
         Catch ex As Exception
-            Throw ex
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
     End Sub
     Private Shared Sub bajarArchivo(objeto As Object)

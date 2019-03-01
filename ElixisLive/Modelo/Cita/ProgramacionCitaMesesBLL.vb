@@ -39,7 +39,7 @@ Public Class ProgramacionCitaMesesBLL
             Next
             contador = 0
         Catch ex As Exception
-            Throw ex
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
 
         Return params
@@ -78,7 +78,7 @@ Public Class ProgramacionCitaMesesBLL
             contenedorPanelHoraDispo = contenedorPanelHoraDispo + incrementoSaltoLinea
             contenedorPanelX = 0
         Catch ex As Exception
-            Throw ex
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
     End Sub
 

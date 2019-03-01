@@ -263,7 +263,7 @@
                     dtCuentas.Rows.RemoveAt(e.RowIndex)
                 End If
             Catch ex As Exception
-                Throw ex
+                EstiloMensajes.mostrarMensajeError(ex.Message)
             End Try
             diseñoDgv()
         End If
@@ -487,7 +487,7 @@
                 tsaldon.Text = CDbl(saldoNuevo).ToString("C2")
             End If
         Catch ex As Exception
-            Throw ex
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
     End Sub
 
@@ -511,7 +511,7 @@
                 textvalorcredito.Text = CDbl(valorCredito).ToString("C2")
             End If
         Catch ex As Exception
-            Throw ex
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
     End Sub
     Private Function validarInformacion() As Boolean
@@ -553,7 +553,7 @@
                 dtComprobantes.Clear()
                 llenardgvCuentas(txtcodigo.Text)
             Catch ex As Exception
-                Throw ex
+                EstiloMensajes.mostrarMensajeError(ex.Message)
             End Try
         End If
     End Sub

@@ -24,7 +24,7 @@ Public Class CrearInforme
             reporte.Close()
             reporte.Dispose()
         Catch ex As Exception
-            Throw ex
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
     End Sub
     Private Shared Sub enviarParametros(area As String,

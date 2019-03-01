@@ -13,7 +13,7 @@ Public Class ConfiguracionConceptosDianDAL
                 dbCommand.ExecuteNonQuery()
             End Using
         Catch ex As Exception
-            Throw ex
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         Finally
             conexion.desconectar()
         End Try

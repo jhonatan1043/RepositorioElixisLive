@@ -23,7 +23,7 @@
                 cbListaServicio.SelectedValue = If(IsDBNull(dFila("codigo_lista_servicio")), -1, dFila("codigo_lista_servicio"))
             End If
         Catch ex As Exception
-            EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
     End Sub
     Private Sub btEditar_Click(sender As Object, e As EventArgs) Handles btEditar.Click
@@ -58,7 +58,7 @@
             EstiloMensajes.mostrarMensajeExitoso(MensajeSistema.REGISTRO_GUARDADO)
 
         Catch ex As Exception
-            EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
     End Sub
     Private Sub dgRegistro_EditingControlShowing(sender As Object, e As DataGridViewEditingControlShowingEventArgs) Handles dgRegistro.EditingControlShowing

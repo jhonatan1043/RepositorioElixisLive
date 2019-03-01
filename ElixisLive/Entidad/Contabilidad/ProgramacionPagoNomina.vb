@@ -122,7 +122,7 @@ Public Class ProgramacionPagoNomina
                     FuncionesContables.aumentarConsecutivo(Constantes.COMPROBANTE_DE_EGRESO)
                 End Using
             Catch ex As Exception
-                Throw ex
+                EstiloMensajes.mostrarMensajeError(ex.Message)
             End Try
         Next
     End Sub

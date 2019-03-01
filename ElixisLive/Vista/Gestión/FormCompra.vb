@@ -39,7 +39,7 @@
                                    Titulo.BUSQUEDA_COMPRA,
                                    True, True)
         Catch ex As Exception
-            EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
     End Sub
     Private Sub cargarCompra(pCodigo As Integer)
@@ -58,7 +58,7 @@
             dgvFactura.DataSource = objCompra.dtCompra
             calcularTotales()
         Catch ex As Exception
-            EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
         Generales.habilitarBotones(ToolStrip1)
         Generales.deshabilitarControles(Me)
@@ -85,7 +85,7 @@
             End If
             mostrarIconoError()
         Catch ex As Exception
-            EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
     End Sub
     Private Sub mostrarIconoError()
@@ -194,7 +194,7 @@
                     EstiloMensajes.mostrarMensajeAnulado(MensajeSistema.REGISTRO_ANULADO)
                 End If
             Catch ex As Exception
-                EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
+                EstiloMensajes.mostrarMensajeError(ex.Message)
             End Try
         End If
     End Sub
@@ -221,7 +221,7 @@
                     objCompra.dtCompra.Rows.RemoveAt(e.RowIndex)
                 End If
             Catch ex As Exception
-                EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
+                EstiloMensajes.mostrarMensajeError(ex.Message)
             End Try
         End If
     End Sub
@@ -244,7 +244,7 @@
                 Next
                 calcularTotales()
             Catch ex As Exception
-                EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
+                EstiloMensajes.mostrarMensajeError(ex.Message)
             End Try
         End If
     End Sub
@@ -259,7 +259,7 @@
                                      True,
                                      True)
         Catch ex As Exception
-            EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
     End Sub
     Private Sub cargarProveedor(pCodigo As Integer)
@@ -273,7 +273,7 @@
             txtTelefono.Text = If(IsDBNull(dfila("Telefono")), dfila("Celular"), dfila("Telefono"))
             TextNombre.Text = dfila("Nombre")
         Catch ex As Exception
-            EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
     End Sub
     Private Sub validarGrilla()
@@ -328,7 +328,7 @@
             txtValorTotal.Text = CDbl(valorTotal).ToString(Constantes.FORMATO_MONEDA)
 
         Catch ex As Exception
-            EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
     End Sub
     Private Sub dgvFactura_DataError(sender As Object, e As DataGridViewDataErrorEventArgs) Handles dgvFactura.DataError

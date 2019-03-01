@@ -36,7 +36,7 @@ Public Class principalBLL
             formulario.menuOpciones.Renderer = New MyRenderer()
 
         Catch ex As Exception
-            EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
     End Sub
     Public Sub eliminarMenu()
@@ -86,7 +86,7 @@ Public Class principalBLL
             Generales.llenarTabla("[SP_ADMIN_MENU_SUCURSAL]", params, dtmenu)
             dsDatos.Tables.Add(dtmenu)
         Catch ex As Exception
-            EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
     End Sub
     Public Sub cargarFormulario(sender As Object, e As EventArgs)
@@ -107,7 +107,7 @@ Public Class principalBLL
                 End If
             End If
         Catch ex As Exception
-            EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
     End Sub
     Public Shared Sub traerAlFrente(ByVal elemento As ElementoMenu)

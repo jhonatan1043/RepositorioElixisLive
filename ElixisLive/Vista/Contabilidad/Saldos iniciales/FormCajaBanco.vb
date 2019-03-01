@@ -61,7 +61,7 @@
                         btCancelar.Enabled = False
                         llenardgv(txtcodigo.Text)
                     Catch ex As Exception
-                        Throw ex
+                        EstiloMensajes.mostrarMensajeError(ex.Message)
                     End Try
                 End If
             End If
@@ -378,7 +378,7 @@
                 dtCuentas.Rows.RemoveAt(e.RowIndex)
             End If
         Catch ex As Exception
-            Throw ex
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
 
     End Sub

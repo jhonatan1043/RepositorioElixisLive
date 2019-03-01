@@ -11,7 +11,7 @@ Public Class FormBalanceComprobacion
         Try
             visualizarReporte(ExportFormatType.PortableDocFormat)
         Catch ex As Exception
-            Throw ex
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
     End Sub
 
@@ -102,7 +102,7 @@ Public Class FormBalanceComprobacion
             Dim ruta As String = FuncionesExcel.exportarDataTable(dtBalance, nombreRpt)
             Process.Start(ruta)
         Catch ex As Exception
-            Throw ex
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         Finally
             Cursor = Cursors.Default
         End Try

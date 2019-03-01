@@ -31,7 +31,7 @@
                                      True,
                                      True)
         Catch ex As Exception
-            EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
     End Sub
 
@@ -40,7 +40,7 @@
         objGstoServicio.dtGasto.AcceptChanges()
         If objGstoServicio.dtGasto.Select("Justificacion IS NULL").Count > 0 Then
             EstiloMensajes.mostrarMensajeAdvertencia("Describa el servicio")
-        ElseIf objGstoServicio.dtGasto.Select("Justificacion IS NOT NULL AND Valor = 0 ").Count > 0
+        ElseIf objGstoServicio.dtGasto.Select("Justificacion IS NOT NULL AND Valor = 0 ").Count > 0 Then
             EstiloMensajes.mostrarMensajeAdvertencia("¡ Hay servicios sin valor !")
         Else
             objGstoServicio.fecha = dtFecha.Value
@@ -84,7 +84,7 @@
                     EstiloMensajes.mostrarMensajeAnulado(MensajeSistema.REGISTRO_ANULADO)
                 End If
             Catch ex As Exception
-                EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
+                EstiloMensajes.mostrarMensajeError(ex.Message)
             End Try
         End If
     End Sub

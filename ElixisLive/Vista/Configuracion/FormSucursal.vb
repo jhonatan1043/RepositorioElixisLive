@@ -37,7 +37,7 @@
             btNuevo.Enabled = True
             btBuscar.Enabled = True
         Catch ex As Exception
-            EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
         Generales.tabularConEnter(Me)
     End Sub
@@ -69,7 +69,7 @@
                 btCancelar.Enabled = False
                 EstiloMensajes.mostrarMensajeExitoso(MensajeSistema.REGISTRO_GUARDADO)
             Catch ex As Exception
-                EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
+                EstiloMensajes.mostrarMensajeError(ex.Message)
             End Try
         Else
             EstiloMensajes.mostrarMensajeAdvertencia(MensajeSistema.VALIDAR_CAMPOS)
@@ -105,7 +105,7 @@
                     EstiloMensajes.mostrarMensajeAnulado(MensajeSistema.REGISTRO_ANULADO)
                 End If
             Catch ex As Exception
-                EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
+                EstiloMensajes.mostrarMensajeError(ex.Message)
             End Try
         End If
     End Sub
@@ -135,7 +135,7 @@
             btCancelar.Enabled = False
             btRegistrar.Enabled = False
         Catch ex As Exception
-            EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
     End Sub
     Private Sub cbDepartamento_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbDepartamento.SelectedIndexChanged

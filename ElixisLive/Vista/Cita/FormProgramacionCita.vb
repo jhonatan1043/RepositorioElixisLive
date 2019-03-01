@@ -44,7 +44,7 @@
                 Next
             End If
         Catch ex As Exception
-            Throw ex
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
     End Sub
     Private Sub cargarInformacion(params As List(Of String))

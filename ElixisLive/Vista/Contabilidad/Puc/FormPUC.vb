@@ -122,7 +122,7 @@
             btRetencionIVA.Enabled = True
             txtCodigo.Text = objPUC.codigo
         Catch ex As Exception
-            Throw ex
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
 
     End Sub
@@ -169,7 +169,7 @@
                 EstiloMensajes.mostrarMensajeAnulado(MensajeSistema.REGISTRO_ANULADO)
             End If
         Catch ex As Exception
-            Throw ex
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
 
     End Sub

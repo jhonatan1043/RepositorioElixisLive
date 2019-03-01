@@ -80,7 +80,7 @@
             btCancelar.Enabled = False
             EstiloMensajes.mostrarMensajeExitoso(MensajeSistema.REGISTRO_GUARDADO)
         Catch ex As Exception
-            EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
     End Sub
     Private Sub calcularTotales()
@@ -101,7 +101,7 @@
             TextValoTotal.Text = CDbl(valorTotal).ToString(Constantes.FORMATO_MONEDA)
             TextTotalServicios.Text = totalServicios.ToString(Constantes.SIN_VALOR_NUMERICO)
         Catch ex As Exception
-            EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
     End Sub
     Private Sub btBuscar_Click(sender As Object, e As EventArgs) Handles btBuscar.Click
@@ -130,7 +130,7 @@
                 btRegistrar.Enabled = False
             End If
         Catch ex As Exception
-            EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
     End Sub
 
@@ -146,7 +146,7 @@
                     EstiloMensajes.mostrarMensajeAnulado(MensajeSistema.REGISTRO_ANULADO)
                 End If
             Catch ex As Exception
-                EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
+                EstiloMensajes.mostrarMensajeError(ex.Message)
             End Try
         End If
     End Sub
@@ -197,7 +197,7 @@
 
             Process.Start(ruta)
         Catch ex As Exception
-            EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         Finally
             Cursor = Cursors.Default
         End Try

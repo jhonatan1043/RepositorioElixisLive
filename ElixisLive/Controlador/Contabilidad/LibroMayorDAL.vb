@@ -20,7 +20,7 @@ Public Class LibroMayorDAL
             End Using
 
         Catch ex As Exception
-            Throw
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         Finally
             conexion.desconectar()
         End Try

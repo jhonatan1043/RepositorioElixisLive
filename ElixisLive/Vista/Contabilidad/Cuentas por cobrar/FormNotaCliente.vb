@@ -273,7 +273,7 @@
             End If
             formatoDgv()
         Catch ex As Exception
-            Throw ex
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
     End Sub
 
@@ -425,7 +425,7 @@
                 textvalorcredito.Text = CDbl(valorCredito).ToString("C2")
             End If
         Catch ex As Exception
-            Throw ex
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
     End Sub
 
@@ -497,7 +497,7 @@
                 llenardgvCuentas(txtcodigo.Text)
                 EstiloMensajes.mostrarMensajeExitoso(MensajeSistema.REGISTRO_GUARDADO)
             Catch ex As Exception
-                Throw ex
+                EstiloMensajes.mostrarMensajeError(ex.Message)
             End Try
         End If
     End Sub

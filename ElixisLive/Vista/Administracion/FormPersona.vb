@@ -58,7 +58,7 @@ Public Class FormPersona
             btNuevo.Enabled = True
             btBuscar.Enabled = True
         Catch ex As Exception
-            EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
         Generales.tabularConEnter(Me)
     End Sub
@@ -96,7 +96,7 @@ Public Class FormPersona
                 btCancelar.Enabled = False
                 EstiloMensajes.mostrarMensajeExitoso(MensajeSistema.REGISTRO_GUARDADO)
             Catch ex As Exception
-                EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
+                EstiloMensajes.mostrarMensajeError(ex.Message)
             End Try
         Else
             EstiloMensajes.mostrarMensajeAdvertencia(MensajeSistema.VALIDAR_CAMPOS)
@@ -138,7 +138,7 @@ Public Class FormPersona
                     EstiloMensajes.mostrarMensajeAnulado(MensajeSistema.REGISTRO_ANULADO)
                 End If
             Catch ex As Exception
-                EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
+                EstiloMensajes.mostrarMensajeError(ex.Message)
             End Try
         End If
     End Sub
@@ -181,7 +181,7 @@ Public Class FormPersona
             btCancelar.Enabled = False
             btRegistrar.Enabled = False
         Catch ex As Exception
-            EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
     End Sub
     Private Sub cbDepartamento_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbDepartamento.SelectedIndexChanged
@@ -352,7 +352,7 @@ Public Class FormPersona
             Next
 
         Catch ex As Exception
-            EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
     End Sub
     Private Sub listaSucursalesListar()
@@ -362,7 +362,7 @@ Public Class FormPersona
             ListSucursal.ValueMember = "Codigo"
             ListSucursal.DisplayMember = "Nombre"
         Catch ex As Exception
-            EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
     End Sub
 

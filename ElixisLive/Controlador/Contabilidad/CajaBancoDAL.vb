@@ -20,7 +20,7 @@ Public Class CajaBancoDAL
             End Using
             objConexio.desconectar()
         Catch ex As Exception
-            Throw ex
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
         Return objcajaBanco.comprobante
     End Function
@@ -41,7 +41,7 @@ Public Class CajaBancoDAL
                 dbCommand.ExecuteNonQuery()
             End Using
         Catch ex As Exception
-            Throw ex
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
     End Sub
 

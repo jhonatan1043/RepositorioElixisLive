@@ -18,7 +18,7 @@ Public Class ContabilidadGeneralDAL
                 FuncionesContables.aumentarConsecutivo(objContaGeneral.codigoDocumento)
             End Using
         Catch ex As Exception
-            Throw ex
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         Finally
             conexion.desconectar()
         End Try
@@ -39,7 +39,7 @@ Public Class ContabilidadGeneralDAL
                 dbCommand.ExecuteNonQuery()
             End Using
         Catch ex As Exception
-            Throw ex
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         Finally
             conexion.desconectar()
         End Try

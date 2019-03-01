@@ -77,7 +77,7 @@ Public Class Funciones
             End If
 
         Catch ex As Exception
-            Throw
+            EstiloMensajes.mostrarMensajeError(ex.Message)
             Return False
         Finally
             FormPrincipal.Cursor = Cursors.Default
@@ -98,7 +98,7 @@ Public Class Funciones
                 End Using
             End Using
         Catch ex As Exception
-            Throw ex
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         Finally
             conexion.desconectar()
         End Try
@@ -162,7 +162,7 @@ Public Class Funciones
         Try
             dFila = Generales.cargarItem(Sentencias.ADMIN_INICIO_SESION, params)
         Catch ex As Exception
-            EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
         Return dFila
     End Function
@@ -176,7 +176,7 @@ Public Class Funciones
                 Return True
             End If
         Catch ex As Exception
-            EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
         Return False
     End Function
@@ -191,7 +191,7 @@ Public Class Funciones
                 dRows = dt.Rows(0)
             End If
         Catch ex As Exception
-            EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
         Return dRows
     End Function
@@ -206,7 +206,7 @@ Public Class Funciones
                 dRows = dt.Rows(0)
             End If
         Catch ex As Exception
-            EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
         Return dRows
     End Function

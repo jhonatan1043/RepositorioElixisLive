@@ -26,7 +26,7 @@
             panel.Controls.Add(objHora.crearPanelHora(contenedorPanelHoraDispo))
             contenedorPanelHoraDispo = contenedorPanelHoraDispo + incrementoPanel
         Catch ex As Exception
-            Throw ex
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
     End Sub
     Private Shared Sub cargarPanelSemana(ByRef panel As Panel,
@@ -70,7 +70,7 @@
             contenedorPanel = contenedorPanel + incrementoSaltoLinea
             contenedorPanelX = 71
         Catch ex As Exception
-            Throw ex
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
     End Sub
     Public Shared Function cargarCitas(panel As Panel,
@@ -97,7 +97,7 @@
             Next
 
         Catch ex As Exception
-            Throw ex
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
         Return params
     End Function

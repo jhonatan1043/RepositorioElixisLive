@@ -6,7 +6,11 @@
     Private Sub Form_Contabilidad_General_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         enlazarTabla()
         Generales.deshabilitarControles(Me)
+        Generales.deshabilitarBotones(ToolStrip1)
+        Generales.asignarPermiso(Me)
         codigoDocumento = Constantes.SALDOS_INICIALES
+        btNuevo.Enabled = True
+        btBuscar.Enabled = True
     End Sub
     Private Sub fechadoc_Leave(sender As Object, e As EventArgs) Handles fechadoc.Leave
         FuncionesContables.validarFechaFutura(fechadoc)
@@ -114,7 +118,7 @@
                 End If
             End If
         Catch ex As Exception
-            Throw ex
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
 
     End Sub
@@ -211,7 +215,7 @@
                         btRegistrar.Enabled = False
                         btCancelar.Enabled = False
                     Catch ex As Exception
-                        Throw ex
+                        EstiloMensajes.mostrarMensajeError(ex.Message)
                     End Try
                     llenardgv(txtcodigo.Text)
                 End If

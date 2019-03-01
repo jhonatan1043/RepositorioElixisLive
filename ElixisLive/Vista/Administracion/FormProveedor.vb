@@ -19,7 +19,7 @@ Public Class FormProveedor
             btNuevo.Enabled = True
             btBuscar.Enabled = True
         Catch ex As Exception
-            EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
         Generales.tabularConEnter(Me)
     End Sub
@@ -65,7 +65,7 @@ Public Class FormProveedor
             btRegistrar.Enabled = False
             btCancelar.Enabled = False
         Catch ex As Exception
-            EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
     End Sub
     Private Sub cargarCampos(dfila As DataRow)
@@ -86,7 +86,7 @@ Public Class FormProveedor
         Try
             Generales.consultarTipoControl(dgvParametro, dgvParametro.CurrentCell.RowIndex)
         Catch ex As Exception
-            EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
     End Sub
     Private Sub btBuscar_Click(sender As Object, e As EventArgs) Handles btBuscar.Click
@@ -99,7 +99,7 @@ Public Class FormProveedor
                                    Titulo.BUSQUEDA_PROVEEDOR,
                                    True, True)
         Catch ex As Exception
-            EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
     End Sub
     Private Sub btBuscarPersona_Click(sender As Object, e As EventArgs) Handles btBuscarPersona.Click
@@ -112,7 +112,7 @@ Public Class FormProveedor
                                    Titulo.BUSQUEDA_PERSONA,
                                    True, True)
         Catch ex As Exception
-            EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
     End Sub
     Private Sub cargarPersona(pCodigo As Integer)
@@ -124,7 +124,7 @@ Public Class FormProveedor
             dfila = Generales.cargarItem(Sentencias.PERSONA_CARGAR, params)
             cargarCampos(dfila)
         Catch ex As Exception
-            EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
     End Sub
     Private Sub btNuevo_Click(sender As Object, e As EventArgs) Handles btNuevo.Click
@@ -174,7 +174,7 @@ Public Class FormProveedor
             End If
             mostrarIconoError()
         Catch ex As Exception
-            EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
     End Sub
     Private Sub btCancelar_Click(sender As Object, e As EventArgs) Handles btCancelar.Click
@@ -209,7 +209,7 @@ Public Class FormProveedor
                     EstiloMensajes.mostrarMensajeAnulado(MensajeSistema.REGISTRO_ANULADO)
                 End If
             Catch ex As Exception
-                EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
+                EstiloMensajes.mostrarMensajeError(ex.Message)
             End Try
         End If
     End Sub

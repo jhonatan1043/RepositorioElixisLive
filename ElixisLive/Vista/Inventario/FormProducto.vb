@@ -17,7 +17,7 @@
             Generales.cargarCombo(Sentencias.MARCA_CONSULTAR, Nothing, "Nombre", "Codigo_Marca", cbMarca)
             Generales.cargarCombo("[SP_CONSULTAR_CATEGORIA]", Nothing, "Nombre", "Codigo_Categoria", cbCategoria)
         Catch ex As Exception
-            EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
         Generales.tabularConEnter(Me)
     End Sub
@@ -33,7 +33,7 @@
         Try
             Generales.consultarTipoControl(dgRegistro, dgRegistro.CurrentCell.RowIndex)
         Catch ex As Exception
-            EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
     End Sub
     Private Sub cargarInfomacion(pcodigo As Integer)
@@ -59,7 +59,7 @@
             btCancelar.Enabled = False
             btRegistrar.Enabled = False
         Catch ex As Exception
-            EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
     End Sub
     Private Sub btGenerar_Click(sender As Object, e As EventArgs) Handles btGenerar.Click
@@ -133,7 +133,7 @@
                 cargarInfomacion(objProducto.codigo)
                 EstiloMensajes.mostrarMensajeExitoso(MensajeSistema.REGISTRO_GUARDADO)
             Catch ex As Exception
-                EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
+                EstiloMensajes.mostrarMensajeError(ex.Message)
             End Try
         Else
             EstiloMensajes.mostrarMensajeAdvertencia(MensajeSistema.VALIDAR_CAMPOS)
@@ -178,7 +178,7 @@
                     EstiloMensajes.mostrarMensajeAnulado(MensajeSistema.REGISTRO_ANULADO)
                 End If
             Catch ex As Exception
-                EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
+                EstiloMensajes.mostrarMensajeError(ex.Message)
             End Try
         End If
     End Sub

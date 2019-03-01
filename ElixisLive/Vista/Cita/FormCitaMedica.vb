@@ -82,7 +82,7 @@
                     Close()
                 End If
             Catch ex As Exception
-                EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
+                EstiloMensajes.mostrarMensajeError(ex.Message)
             End Try
         End If
     End Sub
@@ -120,7 +120,7 @@
             objFormularioProgram.validarControles()
             Close()
         Catch ex As Exception
-            EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
     End Sub
     Private Sub Panel2_Click(sender As Object, e As EventArgs) Handles Panel2.Click
@@ -138,7 +138,7 @@
                                    Titulo.BUSQUEDA_PERSONA,
                                    True, True)
         Catch ex As Exception
-            EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
     End Sub
     Private Sub cargarPersona(pCodigo As Integer)
@@ -150,7 +150,7 @@
             dfila = Generales.cargarItem(Sentencias.PERSONA_CARGAR, params)
             textNombre.Text = dfila("Nombre")
         Catch ex As Exception
-            EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
     End Sub
 
@@ -177,7 +177,7 @@
                     objCita.dtServicio.Rows.RemoveAt(e.RowIndex)
                 End If
             Catch ex As Exception
-                EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
+                EstiloMensajes.mostrarMensajeError(ex.Message)
             End Try
         End If
     End Sub
@@ -209,7 +209,7 @@
             Generales.llenarTabla(objCita.sqlCargarDetalle, params, objCita.dtServicio)
             dgvServicio.DataSource = objCita.dtServicio
         Catch ex As Exception
-            EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
     End Sub
 

@@ -28,7 +28,7 @@ Public Class CuentaPorPagarDAL
                 FuncionesContables.aumentarConsecutivo(objcuentasCXP.codigoDocumento)
             End Using
         Catch ex As Exception
-            Throw ex
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         Finally
             conexion.desconectar()
         End Try
@@ -53,7 +53,7 @@ Public Class CuentaPorPagarDAL
                 dbCommand.ExecuteNonQuery()
             End Using
         Catch ex As Exception
-            Throw ex
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         Finally
             conexion.desconectar()
         End Try

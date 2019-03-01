@@ -19,7 +19,7 @@ Public Class ConfigDAL
             End Using
             objConexio.desconectar()
         Catch ex As Exception
-            Throw ex
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
         Return objConfig
     End Function

@@ -25,7 +25,7 @@
             panel.Cursor = Cursors.Hand
             panel.Show()
         Catch ex As Exception
-            Throw ex
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
         Return panel
     End Function
@@ -47,7 +47,7 @@
             boton.Tag = hora & "-" & estado & "-" & idCita
             AddHandler boton.Click, AddressOf UtlidadCitaBLL.llamarFormularioCita
         Catch ex As Exception
-            Throw ex
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
         Return boton
     End Function

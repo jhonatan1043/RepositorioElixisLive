@@ -136,7 +136,7 @@ Public Class FuncionesContables
                 Return dbCommand.ExecuteScalar()
             End Using
         Catch ex As Exception
-            Throw ex
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
     End Function
     Public Shared Function verificarConsecutivo(pCodigo As String) As String
@@ -160,7 +160,7 @@ Public Class FuncionesContables
                 dbCommand.ExecuteNonQuery()
             End Using
         Catch ex As Exception
-            Throw ex
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         Finally
             objConexion.desconectar()
         End Try

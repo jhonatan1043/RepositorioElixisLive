@@ -26,7 +26,7 @@
             Funciones.getReporteNoFTP(rptInventario, Nothing, "InventarioBalance01")
             Cursor = Cursors.Default
         Catch ex As Exception
-            Throw ex
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
     End Sub
 
@@ -91,7 +91,7 @@
             ruta = FuncionesExcel.exportarDataTable(dtInventarioBalance, nombreRpt)
             Process.Start(ruta)
         Catch ex As Exception
-            Throw ex
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         Finally
             Cursor = Cursors.Default
         End Try

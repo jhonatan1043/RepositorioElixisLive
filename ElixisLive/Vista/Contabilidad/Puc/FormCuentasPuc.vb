@@ -102,7 +102,7 @@
             btRegistrar.Enabled = False
             btCancelar.Enabled = False
         Catch ex As Exception
-            Throw ex
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
     End Sub
 
@@ -213,7 +213,7 @@
                 crearSubcuentas(nodo, campoHijo)
             Next
         Catch ex As Exception
-            Throw ex
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
         dsCuentas.Dispose()
     End Sub
@@ -232,7 +232,7 @@
                 crearSubcuentas(subnodo, campoHijo)
             Next
         Catch ex As Exception
-            Throw ex
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
 
     End Sub
@@ -254,7 +254,7 @@
                 cargarArbolPUC("padre", "codigo_cuenta", "nombre")
             End If
         Catch ex As Exception
-            Throw ex
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
     End Sub
     Private Sub txtCodigoCuenta_Leave(sender As Object, e As EventArgs) Handles txtCodigoCuenta.Leave

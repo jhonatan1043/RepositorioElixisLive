@@ -36,7 +36,7 @@ Public Class FormPrincipal
             End Using
 
         Catch ex As Exception
-            Throw ex
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
         Return dtPermisos
         dtPermisos.Dispose()

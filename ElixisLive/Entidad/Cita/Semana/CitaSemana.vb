@@ -31,7 +31,7 @@
             AddHandler panel.DoubleClick, AddressOf UtlidadCitaBLL.llamarFormularioCita
             panel.Show()
         Catch ex As Exception
-            Throw ex
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
         Return panel
     End Function
@@ -49,7 +49,7 @@
             AddHandler etiqueta.DoubleClick, AddressOf UtlidadCitaBLL.llamarFormularioCita
             mensaje.SetToolTip(etiqueta, complemento)
         Catch ex As Exception
-            Throw ex
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
         Return etiqueta
     End Function
@@ -67,7 +67,7 @@
                 contador = contador + incrementoLabel
             Next
         Catch ex As Exception
-            Throw ex
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
     End Sub
 End Class

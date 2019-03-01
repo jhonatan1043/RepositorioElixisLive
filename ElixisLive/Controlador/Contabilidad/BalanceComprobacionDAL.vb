@@ -26,7 +26,7 @@ Public Class BalanceComprobacionDAL
             End Using
             objConexio.desconectar()
         Catch ex As Exception
-            Throw
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
     End Sub
 

@@ -29,7 +29,7 @@ Public Class RecaudoDAL
                 End Using
             End Using
         Catch ex As Exception
-            Throw ex
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
         Return objRecaudo
     End Function

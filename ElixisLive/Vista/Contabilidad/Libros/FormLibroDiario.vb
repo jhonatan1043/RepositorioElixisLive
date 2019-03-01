@@ -28,7 +28,7 @@ Public Class FormLibroDiario
             Dim rutaArchivo As String = FuncionesExcel.exportarDataTable(dtLibroDiario, nombreRpt)
             Process.Start("file:///" & rutaArchivo)
         Catch ex As Exception
-            Throw ex
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         Finally
             Cursor = Cursors.Default
         End Try
@@ -38,7 +38,7 @@ Public Class FormLibroDiario
         Try
             visualizarReporte(ExportFormatType.PortableDocFormat)
         Catch ex As Exception
-            Throw ex
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
     End Sub
 

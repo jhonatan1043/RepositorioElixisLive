@@ -19,7 +19,7 @@ Public Class PerfilDAL
     '            End Using
     '        End Using
     '    Catch ex As Exception
-    '        Throw ex
+    '        EstiloMensajes.mostrarMensajeError(ex.Message)
     '    Finally
     '        objConexio.desConectar()
     '    End Try
@@ -35,7 +35,7 @@ Public Class PerfilDAL
                 pPerfil.codigoPerfil = CType(consulta.ExecuteScalar, String)
             End Using
         Catch ex As Exception
-            Throw ex
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
         objConexio.desconectar()
     End Sub
@@ -50,7 +50,7 @@ Public Class PerfilDAL
                 consulta.ExecuteNonQuery()
             End Using
         Catch ex As Exception
-            Throw ex
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
         objConexio.desconectar()
     End Sub
@@ -64,7 +64,7 @@ Public Class PerfilDAL
                 consulta.ExecuteNonQuery()
             End Using
         Catch ex As Exception
-            Throw ex
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
         objConexio.desconectar()
     End Sub
@@ -80,7 +80,7 @@ Public Class PerfilDAL
                 End Using
             End Using
         Catch ex As Exception
-            Throw ex
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         Finally
             objConexio.desconectar()
         End Try
@@ -97,7 +97,7 @@ Public Class PerfilDAL
                 End Using
             End Using
         Catch ex As Exception
-            Throw ex
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         Finally
             objConexio.desconectar()
         End Try

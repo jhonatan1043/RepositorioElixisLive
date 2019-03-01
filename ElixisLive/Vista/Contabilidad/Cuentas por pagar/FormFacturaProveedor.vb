@@ -106,7 +106,7 @@
                 textvalorcredito.Text = CDbl(valorCredito).ToString("C2")
             End If
         Catch ex As Exception
-            Throw ex
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
 
     End Sub
@@ -134,7 +134,7 @@
                     btRegistrar.Enabled = False
                     btCancelar.Enabled = False
                 Catch ex As Exception
-                    Throw ex
+                    EstiloMensajes.mostrarMensajeError(ex.Message)
                 End Try
             End If
         End If
@@ -333,7 +333,7 @@
             End If
             diseñoDgv()
         Catch ex As Exception
-            Throw ex
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
     End Sub
     Private Sub cargarFacturaGuardada(pFactura As String, pProveedor As Integer)

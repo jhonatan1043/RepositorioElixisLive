@@ -68,7 +68,7 @@ Public Class FormLibroAuxiliar
         Try
             visualizarReporte(ExportFormatType.PortableDocFormat)
         Catch ex As Exception
-            Throw ex
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
     End Sub
 

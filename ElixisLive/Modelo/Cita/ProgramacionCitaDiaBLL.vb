@@ -22,7 +22,7 @@
             objHoraTomada.hora = hora
             panel.Controls.Add(objHoraTomada.crearPanelHoraTomada(contenedorPanelDispon, 30))
         Catch ex As Exception
-            Throw ex
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
         Return 100
     End Function
@@ -64,7 +64,7 @@
             contenedorPanelX = Constantes.PANEL_POCISION_X
 
         Catch ex As Exception
-            Throw ex
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
     End Sub
 
@@ -77,7 +77,7 @@
             objHoraDisponible.hora = hora
             panel.Controls.Add(objHoraDisponible.crearPanelHoraDisponible(contenedorPanelDispon, 8))
         Catch ex As Exception
-            Throw ex
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
     End Sub
     Private Shared Sub cargarPanelDisponible(ByRef panel As Panel, hora As String)
@@ -88,7 +88,7 @@
             panelCreado = objDisponible.crearPanelDisponible(contenedorPanelDispon)
             panel.Controls.Add(panelCreado)
         Catch ex As Exception
-            Throw ex
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
     End Sub
 #End Region
@@ -122,7 +122,7 @@
 
             Next
         Catch ex As Exception
-            Throw ex
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
         Return params
     End Function

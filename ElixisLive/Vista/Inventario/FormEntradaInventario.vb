@@ -29,7 +29,7 @@
                 End If
             End If
         Catch ex As Exception
-            EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
     End Sub
 
@@ -60,7 +60,7 @@
                                    Titulo.BUSQUEDA_INVENTARIO,
                                    True, True)
         Catch ex As Exception
-            EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
     End Sub
     Private Sub btRegistrar_Click(sender As Object, e As EventArgs) Handles btRegistrar.Click
@@ -91,7 +91,7 @@
                 cargarInventario(objEntrada.codigo)
                 EstiloMensajes.mostrarMensajeExitoso(MensajeSistema.REGISTRO_GUARDADO)
             Catch ex As Exception
-                EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
+                EstiloMensajes.mostrarMensajeError(ex.Message)
             End Try
         End If
     End Sub
@@ -116,7 +116,7 @@
                     EstiloMensajes.mostrarMensajeAnulado(MensajeSistema.REGISTRO_ANULADO)
                 End If
             Catch ex As Exception
-                EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
+                EstiloMensajes.mostrarMensajeError(ex.Message)
             End Try
         End If
     End Sub
@@ -130,7 +130,7 @@
                                    Titulo.BUSQUEDA_COMPRA,
                                    True, True)
         Catch ex As Exception
-            EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
     End Sub
 
@@ -170,7 +170,7 @@
                     End If
                 End If
             Catch ex As Exception
-                EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
+                EstiloMensajes.mostrarMensajeError(ex.Message)
             End Try
         End If
     End Sub
@@ -250,7 +250,7 @@
                 txtTotal.Text = Format(objEntrada.dtEntrada.Compute("Sum(Total)", Constantes.CADENA_VACIA), Constantes.FORMATO_MONEDA)
             End If
         Catch ex As Exception
-            EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
     End Sub
     Private Sub limpiarControl()
@@ -299,7 +299,7 @@
                 txtSubTotal.Text = Format(objEntrada.dtEntrada.Compute("Sum(Valor)", Constantes.CADENA_VACIA), Constantes.FORMATO_MONEDA)
                 txtTotal.Text = Format(objEntrada.dtEntrada.Compute("Sum(Total)", Constantes.CADENA_VACIA), Constantes.FORMATO_MONEDA)
             Catch ex As Exception
-                EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
+                EstiloMensajes.mostrarMensajeError(ex.Message)
             End Try
         End If
     End Sub

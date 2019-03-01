@@ -70,7 +70,7 @@ Public Class FormPerfil
             Next
 
         Catch ex As Exception
-            EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
 
         dsDatos.Dispose()
@@ -97,7 +97,7 @@ Public Class FormPerfil
                 crearSubcuentas(subnodo)
             Next
         Catch ex As Exception
-            EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
 
     End Sub
@@ -123,7 +123,7 @@ Public Class FormPerfil
                 arbolmenu.Enabled = False
                 Me.ErrorIcono.SetError(txtnombre, Constantes.CADENA_VACIA)
             Catch ex As Exception
-                EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
+                EstiloMensajes.mostrarMensajeError(ex.Message)
             End Try
         End If
 
@@ -156,7 +156,7 @@ Public Class FormPerfil
                     EstiloMensajes.mostrarMensajeAnulado(MensajeSistema.REGISTRO_ANULADO)
                 End If
             Catch ex As Exception
-                EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
+                EstiloMensajes.mostrarMensajeError(ex.Message)
             End Try
         End If
     End Sub
@@ -194,7 +194,7 @@ Public Class FormPerfil
                 EstiloMensajes.mostrarMensajeExitoso((MensajeSistema.MODULO_ASIGNADO))
             End Using
         Catch ex As Exception
-            EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
         objConexio.desconectar()
     End Sub
@@ -212,7 +212,7 @@ Public Class FormPerfil
             End Using
 
         Catch ex As Exception
-            EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         Finally
             objConexio.desconectar()
         End Try

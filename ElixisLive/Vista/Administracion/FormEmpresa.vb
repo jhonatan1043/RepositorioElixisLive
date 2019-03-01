@@ -53,7 +53,7 @@
             cargarComboCiudad()
             cargarInfomacion(Constantes.CODIGO_EMPRESA)
         Catch ex As Exception
-            EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
         Generales.tabularConEnter(Me)
     End Sub
@@ -71,7 +71,7 @@
                     inicioSesion.Show()
                 End If
             Catch ex As Exception
-                EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
+                EstiloMensajes.mostrarMensajeError(ex.Message)
             End Try
         Else
             EstiloMensajes.mostrarMensajeAdvertencia(MensajeSistema.VALIDAR_CAMPOS)
@@ -138,7 +138,7 @@
                 btCancelar.Enabled = True
             End If
         Catch ex As Exception
-            EstiloMensajes.mostrarMensajeError(MsgBox(ex.Message))
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
     End Sub
     Private Sub crearImagen(dImagen As DataRow)
