@@ -27,7 +27,7 @@
             FormPrincipal.Show()
             banderaForm = True
         Else
-            MsgBox(MensajeSistema.CONTRASENA_VALIDA, , "Inicio Sesión")
+            EstiloMensajes.mostrarMensajeAdvertencia(MensajeSistema.CONTRASENA_VALIDA)
         End If
         Return banderaForm
     End Function

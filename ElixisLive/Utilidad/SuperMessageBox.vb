@@ -57,17 +57,17 @@
         Me.panel1.Controls.Add(Me.label2)
         Me.panel1.Location = New System.Drawing.Point(0, 0)
         Me.panel1.Name = "panel1"
-        Me.panel1.Size = New System.Drawing.Size(320, 23)
+        Me.panel1.Size = New System.Drawing.Size(356, 23)
         Me.panel1.TabIndex = 0
         '
         'label2
         '
         Me.label2.BackColor = System.Drawing.Color.Transparent
-        Me.label2.Font = New System.Drawing.Font("Segoe UI Semibold", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.label2.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.label2.ForeColor = System.Drawing.Color.White
         Me.label2.Location = New System.Drawing.Point(-1, -1)
         Me.label2.Name = "label2"
-        Me.label2.Size = New System.Drawing.Size(320, 23)
+        Me.label2.Size = New System.Drawing.Size(356, 23)
         Me.label2.TabIndex = 0
         Me.label2.Text = "Quality"
         Me.label2.TextAlign = System.Drawing.ContentAlignment.BottomCenter
@@ -82,7 +82,7 @@
         Me.panel2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.panel2.Location = New System.Drawing.Point(0, 0)
         Me.panel2.Name = "panel2"
-        Me.panel2.Size = New System.Drawing.Size(322, 150)
+        Me.panel2.Size = New System.Drawing.Size(356, 158)
         Me.panel2.TabIndex = 1
         '
         'lblMensaje
@@ -90,9 +90,9 @@
         Me.lblMensaje.BackColor = System.Drawing.Color.Transparent
         Me.lblMensaje.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblMensaje.ForeColor = System.Drawing.Color.White
-        Me.lblMensaje.Location = New System.Drawing.Point(79, 41)
+        Me.lblMensaje.Location = New System.Drawing.Point(79, 36)
         Me.lblMensaje.Name = "lblMensaje"
-        Me.lblMensaje.Size = New System.Drawing.Size(231, 71)
+        Me.lblMensaje.Size = New System.Drawing.Size(264, 83)
         Me.lblMensaje.TabIndex = 0
         Me.lblMensaje.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
@@ -100,16 +100,16 @@
         '
         Me.logo.BackColor = System.Drawing.Color.Transparent
         Me.logo.Image = Global.Quality.My.Resources.Resources.Help_icon
-        Me.logo.Location = New System.Drawing.Point(11, 47)
+        Me.logo.Location = New System.Drawing.Point(10, 47)
         Me.logo.Name = "logo"
-        Me.logo.Size = New System.Drawing.Size(60, 60)
+        Me.logo.Size = New System.Drawing.Size(65, 65)
         Me.logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.logo.TabIndex = 0
         Me.logo.TabStop = False
         '
         'SuperMessageBox
         '
-        Me.ClientSize = New System.Drawing.Size(322, 150)
+        Me.ClientSize = New System.Drawing.Size(356, 158)
         Me.ControlBox = False
         Me.Controls.Add(Me.panel1)
         Me.Controls.Add(Me.panel2)
@@ -173,7 +173,7 @@
 
         Dim cmdBoton As New System.Windows.Forms.Button
         cmdBoton.Text = Cadena
-        cmdBoton.Height = 22 : cmdBoton.Width = mintAncho
+        cmdBoton.Height = 25 : cmdBoton.Width = mintAncho
         cmdBoton.Font = New Font("Times New Roman", 11, FontStyle.Italic)
         cmdBoton.ForeColor = Color.SteelBlue
         alstBotones.Add(cmdBoton)

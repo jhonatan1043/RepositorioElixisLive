@@ -149,7 +149,7 @@
     End Sub
 
     Private Sub Form_antici_decucci_FormClosing(sender As Object, e As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
-        If EstiloMensajes.mostrarMensajePregunta(MensajeSistema.SALIR) = MsgBoxResult.Yes Then
+        If EstiloMensajes.mostrarMensajePregunta(MensajeSistema.SALIR) = Constantes.SI Then
             Me.Dispose()
         Else
             e.Cancel = True
@@ -419,13 +419,13 @@
         If e.ColumnIndex = 5 Then
             For i = 0 To dgvcartera.Rows.Count - 1
                 If dgvcartera.Rows(i).Cells(4).Value.ToString = "" Then
-                    MsgBox("Por Favor ingrese un valor ", 48, "Atención")
+                    EstiloMensajes.mostrarMensajeAdvertencia("Por Favor ingrese un valor")
                 End If
             Next
         ElseIf e.ColumnIndex = 6 Then
             For i = 0 To dgvcartera.Rows.Count - 1
                 If dgvcartera.Rows(i).Cells(5).Value.ToString = "" Then
-                    MsgBox("Por Favor ingrese un valor ", 48, "Atención")
+                    EstiloMensajes.mostrarMensajeAdvertencia("Por Favor ingrese un valor")
                 End If
             Next
         End If

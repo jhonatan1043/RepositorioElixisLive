@@ -80,7 +80,7 @@ Public Class Generales
             fechaServidor = dr(0)
             Return fechaServidor
         Catch ex As Exception
-            MsgBox(ex.Message, MsgBoxStyle.Critical)
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
     End Function
     Public Shared Sub getConnReporte(Itblas As Tables)

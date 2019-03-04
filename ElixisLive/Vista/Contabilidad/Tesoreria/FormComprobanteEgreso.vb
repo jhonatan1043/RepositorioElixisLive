@@ -138,7 +138,7 @@
         Else
             If Not (IsDBNull(dgvComprobante.Rows(dgvComprobante.CurrentCell.RowIndex).Cells("Codigo").Value) OrElse Not dgvComprobante.CurrentCell.ColumnIndex = 4) And
                 dgvComprobante.Rows(dgvComprobante.CurrentCell.RowIndex).Cells("Codigo").Value.ToString.Length < 5 Then
-                MsgBox("Cuenta errada, por favor digite una cuenta válida!", MsgBoxStyle.Exclamation)
+                EstiloMensajes.mostrarMensajeAdvertencia("Cuenta errada, por favor digite una cuenta válida!")
                 dgvComprobante.Rows(dgvComprobante.CurrentCell.RowIndex).Cells("Codigo").Value = ""
             End If
         End If
@@ -324,23 +324,23 @@
         vDebito = CDbl(textvalorcredito.Text)
         vCredito = CDbl(textvalordebito.Text)
         If textCodigoCliente.Text = "" Then
-            MsgBox("Debe seleccionar un tercero", MsgBoxStyle.Exclamation)
+            EstiloMensajes.mostrarMensajeAdvertencia("Debe seleccionar un tercero")
             bttercero.Focus()
             Return False
         ElseIf txtfactura.Text = "" Then
-            MsgBox("El campo factura se encuentra vacio", MsgBoxStyle.Exclamation)
+            EstiloMensajes.mostrarMensajeAdvertencia("El campo factura se encuentra vacio")
             txtfactura.Focus()
             Return False
         ElseIf textobservacion.Text = "" Then
-            MsgBox("El campo detalle del movimiento se encuentra vacio", MsgBoxStyle.Exclamation)
+            EstiloMensajes.mostrarMensajeAdvertencia("El campo detalle del movimiento se encuentra vacio")
             textobservacion.Focus()
             Return False
         ElseIf CDbl(textdiferencia.Text) <> 0 Then
-            MsgBox("Por Favor Corrija el movimiento, los saldos debito y credito no son iguales", MsgBoxStyle.Exclamation)
+            EstiloMensajes.mostrarMensajeAdvertencia("Por favor corrija el movimiento, los saldos debito y credito no son iguales")
             dgvComprobante.Focus()
             Return False
         ElseIf vCredito = 0 Or vDebito = 0 Then
-            MsgBox("Por Favor Corrija el movimiento, los saldos debito y credito no son iguales o estan en CERO", MsgBoxStyle.Exclamation)
+            EstiloMensajes.mostrarMensajeAdvertencia("Por favor corrija el movimiento, los saldos debito y credito no son iguales o estan en cero")
             dgvComprobante.Focus()
             Return False
         ElseIf FuncionesContables.validardgv(objComprobante.dtComprobante) = False Then
@@ -425,6 +425,7 @@
 
     Private Sub btimprimir_Click(sender As Object, e As EventArgs) Handles btImprimir.Click
         imprimir()
+
     End Sub
 
     Public Sub imprimir()

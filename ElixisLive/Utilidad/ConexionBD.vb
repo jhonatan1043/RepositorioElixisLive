@@ -15,7 +15,7 @@ Public Class ConexionBD
             cnxbd.ConnectionString = "Server=SISTEMAS\NADA;Initial Catalog=softbd;integrated security=true"
             cnxbd.Open()
         Catch ex As SqlException
-            MsgBox(ex.Message)
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
     End Sub
     Public Sub desconectar()

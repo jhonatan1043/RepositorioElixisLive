@@ -47,7 +47,7 @@
             ElseIf Not String.IsNullOrEmpty(descripcion) AndAlso Not String.IsNullOrEmpty(dtComprobante.Rows(indiceFila).Item("Descripcion").ToString) Then
                 dtComprobante.Rows(indiceFila).Item("Descripcion") = descripcion
             Else
-                If MsgBox("Esta cuenta no existe ¿Desea crearla?", MsgBoxStyle.YesNo + MsgBoxStyle.Question, "Crear") = MsgBoxResult.Yes Then
+                If EstiloMensajes.mostrarMensajePregunta("Esta cuenta no existe ¿Desea crearla?") = Constantes.SI Then
                     Dim formCuenta As New FormCuentasPuc
                     formCuenta.ShowDialog()
                 Else

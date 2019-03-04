@@ -14,7 +14,7 @@
             cargarDia()
             dFecha.CustomFormat = Constantes.FORMATO_FECHA_LARGA
         Catch ex As Exception
-            MsgBox(ex.Message)
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
     End Sub
     Private Sub cargarDia()

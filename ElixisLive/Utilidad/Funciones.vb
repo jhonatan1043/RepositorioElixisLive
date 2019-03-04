@@ -31,7 +31,7 @@ Public Class Funciones
             Process.Start(ruta)
 
         Catch ex As Exception
-            MsgBox(ex.Message)
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         Finally
             FormPrincipal.Cursor = Cursors.Default
         End Try
@@ -152,7 +152,7 @@ Public Class Funciones
                 codigo = dFila.Item(0)
             End If
         Catch ex As Exception
-            MsgBox(ex.Message)
+            EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
 
         Return codigo

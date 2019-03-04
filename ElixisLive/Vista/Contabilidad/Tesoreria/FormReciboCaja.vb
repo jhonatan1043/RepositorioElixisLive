@@ -242,10 +242,10 @@
                     calcular()
                     objRecaudo.dtDetalle.Rows.Add()
                 Else
-                    MsgBox("No se encontro la Factura", MsgBoxStyle.Exclamation)
+                    EstiloMensajes.mostrarMensajeAdvertencia("No se encontro la Factura")
                 End If
             Else
-                MsgBox("¡Ya se encuentra seleccionado!", MsgBoxStyle.Exclamation)
+                EstiloMensajes.mostrarMensajeAdvertencia("¡Ya se encuentra seleccionado!")
             End If
         Catch ex As Exception
             EstiloMensajes.mostrarMensajeError(ex.Message)
@@ -316,7 +316,7 @@
             EstiloMensajes.mostrarMensajeAdvertencia("¡Favor seleccionar un tercero!")
             bttercero.Focus()
         ElseIf textdiferencia.Text <> 0 Then
-            MsgBox("¡La diferencia debe ser cero(0)!")
+            EstiloMensajes.mostrarMensajeAdvertencia("¡La diferencia debe ser cero(0)!")
             textdiferencia.Focus()
         ElseIf String.IsNullOrEmpty(textobserva.Text) Then
             EstiloMensajes.mostrarMensajeAdvertencia("¡Observacion está en blanco!")
@@ -425,7 +425,7 @@
         Try
             If CDate(fechadoc.Value).Date <= CDate(Funciones.Fecha(23)).Date Then
                 If FuncionesContables.verificarFecha(CDate(fechadoc.Value).Date) Then
-                    MsgBox(MensajeSistema.PERIODO_CONTABLE_CERRADO, MsgBoxStyle.Exclamation)
+                    EstiloMensajes.mostrarMensajeAdvertencia(MensajeSistema.PERIODO_CONTABLE_CERRADO)
                     fechadoc.Value = Date.Today
                     Exit Sub
                 End If

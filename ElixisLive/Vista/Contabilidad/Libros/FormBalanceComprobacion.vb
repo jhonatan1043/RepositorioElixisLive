@@ -38,7 +38,7 @@ Public Class FormBalanceComprobacion
         params = crearParametros()
         objBalanceBLL.calcularBalanceComprobacion(params)
         If params.resultado = False Then
-            MsgBox(MensajeSistema.CONTA_RESULTADO_VACIO, MsgBoxStyle.Exclamation)
+            EstiloMensajes.mostrarMensajeAdvertencia(MensajeSistema.CONTA_RESULTADO_VACIO)
         Else
             Cursor = Cursors.WaitCursor
             Funciones.getReporteNoFTP(generarReporte(), Nothing, "Balance01")

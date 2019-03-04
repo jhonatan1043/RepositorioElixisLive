@@ -52,7 +52,7 @@ Public Class FormCertificadoRetencion
             CertificadoRetencionBLL.obtenerValorRetencion(params)
 
             If params.resultado = False Then
-                MsgBox(MensajeSistema.CONTA_RESULTADO_VACIO, MsgBoxStyle.Exclamation)
+                EstiloMensajes.mostrarMensajeAdvertencia(MensajeSistema.CONTA_RESULTADO_VACIO)
             Else
                 Cursor = Cursors.WaitCursor
                 CertificadoRetencionBLL.generarCertificadoRetencion(params)
@@ -65,7 +65,7 @@ Public Class FormCertificadoRetencion
     Private Function validarFormulario() As Boolean
 
         If txtTercero.Text = String.Empty Then
-            MsgBox("Favor escoger un tercero!", MsgBoxStyle.Exclamation)
+            EstiloMensajes.mostrarMensajeAdvertencia("Favor escoger un tercero!")
             Return False
         End If
 
@@ -103,7 +103,7 @@ Public Class FormCertificadoRetencion
         idTercero = LibroAuxiliarBLL.obtenerTerceroByNit(txtTercero.Text)
 
         If idTercero = Nothing Then
-            MsgBox(MensajeSistema.CONTA_TERCERO_INEXISTENTE, MsgBoxStyle.Critical)
+            EstiloMensajes.mostrarMensajeAdvertencia(MensajeSistema.CONTA_TERCERO_INEXISTENTE)
             txtTercero.Text = String.Empty
             txtRazonSocial.Text = String.Empty
             txtTercero.Focus()

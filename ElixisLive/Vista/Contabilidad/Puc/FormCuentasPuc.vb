@@ -267,7 +267,7 @@
         Dim validaCuentaPuc As Integer
         validaCuentaPuc = FuncionesContables.validarCuentaPuc(pucActivo, txtCodigoCuenta.Text)
         If validaCuentaPuc = FuncionesContables.estadoCuentaPuc.invalida Then
-            MsgBox("Cuenta invalida!", MsgBoxStyle.Exclamation)
+            EstiloMensajes.mostrarMensajeAdvertencia("Cuenta invalida!")
             txtCodigoCuenta.Text = String.Empty
             txtCodigoPadre.Text = String.Empty
             txtNombreCuentaPadre.Text = String.Empty

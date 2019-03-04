@@ -180,7 +180,7 @@
                 Exit Sub
             End If
             If dtCuentas.Rows(dgvCuentas.CurrentRow.Index).Item(0).ToString.StartsWith("22") Then
-                MsgBox("No puede eliminar una cuenta de proveedores", MsgBoxStyle.Exclamation)
+                EstiloMensajes.mostrarMensajeAdvertencia("No puede eliminar una cuenta de proveedores")
                 Exit Sub
             End If
 
@@ -493,7 +493,7 @@
                         base.Focus()
                     End If
                 Else
-                    EstiloMensajes.mostrarMensajeAdvertencia("Digite cantidad base", MsgBoxStyle.Exclamation)
+                    EstiloMensajes.mostrarMensajeAdvertencia("Digite cantidad base")
                     base.Focus()
                 End If
             ElseIf txttotal.text <> "" Then

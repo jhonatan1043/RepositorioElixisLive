@@ -57,7 +57,7 @@
         idTercero = pCodigo
         Generales.llenarTabla(Consultas.TERCERO_CONTABILIDAD_CARGAR, params, dt)
         If dt.Rows.Count > 0 Then
-            idTercero = dt.Rows(0).Item("Id_tercero").ToString()
+            idTercero = dt.Rows(0).Item("codigo_persona").ToString()
             textnombretercero.Text = dt.Rows(0).Item("Tercero").ToString()
             nit = dt.Rows(0).Item("Nit").ToString()
             llenarFacturas(idTercero, fechaini.Value.Date, fechafin.Value.Date)

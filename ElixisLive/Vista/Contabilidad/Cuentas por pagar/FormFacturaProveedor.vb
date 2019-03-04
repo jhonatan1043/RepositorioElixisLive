@@ -361,7 +361,7 @@
                     fechavence.Value = dt.Rows(0).Item("Fecha_Vence").ToString()
                 Else
                     If dtCuentas.Rows.Count = 0 Then
-                        If MsgBox("¿Factura no existe, desea ingresarla ?", MsgBoxStyle.YesNo + MsgBoxStyle.Question, "Ingresar") = MsgBoxResult.Yes Then
+                        If EstiloMensajes.mostrarMensajePregunta("Factura no existe, desea ingresarla") = Constantes.SI Then
                             fecharecibo.Enabled = True
                             fechavence.Enabled = True
                             fecharecibo.Value = Date.Now
@@ -482,7 +482,7 @@
                                   TitulosForm.BUSQUEDA_FACTURAS,
                                   False, True)
         Else
-            MsgBox("Debe escoger un tercero", MsgBoxStyle.Exclamation)
+            EstiloMensajes.mostrarMensajeAdvertencia("Debe escoger un tercero")
         End If
     End Sub
 
@@ -552,7 +552,7 @@
                 If dtProvedor.Rows.Count > 0 Then
                     For indicedtCuentas = 0 To dgvCuentas.Rows.Count - 1
                         If dgvCuentas.Rows(indicedtCuentas).Cells(1).Value.ToString = dtProvedor.Rows(0).Item("Cuenta").ToString Then
-                            MsgBox("Ya existe una cuenta proveedor en el movimiento")
+                            EstiloMensajes.mostrarMensajeAdvertencia("Ya existe una cuenta proveedor en el movimiento")
                             Exit Sub
                         End If
                     Next
@@ -571,11 +571,11 @@
                     End If
 
                 Else
-                    MsgBox("No hay una cuenta asignada a este proveedor")
+                    EstiloMensajes.mostrarMensajeAdvertencia("No hay una cuenta asignada a este proveedor")
                 End If
             End If
         Else
-            MsgBox("Por favor elija un proveedor")
+            EstiloMensajes.mostrarMensajeAdvertencia("Por favor elija un proveedor")
         End If
     End Sub
     Private Sub btcxp_Click(sender As Object, e As EventArgs)
@@ -595,13 +595,13 @@
         If e.ColumnIndex = 4 Then
             For i = 0 To dgvCuentas.Rows.Count - 1
                 If dgvCuentas.Rows(i).Cells(4).Value.ToString = "" Then
-                    MsgBox("Por Favor ingrese un valor ", MsgBoxStyle.Exclamation)
+                    EstiloMensajes.mostrarMensajeAdvertencia("Por Favor ingrese un valor")
                 End If
             Next
         ElseIf e.ColumnIndex = 5 Then
             For i = 0 To dgvCuentas.Rows.Count - 1
                 If dgvCuentas.Rows(i).Cells(5).Value.ToString = "" Then
-                    MsgBox("Por Favor ingrese un valor ", MsgBoxStyle.Exclamation)
+                    EstiloMensajes.mostrarMensajeAdvertencia("Por Favor ingrese un valor")
                 End If
             Next
         End If
@@ -664,11 +664,11 @@
                         txtTotal.Text = (CDbl(base.Text) * CDbl(txtPorcentaje.Text)) / CDbl(100)
                         txtTotal.Focus()
                     Else
-                        MsgBox("la cantidad base no puede ser cero", MsgBoxStyle.Exclamation)
+                        EstiloMensajes.mostrarMensajeAdvertencia("la cantidad base no puede ser cero")
                         base.Focus()
                     End If
                 Else
-                    MsgBox("Digite cantidad base", MsgBoxStyle.Exclamation)
+                    EstiloMensajes.mostrarMensajeAdvertencia("Digite cantidad base")
                     base.Focus()
                 End If
             ElseIf txtTotal.text <> "" Then

@@ -140,7 +140,7 @@
         idTercero = pCodigo
         Generales.llenarTabla(Consultas.CUENTAS_POR_PAGAR_CARGAR, params, dtComprobantes)
         If dtComprobantes.Rows.Count = 0 Then
-            MsgBox("Este Proveedor no tiene cuentas por pagar", MsgBoxStyle.Information)
+            EstiloMensajes.mostrarMensajeAdvertencia("Este Proveedor no tiene cuentas por pagar")
             dtCuentas.Clear()
         End If
         dgvComprobantes.DataSource = dtComprobantes
@@ -240,7 +240,7 @@
                     Exit Sub
                 End If
                 If dgvCuentas.Rows(dgvCuentas.CurrentCell.RowIndex).Cells("anular").Selected = True And dtCuentas.Rows(dgvCuentas.CurrentRow.Index).Item(0).ToString.StartsWith("22") Then
-                    MsgBox("No puede eliminar una cuenta de proveedores", MsgBoxStyle.Exclamation)
+                    EstiloMensajes.mostrarMensajeAdvertencia("No puede eliminar una cuenta de proveedores")
                     Exit Sub
                 End If
 
@@ -395,9 +395,6 @@
             codigoDocumento = objDocumentoContable.codigo
             Textsigla.Text = codigo
             Textnombredocumento.Text = objDocumentoContable.descripcion
-        Else
-            MsgBox("No se encontró ningún documento", MsgBoxStyle.Information)
-            btBusquedaDocumento.PerformClick()
         End If
     End Sub
     Private Sub dgvCuentas_CellEnter(sender As Object, e As DataGridViewCellEventArgs) Handles dgvCuentas.CellEnter
@@ -421,13 +418,13 @@
         If e.ColumnIndex = 4 Then
             For i = 0 To dgvCuentas.Rows.Count - 1
                 If dgvCuentas.Rows(i).Cells(4).Value.ToString = "" Then
-                    MsgBox("Por Favor ingrese un valor ", MsgBoxStyle.Exclamation)
+                    EstiloMensajes.mostrarMensajeAdvertencia("Por Favor ingrese un valor")
                 End If
             Next
         ElseIf e.ColumnIndex = 5 Then
             For i = 0 To dgvCuentas.Rows.Count - 1
                 If dgvCuentas.Rows(i).Cells(5).Value.ToString = "" Then
-                    MsgBox("Por Favor ingrese un valor ", MsgBoxStyle.Exclamation)
+                    EstiloMensajes.mostrarMensajeAdvertencia("Por Favor ingrese un valor")
                 End If
             Next
         End If

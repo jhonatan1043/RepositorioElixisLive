@@ -269,13 +269,13 @@
     End Sub
     Public Function validarDatosDgv()
         If (dgvCartera.RowCount = 1) Then
-            MsgBox("No se puede guardar registros en blanco", MsgBoxStyle.OkOnly + MsgBoxStyle.Exclamation, "Atención")
+            EstiloMensajes.mostrarMensajeAdvertencia("No se puede guardar registros en blanco")
             dgvCartera.Focus()
             Return False
         Else
             For i = 0 To dgvCartera.Rows.Count - 1
                 If dgvCartera.Rows(i).Cells("cuenta").Value.ToString = "" Then
-                    MsgBox("El Tercero " + dgvCartera.Rows(i).Cells("Tercero").Value.ToString.ToLower + " no tiene cuenta configurada")
+                    EstiloMensajes.mostrarMensajeAdvertencia("El Tercero " + dgvCartera.Rows(i).Cells("Tercero").Value.ToString.ToLower + " no tiene cuenta configurada")
                     Return False
                 End If
             Next

@@ -13,7 +13,7 @@
         codigoDocumento = Constantes.NOTAS_DE_VENTAS
     End Sub
     Private Sub FormNotaCliente_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
-        If MsgBox(MensajeSistema.SALIR, MsgBoxStyle.Question + MsgBoxStyle.YesNo, TitulosForm.SALIR) = MsgBoxResult.Yes Then
+        If EstiloMensajes.mostrarMensajePregunta(MensajeSistema.SALIR) = Constantes.SI Then
             Me.Dispose()
         Else
             e.Cancel = True
@@ -397,13 +397,13 @@
         If e.ColumnIndex = 4 Then
             For i = 0 To dgvCuentas.Rows.Count - 1
                 If dgvCuentas.Rows(i).Cells(4).Value.ToString = "" Then
-                    MsgBox("Por Favor ingrese un valor ", MsgBoxStyle.Exclamation)
+                    EstiloMensajes.mostrarMensajeAdvertencia("Por Favor ingrese un valor")
                 End If
             Next
         ElseIf e.ColumnIndex = 5 Then
             For i = 0 To dgvCuentas.Rows.Count - 1
                 If dgvCuentas.Rows(i).Cells(5).Value.ToString = "" Then
-                    MsgBox("Por Favor ingrese un valor ", MsgBoxStyle.Exclamation)
+                    EstiloMensajes.mostrarMensajeAdvertencia("Por Favor ingrese un valor")
                 End If
             Next
         End If
@@ -547,11 +547,11 @@
                         txtTotal.Text = CDbl(base.Text) * CDbl(txtPorcentaje.Text) / 100
                         txtTotal.Focus()
                     Else
-                        MsgBox("la cantidad base no puede ser cero", MsgBoxStyle.Exclamation)
+                        EstiloMensajes.mostrarMensajeAdvertencia("la cantidad base no puede ser cero")
                         base.Focus()
                     End If
                 Else
-                    MsgBox("Digite cantidad base", MsgBoxStyle.Exclamation)
+                    EstiloMensajes.mostrarMensajeAdvertencia("Digite cantidad base")
                     base.Focus()
                 End If
             ElseIf txttotal.text <> "" Then
