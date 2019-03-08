@@ -416,7 +416,7 @@
     Private Sub bttercero_Click(sender As Object, e As EventArgs) Handles bttercero.Click
         Dim params As New List(Of String)
         params.Add("")
-        Generales.buscarElemento(Consultas.BUSQUEDA_CLIENTES,
+        Generales.buscarElemento(Consultas.CONTA_TERCERO_BUSCAR,
                               params,
                               AddressOf cargarTercero,
                               TitulosForm.BUSQUEDA_TERCERO,
