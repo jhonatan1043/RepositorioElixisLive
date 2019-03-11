@@ -413,6 +413,16 @@ Namespace My.Resources
         '''<summary>
         '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         '''</summary>
+        Friend ReadOnly Property attention() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("attention", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        '''</summary>
         Friend ReadOnly Property azul() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("azul", resourceCulture)
@@ -1696,6 +1706,16 @@ Namespace My.Resources
         Friend ReadOnly Property RecycleBin_Full_icon__2_() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("RecycleBin-Full-icon (2)", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property red_white_achtung_caution_blinking_sign_animated_gif() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("red-white-achtung-caution-blinking-sign-animated-gif", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property

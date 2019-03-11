@@ -27,7 +27,7 @@
         End If
         formMsgBx.AgregarBoton("Aceptar")
         formMsgBx.AgregarMensaje(mensaje)
-        formMsgBx.Agregarlogo(My.Resources._error)
+        formMsgBx.Agregarlogo(My.Resources.attention)
         formMsgBx.Mostrar()
     End Sub
     Public Shared Sub mostrarMensajeAdvertencia(mensaje As String, ByVal Optional titulo As String = "")
