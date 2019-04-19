@@ -33,10 +33,12 @@
         Return False
     End Function
     Private Sub Form_FormClosing(sender As Object, e As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
-        If EstiloMensajes.mostrarMensajePregunta(MensajeSistema.SALIR) = Constantes.SI Then
-            Me.Dispose()
-        Else
-            e.Cancel = True
+        If Not IsNothing(objEmpresa.codigoFormulario) Then
+            If EstiloMensajes.mostrarMensajePregunta(MensajeSistema.SALIR) = Constantes.SI Then
+                Me.Dispose()
+            Else
+                e.Cancel = True
+            End If
         End If
     End Sub
     Private Sub FormBase_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -44,7 +46,11 @@
         objEmpresa = New Empresa
         Try
             CheckForIllegalCrossThreadCalls = False
-            objEmpresa.codigoFormulario = Tag.codigo
+            If Not IsNothing(Tag) Then
+                objEmpresa.codigoFormulario = Tag.codigo
+            Else
+                objEmpresa.codigoFormulario = Nothing
+            End If
             params.Add(objEmpresa.codigoFormulario)
             Generales.llenardgv(Sentencias.PARAMETROS_CONSULTAR, dgvParametro, params)
             Generales.personalizarDatagrid(dgvParametro)
