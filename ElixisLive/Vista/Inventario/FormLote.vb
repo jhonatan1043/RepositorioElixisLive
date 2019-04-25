@@ -10,15 +10,7 @@
         lbNombre.Text = nombreProducto
         validarGrilla()
         valoresIniciales()
-        'establecerPosicion()
     End Sub
-    'Private Sub establecerPosicion()
-    '    Dim x As Integer
-    '    Dim y As Integer
-    '    x = Screen.PrimaryScreen.WorkingArea.Width - 880
-    '    y = Screen.PrimaryScreen.WorkingArea.Height - 590
-    '    Me.Location = New Point(x, y)
-    'End Sub
     Private Sub dgAgregar_Click(sender As Object, e As EventArgs) Handles dgAgregar.Click
         objLote.dtLote.Rows.Add()
         objLote.dtLote.Rows(objLote.dtLote.Rows.Count - 1).Item("Codigo") = codigoProducto
@@ -40,13 +32,16 @@
             ElseIf cantidadExistente < cantidades
                 EstiloMensajes.mostrarMensajeAdvertencia("la cantidad ingresada no puede ser mayor a la existente")
             Else
+
                 bandera = LoteBLL.verificarTabla(objproducto, codigoProducto)
+
                 If bandera = True Then
                     objproducto.dtSetLote.Tables.Remove(CStr(codigoProducto))
                 End If
 
                 For posicion = 0 To objLote.dtLote.Rows.Count - 1
                     objLote.dtLote.Rows(posicion).Item("Cantidad_Actual") = objLote.dtLote.Rows(posicion).Item("Cantidad")
+                    objLote.dtLote.Rows(posicion).Item("codigoBarra") = If(txtCodigoBarra.Text = String.Empty, Nothing, txtCodigoBarra.Text)
                 Next
 
                 objLote.dtLote.AcceptChanges()
@@ -64,6 +59,8 @@
             If bandera = True Then
                 objLote.dtLote = objproducto.dtSetLote.Tables(CStr(codigoProducto)).Copy()
                 dgvLote.DataSource = objLote.dtLote
+                txtCodigoBarra.Text = If(IsDBNull(objLote.dtLote.Rows(objLote.dtLote.Rows.Count - 1).Item("CodigoBarra")), Nothing,
+                                          objLote.dtLote.Rows(objLote.dtLote.Rows.Count - 1).Item("CodigoBarra"))
             Else
                 objLote.dtLote.TableName = codigoProducto
                 dgvLote.DataSource = objLote.dtLote
@@ -91,6 +88,7 @@
             .Columns("dgFechaVencimiento").DataPropertyName = "FechaVencimiento"
             .Columns("dgUbicacion").DataPropertyName = "Ubicacion_Lote"
             .Columns("dgCantidadAct").ReadOnly = True
+            .AutoGenerateColumns = False
         End With
     End Sub
     Private Sub dgvLote_EditingControlShowing(sender As Object, e As DataGridViewEditingControlShowingEventArgs) Handles dgvLote.EditingControlShowing
@@ -100,5 +98,9 @@
         Else
         AddHandler e.Control.KeyPress, AddressOf ValidacionDigitacion.validarValoresNumericos
         End If
+    End Sub
+
+    Private Sub btCapturarCodigoBarra_Click(sender As Object, e As EventArgs) Handles btCapturarCodigoBarra.Click
+        txtCodigoBarra.Text = "hjjhjjhjhjhjhjhjhjhuhjhhjhjhjhjhjhjhjhjh"
     End Sub
 End Class

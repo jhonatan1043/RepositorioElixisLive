@@ -9,6 +9,9 @@
     Public Const SERVIDOR_FTP = "ftp://192.168.2.89//CarpetaFTP/"
     Public Const USUARIO_FTP = "AdminSoftQuality"
     Public Const CONTRASENA_FTP = "AdminSoft"
+    Public Const USUARIOBD = "AdminSoftBD"
+    Public Const CONTRASENABD = "AdminSoftBD"
+    Public Const NOMBRE_SOFTWARE = "Quality."
     Public Const SIGNO_PESO = "$"
     Public Const ID_PRODUCTO = "P"
     Public Const ID_SERVICIO = "S"
@@ -184,4 +187,8 @@
     '----------------------------------------------
     Public Const INVENTARIO = "I"
     Public Const FACTURA = "F"
+    '---------------------------------------------
+    Public Const PARAMETRO_ESPECIAL_FECHA1 = "$F1"
+    Public Const PARAMETRO_ESPECIAL_FECHA2 = "$F2"
+    Public Const PARAMETRO_ESPECIAL_CODIGO_INTERNO = "$C1"
 End Class

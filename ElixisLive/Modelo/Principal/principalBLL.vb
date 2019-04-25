@@ -97,7 +97,7 @@ Public Class principalBLL
             If estaAbierto(elemMenu) = True Then
                 traerAlFrente(elemMenu)
             Else
-                Dim nombreTipo = "Quality." & elemMenu.nombre
+                Dim nombreTipo = Constantes.NOMBRE_SOFTWARE & elemMenu.nombre
                 Dim vTipo As Type = Assembly.GetExecutingAssembly.GetType(nombreTipo)
 
                 If vTipo IsNot Nothing Then

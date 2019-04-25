@@ -29,6 +29,9 @@ Partial Class FormInformeInventario
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.crView = New CrystalDecisions.Windows.Forms.CrystalReportViewer()
         Me.GpDatos = New System.Windows.Forms.GroupBox()
+        Me.btGenerar = New System.Windows.Forms.Button()
+        Me.dtFechaFin = New System.Windows.Forms.DateTimePicker()
+        Me.dtFechaInicio = New System.Windows.Forms.DateTimePicker()
         Me.lbListaMedicamento = New System.Windows.Forms.Label()
         Me.cbInforme = New System.Windows.Forms.ComboBox()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -52,7 +55,7 @@ Partial Class FormInformeInventario
         Me.GroupBox1.Controls.Add(Me.GpDatos)
         Me.GroupBox1.Location = New System.Drawing.Point(6, 42)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(888, 472)
+        Me.GroupBox1.Size = New System.Drawing.Size(1115, 472)
         Me.GroupBox1.TabIndex = 21
         Me.GroupBox1.TabStop = False
         '
@@ -63,7 +66,7 @@ Partial Class FormInformeInventario
         Me.GroupBox2.ForeColor = System.Drawing.Color.DarkBlue
         Me.GroupBox2.Location = New System.Drawing.Point(6, 61)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(876, 405)
+        Me.GroupBox2.Size = New System.Drawing.Size(884, 405)
         Me.GroupBox2.TabIndex = 11
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Informe"
@@ -81,13 +84,16 @@ Partial Class FormInformeInventario
         Me.crView.ShowLogo = False
         Me.crView.ShowParameterPanelButton = False
         Me.crView.ShowRefreshButton = False
-        Me.crView.Size = New System.Drawing.Size(870, 385)
+        Me.crView.Size = New System.Drawing.Size(878, 385)
         Me.crView.TabIndex = 0
         Me.crView.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None
         '
         'GpDatos
         '
         Me.GpDatos.BackColor = System.Drawing.Color.Transparent
+        Me.GpDatos.Controls.Add(Me.btGenerar)
+        Me.GpDatos.Controls.Add(Me.dtFechaFin)
+        Me.GpDatos.Controls.Add(Me.dtFechaInicio)
         Me.GpDatos.Controls.Add(Me.lbListaMedicamento)
         Me.GpDatos.Controls.Add(Me.cbInforme)
         Me.GpDatos.Controls.Add(Me.Label3)
@@ -96,17 +102,43 @@ Partial Class FormInformeInventario
         Me.GpDatos.ForeColor = System.Drawing.Color.DarkBlue
         Me.GpDatos.Location = New System.Drawing.Point(6, 6)
         Me.GpDatos.Name = "GpDatos"
-        Me.GpDatos.Size = New System.Drawing.Size(876, 52)
+        Me.GpDatos.Size = New System.Drawing.Size(884, 52)
         Me.GpDatos.TabIndex = 10
         Me.GpDatos.TabStop = False
+        '
+        'btGenerar
+        '
+        Me.btGenerar.ForeColor = System.Drawing.Color.Black
+        Me.btGenerar.Location = New System.Drawing.Point(806, 18)
+        Me.btGenerar.Name = "btGenerar"
+        Me.btGenerar.Size = New System.Drawing.Size(75, 23)
+        Me.btGenerar.TabIndex = 71
+        Me.btGenerar.Text = "Generar"
+        Me.btGenerar.UseVisualStyleBackColor = True
+        '
+        'dtFechaFin
+        '
+        Me.dtFechaFin.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.dtFechaFin.Location = New System.Drawing.Point(407, 20)
+        Me.dtFechaFin.Name = "dtFechaFin"
+        Me.dtFechaFin.Size = New System.Drawing.Size(102, 21)
+        Me.dtFechaFin.TabIndex = 70
+        '
+        'dtFechaInicio
+        '
+        Me.dtFechaInicio.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.dtFechaInicio.Location = New System.Drawing.Point(297, 20)
+        Me.dtFechaInicio.Name = "dtFechaInicio"
+        Me.dtFechaInicio.Size = New System.Drawing.Size(102, 21)
+        Me.dtFechaInicio.TabIndex = 69
         '
         'lbListaMedicamento
         '
         Me.lbListaMedicamento.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.lbListaMedicamento.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbListaMedicamento.Location = New System.Drawing.Point(189, 16)
+        Me.lbListaMedicamento.Location = New System.Drawing.Point(117, 16)
         Me.lbListaMedicamento.Name = "lbListaMedicamento"
-        Me.lbListaMedicamento.Size = New System.Drawing.Size(243, 25)
+        Me.lbListaMedicamento.Size = New System.Drawing.Size(168, 25)
         Me.lbListaMedicamento.TabIndex = 68
         Me.lbListaMedicamento.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
@@ -114,9 +146,9 @@ Partial Class FormInformeInventario
         '
         Me.cbInforme.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbInforme.FormattingEnabled = True
-        Me.cbInforme.Location = New System.Drawing.Point(609, 17)
+        Me.cbInforme.Location = New System.Drawing.Point(629, 17)
         Me.cbInforme.Name = "cbInforme"
-        Me.cbInforme.Size = New System.Drawing.Size(260, 25)
+        Me.cbInforme.Size = New System.Drawing.Size(173, 25)
         Me.cbInforme.TabIndex = 37
         '
         'Label3
@@ -124,7 +156,7 @@ Partial Class FormInformeInventario
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.Black
-        Me.Label3.Location = New System.Drawing.Point(494, 20)
+        Me.Label3.Location = New System.Drawing.Point(517, 20)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(109, 19)
         Me.Label3.TabIndex = 1
@@ -135,11 +167,11 @@ Partial Class FormInformeInventario
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.Black
-        Me.Label2.Location = New System.Drawing.Point(9, 20)
+        Me.Label2.Location = New System.Drawing.Point(5, 19)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(181, 19)
+        Me.Label2.Size = New System.Drawing.Size(108, 19)
         Me.Label2.TabIndex = 0
-        Me.Label2.Text = "Según está Lista de precio:"
+        Me.Label2.Text = "Lista de precio:"
         '
         'DataGridViewImageColumn1
         '
@@ -162,7 +194,7 @@ Partial Class FormInformeInventario
         Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(901, 42)
+        Me.Panel1.Size = New System.Drawing.Size(908, 42)
         Me.Panel1.TabIndex = 20
         '
         'Pimagen
@@ -181,9 +213,9 @@ Partial Class FormInformeInventario
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("Times New Roman", 20.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(3, 0)
+        Me.Label1.Location = New System.Drawing.Point(-10, -2)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(891, 44)
+        Me.Label1.Size = New System.Drawing.Size(915, 44)
         Me.Label1.TabIndex = 1
         Me.Label1.Text = "Informes de Inventario"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -198,12 +230,12 @@ Partial Class FormInformeInventario
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(900, 526)
+        Me.ClientSize = New System.Drawing.Size(900, 523)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Panel1)
         Me.MaximizeBox = False
-        Me.MaximumSize = New System.Drawing.Size(916, 565)
-        Me.MinimumSize = New System.Drawing.Size(916, 565)
+        Me.MaximumSize = New System.Drawing.Size(916, 562)
+        Me.MinimumSize = New System.Drawing.Size(916, 562)
         Me.Name = "FormInformeInventario"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.GroupBox1.ResumeLayout(False)
@@ -230,4 +262,7 @@ Partial Class FormInformeInventario
     Friend WithEvents cbInforme As ComboBox
     Friend WithEvents crView As CrystalDecisions.Windows.Forms.CrystalReportViewer
     Friend WithEvents lbListaMedicamento As Label
+    Friend WithEvents dtFechaFin As DateTimePicker
+    Friend WithEvents dtFechaInicio As DateTimePicker
+    Friend WithEvents btGenerar As Button
 End Class

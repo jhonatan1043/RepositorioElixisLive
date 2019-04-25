@@ -373,6 +373,12 @@
       <DependentUpon>factura.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Reportes\Inventario\rptInventarioIngresado.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptInventarioIngresado.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Utilidad\Busqueda.vb" />
     <Compile Include="Utilidad\CodigosBarra.vb" />
     <Compile Include="Utilidad\ConexionBD.vb" />
@@ -832,6 +838,10 @@
     <EmbeddedResource Include="Reportes\Factura\factura.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>factura.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Inventario\rptInventarioIngresado.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptInventarioIngresado.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Utilidad\SuperMessageBox.resx" />
     <EmbeddedResource Include="Vista\Administracion\FormCliente.resx">

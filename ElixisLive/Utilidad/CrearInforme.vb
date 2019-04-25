@@ -36,6 +36,7 @@ Public Class CrearInforme
                 reporte.SetParameterValue("TotalServicio", params(1))
                 reporte.SetParameterValue("TotalVenta", params(2))
                 reporte.SetParameterValue("DescuentoTotal", params(3))
+                reporte.SetParameterValue("valorLetra", params(4))
         End Select
     End Sub
     Public Sub crearReportePDF(reporte As Object,

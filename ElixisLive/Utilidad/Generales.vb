@@ -88,8 +88,8 @@ Public Class Generales
 
         connReporte.ServerName = objConexion.cnxbd.DataSource
         connReporte.DatabaseName = objConexion.cnxbd.Database
-        connReporte.UserID = "AdminSoftPrueba"
-        connReporte.Password = "AdminSoftPrueba"
+        connReporte.UserID = Constantes.USUARIOBD
+        connReporte.Password = Constantes.CONTRASENABD
 
         connReporte.Type = ConnectionInfoType.SQL
 

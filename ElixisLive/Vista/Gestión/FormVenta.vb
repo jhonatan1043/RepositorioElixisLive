@@ -471,6 +471,7 @@ Public Class FormVenta
         Dim nombreArchivo, ruta, formula, nombreReporte As String
         Dim reporte As New CrearInforme
         Dim params As New List(Of String)
+        Dim convertirNumeroLetra As New ConvertirNumeros
         Try
             nombreReporte = "Factura"
 
@@ -485,6 +486,7 @@ Public Class FormVenta
             params.Add(TextTotalServicio.Text)
             params.Add(TextTotal.Text)
             params.Add(txtDescuento.Text)
+            params.Add(convertirNumeroLetra.Num2MoneyTxt(TextTotal.Text))
 
             reporte.crearReportePDF(New factura, objVenta.codigo, formula, nombreReporte, IO.Path.GetTempPath(),,, params)
 

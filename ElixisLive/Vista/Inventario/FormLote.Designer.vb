@@ -22,10 +22,13 @@ Partial Class FormLote
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.btCapturarCodigoBarra = New System.Windows.Forms.Button()
+        Me.txtCodigoBarra = New System.Windows.Forms.TextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.dgvLote = New System.Windows.Forms.DataGridView()
         Me.dgCodigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -62,6 +65,9 @@ Partial Class FormLote
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.btCapturarCodigoBarra)
+        Me.GroupBox1.Controls.Add(Me.txtCodigoBarra)
+        Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Controls.Add(Me.GroupBox3)
         Me.GroupBox1.Controls.Add(Me.GroupBox2)
         Me.GroupBox1.Location = New System.Drawing.Point(6, 51)
@@ -70,13 +76,43 @@ Partial Class FormLote
         Me.GroupBox1.TabIndex = 2
         Me.GroupBox1.TabStop = False
         '
+        'btCapturarCodigoBarra
+        '
+        Me.btCapturarCodigoBarra.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btCapturarCodigoBarra.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btCapturarCodigoBarra.Location = New System.Drawing.Point(519, 73)
+        Me.btCapturarCodigoBarra.Name = "btCapturarCodigoBarra"
+        Me.btCapturarCodigoBarra.Size = New System.Drawing.Size(64, 24)
+        Me.btCapturarCodigoBarra.TabIndex = 7
+        Me.btCapturarCodigoBarra.Text = "Capturar"
+        Me.btCapturarCodigoBarra.UseVisualStyleBackColor = True
+        '
+        'txtCodigoBarra
+        '
+        Me.txtCodigoBarra.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtCodigoBarra.Location = New System.Drawing.Point(114, 75)
+        Me.txtCodigoBarra.Name = "txtCodigoBarra"
+        Me.txtCodigoBarra.ReadOnly = True
+        Me.txtCodigoBarra.Size = New System.Drawing.Size(399, 21)
+        Me.txtCodigoBarra.TabIndex = 6
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(10, 78)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(100, 15)
+        Me.Label1.TabIndex = 5
+        Me.Label1.Text = "Codigo de Barra:"
+        '
         'GroupBox3
         '
         Me.GroupBox3.Controls.Add(Me.dgvLote)
         Me.GroupBox3.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox3.Location = New System.Drawing.Point(7, 73)
+        Me.GroupBox3.Location = New System.Drawing.Point(7, 99)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(578, 191)
+        Me.GroupBox3.Size = New System.Drawing.Size(578, 173)
         Me.GroupBox3.TabIndex = 4
         Me.GroupBox3.TabStop = False
         '
@@ -86,9 +122,9 @@ Partial Class FormLote
         Me.dgvLote.AllowUserToDeleteRows = False
         Me.dgvLote.AllowUserToResizeColumns = False
         Me.dgvLote.AllowUserToResizeRows = False
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black
-        Me.dgvLote.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black
+        Me.dgvLote.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle4
         Me.dgvLote.BackgroundColor = System.Drawing.Color.White
         Me.dgvLote.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvLote.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.dgCodigo, Me.dgNombre, Me.dgCantidad, Me.dgCantidadAct, Me.dgFechaLote, Me.dgFechaVencimiento, Me.dgUbicacion, Me.dgQuitar})
@@ -98,7 +134,7 @@ Partial Class FormLote
         Me.dgvLote.Name = "dgvLote"
         Me.dgvLote.ReadOnly = True
         Me.dgvLote.RowHeadersVisible = False
-        Me.dgvLote.Size = New System.Drawing.Size(572, 170)
+        Me.dgvLote.Size = New System.Drawing.Size(572, 152)
         Me.dgvLote.TabIndex = 1
         '
         'dgCodigo
@@ -120,8 +156,8 @@ Partial Class FormLote
         'dgCantidad
         '
         Me.dgCantidad.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.dgCantidad.DefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.dgCantidad.DefaultCellStyle = DataGridViewCellStyle5
         Me.dgCantidad.HeaderText = "Cant. Inicial"
         Me.dgCantidad.Name = "dgCantidad"
         Me.dgCantidad.ReadOnly = True
@@ -299,8 +335,8 @@ Partial Class FormLote
         'DataGridViewTextBoxColumn3
         '
         Me.DataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.DataGridViewTextBoxColumn3.DefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.DataGridViewTextBoxColumn3.DefaultCellStyle = DataGridViewCellStyle6
         Me.DataGridViewTextBoxColumn3.HeaderText = "Cantidad"
         Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
         Me.DataGridViewTextBoxColumn3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
@@ -331,6 +367,7 @@ Partial Class FormLote
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.TopMost = True
         Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
         Me.GroupBox3.ResumeLayout(False)
         CType(Me.dgvLote, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox2.ResumeLayout(False)
@@ -370,4 +407,7 @@ Partial Class FormLote
     Friend WithEvents dgFechaVencimiento As DataGridViewDateTimePickerColumn
     Friend WithEvents dgUbicacion As DataGridViewTextBoxColumn
     Friend WithEvents dgQuitar As DataGridViewImageColumn
+    Friend WithEvents btCapturarCodigoBarra As Button
+    Friend WithEvents txtCodigoBarra As TextBox
+    Friend WithEvents Label1 As Label
 End Class
