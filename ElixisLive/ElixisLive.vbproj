@@ -168,6 +168,7 @@
     <Compile Include="Controlador\Inventario\ProductoUbicacionDAL.vb" />
     <Compile Include="Controlador\Inventario\ProveedorDAL.vb" />
     <Compile Include="Controlador\Inventario\ProductoDAL.vb" />
+    <Compile Include="Controlador\Inventario\RemisionDAL.vb" />
     <Compile Include="Controlador\Nomina\NominaDAL.vb" />
     <Compile Include="ControlesElixisLive\TextFiltrarRegistro.Designer.vb">
       <DependentUpon>TextFiltrarRegistro.vb</DependentUpon>
@@ -232,12 +233,14 @@
     <Compile Include="Entidad\Gestion\GastoServicio.vb" />
     <Compile Include="Entidad\Gestion\Venta.vb" />
     <Compile Include="Entidad\Administracion\Cliente.vb" />
+    <Compile Include="Entidad\Informe\Rentabilidad.vb" />
     <Compile Include="Entidad\Inventario\UbicacionProducto.vb" />
     <Compile Include="Entidad\Inventario\EntradaInventario.vb" />
     <Compile Include="Entidad\Inventario\ListaPrecio.vb" />
     <Compile Include="Entidad\Inventario\Lote.vb" />
     <Compile Include="Entidad\Inventario\Proveedor.vb" />
     <Compile Include="Entidad\Inventario\producto.vb" />
+    <Compile Include="Entidad\Inventario\RemisionInventario.vb" />
     <Compile Include="Entidad\Nomina\Nomina.vb" />
     <Compile Include="Entidad\Principal\ElementoMenu.vb" />
     <Compile Include="FormBase\FormBaseLista.Designer.vb">
@@ -302,6 +305,7 @@
     <Compile Include="Modelo\Inventario\ProveedorBLL.vb" />
     <Compile Include="Modelo\Administracion\ClienteBLL.vb" />
     <Compile Include="Modelo\Inventario\ProductoBLL.vb" />
+    <Compile Include="Modelo\Inventario\RemisionBLL.vb" />
     <Compile Include="Modelo\Nomina\NominaBLL.vb" />
     <Compile Include="Modelo\Principal\InicioSesionBLL.vb" />
     <Compile Include="Modelo\Principal\principalBLL.vb" />
@@ -726,6 +730,12 @@
     <Compile Include="Vista\Inventario\FormProducto.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Vista\Inventario\FormRemisionInventario.Designer.vb">
+      <DependentUpon>FormRemisionInventario.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Inventario\FormRemisionInventario.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Vista\Nomina\FormNomina.Designer.vb">
       <DependentUpon>FormNomina.vb</DependentUpon>
     </Compile>
@@ -1005,6 +1015,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\Inventario\FormProducto.resx">
       <DependentUpon>FormProducto.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Inventario\FormRemisionInventario.resx">
+      <DependentUpon>FormRemisionInventario.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\Nomina\FormNomina.resx">
       <DependentUpon>FormNomina.vb</DependentUpon>
