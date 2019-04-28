@@ -127,6 +127,5 @@ Public Class FormCertificadoRetencion
         dtpFechaInicio.Value = DateTime.Now
         dtpFechaFin.Value = DateTime.Now
         Generales.habilitarControles(Me)
-        Generales.asignarPermiso(Me)
     End Sub
 End Class

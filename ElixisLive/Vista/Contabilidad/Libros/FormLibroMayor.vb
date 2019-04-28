@@ -62,7 +62,6 @@ Public Class FormLibroMayor
     End Sub
     Private Sub FormLibroMayor_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Generales.habilitarControles(Me)
-        Generales.asignarPermiso(Me)
         txtNit.Text = SesionActual.nitEmpresa
         txtRazonSocial.Text = SesionActual.nombreEmpresa
         dtpFechaInicio.Value = DateTime.Now
