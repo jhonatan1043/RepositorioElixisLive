@@ -28,8 +28,36 @@ Partial Class FormInformeVenta
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormInformeVenta))
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.TabControl1 = New System.Windows.Forms.TabControl()
+        Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.dgvVenta = New System.Windows.Forms.DataGridView()
+        Me.dgCodigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dgNumeroFactura = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dgDescripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dgCantidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dgValorCosto = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dgValorVenta = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dgRentabilidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dgFecha = New Quality.DataGridViewDateTimePickerColumn()
+        Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.dgvServicio = New System.Windows.Forms.DataGridView()
+        Me.dgCodigoServicio = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dgFecturaServ = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dgDescripcionServ = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dgCostoSev = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dgVentaServ = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dgRentabilidadServ = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dgFechaServ = New Quality.DataGridViewDateTimePickerColumn()
+        Me.TabPage3 = New System.Windows.Forms.TabPage()
+        Me.dgvGasto = New System.Windows.Forms.DataGridView()
+        Me.dgCodigoGasto = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dgDescripcionGasto = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dgCostoGasto = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dgFechaGasto = New Quality.DataGridViewDateTimePickerColumn()
         Me.gpTotales = New System.Windows.Forms.GroupBox()
         Me.txtRentabilidad = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
@@ -39,10 +67,6 @@ Partial Class FormInformeVenta
         Me.Label3 = New System.Windows.Forms.Label()
         Me.txtTotalGasto = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
-        Me.dgvGasto = New System.Windows.Forms.DataGridView()
-        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.dgvVenta = New System.Windows.Forms.DataGridView()
         Me.GpDatos = New System.Windows.Forms.GroupBox()
         Me.btGenerar = New System.Windows.Forms.Button()
         Me.dtFechaFin = New System.Windows.Forms.DateTimePicker()
@@ -55,29 +79,25 @@ Partial Class FormInformeVenta
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewDateTimePickerColumn1 = New Quality.DataGridViewDateTimePickerColumn()
         Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewDateTimePickerColumn2 = New Quality.DataGridViewDateTimePickerColumn()
         Me.DataGridViewTextBoxColumn10 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn11 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.dgCodigoGasto = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.dgDescripcionGasto = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.dgCostoGasto = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.dgCodigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.dgDescripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.dgCantidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.dgValorCosto = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.dgValorVenta = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.dgRentabilidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GroupBox1.SuspendLayout()
-        Me.gpTotales.SuspendLayout()
-        Me.GroupBox3.SuspendLayout()
-        CType(Me.dgvGasto, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GroupBox2.SuspendLayout()
+        Me.TabControl1.SuspendLayout()
+        Me.TabPage1.SuspendLayout()
         CType(Me.dgvVenta, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TabPage2.SuspendLayout()
+        CType(Me.dgvServicio, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TabPage3.SuspendLayout()
+        CType(Me.dgvGasto, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.gpTotales.SuspendLayout()
         Me.GpDatos.SuspendLayout()
         Me.Panel1.SuspendLayout()
         CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -86,15 +106,259 @@ Partial Class FormInformeVenta
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.TabControl1)
         Me.GroupBox1.Controls.Add(Me.gpTotales)
-        Me.GroupBox1.Controls.Add(Me.GroupBox3)
-        Me.GroupBox1.Controls.Add(Me.GroupBox2)
         Me.GroupBox1.Controls.Add(Me.GpDatos)
         Me.GroupBox1.Location = New System.Drawing.Point(6, 42)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(888, 472)
         Me.GroupBox1.TabIndex = 21
         Me.GroupBox1.TabStop = False
+        '
+        'TabControl1
+        '
+        Me.TabControl1.Controls.Add(Me.TabPage1)
+        Me.TabControl1.Controls.Add(Me.TabPage2)
+        Me.TabControl1.Controls.Add(Me.TabPage3)
+        Me.TabControl1.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Italic)
+        Me.TabControl1.Location = New System.Drawing.Point(6, 61)
+        Me.TabControl1.Name = "TabControl1"
+        Me.TabControl1.SelectedIndex = 0
+        Me.TabControl1.Size = New System.Drawing.Size(876, 346)
+        Me.TabControl1.TabIndex = 60036
+        '
+        'TabPage1
+        '
+        Me.TabPage1.Controls.Add(Me.dgvVenta)
+        Me.TabPage1.Location = New System.Drawing.Point(4, 24)
+        Me.TabPage1.Name = "TabPage1"
+        Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage1.Size = New System.Drawing.Size(868, 318)
+        Me.TabPage1.TabIndex = 0
+        Me.TabPage1.Text = "Ventas Productos"
+        Me.TabPage1.UseVisualStyleBackColor = True
+        '
+        'dgvVenta
+        '
+        Me.dgvVenta.AllowUserToAddRows = False
+        Me.dgvVenta.AllowUserToDeleteRows = False
+        Me.dgvVenta.AllowUserToResizeColumns = False
+        Me.dgvVenta.AllowUserToResizeRows = False
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black
+        Me.dgvVenta.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        Me.dgvVenta.BackgroundColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.SteelBlue
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Italic)
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvVenta.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+        Me.dgvVenta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvVenta.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.dgCodigo, Me.dgNumeroFactura, Me.dgDescripcion, Me.dgCantidad, Me.dgValorCosto, Me.dgValorVenta, Me.dgRentabilidad, Me.dgFecha})
+        Me.dgvVenta.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.dgvVenta.Location = New System.Drawing.Point(3, 3)
+        Me.dgvVenta.MultiSelect = False
+        Me.dgvVenta.Name = "dgvVenta"
+        Me.dgvVenta.ReadOnly = True
+        Me.dgvVenta.Size = New System.Drawing.Size(862, 312)
+        Me.dgvVenta.TabIndex = 60034
+        '
+        'dgCodigo
+        '
+        Me.dgCodigo.HeaderText = "Código"
+        Me.dgCodigo.Name = "dgCodigo"
+        Me.dgCodigo.ReadOnly = True
+        Me.dgCodigo.Visible = False
+        '
+        'dgNumeroFactura
+        '
+        Me.dgNumeroFactura.HeaderText = "N° Factura"
+        Me.dgNumeroFactura.Name = "dgNumeroFactura"
+        Me.dgNumeroFactura.ReadOnly = True
+        '
+        'dgDescripcion
+        '
+        Me.dgDescripcion.HeaderText = "Descripción"
+        Me.dgDescripcion.Name = "dgDescripcion"
+        Me.dgDescripcion.ReadOnly = True
+        '
+        'dgCantidad
+        '
+        Me.dgCantidad.HeaderText = "CantidadVenta"
+        Me.dgCantidad.Name = "dgCantidad"
+        Me.dgCantidad.ReadOnly = True
+        '
+        'dgValorCosto
+        '
+        Me.dgValorCosto.HeaderText = "Costo"
+        Me.dgValorCosto.Name = "dgValorCosto"
+        Me.dgValorCosto.ReadOnly = True
+        '
+        'dgValorVenta
+        '
+        Me.dgValorVenta.HeaderText = "V.Venta"
+        Me.dgValorVenta.Name = "dgValorVenta"
+        Me.dgValorVenta.ReadOnly = True
+        '
+        'dgRentabilidad
+        '
+        Me.dgRentabilidad.HeaderText = "Rentabilidad"
+        Me.dgRentabilidad.Name = "dgRentabilidad"
+        Me.dgRentabilidad.ReadOnly = True
+        '
+        'dgFecha
+        '
+        Me.dgFecha.HeaderText = "Fecha"
+        Me.dgFecha.Name = "dgFecha"
+        Me.dgFecha.ReadOnly = True
+        '
+        'TabPage2
+        '
+        Me.TabPage2.Controls.Add(Me.dgvServicio)
+        Me.TabPage2.Location = New System.Drawing.Point(4, 24)
+        Me.TabPage2.Name = "TabPage2"
+        Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage2.Size = New System.Drawing.Size(868, 318)
+        Me.TabPage2.TabIndex = 1
+        Me.TabPage2.Text = "Ventas Servicio"
+        Me.TabPage2.UseVisualStyleBackColor = True
+        '
+        'dgvServicio
+        '
+        Me.dgvServicio.AllowUserToAddRows = False
+        Me.dgvServicio.AllowUserToDeleteRows = False
+        Me.dgvServicio.AllowUserToResizeColumns = False
+        Me.dgvServicio.AllowUserToResizeRows = False
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black
+        Me.dgvServicio.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle3
+        Me.dgvServicio.BackgroundColor = System.Drawing.Color.White
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle4.BackColor = System.Drawing.Color.SteelBlue
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Italic)
+        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvServicio.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle4
+        Me.dgvServicio.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvServicio.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.dgCodigoServicio, Me.dgFecturaServ, Me.dgDescripcionServ, Me.dgCostoSev, Me.dgVentaServ, Me.dgRentabilidadServ, Me.dgFechaServ})
+        Me.dgvServicio.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.dgvServicio.Location = New System.Drawing.Point(3, 3)
+        Me.dgvServicio.MultiSelect = False
+        Me.dgvServicio.Name = "dgvServicio"
+        Me.dgvServicio.ReadOnly = True
+        Me.dgvServicio.Size = New System.Drawing.Size(862, 312)
+        Me.dgvServicio.TabIndex = 60035
+        '
+        'dgCodigoServicio
+        '
+        Me.dgCodigoServicio.HeaderText = "Código"
+        Me.dgCodigoServicio.Name = "dgCodigoServicio"
+        Me.dgCodigoServicio.ReadOnly = True
+        Me.dgCodigoServicio.Visible = False
+        '
+        'dgFecturaServ
+        '
+        Me.dgFecturaServ.HeaderText = "N° Factura"
+        Me.dgFecturaServ.Name = "dgFecturaServ"
+        Me.dgFecturaServ.ReadOnly = True
+        '
+        'dgDescripcionServ
+        '
+        Me.dgDescripcionServ.HeaderText = "Descripción"
+        Me.dgDescripcionServ.Name = "dgDescripcionServ"
+        Me.dgDescripcionServ.ReadOnly = True
+        '
+        'dgCostoSev
+        '
+        Me.dgCostoSev.HeaderText = "Costo"
+        Me.dgCostoSev.Name = "dgCostoSev"
+        Me.dgCostoSev.ReadOnly = True
+        '
+        'dgVentaServ
+        '
+        Me.dgVentaServ.HeaderText = "V.Venta"
+        Me.dgVentaServ.Name = "dgVentaServ"
+        Me.dgVentaServ.ReadOnly = True
+        '
+        'dgRentabilidadServ
+        '
+        Me.dgRentabilidadServ.HeaderText = "Rentabilidad"
+        Me.dgRentabilidadServ.Name = "dgRentabilidadServ"
+        Me.dgRentabilidadServ.ReadOnly = True
+        '
+        'dgFechaServ
+        '
+        Me.dgFechaServ.HeaderText = "Fecha"
+        Me.dgFechaServ.Name = "dgFechaServ"
+        Me.dgFechaServ.ReadOnly = True
+        '
+        'TabPage3
+        '
+        Me.TabPage3.Controls.Add(Me.dgvGasto)
+        Me.TabPage3.Location = New System.Drawing.Point(4, 24)
+        Me.TabPage3.Name = "TabPage3"
+        Me.TabPage3.Size = New System.Drawing.Size(868, 318)
+        Me.TabPage3.TabIndex = 2
+        Me.TabPage3.Text = "Gastos"
+        Me.TabPage3.UseVisualStyleBackColor = True
+        '
+        'dgvGasto
+        '
+        Me.dgvGasto.AllowUserToAddRows = False
+        Me.dgvGasto.AllowUserToDeleteRows = False
+        Me.dgvGasto.AllowUserToResizeColumns = False
+        Me.dgvGasto.AllowUserToResizeRows = False
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black
+        Me.dgvGasto.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle5
+        Me.dgvGasto.BackgroundColor = System.Drawing.Color.White
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle6.BackColor = System.Drawing.Color.SteelBlue
+        DataGridViewCellStyle6.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Italic)
+        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvGasto.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle6
+        Me.dgvGasto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvGasto.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.dgCodigoGasto, Me.dgDescripcionGasto, Me.dgCostoGasto, Me.dgFechaGasto})
+        Me.dgvGasto.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.dgvGasto.Location = New System.Drawing.Point(0, 0)
+        Me.dgvGasto.MultiSelect = False
+        Me.dgvGasto.Name = "dgvGasto"
+        Me.dgvGasto.ReadOnly = True
+        Me.dgvGasto.Size = New System.Drawing.Size(868, 318)
+        Me.dgvGasto.TabIndex = 60034
+        '
+        'dgCodigoGasto
+        '
+        Me.dgCodigoGasto.HeaderText = "CodigoGasto"
+        Me.dgCodigoGasto.Name = "dgCodigoGasto"
+        Me.dgCodigoGasto.ReadOnly = True
+        Me.dgCodigoGasto.Visible = False
+        '
+        'dgDescripcionGasto
+        '
+        Me.dgDescripcionGasto.HeaderText = "Gastos"
+        Me.dgDescripcionGasto.Name = "dgDescripcionGasto"
+        Me.dgDescripcionGasto.ReadOnly = True
+        '
+        'dgCostoGasto
+        '
+        Me.dgCostoGasto.HeaderText = "CostoGasto"
+        Me.dgCostoGasto.Name = "dgCostoGasto"
+        Me.dgCostoGasto.ReadOnly = True
+        '
+        'dgFechaGasto
+        '
+        Me.dgFechaGasto.HeaderText = "Fecha"
+        Me.dgFechaGasto.Name = "dgFechaGasto"
+        Me.dgFechaGasto.ReadOnly = True
         '
         'gpTotales
         '
@@ -109,7 +373,7 @@ Partial Class FormInformeVenta
         Me.gpTotales.Controls.Add(Me.Label2)
         Me.gpTotales.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.gpTotales.ForeColor = System.Drawing.Color.DarkBlue
-        Me.gpTotales.Location = New System.Drawing.Point(6, 411)
+        Me.gpTotales.Location = New System.Drawing.Point(6, 413)
         Me.gpTotales.Name = "gpTotales"
         Me.gpTotales.Size = New System.Drawing.Size(876, 52)
         Me.gpTotales.TabIndex = 60035
@@ -179,84 +443,6 @@ Partial Class FormInformeVenta
         Me.Label2.TabIndex = 0
         Me.Label2.Text = "Total Gastos:"
         '
-        'GroupBox3
-        '
-        Me.GroupBox3.Controls.Add(Me.dgvGasto)
-        Me.GroupBox3.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox3.ForeColor = System.Drawing.Color.DarkBlue
-        Me.GroupBox3.Location = New System.Drawing.Point(6, 229)
-        Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(876, 179)
-        Me.GroupBox3.TabIndex = 60034
-        Me.GroupBox3.TabStop = False
-        Me.GroupBox3.Text = "Gastos"
-        '
-        'dgvGasto
-        '
-        Me.dgvGasto.AllowUserToAddRows = False
-        Me.dgvGasto.AllowUserToDeleteRows = False
-        Me.dgvGasto.AllowUserToResizeColumns = False
-        Me.dgvGasto.AllowUserToResizeRows = False
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black
-        Me.dgvGasto.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
-        Me.dgvGasto.BackgroundColor = System.Drawing.Color.White
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.SteelBlue
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvGasto.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
-        Me.dgvGasto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvGasto.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.dgCodigoGasto, Me.dgDescripcionGasto, Me.dgCostoGasto})
-        Me.dgvGasto.Location = New System.Drawing.Point(0, 20)
-        Me.dgvGasto.MultiSelect = False
-        Me.dgvGasto.Name = "dgvGasto"
-        Me.dgvGasto.ReadOnly = True
-        Me.dgvGasto.Size = New System.Drawing.Size(870, 153)
-        Me.dgvGasto.TabIndex = 60033
-        '
-        'GroupBox2
-        '
-        Me.GroupBox2.Controls.Add(Me.dgvVenta)
-        Me.GroupBox2.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox2.ForeColor = System.Drawing.Color.DarkBlue
-        Me.GroupBox2.Location = New System.Drawing.Point(6, 61)
-        Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(876, 162)
-        Me.GroupBox2.TabIndex = 11
-        Me.GroupBox2.TabStop = False
-        Me.GroupBox2.Text = "Ventas"
-        '
-        'dgvVenta
-        '
-        Me.dgvVenta.AllowUserToAddRows = False
-        Me.dgvVenta.AllowUserToDeleteRows = False
-        Me.dgvVenta.AllowUserToResizeColumns = False
-        Me.dgvVenta.AllowUserToResizeRows = False
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black
-        Me.dgvVenta.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle3
-        Me.dgvVenta.BackgroundColor = System.Drawing.Color.White
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle4.BackColor = System.Drawing.Color.SteelBlue
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvVenta.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle4
-        Me.dgvVenta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvVenta.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.dgCodigo, Me.dgDescripcion, Me.dgCantidad, Me.dgValorCosto, Me.dgValorVenta, Me.dgRentabilidad})
-        Me.dgvVenta.Location = New System.Drawing.Point(0, 20)
-        Me.dgvVenta.MultiSelect = False
-        Me.dgvVenta.Name = "dgvVenta"
-        Me.dgvVenta.ReadOnly = True
-        Me.dgvVenta.Size = New System.Drawing.Size(870, 136)
-        Me.dgvVenta.TabIndex = 60033
-        '
         'GpDatos
         '
         Me.GpDatos.BackColor = System.Drawing.Color.Transparent
@@ -299,10 +485,10 @@ Partial Class FormInformeVenta
         '
         'DataGridViewImageColumn1
         '
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle5.NullValue = CType(resources.GetObject("DataGridViewCellStyle5.NullValue"), Object)
-        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.White
-        Me.DataGridViewImageColumn1.DefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle7.NullValue = CType(resources.GetObject("DataGridViewCellStyle7.NullValue"), Object)
+        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.White
+        Me.DataGridViewImageColumn1.DefaultCellStyle = DataGridViewCellStyle7
         Me.DataGridViewImageColumn1.HeaderText = "Quitar"
         Me.DataGridViewImageColumn1.Image = Global.Quality.My.Resources.Resources.papelera
         Me.DataGridViewImageColumn1.Name = "DataGridViewImageColumn1"
@@ -365,6 +551,11 @@ Partial Class FormInformeVenta
         Me.DataGridViewTextBoxColumn3.HeaderText = "CostoGasto"
         Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
         '
+        'DataGridViewDateTimePickerColumn1
+        '
+        Me.DataGridViewDateTimePickerColumn1.HeaderText = "Fecha"
+        Me.DataGridViewDateTimePickerColumn1.Name = "DataGridViewDateTimePickerColumn1"
+        '
         'DataGridViewTextBoxColumn4
         '
         Me.DataGridViewTextBoxColumn4.HeaderText = "Código"
@@ -396,6 +587,11 @@ Partial Class FormInformeVenta
         Me.DataGridViewTextBoxColumn9.HeaderText = "TotalCosto"
         Me.DataGridViewTextBoxColumn9.Name = "DataGridViewTextBoxColumn9"
         '
+        'DataGridViewDateTimePickerColumn2
+        '
+        Me.DataGridViewDateTimePickerColumn2.HeaderText = "Fecha"
+        Me.DataGridViewDateTimePickerColumn2.Name = "DataGridViewDateTimePickerColumn2"
+        '
         'DataGridViewTextBoxColumn10
         '
         Me.DataGridViewTextBoxColumn10.HeaderText = "TotalVenta"
@@ -405,62 +601,6 @@ Partial Class FormInformeVenta
         '
         Me.DataGridViewTextBoxColumn11.HeaderText = "Rentabilidad"
         Me.DataGridViewTextBoxColumn11.Name = "DataGridViewTextBoxColumn11"
-        '
-        'dgCodigoGasto
-        '
-        Me.dgCodigoGasto.HeaderText = "CodigoGasto"
-        Me.dgCodigoGasto.Name = "dgCodigoGasto"
-        Me.dgCodigoGasto.ReadOnly = True
-        Me.dgCodigoGasto.Visible = False
-        '
-        'dgDescripcionGasto
-        '
-        Me.dgDescripcionGasto.HeaderText = "Gastos"
-        Me.dgDescripcionGasto.Name = "dgDescripcionGasto"
-        Me.dgDescripcionGasto.ReadOnly = True
-        '
-        'dgCostoGasto
-        '
-        Me.dgCostoGasto.HeaderText = "CostoGasto"
-        Me.dgCostoGasto.Name = "dgCostoGasto"
-        Me.dgCostoGasto.ReadOnly = True
-        '
-        'dgCodigo
-        '
-        Me.dgCodigo.HeaderText = "Código"
-        Me.dgCodigo.Name = "dgCodigo"
-        Me.dgCodigo.ReadOnly = True
-        Me.dgCodigo.Visible = False
-        '
-        'dgDescripcion
-        '
-        Me.dgDescripcion.HeaderText = "Descripción"
-        Me.dgDescripcion.Name = "dgDescripcion"
-        Me.dgDescripcion.ReadOnly = True
-        '
-        'dgCantidad
-        '
-        Me.dgCantidad.HeaderText = "CantidadVenta"
-        Me.dgCantidad.Name = "dgCantidad"
-        Me.dgCantidad.ReadOnly = True
-        '
-        'dgValorCosto
-        '
-        Me.dgValorCosto.HeaderText = "Costo"
-        Me.dgValorCosto.Name = "dgValorCosto"
-        Me.dgValorCosto.ReadOnly = True
-        '
-        'dgValorVenta
-        '
-        Me.dgValorVenta.HeaderText = "V.Venta"
-        Me.dgValorVenta.Name = "dgValorVenta"
-        Me.dgValorVenta.ReadOnly = True
-        '
-        'dgRentabilidad
-        '
-        Me.dgRentabilidad.HeaderText = "Rentabilidad"
-        Me.dgRentabilidad.Name = "dgRentabilidad"
-        Me.dgRentabilidad.ReadOnly = True
         '
         'FormInformeVenta
         '
@@ -476,12 +616,15 @@ Partial Class FormInformeVenta
         Me.Name = "FormInformeVenta"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.GroupBox1.ResumeLayout(False)
+        Me.TabControl1.ResumeLayout(False)
+        Me.TabPage1.ResumeLayout(False)
+        CType(Me.dgvVenta, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TabPage2.ResumeLayout(False)
+        CType(Me.dgvServicio, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TabPage3.ResumeLayout(False)
+        CType(Me.dgvGasto, System.ComponentModel.ISupportInitialize).EndInit()
         Me.gpTotales.ResumeLayout(False)
         Me.gpTotales.PerformLayout()
-        Me.GroupBox3.ResumeLayout(False)
-        CType(Me.dgvGasto, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.GroupBox2.ResumeLayout(False)
-        CType(Me.dgvVenta, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GpDatos.ResumeLayout(False)
         Me.Panel1.ResumeLayout(False)
         CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).EndInit()
@@ -494,17 +637,10 @@ Partial Class FormInformeVenta
     Public WithEvents Pimagen As PictureBox
     Public WithEvents Label1 As Label
     Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents GpDatos As GroupBox
     Friend WithEvents DataGridViewImageColumn1 As DataGridViewImageColumn
     Friend WithEvents ErrorIcono As ErrorProvider
-    Public WithEvents dgvVenta As DataGridView
     Friend WithEvents gpTotales As GroupBox
-    Friend WithEvents GroupBox3 As GroupBox
-    Public WithEvents dgvGasto As DataGridView
-    Friend WithEvents dgCodigoGasto As DataGridViewTextBoxColumn
-    Friend WithEvents dgDescripcionGasto As DataGridViewTextBoxColumn
-    Friend WithEvents dgCostoGasto As DataGridViewTextBoxColumn
     Friend WithEvents dtFechaFin As DateTimePicker
     Friend WithEvents dtFechaInicio As DateTimePicker
     Friend WithEvents btGenerar As Button
@@ -527,10 +663,32 @@ Partial Class FormInformeVenta
     Friend WithEvents DataGridViewTextBoxColumn9 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn10 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn11 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewDateTimePickerColumn1 As DataGridViewDateTimePickerColumn
+    Friend WithEvents DataGridViewDateTimePickerColumn2 As DataGridViewDateTimePickerColumn
+    Friend WithEvents TabControl1 As TabControl
+    Friend WithEvents TabPage1 As TabPage
+    Public WithEvents dgvVenta As DataGridView
     Friend WithEvents dgCodigo As DataGridViewTextBoxColumn
+    Friend WithEvents dgNumeroFactura As DataGridViewTextBoxColumn
     Friend WithEvents dgDescripcion As DataGridViewTextBoxColumn
     Friend WithEvents dgCantidad As DataGridViewTextBoxColumn
     Friend WithEvents dgValorCosto As DataGridViewTextBoxColumn
     Friend WithEvents dgValorVenta As DataGridViewTextBoxColumn
     Friend WithEvents dgRentabilidad As DataGridViewTextBoxColumn
+    Friend WithEvents dgFecha As DataGridViewDateTimePickerColumn
+    Friend WithEvents TabPage2 As TabPage
+    Public WithEvents dgvServicio As DataGridView
+    Friend WithEvents dgCodigoServicio As DataGridViewTextBoxColumn
+    Friend WithEvents dgFecturaServ As DataGridViewTextBoxColumn
+    Friend WithEvents dgDescripcionServ As DataGridViewTextBoxColumn
+    Friend WithEvents dgCostoSev As DataGridViewTextBoxColumn
+    Friend WithEvents dgVentaServ As DataGridViewTextBoxColumn
+    Friend WithEvents dgRentabilidadServ As DataGridViewTextBoxColumn
+    Friend WithEvents dgFechaServ As DataGridViewDateTimePickerColumn
+    Friend WithEvents TabPage3 As TabPage
+    Public WithEvents dgvGasto As DataGridView
+    Friend WithEvents dgCodigoGasto As DataGridViewTextBoxColumn
+    Friend WithEvents dgDescripcionGasto As DataGridViewTextBoxColumn
+    Friend WithEvents dgCostoGasto As DataGridViewTextBoxColumn
+    Friend WithEvents dgFechaGasto As DataGridViewDateTimePickerColumn
 End Class

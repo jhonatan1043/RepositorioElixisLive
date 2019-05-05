@@ -28,7 +28,7 @@ Public Class FormEmpleado
         Dim params As New List(Of String)
         Try
             If dgvParametro.ColumnCount = 0 Then
-                '  params.Add(ElementoMenu.codigo)
+                params.Add(objEmpleado.codigoFormulario)
                 Generales.llenardgv(Sentencias.PARAMETROS_CONSULTAR, dgvParametro, params)
                 Generales.personalizarDatagrid(dgvParametro)
                 Generales.diseñoGrillaParametros(dgvParametro)

@@ -349,17 +349,32 @@ Public Class FormVenta
     Private Sub buscarProducto()
         Dim params As New List(Of String)
         params.Add(String.Empty)
-        Generales.busquedaItems(Sentencias.PRODUCTOS_FACTURA_CONSULTAR,
-                                   params,
-                                   Titulo.BUSQUEDA_PRODUCTO,
-                                   dgvProducto,
-                                   objVenta.dtProductos,
-                                   0,
-                                   5,
-                                   0,
-                                   0,
-                                   True)
-        calcularTotales()
+        Try
+            Generales.buscarElemento(Sentencias.PRODUCTOS_FACTURA_CONSULTAR,
+                                     params,
+                                     AddressOf cargarProductoFactura,
+                                     Titulo.BUSQUEDA_PRODUCTO,
+                                     True,
+                                     True)
+        Catch ex As Exception
+            EstiloMensajes.mostrarMensajeError(ex.Message)
+        End Try
+    End Sub
+    Private Sub cargarProductoFactura(pCodigo As Integer)
+        Dim params As New List(Of String)
+        Dim dt As New DataTable
+        params.Add(pCodigo)
+        Generales.llenarTabla(Sentencias.PRODUCTOS_FACTURA_PENDIENTE_CARGAR, params, dt)
+        If dt.Rows.Count > 0 Then
+            objVenta.dtProductos.Rows(objVenta.dtProductos.Rows.Count - 1).Item("Codigo") = dt.Rows(dt.Rows.Count - 1).Item("Codigo")
+            objVenta.dtProductos.Rows(objVenta.dtProductos.Rows.Count - 1).Item("Descripcion") = dt.Rows(dt.Rows.Count - 1).Item("Descripcion")
+            objVenta.dtProductos.Rows(objVenta.dtProductos.Rows.Count - 1).Item("Stock") = dt.Rows(dt.Rows.Count - 1).Item("Stock")
+            objVenta.dtProductos.Rows(objVenta.dtProductos.Rows.Count - 1).Item("Cantidad") = dt.Rows(dt.Rows.Count - 1).Item("Cantidad")
+            objVenta.dtProductos.Rows(objVenta.dtProductos.Rows.Count - 1).Item("Valor") = dt.Rows(dt.Rows.Count - 1).Item("Precio")
+            objVenta.dtProductos.Rows(objVenta.dtProductos.Rows.Count - 1).Item("descuento") = dt.Rows(dt.Rows.Count - 1).Item("descuento")
+            objVenta.dtProductos.Rows.Add()
+            calcularTotales()
+        End If
     End Sub
     Private Sub validarGrilla()
         With dgvProducto

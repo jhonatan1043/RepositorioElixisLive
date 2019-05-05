@@ -275,7 +275,8 @@ Public Class FormRemisionInventario
         txtIdentificacion.Text = dRows("Identificacion")
         TextNombre.Text = dRows("Nombre")
         TextTelefono.Text = dRows("Telefono")
-        dtFecha.Text = Format(dRows("Fecha_Venta"), Constantes.FORMATO_FECHA2)
+        txtObservacion.Text = dRows("Observacion")
+        dtFecha.Text = Format(dRows("Fecha_Remision"), Constantes.FORMATO_FECHA2)
         objRemision.descuentoCliente = dRows("Descuento")
 
         If Replace(dRows("Descuento"), ",00", "") <> Constantes.SIN_VALOR_NUMERICO Then
@@ -283,7 +284,7 @@ Public Class FormRemisionInventario
             lbInformativo.Text = "Este cliente presentó un descuento del " & CStr(Replace(Format(objRemision.descuentoCliente, "p2"), ",00", ""))
         End If
 
-        Generales.llenarTabla(Sentencias.VENTA_CARGAR_PRODUCTO, params, objRemision.dtProductos)
+        Generales.llenarTabla("[SP_REMISION_CARGAR_PRODUCTO]", params, objRemision.dtProductos)
 
         dgvProducto.DataSource = objRemision.dtProductos
         calcularTotales()
@@ -297,17 +298,32 @@ Public Class FormRemisionInventario
     Private Sub buscarProducto()
         Dim params As New List(Of String)
         params.Add(String.Empty)
-        Generales.busquedaItems(Sentencias.PRODUCTOS_FACTURA_CONSULTAR,
-                                   params,
-                                   Titulo.BUSQUEDA_PRODUCTO,
-                                   dgvProducto,
-                                   objRemision.dtProductos,
-                                   0,
-                                   5,
-                                   0,
-                                   0,
-                                   True)
-        calcularTotales()
+        Try
+            Generales.buscarElemento(Sentencias.PRODUCTOS_FACTURA_CONSULTAR,
+                                     params,
+                                     AddressOf cargarProductoFactura,
+                                     Titulo.BUSQUEDA_PRODUCTO,
+                                     True,
+                                     True)
+        Catch ex As Exception
+            EstiloMensajes.mostrarMensajeError(ex.Message)
+        End Try
+    End Sub
+    Private Sub cargarProductoFactura(pCodigo As Integer)
+        Dim params As New List(Of String)
+        Dim dt As New DataTable
+        params.Add(pCodigo)
+        Generales.llenarTabla(Sentencias.PRODUCTOS_FACTURA_PENDIENTE_CARGAR, params, dt)
+        If dt.Rows.Count > 0 Then
+            objRemision.dtProductos.Rows(objRemision.dtProductos.Rows.Count - 1).Item("Codigo") = dt.Rows(dt.Rows.Count - 1).Item("Codigo")
+            objRemision.dtProductos.Rows(objRemision.dtProductos.Rows.Count - 1).Item("Descripcion") = dt.Rows(dt.Rows.Count - 1).Item("Descripcion")
+            objRemision.dtProductos.Rows(objRemision.dtProductos.Rows.Count - 1).Item("Stock") = dt.Rows(dt.Rows.Count - 1).Item("Stock")
+            objRemision.dtProductos.Rows(objRemision.dtProductos.Rows.Count - 1).Item("Cantidad") = dt.Rows(dt.Rows.Count - 1).Item("Cantidad")
+            objRemision.dtProductos.Rows(objRemision.dtProductos.Rows.Count - 1).Item("Valor") = dt.Rows(dt.Rows.Count - 1).Item("Precio")
+            objRemision.dtProductos.Rows(objRemision.dtProductos.Rows.Count - 1).Item("descuento") = dt.Rows(dt.Rows.Count - 1).Item("descuento")
+            objRemision.dtProductos.Rows.Add()
+            calcularTotales()
+        End If
     End Sub
     Private Sub validarGrilla()
         With dgvProducto
@@ -384,21 +400,21 @@ Public Class FormRemisionInventario
         Dim params As New List(Of String)
         Dim convertirNumeroLetra As New ConvertirNumeros
         Try
-            nombreReporte = "Factura"
+            nombreReporte = "FacturaRemision"
 
             Cursor = Cursors.WaitCursor
 
             nombreArchivo = nombreReporte & Constantes.NOMBRE_PDF_SEPARADOR & objRemision.codigo & Constantes.EXTENSION_ARCHIVO_PDF
             ruta = IO.Path.GetTempPath() & nombreReporte
 
-            formula = "{VISTA_VENTA.Codigo_Factura} = " & objRemision.codigo
+            formula = "{VISTA_VENTA.Codigo_Remision} = " & objRemision.codigo
 
             params.Add(TextTotalArticulos.Text)
             params.Add(TextTotal.Text)
             params.Add(txtDescuento.Text)
             params.Add(convertirNumeroLetra.Num2MoneyTxt(TextTotal.Text))
 
-            reporte.crearReportePDF(New factura, objRemision.codigo, formula, nombreReporte, IO.Path.GetTempPath(),,, params)
+            reporte.crearReportePDF(New facturaRemision, objRemision.codigo, formula, nombreReporte, IO.Path.GetTempPath(),,, params)
 
         Catch ex As Exception
             EstiloMensajes.mostrarMensajeError(ex.Message)
