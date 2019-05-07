@@ -15,6 +15,8 @@
         dtVenta.Columns.Add("Cantidad", Type.GetType("System.Int32"))
         dtVenta.Columns.Add("Costo", Type.GetType("System.Int32"))
         dtVenta.Columns.Add("ValorVenta", Type.GetType("System.Int32"))
+        dtVenta.Columns.Add("TotalCosto", Type.GetType("System.Int32"))
+        dtVenta.Columns.Add("TotalVenta", Type.GetType("System.Int32"))
         dtVenta.Columns.Add("Rentabilidad", Type.GetType("System.Int32"))
         dtVenta.Columns.Add("Fecha", Type.GetType("System.DateTime"))
 

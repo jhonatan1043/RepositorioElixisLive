@@ -43,9 +43,9 @@
                 txtTotalGasto.Text = Constantes.SIN_VALOR_NUMERICO
             End If
             If rentabilidad.dtVenta.Rows.Count > 0 Then
-                txtTotalCosto.Text = rentabilidad.dtVenta.Compute("SUM(Costo)", "") +
+                txtTotalCosto.Text = rentabilidad.dtVenta.Compute("SUM(TotalCosto)", "") +
                                      If(rentabilidad.dtServicio.Rows.Count > 0, rentabilidad.dtServicio.Compute("SUM(Costo)", ""), Constantes.SIN_VALOR_NUMERICO)
-                txtTotalVenta.Text = rentabilidad.dtVenta.Compute("SUM(ValorVenta)", "") +
+                txtTotalVenta.Text = rentabilidad.dtVenta.Compute("SUM(TotalVenta)", "") +
                                      If(rentabilidad.dtServicio.Rows.Count > 0, rentabilidad.dtServicio.Compute("SUM(ValorVenta)", ""), Constantes.SIN_VALOR_NUMERICO)
             Else
                 txtTotalCosto.Text = Constantes.SIN_VALOR_NUMERICO
@@ -69,8 +69,10 @@
             .Columns(3).DataPropertyName = "Cantidad"
             .Columns(4).DataPropertyName = "Costo"
             .Columns(5).DataPropertyName = "ValorVenta"
-            .Columns(6).DataPropertyName = "Rentabilidad"
-            .Columns(7).DataPropertyName = "Fecha"
+            .Columns(6).DataPropertyName = "TotalCosto"
+            .Columns(7).DataPropertyName = "TotalVenta"
+            .Columns(8).DataPropertyName = "Rentabilidad"
+            .Columns(9).DataPropertyName = "Fecha"
             .AutoGenerateColumns = False
         End With
     End Sub
@@ -96,12 +98,15 @@
             .Columns(3).DataPropertyName = "Fecha"
             .AutoGenerateColumns = False
         End With
+
     End Sub
 
     Private Sub dgvVenta_CellFormatting(sender As Object, e As DataGridViewCellFormattingEventArgs) Handles dgvVenta.CellFormatting
         If e.ColumnIndex = 4 _
             OrElse e.ColumnIndex = 5 _
-            OrElse e.ColumnIndex = 6 Then
+            OrElse e.ColumnIndex = 6 _
+            OrElse e.ColumnIndex = 7 _
+            OrElse e.ColumnIndex = 8 Then
             If IsDBNull(e.Value) Then
                 e.Value = Format(Val(0), Constantes.FORMATO_MONEDA)
             Else

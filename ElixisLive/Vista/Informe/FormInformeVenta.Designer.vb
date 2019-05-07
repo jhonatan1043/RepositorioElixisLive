@@ -35,14 +35,6 @@ Partial Class FormInformeVenta
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.dgvVenta = New System.Windows.Forms.DataGridView()
-        Me.dgCodigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.dgNumeroFactura = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.dgDescripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.dgCantidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.dgValorCosto = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.dgValorVenta = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.dgRentabilidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.dgFecha = New Quality.DataGridViewDateTimePickerColumn()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.dgvServicio = New System.Windows.Forms.DataGridView()
         Me.dgCodigoServicio = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -89,6 +81,16 @@ Partial Class FormInformeVenta
         Me.DataGridViewDateTimePickerColumn2 = New Quality.DataGridViewDateTimePickerColumn()
         Me.DataGridViewTextBoxColumn10 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn11 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dgCodigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dgNumeroFactura = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dgDescripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dgCantidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dgValorCosto = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dgValorVenta = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dgTotalCosto = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dgTotalVenta = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dgRentabilidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dgFecha = New Quality.DataGridViewDateTimePickerColumn()
         Me.GroupBox1.SuspendLayout()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
@@ -157,7 +159,7 @@ Partial Class FormInformeVenta
         DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.dgvVenta.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.dgvVenta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvVenta.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.dgCodigo, Me.dgNumeroFactura, Me.dgDescripcion, Me.dgCantidad, Me.dgValorCosto, Me.dgValorVenta, Me.dgRentabilidad, Me.dgFecha})
+        Me.dgvVenta.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.dgCodigo, Me.dgNumeroFactura, Me.dgDescripcion, Me.dgCantidad, Me.dgValorCosto, Me.dgValorVenta, Me.dgTotalCosto, Me.dgTotalVenta, Me.dgRentabilidad, Me.dgFecha})
         Me.dgvVenta.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dgvVenta.Location = New System.Drawing.Point(3, 3)
         Me.dgvVenta.MultiSelect = False
@@ -165,55 +167,6 @@ Partial Class FormInformeVenta
         Me.dgvVenta.ReadOnly = True
         Me.dgvVenta.Size = New System.Drawing.Size(862, 312)
         Me.dgvVenta.TabIndex = 60034
-        '
-        'dgCodigo
-        '
-        Me.dgCodigo.HeaderText = "Código"
-        Me.dgCodigo.Name = "dgCodigo"
-        Me.dgCodigo.ReadOnly = True
-        Me.dgCodigo.Visible = False
-        '
-        'dgNumeroFactura
-        '
-        Me.dgNumeroFactura.HeaderText = "N° Factura"
-        Me.dgNumeroFactura.Name = "dgNumeroFactura"
-        Me.dgNumeroFactura.ReadOnly = True
-        '
-        'dgDescripcion
-        '
-        Me.dgDescripcion.HeaderText = "Descripción"
-        Me.dgDescripcion.Name = "dgDescripcion"
-        Me.dgDescripcion.ReadOnly = True
-        '
-        'dgCantidad
-        '
-        Me.dgCantidad.HeaderText = "CantidadVenta"
-        Me.dgCantidad.Name = "dgCantidad"
-        Me.dgCantidad.ReadOnly = True
-        '
-        'dgValorCosto
-        '
-        Me.dgValorCosto.HeaderText = "Costo"
-        Me.dgValorCosto.Name = "dgValorCosto"
-        Me.dgValorCosto.ReadOnly = True
-        '
-        'dgValorVenta
-        '
-        Me.dgValorVenta.HeaderText = "V.Venta"
-        Me.dgValorVenta.Name = "dgValorVenta"
-        Me.dgValorVenta.ReadOnly = True
-        '
-        'dgRentabilidad
-        '
-        Me.dgRentabilidad.HeaderText = "Rentabilidad"
-        Me.dgRentabilidad.Name = "dgRentabilidad"
-        Me.dgRentabilidad.ReadOnly = True
-        '
-        'dgFecha
-        '
-        Me.dgFecha.HeaderText = "Fecha"
-        Me.dgFecha.Name = "dgFecha"
-        Me.dgFecha.ReadOnly = True
         '
         'TabPage2
         '
@@ -602,6 +555,67 @@ Partial Class FormInformeVenta
         Me.DataGridViewTextBoxColumn11.HeaderText = "Rentabilidad"
         Me.DataGridViewTextBoxColumn11.Name = "DataGridViewTextBoxColumn11"
         '
+        'dgCodigo
+        '
+        Me.dgCodigo.HeaderText = "Código"
+        Me.dgCodigo.Name = "dgCodigo"
+        Me.dgCodigo.ReadOnly = True
+        Me.dgCodigo.Visible = False
+        '
+        'dgNumeroFactura
+        '
+        Me.dgNumeroFactura.HeaderText = "N° Factura"
+        Me.dgNumeroFactura.Name = "dgNumeroFactura"
+        Me.dgNumeroFactura.ReadOnly = True
+        '
+        'dgDescripcion
+        '
+        Me.dgDescripcion.HeaderText = "Descripción"
+        Me.dgDescripcion.Name = "dgDescripcion"
+        Me.dgDescripcion.ReadOnly = True
+        '
+        'dgCantidad
+        '
+        Me.dgCantidad.HeaderText = "CantidadVenta"
+        Me.dgCantidad.Name = "dgCantidad"
+        Me.dgCantidad.ReadOnly = True
+        '
+        'dgValorCosto
+        '
+        Me.dgValorCosto.HeaderText = "Costo"
+        Me.dgValorCosto.Name = "dgValorCosto"
+        Me.dgValorCosto.ReadOnly = True
+        '
+        'dgValorVenta
+        '
+        Me.dgValorVenta.HeaderText = "V.Venta"
+        Me.dgValorVenta.Name = "dgValorVenta"
+        Me.dgValorVenta.ReadOnly = True
+        '
+        'dgTotalCosto
+        '
+        Me.dgTotalCosto.HeaderText = "TotalCosto"
+        Me.dgTotalCosto.Name = "dgTotalCosto"
+        Me.dgTotalCosto.ReadOnly = True
+        '
+        'dgTotalVenta
+        '
+        Me.dgTotalVenta.HeaderText = "TotalVenta"
+        Me.dgTotalVenta.Name = "dgTotalVenta"
+        Me.dgTotalVenta.ReadOnly = True
+        '
+        'dgRentabilidad
+        '
+        Me.dgRentabilidad.HeaderText = "Rentabilidad"
+        Me.dgRentabilidad.Name = "dgRentabilidad"
+        Me.dgRentabilidad.ReadOnly = True
+        '
+        'dgFecha
+        '
+        Me.dgFecha.HeaderText = "Fecha"
+        Me.dgFecha.Name = "dgFecha"
+        Me.dgFecha.ReadOnly = True
+        '
         'FormInformeVenta
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -668,14 +682,6 @@ Partial Class FormInformeVenta
     Friend WithEvents TabControl1 As TabControl
     Friend WithEvents TabPage1 As TabPage
     Public WithEvents dgvVenta As DataGridView
-    Friend WithEvents dgCodigo As DataGridViewTextBoxColumn
-    Friend WithEvents dgNumeroFactura As DataGridViewTextBoxColumn
-    Friend WithEvents dgDescripcion As DataGridViewTextBoxColumn
-    Friend WithEvents dgCantidad As DataGridViewTextBoxColumn
-    Friend WithEvents dgValorCosto As DataGridViewTextBoxColumn
-    Friend WithEvents dgValorVenta As DataGridViewTextBoxColumn
-    Friend WithEvents dgRentabilidad As DataGridViewTextBoxColumn
-    Friend WithEvents dgFecha As DataGridViewDateTimePickerColumn
     Friend WithEvents TabPage2 As TabPage
     Public WithEvents dgvServicio As DataGridView
     Friend WithEvents dgCodigoServicio As DataGridViewTextBoxColumn
@@ -691,4 +697,14 @@ Partial Class FormInformeVenta
     Friend WithEvents dgDescripcionGasto As DataGridViewTextBoxColumn
     Friend WithEvents dgCostoGasto As DataGridViewTextBoxColumn
     Friend WithEvents dgFechaGasto As DataGridViewDateTimePickerColumn
+    Friend WithEvents dgCodigo As DataGridViewTextBoxColumn
+    Friend WithEvents dgNumeroFactura As DataGridViewTextBoxColumn
+    Friend WithEvents dgDescripcion As DataGridViewTextBoxColumn
+    Friend WithEvents dgCantidad As DataGridViewTextBoxColumn
+    Friend WithEvents dgValorCosto As DataGridViewTextBoxColumn
+    Friend WithEvents dgValorVenta As DataGridViewTextBoxColumn
+    Friend WithEvents dgTotalCosto As DataGridViewTextBoxColumn
+    Friend WithEvents dgTotalVenta As DataGridViewTextBoxColumn
+    Friend WithEvents dgRentabilidad As DataGridViewTextBoxColumn
+    Friend WithEvents dgFecha As DataGridViewDateTimePickerColumn
 End Class
