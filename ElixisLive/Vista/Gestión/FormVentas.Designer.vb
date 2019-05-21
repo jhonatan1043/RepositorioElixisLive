@@ -2123,7 +2123,7 @@ Partial Class FormVentas
         Me.dtFecha.Enabled = False
         Me.dtFecha.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.dtFecha.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.dtFecha.Location = New System.Drawing.Point(361, 48)
+        Me.dtFecha.Location = New System.Drawing.Point(361, 45)
         Me.dtFecha.Name = "dtFecha"
         Me.dtFecha.Size = New System.Drawing.Size(189, 23)
         Me.dtFecha.TabIndex = 10005
@@ -2148,7 +2148,7 @@ Partial Class FormVentas
         Me.Label11.BackColor = System.Drawing.Color.Transparent
         Me.Label11.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label11.ForeColor = System.Drawing.Color.Black
-        Me.Label11.Location = New System.Drawing.Point(278, 52)
+        Me.Label11.Location = New System.Drawing.Point(278, 49)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(41, 15)
         Me.Label11.TabIndex = 10003
@@ -2172,10 +2172,10 @@ Partial Class FormVentas
         Me.tabVenta.Controls.Add(Me.tpArticulos)
         Me.tabVenta.Controls.Add(Me.tpServicios)
         Me.tabVenta.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed
-        Me.tabVenta.Location = New System.Drawing.Point(7, 118)
+        Me.tabVenta.Location = New System.Drawing.Point(7, 111)
         Me.tabVenta.Name = "tabVenta"
         Me.tabVenta.SelectedIndex = 0
-        Me.tabVenta.Size = New System.Drawing.Size(878, 274)
+        Me.tabVenta.Size = New System.Drawing.Size(878, 281)
         Me.tabVenta.TabIndex = 60038
         '
         'tpArticulos
@@ -2184,7 +2184,7 @@ Partial Class FormVentas
         Me.tpArticulos.Location = New System.Drawing.Point(4, 24)
         Me.tpArticulos.Name = "tpArticulos"
         Me.tpArticulos.Padding = New System.Windows.Forms.Padding(3)
-        Me.tpArticulos.Size = New System.Drawing.Size(870, 246)
+        Me.tpArticulos.Size = New System.Drawing.Size(870, 253)
         Me.tpArticulos.TabIndex = 0
         Me.tpArticulos.Text = "Artículos"
         Me.tpArticulos.UseVisualStyleBackColor = True
@@ -2209,11 +2209,12 @@ Partial Class FormVentas
         Me.dgvProducto.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle77
         Me.dgvProducto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvProducto.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.dgCodigo, Me.dgDescripcion, Me.dgStock, Me.dgCantidad, Me.dgValor, Me.dgDescuento, Me.dgValorDescuento, Me.dgTotal, Me.dgEmpleadoP, Me.dgEmpleadoN, Me.dgQuitar})
-        Me.dgvProducto.Location = New System.Drawing.Point(6, 6)
+        Me.dgvProducto.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.dgvProducto.Location = New System.Drawing.Point(3, 3)
         Me.dgvProducto.MultiSelect = False
         Me.dgvProducto.Name = "dgvProducto"
         Me.dgvProducto.ReadOnly = True
-        Me.dgvProducto.Size = New System.Drawing.Size(859, 234)
+        Me.dgvProducto.Size = New System.Drawing.Size(864, 247)
         Me.dgvProducto.TabIndex = 4
         '
         'dgCodigo
@@ -2314,7 +2315,7 @@ Partial Class FormVentas
         Me.tpServicios.Location = New System.Drawing.Point(4, 24)
         Me.tpServicios.Name = "tpServicios"
         Me.tpServicios.Padding = New System.Windows.Forms.Padding(3)
-        Me.tpServicios.Size = New System.Drawing.Size(870, 246)
+        Me.tpServicios.Size = New System.Drawing.Size(870, 253)
         Me.tpServicios.TabIndex = 1
         Me.tpServicios.Text = "Servicios"
         Me.tpServicios.UseVisualStyleBackColor = True
@@ -2324,7 +2325,7 @@ Partial Class FormVentas
         Me.PanelGastos.Controls.Add(Me.txtTotalGastos)
         Me.PanelGastos.Controls.Add(Me.Label9)
         Me.PanelGastos.Controls.Add(Me.dgvDetalle)
-        Me.PanelGastos.Location = New System.Drawing.Point(463, 28)
+        Me.PanelGastos.Location = New System.Drawing.Point(463, 27)
         Me.PanelGastos.Name = "PanelGastos"
         Me.PanelGastos.Size = New System.Drawing.Size(398, 104)
         Me.PanelGastos.TabIndex = 6
@@ -2398,11 +2399,12 @@ Partial Class FormVentas
         Me.dgvServicio.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle87
         Me.dgvServicio.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvServicio.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.dgCodigoServ, Me.dgDescripcionServ, Me.dgDescuentoS, Me.dgValorDescuentoS, Me.dgValorServ, Me.dgidEmpleado, Me.dgNombreEmpleado, Me.dgDetalle, Me.dgQuitarServ})
-        Me.dgvServicio.Location = New System.Drawing.Point(6, 6)
+        Me.dgvServicio.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.dgvServicio.Location = New System.Drawing.Point(3, 3)
         Me.dgvServicio.MultiSelect = False
         Me.dgvServicio.Name = "dgvServicio"
         Me.dgvServicio.ReadOnly = True
-        Me.dgvServicio.Size = New System.Drawing.Size(859, 234)
+        Me.dgvServicio.Size = New System.Drawing.Size(864, 247)
         Me.dgvServicio.TabIndex = 5
         '
         'dgCodigoServ
@@ -2486,7 +2488,7 @@ Partial Class FormVentas
         Me.Label3.BackColor = System.Drawing.Color.Transparent
         Me.Label3.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.Black
-        Me.Label3.Location = New System.Drawing.Point(7, 50)
+        Me.Label3.Location = New System.Drawing.Point(7, 47)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(66, 15)
         Me.Label3.TabIndex = 12
@@ -2496,7 +2498,7 @@ Partial Class FormVentas
         '
         Me.txtCodigo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtCodigo.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtCodigo.Location = New System.Drawing.Point(112, 47)
+        Me.txtCodigo.Location = New System.Drawing.Point(112, 44)
         Me.txtCodigo.Name = "txtCodigo"
         Me.txtCodigo.Size = New System.Drawing.Size(148, 23)
         Me.txtCodigo.TabIndex = 9999

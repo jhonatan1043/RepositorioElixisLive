@@ -465,7 +465,7 @@ Public Class Generales
         'Firstly we'll define some parameters.
         Dim CurrentTab As TabPage = sender.TabPages(e.Index)
         Dim ItemRect As Rectangle = sender.GetTabRect(e.Index)
-        Dim FillBrush As New SolidBrush(Color.FromArgb(244, 248, 251))
+        Dim FillBrush As New SolidBrush(Color.LightSteelBlue)
         Dim TextBrush As New SolidBrush(Color.Black)
         Dim sf As New StringFormat
         sf.Alignment = StringAlignment.Center
@@ -474,8 +474,8 @@ Public Class Generales
         'If we are currently painting the Selected TabItem we'll 
         'change the brush colors and inflate the rectangle.
         If CBool(e.State And DrawItemState.Selected) Then
-            FillBrush.Color = Color.LightSteelBlue
-            TextBrush.Color = Color.Black
+            FillBrush.Color = Color.SteelBlue
+            TextBrush.Color = Color.White
             ItemRect.Inflate(2, 2)
         End If
 
