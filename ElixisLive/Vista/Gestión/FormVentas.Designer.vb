@@ -203,24 +203,28 @@ Partial Class FormVentas
         Me.Label21 = New System.Windows.Forms.Label()
         Me.Label22 = New System.Windows.Forms.Label()
         Me.GroupBox7 = New System.Windows.Forms.GroupBox()
-        Me.txtIdentificacion = New System.Windows.Forms.TextBox()
+        Me.TextTotalArticulos = New System.Windows.Forms.TextBox()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.TextTotal = New System.Windows.Forms.TextBox()
+        Me.txtDescuento = New System.Windows.Forms.TextBox()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.TextTotalServicio = New System.Windows.Forms.TextBox()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.txtCodigoBarra = New System.Windows.Forms.TextBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label17 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.TextTelefono = New System.Windows.Forms.TextBox()
         Me.TextNombre = New System.Windows.Forms.TextBox()
-        Me.Label17 = New System.Windows.Forms.Label()
+        Me.txtIdentificacion = New System.Windows.Forms.TextBox()
+        Me.dtFecha = New System.Windows.Forms.DateTimePicker()
+        Me.btExistencia = New System.Windows.Forms.Button()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.lbInformativo = New System.Windows.Forms.Label()
         Me.tabVenta = New System.Windows.Forms.TabControl()
         Me.tpArticulos = New System.Windows.Forms.TabPage()
-        Me.tpServicios = New System.Windows.Forms.TabPage()
-        Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
-        Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
-        Me.btNuevo = New System.Windows.Forms.ToolStripButton()
-        Me.btBuscar = New System.Windows.Forms.ToolStripButton()
-        Me.btRegistrar = New System.Windows.Forms.ToolStripButton()
-        Me.btCancelar = New System.Windows.Forms.ToolStripButton()
-        Me.btAnular = New System.Windows.Forms.ToolStripButton()
-        Me.btImprimir = New System.Windows.Forms.ToolStripButton()
-        Me.btExistencia = New System.Windows.Forms.Button()
-        Me.lbInformativo = New System.Windows.Forms.Label()
         Me.dgvProducto = New System.Windows.Forms.DataGridView()
         Me.dgCodigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.dgDescripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -233,6 +237,11 @@ Partial Class FormVentas
         Me.dgEmpleadoP = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.dgEmpleadoN = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.dgQuitar = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.tpServicios = New System.Windows.Forms.TabPage()
+        Me.PanelGastos = New System.Windows.Forms.Panel()
+        Me.txtTotalGastos = New System.Windows.Forms.TextBox()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.dgvDetalle = New System.Windows.Forms.DataGridView()
         Me.dgvServicio = New System.Windows.Forms.DataGridView()
         Me.dgCodigoServ = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.dgDescripcionServ = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -243,25 +252,16 @@ Partial Class FormVentas
         Me.dgNombreEmpleado = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.dgDetalle = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.dgQuitarServ = New System.Windows.Forms.DataGridViewImageColumn()
-        Me.PanelGastos = New System.Windows.Forms.Panel()
-        Me.txtTotalGastos = New System.Windows.Forms.TextBox()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.dgvDetalle = New System.Windows.Forms.DataGridView()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.txtCodigo = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label11 = New System.Windows.Forms.Label()
-        Me.dtFecha = New System.Windows.Forms.DateTimePicker()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.txtCodigoBarra = New System.Windows.Forms.TextBox()
-        Me.TextTotalArticulos = New System.Windows.Forms.TextBox()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.TextTotal = New System.Windows.Forms.TextBox()
-        Me.txtDescuento = New System.Windows.Forms.TextBox()
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.TextTotalServicio = New System.Windows.Forms.TextBox()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
+        Me.txtCodigo = New System.Windows.Forms.TextBox()
+        Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
+        Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
+        Me.btNuevo = New System.Windows.Forms.ToolStripButton()
+        Me.btBuscar = New System.Windows.Forms.ToolStripButton()
+        Me.btRegistrar = New System.Windows.Forms.ToolStripButton()
+        Me.btCancelar = New System.Windows.Forms.ToolStripButton()
+        Me.btAnular = New System.Windows.Forms.ToolStripButton()
+        Me.btImprimir = New System.Windows.Forms.ToolStripButton()
         Me.Panel1.SuspendLayout()
         CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox12.SuspendLayout()
@@ -289,12 +289,12 @@ Partial Class FormVentas
         Me.GroupBox7.SuspendLayout()
         Me.tabVenta.SuspendLayout()
         Me.tpArticulos.SuspendLayout()
-        Me.tpServicios.SuspendLayout()
-        Me.ToolStrip1.SuspendLayout()
         CType(Me.dgvProducto, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.dgvServicio, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.tpServicios.SuspendLayout()
         Me.PanelGastos.SuspendLayout()
         CType(Me.dgvDetalle, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgvServicio, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.ToolStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
@@ -379,7 +379,7 @@ Partial Class FormVentas
         'LTitulo
         '
         Me.LTitulo.BackColor = System.Drawing.Color.Transparent
-        Me.LTitulo.Font = New System.Drawing.Font("Times New Roman", 20.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LTitulo.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LTitulo.ForeColor = System.Drawing.Color.White
         Me.LTitulo.Location = New System.Drawing.Point(1, 3)
         Me.LTitulo.Name = "LTitulo"
@@ -1931,66 +1931,247 @@ Partial Class FormVentas
         Me.GroupBox7.TabStop = False
         Me.GroupBox7.Text = "Datos de la factura"
         '
-        'txtIdentificacion
+        'TextTotalArticulos
         '
-        Me.txtIdentificacion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtIdentificacion.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtIdentificacion.Location = New System.Drawing.Point(112, 15)
-        Me.txtIdentificacion.MaxLength = 26
-        Me.txtIdentificacion.Name = "txtIdentificacion"
-        Me.txtIdentificacion.Size = New System.Drawing.Size(148, 25)
-        Me.txtIdentificacion.TabIndex = 0
+        Me.TextTotalArticulos.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TextTotalArticulos.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextTotalArticulos.ForeColor = System.Drawing.Color.Black
+        Me.TextTotalArticulos.Location = New System.Drawing.Point(63, 407)
+        Me.TextTotalArticulos.Name = "TextTotalArticulos"
+        Me.TextTotalArticulos.Size = New System.Drawing.Size(155, 22)
+        Me.TextTotalArticulos.TabIndex = 60044
+        Me.TextTotalArticulos.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.BackColor = System.Drawing.Color.White
+        Me.Label5.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.ForeColor = System.Drawing.Color.Black
+        Me.Label5.Location = New System.Drawing.Point(1, 409)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(63, 15)
+        Me.Label5.TabIndex = 60043
+        Me.Label5.Text = "Artículos:"
+        Me.Label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'TextTotal
+        '
+        Me.TextTotal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TextTotal.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextTotal.ForeColor = System.Drawing.Color.Black
+        Me.TextTotal.Location = New System.Drawing.Point(729, 408)
+        Me.TextTotal.Name = "TextTotal"
+        Me.TextTotal.Size = New System.Drawing.Size(155, 22)
+        Me.TextTotal.TabIndex = 60045
+        Me.TextTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'txtDescuento
+        '
+        Me.txtDescuento.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtDescuento.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtDescuento.ForeColor = System.Drawing.Color.Black
+        Me.txtDescuento.Location = New System.Drawing.Point(525, 408)
+        Me.txtDescuento.Name = "txtDescuento"
+        Me.txtDescuento.Size = New System.Drawing.Size(155, 22)
+        Me.txtDescuento.TabIndex = 60048
+        Me.txtDescuento.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.BackColor = System.Drawing.Color.White
+        Me.Label10.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.ForeColor = System.Drawing.Color.Black
+        Me.Label10.Location = New System.Drawing.Point(451, 410)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(68, 15)
+        Me.Label10.TabIndex = 60047
+        Me.Label10.Text = "Descuento:"
+        Me.Label10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'TextTotalServicio
+        '
+        Me.TextTotalServicio.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TextTotalServicio.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextTotalServicio.ForeColor = System.Drawing.Color.Black
+        Me.TextTotalServicio.Location = New System.Drawing.Point(288, 408)
+        Me.TextTotalServicio.Name = "TextTotalServicio"
+        Me.TextTotalServicio.Size = New System.Drawing.Size(155, 22)
+        Me.TextTotalServicio.TabIndex = 60046
+        Me.TextTotalServicio.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.BackColor = System.Drawing.Color.White
+        Me.Label6.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.ForeColor = System.Drawing.Color.Black
+        Me.Label6.Location = New System.Drawing.Point(685, 410)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(38, 15)
+        Me.Label6.TabIndex = 60041
+        Me.Label6.Text = "Total:"
+        Me.Label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.BackColor = System.Drawing.Color.White
+        Me.Label4.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.ForeColor = System.Drawing.Color.Black
+        Me.Label4.Location = New System.Drawing.Point(221, 410)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(62, 15)
+        Me.Label4.TabIndex = 60042
+        Me.Label4.Text = "Servicios:"
+        Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.BackColor = System.Drawing.Color.Transparent
+        Me.Label1.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.Black
+        Me.Label1.Location = New System.Drawing.Point(7, 85)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(49, 15)
+        Me.Label1.TabIndex = 60040
+        Me.Label1.Text = "Código:"
+        '
+        'txtCodigoBarra
+        '
+        Me.txtCodigoBarra.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtCodigoBarra.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtCodigoBarra.Location = New System.Drawing.Point(112, 82)
+        Me.txtCodigoBarra.MaxLength = 26
+        Me.txtCodigoBarra.Name = "txtCodigoBarra"
+        Me.txtCodigoBarra.Size = New System.Drawing.Size(148, 23)
+        Me.txtCodigoBarra.TabIndex = 60039
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.BackColor = System.Drawing.Color.Transparent
+        Me.Label2.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.Black
+        Me.Label2.Location = New System.Drawing.Point(699, 22)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(56, 15)
+        Me.Label2.TabIndex = 10
+        Me.Label2.Text = "Teléfono:"
+        '
+        'Label17
+        '
+        Me.Label17.AutoSize = True
+        Me.Label17.BackColor = System.Drawing.Color.Transparent
+        Me.Label17.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label17.ForeColor = System.Drawing.Color.Black
+        Me.Label17.Location = New System.Drawing.Point(279, 22)
+        Me.Label17.Name = "Label17"
+        Me.Label17.Size = New System.Drawing.Size(54, 15)
+        Me.Label17.TabIndex = 7
+        Me.Label17.Text = "Nombre:"
         '
         'Label7
         '
         Me.Label7.AutoSize = True
         Me.Label7.BackColor = System.Drawing.Color.Transparent
-        Me.Label7.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.ForeColor = System.Drawing.Color.Black
-        Me.Label7.Location = New System.Drawing.Point(7, 18)
+        Me.Label7.Location = New System.Drawing.Point(7, 21)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(102, 19)
+        Me.Label7.Size = New System.Drawing.Size(82, 15)
         Me.Label7.TabIndex = 8
         Me.Label7.Text = "Identificación:"
         '
         'TextTelefono
         '
         Me.TextTelefono.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextTelefono.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextTelefono.Location = New System.Drawing.Point(771, 17)
+        Me.TextTelefono.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextTelefono.Location = New System.Drawing.Point(771, 20)
         Me.TextTelefono.MaxLength = 10
         Me.TextTelefono.Name = "TextTelefono"
-        Me.TextTelefono.Size = New System.Drawing.Size(112, 25)
+        Me.TextTelefono.Size = New System.Drawing.Size(112, 23)
         Me.TextTelefono.TabIndex = 2
         Me.TextTelefono.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'TextNombre
         '
         Me.TextNombre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextNombre.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextNombre.Location = New System.Drawing.Point(360, 16)
+        Me.TextNombre.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextNombre.Location = New System.Drawing.Point(360, 19)
         Me.TextNombre.MaxLength = 100
         Me.TextNombre.Name = "TextNombre"
-        Me.TextNombre.Size = New System.Drawing.Size(333, 25)
+        Me.TextNombre.Size = New System.Drawing.Size(333, 23)
         Me.TextNombre.TabIndex = 1
         Me.TextNombre.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'Label17
+        'txtIdentificacion
         '
-        Me.Label17.AutoSize = True
-        Me.Label17.BackColor = System.Drawing.Color.Transparent
-        Me.Label17.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label17.ForeColor = System.Drawing.Color.Black
-        Me.Label17.Location = New System.Drawing.Point(279, 19)
-        Me.Label17.Name = "Label17"
-        Me.Label17.Size = New System.Drawing.Size(65, 19)
-        Me.Label17.TabIndex = 7
-        Me.Label17.Text = "Nombre:"
+        Me.txtIdentificacion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtIdentificacion.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtIdentificacion.Location = New System.Drawing.Point(112, 18)
+        Me.txtIdentificacion.MaxLength = 26
+        Me.txtIdentificacion.Name = "txtIdentificacion"
+        Me.txtIdentificacion.Size = New System.Drawing.Size(148, 23)
+        Me.txtIdentificacion.TabIndex = 0
+        '
+        'dtFecha
+        '
+        Me.dtFecha.CustomFormat = "dd |  MMMM |  yyyy"
+        Me.dtFecha.Enabled = False
+        Me.dtFecha.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.dtFecha.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.dtFecha.Location = New System.Drawing.Point(361, 48)
+        Me.dtFecha.Name = "dtFecha"
+        Me.dtFecha.Size = New System.Drawing.Size(189, 23)
+        Me.dtFecha.TabIndex = 10005
+        '
+        'btExistencia
+        '
+        Me.btExistencia.BackColor = System.Drawing.Color.Transparent
+        Me.btExistencia.BackgroundImage = Global.Quality.My.Resources.Resources.fondo_azul
+        Me.btExistencia.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btExistencia.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btExistencia.ForeColor = System.Drawing.Color.White
+        Me.btExistencia.Location = New System.Drawing.Point(783, 73)
+        Me.btExistencia.Name = "btExistencia"
+        Me.btExistencia.Size = New System.Drawing.Size(97, 29)
+        Me.btExistencia.TabIndex = 10000
+        Me.btExistencia.Text = "Ver existencias"
+        Me.btExistencia.UseVisualStyleBackColor = False
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.BackColor = System.Drawing.Color.Transparent
+        Me.Label11.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label11.ForeColor = System.Drawing.Color.Black
+        Me.Label11.Location = New System.Drawing.Point(278, 52)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(41, 15)
+        Me.Label11.TabIndex = 10003
+        Me.Label11.Text = "Fecha:"
+        '
+        'lbInformativo
+        '
+        Me.lbInformativo.AutoSize = True
+        Me.lbInformativo.BackColor = System.Drawing.Color.Transparent
+        Me.lbInformativo.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbInformativo.ForeColor = System.Drawing.Color.SteelBlue
+        Me.lbInformativo.Location = New System.Drawing.Point(357, 88)
+        Me.lbInformativo.Name = "lbInformativo"
+        Me.lbInformativo.Size = New System.Drawing.Size(19, 15)
+        Me.lbInformativo.TabIndex = 10002
+        Me.lbInformativo.Text = "...:"
+        Me.lbInformativo.Visible = False
         '
         'tabVenta
         '
         Me.tabVenta.Controls.Add(Me.tpArticulos)
         Me.tabVenta.Controls.Add(Me.tpServicios)
+        Me.tabVenta.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed
         Me.tabVenta.Location = New System.Drawing.Point(7, 118)
         Me.tabVenta.Name = "tabVenta"
         Me.tabVenta.SelectedIndex = 0
@@ -2007,130 +2188,6 @@ Partial Class FormVentas
         Me.tpArticulos.TabIndex = 0
         Me.tpArticulos.Text = "Artículos"
         Me.tpArticulos.UseVisualStyleBackColor = True
-        '
-        'tpServicios
-        '
-        Me.tpServicios.Controls.Add(Me.PanelGastos)
-        Me.tpServicios.Controls.Add(Me.dgvServicio)
-        Me.tpServicios.Location = New System.Drawing.Point(4, 24)
-        Me.tpServicios.Name = "tpServicios"
-        Me.tpServicios.Padding = New System.Windows.Forms.Padding(3)
-        Me.tpServicios.Size = New System.Drawing.Size(870, 246)
-        Me.tpServicios.TabIndex = 1
-        Me.tpServicios.Text = "Servicios"
-        Me.tpServicios.UseVisualStyleBackColor = True
-        '
-        'ToolStrip1
-        '
-        Me.ToolStrip1.BackColor = System.Drawing.Color.White
-        Me.ToolStrip1.BackgroundImage = Global.Quality.My.Resources.Resources.fondo_azul
-        Me.ToolStrip1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ToolStrip1.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.ToolStrip1.ImageScalingSize = New System.Drawing.Size(30, 30)
-        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripSeparator1, Me.btNuevo, Me.btBuscar, Me.btRegistrar, Me.btCancelar, Me.btAnular, Me.btImprimir})
-        Me.ToolStrip1.Location = New System.Drawing.Point(0, 486)
-        Me.ToolStrip1.Name = "ToolStrip1"
-        Me.ToolStrip1.Size = New System.Drawing.Size(900, 37)
-        Me.ToolStrip1.TabIndex = 1001
-        Me.ToolStrip1.Text = "ToolStrip1"
-        '
-        'ToolStripSeparator1
-        '
-        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
-        Me.ToolStripSeparator1.Size = New System.Drawing.Size(6, 37)
-        '
-        'btNuevo
-        '
-        Me.btNuevo.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btNuevo.ForeColor = System.Drawing.Color.White
-        Me.btNuevo.Image = Global.Quality.My.Resources.Resources.Files_New_File_icon
-        Me.btNuevo.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.btNuevo.Name = "btNuevo"
-        Me.btNuevo.Size = New System.Drawing.Size(86, 34)
-        Me.btNuevo.Text = "&Nuevo"
-        Me.btNuevo.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        '
-        'btBuscar
-        '
-        Me.btBuscar.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btBuscar.ForeColor = System.Drawing.Color.White
-        Me.btBuscar.Image = Global.Quality.My.Resources.Resources.Search_icon
-        Me.btBuscar.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.btBuscar.Name = "btBuscar"
-        Me.btBuscar.Size = New System.Drawing.Size(90, 34)
-        Me.btBuscar.Text = "&Buscar"
-        Me.btBuscar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        '
-        'btRegistrar
-        '
-        Me.btRegistrar.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btRegistrar.ForeColor = System.Drawing.Color.White
-        Me.btRegistrar.Image = Global.Quality.My.Resources.Resources.Save_icon__1_
-        Me.btRegistrar.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.btRegistrar.Name = "btRegistrar"
-        Me.btRegistrar.Size = New System.Drawing.Size(105, 34)
-        Me.btRegistrar.Text = "&Registrar"
-        Me.btRegistrar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        '
-        'btCancelar
-        '
-        Me.btCancelar.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btCancelar.ForeColor = System.Drawing.Color.White
-        Me.btCancelar.Image = Global.Quality.My.Resources.Resources.Actions_blue_arrow_undo_icon
-        Me.btCancelar.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.btCancelar.Name = "btCancelar"
-        Me.btCancelar.Size = New System.Drawing.Size(104, 34)
-        Me.btCancelar.Text = "&Cancelar"
-        Me.btCancelar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        '
-        'btAnular
-        '
-        Me.btAnular.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btAnular.ForeColor = System.Drawing.Color.White
-        Me.btAnular.Image = Global.Quality.My.Resources.Resources.document_delete_icon__1_
-        Me.btAnular.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.btAnular.Name = "btAnular"
-        Me.btAnular.Size = New System.Drawing.Size(91, 34)
-        Me.btAnular.Text = "&Anular"
-        Me.btAnular.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        '
-        'btImprimir
-        '
-        Me.btImprimir.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btImprimir.ForeColor = System.Drawing.Color.White
-        Me.btImprimir.Image = Global.Quality.My.Resources.Resources.Printer_icon__1_
-        Me.btImprimir.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.btImprimir.Name = "btImprimir"
-        Me.btImprimir.Size = New System.Drawing.Size(103, 34)
-        Me.btImprimir.Text = "&Imprimir"
-        Me.btImprimir.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        '
-        'btExistencia
-        '
-        Me.btExistencia.BackColor = System.Drawing.Color.Transparent
-        Me.btExistencia.BackgroundImage = Global.Quality.My.Resources.Resources.fondo_azul
-        Me.btExistencia.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btExistencia.Font = New System.Drawing.Font("Times New Roman", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btExistencia.ForeColor = System.Drawing.Color.White
-        Me.btExistencia.Location = New System.Drawing.Point(764, 108)
-        Me.btExistencia.Name = "btExistencia"
-        Me.btExistencia.Size = New System.Drawing.Size(119, 29)
-        Me.btExistencia.TabIndex = 10000
-        Me.btExistencia.Text = "Ver existencias"
-        Me.btExistencia.UseVisualStyleBackColor = False
-        '
-        'lbInformativo
-        '
-        Me.lbInformativo.AutoSize = True
-        Me.lbInformativo.BackColor = System.Drawing.Color.Transparent
-        Me.lbInformativo.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbInformativo.ForeColor = System.Drawing.Color.SteelBlue
-        Me.lbInformativo.Location = New System.Drawing.Point(570, 48)
-        Me.lbInformativo.Name = "lbInformativo"
-        Me.lbInformativo.Size = New System.Drawing.Size(26, 19)
-        Me.lbInformativo.TabIndex = 10002
-        Me.lbInformativo.Text = "...:"
-        Me.lbInformativo.Visible = False
         '
         'dgvProducto
         '
@@ -2250,107 +2307,17 @@ Partial Class FormVentas
         Me.dgQuitar.ReadOnly = True
         Me.dgQuitar.Width = 50
         '
-        'dgvServicio
+        'tpServicios
         '
-        Me.dgvServicio.AllowUserToAddRows = False
-        Me.dgvServicio.AllowUserToDeleteRows = False
-        Me.dgvServicio.AllowUserToResizeColumns = False
-        Me.dgvServicio.AllowUserToResizeRows = False
-        DataGridViewCellStyle84.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle84.ForeColor = System.Drawing.Color.Black
-        Me.dgvServicio.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle84
-        Me.dgvServicio.BackgroundColor = System.Drawing.Color.White
-        DataGridViewCellStyle85.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle85.BackColor = System.Drawing.Color.SteelBlue
-        DataGridViewCellStyle85.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle85.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle85.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle85.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle85.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvServicio.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle85
-        Me.dgvServicio.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvServicio.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.dgCodigoServ, Me.dgDescripcionServ, Me.dgDescuentoS, Me.dgValorDescuentoS, Me.dgValorServ, Me.dgidEmpleado, Me.dgNombreEmpleado, Me.dgDetalle, Me.dgQuitarServ})
-        Me.dgvServicio.Location = New System.Drawing.Point(6, 3)
-        Me.dgvServicio.MultiSelect = False
-        Me.dgvServicio.Name = "dgvServicio"
-        Me.dgvServicio.ReadOnly = True
-        Me.dgvServicio.Size = New System.Drawing.Size(859, 239)
-        Me.dgvServicio.TabIndex = 5
-        '
-        'dgCodigoServ
-        '
-        DataGridViewCellStyle86.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.dgCodigoServ.DefaultCellStyle = DataGridViewCellStyle86
-        Me.dgCodigoServ.HeaderText = "Código"
-        Me.dgCodigoServ.Name = "dgCodigoServ"
-        Me.dgCodigoServ.ReadOnly = True
-        '
-        'dgDescripcionServ
-        '
-        Me.dgDescripcionServ.HeaderText = "Descripción"
-        Me.dgDescripcionServ.Name = "dgDescripcionServ"
-        Me.dgDescripcionServ.ReadOnly = True
-        '
-        'dgDescuentoS
-        '
-        Me.dgDescuentoS.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.dgDescuentoS.HeaderText = "Descuento"
-        Me.dgDescuentoS.Name = "dgDescuentoS"
-        Me.dgDescuentoS.ReadOnly = True
-        Me.dgDescuentoS.Width = 82
-        '
-        'dgValorDescuentoS
-        '
-        Me.dgValorDescuentoS.HeaderText = "Valor Descuento"
-        Me.dgValorDescuentoS.Name = "dgValorDescuentoS"
-        Me.dgValorDescuentoS.ReadOnly = True
-        Me.dgValorDescuentoS.Visible = False
-        '
-        'dgValorServ
-        '
-        DataGridViewCellStyle87.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        Me.dgValorServ.DefaultCellStyle = DataGridViewCellStyle87
-        Me.dgValorServ.HeaderText = "Valor"
-        Me.dgValorServ.Name = "dgValorServ"
-        Me.dgValorServ.ReadOnly = True
-        '
-        'dgidEmpleado
-        '
-        Me.dgidEmpleado.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.dgidEmpleado.HeaderText = "C. Empleado"
-        Me.dgidEmpleado.Name = "dgidEmpleado"
-        Me.dgidEmpleado.ReadOnly = True
-        Me.dgidEmpleado.Visible = False
-        '
-        'dgNombreEmpleado
-        '
-        Me.dgNombreEmpleado.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.dgNombreEmpleado.HeaderText = "Empleado"
-        Me.dgNombreEmpleado.Name = "dgNombreEmpleado"
-        Me.dgNombreEmpleado.ReadOnly = True
-        Me.dgNombreEmpleado.Width = 80
-        '
-        'dgDetalle
-        '
-        Me.dgDetalle.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.dgDetalle.HeaderText = "Detalle"
-        Me.dgDetalle.Name = "dgDetalle"
-        Me.dgDetalle.ReadOnly = True
-        Me.dgDetalle.Text = "Costo"
-        Me.dgDetalle.UseColumnTextForButtonValue = True
-        Me.dgDetalle.Width = 47
-        '
-        'dgQuitarServ
-        '
-        DataGridViewCellStyle88.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle88.NullValue = CType(resources.GetObject("DataGridViewCellStyle88.NullValue"), Object)
-        DataGridViewCellStyle88.SelectionBackColor = System.Drawing.Color.White
-        Me.dgQuitarServ.DefaultCellStyle = DataGridViewCellStyle88
-        Me.dgQuitarServ.HeaderText = "Quitar"
-        Me.dgQuitarServ.Image = Global.Quality.My.Resources.Resources.papelera
-        Me.dgQuitarServ.Name = "dgQuitarServ"
-        Me.dgQuitarServ.ReadOnly = True
-        Me.dgQuitarServ.Width = 50
+        Me.tpServicios.Controls.Add(Me.PanelGastos)
+        Me.tpServicios.Controls.Add(Me.dgvServicio)
+        Me.tpServicios.Location = New System.Drawing.Point(4, 24)
+        Me.tpServicios.Name = "tpServicios"
+        Me.tpServicios.Padding = New System.Windows.Forms.Padding(3)
+        Me.tpServicios.Size = New System.Drawing.Size(870, 246)
+        Me.tpServicios.TabIndex = 1
+        Me.tpServicios.Text = "Servicios"
+        Me.tpServicios.UseVisualStyleBackColor = True
         '
         'PanelGastos
         '
@@ -2391,18 +2358,18 @@ Partial Class FormVentas
         Me.dgvDetalle.AllowUserToDeleteRows = False
         Me.dgvDetalle.AllowUserToResizeColumns = False
         Me.dgvDetalle.AllowUserToResizeRows = False
-        DataGridViewCellStyle89.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle89.ForeColor = System.Drawing.Color.Black
-        Me.dgvDetalle.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle89
+        DataGridViewCellStyle84.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle84.ForeColor = System.Drawing.Color.Black
+        Me.dgvDetalle.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle84
         Me.dgvDetalle.BackgroundColor = System.Drawing.Color.White
-        DataGridViewCellStyle90.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle90.BackColor = System.Drawing.Color.SteelBlue
-        DataGridViewCellStyle90.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle90.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle90.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle90.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle90.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvDetalle.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle90
+        DataGridViewCellStyle85.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle85.BackColor = System.Drawing.Color.SteelBlue
+        DataGridViewCellStyle85.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle85.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle85.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle85.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle85.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvDetalle.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle85
         Me.dgvDetalle.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvDetalle.Location = New System.Drawing.Point(3, 3)
         Me.dgvDetalle.MultiSelect = False
@@ -2411,180 +2378,214 @@ Partial Class FormVentas
         Me.dgvDetalle.Size = New System.Drawing.Size(392, 62)
         Me.dgvDetalle.TabIndex = 4
         '
-        'Label2
+        'dgvServicio
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.BackColor = System.Drawing.Color.Transparent
-        Me.Label2.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.Black
-        Me.Label2.Location = New System.Drawing.Point(699, 19)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(69, 19)
-        Me.Label2.TabIndex = 10
-        Me.Label2.Text = "Teléfono:"
+        Me.dgvServicio.AllowUserToAddRows = False
+        Me.dgvServicio.AllowUserToDeleteRows = False
+        Me.dgvServicio.AllowUserToResizeColumns = False
+        Me.dgvServicio.AllowUserToResizeRows = False
+        DataGridViewCellStyle86.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle86.ForeColor = System.Drawing.Color.Black
+        Me.dgvServicio.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle86
+        Me.dgvServicio.BackgroundColor = System.Drawing.Color.White
+        DataGridViewCellStyle87.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle87.BackColor = System.Drawing.Color.SteelBlue
+        DataGridViewCellStyle87.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle87.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle87.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle87.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle87.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvServicio.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle87
+        Me.dgvServicio.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvServicio.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.dgCodigoServ, Me.dgDescripcionServ, Me.dgDescuentoS, Me.dgValorDescuentoS, Me.dgValorServ, Me.dgidEmpleado, Me.dgNombreEmpleado, Me.dgDetalle, Me.dgQuitarServ})
+        Me.dgvServicio.Location = New System.Drawing.Point(6, 6)
+        Me.dgvServicio.MultiSelect = False
+        Me.dgvServicio.Name = "dgvServicio"
+        Me.dgvServicio.ReadOnly = True
+        Me.dgvServicio.Size = New System.Drawing.Size(859, 234)
+        Me.dgvServicio.TabIndex = 5
         '
-        'txtCodigo
+        'dgCodigoServ
         '
-        Me.txtCodigo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtCodigo.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtCodigo.Location = New System.Drawing.Point(112, 44)
-        Me.txtCodigo.Name = "txtCodigo"
-        Me.txtCodigo.Size = New System.Drawing.Size(148, 25)
-        Me.txtCodigo.TabIndex = 9999
-        Me.txtCodigo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        DataGridViewCellStyle88.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.dgCodigoServ.DefaultCellStyle = DataGridViewCellStyle88
+        Me.dgCodigoServ.HeaderText = "Código"
+        Me.dgCodigoServ.Name = "dgCodigoServ"
+        Me.dgCodigoServ.ReadOnly = True
+        '
+        'dgDescripcionServ
+        '
+        Me.dgDescripcionServ.HeaderText = "Descripción"
+        Me.dgDescripcionServ.Name = "dgDescripcionServ"
+        Me.dgDescripcionServ.ReadOnly = True
+        '
+        'dgDescuentoS
+        '
+        Me.dgDescuentoS.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.dgDescuentoS.HeaderText = "Descuento"
+        Me.dgDescuentoS.Name = "dgDescuentoS"
+        Me.dgDescuentoS.ReadOnly = True
+        Me.dgDescuentoS.Width = 82
+        '
+        'dgValorDescuentoS
+        '
+        Me.dgValorDescuentoS.HeaderText = "Valor Descuento"
+        Me.dgValorDescuentoS.Name = "dgValorDescuentoS"
+        Me.dgValorDescuentoS.ReadOnly = True
+        Me.dgValorDescuentoS.Visible = False
+        '
+        'dgValorServ
+        '
+        DataGridViewCellStyle89.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        Me.dgValorServ.DefaultCellStyle = DataGridViewCellStyle89
+        Me.dgValorServ.HeaderText = "Valor"
+        Me.dgValorServ.Name = "dgValorServ"
+        Me.dgValorServ.ReadOnly = True
+        '
+        'dgidEmpleado
+        '
+        Me.dgidEmpleado.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.dgidEmpleado.HeaderText = "C. Empleado"
+        Me.dgidEmpleado.Name = "dgidEmpleado"
+        Me.dgidEmpleado.ReadOnly = True
+        Me.dgidEmpleado.Visible = False
+        '
+        'dgNombreEmpleado
+        '
+        Me.dgNombreEmpleado.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.dgNombreEmpleado.HeaderText = "Empleado"
+        Me.dgNombreEmpleado.Name = "dgNombreEmpleado"
+        Me.dgNombreEmpleado.ReadOnly = True
+        Me.dgNombreEmpleado.Width = 80
+        '
+        'dgDetalle
+        '
+        Me.dgDetalle.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.dgDetalle.HeaderText = "Detalle"
+        Me.dgDetalle.Name = "dgDetalle"
+        Me.dgDetalle.ReadOnly = True
+        Me.dgDetalle.Text = "Costo"
+        Me.dgDetalle.UseColumnTextForButtonValue = True
+        Me.dgDetalle.Width = 47
+        '
+        'dgQuitarServ
+        '
+        DataGridViewCellStyle90.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle90.NullValue = CType(resources.GetObject("DataGridViewCellStyle90.NullValue"), Object)
+        DataGridViewCellStyle90.SelectionBackColor = System.Drawing.Color.White
+        Me.dgQuitarServ.DefaultCellStyle = DataGridViewCellStyle90
+        Me.dgQuitarServ.HeaderText = "Quitar"
+        Me.dgQuitarServ.Image = Global.Quality.My.Resources.Resources.papelera
+        Me.dgQuitarServ.Name = "dgQuitarServ"
+        Me.dgQuitarServ.ReadOnly = True
+        Me.dgQuitarServ.Width = 50
         '
         'Label3
         '
         Me.Label3.AutoSize = True
         Me.Label3.BackColor = System.Drawing.Color.Transparent
-        Me.Label3.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.Black
-        Me.Label3.Location = New System.Drawing.Point(4, 47)
+        Me.Label3.Location = New System.Drawing.Point(7, 50)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(86, 19)
+        Me.Label3.Size = New System.Drawing.Size(66, 15)
         Me.Label3.TabIndex = 12
         Me.Label3.Text = "Nº Factura:"
         '
-        'Label11
+        'txtCodigo
         '
-        Me.Label11.AutoSize = True
-        Me.Label11.BackColor = System.Drawing.Color.Transparent
-        Me.Label11.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.ForeColor = System.Drawing.Color.Black
-        Me.Label11.Location = New System.Drawing.Point(278, 49)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(54, 19)
-        Me.Label11.TabIndex = 10003
-        Me.Label11.Text = "Fecha:"
+        Me.txtCodigo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtCodigo.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtCodigo.Location = New System.Drawing.Point(112, 47)
+        Me.txtCodigo.Name = "txtCodigo"
+        Me.txtCodigo.Size = New System.Drawing.Size(148, 23)
+        Me.txtCodigo.TabIndex = 9999
+        Me.txtCodigo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'dtFecha
+        'ToolStrip1
         '
-        Me.dtFecha.CustomFormat = "dd |  MMMM |  yyyy"
-        Me.dtFecha.Enabled = False
-        Me.dtFecha.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.dtFecha.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.dtFecha.Location = New System.Drawing.Point(361, 45)
-        Me.dtFecha.Name = "dtFecha"
-        Me.dtFecha.Size = New System.Drawing.Size(189, 25)
-        Me.dtFecha.TabIndex = 10005
+        Me.ToolStrip1.BackColor = System.Drawing.Color.White
+        Me.ToolStrip1.BackgroundImage = Global.Quality.My.Resources.Resources.fondo_azul
+        Me.ToolStrip1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.ToolStrip1.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.ToolStrip1.ImageScalingSize = New System.Drawing.Size(30, 30)
+        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripSeparator1, Me.btNuevo, Me.btBuscar, Me.btRegistrar, Me.btCancelar, Me.btAnular, Me.btImprimir})
+        Me.ToolStrip1.Location = New System.Drawing.Point(0, 486)
+        Me.ToolStrip1.Name = "ToolStrip1"
+        Me.ToolStrip1.Size = New System.Drawing.Size(900, 37)
+        Me.ToolStrip1.TabIndex = 1001
+        Me.ToolStrip1.Text = "ToolStrip1"
         '
-        'Label1
+        'ToolStripSeparator1
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.BackColor = System.Drawing.Color.Transparent
-        Me.Label1.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.Black
-        Me.Label1.Location = New System.Drawing.Point(3, 85)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(63, 21)
-        Me.Label1.TabIndex = 60040
-        Me.Label1.Text = "Código:"
+        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
+        Me.ToolStripSeparator1.Size = New System.Drawing.Size(6, 37)
         '
-        'txtCodigoBarra
+        'btNuevo
         '
-        Me.txtCodigoBarra.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtCodigoBarra.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtCodigoBarra.Location = New System.Drawing.Point(112, 82)
-        Me.txtCodigoBarra.MaxLength = 26
-        Me.txtCodigoBarra.Name = "txtCodigoBarra"
-        Me.txtCodigoBarra.Size = New System.Drawing.Size(148, 25)
-        Me.txtCodigoBarra.TabIndex = 60039
+        Me.btNuevo.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btNuevo.ForeColor = System.Drawing.Color.White
+        Me.btNuevo.Image = Global.Quality.My.Resources.Resources.Files_New_File_icon
+        Me.btNuevo.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.btNuevo.Name = "btNuevo"
+        Me.btNuevo.Size = New System.Drawing.Size(86, 34)
+        Me.btNuevo.Text = "&Nuevo"
+        Me.btNuevo.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         '
-        'TextTotalArticulos
+        'btBuscar
         '
-        Me.TextTotalArticulos.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextTotalArticulos.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextTotalArticulos.ForeColor = System.Drawing.Color.Black
-        Me.TextTotalArticulos.Location = New System.Drawing.Point(63, 407)
-        Me.TextTotalArticulos.Name = "TextTotalArticulos"
-        Me.TextTotalArticulos.Size = New System.Drawing.Size(155, 22)
-        Me.TextTotalArticulos.TabIndex = 60044
-        Me.TextTotalArticulos.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        Me.btBuscar.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btBuscar.ForeColor = System.Drawing.Color.White
+        Me.btBuscar.Image = Global.Quality.My.Resources.Resources.Search_icon
+        Me.btBuscar.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.btBuscar.Name = "btBuscar"
+        Me.btBuscar.Size = New System.Drawing.Size(90, 34)
+        Me.btBuscar.Text = "&Buscar"
+        Me.btBuscar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         '
-        'Label5
+        'btRegistrar
         '
-        Me.Label5.AutoSize = True
-        Me.Label5.BackColor = System.Drawing.Color.White
-        Me.Label5.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.ForeColor = System.Drawing.Color.Black
-        Me.Label5.Location = New System.Drawing.Point(1, 409)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(63, 15)
-        Me.Label5.TabIndex = 60043
-        Me.Label5.Text = "Artículos:"
-        Me.Label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btRegistrar.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btRegistrar.ForeColor = System.Drawing.Color.White
+        Me.btRegistrar.Image = Global.Quality.My.Resources.Resources.Save_icon__1_
+        Me.btRegistrar.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.btRegistrar.Name = "btRegistrar"
+        Me.btRegistrar.Size = New System.Drawing.Size(105, 34)
+        Me.btRegistrar.Text = "&Registrar"
+        Me.btRegistrar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         '
-        'TextTotal
+        'btCancelar
         '
-        Me.TextTotal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextTotal.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextTotal.ForeColor = System.Drawing.Color.Black
-        Me.TextTotal.Location = New System.Drawing.Point(729, 408)
-        Me.TextTotal.Name = "TextTotal"
-        Me.TextTotal.Size = New System.Drawing.Size(155, 22)
-        Me.TextTotal.TabIndex = 60045
-        Me.TextTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        Me.btCancelar.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btCancelar.ForeColor = System.Drawing.Color.White
+        Me.btCancelar.Image = Global.Quality.My.Resources.Resources.Actions_blue_arrow_undo_icon
+        Me.btCancelar.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.btCancelar.Name = "btCancelar"
+        Me.btCancelar.Size = New System.Drawing.Size(104, 34)
+        Me.btCancelar.Text = "&Cancelar"
+        Me.btCancelar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         '
-        'txtDescuento
+        'btAnular
         '
-        Me.txtDescuento.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtDescuento.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtDescuento.ForeColor = System.Drawing.Color.Black
-        Me.txtDescuento.Location = New System.Drawing.Point(525, 408)
-        Me.txtDescuento.Name = "txtDescuento"
-        Me.txtDescuento.Size = New System.Drawing.Size(155, 22)
-        Me.txtDescuento.TabIndex = 60048
-        Me.txtDescuento.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.btAnular.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btAnular.ForeColor = System.Drawing.Color.White
+        Me.btAnular.Image = Global.Quality.My.Resources.Resources.document_delete_icon__1_
+        Me.btAnular.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.btAnular.Name = "btAnular"
+        Me.btAnular.Size = New System.Drawing.Size(91, 34)
+        Me.btAnular.Text = "&Anular"
+        Me.btAnular.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         '
-        'Label10
+        'btImprimir
         '
-        Me.Label10.AutoSize = True
-        Me.Label10.BackColor = System.Drawing.Color.White
-        Me.Label10.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.ForeColor = System.Drawing.Color.Black
-        Me.Label10.Location = New System.Drawing.Point(451, 410)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(68, 15)
-        Me.Label10.TabIndex = 60047
-        Me.Label10.Text = "Descuento:"
-        Me.Label10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'TextTotalServicio
-        '
-        Me.TextTotalServicio.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextTotalServicio.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextTotalServicio.ForeColor = System.Drawing.Color.Black
-        Me.TextTotalServicio.Location = New System.Drawing.Point(288, 408)
-        Me.TextTotalServicio.Name = "TextTotalServicio"
-        Me.TextTotalServicio.Size = New System.Drawing.Size(155, 22)
-        Me.TextTotalServicio.TabIndex = 60046
-        Me.TextTotalServicio.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.BackColor = System.Drawing.Color.White
-        Me.Label6.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.ForeColor = System.Drawing.Color.Black
-        Me.Label6.Location = New System.Drawing.Point(685, 410)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(38, 15)
-        Me.Label6.TabIndex = 60041
-        Me.Label6.Text = "Total:"
-        Me.Label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.BackColor = System.Drawing.Color.White
-        Me.Label4.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.ForeColor = System.Drawing.Color.Black
-        Me.Label4.Location = New System.Drawing.Point(221, 410)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(62, 15)
-        Me.Label4.TabIndex = 60042
-        Me.Label4.Text = "Servicios:"
-        Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btImprimir.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btImprimir.ForeColor = System.Drawing.Color.White
+        Me.btImprimir.Image = Global.Quality.My.Resources.Resources.Printer_icon__1_
+        Me.btImprimir.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.btImprimir.Name = "btImprimir"
+        Me.btImprimir.Size = New System.Drawing.Size(103, 34)
+        Me.btImprimir.Text = "&Imprimir"
+        Me.btImprimir.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         '
         'FormVentas
         '
@@ -2642,14 +2643,14 @@ Partial Class FormVentas
         Me.GroupBox7.PerformLayout()
         Me.tabVenta.ResumeLayout(False)
         Me.tpArticulos.ResumeLayout(False)
-        Me.tpServicios.ResumeLayout(False)
-        Me.ToolStrip1.ResumeLayout(False)
-        Me.ToolStrip1.PerformLayout()
         CType(Me.dgvProducto, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.dgvServicio, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.tpServicios.ResumeLayout(False)
         Me.PanelGastos.ResumeLayout(False)
         Me.PanelGastos.PerformLayout()
         CType(Me.dgvDetalle, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvServicio, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.ToolStrip1.ResumeLayout(False)
+        Me.ToolStrip1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

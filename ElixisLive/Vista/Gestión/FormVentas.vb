@@ -10,6 +10,7 @@
         validarGrilla()
         btNuevo.Enabled = True
         btBuscar.Enabled = True
+        Generales.personalizarTabControl(tabVenta)
     End Sub
     Private Sub dgvProducto_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvProducto.CellDoubleClick, DataGridView9.CellDoubleClick, DataGridView3.CellDoubleClick
         Try
@@ -669,4 +670,6 @@
             End If
         End If
     End Sub
+
+
 End Class
