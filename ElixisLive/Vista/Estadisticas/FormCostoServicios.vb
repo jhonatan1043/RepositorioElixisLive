@@ -8,6 +8,9 @@
         dgvServicio.DataSource = dtServicios
         dgvServicio.Columns(0).Visible = False
         dgvServicio.Columns(1).AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
+        Generales.deshabilitarControles(Me)
+        Label1.ForeColor = Color.White
+        Label5.ForeColor = Color.White
     End Sub
     Private Sub dgvServicio_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvServicio.CellContentClick
         If dgvServicio.RowCount > 0 Then

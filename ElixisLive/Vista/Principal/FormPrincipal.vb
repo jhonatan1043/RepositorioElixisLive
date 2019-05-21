@@ -22,6 +22,7 @@ Public Class FormPrincipal
 
         lbUsuario.Text = SesionActual.nombreUsuario
         SesionActual.dtPermisos = cargarOpciones(SesionActual.codigoPerfil)
+        txtNombreEmpresa.Text = SesionActual.nombreEmpresa.ToUpper
     End Sub
     Public Function cargarOpciones(codigoPerfil As Integer) As DataTable
         Dim cadena As String
