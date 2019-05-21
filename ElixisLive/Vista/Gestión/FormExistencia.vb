@@ -5,23 +5,14 @@
         cargarExistencia()
         Generales.personalizarDatagrid(dgvLista)
         Generales.tabularConEnter(Me)
-        'establecerPosicion()
     End Sub
-    'Private Sub establecerPosicion()
-    '    Dim x As Integer
-    '    Dim y As Integer
-    '    x = Screen.PrimaryScreen.WorkingArea.Width - 880
-    '    y = Screen.PrimaryScreen.WorkingArea.Height - 590
-    '    Me.Location = New Point(x, y)
-    'End Sub
     Private Sub cargarExistencia()
-        Dim params As New List(Of String)
         Try
             dgvLista.ReadOnly = True
-            params.Add(txtBuscar.Text)
-            Generales.llenarTabla("[SP_PRODUCTO_EXISTENCIA_CONSULTAR]", params, dt)
+            Generales.llenarTabla("[SP_PRODUCTO_EXISTENCIA_CONSULTAR]", Nothing, dt)
             bdNavegador.DataSource = dt
             dgvLista.DataSource = bdNavegador.DataSource
+            dgvLista.Columns("Registro").Visible = False
             calcularValores()
         Catch ex As Exception
             EstiloMensajes.mostrarMensajeError(ex.Message)
@@ -37,7 +28,7 @@
     End Sub
     Private Sub txtBuscar_KeyDown(sender As Object, e As KeyEventArgs) Handles txtBuscar.KeyDown
         If e.KeyCode = Keys.Enter Then
-            bdNavegador.Filter = "Descripcion Like '%" & txtBuscar.Text & "%'"
+            bdNavegador.Filter = "(Descripcion Like '%" & txtBuscar.Text.Trim & "%' OR Registro Like '%" & txtBuscar.Text & "%')"
         End If
     End Sub
     Private Sub dgvLista_CellFormatting(sender As Object, e As DataGridViewCellFormattingEventArgs) Handles dgvLista.CellFormatting

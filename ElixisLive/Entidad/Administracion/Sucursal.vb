@@ -2,6 +2,7 @@
     Inherits persona
     Property identiResponsable As String
     Property responsable As String
+
     Public Sub New()
         sqlAnular = "[SP_CONFI_SUCURSAL_ANULAR] "
         sqlCargar = "[SP_CONFI_SUCURSAL_CARGAR]"

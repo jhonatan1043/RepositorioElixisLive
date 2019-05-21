@@ -11,7 +11,6 @@ Public Class FormVenta
         validarGrilla()
         btNuevo.Enabled = True
         btBuscar.Enabled = True
-        Generales.tabularConEnter(Me)
     End Sub
     Private Sub dgvProducto_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvProducto.CellDoubleClick, DataGridView9.CellDoubleClick, DataGridView6.CellDoubleClick, DataGridView3.CellDoubleClick, DataGridView12.CellDoubleClick
         Try
@@ -112,7 +111,8 @@ Public Class FormVenta
         btRegistrar.Enabled = True
         btCancelar.Enabled = True
         btExistencia.Enabled = True
-        txtIdentificacion.Focus()
+        txtCodigoBarra.ReadOnly = False
+        txtCodigoBarra.Focus()
     End Sub
     Private Sub btBuscar_Click(sender As Object, e As EventArgs) Handles btBuscar.Click
         Dim params As New List(Of String)
@@ -177,6 +177,7 @@ Public Class FormVenta
             Generales.deshabilitarBotones(ToolStrip1)
             Generales.deshabilitarControles(Me)
             lbInformativo.Visible = False
+            objVenta.dtCodigoBarra.Clear()
             objVenta.descuentoCliente = Constantes.SIN_VALOR_NUMERICO
             If IsNothing(objVenta.codigo) Then
                 Generales.limpiarControles(Me)
@@ -349,6 +350,7 @@ Public Class FormVenta
     Private Sub buscarProducto()
         Dim params As New List(Of String)
         params.Add(String.Empty)
+        params.Add(SesionActual.codigoSucursal)
         Try
             Generales.buscarElemento(Sentencias.PRODUCTOS_FACTURA_CONSULTAR,
                                      params,
@@ -607,6 +609,7 @@ Public Class FormVenta
                 VentaBLL.guardarVenta(objVenta)
                 Generales.habilitarBotones(ToolStrip1)
                 Generales.deshabilitarControles(Me)
+                objVenta.dtCodigoBarra.Clear()
                 txtCodigo.Text = objVenta.codigo
                 cargarInfomacion(txtCodigo.Text)
                 btCancelar.Enabled = False
@@ -631,6 +634,40 @@ Public Class FormVenta
             formExistencia.ShowDialog()
         End If
     End Sub
-
-
+    Private Sub cargarProductoCodigoBarra(pCodigoBarra As String)
+        Dim params As New List(Of String)
+        Dim dt As New DataTable
+        params.Add(pCodigoBarra)
+        params.Add(SesionActual.codigoSucursal)
+        Generales.llenarTabla(Sentencias.PRODUCTO_CODIGO_BARRA_CARGAR, params, dt)
+        If dt.Rows.Count > 0 Then
+            If objVenta.dtCodigoBarra.Select("codigoBarra='" + pCodigoBarra + "'").Count = 0 Then
+                objVenta.dtProductos.Rows(objVenta.dtProductos.Rows.Count - 1).Item("Codigo") = dt.Rows(dt.Rows.Count - 1).Item("Codigo")
+                objVenta.dtProductos.Rows(objVenta.dtProductos.Rows.Count - 1).Item("Descripcion") = dt.Rows(dt.Rows.Count - 1).Item("Descripcion")
+                objVenta.dtProductos.Rows(objVenta.dtProductos.Rows.Count - 1).Item("Stock") = dt.Rows(dt.Rows.Count - 1).Item("Stock")
+                objVenta.dtProductos.Rows(objVenta.dtProductos.Rows.Count - 1).Item("Cantidad") = dt.Rows(dt.Rows.Count - 1).Item("Cantidad")
+                objVenta.dtProductos.Rows(objVenta.dtProductos.Rows.Count - 1).Item("Valor") = dt.Rows(dt.Rows.Count - 1).Item("Precio")
+                objVenta.dtProductos.Rows(objVenta.dtProductos.Rows.Count - 1).Item("descuento") = dt.Rows(dt.Rows.Count - 1).Item("descuento")
+                objVenta.dtProductos.Rows.Add()
+                objVenta.dtCodigoBarra.Rows.Add()
+                objVenta.dtCodigoBarra.Rows(objVenta.dtCodigoBarra.Rows.Count - 1).Item("codigoBarra") = pCodigoBarra
+                calcularCampos()
+            Else
+                Beep()
+            End If
+            calcularTotales()
+        Else
+            EstiloMensajes.mostrarMensajeAdvertencia("Registro no encontrado")
+        End If
+        txtCodigoBarra.Focus()
+    End Sub
+    Private Sub txtCodigoBarra_KeyDown(sender As Object, e As KeyEventArgs) Handles txtCodigoBarra.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            If txtCodigoBarra.Text.Length > 0 Then
+                cargarProductoCodigoBarra(txtCodigoBarra.Text)
+                txtCodigoBarra.Clear()
+                txtCodigoBarra.Focus()
+            End If
+        End If
+    End Sub
 End Class

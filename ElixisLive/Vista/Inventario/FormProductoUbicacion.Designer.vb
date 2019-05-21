@@ -247,8 +247,8 @@ Partial Class FormProductoUbicacion
         Me.btEditar.Image = Global.Quality.My.Resources.Resources.pencil_icon__1_
         Me.btEditar.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.btEditar.Name = "btEditar"
-        Me.btEditar.Size = New System.Drawing.Size(82, 30)
-        Me.btEditar.Text = "Editar"
+        Me.btEditar.Size = New System.Drawing.Size(144, 30)
+        Me.btEditar.Text = "Cargar y Editar"
         Me.btEditar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         '
         'btCancelar

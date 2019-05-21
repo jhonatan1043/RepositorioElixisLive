@@ -13,7 +13,5 @@
         dtLote.Columns.Add("FechaLote", Type.GetType("System.DateTime")).DefaultValue = DateTime.Now
         dtLote.Columns.Add("FechaVencimiento", Type.GetType("System.DateTime")).DefaultValue = DateTime.Now
         dtLote.Columns.Add("Ubicacion_Lote", Type.GetType("System.String"))
-        dtLote.Columns.Add("CodigoBarra", Type.GetType("System.String"))
-
     End Sub
 End Class

@@ -7,6 +7,7 @@
     Property telefono As String
     Property dtProductos As DataTable
     Property dtServicio As DataTable
+    Property dtCodigoBarra As DataTable
     Property estadoAnulado As Boolean
     Property estadoFilaNueva As Boolean
     Property descuentoCliente As Decimal
@@ -14,6 +15,7 @@
     Public Sub New()
         dtProductos = New DataTable
         dtServicio = New DataTable
+        dtCodigoBarra = New DataTable
 
         dtProductos.Columns.Add("codigo", Type.GetType("System.String"))
         dtProductos.Columns.Add("Descripcion", Type.GetType("System.String"))
@@ -33,6 +35,8 @@
         dtServicio.Columns.Add("ValorServicio", Type.GetType("System.Decimal")).DefaultValue = 0
         dtServicio.Columns.Add("codigo_Empleado", Type.GetType("System.String"))
         dtServicio.Columns.Add("NombreEmpleado", Type.GetType("System.String"))
+
+        dtCodigoBarra.Columns.Add("codigoBarra", Type.GetType("System.String"))
 
         sqlAnular = "[SP_INVEN_VENTA_ANULAR]"
         sqlCargar = Sentencias.INVEN_VENTA_CARGAR

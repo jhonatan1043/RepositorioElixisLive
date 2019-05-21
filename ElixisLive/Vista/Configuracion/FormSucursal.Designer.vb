@@ -48,6 +48,8 @@ Partial Class FormSucursal
         Me.GroupBox7 = New System.Windows.Forms.GroupBox()
         Me.TextNombre = New System.Windows.Forms.TextBox()
         Me.Label17 = New System.Windows.Forms.Label()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.ListBodegas = New System.Windows.Forms.CheckedListBox()
         Me.Panel1.SuspendLayout()
         CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ToolStrip1.SuspendLayout()
@@ -55,6 +57,7 @@ Partial Class FormSucursal
         Me.GroupBox5.SuspendLayout()
         Me.GroupBox6.SuspendLayout()
         Me.GroupBox7.SuspendLayout()
+        Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
@@ -175,6 +178,7 @@ Partial Class FormSucursal
         'GroupBox4
         '
         Me.GroupBox4.BackColor = System.Drawing.Color.Transparent
+        Me.GroupBox4.Controls.Add(Me.GroupBox2)
         Me.GroupBox4.Controls.Add(Me.GroupBox5)
         Me.GroupBox4.Controls.Add(Me.GroupBox6)
         Me.GroupBox4.Controls.Add(Me.GroupBox7)
@@ -194,7 +198,7 @@ Partial Class FormSucursal
         Me.GroupBox5.ForeColor = System.Drawing.Color.DarkBlue
         Me.GroupBox5.Location = New System.Drawing.Point(7, 173)
         Me.GroupBox5.Name = "GroupBox5"
-        Me.GroupBox5.Size = New System.Drawing.Size(574, 55)
+        Me.GroupBox5.Size = New System.Drawing.Size(312, 108)
         Me.GroupBox5.TabIndex = 11
         Me.GroupBox5.TabStop = False
         Me.GroupBox5.Text = "Otros datos"
@@ -203,17 +207,17 @@ Partial Class FormSucursal
         '
         Me.TextTelefono.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TextTelefono.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextTelefono.Location = New System.Drawing.Point(117, 17)
+        Me.TextTelefono.Location = New System.Drawing.Point(119, 17)
         Me.TextTelefono.MaxLength = 10
         Me.TextTelefono.Name = "TextTelefono"
-        Me.TextTelefono.Size = New System.Drawing.Size(176, 25)
+        Me.TextTelefono.Size = New System.Drawing.Size(179, 25)
         Me.TextTelefono.TabIndex = 24
         '
         'TextCelular
         '
         Me.TextCelular.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TextCelular.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextCelular.Location = New System.Drawing.Point(389, 17)
+        Me.TextCelular.Location = New System.Drawing.Point(119, 51)
         Me.TextCelular.MaxLength = 10
         Me.TextCelular.Name = "TextCelular"
         Me.TextCelular.Size = New System.Drawing.Size(179, 25)
@@ -225,7 +229,7 @@ Partial Class FormSucursal
         Me.Label9.BackColor = System.Drawing.Color.Transparent
         Me.Label9.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label9.ForeColor = System.Drawing.Color.Black
-        Me.Label9.Location = New System.Drawing.Point(321, 19)
+        Me.Label9.Location = New System.Drawing.Point(4, 53)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(62, 19)
         Me.Label9.TabIndex = 23
@@ -360,6 +364,28 @@ Partial Class FormSucursal
         Me.Label17.TabIndex = 7
         Me.Label17.Text = "Nombre:"
         '
+        'GroupBox2
+        '
+        Me.GroupBox2.Controls.Add(Me.ListBodegas)
+        Me.GroupBox2.Font = New System.Drawing.Font("Times New Roman", 8.25!, System.Drawing.FontStyle.Italic)
+        Me.GroupBox2.ForeColor = System.Drawing.Color.DarkBlue
+        Me.GroupBox2.Location = New System.Drawing.Point(326, 174)
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.Size = New System.Drawing.Size(255, 113)
+        Me.GroupBox2.TabIndex = 69
+        Me.GroupBox2.TabStop = False
+        Me.GroupBox2.Text = "Bodegas"
+        '
+        'ListBodegas
+        '
+        Me.ListBodegas.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.ListBodegas.FormattingEnabled = True
+        Me.ListBodegas.Location = New System.Drawing.Point(3, 16)
+        Me.ListBodegas.MultiColumn = True
+        Me.ListBodegas.Name = "ListBodegas"
+        Me.ListBodegas.Size = New System.Drawing.Size(249, 94)
+        Me.ListBodegas.TabIndex = 0
+        '
         'FormSucursal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -387,6 +413,7 @@ Partial Class FormSucursal
         Me.GroupBox6.PerformLayout()
         Me.GroupBox7.ResumeLayout(False)
         Me.GroupBox7.PerformLayout()
+        Me.GroupBox2.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -417,4 +444,6 @@ Partial Class FormSucursal
     Public WithEvents Label17 As Label
     Friend WithEvents cbDepartamento As ComboBox
     Public WithEvents Label3 As Label
+    Friend WithEvents GroupBox2 As GroupBox
+    Friend WithEvents ListBodegas As CheckedListBox
 End Class

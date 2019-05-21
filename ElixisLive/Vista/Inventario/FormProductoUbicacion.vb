@@ -75,7 +75,9 @@
     End Sub
     Private Sub cargarProductos()
         Try
-            Generales.llenarTabla(objUbicacionProducto.sqlConsulta, Nothing, objUbicacionProducto.dtProducto)
+            Dim params As New List(Of String)
+            params.Add(SesionActual.codigoSucursal)
+            Generales.llenarTabla(objUbicacionProducto.sqlConsulta, params, objUbicacionProducto.dtProducto)
             bdNavegador.DataSource = objUbicacionProducto.dtProducto
             dgvProducto.DataSource = bdNavegador.DataSource
             creacionLote()

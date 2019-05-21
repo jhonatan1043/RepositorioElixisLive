@@ -19,6 +19,7 @@ Public Class SucursalDAL
                     comando.Parameters.Add(New SqlParameter("@codigo_Departamento", SqlDbType.NVarChar)).Value = objSucursal.codigoDepartamento
                     comando.Parameters.Add(New SqlParameter("@codigo_ciudad", SqlDbType.NVarChar)).Value = objSucursal.codigoCiudad
                     comando.Parameters.Add(New SqlParameter("@Usuario_Creacion", SqlDbType.NVarChar)).Value = SesionActual.idUsuario
+                    comando.Parameters.Add(New SqlParameter("@TABLABODEGA", SqlDbType.Structured)).Value = extrarColumna(objSucursal)
                     objSucursal.codigo = CType(comando.ExecuteScalar, String)
                     trnsccion.Commit()
                 End Using
@@ -29,5 +30,12 @@ Public Class SucursalDAL
             objConexio.desconectar()
         End Try
         Return objSucursal
+    End Function
+    Private Shared Function extrarColumna(objSucursal As Sucursal) As DataTable
+        Dim tabla As New DataTable
+        tabla = objSucursal.dtSucursal.Copy
+        tabla.Columns.Remove("Nombre")
+        tabla.Columns.Remove("Realizado")
+        Return tabla
     End Function
 End Class

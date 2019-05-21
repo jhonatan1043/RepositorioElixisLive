@@ -31,6 +31,8 @@
                 EstiloMensajes.mostrarMensajeAdvertencia("Hay lotes con cantidades en 0")
             ElseIf cantidadExistente < cantidades
                 EstiloMensajes.mostrarMensajeAdvertencia("la cantidad ingresada no puede ser mayor a la existente")
+            ElseIf objLote.dtLote.Select("[Registro] IS NULL ").Count > 0 Then
+                EstiloMensajes.mostrarMensajeAdvertencia("Favor digitar el registro del lote")
             Else
 
                 bandera = LoteBLL.verificarTabla(objproducto, codigoProducto)
@@ -41,7 +43,6 @@
 
                 For posicion = 0 To objLote.dtLote.Rows.Count - 1
                     objLote.dtLote.Rows(posicion).Item("Cantidad_Actual") = objLote.dtLote.Rows(posicion).Item("Cantidad")
-                    objLote.dtLote.Rows(posicion).Item("codigoBarra") = If(txtCodigoBarra.Text = String.Empty, Nothing, txtCodigoBarra.Text)
                 Next
 
                 objLote.dtLote.AcceptChanges()
@@ -59,8 +60,6 @@
             If bandera = True Then
                 objLote.dtLote = objproducto.dtSetLote.Tables(CStr(codigoProducto)).Copy()
                 dgvLote.DataSource = objLote.dtLote
-                txtCodigoBarra.Text = If(IsDBNull(objLote.dtLote.Rows(objLote.dtLote.Rows.Count - 1).Item("CodigoBarra")), Nothing,
-                                          objLote.dtLote.Rows(objLote.dtLote.Rows.Count - 1).Item("CodigoBarra"))
             Else
                 objLote.dtLote.TableName = codigoProducto
                 dgvLote.DataSource = objLote.dtLote
@@ -96,11 +95,7 @@
             dgvLote.Rows(dgvLote.CurrentCell.RowIndex).Cells("dgUbicacion").Selected = True Then
             AddHandler e.Control.KeyPress, AddressOf ValidacionDigitacion.validarAlfanumerico
         Else
-        AddHandler e.Control.KeyPress, AddressOf ValidacionDigitacion.validarValoresNumericos
+            AddHandler e.Control.KeyPress, AddressOf ValidacionDigitacion.validarValoresNumericos
         End If
-    End Sub
-
-    Private Sub btCapturarCodigoBarra_Click(sender As Object, e As EventArgs) Handles btCapturarCodigoBarra.Click
-        txtCodigoBarra.Text = "hjjhjjhjhjhjhjhjhjhuhjhhjhjhjhjhjhjhjhjh"
     End Sub
 End Class

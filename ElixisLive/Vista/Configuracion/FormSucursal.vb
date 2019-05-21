@@ -53,6 +53,7 @@
         Generales.deshabilitarBotones(ToolStrip1)
         Generales.habilitarControles(Me)
         Generales.limpiarControles(Me)
+        listaBodegaListar()
         objSucursal.codigo = Nothing
         btCancelar.Enabled = True
         btRegistrar.Enabled = True
@@ -80,6 +81,7 @@
         If EstiloMensajes.mostrarMensajePregunta(MensajeSistema.EDITAR) = Constantes.SI Then
             Generales.deshabilitarBotones(ToolStrip1)
             Generales.habilitarControles(Me)
+            listaBodegaCargar(objSucursal.codigo, Constantes.EDITABLE)
             btCancelar.Enabled = True
             btRegistrar.Enabled = True
         End If
@@ -130,6 +132,7 @@
                 TextDireccion.Text = dfila("Direccion")
                 cbDepartamento.SelectedValue = dfila("Codigo_Departamento")
                 ComboMunicipio.SelectedValue = dfila("Codigo_Ciudad")
+                listaBodegaCargar(pcodigo, Constantes.NO_EDITABLE)
             End If
             Generales.habilitarBotones(ToolStrip1)
             btCancelar.Enabled = False
@@ -142,5 +145,33 @@
         If Not String.IsNullOrEmpty(cbDepartamento.ValueMember) Then
             cargarComboCiudad()
         End If
+    End Sub
+    Private Sub listaBodegaCargar(codigo As Integer, editable As Integer)
+        Dim params As New List(Of String)
+        params.Add(codigo)
+        params.Add(editable)
+        Try
+            Generales.llenarTabla(Sentencias.SUCURSAL_BODEGA_ASIGNADO, params, objSucursal.dtSucursal)
+
+            ListBodegas.DataSource = objSucursal.dtSucursal
+            ListBodegas.ValueMember = "Codigo"
+            ListBodegas.DisplayMember = "Nombre"
+            For item = 0 To objSucursal.dtSucursal.Rows.Count - 1
+                ListBodegas.SetItemChecked(item, objSucursal.dtSucursal.Rows(item).Item("Realizado"))
+            Next
+
+        Catch ex As Exception
+            EstiloMensajes.mostrarMensajeError(ex.Message)
+        End Try
+    End Sub
+    Private Sub listaBodegaListar()
+        Try
+            Generales.llenarTabla(Sentencias.SUCURSAL_BODEGA_SIN_ASIGNAR, Nothing, objSucursal.dtSucursal)
+            ListBodegas.DataSource = objSucursal.dtSucursal
+            ListBodegas.ValueMember = "Codigo"
+            ListBodegas.DisplayMember = "Nombre"
+        Catch ex As Exception
+            EstiloMensajes.mostrarMensajeError(ex.Message)
+        End Try
     End Sub
 End Class
