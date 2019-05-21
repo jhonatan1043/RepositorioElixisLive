@@ -27,7 +27,6 @@ Partial Class FormPrincipal
         Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.lbUsuario = New System.Windows.Forms.Label()
-        Me.txtNombreEmpresa = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'ImageList1
@@ -62,17 +61,6 @@ Partial Class FormPrincipal
         Me.lbUsuario.Text = "Administrador del sistema"
         Me.lbUsuario.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
-        'txtNombreEmpresa
-        '
-        Me.txtNombreEmpresa.Font = New System.Drawing.Font("Segoe UI", 27.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtNombreEmpresa.ForeColor = System.Drawing.Color.SteelBlue
-        Me.txtNombreEmpresa.Location = New System.Drawing.Point(179, 84)
-        Me.txtNombreEmpresa.Name = "txtNombreEmpresa"
-        Me.txtNombreEmpresa.Size = New System.Drawing.Size(742, 47)
-        Me.txtNombreEmpresa.TabIndex = 0
-        Me.txtNombreEmpresa.Text = "Label1"
-        Me.txtNombreEmpresa.TextAlign = System.Drawing.ContentAlignment.TopCenter
-        '
         'FormPrincipal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(96.0!, 96.0!)
@@ -82,7 +70,6 @@ Partial Class FormPrincipal
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.ClientSize = New System.Drawing.Size(1016, 733)
         Me.ControlBox = False
-        Me.Controls.Add(Me.txtNombreEmpresa)
         Me.Controls.Add(Me.lbUsuario)
         Me.Controls.Add(Me.StatusStrip1)
         Me.DoubleBuffered = True
@@ -102,5 +89,4 @@ Partial Class FormPrincipal
     Friend WithEvents StatusStrip1 As StatusStrip
     Friend WithEvents ImageList1 As ImageList
     Friend WithEvents lbUsuario As Label
-    Friend WithEvents txtNombreEmpresa As Label
 End Class

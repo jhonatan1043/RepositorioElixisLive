@@ -694,6 +694,12 @@
     <Compile Include="Vista\Gestión\FormVenta.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Vista\Gestión\FormVentas.Designer.vb">
+      <DependentUpon>FormVentas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Gestión\FormVentas.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Vista\Informe\FormInformeInventario.Designer.vb">
       <DependentUpon>FormInformeInventario.vb</DependentUpon>
     </Compile>
@@ -1004,6 +1010,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\Gestión\FormVenta.resx">
       <DependentUpon>FormVenta.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Gestión\FormVentas.resx">
+      <DependentUpon>FormVentas.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\Informe\FormInformeInventario.resx">
       <DependentUpon>FormInformeInventario.vb</DependentUpon>
