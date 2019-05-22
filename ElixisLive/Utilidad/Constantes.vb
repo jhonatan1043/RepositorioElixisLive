@@ -127,6 +127,7 @@
     Public Const CUENTAS_UCI_MOVIMIENTO_PAGAR_DESC = "Por Pagar"
     Public Const COLUMNA_DEBITO = "Debito"
     Public Const COLUMNA_CREDITO = "Credito"
+    Public Const CLAVE_PRODUCTO = "ESPELIARMUS"
     Public Enum TIPO_CONTROL
         COMBO = 0
         SELECTOR = 1
@@ -191,4 +192,13 @@
     Public Const PARAMETRO_ESPECIAL_FECHA1 = "$F1"
     Public Const PARAMETRO_ESPECIAL_FECHA2 = "$F2"
     Public Const PARAMETRO_ESPECIAL_CODIGO_INTERNO = "$C1"
+    '---------------------------------------------
+    Public Const MODULO_ADMIN = "c1"
+    Public Const MODULO_INVEN = "b1"
+    Public Const MODULO_CONTA = "f1"
+    Public Const MODULO_VENTA = "d1"
+    Public Const MODULO_ESTAD = "g1"
+    Public Const MODULO_NOMIN = "i1"
+    Public Const MODULO_CITA = "e1"
+    Public Const MODULO_CONFIG = "a1"
 End Class

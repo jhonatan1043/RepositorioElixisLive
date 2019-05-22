@@ -19,13 +19,13 @@ Public Class principalBLL
                                                  drFila("Descripcion").ToString)
                 ' añadir este menú desplegable a la barra de menú
                 mnuOpcion.ForeColor = Color.White
-                formulario.menuOpciones.Items.Add(mnuOpcion)
+                FormPrincipal.menuOpciones.Items.Add(mnuOpcion)
                 ' recorrer si hubiera las opciones dependientes de este menú
                 dtFilas = dsDatos.Tables(0)
                 CrearSubopciones(mnuOpcion, dtFilas)
             Next
 
-            formulario.Controls.Add(formulario.menuOpciones)
+            FormPrincipal.Controls.Add(FormPrincipal.menuOpciones)
             FormPrincipal.menuOpciones.LayoutStyle = ToolStripLayoutStyle.Flow
             FormPrincipal.menuOpciones.AutoSize = True
             FormPrincipal.menuOpciones.BackColor = Color.SteelBlue
@@ -33,15 +33,15 @@ Public Class principalBLL
 
             FormPrincipal.menuOpciones.GripStyle = ToolStripGripStyle.Visible
             FormPrincipal.menuOpciones.Font = New Font(Constantes.TIPO_LETRA_ELEMENTO, 10)
-            formulario.menuOpciones.Renderer = New MyRenderer()
+            FormPrincipal.menuOpciones.Renderer = New MyRenderer()
 
         Catch ex As Exception
             EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
     End Sub
     Public Sub eliminarMenu()
-        For t = 0 To formulario.menuOpciones.Items.Count - 1
-            formulario.menuOpciones.Items.RemoveAt(0)
+        For t = 0 To FormPrincipal.menuOpciones.Items.Count - 1
+            FormPrincipal.menuOpciones.Items.RemoveAt(0)
         Next
         Dim con As Control
         For controlIndex As Integer = FormPrincipal.Controls.Count - 1 To 0 Step -1
