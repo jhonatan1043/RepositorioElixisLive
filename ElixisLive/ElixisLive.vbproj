@@ -1175,6 +1175,7 @@
     <None Include="Resources\attention.gif" />
     <None Include="Resources\Accounting-icon1.png" />
     <None Include="Resources\bar-chart-icon1.png" />
+    <None Include="Resources\05_step2_review_payroll_02.jpg" />
     <Content Include="Resources\calculator-icon1.png" />
     <None Include="Resources\folder-invoices-icon.png" />
     <None Include="Resources\Money-Bag-icon.png" />

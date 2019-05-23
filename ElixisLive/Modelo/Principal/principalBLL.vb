@@ -144,7 +144,7 @@ Public Class principalBLL
 
     End Sub
     Sub click_Global(ByVal sender As System.Object, ByVal e As System.EventArgs)
-        If Not IsNothing(formulario.ActiveMdiChild) AndAlso formulario.ActiveMdiChild.WindowState = FormWindowState.Maximized Then
+        If Not IsNothing(FormPrincipal.ActiveMdiChild) AndAlso FormPrincipal.ActiveMdiChild.WindowState = FormWindowState.Maximized Then
             formulario.ActiveMdiChild.WindowState = FormWindowState.Normal
         End If
     End Sub

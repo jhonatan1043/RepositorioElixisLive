@@ -16,6 +16,7 @@ Public Class FormModulo
             btRegistrar.Enabled = True
             btCancelar.Enabled = True
         End If
+        TextClave.Clear()
     End Sub
 
     Private Sub btDeclinar_Click(sender As Object, e As EventArgs) Handles btDeclinar.Click
@@ -32,17 +33,8 @@ Public Class FormModulo
     Private Sub llenarModulos()
         Dim fila As Integer = 0
         dtModulo.Columns.Add("Modulo")
-        If chAdministracion.Checked = True Then
-            dtModulo.Rows.Add()
-            dtModulo.Rows(fila).Item("Modulo") = Constantes.MODULO_ADMIN
-        End If
-        If chConfiguracion.Checked = True Then
-            fila = fila + 1
-            dtModulo.Rows.Add()
-            dtModulo.Rows(fila).Item("Modulo") = Constantes.MODULO_CONFIG
-        End If
+
         If ChContabilidad.Checked = True Then
-            fila = fila + 1
             dtModulo.Rows.Add()
             dtModulo.Rows(fila).Item("Modulo") = Constantes.MODULO_CONTA
         End If

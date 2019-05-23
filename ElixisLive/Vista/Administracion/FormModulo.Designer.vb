@@ -23,14 +23,14 @@ Partial Class FormModulo
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.chNomina = New System.Windows.Forms.CheckBox()
+        Me.chConfiguracion = New System.Windows.Forms.CheckBox()
+        Me.chEstadistica = New System.Windows.Forms.CheckBox()
         Me.gbClave = New System.Windows.Forms.GroupBox()
         Me.TextClave = New System.Windows.Forms.TextBox()
         Me.btDeclinar = New System.Windows.Forms.Button()
         Me.btAceptar = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.chNomina = New System.Windows.Forms.CheckBox()
-        Me.chConfiguracion = New System.Windows.Forms.CheckBox()
-        Me.chEstadistica = New System.Windows.Forms.CheckBox()
         Me.chAdministracion = New System.Windows.Forms.CheckBox()
         Me.ChCitas = New System.Windows.Forms.CheckBox()
         Me.ChInventario = New System.Windows.Forms.CheckBox()
@@ -66,6 +66,48 @@ Partial Class FormModulo
         Me.GroupBox1.Size = New System.Drawing.Size(694, 348)
         Me.GroupBox1.TabIndex = 22
         Me.GroupBox1.TabStop = False
+        '
+        'chNomina
+        '
+        Me.chNomina.AutoSize = True
+        Me.chNomina.Image = Global.Quality.My.Resources.Resources._05_step2_review_payroll_02
+        Me.chNomina.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.chNomina.Location = New System.Drawing.Point(225, 242)
+        Me.chNomina.Name = "chNomina"
+        Me.chNomina.Size = New System.Drawing.Size(87, 77)
+        Me.chNomina.TabIndex = 27
+        Me.chNomina.Text = "Nomina"
+        Me.chNomina.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.chNomina.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        Me.chNomina.UseVisualStyleBackColor = True
+        '
+        'chConfiguracion
+        '
+        Me.chConfiguracion.AutoSize = True
+        Me.chConfiguracion.Image = Global.Quality.My.Resources.Resources.Setting_icon
+        Me.chConfiguracion.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.chConfiguracion.Location = New System.Drawing.Point(85, 33)
+        Me.chConfiguracion.Name = "chConfiguracion"
+        Me.chConfiguracion.Size = New System.Drawing.Size(91, 81)
+        Me.chConfiguracion.TabIndex = 24
+        Me.chConfiguracion.Text = "Configuracion"
+        Me.chConfiguracion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.chConfiguracion.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        Me.chConfiguracion.UseVisualStyleBackColor = True
+        '
+        'chEstadistica
+        '
+        Me.chEstadistica.AutoSize = True
+        Me.chEstadistica.Image = Global.Quality.My.Resources.Resources.bar_chart_icon1
+        Me.chEstadistica.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.chEstadistica.Location = New System.Drawing.Point(366, 242)
+        Me.chEstadistica.Name = "chEstadistica"
+        Me.chEstadistica.Size = New System.Drawing.Size(82, 81)
+        Me.chEstadistica.TabIndex = 25
+        Me.chEstadistica.Text = "Estadisticas"
+        Me.chEstadistica.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.chEstadistica.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        Me.chEstadistica.UseVisualStyleBackColor = True
         '
         'gbClave
         '
@@ -112,48 +154,6 @@ Partial Class FormModulo
         Me.Label1.Size = New System.Drawing.Size(136, 13)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Digite la clave del producto"
-        '
-        'chNomina
-        '
-        Me.chNomina.AutoSize = True
-        Me.chNomina.Image = Global.Quality.My.Resources.Resources.Personnel_icon
-        Me.chNomina.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.chNomina.Location = New System.Drawing.Point(225, 242)
-        Me.chNomina.Name = "chNomina"
-        Me.chNomina.Size = New System.Drawing.Size(79, 81)
-        Me.chNomina.TabIndex = 27
-        Me.chNomina.Text = "Nomina"
-        Me.chNomina.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        Me.chNomina.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
-        Me.chNomina.UseVisualStyleBackColor = True
-        '
-        'chConfiguracion
-        '
-        Me.chConfiguracion.AutoSize = True
-        Me.chConfiguracion.Image = Global.Quality.My.Resources.Resources.Setting_icon
-        Me.chConfiguracion.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.chConfiguracion.Location = New System.Drawing.Point(85, 33)
-        Me.chConfiguracion.Name = "chConfiguracion"
-        Me.chConfiguracion.Size = New System.Drawing.Size(91, 81)
-        Me.chConfiguracion.TabIndex = 24
-        Me.chConfiguracion.Text = "Configuracion"
-        Me.chConfiguracion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        Me.chConfiguracion.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
-        Me.chConfiguracion.UseVisualStyleBackColor = True
-        '
-        'chEstadistica
-        '
-        Me.chEstadistica.AutoSize = True
-        Me.chEstadistica.Image = Global.Quality.My.Resources.Resources.bar_chart_icon1
-        Me.chEstadistica.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.chEstadistica.Location = New System.Drawing.Point(366, 242)
-        Me.chEstadistica.Name = "chEstadistica"
-        Me.chEstadistica.Size = New System.Drawing.Size(82, 81)
-        Me.chEstadistica.TabIndex = 25
-        Me.chEstadistica.Text = "Estadisticas"
-        Me.chEstadistica.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        Me.chEstadistica.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
-        Me.chEstadistica.UseVisualStyleBackColor = True
         '
         'chAdministracion
         '
