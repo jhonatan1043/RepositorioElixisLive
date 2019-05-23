@@ -31,37 +31,36 @@ Public Class FormModulo
         cargarOpciones()
     End Sub
     Private Sub llenarModulos()
-        Dim fila As Integer = 0
+        Dim fila As DataRow = dtModulo.NewRow()
         dtModulo.Columns.Add("Modulo")
-
         If ChContabilidad.Checked = True Then
-            dtModulo.Rows.Add()
-            dtModulo.Rows(fila).Item("Modulo") = Constantes.MODULO_CONTA
+            fila("Modulo") = Constantes.MODULO_CONTA
+            dtModulo.Rows.Add(fila)
         End If
         If ChInventario.Checked = True Then
-            fila = fila + 1
-            dtModulo.Rows.Add()
-            dtModulo.Rows(fila).Item("Modulo") = Constantes.MODULO_INVEN
+            fila = dtModulo.NewRow()
+            fila("Modulo") = Constantes.MODULO_INVEN
+            dtModulo.Rows.Add(fila)
         End If
         If chNomina.Checked = True Then
-            fila = fila + 1
-            dtModulo.Rows.Add()
-            dtModulo.Rows(fila).Item("Modulo") = Constantes.MODULO_NOMIN
+            fila = dtModulo.NewRow()
+            fila("Modulo") = Constantes.MODULO_NOMIN
+            dtModulo.Rows.Add(fila)
         End If
         If ChCitas.Checked = True Then
-            fila = fila + 1
-            dtModulo.Rows.Add()
-            dtModulo.Rows(fila).Item("Modulo") = Constantes.MODULO_CITA
+            fila = dtModulo.NewRow()
+            fila("Modulo") = Constantes.MODULO_CITA
+            dtModulo.Rows.Add(fila)
         End If
         If chEstadistica.Checked = True Then
-            fila = fila + 1
-            dtModulo.Rows.Add()
-            dtModulo.Rows(fila).Item("Modulo") = Constantes.MODULO_ESTAD
+            fila = dtModulo.NewRow()
+            fila("Modulo") = Constantes.MODULO_ESTAD
+            dtModulo.Rows.Add(fila)
         End If
         If ChVentas.Checked = True Then
-            fila = fila + 1
-            dtModulo.Rows.Add()
-            dtModulo.Rows(fila).Item("Modulo") = Constantes.MODULO_VENTA
+            fila = dtModulo.NewRow()
+            fila("Modulo") = Constantes.MODULO_VENTA
+            dtModulo.Rows.Add(fila)
         End If
     End Sub
     Public Function cargarModulos(ByVal pCodigo As String)
