@@ -231,6 +231,13 @@
             .Columns("dgCantidad").AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
             .Columns("dgTotal").AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
             .Columns("dgBodega").AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
+            '-------------------------------------------------------
+            .Columns("dgDescripcion").SortMode = DataGridViewColumnSortMode.NotSortable
+            .Columns("dgValor").SortMode = DataGridViewColumnSortMode.NotSortable
+            .Columns("dgCantidad").SortMode = DataGridViewColumnSortMode.NotSortable
+            .Columns("dgTotal").SortMode = DataGridViewColumnSortMode.NotSortable
+            .Columns("dgBodega").SortMode = DataGridViewColumnSortMode.NotSortable
+
             .DataSource = objEntrada.dtEntrada
             .AutoGenerateColumns = False
             .Columns("dgQuitar").DisplayIndex = 6
