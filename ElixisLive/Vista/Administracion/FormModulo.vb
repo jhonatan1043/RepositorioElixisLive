@@ -33,6 +33,10 @@ Public Class FormModulo
     Private Sub llenarModulos()
         Dim fila As DataRow = dtModulo.NewRow()
         dtModulo.Columns.Add("Modulo")
+        If chConfiguracion.Checked = True Then
+            fila("Modulo") = Constantes.MODULO_CONFIG
+            dtModulo.Rows.Add(fila)
+        End If
         If ChContabilidad.Checked = True Then
             fila("Modulo") = Constantes.MODULO_CONTA
             dtModulo.Rows.Add(fila)
