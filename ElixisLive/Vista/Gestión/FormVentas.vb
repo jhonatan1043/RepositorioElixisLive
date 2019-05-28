@@ -597,9 +597,6 @@
         txtDescuento.Text = Format(0, Constantes.FORMATO_MONEDA)
         lbInformativo.Visible = False
     End Sub
-    Private Sub FormVenta_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
-        funcionesFormulario(e)
-    End Sub
     Private Sub guardarVenta()
         dgvProducto.EndEdit()
         dgvServicio.EndEdit()
@@ -632,6 +629,9 @@
             If btRegistrar.Enabled = False Then Exit Sub
             formExistencia = New FormExistencia
             formExistencia.ShowDialog()
+        ElseIf e.KeyCode = Keys.F3
+            If btRegistrar.Enabled = False Then Exit Sub
+            txtCodigoBarra.Focus()
         End If
     End Sub
     Private Sub cargarProductoCodigoBarra(pCodigoBarra As String)
@@ -670,6 +670,7 @@
             End If
         End If
     End Sub
-
-
+    Private Sub FormVentas_KeyDown(sender As Object, e As KeyEventArgs) Handles MyBase.KeyDown
+        funcionesFormulario(e)
+    End Sub
 End Class
