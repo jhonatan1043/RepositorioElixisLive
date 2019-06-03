@@ -227,6 +227,8 @@
         codigoDocumento = Constantes.COMPROBANTE_DE_CAUSACION
         Generales.deshabilitarBotones(ToolStrip1)
         Generales.asignarPermiso(Me)
+        btNuevo.Enabled = True
+        btBuscar.Enabled = True
     End Sub
     Private Sub deshabilitarColumnas()
         With dgvCuentas

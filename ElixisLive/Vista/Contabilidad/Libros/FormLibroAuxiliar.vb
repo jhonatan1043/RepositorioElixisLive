@@ -109,8 +109,8 @@ Public Class FormLibroAuxiliar
     Private Sub Form_LibroAuxiliarCxP_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         pucActivo = FuncionesContables.obtenerPucActivo()
 
-        dtpFechaInicio.Value = Funciones.Fecha(Constantes.FORMATO_FECHA)
-        dtpFechaFin.Value = Funciones.Fecha(Constantes.FORMATO_FECHA)
+        dtpFechaInicio.Value = DateTime.Now
+        dtpFechaFin.Value = DateTime.Now
     End Sub
 
     Private Sub btExportaExcel_Click(sender As Object, e As EventArgs) Handles btExportaExcel.Click
@@ -144,8 +144,5 @@ Public Class FormLibroAuxiliar
             cargarTercero(idTercero)
         End If
     End Sub
-    Private Sub FormLibroAuxiliar_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Generales.habilitarControles(Me)
-        Generales.asignarPermiso(Me)
-    End Sub
+
 End Class

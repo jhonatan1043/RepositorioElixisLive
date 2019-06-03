@@ -38,6 +38,7 @@ Public Class FormModulo
             dtModulo.Rows.Add(fila)
         End If
         If ChContabilidad.Checked = True Then
+            fila = dtModulo.NewRow()
             fila("Modulo") = Constantes.MODULO_CONTA
             dtModulo.Rows.Add(fila)
         End If
@@ -160,6 +161,7 @@ Public Class FormModulo
             SesionActual.dtPermisos = fprincipal.cargarOpciones(SesionActual.codigoPerfil)
             EstiloMensajes.mostrarMensajeExitoso(MensajeSistema.REGISTRO_GUARDADO)
             dtModulo.Columns.RemoveAt(0)
+            dtModulo.Clear()
         Catch ex As Exception
             EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
