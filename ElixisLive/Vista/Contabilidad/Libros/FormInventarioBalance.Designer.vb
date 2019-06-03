@@ -26,6 +26,8 @@ Partial Class FormInventarioBalance
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
         Me.dgBalance = New System.Windows.Forms.DataGridView()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.btExportaExcel = New System.Windows.Forms.Button()
+        Me.btVisualizaPDF = New System.Windows.Forms.Button()
         Me.rbTodas = New System.Windows.Forms.RadioButton()
         Me.rbResultado = New System.Windows.Forms.RadioButton()
         Me.rbBalance = New System.Windows.Forms.RadioButton()
@@ -35,12 +37,10 @@ Partial Class FormInventarioBalance
         Me.txtRazonSocial = New System.Windows.Forms.Label()
         Me.dtpFechaFin = New System.Windows.Forms.DateTimePicker()
         Me.dtpFechaInicio = New System.Windows.Forms.DateTimePicker()
+        Me.btCalcular = New System.Windows.Forms.Button()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
-        Me.btExportaExcel = New System.Windows.Forms.Button()
-        Me.btVisualizaPDF = New System.Windows.Forms.Button()
-        Me.btCalcular = New System.Windows.Forms.Button()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Pimagen = New System.Windows.Forms.PictureBox()
         Me.LTitulo = New System.Windows.Forms.Label()
@@ -108,6 +108,28 @@ Partial Class FormInventarioBalance
         Me.GroupBox1.TabIndex = 17
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Opciones del informe"
+        '
+        'btExportaExcel
+        '
+        Me.btExportaExcel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btExportaExcel.Enabled = False
+        Me.btExportaExcel.Image = Global.Quality.My.Resources.Resources.Microsoft_Excel_2013_icon1
+        Me.btExportaExcel.Location = New System.Drawing.Point(337, 71)
+        Me.btExportaExcel.Name = "btExportaExcel"
+        Me.btExportaExcel.Size = New System.Drawing.Size(42, 38)
+        Me.btExportaExcel.TabIndex = 60037
+        Me.btExportaExcel.UseVisualStyleBackColor = True
+        '
+        'btVisualizaPDF
+        '
+        Me.btVisualizaPDF.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btVisualizaPDF.Enabled = False
+        Me.btVisualizaPDF.Image = Global.Quality.My.Resources.Resources.Printer_icon__1_1
+        Me.btVisualizaPDF.Location = New System.Drawing.Point(337, 29)
+        Me.btVisualizaPDF.Name = "btVisualizaPDF"
+        Me.btVisualizaPDF.Size = New System.Drawing.Size(42, 38)
+        Me.btVisualizaPDF.TabIndex = 60036
+        Me.btVisualizaPDF.UseVisualStyleBackColor = True
         '
         'rbTodas
         '
@@ -220,6 +242,21 @@ Partial Class FormInventarioBalance
         Me.dtpFechaInicio.Size = New System.Drawing.Size(189, 25)
         Me.dtpFechaInicio.TabIndex = 60033
         '
+        'btCalcular
+        '
+        Me.btCalcular.BackgroundImage = Global.Quality.My.Resources.Resources.fondo_azul
+        Me.btCalcular.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btCalcular.Font = New System.Drawing.Font("Times New Roman", 11.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btCalcular.ForeColor = System.Drawing.Color.White
+        Me.btCalcular.Image = Global.Quality.My.Resources.Resources.SEO_icon
+        Me.btCalcular.Location = New System.Drawing.Point(320, 67)
+        Me.btCalcular.Name = "btCalcular"
+        Me.btCalcular.Size = New System.Drawing.Size(130, 34)
+        Me.btCalcular.TabIndex = 60032
+        Me.btCalcular.Text = "Previsualizar"
+        Me.btCalcular.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btCalcular.UseVisualStyleBackColor = True
+        '
         'Label4
         '
         Me.Label4.AutoSize = True
@@ -252,43 +289,6 @@ Partial Class FormInventarioBalance
         Me.Label11.Size = New System.Drawing.Size(31, 17)
         Me.Label11.TabIndex = 4
         Me.Label11.Text = "Nit:"
-        '
-        'btExportaExcel
-        '
-        Me.btExportaExcel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btExportaExcel.Enabled = False
-        Me.btExportaExcel.Image = Global.Quality.My.Resources.Resources.Microsoft_Excel_2013_icon1
-        Me.btExportaExcel.Location = New System.Drawing.Point(337, 71)
-        Me.btExportaExcel.Name = "btExportaExcel"
-        Me.btExportaExcel.Size = New System.Drawing.Size(42, 38)
-        Me.btExportaExcel.TabIndex = 60037
-        Me.btExportaExcel.UseVisualStyleBackColor = True
-        '
-        'btVisualizaPDF
-        '
-        Me.btVisualizaPDF.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btVisualizaPDF.Enabled = False
-        Me.btVisualizaPDF.Image = Global.Quality.My.Resources.Resources.Printer_icon__1_1
-        Me.btVisualizaPDF.Location = New System.Drawing.Point(337, 29)
-        Me.btVisualizaPDF.Name = "btVisualizaPDF"
-        Me.btVisualizaPDF.Size = New System.Drawing.Size(42, 38)
-        Me.btVisualizaPDF.TabIndex = 60036
-        Me.btVisualizaPDF.UseVisualStyleBackColor = True
-        '
-        'btCalcular
-        '
-        Me.btCalcular.BackgroundImage = Global.Quality.My.Resources.Resources.fondo_azul
-        Me.btCalcular.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btCalcular.Font = New System.Drawing.Font("Times New Roman", 11.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btCalcular.ForeColor = System.Drawing.Color.White
-        Me.btCalcular.Image = Global.Quality.My.Resources.Resources.SEO_icon
-        Me.btCalcular.Location = New System.Drawing.Point(320, 67)
-        Me.btCalcular.Name = "btCalcular"
-        Me.btCalcular.Size = New System.Drawing.Size(130, 34)
-        Me.btCalcular.TabIndex = 60032
-        Me.btCalcular.Text = "Previsualizar"
-        Me.btCalcular.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btCalcular.UseVisualStyleBackColor = True
         '
         'Panel2
         '
@@ -337,6 +337,7 @@ Partial Class FormInventarioBalance
         Me.MaximumSize = New System.Drawing.Size(921, 562)
         Me.MinimumSize = New System.Drawing.Size(921, 562)
         Me.Name = "FormInventarioBalance"
+        Me.ShowIcon = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox5.ResumeLayout(False)

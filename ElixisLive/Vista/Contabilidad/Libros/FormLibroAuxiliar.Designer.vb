@@ -27,6 +27,7 @@ Partial Class FormLibroAuxiliar
         Me.Pimagen = New System.Windows.Forms.PictureBox()
         Me.LTitulo = New System.Windows.Forms.Label()
         Me.gbDatosGrupo = New System.Windows.Forms.GroupBox()
+        Me.btExportaExcel = New System.Windows.Forms.Button()
         Me.btTercero = New System.Windows.Forms.Button()
         Me.txtIdentificacionTercero = New System.Windows.Forms.Label()
         Me.txtDescripcionTercero = New System.Windows.Forms.Label()
@@ -40,7 +41,6 @@ Partial Class FormLibroAuxiliar
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
-        Me.btExportaExcel = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbDatosGrupo.SuspendLayout()
@@ -104,6 +104,17 @@ Partial Class FormLibroAuxiliar
         Me.gbDatosGrupo.Size = New System.Drawing.Size(584, 310)
         Me.gbDatosGrupo.TabIndex = 17
         Me.gbDatosGrupo.TabStop = False
+        '
+        'btExportaExcel
+        '
+        Me.btExportaExcel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btExportaExcel.Enabled = False
+        Me.btExportaExcel.Image = Global.Quality.My.Resources.Resources.Microsoft_Excel_2013_icon1
+        Me.btExportaExcel.Location = New System.Drawing.Point(414, 110)
+        Me.btExportaExcel.Name = "btExportaExcel"
+        Me.btExportaExcel.Size = New System.Drawing.Size(42, 38)
+        Me.btExportaExcel.TabIndex = 60047
+        Me.btExportaExcel.UseVisualStyleBackColor = True
         '
         'btTercero
         '
@@ -248,17 +259,6 @@ Partial Class FormLibroAuxiliar
         Me.Label11.TabIndex = 4
         Me.Label11.Text = "Cuenta:"
         '
-        'btExportaExcel
-        '
-        Me.btExportaExcel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btExportaExcel.Enabled = False
-        Me.btExportaExcel.Image = Global.Quality.My.Resources.Resources.Microsoft_Excel_2013_icon1
-        Me.btExportaExcel.Location = New System.Drawing.Point(414, 110)
-        Me.btExportaExcel.Name = "btExportaExcel"
-        Me.btExportaExcel.Size = New System.Drawing.Size(42, 38)
-        Me.btExportaExcel.TabIndex = 60047
-        Me.btExportaExcel.UseVisualStyleBackColor = True
-        '
         'FormLibroAuxiliar
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -271,6 +271,7 @@ Partial Class FormLibroAuxiliar
         Me.MaximumSize = New System.Drawing.Size(619, 408)
         Me.MinimumSize = New System.Drawing.Size(619, 408)
         Me.Name = "FormLibroAuxiliar"
+        Me.ShowIcon = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Panel1.ResumeLayout(False)
         CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).EndInit()

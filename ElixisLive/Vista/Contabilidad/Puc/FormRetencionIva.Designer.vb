@@ -37,6 +37,8 @@ Partial Class FormRetencionIva
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.txtObservacion = New System.Windows.Forms.TextBox()
         Me.gbInformacionCuenta = New System.Windows.Forms.GroupBox()
+        Me.txtCodigoPuc = New System.Windows.Forms.Label()
+        Me.txtDescripcionPUC = New System.Windows.Forms.Label()
         Me.txtCodigoCuenta = New System.Windows.Forms.Label()
         Me.txtNombreCuenta = New System.Windows.Forms.Label()
         Me.btBusquedaCuenta = New System.Windows.Forms.Button()
@@ -48,8 +50,6 @@ Partial Class FormRetencionIva
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
-        Me.txtDescripcionPUC = New System.Windows.Forms.Label()
-        Me.txtCodigoPuc = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ToolStrip1.SuspendLayout()
@@ -230,6 +230,28 @@ Partial Class FormRetencionIva
         Me.gbInformacionCuenta.TabStop = False
         Me.gbInformacionCuenta.Text = "Información de la Cuenta"
         '
+        'txtCodigoPuc
+        '
+        Me.txtCodigoPuc.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtCodigoPuc.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtCodigoPuc.ForeColor = System.Drawing.Color.Black
+        Me.txtCodigoPuc.Location = New System.Drawing.Point(84, 18)
+        Me.txtCodigoPuc.Name = "txtCodigoPuc"
+        Me.txtCodigoPuc.Size = New System.Drawing.Size(96, 25)
+        Me.txtCodigoPuc.TabIndex = 60051
+        Me.txtCodigoPuc.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'txtDescripcionPUC
+        '
+        Me.txtDescripcionPUC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtDescripcionPUC.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtDescripcionPUC.ForeColor = System.Drawing.Color.Black
+        Me.txtDescripcionPUC.Location = New System.Drawing.Point(329, 18)
+        Me.txtDescripcionPUC.Name = "txtDescripcionPUC"
+        Me.txtDescripcionPUC.Size = New System.Drawing.Size(232, 25)
+        Me.txtDescripcionPUC.TabIndex = 60050
+        Me.txtDescripcionPUC.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
         'txtCodigoCuenta
         '
         Me.txtCodigoCuenta.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
@@ -345,28 +367,6 @@ Partial Class FormRetencionIva
         Me.Label8.TabIndex = 4
         Me.Label8.Text = "PUC:"
         '
-        'txtDescripcionPUC
-        '
-        Me.txtDescripcionPUC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtDescripcionPUC.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtDescripcionPUC.ForeColor = System.Drawing.Color.Black
-        Me.txtDescripcionPUC.Location = New System.Drawing.Point(329, 18)
-        Me.txtDescripcionPUC.Name = "txtDescripcionPUC"
-        Me.txtDescripcionPUC.Size = New System.Drawing.Size(232, 25)
-        Me.txtDescripcionPUC.TabIndex = 60050
-        Me.txtDescripcionPUC.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'txtCodigoPuc
-        '
-        Me.txtCodigoPuc.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtCodigoPuc.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtCodigoPuc.ForeColor = System.Drawing.Color.Black
-        Me.txtCodigoPuc.Location = New System.Drawing.Point(84, 18)
-        Me.txtCodigoPuc.Name = "txtCodigoPuc"
-        Me.txtCodigoPuc.Size = New System.Drawing.Size(96, 25)
-        Me.txtCodigoPuc.TabIndex = 60051
-        Me.txtCodigoPuc.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
         'FormRetencionIva
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -379,6 +379,7 @@ Partial Class FormRetencionIva
         Me.MaximumSize = New System.Drawing.Size(619, 408)
         Me.MinimumSize = New System.Drawing.Size(619, 408)
         Me.Name = "FormRetencionIva"
+        Me.ShowIcon = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Panel1.ResumeLayout(False)
         CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).EndInit()

@@ -237,6 +237,7 @@ Partial Class FormInformeInventario
         Me.MaximumSize = New System.Drawing.Size(916, 562)
         Me.MinimumSize = New System.Drawing.Size(916, 562)
         Me.Name = "FormInformeInventario"
+        Me.ShowIcon = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox2.ResumeLayout(False)

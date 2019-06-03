@@ -380,6 +380,7 @@ Partial Class FormBalanceComprobacion
         Me.MaximumSize = New System.Drawing.Size(921, 562)
         Me.MinimumSize = New System.Drawing.Size(921, 562)
         Me.Name = "FormBalanceComprobacion"
+        Me.ShowIcon = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox5.ResumeLayout(False)

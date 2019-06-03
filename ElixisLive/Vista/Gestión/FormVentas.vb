@@ -113,6 +113,7 @@
         btExistencia.Enabled = True
         txtCodigoBarra.ReadOnly = False
         txtCodigoBarra.Focus()
+        btExistencia.ForeColor = Color.White
     End Sub
     Private Sub btBuscar_Click(sender As Object, e As EventArgs) Handles btBuscar.Click
         Dim params As New List(Of String)
@@ -216,15 +217,15 @@
         End If
     End Sub
     Private Sub txtIdentificacion_KeyDown(sender As Object, e As KeyEventArgs) Handles txtIdentificacion.KeyDown, TextBox4.KeyDown, TextBox31.KeyDown, TextBox22.KeyDown, TextBox13.KeyDown
-        If Not String.IsNullOrEmpty(txtIdentificacion.Text) Then
-            Try
+        'If Not String.IsNullOrEmpty(txtIdentificacion.Text) Then
+        Try
                 If e.KeyCode = Keys.Enter Then
                     cargarCliente(txtIdentificacion.Text)
                 End If
             Catch ex As Exception
                 EstiloMensajes.mostrarMensajeError(ex.Message)
             End Try
-        End If
+        'End If
     End Sub
     Private Sub btAnular_Click(sender As Object, e As EventArgs) Handles btAnular.Click
         If EstiloMensajes.mostrarMensajePregunta(MensajeSistema.ANULAR) = Constantes.SI Then
@@ -331,6 +332,8 @@
         Generales.deshabilitarControles(Me)
         btRegistrar.Enabled = False
         btCancelar.Enabled = False
+        lbInformativo.ForeColor = Color.SteelBlue
+        lbInformativo.Font = New Font(Constantes.TIPO_LETRA_ELEMENTO, 11)
     End Sub
     Private Sub buscarServicio()
         Dim params As New List(Of String)
@@ -375,7 +378,7 @@
             objVenta.dtProductos.Rows(objVenta.dtProductos.Rows.Count - 1).Item("Valor") = dt.Rows(dt.Rows.Count - 1).Item("Precio")
             objVenta.dtProductos.Rows(objVenta.dtProductos.Rows.Count - 1).Item("descuento") = dt.Rows(dt.Rows.Count - 1).Item("descuento")
             objVenta.dtProductos.Rows.Add()
-            calcularTotales()
+            calcularCampos()
         End If
     End Sub
     Private Sub validarGrilla()
@@ -465,9 +468,9 @@
         nombre = Funciones.consultarEmpleado(codigo)
         Return nombre
     End Function
-    Private Sub cargarCliente(txtIdent As String)
+    Private Sub cargarCliente(pIdentpIdentificacion As String)
         Dim dRows As DataRow
-        dRows = Funciones.consultarClienteIdent(txtIdentificacion.Text)
+        dRows = Funciones.consultarClienteIdent(pIdentpIdentificacion)
         If Not IsNothing(dRows) Then
             objVenta.codigoPersonaCliente = dRows("codigo")
             TextNombre.Text = dRows("Nombre")
@@ -478,10 +481,13 @@
                 lbInformativo.Text = "Este cliente presenta un descuento del " & CStr(Replace(Format(objVenta.descuentoCliente, "p2"), ",00", ""))
                 calcularTotales()
             End If
+            lbInformativo.ForeColor = Color.SteelBlue
+            lbInformativo.Font = New Font(Constantes.TIPO_LETRA_ELEMENTO, 11)
         Else
             objVenta.codigoPersonaCliente = Nothing
             TextNombre.Clear()
             TextTelefono.Clear()
+            TextNombre.Focus()
         End If
     End Sub
     Private Sub btImprimir_Click(sender As Object, e As EventArgs) Handles btImprimir.Click
@@ -671,6 +677,9 @@
         End If
     End Sub
     Private Sub FormVentas_KeyDown(sender As Object, e As KeyEventArgs) Handles MyBase.KeyDown
-        funcionesFormulario(e)
+        If e.KeyCode = Keys.F3 Then
+            If btRegistrar.Enabled = False Then Exit Sub
+            txtCodigoBarra.Focus()
+        End If
     End Sub
 End Class

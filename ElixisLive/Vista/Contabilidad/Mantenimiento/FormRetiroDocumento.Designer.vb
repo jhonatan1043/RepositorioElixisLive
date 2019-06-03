@@ -485,6 +485,7 @@ Partial Class FormRetiroDocumento
         Me.MaximumSize = New System.Drawing.Size(1059, 606)
         Me.MinimumSize = New System.Drawing.Size(1059, 606)
         Me.Name = "FormRetiroDocumento"
+        Me.ShowIcon = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()

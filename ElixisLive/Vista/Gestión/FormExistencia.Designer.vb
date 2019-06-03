@@ -23,7 +23,7 @@ Partial Class FormExistencia
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.txtBuscar = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
@@ -123,9 +123,9 @@ Partial Class FormExistencia
         '
         'ToolStripLabel1
         '
-        Me.ToolStripLabel1.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ToolStripLabel1.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ToolStripLabel1.Name = "ToolStripLabel1"
-        Me.ToolStripLabel1.Size = New System.Drawing.Size(149, 26)
+        Me.ToolStripLabel1.Size = New System.Drawing.Size(137, 26)
         Me.ToolStripLabel1.Text = "Productos por Acabar"
         '
         'lbPorAcabar
@@ -138,9 +138,9 @@ Partial Class FormExistencia
         '
         'ToolStripLabel2
         '
-        Me.ToolStripLabel2.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ToolStripLabel2.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ToolStripLabel2.Name = "ToolStripLabel2"
-        Me.ToolStripLabel2.Size = New System.Drawing.Size(140, 26)
+        Me.ToolStripLabel2.Size = New System.Drawing.Size(129, 26)
         Me.ToolStripLabel2.Text = "Productos Acabados"
         '
         'lbAcabado
@@ -168,8 +168,8 @@ Partial Class FormExistencia
         Me.dgvLista.AllowUserToDeleteRows = False
         Me.dgvLista.AllowUserToResizeColumns = False
         Me.dgvLista.AllowUserToResizeRows = False
-        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black
-        Me.dgvLista.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
+        Me.dgvLista.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle2
         Me.dgvLista.BackgroundColor = System.Drawing.SystemColors.Control
         Me.dgvLista.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvLista.Dock = System.Windows.Forms.DockStyle.Fill
@@ -235,6 +235,7 @@ Partial Class FormExistencia
         Me.MaximumSize = New System.Drawing.Size(750, 460)
         Me.MinimumSize = New System.Drawing.Size(750, 460)
         Me.Name = "FormExistencia"
+        Me.ShowIcon = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()

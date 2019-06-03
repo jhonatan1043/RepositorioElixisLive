@@ -29,29 +29,16 @@ Partial Class FormCarteraCXP
         Me.Pimagen = New System.Windows.Forms.PictureBox()
         Me.LTitulo = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.PnlInfo = New System.Windows.Forms.Panel()
-        Me.lbinfo = New System.Windows.Forms.Label()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        Me.dgvCartera = New System.Windows.Forms.DataGridView()
-        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.Textsigla = New System.Windows.Forms.Label()
-        Me.Textnombredocumento = New System.Windows.Forms.Label()
-        Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
-        Me.btNuevo = New System.Windows.Forms.ToolStripButton()
-        Me.btBuscar = New System.Windows.Forms.ToolStripButton()
-        Me.btRegistrar = New System.Windows.Forms.ToolStripButton()
-        Me.btEditar = New System.Windows.Forms.ToolStripButton()
-        Me.btCancelar = New System.Windows.Forms.ToolStripButton()
-        Me.btAnular = New System.Windows.Forms.ToolStripButton()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.fechadoc = New System.Windows.Forms.DateTimePicker()
-        Me.Label21 = New System.Windows.Forms.Label()
         Me.textdiferencia = New System.Windows.Forms.Label()
         Me.textvalorcredito = New System.Windows.Forms.Label()
         Me.textvalordebito = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
+        Me.PnlInfo = New System.Windows.Forms.Panel()
+        Me.lbinfo = New System.Windows.Forms.Label()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.dgvCartera = New System.Windows.Forms.DataGridView()
         Me.dgComprobante = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Factura = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.nit = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -62,6 +49,19 @@ Partial Class FormCarteraCXP
         Me.Credito = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Estado = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.anular = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.fechadoc = New System.Windows.Forms.DateTimePicker()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Textsigla = New System.Windows.Forms.Label()
+        Me.Textnombredocumento = New System.Windows.Forms.Label()
+        Me.Label21 = New System.Windows.Forms.Label()
+        Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
+        Me.btNuevo = New System.Windows.Forms.ToolStripButton()
+        Me.btBuscar = New System.Windows.Forms.ToolStripButton()
+        Me.btRegistrar = New System.Windows.Forms.ToolStripButton()
+        Me.btEditar = New System.Windows.Forms.ToolStripButton()
+        Me.btCancelar = New System.Windows.Forms.ToolStripButton()
+        Me.btAnular = New System.Windows.Forms.ToolStripButton()
         Me.Panel2.SuspendLayout()
         CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
@@ -124,6 +124,72 @@ Partial Class FormCarteraCXP
         Me.GroupBox1.TabIndex = 67
         Me.GroupBox1.TabStop = False
         '
+        'textdiferencia
+        '
+        Me.textdiferencia.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.textdiferencia.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.textdiferencia.Location = New System.Drawing.Point(693, 406)
+        Me.textdiferencia.Name = "textdiferencia"
+        Me.textdiferencia.Size = New System.Drawing.Size(186, 25)
+        Me.textdiferencia.TabIndex = 60051
+        Me.textdiferencia.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'textvalorcredito
+        '
+        Me.textvalorcredito.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.textvalorcredito.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.textvalorcredito.Location = New System.Drawing.Point(404, 406)
+        Me.textvalorcredito.Name = "textvalorcredito"
+        Me.textvalorcredito.Size = New System.Drawing.Size(186, 25)
+        Me.textvalorcredito.TabIndex = 60050
+        Me.textvalorcredito.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'textvalordebito
+        '
+        Me.textvalordebito.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.textvalordebito.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.textvalordebito.Location = New System.Drawing.Point(108, 406)
+        Me.textvalordebito.Name = "textvalordebito"
+        Me.textvalordebito.Size = New System.Drawing.Size(186, 25)
+        Me.textvalordebito.TabIndex = 60049
+        Me.textvalordebito.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'Label3
+        '
+        Me.Label3.BackColor = System.Drawing.Color.Transparent
+        Me.Label3.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.Black
+        Me.Label3.Location = New System.Drawing.Point(13, 410)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(105, 19)
+        Me.Label3.TabIndex = 60046
+        Me.Label3.Text = "Valor Débito:"
+        Me.Label3.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        '
+        'Label11
+        '
+        Me.Label11.BackColor = System.Drawing.Color.Transparent
+        Me.Label11.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label11.ForeColor = System.Drawing.Color.Black
+        Me.Label11.Location = New System.Drawing.Point(298, 411)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(106, 19)
+        Me.Label11.TabIndex = 60047
+        Me.Label11.Text = "Valor Crédito:"
+        Me.Label11.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        '
+        'Label10
+        '
+        Me.Label10.BackColor = System.Drawing.Color.Transparent
+        Me.Label10.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.ForeColor = System.Drawing.Color.Black
+        Me.Label10.Location = New System.Drawing.Point(603, 411)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(89, 19)
+        Me.Label10.TabIndex = 60048
+        Me.Label10.Text = "Diferencia:"
+        Me.Label10.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        '
         'PnlInfo
         '
         Me.PnlInfo.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
@@ -179,6 +245,82 @@ Partial Class FormCarteraCXP
         Me.dgvCartera.Size = New System.Drawing.Size(881, 299)
         Me.dgvCartera.TabIndex = 56
         '
+        'dgComprobante
+        '
+        Me.dgComprobante.HeaderText = "Column1"
+        Me.dgComprobante.Name = "dgComprobante"
+        Me.dgComprobante.Visible = False
+        '
+        'Factura
+        '
+        Me.Factura.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.Factura.HeaderText = "No. Factura"
+        Me.Factura.Name = "Factura"
+        Me.Factura.Width = 86
+        '
+        'nit
+        '
+        Me.nit.HeaderText = "idtercero"
+        Me.nit.Name = "nit"
+        Me.nit.Visible = False
+        '
+        'Tercero
+        '
+        Me.Tercero.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.Tercero.HeaderText = "Tercero"
+        Me.Tercero.Name = "Tercero"
+        Me.Tercero.Width = 69
+        '
+        'Cuenta
+        '
+        Me.Cuenta.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.Cuenta.HeaderText = "Cuenta"
+        Me.Cuenta.Name = "Cuenta"
+        Me.Cuenta.Width = 65
+        '
+        'Descripcion
+        '
+        Me.Descripcion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.Descripcion.HeaderText = "Nombre Cuenta"
+        Me.Descripcion.Name = "Descripcion"
+        Me.Descripcion.Width = 105
+        '
+        'Debito
+        '
+        Me.Debito.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle2.Format = "C2"
+        DataGridViewCellStyle2.NullValue = Nothing
+        Me.Debito.DefaultCellStyle = DataGridViewCellStyle2
+        Me.Debito.HeaderText = "Débito"
+        Me.Debito.Name = "Debito"
+        Me.Debito.Width = 63
+        '
+        'Credito
+        '
+        Me.Credito.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle3.Format = "C2"
+        DataGridViewCellStyle3.NullValue = Nothing
+        Me.Credito.DefaultCellStyle = DataGridViewCellStyle3
+        Me.Credito.HeaderText = "Crédito"
+        Me.Credito.Name = "Credito"
+        Me.Credito.Width = 67
+        '
+        'Estado
+        '
+        Me.Estado.HeaderText = "estado"
+        Me.Estado.Name = "Estado"
+        Me.Estado.Visible = False
+        '
+        'anular
+        '
+        Me.anular.HeaderText = "Quitar"
+        Me.anular.Image = Global.Quality.My.Resources.Resources.papelera
+        Me.anular.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch
+        Me.anular.Name = "anular"
+        Me.anular.Width = 50
+        '
         'GroupBox2
         '
         Me.GroupBox2.Controls.Add(Me.fechadoc)
@@ -191,6 +333,27 @@ Partial Class FormCarteraCXP
         Me.GroupBox2.Size = New System.Drawing.Size(881, 48)
         Me.GroupBox2.TabIndex = 55
         Me.GroupBox2.TabStop = False
+        '
+        'fechadoc
+        '
+        Me.fechadoc.CustomFormat = "dd |  MMMM |  yyyy"
+        Me.fechadoc.Enabled = False
+        Me.fechadoc.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.fechadoc.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.fechadoc.Location = New System.Drawing.Point(686, 16)
+        Me.fechadoc.Name = "fechadoc"
+        Me.fechadoc.Size = New System.Drawing.Size(189, 25)
+        Me.fechadoc.TabIndex = 60029
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(2, 20)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(115, 17)
+        Me.Label1.TabIndex = 60026
+        Me.Label1.Text = "Tipo Documento:"
         '
         'Textsigla
         '
@@ -211,6 +374,16 @@ Partial Class FormCarteraCXP
         Me.Textnombredocumento.Size = New System.Drawing.Size(358, 25)
         Me.Textnombredocumento.TabIndex = 60024
         Me.Textnombredocumento.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label21
+        '
+        Me.Label21.AutoSize = True
+        Me.Label21.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label21.Location = New System.Drawing.Point(560, 20)
+        Me.Label21.Name = "Label21"
+        Me.Label21.Size = New System.Drawing.Size(127, 17)
+        Me.Label21.TabIndex = 60028
+        Me.Label21.Text = "Fecha Documento:"
         '
         'ToolStrip1
         '
@@ -292,179 +465,6 @@ Partial Class FormCarteraCXP
         Me.btAnular.Text = "Anular"
         Me.btAnular.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(2, 20)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(115, 17)
-        Me.Label1.TabIndex = 60026
-        Me.Label1.Text = "Tipo Documento:"
-        '
-        'fechadoc
-        '
-        Me.fechadoc.CustomFormat = "dd |  MMMM |  yyyy"
-        Me.fechadoc.Enabled = False
-        Me.fechadoc.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.fechadoc.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.fechadoc.Location = New System.Drawing.Point(686, 16)
-        Me.fechadoc.Name = "fechadoc"
-        Me.fechadoc.Size = New System.Drawing.Size(189, 25)
-        Me.fechadoc.TabIndex = 60029
-        '
-        'Label21
-        '
-        Me.Label21.AutoSize = True
-        Me.Label21.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label21.Location = New System.Drawing.Point(560, 20)
-        Me.Label21.Name = "Label21"
-        Me.Label21.Size = New System.Drawing.Size(127, 17)
-        Me.Label21.TabIndex = 60028
-        Me.Label21.Text = "Fecha Documento:"
-        '
-        'textdiferencia
-        '
-        Me.textdiferencia.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.textdiferencia.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.textdiferencia.Location = New System.Drawing.Point(693, 406)
-        Me.textdiferencia.Name = "textdiferencia"
-        Me.textdiferencia.Size = New System.Drawing.Size(186, 25)
-        Me.textdiferencia.TabIndex = 60051
-        Me.textdiferencia.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        '
-        'textvalorcredito
-        '
-        Me.textvalorcredito.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.textvalorcredito.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.textvalorcredito.Location = New System.Drawing.Point(404, 406)
-        Me.textvalorcredito.Name = "textvalorcredito"
-        Me.textvalorcredito.Size = New System.Drawing.Size(186, 25)
-        Me.textvalorcredito.TabIndex = 60050
-        Me.textvalorcredito.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        '
-        'textvalordebito
-        '
-        Me.textvalordebito.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.textvalordebito.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.textvalordebito.Location = New System.Drawing.Point(108, 406)
-        Me.textvalordebito.Name = "textvalordebito"
-        Me.textvalordebito.Size = New System.Drawing.Size(186, 25)
-        Me.textvalordebito.TabIndex = 60049
-        Me.textvalordebito.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        '
-        'Label3
-        '
-        Me.Label3.BackColor = System.Drawing.Color.Transparent
-        Me.Label3.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.ForeColor = System.Drawing.Color.Black
-        Me.Label3.Location = New System.Drawing.Point(13, 410)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(105, 19)
-        Me.Label3.TabIndex = 60046
-        Me.Label3.Text = "Valor Débito:"
-        Me.Label3.TextAlign = System.Drawing.ContentAlignment.TopCenter
-        '
-        'Label11
-        '
-        Me.Label11.BackColor = System.Drawing.Color.Transparent
-        Me.Label11.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.ForeColor = System.Drawing.Color.Black
-        Me.Label11.Location = New System.Drawing.Point(298, 411)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(106, 19)
-        Me.Label11.TabIndex = 60047
-        Me.Label11.Text = "Valor Crédito:"
-        Me.Label11.TextAlign = System.Drawing.ContentAlignment.TopCenter
-        '
-        'Label10
-        '
-        Me.Label10.BackColor = System.Drawing.Color.Transparent
-        Me.Label10.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.ForeColor = System.Drawing.Color.Black
-        Me.Label10.Location = New System.Drawing.Point(603, 411)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(89, 19)
-        Me.Label10.TabIndex = 60048
-        Me.Label10.Text = "Diferencia:"
-        Me.Label10.TextAlign = System.Drawing.ContentAlignment.TopCenter
-        '
-        'dgComprobante
-        '
-        Me.dgComprobante.HeaderText = "Column1"
-        Me.dgComprobante.Name = "dgComprobante"
-        Me.dgComprobante.Visible = False
-        '
-        'Factura
-        '
-        Me.Factura.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.Factura.HeaderText = "No. Factura"
-        Me.Factura.Name = "Factura"
-        Me.Factura.Width = 86
-        '
-        'nit
-        '
-        Me.nit.HeaderText = "idtercero"
-        Me.nit.Name = "nit"
-        Me.nit.Visible = False
-        '
-        'Tercero
-        '
-        Me.Tercero.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.Tercero.HeaderText = "Tercero"
-        Me.Tercero.Name = "Tercero"
-        Me.Tercero.Width = 69
-        '
-        'Cuenta
-        '
-        Me.Cuenta.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.Cuenta.HeaderText = "Cuenta"
-        Me.Cuenta.Name = "Cuenta"
-        Me.Cuenta.Width = 65
-        '
-        'Descripcion
-        '
-        Me.Descripcion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.Descripcion.HeaderText = "Nombre Cuenta"
-        Me.Descripcion.Name = "Descripcion"
-        Me.Descripcion.Width = 105
-        '
-        'Debito
-        '
-        Me.Debito.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle2.Format = "C2"
-        DataGridViewCellStyle2.NullValue = Nothing
-        Me.Debito.DefaultCellStyle = DataGridViewCellStyle2
-        Me.Debito.HeaderText = "Débito"
-        Me.Debito.Name = "Debito"
-        Me.Debito.Width = 63
-        '
-        'Credito
-        '
-        Me.Credito.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle3.Format = "C2"
-        DataGridViewCellStyle3.NullValue = Nothing
-        Me.Credito.DefaultCellStyle = DataGridViewCellStyle3
-        Me.Credito.HeaderText = "Crédito"
-        Me.Credito.Name = "Credito"
-        Me.Credito.Width = 67
-        '
-        'Estado
-        '
-        Me.Estado.HeaderText = "estado"
-        Me.Estado.Name = "Estado"
-        Me.Estado.Visible = False
-        '
-        'anular
-        '
-        Me.anular.HeaderText = "Quitar"
-        Me.anular.Image = Global.Quality.My.Resources.Resources.papelera
-        Me.anular.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch
-        Me.anular.Name = "anular"
-        Me.anular.Width = 50
-        '
         'FormCarteraCXP
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -478,6 +478,7 @@ Partial Class FormCarteraCXP
         Me.MaximumSize = New System.Drawing.Size(921, 562)
         Me.MinimumSize = New System.Drawing.Size(921, 562)
         Me.Name = "FormCarteraCXP"
+        Me.ShowIcon = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Panel2.ResumeLayout(False)
         CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).EndInit()

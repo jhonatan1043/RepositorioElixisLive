@@ -583,6 +583,7 @@ Partial Class FormEstadoCuentas
         Me.MaximizeBox = False
         Me.MaximumSize = New System.Drawing.Size(1203, 616)
         Me.Name = "FormEstadoCuentas"
+        Me.ShowIcon = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.GroupBox1.ResumeLayout(False)
         CType(Me.dgvCuentas, System.ComponentModel.ISupportInitialize).EndInit()

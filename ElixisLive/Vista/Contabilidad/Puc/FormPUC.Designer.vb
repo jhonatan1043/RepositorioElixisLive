@@ -25,7 +25,9 @@ Partial Class FormPUC
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormPUC))
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.btRetencionIVA = New System.Windows.Forms.Button()
         Me.chkActivo = New System.Windows.Forms.CheckBox()
+        Me.btCuentas = New System.Windows.Forms.Button()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.numAno = New System.Windows.Forms.NumericUpDown()
         Me.txtCodigo = New System.Windows.Forms.TextBox()
@@ -42,8 +44,6 @@ Partial Class FormPUC
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Pimagen = New System.Windows.Forms.PictureBox()
         Me.LTitulo = New System.Windows.Forms.Label()
-        Me.btRetencionIVA = New System.Windows.Forms.Button()
-        Me.btCuentas = New System.Windows.Forms.Button()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.numAno, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -81,6 +81,22 @@ Partial Class FormPUC
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Información del PUC"
         '
+        'btRetencionIVA
+        '
+        Me.btRetencionIVA.BackgroundImage = CType(resources.GetObject("btRetencionIVA.BackgroundImage"), System.Drawing.Image)
+        Me.btRetencionIVA.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btRetencionIVA.Font = New System.Drawing.Font("Arial Narrow", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btRetencionIVA.ForeColor = System.Drawing.Color.White
+        Me.btRetencionIVA.Image = Global.Quality.My.Resources.Resources.SEO_icon
+        Me.btRetencionIVA.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btRetencionIVA.Location = New System.Drawing.Point(297, 197)
+        Me.btRetencionIVA.Name = "btRetencionIVA"
+        Me.btRetencionIVA.Size = New System.Drawing.Size(130, 34)
+        Me.btRetencionIVA.TabIndex = 10010
+        Me.btRetencionIVA.Text = "Retenciones e IVA"
+        Me.btRetencionIVA.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btRetencionIVA.UseVisualStyleBackColor = True
+        '
         'chkActivo
         '
         Me.chkActivo.AutoSize = True
@@ -95,6 +111,22 @@ Partial Class FormPUC
         Me.chkActivo.TabIndex = 124
         Me.chkActivo.Text = "Activo"
         Me.chkActivo.UseVisualStyleBackColor = True
+        '
+        'btCuentas
+        '
+        Me.btCuentas.BackgroundImage = CType(resources.GetObject("btCuentas.BackgroundImage"), System.Drawing.Image)
+        Me.btCuentas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btCuentas.Font = New System.Drawing.Font("Arial Narrow", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btCuentas.ForeColor = System.Drawing.Color.White
+        Me.btCuentas.Image = Global.Quality.My.Resources.Resources.box_config_icon
+        Me.btCuentas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btCuentas.Location = New System.Drawing.Point(431, 197)
+        Me.btCuentas.Name = "btCuentas"
+        Me.btCuentas.Size = New System.Drawing.Size(130, 34)
+        Me.btCuentas.TabIndex = 10009
+        Me.btCuentas.Text = "Configurar cuentas"
+        Me.btCuentas.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btCuentas.UseVisualStyleBackColor = True
         '
         'Label8
         '
@@ -277,38 +309,6 @@ Partial Class FormPUC
         Me.LTitulo.Text = "Plan único de cuentas"
         Me.LTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'btRetencionIVA
-        '
-        Me.btRetencionIVA.BackgroundImage = CType(resources.GetObject("btRetencionIVA.BackgroundImage"), System.Drawing.Image)
-        Me.btRetencionIVA.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btRetencionIVA.Font = New System.Drawing.Font("Arial Narrow", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btRetencionIVA.ForeColor = System.Drawing.Color.White
-        Me.btRetencionIVA.Image = Global.Quality.My.Resources.Resources.SEO_icon
-        Me.btRetencionIVA.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btRetencionIVA.Location = New System.Drawing.Point(297, 197)
-        Me.btRetencionIVA.Name = "btRetencionIVA"
-        Me.btRetencionIVA.Size = New System.Drawing.Size(130, 34)
-        Me.btRetencionIVA.TabIndex = 10010
-        Me.btRetencionIVA.Text = "Retenciones e IVA"
-        Me.btRetencionIVA.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btRetencionIVA.UseVisualStyleBackColor = True
-        '
-        'btCuentas
-        '
-        Me.btCuentas.BackgroundImage = CType(resources.GetObject("btCuentas.BackgroundImage"), System.Drawing.Image)
-        Me.btCuentas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btCuentas.Font = New System.Drawing.Font("Arial Narrow", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btCuentas.ForeColor = System.Drawing.Color.White
-        Me.btCuentas.Image = Global.Quality.My.Resources.Resources.box_config_icon
-        Me.btCuentas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btCuentas.Location = New System.Drawing.Point(431, 197)
-        Me.btCuentas.Name = "btCuentas"
-        Me.btCuentas.Size = New System.Drawing.Size(130, 34)
-        Me.btCuentas.TabIndex = 10009
-        Me.btCuentas.Text = "Configurar cuentas"
-        Me.btCuentas.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btCuentas.UseVisualStyleBackColor = True
-        '
         'FormPUC
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -321,6 +321,7 @@ Partial Class FormPUC
         Me.MaximumSize = New System.Drawing.Size(619, 408)
         Me.MinimumSize = New System.Drawing.Size(619, 408)
         Me.Name = "FormPUC"
+        Me.ShowIcon = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox1.ResumeLayout(False)

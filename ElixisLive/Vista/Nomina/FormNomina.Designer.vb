@@ -394,6 +394,7 @@ Partial Class FormNomina
         Me.MaximumSize = New System.Drawing.Size(921, 562)
         Me.MinimumSize = New System.Drawing.Size(921, 562)
         Me.Name = "FormNomina"
+        Me.ShowIcon = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.gbOpciones.ResumeLayout(False)
         Me.gbOpciones.PerformLayout()

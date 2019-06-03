@@ -328,6 +328,7 @@ Partial Class FormLote
         Me.MinimizeBox = False
         Me.MinimumSize = New System.Drawing.Size(619, 408)
         Me.Name = "FormLote"
+        Me.ShowIcon = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.TopMost = True
         Me.GroupBox1.ResumeLayout(False)

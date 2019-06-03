@@ -299,6 +299,7 @@ Partial Class FormGastosServicio
         Me.MaximumSize = New System.Drawing.Size(714, 460)
         Me.MinimumSize = New System.Drawing.Size(714, 460)
         Me.Name = "FormGastosServicio"
+        Me.ShowIcon = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Panel1.ResumeLayout(False)
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()

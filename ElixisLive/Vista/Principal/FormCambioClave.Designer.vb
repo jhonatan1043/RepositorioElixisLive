@@ -235,6 +235,7 @@ Partial Class FormCambioClave
         Me.MaximizeBox = False
         Me.MaximumSize = New System.Drawing.Size(445, 255)
         Me.Name = "FormCambioClave"
+        Me.ShowIcon = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()

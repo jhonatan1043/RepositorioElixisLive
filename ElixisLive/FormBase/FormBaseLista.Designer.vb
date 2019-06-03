@@ -320,6 +320,7 @@ Partial Class FormBaseLista
         Me.MaximumSize = New System.Drawing.Size(678, 460)
         Me.MinimumSize = New System.Drawing.Size(678, 460)
         Me.Name = "FormBaseLista"
+        Me.ShowIcon = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Panel1.ResumeLayout(False)
         CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).EndInit()

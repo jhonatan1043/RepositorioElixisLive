@@ -574,6 +574,7 @@ Partial Class FormBaseProductivo
         Me.MaximumSize = New System.Drawing.Size(820, 544)
         Me.MinimumSize = New System.Drawing.Size(820, 544)
         Me.Name = "FormBaseProductivo"
+        Me.ShowIcon = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.GroupBox1.ResumeLayout(False)
         Me.gbInform.ResumeLayout(False)

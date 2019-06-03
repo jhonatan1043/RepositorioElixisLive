@@ -261,6 +261,7 @@ Partial Class FormCliente
         Me.MaximumSize = New System.Drawing.Size(820, 544)
         Me.MinimumSize = New System.Drawing.Size(820, 544)
         Me.Name = "FormCliente"
+        Me.ShowIcon = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)

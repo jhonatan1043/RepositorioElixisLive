@@ -44,6 +44,7 @@ Partial Class FormCierreDocumentos
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.PnlInfo = New System.Windows.Forms.Panel()
         Me.lbinfo = New System.Windows.Forms.Label()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.dgvTraslado = New System.Windows.Forms.DataGridView()
@@ -66,6 +67,7 @@ Partial Class FormCierreDocumentos
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.txtcodigo = New System.Windows.Forms.Label()
         Me.Textsigla = New System.Windows.Forms.Label()
+        Me.Btcerrar = New System.Windows.Forms.Button()
         Me.Textnombredocumento = New System.Windows.Forms.Label()
         Me.Label15 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
@@ -93,10 +95,9 @@ Partial Class FormCierreDocumentos
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Pimagen = New System.Windows.Forms.PictureBox()
         Me.LTitulo = New System.Windows.Forms.Label()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        Me.Btcerrar = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.PnlInfo.SuspendLayout()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         CType(Me.dgvTraslado, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox3.SuspendLayout()
@@ -107,7 +108,6 @@ Partial Class FormCierreDocumentos
         Me.ToolStrip1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GroupBox1
@@ -144,6 +144,16 @@ Partial Class FormCierreDocumentos
         Me.lbinfo.Size = New System.Drawing.Size(68, 16)
         Me.lbinfo.TabIndex = 10063
         Me.lbinfo.Text = "CONTENIDO"
+        '
+        'PictureBox2
+        '
+        Me.PictureBox2.Image = Global.Quality.My.Resources.Resources.atencion
+        Me.PictureBox2.Location = New System.Drawing.Point(2, 2)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(30, 26)
+        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox2.TabIndex = 10063
+        Me.PictureBox2.TabStop = False
         '
         'Panel1
         '
@@ -459,6 +469,20 @@ Partial Class FormCierreDocumentos
         Me.Textsigla.TabIndex = 60022
         Me.Textsigla.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
+        'Btcerrar
+        '
+        Me.Btcerrar.BackgroundImage = Global.Quality.My.Resources.Resources.fondo_azul
+        Me.Btcerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Btcerrar.Font = New System.Drawing.Font("Times New Roman", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Btcerrar.ForeColor = System.Drawing.Color.White
+        Me.Btcerrar.Location = New System.Drawing.Point(771, 67)
+        Me.Btcerrar.Name = "Btcerrar"
+        Me.Btcerrar.Size = New System.Drawing.Size(102, 25)
+        Me.Btcerrar.TabIndex = 50
+        Me.Btcerrar.Text = "Cerrar Cuentas"
+        Me.Btcerrar.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.Btcerrar.UseVisualStyleBackColor = True
+        '
         'Textnombredocumento
         '
         Me.Textnombredocumento.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
@@ -748,30 +772,6 @@ Partial Class FormCierreDocumentos
         Me.LTitulo.Text = "Cierre Contable"
         Me.LTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'PictureBox2
-        '
-        Me.PictureBox2.Image = Global.Quality.My.Resources.Resources.atencion
-        Me.PictureBox2.Location = New System.Drawing.Point(2, 2)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(30, 26)
-        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox2.TabIndex = 10063
-        Me.PictureBox2.TabStop = False
-        '
-        'Btcerrar
-        '
-        Me.Btcerrar.BackgroundImage = Global.Quality.My.Resources.Resources.fondo_azul
-        Me.Btcerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Btcerrar.Font = New System.Drawing.Font("Times New Roman", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Btcerrar.ForeColor = System.Drawing.Color.White
-        Me.Btcerrar.Location = New System.Drawing.Point(771, 67)
-        Me.Btcerrar.Name = "Btcerrar"
-        Me.Btcerrar.Size = New System.Drawing.Size(102, 25)
-        Me.Btcerrar.TabIndex = 50
-        Me.Btcerrar.Text = "Cerrar Cuentas"
-        Me.Btcerrar.TextAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.Btcerrar.UseVisualStyleBackColor = True
-        '
         'FormCierreDocumentos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -785,10 +785,12 @@ Partial Class FormCierreDocumentos
         Me.MaximumSize = New System.Drawing.Size(921, 562)
         Me.MinimumSize = New System.Drawing.Size(921, 562)
         Me.Name = "FormCierreDocumentos"
+        Me.ShowIcon = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.GroupBox1.ResumeLayout(False)
         Me.PnlInfo.ResumeLayout(False)
         Me.PnlInfo.PerformLayout()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         CType(Me.dgvTraslado, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox3.ResumeLayout(False)
@@ -801,7 +803,6 @@ Partial Class FormCierreDocumentos
         Me.ToolStrip1.PerformLayout()
         Me.Panel2.ResumeLayout(False)
         CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

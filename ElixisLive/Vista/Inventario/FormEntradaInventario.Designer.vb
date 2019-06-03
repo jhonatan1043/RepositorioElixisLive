@@ -464,6 +464,7 @@ Partial Class FormEntradaInventario
         Me.MaximumSize = New System.Drawing.Size(921, 562)
         Me.MinimumSize = New System.Drawing.Size(921, 562)
         Me.Name = "FormEntradaInventario"
+        Me.ShowIcon = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.GbInform_D.ResumeLayout(False)
         CType(Me.dgvEntrada, System.ComponentModel.ISupportInitialize).EndInit()

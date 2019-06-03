@@ -205,6 +205,7 @@ Partial Class FormLibroDiario
         Me.MaximumSize = New System.Drawing.Size(619, 408)
         Me.MinimumSize = New System.Drawing.Size(619, 408)
         Me.Name = "FormLibroDiario"
+        Me.ShowIcon = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.gbDatosGrupo.ResumeLayout(False)
         Me.gbDatosGrupo.PerformLayout()

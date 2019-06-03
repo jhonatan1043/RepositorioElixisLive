@@ -262,6 +262,7 @@ Partial Class FormCierrePeriodos
         Me.MaximumSize = New System.Drawing.Size(791, 528)
         Me.MinimumSize = New System.Drawing.Size(791, 528)
         Me.Name = "FormCierrePeriodos"
+        Me.ShowIcon = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()

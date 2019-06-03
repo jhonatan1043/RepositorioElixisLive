@@ -8,6 +8,8 @@
         Generales.deshabilitarControles(Me)
         validarGrilla()
         btEditar.Enabled = True
+        cargarClientes()
+
     End Sub
     Private Sub validarGrilla()
         With dgvCliente
@@ -42,7 +44,6 @@
             Generales.deshabilitarBotones(ToolStrip1)
             Generales.habilitarControles(Me)
             validarEdicionGrilla(Constantes.EDITABLE)
-            cargarClientes()
             btRegistrar.Enabled = True
             btCancelar.Enabled = True
         End If

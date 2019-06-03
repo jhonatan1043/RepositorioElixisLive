@@ -218,6 +218,7 @@ Partial Class FormCertificadoRetencion
         Me.MaximumSize = New System.Drawing.Size(619, 408)
         Me.MinimumSize = New System.Drawing.Size(619, 408)
         Me.Name = "FormCertificadoRetencion"
+        Me.ShowIcon = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.GroupBox2.ResumeLayout(False)
         Me.gbDatosGrupo.ResumeLayout(False)

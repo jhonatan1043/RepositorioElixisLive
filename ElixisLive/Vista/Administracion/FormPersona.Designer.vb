@@ -632,6 +632,7 @@ Partial Class FormPersona
         Me.MaximumSize = New System.Drawing.Size(729, 475)
         Me.MinimumSize = New System.Drawing.Size(729, 475)
         Me.Name = "FormPersona"
+        Me.ShowIcon = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.GroupBox4.ResumeLayout(False)
         Me.GroupBox4.PerformLayout()

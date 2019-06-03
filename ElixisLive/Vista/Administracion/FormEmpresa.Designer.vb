@@ -425,7 +425,7 @@ Partial Class FormEmpresa
         Me.TextDV.ForeColor = System.Drawing.Color.Black
         Me.TextDV.Location = New System.Drawing.Point(195, 10)
         Me.TextDV.Name = "TextDV"
-        Me.TextDV.Size = New System.Drawing.Size(26, 22)
+        Me.TextDV.Size = New System.Drawing.Size(21, 18)
         Me.TextDV.TabIndex = 1001
         Me.TextDV.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '

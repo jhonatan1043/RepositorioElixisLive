@@ -164,6 +164,7 @@ Partial Class FormCostoServicios
         Me.MaximumSize = New System.Drawing.Size(916, 565)
         Me.MinimumSize = New System.Drawing.Size(916, 565)
         Me.Name = "FormCostoServicios"
+        Me.ShowIcon = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         CType(Me.dgvServicio, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)

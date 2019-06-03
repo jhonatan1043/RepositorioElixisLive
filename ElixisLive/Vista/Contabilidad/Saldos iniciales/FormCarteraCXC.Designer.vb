@@ -39,6 +39,16 @@ Partial Class FormCarteraCXC
         Me.lbinfo = New System.Windows.Forms.Label()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.dgvCartera = New System.Windows.Forms.DataGridView()
+        Me.dgComprobante = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Factura = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.nit = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Tercero = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Cuenta = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Descripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Debito = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Credito = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Estado = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.anular = New System.Windows.Forms.DataGridViewImageColumn()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.fechadoc = New System.Windows.Forms.DateTimePicker()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -52,16 +62,6 @@ Partial Class FormCarteraCXC
         Me.btEditar = New System.Windows.Forms.ToolStripButton()
         Me.btCancelar = New System.Windows.Forms.ToolStripButton()
         Me.btAnular = New System.Windows.Forms.ToolStripButton()
-        Me.dgComprobante = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Factura = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.nit = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Tercero = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Cuenta = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Descripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Debito = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Credito = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Estado = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.anular = New System.Windows.Forms.DataGridViewImageColumn()
         Me.Panel2.SuspendLayout()
         CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
@@ -245,6 +245,82 @@ Partial Class FormCarteraCXC
         Me.dgvCartera.Size = New System.Drawing.Size(881, 299)
         Me.dgvCartera.TabIndex = 56
         '
+        'dgComprobante
+        '
+        Me.dgComprobante.HeaderText = "Column1"
+        Me.dgComprobante.Name = "dgComprobante"
+        Me.dgComprobante.Visible = False
+        '
+        'Factura
+        '
+        Me.Factura.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.Factura.HeaderText = "No. Factura"
+        Me.Factura.Name = "Factura"
+        Me.Factura.Width = 86
+        '
+        'nit
+        '
+        Me.nit.HeaderText = "idtercero"
+        Me.nit.Name = "nit"
+        Me.nit.Visible = False
+        '
+        'Tercero
+        '
+        Me.Tercero.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.Tercero.HeaderText = "Tercero"
+        Me.Tercero.Name = "Tercero"
+        Me.Tercero.Width = 69
+        '
+        'Cuenta
+        '
+        Me.Cuenta.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.Cuenta.HeaderText = "Cuenta"
+        Me.Cuenta.Name = "Cuenta"
+        Me.Cuenta.Width = 65
+        '
+        'Descripcion
+        '
+        Me.Descripcion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.Descripcion.HeaderText = "Nombre Cuenta"
+        Me.Descripcion.Name = "Descripcion"
+        Me.Descripcion.Width = 105
+        '
+        'Debito
+        '
+        Me.Debito.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle2.Format = "C2"
+        DataGridViewCellStyle2.NullValue = Nothing
+        Me.Debito.DefaultCellStyle = DataGridViewCellStyle2
+        Me.Debito.HeaderText = "Débito"
+        Me.Debito.Name = "Debito"
+        Me.Debito.Width = 63
+        '
+        'Credito
+        '
+        Me.Credito.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle3.Format = "C2"
+        DataGridViewCellStyle3.NullValue = Nothing
+        Me.Credito.DefaultCellStyle = DataGridViewCellStyle3
+        Me.Credito.HeaderText = "Crédito"
+        Me.Credito.Name = "Credito"
+        Me.Credito.Width = 67
+        '
+        'Estado
+        '
+        Me.Estado.HeaderText = "estado"
+        Me.Estado.Name = "Estado"
+        Me.Estado.Visible = False
+        '
+        'anular
+        '
+        Me.anular.HeaderText = "Quitar"
+        Me.anular.Image = Global.Quality.My.Resources.Resources.papelera
+        Me.anular.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch
+        Me.anular.Name = "anular"
+        Me.anular.Width = 50
+        '
         'GroupBox2
         '
         Me.GroupBox2.Controls.Add(Me.fechadoc)
@@ -389,82 +465,6 @@ Partial Class FormCarteraCXC
         Me.btAnular.Text = "Anular"
         Me.btAnular.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         '
-        'dgComprobante
-        '
-        Me.dgComprobante.HeaderText = "Column1"
-        Me.dgComprobante.Name = "dgComprobante"
-        Me.dgComprobante.Visible = False
-        '
-        'Factura
-        '
-        Me.Factura.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.Factura.HeaderText = "No. Factura"
-        Me.Factura.Name = "Factura"
-        Me.Factura.Width = 86
-        '
-        'nit
-        '
-        Me.nit.HeaderText = "idtercero"
-        Me.nit.Name = "nit"
-        Me.nit.Visible = False
-        '
-        'Tercero
-        '
-        Me.Tercero.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.Tercero.HeaderText = "Tercero"
-        Me.Tercero.Name = "Tercero"
-        Me.Tercero.Width = 69
-        '
-        'Cuenta
-        '
-        Me.Cuenta.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.Cuenta.HeaderText = "Cuenta"
-        Me.Cuenta.Name = "Cuenta"
-        Me.Cuenta.Width = 65
-        '
-        'Descripcion
-        '
-        Me.Descripcion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.Descripcion.HeaderText = "Nombre Cuenta"
-        Me.Descripcion.Name = "Descripcion"
-        Me.Descripcion.Width = 105
-        '
-        'Debito
-        '
-        Me.Debito.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle2.Format = "C2"
-        DataGridViewCellStyle2.NullValue = Nothing
-        Me.Debito.DefaultCellStyle = DataGridViewCellStyle2
-        Me.Debito.HeaderText = "Débito"
-        Me.Debito.Name = "Debito"
-        Me.Debito.Width = 63
-        '
-        'Credito
-        '
-        Me.Credito.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle3.Format = "C2"
-        DataGridViewCellStyle3.NullValue = Nothing
-        Me.Credito.DefaultCellStyle = DataGridViewCellStyle3
-        Me.Credito.HeaderText = "Crédito"
-        Me.Credito.Name = "Credito"
-        Me.Credito.Width = 67
-        '
-        'Estado
-        '
-        Me.Estado.HeaderText = "estado"
-        Me.Estado.Name = "Estado"
-        Me.Estado.Visible = False
-        '
-        'anular
-        '
-        Me.anular.HeaderText = "Quitar"
-        Me.anular.Image = Global.Quality.My.Resources.Resources.papelera
-        Me.anular.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch
-        Me.anular.Name = "anular"
-        Me.anular.Width = 50
-        '
         'FormCarteraCXC
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -478,6 +478,7 @@ Partial Class FormCarteraCXC
         Me.MaximumSize = New System.Drawing.Size(921, 562)
         Me.MinimumSize = New System.Drawing.Size(921, 562)
         Me.Name = "FormCarteraCXC"
+        Me.ShowIcon = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Panel2.ResumeLayout(False)
         CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).EndInit()
