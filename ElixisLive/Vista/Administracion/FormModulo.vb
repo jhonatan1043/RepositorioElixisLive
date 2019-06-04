@@ -25,7 +25,7 @@ Public Class FormModulo
 
     Private Sub FormModulo_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         gbClave.Visible = False
-        Generales.deshabilitarControles(Me)
+        Generales.habilitarControles(Me)
         Generales.deshabilitarBotones(ToolStrip1)
         btEditar.Enabled = True
         cargarOpciones()
@@ -137,12 +137,10 @@ Public Class FormModulo
         llenarModulos()
 
         For Each drFila As DataRow In dtModulo.Rows
-            'If drFila.Item("Modulo").ToString <> "" Then
             Dim drModulo As DataRow = modulo.dtModulo.NewRow
             drModulo.Item("codigo_sucursal") = SesionActual.codigoSucursal
             drModulo.Item("codigo_modulo") = drFila.Item("Modulo")
             modulo.dtModulo.Rows.Add(drModulo)
-            'End If
         Next
         Return modulo
     End Function
@@ -151,8 +149,7 @@ Public Class FormModulo
         Dim moduloBLL As New ModuloBLL
         Try
             moduloBLL.guardarModulo(crearModulo())
-            Generales.habilitarBotones(ToolStrip1)
-            Generales.deshabilitarControles(Me)
+            Generales.habilitarControles(Me)
             btRegistrar.Enabled = False
             btCancelar.Enabled = False
             principalBLL.eliminarMenu()
@@ -169,6 +166,7 @@ Public Class FormModulo
     End Sub
 
     Private Sub btEditar_Click(sender As Object, e As EventArgs) Handles btEditar.Click
+        cargarOpciones()
         gbClave.Visible = True
         btAceptar.Enabled = True
         btDeclinar.Enabled = True
