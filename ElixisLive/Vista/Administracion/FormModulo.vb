@@ -139,9 +139,9 @@ Public Class FormModulo
         For Each drFila As DataRow In dtModulo.Rows
             'If drFila.Item("Modulo").ToString <> "" Then
             Dim drModulo As DataRow = modulo.dtModulo.NewRow
-                drModulo.Item("codigo_sucursal") = SesionActual.codigoSucursal
-                drModulo.Item("codigo_modulo") = drFila.Item("Modulo")
-                modulo.dtModulo.Rows.Add(drModulo)
+            drModulo.Item("codigo_sucursal") = SesionActual.codigoSucursal
+            drModulo.Item("codigo_modulo") = drFila.Item("Modulo")
+            modulo.dtModulo.Rows.Add(drModulo)
             'End If
         Next
         Return modulo

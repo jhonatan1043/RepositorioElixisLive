@@ -100,7 +100,7 @@ Partial Class FormModulo
         Me.chEstadistica.AutoSize = True
         Me.chEstadistica.Image = Global.Quality.My.Resources.Resources.bar_chart_icon1
         Me.chEstadistica.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.chEstadistica.Location = New System.Drawing.Point(366, 242)
+        Me.chEstadistica.Location = New System.Drawing.Point(366, 238)
         Me.chEstadistica.Name = "chEstadistica"
         Me.chEstadistica.Size = New System.Drawing.Size(82, 81)
         Me.chEstadistica.TabIndex = 25
@@ -111,6 +111,7 @@ Partial Class FormModulo
         '
         'gbClave
         '
+        Me.gbClave.BackColor = System.Drawing.Color.SteelBlue
         Me.gbClave.Controls.Add(Me.TextClave)
         Me.gbClave.Controls.Add(Me.btDeclinar)
         Me.gbClave.Controls.Add(Me.btAceptar)
@@ -149,6 +150,7 @@ Partial Class FormModulo
         'Label1
         '
         Me.Label1.AutoSize = True
+        Me.Label1.ForeColor = System.Drawing.Color.White
         Me.Label1.Location = New System.Drawing.Point(94, 13)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(136, 13)
@@ -173,7 +175,7 @@ Partial Class FormModulo
         '
         Me.ChCitas.AutoSize = True
         Me.ChCitas.Image = Global.Quality.My.Resources.Resources.Network_time_icon__1_
-        Me.ChCitas.Location = New System.Drawing.Point(510, 242)
+        Me.ChCitas.Location = New System.Drawing.Point(510, 238)
         Me.ChCitas.Name = "ChCitas"
         Me.ChCitas.Size = New System.Drawing.Size(79, 81)
         Me.ChCitas.TabIndex = 21
@@ -200,7 +202,7 @@ Partial Class FormModulo
         '
         Me.ChContabilidad.AutoSize = True
         Me.ChContabilidad.Image = Global.Quality.My.Resources.Resources.Safe_icon
-        Me.ChContabilidad.Location = New System.Drawing.Point(92, 242)
+        Me.ChContabilidad.Location = New System.Drawing.Point(92, 238)
         Me.ChContabilidad.Name = "ChContabilidad"
         Me.ChContabilidad.Size = New System.Drawing.Size(84, 81)
         Me.ChContabilidad.TabIndex = 20
