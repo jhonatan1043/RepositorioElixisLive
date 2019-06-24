@@ -72,7 +72,7 @@ Partial Class FormModulo
         Me.chNomina.AutoSize = True
         Me.chNomina.Image = Global.Quality.My.Resources.Resources._05_step2_review_payroll_02
         Me.chNomina.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.chNomina.Location = New System.Drawing.Point(225, 242)
+        Me.chNomina.Location = New System.Drawing.Point(217, 253)
         Me.chNomina.Name = "chNomina"
         Me.chNomina.Size = New System.Drawing.Size(87, 77)
         Me.chNomina.TabIndex = 27
@@ -85,13 +85,12 @@ Partial Class FormModulo
         '
         Me.chConfiguracion.AutoSize = True
         Me.chConfiguracion.Image = Global.Quality.My.Resources.Resources.Setting_icon
-        Me.chConfiguracion.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.chConfiguracion.Location = New System.Drawing.Point(85, 33)
+        Me.chConfiguracion.Location = New System.Drawing.Point(65, 22)
         Me.chConfiguracion.Name = "chConfiguracion"
         Me.chConfiguracion.Size = New System.Drawing.Size(91, 81)
         Me.chConfiguracion.TabIndex = 24
         Me.chConfiguracion.Text = "Configuracion"
-        Me.chConfiguracion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.chConfiguracion.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.chConfiguracion.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         Me.chConfiguracion.UseVisualStyleBackColor = True
         '
@@ -100,7 +99,7 @@ Partial Class FormModulo
         Me.chEstadistica.AutoSize = True
         Me.chEstadistica.Image = Global.Quality.My.Resources.Resources.bar_chart_icon1
         Me.chEstadistica.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.chEstadistica.Location = New System.Drawing.Point(366, 238)
+        Me.chEstadistica.Location = New System.Drawing.Point(369, 249)
         Me.chEstadistica.Name = "chEstadistica"
         Me.chEstadistica.Size = New System.Drawing.Size(82, 81)
         Me.chEstadistica.TabIndex = 25
@@ -161,13 +160,12 @@ Partial Class FormModulo
         '
         Me.chAdministracion.AutoSize = True
         Me.chAdministracion.Image = Global.Quality.My.Resources.Resources.Personnel_icon
-        Me.chAdministracion.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.chAdministracion.Location = New System.Drawing.Point(210, 33)
+        Me.chAdministracion.Location = New System.Drawing.Point(210, 22)
         Me.chAdministracion.Name = "chAdministracion"
         Me.chAdministracion.Size = New System.Drawing.Size(94, 81)
         Me.chAdministracion.TabIndex = 22
         Me.chAdministracion.Text = "Administracion"
-        Me.chAdministracion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.chAdministracion.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.chAdministracion.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         Me.chAdministracion.UseVisualStyleBackColor = True
         '
@@ -175,7 +173,7 @@ Partial Class FormModulo
         '
         Me.ChCitas.AutoSize = True
         Me.ChCitas.Image = Global.Quality.My.Resources.Resources.Network_time_icon__1_
-        Me.ChCitas.Location = New System.Drawing.Point(510, 238)
+        Me.ChCitas.Location = New System.Drawing.Point(522, 249)
         Me.ChCitas.Name = "ChCitas"
         Me.ChCitas.Size = New System.Drawing.Size(79, 81)
         Me.ChCitas.TabIndex = 21
@@ -189,7 +187,7 @@ Partial Class FormModulo
         Me.ChInventario.AutoSize = True
         Me.ChInventario.Image = Global.Quality.My.Resources.Resources.palet_01_icon1
         Me.ChInventario.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.ChInventario.Location = New System.Drawing.Point(369, 33)
+        Me.ChInventario.Location = New System.Drawing.Point(369, 22)
         Me.ChInventario.Name = "ChInventario"
         Me.ChInventario.Size = New System.Drawing.Size(79, 81)
         Me.ChInventario.TabIndex = 18
@@ -202,7 +200,7 @@ Partial Class FormModulo
         '
         Me.ChContabilidad.AutoSize = True
         Me.ChContabilidad.Image = Global.Quality.My.Resources.Resources.Safe_icon
-        Me.ChContabilidad.Location = New System.Drawing.Point(92, 238)
+        Me.ChContabilidad.Location = New System.Drawing.Point(65, 249)
         Me.ChContabilidad.Name = "ChContabilidad"
         Me.ChContabilidad.Size = New System.Drawing.Size(84, 81)
         Me.ChContabilidad.TabIndex = 20
@@ -216,7 +214,7 @@ Partial Class FormModulo
         Me.ChVentas.AutoSize = True
         Me.ChVentas.Image = Global.Quality.My.Resources.Resources.DeviceControl_icon
         Me.ChVentas.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.ChVentas.Location = New System.Drawing.Point(510, 33)
+        Me.ChVentas.Location = New System.Drawing.Point(522, 22)
         Me.ChVentas.Name = "ChVentas"
         Me.ChVentas.Size = New System.Drawing.Size(79, 81)
         Me.ChVentas.TabIndex = 19

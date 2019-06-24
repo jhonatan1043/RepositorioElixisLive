@@ -438,11 +438,11 @@ Public Class Generales
         dgv.BackgroundColor = Color.White
         dgv.DefaultCellStyle.BackColor = Color.White
         dgv.DefaultCellStyle.ForeColor = Color.Black
-        dgv.DefaultCellStyle.SelectionBackColor = Color.LightSteelBlue
+        dgv.DefaultCellStyle.SelectionBackColor = Color.FromArgb(76, 137, 184)
         dgv.DefaultCellStyle.SelectionForeColor = Color.Black
         dgv.DefaultCellStyle.Font = New Font(Constantes.TIPO_LETRA_ELEMENTO, 9)
         dgv.EnableHeadersVisualStyles = False
-        dgv.ColumnHeadersDefaultCellStyle.BackColor = Color.SteelBlue
+        dgv.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(20, 61, 113)
         dgv.ColumnHeadersDefaultCellStyle.ForeColor = Color.White
         dgv.AlternatingRowsDefaultCellStyle.Font = New Font(Constantes.TIPO_LETRA_ELEMENTO, 9)
         dgv.ColumnHeadersDefaultCellStyle.Font = New Font(Constantes.TIPO_LETRA_ELEMENTO, 9)
@@ -455,7 +455,7 @@ Public Class Generales
     End Sub
     Public Shared Sub resaltarFila(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs)
         If e.RowIndex >= 0 Then
-            sender.Rows(e.RowIndex).DefaultCellStyle.BackColor = Color.FromArgb(226, 234, 243)
+            sender.Rows(e.RowIndex).DefaultCellStyle.BackColor = Color.FromArgb(158, 210, 231)
         End If
     End Sub
     Public Shared Sub personalizarTabControl(ByRef tab As TabControl)
@@ -465,7 +465,7 @@ Public Class Generales
         'Firstly we'll define some parameters.
         Dim CurrentTab As TabPage = sender.TabPages(e.Index)
         Dim ItemRect As Rectangle = sender.GetTabRect(e.Index)
-        Dim FillBrush As New SolidBrush(Color.LightSteelBlue)
+        Dim FillBrush As New SolidBrush(Color.FromArgb(158, 210, 231))
         Dim TextBrush As New SolidBrush(Color.Black)
         Dim sf As New StringFormat
         sf.Alignment = StringAlignment.Center
@@ -474,7 +474,7 @@ Public Class Generales
         'If we are currently painting the Selected TabItem we'll 
         'change the brush colors and inflate the rectangle.
         If CBool(e.State And DrawItemState.Selected) Then
-            FillBrush.Color = Color.SteelBlue
+            FillBrush.Color = Color.FromArgb(20, 61, 113)
             TextBrush.Color = Color.White
             ItemRect.Inflate(2, 2)
         End If
