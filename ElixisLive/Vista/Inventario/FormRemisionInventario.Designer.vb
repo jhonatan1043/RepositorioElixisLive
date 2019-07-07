@@ -596,7 +596,7 @@ Partial Class FormRemisionInventario
         Me.dgvProducto.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle82
         Me.dgvProducto.BackgroundColor = System.Drawing.Color.White
         DataGridViewCellStyle83.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle83.BackColor = System.Drawing.Color.SteelBlue
+        DataGridViewCellStyle83.BackColor = System.Drawing.Color.FromArgb(20, 61, 113)
         DataGridViewCellStyle83.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle83.ForeColor = System.Drawing.Color.White
         DataGridViewCellStyle83.SelectionBackColor = System.Drawing.SystemColors.Highlight
@@ -1079,7 +1079,7 @@ Partial Class FormRemisionInventario
         Me.DataGridView4.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle92
         Me.DataGridView4.BackgroundColor = System.Drawing.Color.White
         DataGridViewCellStyle93.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle93.BackColor = System.Drawing.Color.SteelBlue
+        DataGridViewCellStyle93.BackColor = System.Drawing.Color.FromArgb(20, 61, 113)
         DataGridViewCellStyle93.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle93.ForeColor = System.Drawing.Color.White
         DataGridViewCellStyle93.SelectionBackColor = System.Drawing.SystemColors.Highlight
@@ -1105,7 +1105,7 @@ Partial Class FormRemisionInventario
         Me.DataGridView5.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle94
         Me.DataGridView5.BackgroundColor = System.Drawing.Color.White
         DataGridViewCellStyle95.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle95.BackColor = System.Drawing.Color.SteelBlue
+        DataGridViewCellStyle95.BackColor = System.Drawing.Color.FromArgb(20, 61, 113)
         DataGridViewCellStyle95.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle95.ForeColor = System.Drawing.Color.White
         DataGridViewCellStyle95.SelectionBackColor = System.Drawing.SystemColors.Highlight
@@ -1200,7 +1200,7 @@ Partial Class FormRemisionInventario
         Me.DataGridView6.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle99
         Me.DataGridView6.BackgroundColor = System.Drawing.Color.White
         DataGridViewCellStyle100.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle100.BackColor = System.Drawing.Color.SteelBlue
+        DataGridViewCellStyle100.BackColor = System.Drawing.Color.FromArgb(20, 61, 113)
         DataGridViewCellStyle100.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle100.ForeColor = System.Drawing.Color.White
         DataGridViewCellStyle100.SelectionBackColor = System.Drawing.SystemColors.Highlight
@@ -1349,7 +1349,7 @@ Partial Class FormRemisionInventario
         '
         'Button2
         '
-        Me.Button2.BackColor = System.Drawing.Color.SteelBlue
+        Me.Button2.BackColor = System.Drawing.Color.FromArgb(20, 61, 113)
         Me.Button2.Font = New System.Drawing.Font("Times New Roman", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button2.ForeColor = System.Drawing.Color.White
         Me.Button2.Location = New System.Drawing.Point(439, 9)
@@ -1652,7 +1652,7 @@ Partial Class FormRemisionInventario
         Me.DataGridView10.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle107
         Me.DataGridView10.BackgroundColor = System.Drawing.Color.White
         DataGridViewCellStyle108.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle108.BackColor = System.Drawing.Color.SteelBlue
+        DataGridViewCellStyle108.BackColor = System.Drawing.Color.FromArgb(20, 61, 113)
         DataGridViewCellStyle108.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle108.ForeColor = System.Drawing.Color.White
         DataGridViewCellStyle108.SelectionBackColor = System.Drawing.SystemColors.Highlight
@@ -1678,7 +1678,7 @@ Partial Class FormRemisionInventario
         Me.DataGridView11.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle109
         Me.DataGridView11.BackgroundColor = System.Drawing.Color.White
         DataGridViewCellStyle110.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle110.BackColor = System.Drawing.Color.SteelBlue
+        DataGridViewCellStyle110.BackColor = System.Drawing.Color.FromArgb(20, 61, 113)
         DataGridViewCellStyle110.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle110.ForeColor = System.Drawing.Color.White
         DataGridViewCellStyle110.SelectionBackColor = System.Drawing.SystemColors.Highlight
@@ -1773,7 +1773,7 @@ Partial Class FormRemisionInventario
         Me.DataGridView12.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle114
         Me.DataGridView12.BackgroundColor = System.Drawing.Color.White
         DataGridViewCellStyle115.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle115.BackColor = System.Drawing.Color.SteelBlue
+        DataGridViewCellStyle115.BackColor = System.Drawing.Color.FromArgb(20, 61, 113)
         DataGridViewCellStyle115.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle115.ForeColor = System.Drawing.Color.White
         DataGridViewCellStyle115.SelectionBackColor = System.Drawing.SystemColors.Highlight
@@ -1922,7 +1922,7 @@ Partial Class FormRemisionInventario
         '
         'Button4
         '
-        Me.Button4.BackColor = System.Drawing.Color.SteelBlue
+        Me.Button4.BackColor = System.Drawing.Color.FromArgb(20, 61, 113)
         Me.Button4.Font = New System.Drawing.Font("Times New Roman", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button4.ForeColor = System.Drawing.Color.White
         Me.Button4.Location = New System.Drawing.Point(439, 9)
@@ -2225,7 +2225,7 @@ Partial Class FormRemisionInventario
         Me.DataGridView1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle122
         Me.DataGridView1.BackgroundColor = System.Drawing.Color.White
         DataGridViewCellStyle123.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle123.BackColor = System.Drawing.Color.SteelBlue
+        DataGridViewCellStyle123.BackColor = System.Drawing.Color.FromArgb(20, 61, 113)
         DataGridViewCellStyle123.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle123.ForeColor = System.Drawing.Color.White
         DataGridViewCellStyle123.SelectionBackColor = System.Drawing.SystemColors.Highlight
@@ -2251,7 +2251,7 @@ Partial Class FormRemisionInventario
         Me.DataGridView2.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle124
         Me.DataGridView2.BackgroundColor = System.Drawing.Color.White
         DataGridViewCellStyle125.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle125.BackColor = System.Drawing.Color.SteelBlue
+        DataGridViewCellStyle125.BackColor = System.Drawing.Color.FromArgb(20, 61, 113)
         DataGridViewCellStyle125.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle125.ForeColor = System.Drawing.Color.White
         DataGridViewCellStyle125.SelectionBackColor = System.Drawing.SystemColors.Highlight
@@ -2346,7 +2346,7 @@ Partial Class FormRemisionInventario
         Me.DataGridView3.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle129
         Me.DataGridView3.BackgroundColor = System.Drawing.Color.White
         DataGridViewCellStyle130.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle130.BackColor = System.Drawing.Color.SteelBlue
+        DataGridViewCellStyle130.BackColor = System.Drawing.Color.FromArgb(20, 61, 113)
         DataGridViewCellStyle130.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle130.ForeColor = System.Drawing.Color.White
         DataGridViewCellStyle130.SelectionBackColor = System.Drawing.SystemColors.Highlight
@@ -2495,7 +2495,7 @@ Partial Class FormRemisionInventario
         '
         'Button1
         '
-        Me.Button1.BackColor = System.Drawing.Color.SteelBlue
+        Me.Button1.BackColor = System.Drawing.Color.FromArgb(20, 61, 113)
         Me.Button1.Font = New System.Drawing.Font("Times New Roman", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button1.ForeColor = System.Drawing.Color.White
         Me.Button1.Location = New System.Drawing.Point(439, 9)
@@ -2770,7 +2770,7 @@ Partial Class FormRemisionInventario
         Me.DataGridView7.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle137
         Me.DataGridView7.BackgroundColor = System.Drawing.Color.White
         DataGridViewCellStyle138.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle138.BackColor = System.Drawing.Color.SteelBlue
+        DataGridViewCellStyle138.BackColor = System.Drawing.Color.FromArgb(20, 61, 113)
         DataGridViewCellStyle138.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle138.ForeColor = System.Drawing.Color.White
         DataGridViewCellStyle138.SelectionBackColor = System.Drawing.SystemColors.Highlight
@@ -2796,7 +2796,7 @@ Partial Class FormRemisionInventario
         Me.DataGridView8.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle139
         Me.DataGridView8.BackgroundColor = System.Drawing.Color.White
         DataGridViewCellStyle140.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle140.BackColor = System.Drawing.Color.SteelBlue
+        DataGridViewCellStyle140.BackColor = System.Drawing.Color.FromArgb(20, 61, 113)
         DataGridViewCellStyle140.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle140.ForeColor = System.Drawing.Color.White
         DataGridViewCellStyle140.SelectionBackColor = System.Drawing.SystemColors.Highlight
@@ -2891,7 +2891,7 @@ Partial Class FormRemisionInventario
         Me.DataGridView9.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle144
         Me.DataGridView9.BackgroundColor = System.Drawing.Color.White
         DataGridViewCellStyle145.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle145.BackColor = System.Drawing.Color.SteelBlue
+        DataGridViewCellStyle145.BackColor = System.Drawing.Color.FromArgb(20, 61, 113)
         DataGridViewCellStyle145.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle145.ForeColor = System.Drawing.Color.White
         DataGridViewCellStyle145.SelectionBackColor = System.Drawing.SystemColors.Highlight
@@ -3040,7 +3040,7 @@ Partial Class FormRemisionInventario
         '
         'Button3
         '
-        Me.Button3.BackColor = System.Drawing.Color.SteelBlue
+        Me.Button3.BackColor = System.Drawing.Color.FromArgb(20, 61, 113)
         Me.Button3.Font = New System.Drawing.Font("Times New Roman", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button3.ForeColor = System.Drawing.Color.White
         Me.Button3.Location = New System.Drawing.Point(439, 9)

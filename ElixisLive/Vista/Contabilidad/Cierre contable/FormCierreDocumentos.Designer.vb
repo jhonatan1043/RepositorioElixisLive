@@ -169,7 +169,7 @@ Partial Class FormCierreDocumentos
         '
         'Label12
         '
-        Me.Label12.BackColor = System.Drawing.Color.SteelBlue
+        Me.Label12.BackColor = System.Drawing.Color.FromArgb(20, 61, 113)
         Me.Label12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Label12.Font = New System.Drawing.Font("Times New Roman", 14.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label12.ForeColor = System.Drawing.Color.White

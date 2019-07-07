@@ -182,7 +182,7 @@ Partial Class FormPerfil
         Me.arbolmenu.CheckBoxes = True
         Me.arbolmenu.Dock = System.Windows.Forms.DockStyle.Fill
         Me.arbolmenu.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.arbolmenu.ForeColor = System.Drawing.Color.SteelBlue
+        Me.arbolmenu.ForeColor = System.Drawing.Color.FromArgb(20, 61, 113)
         Me.arbolmenu.LineColor = System.Drawing.Color.DodgerBlue
         Me.arbolmenu.Location = New System.Drawing.Point(3, 16)
         Me.arbolmenu.Margin = New System.Windows.Forms.Padding(8, 3, 3, 3)

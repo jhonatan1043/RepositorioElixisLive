@@ -14,7 +14,7 @@ Public Class FormPrincipal
         For Each ctl In Me.Controls
             Try
                 ctlMDI = CType(ctl, MdiClient)
-                ctlMDI.BackgroundImage = My.Resources.Quality_logo
+                ctlMDI.BackgroundImage = My.Resources.XANDaR_copia
                 ctlMDI.BackColor = Me.BackColor
             Catch exc As InvalidCastException
             End Try

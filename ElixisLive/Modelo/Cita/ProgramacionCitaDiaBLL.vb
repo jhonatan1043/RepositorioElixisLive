@@ -18,7 +18,7 @@
     Private Shared Function cargarPanelHoraTomada(ByRef panel As Panel, hora As String) As Integer
         Try
             objHoraTomada = New HoraTomada
-            objHoraTomada.color = Color.SteelBlue
+            objHoraTomada.color = Color.FromArgb(20, 61, 113)
             objHoraTomada.hora = hora
             panel.Controls.Add(objHoraTomada.crearPanelHoraTomada(contenedorPanelDispon, 30))
         Catch ex As Exception
@@ -73,7 +73,7 @@
     Private Shared Sub cargarPanelHoraDisponible(ByRef panel As Panel, hora As String)
         Try
             objHoraDisponible = New HoraDisponible
-            objHoraDisponible.color = Color.SteelBlue
+            objHoraDisponible.color = Color.FromArgb(20, 61, 113)
             objHoraDisponible.hora = hora
             panel.Controls.Add(objHoraDisponible.crearPanelHoraDisponible(contenedorPanelDispon, 8))
         Catch ex As Exception

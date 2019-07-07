@@ -74,9 +74,9 @@ Partial Class FormProgramacionCita
         Me.MonthCalendar1.Location = New System.Drawing.Point(726, 55)
         Me.MonthCalendar1.Name = "MonthCalendar1"
         Me.MonthCalendar1.TabIndex = 0
-        Me.MonthCalendar1.TitleBackColor = System.Drawing.Color.SteelBlue
+        Me.MonthCalendar1.TitleBackColor = System.Drawing.Color.FromArgb(20, 61, 113)
         Me.MonthCalendar1.TitleForeColor = System.Drawing.Color.White
-        Me.MonthCalendar1.TrailingForeColor = System.Drawing.Color.SteelBlue
+        Me.MonthCalendar1.TrailingForeColor = System.Drawing.Color.FromArgb(20, 61, 113)
         '
         'txtBusqueda
         '

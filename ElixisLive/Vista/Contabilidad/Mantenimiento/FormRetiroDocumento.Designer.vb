@@ -161,7 +161,7 @@ Partial Class FormRetiroDocumento
         '
         'ToolStrip1
         '
-        Me.ToolStrip1.BackColor = System.Drawing.Color.SteelBlue
+        Me.ToolStrip1.BackColor = System.Drawing.Color.FromArgb(20, 61, 113)
         Me.ToolStrip1.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.btguardar, Me.ToolStripSeparator3, Me.btcancelar})
         Me.ToolStrip1.Location = New System.Drawing.Point(0, 263)
@@ -216,7 +216,7 @@ Partial Class FormRetiroDocumento
         '
         'Ltitulo
         '
-        Me.Ltitulo.BackColor = System.Drawing.Color.SteelBlue
+        Me.Ltitulo.BackColor = System.Drawing.Color.FromArgb(20, 61, 113)
         Me.Ltitulo.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Ltitulo.ForeColor = System.Drawing.Color.White
         Me.Ltitulo.Location = New System.Drawing.Point(2, 1)

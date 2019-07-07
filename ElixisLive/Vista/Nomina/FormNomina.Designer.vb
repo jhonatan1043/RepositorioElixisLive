@@ -77,7 +77,7 @@ Partial Class FormNomina
         '
         Me.btCalcular.BackColor = System.Drawing.Color.AliceBlue
         Me.btCalcular.Font = New System.Drawing.Font("Times New Roman", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btCalcular.ForeColor = System.Drawing.Color.SteelBlue
+        Me.btCalcular.ForeColor = System.Drawing.Color.FromArgb(20, 61, 113)
         Me.btCalcular.Image = Global.Quality.My.Resources.Resources.calculator_icon
         Me.btCalcular.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btCalcular.Location = New System.Drawing.Point(805, 10)

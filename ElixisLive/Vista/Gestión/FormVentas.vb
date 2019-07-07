@@ -332,7 +332,7 @@
         Generales.deshabilitarControles(Me)
         btRegistrar.Enabled = False
         btCancelar.Enabled = False
-        lbInformativo.ForeColor = Color.SteelBlue
+        lbInformativo.ForeColor = Color.FromArgb(20, 61, 113)
         lbInformativo.Font = New Font(Constantes.TIPO_LETRA_ELEMENTO, 11)
     End Sub
     Private Sub buscarServicio()
@@ -481,7 +481,7 @@
                 lbInformativo.Text = "Este cliente presenta un descuento del " & CStr(Replace(Format(objVenta.descuentoCliente, "p2"), ",00", ""))
                 calcularTotales()
             End If
-            lbInformativo.ForeColor = Color.SteelBlue
+            lbInformativo.ForeColor = Color.FromArgb(20, 61, 113)
             lbInformativo.Font = New Font(Constantes.TIPO_LETRA_ELEMENTO, 11)
         Else
             objVenta.codigoPersonaCliente = Nothing

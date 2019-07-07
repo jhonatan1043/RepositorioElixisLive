@@ -446,7 +446,7 @@ Public Class Generales
         dgv.ColumnHeadersDefaultCellStyle.ForeColor = Color.White
         dgv.AlternatingRowsDefaultCellStyle.Font = New Font(Constantes.TIPO_LETRA_ELEMENTO, 9)
         dgv.ColumnHeadersDefaultCellStyle.Font = New Font(Constantes.TIPO_LETRA_ELEMENTO, 9)
-        dgv.RowHeadersDefaultCellStyle.SelectionBackColor = Color.LightSteelBlue
+        dgv.RowHeadersDefaultCellStyle.SelectionBackColor = Color.FromArgb(76, 137, 184)
         For indiceColumna = 0 To dgv.Columns.Count - 1
             dgv.Columns(indiceColumna).AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
         Next

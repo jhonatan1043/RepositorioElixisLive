@@ -861,7 +861,7 @@ Partial Class FormVentas
         Me.DataGridView1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.DataGridView1.BackgroundColor = System.Drawing.Color.White
         DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.SteelBlue
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(20, 61, 113)
         DataGridViewCellStyle2.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
         DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
@@ -887,7 +887,7 @@ Partial Class FormVentas
         Me.DataGridView2.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle3
         Me.DataGridView2.BackgroundColor = System.Drawing.Color.White
         DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle4.BackColor = System.Drawing.Color.SteelBlue
+        DataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(20, 61, 113)
         DataGridViewCellStyle4.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle4.ForeColor = System.Drawing.Color.White
         DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
@@ -982,7 +982,7 @@ Partial Class FormVentas
         Me.DataGridView3.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle8
         Me.DataGridView3.BackgroundColor = System.Drawing.Color.White
         DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle9.BackColor = System.Drawing.Color.SteelBlue
+        DataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(20, 61, 113)
         DataGridViewCellStyle9.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle9.ForeColor = System.Drawing.Color.White
         DataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight
@@ -1131,7 +1131,7 @@ Partial Class FormVentas
         '
         'Button1
         '
-        Me.Button1.BackColor = System.Drawing.Color.SteelBlue
+        Me.Button1.BackColor = System.Drawing.Color.FromArgb(20, 61, 113)
         Me.Button1.Font = New System.Drawing.Font("Times New Roman", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button1.ForeColor = System.Drawing.Color.White
         Me.Button1.Location = New System.Drawing.Point(439, 9)
@@ -1406,7 +1406,7 @@ Partial Class FormVentas
         Me.DataGridView7.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle16
         Me.DataGridView7.BackgroundColor = System.Drawing.Color.White
         DataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle17.BackColor = System.Drawing.Color.SteelBlue
+        DataGridViewCellStyle17.BackColor = System.Drawing.Color.FromArgb(20, 61, 113)
         DataGridViewCellStyle17.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle17.ForeColor = System.Drawing.Color.White
         DataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight
@@ -1432,7 +1432,7 @@ Partial Class FormVentas
         Me.DataGridView8.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle18
         Me.DataGridView8.BackgroundColor = System.Drawing.Color.White
         DataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle19.BackColor = System.Drawing.Color.SteelBlue
+        DataGridViewCellStyle19.BackColor = System.Drawing.Color.FromArgb(20, 61, 113)
         DataGridViewCellStyle19.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle19.ForeColor = System.Drawing.Color.White
         DataGridViewCellStyle19.SelectionBackColor = System.Drawing.SystemColors.Highlight
@@ -1527,7 +1527,7 @@ Partial Class FormVentas
         Me.DataGridView9.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle23
         Me.DataGridView9.BackgroundColor = System.Drawing.Color.White
         DataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle24.BackColor = System.Drawing.Color.SteelBlue
+        DataGridViewCellStyle24.BackColor = System.Drawing.Color.FromArgb(20, 61, 113)
         DataGridViewCellStyle24.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle24.ForeColor = System.Drawing.Color.White
         DataGridViewCellStyle24.SelectionBackColor = System.Drawing.SystemColors.Highlight
@@ -1676,7 +1676,7 @@ Partial Class FormVentas
         '
         'Button3
         '
-        Me.Button3.BackColor = System.Drawing.Color.SteelBlue
+        Me.Button3.BackColor = System.Drawing.Color.FromArgb(20, 61, 113)
         Me.Button3.Font = New System.Drawing.Font("Times New Roman", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button3.ForeColor = System.Drawing.Color.White
         Me.Button3.Location = New System.Drawing.Point(439, 9)
@@ -2027,10 +2027,10 @@ Partial Class FormVentas
         '
         'txtCodigoBarra
         '
-        Me.txtCodigoBarra.BackColor = System.Drawing.Color.LightSteelBlue
+        Me.txtCodigoBarra.BackColor = System.Drawing.Color.FromArgb(76, 137, 184)
         Me.txtCodigoBarra.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtCodigoBarra.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtCodigoBarra.ForeColor = System.Drawing.Color.LightSteelBlue
+        Me.txtCodigoBarra.ForeColor = System.Drawing.Color.FromArgb(76, 137, 184)
         Me.txtCodigoBarra.Location = New System.Drawing.Point(112, 113)
         Me.txtCodigoBarra.MaxLength = 26
         Me.txtCodigoBarra.Name = "txtCodigoBarra"
@@ -2148,7 +2148,7 @@ Partial Class FormVentas
         Me.lbInformativo.AutoSize = True
         Me.lbInformativo.BackColor = System.Drawing.Color.Transparent
         Me.lbInformativo.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbInformativo.ForeColor = System.Drawing.Color.SteelBlue
+        Me.lbInformativo.ForeColor = System.Drawing.Color.FromArgb(20, 61, 113)
         Me.lbInformativo.Location = New System.Drawing.Point(487, 92)
         Me.lbInformativo.Name = "lbInformativo"
         Me.lbInformativo.Size = New System.Drawing.Size(10, 15)
@@ -2190,7 +2190,7 @@ Partial Class FormVentas
         Me.dgvProducto.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle31
         Me.dgvProducto.BackgroundColor = System.Drawing.Color.White
         DataGridViewCellStyle32.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle32.BackColor = System.Drawing.Color.SteelBlue
+        DataGridViewCellStyle32.BackColor = System.Drawing.Color.FromArgb(20, 61, 113)
         DataGridViewCellStyle32.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle32.ForeColor = System.Drawing.Color.White
         DataGridViewCellStyle32.SelectionBackColor = System.Drawing.SystemColors.Highlight
@@ -2354,7 +2354,7 @@ Partial Class FormVentas
         Me.dgvDetalle.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle39
         Me.dgvDetalle.BackgroundColor = System.Drawing.Color.White
         DataGridViewCellStyle40.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle40.BackColor = System.Drawing.Color.SteelBlue
+        DataGridViewCellStyle40.BackColor = System.Drawing.Color.FromArgb(20, 61, 113)
         DataGridViewCellStyle40.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle40.ForeColor = System.Drawing.Color.White
         DataGridViewCellStyle40.SelectionBackColor = System.Drawing.SystemColors.Highlight
@@ -2380,7 +2380,7 @@ Partial Class FormVentas
         Me.dgvServicio.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle41
         Me.dgvServicio.BackgroundColor = System.Drawing.Color.White
         DataGridViewCellStyle42.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle42.BackColor = System.Drawing.Color.SteelBlue
+        DataGridViewCellStyle42.BackColor = System.Drawing.Color.FromArgb(20, 61, 113)
         DataGridViewCellStyle42.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle42.ForeColor = System.Drawing.Color.White
         DataGridViewCellStyle42.SelectionBackColor = System.Drawing.SystemColors.Highlight

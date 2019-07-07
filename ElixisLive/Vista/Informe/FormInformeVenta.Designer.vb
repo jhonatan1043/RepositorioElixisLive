@@ -151,7 +151,7 @@ Partial Class FormInformeVenta
         Me.dgvVenta.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.dgvVenta.BackgroundColor = System.Drawing.Color.White
         DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.SteelBlue
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(20, 61, 113)
         DataGridViewCellStyle2.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Italic)
         DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
         DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
@@ -251,7 +251,7 @@ Partial Class FormInformeVenta
         Me.dgvServicio.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle3
         Me.dgvServicio.BackgroundColor = System.Drawing.Color.White
         DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle4.BackColor = System.Drawing.Color.SteelBlue
+        DataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(20, 61, 113)
         DataGridViewCellStyle4.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Italic)
         DataGridViewCellStyle4.ForeColor = System.Drawing.Color.White
         DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
@@ -332,7 +332,7 @@ Partial Class FormInformeVenta
         Me.dgvGasto.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle5
         Me.dgvGasto.BackgroundColor = System.Drawing.Color.White
         DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle6.BackColor = System.Drawing.Color.SteelBlue
+        DataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(20, 61, 113)
         DataGridViewCellStyle6.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Italic)
         DataGridViewCellStyle6.ForeColor = System.Drawing.Color.White
         DataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight

@@ -470,7 +470,7 @@ Partial Class FormEstadoCuentas
         '
         'Label1
         '
-        Me.Label1.BackColor = System.Drawing.Color.SteelBlue
+        Me.Label1.BackColor = System.Drawing.Color.FromArgb(20, 61, 113)
         Me.Label1.Font = New System.Drawing.Font("Times New Roman", 11.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.White
         Me.Label1.Location = New System.Drawing.Point(13, 12)
@@ -482,7 +482,7 @@ Partial Class FormEstadoCuentas
         '
         'Label2
         '
-        Me.Label2.BackColor = System.Drawing.Color.SteelBlue
+        Me.Label2.BackColor = System.Drawing.Color.FromArgb(20, 61, 113)
         Me.Label2.Font = New System.Drawing.Font("Times New Roman", 11.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.White
         Me.Label2.Location = New System.Drawing.Point(160, 12)
@@ -494,7 +494,7 @@ Partial Class FormEstadoCuentas
         '
         'Label9
         '
-        Me.Label9.BackColor = System.Drawing.Color.SteelBlue
+        Me.Label9.BackColor = System.Drawing.Color.FromArgb(20, 61, 113)
         Me.Label9.Font = New System.Drawing.Font("Times New Roman", 11.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label9.ForeColor = System.Drawing.Color.White
         Me.Label9.Location = New System.Drawing.Point(624, 12)
@@ -506,7 +506,7 @@ Partial Class FormEstadoCuentas
         '
         'Label10
         '
-        Me.Label10.BackColor = System.Drawing.Color.SteelBlue
+        Me.Label10.BackColor = System.Drawing.Color.FromArgb(20, 61, 113)
         Me.Label10.Font = New System.Drawing.Font("Times New Roman", 11.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label10.ForeColor = System.Drawing.Color.White
         Me.Label10.Location = New System.Drawing.Point(318, 12)
@@ -518,7 +518,7 @@ Partial Class FormEstadoCuentas
         '
         'Label11
         '
-        Me.Label11.BackColor = System.Drawing.Color.SteelBlue
+        Me.Label11.BackColor = System.Drawing.Color.FromArgb(20, 61, 113)
         Me.Label11.Font = New System.Drawing.Font("Times New Roman", 11.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label11.ForeColor = System.Drawing.Color.White
         Me.Label11.Location = New System.Drawing.Point(938, 12)
@@ -530,7 +530,7 @@ Partial Class FormEstadoCuentas
         '
         'Label12
         '
-        Me.Label12.BackColor = System.Drawing.Color.SteelBlue
+        Me.Label12.BackColor = System.Drawing.Color.FromArgb(20, 61, 113)
         Me.Label12.Font = New System.Drawing.Font("Times New Roman", 11.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label12.ForeColor = System.Drawing.Color.White
         Me.Label12.Location = New System.Drawing.Point(469, 12)
@@ -542,7 +542,7 @@ Partial Class FormEstadoCuentas
         '
         'Label13
         '
-        Me.Label13.BackColor = System.Drawing.Color.SteelBlue
+        Me.Label13.BackColor = System.Drawing.Color.FromArgb(20, 61, 113)
         Me.Label13.Font = New System.Drawing.Font("Times New Roman", 11.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label13.ForeColor = System.Drawing.Color.White
         Me.Label13.Location = New System.Drawing.Point(789, 12)

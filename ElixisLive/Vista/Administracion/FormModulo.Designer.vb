@@ -110,7 +110,7 @@ Partial Class FormModulo
         '
         'gbClave
         '
-        Me.gbClave.BackColor = System.Drawing.Color.SteelBlue
+        Me.gbClave.BackColor = System.Drawing.Color.FromArgb(20, 61, 113)
         Me.gbClave.Controls.Add(Me.TextClave)
         Me.gbClave.Controls.Add(Me.btDeclinar)
         Me.gbClave.Controls.Add(Me.btAceptar)

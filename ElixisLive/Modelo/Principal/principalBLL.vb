@@ -28,7 +28,7 @@ Public Class principalBLL
             FormPrincipal.Controls.Add(FormPrincipal.menuOpciones)
             FormPrincipal.menuOpciones.LayoutStyle = ToolStripLayoutStyle.Flow
             FormPrincipal.menuOpciones.AutoSize = True
-            FormPrincipal.menuOpciones.BackColor = Color.SteelBlue
+            FormPrincipal.menuOpciones.BackColor = Color.FromArgb(20, 61, 113)
 
 
             FormPrincipal.menuOpciones.GripStyle = ToolStripGripStyle.Visible

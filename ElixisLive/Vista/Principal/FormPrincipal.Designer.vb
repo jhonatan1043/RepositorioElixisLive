@@ -32,7 +32,7 @@ Partial Class FormPrincipal
         'ImageList1
         '
         Me.ImageList1.ImageStream = CType(resources.GetObject("ImageList1.ImageStream"), System.Windows.Forms.ImageListStreamer)
-        Me.ImageList1.TransparentColor = System.Drawing.Color.SteelBlue
+        Me.ImageList1.TransparentColor = System.Drawing.Color.FromArgb(20, 61, 113)
         Me.ImageList1.Images.SetKeyName(0, "azul.png")
         Me.ImageList1.Images.SetKeyName(1, "verde.png")
         Me.ImageList1.Images.SetKeyName(2, "blanco.png")
@@ -53,7 +53,7 @@ Partial Class FormPrincipal
         Me.lbUsuario.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.lbUsuario.BackColor = System.Drawing.Color.White
         Me.lbUsuario.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbUsuario.ForeColor = System.Drawing.Color.SteelBlue
+        Me.lbUsuario.ForeColor = System.Drawing.Color.FromArgb(20, 61, 113)
         Me.lbUsuario.Location = New System.Drawing.Point(612, 711)
         Me.lbUsuario.Name = "lbUsuario"
         Me.lbUsuario.Size = New System.Drawing.Size(388, 22)
@@ -66,7 +66,7 @@ Partial Class FormPrincipal
         Me.AutoScaleDimensions = New System.Drawing.SizeF(96.0!, 96.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi
         Me.BackColor = System.Drawing.Color.White
-        Me.BackgroundImage = Global.Quality.My.Resources.Resources.Quality_logo
+        Me.BackgroundImage = Global.Quality.My.Resources.Resources.XANDaR_copia
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.ClientSize = New System.Drawing.Size(1016, 733)
         Me.ControlBox = False

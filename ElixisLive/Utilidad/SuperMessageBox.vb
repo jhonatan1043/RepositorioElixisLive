@@ -175,7 +175,7 @@
         cmdBoton.Text = Cadena
         cmdBoton.Height = 25 : cmdBoton.Width = mintAncho
         cmdBoton.Font = New Font("Times New Roman", 11, FontStyle.Italic)
-        cmdBoton.ForeColor = Color.SteelBlue
+        cmdBoton.ForeColor = Color.FromArgb(20, 61, 113)
         alstBotones.Add(cmdBoton)
     End Sub
 

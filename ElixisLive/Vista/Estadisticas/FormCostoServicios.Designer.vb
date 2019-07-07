@@ -77,7 +77,7 @@ Partial Class FormCostoServicios
         '
         'Label1
         '
-        Me.Label1.BackColor = System.Drawing.Color.SteelBlue
+        Me.Label1.BackColor = System.Drawing.Color.FromArgb(20, 61, 113)
         Me.Label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Label1.Font = New System.Drawing.Font("Times New Roman", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.White
@@ -90,7 +90,7 @@ Partial Class FormCostoServicios
         '
         'Label5
         '
-        Me.Label5.BackColor = System.Drawing.Color.SteelBlue
+        Me.Label5.BackColor = System.Drawing.Color.FromArgb(20, 61, 113)
         Me.Label5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Label5.Font = New System.Drawing.Font("Times New Roman", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.Color.White
