@@ -49,7 +49,7 @@ Partial Class FormLibroAuxiliar
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.White
-        Me.Panel1.BackgroundImage = Global.Quality.My.Resources.Resources.fondo_azul
+       
         Me.Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Panel1.Controls.Add(Me.Pimagen)
         Me.Panel1.Controls.Add(Me.LTitulo)
@@ -61,7 +61,7 @@ Partial Class FormLibroAuxiliar
         'Pimagen
         '
         Me.Pimagen.BackColor = System.Drawing.Color.Transparent
-        Me.Pimagen.Image = Global.Quality.My.Resources.Resources.project_plan_icon
+      '    Me.Pimagen.Image = Global.Quality.My.Resources.Resources.project_plan_icon
         Me.Pimagen.Location = New System.Drawing.Point(4, 0)
         Me.Pimagen.Name = "Pimagen"
         Me.Pimagen.Size = New System.Drawing.Size(58, 41)
@@ -109,7 +109,7 @@ Partial Class FormLibroAuxiliar
         '
         Me.btExportaExcel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btExportaExcel.Enabled = False
-        Me.btExportaExcel.Image = Global.Quality.My.Resources.Resources.Microsoft_Excel_2013_icon1
+        'Me.btExportaExcel.Image = Global.Quality.My.Resources.Resources.Microsoft_Excel_2013_icon1
         Me.btExportaExcel.Location = New System.Drawing.Point(414, 110)
         Me.btExportaExcel.Name = "btExportaExcel"
         Me.btExportaExcel.Size = New System.Drawing.Size(42, 38)
@@ -219,7 +219,7 @@ Partial Class FormLibroAuxiliar
         '
         Me.btVisualizaPDF.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btVisualizaPDF.Enabled = False
-        Me.btVisualizaPDF.Image = Global.Quality.My.Resources.Resources.Printer_icon__1_1
+        'Me.btVisualizaPDF.Image = Global.Quality.My.Resources.Resources.Printer_icon__1_1
         Me.btVisualizaPDF.Location = New System.Drawing.Point(354, 110)
         Me.btVisualizaPDF.Name = "btVisualizaPDF"
         Me.btVisualizaPDF.Size = New System.Drawing.Size(42, 38)

@@ -33,7 +33,7 @@ Partial Class FormGasto
         'Pimagen
         '
         Me.Pimagen.BackColor = System.Drawing.Color.Transparent
-        Me.Pimagen.Image = Global.Quality.My.Resources.Resources.Cash_icon
+      '    Me.Pimagen.Image = Global.Quality.My.Resources.Resources.Cash_icon
         Me.Pimagen.Location = New System.Drawing.Point(13, -4)
         Me.Pimagen.Size = New System.Drawing.Size(55, 45)
         Me.Pimagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage

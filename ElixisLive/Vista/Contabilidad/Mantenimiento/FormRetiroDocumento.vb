@@ -67,13 +67,13 @@
 
             dgvDocumento.Columns(0).HeaderText = "Habilitar"
             For i = 0 To dgvDocumento.Rows.Count - 1
-                dgvDocumento.Rows(i).Cells("Anulado").Value = My.Resources.verde
+                'dgvDocumento.Rows(i).Cells("Anulado").Value = My.Resources.verde
             Next
         Else
             dgvDocumento.Columns(0).HeaderText = "Anular"
 
             For i = 0 To dgvDocumento.Rows.Count - 1
-                dgvDocumento.Rows(i).Cells("Anulado").Value = My.Resources.rojo
+                'dgvDocumento.Rows(i).Cells("Anulado").Value = My.Resources.rojo
             Next
         End If
     End Sub
@@ -84,13 +84,13 @@
 
             dgvDocumento.Columns(0).HeaderText = "Habilitar"
             For i = 0 To dgvDocumento.Rows.Count - 1
-                dgvDocumento.Rows(i).Cells("Anulado").Value = My.Resources.verde
+                'dgvDocumento.Rows(i).Cells("Anulado").Value = My.Resources.verde
             Next
         Else
             dgvDocumento.Columns(0).HeaderText = "Anular"
 
             For i = 0 To dgvDocumento.Rows.Count - 1
-                dgvDocumento.Rows(i).Cells("Anulado").Value = My.Resources.rojo
+                'dgvDocumento.Rows(i).Cells("Anulado").Value = My.Resources.rojo
             Next
         End If
     End Sub
@@ -102,13 +102,13 @@
 
             dgvDocumento.Columns(0).HeaderText = "Habilitar"
             For i = 0 To dgvDocumento.Rows.Count - 1
-                dgvDocumento.Rows(i).Cells("Anulado").Value = My.Resources.verde
+                'dgvDocumento.Rows(i).Cells("Anulado").Value = My.Resources.verde
             Next
         Else
             dgvDocumento.Columns(0).HeaderText = "Anular"
 
             For i = 0 To dgvDocumento.Rows.Count - 1
-                dgvDocumento.Rows(i).Cells("Anulado").Value = My.Resources.rojo
+                'dgvDocumento.Rows(i).Cells("Anulado").Value = My.Resources.rojo
             Next
         End If
 

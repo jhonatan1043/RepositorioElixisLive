@@ -145,7 +145,7 @@ Partial Class FormInicioSesion
         'Pimagen
         '
         Me.Pimagen.BackColor = System.Drawing.Color.Transparent
-        Me.Pimagen.Image = Global.Quality.My.Resources.Resources.Quality_logo
+      '    Me.Pimagen.Image = Global.Quality.My.Resources.Resources.Quality_logo
         Me.Pimagen.Location = New System.Drawing.Point(3, 10)
         Me.Pimagen.Name = "Pimagen"
         Me.Pimagen.Size = New System.Drawing.Size(120, 155)

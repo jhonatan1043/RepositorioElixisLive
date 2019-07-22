@@ -504,7 +504,7 @@ Partial Class FormInformeVenta
         DataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.White
         Me.DataGridViewImageColumn1.DefaultCellStyle = DataGridViewCellStyle7
         Me.DataGridViewImageColumn1.HeaderText = "Quitar"
-        Me.DataGridViewImageColumn1.Image = Global.Quality.My.Resources.Resources.papelera
+        'Me.DataGridViewImageColumn1.Image = Global.Quality.My.Resources.Resources.papelera
         Me.DataGridViewImageColumn1.Name = "DataGridViewImageColumn1"
         Me.DataGridViewImageColumn1.ReadOnly = True
         Me.DataGridViewImageColumn1.Width = 50
@@ -512,7 +512,7 @@ Partial Class FormInformeVenta
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.White
-        Me.Panel1.BackgroundImage = Global.Quality.My.Resources.Resources.fondo_azul
+       
         Me.Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Panel1.Controls.Add(Me.Pimagen)
         Me.Panel1.Controls.Add(Me.Label1)
@@ -524,7 +524,7 @@ Partial Class FormInformeVenta
         'Pimagen
         '
         Me.Pimagen.BackColor = System.Drawing.Color.Transparent
-        Me.Pimagen.Image = Global.Quality.My.Resources.Resources.Cart_icon
+      '    Me.Pimagen.Image = Global.Quality.My.Resources.Resources.Cart_icon
         Me.Pimagen.Location = New System.Drawing.Point(3, 0)
         Me.Pimagen.Name = "Pimagen"
         Me.Pimagen.Size = New System.Drawing.Size(60, 46)

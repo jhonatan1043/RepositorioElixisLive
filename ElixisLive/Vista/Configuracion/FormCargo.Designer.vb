@@ -35,7 +35,7 @@ Partial Class FormCargo
         'Pimagen
         '
         Me.Pimagen.BackColor = System.Drawing.Color.Transparent
-        Me.Pimagen.Image = Global.Quality.My.Resources.Resources.User_Files_icon1
+      '    Me.Pimagen.Image = Global.Quality.My.Resources.Resources.User_Files_icon1
         Me.Pimagen.Location = New System.Drawing.Point(4, 0)
         Me.Pimagen.Size = New System.Drawing.Size(51, 42)
         Me.Pimagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage

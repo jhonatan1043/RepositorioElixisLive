@@ -42,7 +42,7 @@ Partial Class FormBusqueda
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.White
-        Me.Panel1.BackgroundImage = Global.Quality.My.Resources.Resources.fondo_azul
+       
         Me.Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Panel1.Controls.Add(Me.Pimagen)
         Me.Panel1.Controls.Add(Me.LTitulo)
@@ -54,7 +54,7 @@ Partial Class FormBusqueda
         'Pimagen
         '
         Me.Pimagen.BackColor = System.Drawing.Color.Transparent
-        Me.Pimagen.Image = Global.Quality.My.Resources.Resources.InvoiceSearch_icon
+      '    Me.Pimagen.Image = Global.Quality.My.Resources.Resources.InvoiceSearch_icon
         Me.Pimagen.Location = New System.Drawing.Point(4, 1)
         Me.Pimagen.Name = "Pimagen"
         Me.Pimagen.Size = New System.Drawing.Size(47, 39)

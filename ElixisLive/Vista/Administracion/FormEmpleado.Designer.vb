@@ -32,14 +32,14 @@ Partial Class FormEmpleado
         Me.txtTelefono = New System.Windows.Forms.Label()
         Me.txtIdentificacion = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.btBuscarPersona = New System.Windows.Forms.Button()
+        ' Me.btBuscarPersona = New System.Windows.Forms.Button()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
-        Me.pictImagen = New System.Windows.Forms.PictureBox()
+        ' Me.pictImagen = New System.Windows.Forms.PictureBox()
         Me.GbInform_D = New System.Windows.Forms.GroupBox()
         Me.dgvParametro = New System.Windows.Forms.DataGridView()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
@@ -73,7 +73,7 @@ Partial Class FormEmpleado
         Me.ErrorIcono = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
         Me.btNuevo = New System.Windows.Forms.ToolStripButton()
-        Me.btBuscar = New System.Windows.Forms.ToolStripButton()
+        ' Me.btBuscar = New System.Windows.Forms.ToolStripButton()
         Me.btRegistrar = New System.Windows.Forms.ToolStripButton()
         Me.btEditar = New System.Windows.Forms.ToolStripButton()
         Me.btCancelar = New System.Windows.Forms.ToolStripButton()
@@ -195,14 +195,14 @@ Partial Class FormEmpleado
         '
         'btBuscarPersona
         '
-        Me.btBuscarPersona.BackgroundImage = Global.Quality.My.Resources.Resources.fondo_azul
-        Me.btBuscarPersona.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btBuscarPersona.Image = Global.Quality.My.Resources.Resources.Zoom_icon1
-        Me.btBuscarPersona.Location = New System.Drawing.Point(752, 12)
-        Me.btBuscarPersona.Name = "btBuscarPersona"
-        Me.btBuscarPersona.Size = New System.Drawing.Size(31, 30)
-        Me.btBuscarPersona.TabIndex = 65
-        Me.btBuscarPersona.UseVisualStyleBackColor = True
+        '' Me.btBuscarPersona.BackgroundImage = Global.Quality.My.Resources.Resources.fondo_azul
+        ' Me.btBuscarPersona.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        '' Me.btBuscarPersona.Image = Global.Quality.My.Resources.Resources.Zoom_icon1
+        ' Me.btBuscarPersona.Location = New System.Drawing.Point(752, 12)
+        ' Me.btBuscarPersona.Name = "btBuscarPersona"
+        ' Me.btBuscarPersona.Size = New System.Drawing.Size(31, 30)
+        ' Me.btBuscarPersona.TabIndex = 65
+        ' Me.btBuscarPersona.UseVisualStyleBackColor = True
         '
         'Label4
         '
@@ -275,16 +275,16 @@ Partial Class FormEmpleado
         '
         'pictImagen
         '
-        Me.pictImagen.BackgroundImage = Global.Quality.My.Resources.Resources.fondo_azul
-        Me.pictImagen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.pictImagen.Image = Global.Quality.My.Resources.Resources.usuario
-        Me.pictImagen.InitialImage = Global.Quality.My.Resources.Resources.usuario
-        Me.pictImagen.Location = New System.Drawing.Point(5, 14)
-        Me.pictImagen.Name = "pictImagen"
-        Me.pictImagen.Size = New System.Drawing.Size(92, 82)
-        Me.pictImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.pictImagen.TabIndex = 0
-        Me.pictImagen.TabStop = False
+        ''Me.pictImagen.BackgroundImage = Global.Quality.My.Resources.Resources.fondo_azul
+        'Me.pictImagen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        ' Me.pictImagen.Image = Global.Quality.My.Resources.Resources.usuario
+        ' Me.pictImagen.InitialImage = Global.Quality.My.Resources.Resources.usuario
+        ' Me.pictImagen.Location = New System.Drawing.Point(5, 14)
+        ' Me.pictImagen.Name = "pictImagen"
+        ' Me.pictImagen.Size = New System.Drawing.Size(92, 82)
+        ' Me.pictImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        ' Me.pictImagen.TabIndex = 0
+        ' Me.pictImagen.TabStop = False
         '
         'GbInform_D
         '
@@ -644,8 +644,8 @@ Partial Class FormEmpleado
         'ToolStrip1
         '
         Me.ToolStrip1.BackColor = System.Drawing.Color.White
-        Me.ToolStrip1.BackgroundImage = Global.Quality.My.Resources.Resources.fondo_azul
-        Me.ToolStrip1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        'Me.ToolStrip1.BackgroundImage = Global.Quality.My.Resources.Resources.fondo_azul
+        'Me.ToolStrip1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ToolStrip1.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.ToolStrip1.ImageScalingSize = New System.Drawing.Size(30, 30)
         Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.btNuevo, Me.btBuscar, Me.btRegistrar, Me.btEditar, Me.btCancelar, Me.btAnular})
@@ -659,8 +659,8 @@ Partial Class FormEmpleado
         '
         Me.btNuevo.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btNuevo.ForeColor = System.Drawing.Color.White
-        Me.btNuevo.Image = Global.Quality.My.Resources.Resources.Files_New_File_icon
-        Me.btNuevo.ImageTransparentColor = System.Drawing.Color.Magenta
+        '  Me.btNuevo.Image = Global.Quality.My.Resources.Resources.Files_New_File_icon
+        '  Me.btNuevo.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.btNuevo.Name = "btNuevo"
         Me.btNuevo.Size = New System.Drawing.Size(86, 34)
         Me.btNuevo.Text = "Nuevo"
@@ -668,20 +668,20 @@ Partial Class FormEmpleado
         '
         'btBuscar
         '
-        Me.btBuscar.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btBuscar.ForeColor = System.Drawing.Color.White
-        Me.btBuscar.Image = Global.Quality.My.Resources.Resources.Search_icon
-        Me.btBuscar.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.btBuscar.Name = "btBuscar"
-        Me.btBuscar.Size = New System.Drawing.Size(90, 34)
-        Me.btBuscar.Text = "Buscar"
-        Me.btBuscar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        ' Me.btBuscar.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        ' Me.btBuscar.ForeColor = System.Drawing.Color.White
+        '  ' Me.btBuscar.Image = Global.Quality.My.Resources.Resources.Search_icon
+        '  ' Me.btBuscar.ImageTransparentColor = System.Drawing.Color.Magenta
+        ' Me.btBuscar.Name = "btBuscar"
+        ' Me.btBuscar.Size = New System.Drawing.Size(90, 34)
+        ' Me.btBuscar.Text = "Buscar"
+        ' Me.btBuscar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         '
         'btRegistrar
         '
         Me.btRegistrar.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btRegistrar.ForeColor = System.Drawing.Color.White
-        Me.btRegistrar.Image = Global.Quality.My.Resources.Resources.Save_icon__1_
+        'Me.btRegistrar.Image = Global.Quality.My.Resources.Resources.Save_icon__1_
         Me.btRegistrar.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.btRegistrar.Name = "btRegistrar"
         Me.btRegistrar.Size = New System.Drawing.Size(105, 34)
@@ -692,7 +692,7 @@ Partial Class FormEmpleado
         '
         Me.btEditar.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btEditar.ForeColor = System.Drawing.Color.White
-        Me.btEditar.Image = Global.Quality.My.Resources.Resources.pencil_icon__1_
+        'Me.btEditar.Image = Global.Quality.My.Resources.Resources.pencil_icon__1_
         Me.btEditar.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.btEditar.Name = "btEditar"
         Me.btEditar.Size = New System.Drawing.Size(86, 34)
@@ -703,7 +703,7 @@ Partial Class FormEmpleado
         '
         Me.btCancelar.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btCancelar.ForeColor = System.Drawing.Color.White
-        Me.btCancelar.Image = Global.Quality.My.Resources.Resources.Actions_blue_arrow_undo_icon
+       ' Me.btCancelar.Image = Global.Quality.My.Resources.Resources.Actions_blue_arrow_undo_icon
         Me.btCancelar.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.btCancelar.Name = "btCancelar"
         Me.btCancelar.Size = New System.Drawing.Size(104, 34)
@@ -714,8 +714,8 @@ Partial Class FormEmpleado
         '
         Me.btAnular.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btAnular.ForeColor = System.Drawing.Color.White
-        Me.btAnular.Image = Global.Quality.My.Resources.Resources.document_delete_icon__1_
-        Me.btAnular.ImageTransparentColor = System.Drawing.Color.Magenta
+        '  Me.btAnular.Image = Global.Quality.My.Resources.Resources.document_delete_icon__1_
+        '  Me.btAnular.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.btAnular.Name = "btAnular"
         Me.btAnular.Size = New System.Drawing.Size(91, 34)
         Me.btAnular.Text = "Anular"
@@ -724,7 +724,7 @@ Partial Class FormEmpleado
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.White
-        Me.Panel1.BackgroundImage = Global.Quality.My.Resources.Resources.fondo_azul
+       
         Me.Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Panel1.Controls.Add(Me.Pimagen)
         Me.Panel1.Controls.Add(Me.LTitulo)
@@ -736,7 +736,7 @@ Partial Class FormEmpleado
         'Pimagen
         '
         Me.Pimagen.BackColor = System.Drawing.Color.Transparent
-        Me.Pimagen.Image = Global.Quality.My.Resources.Resources.administrator_icon
+        '    Me.Pimagen.Image = Global.Quality.My.Resources.Resources.administrator_icon
         Me.Pimagen.Location = New System.Drawing.Point(4, 0)
         Me.Pimagen.Name = "Pimagen"
         Me.Pimagen.Size = New System.Drawing.Size(53, 46)

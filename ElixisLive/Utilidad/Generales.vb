@@ -995,7 +995,7 @@ Public Class Generales
                 objeto.image.ImageLocation(ruta)
                 'objeto.imagen.Cursor = Cursors.Default
             Catch ex As Exception
-                objeto.imagen.image = My.Resources.advertencia
+                'objeto.imagen.image = My.Resources.advertencia
             End Try
         End If
     End Sub

@@ -45,7 +45,7 @@ Partial Class FormCerrarSesion
         '
         'PictureBox4
         '
-        Me.PictureBox4.Image = Global.Quality.My.Resources.Resources.Quality_logo
+        'Me.PictureBox4.Image = Global.Quality.My.Resources.Resources.Quality_logo
         Me.PictureBox4.Location = New System.Drawing.Point(8, 14)
         Me.PictureBox4.Name = "PictureBox4"
         Me.PictureBox4.Size = New System.Drawing.Size(78, 108)
@@ -56,7 +56,7 @@ Partial Class FormCerrarSesion
         'PicRegresar
         '
         Me.PicRegresar.BackColor = System.Drawing.Color.White
-        Me.PicRegresar.Image = Global.Quality.My.Resources.Resources.glossy_3d_blue_orbs2_092_icon1
+        'Me.PicRegresar.Image = Global.Quality.My.Resources.Resources.glossy_3d_blue_orbs2_092_icon1
         Me.PicRegresar.Location = New System.Drawing.Point(252, 35)
         Me.PicRegresar.Name = "PicRegresar"
         Me.PicRegresar.Size = New System.Drawing.Size(55, 55)
@@ -67,7 +67,7 @@ Partial Class FormCerrarSesion
         'PicSalir
         '
         Me.PicSalir.BackColor = System.Drawing.Color.White
-        Me.PicSalir.Image = Global.Quality.My.Resources.Resources.glossy_3d_blue_orbs2_132_icon2
+        'Me.PicSalir.Image = Global.Quality.My.Resources.Resources.glossy_3d_blue_orbs2_132_icon2
         Me.PicSalir.Location = New System.Drawing.Point(175, 35)
         Me.PicSalir.Name = "PicSalir"
         Me.PicSalir.Size = New System.Drawing.Size(55, 55)
@@ -78,7 +78,7 @@ Partial Class FormCerrarSesion
         'PicCerrarSesion
         '
         Me.PicCerrarSesion.BackColor = System.Drawing.Color.White
-        Me.PicCerrarSesion.Image = Global.Quality.My.Resources.Resources.glossy_3d_blue_orbs2_115_icon1
+        'Me.PicCerrarSesion.Image = Global.Quality.My.Resources.Resources.glossy_3d_blue_orbs2_115_icon1
         Me.PicCerrarSesion.Location = New System.Drawing.Point(99, 35)
         Me.PicCerrarSesion.Name = "PicCerrarSesion"
         Me.PicCerrarSesion.Size = New System.Drawing.Size(55, 55)

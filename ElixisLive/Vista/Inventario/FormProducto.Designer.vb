@@ -43,7 +43,7 @@ Partial Class FormProducto
         'Pimagen
         '
         Me.Pimagen.BackColor = System.Drawing.Color.Transparent
-        Me.Pimagen.Image = Global.Quality.My.Resources.Resources.palet_03_icon
+      '    Me.Pimagen.Image = Global.Quality.My.Resources.Resources.palet_03_icon
         Me.Pimagen.Location = New System.Drawing.Point(4, -3)
         Me.Pimagen.Size = New System.Drawing.Size(43, 46)
         Me.Pimagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -163,7 +163,7 @@ Partial Class FormProducto
         '
         Me.btGenerar.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic)
         Me.btGenerar.ForeColor = System.Drawing.Color.Black
-        Me.btGenerar.Image = Global.Quality.My.Resources.Resources.barra
+        'Me.btGenerar.Image = Global.Quality.My.Resources.Resources.barra
         Me.btGenerar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btGenerar.Location = New System.Drawing.Point(212, 43)
         Me.btGenerar.Name = "btGenerar"

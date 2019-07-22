@@ -154,7 +154,7 @@ Partial Class FormCierrePeriodos
         Me.btCerrarAño.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btCerrarAño.Font = New System.Drawing.Font("Times New Roman", 11.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btCerrarAño.ForeColor = System.Drawing.Color.White
-        Me.btCerrarAño.Image = Global.Quality.My.Resources.Resources.event_icon__1_
+        'Me.btCerrarAño.Image = Global.Quality.My.Resources.Resources.event_icon__1_
         Me.btCerrarAño.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btCerrarAño.Location = New System.Drawing.Point(17, 244)
         Me.btCerrarAño.Name = "btCerrarAño"
@@ -171,7 +171,7 @@ Partial Class FormCierrePeriodos
         Me.btAbrirAño.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btAbrirAño.Font = New System.Drawing.Font("Times New Roman", 11.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btAbrirAño.ForeColor = System.Drawing.Color.White
-        Me.btAbrirAño.Image = Global.Quality.My.Resources.Resources.Utilities_calendar_green_icon
+        'Me.btAbrirAño.Image = Global.Quality.My.Resources.Resources.Utilities_calendar_green_icon
         Me.btAbrirAño.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btAbrirAño.Location = New System.Drawing.Point(17, 174)
         Me.btAbrirAño.Name = "btAbrirAño"
@@ -188,7 +188,7 @@ Partial Class FormCierrePeriodos
         Me.btAbrirMes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btAbrirMes.Font = New System.Drawing.Font("Times New Roman", 11.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btAbrirMes.ForeColor = System.Drawing.Color.White
-        Me.btAbrirMes.Image = Global.Quality.My.Resources.Resources.Google_Calendar_icon
+        'Me.btAbrirMes.Image = Global.Quality.My.Resources.Resources.Google_Calendar_icon
         Me.btAbrirMes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btAbrirMes.Location = New System.Drawing.Point(17, 34)
         Me.btAbrirMes.Name = "btAbrirMes"
@@ -205,7 +205,7 @@ Partial Class FormCierrePeriodos
         Me.btCerrarMes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btCerrarMes.Font = New System.Drawing.Font("Times New Roman", 11.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btCerrarMes.ForeColor = System.Drawing.Color.White
-        Me.btCerrarMes.Image = Global.Quality.My.Resources.Resources.calendar_icon1
+        'Me.btCerrarMes.Image = Global.Quality.My.Resources.Resources.calendar_icon1
         Me.btCerrarMes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btCerrarMes.Location = New System.Drawing.Point(17, 104)
         Me.btCerrarMes.Name = "btCerrarMes"
@@ -218,7 +218,7 @@ Partial Class FormCierrePeriodos
         'Panel2
         '
         Me.Panel2.BackColor = System.Drawing.Color.White
-        Me.Panel2.BackgroundImage = Global.Quality.My.Resources.Resources.fondo_azul
+        '  Me.Panel2.BackgroundImage = Global.Quality.My.Resources.Resources.fondo_azul
         Me.Panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Panel2.Controls.Add(Me.Pimagen)
         Me.Panel2.Controls.Add(Me.LTitulo)
@@ -230,7 +230,7 @@ Partial Class FormCierrePeriodos
         'Pimagen
         '
         Me.Pimagen.BackColor = System.Drawing.Color.Transparent
-        Me.Pimagen.Image = Global.Quality.My.Resources.Resources.Events_icon
+      '    Me.Pimagen.Image = Global.Quality.My.Resources.Resources.Events_icon
         Me.Pimagen.Location = New System.Drawing.Point(3, -3)
         Me.Pimagen.Name = "Pimagen"
         Me.Pimagen.Size = New System.Drawing.Size(53, 46)

@@ -312,6 +312,11 @@
     <Compile Include="Modelo\Nomina\NominaBLL.vb" />
     <Compile Include="Modelo\Principal\InicioSesionBLL.vb" />
     <Compile Include="Modelo\Principal\principalBLL.vb" />
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="MyRenderer.vb" />
     <Compile Include="ReferenciaDLL\DataGridViewDateTimePickerColumn.vb" />
     <Compile Include="Reportes\Contabilidad\EstadoCXC1.vb">
@@ -1061,6 +1066,7 @@
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -1117,115 +1123,6 @@
     <Content Include="ReferenciaDLL\itextsharp.dll" />
     <Content Include="ReferenciaDLL\MySql.Data.DLL" />
     <Content Include="ReferenciaDLL\NotifySenderControl.dll" />
-    <None Include="Resources\XANDaR copia.jpg" />
-    <None Include="Resources\Network-Panel-Settings-icon.png" />
-    <None Include="Resources\Setting-icon.png" />
-    <None Include="Resources\Personnel-icon.png" />
-    <None Include="Resources\Network-time-icon %281%29.png" />
-    <None Include="Resources\Safe-icon2.png" />
-    <None Include="Resources\palet-01-icon1.png" />
-    <None Include="Resources\Network-time-icon.png" />
-    <None Include="Resources\DeviceControl-icon.png" />
-    <None Include="Resources\shipping-icon1.png" />
-    <None Include="Resources\Toolbox-icon.png" />
-    <None Include="Resources\red-white-achtung-caution-blinking-sign-animated-gif.gif" />
-    <None Include="Resources\glossy-3d-blue-orbs2-132-icon2.png" />
-    <None Include="Resources\glossy-3d-blue-orbs2-092-icon1.png" />
-    <None Include="Resources\glossy-3d-blue-orbs2-132-icon1.png" />
-    <None Include="Resources\glossy-3d-blue-orbs2-115-icon1.png" />
-    <None Include="Resources\Safe-icon1.png" />
-    <None Include="Resources\Statistics-icon.png" />
-    <None Include="Resources\InvoiceSearch-icon.png" />
-    <None Include="Resources\ManageUsers-icon.png" />
-    <None Include="Resources\project-plan-icon.png" />
-    <None Include="Resources\desktop-icon.png" />
-    <None Include="Resources\SEO-icon.png" />
-    <None Include="Resources\Safe-icon.png" />
-    <None Include="Resources\Microsoft-Excel-2013-icon1.png" />
-    <None Include="Resources\Printer-icon %281%291.png" />
-    <None Include="Resources\Mimetypes-text-x-vcard-icon.png" />
-    <None Include="Resources\invoice-icon %281%29.png" />
-    <None Include="Resources\invoice-icon.png" />
-    <None Include="Resources\calendar-icon1.png" />
-    <None Include="Resources\Utilities-calendar-green-icon.png" />
-    <None Include="Resources\Google-Calendar-icon.png" />
-    <None Include="Resources\event-icon %281%29.png" />
-    <None Include="Resources\Events-icon.png" />
-    <None Include="Resources\document-archive-icon.png" />
-    <None Include="Resources\Microsoft-Excel-2013-icon.png" />
-    <None Include="Resources\Preview-icon %281%291.png" />
-    <None Include="Resources\shipping-icon.png" />
-    <None Include="Resources\credit-card-icon.png" />
-    <None Include="Resources\System-Preferences-icon.png" />
-    <None Include="Resources\plus-icon.png" />
-    <None Include="Resources\Actions-button-cancel-icon.png" />
-    <None Include="Resources\Actions-edit-redo-icon.png" />
-    <None Include="Resources\Balance-icon.png" />
-    <None Include="Resources\atencion.gif" />
-    <None Include="Resources\bar-chart-icon.png" />
-    <None Include="Resources\Actions-project-development-close-icon.png" />
-    <None Include="Resources\Accounting-icon.png" />
-    <None Include="Resources\bank-icon.png" />
-    <None Include="Resources\box-config-icon.png" />
-    <None Include="Resources\attention.gif" />
-    <None Include="Resources\Accounting-icon1.png" />
-    <None Include="Resources\bar-chart-icon1.png" />
-    <None Include="Resources\05_step2_review_payroll_02.jpg" />
-    <Content Include="Resources\calculator-icon1.png" />
-    <None Include="Resources\folder-invoices-icon.png" />
-    <None Include="Resources\Money-Bag-icon.png" />
-    <None Include="Resources\note-add-icon1.png" />
-    <None Include="Resources\Apps-preferences-system-time-icon.png" />
-    <None Include="Resources\Help-icon.png" />
-    <None Include="Resources\verde.png" />
-    <None Include="Resources\rojo.png" />
-    <None Include="Resources\azul.png" />
-    <None Include="Resources\Amarillo.png" />
-    <None Include="Resources\Resume-icon.png" />
-    <None Include="Resources\Keys-icon.png" />
-    <None Include="Resources\fork-1-icon.png" />
-    <None Include="Resources\palet-01-icon.png" />
-    <None Include="Resources\palet-03-icon.png" />
-    <None Include="Resources\Card-file-icon.png" />
-    <None Include="Resources\Checklist-icon.png" />
-    <None Include="Resources\dribbble-shop-icon.png" />
-    <None Include="Resources\administrator-icon %281%29.png" />
-    <None Include="Resources\company-building-icon1.png" />
-    <None Include="Resources\Building-icon.png" />
-    <None Include="Resources\usuario.png" />
-    <None Include="Resources\administrator-icon.png" />
-    <None Include="Resources\Cart-icon.png" />
-    <None Include="Resources\Admin-icon.png" />
-    <None Include="Resources\Printer-icon %281%29.png" />
-    <None Include="Resources\edit-file-icon.png" />
-    <None Include="Resources\delete-file-icon %281%29.png" />
-    <None Include="Resources\Search-icon.png" />
-    <None Include="Resources\file-complete-icon.png" />
-    <None Include="Resources\Cash-register-icon.png" />
-    <None Include="Resources\Zoom-icon1.png" />
-    <None Include="Resources\Zoom-icon %281%29.png" />
-    <None Include="Resources\glossy-3d-blue-orbs2-132-icon.png" />
-    <None Include="Resources\glossy-3d-blue-orbs2-092-icon.png" />
-    <None Include="Resources\Quality_logo.jpg" />
-    <None Include="Resources\orlando logo copia.jpg" />
-    <None Include="Resources\print-icon.png" />
-    <None Include="Resources\print-icon %281%29.png" />
-    <None Include="Resources\papelera.png" />
-    <None Include="Resources\RecycleBin-Full-icon %282%29.png" />
-    <None Include="Resources\Logo Q.png" />
-    <None Include="Resources\glossy-3d-blue-orbs2-115-icon.png" />
-    <None Include="Resources\fondo azul.png" />
-    <None Include="Resources\exito1.png" />
-    <None Include="Resources\price-tag-icon.png" />
-    <None Include="Resources\aplica.png" />
-    <None Include="Resources\Edit-Text-icon %281%29.png" />
-    <None Include="Resources\tag-alt-icon %281%29.png" />
-    <None Include="Resources\Apps-preferences-contact-list-icon %281%29.png" />
-    <None Include="Resources\document-delete-icon %281%29.png" />
-    <None Include="Resources\pencil-icon %281%29.png" />
-    <None Include="Resources\Actions-blue-arrow-undo-icon.png" />
-    <None Include="Resources\Save-icon %281%29.png" />
-    <None Include="Resources\Files-New-File-icon.png" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">

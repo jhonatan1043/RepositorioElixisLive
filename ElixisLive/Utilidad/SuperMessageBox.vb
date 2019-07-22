@@ -51,7 +51,7 @@
         'panel1
         '
         Me.panel1.BackColor = System.Drawing.Color.White
-        Me.panel1.BackgroundImage = Global.Quality.My.Resources.Resources.fondo_azul
+       
         Me.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.panel1.Controls.Add(Me.label2)
@@ -74,7 +74,7 @@
         '
         'panel2
         '
-        Me.panel2.BackgroundImage = Global.Quality.My.Resources.Resources.fondo_azul
+        ''  Me.Panel2.BackgroundImage = Global.Quality.My.Resources.Resources.fondo_azul
         Me.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.panel2.Controls.Add(Me.lblMensaje)
@@ -99,7 +99,7 @@
         'logo
         '
         Me.logo.BackColor = System.Drawing.Color.Transparent
-        Me.logo.Image = Global.Quality.My.Resources.Resources.Help_icon
+        'Me.logo.Image = Global.Quality.My.Resources.Resources.Help_icon
         Me.logo.Location = New System.Drawing.Point(10, 47)
         Me.logo.Name = "logo"
         Me.logo.Size = New System.Drawing.Size(65, 65)

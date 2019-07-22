@@ -33,7 +33,7 @@ Partial Class FormServicio
         'Pimagen
         '
         Me.Pimagen.BackColor = System.Drawing.Color.Transparent
-        Me.Pimagen.Image = Global.Quality.My.Resources.Resources.document_archive_icon
+      '    Me.Pimagen.Image = Global.Quality.My.Resources.Resources.document_archive_icon
         Me.Pimagen.Location = New System.Drawing.Point(4, 3)
         Me.Pimagen.Size = New System.Drawing.Size(42, 36)
         Me.Pimagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage

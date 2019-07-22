@@ -174,7 +174,7 @@ Partial Class FormRetiroDocumento
         '
         Me.btguardar.Font = New System.Drawing.Font("Times New Roman", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btguardar.ForeColor = System.Drawing.Color.White
-        Me.btguardar.Image = Global.Quality.My.Resources.Resources.Save_icon__1_
+        'Me.btguardar.Image = Global.Quality.My.Resources.Resources.Save_icon__1_
         Me.btguardar.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.btguardar.Name = "btguardar"
         Me.btguardar.Size = New System.Drawing.Size(71, 22)
@@ -189,7 +189,7 @@ Partial Class FormRetiroDocumento
         '
         Me.btcancelar.Font = New System.Drawing.Font("Times New Roman", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btcancelar.ForeColor = System.Drawing.Color.White
-        Me.btcancelar.Image = Global.Quality.My.Resources.Resources.Actions_blue_arrow_undo_icon
+       ' Me.btCancelar.Image = Global.Quality.My.Resources.Resources.Actions_blue_arrow_undo_icon
         Me.btcancelar.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.btcancelar.Name = "btcancelar"
         Me.btcancelar.Size = New System.Drawing.Size(72, 22)
@@ -441,7 +441,7 @@ Partial Class FormRetiroDocumento
         'Panel3
         '
         Me.Panel3.BackColor = System.Drawing.Color.White
-        Me.Panel3.BackgroundImage = Global.Quality.My.Resources.Resources.fondo_azul
+       '  Me.Panel3.BackgroundImage = Global.Quality.My.Resources.Resources.fondo_azul
         Me.Panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Panel3.Controls.Add(Me.Pimagen)
         Me.Panel3.Controls.Add(Me.Label1)
@@ -453,7 +453,7 @@ Partial Class FormRetiroDocumento
         'Pimagen
         '
         Me.Pimagen.BackColor = System.Drawing.Color.Transparent
-        Me.Pimagen.Image = Global.Quality.My.Resources.Resources.Actions_project_development_close_icon
+      '    Me.Pimagen.Image = Global.Quality.My.Resources.Resources.Actions_project_development_close_icon
         Me.Pimagen.Location = New System.Drawing.Point(3, 0)
         Me.Pimagen.Name = "Pimagen"
         Me.Pimagen.Size = New System.Drawing.Size(53, 46)

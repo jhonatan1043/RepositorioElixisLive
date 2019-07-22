@@ -47,7 +47,7 @@ Partial Class FormCitaMedica
         Me.DataGridViewTextBoxColumn17 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.btBuscarCliente = New System.Windows.Forms.Button()
+        ' Me.btBuscarCliente = New System.Windows.Forms.Button()
         Me.txtfecha = New System.Windows.Forms.MaskedTextBox()
         Me.txtobservacion = New System.Windows.Forms.RichTextBox()
         Me.Label11 = New System.Windows.Forms.Label()
@@ -198,7 +198,7 @@ Partial Class FormCitaMedica
         Me.GroupBox2.Controls.Add(Me.textNombre)
         Me.GroupBox2.Controls.Add(Me.Panel3)
         Me.GroupBox2.Controls.Add(Me.btBuscarCliente)
-        Me.GroupBox2.Controls.Add(Me.txtfecha)
+        'Me.GroupBox2.Controls.Add(Me.txtfecha)
         Me.GroupBox2.Controls.Add(Me.txtobservacion)
         Me.GroupBox2.Controls.Add(Me.Label11)
         Me.GroupBox2.Controls.Add(Me.Label7)
@@ -215,7 +215,7 @@ Partial Class FormCitaMedica
         'Panel3
         '
         Me.Panel3.BackColor = System.Drawing.Color.White
-        Me.Panel3.BackgroundImage = Global.Quality.My.Resources.Resources.calendar_icon
+       '  Me.Panel3.BackgroundImage = Global.Quality.My.Resources.Resources.calendar_icon
         Me.Panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Panel3.Location = New System.Drawing.Point(648, 23)
         Me.Panel3.Name = "Panel3"
@@ -224,14 +224,14 @@ Partial Class FormCitaMedica
         '
         'btBuscarCliente
         '
-        Me.btBuscarCliente.BackgroundImage = Global.Quality.My.Resources.Resources.fondo_azul
-        Me.btBuscarCliente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btBuscarCliente.Image = Global.Quality.My.Resources.Resources.Zoom_icon1
-        Me.btBuscarCliente.Location = New System.Drawing.Point(398, 20)
-        Me.btBuscarCliente.Name = "btBuscarCliente"
-        Me.btBuscarCliente.Size = New System.Drawing.Size(26, 25)
-        Me.btBuscarCliente.TabIndex = 58
-        Me.btBuscarCliente.UseVisualStyleBackColor = True
+        ' Me.btBuscarCliente.BackgroundImage = Global.Quality.My.Resources.Resources.fondo_azul
+        ' Me.btBuscarCliente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        ' Me.btBuscarCliente.Image = Global.Quality.My.Resources.Resources.Zoom_icon1
+        ' Me.btBuscarCliente.Location = New System.Drawing.Point(398, 20)
+        ' Me.btBuscarCliente.Name = "btBuscarCliente"
+        ' Me.btBuscarCliente.Size = New System.Drawing.Size(26, 25)
+        ' Me.btBuscarCliente.TabIndex = 58
+        ' Me.btBuscarCliente.UseVisualStyleBackColor = True
         '
         'txtfecha
         '
@@ -330,7 +330,7 @@ Partial Class FormCitaMedica
         'dgQuitar
         '
         Me.dgQuitar.HeaderText = "Quitar"
-        Me.dgQuitar.Image = Global.Quality.My.Resources.Resources.papelera
+       ' Me.dgQuitar.Image = Global.Quality.My.Resources.Resources.papelera
         Me.dgQuitar.Name = "dgQuitar"
         Me.dgQuitar.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
         Me.dgQuitar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
@@ -362,7 +362,7 @@ Partial Class FormCitaMedica
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.White
-        Me.Panel1.BackgroundImage = Global.Quality.My.Resources.Resources.fondo_azul
+       
         Me.Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Panel1.Controls.Add(Me.Panel2)
         Me.Panel1.Controls.Add(Me.PictureBox1)
@@ -375,7 +375,7 @@ Partial Class FormCitaMedica
         'Panel2
         '
         Me.Panel2.BackColor = System.Drawing.Color.Transparent
-        Me.Panel2.BackgroundImage = Global.Quality.My.Resources.Resources._error
+        '  Me.Panel2.BackgroundImage = Global.Quality.My.Resources.Resources._error
         Me.Panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Panel2.Location = New System.Drawing.Point(678, 0)
         Me.Panel2.Name = "Panel2"
@@ -385,7 +385,7 @@ Partial Class FormCitaMedica
         'PictureBox1
         '
         Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox1.Image = Global.Quality.My.Resources.Resources.calendar_icon
+        ' Me.PictureBox1.Image = Global.Quality.My.Resources.Resources.calendar_icon
         Me.PictureBox1.Location = New System.Drawing.Point(4, 3)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(44, 39)
@@ -408,8 +408,8 @@ Partial Class FormCitaMedica
         'ToolStrip1
         '
         Me.ToolStrip1.BackColor = System.Drawing.Color.White
-        Me.ToolStrip1.BackgroundImage = Global.Quality.My.Resources.Resources.fondo_azul
-        Me.ToolStrip1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        'Me.ToolStrip1.BackgroundImage = Global.Quality.My.Resources.Resources.fondo_azul
+        'Me.ToolStrip1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ToolStrip1.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.ToolStrip1.ImageScalingSize = New System.Drawing.Size(30, 30)
         Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.btRegistrar, Me.btEditar, Me.btCancelar, Me.btAnular})
@@ -423,7 +423,7 @@ Partial Class FormCitaMedica
         '
         Me.btRegistrar.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btRegistrar.ForeColor = System.Drawing.Color.White
-        Me.btRegistrar.Image = Global.Quality.My.Resources.Resources.Save_icon__1_
+        'Me.btRegistrar.Image = Global.Quality.My.Resources.Resources.Save_icon__1_
         Me.btRegistrar.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.btRegistrar.Name = "btRegistrar"
         Me.btRegistrar.Size = New System.Drawing.Size(105, 34)
@@ -434,7 +434,7 @@ Partial Class FormCitaMedica
         '
         Me.btEditar.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btEditar.ForeColor = System.Drawing.Color.White
-        Me.btEditar.Image = Global.Quality.My.Resources.Resources.pencil_icon__1_
+        'Me.btEditar.Image = Global.Quality.My.Resources.Resources.pencil_icon__1_
         Me.btEditar.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.btEditar.Name = "btEditar"
         Me.btEditar.Size = New System.Drawing.Size(86, 34)
@@ -445,7 +445,7 @@ Partial Class FormCitaMedica
         '
         Me.btCancelar.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btCancelar.ForeColor = System.Drawing.Color.White
-        Me.btCancelar.Image = Global.Quality.My.Resources.Resources.Actions_blue_arrow_undo_icon
+       ' Me.btCancelar.Image = Global.Quality.My.Resources.Resources.Actions_blue_arrow_undo_icon
         Me.btCancelar.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.btCancelar.Name = "btCancelar"
         Me.btCancelar.Size = New System.Drawing.Size(104, 34)
@@ -456,8 +456,8 @@ Partial Class FormCitaMedica
         '
         Me.btAnular.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btAnular.ForeColor = System.Drawing.Color.White
-        Me.btAnular.Image = Global.Quality.My.Resources.Resources.document_delete_icon__1_
-        Me.btAnular.ImageTransparentColor = System.Drawing.Color.Magenta
+        '  Me.btAnular.Image = Global.Quality.My.Resources.Resources.document_delete_icon__1_
+        '  Me.btAnular.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.btAnular.Name = "btAnular"
         Me.btAnular.Size = New System.Drawing.Size(91, 34)
         Me.btAnular.Text = "&Anular"
@@ -478,7 +478,7 @@ Partial Class FormCitaMedica
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.BackgroundImage = Global.Quality.My.Resources.Resources.fondo_azul
+        'Me.BackgroundImage = Global.Quality.My.Resources.Resources.fondo_azul
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(714, 460)
         Me.ControlBox = False

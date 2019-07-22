@@ -33,7 +33,7 @@ Partial Class FormProveedor
         'Pimagen
         '
         Me.Pimagen.BackColor = System.Drawing.Color.Transparent
-        Me.Pimagen.Image = Global.Quality.My.Resources.Resources.administrator_icon__1_
+      '    Me.Pimagen.Image = Global.Quality.My.Resources.Resources.administrator_icon__1_
         Me.Pimagen.Location = New System.Drawing.Point(4, 0)
         Me.Pimagen.Size = New System.Drawing.Size(51, 42)
         '

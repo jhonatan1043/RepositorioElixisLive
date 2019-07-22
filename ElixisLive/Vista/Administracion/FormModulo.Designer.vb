@@ -70,7 +70,7 @@ Partial Class FormModulo
         'chNomina
         '
         Me.chNomina.AutoSize = True
-        Me.chNomina.Image = Global.Quality.My.Resources.Resources._05_step2_review_payroll_02
+        'Me.chNomina.Image = Global.Quality.My.Resources.Resources._05_step2_review_payroll_02
         Me.chNomina.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.chNomina.Location = New System.Drawing.Point(217, 253)
         Me.chNomina.Name = "chNomina"
@@ -84,7 +84,7 @@ Partial Class FormModulo
         'chConfiguracion
         '
         Me.chConfiguracion.AutoSize = True
-        Me.chConfiguracion.Image = Global.Quality.My.Resources.Resources.Setting_icon
+        'Me.chConfiguracion.Image = Global.Quality.My.Resources.Resources.Setting_icon
         Me.chConfiguracion.Location = New System.Drawing.Point(65, 22)
         Me.chConfiguracion.Name = "chConfiguracion"
         Me.chConfiguracion.Size = New System.Drawing.Size(91, 81)
@@ -97,7 +97,7 @@ Partial Class FormModulo
         'chEstadistica
         '
         Me.chEstadistica.AutoSize = True
-        Me.chEstadistica.Image = Global.Quality.My.Resources.Resources.bar_chart_icon1
+        'Me.chEstadistica.Image = Global.Quality.My.Resources.Resources.bar_chart_icon1
         Me.chEstadistica.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.chEstadistica.Location = New System.Drawing.Point(369, 249)
         Me.chEstadistica.Name = "chEstadistica"
@@ -159,7 +159,7 @@ Partial Class FormModulo
         'chAdministracion
         '
         Me.chAdministracion.AutoSize = True
-        Me.chAdministracion.Image = Global.Quality.My.Resources.Resources.Personnel_icon
+        'Me.chAdministracion.Image = Global.Quality.My.Resources.Resources.Personnel_icon
         Me.chAdministracion.Location = New System.Drawing.Point(210, 22)
         Me.chAdministracion.Name = "chAdministracion"
         Me.chAdministracion.Size = New System.Drawing.Size(94, 81)
@@ -172,7 +172,7 @@ Partial Class FormModulo
         'ChCitas
         '
         Me.ChCitas.AutoSize = True
-        Me.ChCitas.Image = Global.Quality.My.Resources.Resources.Network_time_icon__1_
+        'Me.ChCitas.Image = Global.Quality.My.Resources.Resources.Network_time_icon__1_
         Me.ChCitas.Location = New System.Drawing.Point(522, 249)
         Me.ChCitas.Name = "ChCitas"
         Me.ChCitas.Size = New System.Drawing.Size(79, 81)
@@ -185,7 +185,7 @@ Partial Class FormModulo
         'ChInventario
         '
         Me.ChInventario.AutoSize = True
-        Me.ChInventario.Image = Global.Quality.My.Resources.Resources.palet_01_icon1
+        'Me.ChInventario.Image = Global.Quality.My.Resources.Resources.palet_01_icon1
         Me.ChInventario.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.ChInventario.Location = New System.Drawing.Point(369, 22)
         Me.ChInventario.Name = "ChInventario"
@@ -199,7 +199,7 @@ Partial Class FormModulo
         'ChContabilidad
         '
         Me.ChContabilidad.AutoSize = True
-        Me.ChContabilidad.Image = Global.Quality.My.Resources.Resources.Safe_icon
+        'Me.ChContabilidad.Image = Global.Quality.My.Resources.Resources.Safe_icon
         Me.ChContabilidad.Location = New System.Drawing.Point(65, 249)
         Me.ChContabilidad.Name = "ChContabilidad"
         Me.ChContabilidad.Size = New System.Drawing.Size(84, 81)
@@ -212,7 +212,7 @@ Partial Class FormModulo
         'ChVentas
         '
         Me.ChVentas.AutoSize = True
-        Me.ChVentas.Image = Global.Quality.My.Resources.Resources.DeviceControl_icon
+        'Me.ChVentas.Image = Global.Quality.My.Resources.Resources.DeviceControl_icon
         Me.ChVentas.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.ChVentas.Location = New System.Drawing.Point(522, 22)
         Me.ChVentas.Name = "ChVentas"
@@ -226,8 +226,8 @@ Partial Class FormModulo
         'ToolStrip1
         '
         Me.ToolStrip1.BackColor = System.Drawing.Color.White
-        Me.ToolStrip1.BackgroundImage = Global.Quality.My.Resources.Resources.fondo_azul
-        Me.ToolStrip1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        'Me.ToolStrip1.BackgroundImage = Global.Quality.My.Resources.Resources.fondo_azul
+        'Me.ToolStrip1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ToolStrip1.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.ToolStrip1.ImageScalingSize = New System.Drawing.Size(30, 30)
         Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.btRegistrar, Me.btEditar, Me.btCancelar})
@@ -241,7 +241,7 @@ Partial Class FormModulo
         '
         Me.btRegistrar.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btRegistrar.ForeColor = System.Drawing.Color.White
-        Me.btRegistrar.Image = Global.Quality.My.Resources.Resources.Save_icon__1_
+        'Me.btRegistrar.Image = Global.Quality.My.Resources.Resources.Save_icon__1_
         Me.btRegistrar.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.btRegistrar.Name = "btRegistrar"
         Me.btRegistrar.Size = New System.Drawing.Size(105, 34)
@@ -252,7 +252,7 @@ Partial Class FormModulo
         '
         Me.btEditar.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btEditar.ForeColor = System.Drawing.Color.White
-        Me.btEditar.Image = Global.Quality.My.Resources.Resources.pencil_icon__1_
+        'Me.btEditar.Image = Global.Quality.My.Resources.Resources.pencil_icon__1_
         Me.btEditar.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.btEditar.Name = "btEditar"
         Me.btEditar.Size = New System.Drawing.Size(86, 34)
@@ -263,7 +263,7 @@ Partial Class FormModulo
         '
         Me.btCancelar.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btCancelar.ForeColor = System.Drawing.Color.White
-        Me.btCancelar.Image = Global.Quality.My.Resources.Resources.Actions_blue_arrow_undo_icon
+       ' Me.btCancelar.Image = Global.Quality.My.Resources.Resources.Actions_blue_arrow_undo_icon
         Me.btCancelar.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.btCancelar.Name = "btCancelar"
         Me.btCancelar.Size = New System.Drawing.Size(104, 34)
@@ -273,7 +273,7 @@ Partial Class FormModulo
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.White
-        Me.Panel1.BackgroundImage = Global.Quality.My.Resources.Resources.fondo_azul
+       
         Me.Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Panel1.Controls.Add(Me.Pimagen)
         Me.Panel1.Controls.Add(Me.LTitulo)
@@ -285,7 +285,7 @@ Partial Class FormModulo
         'Pimagen
         '
         Me.Pimagen.BackColor = System.Drawing.Color.Transparent
-        Me.Pimagen.Image = Global.Quality.My.Resources.Resources.Network_Panel_Settings_icon
+      '    Me.Pimagen.Image = Global.Quality.My.Resources.Resources.Network_Panel_Settings_icon
         Me.Pimagen.Location = New System.Drawing.Point(4, 0)
         Me.Pimagen.Name = "Pimagen"
         Me.Pimagen.Size = New System.Drawing.Size(50, 39)

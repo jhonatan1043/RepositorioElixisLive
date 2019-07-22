@@ -85,7 +85,7 @@ Public Class FormEmpleado
             pictImagen.Image = Image.FromStream(New IO.MemoryStream(bytes))
             objEmpleado.banderaImagen = False
         Else
-            pictImagen.Image = My.Resources.usuario
+            'pictImagen.Image = My.Resources.usuario
         End If
     End Sub
     Private Sub cargarCampos(dfila As DataRow)
@@ -156,7 +156,7 @@ Public Class FormEmpleado
         Generales.deshabilitarControles(gpUsuario)
         Generales.deshabilitarControles(gpPagare)
         Generales.limpiarControles(Me)
-        pictImagen.Image = My.Resources.usuario
+        'pictImagen.Image = My.Resources.usuario
         limpiarLabel()
         cargarParametros()
         formatMoneda()
@@ -222,7 +222,7 @@ Public Class FormEmpleado
             Generales.deshabilitarBotones(ToolStrip1)
             Generales.deshabilitarControles(Me)
             Generales.limpiarControles(Me)
-            pictImagen.Image = My.Resources.usuario
+            'pictImagen.Image = My.Resources.usuario
             limpiarLabel()
             objEmpleado.codigo = Nothing
             formatMoneda()

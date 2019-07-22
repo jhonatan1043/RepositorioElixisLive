@@ -303,7 +303,7 @@ Partial Class FormEstadoCuentas
         '
         Me.btexcel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btexcel.Enabled = False
-        Me.btexcel.Image = Global.Quality.My.Resources.Resources.Microsoft_Excel_2013_icon1
+        'Me.btexcel.Image = Global.Quality.My.Resources.Resources.Microsoft_Excel_2013_icon1
         Me.btexcel.Location = New System.Drawing.Point(1026, 55)
         Me.btexcel.Name = "btexcel"
         Me.btexcel.Size = New System.Drawing.Size(42, 38)
@@ -314,7 +314,7 @@ Partial Class FormEstadoCuentas
         '
         Me.btimprimir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btimprimir.Enabled = False
-        Me.btimprimir.Image = Global.Quality.My.Resources.Resources.Printer_icon__1_1
+       '  Me.btImprimir.Image = Global.Quality.My.Resources.Resources.Printer_icon__1_1
         Me.btimprimir.Location = New System.Drawing.Point(967, 55)
         Me.btimprimir.Name = "btimprimir"
         Me.btimprimir.Size = New System.Drawing.Size(42, 38)
@@ -335,7 +335,7 @@ Partial Class FormEstadoCuentas
         'Panel2
         '
         Me.Panel2.BackColor = System.Drawing.Color.White
-        Me.Panel2.BackgroundImage = Global.Quality.My.Resources.Resources.fondo_azul
+        '  Me.Panel2.BackgroundImage = Global.Quality.My.Resources.Resources.fondo_azul
         Me.Panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Panel2.Controls.Add(Me.Pimagen)
         Me.Panel2.Controls.Add(Me.LTitulo)
@@ -347,7 +347,7 @@ Partial Class FormEstadoCuentas
         'Pimagen
         '
         Me.Pimagen.BackColor = System.Drawing.Color.Transparent
-        Me.Pimagen.Image = Global.Quality.My.Resources.Resources.Safe_icon
+      '    Me.Pimagen.Image = Global.Quality.My.Resources.Resources.Safe_icon
         Me.Pimagen.Location = New System.Drawing.Point(3, 0)
         Me.Pimagen.Name = "Pimagen"
         Me.Pimagen.Size = New System.Drawing.Size(53, 46)

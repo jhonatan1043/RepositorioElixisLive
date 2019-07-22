@@ -118,7 +118,7 @@ Partial Class FormBalanceComprobacion
         '
         Me.btExportaExcel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btExportaExcel.Enabled = False
-        Me.btExportaExcel.Image = Global.Quality.My.Resources.Resources.Microsoft_Excel_2013_icon1
+        'Me.btExportaExcel.Image = Global.Quality.My.Resources.Resources.Microsoft_Excel_2013_icon1
         Me.btExportaExcel.Location = New System.Drawing.Point(337, 71)
         Me.btExportaExcel.Name = "btExportaExcel"
         Me.btExportaExcel.Size = New System.Drawing.Size(42, 38)
@@ -129,7 +129,7 @@ Partial Class FormBalanceComprobacion
         '
         Me.btVisualizaPDF.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btVisualizaPDF.Enabled = False
-        Me.btVisualizaPDF.Image = Global.Quality.My.Resources.Resources.Printer_icon__1_1
+        'Me.btVisualizaPDF.Image = Global.Quality.My.Resources.Resources.Printer_icon__1_1
         Me.btVisualizaPDF.Location = New System.Drawing.Point(337, 29)
         Me.btVisualizaPDF.Name = "btVisualizaPDF"
         Me.btVisualizaPDF.Size = New System.Drawing.Size(42, 38)
@@ -287,11 +287,11 @@ Partial Class FormBalanceComprobacion
         '
         'btCalcular
         '
-        Me.btCalcular.BackgroundImage = Global.Quality.My.Resources.Resources.fondo_azul
+        'Me.btCalcular.BackgroundImage = Global.Quality.My.Resources.Resources.fondo_azul
         Me.btCalcular.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btCalcular.Font = New System.Drawing.Font("Times New Roman", 11.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btCalcular.ForeColor = System.Drawing.Color.White
-        Me.btCalcular.Image = Global.Quality.My.Resources.Resources.SEO_icon
+        'Me.btCalcular.Image = Global.Quality.My.Resources.Resources.SEO_icon
         Me.btCalcular.Location = New System.Drawing.Point(320, 67)
         Me.btCalcular.Name = "btCalcular"
         Me.btCalcular.Size = New System.Drawing.Size(130, 34)
@@ -336,7 +336,7 @@ Partial Class FormBalanceComprobacion
         'Panel2
         '
         Me.Panel2.BackColor = System.Drawing.Color.White
-        Me.Panel2.BackgroundImage = Global.Quality.My.Resources.Resources.fondo_azul
+        '  Me.Panel2.BackgroundImage = Global.Quality.My.Resources.Resources.fondo_azul
         Me.Panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Panel2.Controls.Add(Me.Pimagen)
         Me.Panel2.Controls.Add(Me.LTitulo)
@@ -348,7 +348,7 @@ Partial Class FormBalanceComprobacion
         'Pimagen
         '
         Me.Pimagen.BackColor = System.Drawing.Color.Transparent
-        Me.Pimagen.Image = Global.Quality.My.Resources.Resources.bar_chart_icon
+      '    Me.Pimagen.Image = Global.Quality.My.Resources.Resources.bar_chart_icon
         Me.Pimagen.Location = New System.Drawing.Point(3, 0)
         Me.Pimagen.Name = "Pimagen"
         Me.Pimagen.Size = New System.Drawing.Size(53, 46)

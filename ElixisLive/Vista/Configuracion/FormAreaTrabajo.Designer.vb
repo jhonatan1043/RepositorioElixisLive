@@ -32,7 +32,7 @@ Partial Class FormAreaTrabajo
         'Pimagen
         '
         Me.Pimagen.BackColor = System.Drawing.Color.Transparent
-        Me.Pimagen.Image = Global.Quality.My.Resources.Resources.Admin_icon1
+      '    Me.Pimagen.Image = Global.Quality.My.Resources.Resources.Admin_icon1
         Me.Pimagen.Location = New System.Drawing.Point(4, 0)
         Me.Pimagen.Size = New System.Drawing.Size(49, 41)
         Me.Pimagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage

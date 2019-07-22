@@ -90,7 +90,7 @@ Partial Class FormExistencia
         '
         Me.btActualizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btActualizar.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btActualizar.Image = Global.Quality.My.Resources.Resources.Actions_edit_redo_icon
+        'Me.btActualizar.Image = Global.Quality.My.Resources.Resources.Actions_edit_redo_icon
         Me.btActualizar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btActualizar.Location = New System.Drawing.Point(625, 12)
         Me.btActualizar.Name = "btActualizar"
@@ -188,7 +188,7 @@ Partial Class FormExistencia
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.White
-        Me.Panel1.BackgroundImage = Global.Quality.My.Resources.Resources.fondo_azul
+       
         Me.Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Panel1.Controls.Add(Me.Pimagen)
         Me.Panel1.Controls.Add(Me.LTitulo)
@@ -200,7 +200,7 @@ Partial Class FormExistencia
         'Pimagen
         '
         Me.Pimagen.BackColor = System.Drawing.Color.Transparent
-        Me.Pimagen.Image = Global.Quality.My.Resources.Resources.InvoiceSearch_icon
+      '    Me.Pimagen.Image = Global.Quality.My.Resources.Resources.InvoiceSearch_icon
         Me.Pimagen.Location = New System.Drawing.Point(9, 0)
         Me.Pimagen.Name = "Pimagen"
         Me.Pimagen.Size = New System.Drawing.Size(52, 42)

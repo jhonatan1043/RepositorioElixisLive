@@ -255,7 +255,7 @@ Partial Class FormVentas
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
         Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.btNuevo = New System.Windows.Forms.ToolStripButton()
-        Me.btBuscar = New System.Windows.Forms.ToolStripButton()
+        ' Me.btBuscar = New System.Windows.Forms.ToolStripButton()
         Me.btRegistrar = New System.Windows.Forms.ToolStripButton()
         Me.btCancelar = New System.Windows.Forms.ToolStripButton()
         Me.btAnular = New System.Windows.Forms.ToolStripButton()
@@ -338,7 +338,7 @@ Partial Class FormVentas
         Me.Label34.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Label34.Font = New System.Drawing.Font("Times New Roman", 14.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label34.ForeColor = System.Drawing.Color.White
-        Me.Label34.Image = Global.Quality.My.Resources.Resources.fondo_azul
+        'Me.Label34.Image = Global.Quality.My.Resources.Resources.fondo_azul
         Me.Label34.Location = New System.Drawing.Point(11, 484)
         Me.Label34.Name = "Label34"
         Me.Label34.Size = New System.Drawing.Size(155, 38)
@@ -352,7 +352,7 @@ Partial Class FormVentas
         Me.Label23.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Label23.Font = New System.Drawing.Font("Times New Roman", 14.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label23.ForeColor = System.Drawing.Color.White
-        Me.Label23.Image = Global.Quality.My.Resources.Resources.fondo_azul
+        'Me.Label23.Image = Global.Quality.My.Resources.Resources.fondo_azul
         Me.Label23.Location = New System.Drawing.Point(11, 484)
         Me.Label23.Name = "Label23"
         Me.Label23.Size = New System.Drawing.Size(155, 38)
@@ -418,7 +418,7 @@ Partial Class FormVentas
         Me.Label28.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Label28.Font = New System.Drawing.Font("Times New Roman", 14.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label28.ForeColor = System.Drawing.Color.White
-        Me.Label28.Image = Global.Quality.My.Resources.Resources.fondo_azul
+        'Me.Label28.Image = Global.Quality.My.Resources.Resources.fondo_azul
         Me.Label28.Location = New System.Drawing.Point(327, 443)
         Me.Label28.Name = "Label28"
         Me.Label28.Size = New System.Drawing.Size(155, 36)
@@ -515,7 +515,7 @@ Partial Class FormVentas
         Me.Label56.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Label56.Font = New System.Drawing.Font("Times New Roman", 14.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label56.ForeColor = System.Drawing.Color.White
-        Me.Label56.Image = Global.Quality.My.Resources.Resources.fondo_azul
+        'Me.Label56.Image = Global.Quality.My.Resources.Resources.fondo_azul
         Me.Label56.Location = New System.Drawing.Point(7, 446)
         Me.Label56.Name = "Label56"
         Me.Label56.Size = New System.Drawing.Size(155, 38)
@@ -551,7 +551,7 @@ Partial Class FormVentas
         Me.Label32.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Label32.Font = New System.Drawing.Font("Times New Roman", 14.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label32.ForeColor = System.Drawing.Color.White
-        Me.Label32.Image = Global.Quality.My.Resources.Resources.fondo_azul
+        'Me.Label32.Image = Global.Quality.My.Resources.Resources.fondo_azul
         Me.Label32.Location = New System.Drawing.Point(488, 443)
         Me.Label32.Name = "Label32"
         Me.Label32.Size = New System.Drawing.Size(155, 36)
@@ -565,7 +565,7 @@ Partial Class FormVentas
         Me.Label33.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Label33.Font = New System.Drawing.Font("Times New Roman", 14.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label33.ForeColor = System.Drawing.Color.White
-        Me.Label33.Image = Global.Quality.My.Resources.Resources.fondo_azul
+        'Me.Label33.Image = Global.Quality.My.Resources.Resources.fondo_azul
         Me.Label33.Location = New System.Drawing.Point(166, 444)
         Me.Label33.Name = "Label33"
         Me.Label33.Size = New System.Drawing.Size(155, 38)
@@ -593,7 +593,7 @@ Partial Class FormVentas
         Me.Label50.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Label50.Font = New System.Drawing.Font("Times New Roman", 14.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label50.ForeColor = System.Drawing.Color.White
-        Me.Label50.Image = Global.Quality.My.Resources.Resources.fondo_azul
+        'Me.Label50.Image = Global.Quality.My.Resources.Resources.fondo_azul
         Me.Label50.Location = New System.Drawing.Point(327, 443)
         Me.Label50.Name = "Label50"
         Me.Label50.Size = New System.Drawing.Size(155, 36)
@@ -712,7 +712,7 @@ Partial Class FormVentas
         Me.Label54.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Label54.Font = New System.Drawing.Font("Times New Roman", 14.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label54.ForeColor = System.Drawing.Color.White
-        Me.Label54.Image = Global.Quality.My.Resources.Resources.fondo_azul
+        'Me.Label54.Image = Global.Quality.My.Resources.Resources.fondo_azul
         Me.Label54.Location = New System.Drawing.Point(488, 443)
         Me.Label54.Name = "Label54"
         Me.Label54.Size = New System.Drawing.Size(155, 36)
@@ -726,7 +726,7 @@ Partial Class FormVentas
         Me.Label55.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Label55.Font = New System.Drawing.Font("Times New Roman", 14.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label55.ForeColor = System.Drawing.Color.White
-        Me.Label55.Image = Global.Quality.My.Resources.Resources.fondo_azul
+        'Me.Label55.Image = Global.Quality.My.Resources.Resources.fondo_azul
         Me.Label55.Location = New System.Drawing.Point(166, 444)
         Me.Label55.Name = "Label55"
         Me.Label55.Size = New System.Drawing.Size(155, 38)
@@ -951,7 +951,7 @@ Partial Class FormVentas
         DataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.White
         Me.DataGridViewImageColumn3.DefaultCellStyle = DataGridViewCellStyle7
         Me.DataGridViewImageColumn3.HeaderText = "Quitar"
-        Me.DataGridViewImageColumn3.Image = Global.Quality.My.Resources.Resources.papelera
+        'Me.DataGridViewImageColumn3.Image = Global.Quality.My.Resources.Resources.papelera
         Me.DataGridViewImageColumn3.Name = "DataGridViewImageColumn3"
         Me.DataGridViewImageColumn3.ReadOnly = True
         Me.DataGridViewImageColumn3.Width = 50
@@ -1062,7 +1062,7 @@ Partial Class FormVentas
         DataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.White
         Me.DataGridViewImageColumn4.DefaultCellStyle = DataGridViewCellStyle15
         Me.DataGridViewImageColumn4.HeaderText = "Quitar"
-        Me.DataGridViewImageColumn4.Image = Global.Quality.My.Resources.Resources.papelera
+        'Me.DataGridViewImageColumn4.Image = Global.Quality.My.Resources.Resources.papelera
         Me.DataGridViewImageColumn4.Name = "DataGridViewImageColumn4"
         Me.DataGridViewImageColumn4.ReadOnly = True
         Me.DataGridViewImageColumn4.Width = 50
@@ -1166,7 +1166,7 @@ Partial Class FormVentas
         Me.Label16.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Label16.Font = New System.Drawing.Font("Times New Roman", 14.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label16.ForeColor = System.Drawing.Color.White
-        Me.Label16.Image = Global.Quality.My.Resources.Resources.fondo_azul
+        'Me.Label16.Image = Global.Quality.My.Resources.Resources.fondo_azul
         Me.Label16.Location = New System.Drawing.Point(327, 443)
         Me.Label16.Name = "Label16"
         Me.Label16.Size = New System.Drawing.Size(155, 36)
@@ -1180,7 +1180,7 @@ Partial Class FormVentas
         Me.Label45.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Label45.Font = New System.Drawing.Font("Times New Roman", 14.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label45.ForeColor = System.Drawing.Color.White
-        Me.Label45.Image = Global.Quality.My.Resources.Resources.fondo_azul
+        'Me.Label45.Image = Global.Quality.My.Resources.Resources.fondo_azul
         Me.Label45.Location = New System.Drawing.Point(7, 446)
         Me.Label45.Name = "Label45"
         Me.Label45.Size = New System.Drawing.Size(155, 38)
@@ -1496,7 +1496,7 @@ Partial Class FormVentas
         DataGridViewCellStyle22.SelectionBackColor = System.Drawing.Color.White
         Me.DataGridViewImageColumn7.DefaultCellStyle = DataGridViewCellStyle22
         Me.DataGridViewImageColumn7.HeaderText = "Quitar"
-        Me.DataGridViewImageColumn7.Image = Global.Quality.My.Resources.Resources.papelera
+        'Me.DataGridViewImageColumn7.Image = Global.Quality.My.Resources.Resources.papelera
         Me.DataGridViewImageColumn7.Name = "DataGridViewImageColumn7"
         Me.DataGridViewImageColumn7.ReadOnly = True
         Me.DataGridViewImageColumn7.Width = 50
@@ -1607,7 +1607,7 @@ Partial Class FormVentas
         DataGridViewCellStyle30.SelectionBackColor = System.Drawing.Color.White
         Me.DataGridViewImageColumn8.DefaultCellStyle = DataGridViewCellStyle30
         Me.DataGridViewImageColumn8.HeaderText = "Quitar"
-        Me.DataGridViewImageColumn8.Image = Global.Quality.My.Resources.Resources.papelera
+        'Me.DataGridViewImageColumn8.Image = Global.Quality.My.Resources.Resources.papelera
         Me.DataGridViewImageColumn8.Name = "DataGridViewImageColumn8"
         Me.DataGridViewImageColumn8.ReadOnly = True
         Me.DataGridViewImageColumn8.Width = 50
@@ -1711,7 +1711,7 @@ Partial Class FormVentas
         Me.Label39.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Label39.Font = New System.Drawing.Font("Times New Roman", 14.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label39.ForeColor = System.Drawing.Color.White
-        Me.Label39.Image = Global.Quality.My.Resources.Resources.fondo_azul
+        'Me.Label39.Image = Global.Quality.My.Resources.Resources.fondo_azul
         Me.Label39.Location = New System.Drawing.Point(327, 443)
         Me.Label39.Name = "Label39"
         Me.Label39.Size = New System.Drawing.Size(155, 36)
@@ -1830,7 +1830,7 @@ Partial Class FormVentas
         Me.Label43.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Label43.Font = New System.Drawing.Font("Times New Roman", 14.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label43.ForeColor = System.Drawing.Color.White
-        Me.Label43.Image = Global.Quality.My.Resources.Resources.fondo_azul
+        'Me.Label43.Image = Global.Quality.My.Resources.Resources.fondo_azul
         Me.Label43.Location = New System.Drawing.Point(488, 443)
         Me.Label43.Name = "Label43"
         Me.Label43.Size = New System.Drawing.Size(155, 36)
@@ -1844,7 +1844,7 @@ Partial Class FormVentas
         Me.Label44.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Label44.Font = New System.Drawing.Font("Times New Roman", 14.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label44.ForeColor = System.Drawing.Color.White
-        Me.Label44.Image = Global.Quality.My.Resources.Resources.fondo_azul
+        'Me.Label44.Image = Global.Quality.My.Resources.Resources.fondo_azul
         Me.Label44.Location = New System.Drawing.Point(166, 444)
         Me.Label44.Name = "Label44"
         Me.Label44.Size = New System.Drawing.Size(155, 38)
@@ -1858,7 +1858,7 @@ Partial Class FormVentas
         Me.Label21.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Label21.Font = New System.Drawing.Font("Times New Roman", 14.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label21.ForeColor = System.Drawing.Color.White
-        Me.Label21.Image = Global.Quality.My.Resources.Resources.fondo_azul
+        'Me.Label21.Image = Global.Quality.My.Resources.Resources.fondo_azul
         Me.Label21.Location = New System.Drawing.Point(488, 443)
         Me.Label21.Name = "Label21"
         Me.Label21.Size = New System.Drawing.Size(155, 36)
@@ -1872,7 +1872,7 @@ Partial Class FormVentas
         Me.Label22.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Label22.Font = New System.Drawing.Font("Times New Roman", 14.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label22.ForeColor = System.Drawing.Color.White
-        Me.Label22.Image = Global.Quality.My.Resources.Resources.fondo_azul
+        'Me.Label22.Image = Global.Quality.My.Resources.Resources.fondo_azul
         Me.Label22.Location = New System.Drawing.Point(166, 444)
         Me.Label22.Name = "Label22"
         Me.Label22.Size = New System.Drawing.Size(155, 38)
@@ -2276,7 +2276,7 @@ Partial Class FormVentas
         DataGridViewCellStyle38.SelectionBackColor = System.Drawing.Color.White
         Me.dgQuitar.DefaultCellStyle = DataGridViewCellStyle38
         Me.dgQuitar.HeaderText = "Quitar"
-        Me.dgQuitar.Image = Global.Quality.My.Resources.Resources.papelera
+        ' Me.dgQuitar.Image = Global.Quality.My.Resources.Resources.papelera
         Me.dgQuitar.Name = "dgQuitar"
         Me.dgQuitar.ReadOnly = True
         Me.dgQuitar.Width = 50
@@ -2450,7 +2450,7 @@ Partial Class FormVentas
         DataGridViewCellStyle45.SelectionBackColor = System.Drawing.Color.White
         Me.dgQuitarServ.DefaultCellStyle = DataGridViewCellStyle45
         Me.dgQuitarServ.HeaderText = "Quitar"
-        Me.dgQuitarServ.Image = Global.Quality.My.Resources.Resources.papelera
+        'Me.dgQuitarServ.Image = Global.Quality.My.Resources.Resources.papelera
         Me.dgQuitarServ.Name = "dgQuitarServ"
         Me.dgQuitarServ.ReadOnly = True
         Me.dgQuitarServ.Width = 50
@@ -2483,7 +2483,7 @@ Partial Class FormVentas
         'ToolStrip1
         '
         Me.ToolStrip1.BackColor = System.Drawing.Color.FromArgb(CType(CType(199, Byte), Integer), CType(CType(237, Byte), Integer), CType(CType(252, Byte), Integer))
-        Me.ToolStrip1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        'Me.ToolStrip1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ToolStrip1.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.ToolStrip1.ImageScalingSize = New System.Drawing.Size(30, 30)
         Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripSeparator1, Me.btNuevo, Me.btBuscar, Me.btRegistrar, Me.btCancelar, Me.btAnular, Me.btImprimir})
@@ -2502,7 +2502,7 @@ Partial Class FormVentas
         '
         Me.btNuevo.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btNuevo.ForeColor = System.Drawing.Color.Black
-        Me.btNuevo.ImageTransparentColor = System.Drawing.Color.Magenta
+        '  Me.btNuevo.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.btNuevo.Name = "btNuevo"
         Me.btNuevo.Size = New System.Drawing.Size(56, 34)
         Me.btNuevo.Text = "&Nuevo"
@@ -2510,20 +2510,20 @@ Partial Class FormVentas
         '
         'btBuscar
         '
-        Me.btBuscar.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btBuscar.ForeColor = System.Drawing.Color.Black
-        Me.btBuscar.Image = Global.Quality.My.Resources.Resources.Search_icon
-        Me.btBuscar.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.btBuscar.Name = "btBuscar"
-        Me.btBuscar.Size = New System.Drawing.Size(90, 34)
-        Me.btBuscar.Text = "&Buscar"
-        Me.btBuscar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        ' Me.btBuscar.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        ' Me.btBuscar.ForeColor = System.Drawing.Color.Black
+        '  ' Me.btBuscar.Image = Global.Quality.My.Resources.Resources.Search_icon
+        '  ' Me.btBuscar.ImageTransparentColor = System.Drawing.Color.Magenta
+        ' Me.btBuscar.Name = "btBuscar"
+        ' Me.btBuscar.Size = New System.Drawing.Size(90, 34)
+        ' Me.btBuscar.Text = "&Buscar"
+        ' Me.btBuscar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         '
         'btRegistrar
         '
         Me.btRegistrar.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btRegistrar.ForeColor = System.Drawing.Color.Black
-        Me.btRegistrar.Image = Global.Quality.My.Resources.Resources.Save_icon__1_
+        'Me.btRegistrar.Image = Global.Quality.My.Resources.Resources.Save_icon__1_
         Me.btRegistrar.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.btRegistrar.Name = "btRegistrar"
         Me.btRegistrar.Size = New System.Drawing.Size(105, 34)
@@ -2534,7 +2534,7 @@ Partial Class FormVentas
         '
         Me.btCancelar.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btCancelar.ForeColor = System.Drawing.Color.Black
-        Me.btCancelar.Image = Global.Quality.My.Resources.Resources.Actions_blue_arrow_undo_icon
+        ' Me.btCancelar.Image = Global.Quality.My.Resources.Resources.Actions_blue_arrow_undo_icon
         Me.btCancelar.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.btCancelar.Name = "btCancelar"
         Me.btCancelar.Size = New System.Drawing.Size(104, 34)
@@ -2545,8 +2545,8 @@ Partial Class FormVentas
         '
         Me.btAnular.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btAnular.ForeColor = System.Drawing.Color.Black
-        Me.btAnular.Image = Global.Quality.My.Resources.Resources.document_delete_icon__1_
-        Me.btAnular.ImageTransparentColor = System.Drawing.Color.Magenta
+        '  Me.btAnular.Image = Global.Quality.My.Resources.Resources.document_delete_icon__1_
+        '  Me.btAnular.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.btAnular.Name = "btAnular"
         Me.btAnular.Size = New System.Drawing.Size(91, 34)
         Me.btAnular.Text = "&Anular"
@@ -2556,7 +2556,7 @@ Partial Class FormVentas
         '
         Me.btImprimir.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btImprimir.ForeColor = System.Drawing.Color.Black
-        Me.btImprimir.Image = Global.Quality.My.Resources.Resources.Printer_icon__1_
+        '  Me.btImprimir.Image = Global.Quality.My.Resources.Resources.Printer_icon__1_
         Me.btImprimir.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.btImprimir.Name = "btImprimir"
         Me.btImprimir.Size = New System.Drawing.Size(103, 34)

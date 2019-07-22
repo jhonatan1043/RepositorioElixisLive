@@ -66,7 +66,7 @@ Partial Class FormPrincipal
         Me.AutoScaleDimensions = New System.Drawing.SizeF(96.0!, 96.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(240, Byte), Integer), CType(CType(244, Byte), Integer), CType(CType(248, Byte), Integer))
-        Me.BackgroundImage = Global.Quality.My.Resources.Resources.XANDaR_copia
+        'Me.BackgroundImage = Global.Quality.My.Resources.Resources.XANDaR_copia
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.ClientSize = New System.Drawing.Size(1016, 733)
         Me.ControlBox = False
