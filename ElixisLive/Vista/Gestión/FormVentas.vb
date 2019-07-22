@@ -9,7 +9,7 @@
         Generales.deshabilitarControles(Me)
         validarGrilla()
         btNuevo.Enabled = True
-        btBuscar.Enabled = True
+        btBusqueda.Enabled = True
         Generales.personalizarTabControl(tabVenta)
     End Sub
     Private Sub dgvProducto_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvProducto.CellDoubleClick, DataGridView9.CellDoubleClick, DataGridView3.CellDoubleClick
@@ -115,7 +115,7 @@
         txtCodigoBarra.Focus()
         btExistencia.ForeColor = Color.White
     End Sub
-    Private Sub btBuscar_Click(sender As Object, e As EventArgs) Handles btBuscar.Click
+    Private Sub btBusqueda_Click(sender As Object, e As EventArgs) Handles btBusqueda.Click
         Dim params As New List(Of String)
         params.Add(String.Empty)
         Try
@@ -184,7 +184,7 @@
                 Generales.limpiarControles(Me)
             End If
             btNuevo.Enabled = True
-            btBuscar.Enabled = True
+            btBusqueda.Enabled = True
         End If
     End Sub
     Private Sub Form_FormClosing(sender As Object, e As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
@@ -219,12 +219,12 @@
     Private Sub txtIdentificacion_KeyDown(sender As Object, e As KeyEventArgs) Handles txtIdentificacion.KeyDown, TextBox4.KeyDown, TextBox31.KeyDown, TextBox22.KeyDown, TextBox13.KeyDown
         'If Not String.IsNullOrEmpty(txtIdentificacion.Text) Then
         Try
-                If e.KeyCode = Keys.Enter Then
-                    cargarCliente(txtIdentificacion.Text)
-                End If
-            Catch ex As Exception
-                EstiloMensajes.mostrarMensajeError(ex.Message)
-            End Try
+            If e.KeyCode = Keys.Enter Then
+                cargarCliente(txtIdentificacion.Text)
+            End If
+        Catch ex As Exception
+            EstiloMensajes.mostrarMensajeError(ex.Message)
+        End Try
         'End If
     End Sub
     Private Sub btAnular_Click(sender As Object, e As EventArgs) Handles btAnular.Click
@@ -235,7 +235,7 @@
                     Generales.deshabilitarBotones(ToolStrip1)
                     Generales.limpiarControles(Me)
                     btNuevo.Enabled = True
-                    btBuscar.Enabled = True
+                    btBusqueda.Enabled = True
                     EstiloMensajes.mostrarMensajeAnulado(MensajeSistema.REGISTRO_ANULADO)
                 End If
             Catch ex As Exception

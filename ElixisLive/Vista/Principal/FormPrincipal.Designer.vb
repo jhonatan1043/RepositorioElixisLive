@@ -39,7 +39,7 @@ Partial Class FormPrincipal
         '
         'StatusStrip1
         '
-        Me.StatusStrip1.BackColor = System.Drawing.Color.White
+        Me.StatusStrip1.BackColor = System.Drawing.Color.Gainsboro
         Me.StatusStrip1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.StatusStrip1.Location = New System.Drawing.Point(0, 711)
         Me.StatusStrip1.Name = "StatusStrip1"
@@ -51,7 +51,7 @@ Partial Class FormPrincipal
         'lbUsuario
         '
         Me.lbUsuario.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.lbUsuario.BackColor = System.Drawing.Color.White
+        Me.lbUsuario.BackColor = System.Drawing.Color.Gainsboro
         Me.lbUsuario.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbUsuario.ForeColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(61, Byte), Integer), CType(CType(113, Byte), Integer))
         Me.lbUsuario.Location = New System.Drawing.Point(612, 711)
@@ -65,8 +65,8 @@ Partial Class FormPrincipal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(96.0!, 96.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi
-        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(240, Byte), Integer), CType(CType(244, Byte), Integer), CType(CType(248, Byte), Integer))
-        'Me.BackgroundImage = Global.Quality.My.Resources.Resources.XANDaR_copia
+        Me.BackColor = System.Drawing.Color.White
+        Me.BackgroundImage = Global.Quality.My.Resources.Resources.XANDaR
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.ClientSize = New System.Drawing.Size(1016, 733)
         Me.ControlBox = False
@@ -79,6 +79,7 @@ Partial Class FormPrincipal
         Me.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.MinimizeBox = False
         Me.Name = "FormPrincipal"
+        Me.ShowIcon = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "  "
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized

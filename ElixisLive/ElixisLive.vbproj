@@ -1123,6 +1123,17 @@
     <Content Include="ReferenciaDLL\itextsharp.dll" />
     <Content Include="ReferenciaDLL\MySql.Data.DLL" />
     <Content Include="ReferenciaDLL\NotifySenderControl.dll" />
+    <None Include="Resources\XANDaR.png" />
+    <None Include="Resources\Very-Basic-Search-icon.png" />
+    <None Include="Resources\Very-Basic-Help-icon.png" />
+    <None Include="Resources\ok1.png" />
+    <None Include="Resources\ok.png" />
+    <None Include="Resources\Cancel.png" />
+    <None Include="Resources\Anular.png" />
+    <None Include="Resources\advertencia.png" />
+    <None Include="Resources\regresar.png" />
+    <None Include="Resources\Data-Export-icon.png" />
+    <None Include="Resources\Very-Basic-Update-icon.png" />
     <None Include="Resources\Industry-Trash-2-icon.png" />
     <None Include="Resources\Computer-Hardware-Print-icon.png" />
     <None Include="Resources\Files-Delete-File-icon.png" />
