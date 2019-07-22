@@ -71,7 +71,6 @@ Partial Class FormVentas
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.TextBox18 = New System.Windows.Forms.TextBox()
         Me.TextBox9 = New System.Windows.Forms.TextBox()
-        Me.Pimagen = New System.Windows.Forms.PictureBox()
         Me.Label34 = New System.Windows.Forms.Label()
         Me.Label23 = New System.Windows.Forms.Label()
         Me.LTitulo = New System.Windows.Forms.Label()
@@ -203,6 +202,8 @@ Partial Class FormVentas
         Me.Label21 = New System.Windows.Forms.Label()
         Me.Label22 = New System.Windows.Forms.Label()
         Me.GroupBox7 = New System.Windows.Forms.GroupBox()
+        Me.txtCodigo = New System.Windows.Forms.Label()
+        Me.lbInformativo = New System.Windows.Forms.Label()
         Me.TextTotalArticulos = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.TextTotal = New System.Windows.Forms.TextBox()
@@ -211,7 +212,6 @@ Partial Class FormVentas
         Me.TextTotalServicio = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.txtCodigoBarra = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label17 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
@@ -221,7 +221,6 @@ Partial Class FormVentas
         Me.dtFecha = New System.Windows.Forms.DateTimePicker()
         Me.btExistencia = New System.Windows.Forms.Button()
         Me.Label11 = New System.Windows.Forms.Label()
-        Me.lbInformativo = New System.Windows.Forms.Label()
         Me.tabVenta = New System.Windows.Forms.TabControl()
         Me.tpArticulos = New System.Windows.Forms.TabPage()
         Me.dgvProducto = New System.Windows.Forms.DataGridView()
@@ -252,6 +251,7 @@ Partial Class FormVentas
         Me.dgDetalle = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.dgQuitarServ = New System.Windows.Forms.DataGridViewImageColumn()
         Me.Label3 = New System.Windows.Forms.Label()
+        Me.txtCodigoBarra = New System.Windows.Forms.TextBox()
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
         Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.btNuevo = New System.Windows.Forms.ToolStripButton()
@@ -260,9 +260,7 @@ Partial Class FormVentas
         Me.btCancelar = New System.Windows.Forms.ToolStripButton()
         Me.btAnular = New System.Windows.Forms.ToolStripButton()
         Me.btImprimir = New System.Windows.Forms.ToolStripButton()
-        Me.txtCodigo = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
-        CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox12.SuspendLayout()
         Me.GroupBox17.SuspendLayout()
         Me.GroupBox24.SuspendLayout()
@@ -298,12 +296,10 @@ Partial Class FormVentas
         '
         'Panel1
         '
-        Me.Panel1.BackColor = System.Drawing.Color.White
-        Me.Panel1.BackgroundImage = Global.Quality.My.Resources.Resources.fondo_azul
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(199, Byte), Integer), CType(CType(237, Byte), Integer), CType(CType(252, Byte), Integer))
         Me.Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Panel1.Controls.Add(Me.TextBox18)
         Me.Panel1.Controls.Add(Me.TextBox9)
-        Me.Panel1.Controls.Add(Me.Pimagen)
         Me.Panel1.Controls.Add(Me.Label34)
         Me.Panel1.Controls.Add(Me.Label23)
         Me.Panel1.Controls.Add(Me.LTitulo)
@@ -335,17 +331,6 @@ Partial Class FormVentas
         Me.TextBox9.Size = New System.Drawing.Size(155, 29)
         Me.TextBox9.TabIndex = 999
         Me.TextBox9.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-        '
-        'Pimagen
-        '
-        Me.Pimagen.BackColor = System.Drawing.Color.Transparent
-        Me.Pimagen.Image = Global.Quality.My.Resources.Resources.Accounting_icon
-        Me.Pimagen.Location = New System.Drawing.Point(4, 0)
-        Me.Pimagen.Name = "Pimagen"
-        Me.Pimagen.Size = New System.Drawing.Size(49, 40)
-        Me.Pimagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.Pimagen.TabIndex = 1
-        Me.Pimagen.TabStop = False
         '
         'Label34
         '
@@ -379,10 +364,10 @@ Partial Class FormVentas
         '
         Me.LTitulo.BackColor = System.Drawing.Color.Transparent
         Me.LTitulo.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LTitulo.ForeColor = System.Drawing.Color.White
+        Me.LTitulo.ForeColor = System.Drawing.Color.DarkGray
         Me.LTitulo.Location = New System.Drawing.Point(1, 3)
         Me.LTitulo.Name = "LTitulo"
-        Me.LTitulo.Size = New System.Drawing.Size(898, 39)
+        Me.LTitulo.Size = New System.Drawing.Size(838, 39)
         Me.LTitulo.TabIndex = 1
         Me.LTitulo.Text = "Venta de artículos y servicios"
         Me.LTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -861,7 +846,7 @@ Partial Class FormVentas
         Me.DataGridView1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.DataGridView1.BackgroundColor = System.Drawing.Color.White
         DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(20, 61, 113)
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(61, Byte), Integer), CType(CType(113, Byte), Integer))
         DataGridViewCellStyle2.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
         DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
@@ -887,7 +872,7 @@ Partial Class FormVentas
         Me.DataGridView2.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle3
         Me.DataGridView2.BackgroundColor = System.Drawing.Color.White
         DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(20, 61, 113)
+        DataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(61, Byte), Integer), CType(CType(113, Byte), Integer))
         DataGridViewCellStyle4.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle4.ForeColor = System.Drawing.Color.White
         DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
@@ -982,7 +967,7 @@ Partial Class FormVentas
         Me.DataGridView3.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle8
         Me.DataGridView3.BackgroundColor = System.Drawing.Color.White
         DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(20, 61, 113)
+        DataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(61, Byte), Integer), CType(CType(113, Byte), Integer))
         DataGridViewCellStyle9.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle9.ForeColor = System.Drawing.Color.White
         DataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight
@@ -1131,7 +1116,7 @@ Partial Class FormVentas
         '
         'Button1
         '
-        Me.Button1.BackColor = System.Drawing.Color.FromArgb(20, 61, 113)
+        Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(61, Byte), Integer), CType(CType(113, Byte), Integer))
         Me.Button1.Font = New System.Drawing.Font("Times New Roman", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button1.ForeColor = System.Drawing.Color.White
         Me.Button1.Location = New System.Drawing.Point(439, 9)
@@ -1406,7 +1391,7 @@ Partial Class FormVentas
         Me.DataGridView7.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle16
         Me.DataGridView7.BackgroundColor = System.Drawing.Color.White
         DataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle17.BackColor = System.Drawing.Color.FromArgb(20, 61, 113)
+        DataGridViewCellStyle17.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(61, Byte), Integer), CType(CType(113, Byte), Integer))
         DataGridViewCellStyle17.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle17.ForeColor = System.Drawing.Color.White
         DataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight
@@ -1432,7 +1417,7 @@ Partial Class FormVentas
         Me.DataGridView8.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle18
         Me.DataGridView8.BackgroundColor = System.Drawing.Color.White
         DataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle19.BackColor = System.Drawing.Color.FromArgb(20, 61, 113)
+        DataGridViewCellStyle19.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(61, Byte), Integer), CType(CType(113, Byte), Integer))
         DataGridViewCellStyle19.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle19.ForeColor = System.Drawing.Color.White
         DataGridViewCellStyle19.SelectionBackColor = System.Drawing.SystemColors.Highlight
@@ -1527,7 +1512,7 @@ Partial Class FormVentas
         Me.DataGridView9.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle23
         Me.DataGridView9.BackgroundColor = System.Drawing.Color.White
         DataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle24.BackColor = System.Drawing.Color.FromArgb(20, 61, 113)
+        DataGridViewCellStyle24.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(61, Byte), Integer), CType(CType(113, Byte), Integer))
         DataGridViewCellStyle24.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle24.ForeColor = System.Drawing.Color.White
         DataGridViewCellStyle24.SelectionBackColor = System.Drawing.SystemColors.Highlight
@@ -1676,7 +1661,7 @@ Partial Class FormVentas
         '
         'Button3
         '
-        Me.Button3.BackColor = System.Drawing.Color.FromArgb(20, 61, 113)
+        Me.Button3.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(61, Byte), Integer), CType(CType(113, Byte), Integer))
         Me.Button3.Font = New System.Drawing.Font("Times New Roman", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button3.ForeColor = System.Drawing.Color.White
         Me.Button3.Location = New System.Drawing.Point(439, 9)
@@ -1929,6 +1914,31 @@ Partial Class FormVentas
         Me.GroupBox7.TabStop = False
         Me.GroupBox7.Text = "Datos de la factura"
         '
+        'txtCodigo
+        '
+        Me.txtCodigo.BackColor = System.Drawing.Color.White
+        Me.txtCodigo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtCodigo.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtCodigo.ForeColor = System.Drawing.Color.Black
+        Me.txtCodigo.Location = New System.Drawing.Point(112, 47)
+        Me.txtCodigo.Name = "txtCodigo"
+        Me.txtCodigo.Size = New System.Drawing.Size(148, 18)
+        Me.txtCodigo.TabIndex = 60049
+        Me.txtCodigo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'lbInformativo
+        '
+        Me.lbInformativo.AutoSize = True
+        Me.lbInformativo.BackColor = System.Drawing.Color.Transparent
+        Me.lbInformativo.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbInformativo.ForeColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(61, Byte), Integer), CType(CType(113, Byte), Integer))
+        Me.lbInformativo.Location = New System.Drawing.Point(487, 92)
+        Me.lbInformativo.Name = "lbInformativo"
+        Me.lbInformativo.Size = New System.Drawing.Size(10, 15)
+        Me.lbInformativo.TabIndex = 10002
+        Me.lbInformativo.Text = "."
+        Me.lbInformativo.Visible = False
+        '
         'TextTotalArticulos
         '
         Me.TextTotalArticulos.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
@@ -2025,19 +2035,6 @@ Partial Class FormVentas
         Me.Label4.Text = "Servicios:"
         Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
-        'txtCodigoBarra
-        '
-        Me.txtCodigoBarra.BackColor = System.Drawing.Color.FromArgb(76, 137, 184)
-        Me.txtCodigoBarra.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtCodigoBarra.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtCodigoBarra.ForeColor = System.Drawing.Color.FromArgb(76, 137, 184)
-        Me.txtCodigoBarra.Location = New System.Drawing.Point(112, 113)
-        Me.txtCodigoBarra.MaxLength = 26
-        Me.txtCodigoBarra.Name = "txtCodigoBarra"
-        Me.txtCodigoBarra.Size = New System.Drawing.Size(148, 23)
-        Me.txtCodigoBarra.TabIndex = 60039
-        Me.txtCodigoBarra.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
         'Label2
         '
         Me.Label2.AutoSize = True
@@ -2119,11 +2116,10 @@ Partial Class FormVentas
         '
         'btExistencia
         '
-        Me.btExistencia.BackColor = System.Drawing.Color.Transparent
-        Me.btExistencia.BackgroundImage = Global.Quality.My.Resources.Resources.fondo_azul
+        Me.btExistencia.BackColor = System.Drawing.Color.FromArgb(CType(CType(199, Byte), Integer), CType(CType(237, Byte), Integer), CType(CType(252, Byte), Integer))
         Me.btExistencia.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btExistencia.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btExistencia.ForeColor = System.Drawing.Color.White
+        Me.btExistencia.ForeColor = System.Drawing.Color.Black
         Me.btExistencia.Location = New System.Drawing.Point(783, 55)
         Me.btExistencia.Name = "btExistencia"
         Me.btExistencia.Size = New System.Drawing.Size(97, 29)
@@ -2142,19 +2138,6 @@ Partial Class FormVentas
         Me.Label11.Size = New System.Drawing.Size(41, 15)
         Me.Label11.TabIndex = 10003
         Me.Label11.Text = "Fecha:"
-        '
-        'lbInformativo
-        '
-        Me.lbInformativo.AutoSize = True
-        Me.lbInformativo.BackColor = System.Drawing.Color.Transparent
-        Me.lbInformativo.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbInformativo.ForeColor = System.Drawing.Color.FromArgb(20, 61, 113)
-        Me.lbInformativo.Location = New System.Drawing.Point(487, 92)
-        Me.lbInformativo.Name = "lbInformativo"
-        Me.lbInformativo.Size = New System.Drawing.Size(10, 15)
-        Me.lbInformativo.TabIndex = 10002
-        Me.lbInformativo.Text = "."
-        Me.lbInformativo.Visible = False
         '
         'tabVenta
         '
@@ -2190,7 +2173,7 @@ Partial Class FormVentas
         Me.dgvProducto.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle31
         Me.dgvProducto.BackgroundColor = System.Drawing.Color.White
         DataGridViewCellStyle32.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle32.BackColor = System.Drawing.Color.FromArgb(20, 61, 113)
+        DataGridViewCellStyle32.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(61, Byte), Integer), CType(CType(113, Byte), Integer))
         DataGridViewCellStyle32.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle32.ForeColor = System.Drawing.Color.White
         DataGridViewCellStyle32.SelectionBackColor = System.Drawing.SystemColors.Highlight
@@ -2354,7 +2337,7 @@ Partial Class FormVentas
         Me.dgvDetalle.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle39
         Me.dgvDetalle.BackgroundColor = System.Drawing.Color.White
         DataGridViewCellStyle40.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle40.BackColor = System.Drawing.Color.FromArgb(20, 61, 113)
+        DataGridViewCellStyle40.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(61, Byte), Integer), CType(CType(113, Byte), Integer))
         DataGridViewCellStyle40.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle40.ForeColor = System.Drawing.Color.White
         DataGridViewCellStyle40.SelectionBackColor = System.Drawing.SystemColors.Highlight
@@ -2380,7 +2363,7 @@ Partial Class FormVentas
         Me.dgvServicio.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle41
         Me.dgvServicio.BackgroundColor = System.Drawing.Color.White
         DataGridViewCellStyle42.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle42.BackColor = System.Drawing.Color.FromArgb(20, 61, 113)
+        DataGridViewCellStyle42.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(61, Byte), Integer), CType(CType(113, Byte), Integer))
         DataGridViewCellStyle42.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle42.ForeColor = System.Drawing.Color.White
         DataGridViewCellStyle42.SelectionBackColor = System.Drawing.SystemColors.Highlight
@@ -2484,10 +2467,22 @@ Partial Class FormVentas
         Me.Label3.TabIndex = 12
         Me.Label3.Text = "Nº Factura:"
         '
+        'txtCodigoBarra
+        '
+        Me.txtCodigoBarra.BackColor = System.Drawing.Color.FromArgb(CType(CType(76, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(184, Byte), Integer))
+        Me.txtCodigoBarra.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtCodigoBarra.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtCodigoBarra.ForeColor = System.Drawing.Color.FromArgb(CType(CType(76, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(184, Byte), Integer))
+        Me.txtCodigoBarra.Location = New System.Drawing.Point(112, 113)
+        Me.txtCodigoBarra.MaxLength = 26
+        Me.txtCodigoBarra.Name = "txtCodigoBarra"
+        Me.txtCodigoBarra.Size = New System.Drawing.Size(148, 23)
+        Me.txtCodigoBarra.TabIndex = 60039
+        Me.txtCodigoBarra.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
         'ToolStrip1
         '
-        Me.ToolStrip1.BackColor = System.Drawing.Color.White
-        Me.ToolStrip1.BackgroundImage = Global.Quality.My.Resources.Resources.fondo_azul
+        Me.ToolStrip1.BackColor = System.Drawing.Color.FromArgb(CType(CType(199, Byte), Integer), CType(CType(237, Byte), Integer), CType(CType(252, Byte), Integer))
         Me.ToolStrip1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ToolStrip1.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.ToolStrip1.ImageScalingSize = New System.Drawing.Size(30, 30)
@@ -2506,18 +2501,17 @@ Partial Class FormVentas
         'btNuevo
         '
         Me.btNuevo.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btNuevo.ForeColor = System.Drawing.Color.White
-        Me.btNuevo.Image = Global.Quality.My.Resources.Resources.Files_New_File_icon
+        Me.btNuevo.ForeColor = System.Drawing.Color.Black
         Me.btNuevo.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.btNuevo.Name = "btNuevo"
-        Me.btNuevo.Size = New System.Drawing.Size(86, 34)
+        Me.btNuevo.Size = New System.Drawing.Size(56, 34)
         Me.btNuevo.Text = "&Nuevo"
         Me.btNuevo.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         '
         'btBuscar
         '
         Me.btBuscar.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btBuscar.ForeColor = System.Drawing.Color.White
+        Me.btBuscar.ForeColor = System.Drawing.Color.Black
         Me.btBuscar.Image = Global.Quality.My.Resources.Resources.Search_icon
         Me.btBuscar.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.btBuscar.Name = "btBuscar"
@@ -2528,7 +2522,7 @@ Partial Class FormVentas
         'btRegistrar
         '
         Me.btRegistrar.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btRegistrar.ForeColor = System.Drawing.Color.White
+        Me.btRegistrar.ForeColor = System.Drawing.Color.Black
         Me.btRegistrar.Image = Global.Quality.My.Resources.Resources.Save_icon__1_
         Me.btRegistrar.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.btRegistrar.Name = "btRegistrar"
@@ -2539,7 +2533,7 @@ Partial Class FormVentas
         'btCancelar
         '
         Me.btCancelar.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btCancelar.ForeColor = System.Drawing.Color.White
+        Me.btCancelar.ForeColor = System.Drawing.Color.Black
         Me.btCancelar.Image = Global.Quality.My.Resources.Resources.Actions_blue_arrow_undo_icon
         Me.btCancelar.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.btCancelar.Name = "btCancelar"
@@ -2550,7 +2544,7 @@ Partial Class FormVentas
         'btAnular
         '
         Me.btAnular.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btAnular.ForeColor = System.Drawing.Color.White
+        Me.btAnular.ForeColor = System.Drawing.Color.Black
         Me.btAnular.Image = Global.Quality.My.Resources.Resources.document_delete_icon__1_
         Me.btAnular.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.btAnular.Name = "btAnular"
@@ -2561,7 +2555,7 @@ Partial Class FormVentas
         'btImprimir
         '
         Me.btImprimir.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btImprimir.ForeColor = System.Drawing.Color.White
+        Me.btImprimir.ForeColor = System.Drawing.Color.Black
         Me.btImprimir.Image = Global.Quality.My.Resources.Resources.Printer_icon__1_
         Me.btImprimir.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.btImprimir.Name = "btImprimir"
@@ -2569,23 +2563,11 @@ Partial Class FormVentas
         Me.btImprimir.Text = "&Imprimir"
         Me.btImprimir.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         '
-        'txtCodigo
-        '
-        Me.txtCodigo.BackColor = System.Drawing.Color.White
-        Me.txtCodigo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtCodigo.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtCodigo.ForeColor = System.Drawing.Color.Black
-        Me.txtCodigo.Location = New System.Drawing.Point(112, 47)
-        Me.txtCodigo.Name = "txtCodigo"
-        Me.txtCodigo.Size = New System.Drawing.Size(148, 18)
-        Me.txtCodigo.TabIndex = 60049
-        Me.txtCodigo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
         'FormVentas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.White
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(240, Byte), Integer), CType(CType(244, Byte), Integer), CType(CType(248, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(900, 523)
         Me.Controls.Add(Me.ToolStrip1)
         Me.Controls.Add(Me.GroupBox7)
@@ -2599,7 +2581,6 @@ Partial Class FormVentas
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
-        CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox12.ResumeLayout(False)
         Me.GroupBox12.PerformLayout()
         Me.GroupBox17.ResumeLayout(False)
@@ -2654,7 +2635,6 @@ Partial Class FormVentas
     Public WithEvents Panel1 As Panel
     Public WithEvents TextBox18 As TextBox
     Public WithEvents TextBox9 As TextBox
-    Public WithEvents Pimagen As PictureBox
     Public WithEvents Label34 As Label
     Public WithEvents Label23 As Label
     Public WithEvents LTitulo As Label

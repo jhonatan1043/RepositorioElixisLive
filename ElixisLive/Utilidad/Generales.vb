@@ -435,18 +435,18 @@ Public Class Generales
         Return Nothing
     End Function
     Public Shared Sub personalizarDatagrid(ByRef dgv As DataGridView)
-        dgv.BackgroundColor = Color.White
-        dgv.DefaultCellStyle.BackColor = Color.White
-        dgv.DefaultCellStyle.ForeColor = Color.Black
-        dgv.DefaultCellStyle.SelectionBackColor = Color.FromArgb(76, 137, 184)
-        dgv.DefaultCellStyle.SelectionForeColor = Color.Black
+        dgv.BackgroundColor = Color.FromArgb(240, 244, 248)
+        dgv.DefaultCellStyle.BackColor = Color.FromArgb(240, 244, 248) '' gris
+        dgv.DefaultCellStyle.ForeColor = Color.DarkGray
+        dgv.DefaultCellStyle.SelectionBackColor = Color.FromArgb(199, 237, 252) '' azul seleccion
+        dgv.DefaultCellStyle.SelectionForeColor = Color.DarkGray
         dgv.DefaultCellStyle.Font = New Font(Constantes.TIPO_LETRA_ELEMENTO, 9)
         dgv.EnableHeadersVisualStyles = False
-        dgv.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(20, 61, 113)
-        dgv.ColumnHeadersDefaultCellStyle.ForeColor = Color.White
+        dgv.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(240, 244, 248)
+        dgv.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black
         dgv.AlternatingRowsDefaultCellStyle.Font = New Font(Constantes.TIPO_LETRA_ELEMENTO, 9)
         dgv.ColumnHeadersDefaultCellStyle.Font = New Font(Constantes.TIPO_LETRA_ELEMENTO, 9)
-        dgv.RowHeadersDefaultCellStyle.SelectionBackColor = Color.FromArgb(76, 137, 184)
+        dgv.RowHeadersDefaultCellStyle.SelectionBackColor = Color.FromArgb(199, 237, 252)
         For indiceColumna = 0 To dgv.Columns.Count - 1
             dgv.Columns(indiceColumna).AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
         Next
@@ -455,7 +455,7 @@ Public Class Generales
     End Sub
     Public Shared Sub resaltarFila(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs)
         If e.RowIndex >= 0 Then
-            sender.Rows(e.RowIndex).DefaultCellStyle.BackColor = Color.FromArgb(158, 210, 231)
+            sender.Rows(e.RowIndex).DefaultCellStyle.BackColor = Color.FromArgb(220, 240, 250) '' azul resaltar
         End If
     End Sub
     Public Shared Sub personalizarTabControl(ByRef tab As TabControl)
@@ -465,8 +465,8 @@ Public Class Generales
         'Firstly we'll define some parameters.
         Dim CurrentTab As TabPage = sender.TabPages(e.Index)
         Dim ItemRect As Rectangle = sender.GetTabRect(e.Index)
-        Dim FillBrush As New SolidBrush(Color.FromArgb(158, 210, 231))
-        Dim TextBrush As New SolidBrush(Color.Black)
+        Dim FillBrush As New SolidBrush(Color.FromArgb(240, 244, 248))
+        Dim TextBrush As New SolidBrush(Color.DarkGray)
         Dim sf As New StringFormat
         sf.Alignment = StringAlignment.Center
         sf.LineAlignment = StringAlignment.Center
@@ -474,8 +474,8 @@ Public Class Generales
         'If we are currently painting the Selected TabItem we'll 
         'change the brush colors and inflate the rectangle.
         If CBool(e.State And DrawItemState.Selected) Then
-            FillBrush.Color = Color.FromArgb(20, 61, 113)
-            TextBrush.Color = Color.White
+            FillBrush.Color = Color.FromArgb(240, 244, 248)
+            TextBrush.Color = Color.Black
             ItemRect.Inflate(2, 2)
         End If
 
@@ -505,7 +505,7 @@ Public Class Generales
     End Sub
     Public Shared Sub quitarResaltadoFila(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs)
         If e.RowIndex >= 0 Then
-            sender.Rows(e.RowIndex).DefaultCellStyle.BackColor = Color.White
+            sender.Rows(e.RowIndex).DefaultCellStyle.BackColor = Color.FromArgb(240, 244, 248)
         End If
     End Sub
     Public Shared Sub cargarForm(ByVal form As System.Windows.Forms.Form)
@@ -617,12 +617,12 @@ Public Class Generales
                 vItem.text = vItem.text.ToString.ToUpper
             Else
                 vItem.Font = New Font(Constantes.TIPO_LETRA_ELEMENTO, 9)
-                vItem.foreColor = Color.Black
+                vItem.foreColor = Color.DarkGray
             End If
 
             If (TypeOf vItem Is TextBox) Or (TypeOf vItem Is RichTextBox) Or (TypeOf vItem Is MaskedTextBox) Or (TypeOf vItem Is DataGridView) Then
                 vItem.readonly = True
-                vItem.foreColor = Color.Black
+                vItem.foreColor = Color.DarkGray
             ElseIf (TypeOf vItem Is CheckBox) Or (TypeOf vItem Is RadioButton) Or (TypeOf vItem Is ComboBox) Or
                    ((TypeOf vItem Is Button) Or (TypeOf vItem Is TreeView) Or (TypeOf vItem Is DateTimePicker) Or (TypeOf vItem Is NumericUpDown)) Or
                    (TypeOf vItem Is CheckedListBox) Then
@@ -663,9 +663,10 @@ Public Class Generales
         For Each vItem In pElemento.Controls
             If vItem.name = "LTitulo" Then
                 vItem.Font = New Font(Constantes.TIPO_LETRA_ELEMENTO, 13)
+                vItem.foreColor = Color.DarkGray
             Else
                 vItem.Font = New Font(Constantes.TIPO_LETRA_ELEMENTO, 9)
-                vItem.foreColor = Color.Black
+                vItem.foreColor = Color.DarkGray
             End If
             If ((TypeOf vItem Is TextBox) Or (TypeOf vItem Is RichTextBox) Or (TypeOf vItem Is MaskedTextBox) Or (TypeOf vItem Is DataGridView)) And
                    Not (vItem.name.ToString.ToLower.Contains("txtcodigo")) Then
@@ -676,11 +677,13 @@ Public Class Generales
                 Else
                     vItem.readonly = False
                 End If
+                vItem.foreColor = Color.DarkGray
             ElseIf (TypeOf vItem Is CheckBox) Or (TypeOf vItem Is RadioButton) Or (TypeOf vItem Is ComboBox) Or
                 (TypeOf vItem Is Button) Or (TypeOf vItem Is TreeView) Or (TypeOf vItem Is DateTimePicker) Or (TypeOf vItem Is NumericUpDown) Or
                    (TypeOf vItem Is CheckedListBox) Then
                 vItem.enabled = True
                 vItem.Font = New Font(Constantes.TIPO_LETRA_ELEMENTO, 9)
+                vItem.foreColor = Color.DarkGray
             ElseIf (TypeOf vItem Is GroupBox) Or (vItem.hasChildren) Then
                 habilitarControles(vItem)
                 vItem.foreColor = Color.Black

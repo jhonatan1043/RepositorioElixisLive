@@ -18,7 +18,7 @@ Public Class principalBLL
                                                  Nothing,
                                                  drFila("Descripcion").ToString)
                 ' añadir este menú desplegable a la barra de menú
-                mnuOpcion.ForeColor = Color.White
+                mnuOpcion.ForeColor = Color.DarkGray
                 FormPrincipal.menuOpciones.Items.Add(mnuOpcion)
                 ' recorrer si hubiera las opciones dependientes de este menú
                 dtFilas = dsDatos.Tables(0)
@@ -28,7 +28,7 @@ Public Class principalBLL
             FormPrincipal.Controls.Add(FormPrincipal.menuOpciones)
             FormPrincipal.menuOpciones.LayoutStyle = ToolStripLayoutStyle.Flow
             FormPrincipal.menuOpciones.AutoSize = True
-            FormPrincipal.menuOpciones.BackColor = Color.FromArgb(20, 61, 113)
+            FormPrincipal.menuOpciones.BackColor = Color.FromArgb(240, 244, 248)
 
 
             FormPrincipal.menuOpciones.GripStyle = ToolStripGripStyle.Visible
@@ -69,7 +69,7 @@ Public Class principalBLL
                                                 (mnuOpcion.Tag.codigo.ToString.Substring(0, 2)),
                                                 (mnuOpcion.Tag.nombrePadre.ToString))
 
-            mnuSubOpcion.ForeColor = Color.White
+            mnuSubOpcion.ForeColor = Color.DarkGray
 
             agregarMenuItem(drFila("Formulario").ToString, mnuSubOpcion)
             mnuOpcion.DropDownItems.Add(mnuSubOpcion)

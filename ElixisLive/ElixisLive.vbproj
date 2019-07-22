@@ -799,11 +799,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Application.myapp</DependentUpon>
     </Compile>
-    <Compile Include="My Project\Resources.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <Compile Include="My Project\Settings.Designer.vb">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -1064,7 +1059,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
@@ -1123,6 +1117,9 @@
     <Content Include="ReferenciaDLL\itextsharp.dll" />
     <Content Include="ReferenciaDLL\MySql.Data.DLL" />
     <Content Include="ReferenciaDLL\NotifySenderControl.dll" />
+    <None Include="Resources\guardar.png" />
+    <None Include="Resources\mas.png" />
+    <None Include="Resources\lupa.png" />
     <None Include="Resources\XANDaR copia.jpg" />
     <None Include="Resources\Network-Panel-Settings-icon.png" />
     <None Include="Resources\Setting-icon.png" />

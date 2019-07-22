@@ -184,7 +184,7 @@ Partial Class FormInicioSesion
         '
         'GroupBox2
         '
-        Me.GroupBox2.BackColor = System.Drawing.Color.Transparent
+        Me.GroupBox2.BackColor = System.Drawing.Color.FromArgb(CType(CType(240, Byte), Integer), CType(CType(244, Byte), Integer), CType(CType(248, Byte), Integer))
         Me.GroupBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.GroupBox2.Location = New System.Drawing.Point(127, 1)
         Me.GroupBox2.Name = "GroupBox2"
@@ -202,7 +202,7 @@ Partial Class FormInicioSesion
         Me.AcceptButton = Me.OK
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.FromArgb(20, 61, 113)
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(240, Byte), Integer), CType(CType(244, Byte), Integer), CType(CType(248, Byte), Integer))
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.CancelButton = Me.Cancel
         Me.ClientSize = New System.Drawing.Size(411, 193)
