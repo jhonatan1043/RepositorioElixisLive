@@ -1123,6 +1123,12 @@
     <Content Include="ReferenciaDLL\itextsharp.dll" />
     <Content Include="ReferenciaDLL\MySql.Data.DLL" />
     <Content Include="ReferenciaDLL\NotifySenderControl.dll" />
+    <None Include="Resources\Industry-Trash-2-icon.png" />
+    <None Include="Resources\Computer-Hardware-Print-icon.png" />
+    <None Include="Resources\Files-Delete-File-icon.png" />
+    <None Include="Resources\Arrows-Right-2-icon.png" />
+    <None Include="Resources\User-Interface-Save-As-icon.png" />
+    <None Include="Resources\Add-File-icon.png" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
