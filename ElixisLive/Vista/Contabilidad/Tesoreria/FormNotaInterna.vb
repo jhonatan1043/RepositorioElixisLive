@@ -271,7 +271,7 @@
             AddHandler e.Control.KeyPress, AddressOf ValidacionDigitacion.validarValoresNumericos
         End If
     End Sub
-    Private Sub btnuevo_Click(sender As Object, e As EventArgs) Handles btNuevo.Click
+    Private Sub btnuevo_Click(sender As Object, e As EventArgs)
         Generales.limpiarControles(Me)
         Generales.deshabilitarBotones(ToolStrip1)
         Generales.habilitarControles(Me)
@@ -289,7 +289,7 @@
         bttercero.Focus()
         bloquearColumnas()
     End Sub
-    Private Sub bteditar_Click(sender As Object, e As EventArgs) Handles btEditar.Click
+    Private Sub bteditar_Click(sender As Object, e As EventArgs)
         If EstiloMensajes.mostrarMensajePregunta(MensajeSistema.EDITAR) = Constantes.SI Then
             Generales.deshabilitarBotones(ToolStrip1)
             dtCuentas.Rows.Add()
@@ -299,7 +299,7 @@
             base.ReadOnly = False
         End If
     End Sub
-    Private Sub btcancelar_Click(sender As Object, e As EventArgs) Handles btCancelar.Click
+    Private Sub btcancelar_Click(sender As Object, e As EventArgs)
         If EstiloMensajes.mostrarMensajePregunta(MensajeSistema.CANCELAR) = Constantes.SI Then
             Generales.deshabilitarBotones(ToolStrip1)
             Generales.deshabilitarControles(Me)
@@ -428,7 +428,7 @@
     Private Sub fechadoc_Leave(sender As Object, e As EventArgs) Handles fechadoc.Leave
         FuncionesContables.validarFechaFutura(fechadoc)
     End Sub
-    Private Sub btguardar_Click(sender As Object, e As EventArgs) Handles btRegistrar.Click
+    Private Sub btguardar_Click(sender As Object, e As EventArgs)
         If validarInformacion() Then
             If FuncionesContables.validardgv(dtCuentas) Then
                 codigoPuc = FuncionesContables.obtenerPucActivo()

@@ -23,7 +23,7 @@ Partial Class FormExistencia
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.txtBuscar = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
@@ -39,7 +39,6 @@ Partial Class FormExistencia
         Me.errorIcono = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Pimagen = New System.Windows.Forms.PictureBox()
         Me.LTitulo = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -48,7 +47,6 @@ Partial Class FormExistencia
         CType(Me.dgvLista, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.errorIcono, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
-        CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'txtBuscar
@@ -88,9 +86,9 @@ Partial Class FormExistencia
         '
         'btActualizar
         '
+        Me.btActualizar.BackColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(220, Byte), Integer), CType(CType(234, Byte), Integer))
         Me.btActualizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btActualizar.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        'Me.btActualizar.Image = Global.Quality.My.Resources.Resources.Actions_edit_redo_icon
         Me.btActualizar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btActualizar.Location = New System.Drawing.Point(625, 12)
         Me.btActualizar.Name = "btActualizar"
@@ -98,7 +96,7 @@ Partial Class FormExistencia
         Me.btActualizar.TabIndex = 59
         Me.btActualizar.Text = "Recargar"
         Me.btActualizar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btActualizar.UseVisualStyleBackColor = True
+        Me.btActualizar.UseVisualStyleBackColor = False
         '
         'GroupBox2
         '
@@ -113,6 +111,7 @@ Partial Class FormExistencia
         '
         'Estado
         '
+        Me.Estado.BackColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(220, Byte), Integer), CType(CType(234, Byte), Integer))
         Me.Estado.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Estado.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Italic)
         Me.Estado.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripLabel1, Me.lbPorAcabar, Me.ToolStripLabel2, Me.lbAcabado})
@@ -168,8 +167,8 @@ Partial Class FormExistencia
         Me.dgvLista.AllowUserToDeleteRows = False
         Me.dgvLista.AllowUserToResizeColumns = False
         Me.dgvLista.AllowUserToResizeRows = False
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
-        Me.dgvLista.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black
+        Me.dgvLista.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.dgvLista.BackgroundColor = System.Drawing.SystemColors.Control
         Me.dgvLista.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvLista.Dock = System.Windows.Forms.DockStyle.Fill
@@ -187,38 +186,25 @@ Partial Class FormExistencia
         '
         'Panel1
         '
-        Me.Panel1.BackColor = System.Drawing.Color.White
-       
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(220, Byte), Integer), CType(CType(234, Byte), Integer))
         Me.Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Panel1.Controls.Add(Me.Pimagen)
         Me.Panel1.Controls.Add(Me.LTitulo)
-        Me.Panel1.Location = New System.Drawing.Point(-6, 0)
+        Me.Panel1.Location = New System.Drawing.Point(-2, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(746, 42)
+        Me.Panel1.Size = New System.Drawing.Size(737, 34)
         Me.Panel1.TabIndex = 0
-        '
-        'Pimagen
-        '
-        Me.Pimagen.BackColor = System.Drawing.Color.Transparent
-      '    Me.Pimagen.Image = Global.Quality.My.Resources.Resources.InvoiceSearch_icon
-        Me.Pimagen.Location = New System.Drawing.Point(9, 0)
-        Me.Pimagen.Name = "Pimagen"
-        Me.Pimagen.Size = New System.Drawing.Size(52, 42)
-        Me.Pimagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.Pimagen.TabIndex = 1
-        Me.Pimagen.TabStop = False
         '
         'LTitulo
         '
         Me.LTitulo.BackColor = System.Drawing.Color.Transparent
         Me.LTitulo.Font = New System.Drawing.Font("Times New Roman", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LTitulo.ForeColor = System.Drawing.Color.White
-        Me.LTitulo.Location = New System.Drawing.Point(4, 0)
+        Me.LTitulo.ForeColor = System.Drawing.Color.Black
+        Me.LTitulo.Location = New System.Drawing.Point(4, 3)
         Me.LTitulo.Name = "LTitulo"
-        Me.LTitulo.Size = New System.Drawing.Size(742, 42)
+        Me.LTitulo.Size = New System.Drawing.Size(679, 28)
         Me.LTitulo.TabIndex = 1
         Me.LTitulo.Text = "Productos en existencia"
-        Me.LTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.LTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'FormExistencia
         '
@@ -247,13 +233,11 @@ Partial Class FormExistencia
         CType(Me.dgvLista, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.errorIcono, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
-        CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
     Public WithEvents Panel1 As Panel
     Public WithEvents LTitulo As Label
-    Public WithEvents Pimagen As PictureBox
     Public WithEvents txtBuscar As TextBox
     Public WithEvents Label3 As Label
     Friend WithEvents GroupBox1 As GroupBox

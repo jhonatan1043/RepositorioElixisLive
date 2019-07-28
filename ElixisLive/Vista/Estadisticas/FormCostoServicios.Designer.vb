@@ -31,13 +31,11 @@ Partial Class FormCostoServicios
         Me.Label5 = New System.Windows.Forms.Label()
         Me.dgvProducto = New System.Windows.Forms.DataGridView()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Pimagen = New System.Windows.Forms.PictureBox()
         Me.LTitulo = New System.Windows.Forms.Label()
         CType(Me.dgvServicio, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         CType(Me.dgvProducto, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
-        CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'dgvServicio
@@ -77,10 +75,10 @@ Partial Class FormCostoServicios
         '
         'Label1
         '
-        Me.Label1.BackColor = System.Drawing.Color.FromArgb(20, 61, 113)
+        Me.Label1.BackColor = System.Drawing.Color.Gainsboro
         Me.Label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Label1.Font = New System.Drawing.Font("Times New Roman", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.White
+        Me.Label1.ForeColor = System.Drawing.Color.Black
         Me.Label1.Location = New System.Drawing.Point(240, 12)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(649, 25)
@@ -90,10 +88,10 @@ Partial Class FormCostoServicios
         '
         'Label5
         '
-        Me.Label5.BackColor = System.Drawing.Color.FromArgb(20, 61, 113)
+        Me.Label5.BackColor = System.Drawing.Color.Gainsboro
         Me.Label5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Label5.Font = New System.Drawing.Font("Times New Roman", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.ForeColor = System.Drawing.Color.White
+        Me.Label5.ForeColor = System.Drawing.Color.Black
         Me.Label5.Location = New System.Drawing.Point(6, 12)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(228, 25)
@@ -119,38 +117,25 @@ Partial Class FormCostoServicios
         '
         'Panel1
         '
-        Me.Panel1.BackColor = System.Drawing.Color.White
-       
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(220, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(250, Byte), Integer))
         Me.Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Panel1.Controls.Add(Me.Pimagen)
         Me.Panel1.Controls.Add(Me.LTitulo)
         Me.Panel1.Location = New System.Drawing.Point(-4, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(906, 44)
+        Me.Panel1.Size = New System.Drawing.Size(906, 34)
         Me.Panel1.TabIndex = 2
-        '
-        'Pimagen
-        '
-        Me.Pimagen.BackColor = System.Drawing.Color.Transparent
-      '    Me.Pimagen.Image = Global.Quality.My.Resources.Resources.Money_Bag_icon
-        Me.Pimagen.Location = New System.Drawing.Point(7, 0)
-        Me.Pimagen.Name = "Pimagen"
-        Me.Pimagen.Size = New System.Drawing.Size(52, 41)
-        Me.Pimagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.Pimagen.TabIndex = 1
-        Me.Pimagen.TabStop = False
         '
         'LTitulo
         '
         Me.LTitulo.BackColor = System.Drawing.Color.Transparent
-        Me.LTitulo.Font = New System.Drawing.Font("Segoe UI", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LTitulo.ForeColor = System.Drawing.Color.White
-        Me.LTitulo.Location = New System.Drawing.Point(5, 0)
+        Me.LTitulo.Font = New System.Drawing.Font("Segoe UI", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LTitulo.ForeColor = System.Drawing.Color.Black
+        Me.LTitulo.Location = New System.Drawing.Point(5, 2)
         Me.LTitulo.Name = "LTitulo"
-        Me.LTitulo.Size = New System.Drawing.Size(901, 40)
+        Me.LTitulo.Size = New System.Drawing.Size(898, 28)
         Me.LTitulo.TabIndex = 1
         Me.LTitulo.Text = "Costo de servicios"
-        Me.LTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.LTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'FormCostoServicios
         '
@@ -170,7 +155,6 @@ Partial Class FormCostoServicios
         Me.GroupBox1.ResumeLayout(False)
         CType(Me.dgvProducto, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
-        CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -179,7 +163,6 @@ Partial Class FormCostoServicios
     Friend WithEvents GroupBox1 As GroupBox
     Public WithEvents LTitulo As Label
     Public WithEvents Panel1 As Panel
-    Public WithEvents Pimagen As PictureBox
     Friend WithEvents dgvProducto As DataGridView
     Public WithEvents Label1 As Label
     Public WithEvents Label5 As Label

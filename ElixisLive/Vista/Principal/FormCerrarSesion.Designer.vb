@@ -26,13 +26,13 @@ Partial Class FormCerrarSesion
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
         Me.PictureBox4 = New System.Windows.Forms.PictureBox()
         Me.PicCerrarSesion = New System.Windows.Forms.PictureBox()
         Me.PicRegresar = New System.Windows.Forms.PictureBox()
         Me.PicSalir = New System.Windows.Forms.PictureBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PicCerrarSesion, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -90,6 +90,52 @@ Partial Class FormCerrarSesion
         Me.Label1.TabIndex = 27
         Me.Label1.Text = "Salir"
         '
+        'PictureBox4
+        '
+        Me.PictureBox4.Image = Global.Quality.My.Resources.Resources.XANDaR
+        Me.PictureBox4.Location = New System.Drawing.Point(45, 35)
+        Me.PictureBox4.Name = "PictureBox4"
+        Me.PictureBox4.Size = New System.Drawing.Size(202, 182)
+        Me.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox4.TabIndex = 26
+        Me.PictureBox4.TabStop = False
+        '
+        'PicCerrarSesion
+        '
+        Me.PicCerrarSesion.BackColor = System.Drawing.Color.White
+        Me.PicCerrarSesion.BackgroundImage = Global.Quality.My.Resources.Resources.Very_Basic_Update_icon
+        Me.PicCerrarSesion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.PicCerrarSesion.Location = New System.Drawing.Point(26, 276)
+        Me.PicCerrarSesion.Name = "PicCerrarSesion"
+        Me.PicCerrarSesion.Size = New System.Drawing.Size(65, 65)
+        Me.PicCerrarSesion.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PicCerrarSesion.TabIndex = 21
+        Me.PicCerrarSesion.TabStop = False
+        '
+        'PicRegresar
+        '
+        Me.PicRegresar.BackColor = System.Drawing.Color.White
+        Me.PicRegresar.BackgroundImage = Global.Quality.My.Resources.Resources.regresar
+        Me.PicRegresar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.PicRegresar.Location = New System.Drawing.Point(209, 276)
+        Me.PicRegresar.Name = "PicRegresar"
+        Me.PicRegresar.Size = New System.Drawing.Size(65, 65)
+        Me.PicRegresar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PicRegresar.TabIndex = 25
+        Me.PicRegresar.TabStop = False
+        '
+        'PicSalir
+        '
+        Me.PicSalir.BackColor = System.Drawing.Color.White
+        Me.PicSalir.BackgroundImage = Global.Quality.My.Resources.Resources.Data_Export_icon
+        Me.PicSalir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.PicSalir.Location = New System.Drawing.Point(118, 276)
+        Me.PicSalir.Name = "PicSalir"
+        Me.PicSalir.Size = New System.Drawing.Size(65, 65)
+        Me.PicSalir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PicSalir.TabIndex = 24
+        Me.PicSalir.TabStop = False
+        '
         'Label4
         '
         Me.Label4.AutoSize = True
@@ -120,54 +166,11 @@ Partial Class FormCerrarSesion
         Me.Label6.TabIndex = 32
         Me.Label6.Text = "_____________"
         '
-        'PictureBox4
-        '
-        Me.PictureBox4.Image = Global.Quality.My.Resources.Resources.XANDaR
-        Me.PictureBox4.Location = New System.Drawing.Point(45, 35)
-        Me.PictureBox4.Name = "PictureBox4"
-        Me.PictureBox4.Size = New System.Drawing.Size(202, 182)
-        Me.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox4.TabIndex = 26
-        Me.PictureBox4.TabStop = False
-        '
-        'PicCerrarSesion
-        '
-        Me.PicCerrarSesion.BackColor = System.Drawing.Color.White
-        Me.PicCerrarSesion.Image = Global.Quality.My.Resources.Resources.Very_Basic_Update_icon
-        Me.PicCerrarSesion.Location = New System.Drawing.Point(26, 276)
-        Me.PicCerrarSesion.Name = "PicCerrarSesion"
-        Me.PicCerrarSesion.Size = New System.Drawing.Size(65, 65)
-        Me.PicCerrarSesion.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PicCerrarSesion.TabIndex = 21
-        Me.PicCerrarSesion.TabStop = False
-        '
-        'PicRegresar
-        '
-        Me.PicRegresar.BackColor = System.Drawing.Color.White
-        Me.PicRegresar.Image = Global.Quality.My.Resources.Resources.regresar
-        Me.PicRegresar.Location = New System.Drawing.Point(209, 276)
-        Me.PicRegresar.Name = "PicRegresar"
-        Me.PicRegresar.Size = New System.Drawing.Size(65, 65)
-        Me.PicRegresar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PicRegresar.TabIndex = 25
-        Me.PicRegresar.TabStop = False
-        '
-        'PicSalir
-        '
-        Me.PicSalir.BackColor = System.Drawing.Color.White
-        Me.PicSalir.Image = Global.Quality.My.Resources.Resources.Data_Export_icon
-        Me.PicSalir.Location = New System.Drawing.Point(118, 276)
-        Me.PicSalir.Name = "PicSalir"
-        Me.PicSalir.Size = New System.Drawing.Size(65, 65)
-        Me.PicSalir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PicSalir.TabIndex = 24
-        Me.PicSalir.TabStop = False
-        '
         'FormCerrarSesion
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.Gainsboro
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(220, Byte), Integer), CType(CType(234, Byte), Integer))
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(343, 426)
         Me.ControlBox = False

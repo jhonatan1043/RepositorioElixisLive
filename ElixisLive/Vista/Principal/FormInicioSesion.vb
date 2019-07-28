@@ -76,6 +76,7 @@ Public Class FormInicioSesion
             Close()
         End If
         Generales.tabularConEnter(Me)
+        txtUsuario.Focus()
     End Sub
     Private Function cargarComboEmpresa() As Boolean
         Dim params As New List(Of String)

@@ -113,7 +113,6 @@
         btExistencia.Enabled = True
         txtCodigoBarra.ReadOnly = False
         txtCodigoBarra.Focus()
-        btExistencia.ForeColor = Color.White
     End Sub
     Private Sub btBusqueda_Click(sender As Object, e As EventArgs) Handles btBusqueda.Click
         Dim params As New List(Of String)

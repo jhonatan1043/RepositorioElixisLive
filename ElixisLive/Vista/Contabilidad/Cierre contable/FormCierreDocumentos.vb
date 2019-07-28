@@ -307,7 +307,7 @@
         dgvTraslado.ReadOnly = True
 
     End Sub
-    Private Sub btbuscar_Click(sender As Object, e As EventArgs) Handles btBuscar.Click
+    Private Sub btbuscar_Click(sender As Object, e As EventArgs) Handles btBusqueda.Click
         Dim params As New List(Of String)
 
         Generales.buscarElemento(Consultas.CIERRE_DOCUMENTOS_BUSCAR,

@@ -1123,6 +1123,8 @@
     <Content Include="ReferenciaDLL\itextsharp.dll" />
     <Content Include="ReferenciaDLL\MySql.Data.DLL" />
     <Content Include="ReferenciaDLL\NotifySenderControl.dll" />
+    <None Include="Resources\Pencil-icon.png" />
+    <None Include="Resources\Very-Basic-Update-icon %281%29.png" />
     <None Include="Resources\XANDaR.png" />
     <None Include="Resources\Very-Basic-Search-icon.png" />
     <None Include="Resources\Very-Basic-Help-icon.png" />

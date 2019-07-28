@@ -349,7 +349,7 @@
         End If
     End Sub
 
-    Private Sub btbuscar_Click(sender As Object, e As EventArgs) Handles btBuscar.Click
+    Private Sub btbuscar_Click(sender As Object, e As EventArgs) Handles btBusqueda.Click
         Generales.buscarElemento(objRecaudo.sqlBuscarRecaudo &
                                "_" & objRecaudo.codigoep,
                              Nothing,

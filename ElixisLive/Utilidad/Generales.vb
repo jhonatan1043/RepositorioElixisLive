@@ -435,18 +435,18 @@ Public Class Generales
         Return Nothing
     End Function
     Public Shared Sub personalizarDatagrid(ByRef dgv As DataGridView)
-        dgv.BackgroundColor = Color.FromArgb(240, 244, 248)
-        dgv.DefaultCellStyle.BackColor = Color.Gainsboro
+        dgv.BackgroundColor = Color.White
+        dgv.DefaultCellStyle.BackColor = Color.White
         dgv.DefaultCellStyle.ForeColor = Color.Black
-        dgv.DefaultCellStyle.SelectionBackColor = Color.FromArgb(199, 237, 252) '' azul seleccion
+        dgv.DefaultCellStyle.SelectionBackColor = Color.FromArgb(208, 220, 234) '' azul seleccion
         dgv.DefaultCellStyle.SelectionForeColor = Color.Black
         dgv.DefaultCellStyle.Font = New Font(Constantes.TIPO_LETRA_ELEMENTO, 9)
         dgv.EnableHeadersVisualStyles = False
-        dgv.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(240, 244, 248)
+        dgv.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(208, 220, 234)
         dgv.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black
         dgv.AlternatingRowsDefaultCellStyle.Font = New Font(Constantes.TIPO_LETRA_ELEMENTO, 9)
         dgv.ColumnHeadersDefaultCellStyle.Font = New Font(Constantes.TIPO_LETRA_ELEMENTO, 9)
-        dgv.RowHeadersDefaultCellStyle.SelectionBackColor = Color.FromArgb(199, 237, 252)
+        dgv.RowHeadersDefaultCellStyle.SelectionBackColor = Color.FromArgb(208, 220, 234)
         For indiceColumna = 0 To dgv.Columns.Count - 1
             dgv.Columns(indiceColumna).AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
         Next
@@ -455,7 +455,7 @@ Public Class Generales
     End Sub
     Public Shared Sub resaltarFila(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs)
         If e.RowIndex >= 0 Then
-            sender.Rows(e.RowIndex).DefaultCellStyle.BackColor = Color.FromArgb(220, 240, 250) '' azul resaltar
+            sender.Rows(e.RowIndex).DefaultCellStyle.BackColor = Color.FromArgb(226, 234, 243) '' azul resaltar
         End If
     End Sub
     Public Shared Sub personalizarTabControl(ByRef tab As TabControl)
@@ -465,8 +465,8 @@ Public Class Generales
         'Firstly we'll define some parameters.
         Dim CurrentTab As TabPage = sender.TabPages(e.Index)
         Dim ItemRect As Rectangle = sender.GetTabRect(e.Index)
-        Dim FillBrush As New SolidBrush(Color.FromArgb(240, 244, 248))
-        Dim TextBrush As New SolidBrush(Color.Black)
+        Dim FillBrush As New SolidBrush(Color.FromArgb(226, 234, 243))
+        Dim TextBrush As New SolidBrush(Color.DarkGray)
         Dim sf As New StringFormat
         sf.Alignment = StringAlignment.Center
         sf.LineAlignment = StringAlignment.Center
@@ -474,8 +474,8 @@ Public Class Generales
         'If we are currently painting the Selected TabItem we'll 
         'change the brush colors and inflate the rectangle.
         If CBool(e.State And DrawItemState.Selected) Then
-            FillBrush.Color = Color.FromArgb(240, 244, 248)
-            TextBrush.Color = Color.DarkGray
+            FillBrush.Color = Color.FromArgb(208, 220, 234)
+            TextBrush.Color = Color.Black
             ItemRect.Inflate(2, 2)
         End If
 
@@ -505,7 +505,7 @@ Public Class Generales
     End Sub
     Public Shared Sub quitarResaltadoFila(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs)
         If e.RowIndex >= 0 Then
-            sender.Rows(e.RowIndex).DefaultCellStyle.BackColor = Color.FromArgb(240, 244, 248)
+            sender.Rows(e.RowIndex).DefaultCellStyle.BackColor = Color.White
         End If
     End Sub
     Public Shared Sub cargarForm(ByVal form As System.Windows.Forms.Form)

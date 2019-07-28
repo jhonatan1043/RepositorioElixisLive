@@ -17,7 +17,7 @@
         btBuscar.Enabled = True
         Generales.tabularConEnter(Me)
     End Sub
-    Private Sub btNuevo_Click(sender As Object, e As EventArgs) Handles btNuevo.Click
+    Private Sub btNuevo_Click(sender As Object, e As EventArgs)
         Generales.deshabilitarBotones(ToolStrip1)
         Generales.habilitarControles(Me)
         Generales.deshabilitarControles(GpDatos)
@@ -29,7 +29,7 @@
         btRegistrar.Enabled = True
         btCancelar.Enabled = True
     End Sub
-    Private Sub btBuscar_Click(sender As Object, e As EventArgs) Handles btBuscar.Click
+    Private Sub btBusqueda_Click(sender As Object, e As EventArgs) Handles btBusqueda.Click
         Dim params As New List(Of String)
         params.Add(String.Empty)
         Try
@@ -69,7 +69,7 @@
         objCompra.numeroFactura = txtNumeroFatura.Text
         objCompra.fechaCompra = Format(dtFecha.Value, Constantes.FORMATO_FECHA_HORA)
     End Sub
-    Private Sub btRegistrar_Click(sender As Object, e As EventArgs) Handles btRegistrar.Click
+    Private Sub btRegistrar_Click(sender As Object, e As EventArgs)
         Try
             dgvFactura.EndEdit()
             If validarCampos() = False Then
@@ -161,7 +161,7 @@
         End If
     End Sub
 
-    Private Sub btEditar_Click(sender As Object, e As EventArgs) Handles btEditar.Click
+    Private Sub btEditar_Click(sender As Object, e As EventArgs)
         If EstiloMensajes.mostrarMensajePregunta(MensajeSistema.EDITAR) = Constantes.SI Then
             Generales.deshabilitarBotones(ToolStrip1)
             Generales.habilitarControles(Me)
@@ -172,7 +172,7 @@
             btCancelar.Enabled = True
         End If
     End Sub
-    Private Sub btCancelar_Click(sender As Object, e As EventArgs) Handles btCancelar.Click
+    Private Sub btCancelar_Click(sender As Object, e As EventArgs)
         If EstiloMensajes.mostrarMensajePregunta(MensajeSistema.CANCELAR) = Constantes.SI Then
             Generales.deshabilitarBotones(ToolStrip1)
             Generales.deshabilitarControles(Me)
@@ -183,7 +183,7 @@
             btBuscar.Enabled = True
         End If
     End Sub
-    Private Sub btAnular_Click(sender As Object, e As EventArgs) Handles btAnular.Click
+    Private Sub btAnular_Click(sender As Object, e As EventArgs)
         If EstiloMensajes.mostrarMensajePregunta(MensajeSistema.ANULAR) = Constantes.SI Then
             Try
                 If Generales.ejecutarSQL(objCompra.sqlAnular & objCompra.codigo) = True Then

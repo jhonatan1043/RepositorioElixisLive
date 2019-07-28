@@ -61,7 +61,7 @@
         '
         'label2
         '
-        Me.label2.BackColor = System.Drawing.Color.FromArgb(CType(CType(199, Byte), Integer), CType(CType(237, Byte), Integer), CType(CType(252, Byte), Integer))
+        Me.label2.BackColor = System.Drawing.Color.FromArgb(CType(CType(220, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(250, Byte), Integer))
         Me.label2.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.label2.ForeColor = System.Drawing.Color.Black
         Me.label2.Location = New System.Drawing.Point(-1, -1)
@@ -73,7 +73,7 @@
         '
         'panel2
         '
-        Me.panel2.BackColor = System.Drawing.Color.Gainsboro
+        Me.panel2.BackColor = System.Drawing.Color.White
         Me.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.panel2.Controls.Add(Me.lblMensaje)
@@ -98,9 +98,10 @@
         'logo
         '
         Me.logo.BackColor = System.Drawing.Color.Transparent
-        Me.logo.Location = New System.Drawing.Point(10, 47)
+        Me.logo.Image = Global.Quality.My.Resources.Resources.XANDaR
+        Me.logo.Location = New System.Drawing.Point(1, 34)
         Me.logo.Name = "logo"
-        Me.logo.Size = New System.Drawing.Size(65, 65)
+        Me.logo.Size = New System.Drawing.Size(76, 78)
         Me.logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.logo.TabIndex = 0
         Me.logo.TabStop = False

@@ -342,7 +342,7 @@
                         dtCuentas.Rows.Add()
                     End If
                 End If
-                End If
+            End If
         End If
     End Sub
     Private Sub cargarFactura(pFactura As String)
@@ -451,7 +451,7 @@
         End If
     End Sub
 
-    Private Sub btbuscar_Click(sender As Object, e As EventArgs) Handles btBuscar.Click
+    Private Sub btbuscar_Click(sender As Object, e As EventArgs) Handles btBusqueda.Click
 
         Generales.buscarElemento(Consultas.CUENTAS_CXC_CLIENTE_BUSCAR,
                                    Nothing,
@@ -537,7 +537,7 @@
             EstiloMensajes.mostrarMensajeAdvertencia("Por favor elija el cliente")
         End If
     End Sub
-    Private Sub btCXC_Click(sender As Object, e As EventArgs)
+    Private Sub btCXC_Click(sender As Object, e As EventArgs) Handles btcxc.Click
         crearCuentaPorCobrar(idTercero)
     End Sub
     Private Sub dgvCuentas_CellEnter(sender As Object, e As DataGridViewCellEventArgs) Handles dgvCuentas.CellEnter
@@ -576,7 +576,7 @@
     Private Sub fechadoc_Leave(sender As Object, e As EventArgs) Handles fechadoc.Leave
         FuncionesContables.validarFechaFutura(fechadoc)
     End Sub
-    Private Sub btcancelar_Click(sender As Object, e As EventArgs) Handles btCancelar.Click
+    Private Sub btcancelar_Click(sender As Object, e As EventArgs)
         If EstiloMensajes.mostrarMensajePregunta(MensajeSistema.CANCELAR) = Constantes.SI Then
             Generales.deshabilitarBotones(ToolStrip1)
             Generales.deshabilitarControles(Me)
