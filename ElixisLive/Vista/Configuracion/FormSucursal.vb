@@ -111,7 +111,7 @@
             End Try
         End If
     End Sub
-    Private Sub btBuscar_Click(sender As Object, e As EventArgs) Handles btBuscar.Click
+    Private Sub btBuscar_Click(sender As Object, e As EventArgs) Handles btBusqueda.Click
         Generales.buscarElemento(objSucursal.sqlConsulta,
                                    Nothing,
                                    AddressOf cargarInfomacion,

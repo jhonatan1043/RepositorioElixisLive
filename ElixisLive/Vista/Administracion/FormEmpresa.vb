@@ -4,7 +4,7 @@
     Private Sub cargarObjeto()
         Dim almImagen As New IO.MemoryStream
         If objEmpresa.banderaImagen = True Then
-            pictImagen.Image.Save(almImagen, Imaging.ImageFormat.Png)
+            pLogo.Image.Save(almImagen, Imaging.ImageFormat.Png)
             objEmpresa.imagenEmpresa = almImagen.GetBuffer
         Else
             objEmpresa.imagenEmpresa = Nothing
@@ -151,7 +151,7 @@
         Dim almImagen As New IO.MemoryStream
         Dim bytes() As Byte = Funciones.castFromDbItem(dImagen.Item("logo"))
         If bytes IsNot Nothing Then
-            pictImagen.Image = Image.FromStream(New IO.MemoryStream(bytes))
+            pLogo.Image = Image.FromStream(New IO.MemoryStream(bytes))
             objEmpresa.banderaImagen = False
         End If
     End Sub
@@ -279,10 +279,10 @@
         ErrorIcono.SetError(TxtDescripcion, "")
         ErrorIcono.SetError(txtId, "")
     End Sub
-    Private Sub pictImagen_Click(sender As Object, e As EventArgs) Handles pictImagen.Click
+    Private Sub pLogo_Click(sender As Object, e As EventArgs) Handles pLogo.Click
         If btRegistrar.Enabled = False Then Exit Sub
         Dim open As New OpenFileDialog
-        objEmpresa.banderaImagen = Generales.subirimagen(pictImagen, open)
+        objEmpresa.banderaImagen = Generales.subirimagen(pLogo, open)
     End Sub
 
     Private Sub txtId_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtId.KeyPress, TextTelefono.KeyPress, TextCelular.KeyPress

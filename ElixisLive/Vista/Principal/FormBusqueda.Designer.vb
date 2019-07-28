@@ -39,12 +39,12 @@ Partial Class FormBusqueda
         '
         'Panel1
         '
-        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(220, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(250, Byte), Integer))
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(220, Byte), Integer), CType(CType(234, Byte), Integer))
         Me.Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Panel1.Controls.Add(Me.LTitulo)
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(602, 42)
+        Me.Panel1.Size = New System.Drawing.Size(603, 34)
         Me.Panel1.TabIndex = 1
         '
         'LTitulo
@@ -52,12 +52,12 @@ Partial Class FormBusqueda
         Me.LTitulo.BackColor = System.Drawing.Color.Transparent
         Me.LTitulo.Font = New System.Drawing.Font("Segoe UI Semibold", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LTitulo.ForeColor = System.Drawing.Color.Black
-        Me.LTitulo.Location = New System.Drawing.Point(2, 7)
+        Me.LTitulo.Location = New System.Drawing.Point(3, 3)
         Me.LTitulo.Name = "LTitulo"
-        Me.LTitulo.Size = New System.Drawing.Size(61, 28)
+        Me.LTitulo.Size = New System.Drawing.Size(523, 28)
         Me.LTitulo.TabIndex = 1
         Me.LTitulo.Text = "Titulo"
-        Me.LTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.LTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'GroupBox1
         '

@@ -41,7 +41,6 @@ Partial Class FormReciboCaja
         Me.GroupBox6 = New System.Windows.Forms.GroupBox()
         Me.PnlInfo = New System.Windows.Forms.Panel()
         Me.lbinfo = New System.Windows.Forms.Label()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.dgvCuentas = New System.Windows.Forms.DataGridView()
         Me.dgOrden = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.dgNumFactura = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -61,7 +60,6 @@ Partial Class FormReciboCaja
         Me.fechadoc = New System.Windows.Forms.DateTimePicker()
         Me.textnombreproveedor = New System.Windows.Forms.Label()
         Me.textCodigoCliente = New System.Windows.Forms.Label()
-        Me.bttercero = New System.Windows.Forms.Button()
         Me.Label21 = New System.Windows.Forms.Label()
         Me.Label15 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -74,15 +72,17 @@ Partial Class FormReciboCaja
         Me.btCancelar = New System.Windows.Forms.ToolStripButton()
         Me.btAnular = New System.Windows.Forms.ToolStripButton()
         Me.btImprimir = New System.Windows.Forms.ToolStripButton()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.bttercero = New System.Windows.Forms.Button()
         Me.Panel2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox6.SuspendLayout()
         Me.PnlInfo.SuspendLayout()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgvCuentas, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.grupoDetalle.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.ToolStrip1.SuspendLayout()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel2
@@ -118,7 +118,7 @@ Partial Class FormReciboCaja
         Me.GroupBox1.Controls.Add(Me.GroupBox6)
         Me.GroupBox1.Controls.Add(Me.grupoDetalle)
         Me.GroupBox1.Controls.Add(Me.GroupBox2)
-        Me.GroupBox1.Location = New System.Drawing.Point(5, 44)
+        Me.GroupBox1.Location = New System.Drawing.Point(5, 41)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(894, 441)
         Me.GroupBox1.TabIndex = 78
@@ -226,16 +226,6 @@ Partial Class FormReciboCaja
         Me.lbinfo.Size = New System.Drawing.Size(68, 16)
         Me.lbinfo.TabIndex = 10063
         Me.lbinfo.Text = "CONTENIDO"
-        '
-        'PictureBox2
-        '
-        Me.PictureBox2.Image = Global.Quality.My.Resources.Resources.advertencia
-        Me.PictureBox2.Location = New System.Drawing.Point(3, 4)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(24, 24)
-        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox2.TabIndex = 10063
-        Me.PictureBox2.TabStop = False
         '
         'dgvCuentas
         '
@@ -453,16 +443,6 @@ Partial Class FormReciboCaja
         Me.textCodigoCliente.TabIndex = 60034
         Me.textCodigoCliente.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'bttercero
-        '
-        Me.bttercero.BackgroundImage = Global.Quality.My.Resources.Resources.Very_Basic_Search_icon
-        Me.bttercero.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.bttercero.Location = New System.Drawing.Point(819, 60)
-        Me.bttercero.Name = "bttercero"
-        Me.bttercero.Size = New System.Drawing.Size(26, 25)
-        Me.bttercero.TabIndex = 60032
-        Me.bttercero.UseVisualStyleBackColor = True
-        '
         'Label21
         '
         Me.Label21.AutoSize = True
@@ -588,6 +568,26 @@ Partial Class FormReciboCaja
         Me.btImprimir.Text = "&Imprimir"
         Me.btImprimir.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         '
+        'PictureBox2
+        '
+        Me.PictureBox2.Image = Global.Quality.My.Resources.Resources.advertencia
+        Me.PictureBox2.Location = New System.Drawing.Point(3, 4)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(24, 24)
+        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox2.TabIndex = 10063
+        Me.PictureBox2.TabStop = False
+        '
+        'bttercero
+        '
+        Me.bttercero.BackgroundImage = Global.Quality.My.Resources.Resources.Very_Basic_Search_icon
+        Me.bttercero.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.bttercero.Location = New System.Drawing.Point(819, 60)
+        Me.bttercero.Name = "bttercero"
+        Me.bttercero.Size = New System.Drawing.Size(26, 25)
+        Me.bttercero.TabIndex = 60032
+        Me.bttercero.UseVisualStyleBackColor = True
+        '
         'FormReciboCaja
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -608,7 +608,6 @@ Partial Class FormReciboCaja
         Me.GroupBox6.ResumeLayout(False)
         Me.PnlInfo.ResumeLayout(False)
         Me.PnlInfo.PerformLayout()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dgvCuentas, System.ComponentModel.ISupportInitialize).EndInit()
         Me.grupoDetalle.ResumeLayout(False)
         Me.grupoDetalle.PerformLayout()
@@ -616,6 +615,7 @@ Partial Class FormReciboCaja
         Me.GroupBox2.PerformLayout()
         Me.ToolStrip1.ResumeLayout(False)
         Me.ToolStrip1.PerformLayout()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

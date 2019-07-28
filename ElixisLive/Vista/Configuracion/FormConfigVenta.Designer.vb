@@ -48,7 +48,6 @@ Partial Class FormConfigVenta
         Me.btCancelar = New System.Windows.Forms.ToolStripButton()
         Me.btEditar = New System.Windows.Forms.ToolStripButton()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Pimagen = New System.Windows.Forms.PictureBox()
         Me.LTitulo = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -58,7 +57,6 @@ Partial Class FormConfigVenta
         CType(Me.errorIcono, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ToolStrip1.SuspendLayout()
         Me.Panel1.SuspendLayout()
-        CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GroupBox1
@@ -106,31 +104,31 @@ Partial Class FormConfigVenta
         '
         'btCargarServicio
         '
-        Me.btCargarServicio.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btCargarServicio.BackColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(220, Byte), Integer), CType(CType(234, Byte), Integer))
         Me.btCargarServicio.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Italic)
         Me.btCargarServicio.Location = New System.Drawing.Point(499, 10)
         Me.btCargarServicio.Name = "btCargarServicio"
         Me.btCargarServicio.Size = New System.Drawing.Size(140, 33)
         Me.btCargarServicio.TabIndex = 1
         Me.btCargarServicio.Text = "C. Servicio"
-        Me.btCargarServicio.UseVisualStyleBackColor = True
+        Me.btCargarServicio.UseVisualStyleBackColor = False
         '
         'btCargarProducto
         '
-        Me.btCargarProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btCargarProducto.BackColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(220, Byte), Integer), CType(CType(234, Byte), Integer))
         Me.btCargarProducto.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Italic)
         Me.btCargarProducto.Location = New System.Drawing.Point(352, 10)
         Me.btCargarProducto.Name = "btCargarProducto"
         Me.btCargarProducto.Size = New System.Drawing.Size(140, 33)
         Me.btCargarProducto.TabIndex = 0
         Me.btCargarProducto.Text = "C. Productos"
-        Me.btCargarProducto.UseVisualStyleBackColor = True
+        Me.btCargarProducto.UseVisualStyleBackColor = False
         '
         'GroupBox5
         '
         Me.GroupBox5.Controls.Add(Me.dgRegistro)
         Me.GroupBox5.Font = New System.Drawing.Font("Times New Roman", 8.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox5.ForeColor = System.Drawing.Color.DarkBlue
+        Me.GroupBox5.ForeColor = System.Drawing.Color.Black
         Me.GroupBox5.Location = New System.Drawing.Point(4, 106)
         Me.GroupBox5.Name = "GroupBox5"
         Me.GroupBox5.Size = New System.Drawing.Size(646, 225)
@@ -205,7 +203,7 @@ Partial Class FormConfigVenta
         Me.Gbdatos.Controls.Add(Me.Label3)
         Me.Gbdatos.Controls.Add(Me.Label5)
         Me.Gbdatos.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Gbdatos.ForeColor = System.Drawing.Color.DarkBlue
+        Me.Gbdatos.ForeColor = System.Drawing.Color.Black
         Me.Gbdatos.Location = New System.Drawing.Point(6, 9)
         Me.Gbdatos.Name = "Gbdatos"
         Me.Gbdatos.Size = New System.Drawing.Size(644, 47)
@@ -263,10 +261,8 @@ Partial Class FormConfigVenta
         'ToolStrip1
         '
         Me.ToolStrip1.BackColor = System.Drawing.Color.White
-        'Me.ToolStrip1.BackgroundImage = Global.Quality.My.Resources.Resources.fondo_azul
-        'Me.ToolStrip1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ToolStrip1.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.ToolStrip1.ImageScalingSize = New System.Drawing.Size(30, 30)
+        Me.ToolStrip1.ImageScalingSize = New System.Drawing.Size(25, 25)
         Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.btRegistrar, Me.btCancelar, Me.btEditar})
         Me.ToolStrip1.Location = New System.Drawing.Point(0, 384)
         Me.ToolStrip1.Name = "ToolStrip1"
@@ -277,8 +273,8 @@ Partial Class FormConfigVenta
         'btRegistrar
         '
         Me.btRegistrar.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btRegistrar.ForeColor = System.Drawing.Color.White
-        'Me.btRegistrar.Image = Global.Quality.My.Resources.Resources.Save_icon__1_
+        Me.btRegistrar.ForeColor = System.Drawing.Color.Black
+        Me.btRegistrar.Image = Global.Quality.My.Resources.Resources.User_Interface_Save_As_icon
         Me.btRegistrar.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.btRegistrar.Name = "btRegistrar"
         Me.btRegistrar.Size = New System.Drawing.Size(105, 34)
@@ -288,8 +284,8 @@ Partial Class FormConfigVenta
         'btCancelar
         '
         Me.btCancelar.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btCancelar.ForeColor = System.Drawing.Color.White
-       ' Me.btCancelar.Image = Global.Quality.My.Resources.Resources.Actions_blue_arrow_undo_icon
+        Me.btCancelar.ForeColor = System.Drawing.Color.Black
+        Me.btCancelar.Image = Global.Quality.My.Resources.Resources.Arrows_Right_2_icon
         Me.btCancelar.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.btCancelar.Name = "btCancelar"
         Me.btCancelar.Size = New System.Drawing.Size(104, 34)
@@ -299,8 +295,8 @@ Partial Class FormConfigVenta
         'btEditar
         '
         Me.btEditar.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btEditar.ForeColor = System.Drawing.Color.White
-        'Me.btEditar.Image = Global.Quality.My.Resources.Resources.pencil_icon__1_
+        Me.btEditar.ForeColor = System.Drawing.Color.Black
+        Me.btEditar.Image = Global.Quality.My.Resources.Resources.Pencil_icon
         Me.btEditar.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.btEditar.Name = "btEditar"
         Me.btEditar.Size = New System.Drawing.Size(86, 34)
@@ -309,38 +305,25 @@ Partial Class FormConfigVenta
         '
         'Panel1
         '
-        Me.Panel1.BackColor = System.Drawing.Color.White
-       
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(220, Byte), Integer), CType(CType(234, Byte), Integer))
         Me.Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Panel1.Controls.Add(Me.Pimagen)
         Me.Panel1.Controls.Add(Me.LTitulo)
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(662, 42)
+        Me.Panel1.Size = New System.Drawing.Size(662, 34)
         Me.Panel1.TabIndex = 0
-        '
-        'Pimagen
-        '
-        Me.Pimagen.BackColor = System.Drawing.Color.Transparent
-      '    Me.Pimagen.Image = Global.Quality.My.Resources.Resources.System_Preferences_icon
-        Me.Pimagen.Location = New System.Drawing.Point(4, -4)
-        Me.Pimagen.Name = "Pimagen"
-        Me.Pimagen.Size = New System.Drawing.Size(61, 46)
-        Me.Pimagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.Pimagen.TabIndex = 1
-        Me.Pimagen.TabStop = False
         '
         'LTitulo
         '
         Me.LTitulo.BackColor = System.Drawing.Color.Transparent
         Me.LTitulo.Font = New System.Drawing.Font("Times New Roman", 20.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LTitulo.ForeColor = System.Drawing.Color.White
-        Me.LTitulo.Location = New System.Drawing.Point(3, 0)
+        Me.LTitulo.ForeColor = System.Drawing.Color.Black
+        Me.LTitulo.Location = New System.Drawing.Point(3, 3)
         Me.LTitulo.Name = "LTitulo"
-        Me.LTitulo.Size = New System.Drawing.Size(659, 41)
+        Me.LTitulo.Size = New System.Drawing.Size(554, 28)
         Me.LTitulo.TabIndex = 1
         Me.LTitulo.Text = "Protocolos de venta"
-        Me.LTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.LTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'FormConfigVenta
         '
@@ -370,14 +353,12 @@ Partial Class FormConfigVenta
         Me.ToolStrip1.ResumeLayout(False)
         Me.ToolStrip1.PerformLayout()
         Me.Panel1.ResumeLayout(False)
-        CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
     Public WithEvents Panel1 As Panel
     Public WithEvents LTitulo As Label
-    Public WithEvents Pimagen As PictureBox
     Public WithEvents GroupBox1 As GroupBox
     Public WithEvents Gbdatos As GroupBox
     Friend WithEvents GroupBox5 As GroupBox

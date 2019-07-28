@@ -82,10 +82,10 @@ Public Class FormEmpleado
         Dim almImagen As New IO.MemoryStream
         Dim bytes() As Byte = Funciones.castFromDbItem(dImagen.Item("foto"))
         If bytes IsNot Nothing Then
-            pictImagen.Image = Image.FromStream(New IO.MemoryStream(bytes))
+            pFoto.Image = Image.FromStream(New IO.MemoryStream(bytes))
             objEmpleado.banderaImagen = False
         Else
-            'pictImagen.Image = My.Resources.usuario
+            'pFoto.Image = My.Resources.usuario
         End If
     End Sub
     Private Sub cargarCampos(dfila As DataRow)
@@ -111,7 +111,7 @@ Public Class FormEmpleado
             EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
     End Sub
-    Private Sub btBuscar_Click(sender As Object, e As EventArgs) Handles btBuscar.Click
+    Private Sub btBuscar_Click(sender As Object, e As EventArgs) Handles btBusqueda.Click
         Dim params As New List(Of String)
         params.Add(String.Empty)
         Try
@@ -124,7 +124,7 @@ Public Class FormEmpleado
             EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
     End Sub
-    Private Sub btBuscarPersona_Click(sender As Object, e As EventArgs) Handles btBuscarPersona.Click
+    Private Sub btBuscarPersona_Click(sender As Object, e As EventArgs) Handles bttercero.Click
         Dim params As New List(Of String)
         params.Add(String.Empty)
         Try
@@ -156,7 +156,6 @@ Public Class FormEmpleado
         Generales.deshabilitarControles(gpUsuario)
         Generales.deshabilitarControles(gpPagare)
         Generales.limpiarControles(Me)
-        'pictImagen.Image = My.Resources.usuario
         limpiarLabel()
         cargarParametros()
         formatMoneda()
@@ -181,7 +180,7 @@ Public Class FormEmpleado
     Private Sub cargarObjeto()
         Dim almImagen As New IO.MemoryStream
         If objEmpleado.banderaImagen = True Then
-            pictImagen.Image.Save(almImagen, Imaging.ImageFormat.Png)
+            pFoto.Image.Save(almImagen, Imaging.ImageFormat.Png)
             objEmpleado.imagenEmpleado = almImagen.GetBuffer
         Else
             objEmpleado.imagenEmpleado = Nothing
@@ -222,7 +221,6 @@ Public Class FormEmpleado
             Generales.deshabilitarBotones(ToolStrip1)
             Generales.deshabilitarControles(Me)
             Generales.limpiarControles(Me)
-            'pictImagen.Image = My.Resources.usuario
             limpiarLabel()
             objEmpleado.codigo = Nothing
             formatMoneda()
@@ -266,10 +264,10 @@ Public Class FormEmpleado
             End Try
         End If
     End Sub
-    Private Sub pictImagen_Click(sender As Object, e As EventArgs) Handles pictImagen.Click
+    Private Sub pFoto_Click(sender As Object, e As EventArgs) Handles pFoto.Click
         If btRegistrar.Enabled = False Then Exit Sub
         Dim open As New OpenFileDialog
-        objEmpleado.banderaImagen = Generales.subirimagen(pictImagen, open)
+        objEmpleado.banderaImagen = Generales.subirimagen(pFoto, open)
     End Sub
     Private Sub cbFormaPago_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbFormaPago.SelectedIndexChanged
         validarFormaPago()
@@ -357,7 +355,7 @@ Public Class FormEmpleado
             Me.ErrorIcono.SetError(cbTipoSalario, Constantes.CADENA_VACIA)
         End If
     End Sub
-    Private Sub btBuscarPersona_Validating(sender As Object, e As EventArgs) Handles btBuscarPersona.LostFocus
+    Private Sub btBuscarPersona_Validating(sender As Object, e As EventArgs) Handles bttercero.LostFocus
         If txtNombre.Text = "" And btRegistrar.Enabled = True Then
             Me.ErrorIcono.SetError(txtNombre, "Debe escoger una persona")
         Else

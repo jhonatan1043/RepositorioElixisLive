@@ -35,12 +35,10 @@ Partial Class FormProgramacionCita
         Me.lbInformacionCliente = New System.Windows.Forms.ToolStripLabel()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.LTitulo = New System.Windows.Forms.Label()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.ToolStrip1.SuspendLayout()
         Me.Panel1.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'dFecha
@@ -74,9 +72,9 @@ Partial Class FormProgramacionCita
         Me.MonthCalendar1.Location = New System.Drawing.Point(726, 55)
         Me.MonthCalendar1.Name = "MonthCalendar1"
         Me.MonthCalendar1.TabIndex = 0
-        Me.MonthCalendar1.TitleBackColor = System.Drawing.Color.FromArgb(20, 61, 113)
+        Me.MonthCalendar1.TitleBackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(61, Byte), Integer), CType(CType(113, Byte), Integer))
         Me.MonthCalendar1.TitleForeColor = System.Drawing.Color.White
-        Me.MonthCalendar1.TrailingForeColor = System.Drawing.Color.FromArgb(20, 61, 113)
+        Me.MonthCalendar1.TrailingForeColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(61, Byte), Integer), CType(CType(113, Byte), Integer))
         '
         'txtBusqueda
         '
@@ -144,8 +142,6 @@ Partial Class FormProgramacionCita
         'ToolStrip1
         '
         Me.ToolStrip1.BackColor = System.Drawing.Color.White
-        'Me.ToolStrip1.BackgroundImage = Global.Quality.My.Resources.Resources.fondo_azul
-        'Me.ToolStrip1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ToolStrip1.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.ToolStrip1.ImageScalingSize = New System.Drawing.Size(30, 30)
         Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.lbInformacionCliente})
@@ -164,11 +160,10 @@ Partial Class FormProgramacionCita
         '
         'Label5
         '
-        Me.Label5.BackColor = System.Drawing.Color.Transparent
+        Me.Label5.BackColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(220, Byte), Integer), CType(CType(234, Byte), Integer))
         Me.Label5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Label5.Font = New System.Drawing.Font("Times New Roman", 14.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.ForeColor = System.Drawing.Color.White
-       '  Me.Label5.Image = Global.Quality.My.Resources.Resources.fondo_azul
+        Me.Label5.ForeColor = System.Drawing.Color.Black
         Me.Label5.Location = New System.Drawing.Point(730, 230)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(199, 38)
@@ -178,38 +173,25 @@ Partial Class FormProgramacionCita
         '
         'Panel1
         '
-        Me.Panel1.BackColor = System.Drawing.Color.White
-       
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(220, Byte), Integer), CType(CType(234, Byte), Integer))
         Me.Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Panel1.Controls.Add(Me.PictureBox1)
         Me.Panel1.Controls.Add(Me.LTitulo)
         Me.Panel1.Location = New System.Drawing.Point(1, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(944, 42)
+        Me.Panel1.Size = New System.Drawing.Size(944, 34)
         Me.Panel1.TabIndex = 10058
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
-        ' Me.PictureBox1.Image = Global.Quality.My.Resources.Resources.Apps_preferences_system_time_icon
-        Me.PictureBox1.Location = New System.Drawing.Point(4, 0)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(47, 42)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox1.TabIndex = 1
-        Me.PictureBox1.TabStop = False
         '
         'LTitulo
         '
         Me.LTitulo.BackColor = System.Drawing.Color.Transparent
-        Me.LTitulo.Font = New System.Drawing.Font("Times New Roman", 20.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LTitulo.ForeColor = System.Drawing.Color.White
-        Me.LTitulo.Location = New System.Drawing.Point(0, 1)
+        Me.LTitulo.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LTitulo.ForeColor = System.Drawing.Color.Black
+        Me.LTitulo.Location = New System.Drawing.Point(1, 3)
         Me.LTitulo.Name = "LTitulo"
-        Me.LTitulo.Size = New System.Drawing.Size(941, 41)
+        Me.LTitulo.Size = New System.Drawing.Size(837, 28)
         Me.LTitulo.TabIndex = 1
         Me.LTitulo.Text = "Agenda de Citas"
-        Me.LTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.LTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'ToolTip1
         '
@@ -242,7 +224,6 @@ Partial Class FormProgramacionCita
         Me.ToolStrip1.ResumeLayout(False)
         Me.ToolStrip1.PerformLayout()
         Me.Panel1.ResumeLayout(False)
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -250,7 +231,6 @@ Partial Class FormProgramacionCita
     Friend WithEvents dFecha As DateTimePicker
     Friend WithEvents PanelDia As Panel
     Public WithEvents Panel1 As Panel
-    Public WithEvents PictureBox1 As PictureBox
     Public WithEvents LTitulo As Label
     Friend WithEvents MonthCalendar1 As MonthCalendar
     Public WithEvents txtBusqueda As TextBox

@@ -123,12 +123,12 @@
             EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
     End Sub
-    Private Sub Panel2_Click(sender As Object, e As EventArgs) Handles Panel2.Click
+    Private Sub Panel2_Click(sender As Object, e As EventArgs)
         If EstiloMensajes.mostrarMensajePregunta(MensajeSistema.SALIR) = Constantes.SI Then
             Me.Close()
         End If
     End Sub
-    Private Sub btBuscarCliente_Click(sender As Object, e As EventArgs) Handles btBuscarCliente.Click
+    Private Sub btBuscarCliente_Click(sender As Object, e As EventArgs) Handles bttercero.Click
         Dim params As New List(Of String)
         params.Add(String.Empty)
         Try

@@ -75,7 +75,7 @@ Partial Class FormCostoServicios
         '
         'Label1
         '
-        Me.Label1.BackColor = System.Drawing.Color.Gainsboro
+        Me.Label1.BackColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(220, Byte), Integer), CType(CType(234, Byte), Integer))
         Me.Label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Label1.Font = New System.Drawing.Font("Times New Roman", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.Black
@@ -88,7 +88,7 @@ Partial Class FormCostoServicios
         '
         'Label5
         '
-        Me.Label5.BackColor = System.Drawing.Color.Gainsboro
+        Me.Label5.BackColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(220, Byte), Integer), CType(CType(234, Byte), Integer))
         Me.Label5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Label5.Font = New System.Drawing.Font("Times New Roman", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.Color.Black
@@ -117,12 +117,12 @@ Partial Class FormCostoServicios
         '
         'Panel1
         '
-        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(220, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(250, Byte), Integer))
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(220, Byte), Integer), CType(CType(234, Byte), Integer))
         Me.Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Panel1.Controls.Add(Me.LTitulo)
-        Me.Panel1.Location = New System.Drawing.Point(-4, 0)
+        Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(906, 34)
+        Me.Panel1.Size = New System.Drawing.Size(900, 34)
         Me.Panel1.TabIndex = 2
         '
         'LTitulo
@@ -130,9 +130,9 @@ Partial Class FormCostoServicios
         Me.LTitulo.BackColor = System.Drawing.Color.Transparent
         Me.LTitulo.Font = New System.Drawing.Font("Segoe UI", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LTitulo.ForeColor = System.Drawing.Color.Black
-        Me.LTitulo.Location = New System.Drawing.Point(5, 2)
+        Me.LTitulo.Location = New System.Drawing.Point(8, 2)
         Me.LTitulo.Name = "LTitulo"
-        Me.LTitulo.Size = New System.Drawing.Size(898, 28)
+        Me.LTitulo.Size = New System.Drawing.Size(825, 28)
         Me.LTitulo.TabIndex = 1
         Me.LTitulo.Text = "Costo de servicios"
         Me.LTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft

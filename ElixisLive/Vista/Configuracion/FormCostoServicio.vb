@@ -31,7 +31,7 @@
             dRows = Generales.cargarItem("[SP_SERVICIO_CARGAR]", params)
             objCostoServicio.codigoServicio = pCodigo
             txtcodigo.Text = pCodigo
-            txtnombre.Text = dRows("Descripcion")
+            txtDescripcion.Text = dRows("Descripcion")
         Catch ex As Exception
             EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
@@ -48,7 +48,7 @@
         btCancelar.Enabled = True
     End Sub
 
-    Private Sub btBuscar_Click(sender As Object, e As EventArgs) Handles btBuscar.Click
+    Private Sub btBuscar_Click(sender As Object, e As EventArgs) Handles btBusqueda.Click
         Dim params As New List(Of String)
         params.Add(String.Empty)
         Generales.buscarElemento("[SP_COSTO_CONSULTAR]",
@@ -65,16 +65,16 @@
         Try
 
             dRows = Generales.cargarItem("SP_SERVICIO_CARGAR", paramas)
-        txtcodigo.Text = pCodigo
-        objCostoServicio.codigoServicio = pCodigo
-        txtnombre.Text = dRows("Descripcion")
+            txtcodigo.Text = pCodigo
+            objCostoServicio.codigoServicio = pCodigo
+            txtDescripcion.Text = dRows("Descripcion")
 
-        Generales.llenarTabla("[SP_COSTO_CARGAR]", paramas, objCostoServicio.dtRegistro)
-        dgvRegistro.DataSource = objCostoServicio.dtRegistro
+            Generales.llenarTabla("[SP_COSTO_CARGAR]", paramas, objCostoServicio.dtRegistro)
+            dgvRegistro.DataSource = objCostoServicio.dtRegistro
 
-        Generales.habilitarBotones(ToolStrip1)
-        Generales.deshabilitarControles(Me)
-        btRegistrar.Enabled = False
+            Generales.habilitarBotones(ToolStrip1)
+            Generales.deshabilitarControles(Me)
+            btRegistrar.Enabled = False
             btCancelar.Enabled = False
 
         Catch ex As Exception

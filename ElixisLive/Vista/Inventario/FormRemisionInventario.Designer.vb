@@ -116,6 +116,8 @@ Partial Class FormRemisionInventario
         Me.TextTotal = New System.Windows.Forms.TextBox()
         Me.txtDescuento = New System.Windows.Forms.TextBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.txtCodigoBarra = New System.Windows.Forms.TextBox()
         Me.GroupBox8 = New System.Windows.Forms.GroupBox()
         Me.txtObservacion = New System.Windows.Forms.TextBox()
         Me.dgvProducto = New System.Windows.Forms.DataGridView()
@@ -148,7 +150,6 @@ Partial Class FormRemisionInventario
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.TextBox18 = New System.Windows.Forms.TextBox()
         Me.TextBox9 = New System.Windows.Forms.TextBox()
-        Me.Pimagen = New System.Windows.Forms.PictureBox()
         Me.Label34 = New System.Windows.Forms.Label()
         Me.Label23 = New System.Windows.Forms.Label()
         Me.LTitulo = New System.Windows.Forms.Label()
@@ -348,14 +349,6 @@ Partial Class FormRemisionInventario
         Me.Label44 = New System.Windows.Forms.Label()
         Me.Label21 = New System.Windows.Forms.Label()
         Me.Label22 = New System.Windows.Forms.Label()
-        Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
-        Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
-        Me.btNuevo = New System.Windows.Forms.ToolStripButton()
-        ' Me.btBuscar = New System.Windows.Forms.ToolStripButton()
-        Me.btRegistrar = New System.Windows.Forms.ToolStripButton()
-        Me.btCancelar = New System.Windows.Forms.ToolStripButton()
-        Me.btAnular = New System.Windows.Forms.ToolStripButton()
-        Me.btImprimir = New System.Windows.Forms.ToolStripButton()
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -371,8 +364,15 @@ Partial Class FormRemisionInventario
         Me.DataGridViewTextBoxColumn13 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn14 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn15 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.txtCodigoBarra = New System.Windows.Forms.TextBox()
+        Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
+        Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
+        Me.btNuevo = New System.Windows.Forms.ToolStripButton()
+        Me.btBusqueda = New System.Windows.Forms.ToolStripButton()
+        Me.btRegistrar = New System.Windows.Forms.ToolStripButton()
+        Me.btEditar = New System.Windows.Forms.ToolStripButton()
+        Me.btCancelar = New System.Windows.Forms.ToolStripButton()
+        Me.btAnular = New System.Windows.Forms.ToolStripButton()
+        Me.btImprimir = New System.Windows.Forms.ToolStripButton()
         Me.GroupBox7.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -381,7 +381,6 @@ Partial Class FormRemisionInventario
         Me.gbRelevante.SuspendLayout()
         CType(Me.ErrorIcono, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
-        CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox12.SuspendLayout()
         Me.GroupBox13.SuspendLayout()
         Me.GroupBox14.SuspendLayout()
@@ -431,7 +430,7 @@ Partial Class FormRemisionInventario
         Me.GroupBox7.Controls.Add(Me.Label17)
         Me.GroupBox7.Controls.Add(Me.Label2)
         Me.GroupBox7.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox7.ForeColor = System.Drawing.Color.DarkBlue
+        Me.GroupBox7.ForeColor = System.Drawing.Color.Black
         Me.GroupBox7.Location = New System.Drawing.Point(6, 7)
         Me.GroupBox7.Name = "GroupBox7"
         Me.GroupBox7.Size = New System.Drawing.Size(879, 46)
@@ -552,7 +551,7 @@ Partial Class FormRemisionInventario
         Me.GroupBox2.Controls.Add(Me.GroupBox5)
         Me.GroupBox2.Controls.Add(Me.gbRelevante)
         Me.GroupBox2.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox2.ForeColor = System.Drawing.Color.DarkBlue
+        Me.GroupBox2.ForeColor = System.Drawing.Color.Black
         Me.GroupBox2.Location = New System.Drawing.Point(6, 53)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(879, 367)
@@ -560,10 +559,32 @@ Partial Class FormRemisionInventario
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Información de Factura"
         '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.BackColor = System.Drawing.Color.Transparent
+        Me.Label1.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.Black
+        Me.Label1.Location = New System.Drawing.Point(286, 73)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(121, 19)
+        Me.Label1.TabIndex = 60040
+        Me.Label1.Text = "Codigo de Barra:"
+        '
+        'txtCodigoBarra
+        '
+        Me.txtCodigoBarra.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtCodigoBarra.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtCodigoBarra.Location = New System.Drawing.Point(407, 70)
+        Me.txtCodigoBarra.MaxLength = 26
+        Me.txtCodigoBarra.Name = "txtCodigoBarra"
+        Me.txtCodigoBarra.Size = New System.Drawing.Size(148, 25)
+        Me.txtCodigoBarra.TabIndex = 60039
+        '
         'GroupBox8
         '
         Me.GroupBox8.Controls.Add(Me.txtObservacion)
-        Me.GroupBox8.ForeColor = System.Drawing.Color.DarkBlue
+        Me.GroupBox8.ForeColor = System.Drawing.Color.Black
         Me.GroupBox8.Location = New System.Drawing.Point(5, 250)
         Me.GroupBox8.Name = "GroupBox8"
         Me.GroupBox8.Size = New System.Drawing.Size(868, 110)
@@ -596,7 +617,7 @@ Partial Class FormRemisionInventario
         Me.dgvProducto.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle82
         Me.dgvProducto.BackgroundColor = System.Drawing.Color.White
         DataGridViewCellStyle83.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle83.BackColor = System.Drawing.Color.FromArgb(20, 61, 113)
+        DataGridViewCellStyle83.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(61, Byte), Integer), CType(CType(113, Byte), Integer))
         DataGridViewCellStyle83.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle83.ForeColor = System.Drawing.Color.White
         DataGridViewCellStyle83.SelectionBackColor = System.Drawing.SystemColors.Highlight
@@ -697,14 +718,13 @@ Partial Class FormRemisionInventario
         DataGridViewCellStyle89.SelectionBackColor = System.Drawing.Color.White
         Me.dgQuitar.DefaultCellStyle = DataGridViewCellStyle89
         Me.dgQuitar.HeaderText = "Quitar"
-        ' Me.dgQuitar.Image = Global.Quality.My.Resources.Resources.papelera
         Me.dgQuitar.Name = "dgQuitar"
         Me.dgQuitar.ReadOnly = True
         Me.dgQuitar.Width = 50
         '
         'GroupBox5
         '
-        Me.GroupBox5.ForeColor = System.Drawing.Color.DarkBlue
+        Me.GroupBox5.ForeColor = System.Drawing.Color.Black
         Me.GroupBox5.Location = New System.Drawing.Point(6, 56)
         Me.GroupBox5.Name = "GroupBox5"
         Me.GroupBox5.Size = New System.Drawing.Size(868, 191)
@@ -751,11 +771,10 @@ Partial Class FormRemisionInventario
         '
         'btExistencia
         '
-        Me.btExistencia.BackColor = System.Drawing.Color.Transparent
-        'Me.btExistencia.BackgroundImage = Global.Quality.My.Resources.Resources.fondo_azul
+        Me.btExistencia.BackColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(220, Byte), Integer), CType(CType(234, Byte), Integer))
         Me.btExistencia.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btExistencia.Font = New System.Drawing.Font("Times New Roman", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btExistencia.ForeColor = System.Drawing.Color.White
+        Me.btExistencia.ForeColor = System.Drawing.Color.Black
         Me.btExistencia.Location = New System.Drawing.Point(439, 9)
         Me.btExistencia.Name = "btExistencia"
         Me.btExistencia.Size = New System.Drawing.Size(119, 29)
@@ -766,9 +785,9 @@ Partial Class FormRemisionInventario
         'lbInformativo
         '
         Me.lbInformativo.AutoSize = True
-        Me.lbInformativo.BackColor = System.Drawing.Color.Transparent
+        Me.lbInformativo.BackColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(220, Byte), Integer), CType(CType(234, Byte), Integer))
         Me.lbInformativo.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbInformativo.ForeColor = System.Drawing.Color.Red
+        Me.lbInformativo.ForeColor = System.Drawing.Color.FromArgb(CType(CType(252, Byte), Integer), CType(CType(249, Byte), Integer), CType(CType(169, Byte), Integer))
         Me.lbInformativo.Location = New System.Drawing.Point(566, 15)
         Me.lbInformativo.Name = "lbInformativo"
         Me.lbInformativo.Size = New System.Drawing.Size(26, 19)
@@ -861,7 +880,6 @@ Partial Class FormRemisionInventario
         DataGridViewCellStyle90.SelectionBackColor = System.Drawing.Color.White
         Me.DataGridViewImageColumn1.DefaultCellStyle = DataGridViewCellStyle90
         Me.DataGridViewImageColumn1.HeaderText = "Quitar"
-        'Me.DataGridViewImageColumn1.Image = Global.Quality.My.Resources.Resources.RecycleBin_Full_icon__2_
         Me.DataGridViewImageColumn1.Name = "DataGridViewImageColumn1"
         Me.DataGridViewImageColumn1.ReadOnly = True
         '
@@ -872,18 +890,15 @@ Partial Class FormRemisionInventario
         DataGridViewCellStyle91.SelectionBackColor = System.Drawing.Color.White
         Me.DataGridViewImageColumn2.DefaultCellStyle = DataGridViewCellStyle91
         Me.DataGridViewImageColumn2.HeaderText = "Quitar"
-        'Me.DataGridViewImageColumn2.Image = Global.Quality.My.Resources.Resources.papelera
         Me.DataGridViewImageColumn2.Name = "DataGridViewImageColumn2"
         Me.DataGridViewImageColumn2.Width = 50
         '
         'Panel1
         '
-        Me.Panel1.BackColor = System.Drawing.Color.White
-
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(220, Byte), Integer), CType(CType(234, Byte), Integer))
         Me.Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Panel1.Controls.Add(Me.TextBox18)
         Me.Panel1.Controls.Add(Me.TextBox9)
-        Me.Panel1.Controls.Add(Me.Pimagen)
         Me.Panel1.Controls.Add(Me.Label34)
         Me.Panel1.Controls.Add(Me.Label23)
         Me.Panel1.Controls.Add(Me.LTitulo)
@@ -891,7 +906,7 @@ Partial Class FormRemisionInventario
         Me.Panel1.Controls.Add(Me.GroupBox3)
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(927, 42)
+        Me.Panel1.Size = New System.Drawing.Size(900, 34)
         Me.Panel1.TabIndex = 19
         '
         'TextBox18
@@ -916,24 +931,12 @@ Partial Class FormRemisionInventario
         Me.TextBox9.TabIndex = 999
         Me.TextBox9.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
-        'Pimagen
-        '
-        Me.Pimagen.BackColor = System.Drawing.Color.Transparent
-        '    Me.Pimagen.Image = Global.Quality.My.Resources.Resources.Accounting_icon
-        Me.Pimagen.Location = New System.Drawing.Point(4, 0)
-        Me.Pimagen.Name = "Pimagen"
-        Me.Pimagen.Size = New System.Drawing.Size(49, 40)
-        Me.Pimagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.Pimagen.TabIndex = 1
-        Me.Pimagen.TabStop = False
-        '
         'Label34
         '
         Me.Label34.BackColor = System.Drawing.Color.Transparent
         Me.Label34.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Label34.Font = New System.Drawing.Font("Times New Roman", 14.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label34.ForeColor = System.Drawing.Color.White
-        'Me.Label34.Image = Global.Quality.My.Resources.Resources.fondo_azul
         Me.Label34.Location = New System.Drawing.Point(11, 484)
         Me.Label34.Name = "Label34"
         Me.Label34.Size = New System.Drawing.Size(155, 38)
@@ -947,7 +950,6 @@ Partial Class FormRemisionInventario
         Me.Label23.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Label23.Font = New System.Drawing.Font("Times New Roman", 14.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label23.ForeColor = System.Drawing.Color.White
-        'Me.Label23.Image = Global.Quality.My.Resources.Resources.fondo_azul
         Me.Label23.Location = New System.Drawing.Point(11, 484)
         Me.Label23.Name = "Label23"
         Me.Label23.Size = New System.Drawing.Size(155, 38)
@@ -959,13 +961,13 @@ Partial Class FormRemisionInventario
         '
         Me.LTitulo.BackColor = System.Drawing.Color.Transparent
         Me.LTitulo.Font = New System.Drawing.Font("Times New Roman", 20.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LTitulo.ForeColor = System.Drawing.Color.White
-        Me.LTitulo.Location = New System.Drawing.Point(0, 2)
+        Me.LTitulo.ForeColor = System.Drawing.Color.Black
+        Me.LTitulo.Location = New System.Drawing.Point(1, 3)
         Me.LTitulo.Name = "LTitulo"
-        Me.LTitulo.Size = New System.Drawing.Size(900, 39)
+        Me.LTitulo.Size = New System.Drawing.Size(818, 28)
         Me.LTitulo.TabIndex = 1
         Me.LTitulo.Text = "Factura de Remisión"
-        Me.LTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.LTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'GroupBox12
         '
@@ -1079,7 +1081,7 @@ Partial Class FormRemisionInventario
         Me.DataGridView4.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle92
         Me.DataGridView4.BackgroundColor = System.Drawing.Color.White
         DataGridViewCellStyle93.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle93.BackColor = System.Drawing.Color.FromArgb(20, 61, 113)
+        DataGridViewCellStyle93.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(61, Byte), Integer), CType(CType(113, Byte), Integer))
         DataGridViewCellStyle93.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle93.ForeColor = System.Drawing.Color.White
         DataGridViewCellStyle93.SelectionBackColor = System.Drawing.SystemColors.Highlight
@@ -1105,7 +1107,7 @@ Partial Class FormRemisionInventario
         Me.DataGridView5.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle94
         Me.DataGridView5.BackgroundColor = System.Drawing.Color.White
         DataGridViewCellStyle95.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle95.BackColor = System.Drawing.Color.FromArgb(20, 61, 113)
+        DataGridViewCellStyle95.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(61, Byte), Integer), CType(CType(113, Byte), Integer))
         DataGridViewCellStyle95.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle95.ForeColor = System.Drawing.Color.White
         DataGridViewCellStyle95.SelectionBackColor = System.Drawing.SystemColors.Highlight
@@ -1184,7 +1186,6 @@ Partial Class FormRemisionInventario
         DataGridViewCellStyle98.SelectionBackColor = System.Drawing.Color.White
         Me.DataGridViewImageColumn5.DefaultCellStyle = DataGridViewCellStyle98
         Me.DataGridViewImageColumn5.HeaderText = "Quitar"
-        'Me.DataGridViewImageColumn5.Image = Global.Quality.My.Resources.Resources.papelera
         Me.DataGridViewImageColumn5.Name = "DataGridViewImageColumn5"
         Me.DataGridViewImageColumn5.ReadOnly = True
         Me.DataGridViewImageColumn5.Width = 50
@@ -1200,7 +1201,7 @@ Partial Class FormRemisionInventario
         Me.DataGridView6.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle99
         Me.DataGridView6.BackgroundColor = System.Drawing.Color.White
         DataGridViewCellStyle100.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle100.BackColor = System.Drawing.Color.FromArgb(20, 61, 113)
+        DataGridViewCellStyle100.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(61, Byte), Integer), CType(CType(113, Byte), Integer))
         DataGridViewCellStyle100.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle100.ForeColor = System.Drawing.Color.White
         DataGridViewCellStyle100.SelectionBackColor = System.Drawing.SystemColors.Highlight
@@ -1295,7 +1296,6 @@ Partial Class FormRemisionInventario
         DataGridViewCellStyle106.SelectionBackColor = System.Drawing.Color.White
         Me.DataGridViewImageColumn6.DefaultCellStyle = DataGridViewCellStyle106
         Me.DataGridViewImageColumn6.HeaderText = "Quitar"
-        'Me.DataGridViewImageColumn6.Image = Global.Quality.My.Resources.Resources.papelera
         Me.DataGridViewImageColumn6.Name = "DataGridViewImageColumn6"
         Me.DataGridViewImageColumn6.ReadOnly = True
         Me.DataGridViewImageColumn6.Width = 50
@@ -1349,7 +1349,7 @@ Partial Class FormRemisionInventario
         '
         'Button2
         '
-        Me.Button2.BackColor = System.Drawing.Color.FromArgb(20, 61, 113)
+        Me.Button2.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(61, Byte), Integer), CType(CType(113, Byte), Integer))
         Me.Button2.Font = New System.Drawing.Font("Times New Roman", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button2.ForeColor = System.Drawing.Color.White
         Me.Button2.Location = New System.Drawing.Point(439, 9)
@@ -1399,7 +1399,6 @@ Partial Class FormRemisionInventario
         Me.Label28.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Label28.Font = New System.Drawing.Font("Times New Roman", 14.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label28.ForeColor = System.Drawing.Color.White
-        'Me.Label28.Image = Global.Quality.My.Resources.Resources.fondo_azul
         Me.Label28.Location = New System.Drawing.Point(327, 443)
         Me.Label28.Name = "Label28"
         Me.Label28.Size = New System.Drawing.Size(155, 36)
@@ -1496,7 +1495,6 @@ Partial Class FormRemisionInventario
         Me.Label56.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Label56.Font = New System.Drawing.Font("Times New Roman", 14.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label56.ForeColor = System.Drawing.Color.White
-        'Me.Label56.Image = Global.Quality.My.Resources.Resources.fondo_azul
         Me.Label56.Location = New System.Drawing.Point(7, 446)
         Me.Label56.Name = "Label56"
         Me.Label56.Size = New System.Drawing.Size(155, 38)
@@ -1532,7 +1530,6 @@ Partial Class FormRemisionInventario
         Me.Label32.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Label32.Font = New System.Drawing.Font("Times New Roman", 14.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label32.ForeColor = System.Drawing.Color.White
-        'Me.Label32.Image = Global.Quality.My.Resources.Resources.fondo_azul
         Me.Label32.Location = New System.Drawing.Point(488, 443)
         Me.Label32.Name = "Label32"
         Me.Label32.Size = New System.Drawing.Size(155, 36)
@@ -1546,7 +1543,6 @@ Partial Class FormRemisionInventario
         Me.Label33.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Label33.Font = New System.Drawing.Font("Times New Roman", 14.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label33.ForeColor = System.Drawing.Color.White
-        'Me.Label33.Image = Global.Quality.My.Resources.Resources.fondo_azul
         Me.Label33.Location = New System.Drawing.Point(166, 444)
         Me.Label33.Name = "Label33"
         Me.Label33.Size = New System.Drawing.Size(155, 38)
@@ -1652,7 +1648,7 @@ Partial Class FormRemisionInventario
         Me.DataGridView10.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle107
         Me.DataGridView10.BackgroundColor = System.Drawing.Color.White
         DataGridViewCellStyle108.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle108.BackColor = System.Drawing.Color.FromArgb(20, 61, 113)
+        DataGridViewCellStyle108.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(61, Byte), Integer), CType(CType(113, Byte), Integer))
         DataGridViewCellStyle108.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle108.ForeColor = System.Drawing.Color.White
         DataGridViewCellStyle108.SelectionBackColor = System.Drawing.SystemColors.Highlight
@@ -1678,7 +1674,7 @@ Partial Class FormRemisionInventario
         Me.DataGridView11.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle109
         Me.DataGridView11.BackgroundColor = System.Drawing.Color.White
         DataGridViewCellStyle110.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle110.BackColor = System.Drawing.Color.FromArgb(20, 61, 113)
+        DataGridViewCellStyle110.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(61, Byte), Integer), CType(CType(113, Byte), Integer))
         DataGridViewCellStyle110.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle110.ForeColor = System.Drawing.Color.White
         DataGridViewCellStyle110.SelectionBackColor = System.Drawing.SystemColors.Highlight
@@ -1757,7 +1753,6 @@ Partial Class FormRemisionInventario
         DataGridViewCellStyle113.SelectionBackColor = System.Drawing.Color.White
         Me.DataGridViewImageColumn9.DefaultCellStyle = DataGridViewCellStyle113
         Me.DataGridViewImageColumn9.HeaderText = "Quitar"
-        'Me.DataGridViewImageColumn9.Image = Global.Quality.My.Resources.Resources.papelera
         Me.DataGridViewImageColumn9.Name = "DataGridViewImageColumn9"
         Me.DataGridViewImageColumn9.ReadOnly = True
         Me.DataGridViewImageColumn9.Width = 50
@@ -1773,7 +1768,7 @@ Partial Class FormRemisionInventario
         Me.DataGridView12.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle114
         Me.DataGridView12.BackgroundColor = System.Drawing.Color.White
         DataGridViewCellStyle115.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle115.BackColor = System.Drawing.Color.FromArgb(20, 61, 113)
+        DataGridViewCellStyle115.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(61, Byte), Integer), CType(CType(113, Byte), Integer))
         DataGridViewCellStyle115.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle115.ForeColor = System.Drawing.Color.White
         DataGridViewCellStyle115.SelectionBackColor = System.Drawing.SystemColors.Highlight
@@ -1868,7 +1863,6 @@ Partial Class FormRemisionInventario
         DataGridViewCellStyle121.SelectionBackColor = System.Drawing.Color.White
         Me.DataGridViewImageColumn10.DefaultCellStyle = DataGridViewCellStyle121
         Me.DataGridViewImageColumn10.HeaderText = "Quitar"
-        'Me.DataGridViewImageColumn10.Image = Global.Quality.My.Resources.Resources.papelera
         Me.DataGridViewImageColumn10.Name = "DataGridViewImageColumn10"
         Me.DataGridViewImageColumn10.ReadOnly = True
         Me.DataGridViewImageColumn10.Width = 50
@@ -1922,7 +1916,7 @@ Partial Class FormRemisionInventario
         '
         'Button4
         '
-        Me.Button4.BackColor = System.Drawing.Color.FromArgb(20, 61, 113)
+        Me.Button4.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(61, Byte), Integer), CType(CType(113, Byte), Integer))
         Me.Button4.Font = New System.Drawing.Font("Times New Roman", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button4.ForeColor = System.Drawing.Color.White
         Me.Button4.Location = New System.Drawing.Point(439, 9)
@@ -1972,7 +1966,6 @@ Partial Class FormRemisionInventario
         Me.Label50.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Label50.Font = New System.Drawing.Font("Times New Roman", 14.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label50.ForeColor = System.Drawing.Color.White
-        'Me.Label50.Image = Global.Quality.My.Resources.Resources.fondo_azul
         Me.Label50.Location = New System.Drawing.Point(327, 443)
         Me.Label50.Name = "Label50"
         Me.Label50.Size = New System.Drawing.Size(155, 36)
@@ -2091,7 +2084,6 @@ Partial Class FormRemisionInventario
         Me.Label54.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Label54.Font = New System.Drawing.Font("Times New Roman", 14.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label54.ForeColor = System.Drawing.Color.White
-        'Me.Label54.Image = Global.Quality.My.Resources.Resources.fondo_azul
         Me.Label54.Location = New System.Drawing.Point(488, 443)
         Me.Label54.Name = "Label54"
         Me.Label54.Size = New System.Drawing.Size(155, 36)
@@ -2105,7 +2097,6 @@ Partial Class FormRemisionInventario
         Me.Label55.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Label55.Font = New System.Drawing.Font("Times New Roman", 14.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label55.ForeColor = System.Drawing.Color.White
-        'Me.Label55.Image = Global.Quality.My.Resources.Resources.fondo_azul
         Me.Label55.Location = New System.Drawing.Point(166, 444)
         Me.Label55.Name = "Label55"
         Me.Label55.Size = New System.Drawing.Size(155, 38)
@@ -2225,7 +2216,7 @@ Partial Class FormRemisionInventario
         Me.DataGridView1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle122
         Me.DataGridView1.BackgroundColor = System.Drawing.Color.White
         DataGridViewCellStyle123.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle123.BackColor = System.Drawing.Color.FromArgb(20, 61, 113)
+        DataGridViewCellStyle123.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(61, Byte), Integer), CType(CType(113, Byte), Integer))
         DataGridViewCellStyle123.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle123.ForeColor = System.Drawing.Color.White
         DataGridViewCellStyle123.SelectionBackColor = System.Drawing.SystemColors.Highlight
@@ -2251,7 +2242,7 @@ Partial Class FormRemisionInventario
         Me.DataGridView2.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle124
         Me.DataGridView2.BackgroundColor = System.Drawing.Color.White
         DataGridViewCellStyle125.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle125.BackColor = System.Drawing.Color.FromArgb(20, 61, 113)
+        DataGridViewCellStyle125.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(61, Byte), Integer), CType(CType(113, Byte), Integer))
         DataGridViewCellStyle125.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle125.ForeColor = System.Drawing.Color.White
         DataGridViewCellStyle125.SelectionBackColor = System.Drawing.SystemColors.Highlight
@@ -2330,7 +2321,6 @@ Partial Class FormRemisionInventario
         DataGridViewCellStyle128.SelectionBackColor = System.Drawing.Color.White
         Me.DataGridViewImageColumn3.DefaultCellStyle = DataGridViewCellStyle128
         Me.DataGridViewImageColumn3.HeaderText = "Quitar"
-        'Me.DataGridViewImageColumn3.Image = Global.Quality.My.Resources.Resources.papelera
         Me.DataGridViewImageColumn3.Name = "DataGridViewImageColumn3"
         Me.DataGridViewImageColumn3.ReadOnly = True
         Me.DataGridViewImageColumn3.Width = 50
@@ -2346,7 +2336,7 @@ Partial Class FormRemisionInventario
         Me.DataGridView3.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle129
         Me.DataGridView3.BackgroundColor = System.Drawing.Color.White
         DataGridViewCellStyle130.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle130.BackColor = System.Drawing.Color.FromArgb(20, 61, 113)
+        DataGridViewCellStyle130.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(61, Byte), Integer), CType(CType(113, Byte), Integer))
         DataGridViewCellStyle130.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle130.ForeColor = System.Drawing.Color.White
         DataGridViewCellStyle130.SelectionBackColor = System.Drawing.SystemColors.Highlight
@@ -2441,7 +2431,6 @@ Partial Class FormRemisionInventario
         DataGridViewCellStyle136.SelectionBackColor = System.Drawing.Color.White
         Me.DataGridViewImageColumn4.DefaultCellStyle = DataGridViewCellStyle136
         Me.DataGridViewImageColumn4.HeaderText = "Quitar"
-        'Me.DataGridViewImageColumn4.Image = Global.Quality.My.Resources.Resources.papelera
         Me.DataGridViewImageColumn4.Name = "DataGridViewImageColumn4"
         Me.DataGridViewImageColumn4.ReadOnly = True
         Me.DataGridViewImageColumn4.Width = 50
@@ -2495,7 +2484,7 @@ Partial Class FormRemisionInventario
         '
         'Button1
         '
-        Me.Button1.BackColor = System.Drawing.Color.FromArgb(20, 61, 113)
+        Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(61, Byte), Integer), CType(CType(113, Byte), Integer))
         Me.Button1.Font = New System.Drawing.Font("Times New Roman", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button1.ForeColor = System.Drawing.Color.White
         Me.Button1.Location = New System.Drawing.Point(439, 9)
@@ -2545,7 +2534,6 @@ Partial Class FormRemisionInventario
         Me.Label16.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Label16.Font = New System.Drawing.Font("Times New Roman", 14.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label16.ForeColor = System.Drawing.Color.White
-        'Me.Label16.Image = Global.Quality.My.Resources.Resources.fondo_azul
         Me.Label16.Location = New System.Drawing.Point(327, 443)
         Me.Label16.Name = "Label16"
         Me.Label16.Size = New System.Drawing.Size(155, 36)
@@ -2559,7 +2547,6 @@ Partial Class FormRemisionInventario
         Me.Label45.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Label45.Font = New System.Drawing.Font("Times New Roman", 14.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label45.ForeColor = System.Drawing.Color.White
-        'Me.Label45.Image = Global.Quality.My.Resources.Resources.fondo_azul
         Me.Label45.Location = New System.Drawing.Point(7, 446)
         Me.Label45.Name = "Label45"
         Me.Label45.Size = New System.Drawing.Size(155, 38)
@@ -2770,7 +2757,7 @@ Partial Class FormRemisionInventario
         Me.DataGridView7.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle137
         Me.DataGridView7.BackgroundColor = System.Drawing.Color.White
         DataGridViewCellStyle138.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle138.BackColor = System.Drawing.Color.FromArgb(20, 61, 113)
+        DataGridViewCellStyle138.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(61, Byte), Integer), CType(CType(113, Byte), Integer))
         DataGridViewCellStyle138.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle138.ForeColor = System.Drawing.Color.White
         DataGridViewCellStyle138.SelectionBackColor = System.Drawing.SystemColors.Highlight
@@ -2796,7 +2783,7 @@ Partial Class FormRemisionInventario
         Me.DataGridView8.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle139
         Me.DataGridView8.BackgroundColor = System.Drawing.Color.White
         DataGridViewCellStyle140.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle140.BackColor = System.Drawing.Color.FromArgb(20, 61, 113)
+        DataGridViewCellStyle140.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(61, Byte), Integer), CType(CType(113, Byte), Integer))
         DataGridViewCellStyle140.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle140.ForeColor = System.Drawing.Color.White
         DataGridViewCellStyle140.SelectionBackColor = System.Drawing.SystemColors.Highlight
@@ -2875,7 +2862,6 @@ Partial Class FormRemisionInventario
         DataGridViewCellStyle143.SelectionBackColor = System.Drawing.Color.White
         Me.DataGridViewImageColumn7.DefaultCellStyle = DataGridViewCellStyle143
         Me.DataGridViewImageColumn7.HeaderText = "Quitar"
-        'Me.DataGridViewImageColumn7.Image = Global.Quality.My.Resources.Resources.papelera
         Me.DataGridViewImageColumn7.Name = "DataGridViewImageColumn7"
         Me.DataGridViewImageColumn7.ReadOnly = True
         Me.DataGridViewImageColumn7.Width = 50
@@ -2891,7 +2877,7 @@ Partial Class FormRemisionInventario
         Me.DataGridView9.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle144
         Me.DataGridView9.BackgroundColor = System.Drawing.Color.White
         DataGridViewCellStyle145.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle145.BackColor = System.Drawing.Color.FromArgb(20, 61, 113)
+        DataGridViewCellStyle145.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(61, Byte), Integer), CType(CType(113, Byte), Integer))
         DataGridViewCellStyle145.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle145.ForeColor = System.Drawing.Color.White
         DataGridViewCellStyle145.SelectionBackColor = System.Drawing.SystemColors.Highlight
@@ -2986,7 +2972,6 @@ Partial Class FormRemisionInventario
         DataGridViewCellStyle151.SelectionBackColor = System.Drawing.Color.White
         Me.DataGridViewImageColumn8.DefaultCellStyle = DataGridViewCellStyle151
         Me.DataGridViewImageColumn8.HeaderText = "Quitar"
-        'Me.DataGridViewImageColumn8.Image = Global.Quality.My.Resources.Resources.papelera
         Me.DataGridViewImageColumn8.Name = "DataGridViewImageColumn8"
         Me.DataGridViewImageColumn8.ReadOnly = True
         Me.DataGridViewImageColumn8.Width = 50
@@ -3040,7 +3025,7 @@ Partial Class FormRemisionInventario
         '
         'Button3
         '
-        Me.Button3.BackColor = System.Drawing.Color.FromArgb(20, 61, 113)
+        Me.Button3.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(61, Byte), Integer), CType(CType(113, Byte), Integer))
         Me.Button3.Font = New System.Drawing.Font("Times New Roman", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button3.ForeColor = System.Drawing.Color.White
         Me.Button3.Location = New System.Drawing.Point(439, 9)
@@ -3090,7 +3075,6 @@ Partial Class FormRemisionInventario
         Me.Label39.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Label39.Font = New System.Drawing.Font("Times New Roman", 14.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label39.ForeColor = System.Drawing.Color.White
-        'Me.Label39.Image = Global.Quality.My.Resources.Resources.fondo_azul
         Me.Label39.Location = New System.Drawing.Point(327, 443)
         Me.Label39.Name = "Label39"
         Me.Label39.Size = New System.Drawing.Size(155, 36)
@@ -3209,7 +3193,6 @@ Partial Class FormRemisionInventario
         Me.Label43.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Label43.Font = New System.Drawing.Font("Times New Roman", 14.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label43.ForeColor = System.Drawing.Color.White
-        'Me.Label43.Image = Global.Quality.My.Resources.Resources.fondo_azul
         Me.Label43.Location = New System.Drawing.Point(488, 443)
         Me.Label43.Name = "Label43"
         Me.Label43.Size = New System.Drawing.Size(155, 36)
@@ -3223,7 +3206,6 @@ Partial Class FormRemisionInventario
         Me.Label44.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Label44.Font = New System.Drawing.Font("Times New Roman", 14.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label44.ForeColor = System.Drawing.Color.White
-        'Me.Label44.Image = Global.Quality.My.Resources.Resources.fondo_azul
         Me.Label44.Location = New System.Drawing.Point(166, 444)
         Me.Label44.Name = "Label44"
         Me.Label44.Size = New System.Drawing.Size(155, 38)
@@ -3237,7 +3219,6 @@ Partial Class FormRemisionInventario
         Me.Label21.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Label21.Font = New System.Drawing.Font("Times New Roman", 14.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label21.ForeColor = System.Drawing.Color.White
-        'Me.Label21.Image = Global.Quality.My.Resources.Resources.fondo_azul
         Me.Label21.Location = New System.Drawing.Point(488, 443)
         Me.Label21.Name = "Label21"
         Me.Label21.Size = New System.Drawing.Size(155, 36)
@@ -3251,98 +3232,12 @@ Partial Class FormRemisionInventario
         Me.Label22.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Label22.Font = New System.Drawing.Font("Times New Roman", 14.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label22.ForeColor = System.Drawing.Color.White
-        'Me.Label22.Image = Global.Quality.My.Resources.Resources.fondo_azul
         Me.Label22.Location = New System.Drawing.Point(166, 444)
         Me.Label22.Name = "Label22"
         Me.Label22.Size = New System.Drawing.Size(155, 38)
         Me.Label22.TabIndex = 22
         Me.Label22.Text = "Servicios"
         Me.Label22.TextAlign = System.Drawing.ContentAlignment.TopCenter
-        '
-        'ToolStrip1
-        '
-        Me.ToolStrip1.BackColor = System.Drawing.Color.White
-        'Me.ToolStrip1.BackgroundImage = Global.Quality.My.Resources.Resources.fondo_azul
-        'Me.ToolStrip1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ToolStrip1.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.ToolStrip1.ImageScalingSize = New System.Drawing.Size(30, 30)
-        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripSeparator1, Me.btNuevo, Me.btBuscar, Me.btRegistrar, Me.btCancelar, Me.btAnular, Me.btImprimir})
-        Me.ToolStrip1.Location = New System.Drawing.Point(0, 486)
-        Me.ToolStrip1.Name = "ToolStrip1"
-        Me.ToolStrip1.Size = New System.Drawing.Size(900, 37)
-        Me.ToolStrip1.TabIndex = 4
-        Me.ToolStrip1.Text = "ToolStrip1"
-        '
-        'ToolStripSeparator1
-        '
-        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
-        Me.ToolStripSeparator1.Size = New System.Drawing.Size(6, 37)
-        '
-        'btNuevo
-        '
-        Me.btNuevo.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btNuevo.ForeColor = System.Drawing.Color.White
-        '  Me.btNuevo.Image = Global.Quality.My.Resources.Resources.Files_New_File_icon
-        '  Me.btNuevo.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.btNuevo.Name = "btNuevo"
-        Me.btNuevo.Size = New System.Drawing.Size(86, 34)
-        Me.btNuevo.Text = "&Nuevo"
-        Me.btNuevo.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        '
-        'btBuscar
-        '
-        ' Me.btBuscar.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        ' Me.btBuscar.ForeColor = System.Drawing.Color.White
-        '  ' Me.btBuscar.Image = Global.Quality.My.Resources.Resources.Search_icon
-        '  ' Me.btBuscar.ImageTransparentColor = System.Drawing.Color.Magenta
-        ' Me.btBuscar.Name = "btBuscar"
-        ' Me.btBuscar.Size = New System.Drawing.Size(90, 34)
-        ' Me.btBuscar.Text = "&Buscar"
-        ' Me.btBuscar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        '
-        'btRegistrar
-        '
-        Me.btRegistrar.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btRegistrar.ForeColor = System.Drawing.Color.White
-        'Me.btRegistrar.Image = Global.Quality.My.Resources.Resources.Save_icon__1_
-        Me.btRegistrar.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.btRegistrar.Name = "btRegistrar"
-        Me.btRegistrar.Size = New System.Drawing.Size(105, 34)
-        Me.btRegistrar.Text = "&Registrar"
-        Me.btRegistrar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        '
-        'btCancelar
-        '
-        Me.btCancelar.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btCancelar.ForeColor = System.Drawing.Color.White
-        ' Me.btCancelar.Image = Global.Quality.My.Resources.Resources.Actions_blue_arrow_undo_icon
-        Me.btCancelar.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.btCancelar.Name = "btCancelar"
-        Me.btCancelar.Size = New System.Drawing.Size(104, 34)
-        Me.btCancelar.Text = "&Cancelar"
-        Me.btCancelar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        '
-        'btAnular
-        '
-        Me.btAnular.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btAnular.ForeColor = System.Drawing.Color.White
-        '  Me.btAnular.Image = Global.Quality.My.Resources.Resources.document_delete_icon__1_
-        '  Me.btAnular.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.btAnular.Name = "btAnular"
-        Me.btAnular.Size = New System.Drawing.Size(91, 34)
-        Me.btAnular.Text = "&Anular"
-        Me.btAnular.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        '
-        'btImprimir
-        '
-        Me.btImprimir.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btImprimir.ForeColor = System.Drawing.Color.White
-        '  Me.btImprimir.Image = Global.Quality.My.Resources.Resources.Printer_icon__1_
-        Me.btImprimir.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.btImprimir.Name = "btImprimir"
-        Me.btImprimir.Size = New System.Drawing.Size(103, 34)
-        Me.btImprimir.Text = "&Imprimir"
-        Me.btImprimir.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         '
         'DataGridViewTextBoxColumn1
         '
@@ -3464,27 +3359,100 @@ Partial Class FormRemisionInventario
         Me.DataGridViewTextBoxColumn15.Name = "DataGridViewTextBoxColumn15"
         Me.DataGridViewTextBoxColumn15.Visible = False
         '
-        'Label1
+        'ToolStrip1
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.BackColor = System.Drawing.Color.Transparent
-        Me.Label1.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.Black
-        Me.Label1.Location = New System.Drawing.Point(286, 73)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(121, 19)
-        Me.Label1.TabIndex = 60040
-        Me.Label1.Text = "Codigo de Barra:"
+        Me.ToolStrip1.BackColor = System.Drawing.Color.White
+        Me.ToolStrip1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.ToolStrip1.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.ToolStrip1.ImageScalingSize = New System.Drawing.Size(25, 25)
+        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripSeparator1, Me.btNuevo, Me.btBusqueda, Me.btRegistrar, Me.btEditar, Me.btCancelar, Me.btAnular, Me.btImprimir})
+        Me.ToolStrip1.Location = New System.Drawing.Point(0, 491)
+        Me.ToolStrip1.Name = "ToolStrip1"
+        Me.ToolStrip1.Size = New System.Drawing.Size(900, 32)
+        Me.ToolStrip1.TabIndex = 1004
+        Me.ToolStrip1.Text = "ToolStrip1"
         '
-        'txtCodigoBarra
+        'ToolStripSeparator1
         '
-        Me.txtCodigoBarra.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtCodigoBarra.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtCodigoBarra.Location = New System.Drawing.Point(407, 70)
-        Me.txtCodigoBarra.MaxLength = 26
-        Me.txtCodigoBarra.Name = "txtCodigoBarra"
-        Me.txtCodigoBarra.Size = New System.Drawing.Size(148, 25)
-        Me.txtCodigoBarra.TabIndex = 60039
+        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
+        Me.ToolStripSeparator1.Size = New System.Drawing.Size(6, 32)
+        '
+        'btNuevo
+        '
+        Me.btNuevo.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btNuevo.ForeColor = System.Drawing.Color.Black
+        Me.btNuevo.Image = Global.Quality.My.Resources.Resources.Add_File_icon
+        Me.btNuevo.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.btNuevo.Name = "btNuevo"
+        Me.btNuevo.Size = New System.Drawing.Size(81, 29)
+        Me.btNuevo.Text = "&Nuevo"
+        Me.btNuevo.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        '
+        'btBusqueda
+        '
+        Me.btBusqueda.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btBusqueda.ForeColor = System.Drawing.Color.Black
+        Me.btBusqueda.Image = Global.Quality.My.Resources.Resources.Very_Basic_Search_icon
+        Me.btBusqueda.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.btBusqueda.Name = "btBusqueda"
+        Me.btBusqueda.Size = New System.Drawing.Size(85, 29)
+        Me.btBusqueda.Text = "&Buscar"
+        Me.btBusqueda.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        '
+        'btRegistrar
+        '
+        Me.btRegistrar.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btRegistrar.ForeColor = System.Drawing.Color.Black
+        Me.btRegistrar.Image = Global.Quality.My.Resources.Resources.User_Interface_Save_As_icon
+        Me.btRegistrar.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.btRegistrar.Name = "btRegistrar"
+        Me.btRegistrar.Size = New System.Drawing.Size(100, 29)
+        Me.btRegistrar.Text = "&Registrar"
+        Me.btRegistrar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        '
+        'btEditar
+        '
+        Me.btEditar.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btEditar.ForeColor = System.Drawing.Color.Black
+        Me.btEditar.Image = Global.Quality.My.Resources.Resources.Pencil_icon
+        Me.btEditar.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.btEditar.Name = "btEditar"
+        Me.btEditar.Size = New System.Drawing.Size(81, 29)
+        Me.btEditar.Text = "&Editar"
+        Me.btEditar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        '
+        'btCancelar
+        '
+        Me.btCancelar.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btCancelar.ForeColor = System.Drawing.Color.Black
+        Me.btCancelar.Image = Global.Quality.My.Resources.Resources.Arrows_Right_2_icon
+        Me.btCancelar.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.btCancelar.Name = "btCancelar"
+        Me.btCancelar.Size = New System.Drawing.Size(99, 29)
+        Me.btCancelar.Text = "&Cancelar"
+        Me.btCancelar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        '
+        'btAnular
+        '
+        Me.btAnular.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btAnular.ForeColor = System.Drawing.Color.Black
+        Me.btAnular.Image = Global.Quality.My.Resources.Resources.Files_Delete_File_icon
+        Me.btAnular.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.btAnular.Name = "btAnular"
+        Me.btAnular.Size = New System.Drawing.Size(86, 29)
+        Me.btAnular.Text = "&Anular"
+        Me.btAnular.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        '
+        'btImprimir
+        '
+        Me.btImprimir.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btImprimir.ForeColor = System.Drawing.Color.Black
+        Me.btImprimir.Image = Global.Quality.My.Resources.Resources.Computer_Hardware_Print_icon
+        Me.btImprimir.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.btImprimir.Name = "btImprimir"
+        Me.btImprimir.Size = New System.Drawing.Size(98, 29)
+        Me.btImprimir.Text = "&Imprimir"
+        Me.btImprimir.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         '
         'FormRemisionInventario
         '
@@ -3492,10 +3460,10 @@ Partial Class FormRemisionInventario
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(900, 523)
+        Me.Controls.Add(Me.ToolStrip1)
         Me.Controls.Add(Me.TextTotalArticulos)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Panel1)
-        Me.Controls.Add(Me.ToolStrip1)
         Me.Controls.Add(Me.GroupBox1)
         Me.KeyPreview = True
         Me.MaximizeBox = False
@@ -3517,7 +3485,6 @@ Partial Class FormRemisionInventario
         CType(Me.ErrorIcono, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
-        CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox12.ResumeLayout(False)
         Me.GroupBox12.PerformLayout()
         Me.GroupBox13.ResumeLayout(False)
@@ -3581,15 +3548,8 @@ Partial Class FormRemisionInventario
     Public WithEvents TextNombre As TextBox
     Public WithEvents Label17 As Label
     Friend WithEvents GroupBox1 As GroupBox
-    Public WithEvents ToolStrip1 As ToolStrip
-    Friend WithEvents ToolStripSeparator1 As ToolStripSeparator
-    Public WithEvents btNuevo As ToolStripButton
     Public WithEvents btBuscar As ToolStripButton
-    Public WithEvents btRegistrar As ToolStripButton
-    Public WithEvents btCancelar As ToolStripButton
-    Public WithEvents btAnular As ToolStripButton
     Public WithEvents Panel1 As Panel
-    Public WithEvents Pimagen As PictureBox
     Public WithEvents LTitulo As Label
     Friend WithEvents GroupBox2 As GroupBox
     Public WithEvents TextTelefono As TextBox
@@ -3599,7 +3559,6 @@ Partial Class FormRemisionInventario
     Public WithEvents txtCodigo As TextBox
     Public WithEvents Label3 As Label
     Public WithEvents Label6 As Label
-    Public WithEvents btImprimir As ToolStripButton
     Friend WithEvents DataGridViewImageColumn1 As DataGridViewImageColumn
     Public WithEvents dgvProducto As DataGridView
     Friend WithEvents gbRelevante As GroupBox
@@ -3845,4 +3804,13 @@ Partial Class FormRemisionInventario
     Public WithEvents txtObservacion As TextBox
     Public WithEvents Label1 As Label
     Public WithEvents txtCodigoBarra As TextBox
+    Public WithEvents ToolStrip1 As ToolStrip
+    Friend WithEvents ToolStripSeparator1 As ToolStripSeparator
+    Public WithEvents btNuevo As ToolStripButton
+    Public WithEvents btBusqueda As ToolStripButton
+    Public WithEvents btRegistrar As ToolStripButton
+    Public WithEvents btEditar As ToolStripButton
+    Public WithEvents btCancelar As ToolStripButton
+    Public WithEvents btAnular As ToolStripButton
+    Public WithEvents btImprimir As ToolStripButton
 End Class
