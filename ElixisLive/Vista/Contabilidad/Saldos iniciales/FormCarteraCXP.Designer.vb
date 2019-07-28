@@ -22,11 +22,10 @@ Partial Class FormCarteraCXP
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.Pimagen = New System.Windows.Forms.PictureBox()
         Me.LTitulo = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.textdiferencia = New System.Windows.Forms.Label()
@@ -56,14 +55,14 @@ Partial Class FormCarteraCXP
         Me.Textnombredocumento = New System.Windows.Forms.Label()
         Me.Label21 = New System.Windows.Forms.Label()
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
+        Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.btNuevo = New System.Windows.Forms.ToolStripButton()
-        ' Me.btBuscar = New System.Windows.Forms.ToolStripButton()
+        Me.btBusqueda = New System.Windows.Forms.ToolStripButton()
         Me.btRegistrar = New System.Windows.Forms.ToolStripButton()
         Me.btEditar = New System.Windows.Forms.ToolStripButton()
         Me.btCancelar = New System.Windows.Forms.ToolStripButton()
         Me.btAnular = New System.Windows.Forms.ToolStripButton()
         Me.Panel2.SuspendLayout()
-        CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.PnlInfo.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -74,38 +73,25 @@ Partial Class FormCarteraCXP
         '
         'Panel2
         '
-        Me.Panel2.BackColor = System.Drawing.Color.White
-        '  Me.Panel2.BackgroundImage = Global.Quality.My.Resources.Resources.fondo_azul
+        Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(220, Byte), Integer), CType(CType(234, Byte), Integer))
         Me.Panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Panel2.Controls.Add(Me.Pimagen)
         Me.Panel2.Controls.Add(Me.LTitulo)
         Me.Panel2.Location = New System.Drawing.Point(0, 0)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(905, 44)
+        Me.Panel2.Size = New System.Drawing.Size(905, 34)
         Me.Panel2.TabIndex = 3
-        '
-        'Pimagen
-        '
-        Me.Pimagen.BackColor = System.Drawing.Color.Transparent
-        '    Me.Pimagen.Image = Global.Quality.My.Resources.Resources.Balance_icon
-        Me.Pimagen.Location = New System.Drawing.Point(3, 0)
-        Me.Pimagen.Name = "Pimagen"
-        Me.Pimagen.Size = New System.Drawing.Size(53, 46)
-        Me.Pimagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.Pimagen.TabIndex = 1
-        Me.Pimagen.TabStop = False
         '
         'LTitulo
         '
         Me.LTitulo.BackColor = System.Drawing.Color.Transparent
         Me.LTitulo.Font = New System.Drawing.Font("Times New Roman", 20.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LTitulo.ForeColor = System.Drawing.Color.White
-        Me.LTitulo.Location = New System.Drawing.Point(1, -1)
+        Me.LTitulo.ForeColor = System.Drawing.Color.Black
+        Me.LTitulo.Location = New System.Drawing.Point(1, 2)
         Me.LTitulo.Name = "LTitulo"
-        Me.LTitulo.Size = New System.Drawing.Size(904, 40)
+        Me.LTitulo.Size = New System.Drawing.Size(777, 28)
         Me.LTitulo.TabIndex = 1
         Me.LTitulo.Text = "Cartera cuentas por pagar"
-        Me.LTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.LTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'GroupBox1
         '
@@ -214,7 +200,7 @@ Partial Class FormCarteraCXP
         '
         'PictureBox2
         '
-        '  Me.PictureBox2.Image = Global.Quality.My.Resources.Resources.atencion
+        Me.PictureBox2.Image = Global.Quality.My.Resources.Resources.advertencia
         Me.PictureBox2.Location = New System.Drawing.Point(3, 3)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(24, 24)
@@ -229,14 +215,14 @@ Partial Class FormCarteraCXP
         Me.dgvCartera.AllowUserToResizeColumns = False
         Me.dgvCartera.AllowUserToResizeRows = False
         Me.dgvCartera.BackgroundColor = System.Drawing.Color.White
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Arial Narrow", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvCartera.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle10.Font = New System.Drawing.Font("Arial Narrow", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvCartera.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle10
         Me.dgvCartera.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvCartera.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.dgComprobante, Me.Factura, Me.nit, Me.Tercero, Me.Cuenta, Me.Descripcion, Me.Debito, Me.Credito, Me.Estado, Me.anular})
         Me.dgvCartera.Location = New System.Drawing.Point(6, 91)
@@ -288,10 +274,10 @@ Partial Class FormCarteraCXP
         'Debito
         '
         Me.Debito.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle2.Format = "C2"
-        DataGridViewCellStyle2.NullValue = Nothing
-        Me.Debito.DefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle11.Format = "C2"
+        DataGridViewCellStyle11.NullValue = Nothing
+        Me.Debito.DefaultCellStyle = DataGridViewCellStyle11
         Me.Debito.HeaderText = "Débito"
         Me.Debito.Name = "Debito"
         Me.Debito.Width = 63
@@ -299,10 +285,10 @@ Partial Class FormCarteraCXP
         'Credito
         '
         Me.Credito.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle3.Format = "C2"
-        DataGridViewCellStyle3.NullValue = Nothing
-        Me.Credito.DefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle12.Format = "C2"
+        DataGridViewCellStyle12.NullValue = Nothing
+        Me.Credito.DefaultCellStyle = DataGridViewCellStyle12
         Me.Credito.HeaderText = "Crédito"
         Me.Credito.Name = "Credito"
         Me.Credito.Width = 67
@@ -316,7 +302,6 @@ Partial Class FormCarteraCXP
         'anular
         '
         Me.anular.HeaderText = "Quitar"
-        '  Me.anular.Image = Global.Quality.My.Resources.Resources.papelera
         Me.anular.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch
         Me.anular.Name = "anular"
         Me.anular.Width = 50
@@ -388,81 +373,85 @@ Partial Class FormCarteraCXP
         'ToolStrip1
         '
         Me.ToolStrip1.BackColor = System.Drawing.Color.White
-        'Me.ToolStrip1.BackgroundImage = Global.Quality.My.Resources.Resources.fondo_azul
-        'Me.ToolStrip1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.ToolStrip1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ToolStrip1.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.ToolStrip1.ImageScalingSize = New System.Drawing.Size(30, 30)
-        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.btNuevo, Me.btBuscar, Me.btRegistrar, Me.btEditar, Me.btCancelar, Me.btAnular})
-        Me.ToolStrip1.Location = New System.Drawing.Point(0, 486)
+        Me.ToolStrip1.ImageScalingSize = New System.Drawing.Size(25, 25)
+        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripSeparator1, Me.btNuevo, Me.btBusqueda, Me.btRegistrar, Me.btEditar, Me.btCancelar, Me.btAnular})
+        Me.ToolStrip1.Location = New System.Drawing.Point(0, 491)
         Me.ToolStrip1.Name = "ToolStrip1"
-        Me.ToolStrip1.Size = New System.Drawing.Size(905, 37)
-        Me.ToolStrip1.TabIndex = 60023
+        Me.ToolStrip1.Size = New System.Drawing.Size(905, 32)
+        Me.ToolStrip1.TabIndex = 1003
         Me.ToolStrip1.Text = "ToolStrip1"
+        '
+        'ToolStripSeparator1
+        '
+        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
+        Me.ToolStripSeparator1.Size = New System.Drawing.Size(6, 32)
         '
         'btNuevo
         '
         Me.btNuevo.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btNuevo.ForeColor = System.Drawing.Color.White
-       '  Me.btNuevo.Image = Global.Quality.My.Resources.Resources.Files_New_File_icon
-       '  Me.btNuevo.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.btNuevo.ForeColor = System.Drawing.Color.Black
+        Me.btNuevo.Image = Global.Quality.My.Resources.Resources.Add_File_icon
+        Me.btNuevo.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.btNuevo.Name = "btNuevo"
-        Me.btNuevo.Size = New System.Drawing.Size(86, 34)
-        Me.btNuevo.Text = "Nuevo"
+        Me.btNuevo.Size = New System.Drawing.Size(81, 29)
+        Me.btNuevo.Text = "&Nuevo"
         Me.btNuevo.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         '
-        'btBuscar
+        'btBusqueda
         '
-        ' Me.btBuscar.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        ' Me.btBuscar.ForeColor = System.Drawing.Color.White
-        '  ' Me.btBuscar.Image = Global.Quality.My.Resources.Resources.Search_icon
-        '  ' Me.btBuscar.ImageTransparentColor = System.Drawing.Color.Magenta
-        ' Me.btBuscar.Name = "btBuscar"
-        ' Me.btBuscar.Size = New System.Drawing.Size(90, 34)
-        ' Me.btBuscar.Text = "Buscar"
-        ' Me.btBuscar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btBusqueda.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btBusqueda.ForeColor = System.Drawing.Color.Black
+        Me.btBusqueda.Image = Global.Quality.My.Resources.Resources.Very_Basic_Search_icon
+        Me.btBusqueda.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.btBusqueda.Name = "btBusqueda"
+        Me.btBusqueda.Size = New System.Drawing.Size(85, 29)
+        Me.btBusqueda.Text = "&Buscar"
+        Me.btBusqueda.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         '
         'btRegistrar
         '
         Me.btRegistrar.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btRegistrar.ForeColor = System.Drawing.Color.White
-        'Me.btRegistrar.Image = Global.Quality.My.Resources.Resources.Save_icon__1_
+        Me.btRegistrar.ForeColor = System.Drawing.Color.Black
+        Me.btRegistrar.Image = Global.Quality.My.Resources.Resources.User_Interface_Save_As_icon
         Me.btRegistrar.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.btRegistrar.Name = "btRegistrar"
-        Me.btRegistrar.Size = New System.Drawing.Size(105, 34)
-        Me.btRegistrar.Text = "Registrar"
+        Me.btRegistrar.Size = New System.Drawing.Size(100, 29)
+        Me.btRegistrar.Text = "&Registrar"
         Me.btRegistrar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         '
         'btEditar
         '
         Me.btEditar.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btEditar.ForeColor = System.Drawing.Color.White
-        'Me.btEditar.Image = Global.Quality.My.Resources.Resources.pencil_icon__1_
+        Me.btEditar.ForeColor = System.Drawing.Color.Black
+        Me.btEditar.Image = Global.Quality.My.Resources.Resources.Pencil_icon
         Me.btEditar.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.btEditar.Name = "btEditar"
-        Me.btEditar.Size = New System.Drawing.Size(86, 34)
-        Me.btEditar.Text = "Editar"
+        Me.btEditar.Size = New System.Drawing.Size(81, 29)
+        Me.btEditar.Text = "&Editar"
         Me.btEditar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         '
         'btCancelar
         '
         Me.btCancelar.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btCancelar.ForeColor = System.Drawing.Color.White
-       ' Me.btCancelar.Image = Global.Quality.My.Resources.Resources.Actions_blue_arrow_undo_icon
+        Me.btCancelar.ForeColor = System.Drawing.Color.Black
+        Me.btCancelar.Image = Global.Quality.My.Resources.Resources.Arrows_Right_2_icon
         Me.btCancelar.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.btCancelar.Name = "btCancelar"
-        Me.btCancelar.Size = New System.Drawing.Size(104, 34)
-        Me.btCancelar.Text = "Cancelar"
+        Me.btCancelar.Size = New System.Drawing.Size(99, 29)
+        Me.btCancelar.Text = "&Cancelar"
         Me.btCancelar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         '
         'btAnular
         '
         Me.btAnular.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btAnular.ForeColor = System.Drawing.Color.White
-        '  Me.btAnular.Image = Global.Quality.My.Resources.Resources.document_delete_icon__1_
-        '  Me.btAnular.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.btAnular.ForeColor = System.Drawing.Color.Black
+        Me.btAnular.Image = Global.Quality.My.Resources.Resources.Files_Delete_File_icon
+        Me.btAnular.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.btAnular.Name = "btAnular"
-        Me.btAnular.Size = New System.Drawing.Size(91, 34)
-        Me.btAnular.Text = "Anular"
+        Me.btAnular.Size = New System.Drawing.Size(86, 29)
+        Me.btAnular.Text = "&Anular"
         Me.btAnular.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         '
         'FormCarteraCXP
@@ -481,7 +470,6 @@ Partial Class FormCarteraCXP
         Me.ShowIcon = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Panel2.ResumeLayout(False)
-        CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.PnlInfo.ResumeLayout(False)
         Me.PnlInfo.PerformLayout()
@@ -497,7 +485,6 @@ Partial Class FormCarteraCXP
     End Sub
 
     Public WithEvents Panel2 As Panel
-    Public WithEvents Pimagen As PictureBox
     Public WithEvents LTitulo As Label
     Friend WithEvents GroupBox1 As GroupBox
     Public WithEvents PnlInfo As Panel
@@ -507,13 +494,7 @@ Partial Class FormCarteraCXP
     Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents Textsigla As Label
     Friend WithEvents Textnombredocumento As Label
-    Public WithEvents ToolStrip1 As ToolStrip
-    Public WithEvents btNuevo As ToolStripButton
     Public WithEvents btBuscar As ToolStripButton
-    Public WithEvents btRegistrar As ToolStripButton
-    Public WithEvents btEditar As ToolStripButton
-    Public WithEvents btCancelar As ToolStripButton
-    Public WithEvents btAnular As ToolStripButton
     Friend WithEvents Label1 As Label
     Public WithEvents fechadoc As DateTimePicker
     Friend WithEvents Label21 As Label
@@ -533,4 +514,12 @@ Partial Class FormCarteraCXP
     Friend WithEvents Credito As DataGridViewTextBoxColumn
     Friend WithEvents Estado As DataGridViewTextBoxColumn
     Friend WithEvents anular As DataGridViewImageColumn
+    Public WithEvents ToolStrip1 As ToolStrip
+    Friend WithEvents ToolStripSeparator1 As ToolStripSeparator
+    Public WithEvents btNuevo As ToolStripButton
+    Public WithEvents btBusqueda As ToolStripButton
+    Public WithEvents btRegistrar As ToolStripButton
+    Public WithEvents btEditar As ToolStripButton
+    Public WithEvents btCancelar As ToolStripButton
+    Public WithEvents btAnular As ToolStripButton
 End Class

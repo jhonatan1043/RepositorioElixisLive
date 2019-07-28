@@ -61,7 +61,7 @@
             .Columns.Item("Cuenta").ReadOnly = True
         End With
     End Sub
-    Private Sub btnuevo_Click(sender As Object, e As EventArgs) Handles btNuevo.Click
+    Private Sub btnuevo_Click(sender As Object, e As EventArgs) Handles btnuevo.click
         dtCartera.Clear()
         dtCartera.Rows.Add()
         Textsigla.Focus()
@@ -94,7 +94,7 @@
         btRegistrar.Enabled = False
         btCancelar.Enabled = False
         If FuncionesContables.verificarFecha(fechadoc.Value) Then
-            mostrarInfo(String.Format(MensajeSistema.PERIODO_CONTABLE_CERRADO), Color.White, Color.Red)
+            mostrarInfo(String.Format(MensajeSistema.PERIODO_CONTABLE_CERRADO), Color.White, Color.FromArgb(252, 249, 169))
             btEditar.Enabled = False
         Else
             mostrarInfo(Nothing, Nothing, Nothing, True)
@@ -114,7 +114,7 @@
             End If
         End If
     End Sub
-    Private Sub btbuscar_Click(sender As Object, e As EventArgs) Handles btBuscar.Click
+    Private Sub btbuscar_Click(sender As Object, e As EventArgs) Handles btBusqueda.Click
         Generales.buscarElemento(Consultas.CARTERA_CXP_BUSCAR,
                                    Nothing,
                                    AddressOf cargarDatos,
@@ -277,7 +277,7 @@
         dgvCartera.EndEdit()
 
         If FuncionesContables.verificarFecha(fechadoc.Value) Then
-            mostrarInfo(String.Format(MensajeSistema.PERIODO_CONTABLE_CERRADO), Color.White, Color.Red)
+            mostrarInfo(String.Format(MensajeSistema.PERIODO_CONTABLE_CERRADO), Color.White, Color.FromArgb(252, 249, 169))
             Return False
         Else
             mostrarInfo(Nothing, Nothing, Nothing, True)

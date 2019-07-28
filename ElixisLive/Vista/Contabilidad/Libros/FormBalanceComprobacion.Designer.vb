@@ -45,7 +45,6 @@ Partial Class FormBalanceComprobacion
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.Pimagen = New System.Windows.Forms.PictureBox()
         Me.LTitulo = New System.Windows.Forms.Label()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox5.SuspendLayout()
@@ -54,7 +53,6 @@ Partial Class FormBalanceComprobacion
         Me.gbTipoDetalle.SuspendLayout()
         Me.gbDatosGrupo.SuspendLayout()
         Me.Panel2.SuspendLayout()
-        CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GroupBox2
@@ -72,7 +70,7 @@ Partial Class FormBalanceComprobacion
         '
         Me.GroupBox5.Controls.Add(Me.dgBalance)
         Me.GroupBox5.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.GroupBox5.ForeColor = System.Drawing.Color.Black
         Me.GroupBox5.Location = New System.Drawing.Point(11, 133)
         Me.GroupBox5.Name = "GroupBox5"
         Me.GroupBox5.Size = New System.Drawing.Size(874, 328)
@@ -106,7 +104,7 @@ Partial Class FormBalanceComprobacion
         Me.GroupBox1.Controls.Add(Me.rbBalance)
         Me.GroupBox1.Controls.Add(Me.gbTipoCuenta)
         Me.GroupBox1.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.GroupBox1.ForeColor = System.Drawing.Color.Black
         Me.GroupBox1.Location = New System.Drawing.Point(496, 13)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(389, 118)
@@ -116,9 +114,9 @@ Partial Class FormBalanceComprobacion
         '
         'btExportaExcel
         '
+        Me.btExportaExcel.BackgroundImage = Global.Quality.My.Resources.Resources.Logos_Excel_Copyrighted_icon
         Me.btExportaExcel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btExportaExcel.Enabled = False
-        'Me.btExportaExcel.Image = Global.Quality.My.Resources.Resources.Microsoft_Excel_2013_icon1
         Me.btExportaExcel.Location = New System.Drawing.Point(337, 71)
         Me.btExportaExcel.Name = "btExportaExcel"
         Me.btExportaExcel.Size = New System.Drawing.Size(42, 38)
@@ -127,9 +125,9 @@ Partial Class FormBalanceComprobacion
         '
         'btVisualizaPDF
         '
+        Me.btVisualizaPDF.BackgroundImage = Global.Quality.My.Resources.Resources.Computer_Hardware_Print_icon
         Me.btVisualizaPDF.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btVisualizaPDF.Enabled = False
-        'Me.btVisualizaPDF.Image = Global.Quality.My.Resources.Resources.Printer_icon__1_1
         Me.btVisualizaPDF.Location = New System.Drawing.Point(337, 29)
         Me.btVisualizaPDF.Name = "btVisualizaPDF"
         Me.btVisualizaPDF.Size = New System.Drawing.Size(42, 38)
@@ -140,7 +138,7 @@ Partial Class FormBalanceComprobacion
         '
         Me.gbTipoDetalle.Controls.Add(Me.rbCuentaTercero)
         Me.gbTipoDetalle.Controls.Add(Me.rbCuenta)
-        Me.gbTipoDetalle.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.gbTipoDetalle.ForeColor = System.Drawing.Color.Black
         Me.gbTipoDetalle.Location = New System.Drawing.Point(162, 17)
         Me.gbTipoDetalle.Name = "gbTipoDetalle"
         Me.gbTipoDetalle.Size = New System.Drawing.Size(167, 92)
@@ -214,7 +212,7 @@ Partial Class FormBalanceComprobacion
         '
         'gbTipoCuenta
         '
-        Me.gbTipoCuenta.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.gbTipoCuenta.ForeColor = System.Drawing.Color.Black
         Me.gbTipoCuenta.Location = New System.Drawing.Point(9, 18)
         Me.gbTipoCuenta.Name = "gbTipoCuenta"
         Me.gbTipoCuenta.Size = New System.Drawing.Size(146, 92)
@@ -233,7 +231,7 @@ Partial Class FormBalanceComprobacion
         Me.gbDatosGrupo.Controls.Add(Me.Label5)
         Me.gbDatosGrupo.Controls.Add(Me.Label11)
         Me.gbDatosGrupo.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.gbDatosGrupo.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.gbDatosGrupo.ForeColor = System.Drawing.Color.Black
         Me.gbDatosGrupo.Location = New System.Drawing.Point(10, 13)
         Me.gbDatosGrupo.Name = "gbDatosGrupo"
         Me.gbDatosGrupo.Size = New System.Drawing.Size(480, 117)
@@ -287,18 +285,17 @@ Partial Class FormBalanceComprobacion
         '
         'btCalcular
         '
-        'Me.btCalcular.BackgroundImage = Global.Quality.My.Resources.Resources.fondo_azul
+        Me.btCalcular.BackColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(220, Byte), Integer), CType(CType(234, Byte), Integer))
         Me.btCalcular.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btCalcular.Font = New System.Drawing.Font("Times New Roman", 11.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btCalcular.ForeColor = System.Drawing.Color.White
-        'Me.btCalcular.Image = Global.Quality.My.Resources.Resources.SEO_icon
+        Me.btCalcular.ForeColor = System.Drawing.Color.Black
         Me.btCalcular.Location = New System.Drawing.Point(320, 67)
         Me.btCalcular.Name = "btCalcular"
         Me.btCalcular.Size = New System.Drawing.Size(130, 34)
         Me.btCalcular.TabIndex = 60032
         Me.btCalcular.Text = "Previsualizar"
         Me.btCalcular.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btCalcular.UseVisualStyleBackColor = True
+        Me.btCalcular.UseVisualStyleBackColor = False
         '
         'Label4
         '
@@ -335,38 +332,25 @@ Partial Class FormBalanceComprobacion
         '
         'Panel2
         '
-        Me.Panel2.BackColor = System.Drawing.Color.White
-        '  Me.Panel2.BackgroundImage = Global.Quality.My.Resources.Resources.fondo_azul
+        Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(220, Byte), Integer), CType(CType(234, Byte), Integer))
         Me.Panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Panel2.Controls.Add(Me.Pimagen)
         Me.Panel2.Controls.Add(Me.LTitulo)
         Me.Panel2.Location = New System.Drawing.Point(0, 0)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(905, 44)
+        Me.Panel2.Size = New System.Drawing.Size(905, 34)
         Me.Panel2.TabIndex = 10009
-        '
-        'Pimagen
-        '
-        Me.Pimagen.BackColor = System.Drawing.Color.Transparent
-      '    Me.Pimagen.Image = Global.Quality.My.Resources.Resources.bar_chart_icon
-        Me.Pimagen.Location = New System.Drawing.Point(3, 0)
-        Me.Pimagen.Name = "Pimagen"
-        Me.Pimagen.Size = New System.Drawing.Size(53, 46)
-        Me.Pimagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.Pimagen.TabIndex = 1
-        Me.Pimagen.TabStop = False
         '
         'LTitulo
         '
         Me.LTitulo.BackColor = System.Drawing.Color.Transparent
         Me.LTitulo.Font = New System.Drawing.Font("Times New Roman", 20.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LTitulo.ForeColor = System.Drawing.Color.White
-        Me.LTitulo.Location = New System.Drawing.Point(1, -1)
+        Me.LTitulo.ForeColor = System.Drawing.Color.Black
+        Me.LTitulo.Location = New System.Drawing.Point(1, 3)
         Me.LTitulo.Name = "LTitulo"
-        Me.LTitulo.Size = New System.Drawing.Size(904, 40)
+        Me.LTitulo.Size = New System.Drawing.Size(780, 28)
         Me.LTitulo.TabIndex = 1
         Me.LTitulo.Text = "Balance comprobación de saldos"
-        Me.LTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.LTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'FormBalanceComprobacion
         '
@@ -392,7 +376,6 @@ Partial Class FormBalanceComprobacion
         Me.gbDatosGrupo.ResumeLayout(False)
         Me.gbDatosGrupo.PerformLayout()
         Me.Panel2.ResumeLayout(False)
-        CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -414,7 +397,6 @@ Partial Class FormBalanceComprobacion
     Public WithEvents Label5 As Label
     Public WithEvents Label11 As Label
     Public WithEvents Panel2 As Panel
-    Public WithEvents Pimagen As PictureBox
     Public WithEvents LTitulo As Label
     Public WithEvents dtpFechaFin As DateTimePicker
     Public WithEvents dtpFechaInicio As DateTimePicker

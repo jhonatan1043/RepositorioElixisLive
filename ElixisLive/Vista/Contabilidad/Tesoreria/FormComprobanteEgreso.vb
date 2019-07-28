@@ -11,9 +11,7 @@
                              TitulosForm.BUSQUEDA_TERCERO,
                              True, True)
     End Sub
-    Public Function muestraImagen()
-        Return PictureBox1.Image
-    End Function
+
     Private Sub Form_antici_decucci_FormClosing(sender As Object, e As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
         If EstiloMensajes.mostrarMensajePregunta(MensajeSistema.SALIR) = Constantes.SI Then
             Me.Dispose()
@@ -226,7 +224,7 @@
         End If
     End Sub
 
-    Private Sub btbuscar_Click(sender As Object, e As EventArgs) Handles btBuscar.Click
+    Private Sub btbuscar_Click(sender As Object, e As EventArgs) Handles btBusqueda.Click
         Dim params As New List(Of String)
         params.Add(Nothing)
         Generales.buscarElemento(Consultas.COMPROBANTE_EGRESO_BUSCAR,
@@ -260,7 +258,7 @@
             dgvComprobante.Columns("Codigo Factura").Visible = True
             bttercero.Enabled = False
             If FuncionesContables.verificarFecha(fechaRecibo.Value) Then
-                mostrarInfo(String.Format(MensajeSistema.PERIODO_CONTABLE_CERRADO), Color.White, Color.Red)
+                mostrarInfo(String.Format(MensajeSistema.PERIODO_CONTABLE_CERRADO), Color.White, Color.FromArgb(252, 249, 169))
                 btEditar.Enabled = False
             Else
                 mostrarInfo(Nothing, Nothing, Nothing, True)
@@ -268,7 +266,7 @@
                 btEditar.Enabled = True
             End If
             If FuncionesContables.verificarComprobante(pcodigo) Then
-                mostrarInfo(String.Format(MensajeSistema.COMPROBANTE_ANULADO), Color.White, Color.Red)
+                mostrarInfo(String.Format(MensajeSistema.COMPROBANTE_ANULADO), Color.White, Color.FromArgb(252, 249, 169))
                 Generales.deshabilitarBotones(ToolStrip1)
                 btBuscar.Enabled = True
                 btNuevo.Enabled = True
@@ -300,7 +298,7 @@
             objComprobante.dtComprobante.Rows.Add()
             mostrarInfo(Nothing, Nothing, Nothing, True)
         Else
-            mostrarInfo(String.Format(objComprobante.mensaje), Color.White, Color.Red)
+            mostrarInfo(String.Format(objComprobante.mensaje), Color.White, Color.FromArgb(252, 249, 169))
             btRegistrar.Enabled = False
             btEditar.Enabled = True
             btNuevo.Enabled = True
@@ -385,7 +383,7 @@
                 Generales.deshabilitarControles(Me)
                 dgvComprobante.Enabled = False
             Else
-                mostrarInfo(String.Format(objComprobante.mensaje), Color.White, Color.Red)
+                mostrarInfo(String.Format(objComprobante.mensaje), Color.White, Color.FromArgb(252, 249, 169))
                 btRegistrar.Enabled = False
                 btBuscar.Enabled = True
                 btEditar.Enabled = False

@@ -22,70 +22,56 @@ Partial Class FormGastosServicio
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.GpDatos = New System.Windows.Forms.GroupBox()
         Me.dgvGastos = New System.Windows.Forms.DataGridView()
         Me.dgDescripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.dgValor = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.dgQuitar = New System.Windows.Forms.DataGridViewImageColumn()
-        Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
-        Me.btNuevo = New System.Windows.Forms.ToolStripButton()
-        ' Me.btBuscar = New System.Windows.Forms.ToolStripButton()
-        Me.btRegistrar = New System.Windows.Forms.ToolStripButton()
-        Me.btEditar = New System.Windows.Forms.ToolStripButton()
-        Me.btCancelar = New System.Windows.Forms.ToolStripButton()
-        Me.btAnular = New System.Windows.Forms.ToolStripButton()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.btAgregar = New System.Windows.Forms.Button()
         Me.dtFecha = New System.Windows.Forms.DateTimePicker()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
+        Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
+        Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
+        Me.btNuevo = New System.Windows.Forms.ToolStripButton()
+        Me.btBusqueda = New System.Windows.Forms.ToolStripButton()
+        Me.btRegistrar = New System.Windows.Forms.ToolStripButton()
+        Me.btEditar = New System.Windows.Forms.ToolStripButton()
+        Me.btCancelar = New System.Windows.Forms.ToolStripButton()
+        Me.btAnular = New System.Windows.Forms.ToolStripButton()
         Me.Panel1.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GpDatos.SuspendLayout()
         CType(Me.dgvGastos, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.ToolStrip1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
+        Me.ToolStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
         '
-        Me.Panel1.BackColor = System.Drawing.Color.White
-       
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(220, Byte), Integer), CType(CType(234, Byte), Integer))
         Me.Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Panel1.Controls.Add(Me.PictureBox1)
         Me.Panel1.Controls.Add(Me.Label2)
         Me.Panel1.Location = New System.Drawing.Point(-1, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(699, 42)
+        Me.Panel1.Size = New System.Drawing.Size(699, 34)
         Me.Panel1.TabIndex = 37
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
-        ' Me.PictureBox1.Image = Global.Quality.My.Resources.Resources.Cash_icon
-        Me.PictureBox1.Location = New System.Drawing.Point(4, 3)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(44, 39)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox1.TabIndex = 1
-        Me.PictureBox1.TabStop = False
         '
         'Label2
         '
         Me.Label2.BackColor = System.Drawing.Color.Transparent
         Me.Label2.Font = New System.Drawing.Font("Times New Roman", 20.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.Location = New System.Drawing.Point(0, 0)
+        Me.Label2.ForeColor = System.Drawing.Color.Black
+        Me.Label2.Location = New System.Drawing.Point(0, 3)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(696, 41)
+        Me.Label2.Size = New System.Drawing.Size(583, 28)
         Me.Label2.TabIndex = 1
         Me.Label2.Text = "Gastos de Servicios"
-        Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'GpDatos
         '
@@ -105,9 +91,9 @@ Partial Class FormGastosServicio
         Me.dgvGastos.AllowUserToDeleteRows = False
         Me.dgvGastos.AllowUserToResizeColumns = False
         Me.dgvGastos.AllowUserToResizeRows = False
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black
-        Me.dgvGastos.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Times New Roman", 11.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black
+        Me.dgvGastos.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle3
         Me.dgvGastos.BackgroundColor = System.Drawing.SystemColors.Control
         Me.dgvGastos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvGastos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.dgDescripcion, Me.dgValor, Me.dgQuitar})
@@ -137,94 +123,13 @@ Partial Class FormGastosServicio
         'dgQuitar
         '
         Me.dgQuitar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle2.NullValue = "Nothing"
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgQuitar.DefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle4.NullValue = "Nothing"
+        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgQuitar.DefaultCellStyle = DataGridViewCellStyle4
         Me.dgQuitar.HeaderText = "Quitar"
-        ' Me.dgQuitar.Image = Global.Quality.My.Resources.Resources.papelera
         Me.dgQuitar.Name = "dgQuitar"
         Me.dgQuitar.Width = 45
-        '
-        'ToolStrip1
-        '
-        Me.ToolStrip1.BackColor = System.Drawing.Color.White
-        'Me.ToolStrip1.BackgroundImage = Global.Quality.My.Resources.Resources.fondo_azul
-        'Me.ToolStrip1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ToolStrip1.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.ToolStrip1.ImageScalingSize = New System.Drawing.Size(30, 30)
-        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.btNuevo, Me.btBuscar, Me.btRegistrar, Me.btEditar, Me.btCancelar, Me.btAnular})
-        Me.ToolStrip1.Location = New System.Drawing.Point(0, 384)
-        Me.ToolStrip1.Name = "ToolStrip1"
-        Me.ToolStrip1.Size = New System.Drawing.Size(698, 37)
-        Me.ToolStrip1.TabIndex = 39
-        Me.ToolStrip1.Text = "ToolStrip1"
-        '
-        'btNuevo
-        '
-        Me.btNuevo.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btNuevo.ForeColor = System.Drawing.Color.White
-       '  Me.btNuevo.Image = Global.Quality.My.Resources.Resources.Files_New_File_icon
-       '  Me.btNuevo.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.btNuevo.Name = "btNuevo"
-        Me.btNuevo.Size = New System.Drawing.Size(86, 34)
-        Me.btNuevo.Text = "Nuevo"
-        Me.btNuevo.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        '
-        'btBuscar
-        '
-        ' Me.btBuscar.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        ' Me.btBuscar.ForeColor = System.Drawing.Color.White
-        '  ' Me.btBuscar.Image = Global.Quality.My.Resources.Resources.Search_icon
-        '  ' Me.btBuscar.ImageTransparentColor = System.Drawing.Color.Magenta
-        ' Me.btBuscar.Name = "btBuscar"
-        ' Me.btBuscar.Size = New System.Drawing.Size(90, 34)
-        ' Me.btBuscar.Text = "Buscar"
-        ' Me.btBuscar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        '
-        'btRegistrar
-        '
-        Me.btRegistrar.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btRegistrar.ForeColor = System.Drawing.Color.White
-        'Me.btRegistrar.Image = Global.Quality.My.Resources.Resources.Save_icon__1_
-        Me.btRegistrar.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.btRegistrar.Name = "btRegistrar"
-        Me.btRegistrar.Size = New System.Drawing.Size(105, 34)
-        Me.btRegistrar.Text = "Registrar"
-        Me.btRegistrar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        '
-        'btEditar
-        '
-        Me.btEditar.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btEditar.ForeColor = System.Drawing.Color.White
-        'Me.btEditar.Image = Global.Quality.My.Resources.Resources.pencil_icon__1_
-        Me.btEditar.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.btEditar.Name = "btEditar"
-        Me.btEditar.Size = New System.Drawing.Size(86, 34)
-        Me.btEditar.Text = "Editar"
-        Me.btEditar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        '
-        'btCancelar
-        '
-        Me.btCancelar.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btCancelar.ForeColor = System.Drawing.Color.White
-       ' Me.btCancelar.Image = Global.Quality.My.Resources.Resources.Actions_blue_arrow_undo_icon
-        Me.btCancelar.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.btCancelar.Name = "btCancelar"
-        Me.btCancelar.Size = New System.Drawing.Size(104, 34)
-        Me.btCancelar.Text = "Cancelar"
-        Me.btCancelar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        '
-        'btAnular
-        '
-        Me.btAnular.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btAnular.ForeColor = System.Drawing.Color.White
-        '  Me.btAnular.Image = Global.Quality.My.Resources.Resources.document_delete_icon__1_
-        '  Me.btAnular.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.btAnular.Name = "btAnular"
-        Me.btAnular.Size = New System.Drawing.Size(91, 34)
-        Me.btAnular.Text = "Anular"
-        Me.btAnular.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         '
         'GroupBox1
         '
@@ -243,15 +148,14 @@ Partial Class FormGastosServicio
         '
         'btAgregar
         '
+        Me.btAgregar.BackColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(220, Byte), Integer), CType(CType(234, Byte), Integer))
         Me.btAgregar.ForeColor = System.Drawing.Color.Black
-        '   Me.btAgregar.Image = Global.Quality.My.Resources.Resources.plus_icon
-        '   Me.btAgregar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btAgregar.Location = New System.Drawing.Point(575, 10)
         Me.btAgregar.Name = "btAgregar"
         Me.btAgregar.Size = New System.Drawing.Size(115, 37)
         Me.btAgregar.TabIndex = 2
         Me.btAgregar.Text = "Agregar"
-        Me.btAgregar.UseVisualStyleBackColor = True
+        Me.btAgregar.UseVisualStyleBackColor = False
         '
         'dtFecha
         '
@@ -285,14 +189,98 @@ Partial Class FormGastosServicio
         Me.GroupBox4.TabIndex = 39
         Me.GroupBox4.TabStop = False
         '
+        'ToolStrip1
+        '
+        Me.ToolStrip1.BackColor = System.Drawing.Color.White
+        Me.ToolStrip1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.ToolStrip1.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.ToolStrip1.ImageScalingSize = New System.Drawing.Size(25, 25)
+        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripSeparator1, Me.btNuevo, Me.btBusqueda, Me.btRegistrar, Me.btEditar, Me.btCancelar, Me.btAnular})
+        Me.ToolStrip1.Location = New System.Drawing.Point(0, 389)
+        Me.ToolStrip1.Name = "ToolStrip1"
+        Me.ToolStrip1.Size = New System.Drawing.Size(698, 32)
+        Me.ToolStrip1.TabIndex = 1003
+        Me.ToolStrip1.Text = "ToolStrip1"
+        '
+        'ToolStripSeparator1
+        '
+        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
+        Me.ToolStripSeparator1.Size = New System.Drawing.Size(6, 32)
+        '
+        'btNuevo
+        '
+        Me.btNuevo.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btNuevo.ForeColor = System.Drawing.Color.Black
+        Me.btNuevo.Image = Global.Quality.My.Resources.Resources.Add_File_icon
+        Me.btNuevo.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.btNuevo.Name = "btNuevo"
+        Me.btNuevo.Size = New System.Drawing.Size(81, 29)
+        Me.btNuevo.Text = "&Nuevo"
+        Me.btNuevo.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        '
+        'btBusqueda
+        '
+        Me.btBusqueda.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btBusqueda.ForeColor = System.Drawing.Color.Black
+        Me.btBusqueda.Image = Global.Quality.My.Resources.Resources.Very_Basic_Search_icon
+        Me.btBusqueda.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.btBusqueda.Name = "btBusqueda"
+        Me.btBusqueda.Size = New System.Drawing.Size(85, 29)
+        Me.btBusqueda.Text = "&Buscar"
+        Me.btBusqueda.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        '
+        'btRegistrar
+        '
+        Me.btRegistrar.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btRegistrar.ForeColor = System.Drawing.Color.Black
+        Me.btRegistrar.Image = Global.Quality.My.Resources.Resources.User_Interface_Save_As_icon
+        Me.btRegistrar.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.btRegistrar.Name = "btRegistrar"
+        Me.btRegistrar.Size = New System.Drawing.Size(100, 29)
+        Me.btRegistrar.Text = "&Registrar"
+        Me.btRegistrar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        '
+        'btEditar
+        '
+        Me.btEditar.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btEditar.ForeColor = System.Drawing.Color.Black
+        Me.btEditar.Image = Global.Quality.My.Resources.Resources.Pencil_icon
+        Me.btEditar.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.btEditar.Name = "btEditar"
+        Me.btEditar.Size = New System.Drawing.Size(81, 29)
+        Me.btEditar.Text = "&Editar"
+        Me.btEditar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        '
+        'btCancelar
+        '
+        Me.btCancelar.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btCancelar.ForeColor = System.Drawing.Color.Black
+        Me.btCancelar.Image = Global.Quality.My.Resources.Resources.Arrows_Right_2_icon
+        Me.btCancelar.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.btCancelar.Name = "btCancelar"
+        Me.btCancelar.Size = New System.Drawing.Size(99, 29)
+        Me.btCancelar.Text = "&Cancelar"
+        Me.btCancelar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        '
+        'btAnular
+        '
+        Me.btAnular.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btAnular.ForeColor = System.Drawing.Color.Black
+        Me.btAnular.Image = Global.Quality.My.Resources.Resources.Files_Delete_File_icon
+        Me.btAnular.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.btAnular.Name = "btAnular"
+        Me.btAnular.Size = New System.Drawing.Size(86, 29)
+        Me.btAnular.Text = "&Anular"
+        Me.btAnular.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        '
         'FormGastosServicio
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(698, 421)
-        Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.ToolStrip1)
+        Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.GpDatos)
         Me.Controls.Add(Me.Panel1)
         Me.MaximizeBox = False
@@ -302,29 +290,21 @@ Partial Class FormGastosServicio
         Me.ShowIcon = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Panel1.ResumeLayout(False)
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GpDatos.ResumeLayout(False)
         CType(Me.dgvGastos, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.ToolStrip1.ResumeLayout(False)
-        Me.ToolStrip1.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
+        Me.ToolStrip1.ResumeLayout(False)
+        Me.ToolStrip1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
 
     Public WithEvents Panel1 As Panel
-    Public WithEvents PictureBox1 As PictureBox
     Public WithEvents Label2 As Label
     Friend WithEvents GpDatos As GroupBox
-    Public WithEvents ToolStrip1 As ToolStrip
-    Public WithEvents btNuevo As ToolStripButton
     Public WithEvents btBuscar As ToolStripButton
-    Public WithEvents btRegistrar As ToolStripButton
-    Public WithEvents btEditar As ToolStripButton
-    Public WithEvents btCancelar As ToolStripButton
-    Public WithEvents btAnular As ToolStripButton
     Public WithEvents dgvGastos As DataGridView
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents dtFecha As DateTimePicker
@@ -334,4 +314,12 @@ Partial Class FormGastosServicio
     Friend WithEvents dgValor As DataGridViewTextBoxColumn
     Friend WithEvents dgQuitar As DataGridViewImageColumn
     Friend WithEvents btAgregar As Button
+    Public WithEvents ToolStrip1 As ToolStrip
+    Friend WithEvents ToolStripSeparator1 As ToolStripSeparator
+    Public WithEvents btNuevo As ToolStripButton
+    Public WithEvents btBusqueda As ToolStripButton
+    Public WithEvents btRegistrar As ToolStripButton
+    Public WithEvents btEditar As ToolStripButton
+    Public WithEvents btCancelar As ToolStripButton
+    Public WithEvents btAnular As ToolStripButton
 End Class

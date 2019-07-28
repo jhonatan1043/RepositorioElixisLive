@@ -67,7 +67,7 @@
             EstiloMensajes.mostrarMensajeAdvertencia("Por corrija el movimiento la diferencia debe ser cero")
         ElseIf FuncionesContables.validardgv(dtCuentas) = False Then
         ElseIf FuncionesContables.verificarFecha(fechadoc.Value) Then
-            mostrarInfo(String.Format(MensajeSistema.PERIODO_CONTABLE_CERRADO), Color.White, Color.Red)
+            mostrarInfo(String.Format(MensajeSistema.PERIODO_CONTABLE_CERRADO), Color.White, Color.FromArgb(252, 249, 169))
         ElseIf FuncionesContables.validarFechaFutura(fechadoc) = False Then
         Else
             mostrarInfo(Nothing, Nothing, Nothing, True)
@@ -278,14 +278,14 @@
             btCancelar.Enabled = False
             Textcodfactura.Enabled = False
             If FuncionesContables.verificarFecha(fechadoc.Value) Then
-                mostrarInfo(String.Format(MensajeSistema.PERIODO_CONTABLE_CERRADO), Color.White, Color.Red)
+                mostrarInfo(String.Format(MensajeSistema.PERIODO_CONTABLE_CERRADO), Color.White, Color.FromArgb(252, 249, 169))
                 btEditar.Enabled = False
             Else
                 mostrarInfo(Nothing, Nothing, Nothing, True)
                 PnlInfo.Visible = False
             End If
             If FuncionesContables.verificarComprobante(pCodigo) Then
-                mostrarInfo(String.Format(MensajeSistema.COMPROBANTE_ANULADO), Color.White, Color.Red)
+                mostrarInfo(String.Format(MensajeSistema.COMPROBANTE_ANULADO), Color.White, Color.FromArgb(252, 249, 169))
                 Generales.deshabilitarBotones(ToolStrip1)
                 btBuscar.Enabled = True
                 btNuevo.Enabled = True
@@ -580,7 +580,7 @@
             EstiloMensajes.mostrarMensajeAdvertencia("Por favor elija un proveedor")
         End If
     End Sub
-    Private Sub btcxp_Click(sender As Object, e As EventArgs)
+    Private Sub btcxp_Click(sender As Object, e As EventArgs) Handles btcxp.Click
 
     End Sub
 
@@ -648,7 +648,7 @@
         End If
     End Sub
 
-    Private Sub ToolStripButton1_Click(sender As Object, e As EventArgs) Handles btcxp.Click
+    Private Sub ToolStripButton1_Click(sender As Object, e As EventArgs)
         crearCuentaPorCobrar(idTercero)
     End Sub
 

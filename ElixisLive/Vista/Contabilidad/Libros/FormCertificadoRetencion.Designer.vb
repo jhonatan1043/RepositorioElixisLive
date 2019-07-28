@@ -22,7 +22,6 @@ Partial Class FormCertificadoRetencion
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormCertificadoRetencion))
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.gbDatosGrupo = New System.Windows.Forms.GroupBox()
         Me.btTercero = New System.Windows.Forms.Button()
@@ -35,12 +34,10 @@ Partial Class FormCertificadoRetencion
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Pimagen = New System.Windows.Forms.PictureBox()
         Me.LTitulo = New System.Windows.Forms.Label()
         Me.GroupBox2.SuspendLayout()
         Me.gbDatosGrupo.SuspendLayout()
         Me.Panel1.SuspendLayout()
-        CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GroupBox2
@@ -74,9 +71,8 @@ Partial Class FormCertificadoRetencion
         '
         'btTercero
         '
-        Me.btTercero.BackgroundImage = CType(resources.GetObject("btTercero.BackgroundImage"), System.Drawing.Image)
+        Me.btTercero.BackgroundImage = Global.Quality.My.Resources.Resources.Very_Basic_Search_icon
         Me.btTercero.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btTercero.Image = CType(resources.GetObject("btTercero.Image"), System.Drawing.Image)
         Me.btTercero.Location = New System.Drawing.Point(548, 30)
         Me.btTercero.Name = "btTercero"
         Me.btTercero.Size = New System.Drawing.Size(26, 25)
@@ -129,9 +125,9 @@ Partial Class FormCertificadoRetencion
         '
         'btVisualizaPDF
         '
+        Me.btVisualizaPDF.BackgroundImage = Global.Quality.My.Resources.Resources.Computer_Hardware_Print_icon
         Me.btVisualizaPDF.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btVisualizaPDF.Enabled = False
-        'Me.btVisualizaPDF.Image = Global.Quality.My.Resources.Resources.Printer_icon__1_1
         Me.btVisualizaPDF.Location = New System.Drawing.Point(354, 94)
         Me.btVisualizaPDF.Name = "btVisualizaPDF"
         Me.btVisualizaPDF.Size = New System.Drawing.Size(42, 38)
@@ -173,35 +169,22 @@ Partial Class FormCertificadoRetencion
         '
         'Panel1
         '
-        Me.Panel1.BackColor = System.Drawing.Color.White
-       
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(220, Byte), Integer), CType(CType(234, Byte), Integer))
         Me.Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Panel1.Controls.Add(Me.Pimagen)
         Me.Panel1.Controls.Add(Me.LTitulo)
         Me.Panel1.Location = New System.Drawing.Point(1, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(603, 42)
+        Me.Panel1.Size = New System.Drawing.Size(603, 34)
         Me.Panel1.TabIndex = 1
-        '
-        'Pimagen
-        '
-        Me.Pimagen.BackColor = System.Drawing.Color.Transparent
-      '    Me.Pimagen.Image = Global.Quality.My.Resources.Resources.desktop_icon
-        Me.Pimagen.Location = New System.Drawing.Point(4, 0)
-        Me.Pimagen.Name = "Pimagen"
-        Me.Pimagen.Size = New System.Drawing.Size(58, 41)
-        Me.Pimagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.Pimagen.TabIndex = 1
-        Me.Pimagen.TabStop = False
         '
         'LTitulo
         '
         Me.LTitulo.BackColor = System.Drawing.Color.Transparent
         Me.LTitulo.Font = New System.Drawing.Font("Times New Roman", 20.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LTitulo.ForeColor = System.Drawing.Color.White
-        Me.LTitulo.Location = New System.Drawing.Point(2, 0)
+        Me.LTitulo.ForeColor = System.Drawing.Color.Black
+        Me.LTitulo.Location = New System.Drawing.Point(2, 3)
         Me.LTitulo.Name = "LTitulo"
-        Me.LTitulo.Size = New System.Drawing.Size(601, 41)
+        Me.LTitulo.Size = New System.Drawing.Size(483, 28)
         Me.LTitulo.TabIndex = 1
         Me.LTitulo.Text = "Certificado de retención en la fuente"
         Me.LTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -224,13 +207,11 @@ Partial Class FormCertificadoRetencion
         Me.gbDatosGrupo.ResumeLayout(False)
         Me.gbDatosGrupo.PerformLayout()
         Me.Panel1.ResumeLayout(False)
-        CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
 
     Public WithEvents Panel1 As Panel
-    Public WithEvents Pimagen As PictureBox
     Public WithEvents LTitulo As Label
     Public WithEvents GroupBox2 As GroupBox
     Public WithEvents gbDatosGrupo As GroupBox

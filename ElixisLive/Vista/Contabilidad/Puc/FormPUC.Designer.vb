@@ -22,7 +22,6 @@ Partial Class FormPUC
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormPUC))
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.btRetencionIVA = New System.Windows.Forms.Button()
@@ -34,22 +33,21 @@ Partial Class FormPUC
         Me.Label11 = New System.Windows.Forms.Label()
         Me.txtDescripcion = New System.Windows.Forms.TextBox()
         Me.Label12 = New System.Windows.Forms.Label()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.LTitulo = New System.Windows.Forms.Label()
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
+        Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.btNuevo = New System.Windows.Forms.ToolStripButton()
-        ' Me.btBuscar = New System.Windows.Forms.ToolStripButton()
+        Me.btBusqueda = New System.Windows.Forms.ToolStripButton()
         Me.btRegistrar = New System.Windows.Forms.ToolStripButton()
         Me.btEditar = New System.Windows.Forms.ToolStripButton()
         Me.btCancelar = New System.Windows.Forms.ToolStripButton()
         Me.btAnular = New System.Windows.Forms.ToolStripButton()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Pimagen = New System.Windows.Forms.PictureBox()
-        Me.LTitulo = New System.Windows.Forms.Label()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.numAno, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.ToolStrip1.SuspendLayout()
         Me.Panel1.SuspendLayout()
-        CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.ToolStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'GroupBox2
@@ -83,11 +81,10 @@ Partial Class FormPUC
         '
         'btRetencionIVA
         '
-        Me.btRetencionIVA.BackgroundImage = CType(resources.GetObject("btRetencionIVA.BackgroundImage"), System.Drawing.Image)
+        Me.btRetencionIVA.BackColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(220, Byte), Integer), CType(CType(234, Byte), Integer))
         Me.btRetencionIVA.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btRetencionIVA.Font = New System.Drawing.Font("Arial Narrow", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btRetencionIVA.ForeColor = System.Drawing.Color.White
-        'Me.btRetencionIVA.Image = Global.Quality.My.Resources.Resources.SEO_icon
+        Me.btRetencionIVA.ForeColor = System.Drawing.Color.Black
         Me.btRetencionIVA.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btRetencionIVA.Location = New System.Drawing.Point(297, 197)
         Me.btRetencionIVA.Name = "btRetencionIVA"
@@ -95,7 +92,7 @@ Partial Class FormPUC
         Me.btRetencionIVA.TabIndex = 10010
         Me.btRetencionIVA.Text = "Retenciones e IVA"
         Me.btRetencionIVA.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btRetencionIVA.UseVisualStyleBackColor = True
+        Me.btRetencionIVA.UseVisualStyleBackColor = False
         '
         'chkActivo
         '
@@ -114,11 +111,10 @@ Partial Class FormPUC
         '
         'btCuentas
         '
-        Me.btCuentas.BackgroundImage = CType(resources.GetObject("btCuentas.BackgroundImage"), System.Drawing.Image)
+        Me.btCuentas.BackColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(220, Byte), Integer), CType(CType(234, Byte), Integer))
         Me.btCuentas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btCuentas.Font = New System.Drawing.Font("Arial Narrow", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btCuentas.ForeColor = System.Drawing.Color.White
-        'Me.btCuentas.Image = Global.Quality.My.Resources.Resources.box_config_icon
+        Me.btCuentas.ForeColor = System.Drawing.Color.Black
         Me.btCuentas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btCuentas.Location = New System.Drawing.Point(431, 197)
         Me.btCuentas.Name = "btCuentas"
@@ -126,7 +122,7 @@ Partial Class FormPUC
         Me.btCuentas.TabIndex = 10009
         Me.btCuentas.Text = "Configurar cuentas"
         Me.btCuentas.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btCuentas.UseVisualStyleBackColor = True
+        Me.btCuentas.UseVisualStyleBackColor = False
         '
         'Label8
         '
@@ -194,120 +190,111 @@ Partial Class FormPUC
         Me.Label12.TabIndex = 6
         Me.Label12.Text = "Descripción:"
         '
-        'ToolStrip1
-        '
-        Me.ToolStrip1.BackColor = System.Drawing.Color.White
-        'Me.ToolStrip1.BackgroundImage = Global.Quality.My.Resources.Resources.fondo_azul
-        'Me.ToolStrip1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ToolStrip1.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.ToolStrip1.ImageScalingSize = New System.Drawing.Size(30, 30)
-        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.btNuevo, Me.btBuscar, Me.btRegistrar, Me.btEditar, Me.btCancelar, Me.btAnular})
-        Me.ToolStrip1.Location = New System.Drawing.Point(0, 332)
-        Me.ToolStrip1.Name = "ToolStrip1"
-        Me.ToolStrip1.Size = New System.Drawing.Size(603, 37)
-        Me.ToolStrip1.TabIndex = 10008
-        Me.ToolStrip1.Text = "ToolStrip1"
-        '
-        'btNuevo
-        '
-        Me.btNuevo.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btNuevo.ForeColor = System.Drawing.Color.White
-       '  Me.btNuevo.Image = Global.Quality.My.Resources.Resources.Files_New_File_icon
-       '  Me.btNuevo.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.btNuevo.Name = "btNuevo"
-        Me.btNuevo.Size = New System.Drawing.Size(86, 34)
-        Me.btNuevo.Text = "Nuevo"
-        Me.btNuevo.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        '
-        'btBuscar
-        '
-        ' Me.btBuscar.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        ' Me.btBuscar.ForeColor = System.Drawing.Color.White
-        '  ' Me.btBuscar.Image = Global.Quality.My.Resources.Resources.Search_icon
-        '  ' Me.btBuscar.ImageTransparentColor = System.Drawing.Color.Magenta
-        ' Me.btBuscar.Name = "btBuscar"
-        ' Me.btBuscar.Size = New System.Drawing.Size(90, 34)
-        ' Me.btBuscar.Text = "Buscar"
-        ' Me.btBuscar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        '
-        'btRegistrar
-        '
-        Me.btRegistrar.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btRegistrar.ForeColor = System.Drawing.Color.White
-        'Me.btRegistrar.Image = Global.Quality.My.Resources.Resources.Save_icon__1_
-        Me.btRegistrar.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.btRegistrar.Name = "btRegistrar"
-        Me.btRegistrar.Size = New System.Drawing.Size(105, 34)
-        Me.btRegistrar.Text = "Registrar"
-        Me.btRegistrar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        '
-        'btEditar
-        '
-        Me.btEditar.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btEditar.ForeColor = System.Drawing.Color.White
-        'Me.btEditar.Image = Global.Quality.My.Resources.Resources.pencil_icon__1_
-        Me.btEditar.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.btEditar.Name = "btEditar"
-        Me.btEditar.Size = New System.Drawing.Size(86, 34)
-        Me.btEditar.Text = "Editar"
-        Me.btEditar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        '
-        'btCancelar
-        '
-        Me.btCancelar.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btCancelar.ForeColor = System.Drawing.Color.White
-       ' Me.btCancelar.Image = Global.Quality.My.Resources.Resources.Actions_blue_arrow_undo_icon
-        Me.btCancelar.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.btCancelar.Name = "btCancelar"
-        Me.btCancelar.Size = New System.Drawing.Size(104, 34)
-        Me.btCancelar.Text = "Cancelar"
-        Me.btCancelar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        '
-        'btAnular
-        '
-        Me.btAnular.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btAnular.ForeColor = System.Drawing.Color.White
-        '  Me.btAnular.Image = Global.Quality.My.Resources.Resources.document_delete_icon__1_
-        '  Me.btAnular.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.btAnular.Name = "btAnular"
-        Me.btAnular.Size = New System.Drawing.Size(91, 34)
-        Me.btAnular.Text = "&Anular"
-        Me.btAnular.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        '
         'Panel1
         '
-        Me.Panel1.BackColor = System.Drawing.Color.White
-       
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(220, Byte), Integer), CType(CType(234, Byte), Integer))
         Me.Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Panel1.Controls.Add(Me.Pimagen)
         Me.Panel1.Controls.Add(Me.LTitulo)
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(603, 42)
+        Me.Panel1.Size = New System.Drawing.Size(603, 34)
         Me.Panel1.TabIndex = 10007
-        '
-        'Pimagen
-        '
-        Me.Pimagen.BackColor = System.Drawing.Color.Transparent
-      '    Me.Pimagen.Image = Global.Quality.My.Resources.Resources.Balance_icon1
-        Me.Pimagen.Location = New System.Drawing.Point(4, 0)
-        Me.Pimagen.Name = "Pimagen"
-        Me.Pimagen.Size = New System.Drawing.Size(49, 40)
-        Me.Pimagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.Pimagen.TabIndex = 1
-        Me.Pimagen.TabStop = False
         '
         'LTitulo
         '
         Me.LTitulo.BackColor = System.Drawing.Color.Transparent
         Me.LTitulo.Font = New System.Drawing.Font("Times New Roman", 20.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LTitulo.ForeColor = System.Drawing.Color.White
-        Me.LTitulo.Location = New System.Drawing.Point(3, 0)
+        Me.LTitulo.ForeColor = System.Drawing.Color.Black
+        Me.LTitulo.Location = New System.Drawing.Point(3, 2)
         Me.LTitulo.Name = "LTitulo"
-        Me.LTitulo.Size = New System.Drawing.Size(600, 41)
+        Me.LTitulo.Size = New System.Drawing.Size(477, 28)
         Me.LTitulo.TabIndex = 1
         Me.LTitulo.Text = "Plan único de cuentas"
         Me.LTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'ToolStrip1
+        '
+        Me.ToolStrip1.BackColor = System.Drawing.Color.White
+        Me.ToolStrip1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.ToolStrip1.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.ToolStrip1.ImageScalingSize = New System.Drawing.Size(25, 25)
+        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripSeparator1, Me.btNuevo, Me.btBusqueda, Me.btRegistrar, Me.btEditar, Me.btCancelar, Me.btAnular})
+        Me.ToolStrip1.Location = New System.Drawing.Point(0, 337)
+        Me.ToolStrip1.Name = "ToolStrip1"
+        Me.ToolStrip1.Size = New System.Drawing.Size(603, 32)
+        Me.ToolStrip1.TabIndex = 10008
+        Me.ToolStrip1.Text = "ToolStrip1"
+        '
+        'ToolStripSeparator1
+        '
+        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
+        Me.ToolStripSeparator1.Size = New System.Drawing.Size(6, 32)
+        '
+        'btNuevo
+        '
+        Me.btNuevo.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btNuevo.ForeColor = System.Drawing.Color.Black
+        Me.btNuevo.Image = Global.Quality.My.Resources.Resources.Add_File_icon
+        Me.btNuevo.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.btNuevo.Name = "btNuevo"
+        Me.btNuevo.Size = New System.Drawing.Size(81, 29)
+        Me.btNuevo.Text = "&Nuevo"
+        Me.btNuevo.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        '
+        'btBusqueda
+        '
+        Me.btBusqueda.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btBusqueda.ForeColor = System.Drawing.Color.Black
+        Me.btBusqueda.Image = Global.Quality.My.Resources.Resources.Very_Basic_Search_icon
+        Me.btBusqueda.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.btBusqueda.Name = "btBusqueda"
+        Me.btBusqueda.Size = New System.Drawing.Size(85, 29)
+        Me.btBusqueda.Text = "&Buscar"
+        Me.btBusqueda.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        '
+        'btRegistrar
+        '
+        Me.btRegistrar.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btRegistrar.ForeColor = System.Drawing.Color.Black
+        Me.btRegistrar.Image = Global.Quality.My.Resources.Resources.User_Interface_Save_As_icon
+        Me.btRegistrar.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.btRegistrar.Name = "btRegistrar"
+        Me.btRegistrar.Size = New System.Drawing.Size(100, 29)
+        Me.btRegistrar.Text = "&Registrar"
+        Me.btRegistrar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        '
+        'btEditar
+        '
+        Me.btEditar.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btEditar.ForeColor = System.Drawing.Color.Black
+        Me.btEditar.Image = Global.Quality.My.Resources.Resources.Pencil_icon
+        Me.btEditar.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.btEditar.Name = "btEditar"
+        Me.btEditar.Size = New System.Drawing.Size(81, 29)
+        Me.btEditar.Text = "&Editar"
+        Me.btEditar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        '
+        'btCancelar
+        '
+        Me.btCancelar.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btCancelar.ForeColor = System.Drawing.Color.Black
+        Me.btCancelar.Image = Global.Quality.My.Resources.Resources.Arrows_Right_2_icon
+        Me.btCancelar.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.btCancelar.Name = "btCancelar"
+        Me.btCancelar.Size = New System.Drawing.Size(99, 29)
+        Me.btCancelar.Text = "&Cancelar"
+        Me.btCancelar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        '
+        'btAnular
+        '
+        Me.btAnular.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btAnular.ForeColor = System.Drawing.Color.Black
+        Me.btAnular.Image = Global.Quality.My.Resources.Resources.Files_Delete_File_icon
+        Me.btAnular.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.btAnular.Name = "btAnular"
+        Me.btAnular.Size = New System.Drawing.Size(86, 29)
+        Me.btAnular.Text = "&Anular"
+        Me.btAnular.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         '
         'FormPUC
         '
@@ -327,10 +314,9 @@ Partial Class FormPUC
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         CType(Me.numAno, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel1.ResumeLayout(False)
         Me.ToolStrip1.ResumeLayout(False)
         Me.ToolStrip1.PerformLayout()
-        Me.Panel1.ResumeLayout(False)
-        CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -346,15 +332,16 @@ Partial Class FormPUC
     Public WithEvents txtDescripcion As TextBox
     Public WithEvents Label12 As Label
     Public WithEvents Panel1 As Panel
-    Public WithEvents Pimagen As PictureBox
     Public WithEvents LTitulo As Label
-    Public WithEvents ToolStrip1 As ToolStrip
-    Public WithEvents btNuevo As ToolStripButton
     Public WithEvents btBuscar As ToolStripButton
+    Public WithEvents btRetencionIVA As Button
+    Public WithEvents btCuentas As Button
+    Public WithEvents ToolStrip1 As ToolStrip
+    Friend WithEvents ToolStripSeparator1 As ToolStripSeparator
+    Public WithEvents btNuevo As ToolStripButton
+    Public WithEvents btBusqueda As ToolStripButton
     Public WithEvents btRegistrar As ToolStripButton
     Public WithEvents btEditar As ToolStripButton
     Public WithEvents btCancelar As ToolStripButton
     Public WithEvents btAnular As ToolStripButton
-    Public WithEvents btRetencionIVA As Button
-    Public WithEvents btCuentas As Button
 End Class

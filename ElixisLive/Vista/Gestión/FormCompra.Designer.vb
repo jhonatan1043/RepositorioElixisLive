@@ -101,7 +101,7 @@ Partial Class FormCompra
         Me.GroupBox2.Controls.Add(Me.Label6)
         Me.GroupBox2.Controls.Add(Me.GroupBox3)
         Me.GroupBox2.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox2.ForeColor = System.Drawing.Color.DarkBlue
+        Me.GroupBox2.ForeColor = System.Drawing.Color.Black
         Me.GroupBox2.Location = New System.Drawing.Point(6, 59)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(876, 384)
@@ -295,7 +295,7 @@ Partial Class FormCompra
         Me.GpDatos.Controls.Add(Me.TextIdentificacion)
         Me.GpDatos.Controls.Add(Me.Label19)
         Me.GpDatos.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GpDatos.ForeColor = System.Drawing.Color.DarkBlue
+        Me.GpDatos.ForeColor = System.Drawing.Color.Black
         Me.GpDatos.Location = New System.Drawing.Point(6, 6)
         Me.GpDatos.Name = "GpDatos"
         Me.GpDatos.Size = New System.Drawing.Size(876, 52)

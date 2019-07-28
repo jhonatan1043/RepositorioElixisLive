@@ -22,13 +22,12 @@ Partial Class FormCajaBanco
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.Pimagen = New System.Windows.Forms.PictureBox()
         Me.LTitulo = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Panel3 = New System.Windows.Forms.Panel()
@@ -67,14 +66,14 @@ Partial Class FormCajaBanco
         Me.Rcaja = New System.Windows.Forms.RadioButton()
         Me.Label15 = New System.Windows.Forms.Label()
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
+        Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.btNuevo = New System.Windows.Forms.ToolStripButton()
-        ' Me.btBuscar = New System.Windows.Forms.ToolStripButton()
+        Me.btBusqueda = New System.Windows.Forms.ToolStripButton()
         Me.btRegistrar = New System.Windows.Forms.ToolStripButton()
         Me.btEditar = New System.Windows.Forms.ToolStripButton()
         Me.btCancelar = New System.Windows.Forms.ToolStripButton()
         Me.btAnular = New System.Windows.Forms.ToolStripButton()
         Me.Panel2.SuspendLayout()
-        CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.Panel3.SuspendLayout()
         Me.PnlInfo.SuspendLayout()
@@ -87,38 +86,25 @@ Partial Class FormCajaBanco
         '
         'Panel2
         '
-        Me.Panel2.BackColor = System.Drawing.Color.White
-        '  Me.Panel2.BackgroundImage = Global.Quality.My.Resources.Resources.fondo_azul
+        Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(220, Byte), Integer), CType(CType(234, Byte), Integer))
         Me.Panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Panel2.Controls.Add(Me.Pimagen)
         Me.Panel2.Controls.Add(Me.LTitulo)
         Me.Panel2.Location = New System.Drawing.Point(0, 0)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(905, 44)
+        Me.Panel2.Size = New System.Drawing.Size(905, 34)
         Me.Panel2.TabIndex = 3
-        '
-        'Pimagen
-        '
-        Me.Pimagen.BackColor = System.Drawing.Color.Transparent
-        '    Me.Pimagen.Image = Global.Quality.My.Resources.Resources.bank_icon
-        Me.Pimagen.Location = New System.Drawing.Point(3, 0)
-        Me.Pimagen.Name = "Pimagen"
-        Me.Pimagen.Size = New System.Drawing.Size(53, 46)
-        Me.Pimagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.Pimagen.TabIndex = 1
-        Me.Pimagen.TabStop = False
         '
         'LTitulo
         '
         Me.LTitulo.BackColor = System.Drawing.Color.Transparent
         Me.LTitulo.Font = New System.Drawing.Font("Times New Roman", 20.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LTitulo.ForeColor = System.Drawing.Color.White
-        Me.LTitulo.Location = New System.Drawing.Point(1, -1)
+        Me.LTitulo.ForeColor = System.Drawing.Color.Black
+        Me.LTitulo.Location = New System.Drawing.Point(1, 3)
         Me.LTitulo.Name = "LTitulo"
-        Me.LTitulo.Size = New System.Drawing.Size(904, 40)
+        Me.LTitulo.Size = New System.Drawing.Size(798, 28)
         Me.LTitulo.TabIndex = 1
         Me.LTitulo.Text = "Caja - Banco"
-        Me.LTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.LTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'GroupBox1
         '
@@ -134,8 +120,7 @@ Partial Class FormCajaBanco
         '
         'Panel3
         '
-        Me.Panel3.BackColor = System.Drawing.Color.Transparent
-        '  Me.Panel3.BackgroundImage = Global.Quality.My.Resources.Resources.fondo_azul
+        Me.Panel3.BackColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(220, Byte), Integer), CType(CType(234, Byte), Integer))
         Me.Panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel3.Controls.Add(Me.txtTotal)
@@ -192,7 +177,7 @@ Partial Class FormCajaBanco
         '
         Me.Label33.AutoSize = True
         Me.Label33.Font = New System.Drawing.Font("Times New Roman", 9.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label33.ForeColor = System.Drawing.Color.White
+        Me.Label33.ForeColor = System.Drawing.Color.Black
         Me.Label33.Location = New System.Drawing.Point(175, 35)
         Me.Label33.Name = "Label33"
         Me.Label33.Size = New System.Drawing.Size(73, 16)
@@ -203,7 +188,7 @@ Partial Class FormCajaBanco
         '
         Me.Label29.AutoSize = True
         Me.Label29.Font = New System.Drawing.Font("Times New Roman", 9.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label29.ForeColor = System.Drawing.Color.White
+        Me.Label29.ForeColor = System.Drawing.Color.Black
         Me.Label29.Location = New System.Drawing.Point(115, 35)
         Me.Label29.Name = "Label29"
         Me.Label29.Size = New System.Drawing.Size(19, 16)
@@ -214,7 +199,7 @@ Partial Class FormCajaBanco
         '
         Me.Label28.AutoSize = True
         Me.Label28.Font = New System.Drawing.Font("Times New Roman", 9.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label28.ForeColor = System.Drawing.Color.White
+        Me.Label28.ForeColor = System.Drawing.Color.Black
         Me.Label28.Location = New System.Drawing.Point(202, 87)
         Me.Label28.Name = "Label28"
         Me.Label28.Size = New System.Drawing.Size(37, 16)
@@ -234,7 +219,7 @@ Partial Class FormCajaBanco
         '
         Me.Label30.AutoSize = True
         Me.Label30.Font = New System.Drawing.Font("Times New Roman", 9.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label30.ForeColor = System.Drawing.Color.White
+        Me.Label30.ForeColor = System.Drawing.Color.Black
         Me.Label30.Location = New System.Drawing.Point(49, 87)
         Me.Label30.Name = "Label30"
         Me.Label30.Size = New System.Drawing.Size(35, 16)
@@ -245,7 +230,7 @@ Partial Class FormCajaBanco
         '
         Me.Label31.AutoSize = True
         Me.Label31.Font = New System.Drawing.Font("Times New Roman", 9.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label31.ForeColor = System.Drawing.Color.White
+        Me.Label31.ForeColor = System.Drawing.Color.Black
         Me.Label31.Location = New System.Drawing.Point(6, 35)
         Me.Label31.Name = "Label31"
         Me.Label31.Size = New System.Drawing.Size(72, 16)
@@ -256,7 +241,7 @@ Partial Class FormCajaBanco
         '
         Me.lblivarete.AutoSize = True
         Me.lblivarete.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblivarete.ForeColor = System.Drawing.Color.White
+        Me.lblivarete.ForeColor = System.Drawing.Color.Black
         Me.lblivarete.Location = New System.Drawing.Point(60, 12)
         Me.lblivarete.Name = "lblivarete"
         Me.lblivarete.Size = New System.Drawing.Size(19, 15)
@@ -267,7 +252,7 @@ Partial Class FormCajaBanco
         '
         Me.Label32.AutoSize = True
         Me.Label32.Font = New System.Drawing.Font("Times New Roman", 9.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label32.ForeColor = System.Drawing.Color.White
+        Me.Label32.ForeColor = System.Drawing.Color.Black
         Me.Label32.Location = New System.Drawing.Point(6, 12)
         Me.Label32.Name = "Label32"
         Me.Label32.Size = New System.Drawing.Size(52, 16)
@@ -288,7 +273,7 @@ Partial Class FormCajaBanco
         '
         'PictureBox2
         '
-        '  Me.PictureBox2.Image = Global.Quality.My.Resources.Resources.atencion
+        Me.PictureBox2.Image = Global.Quality.My.Resources.Resources.advertencia
         Me.PictureBox2.Location = New System.Drawing.Point(3, 3)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(24, 24)
@@ -312,8 +297,8 @@ Partial Class FormCajaBanco
         Me.dgvcuentas.AllowUserToDeleteRows = False
         Me.dgvcuentas.AllowUserToResizeColumns = False
         Me.dgvcuentas.AllowUserToResizeRows = False
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.dgvcuentas.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle6.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.dgvcuentas.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle6
         Me.dgvcuentas.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -321,24 +306,24 @@ Partial Class FormCajaBanco
         Me.dgvcuentas.BackgroundColor = System.Drawing.Color.White
         Me.dgvcuentas.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical
         Me.dgvcuentas.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Arial Narrow", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvcuentas.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle7.Font = New System.Drawing.Font("Arial Narrow", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvcuentas.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle7
         Me.dgvcuentas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         Me.dgvcuentas.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.codigoCuenta, Me.nombre, Me.debito, Me.estado, Me.credito, Me.orden, Me.anular})
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgvcuentas.DefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle10.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle10.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgvcuentas.DefaultCellStyle = DataGridViewCellStyle10
         Me.dgvcuentas.Location = New System.Drawing.Point(6, 160)
         Me.dgvcuentas.MultiSelect = False
         Me.dgvcuentas.Name = "dgvcuentas"
@@ -363,9 +348,9 @@ Partial Class FormCajaBanco
         '
         'debito
         '
-        DataGridViewCellStyle3.Format = "C2"
-        DataGridViewCellStyle3.NullValue = "0"
-        Me.debito.DefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle8.Format = "C2"
+        DataGridViewCellStyle8.NullValue = "0"
+        Me.debito.DefaultCellStyle = DataGridViewCellStyle8
         Me.debito.HeaderText = "Débito"
         Me.debito.Name = "debito"
         '
@@ -377,9 +362,9 @@ Partial Class FormCajaBanco
         '
         'credito
         '
-        DataGridViewCellStyle4.Format = "C2"
-        DataGridViewCellStyle4.NullValue = "0"
-        Me.credito.DefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle9.Format = "C2"
+        DataGridViewCellStyle9.NullValue = "0"
+        Me.credito.DefaultCellStyle = DataGridViewCellStyle9
         Me.credito.HeaderText = "Crédito"
         Me.credito.Name = "credito"
         '
@@ -392,7 +377,6 @@ Partial Class FormCajaBanco
         'anular
         '
         Me.anular.HeaderText = "Quitar"
-        '  Me.anular.Image = Global.Quality.My.Resources.Resources.papelera
         Me.anular.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch
         Me.anular.Name = "anular"
         Me.anular.Width = 50
@@ -531,81 +515,85 @@ Partial Class FormCajaBanco
         'ToolStrip1
         '
         Me.ToolStrip1.BackColor = System.Drawing.Color.White
-        'Me.ToolStrip1.BackgroundImage = Global.Quality.My.Resources.Resources.fondo_azul
-        'Me.ToolStrip1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.ToolStrip1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ToolStrip1.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.ToolStrip1.ImageScalingSize = New System.Drawing.Size(30, 30)
-        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.btNuevo, Me.btBuscar, Me.btRegistrar, Me.btEditar, Me.btCancelar, Me.btAnular})
-        Me.ToolStrip1.Location = New System.Drawing.Point(0, 486)
+        Me.ToolStrip1.ImageScalingSize = New System.Drawing.Size(25, 25)
+        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripSeparator1, Me.btNuevo, Me.btBusqueda, Me.btRegistrar, Me.btEditar, Me.btCancelar, Me.btAnular})
+        Me.ToolStrip1.Location = New System.Drawing.Point(0, 491)
         Me.ToolStrip1.Name = "ToolStrip1"
-        Me.ToolStrip1.Size = New System.Drawing.Size(905, 37)
-        Me.ToolStrip1.TabIndex = 78
+        Me.ToolStrip1.Size = New System.Drawing.Size(905, 32)
+        Me.ToolStrip1.TabIndex = 1003
         Me.ToolStrip1.Text = "ToolStrip1"
+        '
+        'ToolStripSeparator1
+        '
+        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
+        Me.ToolStripSeparator1.Size = New System.Drawing.Size(6, 32)
         '
         'btNuevo
         '
         Me.btNuevo.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btNuevo.ForeColor = System.Drawing.Color.White
-       '  Me.btNuevo.Image = Global.Quality.My.Resources.Resources.Files_New_File_icon
-       '  Me.btNuevo.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.btNuevo.ForeColor = System.Drawing.Color.Black
+        Me.btNuevo.Image = Global.Quality.My.Resources.Resources.Add_File_icon
+        Me.btNuevo.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.btNuevo.Name = "btNuevo"
-        Me.btNuevo.Size = New System.Drawing.Size(86, 34)
-        Me.btNuevo.Text = "Nuevo"
+        Me.btNuevo.Size = New System.Drawing.Size(81, 29)
+        Me.btNuevo.Text = "&Nuevo"
         Me.btNuevo.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         '
-        'btBuscar
+        'btBusqueda
         '
-        ' Me.btBuscar.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        ' Me.btBuscar.ForeColor = System.Drawing.Color.White
-        '  ' Me.btBuscar.Image = Global.Quality.My.Resources.Resources.Search_icon
-        '  ' Me.btBuscar.ImageTransparentColor = System.Drawing.Color.Magenta
-        ' Me.btBuscar.Name = "btBuscar"
-        ' Me.btBuscar.Size = New System.Drawing.Size(90, 34)
-        ' Me.btBuscar.Text = "Buscar"
-        ' Me.btBuscar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btBusqueda.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btBusqueda.ForeColor = System.Drawing.Color.Black
+        Me.btBusqueda.Image = Global.Quality.My.Resources.Resources.Very_Basic_Search_icon
+        Me.btBusqueda.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.btBusqueda.Name = "btBusqueda"
+        Me.btBusqueda.Size = New System.Drawing.Size(85, 29)
+        Me.btBusqueda.Text = "&Buscar"
+        Me.btBusqueda.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         '
         'btRegistrar
         '
         Me.btRegistrar.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btRegistrar.ForeColor = System.Drawing.Color.White
-        'Me.btRegistrar.Image = Global.Quality.My.Resources.Resources.Save_icon__1_
+        Me.btRegistrar.ForeColor = System.Drawing.Color.Black
+        Me.btRegistrar.Image = Global.Quality.My.Resources.Resources.User_Interface_Save_As_icon
         Me.btRegistrar.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.btRegistrar.Name = "btRegistrar"
-        Me.btRegistrar.Size = New System.Drawing.Size(105, 34)
-        Me.btRegistrar.Text = "Registrar"
+        Me.btRegistrar.Size = New System.Drawing.Size(100, 29)
+        Me.btRegistrar.Text = "&Registrar"
         Me.btRegistrar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         '
         'btEditar
         '
         Me.btEditar.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btEditar.ForeColor = System.Drawing.Color.White
-        'Me.btEditar.Image = Global.Quality.My.Resources.Resources.pencil_icon__1_
+        Me.btEditar.ForeColor = System.Drawing.Color.Black
+        Me.btEditar.Image = Global.Quality.My.Resources.Resources.Pencil_icon
         Me.btEditar.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.btEditar.Name = "btEditar"
-        Me.btEditar.Size = New System.Drawing.Size(86, 34)
-        Me.btEditar.Text = "Editar"
+        Me.btEditar.Size = New System.Drawing.Size(81, 29)
+        Me.btEditar.Text = "&Editar"
         Me.btEditar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         '
         'btCancelar
         '
         Me.btCancelar.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btCancelar.ForeColor = System.Drawing.Color.White
-       ' Me.btCancelar.Image = Global.Quality.My.Resources.Resources.Actions_blue_arrow_undo_icon
+        Me.btCancelar.ForeColor = System.Drawing.Color.Black
+        Me.btCancelar.Image = Global.Quality.My.Resources.Resources.Arrows_Right_2_icon
         Me.btCancelar.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.btCancelar.Name = "btCancelar"
-        Me.btCancelar.Size = New System.Drawing.Size(104, 34)
-        Me.btCancelar.Text = "Cancelar"
+        Me.btCancelar.Size = New System.Drawing.Size(99, 29)
+        Me.btCancelar.Text = "&Cancelar"
         Me.btCancelar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         '
         'btAnular
         '
         Me.btAnular.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btAnular.ForeColor = System.Drawing.Color.White
-        '  Me.btAnular.Image = Global.Quality.My.Resources.Resources.document_delete_icon__1_
-        '  Me.btAnular.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.btAnular.ForeColor = System.Drawing.Color.Black
+        Me.btAnular.Image = Global.Quality.My.Resources.Resources.Files_Delete_File_icon
+        Me.btAnular.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.btAnular.Name = "btAnular"
-        Me.btAnular.Size = New System.Drawing.Size(91, 34)
-        Me.btAnular.Text = "Anular"
+        Me.btAnular.Size = New System.Drawing.Size(86, 29)
+        Me.btAnular.Text = "&Anular"
         Me.btAnular.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         '
         'FormCajaBanco
@@ -624,7 +612,6 @@ Partial Class FormCajaBanco
         Me.ShowIcon = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Panel2.ResumeLayout(False)
-        CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
@@ -644,7 +631,6 @@ Partial Class FormCajaBanco
     End Sub
 
     Public WithEvents Panel2 As Panel
-    Public WithEvents Pimagen As PictureBox
     Public WithEvents LTitulo As Label
     Friend WithEvents GroupBox1 As GroupBox
     Public WithEvents PnlInfo As Panel
@@ -663,13 +649,7 @@ Partial Class FormCajaBanco
     Friend WithEvents txtcodigo As Label
     Friend WithEvents Textsigla As Label
     Friend WithEvents Textnombredocumento As Label
-    Public WithEvents ToolStrip1 As ToolStrip
-    Public WithEvents btNuevo As ToolStripButton
     Public WithEvents btBuscar As ToolStripButton
-    Public WithEvents btRegistrar As ToolStripButton
-    Public WithEvents btEditar As ToolStripButton
-    Public WithEvents btCancelar As ToolStripButton
-    Public WithEvents btAnular As ToolStripButton
     Friend WithEvents Panel3 As Panel
     Friend WithEvents txtTotal As Label
     Friend WithEvents txtNaturaleza As Label
@@ -689,4 +669,12 @@ Partial Class FormCajaBanco
     Friend WithEvents credito As DataGridViewTextBoxColumn
     Friend WithEvents orden As DataGridViewTextBoxColumn
     Friend WithEvents anular As DataGridViewImageColumn
+    Public WithEvents ToolStrip1 As ToolStrip
+    Friend WithEvents ToolStripSeparator1 As ToolStripSeparator
+    Public WithEvents btNuevo As ToolStripButton
+    Public WithEvents btBusqueda As ToolStripButton
+    Public WithEvents btRegistrar As ToolStripButton
+    Public WithEvents btEditar As ToolStripButton
+    Public WithEvents btCancelar As ToolStripButton
+    Public WithEvents btAnular As ToolStripButton
 End Class

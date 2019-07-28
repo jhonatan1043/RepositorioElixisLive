@@ -119,7 +119,7 @@
         Return objCuentaPUC
     End Function
 
-    Private Sub btbuscar_Click(sender As Object, e As EventArgs) Handles btBuscar.Click
+    Private Sub btbuscar_Click(sender As Object, e As EventArgs) Handles btBusqueda.Click
         Dim params As New List(Of String)
         params.Add(txtCodigoPUC.Text)
         params.Add(Nothing)

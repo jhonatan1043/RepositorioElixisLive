@@ -70,7 +70,7 @@
             EstiloMensajes.mostrarMensajeAdvertencia("Por favor corrija el movimiento la diferencia debe ser cero")
         ElseIf FuncionesContables.validardgv(dtCuentas) = False Then
         ElseIf FuncionesContables.verificarFecha(fechadoc.Value) Then
-            mostrarInfo(String.Format(MensajeSistema.PERIODO_CONTABLE_CERRADO), Color.White, Color.Red)
+            mostrarInfo(String.Format(MensajeSistema.PERIODO_CONTABLE_CERRADO), Color.White, Color.FromArgb(252, 249, 169))
         ElseIf FuncionesContables.VerificarCuentaTercero(idTercero, Consultas.CUENTA_POR_COBRAR_CREAR, dgvCuentas) = False Then
             EstiloMensajes.mostrarMensajeAdvertencia("Debe crear una cuenta por cobrar")
         ElseIf FuncionesContables.validarFechaFutura(fechadoc) = False Then
@@ -267,7 +267,7 @@
             btRegistrar.Enabled = False
             btCancelar.Enabled = False
             If FuncionesContables.verificarFecha(fechadoc.Value) Then
-                mostrarInfo(String.Format(MensajeSistema.PERIODO_CONTABLE_CERRADO), Color.Black, Color.Red)
+                mostrarInfo(String.Format(MensajeSistema.PERIODO_CONTABLE_CERRADO), Color.Black, Color.FromArgb(252, 249, 169))
                 btEditar.Enabled = False
             Else
                 mostrarInfo(Nothing, Nothing, Nothing, True)

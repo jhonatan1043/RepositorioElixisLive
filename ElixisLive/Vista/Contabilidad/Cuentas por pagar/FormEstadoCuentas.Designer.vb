@@ -35,7 +35,6 @@ Partial Class FormEstadoCuentas
         Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormEstadoCuentas))
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.dgvCuentas = New System.Windows.Forms.DataGridView()
         Me.dgfactura = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -52,11 +51,7 @@ Partial Class FormEstadoCuentas
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.fechaFin = New System.Windows.Forms.DateTimePicker()
-        Me.btexcel = New System.Windows.Forms.Button()
-        Me.btimprimir = New System.Windows.Forms.Button()
-        Me.btBusquedaCuenta = New System.Windows.Forms.Button()
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.Pimagen = New System.Windows.Forms.PictureBox()
         Me.LTitulo = New System.Windows.Forms.Label()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.text180dias = New System.Windows.Forms.TextBox()
@@ -74,10 +69,12 @@ Partial Class FormEstadoCuentas
         Me.Label12 = New System.Windows.Forms.Label()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.fechaIni = New System.Windows.Forms.DateTimePicker()
+        Me.btexcel = New System.Windows.Forms.Button()
+        Me.btimprimir = New System.Windows.Forms.Button()
+        Me.btBusquedaCuenta = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         CType(Me.dgvCuentas, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
-        CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox3.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -299,73 +296,27 @@ Partial Class FormEstadoCuentas
         Me.fechaFin.Size = New System.Drawing.Size(189, 25)
         Me.fechaFin.TabIndex = 60037
         '
-        'btexcel
-        '
-        Me.btexcel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btexcel.Enabled = False
-        'Me.btexcel.Image = Global.Quality.My.Resources.Resources.Microsoft_Excel_2013_icon1
-        Me.btexcel.Location = New System.Drawing.Point(1026, 55)
-        Me.btexcel.Name = "btexcel"
-        Me.btexcel.Size = New System.Drawing.Size(42, 38)
-        Me.btexcel.TabIndex = 60035
-        Me.btexcel.UseVisualStyleBackColor = True
-        '
-        'btimprimir
-        '
-        Me.btimprimir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btimprimir.Enabled = False
-       '  Me.btImprimir.Image = Global.Quality.My.Resources.Resources.Printer_icon__1_1
-        Me.btimprimir.Location = New System.Drawing.Point(967, 55)
-        Me.btimprimir.Name = "btimprimir"
-        Me.btimprimir.Size = New System.Drawing.Size(42, 38)
-        Me.btimprimir.TabIndex = 60034
-        Me.btimprimir.UseVisualStyleBackColor = True
-        '
-        'btBusquedaCuenta
-        '
-        Me.btBusquedaCuenta.BackgroundImage = CType(resources.GetObject("btBusquedaCuenta.BackgroundImage"), System.Drawing.Image)
-        Me.btBusquedaCuenta.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btBusquedaCuenta.Image = CType(resources.GetObject("btBusquedaCuenta.Image"), System.Drawing.Image)
-        Me.btBusquedaCuenta.Location = New System.Drawing.Point(634, 61)
-        Me.btBusquedaCuenta.Name = "btBusquedaCuenta"
-        Me.btBusquedaCuenta.Size = New System.Drawing.Size(26, 25)
-        Me.btBusquedaCuenta.TabIndex = 60031
-        Me.btBusquedaCuenta.UseVisualStyleBackColor = True
-        '
         'Panel2
         '
-        Me.Panel2.BackColor = System.Drawing.Color.White
-        '  Me.Panel2.BackgroundImage = Global.Quality.My.Resources.Resources.fondo_azul
+        Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(220, Byte), Integer), CType(CType(234, Byte), Integer))
         Me.Panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Panel2.Controls.Add(Me.Pimagen)
         Me.Panel2.Controls.Add(Me.LTitulo)
         Me.Panel2.Location = New System.Drawing.Point(-1, 0)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(1078, 44)
+        Me.Panel2.Size = New System.Drawing.Size(1078, 34)
         Me.Panel2.TabIndex = 3
-        '
-        'Pimagen
-        '
-        Me.Pimagen.BackColor = System.Drawing.Color.Transparent
-      '    Me.Pimagen.Image = Global.Quality.My.Resources.Resources.Safe_icon
-        Me.Pimagen.Location = New System.Drawing.Point(3, 0)
-        Me.Pimagen.Name = "Pimagen"
-        Me.Pimagen.Size = New System.Drawing.Size(53, 46)
-        Me.Pimagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.Pimagen.TabIndex = 1
-        Me.Pimagen.TabStop = False
         '
         'LTitulo
         '
         Me.LTitulo.BackColor = System.Drawing.Color.Transparent
         Me.LTitulo.Font = New System.Drawing.Font("Times New Roman", 20.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LTitulo.ForeColor = System.Drawing.Color.White
-        Me.LTitulo.Location = New System.Drawing.Point(1, -1)
+        Me.LTitulo.ForeColor = System.Drawing.Color.Black
+        Me.LTitulo.Location = New System.Drawing.Point(1, 3)
         Me.LTitulo.Name = "LTitulo"
-        Me.LTitulo.Size = New System.Drawing.Size(1077, 40)
+        Me.LTitulo.Size = New System.Drawing.Size(961, 28)
         Me.LTitulo.TabIndex = 1
         Me.LTitulo.Text = "Estado de cuentas"
-        Me.LTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.LTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'GroupBox3
         '
@@ -470,9 +421,9 @@ Partial Class FormEstadoCuentas
         '
         'Label1
         '
-        Me.Label1.BackColor = System.Drawing.Color.FromArgb(20, 61, 113)
+        Me.Label1.BackColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(220, Byte), Integer), CType(CType(234, Byte), Integer))
         Me.Label1.Font = New System.Drawing.Font("Times New Roman", 11.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.White
+        Me.Label1.ForeColor = System.Drawing.Color.Black
         Me.Label1.Location = New System.Drawing.Point(13, 12)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(115, 27)
@@ -482,9 +433,9 @@ Partial Class FormEstadoCuentas
         '
         'Label2
         '
-        Me.Label2.BackColor = System.Drawing.Color.FromArgb(20, 61, 113)
+        Me.Label2.BackColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(220, Byte), Integer), CType(CType(234, Byte), Integer))
         Me.Label2.Font = New System.Drawing.Font("Times New Roman", 11.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.White
+        Me.Label2.ForeColor = System.Drawing.Color.Black
         Me.Label2.Location = New System.Drawing.Point(160, 12)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(123, 27)
@@ -494,9 +445,9 @@ Partial Class FormEstadoCuentas
         '
         'Label9
         '
-        Me.Label9.BackColor = System.Drawing.Color.FromArgb(20, 61, 113)
+        Me.Label9.BackColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(220, Byte), Integer), CType(CType(234, Byte), Integer))
         Me.Label9.Font = New System.Drawing.Font("Times New Roman", 11.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.ForeColor = System.Drawing.Color.White
+        Me.Label9.ForeColor = System.Drawing.Color.Black
         Me.Label9.Location = New System.Drawing.Point(624, 12)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(131, 27)
@@ -506,9 +457,9 @@ Partial Class FormEstadoCuentas
         '
         'Label10
         '
-        Me.Label10.BackColor = System.Drawing.Color.FromArgb(20, 61, 113)
+        Me.Label10.BackColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(220, Byte), Integer), CType(CType(234, Byte), Integer))
         Me.Label10.Font = New System.Drawing.Font("Times New Roman", 11.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.ForeColor = System.Drawing.Color.White
+        Me.Label10.ForeColor = System.Drawing.Color.Black
         Me.Label10.Location = New System.Drawing.Point(318, 12)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(115, 27)
@@ -518,9 +469,9 @@ Partial Class FormEstadoCuentas
         '
         'Label11
         '
-        Me.Label11.BackColor = System.Drawing.Color.FromArgb(20, 61, 113)
+        Me.Label11.BackColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(220, Byte), Integer), CType(CType(234, Byte), Integer))
         Me.Label11.Font = New System.Drawing.Font("Times New Roman", 11.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.ForeColor = System.Drawing.Color.White
+        Me.Label11.ForeColor = System.Drawing.Color.Black
         Me.Label11.Location = New System.Drawing.Point(938, 12)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(115, 27)
@@ -530,9 +481,9 @@ Partial Class FormEstadoCuentas
         '
         'Label12
         '
-        Me.Label12.BackColor = System.Drawing.Color.FromArgb(20, 61, 113)
+        Me.Label12.BackColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(220, Byte), Integer), CType(CType(234, Byte), Integer))
         Me.Label12.Font = New System.Drawing.Font("Times New Roman", 11.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.ForeColor = System.Drawing.Color.White
+        Me.Label12.ForeColor = System.Drawing.Color.Black
         Me.Label12.Location = New System.Drawing.Point(469, 12)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(122, 27)
@@ -542,9 +493,9 @@ Partial Class FormEstadoCuentas
         '
         'Label13
         '
-        Me.Label13.BackColor = System.Drawing.Color.FromArgb(20, 61, 113)
+        Me.Label13.BackColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(220, Byte), Integer), CType(CType(234, Byte), Integer))
         Me.Label13.Font = New System.Drawing.Font("Times New Roman", 11.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label13.ForeColor = System.Drawing.Color.White
+        Me.Label13.ForeColor = System.Drawing.Color.Black
         Me.Label13.Location = New System.Drawing.Point(789, 12)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(115, 27)
@@ -562,6 +513,38 @@ Partial Class FormEstadoCuentas
         Me.fechaIni.Name = "fechaIni"
         Me.fechaIni.Size = New System.Drawing.Size(189, 25)
         Me.fechaIni.TabIndex = 60038
+        '
+        'btexcel
+        '
+        Me.btexcel.BackgroundImage = Global.Quality.My.Resources.Resources.Logos_Excel_Copyrighted_icon
+        Me.btexcel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btexcel.Enabled = False
+        Me.btexcel.Location = New System.Drawing.Point(1026, 55)
+        Me.btexcel.Name = "btexcel"
+        Me.btexcel.Size = New System.Drawing.Size(42, 38)
+        Me.btexcel.TabIndex = 60035
+        Me.btexcel.UseVisualStyleBackColor = True
+        '
+        'btimprimir
+        '
+        Me.btimprimir.BackgroundImage = Global.Quality.My.Resources.Resources.Computer_Hardware_Print_icon
+        Me.btimprimir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btimprimir.Enabled = False
+        Me.btimprimir.Location = New System.Drawing.Point(967, 55)
+        Me.btimprimir.Name = "btimprimir"
+        Me.btimprimir.Size = New System.Drawing.Size(42, 38)
+        Me.btimprimir.TabIndex = 60034
+        Me.btimprimir.UseVisualStyleBackColor = True
+        '
+        'btBusquedaCuenta
+        '
+        Me.btBusquedaCuenta.BackgroundImage = Global.Quality.My.Resources.Resources.Very_Basic_Search_icon
+        Me.btBusquedaCuenta.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btBusquedaCuenta.Location = New System.Drawing.Point(634, 61)
+        Me.btBusquedaCuenta.Name = "btBusquedaCuenta"
+        Me.btBusquedaCuenta.Size = New System.Drawing.Size(26, 25)
+        Me.btBusquedaCuenta.TabIndex = 60031
+        Me.btBusquedaCuenta.UseVisualStyleBackColor = True
         '
         'FormEstadoCuentas
         '
@@ -588,7 +571,6 @@ Partial Class FormEstadoCuentas
         Me.GroupBox1.ResumeLayout(False)
         CType(Me.dgvCuentas, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
-        CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
         Me.ResumeLayout(False)
@@ -597,7 +579,6 @@ Partial Class FormEstadoCuentas
     End Sub
 
     Public WithEvents Panel2 As Panel
-    Public WithEvents Pimagen As PictureBox
     Public WithEvents LTitulo As Label
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents dgvCuentas As DataGridView

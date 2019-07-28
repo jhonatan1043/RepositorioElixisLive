@@ -22,8 +22,8 @@ Partial Class FormCierrePeriodos
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.fechaCierre = New System.Windows.Forms.DateTimePicker()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -86,17 +86,17 @@ Partial Class FormCierrePeriodos
         Me.dgvCuentas.AllowUserToAddRows = False
         Me.dgvCuentas.AllowUserToResizeColumns = False
         Me.dgvCuentas.AllowUserToResizeRows = False
-        DataGridViewCellStyle5.BackColor = System.Drawing.Color.AliceBlue
-        Me.dgvCuentas.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.AliceBlue
+        Me.dgvCuentas.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.dgvCuentas.BackgroundColor = System.Drawing.Color.White
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle6.Font = New System.Drawing.Font("Arial Narrow", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvCuentas.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Arial Narrow", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvCuentas.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.dgvCuentas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvCuentas.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.dgfecha, Me.dgDetalle, Me.dgAnulado})
         Me.dgvCuentas.Location = New System.Drawing.Point(4, 13)
@@ -146,7 +146,7 @@ Partial Class FormCierrePeriodos
         '
         'btCerrarAño
         '
-        Me.btCerrarAño.BackColor = System.Drawing.Color.Gainsboro
+        Me.btCerrarAño.BackColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(220, Byte), Integer), CType(CType(234, Byte), Integer))
         Me.btCerrarAño.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btCerrarAño.Font = New System.Drawing.Font("Times New Roman", 11.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btCerrarAño.ForeColor = System.Drawing.Color.Black
@@ -161,7 +161,7 @@ Partial Class FormCierrePeriodos
         '
         'btAbrirAño
         '
-        Me.btAbrirAño.BackColor = System.Drawing.Color.Gainsboro
+        Me.btAbrirAño.BackColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(220, Byte), Integer), CType(CType(234, Byte), Integer))
         Me.btAbrirAño.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btAbrirAño.Font = New System.Drawing.Font("Times New Roman", 11.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btAbrirAño.ForeColor = System.Drawing.Color.Black
@@ -176,7 +176,7 @@ Partial Class FormCierrePeriodos
         '
         'btAbrirMes
         '
-        Me.btAbrirMes.BackColor = System.Drawing.Color.Gainsboro
+        Me.btAbrirMes.BackColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(220, Byte), Integer), CType(CType(234, Byte), Integer))
         Me.btAbrirMes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btAbrirMes.Font = New System.Drawing.Font("Times New Roman", 11.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btAbrirMes.ForeColor = System.Drawing.Color.Black
@@ -191,7 +191,7 @@ Partial Class FormCierrePeriodos
         '
         'btCerrarMes
         '
-        Me.btCerrarMes.BackColor = System.Drawing.Color.Gainsboro
+        Me.btCerrarMes.BackColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(220, Byte), Integer), CType(CType(234, Byte), Integer))
         Me.btCerrarMes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btCerrarMes.Font = New System.Drawing.Font("Times New Roman", 11.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btCerrarMes.ForeColor = System.Drawing.Color.Black
@@ -206,7 +206,7 @@ Partial Class FormCierrePeriodos
         '
         'Panel2
         '
-        Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(220, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(250, Byte), Integer))
+        Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(220, Byte), Integer), CType(CType(234, Byte), Integer))
         Me.Panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Panel2.Controls.Add(Me.LTitulo)
         Me.Panel2.Location = New System.Drawing.Point(0, 0)

@@ -370,7 +370,7 @@
             btCancelar.Enabled = False
             Panel1.Visible = True
             If FuncionesContables.verificarComprobante(pCodigo) Then
-                mostrarInfo(String.Format(MensajeSistema.COMPROBANTE_ANULADO), Color.White, Color.Red)
+                mostrarInfo(String.Format(MensajeSistema.COMPROBANTE_ANULADO), Color.White, Color.FromArgb(252, 249, 169))
                 Generales.deshabilitarBotones(ToolStrip1)
                 btBuscar.Enabled = True
                 btNuevo.Enabled = True

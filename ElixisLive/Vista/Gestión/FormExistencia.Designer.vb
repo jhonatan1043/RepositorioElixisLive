@@ -111,7 +111,7 @@ Partial Class FormExistencia
         '
         'Estado
         '
-        Me.Estado.BackColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(220, Byte), Integer), CType(CType(234, Byte), Integer))
+        Me.Estado.BackColor = System.Drawing.Color.White
         Me.Estado.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Estado.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Italic)
         Me.Estado.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripLabel1, Me.lbPorAcabar, Me.ToolStripLabel2, Me.lbAcabado})

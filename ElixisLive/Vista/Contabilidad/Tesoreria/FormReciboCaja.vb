@@ -328,7 +328,7 @@
         End If
 
         If FuncionesContables.verificarFecha(fechadoc.Value) Then
-            mostrarInfo(String.Format(MensajeSistema.PERIODO_CONTABLE_CERRADO), Color.White, Color.Red)
+            mostrarInfo(String.Format(MensajeSistema.PERIODO_CONTABLE_CERRADO), Color.White, Color.FromArgb(252, 249, 169))
             Return False
         Else
             mostrarInfo(Nothing, Nothing, Nothing, True)
@@ -374,7 +374,7 @@
             fechadoc.Value = dFila.Item("Fecha_recibo")
             cargarRegistroDetalleRecaudo(pCodigo)
             If FuncionesContables.verificarFecha(fechadoc.Value) Then
-                mostrarInfo(String.Format(MensajeSistema.PERIODO_CONTABLE_CERRADO), Color.White, Color.Red)
+                mostrarInfo(String.Format(MensajeSistema.PERIODO_CONTABLE_CERRADO), Color.White, Color.FromArgb(252, 249, 169))
                 btEditar.Enabled = False
             Else
                 mostrarInfo(Nothing, Nothing, Nothing, True)

@@ -185,7 +185,7 @@
     End Sub
     Private Function validarInformacion() As Boolean
         If FuncionesContables.verificarFecha(fechadoc.Value) Then
-            mostrarInfo(String.Format(MensajeSistema.PERIODO_CONTABLE_CERRADO), Color.White, Color.Red)
+            mostrarInfo(String.Format(MensajeSistema.PERIODO_CONTABLE_CERRADO), Color.White, Color.FromArgb(252, 249, 169))
             Return False
         Else
             mostrarInfo(Nothing, Nothing, Nothing, True)
@@ -228,7 +228,7 @@
         txtcodigo.Text = pCodigo
         Generales.llenarTabla(Consultas.CONTA_GENERAL_CARGAR_CUENTAS, params, dtCuentas)
         If FuncionesContables.verificarFecha(fechadoc.Value) Then
-            mostrarInfo(String.Format(MensajeSistema.PERIODO_CONTABLE_CERRADO), Color.White, Color.Red)
+            mostrarInfo(String.Format(MensajeSistema.PERIODO_CONTABLE_CERRADO), Color.White, Color.FromArgb(252, 249, 169))
             fechadoc.Focus()
         End If
     End Sub
@@ -271,7 +271,7 @@
         btRegistrar.Enabled = False
         btCancelar.Enabled = False
         If FuncionesContables.verificarFecha(fechadoc.Value) Then
-            mostrarInfo(String.Format(MensajeSistema.PERIODO_CONTABLE_CERRADO), Color.White, Color.Red)
+            mostrarInfo(String.Format(MensajeSistema.PERIODO_CONTABLE_CERRADO), Color.White, Color.FromArgb(252, 249, 169))
             btEditar.Enabled = False
         Else
             mostrarInfo(Nothing, Nothing, Nothing, True)
@@ -279,7 +279,7 @@
         End If
         If FuncionesContables.verificarComprobante(pCodigo) Then
 
-            mostrarInfo(String.Format(MensajeSistema.COMPROBANTE_ANULADO), Color.White, Color.Red)
+            mostrarInfo(String.Format(MensajeSistema.COMPROBANTE_ANULADO), Color.White, Color.FromArgb(252, 249, 169))
             Generales.deshabilitarBotones(ToolStrip1)
             btBuscar.Enabled = True
             btNuevo.Enabled = True
@@ -353,7 +353,7 @@
 
     End Sub
 
-    Private Sub btbuscar_Click(sender As Object, e As EventArgs) Handles btBuscar.Click
+    Private Sub btbuscar_Click(sender As Object, e As EventArgs) Handles btBusqueda.Click
         Generales.buscarElemento(Consultas.CONTA_GENERAL_BUSCAR,
                                Nothing,
                                AddressOf cargarDatos,

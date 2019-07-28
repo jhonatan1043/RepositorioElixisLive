@@ -136,14 +136,14 @@
             btRegistrar.Enabled = False
             btCancelar.Enabled = False
             If FuncionesContables.verificarFecha(fechadoc.Value) Then
-                mostrarInfo(String.Format(MensajeSistema.PERIODO_CONTABLE_CERRADO), Color.White, Color.Red)
+                mostrarInfo(String.Format(MensajeSistema.PERIODO_CONTABLE_CERRADO), Color.White, Color.FromArgb(252, 249, 169))
                 btEditar.Enabled = False
             Else
                 mostrarInfo(Nothing, Nothing, Nothing, True)
                 PnlInfo.Visible = False
             End If
             If FuncionesContables.verificarComprobante(pCodigo) Then
-                mostrarInfo(String.Format(MensajeSistema.COMPROBANTE_ANULADO), Color.White, Color.Red)
+                mostrarInfo(String.Format(MensajeSistema.COMPROBANTE_ANULADO), Color.White, Color.FromArgb(252, 249, 169))
                 Generales.deshabilitarBotones(ToolStrip1)
                 btBuscar.Enabled = True
                 btNuevo.Enabled = True
@@ -163,7 +163,7 @@
             End If
         End If
     End Sub
-    Private Sub btbuscar_Click(sender As Object, e As EventArgs) Handles btBuscar.Click
+    Private Sub btbuscar_Click(sender As Object, e As EventArgs) Handles btBusqueda.Click
         Generales.buscarElemento(Consultas.NOTA_INTERNA_BUSCAR,
                               Nothing,
                               AddressOf cargarDatos,
@@ -271,7 +271,7 @@
             AddHandler e.Control.KeyPress, AddressOf ValidacionDigitacion.validarValoresNumericos
         End If
     End Sub
-    Private Sub btnuevo_Click(sender As Object, e As EventArgs)
+    Private Sub btnuevo_Click(sender As Object, e As EventArgs) Handles btNuevo.Click
         Generales.limpiarControles(Me)
         Generales.deshabilitarBotones(ToolStrip1)
         Generales.habilitarControles(Me)
@@ -289,7 +289,7 @@
         bttercero.Focus()
         bloquearColumnas()
     End Sub
-    Private Sub bteditar_Click(sender As Object, e As EventArgs)
+    Private Sub bteditar_Click(sender As Object, e As EventArgs) Handles btEditar.Click
         If EstiloMensajes.mostrarMensajePregunta(MensajeSistema.EDITAR) = Constantes.SI Then
             Generales.deshabilitarBotones(ToolStrip1)
             dtCuentas.Rows.Add()
@@ -299,7 +299,7 @@
             base.ReadOnly = False
         End If
     End Sub
-    Private Sub btcancelar_Click(sender As Object, e As EventArgs)
+    Private Sub btcancelar_Click(sender As Object, e As EventArgs) Handles btCancelar.Click
         If EstiloMensajes.mostrarMensajePregunta(MensajeSistema.CANCELAR) = Constantes.SI Then
             Generales.deshabilitarBotones(ToolStrip1)
             Generales.deshabilitarControles(Me)
@@ -413,7 +413,7 @@
             Return True
         End If
         If FuncionesContables.verificarFecha(fechadoc.Value) Then
-            mostrarInfo(String.Format(MensajeSistema.PERIODO_CONTABLE_CERRADO), Color.White, Color.Red)
+            mostrarInfo(String.Format(MensajeSistema.PERIODO_CONTABLE_CERRADO), Color.White, Color.FromArgb(252, 249, 169))
             Return False
         Else
             mostrarInfo(Nothing, Nothing, Nothing, True)
@@ -428,7 +428,7 @@
     Private Sub fechadoc_Leave(sender As Object, e As EventArgs) Handles fechadoc.Leave
         FuncionesContables.validarFechaFutura(fechadoc)
     End Sub
-    Private Sub btguardar_Click(sender As Object, e As EventArgs)
+    Private Sub btguardar_Click(sender As Object, e As EventArgs) Handles btRegistrar.Click
         If validarInformacion() Then
             If FuncionesContables.validardgv(dtCuentas) Then
                 codigoPuc = FuncionesContables.obtenerPucActivo()

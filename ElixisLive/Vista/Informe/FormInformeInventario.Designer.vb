@@ -38,14 +38,12 @@ Partial Class FormInformeInventario
         Me.Label2 = New System.Windows.Forms.Label()
         Me.DataGridViewImageColumn1 = New System.Windows.Forms.DataGridViewImageColumn()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Pimagen = New System.Windows.Forms.PictureBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.ErrorIcono = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GpDatos.SuspendLayout()
         Me.Panel1.SuspendLayout()
-        CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ErrorIcono, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -108,13 +106,14 @@ Partial Class FormInformeInventario
         '
         'btGenerar
         '
+        Me.btGenerar.BackColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(220, Byte), Integer), CType(CType(234, Byte), Integer))
         Me.btGenerar.ForeColor = System.Drawing.Color.Black
         Me.btGenerar.Location = New System.Drawing.Point(806, 18)
         Me.btGenerar.Name = "btGenerar"
         Me.btGenerar.Size = New System.Drawing.Size(75, 23)
         Me.btGenerar.TabIndex = 71
         Me.btGenerar.Text = "Generar"
-        Me.btGenerar.UseVisualStyleBackColor = True
+        Me.btGenerar.UseVisualStyleBackColor = False
         '
         'dtFechaFin
         '
@@ -180,45 +179,31 @@ Partial Class FormInformeInventario
         DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.White
         Me.DataGridViewImageColumn1.DefaultCellStyle = DataGridViewCellStyle1
         Me.DataGridViewImageColumn1.HeaderText = "Quitar"
-        'Me.DataGridViewImageColumn1.Image = Global.Quality.My.Resources.Resources.papelera
         Me.DataGridViewImageColumn1.Name = "DataGridViewImageColumn1"
         Me.DataGridViewImageColumn1.ReadOnly = True
         Me.DataGridViewImageColumn1.Width = 50
         '
         'Panel1
         '
-        Me.Panel1.BackColor = System.Drawing.Color.White
-       
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(220, Byte), Integer), CType(CType(234, Byte), Integer))
         Me.Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Panel1.Controls.Add(Me.Pimagen)
         Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(908, 42)
+        Me.Panel1.Size = New System.Drawing.Size(905, 34)
         Me.Panel1.TabIndex = 20
-        '
-        'Pimagen
-        '
-        Me.Pimagen.BackColor = System.Drawing.Color.Transparent
-      '    Me.Pimagen.Image = Global.Quality.My.Resources.Resources.Cart_icon
-        Me.Pimagen.Location = New System.Drawing.Point(3, 0)
-        Me.Pimagen.Name = "Pimagen"
-        Me.Pimagen.Size = New System.Drawing.Size(60, 46)
-        Me.Pimagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.Pimagen.TabIndex = 1
-        Me.Pimagen.TabStop = False
         '
         'Label1
         '
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("Times New Roman", 20.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(-10, -2)
+        Me.Label1.ForeColor = System.Drawing.Color.Black
+        Me.Label1.Location = New System.Drawing.Point(3, 3)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(915, 44)
+        Me.Label1.Size = New System.Drawing.Size(838, 28)
         Me.Label1.TabIndex = 1
         Me.Label1.Text = "Informes de Inventario"
-        Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'ErrorIcono
         '
@@ -244,14 +229,12 @@ Partial Class FormInformeInventario
         Me.GpDatos.ResumeLayout(False)
         Me.GpDatos.PerformLayout()
         Me.Panel1.ResumeLayout(False)
-        CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ErrorIcono, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
 
     Public WithEvents Panel1 As Panel
-    Public WithEvents Pimagen As PictureBox
     Public WithEvents Label1 As Label
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents GroupBox2 As GroupBox

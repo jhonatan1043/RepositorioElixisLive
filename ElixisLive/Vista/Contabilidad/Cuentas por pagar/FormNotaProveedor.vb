@@ -195,14 +195,14 @@
             btRegistrar.Enabled = False
             btCancelar.Enabled = False
             If FuncionesContables.verificarFecha(fechadoc.Value) Then
-                mostrarInfo(String.Format(MensajeSistema.PERIODO_CONTABLE_CERRADO), Color.White, Color.Red)
+                mostrarInfo(String.Format(MensajeSistema.PERIODO_CONTABLE_CERRADO), Color.White, Color.FromArgb(252, 249, 169))
                 btEditar.Enabled = False
             Else
                 mostrarInfo(Nothing, Nothing, Nothing, True)
                 PnlInfo.Visible = False
             End If
             If FuncionesContables.verificarComprobante(pCodigo) Then
-                mostrarInfo(String.Format(MensajeSistema.COMPROBANTE_ANULADO), Color.White, Color.Red)
+                mostrarInfo(String.Format(MensajeSistema.COMPROBANTE_ANULADO), Color.White, Color.FromArgb(252, 249, 169))
                 Generales.deshabilitarBotones(ToolStrip1)
                 btBuscar.Enabled = True
                 btNuevo.Enabled = True
@@ -222,7 +222,7 @@
             End If
         End If
     End Sub
-    Private Sub btbuscar_Click(sender As Object, e As EventArgs) Handles btBuscar.Click
+    Private Sub btbuscar_Click(sender As Object, e As EventArgs) Handles btBusqueda.Click
         Dim params As New List(Of String)
         Generales.buscarElemento(Consultas.NOTA_PROVEEDOR_BUSCAR,
                                params,
@@ -528,7 +528,7 @@
         ElseIf FuncionesContables.validardgv(dtCuentas) = False Then
 
         ElseIf FuncionesContables.verificarFecha(fechadoc.Value) Then
-            mostrarInfo(String.Format(MensajeSistema.PERIODO_CONTABLE_CERRADO), Color.White, Color.Red)
+            mostrarInfo(String.Format(MensajeSistema.PERIODO_CONTABLE_CERRADO), Color.White, Color.FromArgb(252, 249, 169))
         Else
             mostrarInfo(Nothing, Nothing, Nothing, True)
             PnlInfo.Visible = False
