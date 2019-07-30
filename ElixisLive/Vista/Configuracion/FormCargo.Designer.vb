@@ -22,7 +22,7 @@ Partial Class FormCargo
         Me.components = New System.ComponentModel.Container()
         Me.ErrorIcono = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.Panel1.SuspendLayout()
-        CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).BeginInit()
+        'CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.Gbdatos.SuspendLayout()
         CType(Me.ErrorIcono, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -34,11 +34,11 @@ Partial Class FormCargo
         '
         'Pimagen
         '
-        Me.Pimagen.BackColor = System.Drawing.Color.Transparent
-      '    Me.Pimagen.Image = Global.Quality.My.Resources.Resources.User_Files_icon1
-        Me.Pimagen.Location = New System.Drawing.Point(4, 0)
-        Me.Pimagen.Size = New System.Drawing.Size(51, 42)
-        Me.Pimagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        '  Me.Pimagen.BackColor = System.Drawing.Color.Transparent
+        ''    Me.Pimagen.Image = Global.Quality.My.Resources.Resources.User_Files_icon1
+        '  Me.Pimagen.Location = New System.Drawing.Point(4, 0)
+        '  Me.Pimagen.Size = New System.Drawing.Size(51, 42)
+        '  Me.Pimagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         '
         'txtnombre
         '
@@ -57,7 +57,7 @@ Partial Class FormCargo
         Me.Location = New System.Drawing.Point(0, 0)
         Me.Name = "FormCargo"
         Me.Panel1.ResumeLayout(False)
-        CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).EndInit()
+        'CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.Gbdatos.ResumeLayout(False)
         Me.Gbdatos.PerformLayout()

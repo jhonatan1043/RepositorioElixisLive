@@ -22,7 +22,7 @@ Partial Class FormProveedor
         Me.components = New System.ComponentModel.Container()
         Me.ErrorIcono = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.Panel1.SuspendLayout()
-        CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).BeginInit()
+        'CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ErrorIcono, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -32,10 +32,10 @@ Partial Class FormProveedor
         '
         'Pimagen
         '
-        Me.Pimagen.BackColor = System.Drawing.Color.Transparent
-      '    Me.Pimagen.Image = Global.Quality.My.Resources.Resources.administrator_icon__1_
-        Me.Pimagen.Location = New System.Drawing.Point(4, 0)
-        Me.Pimagen.Size = New System.Drawing.Size(51, 42)
+        '  Me.Pimagen.BackColor = System.Drawing.Color.Transparent
+        ''    Me.Pimagen.Image = Global.Quality.My.Resources.Resources.administrator_icon__1_
+        '  Me.Pimagen.Location = New System.Drawing.Point(4, 0)
+        '  Me.Pimagen.Size = New System.Drawing.Size(51, 42)
         '
         'ErrorIcono
         '
@@ -49,7 +49,7 @@ Partial Class FormProveedor
         Me.Location = New System.Drawing.Point(0, 0)
         Me.Name = "FormProveedor"
         Me.Panel1.ResumeLayout(False)
-        CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).EndInit()
+        'CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ErrorIcono, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()

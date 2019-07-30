@@ -20,7 +20,7 @@ Partial Class FormCategoria
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.Panel1.SuspendLayout()
-        CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).BeginInit()
+        'CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.Gbdatos.SuspendLayout()
         Me.SuspendLayout()
@@ -31,12 +31,12 @@ Partial Class FormCategoria
         Me.LTitulo.Text = "Categoria"
         '
         'Pimagen
-        '
-        Me.Pimagen.BackColor = System.Drawing.Color.Transparent
-      '    Me.Pimagen.Image = Global.Quality.My.Resources.Resources.Card_file_icon1
-        Me.Pimagen.Location = New System.Drawing.Point(4, 0)
-        Me.Pimagen.Size = New System.Drawing.Size(44, 38)
-        Me.Pimagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        '  '
+        '  Me.Pimagen.BackColor = System.Drawing.Color.Transparent
+        ''    Me.Pimagen.Image = Global.Quality.My.Resources.Resources.Card_file_icon1
+        '  Me.Pimagen.Location = New System.Drawing.Point(4, 0)
+        '  Me.Pimagen.Size = New System.Drawing.Size(44, 38)
+        '  Me.Pimagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         '
         'FormCategoria
         '
@@ -45,7 +45,7 @@ Partial Class FormCategoria
         Me.Location = New System.Drawing.Point(0, 0)
         Me.Name = "FormCategoria"
         Me.Panel1.ResumeLayout(False)
-        CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).EndInit()
+        'CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.Gbdatos.ResumeLayout(False)
         Me.Gbdatos.PerformLayout()

@@ -20,7 +20,7 @@ Partial Class FormAreaTrabajo
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.Panel1.SuspendLayout()
-        CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).BeginInit()
+        'CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.Gbdatos.SuspendLayout()
         Me.SuspendLayout()
@@ -31,12 +31,12 @@ Partial Class FormAreaTrabajo
         '
         'Pimagen
         '
-        Me.Pimagen.BackColor = System.Drawing.Color.Transparent
-      '    Me.Pimagen.Image = Global.Quality.My.Resources.Resources.Admin_icon1
-        Me.Pimagen.Location = New System.Drawing.Point(4, 0)
-        Me.Pimagen.Size = New System.Drawing.Size(49, 41)
-        Me.Pimagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        '
+        '  Me.Pimagen.BackColor = System.Drawing.Color.Transparent
+        ''    Me.Pimagen.Image = Global.Quality.My.Resources.Resources.Admin_icon1
+        '  Me.Pimagen.Location = New System.Drawing.Point(4, 0)
+        '  Me.Pimagen.Size = New System.Drawing.Size(49, 41)
+        '  Me.Pimagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        '  '
         'FormAreaTrabajo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -44,7 +44,7 @@ Partial Class FormAreaTrabajo
         Me.Location = New System.Drawing.Point(0, 0)
         Me.Name = "FormAreaTrabajo"
         Me.Panel1.ResumeLayout(False)
-        CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).EndInit()
+        'CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.Gbdatos.ResumeLayout(False)
         Me.Gbdatos.PerformLayout()

@@ -20,7 +20,7 @@ Partial Class FormListaPrecio
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.Panel1.SuspendLayout()
-        CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).BeginInit()
+        'CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'LTitulo
@@ -29,11 +29,11 @@ Partial Class FormListaPrecio
         '
         'Pimagen
         '
-        Me.Pimagen.BackColor = System.Drawing.Color.Transparent
-      '    Me.Pimagen.Image = Global.Quality.My.Resources.Resources.Checklist_icon
-        Me.Pimagen.Location = New System.Drawing.Point(4, -1)
-        Me.Pimagen.Size = New System.Drawing.Size(39, 39)
-        Me.Pimagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        '  Me.Pimagen.BackColor = System.Drawing.Color.Transparent
+        ''    Me.Pimagen.Image = Global.Quality.My.Resources.Resources.Checklist_icon
+        '  Me.Pimagen.Location = New System.Drawing.Point(4, -1)
+        '  Me.Pimagen.Size = New System.Drawing.Size(39, 39)
+        '  Me.Pimagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         '
         'txtNombre
         '
@@ -50,7 +50,7 @@ Partial Class FormListaPrecio
         Me.Location = New System.Drawing.Point(0, 0)
         Me.Name = "FormListaPrecio"
         Me.Panel1.ResumeLayout(False)
-        CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).EndInit()
+        'CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

@@ -20,7 +20,7 @@ Partial Class FormServicio
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.Panel1.SuspendLayout()
-        CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).BeginInit()
+        'CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.Gbdatos.SuspendLayout()
         Me.SuspendLayout()
@@ -32,11 +32,11 @@ Partial Class FormServicio
         '
         'Pimagen
         '
-        Me.Pimagen.BackColor = System.Drawing.Color.Transparent
-      '    Me.Pimagen.Image = Global.Quality.My.Resources.Resources.document_archive_icon
-        Me.Pimagen.Location = New System.Drawing.Point(4, 3)
-        Me.Pimagen.Size = New System.Drawing.Size(42, 36)
-        Me.Pimagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        '  Me.Pimagen.BackColor = System.Drawing.Color.Transparent
+        ''    Me.Pimagen.Image = Global.Quality.My.Resources.Resources.document_archive_icon
+        '  Me.Pimagen.Location = New System.Drawing.Point(4, 3)
+        '  Me.Pimagen.Size = New System.Drawing.Size(42, 36)
+        '  Me.Pimagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         '
         'FormServicio
         '
@@ -45,7 +45,7 @@ Partial Class FormServicio
         Me.Location = New System.Drawing.Point(0, 0)
         Me.Name = "FormServicio"
         Me.Panel1.ResumeLayout(False)
-        CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).EndInit()
+        'CType(Me.Pimagen, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.Gbdatos.ResumeLayout(False)
         Me.Gbdatos.PerformLayout()
