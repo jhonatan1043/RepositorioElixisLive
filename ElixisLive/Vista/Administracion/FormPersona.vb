@@ -142,7 +142,7 @@ Public Class FormPersona
             End Try
         End If
     End Sub
-    Private Sub btBuscar_Click(sender As Object, e As EventArgs) Handles btBuscar.Click
+    Private Sub btBuscar_Click(sender As Object, e As EventArgs) Handles btBusqueda.Click
         Dim params As New List(Of String)
         params.Add(String.Empty)
         Generales.buscarElemento(objPersona.sqlConsulta,
@@ -190,10 +190,10 @@ Public Class FormPersona
     Private Sub chUsuario_Click(sender As Object, e As EventArgs) Handles chUsuario.Click
         If chUsuario.Checked = True Then
             txtUsuario.ReadOnly = False
-            btBuscarPerfil.Enabled = True
+            btPerfil.Enabled = True
         Else
             txtUsuario.ReadOnly = True
-            btBuscarPerfil.Enabled = False
+            btPerfil.Enabled = False
             txtPerfil.Text = ""
             txtUsuario.Clear()
         End If
@@ -325,7 +325,7 @@ Public Class FormPersona
         End If
     End Sub
 
-    Private Sub btBuscarPerfil_Click(sender As Object, e As EventArgs) Handles btBuscarPerfil.Click
+    Private Sub btPerfil_Click(sender As Object, e As EventArgs) Handles btPerfil.Click
         Dim params As New List(Of String)
         Dim tblPerfil As DataRow = Nothing
         params.Add(String.Empty)

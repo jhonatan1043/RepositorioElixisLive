@@ -23,33 +23,33 @@ Partial Class FormModulo
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.chNomina = New System.Windows.Forms.CheckBox()
+        Me.chConfiguracion = New System.Windows.Forms.CheckBox()
+        Me.chEstadistica = New System.Windows.Forms.CheckBox()
         Me.gbClave = New System.Windows.Forms.GroupBox()
         Me.TextClave = New System.Windows.Forms.TextBox()
         Me.btDeclinar = New System.Windows.Forms.Button()
         Me.btAceptar = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.LTitulo = New System.Windows.Forms.Label()
-        Me.chNomina = New System.Windows.Forms.CheckBox()
-        Me.chConfiguracion = New System.Windows.Forms.CheckBox()
-        Me.chEstadistica = New System.Windows.Forms.CheckBox()
         Me.chAdministracion = New System.Windows.Forms.CheckBox()
         Me.ChCitas = New System.Windows.Forms.CheckBox()
         Me.ChInventario = New System.Windows.Forms.CheckBox()
         Me.ChContabilidad = New System.Windows.Forms.CheckBox()
         Me.ChVentas = New System.Windows.Forms.CheckBox()
+        Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
         Me.btRegistrar = New System.Windows.Forms.ToolStripButton()
         Me.btEditar = New System.Windows.Forms.ToolStripButton()
         Me.btCancelar = New System.Windows.Forms.ToolStripButton()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.Label9 = New System.Windows.Forms.Label()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.LTitulo = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         Me.gbClave.SuspendLayout()
         Me.ToolStrip1.SuspendLayout()
@@ -80,6 +80,119 @@ Partial Class FormModulo
         Me.GroupBox1.Size = New System.Drawing.Size(694, 348)
         Me.GroupBox1.TabIndex = 22
         Me.GroupBox1.TabStop = False
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(553, 109)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(40, 13)
+        Me.Label9.TabIndex = 35
+        Me.Label9.Text = "Ventas"
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(560, 221)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(30, 13)
+        Me.Label8.TabIndex = 34
+        Me.Label8.Text = "Citas"
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(407, 221)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(65, 13)
+        Me.Label7.TabIndex = 33
+        Me.Label7.Text = "Estadísticas"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(237, 221)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(43, 13)
+        Me.Label6.TabIndex = 32
+        Me.Label6.Text = "Nómina"
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(79, 221)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(65, 13)
+        Me.Label5.TabIndex = 31
+        Me.Label5.Text = "Contabilidad"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(217, 109)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(75, 13)
+        Me.Label4.TabIndex = 30
+        Me.Label4.Text = "Administración"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(388, 109)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(54, 13)
+        Me.Label3.TabIndex = 29
+        Me.Label3.Text = "Inventario"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(75, 109)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(72, 13)
+        Me.Label2.TabIndex = 28
+        Me.Label2.Text = "Configuración"
+        '
+        'chNomina
+        '
+        Me.chNomina.AutoSize = True
+        Me.chNomina.Image = Global.Quality.My.Resources.Resources.Users_Conference_icon__1_
+        Me.chNomina.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.chNomina.Location = New System.Drawing.Point(210, 253)
+        Me.chNomina.Name = "chNomina"
+        Me.chNomina.Size = New System.Drawing.Size(74, 65)
+        Me.chNomina.TabIndex = 27
+        Me.chNomina.Text = "                "
+        Me.chNomina.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.chNomina.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage
+        Me.chNomina.UseVisualStyleBackColor = True
+        '
+        'chConfiguracion
+        '
+        Me.chConfiguracion.AutoSize = True
+        Me.chConfiguracion.Image = Global.Quality.My.Resources.Resources.Very_Basic_Settings_icon__1_
+        Me.chConfiguracion.Location = New System.Drawing.Point(65, 28)
+        Me.chConfiguracion.Name = "chConfiguracion"
+        Me.chConfiguracion.Size = New System.Drawing.Size(77, 65)
+        Me.chConfiguracion.TabIndex = 24
+        Me.chConfiguracion.Text = "                 "
+        Me.chConfiguracion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.chConfiguracion.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage
+        Me.chConfiguracion.UseVisualStyleBackColor = True
+        '
+        'chEstadistica
+        '
+        Me.chEstadistica.AutoSize = True
+        Me.chEstadistica.Image = Global.Quality.My.Resources.Resources.Data_Combo_Chart_icon
+        Me.chEstadistica.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.chEstadistica.Location = New System.Drawing.Point(369, 255)
+        Me.chEstadistica.Name = "chEstadistica"
+        Me.chEstadistica.Size = New System.Drawing.Size(95, 65)
+        Me.chEstadistica.TabIndex = 25
+        Me.chEstadistica.Text = "                       "
+        Me.chEstadistica.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.chEstadistica.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        Me.chEstadistica.UseVisualStyleBackColor = True
         '
         'gbClave
         '
@@ -128,81 +241,6 @@ Partial Class FormModulo
         Me.Label1.Size = New System.Drawing.Size(136, 13)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Digite la clave del producto"
-        '
-        'ToolStrip1
-        '
-        Me.ToolStrip1.BackColor = System.Drawing.Color.White
-        Me.ToolStrip1.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.ToolStrip1.ImageScalingSize = New System.Drawing.Size(25, 25)
-        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.btRegistrar, Me.btEditar, Me.btCancelar})
-        Me.ToolStrip1.Location = New System.Drawing.Point(0, 404)
-        Me.ToolStrip1.Name = "ToolStrip1"
-        Me.ToolStrip1.Size = New System.Drawing.Size(713, 32)
-        Me.ToolStrip1.TabIndex = 17
-        Me.ToolStrip1.Text = "ToolStrip1"
-        '
-        'Panel1
-        '
-        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(220, Byte), Integer), CType(CType(234, Byte), Integer))
-        Me.Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Panel1.Controls.Add(Me.LTitulo)
-        Me.Panel1.Location = New System.Drawing.Point(1, 0)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(713, 34)
-        Me.Panel1.TabIndex = 1
-        '
-        'LTitulo
-        '
-        Me.LTitulo.BackColor = System.Drawing.Color.Transparent
-        Me.LTitulo.Font = New System.Drawing.Font("Times New Roman", 20.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LTitulo.ForeColor = System.Drawing.Color.Black
-        Me.LTitulo.Location = New System.Drawing.Point(1, 3)
-        Me.LTitulo.Name = "LTitulo"
-        Me.LTitulo.Size = New System.Drawing.Size(625, 28)
-        Me.LTitulo.TabIndex = 1
-        Me.LTitulo.Text = "Asignación de modulos"
-        Me.LTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'chNomina
-        '
-        Me.chNomina.AutoSize = True
-        Me.chNomina.Image = Global.Quality.My.Resources.Resources.Users_Conference_icon__1_
-        Me.chNomina.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.chNomina.Location = New System.Drawing.Point(210, 253)
-        Me.chNomina.Name = "chNomina"
-        Me.chNomina.Size = New System.Drawing.Size(74, 65)
-        Me.chNomina.TabIndex = 27
-        Me.chNomina.Text = "                "
-        Me.chNomina.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        Me.chNomina.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage
-        Me.chNomina.UseVisualStyleBackColor = True
-        '
-        'chConfiguracion
-        '
-        Me.chConfiguracion.AutoSize = True
-        Me.chConfiguracion.Image = Global.Quality.My.Resources.Resources.Very_Basic_Settings_icon__1_
-        Me.chConfiguracion.Location = New System.Drawing.Point(65, 28)
-        Me.chConfiguracion.Name = "chConfiguracion"
-        Me.chConfiguracion.Size = New System.Drawing.Size(77, 65)
-        Me.chConfiguracion.TabIndex = 24
-        Me.chConfiguracion.Text = "                 "
-        Me.chConfiguracion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        Me.chConfiguracion.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage
-        Me.chConfiguracion.UseVisualStyleBackColor = True
-        '
-        'chEstadistica
-        '
-        Me.chEstadistica.AutoSize = True
-        Me.chEstadistica.Image = Global.Quality.My.Resources.Resources.Data_Combo_Chart_icon
-        Me.chEstadistica.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.chEstadistica.Location = New System.Drawing.Point(369, 255)
-        Me.chEstadistica.Name = "chEstadistica"
-        Me.chEstadistica.Size = New System.Drawing.Size(95, 65)
-        Me.chEstadistica.TabIndex = 25
-        Me.chEstadistica.Text = "                       "
-        Me.chEstadistica.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        Me.chEstadistica.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
-        Me.chEstadistica.UseVisualStyleBackColor = True
         '
         'chAdministracion
         '
@@ -271,6 +309,18 @@ Partial Class FormModulo
         Me.ChVentas.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage
         Me.ChVentas.UseVisualStyleBackColor = True
         '
+        'ToolStrip1
+        '
+        Me.ToolStrip1.BackColor = System.Drawing.Color.White
+        Me.ToolStrip1.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.ToolStrip1.ImageScalingSize = New System.Drawing.Size(25, 25)
+        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.btRegistrar, Me.btEditar, Me.btCancelar})
+        Me.ToolStrip1.Location = New System.Drawing.Point(0, 404)
+        Me.ToolStrip1.Name = "ToolStrip1"
+        Me.ToolStrip1.Size = New System.Drawing.Size(713, 32)
+        Me.ToolStrip1.TabIndex = 17
+        Me.ToolStrip1.Text = "ToolStrip1"
+        '
         'btRegistrar
         '
         Me.btRegistrar.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -304,77 +354,27 @@ Partial Class FormModulo
         Me.btCancelar.Text = "&Cancelar"
         Me.btCancelar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         '
-        'Label2
+        'Panel1
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(75, 96)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(72, 13)
-        Me.Label2.TabIndex = 28
-        Me.Label2.Text = "Configuración"
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(220, Byte), Integer), CType(CType(234, Byte), Integer))
+        Me.Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Panel1.Controls.Add(Me.LTitulo)
+        Me.Panel1.Location = New System.Drawing.Point(1, 0)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(712, 34)
+        Me.Panel1.TabIndex = 1
         '
-        'Label3
+        'LTitulo
         '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(388, 96)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(54, 13)
-        Me.Label3.TabIndex = 29
-        Me.Label3.Text = "Inventario"
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(223, 96)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(75, 13)
-        Me.Label4.TabIndex = 30
-        Me.Label4.Text = "Administración"
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(79, 237)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(65, 13)
-        Me.Label5.TabIndex = 31
-        Me.Label5.Text = "Contabilidad"
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(237, 237)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(43, 13)
-        Me.Label6.TabIndex = 32
-        Me.Label6.Text = "Nómina"
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(407, 237)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(65, 13)
-        Me.Label7.TabIndex = 33
-        Me.Label7.Text = "Estadísticas"
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(558, 237)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(30, 13)
-        Me.Label8.TabIndex = 34
-        Me.Label8.Text = "Citas"
-        '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(553, 96)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(40, 13)
-        Me.Label9.TabIndex = 35
-        Me.Label9.Text = "Ventas"
+        Me.LTitulo.BackColor = System.Drawing.Color.Transparent
+        Me.LTitulo.Font = New System.Drawing.Font("Times New Roman", 20.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LTitulo.ForeColor = System.Drawing.Color.Black
+        Me.LTitulo.Location = New System.Drawing.Point(1, 3)
+        Me.LTitulo.Name = "LTitulo"
+        Me.LTitulo.Size = New System.Drawing.Size(625, 28)
+        Me.LTitulo.TabIndex = 1
+        Me.LTitulo.Text = "Asignación de modulos"
+        Me.LTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'FormModulo
         '

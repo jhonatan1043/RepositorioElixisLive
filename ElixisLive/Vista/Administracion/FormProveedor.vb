@@ -89,7 +89,7 @@ Public Class FormProveedor
             EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
     End Sub
-    Private Sub btBuscar_Click(sender As Object, e As EventArgs) Handles btBuscar.Click
+    Private Sub btBuscar_Click(sender As Object, e As EventArgs) Handles btBusqueda.Click
         Dim params As New List(Of String)
         params.Add(String.Empty)
         Try
