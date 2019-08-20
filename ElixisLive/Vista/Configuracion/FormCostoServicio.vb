@@ -8,7 +8,7 @@
         Generales.deshabilitarControles(Me)
         validarGrilla()
         btNuevo.Enabled = True
-        btBuscar.Enabled = True
+        'btBuscar.Enabled = True
         Generales.tabularConEnter(Me)
         Generales.asignarPermiso(Me)
     End Sub
@@ -118,7 +118,7 @@
             Generales.limpiarControles(Me)
             objCostoServicio.codigoServicio = Nothing
             btNuevo.Enabled = True
-            btBuscar.Enabled = True
+            'btBuscar.Enabled = True
         End If
     End Sub
     Private Sub validarGrilla()

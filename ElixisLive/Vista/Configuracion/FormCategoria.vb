@@ -8,12 +8,12 @@
         Generales.deshabilitarBotones(ToolStrip1)
         Generales.deshabilitarControles(Me)
         btNuevo.Enabled = True
-        btBuscar.Enabled = True
+        'btBuscar.Enabled = True
         visibleConfig()
         Generales.tabularConEnter(Me)
     End Sub
     Private Sub visibleConfig()
-        btBuscar.Visible = False
+        'btBuscar.Visible = False
     End Sub
     Private Sub cargarRegistro()
         Dim params As New List(Of String)
@@ -48,7 +48,7 @@
             Generales.deshabilitarBotones(ToolStrip1)
             Generales.deshabilitarControles(Me)
             btNuevo.Enabled = True
-            btBuscar.Enabled = True
+            'btBuscar.Enabled = True
             errorIcono.SetError(txtnombre, "")
         End If
     End Sub

@@ -323,7 +323,7 @@ Public Class Generales
                     limpiarGrillaParametro(vControl)
                 End If
             Else
-                ' mira a ve si es un contenedor
+
                 limpiarControles(vControl)
             End If
         Next
@@ -442,10 +442,10 @@ Public Class Generales
         dgv.DefaultCellStyle.SelectionForeColor = Color.Black
         dgv.DefaultCellStyle.Font = New Font(Constantes.TIPO_LETRA_ELEMENTO, 9)
         dgv.EnableHeadersVisualStyles = False
-        dgv.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(208, 220, 234)
+        dgv.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(215, 228, 242)
         dgv.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black
         dgv.AlternatingRowsDefaultCellStyle.Font = New Font(Constantes.TIPO_LETRA_ELEMENTO, 9)
-        dgv.ColumnHeadersDefaultCellStyle.Font = New Font(Constantes.TIPO_LETRA_ELEMENTO, 9)
+        dgv.ColumnHeadersDefaultCellStyle.Font = New Font(Constantes.TIPO_LETRA_TITULO, 10)
         dgv.RowHeadersDefaultCellStyle.SelectionBackColor = Color.FromArgb(208, 220, 234)
         For indiceColumna = 0 To dgv.Columns.Count - 1
             dgv.Columns(indiceColumna).AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells

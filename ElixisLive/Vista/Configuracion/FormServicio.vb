@@ -9,7 +9,7 @@
         Generales.deshabilitarControles(Me)
         visibleConfig()
         btNuevo.Enabled = True
-        btBuscar.Enabled = True
+        'btBusqueda.Enabled = True
         Generales.tabularConEnter(Me)
     End Sub
     Private Sub txtnombre_LostFocus(sender As Object, e As EventArgs) Handles txtnombre.LostFocus
@@ -20,7 +20,7 @@
         End If
     End Sub
     Private Sub visibleConfig()
-        btBuscar.Visible = False
+        'btBusqueda.Visible = False
     End Sub
     Private Sub cargarRegistro()
         Dim params As New List(Of String)
@@ -51,7 +51,7 @@
             Generales.deshabilitarBotones(ToolStrip1)
             Generales.deshabilitarControles(Me)
             btNuevo.Enabled = True
-            btBuscar.Enabled = True
+            'btBusqueda.Enabled = True
             errorIcono.SetError(txtnombre, "")
         End If
     End Sub
@@ -71,7 +71,7 @@
                     Generales.deshabilitarBotones(ToolStrip1)
                     cargarRegistro()
                     btNuevo.Enabled = True
-                    btBuscar.Enabled = True
+                    'btBusqueda.Enabled = True
                     EstiloMensajes.mostrarMensajeAnulado(MensajeSistema.REGISTRO_ANULADO)
                 End If
             Catch ex As Exception

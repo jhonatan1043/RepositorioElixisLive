@@ -15,7 +15,7 @@
         Generales.deshabilitarBotones(ToolStrip1)
         Generales.deshabilitarControles(Me)
         btNuevo.Enabled = True
-        btBuscar.Enabled = True
+        'btBuscar.Enabled = True
         visibleConfig()
         Generales.tabularConEnter(Me)
     End Sub
@@ -55,7 +55,7 @@
             Generales.deshabilitarBotones(ToolStrip1)
             Generales.deshabilitarControles(Me)
             btNuevo.Enabled = True
-            btBuscar.Enabled = True
+            'btBuscar.Enabled = True
             Me.ErrorIcono.SetError(txtnombre, Constantes.CADENA_VACIA)
         End If
     End Sub

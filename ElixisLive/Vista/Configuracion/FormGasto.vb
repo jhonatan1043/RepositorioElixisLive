@@ -8,12 +8,12 @@
         Generales.deshabilitarBotones(ToolStrip1)
         Generales.deshabilitarControles(Me)
         btNuevo.Enabled = True
-        btBuscar.Enabled = True
+        'btBuscar.Enabled = True
         visibleConfig()
         Generales.tabularConEnter(Me)
     End Sub
     Private Sub visibleConfig()
-        btBuscar.Visible = False
+        'btBuscar.Visible = False
     End Sub
     Private Sub cargarRegistro()
         Dim params As New List(Of String)
@@ -47,7 +47,7 @@
             Generales.deshabilitarBotones(ToolStrip1)
             Generales.deshabilitarControles(Me)
             btNuevo.Enabled = True
-            btBuscar.Enabled = True
+            'btBuscar.Enabled = True
         End If
     End Sub
     Private Sub btEditar_Click(sender As Object, e As EventArgs) Handles btEditar.Click
@@ -66,7 +66,7 @@
                     Generales.deshabilitarBotones(ToolStrip1)
                     cargarRegistro()
                     btNuevo.Enabled = True
-                    btBuscar.Enabled = True
+                    'btBuscar.Enabled = True
                     EstiloMensajes.mostrarMensajeAnulado(MensajeSistema.REGISTRO_ANULADO)
                 End If
             Catch ex As Exception
