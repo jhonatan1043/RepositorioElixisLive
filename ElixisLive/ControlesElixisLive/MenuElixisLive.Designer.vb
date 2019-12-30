@@ -56,7 +56,7 @@ Partial Class MenuElixisLive
         'SplitContainer1.Panel1
         '
         Me.SplitContainer1.Panel1.AutoScroll = True
-        Me.SplitContainer1.Panel1.BackColor = System.Drawing.Color.Silver
+        Me.SplitContainer1.Panel1.BackColor = System.Drawing.Color.White
         Me.SplitContainer1.Panel1.Controls.Add(Me.Panel2)
         Me.SplitContainer1.Panel1.Controls.Add(Me.pctLogo)
         Me.SplitContainer1.Panel1.Controls.Add(Me.Panel1)

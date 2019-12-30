@@ -15,6 +15,8 @@
             bra = True
         End If
     End Sub
+
+
     'Private Sub desplegarMenuHijo()
     '    If braButton = True Then
     '        panelGrobal.Size = New Size(tamañoGrobalFinal)
@@ -26,11 +28,13 @@
     '        braButton = True
     '    End If
     'End Sub
-    Private Sub MenuElixisLive_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        generarMenu(crearDatatble)
-    End Sub
 
-    Private Sub generarMenu(dtMenu As DataTable)
+    Public Sub generarMenu(dtMenu As DataTable,
+                           columnPadre As String,
+                           columnCodigo As String,
+                           columnNombre As String,
+                           columnForm As String)
+
         Dim pnlContButton As Panel
         Dim numHijo As Integer
         Dim salto As Integer
@@ -56,100 +60,100 @@
 
         For Each dRow As DataRow In dtMenu.Select
             salto = 0
-            If dRow.Item("padre") = "" Then
+            If dRow.Item(columnPadre) = "" Then
                 contador = 1
                 pnlContButton = New Panel
-                numHijo = dtMenu.Compute("COUNT(codigo)", "padre = '" + dRow.Item("codigo") + "'") + 1
+                numHijo = dtMenu.Compute("COUNT(" + columnCodigo + ")", columnPadre + " = '" + dRow.Item(columnCodigo) + "'") + 1
                 salto = saltoLineaPredeterminado * numHijo
                 pnlContButton = pnlContenedorCrear(New Point(posicionX, auxTamañoY), New Point(tamañoX, salto))
-                pnlContButton.Controls.Add(btEncabezadoCrear(New Point(posicionButX, posicionInicialButY), dRow.Item("nombre"), pnlContButton))
-                pnlContButton.Name = dRow.Item("nombre")
+                pnlContButton.Controls.Add(btEncabezadoCrear(New Point(posicionButX, posicionInicialButY), dRow.Item(columnNombre), pnlContButton))
+                pnlContButton.Name = dRow.Item(columnNombre)
                 SplitContainer1.Panel1.Controls.Add(pnlContButton)
                 auxTamañoY = auxTamañoY + salto - 5
             Else
                 salto = saltoLineaPredeterminado * contador
-                pnlContButton.Controls.Add(btHijoCrear(New Point(posicionButX, salto), dRow.Item("nombre")))
+                pnlContButton.Controls.Add(btHijoCrear(New Point(posicionButX, salto), dRow.Item(columnNombre)))
                 contador = contador + 1
                 If contador = numHijo Then
-                    ocultarSubMenu(pnlContButton)
+                    'ocultarSubMenu(pnlContButton)
                 End If
             End If
         Next
     End Sub
-    Private Function crearDatatble() As DataTable
-        Dim dt As New DataTable
-        dt.Columns.Add("codigo", Type.GetType("System.String"))
-        dt.Columns.Add("nombre", Type.GetType("System.String"))
-        dt.Columns.Add("formulario", Type.GetType("System.String"))
-        dt.Columns.Add("icono", Type.GetType("System.String"))
-        dt.Columns.Add("padre", Type.GetType("System.String"))
+    'Private Function crearDatatble() As DataTable
+    '    Dim dt As New DataTable
+    '    dt.Columns.Add("codigo", Type.GetType("System.String"))
+    '    dt.Columns.Add("nombre", Type.GetType("System.String"))
+    '    dt.Columns.Add("formulario", Type.GetType("System.String"))
+    '    dt.Columns.Add("icono", Type.GetType("System.String"))
+    '    dt.Columns.Add("padre", Type.GetType("System.String"))
 
-        For posicion = 0 To 9 Step 1
-            dt.Rows.Add()
-        Next
+    '    For posicion = 0 To 9 Step 1
+    '        dt.Rows.Add()
+    '    Next
 
-        dt.Rows(0).Item("codigo") = "1"
-        dt.Rows(0).Item("nombre") = "Administracion"
-        dt.Rows(0).Item("formulario") = ""
-        dt.Rows(0).Item("icono") = ""
-        dt.Rows(0).Item("padre") = ""
+    '    dt.Rows(0).Item("codigo") = "1"
+    '    dt.Rows(0).Item("nombre") = "Administracion"
+    '    dt.Rows(0).Item("formulario") = ""
+    '    dt.Rows(0).Item("icono") = ""
+    '    dt.Rows(0).Item("padre") = ""
 
-        dt.Rows(1).Item("codigo") = "2"
-        dt.Rows(1).Item("nombre") = "Empresa"
-        dt.Rows(1).Item("formulario") = ""
-        dt.Rows(1).Item("icono") = ""
-        dt.Rows(1).Item("padre") = "1"
+    '    dt.Rows(1).Item("codigo") = "2"
+    '    dt.Rows(1).Item("nombre") = "Empresa"
+    '    dt.Rows(1).Item("formulario") = ""
+    '    dt.Rows(1).Item("icono") = ""
+    '    dt.Rows(1).Item("padre") = "1"
 
-        dt.Rows(2).Item("codigo") = "3"
-        dt.Rows(2).Item("nombre") = "Persona"
-        dt.Rows(2).Item("formulario") = ""
-        dt.Rows(2).Item("icono") = ""
-        dt.Rows(2).Item("padre") = "1"
+    '    dt.Rows(2).Item("codigo") = "3"
+    '    dt.Rows(2).Item("nombre") = "Persona"
+    '    dt.Rows(2).Item("formulario") = ""
+    '    dt.Rows(2).Item("icono") = ""
+    '    dt.Rows(2).Item("padre") = "1"
 
-        dt.Rows(3).Item("codigo") = "4"
-        dt.Rows(3).Item("nombre") = "cliente"
-        dt.Rows(3).Item("formulario") = ""
-        dt.Rows(3).Item("icono") = ""
-        dt.Rows(3).Item("padre") = "1"
+    '    dt.Rows(3).Item("codigo") = "4"
+    '    dt.Rows(3).Item("nombre") = "cliente"
+    '    dt.Rows(3).Item("formulario") = ""
+    '    dt.Rows(3).Item("icono") = ""
+    '    dt.Rows(3).Item("padre") = "1"
 
-        dt.Rows(4).Item("codigo") = "5"
-        dt.Rows(4).Item("nombre") = "Inventario"
-        dt.Rows(4).Item("formulario") = ""
-        dt.Rows(4).Item("icono") = ""
-        dt.Rows(4).Item("padre") = ""
+    '    dt.Rows(4).Item("codigo") = "5"
+    '    dt.Rows(4).Item("nombre") = "Inventario"
+    '    dt.Rows(4).Item("formulario") = ""
+    '    dt.Rows(4).Item("icono") = ""
+    '    dt.Rows(4).Item("padre") = ""
 
-        dt.Rows(5).Item("codigo") = "6"
-        dt.Rows(5).Item("nombre") = "Producto"
-        dt.Rows(5).Item("formulario") = ""
-        dt.Rows(5).Item("icono") = ""
-        dt.Rows(5).Item("padre") = "5"
+    '    dt.Rows(5).Item("codigo") = "6"
+    '    dt.Rows(5).Item("nombre") = "Producto"
+    '    dt.Rows(5).Item("formulario") = ""
+    '    dt.Rows(5).Item("icono") = ""
+    '    dt.Rows(5).Item("padre") = "5"
 
-        dt.Rows(6).Item("codigo") = "7"
-        dt.Rows(6).Item("nombre") = "Entrada"
-        dt.Rows(6).Item("formulario") = ""
-        dt.Rows(6).Item("icono") = ""
-        dt.Rows(6).Item("padre") = "5"
+    '    dt.Rows(6).Item("codigo") = "7"
+    '    dt.Rows(6).Item("nombre") = "Entrada"
+    '    dt.Rows(6).Item("formulario") = ""
+    '    dt.Rows(6).Item("icono") = ""
+    '    dt.Rows(6).Item("padre") = "5"
 
-        dt.Rows(7).Item("codigo") = "8"
-        dt.Rows(7).Item("nombre") = "Venta"
-        dt.Rows(7).Item("formulario") = ""
-        dt.Rows(7).Item("icono") = ""
-        dt.Rows(7).Item("padre") = ""
+    '    dt.Rows(7).Item("codigo") = "8"
+    '    dt.Rows(7).Item("nombre") = "Venta"
+    '    dt.Rows(7).Item("formulario") = ""
+    '    dt.Rows(7).Item("icono") = ""
+    '    dt.Rows(7).Item("padre") = ""
 
-        dt.Rows(8).Item("codigo") = "9"
-        dt.Rows(8).Item("nombre") = "Factura"
-        dt.Rows(8).Item("formulario") = ""
-        dt.Rows(8).Item("icono") = ""
-        dt.Rows(8).Item("padre") = "8"
+    '    dt.Rows(8).Item("codigo") = "9"
+    '    dt.Rows(8).Item("nombre") = "Factura"
+    '    dt.Rows(8).Item("formulario") = ""
+    '    dt.Rows(8).Item("icono") = ""
+    '    dt.Rows(8).Item("padre") = "8"
 
-        dt.Rows(9).Item("codigo") = "10"
-        dt.Rows(9).Item("nombre") = "Recibo"
-        dt.Rows(9).Item("formulario") = ""
-        dt.Rows(9).Item("icono") = ""
-        dt.Rows(9).Item("padre") = "8"
+    '    dt.Rows(9).Item("codigo") = "10"
+    '    dt.Rows(9).Item("nombre") = "Recibo"
+    '    dt.Rows(9).Item("formulario") = ""
+    '    dt.Rows(9).Item("icono") = ""
+    '    dt.Rows(9).Item("padre") = "8"
 
-        Return dt
-    End Function
+    '    Return dt
+    'End Function
 
     Private Function btEncabezadoCrear(localidad As Point,
                                        nombre As String,
