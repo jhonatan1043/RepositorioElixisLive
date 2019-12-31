@@ -9,7 +9,7 @@ Public Class principalBLL
         Dim dtFilas As New DataTable
         Try
             dsDatos = New DataSet
-            CreaOpciones(dsDatos)
+
             drCuentaPadre = dsDatos.Tables(0).Select("Codigo_Padre is null", "Codigo")
             For Each drFila As DataRow In drCuentaPadre
                 mnuOpcion = New ToolStripMenuItem(drFila("Descripcion").ToString())
@@ -77,18 +77,21 @@ Public Class principalBLL
         Next
 
     End Sub
-    Private Shared Sub CreaOpciones(ByRef dsDatos As DataSet)
-        Dim dtmenu As New DataTable("menu")
+    'crear menu de inicio 
+    '------------------------------------------------
+    Public Function CreaOpciones() As DataTable
+        Dim dtMenu As New DataTable
         Dim params As New List(Of String)
         Try
             params.Add(SesionActual.codigoSucursal)
             params.Add(SesionActual.idUsuario)
-            Generales.llenarTabla("[SP_ADMIN_MENU_SUCURSAL]", params, dtmenu)
-            dsDatos.Tables.Add(dtmenu)
+            Generales.llenarTabla("[SP_ADMIN_MENU_SUCURSAL]", params, dtMenu)
+            Return dtMenu
         Catch ex As Exception
             EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
-    End Sub
+    End Function
+
     Public Sub cargarFormulario(sender As Object, e As EventArgs)
         Try
             Dim menuItem = DirectCast(sender, ToolStripMenuItem)

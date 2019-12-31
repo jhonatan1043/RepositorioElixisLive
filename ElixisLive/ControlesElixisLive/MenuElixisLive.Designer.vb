@@ -66,7 +66,7 @@ Partial Class MenuElixisLive
         'SplitContainer1.Panel2
         '
         Me.SplitContainer1.Panel2.Controls.Add(Me.btnMenu)
-        Me.SplitContainer1.Size = New System.Drawing.Size(674, 498)
+        Me.SplitContainer1.Size = New System.Drawing.Size(674, 487)
         Me.SplitContainer1.SplitterDistance = 280
         Me.SplitContainer1.TabIndex = 0
         '
@@ -78,7 +78,7 @@ Partial Class MenuElixisLive
         Me.Panel2.Controls.Add(Me.Button4)
         Me.Panel2.Controls.Add(Me.Button5)
         Me.Panel2.Controls.Add(Me.Button6)
-        Me.Panel2.Location = New System.Drawing.Point(7, 111)
+        Me.Panel2.Location = New System.Drawing.Point(7, 113)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(263, 37)
         Me.Panel2.TabIndex = 5
@@ -142,9 +142,9 @@ Partial Class MenuElixisLive
         Me.pctLogo.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.pctLogo.Image = CType(resources.GetObject("pctLogo.Image"), System.Drawing.Image)
-        Me.pctLogo.Location = New System.Drawing.Point(9, 7)
+        Me.pctLogo.Location = New System.Drawing.Point(9, 3)
         Me.pctLogo.Name = "pctLogo"
-        Me.pctLogo.Size = New System.Drawing.Size(267, 64)
+        Me.pctLogo.Size = New System.Drawing.Size(261, 57)
         Me.pctLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.pctLogo.TabIndex = 2
         Me.pctLogo.TabStop = False
@@ -157,7 +157,7 @@ Partial Class MenuElixisLive
         Me.Panel1.Controls.Add(Me.Button3)
         Me.Panel1.Controls.Add(Me.Button1)
         Me.Panel1.Controls.Add(Me.Button2)
-        Me.Panel1.Location = New System.Drawing.Point(6, 77)
+        Me.Panel1.Location = New System.Drawing.Point(7, 79)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(263, 37)
         Me.Panel1.TabIndex = 2
@@ -220,7 +220,7 @@ Partial Class MenuElixisLive
         '
         Me.btnMenu.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnMenu.Image = CType(resources.GetObject("btnMenu.Image"), System.Drawing.Image)
-        Me.btnMenu.Location = New System.Drawing.Point(5, 6)
+        Me.btnMenu.Location = New System.Drawing.Point(4, 5)
         Me.btnMenu.Name = "btnMenu"
         Me.btnMenu.Size = New System.Drawing.Size(35, 35)
         Me.btnMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -233,7 +233,7 @@ Partial Class MenuElixisLive
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.Controls.Add(Me.SplitContainer1)
         Me.Name = "MenuElixisLive"
-        Me.Size = New System.Drawing.Size(674, 498)
+        Me.Size = New System.Drawing.Size(674, 487)
         Me.SplitContainer1.Panel1.ResumeLayout(False)
         Me.SplitContainer1.Panel2.ResumeLayout(False)
         CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).EndInit()

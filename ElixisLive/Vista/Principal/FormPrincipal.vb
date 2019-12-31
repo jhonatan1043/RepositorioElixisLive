@@ -7,22 +7,10 @@ Public Class FormPrincipal
     Dim objPrincipalBLL As New principalBLL
     Public menuOpciones As New MenuStrip
     Private Sub formPrincipal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        objPrincipalBLL.formulario = Me
-        objPrincipalBLL.cargarMenu()
-
-        Dim ctl As Control
-        For Each ctl In Me.Controls
-            Try
-                ctlMDI = CType(ctl, MdiClient)
-                ctlMDI.BackgroundImage = My.Resources.XANDaR
-                ctlMDI.BackColor = Me.BackColor
-            Catch exc As InvalidCastException
-            End Try
-        Next
-
+        MenuElixisLive1.pctLogo.Image = My.Resources.XANDaR
+        MenuElixisLive1.generarMenu(objPrincipalBLL.CreaOpciones(), "Codigo_Padre", "codigo", "Descripcion", "Formulario")
         lbUsuario.Text = SesionActual.nombreUsuario
-        SesionActual.dtPermisos = cargarOpciones(SesionActual.codigoPerfil)
-        'txtNombreEmpresa.Text = SesionActual.nombreEmpresa.ToUpper
+        'SesionActual.dtPermisos = cargarOpciones(SesionActual.codigoPerfil)
     End Sub
     Public Function cargarOpciones(codigoPerfil As Integer) As DataTable
         Dim cadena As String
@@ -44,4 +32,9 @@ Public Class FormPrincipal
         objConexio.desconectar()
     End Function
 
+    Private Sub ToolStripButton1_Click(sender As Object, e As EventArgs) Handles ToolStripButton1.Click
+
+        Application.Exit()
+
+    End Sub
 End Class
