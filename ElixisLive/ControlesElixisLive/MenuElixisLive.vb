@@ -7,7 +7,7 @@ Public Class MenuElixisLive
     Dim tamañoGrobalFinal As Point
     Dim localicionGlobalInicial As Point
     Dim localicionGlobalFinal As Point
-    Dim formulario As String
+    Dim menu As ElementoMenu
     Private Sub btnMenu_Click(sender As Object, e As EventArgs) Handles btnMenu.Click
         If bra = True Then
             SplitContainer1.Panel1Collapsed = False
@@ -33,11 +33,13 @@ Public Class MenuElixisLive
                            columnCodigo As String,
                            columnNombre As String,
                            columnForm As String)
+
         Dim pnlContButton As Panel
         Dim numHijo As Integer
         Dim salto As Integer
         Dim contador As Integer
         Dim auxTamañoY As Integer
+
         ' Datos del panel Posicion Y
         Dim posicionInicialY = 77
         Dim tamañoIncialY = 100
@@ -54,9 +56,11 @@ Public Class MenuElixisLive
         Dim saltoLineaPredeterminado = 32
         '----------------------------------------------
         auxTamañoY = posicionInicialY
+
         Try
             For Each dRow As DataRow In dtMenu.Select
                 salto = 0
+
                 If dRow.Item(columnPadre) = "" Then
                     contador = 1
                     pnlContButton = New Panel
@@ -69,8 +73,13 @@ Public Class MenuElixisLive
                     auxTamañoY = auxTamañoY + salto - 5
                 Else
                     salto = saltoLineaPredeterminado * contador
-                    formulario = dRow.Item(columnForm)
-                    pnlContButton.Controls.Add(btHijoCrear(New Point(posicionButX, salto), dRow.Item(columnNombre)))
+                    pnlContButton.Controls.Add(btHijoCrear(New Point(posicionButX, salto),
+                                                               dRow.Item(columnNombre),
+                                                               dRow,
+                                                               columnPadre,
+                                                               columnCodigo,
+                                                               columnNombre,
+                                                               columnForm))
                     contador = contador + 1
                     If contador = numHijo Then
                         'ocultarSubMenu(pnlContButton)
@@ -105,8 +114,21 @@ Public Class MenuElixisLive
     End Function
     Private Function btHijoCrear(localidad As Point,
                                  nombre As String,
+                                 dRow As DataRow,
+                                 columnPadre As String,
+                                 columnCodigo As String,
+                                 columnNombre As String,
+                                 columnForm As String,
                                  Optional img As Image = Nothing) As Button
+
         Dim btn As New Button
+
+        btn.Tag = New ElementoMenu(dRow.Item(columnCodigo),
+                                        dRow.Item(columnForm),
+                                        Nothing,
+                                        dRow.Item(columnNombre))
+
+        btn.Name = dRow.Item(columnNombre)
         btn.BackColor = Color.LightSkyBlue
         btn.ForeColor = Color.Black
         btn.ImageAlign = ContentAlignment.MiddleLeft
@@ -153,11 +175,16 @@ Public Class MenuElixisLive
             contador = contador + 1
         End If
     End Sub
-    Private Sub abrirFormulario()
-        Dim nombreTipo = Constantes.NOMBRE_SOFTWARE & formulario
+    Private Sub abrirFormulario(sender As Object, e As EventArgs)
+        Dim boton = DirectCast(sender, Button)
+        Dim elemMenu As ElementoMenu = boton.Tag
+
+        Dim nombreTipo = Constantes.NOMBRE_SOFTWARE & elemMenu.nombre
         Dim vTipo As Type = Assembly.GetExecutingAssembly.GetType(nombreTipo)
+
         If vTipo IsNot Nothing Then
             Dim vFormulario = Activator.CreateInstance(vTipo)
+            vFormulario.tag = elemMenu
             cargarFormularioPanel(vFormulario)
         End If
     End Sub
@@ -165,10 +192,11 @@ Public Class MenuElixisLive
         formContenido.TopLevel = False
         formContenido.Dock = DockStyle.None
         formContenido.FormBorderStyle = FormBorderStyle.None
-        SplitContainer1.Panel2.Controls.Add(formContenido)
-        formContenido.Top = (SplitContainer1.Panel2.Height / 2) - (formContenido.Height / 2)
-        formContenido.Left = (SplitContainer1.Panel2.Width / 2) - (formContenido.Width / 2)
-        SplitContainer1.Panel2.AutoScroll = True
+        PnlContendorForm.Controls.Clear()
+        PnlContendorForm.Controls.Add(formContenido)
+        formContenido.Top = (PnlContendorForm.Height / 2) - (formContenido.Height / 2)
+        formContenido.Left = (PnlContendorForm.Width / 2) - (formContenido.Width / 2)
+        PnlContendorForm.AutoScroll = True
         formContenido.Show()
     End Sub
 End Class

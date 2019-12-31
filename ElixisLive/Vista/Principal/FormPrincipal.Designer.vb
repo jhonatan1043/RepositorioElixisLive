@@ -28,7 +28,7 @@ Partial Class FormPrincipal
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.lbUsuario = New System.Windows.Forms.Label()
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
-        Me.ToolStripButton1 = New System.Windows.Forms.ToolStripButton()
+        Me.tsSalir = New System.Windows.Forms.ToolStripButton()
         Me.MenuElixisLive1 = New Quality.MenuElixisLive()
         Me.ToolStrip1.SuspendLayout()
         Me.SuspendLayout()
@@ -67,22 +67,22 @@ Partial Class FormPrincipal
         '
         'ToolStrip1
         '
-        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripButton1})
+        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsSalir})
         Me.ToolStrip1.Location = New System.Drawing.Point(0, 0)
         Me.ToolStrip1.Name = "ToolStrip1"
         Me.ToolStrip1.Size = New System.Drawing.Size(1016, 25)
         Me.ToolStrip1.TabIndex = 32
         Me.ToolStrip1.Text = "ToolStrip1"
         '
-        'ToolStripButton1
+        'tsSalir
         '
-        Me.ToolStripButton1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
-        Me.ToolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.ToolStripButton1.Image = CType(resources.GetObject("ToolStripButton1.Image"), System.Drawing.Image)
-        Me.ToolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.ToolStripButton1.Name = "ToolStripButton1"
-        Me.ToolStripButton1.Size = New System.Drawing.Size(23, 22)
-        Me.ToolStripButton1.Text = "ToolStripButton1"
+        Me.tsSalir.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
+        Me.tsSalir.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.tsSalir.Image = CType(resources.GetObject("tsSalir.Image"), System.Drawing.Image)
+        Me.tsSalir.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.tsSalir.Name = "tsSalir"
+        Me.tsSalir.Size = New System.Drawing.Size(23, 22)
+        Me.tsSalir.Text = "Salir"
         '
         'MenuElixisLive1
         '
@@ -130,5 +130,5 @@ Partial Class FormPrincipal
     Friend WithEvents lbUsuario As Label
     Friend WithEvents MenuElixisLive1 As MenuElixisLive
     Friend WithEvents ToolStrip1 As ToolStrip
-    Friend WithEvents ToolStripButton1 As ToolStripButton
+    Friend WithEvents tsSalir As ToolStripButton
 End Class

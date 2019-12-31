@@ -9,7 +9,6 @@ Public Class principalBLL
         Dim dtFilas As New DataTable
         Try
             dsDatos = New DataSet
-
             drCuentaPadre = dsDatos.Tables(0).Select("Codigo_Padre is null", "Codigo")
             For Each drFila As DataRow In drCuentaPadre
                 mnuOpcion = New ToolStripMenuItem(drFila("Descripcion").ToString())

@@ -34,6 +34,7 @@ Partial Class MenuElixisLive
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.btnMenu = New System.Windows.Forms.PictureBox()
+        Me.PnlContendorForm = New System.Windows.Forms.Panel()
         CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainer1.Panel1.SuspendLayout()
         Me.SplitContainer1.Panel2.SuspendLayout()
@@ -65,6 +66,7 @@ Partial Class MenuElixisLive
         '
         'SplitContainer1.Panel2
         '
+        Me.SplitContainer1.Panel2.Controls.Add(Me.PnlContendorForm)
         Me.SplitContainer1.Panel2.Controls.Add(Me.btnMenu)
         Me.SplitContainer1.Size = New System.Drawing.Size(674, 487)
         Me.SplitContainer1.SplitterDistance = 280
@@ -227,6 +229,16 @@ Partial Class MenuElixisLive
         Me.btnMenu.TabIndex = 1
         Me.btnMenu.TabStop = False
         '
+        'PnlContendorForm
+        '
+        Me.PnlContendorForm.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.PnlContendorForm.Location = New System.Drawing.Point(4, 46)
+        Me.PnlContendorForm.Name = "PnlContendorForm"
+        Me.PnlContendorForm.Size = New System.Drawing.Size(381, 426)
+        Me.PnlContendorForm.TabIndex = 2
+        '
         'MenuElixisLive
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -256,4 +268,5 @@ Partial Class MenuElixisLive
     Friend WithEvents Button3 As Button
     Friend WithEvents Button1 As Button
     Friend WithEvents Button2 As Button
+    Friend WithEvents PnlContendorForm As Panel
 End Class

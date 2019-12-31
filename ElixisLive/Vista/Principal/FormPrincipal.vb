@@ -32,9 +32,7 @@ Public Class FormPrincipal
         objConexio.desconectar()
     End Function
 
-    Private Sub ToolStripButton1_Click(sender As Object, e As EventArgs) Handles ToolStripButton1.Click
-
+    Private Sub ToolStripButton1_Click(sender As Object, e As EventArgs) Handles tsSalir.Click
         Application.Exit()
-
     End Sub
 End Class
