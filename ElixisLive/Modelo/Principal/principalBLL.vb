@@ -8,20 +8,27 @@ Public Class principalBLL
         Dim drCuentaPadre As DataRow()
         Dim dtFilas As New DataTable
         Try
+
             dsDatos = New DataSet
-            drCuentaPadre = dsDatos.Tables(0).Select("Codigo_Padre is null", "Codigo")
+            CreaOpciones(dsDatos)
+            drCuentaPadre = dsDatos.Tables(0).Select("Codigo_Padre = ''", "Codigo")
+
             For Each drFila As DataRow In drCuentaPadre
+
                 mnuOpcion = New ToolStripMenuItem(drFila("Descripcion").ToString())
                 mnuOpcion.Tag = New ElementoMenu(drFila("Codigo").ToString(),
                                                  drFila("Formulario").ToString,
                                                  Nothing,
                                                  drFila("Descripcion").ToString)
+
                 ' añadir este menú desplegable a la barra de menú
                 mnuOpcion.ForeColor = Color.Black
                 FormPrincipal.menuOpciones.Items.Add(mnuOpcion)
+
                 ' recorrer si hubiera las opciones dependientes de este menú
                 dtFilas = dsDatos.Tables(0)
                 CrearSubopciones(mnuOpcion, dtFilas)
+
             Next
 
             FormPrincipal.Controls.Add(FormPrincipal.menuOpciones)
@@ -78,19 +85,21 @@ Public Class principalBLL
     End Sub
     'crear menu de inicio 
     '------------------------------------------------
-    Public Function CreaOpciones() As DataTable
-        Dim dtMenu As New DataTable
+    Private Shared Sub CreaOpciones(ByRef dsDatos As DataSet)
+        Dim dtmenu As New DataTable("menu")
         Dim params As New List(Of String)
+
         Try
             params.Add(SesionActual.codigoSucursal)
             params.Add(SesionActual.idUsuario)
+
             Generales.llenarTabla("[SP_ADMIN_MENU_SUCURSAL]", params, dtMenu)
-            Return dtMenu
+            dsDatos.Tables.Add(dtmenu)
+
         Catch ex As Exception
             EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
-    End Function
-
+    End Sub
     Public Sub cargarFormulario(sender As Object, e As EventArgs)
         Try
             Dim menuItem = DirectCast(sender, ToolStripMenuItem)

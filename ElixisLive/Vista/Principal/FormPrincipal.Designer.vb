@@ -27,10 +27,6 @@ Partial Class FormPrincipal
         Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.lbUsuario = New System.Windows.Forms.Label()
-        Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
-        Me.tsSalir = New System.Windows.Forms.ToolStripButton()
-        Me.MenuElixisLive1 = New Quality.MenuElixisLive()
-        Me.ToolStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'ImageList1
@@ -65,36 +61,6 @@ Partial Class FormPrincipal
         Me.lbUsuario.Text = "Administrador del sistema"
         Me.lbUsuario.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
-        'ToolStrip1
-        '
-        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsSalir})
-        Me.ToolStrip1.Location = New System.Drawing.Point(0, 0)
-        Me.ToolStrip1.Name = "ToolStrip1"
-        Me.ToolStrip1.Size = New System.Drawing.Size(1016, 25)
-        Me.ToolStrip1.TabIndex = 32
-        Me.ToolStrip1.Text = "ToolStrip1"
-        '
-        'tsSalir
-        '
-        Me.tsSalir.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
-        Me.tsSalir.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.tsSalir.Image = CType(resources.GetObject("tsSalir.Image"), System.Drawing.Image)
-        Me.tsSalir.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.tsSalir.Name = "tsSalir"
-        Me.tsSalir.Size = New System.Drawing.Size(23, 22)
-        Me.tsSalir.Text = "Salir"
-        '
-        'MenuElixisLive1
-        '
-        Me.MenuElixisLive1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.MenuElixisLive1.AutoScroll = True
-        Me.MenuElixisLive1.Location = New System.Drawing.Point(0, 28)
-        Me.MenuElixisLive1.Name = "MenuElixisLive1"
-        Me.MenuElixisLive1.Size = New System.Drawing.Size(1016, 683)
-        Me.MenuElixisLive1.TabIndex = 30
-        '
         'FormPrincipal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(96.0!, 96.0!)
@@ -103,24 +69,18 @@ Partial Class FormPrincipal
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.ClientSize = New System.Drawing.Size(1016, 733)
         Me.ControlBox = False
-        Me.Controls.Add(Me.ToolStrip1)
-        Me.Controls.Add(Me.MenuElixisLive1)
         Me.Controls.Add(Me.lbUsuario)
         Me.Controls.Add(Me.StatusStrip1)
         Me.DoubleBuffered = True
         Me.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.IsMdiContainer = True
         Me.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.MinimizeBox = False
         Me.Name = "FormPrincipal"
-        Me.ShowIcon = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "  "
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
-        Me.ToolStrip1.ResumeLayout(False)
-        Me.ToolStrip1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -128,7 +88,4 @@ Partial Class FormPrincipal
     Friend WithEvents StatusStrip1 As StatusStrip
     Friend WithEvents ImageList1 As ImageList
     Friend WithEvents lbUsuario As Label
-    Friend WithEvents MenuElixisLive1 As MenuElixisLive
-    Friend WithEvents ToolStrip1 As ToolStrip
-    Friend WithEvents tsSalir As ToolStripButton
 End Class
