@@ -43,7 +43,7 @@
         validarEdicionGrilla(Constantes.EDITABLE)
         objCostoServicio.dtRegistro.Rows.Add()
         objCostoServicio.codigoServicio = Nothing
-        btBuscarServicio.Enabled = True
+        btBusqueda.Enabled = True
         btRegistrar.Enabled = True
         btCancelar.Enabled = True
     End Sub
@@ -118,7 +118,7 @@
             Generales.limpiarControles(Me)
             objCostoServicio.codigoServicio = Nothing
             btNuevo.Enabled = True
-            'btBuscar.Enabled = True
+            btBusqueda.Enabled = True
         End If
     End Sub
     Private Sub validarGrilla()

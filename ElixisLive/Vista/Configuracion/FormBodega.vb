@@ -15,12 +15,7 @@
         Generales.deshabilitarBotones(ToolStrip1)
         Generales.deshabilitarControles(Me)
         btNuevo.Enabled = True
-        'btBuscar.Enabled = True
-        visibleConfig()
         Generales.tabularConEnter(Me)
-    End Sub
-    Private Sub visibleConfig()
-        btBuscar.Visible = False
     End Sub
     Private Sub cargarRegistro()
         Dim params As New List(Of String)

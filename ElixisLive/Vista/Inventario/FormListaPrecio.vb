@@ -15,7 +15,7 @@
         validarGrilla()
         ListaPrecioBLL.cargarComboTipoLista(cbTipoLista)
         btNuevo.Enabled = True
-        btBuscar.Enabled = True
+        btBusqueda.Enabled = True
         Generales.tabularConEnter(Me)
     End Sub
     Private Sub validarGrilla()
@@ -75,7 +75,7 @@
         btRegistrar.Enabled = True
         btCancelar.Enabled = True
     End Sub
-    Private Sub btBuscar_Click(sender As Object, e As EventArgs) Handles btBuscar.Click
+    Private Sub btBuscar_Click(sender As Object, e As EventArgs) Handles btBusqueda.Click
         Dim params As New List(Of String)
         params.Add(String.Empty)
         Try
@@ -101,7 +101,7 @@
                 Generales.deshabilitarBotones(ToolStrip1)
                 Generales.deshabilitarControles(Me)
                 btNuevo.Enabled = True
-                btBuscar.Enabled = True
+                btBusqueda.Enabled = True
                 btAnular.Enabled = True
                 EstiloMensajes.mostrarMensajeExitoso(MensajeSistema.REGISTRO_GUARDADO)
             Catch ex As Exception

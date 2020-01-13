@@ -35,7 +35,7 @@
             Generales.deshabilitarBotones(ToolStrip1)
             Generales.deshabilitarControles(Me)
             btNuevo.Enabled = True
-            btBuscar.Enabled = True
+            btBusqueda.Enabled = True
         Catch ex As Exception
             EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
@@ -93,7 +93,7 @@
             Generales.deshabilitarControles(Me)
             objSucursal.codigo = Nothing
             btNuevo.Enabled = True
-            btBuscar.Enabled = True
+            btBusqueda.Enabled = True
         End If
     End Sub
     Private Sub btAnular_Click(sender As Object, e As EventArgs) Handles btAnular.Click
@@ -103,7 +103,7 @@
                     Generales.limpiarControles(Me)
                     Generales.deshabilitarBotones(ToolStrip1)
                     btNuevo.Enabled = True
-                    btBuscar.Enabled = True
+                    btBusqueda.Enabled = True
                     EstiloMensajes.mostrarMensajeAnulado(MensajeSistema.REGISTRO_ANULADO)
                 End If
             Catch ex As Exception
