@@ -10,7 +10,7 @@
             Generales.deshabilitarBotones(ToolStrip1)
             Generales.deshabilitarControles(Me)
             btNuevo.Enabled = True
-            btBuscar.Enabled = True
+            ' btBuscar.Enabled = True
             Generales.llenardgv(Sentencias.PARAMETROS_CONSULTAR, dgRegistro, params)
             Generales.personalizarDatagrid(dgRegistro)
             Generales.diseñoGrillaParametros(dgRegistro)
