@@ -1,0 +1,1193 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4E93D15C-08AE-4EC1-8140-B707CC081A83}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>Quality.My.MyApplication</StartupObject>
+    <RootNamespace>Quality</RootNamespace>
+    <AssemblyName>Quality</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <PublishUrl>publicar\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>Quality.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>Quality.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Quality_logo.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="itextsharp, Version=5.5.6.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>ReferenciaDLL\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Vbe.Interop.Forms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="MySql.Data, Version=6.1.0.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\MySql.Data.DLL</HintPath>
+    </Reference>
+    <Reference Include="NotifySenderControl, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>ReferenciaDLL\NotifySenderControl.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ApplicationEvents.vb" />
+    <Compile Include="Controlador\Administracion\CambioClaveDAL.vb" />
+    <Compile Include="Controlador\Administracion\EmpleadoDAL.vb" />
+    <Compile Include="Controlador\Administracion\EmpresaDAL.vb" />
+    <Compile Include="Controlador\Administracion\ModuloDAL.vb" />
+    <Compile Include="Controlador\Administracion\PerfilDAL.vb" />
+    <Compile Include="Controlador\Administracion\SucursalDAL.vb" />
+    <Compile Include="Controlador\Administracion\PersonaDAL.vb" />
+    <Compile Include="Controlador\Cita\AgendarCitaDAL.vb" />
+    <Compile Include="Controlador\Configuracion\ConfigDAL.vb" />
+    <Compile Include="Controlador\Configuracion\ConfigVentaDAL.vb" />
+    <Compile Include="Controlador\Configuracion\CostoServicioDAL.vb" />
+    <Compile Include="Controlador\Contabilidad\BalanceComprobacionDAL.vb" />
+    <Compile Include="Controlador\Contabilidad\CajaBancoDAL.vb" />
+    <Compile Include="Controlador\Contabilidad\CarteraCuentaPorCobrarDAL.vb" />
+    <Compile Include="Controlador\Contabilidad\CarteraCuentaPorPagarDAL.vb" />
+    <Compile Include="Controlador\Contabilidad\CertificadoRetencionDAL.vb" />
+    <Compile Include="Controlador\Contabilidad\CierreDocumentosDAL.vb" />
+    <Compile Include="Controlador\Contabilidad\CierrePeriodosDAL.vb" />
+    <Compile Include="Controlador\Contabilidad\ComprobanteEgresoDAL.vb" />
+    <Compile Include="Controlador\Contabilidad\ConfiguracionCentroDeCostosDAL.vb" />
+    <Compile Include="Controlador\Contabilidad\ConfiguracionConceptosDianDAL.vb" />
+    <Compile Include="Controlador\Contabilidad\ConfiguracionTipoCuentaDAL.vb" />
+    <Compile Include="Controlador\Contabilidad\ContabilidadGeneralDAL.vb" />
+    <Compile Include="Controlador\Contabilidad\CuentaClasificacionDAL.vb" />
+    <Compile Include="Controlador\Contabilidad\CuentaPorPagarDAL.vb" />
+    <Compile Include="Controlador\Contabilidad\CuentaPucDAL.vb" />
+    <Compile Include="Controlador\Contabilidad\CuentasPorCobrarDAL.vb" />
+    <Compile Include="Controlador\Contabilidad\DocumentoContableDAL.vb" />
+    <Compile Include="Controlador\Contabilidad\EstadoCuentasDAL.vb" />
+    <Compile Include="Controlador\Contabilidad\LibroAuxiliarDAL.vb" />
+    <Compile Include="Controlador\Contabilidad\LibroDiarioDAL.vb" />
+    <Compile Include="Controlador\Contabilidad\LibroMayorDAL.vb" />
+    <Compile Include="Controlador\Contabilidad\NotaClienteDAL.vb" />
+    <Compile Include="Controlador\Contabilidad\NotaInternaDAL.vb" />
+    <Compile Include="Controlador\Contabilidad\NotaProveedorDAL.vb" />
+    <Compile Include="Controlador\Contabilidad\ProgramacionPagoNominaDAL.vb" />
+    <Compile Include="Controlador\Contabilidad\ProgramacionPagoProveedorDAL.vb" />
+    <Compile Include="Controlador\Contabilidad\PucDAL.vb" />
+    <Compile Include="Controlador\Contabilidad\RecaudoDAL.vb" />
+    <Compile Include="Controlador\Contabilidad\RetencionIvaDAL.vb" />
+    <Compile Include="Controlador\Contabilidad\RetiroDocumentoContaDAL.vb" />
+    <Compile Include="Controlador\Gestion\CompraDAL.vb" />
+    <Compile Include="Controlador\Gestion\GastoServicioDAL.vb" />
+    <Compile Include="Controlador\Gestion\VentaDAL.vb" />
+    <Compile Include="Controlador\Administracion\ClienteDAL.vb" />
+    <Compile Include="Controlador\Inventario\EntradaInventarioDAL.vb" />
+    <Compile Include="Controlador\Inventario\ListaPrecioDAL.vb" />
+    <Compile Include="Controlador\Inventario\ProductoUbicacionDAL.vb" />
+    <Compile Include="Controlador\Inventario\ProveedorDAL.vb" />
+    <Compile Include="Controlador\Inventario\ProductoDAL.vb" />
+    <Compile Include="Controlador\Inventario\RemisionDAL.vb" />
+    <Compile Include="Controlador\Nomina\NominaDAL.vb" />
+    <Compile Include="ControlesElixisLive\MenuElixisLive.Designer.vb">
+      <DependentUpon>MenuElixisLive.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ControlesElixisLive\MenuElixisLive.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlesElixisLive\TextFiltrarRegistro.Designer.vb">
+      <DependentUpon>TextFiltrarRegistro.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ControlesElixisLive\TextFiltrarRegistro.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Entidad\Administracion\CambioClave.vb" />
+    <Compile Include="Entidad\Administracion\Empleado.vb" />
+    <Compile Include="Entidad\Administracion\Empresa.vb" />
+    <Compile Include="Entidad\Administracion\Modulo.vb" />
+    <Compile Include="Entidad\Administracion\Perfil.vb" />
+    <Compile Include="Entidad\Administracion\Sucursal.vb" />
+    <Compile Include="Entidad\Administracion\persona.vb" />
+    <Compile Include="Entidad\Cita\AgendarCita.vb" />
+    <Compile Include="Entidad\Cita\CitaPrevia.vb" />
+    <Compile Include="Entidad\Cita\ConfigCita.vb" />
+    <Compile Include="Entidad\Cita\Dia\CitaDisponible.vb" />
+    <Compile Include="Entidad\Cita\Dia\CitaTomada.vb" />
+    <Compile Include="Entidad\Cita\Dia\HoraCita.vb" />
+    <Compile Include="Entidad\Cita\Dia\HoraDisponible.vb" />
+    <Compile Include="Entidad\Cita\Dia\HoraTomada.vb" />
+    <Compile Include="Entidad\Cita\ListaCita.vb" />
+    <Compile Include="Entidad\Cita\Mes\CitaMes.vb" />
+    <Compile Include="Entidad\Cita\Semana\CitaSemana.vb" />
+    <Compile Include="Entidad\Cita\Semana\HoraSemana.vb" />
+    <Compile Include="Entidad\Configuracion\ConfigVenta.vb" />
+    <Compile Include="Entidad\Configuracion\CostoServicio.vb" />
+    <Compile Include="Entidad\Contabilidad\BalanceComprobacionParams.vb" />
+    <Compile Include="Entidad\Contabilidad\CajaBanco.vb" />
+    <Compile Include="Entidad\Contabilidad\CarteraCXC.vb" />
+    <Compile Include="Entidad\Contabilidad\CarteraCXP.vb" />
+    <Compile Include="Entidad\Contabilidad\CertificadoRetencionParams.vb" />
+    <Compile Include="Entidad\Contabilidad\CierreDocumentos.vb" />
+    <Compile Include="Entidad\Contabilidad\CierrePeriodos.vb" />
+    <Compile Include="Entidad\Contabilidad\ClasificacionCuentaHC.vb" />
+    <Compile Include="Entidad\Contabilidad\ConfiguracionCentroDeCostos.vb" />
+    <Compile Include="Entidad\Contabilidad\ConfiguracionConceptosDian.vb" />
+    <Compile Include="Entidad\Contabilidad\ConfiguracionTipoCuenta.vb" />
+    <Compile Include="Entidad\Contabilidad\ContabilidadGeneral.vb" />
+    <Compile Include="Entidad\Contabilidad\CuentaPUC.vb" />
+    <Compile Include="Entidad\Contabilidad\CuentasPorCobrar.vb" />
+    <Compile Include="Entidad\Contabilidad\CuentasPorPagar.vb" />
+    <Compile Include="Entidad\Contabilidad\DocumentoContable.vb" />
+    <Compile Include="Entidad\Contabilidad\EstadoDeCuentas.vb" />
+    <Compile Include="Entidad\Contabilidad\LibroAuxiliarParams.vb" />
+    <Compile Include="Entidad\Contabilidad\LibroDiarioParams.vb" />
+    <Compile Include="Entidad\Contabilidad\LibroMayorParams.vb" />
+    <Compile Include="Entidad\Contabilidad\NotaCliente.vb" />
+    <Compile Include="Entidad\Contabilidad\NotaInterna.vb" />
+    <Compile Include="Entidad\Contabilidad\NotaProveedor.vb" />
+    <Compile Include="Entidad\Contabilidad\PagoProveedorConsolidado.vb" />
+    <Compile Include="Entidad\Contabilidad\PagosDirecto.vb" />
+    <Compile Include="Entidad\Contabilidad\ProgramacionPagoNomina.vb" />
+    <Compile Include="Entidad\Contabilidad\ProgramacionPagoProveedor.vb" />
+    <Compile Include="Entidad\Contabilidad\Puc.vb" />
+    <Compile Include="Entidad\Contabilidad\Recaudo.vb" />
+    <Compile Include="Entidad\Contabilidad\RetencionIVA.vb" />
+    <Compile Include="Entidad\Contabilidad\RetiroDocumento.vb" />
+    <Compile Include="Entidad\generalConsulta.vb" />
+    <Compile Include="Entidad\Configuracion\Configuracion.vb" />
+    <Compile Include="Entidad\Gestion\Compra.vb" />
+    <Compile Include="Entidad\Gestion\GastoServicio.vb" />
+    <Compile Include="Entidad\Gestion\Venta.vb" />
+    <Compile Include="Entidad\Administracion\Cliente.vb" />
+    <Compile Include="Entidad\Informe\Rentabilidad.vb" />
+    <Compile Include="Entidad\Inventario\UbicacionProducto.vb" />
+    <Compile Include="Entidad\Inventario\EntradaInventario.vb" />
+    <Compile Include="Entidad\Inventario\ListaPrecio.vb" />
+    <Compile Include="Entidad\Inventario\Lote.vb" />
+    <Compile Include="Entidad\Inventario\Proveedor.vb" />
+    <Compile Include="Entidad\Inventario\producto.vb" />
+    <Compile Include="Entidad\Inventario\RemisionInventario.vb" />
+    <Compile Include="Entidad\Nomina\Nomina.vb" />
+    <Compile Include="Entidad\Principal\ElementoMenu.vb" />
+    <Compile Include="FormBase\FormBaseLista.Designer.vb">
+      <DependentUpon>FormBaseLista.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormBase\FormBaseLista.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBase\FormBaseProductivo.Designer.vb">
+      <DependentUpon>FormBaseProductivo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormBase\FormBaseProductivo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modelo\Administracion\EmpleadoBLL.vb" />
+    <Compile Include="Modelo\Administracion\EmpresaBLL.vb" />
+    <Compile Include="Modelo\Administracion\ModuloBLL.vb" />
+    <Compile Include="Modelo\Administracion\PerfilBLL.vb" />
+    <Compile Include="Modelo\Administracion\SucursalBLL.vb" />
+    <Compile Include="Modelo\Administracion\PersonaBLL.vb" />
+    <Compile Include="Modelo\Cita\AgendarCitaBLL.vb" />
+    <Compile Include="Modelo\Cita\ConfigCitaBLL.vb" />
+    <Compile Include="Modelo\Cita\ProgramacionCitaDiaBLL.vb" />
+    <Compile Include="Modelo\Cita\ProgramacionCitaMesesBLL.vb" />
+    <Compile Include="Modelo\Cita\ProgramacionCitaSemanaBLL.vb" />
+    <Compile Include="Modelo\Cita\UtlidadCitaBLL.vb" />
+    <Compile Include="Modelo\Configuracion\ConfigBLL.vb" />
+    <Compile Include="Modelo\Configuracion\ConfigVentaBLL.vb" />
+    <Compile Include="Modelo\Configuracion\CostoServicioBLL.vb" />
+    <Compile Include="Modelo\Contabilidad\BalanceComprobacionBLL.vb" />
+    <Compile Include="Modelo\Contabilidad\CajaBancoBLL.vb" />
+    <Compile Include="Modelo\Contabilidad\CarteraCuentaPorCobrarBLL.vb" />
+    <Compile Include="Modelo\Contabilidad\CarteraCuentaPorPagarBLL.vb" />
+    <Compile Include="Modelo\Contabilidad\CertificadoRetencionBLL.vb" />
+    <Compile Include="Modelo\Contabilidad\CierreDocumentosBLL.vb" />
+    <Compile Include="Modelo\Contabilidad\CierrePeriosdosBLL.vb" />
+    <Compile Include="Modelo\Contabilidad\ConfiguracionConceptosDianBLL.vb" />
+    <Compile Include="Modelo\Contabilidad\ContabilidadGeneralBLL.vb" />
+    <Compile Include="Modelo\Contabilidad\CuentaClasificacionBLL.vb" />
+    <Compile Include="Modelo\Contabilidad\CuentaPorPagarBLL.vb" />
+    <Compile Include="Modelo\Contabilidad\CuentaPucBLL.vb" />
+    <Compile Include="Modelo\Contabilidad\CuentasPorCobrarBLL.vb" />
+    <Compile Include="Modelo\Contabilidad\DocumentoContableBLL.vb" />
+    <Compile Include="Modelo\Contabilidad\EstadoCuentasBLL.vb" />
+    <Compile Include="Modelo\Contabilidad\IVARetencionBLL.vb" />
+    <Compile Include="Modelo\Contabilidad\LibroAuxiliarBLL.vb" />
+    <Compile Include="Modelo\Contabilidad\LibroDiarioBLL.vb" />
+    <Compile Include="Modelo\Contabilidad\LibroMayorBLL.vb" />
+    <Compile Include="Modelo\Contabilidad\NotaClienteBLL.vb" />
+    <Compile Include="Modelo\Contabilidad\NotaInternaBLL.vb" />
+    <Compile Include="Modelo\Contabilidad\NotaProveedorBLL.vb" />
+    <Compile Include="Modelo\Contabilidad\ProgramacionPagoNominaBLL.vb" />
+    <Compile Include="Modelo\Contabilidad\ProgramacionPagoProveedorBLL.vb" />
+    <Compile Include="Modelo\Contabilidad\PucBLL.vb" />
+    <Compile Include="Modelo\Contabilidad\RecaudoBLL.vb" />
+    <Compile Include="Modelo\Gestion\CompraBLL.vb" />
+    <Compile Include="Modelo\Gestion\GastoServicioBLL.vb" />
+    <Compile Include="Modelo\Gestion\VentaBLL.vb" />
+    <Compile Include="Modelo\Inventario\EntradaInventarioBLL.vb" />
+    <Compile Include="Modelo\Inventario\ListaPrecioBLL.vb" />
+    <Compile Include="Modelo\Inventario\LoteBLL.vb" />
+    <Compile Include="Modelo\Inventario\ProductoUbicacionBLL.vb" />
+    <Compile Include="Modelo\Inventario\ProveedorBLL.vb" />
+    <Compile Include="Modelo\Administracion\ClienteBLL.vb" />
+    <Compile Include="Modelo\Inventario\ProductoBLL.vb" />
+    <Compile Include="Modelo\Inventario\RemisionBLL.vb" />
+    <Compile Include="Modelo\Nomina\NominaBLL.vb" />
+    <Compile Include="Modelo\Principal\InicioSesionBLL.vb" />
+    <Compile Include="Modelo\Principal\principalBLL.vb" />
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="MyRenderer.vb" />
+    <Compile Include="ReferenciaDLL\DataGridViewDateTimePickerColumn.vb" />
+    <Compile Include="Reportes\Contabilidad\EstadoCXC1.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EstadoCXC.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\Contabilidad\rptBalanceComprobacion1.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptBalanceComprobacion.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\Contabilidad\rptCertificadoRetefuente1.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptCertificadoRetefuente.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\Contabilidad\rptComprobanteEgreso.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptComprobanteEgreso.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\Contabilidad\rptFacturavsRadicacionn1.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptFacturavsRadicacionn.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\Contabilidad\rptLibroAuxiliar1.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptLibroAuxiliar.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\Contabilidad\rptLibroDiario1.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptLibroDiario.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\Contabilidad\rptLibroInventarioBalance1.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptLibroInventarioBalance.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\Contabilidad\rptLibroMayor1.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptLibroMayor.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\Contabilidad\rptRecaudo.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptRecaudo.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\Factura\factura.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>factura.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\Inventario\facturaRemision.vb">
+      <DependentUpon>facturaRemision.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\Inventario\rptInventarioIngresado.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptInventarioIngresado.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Utilidad\Busqueda.vb" />
+    <Compile Include="Utilidad\CodigosBarra.vb" />
+    <Compile Include="Utilidad\ConexionBD.vb" />
+    <Compile Include="Utilidad\Constantes.vb" />
+    <Compile Include="Utilidad\Consultas.vb" />
+    <Compile Include="Utilidad\ConvertirNumeros.vb" />
+    <Compile Include="Utilidad\CrearInforme.vb" />
+    <Compile Include="Utilidad\DigitoVerificacion.vb" />
+    <Compile Include="Utilidad\EstiloMensajes.vb" />
+    <Compile Include="Utilidad\Funciones.vb" />
+    <Compile Include="Utilidad\FuncionesContables.vb" />
+    <Compile Include="Utilidad\FuncionesExcel.vb" />
+    <Compile Include="Utilidad\Generales.vb" />
+    <Compile Include="Utilidad\MensajeSistema.vb" />
+    <Compile Include="Utilidad\Sentencias.vb" />
+    <Compile Include="Utilidad\SesionActual.vb" />
+    <Compile Include="Utilidad\SuperMessageBox.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Utilidad\Titulo.vb" />
+    <Compile Include="Utilidad\TitulosForm.vb" />
+    <Compile Include="Utilidad\ValidarDigitacion.vb" />
+    <Compile Include="Utilidad\vForm.vb" />
+    <Compile Include="Vista\Administracion\FormCliente.Designer.vb">
+      <DependentUpon>FormCliente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Administracion\FormCliente.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Administracion\FormEmpleado.Designer.vb">
+      <DependentUpon>FormEmpleado.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Administracion\FormEmpleado.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Administracion\FormModulo.Designer.vb">
+      <DependentUpon>FormModulo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Administracion\FormModulo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Administracion\FormPerfil.Designer.vb">
+      <DependentUpon>FormPerfil.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Administracion\FormPerfil.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Administracion\FormPersona.Designer.vb">
+      <DependentUpon>FormPersona.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Administracion\FormPersona.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Administracion\FormEmpresa.Designer.vb">
+      <DependentUpon>FormEmpresa.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Administracion\FormEmpresa.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Administracion\FormProveedor.Designer.vb">
+      <DependentUpon>FormProveedor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Administracion\FormProveedor.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Cita\FormCitaMedica.Designer.vb">
+      <DependentUpon>FormCitaMedica.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Cita\FormCitaMedica.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Cita\FormProgramacionCita.Designer.vb">
+      <DependentUpon>FormProgramacionCita.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Cita\FormProgramacionCita.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Configuracion\FormAreaTrabajo.Designer.vb">
+      <DependentUpon>FormAreaTrabajo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Configuracion\FormAreaTrabajo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Configuracion\FormCategoria.Designer.vb">
+      <DependentUpon>FormCategoria.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Configuracion\FormCategoria.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Configuracion\FormConfigVenta.Designer.vb">
+      <DependentUpon>FormConfigVenta.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Configuracion\FormConfigVenta.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Configuracion\FormBodega.Designer.vb">
+      <DependentUpon>FormBodega.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Configuracion\FormBodega.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Configuracion\FormCargo.Designer.vb">
+      <DependentUpon>FormCargo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Configuracion\FormCargo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Configuracion\FormGasto.Designer.vb">
+      <DependentUpon>FormGasto.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Configuracion\FormGasto.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Configuracion\FormMarca.Designer.vb">
+      <DependentUpon>FormMarca.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Configuracion\FormMarca.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Configuracion\FormSucursal.Designer.vb">
+      <DependentUpon>FormSucursal.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Configuracion\FormSucursal.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Configuracion\FormServicio.Designer.vb">
+      <DependentUpon>FormServicio.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Configuracion\FormServicio.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Configuracion\FormCostoServicio.Designer.vb">
+      <DependentUpon>FormCostoServicio.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Configuracion\FormCostoServicio.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Contabilidad\Cierre contable\FormCierreDocumentos.Designer.vb">
+      <DependentUpon>FormCierreDocumentos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Contabilidad\Cierre contable\FormCierreDocumentos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Contabilidad\Cierre contable\FormCierrePeriodos.Designer.vb">
+      <DependentUpon>FormCierrePeriodos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Contabilidad\Cierre contable\FormCierrePeriodos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Contabilidad\Cuentas por cobrar\FormFacturaCliente.Designer.vb">
+      <DependentUpon>FormFacturaCliente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Contabilidad\Cuentas por cobrar\FormFacturaCliente.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Contabilidad\Cuentas por cobrar\FormNotaCliente.Designer.vb">
+      <DependentUpon>FormNotaCliente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Contabilidad\Cuentas por cobrar\FormNotaCliente.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Contabilidad\Cuentas por pagar\FormEstadoCuentas.Designer.vb">
+      <DependentUpon>FormEstadoCuentas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Contabilidad\Cuentas por pagar\FormEstadoCuentas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Contabilidad\Cuentas por pagar\FormFacturaProveedor.Designer.vb">
+      <DependentUpon>FormFacturaProveedor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Contabilidad\Cuentas por pagar\FormFacturaProveedor.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Contabilidad\Cuentas por pagar\FormNotaProveedor.Designer.vb">
+      <DependentUpon>FormNotaProveedor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Contabilidad\Cuentas por pagar\FormNotaProveedor.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Contabilidad\Libros\FormBalanceComprobacion.Designer.vb">
+      <DependentUpon>FormBalanceComprobacion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Contabilidad\Libros\FormBalanceComprobacion.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Contabilidad\Libros\FormCertificadoRetencion.Designer.vb">
+      <DependentUpon>FormCertificadoRetencion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Contabilidad\Libros\FormCertificadoRetencion.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Contabilidad\Libros\FormInventarioBalance.Designer.vb">
+      <DependentUpon>FormInventarioBalance.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Contabilidad\Libros\FormInventarioBalance.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Contabilidad\Libros\FormLibroAuxiliar.Designer.vb">
+      <DependentUpon>FormLibroAuxiliar.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Contabilidad\Libros\FormLibroAuxiliar.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Contabilidad\Libros\FormLibroDiario.Designer.vb">
+      <DependentUpon>FormLibroDiario.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Contabilidad\Libros\FormLibroDiario.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Contabilidad\Libros\FormLibroMayor.Designer.vb">
+      <DependentUpon>FormLibroMayor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Contabilidad\Libros\FormLibroMayor.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Contabilidad\Mantenimiento\FormRetiroDocumento.Designer.vb">
+      <DependentUpon>FormRetiroDocumento.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Contabilidad\Mantenimiento\FormRetiroDocumento.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Contabilidad\Puc\FormCuentasPuc.Designer.vb">
+      <DependentUpon>FormCuentasPuc.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Contabilidad\Puc\FormCuentasPuc.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Contabilidad\Puc\FormPUC.Designer.vb">
+      <DependentUpon>FormPUC.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Contabilidad\Puc\FormPUC.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Contabilidad\Puc\FormRetencionIva.Designer.vb">
+      <DependentUpon>FormRetencionIva.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Contabilidad\Puc\FormRetencionIva.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Contabilidad\Saldos iniciales\FormCajaBanco.Designer.vb">
+      <DependentUpon>FormCajaBanco.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Contabilidad\Saldos iniciales\FormCajaBanco.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Contabilidad\Saldos iniciales\FormCarteraCXC.Designer.vb">
+      <DependentUpon>FormCarteraCXC.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Contabilidad\Saldos iniciales\FormCarteraCXC.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Contabilidad\Saldos iniciales\FormCarteraCXP.Designer.vb">
+      <DependentUpon>FormCarteraCXP.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Contabilidad\Saldos iniciales\FormCarteraCXP.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Contabilidad\Saldos iniciales\FormContabilidadGeneral.Designer.vb">
+      <DependentUpon>FormContabilidadGeneral.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Contabilidad\Saldos iniciales\FormContabilidadGeneral.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Contabilidad\Tesoreria\FormComprobanteEgreso.Designer.vb">
+      <DependentUpon>FormComprobanteEgreso.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Contabilidad\Tesoreria\FormComprobanteEgreso.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Contabilidad\Tesoreria\FormNotaInterna.Designer.vb">
+      <DependentUpon>FormNotaInterna.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Contabilidad\Tesoreria\FormNotaInterna.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Contabilidad\Tesoreria\FormReciboCaja.Designer.vb">
+      <DependentUpon>FormReciboCaja.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Contabilidad\Tesoreria\FormReciboCaja.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Estadisticas\FormCostoServicios.Designer.vb">
+      <DependentUpon>FormCostoServicios.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Estadisticas\FormCostoServicios.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Gestión\FormGastosServicio.Designer.vb">
+      <DependentUpon>FormGastosServicio.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Gestión\FormGastosServicio.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Gestión\FormExistencia.Designer.vb">
+      <DependentUpon>FormExistencia.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Gestión\FormExistencia.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Gestión\FormCompra.Designer.vb">
+      <DependentUpon>FormCompra.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Gestión\FormCompra.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Gestión\FormVentas.Designer.vb">
+      <DependentUpon>FormVentas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Gestión\FormVentas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Informe\FormInformeInventario.Designer.vb">
+      <DependentUpon>FormInformeInventario.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Informe\FormInformeInventario.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Informe\FormInformeVenta.Designer.vb">
+      <DependentUpon>FormInformeVenta.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Informe\FormInformeVenta.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Inventario\FormLote.Designer.vb">
+      <DependentUpon>FormLote.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Inventario\FormLote.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Inventario\FormProductoUbicacion.Designer.vb">
+      <DependentUpon>FormProductoUbicacion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Inventario\FormProductoUbicacion.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Inventario\FormEntradaInventario.Designer.vb">
+      <DependentUpon>FormEntradaInventario.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Inventario\FormEntradaInventario.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Inventario\FormListaPrecio.Designer.vb">
+      <DependentUpon>FormListaPrecio.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Inventario\FormListaPrecio.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Inventario\FormProducto.Designer.vb">
+      <DependentUpon>FormProducto.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Inventario\FormProducto.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Inventario\FormRemisionInventario.Designer.vb">
+      <DependentUpon>FormRemisionInventario.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Inventario\FormRemisionInventario.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Nomina\FormNomina.Designer.vb">
+      <DependentUpon>FormNomina.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Nomina\FormNomina.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Principal\FormBusqueda.Designer.vb">
+      <DependentUpon>FormBusqueda.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Principal\FormBusqueda.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Principal\FormCambioClave.Designer.vb">
+      <DependentUpon>FormCambioClave.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Principal\FormCambioClave.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Principal\FormCerrarSesion.Designer.vb">
+      <DependentUpon>FormCerrarSesion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Principal\FormCerrarSesion.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Principal\FormInicioSesion.Designer.vb">
+      <DependentUpon>FormInicioSesion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Principal\FormInicioSesion.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Principal\FormPrincipal.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Principal\FormPrincipal.Designer.vb">
+      <DependentUpon>FormPrincipal.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBase\FormBase.Designer.vb">
+      <DependentUpon>FormBase.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormBase\FormBase.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ControlesElixisLive\MenuElixisLive.resx">
+      <DependentUpon>MenuElixisLive.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlesElixisLive\TextFiltrarRegistro.resx">
+      <DependentUpon>TextFiltrarRegistro.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormBase\FormBaseLista.resx">
+      <DependentUpon>FormBaseLista.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormBase\FormBaseProductivo.resx">
+      <DependentUpon>FormBaseProductivo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Contabilidad\EstadoCXC.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>EstadoCXC1.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Contabilidad\rptBalanceComprobacion.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptBalanceComprobacion1.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Contabilidad\rptCertificadoRetefuente.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptCertificadoRetefuente1.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Contabilidad\rptComprobanteEgreso.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptComprobanteEgreso.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Contabilidad\rptFacturavsRadicacionn.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptFacturavsRadicacionn1.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Contabilidad\rptLibroAuxiliar.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptLibroAuxiliar1.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Contabilidad\rptLibroDiario.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptLibroDiario1.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Contabilidad\rptLibroInventarioBalance.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptLibroInventarioBalance1.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Contabilidad\rptLibroMayor.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptLibroMayor1.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Contabilidad\rptRecaudo.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptRecaudo.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Factura\factura.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>factura.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Inventario\facturaRemision.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>facturaRemision.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Inventario\rptInventarioIngresado.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptInventarioIngresado.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Utilidad\SuperMessageBox.resx" />
+    <EmbeddedResource Include="Vista\Administracion\FormCliente.resx">
+      <DependentUpon>FormCliente.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Administracion\FormEmpleado.resx">
+      <DependentUpon>FormEmpleado.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Administracion\FormModulo.resx">
+      <DependentUpon>FormModulo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Administracion\FormPerfil.resx">
+      <DependentUpon>FormPerfil.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Administracion\FormPersona.resx">
+      <DependentUpon>FormPersona.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Administracion\FormEmpresa.resx">
+      <DependentUpon>FormEmpresa.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Administracion\FormProveedor.resx">
+      <DependentUpon>FormProveedor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Cita\FormCitaMedica.resx">
+      <DependentUpon>FormCitaMedica.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Cita\FormProgramacionCita.resx">
+      <DependentUpon>FormProgramacionCita.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Configuracion\FormAreaTrabajo.resx">
+      <DependentUpon>FormAreaTrabajo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Configuracion\FormCategoria.resx">
+      <DependentUpon>FormCategoria.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Configuracion\FormConfigVenta.resx">
+      <DependentUpon>FormConfigVenta.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Configuracion\FormBodega.resx">
+      <DependentUpon>FormBodega.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Configuracion\FormCargo.resx">
+      <DependentUpon>FormCargo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Configuracion\FormGasto.resx">
+      <DependentUpon>FormGasto.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Configuracion\FormMarca.resx">
+      <DependentUpon>FormMarca.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Configuracion\FormSucursal.resx">
+      <DependentUpon>FormSucursal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Configuracion\FormServicio.resx">
+      <DependentUpon>FormServicio.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Configuracion\FormCostoServicio.resx">
+      <DependentUpon>FormCostoServicio.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Contabilidad\Cierre contable\FormCierreDocumentos.resx">
+      <DependentUpon>FormCierreDocumentos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Contabilidad\Cierre contable\FormCierrePeriodos.resx">
+      <DependentUpon>FormCierrePeriodos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Contabilidad\Cuentas por cobrar\FormFacturaCliente.resx">
+      <DependentUpon>FormFacturaCliente.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Contabilidad\Cuentas por cobrar\FormNotaCliente.resx">
+      <DependentUpon>FormNotaCliente.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Contabilidad\Cuentas por pagar\FormEstadoCuentas.resx">
+      <DependentUpon>FormEstadoCuentas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Contabilidad\Cuentas por pagar\FormFacturaProveedor.resx">
+      <DependentUpon>FormFacturaProveedor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Contabilidad\Cuentas por pagar\FormNotaProveedor.resx">
+      <DependentUpon>FormNotaProveedor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Contabilidad\Libros\FormBalanceComprobacion.resx">
+      <DependentUpon>FormBalanceComprobacion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Contabilidad\Libros\FormCertificadoRetencion.resx">
+      <DependentUpon>FormCertificadoRetencion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Contabilidad\Libros\FormInventarioBalance.resx">
+      <DependentUpon>FormInventarioBalance.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Contabilidad\Libros\FormLibroAuxiliar.resx">
+      <DependentUpon>FormLibroAuxiliar.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Contabilidad\Libros\FormLibroDiario.resx">
+      <DependentUpon>FormLibroDiario.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Contabilidad\Libros\FormLibroMayor.resx">
+      <DependentUpon>FormLibroMayor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Contabilidad\Mantenimiento\FormRetiroDocumento.resx">
+      <DependentUpon>FormRetiroDocumento.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Contabilidad\Puc\FormCuentasPuc.resx">
+      <DependentUpon>FormCuentasPuc.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Contabilidad\Puc\FormPUC.resx">
+      <DependentUpon>FormPUC.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Contabilidad\Puc\FormRetencionIva.resx">
+      <DependentUpon>FormRetencionIva.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Contabilidad\Saldos iniciales\FormCajaBanco.resx">
+      <DependentUpon>FormCajaBanco.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Contabilidad\Saldos iniciales\FormCarteraCXC.resx">
+      <DependentUpon>FormCarteraCXC.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Contabilidad\Saldos iniciales\FormCarteraCXP.resx">
+      <DependentUpon>FormCarteraCXP.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Contabilidad\Saldos iniciales\FormContabilidadGeneral.resx">
+      <DependentUpon>FormContabilidadGeneral.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Contabilidad\Tesoreria\FormComprobanteEgreso.resx">
+      <DependentUpon>FormComprobanteEgreso.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Contabilidad\Tesoreria\FormNotaInterna.resx">
+      <DependentUpon>FormNotaInterna.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Contabilidad\Tesoreria\FormReciboCaja.resx">
+      <DependentUpon>FormReciboCaja.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Estadisticas\FormCostoServicios.resx">
+      <DependentUpon>FormCostoServicios.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Gestión\FormGastosServicio.resx">
+      <DependentUpon>FormGastosServicio.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Gestión\FormExistencia.resx">
+      <DependentUpon>FormExistencia.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Gestión\FormCompra.resx">
+      <DependentUpon>FormCompra.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Gestión\FormVentas.resx">
+      <DependentUpon>FormVentas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Informe\FormInformeInventario.resx">
+      <DependentUpon>FormInformeInventario.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Informe\FormInformeVenta.resx">
+      <DependentUpon>FormInformeVenta.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Inventario\FormLote.resx">
+      <DependentUpon>FormLote.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Inventario\FormProductoUbicacion.resx">
+      <DependentUpon>FormProductoUbicacion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Inventario\FormEntradaInventario.resx">
+      <DependentUpon>FormEntradaInventario.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Inventario\FormListaPrecio.resx">
+      <DependentUpon>FormListaPrecio.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Inventario\FormProducto.resx">
+      <DependentUpon>FormProducto.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Inventario\FormRemisionInventario.resx">
+      <DependentUpon>FormRemisionInventario.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Nomina\FormNomina.resx">
+      <DependentUpon>FormNomina.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Principal\FormBusqueda.resx">
+      <DependentUpon>FormBusqueda.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Principal\FormCambioClave.resx">
+      <DependentUpon>FormCambioClave.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Principal\FormCerrarSesion.resx">
+      <DependentUpon>FormCerrarSesion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Principal\FormInicioSesion.resx">
+      <DependentUpon>FormInicioSesion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Principal\FormPrincipal.resx">
+      <DependentUpon>FormPrincipal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormBase\FormBase.resx">
+      <DependentUpon>FormBase.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\app.manifest" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>8</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Excel">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>8</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CHFinalIcono.ico" />
+    <Content Include="Qual.ico" />
+    <Content Include="Quality_logo.ico" />
+    <Content Include="ReferenciaDLL\ClaseExcel.dll" />
+    <Content Include="ReferenciaDLL\CnxElixisLiveBD.dll" />
+    <Content Include="ReferenciaDLL\itextsharp.dll" />
+    <Content Include="ReferenciaDLL\MySql.Data.DLL" />
+    <Content Include="ReferenciaDLL\NotifySenderControl.dll" />
+    <None Include="Resources\Time-And-Date-Alarm-Clock-icon %281%29.png" />
+    <None Include="Resources\Data-Combo-Chart-icon.png" />
+    <None Include="Resources\Users-Conference-icon %281%29.png" />
+    <None Include="Resources\Money-2-icon.png" />
+    <None Include="Resources\Ecommerce-Cash-Register-icon %281%29.png" />
+    <None Include="Resources\Ecommerce-Filled-Box-icon %281%29.png" />
+    <None Include="Resources\Users-Administrator-icon.png" />
+    <None Include="Resources\Very-Basic-Settings-icon %281%29.png" />
+    <None Include="Resources\Very-Basic-Settings-icon.png" />
+    <None Include="Resources\company-building-icon.png" />
+    <None Include="Resources\Users-User-Male-3-icon.png" />
+    <None Include="Resources\Users-Administrator-2-icon.png" />
+    <None Include="Resources\Calculator-3-icon.png" />
+    <None Include="Resources\Logos-Excel-Copyrighted-icon.png" />
+    <None Include="Resources\Pencil-icon.png" />
+    <None Include="Resources\Very-Basic-Update-icon %281%29.png" />
+    <None Include="Resources\XANDaR.png" />
+    <None Include="Resources\Very-Basic-Search-icon.png" />
+    <None Include="Resources\Very-Basic-Help-icon.png" />
+    <None Include="Resources\ok1.png" />
+    <None Include="Resources\ok.png" />
+    <None Include="Resources\Cancel.png" />
+    <None Include="Resources\Anular.png" />
+    <None Include="Resources\advertencia.png" />
+    <None Include="Resources\regresar.png" />
+    <None Include="Resources\Data-Export-icon.png" />
+    <None Include="Resources\Very-Basic-Update-icon.png" />
+    <None Include="Resources\Industry-Trash-2-icon.png" />
+    <None Include="Resources\Computer-Hardware-Print-icon.png" />
+    <None Include="Resources\Files-Delete-File-icon.png" />
+    <None Include="Resources\Arrows-Right-2-icon.png" />
+    <None Include="Resources\User-Interface-Save-As-icon.png" />
+    <None Include="Resources\Add-File-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5.2 %28x86 y x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

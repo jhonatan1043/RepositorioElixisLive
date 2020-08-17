@@ -12,7 +12,7 @@ Public Class ConexionBD
     'End Sub
     Public Sub conectar()
         Try
-            cnxbd.ConnectionString = "Server=DESKTOP-5D73829;Initial Catalog=softbd;integrated security=true"
+            cnxbd.ConnectionString = "Server=SION\SION;Initial Catalog=softbd;integrated security=true"
             cnxbd.Open()
         Catch ex As SqlException
             EstiloMensajes.mostrarMensajeError(ex.Message)
