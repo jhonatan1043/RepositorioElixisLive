@@ -145,14 +145,14 @@ Partial Class FormInicioSesion
         '
         Me.GroupBox2.BackColor = System.Drawing.Color.White
         Me.GroupBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.GroupBox2.Controls.Add(Me.Label2)
         Me.GroupBox2.Controls.Add(Me.CbEmpresa)
         Me.GroupBox2.Controls.Add(Me.txtContraseña)
         Me.GroupBox2.Controls.Add(Me.txtUsuario)
-        Me.GroupBox2.Controls.Add(Me.Pimagen)
         Me.GroupBox2.Controls.Add(Me.UsernameLabel)
         Me.GroupBox2.Controls.Add(Me.PasswordLabel)
         Me.GroupBox2.Controls.Add(Me.Label1)
+        Me.GroupBox2.Controls.Add(Me.Pimagen)
+        Me.GroupBox2.Controls.Add(Me.Label2)
         Me.GroupBox2.Location = New System.Drawing.Point(17, 17)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(300, 382)
@@ -161,9 +161,9 @@ Partial Class FormInicioSesion
         '
         'Label2
         '
-        Me.Label2.Location = New System.Drawing.Point(2, 0)
+        Me.Label2.Location = New System.Drawing.Point(-5, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(296, 16)
+        Me.Label2.Size = New System.Drawing.Size(313, 394)
         Me.Label2.TabIndex = 8
         '
         'Pimagen

@@ -25,7 +25,7 @@ Public Class FormModulo
 
     Private Sub FormModulo_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         gbClave.Visible = False
-        Generales.habilitarControles(Me)
+        Generales.deshabilitarControles(Me)
         Generales.deshabilitarBotones(ToolStrip1)
         btEditar.Enabled = True
         cargarOpciones()
@@ -97,52 +97,38 @@ Public Class FormModulo
             End If
             If dt.Select("Codigo='" & Constantes.MODULO_CITA & "'").Count > 0 Then
                 ChCitas.Checked = True
-                ChCitas.Enabled = True
             Else
                 ChCitas.Checked = False
-                ChCitas.Enabled = False
             End If
             If dt.Select("Codigo='" & Constantes.MODULO_CONFIG & "'").Count > 0 Then
                 chConfiguracion.Checked = True
-                chConfiguracion.Enabled = True
             Else
                 chConfiguracion.Checked = False
-                chConfiguracion.Enabled = False
             End If
             If dt.Select("Codigo='" & Constantes.MODULO_CONTA & "'").Count > 0 Then
                 ChContabilidad.Checked = True
-                ChContabilidad.Enabled = True
             Else
                 ChContabilidad.Checked = False
-                ChContabilidad.Enabled = False
             End If
             If dt.Select("Codigo='" & Constantes.MODULO_ESTAD & "'").Count > 0 Then
                 chEstadistica.Checked = True
-                chEstadistica.Enabled = True
             Else
                 chEstadistica.Checked = False
-                chEstadistica.Enabled = False
             End If
             If dt.Select("Codigo='" & Constantes.MODULO_INVEN & "'").Count > 0 Then
                 ChInventario.Checked = True
-                ChInventario.Enabled = True
             Else
                 ChInventario.Checked = False
-                ChInventario.Enabled = False
             End If
             If dt.Select("Codigo='" & Constantes.MODULO_NOMIN & "'").Count > 0 Then
                 chNomina.Checked = True
-                chNomina.Enabled = True
             Else
                 chNomina.Checked = False
-                chNomina.Enabled = False
             End If
             If dt.Select("Codigo='" & Constantes.MODULO_VENTA & "'").Count > 0 Then
                 ChVentas.Checked = True
-                ChVentas.Enabled = True
             Else
                 ChVentas.Checked = False
-                ChVentas.Enabled = False
             End If
         End If
     End Sub

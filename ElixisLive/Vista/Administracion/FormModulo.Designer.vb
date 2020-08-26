@@ -211,6 +211,7 @@ Partial Class FormModulo
         '
         Me.TextClave.Location = New System.Drawing.Point(6, 31)
         Me.TextClave.Name = "TextClave"
+        Me.TextClave.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.TextClave.Size = New System.Drawing.Size(308, 20)
         Me.TextClave.TabIndex = 3
         '
@@ -371,7 +372,7 @@ Partial Class FormModulo
         Me.LTitulo.ForeColor = System.Drawing.Color.Black
         Me.LTitulo.Location = New System.Drawing.Point(1, 3)
         Me.LTitulo.Name = "LTitulo"
-        Me.LTitulo.Size = New System.Drawing.Size(625, 28)
+        Me.LTitulo.Size = New System.Drawing.Size(711, 28)
         Me.LTitulo.TabIndex = 1
         Me.LTitulo.Text = "Asignación de modulos"
         Me.LTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft

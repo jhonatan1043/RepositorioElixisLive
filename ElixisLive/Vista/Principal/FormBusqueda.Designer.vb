@@ -54,9 +54,9 @@ Partial Class FormBusqueda
         Me.LTitulo.ForeColor = System.Drawing.Color.Black
         Me.LTitulo.Location = New System.Drawing.Point(3, 3)
         Me.LTitulo.Name = "LTitulo"
-        Me.LTitulo.Size = New System.Drawing.Size(523, 28)
+        Me.LTitulo.Size = New System.Drawing.Size(597, 28)
         Me.LTitulo.TabIndex = 1
-        Me.LTitulo.Text = "Titulo"
+        Me.LTitulo.Text = "TITULO"
         Me.LTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'GroupBox1

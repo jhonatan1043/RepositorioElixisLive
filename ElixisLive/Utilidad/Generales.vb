@@ -12,6 +12,14 @@ Public Class Generales
     Public Delegate Sub cargaInfoFormObj(ByVal fila As DataRow)
     Public Delegate Sub subRutina()
     Private Shared objConexion As New ConexionBD
+    Public Shared Sub mostrarImagenDatagrid(datagrid As DataGridView, nombreColumnaCodigo As String, nombreColumnaImagen As String)
+        Dim cell As DataGridViewImageCell = CType(datagrid.Rows(datagrid.CurrentRow.Index).Cells(nombreColumnaImagen), DataGridViewImageCell)
+        If datagrid.Rows(datagrid.CurrentRow.Index).Cells(nombreColumnaCodigo).Value = "" Then
+            cell.Value = (My.Resources.Very_Basic_Search_icon)
+        Else
+            cell.Value = (My.Resources.Industry_Trash_2_icon)
+        End If
+    End Sub
     Public Shared Sub agregarItems(ByVal consulta As String,
                                    ByVal titulo As String,
                                    ByVal datagrid As DataGridView,
@@ -667,6 +675,7 @@ Public Class Generales
             Else
                 vItem.Font = New Font(Constantes.TIPO_LETRA_ELEMENTO, 9)
                 vItem.foreColor = Color.Black
+
             End If
             If ((TypeOf vItem Is TextBox) Or (TypeOf vItem Is RichTextBox) Or (TypeOf vItem Is MaskedTextBox) Or (TypeOf vItem Is DataGridView)) And
                    Not (vItem.name.ToString.ToLower.Contains("txtcodigo")) Then

@@ -270,7 +270,7 @@ Partial Class FormPerfil
         Me.LTitulo.ForeColor = System.Drawing.Color.Black
         Me.LTitulo.Location = New System.Drawing.Point(2, 3)
         Me.LTitulo.Name = "LTitulo"
-        Me.LTitulo.Size = New System.Drawing.Size(647, 28)
+        Me.LTitulo.Size = New System.Drawing.Size(769, 28)
         Me.LTitulo.TabIndex = 1
         Me.LTitulo.Text = "Perfíles"
         Me.LTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft

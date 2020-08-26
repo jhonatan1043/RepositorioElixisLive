@@ -18,6 +18,7 @@
             If (dgvProducto.Rows(dgvProducto.CurrentCell.RowIndex).Cells("dgCodigo").Selected = True Or
                 dgvProducto.Rows(dgvProducto.CurrentCell.RowIndex).Cells("dgDescripcion").Selected = True) Then
                 buscarProducto()
+
             ElseIf dgvProducto.Rows(dgvProducto.CurrentCell.RowIndex).Cells("dgQuitar").Selected = True And
                    objVenta.dtProductos.Rows(dgvProducto.CurrentCell.RowIndex).Item("Codigo").ToString <> Constantes.CADENA_VACIA Then
                 objVenta.dtProductos.Rows.RemoveAt(e.RowIndex)
@@ -29,6 +30,7 @@
         Catch ex As Exception
             EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
+        Generales.mostrarImagenDatagrid(dgvProducto, "dgCodigo", "dgQuitar")
     End Sub
     Private Sub dgvServicio_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvServicio.CellDoubleClick, DataGridView8.CellDoubleClick, DataGridView2.CellDoubleClick
         Try
