@@ -52,7 +52,7 @@
         Generales.deshabilitarBotones(ToolStrip1)
         Generales.deshabilitarControles(Me)
         btNuevo.Enabled = True
-        btBuscar.Enabled = True
+        btBusqueda.Enabled = True
     End Sub
     Private Sub dtFechaInicio_ValueChanged(sender As Object, e As EventArgs) Handles dtFechaInicio.ValueChanged
         dtFechaFinal.Value = dtFechaInicio.Value.AddDays(14)

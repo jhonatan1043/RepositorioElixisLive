@@ -25,6 +25,7 @@ Partial Class FormEmpleado
         Me.components = New System.ComponentModel.Container()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.gbInform = New System.Windows.Forms.GroupBox()
+        Me.btPersona = New System.Windows.Forms.Button()
         Me.txtEmail = New System.Windows.Forms.Label()
         Me.txtDireccion = New System.Windows.Forms.Label()
         Me.txtNombre = New System.Windows.Forms.Label()
@@ -38,6 +39,7 @@ Partial Class FormEmpleado
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.pFoto = New System.Windows.Forms.PictureBox()
         Me.GbInform_D = New System.Windows.Forms.GroupBox()
         Me.dgvParametro = New System.Windows.Forms.DataGridView()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
@@ -79,10 +81,9 @@ Partial Class FormEmpleado
         Me.btEditar = New System.Windows.Forms.ToolStripButton()
         Me.btCancelar = New System.Windows.Forms.ToolStripButton()
         Me.btAnular = New System.Windows.Forms.ToolStripButton()
-        Me.pFoto = New System.Windows.Forms.PictureBox()
-        Me.bttercero = New System.Windows.Forms.Button()
         Me.gbInform.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
+        CType(Me.pFoto, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GbInform_D.SuspendLayout()
         CType(Me.dgvParametro, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
@@ -95,13 +96,12 @@ Partial Class FormEmpleado
         CType(Me.ErrorIcono, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.ToolStrip1.SuspendLayout()
-        CType(Me.pFoto, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'gbInform
         '
         Me.gbInform.BackColor = System.Drawing.Color.Transparent
-        Me.gbInform.Controls.Add(Me.bttercero)
+        Me.gbInform.Controls.Add(Me.btPersona)
         Me.gbInform.Controls.Add(Me.txtEmail)
         Me.gbInform.Controls.Add(Me.txtDireccion)
         Me.gbInform.Controls.Add(Me.txtNombre)
@@ -119,6 +119,16 @@ Partial Class FormEmpleado
         Me.gbInform.Size = New System.Drawing.Size(786, 102)
         Me.gbInform.TabIndex = 9
         Me.gbInform.TabStop = False
+        '
+        'btPersona
+        '
+        Me.btPersona.BackgroundImage = Global.Quality.My.Resources.Resources.Very_Basic_Search_icon
+        Me.btPersona.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btPersona.Location = New System.Drawing.Point(754, 15)
+        Me.btPersona.Name = "btPersona"
+        Me.btPersona.Size = New System.Drawing.Size(26, 25)
+        Me.btPersona.TabIndex = 60033
+        Me.btPersona.UseVisualStyleBackColor = True
         '
         'txtEmail
         '
@@ -260,6 +270,17 @@ Partial Class FormEmpleado
         Me.GroupBox3.Size = New System.Drawing.Size(100, 102)
         Me.GroupBox3.TabIndex = 56
         Me.GroupBox3.TabStop = False
+        '
+        'pFoto
+        '
+        Me.pFoto.BackgroundImage = Global.Quality.My.Resources.Resources.Users_User_Male_3_icon
+        Me.pFoto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.pFoto.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.pFoto.Location = New System.Drawing.Point(3, 16)
+        Me.pFoto.Name = "pFoto"
+        Me.pFoto.Size = New System.Drawing.Size(94, 83)
+        Me.pFoto.TabIndex = 0
+        Me.pFoto.TabStop = False
         '
         'GbInform_D
         '
@@ -722,27 +743,6 @@ Partial Class FormEmpleado
         Me.btAnular.Text = "&Anular"
         Me.btAnular.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         '
-        'pFoto
-        '
-        Me.pFoto.BackgroundImage = Global.Quality.My.Resources.Resources.Users_User_Male_3_icon
-        Me.pFoto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.pFoto.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.pFoto.Location = New System.Drawing.Point(3, 16)
-        Me.pFoto.Name = "pFoto"
-        Me.pFoto.Size = New System.Drawing.Size(94, 83)
-        Me.pFoto.TabIndex = 0
-        Me.pFoto.TabStop = False
-        '
-        'bttercero
-        '
-        Me.bttercero.BackgroundImage = Global.Quality.My.Resources.Resources.Very_Basic_Search_icon
-        Me.bttercero.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.bttercero.Location = New System.Drawing.Point(754, 15)
-        Me.bttercero.Name = "bttercero"
-        Me.bttercero.Size = New System.Drawing.Size(26, 25)
-        Me.bttercero.TabIndex = 60033
-        Me.bttercero.UseVisualStyleBackColor = True
-        '
         'FormEmpleado
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -764,6 +764,7 @@ Partial Class FormEmpleado
         Me.gbInform.ResumeLayout(False)
         Me.gbInform.PerformLayout()
         Me.GroupBox3.ResumeLayout(False)
+        CType(Me.pFoto, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GbInform_D.ResumeLayout(False)
         CType(Me.dgvParametro, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
@@ -782,7 +783,6 @@ Partial Class FormEmpleado
         Me.Panel1.ResumeLayout(False)
         Me.ToolStrip1.ResumeLayout(False)
         Me.ToolStrip1.PerformLayout()
-        CType(Me.pFoto, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -845,6 +845,6 @@ Partial Class FormEmpleado
     Public WithEvents btEditar As ToolStripButton
     Public WithEvents btCancelar As ToolStripButton
     Public WithEvents btAnular As ToolStripButton
-    Public WithEvents bttercero As Button
+    Public WithEvents btPersona As Button
     Friend WithEvents pFoto As PictureBox
 End Class

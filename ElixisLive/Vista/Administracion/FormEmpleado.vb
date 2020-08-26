@@ -18,7 +18,7 @@ Public Class FormEmpleado
             Generales.deshabilitarControles(Me)
             combosIniciales()
             btNuevo.Enabled = True
-            btBuscar.Enabled = True
+            btBusqueda.Enabled = True
         Catch ex As Exception
             EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
@@ -124,7 +124,7 @@ Public Class FormEmpleado
             EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
     End Sub
-    Private Sub btBuscarPersona_Click(sender As Object, e As EventArgs) Handles bttercero.Click
+    Private Sub btBuscarPersona_Click(sender As Object, e As EventArgs) Handles btPersona.Click
         Dim params As New List(Of String)
         params.Add(String.Empty)
         Try
@@ -161,7 +161,7 @@ Public Class FormEmpleado
         formatMoneda()
         cbTipoSalario.Enabled = True
         objEmpleado.codigo = Nothing
-        btBuscarPersona.Enabled = True
+        btPersona.Enabled = True
         btCancelar.Enabled = True
         btRegistrar.Enabled = True
     End Sub
@@ -355,7 +355,7 @@ Public Class FormEmpleado
             Me.ErrorIcono.SetError(cbTipoSalario, Constantes.CADENA_VACIA)
         End If
     End Sub
-    Private Sub btBuscarPersona_Validating(sender As Object, e As EventArgs) Handles bttercero.LostFocus
+    Private Sub btBuscarPersona_Validating(sender As Object, e As EventArgs) Handles btPersona.LostFocus
         If txtNombre.Text = "" And btRegistrar.Enabled = True Then
             Me.ErrorIcono.SetError(txtNombre, "Debe escoger una persona")
         Else

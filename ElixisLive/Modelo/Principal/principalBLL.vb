@@ -11,7 +11,7 @@ Public Class principalBLL
 
             dsDatos = New DataSet
             CreaOpciones(dsDatos)
-            drCuentaPadre = dsDatos.Tables(0).Select("Codigo_Padre = ''", "Codigo")
+            drCuentaPadre = dsDatos.Tables(0).Select("Codigo_Padre IS NULL", "Codigo")
 
             For Each drFila As DataRow In drCuentaPadre
 

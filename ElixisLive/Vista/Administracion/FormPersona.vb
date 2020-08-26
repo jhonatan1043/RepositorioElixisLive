@@ -56,7 +56,7 @@ Public Class FormPersona
             Generales.deshabilitarBotones(ToolStrip1)
             Generales.deshabilitarControles(Me)
             btNuevo.Enabled = True
-            btBuscar.Enabled = True
+            btBusqueda.Enabled = True
         Catch ex As Exception
             EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
@@ -123,7 +123,7 @@ Public Class FormPersona
             Generales.deshabilitarControles(Me)
             objPersona.codigo = Nothing
             btNuevo.Enabled = True
-            btBuscar.Enabled = True
+            btBusqueda.Enabled = True
             quitarIconoError()
         End If
     End Sub

@@ -13,7 +13,7 @@
         Generales.cargarCombo(Sentencias.MOVIMIENTO_CONSULTAR, Nothing, "Nombre", "Codigo", cbMovimiento)
         validarGrilla()
         btNuevo.Enabled = True
-        btBuscar.Enabled = True
+        btBusqueda.Enabled = True
         Generales.tabularConEnter(Me)
     End Sub
 
