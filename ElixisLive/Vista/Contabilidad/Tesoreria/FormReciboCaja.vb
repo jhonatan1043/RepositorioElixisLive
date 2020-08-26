@@ -15,7 +15,7 @@
         Generales.deshabilitarControles(Me)
         Generales.asignarPermiso(Me)
         btNuevo.Enabled = True
-        btBuscar.Enabled = True
+        btBusqueda.Enabled = True
         objRecaudo = New Recaudo
         objRecaudo.codigoPuc = FuncionesContables.obtenerPucActivo()
         objRecaudo.codigoDocumento = Constantes.RECAUDO_DE_CLIENTES

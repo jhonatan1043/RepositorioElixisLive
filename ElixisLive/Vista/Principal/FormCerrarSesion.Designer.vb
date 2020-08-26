@@ -33,6 +33,7 @@ Partial Class FormCerrarSesion
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PicCerrarSesion, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -44,6 +45,7 @@ Partial Class FormCerrarSesion
         '
         Me.GroupBox1.BackColor = System.Drawing.Color.White
         Me.GroupBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.GroupBox1.Controls.Add(Me.Label7)
         Me.GroupBox1.Controls.Add(Me.Label3)
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Controls.Add(Me.Label1)
@@ -166,6 +168,13 @@ Partial Class FormCerrarSesion
         Me.Label6.TabIndex = 32
         Me.Label6.Text = "_____________"
         '
+        'Label7
+        '
+        Me.Label7.Location = New System.Drawing.Point(2, 0)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(296, 16)
+        Me.Label7.TabIndex = 33
+        '
         'FormCerrarSesion
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -200,4 +209,5 @@ Partial Class FormCerrarSesion
     Friend WithEvents Label4 As Label
     Friend WithEvents Label5 As Label
     Friend WithEvents Label6 As Label
+    Friend WithEvents Label7 As Label
 End Class

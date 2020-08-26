@@ -79,7 +79,7 @@
         Generales.deshabilitarBotones(ToolStrip1)
         Generales.deshabilitarControles(Me)
         Generales.asignarPermiso(Me)
-        btBuscar.Enabled = True
+        btBusqueda.Enabled = True
         btNuevo.Enabled = True
     End Sub
 

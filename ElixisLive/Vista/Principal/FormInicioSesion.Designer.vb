@@ -39,6 +39,7 @@ Partial Class FormInicioSesion
         Me.OK = New System.Windows.Forms.Button()
         Me.Cancel = New System.Windows.Forms.Button()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.Pimagen = New System.Windows.Forms.PictureBox()
         Me.ErrorIcono = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.GroupBox2.SuspendLayout()
@@ -78,7 +79,7 @@ Partial Class FormInicioSesion
         Me.txtUsuario.MaxLength = 15
         Me.txtUsuario.Name = "txtUsuario"
         Me.txtUsuario.Size = New System.Drawing.Size(193, 23)
-        Me.txtUsuario.TabIndex = 1
+        Me.txtUsuario.TabIndex = 0
         '
         'txtContraseña
         '
@@ -144,6 +145,7 @@ Partial Class FormInicioSesion
         '
         Me.GroupBox2.BackColor = System.Drawing.Color.White
         Me.GroupBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.GroupBox2.Controls.Add(Me.Label2)
         Me.GroupBox2.Controls.Add(Me.CbEmpresa)
         Me.GroupBox2.Controls.Add(Me.txtContraseña)
         Me.GroupBox2.Controls.Add(Me.txtUsuario)
@@ -156,6 +158,13 @@ Partial Class FormInicioSesion
         Me.GroupBox2.Size = New System.Drawing.Size(300, 382)
         Me.GroupBox2.TabIndex = 6
         Me.GroupBox2.TabStop = False
+        '
+        'Label2
+        '
+        Me.Label2.Location = New System.Drawing.Point(2, 0)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(296, 16)
+        Me.Label2.TabIndex = 8
         '
         'Pimagen
         '
@@ -207,4 +216,5 @@ Partial Class FormInicioSesion
     Friend WithEvents GroupBox2 As GroupBox
     Public WithEvents txtContraseña As TextBox
     Friend WithEvents ErrorIcono As ErrorProvider
+    Friend WithEvents Label2 As Label
 End Class

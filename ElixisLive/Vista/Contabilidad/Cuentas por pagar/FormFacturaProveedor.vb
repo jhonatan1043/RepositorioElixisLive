@@ -228,7 +228,7 @@
         Generales.deshabilitarBotones(ToolStrip1)
         Generales.asignarPermiso(Me)
         btNuevo.Enabled = True
-        btBuscar.Enabled = True
+        btBusqueda.Enabled = True
     End Sub
     Private Sub deshabilitarColumnas()
         With dgvCuentas
