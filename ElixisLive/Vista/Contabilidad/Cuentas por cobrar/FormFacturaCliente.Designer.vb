@@ -66,7 +66,6 @@ Partial Class FormFacturaCliente
         Me.Label4 = New System.Windows.Forms.Label()
         Me.btBusquedaDocumento = New System.Windows.Forms.Button()
         Me.dgvCuentas = New System.Windows.Forms.DataGridView()
-        Me.anular = New System.Windows.Forms.DataGridViewImageColumn()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.LTitulo = New System.Windows.Forms.Label()
@@ -79,6 +78,7 @@ Partial Class FormFacturaCliente
         Me.btCancelar = New System.Windows.Forms.ToolStripButton()
         Me.btAnular = New System.Windows.Forms.ToolStripButton()
         Me.btcxc = New System.Windows.Forms.ToolStripButton()
+        Me.anular = New System.Windows.Forms.DataGridViewImageColumn()
         Me.GroupBox1.SuspendLayout()
         Me.PnlInfo.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -587,14 +587,6 @@ Partial Class FormFacturaCliente
         Me.dgvCuentas.Size = New System.Drawing.Size(870, 255)
         Me.dgvCuentas.TabIndex = 60027
         '
-        'anular
-        '
-        Me.anular.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.anular.HeaderText = "Quitar"
-        Me.anular.Name = "anular"
-        Me.anular.ReadOnly = True
-        Me.anular.Width = 43
-        '
         'GroupBox3
         '
         Me.GroupBox3.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -721,6 +713,14 @@ Partial Class FormFacturaCliente
         Me.btcxc.Size = New System.Drawing.Size(59, 29)
         Me.btcxc.Text = "CXC"
         '
+        'anular
+        '
+        Me.anular.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.anular.HeaderText = "*"
+        Me.anular.Name = "anular"
+        Me.anular.ReadOnly = True
+        Me.anular.Width = 18
+        '
         'FormFacturaCliente
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -774,7 +774,6 @@ Partial Class FormFacturaCliente
     Friend WithEvents Label4 As Label
     Public WithEvents btBusquedaDocumento As Button
     Friend WithEvents dgvCuentas As DataGridView
-    Friend WithEvents anular As DataGridViewImageColumn
     Friend WithEvents GroupBox3 As GroupBox
     Public WithEvents PnlInfo As Panel
     Public WithEvents lbinfo As Label
@@ -808,4 +807,5 @@ Partial Class FormFacturaCliente
     Public WithEvents btCancelar As ToolStripButton
     Public WithEvents btAnular As ToolStripButton
     Friend WithEvents btcxc As ToolStripButton
+    Friend WithEvents anular As DataGridViewImageColumn
 End Class

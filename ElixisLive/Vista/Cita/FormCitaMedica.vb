@@ -26,6 +26,7 @@
             btRegistrar.Enabled = True
             btCancelar.Enabled = True
             objCita.dtServicio.Rows.Add()
+            Generales.mostrarImagenDatagrid(dgvServicio, "dgCodigo", "dgQuitar")
         End If
         Generales.tabularConEnter(Me)
     End Sub

@@ -343,4 +343,8 @@
         End If
         Return False
     End Function
+
+    Private Sub dgvFactura_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvFactura.CellClick
+        Generales.mostrarImagenDatagrid(dgvFactura, "dgCodigo", "dgQuitar")
+    End Sub
 End Class

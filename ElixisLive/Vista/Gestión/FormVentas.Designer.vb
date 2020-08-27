@@ -220,6 +220,7 @@ Partial Class FormVentas
         Me.TextNombre = New System.Windows.Forms.TextBox()
         Me.txtIdentificacion = New System.Windows.Forms.TextBox()
         Me.dtFecha = New System.Windows.Forms.DateTimePicker()
+        Me.btExistencia = New System.Windows.Forms.Button()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.tabVenta = New System.Windows.Forms.TabControl()
         Me.tpArticulos = New System.Windows.Forms.TabPage()
@@ -234,14 +235,13 @@ Partial Class FormVentas
         Me.txtCodigoBarra = New System.Windows.Forms.TextBox()
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
         Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
-        Me.DataGridViewImageColumn1 = New System.Windows.Forms.DataGridViewImageColumn()
         Me.btNuevo = New System.Windows.Forms.ToolStripButton()
         Me.btBusqueda = New System.Windows.Forms.ToolStripButton()
         Me.btRegistrar = New System.Windows.Forms.ToolStripButton()
         Me.btAnular = New System.Windows.Forms.ToolStripButton()
         Me.btCancelar = New System.Windows.Forms.ToolStripButton()
         Me.btImprimir = New System.Windows.Forms.ToolStripButton()
-        Me.btExistencia = New System.Windows.Forms.Button()
+        Me.DataGridViewImageColumn1 = New System.Windows.Forms.DataGridViewImageColumn()
         Me.dgCodigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.dgDescripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.dgStock = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -1965,7 +1965,7 @@ Partial Class FormVentas
         Me.txtDescuento.Name = "txtDescuento"
         Me.txtDescuento.Size = New System.Drawing.Size(155, 22)
         Me.txtDescuento.TabIndex = 60048
-        Me.txtDescuento.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.txtDescuento.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'Label10
         '
@@ -2095,6 +2095,19 @@ Partial Class FormVentas
         Me.dtFecha.Name = "dtFecha"
         Me.dtFecha.Size = New System.Drawing.Size(189, 23)
         Me.dtFecha.TabIndex = 10005
+        '
+        'btExistencia
+        '
+        Me.btExistencia.BackColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(220, Byte), Integer), CType(CType(234, Byte), Integer))
+        Me.btExistencia.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btExistencia.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btExistencia.ForeColor = System.Drawing.Color.Black
+        Me.btExistencia.Location = New System.Drawing.Point(783, 55)
+        Me.btExistencia.Name = "btExistencia"
+        Me.btExistencia.Size = New System.Drawing.Size(97, 29)
+        Me.btExistencia.TabIndex = 10000
+        Me.btExistencia.Text = "Ver existencias"
+        Me.btExistencia.UseVisualStyleBackColor = False
         '
         'Label11
         '
@@ -2301,18 +2314,6 @@ Partial Class FormVentas
         Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
         Me.ToolStripSeparator1.Size = New System.Drawing.Size(6, 32)
         '
-        'DataGridViewImageColumn1
-        '
-        DataGridViewCellStyle46.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle46.NullValue = CType(resources.GetObject("DataGridViewCellStyle46.NullValue"), Object)
-        DataGridViewCellStyle46.SelectionBackColor = System.Drawing.Color.White
-        Me.DataGridViewImageColumn1.DefaultCellStyle = DataGridViewCellStyle46
-        Me.DataGridViewImageColumn1.HeaderText = "Quitar"
-        Me.DataGridViewImageColumn1.Image = Global.Quality.My.Resources.Resources.Industry_Trash_2_icon
-        Me.DataGridViewImageColumn1.Name = "DataGridViewImageColumn1"
-        Me.DataGridViewImageColumn1.ReadOnly = True
-        Me.DataGridViewImageColumn1.Width = 50
-        '
         'btNuevo
         '
         Me.btNuevo.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -2379,18 +2380,17 @@ Partial Class FormVentas
         Me.btImprimir.Text = "&Imprimir"
         Me.btImprimir.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         '
-        'btExistencia
+        'DataGridViewImageColumn1
         '
-        Me.btExistencia.BackColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(220, Byte), Integer), CType(CType(234, Byte), Integer))
-        Me.btExistencia.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btExistencia.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btExistencia.ForeColor = System.Drawing.Color.Black
-        Me.btExistencia.Location = New System.Drawing.Point(783, 55)
-        Me.btExistencia.Name = "btExistencia"
-        Me.btExistencia.Size = New System.Drawing.Size(97, 29)
-        Me.btExistencia.TabIndex = 10000
-        Me.btExistencia.Text = "Ver existencias"
-        Me.btExistencia.UseVisualStyleBackColor = False
+        DataGridViewCellStyle46.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle46.NullValue = CType(resources.GetObject("DataGridViewCellStyle46.NullValue"), Object)
+        DataGridViewCellStyle46.SelectionBackColor = System.Drawing.Color.White
+        Me.DataGridViewImageColumn1.DefaultCellStyle = DataGridViewCellStyle46
+        Me.DataGridViewImageColumn1.HeaderText = "Quitar"
+        Me.DataGridViewImageColumn1.Image = Global.Quality.My.Resources.Resources.Industry_Trash_2_icon
+        Me.DataGridViewImageColumn1.Name = "DataGridViewImageColumn1"
+        Me.DataGridViewImageColumn1.ReadOnly = True
+        Me.DataGridViewImageColumn1.Width = 50
         '
         'dgCodigo
         '
@@ -2478,11 +2478,11 @@ Partial Class FormVentas
         DataGridViewCellStyle38.NullValue = CType(resources.GetObject("DataGridViewCellStyle38.NullValue"), Object)
         DataGridViewCellStyle38.SelectionBackColor = System.Drawing.Color.White
         Me.dgQuitar.DefaultCellStyle = DataGridViewCellStyle38
-        Me.dgQuitar.HeaderText = ""
+        Me.dgQuitar.HeaderText = "*"
         Me.dgQuitar.Image = Global.Quality.My.Resources.Resources.Industry_Trash_2_icon
         Me.dgQuitar.Name = "dgQuitar"
         Me.dgQuitar.ReadOnly = True
-        Me.dgQuitar.Width = 50
+        Me.dgQuitar.Width = 20
         '
         'dgCodigoServ
         '
@@ -2554,10 +2554,10 @@ Partial Class FormVentas
         DataGridViewCellStyle45.NullValue = CType(resources.GetObject("DataGridViewCellStyle45.NullValue"), Object)
         DataGridViewCellStyle45.SelectionBackColor = System.Drawing.Color.White
         Me.dgQuitarServ.DefaultCellStyle = DataGridViewCellStyle45
-        Me.dgQuitarServ.HeaderText = ""
+        Me.dgQuitarServ.HeaderText = "*"
         Me.dgQuitarServ.Name = "dgQuitarServ"
         Me.dgQuitarServ.ReadOnly = True
-        Me.dgQuitarServ.Width = 50
+        Me.dgQuitarServ.Width = 20
         '
         'FormVentas
         '
