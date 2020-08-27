@@ -1132,6 +1132,7 @@
     <Content Include="ReferenciaDLL\itextsharp.dll" />
     <Content Include="ReferenciaDLL\MySql.Data.DLL" />
     <Content Include="ReferenciaDLL\NotifySenderControl.dll" />
+    <None Include="Resources\Very-Basic-Search-icon1.png" />
     <None Include="Resources\Time-And-Date-Alarm-Clock-icon %281%29.png" />
     <None Include="Resources\Data-Combo-Chart-icon.png" />
     <None Include="Resources\Users-Conference-icon %281%29.png" />

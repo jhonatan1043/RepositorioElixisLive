@@ -17,7 +17,7 @@ Public Class Generales
         For i = 0 To datagrid.Rows.Count - 1
             Dim cell As DataGridViewImageCell = CType(datagrid.Rows(i).Cells(nombreColumnaImagen), DataGridViewImageCell)
             If datagrid.Rows(i).Cells(nombreColumnaCodigo).Value.ToString = "" Then
-                cell.Value = (My.Resources.Very_Basic_Search_icon)
+                cell.Value = (My.Resources.Very_Basic_Search_icon1)
             Else
                 cell.Value = (My.Resources.Industry_Trash_2_icon)
             End If

@@ -15,16 +15,12 @@
     Private Sub dgvProducto_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvProducto.CellDoubleClick, DataGridView9.CellDoubleClick, DataGridView3.CellDoubleClick
         Try
             If btRegistrar.Enabled = False Then Exit Sub
-            If (dgvProducto.Rows(dgvProducto.CurrentCell.RowIndex).Cells("dgCodigo").Selected = True Or
-                dgvProducto.Rows(dgvProducto.CurrentCell.RowIndex).Cells("dgDescripcion").Selected = True) Then
-                buscarProducto()
-
-            ElseIf dgvProducto.Rows(dgvProducto.CurrentCell.RowIndex).Cells("dgQuitar").Selected = True And
+            If dgvProducto.Rows(dgvProducto.CurrentCell.RowIndex).Cells("dgQuitar").Selected = True And
                    objVenta.dtProductos.Rows(dgvProducto.CurrentCell.RowIndex).Item("Codigo").ToString <> Constantes.CADENA_VACIA Then
                 objVenta.dtProductos.Rows.RemoveAt(e.RowIndex)
                 calcularTotales()
             ElseIf dgvProducto.Rows(dgvProducto.CurrentCell.RowIndex).Cells("dgEmpleadoN").Selected = True And
-                    Not IsDBNull(dgvProducto.Rows(dgvProducto.CurrentCell.RowIndex).Cells("dgCodigo").Value) Then
+               Not IsDBNull(dgvProducto.Rows(dgvProducto.CurrentCell.RowIndex).Cells("dgCodigo").Value) Then
                 consultarEmpleado(1)
             End If
         Catch ex As Exception
@@ -35,10 +31,7 @@
     Private Sub dgvServicio_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvServicio.CellDoubleClick, DataGridView8.CellDoubleClick, DataGridView2.CellDoubleClick
         Try
             If btRegistrar.Enabled = False Then Exit Sub
-            If (dgvServicio.Rows(dgvServicio.CurrentCell.RowIndex).Cells("dgCodigoServ").Selected = True Or
-                dgvServicio.Rows(dgvServicio.CurrentCell.RowIndex).Cells("dgDescripcionServ").Selected = True) Then
-                buscarServicio()
-            ElseIf dgvServicio.Rows(dgvServicio.CurrentCell.RowIndex).Cells("dgQuitarServ").Selected = True And
+            If dgvServicio.Rows(dgvServicio.CurrentCell.RowIndex).Cells("dgQuitarServ").Selected = True And
                    objVenta.dtServicio.Rows(dgvServicio.CurrentCell.RowIndex).Item("Codigo").ToString <> Constantes.CADENA_VACIA Then
                 objVenta.dtServicio.Rows.RemoveAt(e.RowIndex)
                 calcularTotales()
@@ -522,14 +515,7 @@
             Cursor = Cursors.Default
         End Try
     End Sub
-    Private Sub dgvServicio_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvServicio.CellClick, DataGridView8.CellClick, DataGridView2.CellClick
-        If e.ColumnIndex = 0 Then
-            If objVenta.dtServicio.Rows.Count > 0 Then
-                cargarCostosServicio(If(IsDBNull(objVenta.dtServicio.Rows(dgvServicio.CurrentCell.RowIndex).Item("codigo")), Nothing,
-                                     objVenta.dtServicio.Rows(dgvServicio.CurrentCell.RowIndex).Item("codigo")))
-            End If
-        End If
-    End Sub
+
     Private Sub cargarCostosServicio(pcodigo)
         Dim params As New List(Of String)
         Dim dtServicioCosto As New DataTable
@@ -695,13 +681,28 @@
                    objVenta.dtProductos.Rows(dgvProducto.CurrentCell.RowIndex).Item("Codigo").ToString = Constantes.CADENA_VACIA Then
                 buscarProducto()
                 calcularTotales()
-            ElseIf dgvProducto.Rows(dgvProducto.CurrentCell.RowIndex).Cells("dgEmpleadoN").Selected = True And
-                    Not IsDBNull(dgvProducto.Rows(dgvProducto.CurrentCell.RowIndex).Cells("dgCodigo").Value) Then
-                consultarEmpleado(1)
+
             End If
         Catch ex As Exception
             EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
         Generales.mostrarImagenDatagrid(dgvProducto, "dgCodigo", "dgQuitar")
+    End Sub
+    Private Sub dgvServicio_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvServicio.CellClick, DataGridView8.CellClick, DataGridView2.CellClick
+        Try
+            If e.ColumnIndex = 0 Then
+                If objVenta.dtServicio.Rows.Count > 0 Then
+                    cargarCostosServicio(If(IsDBNull(objVenta.dtServicio.Rows(dgvServicio.CurrentCell.RowIndex).Item("codigo")), Nothing,
+                                     objVenta.dtServicio.Rows(dgvServicio.CurrentCell.RowIndex).Item("codigo")))
+                End If
+
+            ElseIf (dgvServicio.Rows(dgvServicio.CurrentCell.RowIndex).Cells("dgQuitarServ").Selected = True And
+                    objVenta.dtServicio.Rows(dgvServicio.CurrentCell.RowIndex).Item("Codigo").ToString = Constantes.CADENA_VACIA) Then
+                buscarServicio()
+            End If
+        Catch ex As Exception
+            EstiloMensajes.mostrarMensajeError(ex.Message)
+        End Try
+        Generales.mostrarImagenDatagrid(dgvProducto, "dgCodigoServ", "dgQuitarServ")
     End Sub
 End Class
