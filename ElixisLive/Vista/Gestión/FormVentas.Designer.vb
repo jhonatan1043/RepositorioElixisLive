@@ -258,8 +258,8 @@ Partial Class FormVentas
         Me.btNuevo = New System.Windows.Forms.ToolStripButton()
         Me.btBusqueda = New System.Windows.Forms.ToolStripButton()
         Me.btRegistrar = New System.Windows.Forms.ToolStripButton()
-        Me.btCancelar = New System.Windows.Forms.ToolStripButton()
         Me.btAnular = New System.Windows.Forms.ToolStripButton()
+        Me.btCancelar = New System.Windows.Forms.ToolStripButton()
         Me.btImprimir = New System.Windows.Forms.ToolStripButton()
         Me.DataGridViewImageColumn1 = New System.Windows.Forms.DataGridViewImageColumn()
         Me.Panel1.SuspendLayout()
@@ -2025,7 +2025,7 @@ Partial Class FormVentas
         Me.Label2.ForeColor = System.Drawing.Color.Black
         Me.Label2.Location = New System.Drawing.Point(699, 22)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(56, 15)
+        Me.Label2.Size = New System.Drawing.Size(55, 15)
         Me.Label2.TabIndex = 10
         Me.Label2.Text = "Teléfono:"
         '
@@ -2512,17 +2512,6 @@ Partial Class FormVentas
         Me.btRegistrar.Text = "&Registrar"
         Me.btRegistrar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         '
-        'btCancelar
-        '
-        Me.btCancelar.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btCancelar.ForeColor = System.Drawing.Color.Black
-        Me.btCancelar.Image = Global.Quality.My.Resources.Resources.Arrows_Right_2_icon
-        Me.btCancelar.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.btCancelar.Name = "btCancelar"
-        Me.btCancelar.Size = New System.Drawing.Size(99, 29)
-        Me.btCancelar.Text = "&Cancelar"
-        Me.btCancelar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        '
         'btAnular
         '
         Me.btAnular.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -2533,6 +2522,17 @@ Partial Class FormVentas
         Me.btAnular.Size = New System.Drawing.Size(86, 29)
         Me.btAnular.Text = "&Anular"
         Me.btAnular.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        '
+        'btCancelar
+        '
+        Me.btCancelar.Font = New System.Drawing.Font("Times New Roman", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btCancelar.ForeColor = System.Drawing.Color.Black
+        Me.btCancelar.Image = Global.Quality.My.Resources.Resources.Arrows_Right_2_icon
+        Me.btCancelar.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.btCancelar.Name = "btCancelar"
+        Me.btCancelar.Size = New System.Drawing.Size(99, 29)
+        Me.btCancelar.Text = "&Cancelar"
+        Me.btCancelar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         '
         'btImprimir
         '

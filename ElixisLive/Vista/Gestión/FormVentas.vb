@@ -115,6 +115,8 @@
         btExistencia.Enabled = True
         txtCodigoBarra.ReadOnly = False
         txtCodigoBarra.Focus()
+        Generales.mostrarImagenDatagrid(dgvProducto, "dgCodigo", "dgQuitar")
+        Generales.mostrarImagenDatagrid(dgvServicio, "dgCodigoServ", "dgQuitarServ")
     End Sub
     Private Sub btBusqueda_Click(sender As Object, e As EventArgs) Handles btBusqueda.Click
         Dim params As New List(Of String)
@@ -682,5 +684,24 @@
             If btRegistrar.Enabled = False Then Exit Sub
             txtCodigoBarra.Focus()
         End If
+    End Sub
+
+    Private Sub dgvProducto_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvProducto.CellClick
+
+        Try
+            If btRegistrar.Enabled = False Then Exit Sub
+
+            If dgvProducto.Rows(dgvProducto.CurrentCell.RowIndex).Cells("dgQuitar").Selected = True And
+                   objVenta.dtProductos.Rows(dgvProducto.CurrentCell.RowIndex).Item("Codigo").ToString = Constantes.CADENA_VACIA Then
+                buscarProducto()
+                calcularTotales()
+            ElseIf dgvProducto.Rows(dgvProducto.CurrentCell.RowIndex).Cells("dgEmpleadoN").Selected = True And
+                    Not IsDBNull(dgvProducto.Rows(dgvProducto.CurrentCell.RowIndex).Cells("dgCodigo").Value) Then
+                consultarEmpleado(1)
+            End If
+        Catch ex As Exception
+            EstiloMensajes.mostrarMensajeError(ex.Message)
+        End Try
+        Generales.mostrarImagenDatagrid(dgvProducto, "dgCodigo", "dgQuitar")
     End Sub
 End Class

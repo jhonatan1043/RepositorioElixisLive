@@ -13,12 +13,15 @@ Public Class Generales
     Public Delegate Sub subRutina()
     Private Shared objConexion As New ConexionBD
     Public Shared Sub mostrarImagenDatagrid(datagrid As DataGridView, nombreColumnaCodigo As String, nombreColumnaImagen As String)
-        Dim cell As DataGridViewImageCell = CType(datagrid.Rows(datagrid.CurrentRow.Index).Cells(nombreColumnaImagen), DataGridViewImageCell)
-        If datagrid.Rows(datagrid.CurrentRow.Index).Cells(nombreColumnaCodigo).Value = "" Then
-            cell.Value = (My.Resources.Very_Basic_Search_icon)
-        Else
-            cell.Value = (My.Resources.Industry_Trash_2_icon)
-        End If
+
+        For i = 0 To datagrid.Rows.Count - 1
+            Dim cell As DataGridViewImageCell = CType(datagrid.Rows(i).Cells(nombreColumnaImagen), DataGridViewImageCell)
+            If datagrid.Rows(i).Cells(nombreColumnaCodigo).Value.ToString = "" Then
+                cell.Value = (My.Resources.Very_Basic_Search_icon)
+            Else
+                cell.Value = (My.Resources.Industry_Trash_2_icon)
+            End If
+        Next
     End Sub
     Public Shared Sub agregarItems(ByVal consulta As String,
                                    ByVal titulo As String,
