@@ -703,6 +703,6 @@
         Catch ex As Exception
             EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
-        Generales.mostrarImagenDatagrid(dgvProducto, "dgCodigoServ", "dgQuitarServ")
+        Generales.mostrarImagenDatagrid(dgvServicio, "dgCodigoServ", "dgQuitarServ")
     End Sub
 End Class
