@@ -1,9 +1,9 @@
 ﻿Public Class FormVentas
-    Dim objVenta As Venta
+    Dim venta As Venta
     Dim formExistencia As FormExistencia
     Private Sub FormVenta_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Generales.asignarPermiso(Me)
-        objVenta = New Venta
+        venta = New Venta
         Generales.personalizarDatagrid(dgvProducto)
         Generales.deshabilitarBotones(ToolStrip1)
         Generales.deshabilitarControles(Me)
@@ -16,8 +16,8 @@
         Try
             If btRegistrar.Enabled = False Then Exit Sub
             If dgvProducto.Rows(dgvProducto.CurrentCell.RowIndex).Cells("dgQuitar").Selected = True And
-                   objVenta.dtProductos.Rows(dgvProducto.CurrentCell.RowIndex).Item("Codigo").ToString <> Constantes.CADENA_VACIA Then
-                objVenta.dtProductos.Rows.RemoveAt(e.RowIndex)
+                   venta.dtProductos.Rows(dgvProducto.CurrentCell.RowIndex).Item("Codigo").ToString <> Constantes.CADENA_VACIA Then
+                venta.dtProductos.Rows.RemoveAt(e.RowIndex)
                 calcularTotales()
             ElseIf dgvProducto.Rows(dgvProducto.CurrentCell.RowIndex).Cells("dgEmpleadoN").Selected = True And
                Not IsDBNull(dgvProducto.Rows(dgvProducto.CurrentCell.RowIndex).Cells("dgCodigo").Value) Then
@@ -32,8 +32,8 @@
         Try
             If btRegistrar.Enabled = False Then Exit Sub
             If dgvServicio.Rows(dgvServicio.CurrentCell.RowIndex).Cells("dgQuitarServ").Selected = True And
-                   objVenta.dtServicio.Rows(dgvServicio.CurrentCell.RowIndex).Item("Codigo").ToString <> Constantes.CADENA_VACIA Then
-                objVenta.dtServicio.Rows.RemoveAt(e.RowIndex)
+                   venta.dtServicio.Rows(dgvServicio.CurrentCell.RowIndex).Item("Codigo").ToString <> Constantes.CADENA_VACIA Then
+                venta.dtServicio.Rows.RemoveAt(e.RowIndex)
                 calcularTotales()
             ElseIf dgvServicio.Rows(dgvServicio.CurrentCell.RowIndex).Cells("dgNombreEmpleado").Selected = True And
                     Not IsDBNull(dgvServicio.Rows(dgvServicio.CurrentCell.RowIndex).Cells("dgCodigoServ").Value) Then
@@ -42,6 +42,7 @@
         Catch ex As Exception
             EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
+        Generales.mostrarImagenDatagrid(dgvServicio, "dgCodigo", "dgQuitar")
     End Sub
     Private Sub dgvProducto_CellFormatting(sender As System.Object, e As System.Windows.Forms.DataGridViewCellFormattingEventArgs) Handles dgvProducto.CellFormatting, DataGridView9.CellFormatting, DataGridView3.CellFormatting
 
@@ -71,7 +72,7 @@
         Dim dFila As DataRow = Nothing
         If dgvProducto.RowCount >= 1 Then
             Try
-                If Not IsDBNull(objVenta.dtProductos.Rows(dgvProducto.CurrentCell.RowIndex).Item("Codigo")) Then
+                If Not IsDBNull(venta.dtProductos.Rows(dgvProducto.CurrentCell.RowIndex).Item("Codigo")) Then
                     calcularCampos()
                 End If
                 calcularTotales()
@@ -81,12 +82,12 @@
         End If
     End Sub
     Private Sub dgvProducto_EditingControlShowing(sender As Object, e As DataGridViewEditingControlShowingEventArgs) Handles dgvProducto.EditingControlShowing
-        If objVenta.dtProductos.Rows.Count > 0 Then
+        If venta.dtProductos.Rows.Count > 0 Then
             AddHandler e.Control.KeyPress, AddressOf ValidacionDigitacion.validarValoresNumericos
         End If
     End Sub
     Private Sub dgvServicio_EditingControlShowing(sender As Object, e As DataGridViewEditingControlShowingEventArgs) Handles dgvServicio.EditingControlShowing
-        If objVenta.dtServicio.Rows.Count > 0 Then
+        If venta.dtServicio.Rows.Count > 0 Then
             AddHandler e.Control.KeyPress, AddressOf ValidacionDigitacion.validarValoresNumericos
         End If
     End Sub
@@ -99,10 +100,10 @@
         desactivadoPermante()
         validarEdicionGrilla(Constantes.EDITABLE)
         dtFecha.Text = Format(DateTime.Now, Constantes.FORMATO_FECHA2)
-        objVenta.codigo = Nothing
-        objVenta.descuentoCliente = Constantes.SIN_VALOR_NUMERICO
-        objVenta.dtProductos.Rows.Add()
-        objVenta.dtServicio.Rows.Add()
+        venta.codigo = Nothing
+        venta.descuentoCliente = Constantes.SIN_VALOR_NUMERICO
+        venta.dtProductos.Rows.Add()
+        venta.dtServicio.Rows.Add()
         btRegistrar.Enabled = True
         btCancelar.Enabled = True
         btExistencia.Enabled = True
@@ -115,7 +116,7 @@
         Dim params As New List(Of String)
         params.Add(String.Empty)
         Try
-            Generales.buscarElemento(objVenta.sqlConsulta,
+            Generales.buscarElemento(venta.sqlConsulta,
                                      params,
                                      AddressOf cargarInfomacion,
                                      Titulo.BUSQUEDA_FACTURA,
@@ -136,30 +137,30 @@
         dRows = Generales.cargarItem(Sentencias.PRODUCTOS_FACTURA_CARGAR, params)
         If Not IsNothing(dRows) Then
 
-            objVenta.dtProductos(dgvProducto.CurrentCell.RowIndex).Item("Descripcion") = dRows("Descripcion")
-            objVenta.dtProductos(dgvProducto.CurrentCell.RowIndex).Item("Stock") = dRows("Stock")
-            objVenta.dtProductos(dgvProducto.CurrentCell.RowIndex).Item("Valor") = dRows("Valor")
+            venta.dtProductos(dgvProducto.CurrentCell.RowIndex).Item("Descripcion") = dRows("Descripcion")
+            venta.dtProductos(dgvProducto.CurrentCell.RowIndex).Item("Stock") = dRows("Stock")
+            venta.dtProductos(dgvProducto.CurrentCell.RowIndex).Item("Valor") = dRows("Valor")
             dgvProducto.Columns("dgCantidad").Selected = True
 
-            If IsDBNull(objVenta.dtProductos.Rows(objVenta.dtProductos.Rows.Count).Item("Codigo")) And objVenta.estadoFilaNueva = True Then
-                objVenta.dtProductos.Rows.Add()
-                objVenta.estadoFilaNueva = False
+            If IsDBNull(venta.dtProductos.Rows(venta.dtProductos.Rows.Count).Item("Codigo")) And venta.estadoFilaNueva = True Then
+                venta.dtProductos.Rows.Add()
+                venta.estadoFilaNueva = False
             End If
         Else
             EstiloMensajes.mostrarMensajeAdvertencia(" Producto no Encontrado ")
         End If
     End Sub
     Private Sub cargarObjeto()
-        objVenta.codigo = If(String.IsNullOrEmpty(txtCodigo.Text), Nothing, txtCodigo.Text)
-        objVenta.telefono = TextTelefono.Text
-        objVenta.nombre = TextNombre.Text
-        objVenta.identificacion = txtIdentificacion.Text
+        venta.codigo = If(String.IsNullOrEmpty(txtCodigo.Text), Nothing, txtCodigo.Text)
+        venta.telefono = TextTelefono.Text
+        venta.nombre = TextNombre.Text
+        venta.identificacion = txtIdentificacion.Text
     End Sub
     Private Function validarCampos()
         If dgvProducto.Rows.Count <= 1 _
             AndAlso dgvServicio.Rows.Count <= 1 Then
             EstiloMensajes.mostrarMensajeAdvertencia("¡ No hay ningun movimiento para guardar !")
-        ElseIf objVenta.dtProductos.Select("[codigo] Not is null And [Cantidad] = 0").Count > 0 Then
+        ElseIf venta.dtProductos.Select("[codigo] Not is null And [Cantidad] = 0").Count > 0 Then
             EstiloMensajes.mostrarMensajeAdvertencia("¡ Hay productos con cantidad en 0 !")
         Else
             Return True
@@ -174,9 +175,9 @@
             Generales.deshabilitarBotones(ToolStrip1)
             Generales.deshabilitarControles(Me)
             lbInformativo.Visible = False
-            objVenta.dtCodigoBarra.Clear()
-            objVenta.descuentoCliente = Constantes.SIN_VALOR_NUMERICO
-            If IsNothing(objVenta.codigo) Then
+            venta.dtCodigoBarra.Clear()
+            venta.descuentoCliente = Constantes.SIN_VALOR_NUMERICO
+            If IsNothing(venta.codigo) Then
                 Generales.limpiarControles(Me)
             End If
             btNuevo.Enabled = True
@@ -226,8 +227,8 @@
     Private Sub btAnular_Click(sender As Object, e As EventArgs) Handles btAnular.Click
         If EstiloMensajes.mostrarMensajePregunta(MensajeSistema.ANULAR) = Constantes.SI Then
             Try
-                VentaBLL.anularVenta(objVenta)
-                If objVenta.estadoAnulado = True Then
+                VentaBLL.anularVenta(venta)
+                If venta.estadoAnulado = True Then
                     Generales.deshabilitarBotones(ToolStrip1)
                     Generales.limpiarControles(Me)
                     btNuevo.Enabled = True
@@ -275,14 +276,14 @@
             Dim cantidadArticulos,
                 cantidadServicio As Double
             If dgvProducto.Rows.Count >= 1 Then
-                cantidadArticulos = objVenta.dtProductos.Compute("SUM(Total)", "")
-                descuentoTotalProducto = objVenta.dtProductos.Compute("SUM(valorDescuento)", "")
+                cantidadArticulos = venta.dtProductos.Compute("SUM(Total)", "")
+                descuentoTotalProducto = venta.dtProductos.Compute("SUM(valorDescuento)", "")
             Else
                 cantidadArticulos = Constantes.SIN_VALOR_NUMERICO
             End If
             If dgvServicio.Rows.Count >= 1 Then
-                cantidadServicio = objVenta.dtServicio.Compute("SUM(ValorServicio)", "")
-                descuentoTotalServicio = objVenta.dtServicio.Compute("SUM(valorDescuento)", "")
+                cantidadServicio = venta.dtServicio.Compute("SUM(ValorServicio)", "")
+                descuentoTotalServicio = venta.dtServicio.Compute("SUM(valorDescuento)", "")
             Else
                 cantidadServicio = Constantes.SIN_VALOR_NUMERICO
             End If
@@ -290,7 +291,7 @@
             TextTotalServicio.Text = CDbl(cantidadServicio).ToString(Constantes.FORMATO_MONEDA)
 
             valorTotal = (cantidadArticulos + cantidadServicio)
-            descuento = (valorTotal * objVenta.descuentoCliente)
+            descuento = (valorTotal * venta.descuentoCliente)
             TextTotal.Text = CDbl(valorTotal - descuento).ToString(Constantes.FORMATO_MONEDA)
             txtDescuento.Text = CDbl(descuentoTotalProducto + descuentoTotalServicio + descuento).ToString(Constantes.FORMATO_MONEDA)
 
@@ -302,26 +303,26 @@
         Dim params As New List(Of String)
         Dim dRows As DataRow
         params.Add(pCodigo)
-        objVenta.codigo = pCodigo
-        dRows = Generales.cargarItem(objVenta.sqlCargar, params)
+        venta.codigo = pCodigo
+        dRows = Generales.cargarItem(venta.sqlCargar, params)
 
         txtCodigo.Text = pCodigo
         txtIdentificacion.Text = dRows("Identificacion")
         TextNombre.Text = dRows("Nombre")
         TextTelefono.Text = dRows("Telefono")
         dtFecha.Text = Format(dRows("Fecha_Venta"), Constantes.FORMATO_FECHA2)
-        objVenta.descuentoCliente = dRows("Descuento")
+        venta.descuentoCliente = dRows("Descuento")
 
         If Replace(dRows("Descuento"), ",00", "") <> Constantes.SIN_VALOR_NUMERICO Then
             lbInformativo.Visible = True
-            lbInformativo.Text = "Este cliente presentó un descuento del " & CStr(Replace(Format(objVenta.descuentoCliente, "p2"), ",00", ""))
+            lbInformativo.Text = "Este cliente presentó un descuento del " & CStr(Replace(Format(venta.descuentoCliente, "p2"), ",00", ""))
         End If
 
-        Generales.llenarTabla(Sentencias.VENTA_CARGAR_PRODUCTO, params, objVenta.dtProductos)
-        Generales.llenarTabla(Sentencias.VENTA_CARGAR_SERVICIO, params, objVenta.dtServicio)
+        Generales.llenarTabla(Sentencias.VENTA_CARGAR_PRODUCTO, params, venta.dtProductos)
+        Generales.llenarTabla(Sentencias.VENTA_CARGAR_SERVICIO, params, venta.dtServicio)
 
-        dgvProducto.DataSource = objVenta.dtProductos
-        dgvServicio.DataSource = objVenta.dtServicio
+        dgvProducto.DataSource = venta.dtProductos
+        dgvServicio.DataSource = venta.dtServicio
         calcularTotales()
 
         Generales.habilitarBotones(ToolStrip1)
@@ -338,7 +339,7 @@
                                    params,
                                    Titulo.BUSQUEDA_SERVICIO,
                                    dgvServicio,
-                                   objVenta.dtServicio,
+                                   venta.dtServicio,
                                    0,
                                    4,
                                    0,
@@ -367,13 +368,13 @@
         params.Add(pCodigo)
         Generales.llenarTabla(Sentencias.PRODUCTOS_FACTURA_PENDIENTE_CARGAR, params, dt)
         If dt.Rows.Count > 0 Then
-            objVenta.dtProductos.Rows(objVenta.dtProductos.Rows.Count - 1).Item("Codigo") = dt.Rows(dt.Rows.Count - 1).Item("Codigo")
-            objVenta.dtProductos.Rows(objVenta.dtProductos.Rows.Count - 1).Item("Descripcion") = dt.Rows(dt.Rows.Count - 1).Item("Descripcion")
-            objVenta.dtProductos.Rows(objVenta.dtProductos.Rows.Count - 1).Item("Stock") = dt.Rows(dt.Rows.Count - 1).Item("Stock")
-            objVenta.dtProductos.Rows(objVenta.dtProductos.Rows.Count - 1).Item("Cantidad") = dt.Rows(dt.Rows.Count - 1).Item("Cantidad")
-            objVenta.dtProductos.Rows(objVenta.dtProductos.Rows.Count - 1).Item("Valor") = dt.Rows(dt.Rows.Count - 1).Item("Precio")
-            objVenta.dtProductos.Rows(objVenta.dtProductos.Rows.Count - 1).Item("descuento") = dt.Rows(dt.Rows.Count - 1).Item("descuento")
-            objVenta.dtProductos.Rows.Add()
+            venta.dtProductos.Rows(venta.dtProductos.Rows.Count - 1).Item("Codigo") = dt.Rows(dt.Rows.Count - 1).Item("Codigo")
+            venta.dtProductos.Rows(venta.dtProductos.Rows.Count - 1).Item("Descripcion") = dt.Rows(dt.Rows.Count - 1).Item("Descripcion")
+            venta.dtProductos.Rows(venta.dtProductos.Rows.Count - 1).Item("Stock") = dt.Rows(dt.Rows.Count - 1).Item("Stock")
+            venta.dtProductos.Rows(venta.dtProductos.Rows.Count - 1).Item("Cantidad") = dt.Rows(dt.Rows.Count - 1).Item("Cantidad")
+            venta.dtProductos.Rows(venta.dtProductos.Rows.Count - 1).Item("Valor") = dt.Rows(dt.Rows.Count - 1).Item("Precio")
+            venta.dtProductos.Rows(venta.dtProductos.Rows.Count - 1).Item("descuento") = dt.Rows(dt.Rows.Count - 1).Item("descuento")
+            venta.dtProductos.Rows.Add()
             calcularCampos()
         End If
     End Sub
@@ -399,7 +400,7 @@
             .Columns("dgTotal").SortMode = DataGridViewColumnSortMode.NotSortable
             .Columns("dgEmpleadoP").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
 
-            .DataSource = objVenta.dtProductos
+            .DataSource = venta.dtProductos
             .AutoGenerateColumns = False
         End With
 
@@ -421,7 +422,7 @@
             .Columns("dgIdEmpleado").SortMode = DataGridViewColumnSortMode.NotSortable
             .Columns("dgNombreEmpleado").SortMode = DataGridViewColumnSortMode.NotSortable
             .Columns("dgIdEmpleado").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
-            .DataSource = objVenta.dtServicio
+            .DataSource = venta.dtServicio
             .AutoGenerateColumns = False
         End With
     End Sub
@@ -468,19 +469,19 @@
         Dim dRows As DataRow
         dRows = Funciones.consultarClienteIdent(pIdentpIdentificacion)
         If Not IsNothing(dRows) Then
-            objVenta.codigoPersonaCliente = dRows("codigo")
+            venta.codigoPersonaCliente = dRows("codigo")
             TextNombre.Text = dRows("Nombre")
             TextTelefono.Text = dRows("Telefono")
-            objVenta.descuentoCliente = dRows("Descuento")
+            venta.descuentoCliente = dRows("Descuento")
             If Replace(dRows("Descuento"), ",00", "") <> Constantes.SIN_VALOR_NUMERICO Then
                 lbInformativo.Visible = True
-                lbInformativo.Text = "Este cliente presenta un descuento del " & CStr(Replace(Format(objVenta.descuentoCliente, "p2"), ",00", ""))
+                lbInformativo.Text = "Este cliente presenta un descuento del " & CStr(Replace(Format(venta.descuentoCliente, "p2"), ",00", ""))
                 calcularTotales()
             End If
             lbInformativo.ForeColor = Color.FromArgb(20, 61, 113)
             lbInformativo.Font = New Font(Constantes.TIPO_LETRA_ELEMENTO, 11)
         Else
-            objVenta.codigoPersonaCliente = Nothing
+            venta.codigoPersonaCliente = Nothing
             TextNombre.Clear()
             TextTelefono.Clear()
             TextNombre.Focus()
@@ -496,10 +497,10 @@
 
             Cursor = Cursors.WaitCursor
 
-            nombreArchivo = nombreReporte & Constantes.NOMBRE_PDF_SEPARADOR & objVenta.codigo & Constantes.EXTENSION_ARCHIVO_PDF
+            nombreArchivo = nombreReporte & Constantes.NOMBRE_PDF_SEPARADOR & venta.codigo & Constantes.EXTENSION_ARCHIVO_PDF
             ruta = IO.Path.GetTempPath() & nombreReporte
 
-            formula = "{VISTA_VENTA.Codigo_Factura} = " & objVenta.codigo
+            formula = "{VISTA_VENTA.Codigo_Factura} = " & venta.codigo
 
             params.Add(TextTotalArticulos.Text)
             params.Add(TextTotalServicio.Text)
@@ -507,7 +508,7 @@
             params.Add(txtDescuento.Text)
             params.Add(convertirNumeroLetra.Num2MoneyTxt(TextTotal.Text))
 
-            reporte.crearReportePDF(New factura, objVenta.codigo, formula, nombreReporte, IO.Path.GetTempPath(),,, params)
+            reporte.crearReportePDF(New factura, venta.codigo, formula, nombreReporte, IO.Path.GetTempPath(),,, params)
 
         Catch ex As Exception
             EstiloMensajes.mostrarMensajeError(ex.Message)
@@ -550,7 +551,7 @@
     Private Sub consultarEmpleado(indice As Integer)
         Dim params As New List(Of String)
         params.Add(String.Empty)
-        objVenta.indice = indice
+        venta.indice = indice
         Try
             Generales.buscarElemento("[SP_ADMIN_EMPLEADO_CONSULTAR]",
                                      params,
@@ -567,14 +568,14 @@
         Dim dRows As DataRow
         params.Add(pCodigo)
         dRows = Generales.cargarItem(Sentencias.PERSONA_EMPLEADO_CARGAR, params)
-        If objVenta.indice = 1 Then
-            objVenta.dtProductos.Rows(dgvProducto.CurrentCell.RowIndex).Item("EmpleadoP") = pCodigo
-            objVenta.dtProductos.Rows(dgvProducto.CurrentCell.RowIndex).Item("EmpleadoN") = dRows("Nombre")
-            objVenta.dtProductos.AcceptChanges()
-        ElseIf objVenta.indice = 2 Then
-            objVenta.dtServicio.Rows(dgvServicio.CurrentCell.RowIndex).Item("codigo_Empleado") = pCodigo
-            objVenta.dtServicio.Rows(dgvServicio.CurrentCell.RowIndex).Item("NombreEmpleado") = dRows("Nombre")
-            objVenta.dtServicio.AcceptChanges()
+        If venta.indice = 1 Then
+            venta.dtProductos.Rows(dgvProducto.CurrentCell.RowIndex).Item("EmpleadoP") = pCodigo
+            venta.dtProductos.Rows(dgvProducto.CurrentCell.RowIndex).Item("EmpleadoN") = dRows("Nombre")
+            venta.dtProductos.AcceptChanges()
+        ElseIf venta.indice = 2 Then
+            venta.dtServicio.Rows(dgvServicio.CurrentCell.RowIndex).Item("codigo_Empleado") = pCodigo
+            venta.dtServicio.Rows(dgvServicio.CurrentCell.RowIndex).Item("NombreEmpleado") = dRows("Nombre")
+            venta.dtServicio.AcceptChanges()
         End If
     End Sub
     Private Sub desactivadoPermante()
@@ -598,11 +599,11 @@
         Try
             If validarCampos() = True Then
                 cargarObjeto()
-                VentaBLL.guardarVenta(objVenta)
+                VentaBLL.guardarVenta(venta)
                 Generales.habilitarBotones(ToolStrip1)
                 Generales.deshabilitarControles(Me)
-                objVenta.dtCodigoBarra.Clear()
-                txtCodigo.Text = objVenta.codigo
+                venta.dtCodigoBarra.Clear()
+                txtCodigo.Text = venta.codigo
                 cargarInfomacion(txtCodigo.Text)
                 btCancelar.Enabled = False
                 btRegistrar.Enabled = False
@@ -624,7 +625,7 @@
             If btRegistrar.Enabled = False Then Exit Sub
             formExistencia = New FormExistencia
             formExistencia.ShowDialog()
-        ElseIf e.KeyCode = Keys.F3
+        ElseIf e.KeyCode = Keys.F3 Then
             If btRegistrar.Enabled = False Then Exit Sub
             txtCodigoBarra.Focus()
         End If
@@ -636,16 +637,16 @@
         params.Add(SesionActual.codigoSucursal)
         Generales.llenarTabla(Sentencias.PRODUCTO_CODIGO_BARRA_CARGAR, params, dt)
         If dt.Rows.Count > 0 Then
-            If objVenta.dtCodigoBarra.Select("codigoBarra='" + pCodigoBarra + "'").Count = 0 Then
-                objVenta.dtProductos.Rows(objVenta.dtProductos.Rows.Count - 1).Item("Codigo") = dt.Rows(dt.Rows.Count - 1).Item("Codigo")
-                objVenta.dtProductos.Rows(objVenta.dtProductos.Rows.Count - 1).Item("Descripcion") = dt.Rows(dt.Rows.Count - 1).Item("Descripcion")
-                objVenta.dtProductos.Rows(objVenta.dtProductos.Rows.Count - 1).Item("Stock") = dt.Rows(dt.Rows.Count - 1).Item("Stock")
-                objVenta.dtProductos.Rows(objVenta.dtProductos.Rows.Count - 1).Item("Cantidad") = dt.Rows(dt.Rows.Count - 1).Item("Cantidad")
-                objVenta.dtProductos.Rows(objVenta.dtProductos.Rows.Count - 1).Item("Valor") = dt.Rows(dt.Rows.Count - 1).Item("Precio")
-                objVenta.dtProductos.Rows(objVenta.dtProductos.Rows.Count - 1).Item("descuento") = dt.Rows(dt.Rows.Count - 1).Item("descuento")
-                objVenta.dtProductos.Rows.Add()
-                objVenta.dtCodigoBarra.Rows.Add()
-                objVenta.dtCodigoBarra.Rows(objVenta.dtCodigoBarra.Rows.Count - 1).Item("codigoBarra") = pCodigoBarra
+            If venta.dtCodigoBarra.Select("codigoBarra='" + pCodigoBarra + "'").Count = 0 Then
+                venta.dtProductos.Rows(venta.dtProductos.Rows.Count - 1).Item("Codigo") = dt.Rows(dt.Rows.Count - 1).Item("Codigo")
+                venta.dtProductos.Rows(venta.dtProductos.Rows.Count - 1).Item("Descripcion") = dt.Rows(dt.Rows.Count - 1).Item("Descripcion")
+                venta.dtProductos.Rows(venta.dtProductos.Rows.Count - 1).Item("Stock") = dt.Rows(dt.Rows.Count - 1).Item("Stock")
+                venta.dtProductos.Rows(venta.dtProductos.Rows.Count - 1).Item("Cantidad") = dt.Rows(dt.Rows.Count - 1).Item("Cantidad")
+                venta.dtProductos.Rows(venta.dtProductos.Rows.Count - 1).Item("Valor") = dt.Rows(dt.Rows.Count - 1).Item("Precio")
+                venta.dtProductos.Rows(venta.dtProductos.Rows.Count - 1).Item("descuento") = dt.Rows(dt.Rows.Count - 1).Item("descuento")
+                venta.dtProductos.Rows.Add()
+                venta.dtCodigoBarra.Rows.Add()
+                venta.dtCodigoBarra.Rows(venta.dtCodigoBarra.Rows.Count - 1).Item("codigoBarra") = pCodigoBarra
                 calcularCampos()
             Else
                 Beep()
@@ -678,7 +679,7 @@
             If btRegistrar.Enabled = False Then Exit Sub
 
             If dgvProducto.Rows(dgvProducto.CurrentCell.RowIndex).Cells("dgQuitar").Selected = True And
-                   objVenta.dtProductos.Rows(dgvProducto.CurrentCell.RowIndex).Item("Codigo").ToString = Constantes.CADENA_VACIA Then
+                   venta.dtProductos.Rows(dgvProducto.CurrentCell.RowIndex).Item("Codigo").ToString = Constantes.CADENA_VACIA Then
                 buscarProducto()
                 calcularTotales()
 
@@ -691,13 +692,13 @@
     Private Sub dgvServicio_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvServicio.CellClick, DataGridView8.CellClick, DataGridView2.CellClick
         Try
             If e.ColumnIndex = 0 Then
-                If objVenta.dtServicio.Rows.Count > 0 Then
-                    cargarCostosServicio(If(IsDBNull(objVenta.dtServicio.Rows(dgvServicio.CurrentCell.RowIndex).Item("codigo")), Nothing,
-                                     objVenta.dtServicio.Rows(dgvServicio.CurrentCell.RowIndex).Item("codigo")))
+                If venta.dtServicio.Rows.Count > 0 Then
+                    cargarCostosServicio(If(IsDBNull(venta.dtServicio.Rows(dgvServicio.CurrentCell.RowIndex).Item("codigo")), Nothing,
+                                     venta.dtServicio.Rows(dgvServicio.CurrentCell.RowIndex).Item("codigo")))
                 End If
 
             ElseIf (dgvServicio.Rows(dgvServicio.CurrentCell.RowIndex).Cells("dgQuitarServ").Selected = True And
-                    objVenta.dtServicio.Rows(dgvServicio.CurrentCell.RowIndex).Item("Codigo").ToString = Constantes.CADENA_VACIA) Then
+                    venta.dtServicio.Rows(dgvServicio.CurrentCell.RowIndex).Item("Codigo").ToString = Constantes.CADENA_VACIA) Then
                 buscarServicio()
             End If
         Catch ex As Exception

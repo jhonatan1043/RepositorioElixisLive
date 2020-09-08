@@ -28,6 +28,7 @@
         btBuscarProveedor.Enabled = True
         btRegistrar.Enabled = True
         btCancelar.Enabled = True
+        Generales.mostrarImagenDatagrid(dgvFactura, "dgCodigo", "dgQuitar")
     End Sub
     Private Sub btBusqueda_Click(sender As Object, e As EventArgs) Handles btBusqueda.Click
         Dim params As New List(Of String)
@@ -170,6 +171,7 @@
             objCompra.dtCompra.Rows.Add()
             btRegistrar.Enabled = True
             btCancelar.Enabled = True
+            Generales.mostrarImagenDatagrid(dgvFactura, "dgCodigo", "dgQuitar")
         End If
     End Sub
     Private Sub btCancelar_Click(sender As Object, e As EventArgs)
@@ -198,14 +200,16 @@
             End Try
         End If
     End Sub
-    Private Sub dgvFactura_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvFactura.CellDoubleClick
+    Private Sub dgvFactura_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvFactura.CellClick
         Dim params As New List(Of String)
         params.Add(String.Empty)
         If TextIdentificacion.Text <> String.Empty Then
+
+            If btRegistrar.Enabled = False Then Exit Sub
             Try
-                If btRegistrar.Enabled = False Then Exit Sub
-                If (dgvFactura.Rows(dgvFactura.CurrentCell.RowIndex).Cells("dgCodigo").Selected = True _
-                    Or dgvFactura.Rows(dgvFactura.CurrentCell.RowIndex).Cells("dgDescripcion").Selected = True) Then
+
+                If (dgvFactura.Rows(dgvFactura.CurrentCell.RowIndex).Cells("dgCodigo").Value.ToString = "" _
+                    And dgvFactura.Rows(dgvFactura.CurrentCell.RowIndex).Cells("dgQuitar").Selected = True) Then
                     Generales.busquedaItems(Sentencias.PRODUCTO_CONSULTAR,
                                               params,
                                               Titulo.BUSQUEDA_PRODUCTO,
@@ -215,15 +219,25 @@
                                               1,
                                               0,
                                               0,
-                                              True)
-                ElseIf dgvFactura.Rows(dgvFactura.CurrentCell.RowIndex).Cells("dgQuitar").Selected = True _
-                    And objCompra.dtCompra.Rows(dgvFactura.CurrentCell.RowIndex).Item(0).ToString <> "" Then
-                    objCompra.dtCompra.Rows.RemoveAt(e.RowIndex)
+                                         True)
                 End If
+
             Catch ex As Exception
                 EstiloMensajes.mostrarMensajeError(ex.Message)
             End Try
         End If
+        Generales.mostrarImagenDatagrid(dgvFactura, "dgCodigo", "dgQuitar")
+    End Sub
+    Private Sub dgvFactura_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvFactura.CellDoubleClick
+        Try
+            If dgvFactura.Rows(dgvFactura.CurrentCell.RowIndex).Cells("dgQuitar").Selected = True _
+                    And objCompra.dtCompra.Rows(dgvFactura.CurrentCell.RowIndex).Item(0).ToString <> "" Then
+                objCompra.dtCompra.Rows.RemoveAt(e.RowIndex)
+            End If
+        Catch ex As Exception
+            EstiloMensajes.mostrarMensajeError(ex.Message)
+        End Try
+        Generales.mostrarImagenDatagrid(dgvFactura, "dgCodigo", "dgQuitar")
     End Sub
     Private Sub dgvFactura_CellFormatting(sender As System.Object, e As System.Windows.Forms.DataGridViewCellFormattingEventArgs) Handles dgvFactura.CellFormatting
         If e.ColumnIndex = 4 Or e.ColumnIndex = 5 Then
@@ -344,7 +358,5 @@
         Return False
     End Function
 
-    Private Sub dgvFactura_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvFactura.CellClick
-        Generales.mostrarImagenDatagrid(dgvFactura, "dgCodigo", "dgQuitar")
-    End Sub
+
 End Class

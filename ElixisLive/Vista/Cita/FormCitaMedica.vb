@@ -60,6 +60,7 @@
             validarEdicionGrilla(Constantes.EDITABLE)
             btRegistrar.Enabled = True
             btCancelar.Enabled = True
+            Generales.mostrarImagenDatagrid(dgvServicio, "dgCodigo", "dgQuitar")
         End If
     End Sub
     Private Sub btCancelar_Click(sender As Object, e As EventArgs) Handles btCancelar.Click
@@ -158,11 +159,26 @@
     Private Sub dgvServicio_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvServicio.CellDoubleClick
         Dim params As New List(Of String)
         params.Add(String.Empty)
+
+        Try
+                If btRegistrar.Enabled = False Then Exit Sub
+            If dgvServicio.Rows(dgvServicio.CurrentCell.RowIndex).Cells("dgQuitar").Selected = True _
+                    And objCita.dtServicio.Rows(dgvServicio.CurrentCell.RowIndex).Item(0).ToString <> String.Empty Then
+                objCita.dtServicio.Rows.RemoveAt(e.RowIndex)
+            End If
+        Catch ex As Exception
+                EstiloMensajes.mostrarMensajeError(ex.Message)
+            End Try
+        Generales.mostrarImagenDatagrid(dgvServicio, "dgCodigo", "dgQuitar")
+    End Sub
+    Private Sub dgvServicio_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvServicio.CellClick
+        Dim params As New List(Of String)
+        params.Add(String.Empty)
         If textNombre.Text <> String.Empty Then
             Try
                 If btRegistrar.Enabled = False Then Exit Sub
-                If (dgvServicio.Rows(dgvServicio.CurrentCell.RowIndex).Cells("dgCodigo").Selected = True _
-                    Or dgvServicio.Rows(dgvServicio.CurrentCell.RowIndex).Cells("dgServicio").Selected = True) Then
+                If (dgvServicio.Rows(dgvServicio.CurrentCell.RowIndex).Cells("dgCodigo").Value.ToString = "" _
+                    Or dgvServicio.Rows(dgvServicio.CurrentCell.RowIndex).Cells("dgQuitar").Selected = True) Then
                     Generales.busquedaItems(Sentencias.SERVICIO_CONSULTAR,
                                               params,
                                               Titulo.BUSQUEDA_SERVICIO,
@@ -173,14 +189,13 @@
                                               0,
                                               0,
                                               True)
-                ElseIf dgvServicio.Rows(dgvServicio.CurrentCell.RowIndex).Cells("dgQuitar").Selected = True _
-                    And objCita.dtServicio.Rows(dgvServicio.CurrentCell.RowIndex).Item(0).ToString <> String.Empty Then
-                    objCita.dtServicio.Rows.RemoveAt(e.RowIndex)
+
                 End If
             Catch ex As Exception
                 EstiloMensajes.mostrarMensajeError(ex.Message)
             End Try
         End If
+        Generales.mostrarImagenDatagrid(dgvServicio, "dgCodigo", "dgQuitar")
     End Sub
     Private Sub txtfecha_Leave(sender As Object, e As EventArgs) Handles txtfecha.Leave
         If btRegistrar.Enabled = False Then Exit Sub

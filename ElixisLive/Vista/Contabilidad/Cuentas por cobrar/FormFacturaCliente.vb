@@ -243,6 +243,7 @@
         textvalordebito.Text = FormatCurrency(0, 2)
         textdiferencia.Text = FormatCurrency(0, 2)
         bloquearColumnas()
+        Generales.mostrarImagenDatagrid(dgvCuentas, "Cuenta", "anular")
     End Sub
     Private Sub cargarDatos(pCodigo As String)
         Dim dt As New DataTable
@@ -296,18 +297,17 @@
             If btRegistrar.Enabled = False Or FuncionesContables.consultarMovimientosComprobante(Consultas.FACTURA_VENTA_CONSULTAR, Textcodfactura.Text) = False Then
                 Exit Sub
             End If
-            If dgvCuentas.Rows(dgvCuentas.CurrentCell.RowIndex).Cells("Cuenta").Selected = True And Textcodfactura.Text <> "" Then
-                Generales.busquedaItems(Consultas.BUSQUEDA_CUENTAS_DETALLE_PUC, params, TitulosForm.BUSQUEDA_CUENTAS_PUC, dgvCuentas, dtCuentas, 0, 2, 0, 0, 0, 0, 1)
-            ElseIf dgvCuentas.Rows(dgvCuentas.CurrentCell.RowIndex).Cells("anular").Selected = True And dtCuentas.Rows(dgvCuentas.CurrentCell.RowIndex).Item("Cuenta").ToString <> "" Then
+            If dgvCuentas.Rows(dgvCuentas.CurrentCell.RowIndex).Cells("anular").Selected = True And
+                dtCuentas.Rows(dgvCuentas.CurrentCell.RowIndex).Item("Cuenta").ToString <> "" Then
                 dtCuentas.Rows.RemoveAt(e.RowIndex)
-
             End If
             diseñoDgv()
         Catch ex As Exception
             EstiloMensajes.mostrarMensajeError(ex.Message)
         End Try
-
+        Generales.mostrarImagenDatagrid(dgvCuentas, "Cuenta", "anular")
     End Sub
+
     Private Sub cargarFacturaGuardada(pFactura As String)
         Dim dt As New DataTable
         Dim params As New List(Of String)
@@ -481,6 +481,7 @@
             btCancelar.Enabled = True
             base.ReadOnly = False
         End If
+        Generales.mostrarImagenDatagrid(dgvCuentas, "Cuenta", "anular")
     End Sub
     Private Sub crearCuentaPorCobrar(idCliente As Integer)
         Dim diferencia As Double
@@ -569,9 +570,28 @@
             FuncionesContables.ValidarCreditoDebito(dgvCuentas, Constantes.COLUMNA_DEBITO, Constantes.COLUMNA_CREDITO)
         ElseIf e.ColumnIndex = 5 Then
             FuncionesContables.ValidarCreditoDebito(dgvCuentas, Constantes.COLUMNA_CREDITO, Constantes.COLUMNA_DEBITO)
+        ElseIf e.ColumnIndex = 0 Then
+
+            Dim params As New List(Of String)
+            params.Add(codigoPuc)
+            params.Add("")
+            Try
+                If btRegistrar.Enabled = False Or FuncionesContables.consultarMovimientosComprobante(Consultas.FACTURA_VENTA_CONSULTAR, Textcodfactura.Text) = False Then
+                    Exit Sub
+                End If
+                If dgvCuentas.Rows(dgvCuentas.CurrentCell.RowIndex).Cells("Cuenta").Value.ToString = "" And
+                    Textcodfactura.Text <> "" And dgvCuentas.Rows(dgvCuentas.CurrentCell.RowIndex).Cells("anular").Selected = True Then
+                    Generales.busquedaItems(Consultas.BUSQUEDA_CUENTAS_DETALLE_PUC, params, TitulosForm.BUSQUEDA_CUENTAS_PUC, dgvCuentas, dtCuentas, 0, 2, 0, 0, 0, 0, 1)
+                End If
+                diseñoDgv()
+            Catch ex As Exception
+                EstiloMensajes.mostrarMensajeError(ex.Message)
+            End Try
         End If
         bloquearColumnas()
+        Generales.mostrarImagenDatagrid(dgvCuentas, "Cuenta", "anular")
     End Sub
+
 
     Private Sub fechadoc_Leave(sender As Object, e As EventArgs) Handles fechadoc.Leave
         FuncionesContables.validarFechaFutura(fechadoc)

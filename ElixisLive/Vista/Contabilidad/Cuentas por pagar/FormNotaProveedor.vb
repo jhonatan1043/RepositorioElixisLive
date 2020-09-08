@@ -411,8 +411,11 @@
             FuncionesContables.ValidarCreditoDebito(dgvCuentas, Constantes.COLUMNA_DEBITO, Constantes.COLUMNA_CREDITO)
         ElseIf e.ColumnIndex = 5 Then
             FuncionesContables.ValidarCreditoDebito(dgvCuentas, Constantes.COLUMNA_CREDITO, Constantes.COLUMNA_DEBITO)
+        ElseIf e.ColumnIndex = 0 Then
+
         End If
         deshabilitarColumnas()
+
     End Sub
     Private Sub dgvcuentas_DataError(ByVal sender As Object, ByVal e As System.Windows.Forms.DataGridViewDataErrorEventArgs) Handles dgvCuentas.DataError
         If e.ColumnIndex = 4 Then
