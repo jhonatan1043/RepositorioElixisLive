@@ -15,15 +15,12 @@ Public Class FormRemisionInventario
     Private Sub dgvProducto_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvProducto.CellDoubleClick, DataGridView9.CellDoubleClick, DataGridView6.CellDoubleClick, DataGridView3.CellDoubleClick, DataGridView12.CellDoubleClick
         Try
             If btRegistrar.Enabled = False Then Exit Sub
-            If (dgvProducto.Rows(dgvProducto.CurrentCell.RowIndex).Cells("dgCodigo").Selected = True Or
-                dgvProducto.Rows(dgvProducto.CurrentCell.RowIndex).Cells("dgDescripcion").Selected = True) Then
-                buscarProducto()
-            ElseIf dgvProducto.Rows(dgvProducto.CurrentCell.RowIndex).Cells("dgQuitar").Selected = True And
+            If dgvProducto.Rows(dgvProducto.CurrentCell.RowIndex).Cells("dgQuitar").Selected = True And
                    objRemision.dtProductos.Rows(dgvProducto.CurrentCell.RowIndex).Item("Codigo").ToString <> Constantes.CADENA_VACIA Then
                 objRemision.dtProductos.Rows.RemoveAt(e.RowIndex)
                 calcularTotales()
             ElseIf dgvProducto.Rows(dgvProducto.CurrentCell.RowIndex).Cells("dgEmpleadoN").Selected = True And
-                    Not IsDBNull(dgvProducto.Rows(dgvProducto.CurrentCell.RowIndex).Cells("dgCodigo").Value)
+                    Not IsDBNull(dgvProducto.Rows(dgvProducto.CurrentCell.RowIndex).Cells("dgCodigo").Value) Then
                 consultarEmpleado(1)
             End If
         Catch ex As Exception
@@ -539,5 +536,20 @@ Public Class FormRemisionInventario
                 txtCodigoBarra.Focus()
             End If
         End If
+    End Sub
+    Private Sub dgvServicio_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvProducto.CellClick
+        Try
+
+            If e.ColumnIndex = 0 Then
+                If (dgvProducto.Rows(dgvProducto.CurrentCell.RowIndex).Cells("dgQuitar").Selected = True And
+                dgvProducto.Rows(dgvProducto.CurrentCell.RowIndex).Cells("dgCodigo").ToString = Constantes.CADENA_VACIA) Then
+                    buscarProducto()
+                End If
+            End If
+
+        Catch ex As Exception
+            EstiloMensajes.mostrarMensajeError(ex.Message)
+        End Try
+        Generales.mostrarImagenDatagrid(dgvProducto, "dgCodigo", "dgQuitar")
     End Sub
 End Class

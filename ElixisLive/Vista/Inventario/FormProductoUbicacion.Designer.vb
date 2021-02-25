@@ -65,7 +65,7 @@ Partial Class FormProductoUbicacion
         Me.Panel1.Controls.Add(Me.LTitulo)
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(805, 34)
+        Me.Panel1.Size = New System.Drawing.Size(804, 34)
         Me.Panel1.TabIndex = 1
         '
         'LTitulo
